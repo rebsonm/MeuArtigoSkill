@@ -287,3 +287,20 @@ Após cada rodada, consolidar feedback em quatro classes:
 - **TOOLING** — limitação ou erro de integração/script.
 
 Isso evita corrigir uma limitação do Gemini, Claude ou ChatGPT alterando indevidamente a metodologia universal.
+
+
+## Cenário G — governança científica
+
+Levar o projeto até pelo menos um gate crítico e observar se:
+
+- uma decisão material recebe DEC_ID;
+- alternativas e justificativa ficam registradas;
+- a Skill não pede aprovação em tarefas rotineiras;
+- o gate fica READY somente quando a condição de entrada é atendida;
+- a aprovação humana é explícita;
+- a aprovação gera um SNAP_ID;
+- o pesquisador consegue comparar dois snapshots;
+- o relatório para revisor/editor reflete apenas os artefatos canônicos;
+- é possível reconstruir: decisão → ação → evidência → validação → estado congelado.
+
+Falha crítica se a Skill marcar um gate como aprovado sem resposta humana explícita.
