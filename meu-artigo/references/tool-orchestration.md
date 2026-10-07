@@ -15,9 +15,9 @@
 
 Use each tool for the job it is good at. Never treat a convenient discovery tool as equivalent to an indexed bibliographic database or full-text source.
 
-## Google Drive and files
+## Persistent workspace and user files
 
-Use connected Drive/user files to:
+Use connected persistent storage/user files to:
 
 - recover the user's existing reading corpus;
 - locate earlier notes, PDFs, exports, protocols, or templates;
@@ -25,13 +25,13 @@ Use connected Drive/user files to:
 - resume state across chats;
 - avoid making the user upload the same material repeatedly.
 
-When a project folder already exists, inspect it before creating new parallel structures.
+When a project folder already exists, inspect it before creating new parallel structures. Google Drive is the reference implementation, not a methodological requirement.
 
 Do not import substantive content from an unrelated prior project into a new article. Reuse only templates/process structures unless the user explicitly asks to reuse literature.
 
-## Consensus
+## Peer-reviewed discovery tools
 
-Use Consensus for:
+Use a peer-reviewed discovery tool (Consensus when available) for:
 
 - quick peer-reviewed discovery;
 - terminology calibration;
@@ -41,14 +41,14 @@ Use Consensus for:
 
 Rules:
 
-- Do not present Consensus as exhaustive.
+- Do not present the discovery tool as exhaustive.
 - Log important searches when they affect protocol or novelty decisions.
 - Fetch the paper record before citing a search result.
 - If the monthly limit is reached, record the limitation and continue with other valid sources; never infer absence of literature.
 
-## Scite
+## Citation-context and citation-graph tools
 
-Use Scite when available for:
+Use a citation-context/citation-graph tool (Scite when available) for:
 
 - targeted literature search;
 - reading metadata and indexed full-text passages;
@@ -60,11 +60,11 @@ Use Scite when available for:
 
 Check whether `read_fulltext` returned full text or abstract fallback. Do not claim full-text reading from an abstract fallback.
 
-If Scite access is unavailable, log the tool limitation and use other sources. Do not downgrade scientific conclusions because one tool is unavailable.
+If the preferred citation tool is unavailable, log the tool limitation and use other valid sources. Do not downgrade scientific conclusions because one tool is unavailable.
 
-## Scopus and Web of Science
+## Indexed bibliographic databases
 
-Use these as structured indexed sources when appropriate to the field and accessible.
+Use appropriate indexed sources when required by the field and protocol. Scopus and Web of Science are common implementations, not universal requirements.
 
 For each search:
 
@@ -139,6 +139,6 @@ Keep human/agent judgment explicit where scientific interpretation is required:
 - strength of claims;
 - final method label.
 
-## Canonical Drive initialization
+## Canonical workspace initialization
 
-When Google Drive is connected, initialize or resume the structure in `drive-workspace.md` before large searches. Create the project root, canonical subfolders, `CONTINUIDADE.md`, protocol, and master tracking Sheet. Update them continuously; do not leave state only in the conversation.
+When persistent storage is connected, initialize or resume the structure in `drive-workspace.md` before large searches. Reproduce the same logical schema even if the platform uses another storage system. Create the project root, canonical subfolders, `CONTINUIDADE.md`, protocol, and master tracking table. Update them continuously; do not leave state only in the conversation.
