@@ -385,6 +385,10 @@ Epistemic labels:
 - [I]
 - [P]
 
+For material constructs or categories requiring operationalization, extend the existing evidence rows with: canonical definition; definition-source Evidence_IDs; mechanism or relationship; dimension or category; indicator or observable; interpretation rule; boundary or exclusion rule; epistemic label; Trace_IDs; and human validation.
+
+Preserve the chain from concept to definition, source, mechanism, dimension/category, indicator/observable, and interpretation rule. Keep source definitions distinct from project adaptations and original propositions. Do not create a new canonical sheet or ID family for this purpose.
+
 ## 10_SINTESE
 
 Columns:
