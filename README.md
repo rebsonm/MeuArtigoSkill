@@ -6,6 +6,30 @@ Ela não entrega um “artigo pronto por mágica” e não reutiliza o conteúdo
 
 > O tema, a pergunta de pesquisa, os conceitos, as strings de busca, as fontes, as categorias analíticas e as conclusões pertencem sempre ao projeto do novo usuário.
 
+## 🚀 Nunca usou GitHub? Comece aqui
+
+Você **não precisa saber Git, programação nem terminal** para testar o Meu Artigo.
+
+Se esta é sua primeira vez no GitHub, abra o guia:
+
+### 👉 [COMECE AQUI — passo a passo para quem nunca usou GitHub](./docs/COMECE-AQUI.md)
+
+O caminho básico é:
+
+```text
+GitHub → botão Code → Download ZIP → descompactar
+       → abrir a pasta meu-artigo/
+       → seguir o guia da sua IA
+```
+
+Depois escolha:
+
+- [ChatGPT / Codex](./docs/CHATGPT.md)
+- [Claude](./docs/CLAUDE.md)
+- [Gemini](./docs/GEMINI.md)
+
+Você não precisa clonar o repositório, criar branch, fazer commit ou instalar Git para usar a Skill.
+
 ## O que a Skill faz
 
 A Skill conduz o pesquisador por um fluxo completo:
@@ -199,6 +223,7 @@ A Skill deve:
 MeuArtigoSkill/
 ├── README.md
 ├── docs/
+│   ├── COMECE-AQUI.md
 │   ├── CHATGPT.md
 │   ├── CLAUDE.md
 │   ├── GEMINI.md
@@ -223,6 +248,8 @@ MeuArtigoSkill/
 ```
 
 ## Instalação
+
+Se você nunca usou GitHub, comece pelo [guia para iniciantes](./docs/COMECE-AQUI.md).
 
 A Skill instalável está na pasta [`meu-artigo`](./meu-artigo/).
 
