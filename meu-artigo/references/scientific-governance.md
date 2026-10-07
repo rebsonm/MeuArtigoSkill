@@ -188,6 +188,24 @@ Gate status:
 - COMPLETED
 - NOT_APPLICABLE
 
+### GATE-0006 robustness requirement
+
+GATE-0006 is not satisfied merely because each claim has a supporting citation.
+
+Before it becomes READY/APPROVED, material claims should be checked for:
+
+- counter-evidence;
+- alternative explanations;
+- boundary conditions;
+- single-source dependence;
+- evidentiary overstatement;
+- [L]/[I]/[P] status;
+- real human review.
+
+Claims marked REVISE or REJECT block final claim freeze until resolved. Claims marked QUALIFIED must carry their qualification into the manuscript.
+
+When a target journal is active, GATE-0006 may also check whether the claim architecture fits the journal's permitted article structure, but journal fit must never be used to suppress contradictory evidence.
+
 ### Gate behavior
 
 If a required gate is READY:
