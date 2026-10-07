@@ -6,7 +6,7 @@ implementation. C.A.D.A. is the operational governance layer; an external work
 manager (ClickUp/Jira/Trello) is optional and remains a mirror.
 """
 from __future__ import annotations
-import argparse, csv, json, re
+import argparse, csv, json, re, subprocess, sys
 from datetime import date
 from pathlib import Path
 
@@ -262,7 +262,7 @@ Updated: {date.today().isoformat()}
 
 ## 4. Canonical workspace links
 - Project root: local mirror
-- Master matrix: CSV mirror
+- Master matrix: 00_Gestao_e_Continuidade/MATRIZ_MESTRA_${slug(a.name)}.xlsx when generator is available; CSV mirrors remain canonical-compatible
 - Protocol: 00_Gestao_e_Continuidade/PROTOCOLO.md
 - C.A.D.A. control: 00_Gestao_e_Continuidade/11_CADA_Control.csv
 - PM sync: 00_Gestao_e_Continuidade/12_PM_Sync.csv
@@ -342,6 +342,29 @@ Updated: {date.today().isoformat()}
 - Conflicts: none
 """,encoding="utf-8")
 
+    # Generate the official visual workbook when the reference spreadsheet
+    # implementation is available. CSV mirrors remain as a compatibility layer.
+    matrix=root/f"00_Gestao_e_Continuidade/MATRIZ_MESTRA_{slug(a.name)}.xlsx"
+    matrix_status="EXISTS" if matrix.exists() else "NOT_CREATED"
+    if not matrix.exists():
+        builder=Path(__file__).with_name("build_matrix_template.py")
+        if builder.exists():
+            cmd=[
+                sys.executable,str(builder),
+                "--output",str(matrix),
+                "--project-name",a.name,
+                "--problem",a.problem,
+                "--article-type",a.article_type,
+                "--pm-provider",(pm or "NONE"),
+            ]
+            try:
+                subprocess.run(cmd,check=True,capture_output=True,text=True)
+                matrix_status="CREATED"
+            except Exception as exc:
+                matrix_status=f"FALLBACK_CSV: {type(exc).__name__}"
+        else:
+            matrix_status="FALLBACK_CSV: builder_missing"
+
     prot=root/"00_Gestao_e_Continuidade/PROTOCOLO.md"
     if not prot.exists():
         prot.write_text(f"""# PROTOCOLO — {a.name}
@@ -387,6 +410,7 @@ Updated: {date.today().isoformat()}
 """,encoding="utf-8")
 
     print(root)
+    print(f"matrix_status={matrix_status}")
     return 0
 
 if __name__=="__main__":
