@@ -23,3 +23,22 @@ jobs:
 
       - name: Static release audit
         run: python scripts/release_audit.py
+
+      - name: Upload installable Skill bundle
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: MeuArtigoSkill
+          path: |
+            SKILL.md
+            agents/
+            assets/
+            references/
+            scripts/
+            docs/
+            README.md
+            CHANGELOG.md
+            VERSION
+            CITATION.cff
+          if-no-files-found: error
+          retention-days: 30
