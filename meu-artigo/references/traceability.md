@@ -290,3 +290,34 @@ Record:
 Grounded Corpus Mode must preserve the Record_ID/Evidence_ID/locator chain for material answers.
 
 If AI interpretation materially affects synthesis, categories, propositions, or claims, also record AI_Use_ID and the real human review action.
+
+
+## Journal-profile traceability
+
+When a target journal is defined, trace material changes to `JOURNAL_PROFILE.json`.
+
+Record a TRACE event when:
+
+- author guidelines/template are first ingested;
+- rules are verified against an official source;
+- the target journal changes;
+- a materially revised journal guideline/template is adopted.
+
+Preserve source/URL, verification date, profile status, and affected manuscript/checklist artifacts.
+
+Journal-profile changes may alter manuscript presentation and submission requirements, but must not be used to rewrite scientific evidence or hide contradictory results.
+
+## Claim-robustness traceability
+
+For material claims, the ledger should preserve:
+
+- supporting Evidence_IDs;
+- Counter_Evidence_IDs;
+- alternative explanations;
+- boundary conditions;
+- single-source dependency;
+- robustness status;
+- human validation;
+- GATE-0006 linkage.
+
+A traceable claim should therefore show not only why it was supported, but how reasonable contestation was handled.
