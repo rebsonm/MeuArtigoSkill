@@ -21,8 +21,13 @@ Resolve provider in this order:
 
 1. provider explicitly selected in project configuration;
 2. provider containing an existing linked project/board/list for this article;
-3. already-connected provider supported by the current platform;
-4. if none is connected, continue without external PM and surface a connection option when useful.
+3. if exactly one supported provider is connected, use it;
+4. if several are connected, choose by existing work context:
+   - prefer Jira when the research already lives in an Atlassian/team project context;
+   - prefer ClickUp for a general-purpose research project needing hierarchy, assignments, deadlines, custom fields, or richer project tracking;
+   - prefer Trello for a lightweight visual board, especially for a simple/solo workflow;
+5. if several are connected and no contextual signal exists, default to ClickUp as the general-purpose provider, record the choice as `AUTO_SELECTED`, and allow the user to change it later;
+6. if none is connected, continue without external PM and surface a connection option when useful.
 
 Persist:
 
