@@ -71,6 +71,10 @@ def canonical_files(root:Path)->list[Path]:
             for p in d.rglob("*"):
                 if p.is_file() and not p.name.startswith("RO_CRATE_"):
                     keep.append(p)
+    for rel in ["04_Evidencias_e_Sintese/MAPA_CORPUS.json","04_Evidencias_e_Sintese/MAPA_CORPUS.md"]:
+        p=root/rel
+        if p.exists() and p.is_file():
+            keep.append(p)
     seen=set(); out=[]
     for p in sorted(keep):
         rp=p.resolve()
