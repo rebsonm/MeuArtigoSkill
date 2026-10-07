@@ -70,7 +70,7 @@ def body(sheet, rng):
 def widths(sheet, mapping):
     for col,w in mapping.items(): sheet.get_range(f"{col}:{col}").format.column_width=w
 
-def build(output:Path, project_name:str, problem:str, article_type:str, pm_provider:str="NONE"):
+def build(output:Path, project_name:str, problem:str, article_type:str, pm_provider:str="NONE", target_journal:str="", journal_mode:str="JOURNAL_NEUTRAL", journal_profile_status:str="TO_DEFINE"):
     wb=Workbook.create()
 
     cfg=wb.worksheets.add("15_CONFIG")
@@ -94,6 +94,10 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
       "GATE_DECISION":["PENDING","APPROVED","APPROVED_WITH_CHANGES","REJECTED","NOT_APPLICABLE"],
       "GATE_STATUS":["PENDING","READY","COMPLETED","NOT_APPLICABLE"],
       "SNAPSHOT_STATUS":["VALID","INVALID","PENDING"],
+      "JOURNAL_MODE":["JOURNAL_NEUTRAL","JOURNAL_AWARE_PENDING_PROFILE","JOURNAL_AWARE"],
+      "JOURNAL_PROFILE_STATUS":["TO_DEFINE","PENDING_RULES","LOADED","VERIFIED","SUPERSEDED"],
+      "CLAIM_ROBUSTNESS":["NOT_AUDITED","ROBUST","QUALIFIED","REVISE","REJECT","NOT_APPLICABLE"],
+      "HUMAN_VALIDATION":["PENDING","VALIDATED","REVISED","REJECTED","NOT_APPLICABLE"],
     }
     rows=[]
     for ln,vals in lists.items():
@@ -114,7 +118,9 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
       ["Contribuição pretendida","[A VALIDAR NA AUDITORIA DE NOVIDADE]","IN_PROGRESS",date.today()],
       ["Desenho metodológico",article_type,"PLANNED",date.today()],
       ["Escopo e exclusões","[A DEFINIR]","PLANNED",date.today()],
-      ["Revista-alvo","[NÃO DEFINIDA]","PLANNED",date.today()],
+      ["Revista-alvo",target_journal or "[NÃO DEFINIDA]","PLANNED" if not target_journal else "IN_PROGRESS",date.today()],
+      ["Modo de construção editorial",journal_mode,"FROZEN" if journal_mode=="JOURNAL_NEUTRAL" else "IN_PROGRESS",date.today()],
+      ["Perfil da revista",journal_profile_status,"PLANNED" if journal_profile_status in {"TO_DEFINE","PENDING_RULES"} else "IN_PROGRESS",date.today()],
       ["Idiomas","Português; Inglês","PLANNED",date.today()],
       ["Período de busca","[A DEFINIR]","PLANNED",date.today()],
       ["Etapa atual","01 — Auditoria de novidade","IN_PROGRESS",date.today()],
@@ -122,9 +128,9 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
       ["Gerenciador externo",pm_provider,"NOT APPLICABLE" if pm_provider=="NONE" else "IN_PROGRESS",date.today()],
       ["Rastreabilidade habilitada","SIM","FROZEN",date.today()],
     ]
-    proj.get_range("A5:D18").values=vals; body(proj,"A5:D18")
-    proj.get_range("D5:D18").format.number_format="yyyy-mm-dd"
-    proj.get_range("C5:C18").data_validation={"rule":{"type":"list","values":lists["STATUS_GERAL"]}}
+    proj.get_range("A5:D20").values=vals; body(proj,"A5:D20")
+    proj.get_range("D5:D20").format.number_format="yyyy-mm-dd"
+    proj.get_range("C5:C20").data_validation={"rule":{"type":"list","values":lists["STATUS_GERAL"]}}
     widths(proj,{"A":28,"B":70,"C":20,"D":18}); proj.freeze_panes.freeze_rows(4)
 
     cada=wb.worksheets.add("01_CADA")
@@ -169,7 +175,7 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
       ("08_FULL_TEXT","CONTROLE DE FULL TEXT","Acesso, versão, decisão e vínculo com a matriz de evidências.",["Record_ID","Prioridade","Status full text","Versão acessada","Fonte de acesso","Data de acesso","Decisão","Motivo exclusão","Evidence_ID","Arquivo / URL","Observações"],"A1:K1",{"A":14,"B":12,"C":18,"D":18,"E":28,"F":14,"G":14,"H":32,"I":14,"J":38,"K":30}),
       ("09_MATRIZ_EVID","MATRIZ DE EVIDÊNCIAS — DETALHADA","Extração estruturada para síntese horizontal e redação ancorada em fontes.",["Evidence_ID","Citação","DOI / ID","Conceito","Definição / claim","Problema / tensão","Mecanismo / achado","Desenho / tipo de fonte","Amostra / dados","Contexto","Processo / etapa","Atores / papéis","Ação / decisão","Evidência observável","Condições de contorno","Limitações","Transferibilidade","Papel / força","Locator","Rótulo epistêmico","Observações"],"A1:U1",{"A":14,"B":36,"C":24,"D":26,"E":42,"F":36,"G":42,"H":24,"I":28,"J":24,"K":22,"L":22,"M":24,"N":34,"O":34,"P":30,"Q":34,"R":20,"S":34,"T":18,"U":28}),
       ("10_SINTESE","SÍNTESE ENTRE FONTES","Convergências, contradições, limites e inferências explicitamente rastreadas.",["Synthesis_ID","Tema / Categoria","Evidence_IDs","Padrão entre fontes","Contradições","Condições de contorno","Inferência","Status epistêmico","Decisão","Claim_IDs","Trace_ID"],"A1:K1",{"A":14,"B":28,"C":28,"D":46,"E":36,"F":36,"G":44,"H":18,"I":30,"J":24,"K":16}),
-      ("11_CLAIMS","CLAIMS LEDGER — MANUSCRITO ↔ EVIDÊNCIA","Cada afirmação relevante deve apontar para sua sustentação e proveniência.",["Claim_ID","Seção do manuscrito","Claim / afirmação","Tipo","Evidence_IDs","Locators","Trace_IDs","Força","Verificação","Status de redação","Observações"],"A1:K1",{"A":14,"B":24,"C":56,"D":20,"E":24,"F":34,"G":24,"H":14,"I":26,"J":18,"K":28}),
+      ("11_CLAIMS","CLAIMS LEDGER — EVIDÊNCIA, CONTESTAÇÃO E ROBUSTEZ","Cada claim material deve mostrar sustentação, evidência contrária, limites e resultado da auditoria de robustez.",["Claim_ID","Seção do manuscrito","Claim / afirmação","Tipo","Evidence_IDs","Counter_Evidence_IDs","Locators","Explicações alternativas","Condições de contorno","Dependência de fonte única","Força","Robustez","Notas de robustez","Trace_IDs","Gate_ID","Validação humana","Status de redação","Observações"],"A1:R1",{"A":14,"B":24,"C":56,"D":20,"E":24,"F":26,"G":34,"H":42,"I":34,"J":24,"K":14,"L":18,"M":42,"N":24,"O":14,"P":20,"Q":18,"R":28}),
       ("12_USO_IA","REGISTRO DE USO DE IA","Transparência: onde a IA atuou, para quê e como houve validação humana.",["AI_Use_ID","Data","Etapa","CADA_ID","Trace_ID","Plataforma / ferramenta","Modelo / versão","Finalidade","Categoria de entrada","Categoria de saída","Materialidade","Método de revisão humana","Decisão humana","Aceito / modificado / rejeitado","Artefatos relacionados","Disclosure necessário","Texto / nota de disclosure","Observações"],"A1:R1",{"A":14,"B":13,"C":12,"D":14,"E":14,"F":24,"G":18,"H":36,"I":24,"J":24,"K":18,"L":40,"M":28,"N":22,"O":34,"P":18,"Q":48,"R":28}),
       ("13_SUBMISSAO","CHECKLIST DE SUBMISSÃO","Fechamento: requisitos, arquivos, prazos, comprovantes e rastreabilidade.",["Item","Requisito","Fonte do requisito","Status","Prazo","Evidência / arquivo","Trace_ID","Observações"],"A1:H1",{"A":24,"B":44,"C":30,"D":16,"E":14,"F":38,"G":16,"H":30}),
       ("14_PM_SYNC","SINCRONIZAÇÃO COM GERENCIADOR EXTERNO","Opcional: ClickUp, Jira, Trello ou equivalente. A planilha continua canônica.",["CADA_ID","Provider","Workspace / site","Container ID","External item ID","External URL","Status externo","Responsável externo","Prazo externo","Status canônico","Responsável canônico","Prazo canônico","Último push","Último pull","Sync status","Conflito","Observações"],"A1:Q1",{"A":14,"B":14,"C":24,"D":18,"E":18,"F":38,"G":18,"H":20,"I":14,"J":18,"K":20,"L":14,"M":20,"N":20,"O":16,"P":30,"Q":30}),
@@ -214,8 +220,8 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
       ["GATE-0003","SEARCH_STRATEGY","03-04","Estratégia de busca","Strings e filtros preparados e testados.","Blocos conceituais, strings literais, filtros e bases.","","","","","PENDING","","","","","","","PENDING","Execução das buscas canônicas",""],
       ["GATE-0004","CORPUS_FREEZE","08-09","Congelamento do corpus","Screening/full text encerrados e contagens reconciliadas.","Corpus elegível, exclusões, duplicatas e contagens finais.","","","","","PENDING","","","","","","","PENDING","Extração/síntese final do corpus",""],
       ["GATE-0005","SYNTHESIS","10","Síntese e produto teórico","Síntese entre fontes estabilizada.","Categorias, contradições, inferências e proposições/modelo.","","","","","PENDING","","","","","","","PENDING","Redação substantiva do manuscrito",""],
-      ["GATE-0006","CLAIMS_AUDIT","12-13","Claims e auditoria científica","Claims principais ligados às evidências e auditoria final executada.","Claims, Evidence_IDs, locators, limites e uso de IA.","","","","","PENDING","","","","","","","PENDING","Liberação da versão final",""],
-      ["GATE-0007","SUBMISSION_RELEASE","14","Liberação para submissão","Versão canônica, checklist e transparência prontos.","Manuscrito final, relatório de transparência, disclosures e arquivos de submissão.","","","","","PENDING","","","","","","","PENDING","Submissão externa",""],
+      ["GATE-0006","CLAIMS_AUDIT","12-13","Claims e auditoria científica","Claims principais ligados às evidências; evidência contrária, explicações alternativas, dependência de fonte e limites auditados.","Claims, Evidence_IDs, Counter_Evidence_IDs, locators, explicações alternativas, condições de contorno, dependência de fonte, robustez, uso de IA e aderência editorial aplicável.","","","","","PENDING","","","","","","","PENDING","Liberação da versão final",""],
+      ["GATE-0007","SUBMISSION_RELEASE","14","Liberação para submissão","Versão canônica, checklist, perfil da revista e transparência reconciliados.","Manuscrito final, JOURNAL_PROFILE, conformidade com regras oficiais, relatório de transparência, disclosures e arquivos de submissão.","","","","","PENDING","","","","","","","PENDING","Submissão externa",""],
     ]
     gates.get_range("A5:T11").values=gate_seed
     gates.get_range("K5:K100").data_validation={"rule":{"type":"list","values":lists["GATE_DECISION"]}}
@@ -287,17 +293,27 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
     ai=wb.worksheets.get_item("12_USO_IA")
     ai.get_range("K5:K500").data_validation={"rule":{"type":"list","values":lists["MATERIALIDADE_IA"]}}
     ai.get_range("N5:N500").data_validation={"rule":{"type":"list","values":lists["DECISAO_IA"]}}
+    claims=wb.worksheets.get_item("11_CLAIMS")
+    claims.get_range("L5:L500").data_validation={"rule":{"type":"list","values":lists["CLAIM_ROBUSTNESS"]}}
+    claims.get_range("P5:P500").data_validation={"rule":{"type":"list","values":lists["HUMAN_VALIDATION"]}}
+    claims.get_range("L5:L500").conditional_formats.add_custom('=L5="ROBUST"',{"fill":LIGHT_GREEN,"font":{"color":GREEN,"bold":True}})
+    claims.get_range("L5:L500").conditional_formats.add_custom('=L5="QUALIFIED"',{"fill":LIGHT_AMBER,"font":{"color":AMBER,"bold":True}})
+    claims.get_range("L5:L500").conditional_formats.add_custom('=OR(L5="REVISE",L5="REJECT")',{"fill":LIGHT_RED,"font":{"color":RED,"bold":True}})
+
 
     dash=wb.worksheets.add("00_PAINEL")
     title(dash,"MEU ARTIGO — PAINEL DE GOVERNANÇA CIENTÍFICA","Onde estamos? O que falta? Como chegamos aqui? Onde a IA participou?","A1:L1")
     dash.get_range("A4:B4").values=[["Projeto","Valor"]]; hdr(dash,"A4:B4")
-    dash.get_range("A5:A9").values=[["Título"],["Etapa atual"],["Modo de gestão"],["Gerenciador externo"],["Última atualização"]]
-    dash.get_range("A5:A9").format=LABEL
+    dash.get_range("A5:A11").values=[["Título"],["Etapa atual"],["Modo de gestão"],["Gerenciador externo"],["Última atualização"],["Revista-alvo"],["Modo editorial"]]
+    dash.get_range("A5:A11").format=LABEL
     dash.get_range("B5").formulas=[["=IFERROR(INDEX('03_PROJETO'!$B$5:$B$30,MATCH(\"Título curto do projeto\",'03_PROJETO'!$A$5:$A$30,0)),\"[DEFINIR]\")"]]
     dash.get_range("B6").formulas=[["=IFERROR(INDEX('03_PROJETO'!$B$5:$B$30,MATCH(\"Etapa atual\",'03_PROJETO'!$A$5:$A$30,0)),\"—\")"]]
     dash.get_range("B7").formulas=[["=IFERROR(INDEX('03_PROJETO'!$B$5:$B$30,MATCH(\"Modo de gestão\",'03_PROJETO'!$A$5:$A$30,0)),\"MATRIX_ONLY\")"]]
     dash.get_range("B8").formulas=[["=IFERROR(INDEX('03_PROJETO'!$B$5:$B$30,MATCH(\"Gerenciador externo\",'03_PROJETO'!$A$5:$A$30,0)),\"NONE\")"]]
-    dash.get_range("B9").formulas=[["=TODAY()"]]; dash.get_range("B9").format.number_format="yyyy-mm-dd"; body(dash,"A5:B9")
+    dash.get_range("B9").formulas=[["=TODAY()"]]; dash.get_range("B9").format.number_format="yyyy-mm-dd"
+    dash.get_range("B10").formulas=[["=IFERROR(INDEX('03_PROJETO'!$B$5:$B$30,MATCH(\"Revista-alvo\",'03_PROJETO'!$A$5:$A$30,0)),\"[NÃO DEFINIDA]\")"]]
+    dash.get_range("B11").formulas=[["=IFERROR(INDEX('03_PROJETO'!$B$5:$B$30,MATCH(\"Modo de construção editorial\",'03_PROJETO'!$A$5:$A$30,0)),\"JOURNAL_NEUTRAL\")"]]
+    body(dash,"A5:B11")
 
     cards=[
       ("D4:E4","D5:E6","Avanço C.A.D.A.","=IFERROR(COUNTIF('01_CADA'!$H$5:$H$500,\"DONE\")/COUNTA('01_CADA'!$A$5:$A$500),0)","0%"),
@@ -366,9 +382,12 @@ def main():
     ap.add_argument("--project-name",required=True)
     ap.add_argument("--problem",default="")
     ap.add_argument("--article-type",default="undecided")
+    ap.add_argument("--target-journal",default="")
+    ap.add_argument("--journal-mode",default="JOURNAL_NEUTRAL")
+    ap.add_argument("--journal-profile-status",default="TO_DEFINE")
     ap.add_argument("--pm-provider",default="NONE")
     a=ap.parse_args()
-    path=build(Path(a.output),a.project_name,a.problem,a.article_type,(a.pm_provider or "NONE").upper())
+    path=build(Path(a.output),a.project_name,a.problem,a.article_type,(a.pm_provider or "NONE").upper(),a.target_journal,a.journal_mode,a.journal_profile_status)
     print(path)
 
 if __name__=="__main__":
