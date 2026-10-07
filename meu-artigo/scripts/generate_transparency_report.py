@@ -51,6 +51,14 @@ def report_data(root:Path)->dict:
     decisions=rows(root,"17_Decision_Log.csv")
     gates=rows(root,"18_Human_Validation_Gates.csv")
     snaps=rows(root,"19_Snapshots.csv")
+    submission=rows(root,"10_Submission_Checklist.csv")
+    journal_profile_path=root/"06_Submissao/Regras_da_Revista/JOURNAL_PROFILE.json"
+    journal_profile=None
+    if journal_profile_path.exists():
+        try:
+            journal_profile=json.loads(journal_profile_path.read_text(encoding="utf-8"))
+        except Exception:
+            journal_profile={"status":"INVALID","notes":"JOURNAL_PROFILE.json exists but could not be parsed."}
     corpus_map_path=root/"04_Evidencias_e_Sintese/MAPA_CORPUS.json"
     corpus_map=None
     if corpus_map_path.exists():
@@ -74,6 +82,26 @@ def report_data(root:Path)->dict:
     ]
     claims_without_evidence=[
         r for r in claims if (r.get("Claim_ID") or "").strip() and not (r.get("Evidence_IDs") or "").strip()
+    ]
+    claims_not_audited=[
+        r for r in claims
+        if (r.get("Claim_ID") or "").strip()
+        and (r.get("Robustness_status") or "").upper().strip() in {"","NOT_AUDITED"}
+    ]
+    claims_revise_or_reject=[
+        r for r in claims
+        if (r.get("Claim_ID") or "").strip()
+        and (r.get("Robustness_status") or "").upper().strip() in {"REVISE","REJECT"}
+    ]
+    claims_qualified=[
+        r for r in claims
+        if (r.get("Claim_ID") or "").strip()
+        and (r.get("Robustness_status") or "").upper().strip()=="QUALIFIED"
+    ]
+    claims_robust=[
+        r for r in claims
+        if (r.get("Claim_ID") or "").strip()
+        and (r.get("Robustness_status") or "").upper().strip()=="ROBUST"
     ]
     done_without_evidence=[
         r for r in cada
@@ -99,6 +127,10 @@ def report_data(root:Path)->dict:
             "evidence_items":len(evidence),
             "synthesis_items":len(synthesis),
             "claims":len([r for r in claims if (r.get("Claim_ID") or "").strip()]),
+            "claims_robust":len(claims_robust),
+            "claims_qualified":len(claims_qualified),
+            "claims_not_audited":len(claims_not_audited),
+            "claims_revise_or_reject":len(claims_revise_or_reject),
             "trace_events":len([r for r in trace if (r.get("Trace_ID") or "").strip()]),
             "material_decisions":len([r for r in decisions if (r.get("DEC_ID") or "").strip()]),
             "human_gates":len([r for r in gates if (r.get("GATE_ID") or "").strip()]),
@@ -114,8 +146,12 @@ def report_data(root:Path)->dict:
         "substantive_ai":substantive,
         "interop":interop,
         "corpus_map":corpus_map,
+        "journal_profile":journal_profile,
+        "submission_checklist":submission,
         "gaps":{
             "claims_without_evidence":[r.get("Claim_ID") for r in claims_without_evidence],
+            "claims_not_robustness_audited":[r.get("Claim_ID") for r in claims_not_audited],
+            "claims_revise_or_reject":[r.get("Claim_ID") for r in claims_revise_or_reject],
             "done_cada_without_completion_evidence":[r.get("CADA_ID") for r in done_without_evidence],
             "substantive_ai_pending_validation":[r.get("AI_Use_ID") for r in substantive_pending],
             "gates_not_completed":[r.get("GATE_ID") for r in gates_pending],
@@ -154,6 +190,14 @@ def main()->int:
         f"- Original research input: {p.get('research_input') or p.get('Problema original') or 'Not available in canonical project metadata'}",
         f"- Article/review design: {p.get('article_type') or p.get('Desenho metodológico') or 'Not yet frozen'}",
         f"- Management mode: {p.get('work_management_mode') or p.get('Modo de gestão') or 'Not recorded'}",
+        "",
+        "## 1.5. Journal-aware construction",
+        f"- Target journal: {(data.get('journal_profile') or {}).get('journal_name') or p.get('target_journal') or 'TO_DEFINE'}",
+        f"- Construction mode: {(data.get('journal_profile') or {}).get('construction_mode') or p.get('journal_construction_mode') or 'JOURNAL_NEUTRAL'}",
+        f"- Journal profile status: {(data.get('journal_profile') or {}).get('status') or p.get('journal_profile_status') or 'TO_DEFINE'}",
+        f"- Official rules verified: {(data.get('journal_profile') or {}).get('official_rules_verified') if data.get('journal_profile') is not None else 'not recorded'}",
+        f"- Rules verified at: {(data.get('journal_profile') or {}).get('rules_verified_at') or '—'}",
+        f"- Submission checklist items: {len(data.get('submission_checklist') or [])}",
         "",
         "## 2. Methodological design and protocol status",
         f"- Protocol records: {c['protocol_rows']}",
@@ -221,6 +265,10 @@ def main()->int:
         f"- Evidence items: {c['evidence_items']}",
         f"- Synthesis items: {c['synthesis_items']}",
         f"- Claims: {c['claims']}",
+        f"- Claims ROBUST: {c['claims_robust']}",
+        f"- Claims QUALIFIED: {c['claims_qualified']}",
+        f"- Claims not robustness-audited: {c['claims_not_audited']}",
+        f"- Claims pending REVISE/REJECT: {c['claims_revise_or_reject']}",
         "",
         "## 5. Human validation gates",
     ]
@@ -291,6 +339,12 @@ def main()->int:
         "",
         "### Claims without Evidence_ID",
         md_list(gaps["claims_without_evidence"]),
+        "",
+        "### Claims without robustness audit",
+        md_list(gaps["claims_not_robustness_audited"]),
+        "",
+        "### Claims still marked REVISE/REJECT",
+        md_list(gaps["claims_revise_or_reject"]),
         "",
         "### DONE C.A.D.A. items without completion evidence",
         md_list(gaps["done_cada_without_completion_evidence"]),
