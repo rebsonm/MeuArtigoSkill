@@ -251,3 +251,19 @@ Interoperable provenance does not itself prove validity, rigor, or reproducibili
 It demonstrates that the construction process is documented in a standardized, inspectable form.
 
 The scientific argument must still be evaluated on method, evidence, analysis, reasoning, and human responsibility.
+
+
+## Journal profile and robust claims
+
+When present, `JOURNAL_PROFILE.json` is included in the RO-Crate payload and represented as a provenance entity in the W3C PROV graph.
+
+Claim entities may expose:
+
+- robustness status;
+- human validation;
+- alternative explanations;
+- boundary conditions;
+- single-source dependency;
+- counter-evidence relations.
+
+Supporting evidence remains represented through `prov:wasDerivedFrom`. Counter-evidence uses the Meu Artigo namespace rather than pretending it is ordinary derivation.
