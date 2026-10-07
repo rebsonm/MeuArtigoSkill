@@ -51,6 +51,13 @@ def report_data(root:Path)->dict:
     decisions=rows(root,"17_Decision_Log.csv")
     gates=rows(root,"18_Human_Validation_Gates.csv")
     snaps=rows(root,"19_Snapshots.csv")
+    corpus_map_path=root/"04_Evidencias_e_Sintese/MAPA_CORPUS.json"
+    corpus_map=None
+    if corpus_map_path.exists():
+        try:
+            corpus_map=json.loads(corpus_map_path.read_text(encoding="utf-8"))
+        except Exception:
+            corpus_map={"warnings":["MAPA_CORPUS.json exists but could not be parsed."]}
 
     executed_searches=[
         r for r in searches
@@ -98,6 +105,7 @@ def report_data(root:Path)->dict:
             "snapshots":len([r for r in snaps if (r.get("SNAP_ID") or "").strip()]),
             "substantive_ai_uses":len(substantive),
             "interop_exports":len([r for r in interop if (r.get("Export_ID") or "").strip()]),
+            "corpus_map_generated":1 if corpus_map else 0,
         },
         "executed_searches":executed_searches,
         "decisions":decisions,
@@ -105,6 +113,7 @@ def report_data(root:Path)->dict:
         "snapshots":snaps,
         "substantive_ai":substantive,
         "interop":interop,
+        "corpus_map":corpus_map,
         "gaps":{
             "claims_without_evidence":[r.get("Claim_ID") for r in claims_without_evidence],
             "done_cada_without_completion_evidence":[r.get("CADA_ID") for r in done_without_evidence],
@@ -185,6 +194,26 @@ def main()->int:
             )
     else:
         lines.append("- No executed searches recorded.")
+
+    lines += [
+        "",
+        "### Corpus Map / grounded corpus status",
+        f"- Corpus Map generated: {'yes' if data.get('corpus_map') else 'no'}",
+        f"- Grounded Corpus Mode enabled in project configuration: {p.get('grounded_corpus_mode_enabled') or 'not recorded'}",
+    ]
+    if data.get("corpus_map"):
+        cm=data["corpus_map"] or {}
+        coverage=cm.get("coverage") or {}
+        lines += [
+            f"- Retained records represented: {coverage.get('retained_records','—')}",
+            f"- DOI coverage: {coverage.get('doi_coverage','—')}",
+            f"- OpenAlex coverage: {coverage.get('openalex_coverage','—')}",
+            f"- Edge definition: {cm.get('edge_definition') or 'none / not available'}",
+            f"- Clusters generated: {len(cm.get('clusters') or [])}",
+            f"- Bridge records generated: {len(cm.get('bridge_records') or [])}",
+        ]
+        for warning in (cm.get("warnings") or []):
+            lines.append(f"- Corpus Map warning: {warning}")
 
     lines += [
         "",
