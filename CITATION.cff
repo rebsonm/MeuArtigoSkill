@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: "Mendes"
     given-names: "Rebson de Morais"
-version: "0.5.0-beta.1"
+version: "0.6.0-beta.1"
 date-released: "2026-10-07"
 repository-code: "https://github.com/rebsonm/MeuArtigoSkill"
 url: "https://github.com/rebsonm/MeuArtigoSkill"
@@ -14,5 +14,6 @@ abstract: >-
   Meu Artigo is a cross-platform scientific-workflow skill for managing,
   tracing, validating, and documenting AI-assisted article construction.
   It combines C.A.D.A. operational governance, evidence-to-claim
-  traceability, human validation gates, frozen scientific snapshots,
+  traceability, journal-aware manuscript construction, adversarial claim
+  robustness checks, human validation gates, frozen scientific snapshots,
   AI-use transparency, and interoperable provenance export.
