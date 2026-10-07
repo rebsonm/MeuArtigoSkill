@@ -2,7 +2,7 @@
 
 **Meu Artigo** é uma Skill **multiplataforma** para pesquisa e construção de artigos científicos. Ela transforma um problema, pergunta ou ideia de pesquisa fornecida pelo usuário em um **processo científico rastreável, persistente e orientado por evidências**. O núcleo metodológico vive em `meu-artigo/SKILL.md`; diferenças entre ChatGPT, Claude e Gemini ficam isoladas em adapters/documentação de plataforma.
 
-Ela não entrega um “artigo pronto por mágica” e não reutiliza o conteúdo de um projeto anterior. O que a Skill reutiliza é um **método de trabalho**: organização do projeto, auditoria de novidade, protocolo, buscas bibliográficas, registro das decisões, deduplicação, screening, full text, matriz de evidências, síntese, redação e auditoria final.
+Ela não entrega um “artigo pronto por mágica” e não reutiliza o conteúdo de um projeto anterior. O que a Skill reutiliza é um **método de trabalho**: organização do projeto, auditoria de novidade, protocolo, buscas bibliográficas, registro das decisões, deduplicação, screening, full text, matriz de evidências, síntese, redação e auditoria final. Todo esse fluxo é acompanhado por uma camada de gestão **C.A.D.A.**, para tornar o passo a passo visível e rastreável.
 
 > O tema, a pergunta de pesquisa, os conceitos, as strings de busca, as fontes, as categorias analíticas e as conclusões pertencem sempre ao projeto do novo usuário.
 
@@ -64,7 +64,50 @@ A Skill conduz o pesquisador por um fluxo completo:
 16. mantém um *claims ledger* para ligar afirmações do manuscrito às evidências;
 17. redige o artigo a partir dos artefatos canônicos do projeto;
 18. audita método, contagens, evidências, citações e requisitos da revista antes da submissão;
-19. mantém o projeto retomável por outro chat ou agente sem depender da memória da conversa.
+19. mantém o projeto retomável por outro chat ou agente sem depender da memória da conversa;
+20. governa o passo a passo pelo C.A.D.A. — Capturar, Atribuir, Definir prazo e Acompanhar;
+21. quando disponível, espelha as tarefas C.A.D.A. em ClickUp, Jira/Atlassian ou Trello.
+
+## Gestão do passo a passo com C.A.D.A.
+
+O **C.A.D.A. não substitui a metodologia científica**. Ele governa o trabalho necessário para executá-la.
+
+| C.A.D.A. | No Meu Artigo |
+|---|---|
+| **Capturar** | registrar uma ação, decisão, dependência, prazo ou bloqueio relevante |
+| **Atribuir** | definir responsável, etapa científica, prioridade e artefato relacionado |
+| **Definir prazo** | registrar prazo externo, prazo do usuário, meta interna ou dependência |
+| **Acompanhar** | atualizar status até existir evidência de avanço ou conclusão |
+
+Cada unidade operacional recebe um identificador como `CADA-0042`.
+
+Assim, a Skill consegue responder com clareza:
+
+- onde o artigo está;
+- o que já foi concluído;
+- o que está em andamento;
+- o que está bloqueado;
+- quem é responsável;
+- qual é o próximo passo;
+- qual é o prazo;
+- qual evidência comprova o avanço.
+
+A documentação completa está em [docs/CADA.md](./docs/CADA.md).
+
+### ClickUp, Jira e Trello
+
+O usuário pode conectar um gerenciador de trabalho para visualizar o C.A.D.A. fora da conversa.
+
+A Skill pode usar:
+
+- **ClickUp**;
+- **Jira**, via Atlassian;
+- **Trello**;
+- ou um gerenciador equivalente com capacidade de leitura e escrita.
+
+Por padrão, usa **um único gerenciador principal por artigo**. A matriz científica continua sendo a fonte de verdade; o card/ticket é um espelho operacional.
+
+O vínculo entre cada item C.A.D.A. e a tarefa externa fica registrado em `12_PM_Sync`.
 
 ## O que o usuário precisa trazer
 
@@ -174,6 +217,8 @@ A Skill cria uma planilha-mestra com abas lógicas para:
 - `08_Synthesis_Log`
 - `09_Claims_Ledger`
 - `10_Submission_Checklist`
+- `11_CADA_Control`
+- `12_PM_Sync`
 
 Essas tabelas separam descoberta, decisão metodológica, evidência e redação. Também permitem reconstruir de onde vieram as contagens e afirmações utilizadas no manuscrito.
 
@@ -236,6 +281,7 @@ MeuArtigoSkill/
 ├── README.md
 ├── docs/
 │   ├── COMECE-AQUI.md
+│   ├── CADA.md
 │   ├── CHATGPT.md
 │   ├── CLAUDE.md
 │   ├── GEMINI.md
@@ -279,7 +325,7 @@ Siga [docs/GEMINI.md](./docs/GEMINI.md). Envie a pasta `meu-artigo/` ou um ZIP e
 
 ### Prompt inicial
 
-> “Use a Skill Meu Artigo. Meu problema de pesquisa é: [descreva o problema]. Quero desenvolver um artigo científico e ainda não defini a revista.”
+> “Use a Skill Meu Artigo. Meu problema de pesquisa é: [descreva o problema]. Quero desenvolver um artigo científico, acompanhar o passo a passo pelo C.A.D.A. e ainda não defini a revista.”
 
 A própria Skill deve verificar as capacidades disponíveis, orientar conexões quando a plataforma permitir, criar o workspace e **começar a pesquisa**, não apenas explicar o método.
 
