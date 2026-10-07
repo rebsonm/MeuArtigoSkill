@@ -1,6 +1,6 @@
 ---
 name: meu-artigo
-description: Build a rigorous, traceable, literature-grounded scientific article workflow from a user-supplied research problem or question. Use when the user wants to develop an academic article, especially a conceptual, theoretical, integrative-review, evidence-synthesis, or literature-intensive manuscript; audit novelty; design and log bibliographic searches; combine Scopus/WoS exports with Consensus, Scite, Google Drive, web and publisher sources; deduplicate and screen records; retrieve full text; build an evidence matrix; synthesize constructs or propositions; draft from evidence; and preserve a resumable audit trail. Also use for the literature-grounding portion of empirical articles, but do not invent the empirical design, data, analysis, or findings.
+description: Build a rigorous, traceable, literature-grounded scientific article workflow from a user-supplied research problem or question. Use when the user wants to develop an academic article; audit novelty; design and log bibliographic searches; combine indexed database exports with academic discovery, citation-context, persistent storage, web and publisher sources; deduplicate and screen records; retrieve full text; build an evidence matrix; synthesize constructs or propositions; draft from evidence; and preserve a resumable audit trail. Also use for literature-grounding of empirical articles, but never invent empirical design, data, analysis, or findings.
 ---
 
 # Meu Artigo
@@ -15,11 +15,22 @@ The goal is not to generate a plausible manuscript quickly. The goal is to creat
 
 ## First-run preflight
 
-Before substantive searching, inspect the available research integrations. Read `references/plugin-onboarding.md`.
+Before substantive searching, inspect the capabilities available on the current AI platform. Read `references/plugin-onboarding.md`.
 
-The preferred stack is Google Drive + Consensus + Scite + Firecrawl/web. If one is missing and a plugin is available, surface the install/connect action to the user. Installation or OAuth authorization always requires the user's explicit platform action; never claim a silent install. Scite access is useful but non-blocking when unavailable.
+Resolve capabilities by **role**, not by product name:
 
-Do not stop at setup. Once the user's problem is sufficiently specific, create/resume the workspace and immediately begin a small novelty/terminology scan with the available academic tools.
+- persistent project storage;
+- peer-reviewed literature discovery;
+- citation-context / citation-graph verification when available;
+- academic web, publisher, repository, and official-source retrieval;
+- ingestion of structured bibliographic exports;
+- code/script execution when the platform supports it.
+
+If a useful integration is missing and the platform exposes an install/connect flow, surface it to the user. Installation, OAuth, account linking, or other third-party authorization always requires the user's explicit platform action; never claim a silent install.
+
+Named services such as Google Drive, Consensus, Scite, Firecrawl, Scopus, or Web of Science are preferred implementations when available, not hard requirements of the methodology. Equivalent tools may fulfill the same role.
+
+Do not stop at setup. Once the user's problem is sufficiently specific, create/resume the workspace and immediately begin a small novelty/terminology scan with the academic tools actually available on that platform.
 
 ## Default operating mode
 
@@ -42,7 +53,7 @@ Classify the intended article before building the protocol:
 
 ## Build a persistent research workspace
 
-Create or reuse a project workspace before large searches. Prefer connected Google Drive when available; otherwise create local files that can later be uploaded.
+Create or reuse a project workspace before large searches. Prefer a connected persistent storage system when available. Google Drive is the canonical reference implementation, but an equivalent cloud/file workspace is acceptable if it can preserve folders, structured tables, documents, raw exports, and stable links. Otherwise create local files that can later be synchronized.
 
 Maintain these canonical artifacts:
 
@@ -58,7 +69,7 @@ Maintain these canonical artifacts:
 - manuscript;
 - submission checklist.
 
-Read `references/drive-workspace.md` and `references/project-state.md` for the canonical Drive folder tree, master tracking matrix, tab schemas, versioning rules, and recovery flow. Run `scripts/init_project.py` when a filesystem workspace is available or Drive is temporarily unavailable.
+Read `references/drive-workspace.md` and `references/project-state.md` for the canonical workspace tree, master tracking matrix, tab schemas, versioning rules, and recovery flow. Treat the Drive layout as the reference schema even when another storage system is used. Run `scripts/init_project.py` when a filesystem workspace is available or persistent cloud storage is temporarily unavailable.
 
 Before ending any material stage, update `CONTINUIDADE.md` with what is frozen, what changed, tool/plugin status, exact counts, unresolved issues, canonical links, and the next valid action. Update the master matrix in the same stage. Another agent should be able to continue without reading the original chat.
 
@@ -74,7 +85,7 @@ Convert the user input into a provisional research object:
 - article type;
 - target journal or field if known.
 
-Then run a **novelty audit**, not yet an exhaustive review. Use seed sources from the user's files/Drive, Consensus, Scite, academic web search, publisher pages, and relevant journal archives.
+Then run a **novelty audit**, not yet an exhaustive review. Use seed sources from the user's files/persistent workspace, available peer-reviewed discovery tools, citation-context tools, academic web search, publisher pages, and relevant journal archives.
 
 For the closest neighboring papers, record:
 
@@ -128,16 +139,16 @@ Read `references/review-design.md` and `references/search-screening.md`.
 
 ## Stage 3 — Orchestrate sources by role
 
-Use tools for distinct purposes rather than treating all search systems as interchangeable.
+Use capabilities for distinct purposes rather than treating all search systems as interchangeable.
 
-- **Google Drive / user files**: recover prior reading, project artifacts, PDFs, notes, templates, and continuity state.
-- **Consensus**: rapid peer-reviewed discovery, terminology calibration, nearby-paper discovery, and cross-checking. It is not an exhaustive bibliographic database. Fetch a result before citing it.
-- **Scite**: targeted literature search, citation graph traversal, citation context/intent, full-text reading where available, bibliography generation, and source-decision audit. Record tool-access limitations rather than inferring absence of evidence.
-- **Scopus / Web of Science**: primary structured indexed searches when the protocol calls for them. If direct connectors are unavailable, use user exports or authenticated browser workflows. Validate exports before screening.
-- **Academic/public web and publisher pages**: locate official metadata, open full text, current institutional documents, journal archives, and authoritative source pages.
-- **Google Scholar**: sensitivity searching and backward/forward discovery; do not treat it as a fully reproducible exhaustive database.
+- **Persistent storage / user files**: recover prior reading, project artifacts, PDFs, notes, exports, templates, and continuity state.
+- **Peer-reviewed discovery tool**: rapid literature discovery, terminology calibration, nearby-paper discovery, and cross-checking. Do not treat a discovery tool as an exhaustive bibliographic database.
+- **Citation-context / citation-graph tool**: targeted literature verification, citation traversal, citation intent/context, and full-text support where legitimately available.
+- **Indexed bibliographic databases**: primary structured searches when the protocol calls for them. Scopus and Web of Science are common implementations. If direct connectors are unavailable, use exports or authorized browser workflows and validate the files before screening.
+- **Academic/public web, publishers, repositories, and official sites**: locate official metadata, lawful full text, current institutional documents, journal archives, and authoritative source pages.
+- **Sensitivity/snowball search tools**: identify additional candidates and citation chains; do not treat them as automatically exhaustive or reproducible.
 
-Read `references/tool-orchestration.md` before multi-source searching.
+Read `references/tool-orchestration.md` before multi-source searching. Map available platform tools to these roles; do not invent missing capabilities.
 
 ## Stage 4 — Execute and audit bibliographic searches
 
@@ -305,7 +316,7 @@ Run `scripts/validate_project.py` when using the standard workspace.
 
 ## Recovery and continuation rule
 
-When resuming an existing project, read `CONTINUIDADE.md` first, then inspect the Drive root, master matrix, protocol, and latest canonical trackers. Do not re-screen decided records or reconstruct executed search strings from memory unless an explicit audit is requested.
+When resuming an existing project, read `CONTINUIDADE.md` first, then inspect the persistent workspace root, master matrix, protocol, and latest canonical trackers. Do not re-screen decided records or reconstruct executed search strings from memory unless an explicit audit is requested.
 
 If records conflict, prefer the most recent explicitly marked canonical entry and preserve superseded history rather than deleting it.
 
@@ -314,9 +325,9 @@ If records conflict, prefer the most recent explicitly marked canonical entry an
 Read only what the current task needs:
 
 - `references/review-design.md` — choose and correctly label the review/article design.
-- `references/drive-workspace.md` — canonical Google Drive folders, master matrix tabs, MD continuity file, naming and snapshots.
+- `references/drive-workspace.md` — canonical persistent-workspace schema, with Google Drive as the reference implementation, plus master matrix tabs, MD continuity file, naming and snapshots.
 - `references/project-state.md` — persistence, versioning, and recovery rules.
-- `references/plugin-onboarding.md` — plugin preflight, connection flow, minimum research stack, Scopus/WoS handoff.
+- `references/plugin-onboarding.md` — platform-neutral integration preflight, capability mapping, connection flow, minimum research stack, and Scopus/WoS handoff.
 - `references/tool-orchestration.md` — source roles and automation/fallback behavior.
 - `references/search-screening.md` — strings, exports, deduplication, screening, full text.
 - `references/evidence-synthesis.md` — evidence matrix, cross-source synthesis, L/I/P discipline.
