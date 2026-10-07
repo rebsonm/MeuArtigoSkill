@@ -1,6 +1,6 @@
 # Meu Artigo — Skill para pesquisa e construção de artigos científicos
 
-**Meu Artigo** é uma Skill para ChatGPT/Codex que transforma um problema, pergunta ou ideia de pesquisa fornecida pelo usuário em um **processo científico rastreável, persistente e orientado por evidências**.
+**Meu Artigo** é uma Skill **multiplataforma** para pesquisa e construção de artigos científicos. Ela transforma um problema, pergunta ou ideia de pesquisa fornecida pelo usuário em um **processo científico rastreável, persistente e orientado por evidências**. O núcleo metodológico vive em `meu-artigo/SKILL.md`; diferenças entre ChatGPT, Claude e Gemini ficam isoladas em adapters/documentação de plataforma.
 
 Ela não entrega um “artigo pronto por mágica” e não reutiliza o conteúdo de um projeto anterior. O que a Skill reutiliza é um **método de trabalho**: organização do projeto, auditoria de novidade, protocolo, buscas bibliográficas, registro das decisões, deduplicação, screening, full text, matriz de evidências, síntese, redação e auditoria final.
 
@@ -46,23 +46,47 @@ Exemplo:
 
 A Skill não deve importar tema, constructos, artigos, strings ou resultados de projetos anteriores. Ela constrói o projeto científico a partir da entrada do novo usuário.
 
+## Portabilidade entre IAs
+
+O projeto separa **método** de **plataforma**.
+
+| Camada | Portável? | Papel |
+|---|---|---|
+| `meu-artigo/SKILL.md` | Sim | Metodologia e workflow científico |
+| `references/` | Sim | Regras de busca, evidência, síntese, persistência e rigor |
+| `scripts/` | Em geral | Operações determinísticas quando a plataforma permite execução |
+| `agents/openai.yaml` | Não | Adapter específico para ambientes OpenAI |
+| `docs/CHATGPT.md` | Plataforma | Instalação/comportamento no ChatGPT/Codex |
+| `docs/CLAUDE.md` | Plataforma | Instalação/comportamento no Claude |
+| `docs/GEMINI.md` | Plataforma | Instalação/comportamento no Gemini |
+
+A Skill não exige que todas as IAs tenham os mesmos plugins. O núcleo resolve **capacidades por função**: armazenamento persistente, descoberta acadêmica, contexto de citação, busca em web/editoras/repositórios, bases bibliográficas indexadas e execução de scripts. Produtos específicos são implementações possíveis dessas funções.
+
+Guias:
+
+- [ChatGPT / Codex](./docs/CHATGPT.md)
+- [Claude](./docs/CLAUDE.md)
+- [Gemini](./docs/GEMINI.md)
+- [Protocolo de teste com usuários](./docs/TESTE-DE-USABILIDADE.md)
+
 ## Integrações de pesquisa
 
-A configuração preferencial utiliza:
+O núcleo não depende de marcas específicas. Ele procura capacidades:
 
-- **Google Drive** — memória persistente do projeto, pastas, PDFs, Docs, Sheets, protocolo, matrizes e manuscrito;
-- **Consensus** — descoberta acadêmica, calibração de termos, auditoria inicial de novidade e literatura próxima;
-- **Scite** — contexto de citação, grafo de citações, verificação bibliográfica e apoio à leitura de full text quando disponível;
-- **Firecrawl** — páginas de periódicos, editoras, repositórios e documentos oficiais;
-- **Scopus e Web of Science** — bases bibliográficas estruturadas quando o desenho da pesquisa exigir busca indexada reproduzível.
+- **armazenamento persistente** — workspace, PDFs, documentos, matrizes, exports e manuscrito;
+- **descoberta acadêmica** — calibração de termos, auditoria de novidade e literatura próxima;
+- **contexto/grafo de citação** — verificação bibliográfica e apoio à leitura quando disponível;
+- **web/editoras/repositórios/fontes oficiais** — metadados, full text legal, normas e instruções;
+- **bases indexadas** — busca bibliográfica estruturada e reproduzível;
+- **execução local** — scaffolding, validação e deduplicação determinística.
 
-As quatro primeiras podem ser declaradas como dependências da Skill. A autorização de uma integração de terceiros sempre depende da ação do próprio usuário na plataforma; a Skill deve detectar a ausência, apresentar a conexão e continuar automaticamente depois da autorização.
+No ChatGPT, a configuração preferencial declara Google Drive, Consensus, Scite e Firecrawl em `agents/openai.yaml`. Em outras plataformas, a Skill mapeia ferramentas equivalentes conforme o que realmente estiver disponível.
 
 Scopus e Web of Science não são tratados como “plugins imaginários”. Quando não há conector direto, a Skill prepara a busca, orienta a execução/autenticação, especifica o export e depois valida e processa o arquivo recebido.
 
-## Workspace canônico no Google Drive
+## Workspace canônico persistente
 
-Quando o Google Drive está conectado, a Skill cria ou retoma uma estrutura como esta:
+Google Drive é a implementação de referência. Quando ele está conectado, a Skill cria ou retoma uma estrutura como esta. Em outra plataforma, um armazenamento persistente equivalente pode reproduzir a mesma estrutura lógica:
 
 ```text
 ARTIGO_<titulo>_<ano>/
@@ -97,7 +121,7 @@ ARTIGO_<titulo>_<ano>/
 └── 99_Arquivo_Historico/
 ```
 
-O chat não é a fonte de verdade do projeto. O Drive é.
+O chat não é a fonte de verdade do projeto. O **workspace persistente** é.
 
 ## Matriz-mestra
 
@@ -174,6 +198,11 @@ A Skill deve:
 ```text
 MeuArtigoSkill/
 ├── README.md
+├── docs/
+│   ├── CHATGPT.md
+│   ├── CLAUDE.md
+│   ├── GEMINI.md
+│   └── TESTE-DE-USABILIDADE.md
 └── meu-artigo/
     ├── SKILL.md
     ├── agents/
@@ -197,13 +226,23 @@ MeuArtigoSkill/
 
 A Skill instalável está na pasta [`meu-artigo`](./meu-artigo/).
 
-Em um ambiente que suporte Skills, adicione/importe essa pasta como Skill. Depois invoque-a informando seu problema ou pergunta de pesquisa.
+### ChatGPT / Codex
 
-Exemplo de início:
+Siga [docs/CHATGPT.md](./docs/CHATGPT.md). O adapter OpenAI está em `meu-artigo/agents/openai.yaml`.
 
-> “Use `$meu-artigo`. Meu problema de pesquisa é: [descreva o problema]. Quero desenvolver um artigo científico e ainda não defini a revista.”
+### Claude
 
-A própria Skill deve verificar as integrações disponíveis, orientar as conexões necessárias, criar o workspace e começar a pesquisa.
+Siga [docs/CLAUDE.md](./docs/CLAUDE.md). O mesmo `SKILL.md`, referências e scripts constituem o núcleo portável; MCPs e ferramentas são mapeados conforme a instalação do Claude.
+
+### Gemini
+
+Siga [docs/GEMINI.md](./docs/GEMINI.md). Envie a pasta `meu-artigo/` ou um ZIP em que `SKILL.md` esteja na raiz da Skill.
+
+### Prompt inicial
+
+> “Use a Skill Meu Artigo. Meu problema de pesquisa é: [descreva o problema]. Quero desenvolver um artigo científico e ainda não defini a revista.”
+
+A própria Skill deve verificar as capacidades disponíveis, orientar conexões quando a plataforma permitir, criar o workspace e **começar a pesquisa**, não apenas explicar o método.
 
 ## Scripts incluídos
 
@@ -219,6 +258,20 @@ Eles não substituem julgamento científico.
 
 O nome e a documentação principal estão em português, mas a Skill deve responder no idioma do usuário e adaptar estratégias de busca às línguas relevantes para o campo científico.
 
+## Testes com usuários
+
+Para testar a Skill com pessoas que não participaram do desenvolvimento, use [docs/TESTE-DE-USABILIDADE.md](./docs/TESTE-DE-USABILIDADE.md).
+
+O protocolo inclui:
+
+- teste cego de onboarding;
+- teste de busca;
+- teste obrigatório de retomada em nova conversa;
+- comparação entre plataformas;
+- critérios de falha crítica;
+- ficha mínima de registro;
+- classificação do feedback em CORE, ADAPTER, UX e TOOLING.
+
 ## Estado do projeto
 
-Esta é uma Skill de pesquisa em evolução. Seu objetivo é transformar o uso de IA na escrita científica de uma sequência de conversas isoladas em um **pipeline de pesquisa auditável, persistente e retomável**.
+Esta é uma Skill de pesquisa em evolução. Seu objetivo é transformar o uso de IA na escrita científica de uma sequência de conversas isoladas em um **pipeline de pesquisa auditável, persistente, retomável e portável entre agentes**.
