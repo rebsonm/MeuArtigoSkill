@@ -62,7 +62,7 @@ Every meaningful operational unit receives a stable `CADA_ID`. Maintain `11_CADA
 
 The **spreadsheet/matrix is the universal default management mode**. Read `references/cada-matrix.md` and `references/spreadsheet-template.md`. A user never needs ClickUp, Jira, Trello, or project-management expertise to use C.A.D.A.
 
-Before large searches, create the canonical 16-sheet workbook whenever the platform supports native spreadsheet creation. Prefer:
+Before large searches, create the canonical governance workbook whenever the platform supports native spreadsheet creation. It includes the scientific workflow plus decision, human-validation, snapshot, and interoperability tabs. Prefer:
 
 1. a native connected spreadsheet (for example Google Sheets) reproduced from `references/spreadsheet-template.md`;
 2. `scripts/build_matrix_template.py` when `artifact_tool` is available;
@@ -110,7 +110,11 @@ Maintain these canonical artifacts:
 - C.A.D.A. spreadsheet dashboard;
 - human-readable `RASTREABILIDADE.md` provenance summary;
 - interoperability export log (`16_INTEROPERABILIDADE`);
-- optional W3C PROV / RO-Crate audit package with SHA-256 manifest.
+- optional W3C PROV / RO-Crate audit package with SHA-256 manifest;
+- material scientific decision log (`DEC_ID`);
+- human validation gates (`GATE_ID`);
+- frozen scientific snapshots (`SNAP_ID`);
+- reviewer/editor transparency report.
 
 Read `references/drive-workspace.md` and `references/project-state.md` for the canonical workspace tree, master tracking matrix, tab schemas, versioning rules, and recovery flow. Treat the Drive layout as the reference schema even when another storage system is used. Run `scripts/init_project.py` when a filesystem workspace is available or persistent cloud storage is temporarily unavailable.
 
@@ -134,6 +138,26 @@ For substantive AI-assisted work, record tool/platform, model/version when known
 The final goal is that a researcher, coauthor, reviewer, editor, or future agent can reconstruct how important parts of the article were built.
 
 When the user requests an audit snapshot, when a major project state is frozen, or before/after submission, read `references/provenance-export.md` and generate an interoperable package when the platform permits it. Use W3C PROV-O for provenance, RO-Crate 1.3 for packaging, and SHA-256 for fixity. Do not require the researcher to understand these standards.
+
+## Govern critical scientific transitions
+
+Read `references/scientific-governance.md`.
+
+Use three additional stable identifiers:
+
+- `DEC_ID` — material scientific decision, alternatives, rationale, evidence, impact, and supersession;
+- `GATE_ID` — human validation checkpoint at a critical transition;
+- `SNAP_ID` — frozen project state with SHA-256 manifest.
+
+Do not create decision records for trivial wording/formatting. Record decisions that materially affect question, method, scope, search, corpus, evidence interpretation, synthesis, claims, manuscript, or submission.
+
+Use only a small number of default human gates. Routine actions remain autonomous. A gate becomes READY only when its documented entry condition is met. At that point, show the researcher exactly what requires judgment, ask one focused approval/revision question, record the human response, create/update linked DEC_IDs, record a TRACE event, create the post-gate snapshot when approved, and then continue.
+
+Never infer gate approval from silence, prior preferences, or an unrelated response.
+
+Create snapshots at meaningful freezes, not on every edit. Use `scripts/create_snapshot.py` when a filesystem project is available and `scripts/compare_snapshots.py` when the user asks what changed between states.
+
+Before submission or when a reviewer/editor needs process transparency, generate a deterministic transparency report with `scripts/generate_transparency_report.py`. The report must summarize only canonical recorded state and must not invent missing methodological detail.
 
 ## Stage 1 — Audit the idea before exhaustive searching
 
@@ -374,7 +398,7 @@ Before declaring the manuscript ready, verify:
 - target-journal rules are satisfied;
 - continuity state is updated.
 
-Run `scripts/validate_project.py` when using the standard workspace. When local spreadsheet generation is available, also use `scripts/build_matrix_template.py` or let `scripts/init_project.py` invoke it automatically.
+Run `scripts/validate_project.py` when using the standard workspace. When local spreadsheet generation is available, also use `scripts/build_matrix_template.py` or let `scripts/init_project.py` invoke it automatically. Use `scripts/governance_events.py`, `scripts/create_snapshot.py`, `scripts/compare_snapshots.py`, and `scripts/generate_transparency_report.py` for deterministic governance operations.
 
 ## Stage 14 — Prepare submission and preserve the outcome
 
@@ -415,3 +439,4 @@ Read only what the current task needs:
 - `references/spreadsheet-template.md` — canonical 16-sheet workbook design, formulas, validations, views, and generation priority.
 - `references/traceability.md` — research-process provenance, Trace IDs, AI-use logging, and final transparency audit.
 - `references/provenance-export.md` — W3C PROV-O mapping, RO-Crate 1.3 packaging, SHA-256 fixity, export/validation rules.
+- `references/scientific-governance.md` — DEC_ID decisions, human validation gates, SNAP_ID frozen states, and reviewer/editor transparency.
