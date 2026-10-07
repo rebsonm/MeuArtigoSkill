@@ -16,6 +16,7 @@ Prefer these capabilities when available:
 4. **Academic web / publisher / repository retrieval** — official metadata, journal instructions, lawful full text, standards, and institutional sources.
 5. **Indexed bibliographic databases** — structured, reproducible searches and exports when required by the review design.
 6. **Local/script execution** — deterministic scaffolding, validation, and deduplication where the platform supports it.
+7. **Work management** — optional task/issue/card management for the C.A.D.A. operational layer.
 
 ## Preferred implementations
 
@@ -25,7 +26,8 @@ When available, these are useful implementations of the roles above:
 - Consensus — peer-reviewed discovery;
 - Scite — citation context and graph;
 - Firecrawl or equivalent web-retrieval capability — publisher/repository/official-source retrieval;
-- Scopus and Web of Science — indexed bibliographic databases.
+- Scopus and Web of Science — indexed bibliographic databases;
+- ClickUp, Jira/Atlassian, or Trello — optional C.A.D.A. work-management mirror.
 
 These names are **not methodological requirements**. Equivalent services may fulfill the same roles.
 
@@ -39,7 +41,11 @@ Before large-scale research:
 4. explain in one short sentence why it is useful;
 5. never claim it was installed or connected until verified;
 6. continue any independent work while the user authorizes connections;
-7. after connection, resume the workflow without asking the user to repeat the research problem.
+7. inspect whether a work-management provider is connected;
+8. if exactly one is connected, use it as the primary operational mirror;
+9. if several are connected, prefer an existing article/project container; otherwise select the provider that best fits the user's existing work context and persist the choice;
+10. if none is connected, continue without blocking research and surface a connection option when project-management visibility would help;
+11. after any connection, resume the workflow without asking the user to repeat the research problem.
 
 Installation, OAuth, account linking, or other third-party authorization always requires the user's explicit platform action.
 
@@ -52,7 +58,7 @@ Do not block the project merely because the preferred tools are unavailable. A v
 - a way to verify sources against original metadata/publisher records;
 - a way to ingest structured bibliographic exports when exhaustive indexed searching is required.
 
-A citation-context tool is valuable but non-blocking when absent. Record the limitation rather than treating it as evidence absence.
+A citation-context tool is valuable but non-blocking when absent. External work-management is also optional: C.A.D.A. must continue in the canonical workspace even without ClickUp, Jira, Trello, or equivalent. Record tool limitations rather than treating them as evidence absence.
 
 ## Scopus and Web of Science
 
