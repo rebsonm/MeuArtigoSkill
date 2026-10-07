@@ -2,7 +2,7 @@
 
 > Se você nunca usou GitHub, comece por [COMECE-AQUI.md](./COMECE-AQUI.md).
 
-Este documento descreve como usar **Meu Artigo** nos apps Gemini. A metodologia central continua em `meu-artigo/SKILL.md`.
+Este documento descreve como usar **Meu Artigo** nos apps Gemini. A metodologia central continua em `SKILL.md`.
 
 ## Antes de tentar instalar
 
@@ -24,7 +24,7 @@ Na página do repositório:
 1. clique em **Code**;
 2. clique em **Download ZIP**;
 3. descompacte;
-4. localize a pasta `meu-artigo`.
+4. entre na pasta descompactada; a raiz já é o bundle da Skill.
 
 ## 2. Instale no Gemini
 
@@ -32,13 +32,13 @@ No web app do Gemini:
 
 1. abra a página **Skills / Habilidades**;
 2. escolha **Upload / Fazer upload**;
-3. selecione a pasta `meu-artigo`, o arquivo `SKILL.md` ou um ZIP preparado;
+3. selecione a pasta raiz, o arquivo `SKILL.md` ou o ZIP preparado;
 4. revise a Skill;
 5. clique em **Criar**.
 
 O Gemini aceita uma pasta ou ZIP quando `SKILL.md` está na pasta principal da Skill.
 
-Portanto, **não envie o ZIP completo do repositório** se nele `SKILL.md` estiver dentro de `meu-artigo/`. Prefira selecionar diretamente a pasta `meu-artigo`.
+O repositório foi estruturado para que `SKILL.md` fique diretamente na raiz do bundle, junto de `references/`, `scripts/` e `agents/`.
 
 ## 3. Comece em uma conversa nova
 

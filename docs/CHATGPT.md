@@ -2,7 +2,7 @@
 
 > Se você nunca usou GitHub, comece por [COMECE-AQUI.md](./COMECE-AQUI.md).
 
-Este documento descreve como usar **Meu Artigo** em ambientes OpenAI. A metodologia central continua em `meu-artigo/SKILL.md`.
+Este documento descreve como usar **Meu Artigo** em ambientes OpenAI. A metodologia central continua em `SKILL.md`.
 
 ## Antes de tentar instalar
 
@@ -23,10 +23,9 @@ Na página do repositório:
 1. clique em **Code**;
 2. clique em **Download ZIP**;
 3. descompacte o arquivo;
-4. entre na pasta `MeuArtigoSkill`;
-5. localize a subpasta `meu-artigo`.
+4. entre na pasta descompactada `MeuArtigoSkill`.
 
-A Skill está nessa subpasta.
+A própria raiz dessa pasta é o bundle da Skill: nela ficam `SKILL.md`, `references/`, `scripts/` e `agents/`.
 
 ## 2. Instale no ChatGPT
 
@@ -39,9 +38,7 @@ Quando sua conta/workspace oferecer Skills:
 5. escolha **Carregar do computador**;
 6. forneça o pacote da Skill.
 
-Se a interface exigir um único arquivo, compacte **somente** a pasta `meu-artigo` antes do upload. O pacote da Skill precisa preservar `SKILL.md`, `references/`, `scripts/` e `agents/`.
-
-Não envie o ZIP completo do repositório como substituto da pasta da Skill, porque ele também contém README e documentação de distribuição.
+Se a interface exigir um único arquivo, você pode usar o ZIP baixado do GitHub ou compactar a pasta raiz descompactada. O pacote precisa preservar `SKILL.md`, `references/`, `scripts/` e `agents/` no mesmo nível.
 
 ## 3. Inicie em um chat novo
 
@@ -53,7 +50,7 @@ Para o teste de usabilidade, não explique à IA como a Skill deveria funcionar.
 
 ## Compatibilidade técnica
 
-A pasta `meu-artigo/` contém:
+A raiz do bundle contém:
 
 - `SKILL.md`;
 - arquivos em `references/`;

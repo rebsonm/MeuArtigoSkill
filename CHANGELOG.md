@@ -6,6 +6,13 @@ The project follows semantic versioning while in beta. Breaking changes may stil
 
 ## 0.6.0-beta.1 — 2026-10-07
 
+### Packaging correction
+
+- Reorganized the repository so the installable Skill bundle lives directly at repository root.
+- Moved `SKILL.md`, `agents/`, `references/`, and `scripts/` to the root level expected by direct ZIP/folder installation.
+- Updated release audit and platform installation guides to the root-bundle layout.
+- Removed the extra `meu-artigo/` nesting that could cause incomplete uploads or hide supporting files.
+
 ### Added
 
 - Journal-aware construction as a core intake directive.

@@ -46,22 +46,19 @@ Depois de descompactar, você verá algo parecido com:
 
 ```text
 MeuArtigoSkill/
-├── README.md
+├── SKILL.md
+├── agents/
+├── references/
+├── scripts/
 ├── docs/
-└── meu-artigo/
+└── README.md
 ```
 
-A pasta que contém a Skill propriamente dita é:
-
-```text
-meu-artigo/
-```
-
-Não confunda com a pasta `docs/`, que contém apenas os guias de instalação e teste.
+A **raiz do repositório já é o bundle da Skill**. A pasta `docs/` contém guias de instalação e teste; `references/` e `scripts/` fazem parte do funcionamento da Skill.
 
 ## 4. Qual arquivo eu uso?
 
-Dentro de `meu-artigo/`, o arquivo principal é:
+Na raiz do bundle, o arquivo principal é:
 
 ```text
 SKILL.md
@@ -69,7 +66,7 @@ SKILL.md
 
 Ele contém as instruções centrais da Skill.
 
-Mas, quando sua IA permitir importar uma **pasta ou ZIP**, prefira fornecer a pasta `meu-artigo/` inteira, porque ela também contém:
+Mas, quando sua IA permitir importar uma **pasta ou ZIP**, prefira fornecer a pasta raiz inteira, porque ela também contém:
 
 - `references/` — regras metodológicas detalhadas;
 - `scripts/` — rotinas auxiliares;
@@ -178,7 +175,7 @@ Download ZIP
    ↓
 Descompactar
    ↓
-abrir a pasta meu-artigo/
+usar a pasta raiz descompactada
    ↓
 seguir o guia da sua IA
    ↓
@@ -209,9 +206,9 @@ Depois do primeiro teste, fique à vontade para explorar:
 - [JOURNAL-AWARE.md](./JOURNAL-AWARE.md) — como a revista-alvo orienta a construção desde o início;
 - [ROBUSTEZ-CLAIMS.md](./ROBUSTEZ-CLAIMS.md) — como claims importantes são confrontados antes de congelar;
 - [MAPA-CORPUS.md](./MAPA-CORPUS.md) — como funciona o mapa do corpus e a consulta grounded;
-- `../meu-artigo/SKILL.md` — instrução central;
-- `../meu-artigo/references/` — metodologia detalhada;
-- `../meu-artigo/scripts/` — automações determinísticas;
+- `../SKILL.md` — instrução central;
+- `../references/` — metodologia detalhada;
+- `../scripts/` — automações determinísticas;
 - `TESTE-DE-USABILIDADE.md` — desenho da avaliação com usuários.
 
 O objetivo não é esconder o funcionamento, mas evitar que conhecer o mecanismo antes da primeira tentativa influencie o teste.

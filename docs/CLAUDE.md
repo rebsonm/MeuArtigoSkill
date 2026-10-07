@@ -2,7 +2,7 @@
 
 > Se você nunca usou GitHub, comece por [COMECE-AQUI.md](./COMECE-AQUI.md).
 
-Este documento descreve como usar **Meu Artigo** em Claude. A metodologia central continua em `meu-artigo/SKILL.md`.
+Este documento descreve como usar **Meu Artigo** em Claude. A metodologia central continua em `SKILL.md`.
 
 ## Antes de tentar instalar
 
@@ -21,11 +21,11 @@ Na página do repositório:
 1. clique em **Code**;
 2. clique em **Download ZIP**;
 3. descompacte o arquivo;
-4. localize a pasta `meu-artigo`.
+4. entre na pasta descompactada; a raiz já é o bundle da Skill.
 
 ## 2A. Instalação no claude.ai
 
-1. compacte **somente** a pasta `meu-artigo` em um ZIP;
+1. use o ZIP baixado do GitHub ou compacte a pasta raiz descompactada;
 2. abra o Claude;
 3. acesse **Settings → Features**;
 4. localize a área de Skills personalizadas;

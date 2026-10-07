@@ -4,7 +4,7 @@
 
 **Status de distribuição:** beta fechado · repositório privado · implementação ainda não liberada para distribuição pública · veja [CHANGELOG.md](./CHANGELOG.md) · metadados de citação em [CITATION.cff](./CITATION.cff)
 
-**Meu Artigo** é uma Skill **multiplataforma** para pesquisa e construção de artigos científicos. Ela transforma um problema, pergunta ou ideia de pesquisa fornecida pelo usuário em um **processo científico rastreável, persistente, orientado por evidências e auditável quanto à sua própria construção**. O núcleo metodológico vive em `meu-artigo/SKILL.md`; diferenças entre ChatGPT, Claude e Gemini ficam isoladas em adapters/documentação de plataforma.
+**Meu Artigo** é uma Skill **multiplataforma** para pesquisa e construção de artigos científicos. Ela transforma um problema, pergunta ou ideia de pesquisa fornecida pelo usuário em um **processo científico rastreável, persistente, orientado por evidências e auditável quanto à sua própria construção**. O núcleo metodológico vive em `SKILL.md`; diferenças entre ChatGPT, Claude e Gemini ficam isoladas em adapters/documentação de plataforma.
 
 Ela não entrega um “artigo pronto por mágica” e não reutiliza o conteúdo de um projeto anterior. O que a Skill reutiliza é um **método de trabalho**: organização do projeto, auditoria de novidade, protocolo, buscas bibliográficas, registro das decisões, deduplicação, screening, full text, matriz de evidências, síntese, redação e auditoria final. Todo esse fluxo é acompanhado por uma camada de gestão **C.A.D.A.**, para tornar o passo a passo visível e rastreável.
 
@@ -24,7 +24,7 @@ O caminho básico é:
 
 ```text
 GitHub → botão Code → Download ZIP → descompactar
-       → abrir a pasta meu-artigo/
+       → usar a pasta raiz descompactada
        → seguir o guia da sua IA
 ```
 
@@ -154,7 +154,7 @@ A Skill deve tentar criar essa matriz **antes das buscas em escala**:
 
 Documentação: [docs/MATRIZ-CADA.md](./docs/MATRIZ-CADA.md)
 
-Especificação técnica: [meu-artigo/references/spreadsheet-template.md](./meu-artigo/references/spreadsheet-template.md)
+Especificação técnica: [references/spreadsheet-template.md](./references/spreadsheet-template.md)
 
 ## Construção orientada à revista
 
@@ -281,7 +281,7 @@ O projeto separa **método** de **plataforma**.
 
 | Camada | Portável? | Papel |
 |---|---|---|
-| `meu-artigo/SKILL.md` | Sim | Metodologia e workflow científico |
+| `SKILL.md` | Sim | Metodologia e workflow científico |
 | `references/` | Sim | Regras de busca, evidência, síntese, persistência e rigor |
 | `scripts/` | Em geral | Operações determinísticas quando a plataforma permite execução |
 | `agents/openai.yaml` | Não | Adapter específico para ambientes OpenAI |
@@ -440,57 +440,29 @@ MeuArtigoSkill/
 ├── VERSION
 ├── CHANGELOG.md
 ├── CITATION.cff
+├── SKILL.md
+├── agents/
+│   └── openai.yaml
+├── references/
+│   └── ... documentação operacional da Skill
+├── scripts/
+│   └── ... automações determinísticas
 ├── docs/
-│   ├── COMECE-AQUI.md
-│   ├── CADA.md
-│   ├── MATRIZ-CADA.md
-│   ├── RASTREABILIDADE.md
-│   ├── GOVERNANCA-CIENTIFICA.md
-│   ├── JOURNAL-AWARE.md
-│   ├── ROBUSTEZ-CLAIMS.md
-│   ├── MAPA-CORPUS.md
-│   ├── INTEROPERABILIDADE.md
-│   ├── CHATGPT.md
-│   ├── CLAUDE.md
-│   ├── GEMINI.md
-│   └── TESTE-DE-USABILIDADE.md
-└── meu-artigo/
-    ├── SKILL.md
-    ├── agents/
-    │   └── openai.yaml
-    ├── references/
-    │   ├── beginner-mode.md
-    │   ├── drive-workspace.md
-    │   ├── evidence-synthesis.md
-    │   ├── plugin-onboarding.md
-    │   ├── project-state.md
-    │   ├── review-design.md
-    │   ├── search-screening.md
-    │   └── tool-orchestration.md
-    └── scripts/
-        ├── build_matrix_template.py
-        ├── build_corpus_map.py
-        ├── dedupe_records.py
-        ├── governance_events.py
-        ├── create_snapshot.py
-        ├── compare_snapshots.py
-        ├── generate_transparency_report.py
-        ├── export_provenance.py
-        ├── validate_provenance_package.py
-        ├── init_project.py
-        ├── validate_project.py
-        └── release_audit.py
+│   └── ... guias de uso e distribuição
+└── .github/
+    └── workflows/
+        └── release-audit.yml
 ```
 
 ## Instalação
 
 Se você nunca usou GitHub, comece pelo [guia para iniciantes](./docs/COMECE-AQUI.md).
 
-A Skill instalável está na pasta [`meu-artigo`](./meu-artigo/).
+A Skill instalável está na **raiz do repositório**: `SKILL.md`, `references/`, `scripts/` e `agents/` formam um único bundle.
 
 ### ChatGPT / Codex
 
-Siga [docs/CHATGPT.md](./docs/CHATGPT.md). O adapter OpenAI está em `meu-artigo/agents/openai.yaml`.
+Siga [docs/CHATGPT.md](./docs/CHATGPT.md). O adapter OpenAI está em `agents/openai.yaml`.
 
 ### Claude
 
@@ -498,7 +470,7 @@ Siga [docs/CLAUDE.md](./docs/CLAUDE.md). O mesmo `SKILL.md`, referências e scri
 
 ### Gemini
 
-Siga [docs/GEMINI.md](./docs/GEMINI.md). Envie a pasta `meu-artigo/` ou um ZIP em que `SKILL.md` esteja na raiz da Skill.
+Siga [docs/GEMINI.md](./docs/GEMINI.md). Envie a pasta raiz do projeto ou um ZIP em que `SKILL.md` esteja na raiz da Skill.
 
 ### Prompt inicial
 
