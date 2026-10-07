@@ -465,6 +465,10 @@ def canonical_files(root: Path, include_fulltext: bool) -> list[Path]:
         d = root / "03_Screening_e_FullText/FullText_Corpus"
         if d.exists():
             candidates.extend([p for p in d.rglob("*") if p.is_file()])
+    for rel in ["04_Evidencias_e_Sintese/MAPA_CORPUS.json","04_Evidencias_e_Sintese/MAPA_CORPUS.md"]:
+        p = root / rel
+        if p.exists() and p.is_file():
+            candidates.append(p)
     # Deduplicate by resolved path.
     seen = set()
     out = []
