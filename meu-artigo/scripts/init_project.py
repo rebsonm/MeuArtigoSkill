@@ -49,6 +49,7 @@ TABLES = {
 "00_Gestao_e_Continuidade/13_Traceability_Log.csv":["Trace_ID","Timestamp","Scientific_stage","CADA_ID","Actor","AI_platform_or_tool","Model_or_version","Action_type","Action_summary","Input_or_source","Source_or_artifact_IDs","Decision_or_output","Rationale","Artifact_before","Artifact_after","Verification_method","Human_validation","Related_Search_IDs","Related_Record_IDs","Related_Evidence_IDs","Related_Claim_IDs","Prompt_or_instruction_summary","Reproducibility_information","Materiality","Status","Notes"],
 "00_Gestao_e_Continuidade/14_AI_Use_Log.csv":["AI_Use_ID","Date","Scientific_stage","CADA_ID","Trace_ID","Platform_or_tool","Model_or_version","Purpose","Input_category","Output_category","Materiality","Human_review_method","Human_decision","Accepted_modified_or_rejected","Related_artifacts","Disclosure_required","Disclosure_text_or_note","Notes"],
 "00_Gestao_e_Continuidade/15_CADA_Dashboard.csv":["Metric","Value","Last_updated","Notes"],
+"00_Gestao_e_Continuidade/16_Interoperabilidade.csv":["Export_ID","Timestamp","Standards","Package_path_or_URL","Package_SHA256","Validation_status","Trace_events","Prov_entities","Prov_activities","Prov_agents","RO_Crate_files","Warnings","Notes"],
 }
 
 def slug(v:str)->str:
@@ -136,6 +137,8 @@ def main()->int:
             "work_management_provider":pm or None,
             "work_management_role":"OPTIONAL_OPERATIONAL_MIRROR",
             "traceability_enabled":True,
+            "interoperable_provenance_enabled":True,
+            "provenance_standards":["W3C PROV-O","RO-Crate 1.3","SHA-256"],
         },ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
     for rel,h in TABLES.items():write_csv(root/rel,h)
@@ -259,6 +262,7 @@ Updated: {date.today().isoformat()}
 - Spreadsheet/matrix management: ACTIVE
 - Work-management provider: {pm or 'NONE / OPTIONAL'}
 - Traceability: ACTIVE
+- Interoperable provenance: ACTIVE — W3C PROV-O / RO-Crate 1.3 / SHA-256
 
 ## 4. Canonical workspace links
 - Project root: local mirror
@@ -270,6 +274,7 @@ Updated: {date.today().isoformat()}
 - AI use log: 00_Gestao_e_Continuidade/14_AI_Use_Log.csv
 - C.A.D.A. dashboard: 00_Gestao_e_Continuidade/15_CADA_Dashboard.csv
 - Traceability summary: 00_Gestao_e_Continuidade/RASTREABILIDADE.md
+- Interoperability export log: 00_Gestao_e_Continuidade/16_Interoperabilidade.csv
 - Manuscript: not started
 
 ## 5. Frozen decisions
@@ -277,6 +282,7 @@ Updated: {date.today().isoformat()}
 - Spreadsheet/matrix management is the universal default.
 - External work manager is an optional operational mirror, never the scientific source of truth.
 - Scientific-process traceability is enabled from project initialization.
+- W3C PROV / RO-Crate export is available for audit snapshots and submission packages.
 
 ## 6. Search status
 - Not started.
