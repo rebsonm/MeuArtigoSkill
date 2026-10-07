@@ -22,4 +22,4 @@ jobs:
           python-version: "3.12"
 
       - name: Static release audit
-        run: python meu-artigo/scripts/release_audit.py
+        run: python scripts/release_audit.py
