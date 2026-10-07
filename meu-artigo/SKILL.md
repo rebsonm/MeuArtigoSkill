@@ -24,11 +24,14 @@ Resolve capabilities by **role**, not by product name:
 - citation-context / citation-graph verification when available;
 - academic web, publisher, repository, and official-source retrieval;
 - ingestion of structured bibliographic exports;
-- code/script execution when the platform supports it.
+- code/script execution when the platform supports it;
+- optional work-management integration for step-by-step execution and follow-up.
 
 If a useful integration is missing and the platform exposes an install/connect flow, surface it to the user. Installation, OAuth, account linking, or other third-party authorization always requires the user's explicit platform action; never claim a silent install.
 
 Named services such as Google Drive, Consensus, Scite, Firecrawl, Scopus, or Web of Science are preferred implementations when available, not hard requirements of the methodology. Equivalent tools may fulfill the same role.
+
+For operational project management, ClickUp, Jira/Atlassian, Trello, or an equivalent task manager may be used. Use only one primary work-management provider per article unless the user explicitly requests multiple.
 
 Do not stop at setup. Once the user's problem is sufficiently specific, create/resume the workspace and immediately begin a small novelty/terminology scan with the academic tools actually available on that platform.
 
@@ -41,6 +44,23 @@ At minimum, require a user-supplied research problem, research question, phenome
 Explain technical steps in plain language when the user appears unfamiliar with bibliographic databases or AI-assisted research.
 
 Never fabricate database access, search counts, retrieved papers, full-text reading, screening decisions, inter-rater reliability, saturation, replication, or validation.
+
+## Govern the workflow with C.A.D.A.
+
+Use C.A.D.A. as the operational governance layer across the scientific workflow. Read `references/cada-governance.md`.
+
+C.A.D.A. means:
+
+- **Capturar** — register meaningful work items, decisions, dependencies, deadlines, or blockers;
+- **Atribuir** — assign owner, scientific stage, related artifact/ID, priority, and execution mode;
+- **Definir prazo** — record a hard deadline, user-set deadline, internal target, dependency-based due point, or explicit TO_DEFINE state;
+- **Acompanhar** — maintain status and evidence of progress/completion until the item is resolved.
+
+C.A.D.A. never replaces the scientific method. It manages the work required to execute that method.
+
+Every meaningful operational unit receives a stable `CADA_ID`. Maintain `11_CADA_Control` and the concise C.A.D.A. dashboard inside `CONTINUIDADE.md`.
+
+If ClickUp, Jira/Atlassian, Trello, or an equivalent task manager is available, mirror C.A.D.A. items there according to `references/work-management.md`. The persistent scientific workspace remains the source of truth.
 
 ## Choose the methodological track
 
@@ -67,11 +87,13 @@ Maintain these canonical artifacts:
 - full-text tracker;
 - synthesis notes;
 - manuscript;
-- submission checklist.
+- submission checklist;
+- C.A.D.A. control table;
+- optional project-manager synchronization table.
 
 Read `references/drive-workspace.md` and `references/project-state.md` for the canonical workspace tree, master tracking matrix, tab schemas, versioning rules, and recovery flow. Treat the Drive layout as the reference schema even when another storage system is used. Run `scripts/init_project.py` when a filesystem workspace is available or persistent cloud storage is temporarily unavailable.
 
-Before ending any material stage, update `CONTINUIDADE.md` with what is frozen, what changed, tool/plugin status, exact counts, unresolved issues, canonical links, and the next valid action. Update the master matrix in the same stage. Another agent should be able to continue without reading the original chat.
+Before ending any material stage, update `CONTINUIDADE.md` with what is frozen, what changed, tool/plugin status, exact counts, unresolved issues, canonical links, the C.A.D.A. dashboard, and the next valid action. Update the master matrix and any connected work-management mirror in the same stage. Another agent should be able to continue without reading the original chat.
 
 ## Stage 1 — Audit the idea before exhaustive searching
 
@@ -332,3 +354,5 @@ Read only what the current task needs:
 - `references/search-screening.md` — strings, exports, deduplication, screening, full text.
 - `references/evidence-synthesis.md` — evidence matrix, cross-source synthesis, L/I/P discipline.
 - `references/beginner-mode.md` — user-facing flow for researchers with little AI/tooling experience.
+- `references/cada-governance.md` — C.A.D.A. governance, stage roadmap, work-item schema, deadlines, statuses, and completion evidence.
+- `references/work-management.md` — optional ClickUp/Jira/Trello synchronization and source-of-truth rules.
