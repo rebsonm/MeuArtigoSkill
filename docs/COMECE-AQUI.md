@@ -85,6 +85,8 @@ Depois de instalar/importar a Skill na sua IA, abra uma conversa nova e escreva 
 
 > Use a Skill Meu Artigo. Meu problema de pesquisa é: [descreva seu problema]. Quero desenvolver um artigo científico.
 
+Logo no início, a Skill também deve perguntar se você já possui **revista-alvo**. Se possuir, tenha à mão o link/arquivo das normas para autores e, se existir, o template/layout da revista. Se ainda não tiver revista definida, isso não impede o início do projeto.
+
 Você não precisa preparar:
 
 - string booleana;
@@ -198,6 +200,8 @@ Depois do primeiro teste, fique à vontade para explorar:
 - [MATRIZ-CADA.md](./MATRIZ-CADA.md) — como funciona o painel/planilha oficial;
 - [RASTREABILIDADE.md](./RASTREABILIDADE.md) — como o processo de construção do artigo fica auditável;
 - [GOVERNANCA-CIENTIFICA.md](./GOVERNANCA-CIENTIFICA.md) — como decisões, validação humana e snapshots funcionam;
+- [JOURNAL-AWARE.md](./JOURNAL-AWARE.md) — como a revista-alvo orienta a construção desde o início;
+- [ROBUSTEZ-CLAIMS.md](./ROBUSTEZ-CLAIMS.md) — como claims importantes são confrontados antes de congelar;
 - [MAPA-CORPUS.md](./MAPA-CORPUS.md) — como funciona o mapa do corpus e a consulta grounded;
 - `../meu-artigo/SKILL.md` — instrução central;
 - `../meu-artigo/references/` — metodologia detalhada;
