@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Meu Artigo">
+  <defs>
+    <linearGradient id="bg" x1="70" y1="60" x2="440" y2="455" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B57D0"/>
+      <stop offset="0.52" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="180" y1="95" x2="310" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E9F2FF"/>
+    </linearGradient>
+    <linearGradient id="book" x1="116" y1="290" x2="345" y2="406" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#DDEBFF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#061B4F" flood-opacity=".28"/>
+    </filter>
+  </defs>
+
+  <rect x="28" y="28" width="456" height="456" rx="112" fill="url(#bg)"/>
+  <circle cx="410" cy="126" r="52" fill="#093F9D" opacity=".32"/>
+  <circle cx="422" cy="380" r="66" fill="#5B21B6" opacity=".22"/>
+
+  <!-- document -->
+  <g filter="url(#shadow)">
+    <path d="M157 103c0-20 16-36 36-36h133l65 66v194c0 20-16 36-36 36H193c-20 0-36-16-36-36V103z" fill="#0B3E94" opacity=".55"/>
+    <path d="M145 91c0-20 16-36 36-36h135l66 66v194c0 20-16 36-36 36H181c-20 0-36-16-36-36V91z" fill="url(#paper)"/>
+    <path d="M316 55v42c0 17 14 31 31 31h35" fill="#D6E6FF"/>
+    <path d="M316 55l66 66h-35c-17 0-31-14-31-31V55z" fill="#C9DBF6"/>
+    <g fill="#6E95C9">
+      <rect x="190" y="132" width="119" height="13" rx="6.5"/>
+      <rect x="190" y="166" width="139" height="13" rx="6.5"/>
+      <rect x="190" y="200" width="107" height="13" rx="6.5"/>
+      <rect x="190" y="234" width="84" height="13" rx="6.5"/>
+      <rect x="295" y="229" width="17" height="56" rx="6"/>
+      <rect x="322" y="211" width="17" height="74" rx="6"/>
+      <rect x="349" y="190" width="17" height="95" rx="6"/>
+    </g>
+  </g>
+
+  <!-- open book -->
+  <g filter="url(#shadow)">
+    <path d="M96 301c43-4 83 8 120 40 18 16 32 33 40 50 8-17 22-34 40-50 37-32 77-44 120-40v112c-46-3-89 10-128 39-14 10-25 21-32 31-7-10-18-21-32-31-39-29-82-42-128-39V301z" fill="#0A3A8B" opacity=".55"/>
+    <path d="M86 286c45-4 87 9 126 41 20 17 35 34 44 52 9-18 24-35 44-52 39-32 81-45 126-41v112c-47-3-91 10-132 40-17 13-30 25-38 37-8-12-21-24-38-37-41-30-85-43-132-40V286z" fill="url(#book)"/>
+    <path d="M256 379v56" stroke="#A8C3E8" stroke-width="8" stroke-linecap="round"/>
+    <path d="M111 316c37 1 70 13 99 36M111 343c33 1 62 11 88 31M401 316c-37 1-70 13-99 36M401 343c-33 1-62 11-88 31" stroke="#B8CCE8" stroke-width="9" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- workflow nodes -->
+  <path d="M399 102c33 27 46 57 38 91M437 213c8 31 3 60-16 85M421 320c-8 27-26 49-53 66" fill="none" stroke="#67C7FF" stroke-width="10" stroke-linecap="round" opacity=".95"/>
+
+  <g filter="url(#shadow)">
+    <circle cx="408" cy="100" r="38" fill="#0A53C6"/>
+    <circle cx="442" cy="215" r="38" fill="#0EA5A8"/>
+    <circle cx="415" cy="323" r="38" fill="#F59E0B"/>
+    <circle cx="365" cy="409" r="38" fill="#5B21B6"/>
+  </g>
+
+  <!-- search -->
+  <circle cx="401" cy="93" r="13" fill="none" stroke="#fff" stroke-width="8"/>
+  <path d="M411 103l13 13" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <!-- document node -->
+  <path d="M431 194h18l10 10v28h-28z" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M449 194v10h10M437 214h16M437 223h13" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- gear simplified -->
+  <circle cx="415" cy="323" r="12" fill="none" stroke="#fff" stroke-width="7"/>
+  <path d="M415 301v8M415 337v8M393 323h8M429 323h8M400 308l6 6M424 332l6 6M430 308l-6 6M406 332l-6 6" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+  <!-- check -->
+  <path d="M346 409l13 14 26-31" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

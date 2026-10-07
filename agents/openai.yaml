@@ -1,6 +1,9 @@
 interface:
   display_name: "Meu Artigo"
   short_description: "Do problema ao artigo com gestão C.A.D.A."
+  icon_small: "assets/icon.svg"
+  icon_large: "assets/icon.svg"
+  brand_color: "#2563EB"
   default_prompt: "Use $meu-artigo para organizar meu projeto, aplicar a gestão C.A.D.A. pela matriz como padrão e manter rastreabilidade e governança científica. No intake, pergunte se eu já tenho revista-alvo e, se tiver, peça as normas oficiais e o template/layout para construir o manuscrito desde cedo segundo o JOURNAL_PROFILE. Antes de congelar claims materiais, execute a auditoria de robustez/contestação do GATE-0006. Construa o Mapa do Corpus somente com metadados reais e use Grounded Corpus Mode quando eu quiser respostas limitadas ao full text validado. Em marcos importantes, permita exportar W3C PROV/RO-Crate com SHA-256."
 
 dependencies:
