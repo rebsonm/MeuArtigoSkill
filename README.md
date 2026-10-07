@@ -1,6 +1,8 @@
 # Meu Artigo — Skill para pesquisa e construção de artigos científicos
 
-**Versão atual:** `0.6.0-beta.1` · veja [CHANGELOG.md](./CHANGELOG.md) · metadados de citação em [CITATION.cff](./CITATION.cff)
+**Versão atual:** `0.6.0-beta.1`
+
+**Status de distribuição:** beta fechado · repositório privado · implementação ainda não liberada para distribuição pública · veja [CHANGELOG.md](./CHANGELOG.md) · metadados de citação em [CITATION.cff](./CITATION.cff)
 
 **Meu Artigo** é uma Skill **multiplataforma** para pesquisa e construção de artigos científicos. Ela transforma um problema, pergunta ou ideia de pesquisa fornecida pelo usuário em um **processo científico rastreável, persistente, orientado por evidências e auditável quanto à sua própria construção**. O núcleo metodológico vive em `meu-artigo/SKILL.md`; diferenças entre ChatGPT, Claude e Gemini ficam isoladas em adapters/documentação de plataforma.
 
@@ -9,6 +11,8 @@ Ela não entrega um “artigo pronto por mágica” e não reutiliza o conteúdo
 > O tema, a pergunta de pesquisa, os conceitos, as strings de busca, as fontes, as categorias analíticas e as conclusões pertencem sempre ao projeto do novo usuário.
 
 ## 🚀 Nunca usou GitHub? Comece aqui
+
+> **Nota de acesso:** este guia está preservado para a futura fase de testes. Enquanto o projeto estiver em beta fechado, o repositório e a implementação permanecem restritos aos acessos autorizados.
 
 Você **não precisa saber Git, programação nem terminal** para testar o Meu Artigo.
 
