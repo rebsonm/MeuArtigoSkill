@@ -44,6 +44,33 @@ Notes
 
 Not every field fits every discipline. Remove irrelevant fields rather than filling them with invented content.
 
+## Concept operationalization traceability
+
+When an article adopts, adapts, combines, or creates constructs, dimensions, categories, indicators, or interpretation rules, preserve the operationalization chain explicitly.
+
+For each material construct/category, record where applicable:
+
+```text
+Concept_or_construct
+Canonical_definition
+Definition_source_Evidence_IDs
+Mechanism_or_relationship
+Dimension_or_category
+Indicator_or_observable
+Interpretation_rule
+Boundary_or_exclusion_rule
+Epistemic_label
+Trace_IDs
+Human_validation
+Notes
+```
+
+Expected chain: `concept -> definition -> source -> mechanism -> dimension/category -> indicator/observable -> interpretation rule`.
+
+Do not invent an indicator merely to complete the chain. Keep a source definition [L], an analytical operationalization [I], and an original construct/category [P] distinguishable. If a construct is adapted, preserve both the source definition and the project's operational definition with the rationale. If categories are merged, split, renamed, or superseded, record the decision and linked evidence rather than silently rewriting history.
+
+This traceability belongs inside the existing evidence/synthesis architecture; it does not create a new canonical sheet or ID family. Use `09_MATRIZ_EVID`, `10_SINTESE`, `17_DECISOES`, `18_VALIDACOES`, and TRACE events as appropriate.
+
 ## L/I/P discipline
 
 Use internal epistemic labels:
