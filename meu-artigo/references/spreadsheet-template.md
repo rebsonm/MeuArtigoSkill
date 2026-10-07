@@ -51,6 +51,7 @@ Use these exact sheet names and order:
 18. `17_DECISOES`
 19. `18_VALIDACOES`
 20. `19_SNAPSHOTS`
+21. `20_MAPA_CORPUS`
 
 Do not rename these sheets without a migration step because formulas and agents rely on them.
 
@@ -631,3 +632,31 @@ SNAP_ID | Timestamp | Marco | Etapa | Trigger | Gate_ID | DEC_IDs | CADA_IDs | S
 ```
 
 Use `scripts/create_snapshot.py` and `scripts/compare_snapshots.py` in filesystem mode.
+
+
+## 20_MAPA_CORPUS
+
+Human-facing exploratory view of the validated retained corpus.
+
+The sheet must not contain fictitious seed data.
+
+Sections:
+
+- corpus overview;
+- publications by year;
+- recurrent authors;
+- source titles;
+- keywords/concepts;
+- network method/edge definition;
+- clusters only when supported by a real edge model;
+- bridge records only when operationally supported;
+- enrichment/metadata coverage;
+- warnings.
+
+The top overview may derive real counts directly from `07_SCREENING`, `09_MATRIZ_EVID`, and `11_CLAIMS`.
+
+Leave unsupported metadata sections empty until real data exist.
+
+Reference generator: `scripts/build_corpus_map.py`.
+
+Corpus mapping is exploratory unless the scientific design explicitly adopts bibliometric methods.
