@@ -60,7 +60,15 @@ C.A.D.A. never replaces the scientific method. It manages the work required to e
 
 Every meaningful operational unit receives a stable `CADA_ID`. Maintain `11_CADA_Control` and the concise C.A.D.A. dashboard inside `CONTINUIDADE.md`.
 
-The **spreadsheet/matrix is the universal default management mode**. Read `references/cada-matrix.md`. A user never needs ClickUp, Jira, Trello, or project-management expertise to use C.A.D.A.
+The **spreadsheet/matrix is the universal default management mode**. Read `references/cada-matrix.md` and `references/spreadsheet-template.md`. A user never needs ClickUp, Jira, Trello, or project-management expertise to use C.A.D.A.
+
+Before large searches, create the canonical 16-sheet workbook whenever the platform supports native spreadsheet creation. Prefer:
+
+1. a native connected spreadsheet (for example Google Sheets) reproduced from `references/spreadsheet-template.md`;
+2. `scripts/build_matrix_template.py` when `artifact_tool` is available;
+3. the CSV mirrors only when a visual workbook cannot be created.
+
+Show `00_PAINEL` as the default human-facing view. Keep the detailed scientific/provenance tabs available for audit and continuation.
 
 Use one of two modes:
 
@@ -362,7 +370,7 @@ Before declaring the manuscript ready, verify:
 - target-journal rules are satisfied;
 - continuity state is updated.
 
-Run `scripts/validate_project.py` when using the standard workspace.
+Run `scripts/validate_project.py` when using the standard workspace. When local spreadsheet generation is available, also use `scripts/build_matrix_template.py` or let `scripts/init_project.py` invoke it automatically.
 
 ## Stage 14 — Prepare submission and preserve the outcome
 
@@ -400,4 +408,5 @@ Read only what the current task needs:
 - `references/cada-governance.md` — C.A.D.A. governance, stage roadmap, work-item schema, deadlines, statuses, and completion evidence.
 - `references/work-management.md` — optional ClickUp/Jira/Trello synchronization and source-of-truth rules.
 - `references/cada-matrix.md` — spreadsheet-first C.A.D.A. management mode and dashboard.
+- `references/spreadsheet-template.md` — canonical 16-sheet workbook design, formulas, validations, views, and generation priority.
 - `references/traceability.md` — research-process provenance, Trace IDs, AI-use logging, and final transparency audit.
