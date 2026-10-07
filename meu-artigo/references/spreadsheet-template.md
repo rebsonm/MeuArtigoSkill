@@ -47,6 +47,7 @@ Use these exact sheet names and order:
 14. `13_SUBMISSAO`
 15. `14_PM_SYNC`
 16. `15_CONFIG`
+17. `16_INTEROPERABILIDADE`
 
 Do not rename these sheets without a migration step because formulas and agents rely on them.
 
@@ -561,3 +562,32 @@ Preferred:
 - CSV mirrors only as a last-resort compatibility mode.
 
 Read `scripts/build_matrix_template.py` for the reference XLSX implementation.
+
+
+## 16_INTEROPERABILIDADE
+
+Purpose: log machine-readable provenance exports.
+
+Columns:
+
+```text
+Export_ID
+Timestamp
+Padrões
+Pacote / URL
+SHA-256 do pacote
+Validação
+TRACE events
+PROV entities
+PROV activities
+PROV agents
+RO-Crate files
+Warnings
+Observações
+```
+
+Use stable `EXPORT-####` IDs.
+
+Each W3C PROV / RO-Crate export should create one row. In local-project mode, synchronize this sheet with `00_Gestao_e_Continuidade/16_Interoperabilidade.csv`.
+
+The sheet is an export history, not the provenance graph itself. The graph lives in the generated package.
