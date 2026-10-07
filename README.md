@@ -48,7 +48,7 @@ A Skill conduz o pesquisador por um fluxo completo:
 
 1. recebe o problema, pergunta, fenômeno ou ideia de artigo do usuário;
 2. verifica as integrações de pesquisa disponíveis e orienta a conexão das que estiverem faltando;
-3. cria um workspace persistente e padronizado no Google Drive;
+3. cria um workspace persistente e padronizado — com Google Drive como implementação de referência;
 4. registra o problema original e cria `CONTINUIDADE.md`, protocolo e matriz-mestra;
 5. faz uma auditoria inicial de novidade e de terminologia;
 6. ajuda a refinar pergunta, objetivo e contribuição;
