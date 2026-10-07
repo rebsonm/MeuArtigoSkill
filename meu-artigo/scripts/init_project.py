@@ -530,6 +530,14 @@ Updated: {date.today().isoformat()}
 ## Article/review design
 {a.article_type}
 
+## Target journal / editorial contract
+- Target journal: {target_journal or 'TO_DEFINE'}
+- Construction mode: {journal_mode}
+- Journal profile status: {journal_profile_status}
+- Guidelines source: {journal_guidelines or 'not supplied'}
+- Template/layout source: {journal_template or 'not supplied'}
+- Scientific boundary: editorial rules may shape presentation/architecture, never findings or evidence.
+
 ## Scope and exclusions
 [TO DEFINE]
 
