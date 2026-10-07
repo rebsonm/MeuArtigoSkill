@@ -42,6 +42,8 @@ ARTIGO_<short-title>_<YYYY>/
 │   └── Versao_Canonica/
 ├── 06_Submissao/
 │   ├── Regras_da_Revista/
+│   │   ├── JOURNAL_PROFILE.json
+│   │   └── JOURNAL_PROFILE.md (when populated)
 │   ├── Arquivos_Finais/
 │   └── Comprovantes/
 └── 99_Arquivo_Historico/
@@ -103,6 +105,11 @@ Updated: <ISO date/time>
 ## 11. Manuscript status
 
 ## 12. Journal/submission status
+- Target journal
+- Journal construction mode
+- JOURNAL_PROFILE status/source/verification date
+- Formal-rule compliance
+- Scientific journal dialogue status
 
 ## 13. Open issues and blockers
 
@@ -209,7 +216,7 @@ Use to make the transition from article-by-article notes to cross-source synthes
 ### `09_Claims_Ledger`
 
 ```text
-Claim_ID | Manuscript_section | Claim_text | Claim_type | Evidence_IDs | Locator_status | Strength | Draft_status | Notes
+Claim_ID | Manuscript_section | Claim_text | Claim_type | Evidence_IDs | Counter_Evidence_IDs | Locator_status | Alternative_explanations | Boundary_conditions | Single_source_dependency | Strength | Robustness_status | Robustness_notes | Trace_IDs | Gate_ID | Human_validation | Draft_status | Notes
 ```
 
 Every important manuscript claim should eventually be traceable to evidence IDs, actual empirical results, or a clearly marked original proposition.
@@ -329,3 +336,21 @@ Generate `MAPA_CORPUS.md` and `MAPA_CORPUS.json` only after a real retained corp
 These artifacts are optional before that point and must never be populated with fictitious values.
 
 When present, include them in relevant snapshots, transparency reports, and RO-Crate exports.
+
+
+## Journal-aware artifacts
+
+At intake, ask whether the researcher already has a target journal and request the official author guidelines plus template/layout when available.
+
+Maintain `06_Submissao/Regras_da_Revista/JOURNAL_PROFILE.json`.
+
+When no journal is defined, keep the profile in JOURNAL_NEUTRAL / TO_DEFINE state and continue the project.
+
+When a journal is defined, the profile must distinguish:
+
+- formal editorial contract;
+- scientific/editorial profile.
+
+Do not infer missing journal rules. Record sources and verification dates.
+
+If the target changes materially, preserve the superseded profile and record a DEC_ID of type JOURNAL.
