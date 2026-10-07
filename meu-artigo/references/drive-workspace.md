@@ -34,7 +34,9 @@ ARTIGO_<short-title>_<YYYY>/
 ├── 04_Evidencias_e_Sintese/
 │   ├── Notas_de_Sintese/
 │   ├── Figuras_e_Modelos/
-│   └── Claims_Ledger/
+│   ├── Claims_Ledger/
+│   ├── MAPA_CORPUS.md
+│   └── MAPA_CORPUS.json
 ├── 05_Manuscrito/
 │   ├── Rascunhos/
 │   └── Versao_Canonica/
@@ -318,3 +320,12 @@ Human validation gates. Seed the seven default gates at initialization; routine 
 Frozen project states with manifest SHA-256, linked gate/decisions and change summary.
 
 At project initialization, create the initial SNAP_ID when filesystem capabilities permit.
+
+
+### Corpus Map outputs
+
+Generate `MAPA_CORPUS.md` and `MAPA_CORPUS.json` only after a real retained corpus exists.
+
+These artifacts are optional before that point and must never be populated with fictitious values.
+
+When present, include them in relevant snapshots, transparency reports, and RO-Crate exports.
