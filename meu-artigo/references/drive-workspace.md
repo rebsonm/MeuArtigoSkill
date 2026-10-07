@@ -17,6 +17,7 @@ ARTIGO_<short-title>_<YYYY>/
 │   ├── PROTOCOLO.md
 │   ├── PROJECT_CONFIG.json
 │   ├── RASTREABILIDADE.md
+│   ├── Snapshots/
 │   └── MATRIZ_MESTRA_<short-title>
 ├── 01_Auditoria_de_Novidade/
 │   ├── Notas_de_Auditoria/
@@ -302,3 +303,18 @@ When persistent storage is connected:
 13. persist results before expanding the search.
 
 Do not wait for the manuscript stage to create project state. Persistence begins before the first substantive search.
+
+
+### `17_DECISOES`
+
+Material scientific decisions with stable DEC_ID values, rationale, alternatives, evidence links, impact and supersession.
+
+### `18_VALIDACOES`
+
+Human validation gates. Seed the seven default gates at initialization; routine work remains autonomous until a gate becomes READY.
+
+### `19_SNAPSHOTS`
+
+Frozen project states with manifest SHA-256, linked gate/decisions and change summary.
+
+At project initialization, create the initial SNAP_ID when filesystem capabilities permit.
