@@ -42,7 +42,7 @@ Portanto, **não envie o ZIP completo do repositório** se nele `SKILL.md` estiv
 
 ## 3. Comece em uma conversa nova
 
-> Use a Skill Meu Artigo. Meu problema de pesquisa é: [problema]. Quero construir o artigo com rastreabilidade e continuidade.
+> Use a Skill Meu Artigo. Meu problema de pesquisa é: [problema]. Quero construir o artigo com rastreabilidade, continuidade e gestão C.A.D.A.
 
 ## Compatibilidade verificada
 
@@ -76,9 +76,14 @@ Mapeie os recursos disponíveis para:
 - verificação bibliográfica;
 - web/publisher retrieval;
 - bases indexadas;
-- execução local quando disponível.
+- execução local quando disponível;
+- gerenciador de trabalho para espelhar o C.A.D.A., quando houver integração disponível.
 
 Se Google Drive/Workspace estiver conectado, ele é um bom candidato para o workspace canônico, conforme a conta e a superfície utilizadas.
+
+## Gestão C.A.D.A.
+
+O C.A.D.A. continua funcionando mesmo sem integração com ClickUp, Jira ou Trello. Se o Gemini disponibilizar uma integração equivalente, use-a apenas como espelho operacional; preserve o workspace e `11_CADA_Control` como fontes canônicas.
 
 ## Scopus e Web of Science
 
