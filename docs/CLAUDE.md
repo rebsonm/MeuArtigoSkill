@@ -45,7 +45,7 @@ A pasta deve manter seu `SKILL.md` e arquivos de suporte.
 
 ## 3. Comece em uma conversa nova
 
-> Use a Skill Meu Artigo. Meu problema de pesquisa é: [problema]. Quero construir o artigo com rastreabilidade e continuidade.
+> Use a Skill Meu Artigo. Meu problema de pesquisa é: [problema]. Quero construir o artigo com rastreabilidade, continuidade e gestão C.A.D.A.
 
 Para o teste, não descreva previamente o nosso workflow.
 
@@ -70,7 +70,12 @@ Exemplos:
 - descoberta acadêmica → mecanismo acadêmico/MCP disponível;
 - contexto de citação → Scite ou equivalente;
 - web/publisher retrieval → navegador, web search ou MCP correspondente;
-- bases indexadas → export de Scopus/WoS ou connector real.
+- bases indexadas → export de Scopus/WoS ou connector real;
+- gestão operacional C.A.D.A. → ClickUp, Jira, Trello ou MCP equivalente, se realmente disponível.
+
+## Gestão C.A.D.A.
+
+O C.A.D.A. é interno à Skill e não depende de MCP externo. Se um gerenciador de trabalho estiver conectado no Claude, use-o como espelho operacional conforme `references/work-management.md`. Preserve `11_CADA_Control` como fonte canônica.
 
 ## Scripts
 
