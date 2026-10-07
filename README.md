@@ -105,7 +105,10 @@ O modo padrão é `MATRIX_ONLY`: a própria matriz-mestra gerencia o projeto por
 
 - `11_CADA_Control` — tarefas, responsáveis, próxima ação, prazos, status e evidências;
 - `15_CADA_Dashboard`
-- `16_INTEROPERABILIDADE` — visão resumida do andamento.
+- `16_INTEROPERABILIDADE`
+- `17_DECISOES`
+- `18_VALIDACOES`
+- `19_SNAPSHOTS` — visão resumida do andamento.
 
 Quem já usa uma ferramenta de gestão pode ativar `MATRIX_PLUS_EXTERNAL`.
 
@@ -126,7 +129,7 @@ O vínculo entre cada item C.A.D.A. e a tarefa externa fica registrado em `12_PM
 
 ## Template oficial da matriz C.A.D.A.
 
-A planilha que gerencia o projeto tem agora um **template canônico de 17 abas**, com dashboard, C.A.D.A., linha do tempo, protocolo, buscas, screening, full text, matriz de evidências, síntese, claims, uso de IA, submissão e sincronização opcional.
+A planilha que gerencia o projeto tem agora um **template canônico de 20 abas**, com dashboard, C.A.D.A., linha do tempo, protocolo, buscas, screening, full text, matriz de evidências, síntese, claims, uso de IA, submissão e sincronização opcional.
 
 O modo padrão é `MATRIX_ONLY`: a pessoa consegue conduzir todo o projeto sem conhecer software de gestão.
 
@@ -155,6 +158,24 @@ O pesquisador não precisa conhecer esses padrões para usar a Skill. Eles funci
 Cada export recebe um `EXPORT-####` e é registrado em `16_INTEROPERABILIDADE`.
 
 Veja [docs/INTEROPERABILIDADE.md](./docs/INTEROPERABILIDADE.md).
+
+## Cadeia de custódia científica
+
+Além de tarefas e eventos, o Meu Artigo distingue três objetos de governança:
+
+- **DEC_ID** — registra o que foi decidido, alternativas, justificativa e impacto;
+- **GATE_ID** — registra a validação humana em poucos pontos críticos;
+- **SNAP_ID** — congela o estado oficial do projeto com SHA-256.
+
+A cadeia, quando aplicável, fica:
+
+```text
+DEC_ID → CADA_ID → TRACE_ID → Evidence/Claim → GATE_ID → SNAP_ID → EXPORT_ID
+```
+
+A Skill trabalha autonomamente entre os gates. Ela só pede julgamento humano quando uma transição científica crítica está pronta para validação.
+
+Também pode gerar um **Relatório de Transparência e Rastreabilidade para Revisor/Editor**, sem expor o workspace privado inteiro.
 
 ## Rastreabilidade da construção do artigo
 
@@ -427,7 +448,10 @@ Os scripts são auxiliares determinísticos para etapas frágeis/repetitivas:
 
 - `init_project.py` — cria um espelho local do workspace canônico;
 - `dedupe_records.py` — normaliza identificadores e títulos, remove duplicatas exatas e **sinaliza** near-duplicates para revisão;
-- `validate_project.py` — verifica a presença e consistência mínima dos artefatos canônicos do projeto.
+- `validate_project.py` — verifica a presença e consistência mínima dos artefatos canônicos do projeto;
+- `governance_events.py` — registra DEC_ID e validações GATE_ID;
+- `create_snapshot.py` / `compare_snapshots.py` — congela e compara estados SNAP_ID;
+- `generate_transparency_report.py` — gera a visão de transparência para revisor/editor.
 
 Eles não substituem julgamento científico.
 
