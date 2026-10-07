@@ -25,6 +25,7 @@ REQUIRED=[
     "docs/RASTREABILIDADE.md",
     "docs/GOVERNANCA-CIENTIFICA.md",
     "docs/INTEROPERABILIDADE.md",
+    "docs/MAPA-CORPUS.md",
     "meu-artigo/SKILL.md",
     "meu-artigo/references/corpus-map.md",
     "meu-artigo/references/grounded-corpus.md",
