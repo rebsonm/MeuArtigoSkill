@@ -114,7 +114,9 @@ Maintain these canonical artifacts:
 - material scientific decision log (`DEC_ID`);
 - human validation gates (`GATE_ID`);
 - frozen scientific snapshots (`SNAP_ID`);
-- reviewer/editor transparency report.
+- reviewer/editor transparency report;
+- exploratory Corpus Map over the validated retained corpus;
+- Grounded Corpus Mode for evidence-bounded consultation over validated full text.
 
 Read `references/drive-workspace.md` and `references/project-state.md` for the canonical workspace tree, master tracking matrix, tab schemas, versioning rules, and recovery flow. Treat the Drive layout as the reference schema even when another storage system is used. Run `scripts/init_project.py` when a filesystem workspace is available or persistent cloud storage is temporarily unavailable.
 
@@ -326,6 +328,48 @@ Write from this matrix later. Do not write the literature argument from model me
 
 Read `references/evidence-synthesis.md`.
 
+## Explore the validated corpus without changing the methodology
+
+Read `references/corpus-map.md` and `references/grounded-corpus.md`.
+
+### Corpus Map
+
+After a meaningful retained corpus exists, the Skill may build an exploratory Corpus Map.
+
+Use only metadata actually present in the canonical project or legitimately retrieved from a scholarly metadata source. Report metadata/enrichment coverage explicitly.
+
+The map may show, where supported:
+
+- publications by year;
+- recurrent authors;
+- journals/source titles;
+- source-derived keywords/concepts;
+- evidence-matrix constructs;
+- real citation/coauthorship/co-occurrence network structure;
+- clusters and bridge records only when an actual edge model supports them.
+
+Do not fabricate missing metadata. Do not infer citation links from semantic similarity. Do not label the study bibliometric merely because the Skill provides an exploratory map.
+
+Use `scripts/build_corpus_map.py` in filesystem mode. Record map generation as a TRACE event and AI use when cluster interpretation is substantively AI-assisted.
+
+### Grounded Corpus Mode
+
+When the user asks analytical questions about the retained literature, prefer Grounded Corpus Mode when full text is available.
+
+Ground answers only in eligible validated corpus sources. Default eligible states are FULL TEXT — CORE and FULL TEXT — SUPPORT with actual full-text access.
+
+For material answers:
+
+- identify supporting Record_IDs;
+- use Evidence_IDs where available;
+- provide locators when available;
+- label literature-supported statements [L] and analytical inferences [I];
+- say when the corpus does not support the answer.
+
+Do not silently supplement a grounded answer with model memory or unrestricted web knowledge. If external literature is needed, explicitly leave Grounded Corpus Mode and tell the user that the answer is being expanded beyond the frozen corpus.
+
+Grounded retrieval does not replace human validation before a synthesis, theoretical category, material inference, or key manuscript claim is frozen.
+
 ## Stage 9 — Synthesize across sources
 
 Move from paper-by-paper summaries to cross-source comparison. Look for:
@@ -398,7 +442,7 @@ Before declaring the manuscript ready, verify:
 - target-journal rules are satisfied;
 - continuity state is updated.
 
-Run `scripts/validate_project.py` when using the standard workspace. When local spreadsheet generation is available, also use `scripts/build_matrix_template.py` or let `scripts/init_project.py` invoke it automatically. Use `scripts/governance_events.py`, `scripts/create_snapshot.py`, `scripts/compare_snapshots.py`, and `scripts/generate_transparency_report.py` for deterministic governance operations.
+Run `scripts/validate_project.py` when using the standard workspace. When local spreadsheet generation is available, also use `scripts/build_matrix_template.py` or let `scripts/init_project.py` invoke it automatically. Use `scripts/governance_events.py`, `scripts/create_snapshot.py`, `scripts/compare_snapshots.py`, and `scripts/generate_transparency_report.py` for deterministic governance operations. Use `scripts/build_corpus_map.py` for corpus mapping when a retained corpus exists, and `scripts/release_audit.py` before a release.
 
 ## Stage 14 — Prepare submission and preserve the outcome
 
@@ -440,3 +484,5 @@ Read only what the current task needs:
 - `references/traceability.md` — research-process provenance, Trace IDs, AI-use logging, and final transparency audit.
 - `references/provenance-export.md` — W3C PROV-O mapping, RO-Crate 1.3 packaging, SHA-256 fixity, export/validation rules.
 - `references/scientific-governance.md` — DEC_ID decisions, human validation gates, SNAP_ID frozen states, and reviewer/editor transparency.
+- `references/corpus-map.md` — data-driven exploratory map of the validated corpus.
+- `references/grounded-corpus.md` — evidence-bounded AI consultation over validated full text.
