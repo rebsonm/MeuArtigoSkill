@@ -21,12 +21,72 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 MGMT="00_Gestao_e_Continuidade"
+TRACE_FILE=f"{MGMT}/13_Traceability_Log.csv"
+TRACE_HEADERS=[
+"Trace_ID","Timestamp","Scientific_stage","CADA_ID","Actor",
+"AI_platform_or_tool","Model_or_version","Action_type","Action_summary",
+"Input_or_source","Source_or_artifact_IDs","Decision_or_output","Rationale",
+"Artifact_before","Artifact_after","Verification_method","Human_validation",
+"Related_Search_IDs","Related_Record_IDs","Related_Evidence_IDs",
+"Related_Claim_IDs","Prompt_or_instruction_summary","Reproducibility_information",
+"Materiality","Status","Notes"
+]
 
 def read_csv(path:Path)->list[dict[str,str]]:
     if not path.exists():
         return []
     with path.open("r",encoding="utf-8-sig",newline="") as f:
         return list(csv.DictReader(f))
+
+def next_trace_id(root:Path)->str:
+    path=root/TRACE_FILE
+    rows=read_csv(path)
+    n=0
+    pat=re.compile(r"^TRACE-(\d+)$")
+    for row in rows:
+        m=pat.match((row.get("Trace_ID") or "").strip())
+        if m:
+            n=max(n,int(m.group(1)))
+    return f"TRACE-{n+1:04d}"
+
+def append_trace(root:Path, retained_ids:list[str], json_path:Path, md_path:Path, warnings:list[str])->str:
+    path=root/TRACE_FILE
+    path.parent.mkdir(parents=True,exist_ok=True)
+    exists=path.exists() and path.stat().st_size>0
+    tid=next_trace_id(root)
+    with path.open("a",encoding="utf-8-sig",newline="") as f:
+        w=csv.DictWriter(f,fieldnames=TRACE_HEADERS)
+        if not exists:
+            w.writeheader()
+        w.writerow({
+            "Trace_ID":tid,
+            "Timestamp":datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+            "Scientific_stage":"09-10",
+            "CADA_ID":"",
+            "Actor":"SCRIPT",
+            "AI_platform_or_tool":"build_corpus_map.py",
+            "Model_or_version":"",
+            "Action_type":"CORPUS_MAP_GENERATION",
+            "Action_summary":"Generated exploratory Corpus Map from canonical retained metadata.",
+            "Input_or_source":"Canonical retained corpus metadata",
+            "Source_or_artifact_IDs":"; ".join(retained_ids),
+            "Decision_or_output":f"{json_path.as_posix()}; {md_path.as_posix()}",
+            "Rationale":"Provide a data-driven structural view of the validated retained corpus without changing the methodological design.",
+            "Artifact_before":"",
+            "Artifact_after":f"{json_path.as_posix()}; {md_path.as_posix()}",
+            "Verification_method":"Deterministic metadata aggregation; missing metadata reported as warnings.",
+            "Human_validation":"PENDING",
+            "Related_Search_IDs":"",
+            "Related_Record_IDs":"; ".join(retained_ids),
+            "Related_Evidence_IDs":"",
+            "Related_Claim_IDs":"",
+            "Prompt_or_instruction_summary":"",
+            "Reproducibility_information":"Run build_corpus_map.py against the same canonical project state.",
+            "Materiality":"ASSISTIVE",
+            "Status":"COMPLETE",
+            "Notes":" | ".join(warnings),
+        })
+    return tid
 
 def first_present(row:dict[str,str], names:list[str])->str:
     for name in names:
@@ -213,10 +273,13 @@ def main()->int:
     ]
     md_path.write_text("\n".join(lines)+"\n",encoding="utf-8")
 
+    trace_id=append_trace(root,sorted(by_id),json_path,md_path,warnings)
+
     print(json_path)
     print(md_path)
     print(f"retained_records={len(retained)}")
     print(f"warnings={len(warnings)}")
+    print(f"trace_id={trace_id}")
     return 0
 
 if __name__=="__main__":
