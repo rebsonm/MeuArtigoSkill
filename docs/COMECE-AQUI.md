@@ -71,7 +71,7 @@ Mas, quando sua IA permitir importar uma **pasta ou ZIP**, prefira fornecer a pa
 
 ## 5. Escolha sua IA
 
-Depois de baixar, siga o guia correspondente:
+Depois de baixar, siga o guia correspondente. **A opção de instalar Skills depende do plano/conta de cada plataforma**, então leia o início do guia antes de procurar os menus:
 
 - [Quero usar no ChatGPT / Codex](./CHATGPT.md)
 - [Quero usar no Claude](./CLAUDE.md)
