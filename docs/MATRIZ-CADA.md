@@ -18,7 +18,7 @@ A primeira aba, `00_PAINEL`, foi desenhada para responder rapidamente:
 - Onde a IA participou?
 - Como essa participação foi validada?
 
-## As 16 abas
+## As 17 abas
 
 | Aba | Função |
 |---|---|
@@ -38,6 +38,7 @@ A primeira aba, `00_PAINEL`, foi desenhada para responder rapidamente:
 | `13_SUBMISSAO` | requisitos e comprovantes |
 | `14_PM_SYNC` | sincronização opcional com gerenciador externo |
 | `15_CONFIG` | vocabulários e parâmetros |
+| `16_INTEROPERABILIDADE` | exports W3C PROV/RO-Crate, SHA-256 e validação |
 
 ## Dois modos
 
@@ -93,3 +94,23 @@ Ela combina:
 **gestão + evidência + proveniência + transparência de IA + continuidade**
 
 Esse é o papel da matriz no Meu Artigo.
+
+
+## Exportação auditável
+
+A aba `16_INTEROPERABILIDADE` registra cada pacote gerado pela Skill.
+
+O pacote contém:
+
+- `ro-crate-metadata.json` — RO-Crate 1.3;
+- `provenance/prov.jsonld` — grafo W3C PROV-O;
+- `manifest-sha256.txt` — fixidade dos arquivos;
+- relatório de proveniência;
+- artefatos canônicos do projeto.
+
+A exportação pode ser feita com:
+
+```bash
+python scripts/export_provenance.py /caminho/do/projeto
+python scripts/validate_provenance_package.py /caminho/do/pacote.zip
+```
