@@ -22,6 +22,8 @@ from __future__ import annotations
 import argparse
 import csv
 import re
+import subprocess
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -233,9 +235,31 @@ def record_gate(args)->int:
         w.writeheader()
         w.writerows([{h:r.get(h,"") for h in GATE_HEADERS} for r in updated])
 
+    snapshot_id=""
+    if decision in {"APPROVED","APPROVED_WITH_CHANGES"} and not args.no_snapshot:
+        snap_script=Path(__file__).with_name("create_snapshot.py")
+        if snap_script.exists():
+            cmd=[
+                sys.executable,str(snap_script),str(root),
+                "--milestone",target.get("Name") or args.gate_id,
+                "--stage",target.get("Scientific_stage") or "",
+                "--trigger","HUMAN_GATE",
+                "--gate-id",args.gate_id,
+                "--dec-ids",target.get("DEC_IDs") or "",
+                "--cada-ids",target.get("CADA_IDs") or "",
+                "--change-summary",args.notes or f"State frozen after {args.gate_id} {decision}."
+            ]
+            run=subprocess.run(cmd,check=True,capture_output=True,text=True)
+            for line in run.stdout.splitlines():
+                if line.startswith("snapshot_id="):
+                    snapshot_id=line.split("=",1)[1].strip()
+                    break
+
     print(f"gate_id={args.gate_id}")
     print(f"trace_id={tid}")
     print(f"decision={decision}")
+    if snapshot_id:
+        print(f"snapshot_id={snapshot_id}")
     return 0
 
 def main()->int:
@@ -271,6 +295,7 @@ def main()->int:
     g.add_argument("--method",default="")
     g.add_argument("--evidence",default="")
     g.add_argument("--notes",default="")
+    g.add_argument("--no-snapshot",action="store_true")
     g.set_defaults(func=record_gate)
 
     args=ap.parse_args()
