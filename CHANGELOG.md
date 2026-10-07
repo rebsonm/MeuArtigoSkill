@@ -4,6 +4,33 @@ All notable changes to Meu Artigo are recorded here.
 
 The project follows semantic versioning while in beta. Breaking changes may still occur before 1.0.0, but they must be documented.
 
+## 0.6.0-beta.1 — 2026-10-07
+
+### Added
+
+- Journal-aware construction as a core intake directive.
+- Early request for official author guidelines and journal template/layout when a target journal already exists.
+- Canonical `JOURNAL_PROFILE.json` with separate formal editorial contract and scientific/editorial profile.
+- `JOURNAL_NEUTRAL`, `JOURNAL_AWARE_PENDING_PROFILE`, and `JOURNAL_AWARE` construction modes.
+- Target journal and editorial mode in the project cockpit without adding a new workbook tab.
+- Material journal changes tracked through existing DEC_ID/TRACE mechanisms.
+- Adversarial/contestability audit for material claims inside GATE-0006.
+- Claims-ledger fields for counter-evidence, alternative explanations, boundary conditions, single-source dependency, robustness status, gate link, and human validation.
+- Robustness state exported in the transparency report and W3C PROV layer.
+- Validation rules that block frozen/final claims with unresolved robustness status.
+- Submission-gate validation against verified journal rules when a target journal is defined.
+
+### Scientific guardrails
+
+- Journal rules may shape presentation and manuscript architecture but never scientific findings, evidence strength, contradictory evidence, or methodological facts.
+- Journal fit must not be used to suppress disconfirming evidence.
+- A supporting citation alone is not sufficient for GATE-0006 approval.
+- Claims marked QUALIFIED must carry their qualification into the manuscript.
+
+### Notes
+
+No new management ID or workbook tab was introduced. Journal awareness reuses the existing project, journal dialogue, submission, decision, traceability, and gate structures.
+
 ## 0.5.0-beta.1 — 2026-10-07
 
 ### Added
