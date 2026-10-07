@@ -4,10 +4,11 @@
 
 Avaliar se a Skill funciona para pessoas que **não participaram de sua criação**, em diferentes IAs, sem depender de explicações prévias do autor.
 
-O teste deve medir duas coisas separadamente:
+O teste deve medir três coisas separadamente:
 
-1. qualidade da **metodologia**;
-2. qualidade da **implementação em cada plataforma**.
+1. qualidade da **metodologia científica**;
+2. qualidade da **gestão C.A.D.A. e visibilidade do passo a passo**;
+3. qualidade da **implementação em cada plataforma**.
 
 ## Regra principal
 
@@ -61,7 +62,9 @@ Observar se a Skill:
 - cria `CONTINUIDADE.md`;
 - cria protocolo e matriz de acompanhamento;
 - diferencia método de ferramenta;
-- evita chamar qualquer busca estruturada de revisão sistemática.
+- evita chamar qualquer busca estruturada de revisão sistemática;
+- cria `11_CADA_Control` e um painel C.A.D.A.;
+- mostra claramente a etapa atual e a próxima ação.
 
 ## Cenário B — busca bibliográfica
 
@@ -119,6 +122,23 @@ Comparar:
 
 Não comparar apenas a qualidade textual do manuscrito.
 
+## Cenário E — gestão C.A.D.A. e gerenciador externo
+
+Quando a plataforma oferecer ClickUp, Jira/Atlassian, Trello ou equivalente, testar também a camada de gestão.
+
+Observar se:
+
+- a Skill escolhe ou reutiliza **um** gerenciador principal, sem duplicar o projeto em vários;
+- cada tarefa externa mostra o `CADA_ID`;
+- as tarefas são criadas em nível útil de gestão, sem gerar um card para cada referência bibliográfica;
+- responsável, próxima ação, prazo, status e bloqueio ficam compreensíveis;
+- `11_CADA_Control` permanece como controle canônico;
+- `12_PM_Sync` registra o vínculo com a tarefa externa;
+- marcar um card como concluído não altera sozinho uma decisão científica;
+- ao perguntar **“onde estamos?”**, a IA informa etapa, concluídos, pendências, bloqueios, prazo e próxima ação.
+
+O teste também pode ser feito sem gerenciador externo. Nesse caso, avaliar se o C.A.D.A. funciona integralmente apenas no workspace.
+
 ## Formulário de avaliação
 
 Escala de 1 a 5:
@@ -129,6 +149,8 @@ Escala de 1 a 5:
 | Autonomia | A IA avançou sem pedir confirmações desnecessárias? |
 | Direcionamento | A IA realmente conduziu a pesquisa? |
 | Organização | O projeto ficou organizado e compreensível? |
+| Passo a passo | Você conseguia saber em que etapa estava e o que vinha depois? |
+| C.A.D.A. | Responsável, prazo, status, bloqueios e evidências de conclusão ficaram claros? |
 | Rastreabilidade | Você consegue descobrir de onde vieram decisões e contagens? |
 | Continuidade | Outro chat conseguiu retomar o trabalho? |
 | Rigor | A IA evitou inventar resultados, fontes e métodos? |
@@ -167,6 +189,10 @@ Integrações ausentes:
 Workspace criado:
 CONTINUIDADE.md criado:
 Matriz criada:
+CADA_Control criado:
+Gerenciador externo:
+Container externo:
+PM_Sync criado:
 Auditoria de novidade iniciada:
 Método proposto:
 Busca executada:
@@ -190,6 +216,8 @@ Marcar como falha crítica se ocorrer qualquer um:
 - chamar o método de sistemático sem base;
 - sobrescrever histórico de busca executada;
 - não preservar estado suficiente para retomada;
+- perder ou duplicar CADA_IDs;
+- tratar o gerenciador externo como fonte de verdade científica;
 - produzir manuscrito sem trilha de evidência.
 
 ## Critério de sucesso da versão
