@@ -108,7 +108,8 @@ O modo padrão é `MATRIX_ONLY`: a própria matriz-mestra gerencia o projeto por
 - `16_INTEROPERABILIDADE`
 - `17_DECISOES`
 - `18_VALIDACOES`
-- `19_SNAPSHOTS` — visão resumida do andamento.
+- `19_SNAPSHOTS`
+- `20_MAPA_CORPUS` — visão resumida do andamento.
 
 Quem já usa uma ferramenta de gestão pode ativar `MATRIX_PLUS_EXTERNAL`.
 
@@ -129,7 +130,7 @@ O vínculo entre cada item C.A.D.A. e a tarefa externa fica registrado em `12_PM
 
 ## Template oficial da matriz C.A.D.A.
 
-A planilha que gerencia o projeto tem agora um **template canônico de 20 abas**, com dashboard, C.A.D.A., linha do tempo, protocolo, buscas, screening, full text, matriz de evidências, síntese, claims, uso de IA, submissão e sincronização opcional.
+A planilha que gerencia o projeto tem agora um **template canônico de 21 abas**, com dashboard, C.A.D.A., linha do tempo, protocolo, buscas, screening, full text, matriz de evidências, síntese, claims, uso de IA, submissão e sincronização opcional.
 
 O modo padrão é `MATRIX_ONLY`: a pessoa consegue conduzir todo o projeto sem conhecer software de gestão.
 
@@ -158,6 +159,16 @@ O pesquisador não precisa conhecer esses padrões para usar a Skill. Eles funci
 Cada export recebe um `EXPORT-####` e é registrado em `16_INTEROPERABILIDADE`.
 
 Veja [docs/INTEROPERABILIDADE.md](./docs/INTEROPERABILIDADE.md).
+
+## Mapa do Corpus e consulta grounded
+
+Depois que existe um corpus retido real, o Meu Artigo pode gerar uma visão exploratória da sua estrutura em `20_MAPA_CORPUS`.
+
+O mapa usa somente metadados disponíveis e não inventa periódicos, keywords, citações, clusters ou cobertura de OpenAlex.
+
+O **Grounded Corpus Mode** permite consultar analiticamente apenas o full text validado, com Record_ID, Evidence_ID e locator quando disponíveis. Se o corpus não sustenta a resposta, a Skill deve dizer isso em vez de completar com memória do modelo.
+
+Veja [docs/MAPA-CORPUS.md](./docs/MAPA-CORPUS.md).
 
 ## Cadeia de custódia científica
 
@@ -395,6 +406,7 @@ MeuArtigoSkill/
 │   ├── MATRIZ-CADA.md
 │   ├── RASTREABILIDADE.md
 │   ├── GOVERNANCA-CIENTIFICA.md
+│   ├── MAPA-CORPUS.md
 │   ├── INTEROPERABILIDADE.md
 │   ├── CHATGPT.md
 │   ├── CLAUDE.md
