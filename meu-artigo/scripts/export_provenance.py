@@ -37,6 +37,9 @@ SCREEN_FILE = f"{MGMT}/03_Screening.csv"
 EVIDENCE_FILE = f"{MGMT}/05_Evidence_Matrix.csv"
 CLAIMS_FILE = f"{MGMT}/09_Claims_Ledger.csv"
 EXPORT_LOG = f"{MGMT}/16_Interoperabilidade.csv"
+DECISION_FILE = f"{MGMT}/17_Decision_Log.csv"
+GATE_FILE = f"{MGMT}/18_Human_Validation_Gates.csv"
+SNAPSHOT_FILE = f"{MGMT}/19_Snapshots.csv"
 
 EXPORT_HEADERS = [
     "Export_ID","Timestamp","Standards","Package_path_or_URL","Package_SHA256",
@@ -161,6 +164,9 @@ def build_prov(root: Path) -> tuple[dict, dict]:
     evidence_rows = read_csv(root, EVIDENCE_FILE)
     claim_rows = read_csv(root, CLAIMS_FILE)
     cada_rows = read_csv(root, CADA_FILE)
+    decision_rows = read_csv(root, DECISION_FILE)
+    gate_rows = read_csv(root, GATE_FILE)
+    snapshot_rows = read_csv(root, SNAPSHOT_FILE)
 
     graph: dict[str, dict] = {}
 
@@ -259,6 +265,80 @@ def build_prov(root: Path) -> tuple[dict, dict]:
         }
         if evid:
             node["prov:wasDerivedFrom"] = [{"@id": urn("evidence", e)} for e in evid]
+        add(node)
+
+    # Material scientific decisions
+    for r in decision_rows:
+        did=(r.get("DEC_ID") or "").strip()
+        if not did:
+            continue
+        node={
+            "@id":urn("decision",did),
+            "@type":"prov:Entity",
+            "rdfs:label":r.get("Decision") or did,
+            "meuartigo:decisionId":did,
+            "meuartigo:decisionType":r.get("Decision_type") or "",
+            "meuartigo:decisionQuestion":r.get("Decision_question") or "",
+            "meuartigo:rationale":r.get("Rationale") or "",
+            "meuartigo:status":r.get("Status") or "",
+        }
+        evid=refs(r.get("Evidence_IDs") or "")
+        if evid:
+            node["prov:wasDerivedFrom"]=[{"@id":urn("evidence",e)} for e in evid]
+        tid=(r.get("Trace_ID") or "").strip()
+        if tid:
+            node["prov:wasGeneratedBy"]={"@id":urn("trace",tid)}
+        add(node)
+
+    # Human validation gates
+    for r in gate_rows:
+        gid=(r.get("GATE_ID") or "").strip()
+        if not gid:
+            continue
+        act={
+            "@id":urn("gate",gid),
+            "@type":"prov:Activity",
+            "rdfs:label":r.get("Name") or gid,
+            "meuartigo:gateId":gid,
+            "meuartigo:gateType":r.get("Gate_type") or "",
+            "meuartigo:decision":r.get("Decision") or "",
+            "meuartigo:status":r.get("Status") or "",
+        }
+        if r.get("Validation_date"):
+            act["prov:startedAtTime"]=r["Validation_date"]
+        validator=(r.get("Validated_by") or "").strip()
+        if validator:
+            aid=urn("agent",f"validator-{validator}")
+            act["prov:wasAssociatedWith"]={"@id":aid}
+            add({"@id":aid,"@type":"prov:Agent","rdfs:label":validator})
+        used=[]
+        for did in refs(r.get("DEC_IDs") or ""):
+            used.append({"@id":urn("decision",did)})
+        for eid in refs(r.get("Evidence_IDs") or ""):
+            used.append({"@id":urn("evidence",eid)})
+        if used:
+            act["prov:used"]=used
+        add(act)
+
+    # Frozen project snapshots
+    for r in snapshot_rows:
+        sid=(r.get("SNAP_ID") or "").strip()
+        if not sid:
+            continue
+        node={
+            "@id":urn("snapshot",sid),
+            "@type":"prov:Entity",
+            "rdfs:label":r.get("Milestone") or sid,
+            "meuartigo:snapshotId":sid,
+            "meuartigo:manifestSHA256":r.get("Manifest_SHA256") or "",
+            "meuartigo:validationStatus":r.get("Validation_status") or "",
+        }
+        gid=(r.get("Gate_ID") or "").strip()
+        if gid:
+            node["prov:wasGeneratedBy"]={"@id":urn("gate",gid)}
+        prev=(r.get("Previous_SNAP_ID") or "").strip()
+        if prev:
+            node["prov:wasDerivedFrom"]={"@id":urn("snapshot",prev)}
         add(node)
 
     # Trace activities + agents + links
