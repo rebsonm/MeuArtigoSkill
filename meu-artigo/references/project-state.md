@@ -10,7 +10,17 @@ When a persistent cloud/file workspace is available, use the canonical schema in
 
 The canonical continuity artifact is `CONTINUIDADE.md`. A resumed agent must read it before taking substantive action.
 
-The canonical tracking artifact is the master matrix, preferably a native structured spreadsheet/table in the connected workspace, with tabs/sections for project metadata, protocol, search log, screening, full text, evidence, synthesis, claims, and submission.
+The canonical tracking artifact is the master matrix, preferably a native structured spreadsheet/table in the connected workspace, with tabs/sections for project metadata, protocol, search log, screening, full text, evidence, synthesis, claims, submission, C.A.D.A. control, and optional project-manager synchronization.
+
+## C.A.D.A. operational state
+
+The scientific state and the operational state must coexist.
+
+Scientific tables preserve evidence and methodological decisions.
+
+Operational work is governed through stable `CADA_ID` values in `11_CADA_Control`. If a project manager is connected, `12_PM_Sync` maps each mirrored external item back to its canonical CADA_ID.
+
+Never treat an external card/ticket status as sufficient evidence that a scientific action occurred.
 
 ## Status vocabulary
 
@@ -48,7 +58,9 @@ When resuming:
 5. verify the last completed stage;
 6. do not reclassify decided records without an explicit audit reason;
 7. continue from the documented `Next valid action`;
-8. update continuity before ending.
+8. inspect active C.A.D.A. items and the next valid action;
+9. reconcile the connected work-management mirror if present;
+10. update continuity before ending.
 
 ## Required workspace details
 
