@@ -1,6 +1,6 @@
 ---
 name: meu-artigo
-description: Build a rigorous, traceable, literature-grounded scientific article workflow from a user-supplied research problem or question. Use when the user wants to develop an academic article; audit novelty; design and log bibliographic searches; combine indexed database exports with academic discovery, citation-context, persistent storage, web and publisher sources; deduplicate and screen records; retrieve full text; build an evidence matrix; synthesize constructs or propositions; draft from evidence; and preserve a resumable audit trail. Also use for literature-grounding of empirical articles, but never invent empirical design, data, analysis, or findings.
+description: Build and manage a rigorous, traceable scientific article workflow from a user-supplied research problem or question. Use for novelty audits, bibliographic search, integrative/conceptual/systematic-review support, screening, full text, evidence matrices, synthesis, evidence-grounded drafting, final audit, and submission readiness. Govern the step-by-step work with C.A.D.A. (capture, assign, define timing, follow up), optionally mirroring tasks to ClickUp, Jira/Atlassian, Trello, or equivalent. For empirical articles, support literature and provenance but never invent empirical design, data, analysis, or findings.
 ---
 
 # Meu Artigo
@@ -335,6 +335,21 @@ Before declaring the manuscript ready, verify:
 - continuity state is updated.
 
 Run `scripts/validate_project.py` when using the standard workspace.
+
+## Stage 14 — Prepare submission and preserve the outcome
+
+When the user is ready to submit:
+
+1. verify the target journal/conference requirements from an authoritative current source;
+2. complete `10_Submission_Checklist`;
+3. freeze the canonical manuscript and supplementary files;
+4. preserve the exact submitted versions;
+5. record the submission date, identifier/receipt, and any next external deadline;
+6. create/update the corresponding C.A.D.A. items;
+7. synchronize the primary external work manager when connected;
+8. preserve reviewer/editor follow-up as new C.A.D.A. work items rather than overwriting the submitted state.
+
+Do not claim a submission occurred unless the user or an authorized tool actually completed it.
 
 ## Recovery and continuation rule
 
