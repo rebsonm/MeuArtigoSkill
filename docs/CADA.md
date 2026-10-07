@@ -95,6 +95,24 @@ CADA-0030 — Etapa 07: Screening
 
 Os registros bibliográficos individuais continuam nas tabelas de screening/evidência.
 
+## Dois modos de gestão
+
+O Meu Artigo funciona mesmo para quem nunca usou uma ferramenta formal de gestão de tarefas.
+
+### Modo 1 — Planilha C.A.D.A. (`MATRIX_ONLY`)
+
+É o modo universal e padrão.
+
+A própria matriz-mestra funciona como gerenciador do projeto. O pesquisador acompanha etapa, responsável, próxima ação, prazo, status, bloqueios e evidências diretamente na planilha.
+
+A aba `15_CADA_Dashboard` oferece uma visão resumida para quem prefere não trabalhar com filtros e tabelas detalhadas.
+
+### Modo 2 — Planilha + gerenciador externo (`MATRIX_PLUS_EXTERNAL`)
+
+A mesma matriz continua sendo canônica, mas os itens podem ser espelhados em ClickUp, Jira ou Trello.
+
+Isso é uma conveniência de gestão, não uma exigência.
+
 ## Onde fica o controle
 
 A matriz-mestra contém:
@@ -122,6 +140,10 @@ Campos incluem:
 
 ### `12_PM_Sync`
 
+É opcional. Pode permanecer vazio quando o projeto usa apenas a planilha.
+
+
+
 Registra a correspondência entre o item C.A.D.A. e um card/ticket/tarefa externa.
 
 Exemplo:
@@ -134,6 +156,24 @@ Canonical status: IN_PROGRESS
 External status: In Progress
 Sync status: OK
 ```
+
+### `15_CADA_Dashboard`
+
+É a visão de gestão da planilha.
+
+Pode mostrar:
+
+- etapa científica atual;
+- quantidade de itens ativos;
+- itens bloqueados;
+- itens vencidos;
+- próximos prazos;
+- taxa de conclusão;
+- próxima ação;
+- responsável;
+- lacunas de rastreabilidade;
+- usos substantivos de IA ainda sem revisão;
+- saúde da sincronização externa, quando existir.
 
 ## Painel em CONTINUIDADE.md
 
@@ -167,6 +207,30 @@ Conflicts:
 ```
 
 Assim, uma conversa nova pode entender rapidamente onde o trabalho parou.
+
+## Relação com rastreabilidade
+
+C.A.D.A. gerencia o trabalho. A rastreabilidade registra como o trabalho científico aconteceu.
+
+Por isso, além de `11_CADA_Control`, o projeto mantém:
+
+- `13_Traceability_Log`;
+- `14_AI_Use_Log`;
+- `RASTREABILIDADE.md`.
+
+Um item C.A.D.A. pode gerar vários eventos de rastreabilidade.
+
+Exemplo:
+
+```text
+CADA-0042 — validar export WoS
+  TRACE-0104 — export recebido
+  TRACE-0105 — validação executada
+  TRACE-0106 — erro de filtro detectado
+  TRACE-0107 — novo export validado
+```
+
+Veja [RASTREABILIDADE.md](./RASTREABILIDADE.md).
 
 ## Integração com ClickUp, Jira ou Trello
 
