@@ -660,3 +660,51 @@ Leave unsupported metadata sections empty until real data exist.
 Reference generator: `scripts/build_corpus_map.py`.
 
 Corpus mapping is exploratory unless the scientific design explicitly adopts bibliometric methods.
+
+
+## Journal-aware fields
+
+Do not add a new journal tab. Reuse the existing architecture.
+
+In `03_PROJETO`, expose:
+
+- Revista-alvo;
+- Modo de construção editorial;
+- Perfil da revista.
+
+In `00_PAINEL`, expose at least Revista-alvo and Modo editorial.
+
+Canonical modes:
+
+- JOURNAL_NEUTRAL
+- JOURNAL_AWARE_PENDING_PROFILE
+- JOURNAL_AWARE
+
+Canonical profile statuses:
+
+- TO_DEFINE
+- PENDING_RULES
+- LOADED
+- VERIFIED
+- SUPERSEDED
+
+Formal journal rules live in `06_Submissao/Regras_da_Revista/JOURNAL_PROFILE.json` and flow into `13_SUBMISSAO`.
+
+## Robust claims schema
+
+`11_CLAIMS` should expose:
+
+```text
+Claim_ID | Seção do manuscrito | Claim / afirmação | Tipo | Evidence_IDs | Counter_Evidence_IDs | Locators | Explicações alternativas | Condições de contorno | Dependência de fonte única | Força | Robustez | Notas de robustez | Trace_IDs | Gate_ID | Validação humana | Status de redação | Observações
+```
+
+Robustness values:
+
+- NOT_AUDITED
+- ROBUST
+- QUALIFIED
+- REVISE
+- REJECT
+- NOT_APPLICABLE
+
+A claim marked QUALIFIED must carry the qualification into the manuscript.
