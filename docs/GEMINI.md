@@ -1,16 +1,14 @@
 # Adapter — Gemini
 
+> Se você nunca usou GitHub, comece por [COMECE-AQUI.md](./COMECE-AQUI.md).
+
 Este documento descreve como usar **Meu Artigo** nos apps Gemini. A metodologia central continua em `meu-artigo/SKILL.md`.
 
-## Compatibilidade verificada
+## Antes de tentar instalar
 
-Os apps Gemini aceitam Skills enviadas como:
+Segundo a documentação oficial atual do Google, o gerenciamento completo de Skills fica no **web app do Gemini**. A disponibilidade depende dos requisitos atuais da conta; a documentação informa, entre outros requisitos, conta Google pessoal elegível e assinatura Google AI compatível.
 
-- um arquivo `SKILL.md`;
-- uma pasta contendo `SKILL.md` na raiz;
-- um arquivo `.zip` contendo `SKILL.md` na raiz.
-
-O Google também informa que Skills criadas em outras plataformas podem ser importadas por upload do `SKILL.md`.
+Se a opção **Skills / Habilidades** não aparecer, confira a disponibilidade da sua conta antes de concluir que houve erro no arquivo.
 
 Fontes oficiais:
 
@@ -19,54 +17,59 @@ Fontes oficiais:
 
 Informações de plataforma podem mudar; estas instruções foram revisadas em 2026-10-06.
 
-## Como preparar o upload
+## 1. Baixe pelo GitHub
 
-Não envie o ZIP do repositório inteiro se o `SKILL.md` ficar dentro de uma subpasta.
+Na página do repositório:
 
-Use a pasta:
+1. clique em **Code**;
+2. clique em **Download ZIP**;
+3. descompacte;
+4. localize a pasta `meu-artigo`.
 
-`meu-artigo/`
+## 2. Instale no Gemini
 
-ou crie um ZIP cujo nível raiz seja:
+No web app do Gemini:
 
-```text
-SKILL.md
-references/
-scripts/
-agents/
-```
+1. abra a página **Skills / Habilidades**;
+2. escolha **Upload / Fazer upload**;
+3. selecione a pasta `meu-artigo`, o arquivo `SKILL.md` ou um ZIP preparado;
+4. revise a Skill;
+5. clique em **Criar**.
 
-O Gemini precisa encontrar `SKILL.md` na raiz da Skill enviada.
+O Gemini aceita uma pasta ou ZIP quando `SKILL.md` está na pasta principal da Skill.
 
-## Instalação
+Portanto, **não envie o ZIP completo do repositório** se nele `SKILL.md` estiver dentro de `meu-artigo/`. Prefira selecionar diretamente a pasta `meu-artigo`.
 
-Na interface de Skills do Gemini:
-
-1. escolha Upload;
-2. selecione `SKILL.md`, a pasta `meu-artigo/` ou o ZIP preparado;
-3. revise a Skill;
-4. crie/salve;
-5. inicie um chat com um problema de pesquisa inédito.
-
-Prompt inicial sugerido:
+## 3. Comece em uma conversa nova
 
 > Use a Skill Meu Artigo. Meu problema de pesquisa é: [problema]. Quero construir o artigo com rastreabilidade e continuidade.
+
+## Compatibilidade verificada
+
+O Google informa que Skills podem ser carregadas por:
+
+- `SKILL.md`;
+- pasta com `SKILL.md` na raiz;
+- ZIP com `SKILL.md` na raiz.
+
+Também informa que Skills criadas em outras plataformas podem ser importadas.
 
 ## Limitações importantes
 
 Segundo a documentação atual do Gemini:
 
 - scripts que exigem acesso à internet não são suportados dentro de Skills;
-- ferramentas disponíveis podem variar em relação a Gems e outros modos do Gemini;
-- o acesso direto a arquivos do GitHub como fonte da Skill não é a rota principal de importação.
+- ferramentas disponíveis podem variar em relação a Gems e outros modos;
+- arquivos de referência precisam acompanhar a Skill no upload;
+- importação direta do repositório GitHub não substitui o upload da Skill.
 
-Os scripts deste repositório são locais e determinísticos. Ainda assim, a execução efetiva depende da superfície e das permissões do Gemini.
+Os scripts deste repositório são locais e determinísticos. Ainda assim, a execução depende da superfície e das permissões do Gemini.
 
 ## Integrações
 
-Não tente reproduzir literalmente o manifesto `agents/openai.yaml`.
+Não tente reproduzir literalmente `agents/openai.yaml`.
 
-No Gemini, a Skill deve identificar os recursos disponíveis e mapear por papel:
+Mapeie os recursos disponíveis para:
 
 - armazenamento persistente;
 - descoberta acadêmica;
@@ -75,11 +78,9 @@ No Gemini, a Skill deve identificar os recursos disponíveis e mapear por papel:
 - bases indexadas;
 - execução local quando disponível.
 
-Se Google Drive/Workspace estiver conectado, ele é um bom candidato para reproduzir o workspace canônico, mas a disponibilidade depende da conta e da superfície utilizada.
+Se Google Drive/Workspace estiver conectado, ele é um bom candidato para o workspace canônico, conforme a conta e a superfície utilizadas.
 
 ## Scopus e Web of Science
-
-A lógica é a mesma das demais plataformas:
 
 1. gerar query e filtros;
 2. executar por acesso institucional/navegador quando necessário;
@@ -92,16 +93,14 @@ Nunca presumir acesso direto.
 
 ## Teste recomendado
 
-O Gemini é especialmente útil no teste de portabilidade porque o `SKILL.md` pode ser importado de outra plataforma.
-
 Avalie:
 
-- a Skill reconheceu a estrutura e referências?
-- ignorou corretamente o adapter OpenAI?
-- conseguiu iniciar o workflow com apenas um problema de pesquisa?
-- conseguiu criar uma persistência equivalente?
-- respeitou limitações de ferramentas sem inventar resultados?
-- continuou corretamente após nova conversa usando os artefatos persistidos?
+- reconhecimento da estrutura e referências;
+- independência do adapter OpenAI;
+- início do workflow apenas com problema de pesquisa;
+- persistência;
+- transparência das limitações;
+- retomada após nova conversa.
 
 ## Regra
 
