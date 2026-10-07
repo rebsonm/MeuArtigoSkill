@@ -41,11 +41,12 @@ Before large-scale research:
 4. explain in one short sentence why it is useful;
 5. never claim it was installed or connected until verified;
 6. continue any independent work while the user authorizes connections;
-7. inspect whether a work-management provider is connected;
-8. if exactly one is connected, use it as the primary operational mirror;
-9. if several are connected, prefer an existing article/project container; otherwise select the provider that best fits the user's existing work context and persist the choice;
-10. if none is connected, continue without blocking research and surface a connection option when project-management visibility would help;
-11. after any connection, resume the workflow without asking the user to repeat the research problem.
+7. initialize spreadsheet/matrix management as `MATRIX_ONLY` regardless of external-tool availability;
+8. inspect whether a work-management provider is connected;
+9. if the user already works with one or explicitly wants external task management, mirror the C.A.D.A. layer and switch to `MATRIX_PLUS_EXTERNAL`;
+10. if the user has no task-management experience or preference, keep `MATRIX_ONLY` and do not pressure them to install another tool;
+11. if several providers are connected, prefer an existing article/project container or use the selection rules in `work-management.md`;
+12. after any connection, resume the workflow without asking the user to repeat the research problem.
 
 Installation, OAuth, account linking, or other third-party authorization always requires the user's explicit platform action.
 
