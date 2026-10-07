@@ -18,6 +18,9 @@ REQUIRED=[
 "00_Gestao_e_Continuidade/15_CADA_Dashboard.csv",
 "00_Gestao_e_Continuidade/RASTREABILIDADE.md",
 "00_Gestao_e_Continuidade/16_Interoperabilidade.csv",
+"00_Gestao_e_Continuidade/17_Decision_Log.csv",
+"00_Gestao_e_Continuidade/18_Human_Validation_Gates.csv",
+"00_Gestao_e_Continuidade/19_Snapshots.csv",
 ]
 PASS1={"","INCLUDE","BORDERLINE","EXCLUDE"}
 PASS2={"","FULL TEXT — CORE","FULL TEXT — SUPPORT","EXCLUDE","FULL TEXT - CORE","FULL TEXT - SUPPORT"}
@@ -220,6 +223,49 @@ def main():
                 warnings.append(f"interoperability row {i}: nonstandard Export_ID {eid!r}")
             if (r.get("Validation_status") or "").upper().startswith("INVALID"):
                 warnings.append(f"interoperability row {i}: provenance package {eid} is INVALID")
+
+    decisions=root/"00_Gestao_e_Continuidade/17_Decision_Log.csv"
+    if decisions.exists():
+        seen=set()
+        for i,r in enumerate(rows(decisions),2):
+            did=(r.get("DEC_ID") or "").strip()
+            if not did: continue
+            if did in seen: errors.append(f"decision row {i}: duplicate DEC_ID {did}")
+            seen.add(did)
+            if not did.startswith("DEC-"): warnings.append(f"decision row {i}: nonstandard DEC_ID {did!r}")
+            status=(r.get("Status") or "").upper()
+            if status in {"APPROVED","FROZEN"} and not (r.get("Rationale") or "").strip():
+                errors.append(f"decision row {i}: {did} is {status} without rationale")
+
+    gates=root/"00_Gestao_e_Continuidade/18_Human_Validation_Gates.csv"
+    if gates.exists():
+        seen=set()
+        for i,r in enumerate(rows(gates),2):
+            gid=(r.get("GATE_ID") or "").strip()
+            if not gid: continue
+            if gid in seen: errors.append(f"gate row {i}: duplicate GATE_ID {gid}")
+            seen.add(gid)
+            if not gid.startswith("GATE-"): warnings.append(f"gate row {i}: nonstandard GATE_ID {gid!r}")
+            status=(r.get("Status") or "").upper()
+            decision=(r.get("Decision") or "").upper()
+            if status=="COMPLETED" and decision not in {"APPROVED","APPROVED_WITH_CHANGES","REJECTED"}:
+                errors.append(f"gate row {i}: completed {gid} lacks valid decision")
+            if status=="COMPLETED" and not (r.get("Validated_by") or "").strip():
+                errors.append(f"gate row {i}: completed {gid} lacks validator")
+            if status=="COMPLETED" and not (r.get("Validation_method") or "").strip():
+                errors.append(f"gate row {i}: completed {gid} lacks validation method")
+
+    snaps=root/"00_Gestao_e_Continuidade/19_Snapshots.csv"
+    if snaps.exists():
+        seen=set()
+        for i,r in enumerate(rows(snaps),2):
+            sid=(r.get("SNAP_ID") or "").strip()
+            if not sid: continue
+            if sid in seen: errors.append(f"snapshot row {i}: duplicate SNAP_ID {sid}")
+            seen.add(sid)
+            if not sid.startswith("SNAP-"): warnings.append(f"snapshot row {i}: nonstandard SNAP_ID {sid!r}")
+            if (r.get("Validation_status") or "").upper()=="VALID" and not (r.get("Manifest_SHA256") or "").strip():
+                warnings.append(f"snapshot row {i}: VALID {sid} lacks manifest SHA-256")
 
     matrix_files=list((root/"00_Gestao_e_Continuidade").glob("MATRIZ_MESTRA_*.xlsx"))
     if not matrix_files:
