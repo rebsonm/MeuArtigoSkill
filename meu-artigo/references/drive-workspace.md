@@ -134,7 +134,7 @@ Key/value project metadata:
 Field | Value | Status | Updated | Notes
 ```
 
-Include: research problem, current question, objective, contribution, article type, review type if applicable, target journal, languages, years, current stage, project folder URL.
+Include: research problem, current question, objective, contribution, article type, review type if applicable, target journal, languages, years, current scientific stage, C.A.D.A. governance status, primary work-management provider, external project/container URL, and canonical project folder URL.
 
 ### `01_Protocolo`
 
