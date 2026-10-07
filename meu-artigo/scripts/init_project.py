@@ -46,6 +46,9 @@ TABLES = {
 "00_Gestao_e_Continuidade/10_Submission_Checklist.csv":["Item","Requirement","Source_of_requirement","Status","Evidence_or_file","Notes"],
 "00_Gestao_e_Continuidade/11_CADA_Control.csv":["CADA_ID","Item_type","Title","Description","Scientific_stage","Captured_at","Source_or_trigger","Assigned_to","Execution_mode","Priority","Dependency_IDs","Next_action","Deadline","Deadline_type","Status","Evidence_of_progress","Completion_evidence","Related_artifact","Related_research_IDs","Blocker","Last_updated","External_manager","External_item_ID","Notes"],
 "00_Gestao_e_Continuidade/12_PM_Sync.csv":["CADA_ID","Provider","Workspace_or_site","Container_ID","External_item_ID","External_URL","External_status","External_assignee","External_due","Canonical_status","Canonical_assignee","Canonical_deadline","Last_pushed_at","Last_pulled_at","Sync_status","Conflict","Notes"],
+"00_Gestao_e_Continuidade/13_Traceability_Log.csv":["Trace_ID","Timestamp","Scientific_stage","CADA_ID","Actor","AI_platform_or_tool","Model_or_version","Action_type","Action_summary","Input_or_source","Source_or_artifact_IDs","Decision_or_output","Rationale","Artifact_before","Artifact_after","Verification_method","Human_validation","Related_Search_IDs","Related_Record_IDs","Related_Evidence_IDs","Related_Claim_IDs","Prompt_or_instruction_summary","Reproducibility_information","Materiality","Status","Notes"],
+"00_Gestao_e_Continuidade/14_AI_Use_Log.csv":["AI_Use_ID","Date","Scientific_stage","CADA_ID","Trace_ID","Platform_or_tool","Model_or_version","Purpose","Input_category","Output_category","Materiality","Human_review_method","Human_decision","Accepted_modified_or_rejected","Related_artifacts","Disclosure_required","Disclosure_text_or_note","Notes"],
+"00_Gestao_e_Continuidade/15_CADA_Dashboard.csv":["Metric","Value","Last_updated","Notes"],
 }
 
 def slug(v:str)->str:
@@ -129,12 +132,106 @@ def main()->int:
             "created":date.today().isoformat(),
             "status":"INITIALIZED",
             "cada_governance":True,
+            "work_management_mode":"MATRIX_PLUS_EXTERNAL" if pm else "MATRIX_ONLY",
             "work_management_provider":pm or None,
             "work_management_role":"OPTIONAL_OPERATIONAL_MIRROR",
+            "traceability_enabled":True,
         },ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
     for rel,h in TABLES.items():write_csv(root/rel,h)
     seed_cada(root/"00_Gestao_e_Continuidade/11_CADA_Control.csv",a.name,pm)
+
+    trace=root/"00_Gestao_e_Continuidade/13_Traceability_Log.csv"
+    with trace.open("r",encoding="utf-8-sig",newline="") as f:
+        trace_rows=list(csv.DictReader(f))
+    if not trace_rows:
+        with trace.open("w",newline="",encoding="utf-8-sig") as f:
+            w=csv.DictWriter(f,fieldnames=TABLES["00_Gestao_e_Continuidade/13_Traceability_Log.csv"])
+            w.writeheader()
+            w.writerow({
+                "Trace_ID":"TRACE-0001","Timestamp":date.today().isoformat(),"Scientific_stage":"00",
+                "CADA_ID":"CADA-0001","Actor":"SCRIPT","AI_platform_or_tool":"init_project.py",
+                "Model_or_version":"","Action_type":"WORKSPACE_INITIALIZATION",
+                "Action_summary":"Initialized canonical workspace, C.A.D.A. matrix, traceability and management artifacts.",
+                "Input_or_source":"User project name/problem","Source_or_artifact_IDs":"",
+                "Decision_or_output":"Canonical project structure created.","Rationale":"Start persistent provenance before substantive research.",
+                "Artifact_before":"","Artifact_after":"00_Gestao_e_Continuidade/",
+                "Verification_method":"File/table creation","Human_validation":"PENDING",
+                "Related_Search_IDs":"","Related_Record_IDs":"","Related_Evidence_IDs":"","Related_Claim_IDs":"",
+                "Prompt_or_instruction_summary":"Initialize article research project.","Reproducibility_information":"Run init_project.py with project arguments.",
+                "Materiality":"ADMINISTRATIVE","Status":"COMPLETE","Notes":""
+            })
+
+    dash=root/"00_Gestao_e_Continuidade/15_CADA_Dashboard.csv"
+    with dash.open("r",encoding="utf-8-sig",newline="") as f:
+        dash_rows=list(csv.DictReader(f))
+    if not dash_rows:
+        today=date.today().isoformat()
+        metrics=[
+            ("Management_mode","MATRIX_PLUS_EXTERNAL" if pm else "MATRIX_ONLY","Spreadsheet is always canonical."),
+            ("Current_scientific_stage","01 — Novelty audit",""),
+            ("Current_stage_outcome","Nearest literature assessed and contribution/question refined.",""),
+            ("Total_active_items","2",""),
+            ("Ready_items","1",""),
+            ("In_progress_items","0",""),
+            ("Waiting_items","0",""),
+            ("Blocked_items","0",""),
+            ("Next_CADA_ID","CADA-0002",""),
+            ("Next_action","Run first novelty/terminology scan.",""),
+            ("Next_owner","AGENT",""),
+            ("Next_due","TO_DEFINE",""),
+            ("Traceability_gaps","0","Initial trace event created."),
+            ("Substantive_AI_uses_unreviewed","0",""),
+            ("External_PM_provider",pm or "NONE",""),
+            ("External_PM_sync_health","NOT_APPLICABLE" if not pm else "NOT_INITIALIZED",""),
+        ]
+        with dash.open("w",newline="",encoding="utf-8-sig") as f:
+            w=csv.DictWriter(f,fieldnames=TABLES["00_Gestao_e_Continuidade/15_CADA_Dashboard.csv"])
+            w.writeheader()
+            for metric,value,notes in metrics:
+                w.writerow({"Metric":metric,"Value":value,"Last_updated":today,"Notes":notes})
+
+    rast=root/"00_Gestao_e_Continuidade/RASTREABILIDADE.md"
+    if not rast.exists():
+        rast.write_text(f"""# RASTREABILIDADE — {a.name}
+
+Updated: {date.today().isoformat()}
+
+## Purpose
+
+This file explains how the article is being constructed. It complements CONTINUIDADE.md, which explains the current state and next action.
+
+## Project origin
+- Original research input: {a.problem or '[USER INPUT REQUIRED]'}
+- Article/review design: {a.article_type}
+
+## Management mode
+- C.A.D.A.: enabled
+- Spreadsheet/matrix: canonical
+- External work manager: {pm or 'none'}
+- Mode: {'MATRIX_PLUS_EXTERNAL' if pm else 'MATRIX_ONLY'}
+
+## Process provenance
+- TRACE-0001 — canonical workspace initialized before substantive research.
+
+## AI use
+- No substantive AI-use event has yet been recorded in 14_AI_Use_Log.
+
+## Method and search provenance
+- Not started.
+
+## Corpus and evidence provenance
+- Not started.
+
+## Synthesis and manuscript provenance
+- Not started.
+
+## Human validation checkpoints
+- Initial workspace creation: pending researcher review.
+
+## Provenance gaps
+- None known at initialization.
+""",encoding="utf-8")
 
     cont=root/"00_Gestao_e_Continuidade/CONTINUIDADE.md"
     if not cont.exists():
@@ -158,7 +255,10 @@ Updated: {date.today().isoformat()}
 - Academic web/publisher retrieval: UNKNOWN
 - Scopus access: UNKNOWN
 - Web of Science access: UNKNOWN
-- Work-management provider: {pm or 'NONE / TO DETECT'}
+- Work-management mode: {'MATRIX_PLUS_EXTERNAL' if pm else 'MATRIX_ONLY'}
+- Spreadsheet/matrix management: ACTIVE
+- Work-management provider: {pm or 'NONE / OPTIONAL'}
+- Traceability: ACTIVE
 
 ## 4. Canonical workspace links
 - Project root: local mirror
@@ -166,11 +266,17 @@ Updated: {date.today().isoformat()}
 - Protocol: 00_Gestao_e_Continuidade/PROTOCOLO.md
 - C.A.D.A. control: 00_Gestao_e_Continuidade/11_CADA_Control.csv
 - PM sync: 00_Gestao_e_Continuidade/12_PM_Sync.csv
+- Traceability log: 00_Gestao_e_Continuidade/13_Traceability_Log.csv
+- AI use log: 00_Gestao_e_Continuidade/14_AI_Use_Log.csv
+- C.A.D.A. dashboard: 00_Gestao_e_Continuidade/15_CADA_Dashboard.csv
+- Traceability summary: 00_Gestao_e_Continuidade/RASTREABILIDADE.md
 - Manuscript: not started
 
 ## 5. Frozen decisions
 - C.A.D.A. operational governance enabled.
-- External work manager is an operational mirror, never the scientific source of truth.
+- Spreadsheet/matrix management is the universal default.
+- External work manager is an optional operational mirror, never the scientific source of truth.
+- Scientific-process traceability is enabled from project initialization.
 
 ## 6. Search status
 - Not started.
