@@ -1,10 +1,10 @@
-# Canonical Google Drive workspace
+# Canonical persistent research workspace
 
 ## Purpose
 
-Treat Google Drive as the persistent project memory. The chat is never the source of truth. Every material research action must leave a durable artifact that another agent can inspect and continue.
+Treat the persistent project workspace as the project memory. Google Drive is the reference implementation, but an equivalent cloud/file system is acceptable. The chat is never the source of truth. Every material research action must leave a durable artifact that another agent can inspect and continue.
 
-When Google Drive is connected, create or resume this canonical structure before large searches. Do not create a parallel structure if a compatible project folder already exists.
+When persistent storage is connected, create or resume this canonical logical structure before large searches. Do not create a parallel structure if a compatible project folder already exists.
 
 ## Folder tree
 
@@ -112,7 +112,7 @@ Update this file after every material stage, after any invalid search/export, af
 
 ## Master tracking matrix
 
-Create one native Google Sheet named `MATRIZ_MESTRA_<short-title>`. Use the following tabs. Keep tabs even if some remain unused; mark them `NOT APPLICABLE` rather than deleting them when doing so improves continuity.
+Create one structured master matrix named `MATRIZ_MESTRA_<short-title>`. Prefer a native spreadsheet when the platform supports it. Use the following tabs. Keep tabs even if some remain unused; mark them `NOT APPLICABLE` rather than deleting them when doing so improves continuity.
 
 ### `00_Projeto`
 
@@ -222,7 +222,7 @@ Rules:
 
 ## Creation order on a new project
 
-When Drive is connected:
+When persistent storage is connected:
 
 1. create the project root;
 2. create the canonical folders;
