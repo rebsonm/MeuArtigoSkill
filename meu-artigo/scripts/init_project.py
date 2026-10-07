@@ -12,6 +12,7 @@ from pathlib import Path
 
 FOLDERS = [
     "00_Gestao_e_Continuidade",
+    "00_Gestao_e_Continuidade/Snapshots",
     "01_Auditoria_de_Novidade/Notas_de_Auditoria",
     "01_Auditoria_de_Novidade/Artigos_Semente",
     "02_Buscas_e_Exports/Scopus",
@@ -50,6 +51,9 @@ TABLES = {
 "00_Gestao_e_Continuidade/14_AI_Use_Log.csv":["AI_Use_ID","Date","Scientific_stage","CADA_ID","Trace_ID","Platform_or_tool","Model_or_version","Purpose","Input_category","Output_category","Materiality","Human_review_method","Human_decision","Accepted_modified_or_rejected","Related_artifacts","Disclosure_required","Disclosure_text_or_note","Notes"],
 "00_Gestao_e_Continuidade/15_CADA_Dashboard.csv":["Metric","Value","Last_updated","Notes"],
 "00_Gestao_e_Continuidade/16_Interoperabilidade.csv":["Export_ID","Timestamp","Standards","Package_path_or_URL","Package_SHA256","Validation_status","Trace_events","Prov_entities","Prov_activities","Prov_agents","RO_Crate_files","Warnings","Notes"],
+"00_Gestao_e_Continuidade/17_Decision_Log.csv":["DEC_ID","Timestamp","Scientific_stage","Decision_type","Decision_question","Decision","Alternatives_considered","Rationale","Evidence_IDs","Record_IDs","CADA_ID","Trace_ID","Gate_ID","Status","Decided_by","Impact","Affected_artifacts","Resulting_version","Supersedes_DEC_ID","Notes"],
+"00_Gestao_e_Continuidade/18_Human_Validation_Gates.csv":["GATE_ID","Gate_type","Scientific_stage","Name","Entry_condition","Items_to_validate","DEC_IDs","CADA_IDs","Evidence_IDs","Snapshot_before","Decision","Validated_by","Validation_date","Validation_method","Validation_evidence","Trace_ID","Snapshot_after","Status","Blocking_transition","Notes"],
+"00_Gestao_e_Continuidade/19_Snapshots.csv":["SNAP_ID","Timestamp","Milestone","Scientific_stage","Trigger","Gate_ID","DEC_IDs","CADA_IDs","Previous_SNAP_ID","Snapshot_path_or_URL","Manifest_path","Manifest_SHA256","Canonical_artifacts","Change_summary","Validation_status","EXPORT_ID","Notes"],
 }
 
 def slug(v:str)->str:
@@ -110,6 +114,26 @@ def seed_cada(path:Path, project_name:str, pm_provider:str):
         w=csv.DictWriter(f,fieldnames=TABLES["00_Gestao_e_Continuidade/11_CADA_Control.csv"])
         w.writeheader(); w.writerows(rows)
 
+
+def seed_gates(path:Path):
+    with path.open("r",encoding="utf-8-sig",newline="") as f:
+        existing=list(csv.DictReader(f))
+    if existing:
+        return
+    rows=[
+        ["GATE-0001","QUESTION_CONTRIBUTION","01","Pergunta e contribuição","Auditoria inicial de novidade concluída.","Pergunta, objetivo, contribuição e limites propostos.","","CADA-0002","","","PENDING","","","","","","","PENDING","Definição do desenho metodológico",""],
+        ["GATE-0002","METHOD_PROTOCOL","02-03","Método e protocolo","Desenho metodológico e protocolo v1 preparados.","Método, critérios, escopo, papéis das bases e regras de screening.","","CADA-0003","","","PENDING","","","","","","","PENDING","Busca em escala",""],
+        ["GATE-0003","SEARCH_STRATEGY","03-04","Estratégia de busca","Strings e filtros preparados e testados.","Blocos conceituais, strings literais, filtros e bases.","","","","","PENDING","","","","","","","PENDING","Execução das buscas canônicas",""],
+        ["GATE-0004","CORPUS_FREEZE","08-09","Congelamento do corpus","Screening/full text encerrados e contagens reconciliadas.","Corpus elegível, exclusões, duplicatas e contagens finais.","","","","","PENDING","","","","","","","PENDING","Extração/síntese final do corpus",""],
+        ["GATE-0005","SYNTHESIS","10","Síntese e produto teórico","Síntese entre fontes estabilizada.","Categorias, contradições, inferências e proposições/modelo.","","","","","PENDING","","","","","","","PENDING","Redação substantiva do manuscrito",""],
+        ["GATE-0006","CLAIMS_AUDIT","12-13","Claims e auditoria científica","Claims principais ligados às evidências e auditoria final executada.","Claims, Evidence_IDs, locators, limites e uso de IA.","","","","","PENDING","","","","","","","PENDING","Liberação da versão final",""],
+        ["GATE-0007","SUBMISSION_RELEASE","14","Liberação para submissão","Versão canônica, checklist e transparência prontos.","Manuscrito final, relatório de transparência, disclosures e arquivos de submissão.","","","","","PENDING","","","","","","","PENDING","Submissão externa",""],
+    ]
+    with path.open("w",newline="",encoding="utf-8-sig") as f:
+        w=csv.writer(f)
+        w.writerow(TABLES["00_Gestao_e_Continuidade/18_Human_Validation_Gates.csv"])
+        w.writerows(rows)
+
 def main()->int:
     ap=argparse.ArgumentParser()
     ap.add_argument("--path",default=".")
@@ -139,10 +163,14 @@ def main()->int:
             "traceability_enabled":True,
             "interoperable_provenance_enabled":True,
             "provenance_standards":["W3C PROV-O","RO-Crate 1.3","SHA-256"],
+            "scientific_decision_log_enabled":True,
+            "human_validation_gates_enabled":True,
+            "scientific_snapshots_enabled":True,
         },ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
     for rel,h in TABLES.items():write_csv(root/rel,h)
     seed_cada(root/"00_Gestao_e_Continuidade/11_CADA_Control.csv",a.name,pm)
+    seed_gates(root/"00_Gestao_e_Continuidade/18_Human_Validation_Gates.csv")
 
     trace=root/"00_Gestao_e_Continuidade/13_Traceability_Log.csv"
     with trace.open("r",encoding="utf-8-sig",newline="") as f:
@@ -187,6 +215,9 @@ def main()->int:
             ("Substantive_AI_uses_unreviewed","0",""),
             ("External_PM_provider",pm or "NONE",""),
             ("External_PM_sync_health","NOT_APPLICABLE" if not pm else "NOT_INITIALIZED",""),
+            ("Material_decisions","0",""),
+            ("Next_human_gate","GATE-0001","Question & contribution"),
+            ("Snapshots","0",""),
         ]
         with dash.open("w",newline="",encoding="utf-8-sig") as f:
             w=csv.DictWriter(f,fieldnames=TABLES["00_Gestao_e_Continuidade/15_CADA_Dashboard.csv"])
@@ -263,6 +294,9 @@ Updated: {date.today().isoformat()}
 - Work-management provider: {pm or 'NONE / OPTIONAL'}
 - Traceability: ACTIVE
 - Interoperable provenance: ACTIVE — W3C PROV-O / RO-Crate 1.3 / SHA-256
+- Scientific decision log: ACTIVE
+- Human validation gates: ACTIVE
+- Scientific snapshots: ACTIVE
 
 ## 4. Canonical workspace links
 - Project root: local mirror
@@ -275,6 +309,10 @@ Updated: {date.today().isoformat()}
 - C.A.D.A. dashboard: 00_Gestao_e_Continuidade/15_CADA_Dashboard.csv
 - Traceability summary: 00_Gestao_e_Continuidade/RASTREABILIDADE.md
 - Interoperability export log: 00_Gestao_e_Continuidade/16_Interoperabilidade.csv
+- Scientific decisions: 00_Gestao_e_Continuidade/17_Decision_Log.csv
+- Human validation gates: 00_Gestao_e_Continuidade/18_Human_Validation_Gates.csv
+- Scientific snapshots: 00_Gestao_e_Continuidade/19_Snapshots.csv
+- Snapshot directory: 00_Gestao_e_Continuidade/Snapshots/
 - Manuscript: not started
 
 ## 5. Frozen decisions
@@ -283,6 +321,9 @@ Updated: {date.today().isoformat()}
 - External work manager is an optional operational mirror, never the scientific source of truth.
 - Scientific-process traceability is enabled from project initialization.
 - W3C PROV / RO-Crate export is available for audit snapshots and submission packages.
+- Material scientific decisions receive DEC_ID values.
+- Seven default human validation gates govern critical scientific transitions without interrupting routine autonomy.
+- Frozen project states receive SNAP_ID values and SHA-256 manifests.
 
 ## 6. Search status
 - Not started.
@@ -346,6 +387,12 @@ Updated: {date.today().isoformat()}
 - Container: not initialized
 - Last sync: never
 - Conflicts: none
+
+## 17. Scientific governance
+- Material decisions: none yet
+- Next human validation gate: GATE-0001 — Question & contribution
+- Frozen snapshots: none yet
+- Gate policy: routine actions remain autonomous; approval is requested only when a required gate becomes READY
 """,encoding="utf-8")
 
     # Generate the official visual workbook when the reference spreadsheet
@@ -415,8 +462,36 @@ Updated: {date.today().isoformat()}
 [TO DEFINE]
 """,encoding="utf-8")
 
+    # Create the initial frozen snapshot after canonical initialization.
+    snapshot_status="NOT_CREATED"
+    snap_table=root/"00_Gestao_e_Continuidade/19_Snapshots.csv"
+    try:
+        with snap_table.open("r",encoding="utf-8-sig",newline="") as f:
+            existing_snaps=list(csv.DictReader(f))
+    except Exception:
+        existing_snaps=[]
+    if not existing_snaps:
+        snap_script=Path(__file__).with_name("create_snapshot.py")
+        if snap_script.exists():
+            cmd=[
+                sys.executable,str(snap_script),str(root),
+                "--milestone","Project initialization",
+                "--stage","00",
+                "--trigger","INITIALIZATION",
+                "--cada-ids","CADA-0001",
+                "--change-summary","Initial research input and canonical workspace state."
+            ]
+            try:
+                subprocess.run(cmd,check=True,capture_output=True,text=True)
+                snapshot_status="CREATED"
+            except Exception as exc:
+                snapshot_status=f"FAILED: {type(exc).__name__}"
+        else:
+            snapshot_status="SKIPPED: script_missing"
+
     print(root)
     print(f"matrix_status={matrix_status}")
+    print(f"snapshot_status={snapshot_status}")
     return 0
 
 if __name__=="__main__":
