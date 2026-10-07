@@ -1,5 +1,11 @@
 # Comece aqui — usando o Meu Artigo pelo GitHub
 
+## Status atual de acesso
+
+O Meu Artigo está em **beta fechado**. O repositório está privado e este guia permanece documentado para a futura liberação de testes.
+
+Enquanto o acesso não for aberto pelo autor, as instruções abaixo devem ser entendidas como o fluxo previsto para usuários autorizados/testadores futuros, e não como convite para distribuição pública.
+
 Este guia foi escrito para pesquisadores que **nunca usaram Git ou GitHub**, mas querem testar a Skill sem depender de alguém para instalar por eles.
 
 Você não precisa saber programação. Também não precisa instalar Git, abrir terminal, criar branch ou fazer commit para usar a Skill.
@@ -20,7 +26,7 @@ O arquivo que aparece automaticamente na página inicial chama-se `README.md`. E
 
 ## 2. Preciso criar conta no GitHub?
 
-Para **ler e baixar um repositório público**, normalmente não.
+Quando o repositório estiver público, normalmente não será necessária conta apenas para leitura/download. **Na fase atual, o repositório está privado e exige acesso autorizado.**
 
 Você só precisaria de conta para ações como comentar, abrir uma Issue, favoritar o projeto ou colaborar diretamente no código.
 
