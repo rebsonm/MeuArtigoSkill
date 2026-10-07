@@ -108,7 +108,9 @@ Maintain these canonical artifacts:
 - scientific-process traceability log;
 - AI-use transparency log;
 - C.A.D.A. spreadsheet dashboard;
-- human-readable `RASTREABILIDADE.md` provenance summary.
+- human-readable `RASTREABILIDADE.md` provenance summary;
+- interoperability export log (`16_INTEROPERABILIDADE`);
+- optional W3C PROV / RO-Crate audit package with SHA-256 manifest.
 
 Read `references/drive-workspace.md` and `references/project-state.md` for the canonical workspace tree, master tracking matrix, tab schemas, versioning rules, and recovery flow. Treat the Drive layout as the reference schema even when another storage system is used. Run `scripts/init_project.py` when a filesystem workspace is available or persistent cloud storage is temporarily unavailable.
 
@@ -130,6 +132,8 @@ Do not attempt to archive every conversational token. Log material actions that 
 For substantive AI-assisted work, record tool/platform, model/version when known, purpose, input/output category, human review method, final human decision, and related artifacts. Never claim human validation without an actual verification action.
 
 The final goal is that a researcher, coauthor, reviewer, editor, or future agent can reconstruct how important parts of the article were built.
+
+When the user requests an audit snapshot, when a major project state is frozen, or before/after submission, read `references/provenance-export.md` and generate an interoperable package when the platform permits it. Use W3C PROV-O for provenance, RO-Crate 1.3 for packaging, and SHA-256 for fixity. Do not require the researcher to understand these standards.
 
 ## Stage 1 — Audit the idea before exhaustive searching
 
@@ -410,3 +414,4 @@ Read only what the current task needs:
 - `references/cada-matrix.md` — spreadsheet-first C.A.D.A. management mode and dashboard.
 - `references/spreadsheet-template.md` — canonical 16-sheet workbook design, formulas, validations, views, and generation priority.
 - `references/traceability.md` — research-process provenance, Trace IDs, AI-use logging, and final transparency audit.
+- `references/provenance-export.md` — W3C PROV-O mapping, RO-Crate 1.3 packaging, SHA-256 fixity, export/validation rules.
