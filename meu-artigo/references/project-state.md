@@ -58,7 +58,7 @@ When resuming:
 1. read `CONTINUIDADE.md`;
 2. inspect the project root and master matrix;
 3. read the protocol;
-4. identify the latest canonical search, screening, full-text, evidence, synthesis, Corpus Map (when generated), C.A.D.A., decisions, gates, snapshots, traceability, and AI-use state;
+4. identify the latest canonical search, screening, full-text, evidence, synthesis, claim-robustness status, Corpus Map (when generated), journal profile/mode, C.A.D.A., decisions, gates, snapshots, traceability, and AI-use state;
 5. verify the last completed stage;
 6. do not reclassify decided records without an explicit audit reason;
 7. continue from the documented `Next valid action`;
@@ -82,3 +82,22 @@ When resuming a project:
 - verify its generation timestamp and warnings before relying on it;
 - use Grounded Corpus Mode only with full text that is actually available and canonically eligible;
 - never reconstruct missing corpus facts from model memory.
+
+
+## Journal-state recovery
+
+When resuming a project:
+
+- read `JOURNAL_PROFILE.json` when present;
+- distinguish JOURNAL_NEUTRAL from JOURNAL_AWARE_PENDING_PROFILE and JOURNAL_AWARE;
+- verify whether the rules were actually checked and when;
+- do not assume a target journal from prior model memory;
+- if the journal changed, recover the latest non-superseded profile and related DEC_ID.
+
+Before manuscript consolidation, if the project is still JOURNAL_NEUTRAL, surface the target-journal decision without blocking scientific work.
+
+## Claim-robustness recovery
+
+Before considering GATE-0006 ready, recover the claims ledger and inspect Robustness_status, Counter_Evidence_IDs, Alternative_explanations, Boundary_conditions, Single_source_dependency, and Human_validation for material claims.
+
+Do not treat a claim as validated merely because Evidence_IDs are present.
