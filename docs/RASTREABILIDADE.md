@@ -147,3 +147,16 @@ Ao final de um projeto, deve ser possível responder:
 sem depender apenas da memória do autor ou do histórico de um chat.
 
 Esse é o papel da camada de rastreabilidade do Meu Artigo.
+
+
+## Interoperabilidade
+
+A rastreabilidade também pode ser exportada em formatos padronizados:
+
+- **W3C PROV-O** para representar entidades, atividades, agentes e relações de proveniência;
+- **RO-Crate 1.3** para empacotar o objeto de pesquisa e seus metadados;
+- **SHA-256** para verificar fixidade dos arquivos do pacote.
+
+Isso é uma camada de exportação. O pesquisador não precisa conhecer esses padrões para usar o Meu Artigo.
+
+Veja `../meu-artigo/references/provenance-export.md`.
