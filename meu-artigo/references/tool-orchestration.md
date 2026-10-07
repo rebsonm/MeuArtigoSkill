@@ -91,6 +91,22 @@ Use academic web search, publisher pages, repositories, and official institution
 
 Prefer original publishers, DOI landing pages, official institutional domains, and recognized repositories for verification.
 
+## Work-management tools
+
+Use ClickUp, Jira/Atlassian, Trello, or equivalent only as the operational mirror of C.A.D.A.
+
+Rules:
+
+- use one primary provider per article unless explicitly requested otherwise;
+- keep `CADA_ID` visible in every external task/card/issue title;
+- do not create one external card per bibliographic record;
+- synchronize owner, due date, priority, status, blockers, and completion evidence links when useful;
+- preserve scientific evidence and decisions in the canonical workspace;
+- if external status conflicts with canonical state, log and reconcile rather than silently overwriting;
+- external task completion does not by itself prove scientific completion.
+
+Read `work-management.md` for provider-specific mapping.
+
 ## Browser automation
 
 Use authenticated browser workflows when a database or publisher requires normal interactive access and the user has authorized access.
