@@ -198,6 +198,7 @@ Depois do primeiro teste, fique à vontade para explorar:
 - [MATRIZ-CADA.md](./MATRIZ-CADA.md) — como funciona o painel/planilha oficial;
 - [RASTREABILIDADE.md](./RASTREABILIDADE.md) — como o processo de construção do artigo fica auditável;
 - [GOVERNANCA-CIENTIFICA.md](./GOVERNANCA-CIENTIFICA.md) — como decisões, validação humana e snapshots funcionam;
+- [MAPA-CORPUS.md](./MAPA-CORPUS.md) — como funciona o mapa do corpus e a consulta grounded;
 - `../meu-artigo/SKILL.md` — instrução central;
 - `../meu-artigo/references/` — metodologia detalhada;
 - `../meu-artigo/scripts/` — automações determinísticas;
