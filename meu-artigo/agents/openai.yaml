@@ -1,0 +1,19 @@
+interface:
+  display_name: "Meu Artigo"
+  short_description: "Do problema de pesquisa ao artigo científico"
+  default_prompt: "Use $meu-artigo para organizar meu projeto no Drive, conectar as ferramentas de pesquisa necessárias e começar a construir meu artigo a partir do meu problema de pesquisa."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "google-drive"
+      description: "Persist research folders, PDFs, Docs, Sheets, search logs, evidence matrices, and continuity state."
+    - type: "mcp"
+      value: "consensus"
+      description: "Search and synthesize peer-reviewed literature for terminology calibration, novelty auditing, and evidence discovery."
+    - type: "mcp"
+      value: "scite"
+      description: "Inspect citation context, citation graphs, and verified literature/full text where available."
+    - type: "mcp"
+      value: "firecrawl"
+      description: "Retrieve academic web, publisher, repository, journal, and official-source content."
