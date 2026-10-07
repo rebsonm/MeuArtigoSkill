@@ -1,6 +1,6 @@
 # Meu Artigo — Skill para pesquisa e construção de artigos científicos
 
-**Meu Artigo** é uma Skill **multiplataforma** para pesquisa e construção de artigos científicos. Ela transforma um problema, pergunta ou ideia de pesquisa fornecida pelo usuário em um **processo científico rastreável, persistente e orientado por evidências**. O núcleo metodológico vive em `meu-artigo/SKILL.md`; diferenças entre ChatGPT, Claude e Gemini ficam isoladas em adapters/documentação de plataforma.
+**Meu Artigo** é uma Skill **multiplataforma** para pesquisa e construção de artigos científicos. Ela transforma um problema, pergunta ou ideia de pesquisa fornecida pelo usuário em um **processo científico rastreável, persistente, orientado por evidências e auditável quanto à sua própria construção**. O núcleo metodológico vive em `meu-artigo/SKILL.md`; diferenças entre ChatGPT, Claude e Gemini ficam isoladas em adapters/documentação de plataforma.
 
 Ela não entrega um “artigo pronto por mágica” e não reutiliza o conteúdo de um projeto anterior. O que a Skill reutiliza é um **método de trabalho**: organização do projeto, auditoria de novidade, protocolo, buscas bibliográficas, registro das decisões, deduplicação, screening, full text, matriz de evidências, síntese, redação e auditoria final. Todo esse fluxo é acompanhado por uma camada de gestão **C.A.D.A.**, para tornar o passo a passo visível e rastreável.
 
@@ -66,7 +66,10 @@ A Skill conduz o pesquisador por um fluxo completo:
 18. audita método, contagens, evidências, citações e requisitos da revista antes da submissão;
 19. mantém o projeto retomável por outro chat ou agente sem depender da memória da conversa;
 20. governa o passo a passo pelo C.A.D.A. — Capturar, Atribuir, Definir prazo e Acompanhar;
-21. quando disponível, espelha as tarefas C.A.D.A. em ClickUp, Jira/Atlassian ou Trello.
+21. usa a própria planilha/matriz como gerenciador C.A.D.A. universal;
+22. quando disponível e desejado, espelha as tarefas C.A.D.A. em ClickUp, Jira/Atlassian ou Trello;
+23. mantém uma trilha de rastreabilidade do processo de construção do artigo;
+24. registra usos materiais de IA, finalidade, ferramenta/modelo quando conhecido e validação humana.
 
 ## Gestão do passo a passo com C.A.D.A.
 
@@ -94,6 +97,17 @@ Assim, a Skill consegue responder com clareza:
 
 A documentação completa está em [docs/CADA.md](./docs/CADA.md).
 
+### A planilha já é um gerenciador completo
+
+O usuário **não precisa conhecer ClickUp, Jira ou Trello**.
+
+O modo padrão é `MATRIX_ONLY`: a própria matriz-mestra gerencia o projeto por meio de:
+
+- `11_CADA_Control` — tarefas, responsáveis, próxima ação, prazos, status e evidências;
+- `15_CADA_Dashboard` — visão resumida do andamento.
+
+Quem já usa uma ferramenta de gestão pode ativar `MATRIX_PLUS_EXTERNAL`.
+
 ### ClickUp, Jira e Trello
 
 O usuário pode conectar um gerenciador de trabalho para visualizar o C.A.D.A. fora da conversa.
@@ -108,6 +122,45 @@ A Skill pode usar:
 Por padrão, usa **um único gerenciador principal por artigo**. A matriz científica continua sendo a fonte de verdade; o card/ticket é um espelho operacional.
 
 O vínculo entre cada item C.A.D.A. e a tarefa externa fica registrado em `12_PM_Sync`.
+
+## Rastreabilidade da construção do artigo
+
+Um objetivo central do Meu Artigo é permitir que o pesquisador responda:
+
+> **Como este artigo foi construído?**
+
+Para isso, gestão e rastreabilidade são separadas:
+
+- **C.A.D.A.** mostra onde estamos e o que precisa acontecer;
+- **rastreabilidade** mostra como chegamos até aqui.
+
+O projeto mantém:
+
+- `RASTREABILIDADE.md` — síntese legível da proveniência do processo;
+- `13_Traceability_Log` — registro estruturado dos eventos científicos materiais;
+- `14_AI_Use_Log` — registro específico de uso de IA e validação humana.
+
+A trilha permite ligar, quando aplicável:
+
+```text
+Claim_ID
+  ↓
+Evidence_ID
+  ↓
+Record_ID / fonte
+  ↓
+Search_ID / origem
+  ↓
+Trace_ID
+  ↓
+CADA_ID / decisão de protocolo
+```
+
+Isso aproxima a construção do artigo de um processo auditável, especialmente importante em pesquisa assistida por IA.
+
+Essa preocupação é consistente com diretrizes editoriais recentes. A Revista de Ciências da Administração, por exemplo, determina que usos substantivos de IA sejam descritos nos métodos e que ferramenta, versão, finalidade e procedimentos de validação humana sejam explicitados para assegurar rastreabilidade. Ricardo Limongi também possui trabalhos publicados sobre IA, integridade científica e transparência algorítmica.
+
+Veja [docs/RASTREABILIDADE.md](./docs/RASTREABILIDADE.md).
 
 ## O que o usuário precisa trazer
 
@@ -219,6 +272,9 @@ A Skill cria uma planilha-mestra com abas lógicas para:
 - `10_Submission_Checklist`
 - `11_CADA_Control`
 - `12_PM_Sync`
+- `13_Traceability_Log`
+- `14_AI_Use_Log`
+- `15_CADA_Dashboard`
 
 Essas tabelas separam descoberta, decisão metodológica, evidência e redação. Também permitem reconstruir de onde vieram as contagens e afirmações utilizadas no manuscrito.
 
@@ -282,6 +338,7 @@ MeuArtigoSkill/
 ├── docs/
 │   ├── COMECE-AQUI.md
 │   ├── CADA.md
+│   ├── RASTREABILIDADE.md
 │   ├── CHATGPT.md
 │   ├── CLAUDE.md
 │   ├── GEMINI.md
