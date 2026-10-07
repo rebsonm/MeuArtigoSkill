@@ -205,6 +205,10 @@ def main():
             if heading not in rs:
                 warnings.append(f"RASTREABILIDADE.md lacks {heading!r}")
 
+    matrix_files=list((root/"00_Gestao_e_Continuidade").glob("MATRIZ_MESTRA_*.xlsx"))
+    if not matrix_files:
+        warnings.append("visual MATRIZ_MESTRA_*.xlsx not found; project is using compatibility tables only")
+
     cont=root/"00_Gestao_e_Continuidade/CONTINUIDADE.md"
     if cont.exists():
         s=cont.read_text(encoding="utf-8",errors="replace")
