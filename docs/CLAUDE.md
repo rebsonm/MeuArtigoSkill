@@ -1,29 +1,57 @@
 # Adapter — Claude
 
+> Se você nunca usou GitHub, comece por [COMECE-AQUI.md](./COMECE-AQUI.md).
+
 Este documento descreve como usar **Meu Artigo** em Claude. A metodologia central continua em `meu-artigo/SKILL.md`.
+
+## Antes de tentar instalar
+
+Segundo a documentação oficial atual da Anthropic, Skills personalizadas no **claude.ai** podem ser enviadas em **Settings → Features** e estão disponíveis nos planos **Pro, Max, Team e Enterprise** quando a execução de código está habilitada.
+
+Claude Code também reconhece Skills baseadas em filesystem.
+
+Fonte oficial:
+
+- https://platform.claude.com/docs/pt-BR/agents-and-tools/agent-skills/overview
+
+## 1. Baixe pelo GitHub
+
+Na página do repositório:
+
+1. clique em **Code**;
+2. clique em **Download ZIP**;
+3. descompacte o arquivo;
+4. localize a pasta `meu-artigo`.
+
+## 2A. Instalação no claude.ai
+
+1. compacte **somente** a pasta `meu-artigo` em um ZIP;
+2. abra o Claude;
+3. acesse **Settings → Features**;
+4. localize a área de Skills personalizadas;
+5. faça upload do ZIP;
+6. confirme a Skill.
+
+Cada usuário precisa instalar sua própria cópia no claude.ai.
+
+## 2B. Instalação no Claude Code
+
+Se você usa Claude Code:
+
+- coloque a Skill pessoal em `~/.claude/skills/`; ou
+- coloque-a no projeto em `.claude/skills/`.
+
+A pasta deve manter seu `SKILL.md` e arquivos de suporte.
+
+## 3. Comece em uma conversa nova
+
+> Use a Skill Meu Artigo. Meu problema de pesquisa é: [problema]. Quero construir o artigo com rastreabilidade e continuidade.
+
+Para o teste, não descreva previamente o nosso workflow.
 
 ## Compatibilidade
 
-Claude reconhece Skills estruturadas com `SKILL.md`, arquivos de referência e scripts executáveis. A arquitetura de divulgação progressiva — metadados no frontmatter, instruções centrais e referências lidas sob demanda — é compatível com a estrutura deste repositório.
-
-Fonte oficial de referência:
-
-- https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview
-- https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices
-
-> Observação: interfaces, caminhos de instalação e capacidades de execução podem variar entre claude.ai, Claude Code e API. Use o mecanismo de Skills da superfície em que estiver trabalhando.
-
-## Instalação
-
-Use a pasta `meu-artigo/` como a pasta da Skill.
-
-O arquivo principal deve continuar sendo:
-
-`meu-artigo/SKILL.md`
-
-Prompt inicial sugerido:
-
-> Use a Skill Meu Artigo. Meu problema de pesquisa é: [problema]. Quero construir o artigo com rastreabilidade e continuidade.
+Claude reconhece Skills estruturadas com `SKILL.md`, arquivos de referência e scripts executáveis. A arquitetura de divulgação progressiva — metadados no frontmatter, instruções centrais e referências lidas sob demanda — é compatível com este repositório.
 
 ## MCP e conectores
 
@@ -33,28 +61,26 @@ No Claude:
 
 1. identifique os MCPs/connectores realmente disponíveis;
 2. mapeie-os para os papéis definidos no `SKILL.md`;
-3. quando citar uma ferramenta MCP dentro de instruções específicas do Claude, prefira nomes totalmente qualificados no formato recomendado pela documentação da Anthropic;
+3. use nomes de ferramentas compatíveis com a instalação real;
 4. não presuma que um servidor MCP está instalado.
 
-Exemplo de papéis:
+Exemplos:
 
 - armazenamento persistente → Google Drive, filesystem ou equivalente;
 - descoberta acadêmica → mecanismo acadêmico/MCP disponível;
 - contexto de citação → Scite ou equivalente;
 - web/publisher retrieval → navegador, web search ou MCP correspondente;
-- bases indexadas → export de Scopus/WoS ou connector real, quando existente.
+- bases indexadas → export de Scopus/WoS ou connector real.
 
 ## Scripts
 
-Claude Skills podem trabalhar com scripts e filesystem, mas o ambiente varia por superfície.
-
-Os scripts deste repositório são auxiliares determinísticos e não requerem acesso à internet:
+Os scripts deste repositório são locais e determinísticos:
 
 - `scripts/init_project.py`;
 - `scripts/dedupe_records.py`;
 - `scripts/validate_project.py`.
 
-Quando a superfície permitir execução local, prefira executá-los em vez de reimplementar sua lógica em linguagem natural.
+Quando a superfície permitir execução local, prefira executá-los em vez de reimplementar a lógica em linguagem natural.
 
 ## Persistência
 
@@ -64,7 +90,7 @@ Se não estiver:
 
 1. crie o espelho local com `init_project.py`;
 2. mantenha `CONTINUIDADE.md` atualizado;
-3. sincronize depois com um armazenamento persistente;
+3. sincronize depois com armazenamento persistente;
 4. não dependa do histórico da conversa.
 
 ## Scopus e Web of Science
@@ -73,22 +99,22 @@ Trate como fontes bibliográficas externas, salvo quando um MCP real fornecer ac
 
 Não invente conectores.
 
-Quando for necessário login institucional, o usuário pode precisar executar a busca ou autenticar uma sessão autorizada. A Skill prepara query, filtros, export, validação e continuidade.
+Quando houver login institucional, o usuário pode precisar executar a busca ou autenticar uma sessão autorizada. A Skill prepara query, filtros, export, validação e continuidade.
 
 ## Teste recomendado
 
-Use um problema que nunca tenha sido discutido com o Claude usado no teste.
+Use um problema nunca discutido com o Claude usado no teste.
 
-Critérios centrais:
+Observe:
 
-- detectou a necessidade de persistência?
-- preservou o problema original?
-- iniciou auditoria de novidade?
-- escolheu o desenho metodológico sem inflar o rótulo?
-- registrou strings e contagens?
-- usou scripts quando disponíveis?
-- retomou corretamente em uma sessão nova?
+- persistência;
+- preservação do problema original;
+- auditoria de novidade;
+- escolha metodológica;
+- strings e contagens;
+- uso de scripts quando disponível;
+- retomada correta em nova sessão.
 
 ## Nota de plataforma
 
-A Anthropic recomenda manter `SKILL.md` conciso, usar referências separadas e preferir scripts determinísticos para operações verificáveis. Essa é exatamente a arquitetura adotada por este projeto.
+A Anthropic recomenda manter `SKILL.md` conciso, usar referências separadas e preferir scripts determinísticos para operações verificáveis. Essa é a arquitetura adotada por este projeto.
