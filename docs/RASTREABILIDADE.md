@@ -160,3 +160,14 @@ A rastreabilidade também pode ser exportada em formatos padronizados:
 Isso é uma camada de exportação. O pesquisador não precisa conhecer esses padrões para usar o Meu Artigo.
 
 Veja `../meu-artigo/references/provenance-export.md`.
+
+
+## Decisão, responsabilidade e estado congelado
+
+A rastreabilidade distingue:
+
+- `DEC_ID`: por que uma escolha científica foi feita;
+- `GATE_ID`: onde o pesquisador humano validou uma transição crítica;
+- `SNAP_ID`: qual era o estado oficial do projeto naquele momento.
+
+Isso permite reconstruir não apenas o que aconteceu, mas também decisões, responsabilidade humana e mudanças entre versões.
