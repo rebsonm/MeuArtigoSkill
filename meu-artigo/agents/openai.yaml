@@ -1,7 +1,7 @@
 interface:
   display_name: "Meu Artigo"
-  short_description: "Do problema de pesquisa ao artigo científico"
-  default_prompt: "Use $meu-artigo para organizar meu projeto no Drive, conectar as ferramentas de pesquisa necessárias e começar a construir meu artigo a partir do meu problema de pesquisa."
+  short_description: "Do problema ao artigo com gestão C.A.D.A."
+  default_prompt: "Use $meu-artigo para organizar meu projeto, aplicar a gestão C.A.D.A., conectar as ferramentas de pesquisa e, quando disponível, espelhar o passo a passo em ClickUp, Jira ou Trello a partir do meu problema de pesquisa."
 
 dependencies:
   tools:
