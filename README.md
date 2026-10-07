@@ -71,7 +71,13 @@ A Skill conduz o pesquisador por um fluxo completo:
 21. usa a própria planilha/matriz como gerenciador C.A.D.A. universal;
 22. quando disponível e desejado, espelha as tarefas C.A.D.A. em ClickUp, Jira/Atlassian ou Trello;
 23. mantém uma trilha de rastreabilidade do processo de construção do artigo;
-24. registra usos materiais de IA, finalidade, ferramenta/modelo quando conhecido e validação humana.
+24. registra usos materiais de IA, finalidade, ferramenta/modelo quando conhecido e validação humana;
+25. registra decisões científicas materiais com `DEC_ID`;
+26. usa gates humanos críticos e snapshots verificáveis com `GATE_ID` e `SNAP_ID`;
+27. gera o Mapa do Corpus somente com metadados reais do corpus retido;
+28. oferece Grounded Corpus Mode para perguntas limitadas ao full text validado;
+29. gera relatório de transparência para revisor/editor;
+30. exporta proveniência interoperável em W3C PROV/RO-Crate com SHA-256.
 
 ## Gestão do passo a passo com C.A.D.A.
 
