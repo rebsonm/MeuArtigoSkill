@@ -18,7 +18,7 @@ A primeira aba, `00_PAINEL`, foi desenhada para responder rapidamente:
 - Onde a IA participou?
 - Como essa participação foi validada?
 
-## As 17 abas
+## As 20 abas
 
 | Aba | Função |
 |---|---|
@@ -39,6 +39,9 @@ A primeira aba, `00_PAINEL`, foi desenhada para responder rapidamente:
 | `14_PM_SYNC` | sincronização opcional com gerenciador externo |
 | `15_CONFIG` | vocabulários e parâmetros |
 | `16_INTEROPERABILIDADE` | exports W3C PROV/RO-Crate, SHA-256 e validação |
+| `17_DECISOES` | decisões científicas materiais, alternativas e justificativas |
+| `18_VALIDACOES` | gates de validação humana em transições críticas |
+| `19_SNAPSHOTS` | estados congelados e comparáveis do projeto |
 
 ## Dois modos
 
@@ -114,3 +117,14 @@ A exportação pode ser feita com:
 python scripts/export_provenance.py /caminho/do/projeto
 python scripts/validate_provenance_package.py /caminho/do/pacote.zip
 ```
+
+
+## Governança sem burocratizar
+
+As novas abas não criam mais trabalho cotidiano:
+
+- `17_DECISOES` só recebe decisões materialmente científicas;
+- `18_VALIDACOES` contém apenas sete gates padrão;
+- `19_SNAPSHOTS` registra estados congelados, não cada edição.
+
+O pesquisador continua usando principalmente `00_PAINEL`, `01_CADA` e as abas científicas da etapa atual.
