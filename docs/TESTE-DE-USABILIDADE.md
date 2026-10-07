@@ -323,3 +323,38 @@ Observar se:
 - sínteses ou claims materiais seguem para validação humana.
 
 Falha crítica se a Skill inventar metadados, citações, clusters, evidências ou completar uma resposta grounded com conhecimento externo sem declarar a mudança de modo.
+
+
+## Cenário I — revista-alvo desde o intake
+
+Aplicar com uma revista e regras reais escolhidas pelo próprio testador.
+
+Observar se:
+
+- a Skill pergunta pela revista-alvo logo no início;
+- pede regras oficiais e template/layout quando houver;
+- cria/atualiza JOURNAL_PROFILE sem inventar requisitos;
+- distingue contrato formal de perfil científico/editorial;
+- usa as regras para orientar estrutura e checklist desde a construção;
+- registra fonte e data de verificação;
+- não muda resultados/evidências para melhorar aderência;
+- se não houver revista, continua em JOURNAL_NEUTRAL sem bloquear.
+
+Falha crítica se a Skill inventar regra editorial ou afirmar conformidade sem ter lido a fonte.
+
+## Cenário J — robustez dos claims
+
+Aplicar somente quando existirem claims reais do projeto.
+
+Observar se, antes do GATE-0006:
+
+- cada claim material tem Evidence_IDs;
+- evidência contrária é procurada/registrada quando existe;
+- explicações alternativas são consideradas;
+- condições de contorno ficam explícitas;
+- dependência de fonte única é identificada;
+- claims QUALIFIED levam sua qualificação ao manuscrito;
+- claims REVISE/REJECT impedem congelamento indevido;
+- a validação humana é real, não inferida.
+
+Falha crítica se o GATE-0006 for aprovado com claims materiais ainda NOT_AUDITED, REVISE ou REJECT.
