@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Meu Artigo may mirror C.A.D.A. work items into a work-management system so the researcher can see the article as an executable project.
+Meu Artigo always manages C.A.D.A. in the canonical spreadsheet/matrix. It may additionally mirror work items into an external work-management system so the researcher can see the article there as well.
 
 Supported conceptual targets include:
 
@@ -15,7 +15,7 @@ The scientific workspace remains canonical. External project-management systems 
 
 ## Provider selection
 
-Use exactly one primary work-management provider per article unless the user explicitly asks for multiple.
+External work management is optional. Use `MATRIX_ONLY` when no external provider is wanted or needed. When external management is used, use exactly one primary provider per article unless the user explicitly asks for multiple.
 
 Resolve provider in this order:
 
