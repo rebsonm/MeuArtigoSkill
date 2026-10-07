@@ -45,6 +45,33 @@ Explain technical steps in plain language when the user appears unfamiliar with 
 
 Never fabricate database access, search counts, retrieved papers, full-text reading, screening decisions, inter-rater reliability, saturation, replication, or validation.
 
+## Ask for the target journal and submission rules at intake
+
+Read `references/journal-aware.md`.
+
+At the beginning of a new article project, after the user has supplied a research problem/question/topic, ask:
+
+> Do you already have a target journal? If yes, send the official author-guidelines link/file and the journal template/layout, if one exists.
+
+Treat this as a core intake directive because the manuscript should be constructed for its scientific destination when that destination is known.
+
+If the user supplies a target journal and rules/template:
+
+1. preserve the supplied source or official URL in `06_Submissao/Regras_da_Revista/`;
+2. build/update `JOURNAL_PROFILE.json`;
+3. separate formal submission requirements from the journal's scientific/editorial profile;
+4. set `construction_mode = JOURNAL_AWARE` only after the rules/profile have actually been read;
+5. populate/update the submission checklist from verified rules;
+6. use the profile to guide manuscript architecture, length planning, required declarations, anonymization, reference style, and journal dialogue from the start.
+
+If the user has a journal but has not supplied rules/template, use `JOURNAL_AWARE_PENDING_PROFILE` and request the official material without blocking scientific work.
+
+If the user has no target journal, record `JOURNAL_NEUTRAL` and continue. Do not force an early journal choice. Before full manuscript consolidation, surface the target-journal decision again when it is scientifically useful.
+
+Journal rules may shape presentation and architecture. They must not change findings, evidence strength, contradictory evidence, inclusion/exclusion decisions after outcomes are known, or methodological facts.
+
+When the target journal changes materially, record a DEC_ID of type JOURNAL, rebuild the profile/checklist, and preserve the prior profile in project history.
+
 ## Govern the workflow with C.A.D.A.
 
 Use C.A.D.A. as the operational governance layer across the scientific workflow. Read `references/cada-governance.md`.
@@ -98,6 +125,7 @@ Maintain these canonical artifacts:
 - screening table;
 - evidence matrix;
 - journal dialogue table when a target outlet is known;
+- canonical `JOURNAL_PROFILE.json` for target-journal rules and scientific/editorial fit;
 - optional institutional/normative corpus when the topic requires it;
 - full-text tracker;
 - synthesis notes;
@@ -399,7 +427,15 @@ If the topic does not need this corpus, omit it.
 
 ## Stage 11 — Enter the target journal's conversation
 
-When a target journal is known, inspect its instructions and relevant recent archive. Identify substantively relevant papers already published there.
+When a target journal is known, work from `JOURNAL_PROFILE.json`, the supplied/official rules and template, and the relevant recent archive.
+
+Use the formal editorial contract during manuscript construction, not only for final formatting. This includes required section architecture, length constraints, abstract/keyword rules, anonymization, reference style, declarations, AI/data policies, and required submission files.
+
+Use aims & scope, editorials, and relevant recent journal articles to understand the scientific conversation and contribution profile. Keep this scientific/editorial profile separate from mandatory formal rules.
+
+Do not claim that rules are current unless the supplied or official source was actually checked. Do not use journal fit to suppress contradictory evidence or alter scientific findings.
+
+Identify substantively relevant papers already published there.
 
 For each useful journal anchor, record:
 
@@ -424,6 +460,38 @@ Keep claims no stronger than the evidence. Do not call a conceptual framework "v
 
 Use the Search Log and state file to write the methods section. Reconcile every count before publication.
 
+## Stage 12.5 — Audit claim robustness before freezing
+
+Read `references/evidence-synthesis.md` and `references/scientific-governance.md`.
+
+Before GATE-0006 can be approved, audit every material claim for contestability.
+
+For each material Claim_ID, examine:
+
+- supporting Evidence_IDs;
+- contradictory or disconfirming Evidence_IDs in the retained corpus;
+- plausible alternative explanations;
+- boundary conditions;
+- dependence on a single source or fragile evidence chain;
+- whether wording exceeds the evidentiary strength;
+- [L] / [I] / [P] status;
+- human validation outcome.
+
+Use the robustness statuses:
+
+- `NOT_AUDITED`
+- `ROBUST`
+- `QUALIFIED`
+- `REVISE`
+- `REJECT`
+- `NOT_APPLICABLE`
+
+A `QUALIFIED` claim must carry the qualification/condition into the manuscript.
+
+When useful, perform a dependency check: if the central supporting evidence were removed, would the claim remain defensible? Treat this as an argument-dependency check, not as a universal statistical test.
+
+Do not hide contradictory evidence merely to improve journal fit.
+
 ## Stage 13 — Run the final audit
 
 Before declaring the manuscript ready, verify:
@@ -436,10 +504,12 @@ Before declaring the manuscript ready, verify:
 - duplicates were handled transparently;
 - full-text claims match actual access level;
 - important claims trace to evidence entries;
+- material claims have completed robustness/contestability review;
+- counter-evidence, alternative explanations, boundary conditions, and single-source dependencies were not silently ignored;
 - `[I]` and `[P]` were not disguised as literature consensus;
 - no citations were invented or cited from search snippets without source verification;
 - limitations include real scope and access constraints;
-- target-journal rules are satisfied;
+- target-journal rules are satisfied against the current verified JOURNAL_PROFILE when a journal is defined;
 - continuity state is updated.
 
 Run `scripts/validate_project.py` when using the standard workspace. When local spreadsheet generation is available, also use `scripts/build_matrix_template.py` or let `scripts/init_project.py` invoke it automatically. Use `scripts/governance_events.py`, `scripts/create_snapshot.py`, `scripts/compare_snapshots.py`, and `scripts/generate_transparency_report.py` for deterministic governance operations. Use `scripts/build_corpus_map.py` for corpus mapping when a retained corpus exists, and `scripts/release_audit.py` before a release.
@@ -486,3 +556,4 @@ Read only what the current task needs:
 - `references/scientific-governance.md` — DEC_ID decisions, human validation gates, SNAP_ID frozen states, and reviewer/editor transparency.
 - `references/corpus-map.md` — data-driven exploratory map of the validated corpus.
 - `references/grounded-corpus.md` — evidence-bounded AI consultation over validated full text.
+- `references/journal-aware.md` — target-journal intake, JOURNAL_PROFILE, editorial contract, and scientific non-interference boundary.
