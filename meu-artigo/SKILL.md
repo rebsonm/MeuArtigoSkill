@@ -1,0 +1,323 @@
+---
+name: meu-artigo
+description: Build a rigorous, traceable, literature-grounded scientific article workflow from a user-supplied research problem or question. Use when the user wants to develop an academic article, especially a conceptual, theoretical, integrative-review, evidence-synthesis, or literature-intensive manuscript; audit novelty; design and log bibliographic searches; combine Scopus/WoS exports with Consensus, Scite, Google Drive, web and publisher sources; deduplicate and screen records; retrieve full text; build an evidence matrix; synthesize constructs or propositions; draft from evidence; and preserve a resumable audit trail. Also use for the literature-grounding portion of empirical articles, but do not invent the empirical design, data, analysis, or findings.
+---
+
+# Meu Artigo
+
+## Core principle
+
+Start from the user's own research problem, question, phenomenon, theory gap, empirical puzzle, or article idea. Never import the topic, constructs, search strings, inclusion criteria, sources, categories, findings, journal, or conclusions of a previous project into a new one.
+
+Treat any prior project only as evidence about **how to work**: stage ordering, audit controls, state persistence, tool orchestration, screening discipline, evidence extraction, synthesis, and writing provenance.
+
+The goal is not to generate a plausible manuscript quickly. The goal is to create a manuscript whose important claims can be traced back through a persistent evidence trail.
+
+## First-run preflight
+
+Before substantive searching, inspect the available research integrations. Read `references/plugin-onboarding.md`.
+
+The preferred stack is Google Drive + Consensus + Scite + Firecrawl/web. If one is missing and a plugin is available, surface the install/connect action to the user. Installation or OAuth authorization always requires the user's explicit platform action; never claim a silent install. Scite access is useful but non-blocking when unavailable.
+
+Do not stop at setup. Once the user's problem is sufficiently specific, create/resume the workspace and immediately begin a small novelty/terminology scan with the available academic tools.
+
+## Default operating mode
+
+Operate autonomously with available tools. Ask the user only for information that cannot safely be inferred and is essential to scientific validity. Do not request repeated confirmations for routine steps.
+
+At minimum, require a user-supplied research problem, research question, phenomenon, or sufficiently specific topic. If the user gives only a broad topic, refine it into candidate questions and clearly mark them as proposals rather than user decisions.
+
+Explain technical steps in plain language when the user appears unfamiliar with bibliographic databases or AI-assisted research.
+
+Never fabricate database access, search counts, retrieved papers, full-text reading, screening decisions, inter-rater reliability, saturation, replication, or validation.
+
+## Choose the methodological track
+
+Classify the intended article before building the protocol:
+
+1. **Integrative / conceptual / theoretical synthesis** — use this skill end-to-end. The default review label is "integrative literature review" when the purpose is to combine heterogeneous conceptual and/or empirical literature to construct or refine concepts, mechanisms, propositions, models, typologies, or frameworks.
+2. **Systematic review** — use a stricter exhaustive eligibility and full-text pathway. Do not call a project systematic merely because searches are structured or reproducible. Read `references/review-design.md` before using this label.
+3. **Empirical article** — use this skill for novelty audit, theory/literature grounding, search logging, evidence matrix, journal dialogue, and manuscript provenance. Require a domain-appropriate empirical design for sampling, measurement, data collection, ethics, analysis, and results; never invent these components.
+4. **Other review family** — if scoping, meta-analysis, bibliometric, realist, umbrella, or another design is requested, identify the correct methodological requirements before proceeding. Do not force the integrative workflow onto an incompatible design.
+
+## Build a persistent research workspace
+
+Create or reuse a project workspace before large searches. Prefer connected Google Drive when available; otherwise create local files that can later be uploaded.
+
+Maintain these canonical artifacts:
+
+- `CONTINUIDADE.md` as the canonical resumable state;
+- protocol;
+- search log;
+- screening table;
+- evidence matrix;
+- journal dialogue table when a target outlet is known;
+- optional institutional/normative corpus when the topic requires it;
+- full-text tracker;
+- synthesis notes;
+- manuscript;
+- submission checklist.
+
+Read `references/drive-workspace.md` and `references/project-state.md` for the canonical Drive folder tree, master tracking matrix, tab schemas, versioning rules, and recovery flow. Run `scripts/init_project.py` when a filesystem workspace is available or Drive is temporarily unavailable.
+
+Before ending any material stage, update `CONTINUIDADE.md` with what is frozen, what changed, tool/plugin status, exact counts, unresolved issues, canonical links, and the next valid action. Update the master matrix in the same stage. Another agent should be able to continue without reading the original chat.
+
+## Stage 1 — Audit the idea before exhaustive searching
+
+Convert the user input into a provisional research object:
+
+- problem or puzzle;
+- provisional question;
+- intended contribution;
+- unit of analysis or phenomenon;
+- boundaries and explicit exclusions;
+- article type;
+- target journal or field if known.
+
+Then run a **novelty audit**, not yet an exhaustive review. Use seed sources from the user's files/Drive, Consensus, Scite, academic web search, publisher pages, and relevant journal archives.
+
+For the closest neighboring papers, record:
+
+- what they already do;
+- where they overlap with the new idea;
+- what they do not do;
+- whether the proposed novelty survives;
+- how the research question or contribution should be narrowed.
+
+Revise the contribution before scaling the search. Prefer a narrower defensible contribution over a broad unsupported novelty claim.
+
+Use epistemic labels internally:
+
+- `[L]` = directly supported by literature, data, or an authoritative source;
+- `[I]` = analytical inference from comparison/synthesis;
+- `[P]` = original proposition, model element, hypothesis, or author contribution.
+
+Do not present `[I]` or `[P]` as established literature findings.
+
+## Stage 2 — Freeze a review/search protocol
+
+Translate the question into conceptual blocks and search families. Separate:
+
+- conceptual query logic;
+- literal executable string for each database;
+- filters;
+- date executed;
+- database/platform;
+- export file;
+- records found/exported;
+- status and notes.
+
+Never overwrite a previously executed search string. If syntax, synonyms, wildcards, field tags, filters, or date ranges change, create a new version identifier and explain why.
+
+Define before large-scale screening:
+
+- databases and their roles;
+- years;
+- languages;
+- document types;
+- inclusion criteria;
+- exclusion criteria;
+- treatment of seminal older sources;
+- treatment of preprints and conference/article pairs;
+- screening rules;
+- full-text retrieval rules;
+- snowballing rule;
+- stopping/saturation rule appropriate to the review design.
+
+Read `references/review-design.md` and `references/search-screening.md`.
+
+## Stage 3 — Orchestrate sources by role
+
+Use tools for distinct purposes rather than treating all search systems as interchangeable.
+
+- **Google Drive / user files**: recover prior reading, project artifacts, PDFs, notes, templates, and continuity state.
+- **Consensus**: rapid peer-reviewed discovery, terminology calibration, nearby-paper discovery, and cross-checking. It is not an exhaustive bibliographic database. Fetch a result before citing it.
+- **Scite**: targeted literature search, citation graph traversal, citation context/intent, full-text reading where available, bibliography generation, and source-decision audit. Record tool-access limitations rather than inferring absence of evidence.
+- **Scopus / Web of Science**: primary structured indexed searches when the protocol calls for them. If direct connectors are unavailable, use user exports or authenticated browser workflows. Validate exports before screening.
+- **Academic/public web and publisher pages**: locate official metadata, open full text, current institutional documents, journal archives, and authoritative source pages.
+- **Google Scholar**: sensitivity searching and backward/forward discovery; do not treat it as a fully reproducible exhaustive database.
+
+Read `references/tool-orchestration.md` before multi-source searching.
+
+## Stage 4 — Execute and audit bibliographic searches
+
+For every search family:
+
+1. execute the literal version appropriate to the database;
+2. log date, filters, counts, and exact string;
+3. export enough metadata for screening and deduplication;
+4. verify the actual exported row count;
+5. verify required fields such as title, abstract, DOI/identifier, year, document type, authors, and keywords when available;
+6. mark partial, malformed, wrongly filtered, or field-deficient exports as invalid and re-export instead of silently using them;
+7. preserve raw exports unchanged.
+
+When reproducing a strategy in a second database, call it a **replication in a complementary bibliographic database**, followed by cross-database deduplication and incremental screening. Do not call Scopus × WoS a meta-analysis or data triangulation.
+
+## Stage 5 — Deduplicate conservatively
+
+Use multiple keys:
+
+- normalized DOI when bibliographically valid;
+- normalized title;
+- database identifiers;
+- author overlap;
+- year proximity;
+- abstract comparison for suspicious pairs.
+
+Then check near-duplicates, preprint versus final publication, translated/bilingual titles, and conference paper versus expanded article.
+
+Never remove a record solely because an automatic similarity score is high. Flag candidate pairs and confirm before exclusion.
+
+Use `scripts/dedupe_records.py` when compatible exports are available. Preserve original records and log which occurrence was retained.
+
+## Stage 6 — Screen in explicit passes
+
+For integrative/conceptual synthesis, use two passes by default:
+
+**Pass 1 — title + abstract**
+- INCLUDE
+- BORDERLINE
+- EXCLUDE
+
+**Pass 2 — retained records**
+- FULL TEXT — CORE
+- FULL TEXT — SUPPORT
+- EXCLUDE
+
+Record a short reason for exclusions. Screen only records that are new after deduplication when a complementary database is added.
+
+For single-author work, do not simulate independent double screening. Instead use a second pass for borderline cases plus a documented sample recheck of included/excluded records. If genuine multiple reviewers exist, record their real procedure.
+
+For systematic reviews, follow the stricter design described in `references/review-design.md` rather than substituting priority sampling for full eligibility assessment.
+
+## Stage 7 — Retrieve full text without access bias
+
+Track for each candidate:
+
+- full text found: yes/no;
+- version: final, accepted manuscript, preprint, other;
+- acquisition source;
+- access date;
+- full-text decision;
+- exclusion reason if excluded;
+- notes relevant to synthesis.
+
+Lack of access is not a scientific exclusion criterion. Keep the item pending and try legitimate alternatives such as institutional access, open repositories, accepted manuscripts, author pages, or author contact.
+
+Do not claim to have read full text when only an abstract or snippets were available.
+
+## Stage 8 — Extract evidence, not summaries alone
+
+For each included source, populate a structured evidence matrix. Adapt fields to the field and article, but preserve the logic:
+
+- citation / persistent identifier;
+- construct or concept;
+- definition or central claim;
+- problem, tension, mechanism, relationship, or finding;
+- study design / evidence type;
+- context and sample/data if empirical;
+- relevant process or stage;
+- actors/roles when applicable;
+- observable evidence or artifact;
+- boundary conditions / limitations;
+- transferability to the user's question;
+- evidence strength/role;
+- exact locator or supporting passage when useful;
+- `[L]`, `[I]`, `[P]` status for downstream synthesis.
+
+Write from this matrix later. Do not write the literature argument from model memory.
+
+Read `references/evidence-synthesis.md`.
+
+## Stage 9 — Synthesize across sources
+
+Move from paper-by-paper summaries to cross-source comparison. Look for:
+
+- recurring constructs;
+- mechanisms or relationships;
+- contradictions;
+- boundary conditions;
+- missing links;
+- distinct explanatory roles;
+- methodological disagreements;
+- contexts where transfer is weak or strong.
+
+Create higher-order categories only when supported by more than one independent source stream or when the methodological design supplies another explicit justification. Keep provisional categories marked as inference until sufficiently grounded.
+
+For integrative/conceptual work, theoretical or purposive full-text sampling may be used when explicitly justified by the research purpose. Never represent a prioritized subset as if every pre-full-text candidate had been fully assessed.
+
+Treat saturation cautiously. Record it as provisional unless there is an operational stopping rule and recent additions demonstrably cease to create new categories or materially alter the synthesis.
+
+## Stage 10 — Add institutional or normative evidence only when relevant
+
+If the question concerns regulation, governance, standards, policy, professional practice, public administration, compliance, or another institutionally governed domain, build a separate institutional/normative corpus.
+
+Keep scientific literature and institutional authority analytically distinct. Record jurisdiction, binding status, version/date, scope, mechanisms, and relevance. Do not treat regulations or standards as empirical research articles.
+
+If the topic does not need this corpus, omit it.
+
+## Stage 11 — Enter the target journal's conversation
+
+When a target journal is known, inspect its instructions and relevant recent archive. Identify substantively relevant papers already published there.
+
+For each useful journal anchor, record:
+
+- what the journal paper already established;
+- where the new article agrees, extends, narrows, contradicts, or relocates the discussion;
+- why citing it is substantively justified.
+
+Avoid citation gaming. Do not add journal citations solely to appear tailored.
+
+## Stage 12 — Draft from evidence and provenance
+
+Draft only after the question, contribution, protocol, and evidence structure are stable enough.
+
+For each substantive paragraph, be able to identify whether it is:
+
+- literature-supported;
+- an analytical integration;
+- an original proposition;
+- an empirical result supplied by the user's actual data/analysis.
+
+Keep claims no stronger than the evidence. Do not call a conceptual framework "validated" without empirical validation. Do not claim causal necessity from conceptual synthesis alone.
+
+Use the Search Log and state file to write the methods section. Reconcile every count before publication.
+
+## Stage 13 — Run the final audit
+
+Before declaring the manuscript ready, verify:
+
+- review type is labeled correctly;
+- research question and contribution still match the evidence;
+- all reported search strings correspond to actual executed versions;
+- counts reconcile from raw search through deduplication and screening;
+- invalid/partial exports are excluded from official counts;
+- duplicates were handled transparently;
+- full-text claims match actual access level;
+- important claims trace to evidence entries;
+- `[I]` and `[P]` were not disguised as literature consensus;
+- no citations were invented or cited from search snippets without source verification;
+- limitations include real scope and access constraints;
+- target-journal rules are satisfied;
+- continuity state is updated.
+
+Run `scripts/validate_project.py` when using the standard workspace.
+
+## Recovery and continuation rule
+
+When resuming an existing project, read `CONTINUIDADE.md` first, then inspect the Drive root, master matrix, protocol, and latest canonical trackers. Do not re-screen decided records or reconstruct executed search strings from memory unless an explicit audit is requested.
+
+If records conflict, prefer the most recent explicitly marked canonical entry and preserve superseded history rather than deleting it.
+
+## Required references
+
+Read only what the current task needs:
+
+- `references/review-design.md` — choose and correctly label the review/article design.
+- `references/drive-workspace.md` — canonical Google Drive folders, master matrix tabs, MD continuity file, naming and snapshots.
+- `references/project-state.md` — persistence, versioning, and recovery rules.
+- `references/plugin-onboarding.md` — plugin preflight, connection flow, minimum research stack, Scopus/WoS handoff.
+- `references/tool-orchestration.md` — source roles and automation/fallback behavior.
+- `references/search-screening.md` — strings, exports, deduplication, screening, full text.
+- `references/evidence-synthesis.md` — evidence matrix, cross-source synthesis, L/I/P discipline.
+- `references/beginner-mode.md` — user-facing flow for researchers with little AI/tooling experience.
