@@ -18,7 +18,7 @@ A primeira aba, `00_PAINEL`, foi desenhada para responder rapidamente:
 - Onde a IA participou?
 - Como essa participação foi validada?
 
-## As 20 abas
+## As 21 abas
 
 | Aba | Função |
 |---|---|
@@ -42,6 +42,7 @@ A primeira aba, `00_PAINEL`, foi desenhada para responder rapidamente:
 | `17_DECISOES` | decisões científicas materiais, alternativas e justificativas |
 | `18_VALIDACOES` | gates de validação humana em transições críticas |
 | `19_SNAPSHOTS` | estados congelados e comparáveis do projeto |
+| `20_MAPA_CORPUS` | visão exploratória e data-driven do corpus validado |
 
 ## Dois modos
 
@@ -128,3 +129,14 @@ As novas abas não criam mais trabalho cotidiano:
 - `19_SNAPSHOTS` registra estados congelados, não cada edição.
 
 O pesquisador continua usando principalmente `00_PAINEL`, `01_CADA` e as abas científicas da etapa atual.
+
+
+## Mapa do Corpus
+
+A aba `20_MAPA_CORPUS` só apresenta dados reais do corpus.
+
+Ela pode mostrar evolução temporal, autores, periódicos/fontes, keywords/conceitos e estrutura de rede quando os metadados existirem.
+
+Campos sem suporte permanecem vazios. Clusters e artigos-ponte exigem uma definição real de rede; a Skill não cria uma aparência bibliométrica com agrupamentos semânticos arbitrários.
+
+Veja [MAPA-CORPUS.md](./MAPA-CORPUS.md).
