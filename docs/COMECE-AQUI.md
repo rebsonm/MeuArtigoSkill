@@ -95,7 +95,7 @@ Você não precisa preparar:
 - critérios de inclusão;
 - matriz de evidências.
 
-A Skill deve ajudar a construir isso a partir do problema de pesquisa.
+A Skill deve ajudar a construir isso a partir do problema de pesquisa e mostrar o passo a passo por meio da gestão **C.A.D.A.**. Se você já usa ClickUp, Jira ou Trello e sua IA tiver essa integração, a Skill também pode espelhar as tarefas nesses sistemas.
 
 ## 7. O que NÃO fazer no primeiro teste
 
@@ -190,6 +190,7 @@ Você não precisa preencher tudo durante o uso. O mais importante é registrar:
 
 Depois do primeiro teste, fique à vontade para explorar:
 
+- [CADA.md](./CADA.md) — como funciona a gestão do passo a passo;
 - `../meu-artigo/SKILL.md` — instrução central;
 - `../meu-artigo/references/` — metodologia detalhada;
 - `../meu-artigo/scripts/` — automações determinísticas;
