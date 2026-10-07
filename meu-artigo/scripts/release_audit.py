@@ -26,9 +26,12 @@ REQUIRED=[
     "docs/GOVERNANCA-CIENTIFICA.md",
     "docs/INTEROPERABILIDADE.md",
     "docs/MAPA-CORPUS.md",
+    "docs/JOURNAL-AWARE.md",
+    "docs/ROBUSTEZ-CLAIMS.md",
     "meu-artigo/SKILL.md",
     "meu-artigo/references/corpus-map.md",
     "meu-artigo/references/grounded-corpus.md",
+    "meu-artigo/references/journal-aware.md",
     "meu-artigo/references/scientific-governance.md",
     "meu-artigo/references/provenance-export.md",
     "meu-artigo/scripts/build_matrix_template.py",
@@ -73,8 +76,8 @@ def main()->int:
 
     # Core feature references.
     required_terms={
-        "SKILL.md":["DEC_ID","GATE_ID","SNAP_ID","W3C PROV","RO-Crate","Grounded Corpus","Corpus Map"],
-        "README.md":["DEC_ID","GATE_ID","SNAP_ID","RO-Crate","Mapa do Corpus"],
+        "SKILL.md":["DEC_ID","GATE_ID","SNAP_ID","W3C PROV","RO-Crate","Grounded Corpus","Corpus Map","JOURNAL_PROFILE","JOURNAL_NEUTRAL","Counter_Evidence_IDs","Robustness_status"],
+        "README.md":["DEC_ID","GATE_ID","SNAP_ID","RO-Crate","Mapa do Corpus","JOURNAL_PROFILE","robustez dos claims"],
     }
     for label,terms in required_terms.items():
         text=skill if label=="SKILL.md" else readme
@@ -87,6 +90,14 @@ def main()->int:
     for sheet in ["16_INTEROPERABILIDADE","17_DECISOES","18_VALIDACOES","19_SNAPSHOTS","20_MAPA_CORPUS"]:
         if sheet not in matrix:
             errors.append(f"workbook generator missing sheet: {sheet}")
+    for term in ["Counter_Evidence_IDs","Explicações alternativas","Dependência de fonte única","Robustez","Revista-alvo","Modo de construção editorial"]:
+        if term not in matrix:
+            errors.append(f"workbook generator missing journal/robustness field: {term}")
+
+    init_script=(ROOT/"meu-artigo/scripts/init_project.py").read_text(encoding="utf-8") if (ROOT/"meu-artigo/scripts/init_project.py").exists() else ""
+    for term in ["JOURNAL_PROFILE.json","JOURNAL_NEUTRAL","claim_robustness_audit_enabled","Counter_Evidence_IDs"]:
+        if term not in init_script:
+            errors.append(f"project initializer missing journal/robustness capability: {term}")
 
     # Do not ship a fake project/corpus as part of the canonical repository.
     forbidden_paths=[]
