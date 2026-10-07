@@ -48,6 +48,9 @@ Use these exact sheet names and order:
 15. `14_PM_SYNC`
 16. `15_CONFIG`
 17. `16_INTEROPERABILIDADE`
+18. `17_DECISOES`
+19. `18_VALIDACOES`
+20. `19_SNAPSHOTS`
 
 Do not rename these sheets without a migration step because formulas and agents rely on them.
 
@@ -591,3 +594,40 @@ Use stable `EXPORT-####` IDs.
 Each W3C PROV / RO-Crate export should create one row. In local-project mode, synchronize this sheet with `00_Gestao_e_Continuidade/16_Interoperabilidade.csv`.
 
 The sheet is an export history, not the provenance graph itself. The graph lives in the generated package.
+
+
+## 17_DECISOES
+
+Material scientific decisions. Use stable `DEC-####` identifiers.
+
+Columns:
+
+```text
+DEC_ID | Timestamp | Etapa | Tipo | Pergunta decisória | Decisão | Alternativas consideradas | Justificativa | Evidence_IDs | Record_IDs | CADA_ID | Trace_ID | Gate_ID | Status | Decidido por | Impacto | Artefatos afetados | Versão resultante | Supersede DEC_ID | Observações
+```
+
+Do not overwrite frozen decisions. Supersede explicitly.
+
+## 18_VALIDACOES
+
+Seven default human-validation gates. Routine work remains autonomous.
+
+Columns:
+
+```text
+GATE_ID | Tipo | Etapa | Nome | Condição de entrada | Itens a validar | DEC_IDs | CADA_IDs | Evidence_IDs | Snapshot antes | Decisão | Validado por | Data | Método de validação | Evidência da validação | Trace_ID | Snapshot depois | Status | Transição bloqueada | Observações
+```
+
+A gate approval must be an explicit human response.
+
+## 19_SNAPSHOTS
+
+Frozen project states with fixity.
+
+Columns:
+
+```text
+SNAP_ID | Timestamp | Marco | Etapa | Trigger | Gate_ID | DEC_IDs | CADA_IDs | SNAP anterior | Caminho / URL | Manifest | SHA-256 do manifest | Artefatos canônicos | Resumo da mudança | Validação | EXPORT_ID | Observações
+```
+
+Use `scripts/create_snapshot.py` and `scripts/compare_snapshots.py` in filesystem mode.
