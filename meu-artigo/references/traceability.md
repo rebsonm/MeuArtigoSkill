@@ -13,6 +13,9 @@ The canonical principle is:
 
 > `CONTINUIDADE.md` explains **where the project is now**.
 > `RASTREABILIDADE.md` and `13_Traceability_Log` explain **how the project got there**.
+> `17_Decision_Log` explains **why material choices were made**.
+> `18_Human_Validation_Gates` records **where human responsibility was exercised**.
+> `19_Snapshots` preserves **what the official state was at key moments**.
 
 ## Why this matters in AI-assisted research
 
@@ -258,3 +261,14 @@ Before submission:
 Traceability is not the same as publishing the entire private workspace.
 
 When sharing with reviewers/editors, prepare an appropriate transparency artifact containing the necessary methodological provenance without exposing passwords, confidential material, copyrighted full texts, or unrelated private notes.
+
+
+## Scientific chain of custody
+
+Use the connected governance chain when applicable:
+
+```text
+DEC_ID → CADA_ID → TRACE_ID → Evidence/Claim → GATE_ID → SNAP_ID → EXPORT_ID
+```
+
+This is not a requirement that every object link to every other object. It is a provenance path for material scientific transitions.
