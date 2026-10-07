@@ -137,7 +137,24 @@ Observar se:
 - marcar um card como concluído não altera sozinho uma decisão científica;
 - ao perguntar **“onde estamos?”**, a IA informa etapa, concluídos, pendências, bloqueios, prazo e próxima ação.
 
-O teste também pode ser feito sem gerenciador externo. Nesse caso, avaliar se o C.A.D.A. funciona integralmente apenas no workspace.
+O teste também deve ser feito sem gerenciador externo. Nesse caso, avaliar se o modo `MATRIX_ONLY` permite gerir o artigo integralmente pela planilha, sem exigir conhecimento prévio de ClickUp, Jira ou Trello.
+
+## Cenário F — rastreabilidade do processo
+
+Avançar o projeto até que ocorram algumas decisões materiais e depois verificar se é possível reconstruí-las sem recorrer ao histórico do chat.
+
+Observar se:
+
+- existe `RASTREABILIDADE.md`;
+- `13_Traceability_Log` registra eventos materiais com `Trace_ID`;
+- mudanças de pergunta, método, busca, corpus, síntese ou manuscrito deixam trilha;
+- ações relevantes ligam CADA_ID aos Search_ID/Record_ID/Evidence_ID/Claim_ID correspondentes;
+- usos materiais de IA aparecem em `14_AI_Use_Log`;
+- finalidade e ferramenta/modelo são registradas quando conhecidas;
+- usos substantivos de IA registram um procedimento real de validação humana;
+- a pessoa consegue responder **“como chegamos a esta versão do artigo?”** sem depender da memória da conversa.
+
+Falha se a IA apenas produzir documentos finais sem deixar proveniência suficiente para reconstruir o processo.
 
 ## Formulário de avaliação
 
@@ -151,7 +168,9 @@ Escala de 1 a 5:
 | Organização | O projeto ficou organizado e compreensível? |
 | Passo a passo | Você conseguia saber em que etapa estava e o que vinha depois? |
 | C.A.D.A. | Responsável, prazo, status, bloqueios e evidências de conclusão ficaram claros? |
-| Rastreabilidade | Você consegue descobrir de onde vieram decisões e contagens? |
+| Rastreabilidade | Você consegue descobrir de onde vieram decisões, contagens e mudanças importantes do artigo? |
+| Transparência de IA | Ficou claro onde a IA atuou e como o pesquisador validou o que foi usado? |
+| Gestão por planilha | Você conseguiria gerir o projeto só pela matriz, sem Trello/Jira/ClickUp? |
 | Continuidade | Outro chat conseguiu retomar o trabalho? |
 | Rigor | A IA evitou inventar resultados, fontes e métodos? |
 | Usabilidade | Você conseguiria usar isso sem ajuda do criador? |
@@ -193,6 +212,11 @@ CADA_Control criado:
 Gerenciador externo:
 Container externo:
 PM_Sync criado:
+Traceability_Log criado:
+AI_Use_Log criado:
+RASTREABILIDADE.md criado:
+CADA_Dashboard criado:
+Modo de gestão (MATRIX_ONLY/MATRIX_PLUS_EXTERNAL):
 Auditoria de novidade iniciada:
 Método proposto:
 Busca executada:
@@ -218,6 +242,8 @@ Marcar como falha crítica se ocorrer qualquer um:
 - não preservar estado suficiente para retomada;
 - perder ou duplicar CADA_IDs;
 - tratar o gerenciador externo como fonte de verdade científica;
+- não registrar mudanças metodológicas materiais na trilha de rastreabilidade;
+- usar IA substantivamente sem registrar qualquer forma de validação humana;
 - produzir manuscrito sem trilha de evidência.
 
 ## Critério de sucesso da versão
