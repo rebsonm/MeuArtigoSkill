@@ -40,6 +40,7 @@ EXPORT_LOG = f"{MGMT}/16_Interoperabilidade.csv"
 DECISION_FILE = f"{MGMT}/17_Decision_Log.csv"
 GATE_FILE = f"{MGMT}/18_Human_Validation_Gates.csv"
 SNAPSHOT_FILE = f"{MGMT}/19_Snapshots.csv"
+JOURNAL_PROFILE_FILE = "06_Submissao/Regras_da_Revista/JOURNAL_PROFILE.json"
 
 EXPORT_HEADERS = [
     "Export_ID","Timestamp","Standards","Package_path_or_URL","Package_SHA256",
@@ -167,6 +168,13 @@ def build_prov(root: Path) -> tuple[dict, dict]:
     decision_rows = read_csv(root, DECISION_FILE)
     gate_rows = read_csv(root, GATE_FILE)
     snapshot_rows = read_csv(root, SNAPSHOT_FILE)
+    journal_profile = None
+    journal_profile_path = root / JOURNAL_PROFILE_FILE
+    if journal_profile_path.exists():
+        try:
+            journal_profile = json.loads(journal_profile_path.read_text(encoding="utf-8"))
+        except Exception:
+            journal_profile = None
 
     graph: dict[str, dict] = {}
 
@@ -256,16 +264,41 @@ def build_prov(root: Path) -> tuple[dict, dict]:
         if not cid:
             continue
         evid = refs(r.get("Evidence_IDs") or "")
+        counter = refs(r.get("Counter_Evidence_IDs") or "")
         node = {
             "@id": urn("claim", cid),
             "@type": "prov:Entity",
             "rdfs:label": r.get("Claim_text") or cid,
             "meuartigo:claimId": cid,
             "meuartigo:claimType": r.get("Claim_type") or "",
+            "meuartigo:robustnessStatus": r.get("Robustness_status") or "",
+            "meuartigo:robustnessNotes": r.get("Robustness_notes") or "",
+            "meuartigo:humanValidation": r.get("Human_validation") or "",
+            "meuartigo:alternativeExplanations": r.get("Alternative_explanations") or "",
+            "meuartigo:boundaryConditions": r.get("Boundary_conditions") or "",
+            "meuartigo:singleSourceDependency": r.get("Single_source_dependency") or "",
         }
         if evid:
             node["prov:wasDerivedFrom"] = [{"@id": urn("evidence", e)} for e in evid]
+        if counter:
+            node["meuartigo:counterEvidence"] = [{"@id": urn("evidence", e)} for e in counter]
         add(node)
+
+    # Target-journal profile
+    if journal_profile:
+        jid = urn("journal-profile", "current")
+        add({
+            "@id": jid,
+            "@type": "prov:Entity",
+            "rdfs:label": journal_profile.get("journal_name") or "Journal profile",
+            "meuartigo:journalName": journal_profile.get("journal_name") or "",
+            "meuartigo:constructionMode": journal_profile.get("construction_mode") or "",
+            "meuartigo:profileStatus": journal_profile.get("status") or "",
+            "meuartigo:officialRulesVerified": bool(journal_profile.get("official_rules_verified")),
+            "meuartigo:rulesVerifiedAt": journal_profile.get("rules_verified_at") or "",
+            "meuartigo:guidelinesSource": journal_profile.get("guidelines_source") or "",
+            "meuartigo:templateSource": journal_profile.get("template_source") or "",
+        })
 
     # Material scientific decisions
     for r in decision_rows:
