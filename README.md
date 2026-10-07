@@ -123,6 +123,22 @@ Por padrão, usa **um único gerenciador principal por artigo**. A matriz cient�
 
 O vínculo entre cada item C.A.D.A. e a tarefa externa fica registrado em `12_PM_Sync`.
 
+## Template oficial da matriz C.A.D.A.
+
+A planilha que gerencia o projeto tem agora um **template canônico de 16 abas**, com dashboard, C.A.D.A., linha do tempo, protocolo, buscas, screening, full text, matriz de evidências, síntese, claims, uso de IA, submissão e sincronização opcional.
+
+O modo padrão é `MATRIX_ONLY`: a pessoa consegue conduzir todo o projeto sem conhecer software de gestão.
+
+A Skill deve tentar criar essa matriz **antes das buscas em escala**:
+
+1. como planilha nativa quando houver integração de planilhas;
+2. pelo gerador oficial `scripts/build_matrix_template.py` quando `artifact_tool` estiver disponível;
+3. pelos CSVs somente como compatibilidade final.
+
+Documentação: [docs/MATRIZ-CADA.md](./docs/MATRIZ-CADA.md)
+
+Especificação técnica: [meu-artigo/references/spreadsheet-template.md](./meu-artigo/references/spreadsheet-template.md)
+
 ## Rastreabilidade da construção do artigo
 
 Um objetivo central do Meu Artigo é permitir que o pesquisador responda:
@@ -338,6 +354,7 @@ MeuArtigoSkill/
 ├── docs/
 │   ├── COMECE-AQUI.md
 │   ├── CADA.md
+│   ├── MATRIZ-CADA.md
 │   ├── RASTREABILIDADE.md
 │   ├── CHATGPT.md
 │   ├── CLAUDE.md
