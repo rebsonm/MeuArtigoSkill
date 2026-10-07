@@ -23,8 +23,8 @@ Se esta é sua primeira vez no GitHub, abra o guia:
 O caminho básico é:
 
 ```text
-GitHub → botão Code → Download ZIP → descompactar
-       → usar a pasta raiz descompactada
+GitHub → botão Code → Download ZIP
+       → no ChatGPT, importar o ZIP completo
        → seguir o guia da sua IA
 ```
 
@@ -42,7 +42,7 @@ A instalação nativa depende da plataforma e do plano atual:
 
 | Plataforma | Situação atual resumida |
 |---|---|
-| **ChatGPT** | Skills nativas aparecem em contas/workspaces elegíveis; a documentação atual cita Business, Enterprise, Healthcare e Edu. |
+| **ChatGPT** | A disponibilidade pode variar por conta e rollout. Em teste direto em 07/10/2026, a criação/importação de Skills estava ativa também em uma conta Plus. Verifique a presença de **Plugins → Habilidades** na própria interface. |
 | **Claude.ai** | Skills personalizadas podem ser enviadas em planos Pro, Max, Team e Enterprise quando a execução de código está habilitada. |
 | **Gemini** | Skills dependem dos requisitos atuais da conta/assinatura Google; confira o guia antes do teste. |
 
@@ -459,6 +459,8 @@ MeuArtigoSkill/
 Se você nunca usou GitHub, comece pelo [guia para iniciantes](./docs/COMECE-AQUI.md).
 
 A Skill instalável está na **raiz do repositório**: `SKILL.md`, `references/`, `scripts/` e `agents/` formam um único bundle.
+
+**Para o ChatGPT, o método validado neste projeto é importar diretamente o ZIP completo baixado em `Code → Download ZIP`.** No teste de 07/10/2026, essa forma preservou corretamente os arquivos auxiliares da Skill; tentativas de reconstruir ou selecionar apenas parte do pacote resultaram em importação incompleta.
 
 ### ChatGPT / Codex
 

@@ -8,6 +8,9 @@ The project follows semantic versioning while in beta. Breaking changes may stil
 
 ### Packaging correction
 
+- Documented the validated ChatGPT installation path: import the full ZIP downloaded from GitHub.
+- Removed the incorrect assumption that Plus accounts cannot use Skills; availability is now documented as account/rollout-dependent, with a successful Plus test recorded on 2026-10-07.
+- Added icon packaging/configuration guidance for `assets/icon.svg` and `agents/openai.yaml`.
 - Reorganized the repository so the installable Skill bundle lives directly at repository root.
 - Moved `SKILL.md`, `agents/`, `references/`, and `scripts/` to the root level expected by direct ZIP/folder installation.
 - Updated release audit and platform installation guides to the root-bundle layout.

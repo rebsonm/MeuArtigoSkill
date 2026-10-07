@@ -39,8 +39,9 @@ Na página principal do repositório:
 1. procure o botão verde **Code**;
 2. clique nele;
 3. escolha **Download ZIP**;
-4. salve o arquivo no computador;
-5. extraia/descompacte o ZIP.
+4. salve o arquivo no computador.
+
+**Se você vai instalar no ChatGPT, não precisa descompactar:** o procedimento validado é importar diretamente esse ZIP completo. Descompacte apenas se quiser inspecionar os arquivos ou usar outra plataforma.
 
 Depois de descompactar, você verá algo parecido com:
 
@@ -66,7 +67,7 @@ SKILL.md
 
 Ele contém as instruções centrais da Skill.
 
-Mas, quando sua IA permitir importar uma **pasta ou ZIP**, prefira fornecer a pasta raiz inteira, porque ela também contém:
+Quando sua IA permitir importar um **ZIP**, no ChatGPT prefira o ZIP completo baixado diretamente do GitHub, porque ele preserva a estrutura e os arquivos auxiliares. Ele contém:
 
 - `references/` — regras metodológicas detalhadas;
 - `scripts/` — rotinas auxiliares;
@@ -84,7 +85,7 @@ As três usam o mesmo núcleo metodológico. O que muda é a forma de instalar e
 
 ## 6. Como começar o teste
 
-Depois de instalar/importar a Skill na sua IA, abra uma conversa nova e escreva algo como:
+No ChatGPT, importe o ZIP completo em **Plugins → Habilidades → Criar/Carregar do computador**. Depois de instalar/importar a Skill na sua IA, abra uma conversa nova e escreva algo como:
 
 > Use a Skill Meu Artigo. Meu problema de pesquisa é: [descreva seu problema]. Quero desenvolver um artigo científico.
 

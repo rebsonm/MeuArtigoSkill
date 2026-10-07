@@ -6,11 +6,11 @@ Este documento descreve como usar **Meu Artigo** em ambientes OpenAI. A metodolo
 
 ## Antes de tentar instalar
 
-Segundo a documentação oficial atual da OpenAI, Skills no ChatGPT estão disponíveis para usuários elegíveis dos planos **Business, Enterprise, Healthcare e Edu**, sujeitos às configurações do workspace e à disponibilidade do produto.
+A disponibilidade de Skills pode variar por conta, rollout e superfície do produto.
 
-A disponibilidade pode variar entre ChatGPT, Codex e outras superfícies.
+A documentação pública da OpenAI consultada em 07/10/2026 ainda cita Business, Enterprise, Healthcare e Edu como planos elegíveis. Porém, em teste direto no mesmo dia, a criação/importação de Skills estava funcional também em uma conta **ChatGPT Plus**.
 
-Se você não encontrar a área **Plugins → Habilidades/Skills**, isso provavelmente significa que a instalação nativa de Skills ainda não está disponível naquele ambiente. Nesse caso, não é erro seu nem da Skill.
+Por isso, **não conclua a disponibilidade apenas pelo nome do plano**. O teste prático é verificar se sua conta mostra **Plugins → Habilidades/Skills** e as opções de criar/importar. Se essa área estiver disponível, siga normalmente o procedimento abaixo.
 
 Fonte oficial:
 
@@ -22,10 +22,9 @@ Na página do repositório:
 
 1. clique em **Code**;
 2. clique em **Download ZIP**;
-3. descompacte o arquivo;
-4. entre na pasta descompactada `MeuArtigoSkill`.
+3. mantenha esse ZIP completo para a instalação no ChatGPT.
 
-A própria raiz dessa pasta é o bundle da Skill: nela ficam `SKILL.md`, `references/`, `scripts/` e `agents/`.
+Você pode descompactá-lo apenas para inspeção. A raiz do pacote contém `SKILL.md`, `references/`, `scripts/` e `agents/`.
 
 ## 2. Instale no ChatGPT
 
@@ -36,9 +35,9 @@ Quando sua conta/workspace oferecer Skills:
 3. abra a aba **Habilidades / Skills**;
 4. clique em **Criar**;
 5. escolha **Carregar do computador**;
-6. forneça o pacote da Skill.
+6. selecione **o ZIP completo baixado diretamente do GitHub**.
 
-Se a interface exigir um único arquivo, você pode usar o ZIP baixado do GitHub ou compactar a pasta raiz descompactada. O pacote precisa preservar `SKILL.md`, `references/`, `scripts/` e `agents/` no mesmo nível.
+Este é o procedimento validado para o Meu Artigo. No teste de 07/10/2026, importar o ZIP completo preservou corretamente `references/`, `scripts/`, `agents/` e os demais recursos. Evite reconstruir manualmente o ZIP ou enviar apenas uma parte da estrutura quando não houver necessidade.
 
 ## 3. Inicie em um chat novo
 
@@ -131,3 +130,24 @@ Você pode usar `SKILL.md` como contexto manual em uma conversa comum, mas isso 
 ## Regra de portabilidade
 
 Se uma capacidade específica da OpenAI não estiver disponível, seguir os papéis definidos em `SKILL.md` e usar um equivalente. Nunca transformar indisponibilidade de ferramenta em ausência de evidência.
+
+
+## Ícone da Skill
+
+O ícone pode ser empacotado junto com a Skill.
+
+1. crie uma pasta `assets/` na raiz do bundle;
+2. coloque nela o arquivo do ícone, por exemplo `assets/icon.svg` ou `assets/icon.png`;
+3. em `agents/openai.yaml`, dentro de `interface:`, aponte os campos de ícone para esse arquivo:
+
+```yaml
+interface:
+  display_name: "Meu Artigo"
+  short_description: "Do problema ao artigo com gestão C.A.D.A."
+  icon_small: "assets/icon.svg"
+  icon_large: "assets/icon.svg"
+```
+
+Opcionalmente, a interface também aceita `brand_color` em hexadecimal, por exemplo `"#1ABCFE"`.
+
+Os caminhos devem ser **relativos ao bundle da Skill** e o arquivo precisa estar realmente presente no ZIP. Depois de alterar o ícone, reinstale/atualize a Skill para que a interface processe o novo asset.
