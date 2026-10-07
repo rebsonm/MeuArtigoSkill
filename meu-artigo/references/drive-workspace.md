@@ -106,6 +106,18 @@ Updated: <ISO date/time>
 
 ## 15. Change log
 - timestamp — material change — rationale
+
+## 16. C.A.D.A. dashboard
+- Current stage
+- Stage outcome required
+- READY items
+- IN_PROGRESS items
+- WAITING/BLOCKED items
+- Hard/external deadlines
+- Internal targets
+- Next valid action with CADA_ID, owner, and due
+- Recently completed items with evidence
+- Work-management provider/container/sync health
 ```
 
 Update this file after every material stage, after any invalid search/export, after a major methodological change, and before ending a long work session.
@@ -196,6 +208,22 @@ Every important manuscript claim should eventually be traceable to evidence IDs,
 Item | Requirement | Source_of_requirement | Status | Evidence_or_file | Notes
 ```
 
+### `11_CADA_Control`
+
+```text
+CADA_ID | Item_type | Title | Description | Scientific_stage | Captured_at | Source_or_trigger | Assigned_to | Execution_mode | Priority | Dependency_IDs | Next_action | Deadline | Deadline_type | Status | Evidence_of_progress | Completion_evidence | Related_artifact | Related_research_IDs | Blocker | Last_updated | External_manager | External_item_ID | Notes
+```
+
+This is the canonical operational-control table. Use stable CADA_ID values and never recycle them.
+
+### `12_PM_Sync`
+
+```text
+CADA_ID | Provider | Workspace_or_site | Container_ID | External_item_ID | External_URL | External_status | External_assignee | External_due | Canonical_status | Canonical_assignee | Canonical_deadline | Last_pushed_at | Last_pulled_at | Sync_status | Conflict | Notes
+```
+
+Use only when a work-management provider is connected. Preserve one row per CADA_ID × provider.
+
 ## Snapshot and filename rules
 
 Preserve stage history. Use names that encode stage, source, version, count, and date when useful.
@@ -231,7 +259,9 @@ When persistent storage is connected:
 5. create the master Sheet and all tabs;
 6. populate `00_Projeto` with the user's original problem and current project state;
 7. record plugin/tool status;
-8. run the first novelty audit;
-9. persist results before expanding the search.
+8. initialize `11_CADA_Control` with the first actionable project items;
+9. if a work-management provider is connected, choose one primary provider and initialize `12_PM_Sync`;
+10. run the first novelty audit;
+11. persist results before expanding the search.
 
 Do not wait for the manuscript stage to create project state. Persistence begins before the first substantive search.
