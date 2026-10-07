@@ -17,6 +17,7 @@ REQUIRED=[
 "00_Gestao_e_Continuidade/14_AI_Use_Log.csv",
 "00_Gestao_e_Continuidade/15_CADA_Dashboard.csv",
 "00_Gestao_e_Continuidade/RASTREABILIDADE.md",
+"00_Gestao_e_Continuidade/16_Interoperabilidade.csv",
 ]
 PASS1={"","INCLUDE","BORDERLINE","EXCLUDE"}
 PASS2={"","FULL TEXT — CORE","FULL TEXT — SUPPORT","EXCLUDE","FULL TEXT - CORE","FULL TEXT - SUPPORT"}
@@ -204,6 +205,21 @@ def main():
         for heading in ["## Process provenance","## AI use","## Human validation checkpoints","## Provenance gaps"]:
             if heading not in rs:
                 warnings.append(f"RASTREABILIDADE.md lacks {heading!r}")
+
+    interop=root/"00_Gestao_e_Continuidade/16_Interoperabilidade.csv"
+    if interop.exists():
+        export_ids=set()
+        for i,r in enumerate(rows(interop),2):
+            eid=(r.get("Export_ID") or "").strip()
+            if not eid:
+                continue
+            if eid in export_ids:
+                errors.append(f"interoperability row {i}: duplicate Export_ID {eid}")
+            export_ids.add(eid)
+            if not eid.startswith("EXPORT-"):
+                warnings.append(f"interoperability row {i}: nonstandard Export_ID {eid!r}")
+            if (r.get("Validation_status") or "").upper().startswith("INVALID"):
+                warnings.append(f"interoperability row {i}: provenance package {eid} is INVALID")
 
     matrix_files=list((root/"00_Gestao_e_Continuidade").glob("MATRIZ_MESTRA_*.xlsx"))
     if not matrix_files:
