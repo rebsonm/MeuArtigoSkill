@@ -104,7 +104,8 @@ O usuário **não precisa conhecer ClickUp, Jira ou Trello**.
 O modo padrão é `MATRIX_ONLY`: a própria matriz-mestra gerencia o projeto por meio de:
 
 - `11_CADA_Control` — tarefas, responsáveis, próxima ação, prazos, status e evidências;
-- `15_CADA_Dashboard` — visão resumida do andamento.
+- `15_CADA_Dashboard`
+- `16_INTEROPERABILIDADE` — visão resumida do andamento.
 
 Quem já usa uma ferramenta de gestão pode ativar `MATRIX_PLUS_EXTERNAL`.
 
@@ -125,7 +126,7 @@ O vínculo entre cada item C.A.D.A. e a tarefa externa fica registrado em `12_PM
 
 ## Template oficial da matriz C.A.D.A.
 
-A planilha que gerencia o projeto tem agora um **template canônico de 16 abas**, com dashboard, C.A.D.A., linha do tempo, protocolo, buscas, screening, full text, matriz de evidências, síntese, claims, uso de IA, submissão e sincronização opcional.
+A planilha que gerencia o projeto tem agora um **template canônico de 17 abas**, com dashboard, C.A.D.A., linha do tempo, protocolo, buscas, screening, full text, matriz de evidências, síntese, claims, uso de IA, submissão e sincronização opcional.
 
 O modo padrão é `MATRIX_ONLY`: a pessoa consegue conduzir todo o projeto sem conhecer software de gestão.
 
@@ -138,6 +139,22 @@ A Skill deve tentar criar essa matriz **antes das buscas em escala**:
 Documentação: [docs/MATRIZ-CADA.md](./docs/MATRIZ-CADA.md)
 
 Especificação técnica: [meu-artigo/references/spreadsheet-template.md](./meu-artigo/references/spreadsheet-template.md)
+
+## Exportação interoperável da proveniência
+
+O Meu Artigo consegue transformar a trilha interna de rastreabilidade em um **pacote auditável e legível por máquinas**.
+
+A exportação usa:
+
+- **W3C PROV-O** para entidades, atividades, agentes e relações de proveniência;
+- **RO-Crate 1.3** para empacotar o objeto de pesquisa;
+- **SHA-256** para verificar se os arquivos do pacote permaneceram inalterados.
+
+O pesquisador não precisa conhecer esses padrões para usar a Skill. Eles funcionam como camada de interoperabilidade.
+
+Cada export recebe um `EXPORT-####` e é registrado em `16_INTEROPERABILIDADE`.
+
+Veja [docs/INTEROPERABILIDADE.md](./docs/INTEROPERABILIDADE.md).
 
 ## Rastreabilidade da construção do artigo
 
@@ -356,6 +373,7 @@ MeuArtigoSkill/
 │   ├── CADA.md
 │   ├── MATRIZ-CADA.md
 │   ├── RASTREABILIDADE.md
+│   ├── INTEROPERABILIDADE.md
 │   ├── CHATGPT.md
 │   ├── CLAUDE.md
 │   ├── GEMINI.md
