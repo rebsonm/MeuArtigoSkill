@@ -58,7 +58,7 @@ When resuming:
 1. read `CONTINUIDADE.md`;
 2. inspect the project root and master matrix;
 3. read the protocol;
-4. identify the latest canonical search, screening, full-text, evidence, synthesis, C.A.D.A., decisions, gates, snapshots, traceability, and AI-use state;
+4. identify the latest canonical search, screening, full-text, evidence, synthesis, Corpus Map (when generated), C.A.D.A., decisions, gates, snapshots, traceability, and AI-use state;
 5. verify the last completed stage;
 6. do not reclassify decided records without an explicit audit reason;
 7. continue from the documented `Next valid action`;
@@ -72,3 +72,13 @@ When resuming:
 ## Required workspace details
 
 Read `drive-workspace.md` before creating or repairing a project workspace. It defines the reference folder tree, master-matrix tabs/sections, schemas, naming rules, snapshot policy, and continuity-file structure.
+
+
+## Corpus-state recovery
+
+When resuming a project:
+
+- if `MAPA_CORPUS.json` exists, treat it as a derived view of the retained corpus, not as a replacement for screening/evidence tables;
+- verify its generation timestamp and warnings before relying on it;
+- use Grounded Corpus Mode only with full text that is actually available and canonically eligible;
+- never reconstruct missing corpus facts from model memory.
