@@ -30,6 +30,18 @@ Depois escolha:
 
 Você não precisa clonar o repositório, criar branch, fazer commit ou instalar Git para usar a Skill.
 
+### Disponibilidade das Skills
+
+A instalação nativa depende da plataforma e do plano atual:
+
+| Plataforma | Situação atual resumida |
+|---|---|
+| **ChatGPT** | Skills nativas aparecem em contas/workspaces elegíveis; a documentação atual cita Business, Enterprise, Healthcare e Edu. |
+| **Claude.ai** | Skills personalizadas podem ser enviadas em planos Pro, Max, Team e Enterprise quando a execução de código está habilitada. |
+| **Gemini** | Skills dependem dos requisitos atuais da conta/assinatura Google; confira o guia antes do teste. |
+
+Se o menu de Skills não aparecer, abra o guia da plataforma antes de concluir que houve erro no repositório.
+
 ## O que a Skill faz
 
 A Skill conduz o pesquisador por um fluxo completo:
