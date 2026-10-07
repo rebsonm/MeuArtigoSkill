@@ -1,7 +1,7 @@
 interface:
   display_name: "Meu Artigo"
   short_description: "Do problema ao artigo com gestão C.A.D.A."
-  default_prompt: "Use $meu-artigo para organizar meu projeto, aplicar a gestão C.A.D.A., conectar as ferramentas de pesquisa e, quando disponível, espelhar o passo a passo em ClickUp, Jira ou Trello a partir do meu problema de pesquisa."
+  default_prompt: "Use $meu-artigo para organizar meu projeto, aplicar a gestão C.A.D.A. pela matriz como padrão, manter a rastreabilidade do processo científico, conectar as ferramentas de pesquisa e, se eu já usar um gerenciador, espelhar opcionalmente o passo a passo em ClickUp, Jira ou Trello."
 
 dependencies:
   tools:
