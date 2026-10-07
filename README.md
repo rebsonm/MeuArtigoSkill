@@ -1,5 +1,7 @@
 # Meu Artigo — Skill para pesquisa e construção de artigos científicos
 
+**Versão atual:** `0.5.0-beta.1` · veja [CHANGELOG.md](./CHANGELOG.md) · metadados de citação em [CITATION.cff](./CITATION.cff)
+
 **Meu Artigo** é uma Skill **multiplataforma** para pesquisa e construção de artigos científicos. Ela transforma um problema, pergunta ou ideia de pesquisa fornecida pelo usuário em um **processo científico rastreável, persistente, orientado por evidências e auditável quanto à sua própria construção**. O núcleo metodológico vive em `meu-artigo/SKILL.md`; diferenças entre ChatGPT, Claude e Gemini ficam isoladas em adapters/documentação de plataforma.
 
 Ela não entrega um “artigo pronto por mágica” e não reutiliza o conteúdo de um projeto anterior. O que a Skill reutiliza é um **método de trabalho**: organização do projeto, auditoria de novidade, protocolo, buscas bibliográficas, registro das decisões, deduplicação, screening, full text, matriz de evidências, síntese, redação e auditoria final. Todo esse fluxo é acompanhado por uma camada de gestão **C.A.D.A.**, para tornar o passo a passo visível e rastreável.
@@ -104,12 +106,12 @@ O usuário **não precisa conhecer ClickUp, Jira ou Trello**.
 O modo padrão é `MATRIX_ONLY`: a própria matriz-mestra gerencia o projeto por meio de:
 
 - `11_CADA_Control` — tarefas, responsáveis, próxima ação, prazos, status e evidências;
-- `15_CADA_Dashboard`
-- `16_INTEROPERABILIDADE`
-- `17_DECISOES`
-- `18_VALIDACOES`
-- `19_SNAPSHOTS`
-- `20_MAPA_CORPUS` — visão resumida do andamento.
+- `15_CADA_Dashboard` — visão resumida do andamento;
+- `16_INTEROPERABILIDADE` — exports PROV/RO-Crate e fixidade;
+- `17_DECISOES` — decisões científicas materiais;
+- `18_VALIDACOES` — gates humanos críticos;
+- `19_SNAPSHOTS` — estados congelados;
+- `20_MAPA_CORPUS` — estrutura exploratória do corpus validado.
 
 Quem já usa uma ferramenta de gestão pode ativar `MATRIX_PLUS_EXTERNAL`.
 
@@ -340,6 +342,11 @@ A Skill cria uma planilha-mestra com abas lógicas para:
 - `13_Traceability_Log`
 - `14_AI_Use_Log`
 - `15_CADA_Dashboard`
+- `16_INTEROPERABILIDADE`
+- `17_DECISOES`
+- `18_VALIDACOES`
+- `19_SNAPSHOTS`
+- `20_MAPA_CORPUS`
 
 Essas tabelas separam descoberta, decisão metodológica, evidência e redação. Também permitem reconstruir de onde vieram as contagens e afirmações utilizadas no manuscrito.
 
@@ -400,6 +407,9 @@ A Skill deve:
 ```text
 MeuArtigoSkill/
 ├── README.md
+├── VERSION
+├── CHANGELOG.md
+├── CITATION.cff
 ├── docs/
 │   ├── COMECE-AQUI.md
 │   ├── CADA.md
@@ -426,9 +436,18 @@ MeuArtigoSkill/
     │   ├── search-screening.md
     │   └── tool-orchestration.md
     └── scripts/
+        ├── build_matrix_template.py
+        ├── build_corpus_map.py
         ├── dedupe_records.py
+        ├── governance_events.py
+        ├── create_snapshot.py
+        ├── compare_snapshots.py
+        ├── generate_transparency_report.py
+        ├── export_provenance.py
+        ├── validate_provenance_package.py
         ├── init_project.py
-        └── validate_project.py
+        ├── validate_project.py
+        └── release_audit.py
 ```
 
 ## Instalação
@@ -464,7 +483,10 @@ Os scripts são auxiliares determinísticos para etapas frágeis/repetitivas:
 - `validate_project.py` — verifica a presença e consistência mínima dos artefatos canônicos do projeto;
 - `governance_events.py` — registra DEC_ID e validações GATE_ID;
 - `create_snapshot.py` / `compare_snapshots.py` — congela e compara estados SNAP_ID;
-- `generate_transparency_report.py` — gera a visão de transparência para revisor/editor.
+- `generate_transparency_report.py` — gera a visão de transparência para revisor/editor;
+- `build_corpus_map.py` — gera o mapa exploratório do corpus usando somente metadados reais disponíveis;
+- `export_provenance.py` / `validate_provenance_package.py` — gera e valida o pacote W3C PROV/RO-Crate;
+- `release_audit.py` — audita estrutura, versão, sintaxe e consistência antes de uma release.
 
 Eles não substituem julgamento científico.
 
@@ -488,4 +510,4 @@ O protocolo inclui:
 
 ## Estado do projeto
 
-Esta é uma Skill de pesquisa em evolução. Seu objetivo é transformar o uso de IA na escrita científica de uma sequência de conversas isoladas em um **pipeline de pesquisa auditável, persistente, retomável e portável entre agentes**.
+Esta é uma Skill de pesquisa em evolução, atualmente em `0.5.0-beta.1`. Seu objetivo é transformar o uso de IA na escrita científica de uma sequência de conversas isoladas em um **pipeline de pesquisa auditável, persistente, retomável e portável entre agentes**.
