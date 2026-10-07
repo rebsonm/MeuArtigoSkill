@@ -278,8 +278,9 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
     widths(cmap,{"A":24,"B":14,"C":28,"D":18,"E":14,"F":4,"G":30,"H":14,"I":4,"J":30,"K":14,"L":4,"M":24,"N":24,"O":48})
     cmap.freeze_panes.freeze_rows(4)
 
-    wb.worksheets.get_item("05_PROTOCOLO").get_range("A5:G11").values=[
+    wb.worksheets.get_item("05_PROTOCOLO").get_range("A5:G12").values=[
       ["Tipo de artigo/revisão","[A DEFINIR]","Depende da finalidade e da auditoria de novidade","PLANNED","v0",date.today(),""],
+      ["Revista-alvo / contrato editorial",target_journal or "TO_DEFINE",f"Modo: {journal_mode}; perfil: {journal_profile_status}. Regras editoriais orientam apresentação, nunca resultados/evidências.","PLANNED" if not target_journal else "IN_PROGRESS","v0",date.today(),""],
       ["Escopo","[A DEFINIR]","","PLANNED","v0",date.today(),""],
       ["Critérios de inclusão","[A DEFINIR]","","PLANNED","v0",date.today(),""],
       ["Critérios de exclusão","[A DEFINIR]","","PLANNED","v0",date.today(),""],
