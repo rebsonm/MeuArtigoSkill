@@ -20,7 +20,7 @@ The scientific state and the operational state must coexist.
 
 Scientific tables preserve evidence and methodological decisions.
 
-Operational work is governed through stable `CADA_ID` values in `11_CADA_Control`. The default mode is `MATRIX_ONLY`, using `15_CADA_Dashboard` for a readable project view. If a project manager is connected, `12_PM_Sync` maps each mirrored external item back to its canonical CADA_ID and the mode becomes `MATRIX_PLUS_EXTERNAL`.
+Operational work is governed through stable `CADA_ID` values in `11_CADA_Control`. Material scientific choices are governed through `DEC_ID`, critical human transitions through `GATE_ID`, and frozen states through `SNAP_ID`. The default mode is `MATRIX_ONLY`, using `15_CADA_Dashboard` for a readable project view. If a project manager is connected, `12_PM_Sync` maps each mirrored external item back to its canonical CADA_ID and the mode becomes `MATRIX_PLUS_EXTERNAL`.
 
 Research-process provenance is governed through stable `TRACE-####` events in `13_Traceability_Log` and summarized in `RASTREABILIDADE.md`. Material AI use is recorded in `14_AI_Use_Log`.
 
@@ -58,15 +58,16 @@ When resuming:
 1. read `CONTINUIDADE.md`;
 2. inspect the project root and master matrix;
 3. read the protocol;
-4. identify the latest canonical search, screening, full-text, evidence, synthesis, C.A.D.A., traceability, and AI-use state;
+4. identify the latest canonical search, screening, full-text, evidence, synthesis, C.A.D.A., decisions, gates, snapshots, traceability, and AI-use state;
 5. verify the last completed stage;
 6. do not reclassify decided records without an explicit audit reason;
 7. continue from the documented `Next valid action`;
 8. inspect active C.A.D.A. items and the next valid action;
 9. reconcile the connected work-management mirror if present;
-10. record material process-provenance events;
-11. update the AI-use log for substantive/assistive AI actions when applicable;
-12. update continuity and RASTREABILIDADE.md before ending.
+10. recover material DEC_ID decisions, the next pending/READY GATE_ID, and the latest SNAP_ID;
+11. record material process-provenance events;
+12. update the AI-use log for substantive/assistive AI actions when applicable;
+13. update continuity and RASTREABILIDADE.md before ending.
 
 ## Required workspace details
 
