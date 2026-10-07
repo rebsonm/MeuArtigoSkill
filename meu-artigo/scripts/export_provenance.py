@@ -375,8 +375,12 @@ def canonical_files(root: Path, include_fulltext: bool) -> list[Path]:
         d = root / rel
         if d.exists():
             for p in d.rglob("*"):
-                if p.is_file() and "RO_CRATE_" not in p.name:
-                    candidates.append(p)
+                if not p.is_file():
+                    continue
+                rel_parts = p.relative_to(d).parts
+                if "RO_CRATE_" in p.name or any(part.startswith("RO_CRATE_") for part in rel_parts):
+                    continue
+                candidates.append(p)
     if include_fulltext:
         d = root / "03_Screening_e_FullText/FullText_Corpus"
         if d.exists():
@@ -615,9 +619,9 @@ def main() -> int:
 
     (crate_dir / "ro-crate-metadata.json").write_text(json.dumps(ro_doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
+    write_manifest(crate_dir)
     errors = validate_structure(crate_dir)
     validation = "VALID" if not errors else "INVALID: " + "; ".join(errors)
-    write_manifest(crate_dir)
 
     zip_path = base_out / f"{crate_name}.zip"
     zip_dir(crate_dir, zip_path)
