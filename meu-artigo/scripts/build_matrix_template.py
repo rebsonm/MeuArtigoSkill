@@ -237,6 +237,41 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
     widths(snaps,{"A":14,"B":20,"C":30,"D":12,"E":18,"F":14,"G":22,"H":22,"I":16,"J":46,"K":46,"L":68,"M":54,"N":48,"O":16,"P":14,"Q":30})
     snaps.freeze_panes.freeze_rows(4); snaps.freeze_panes.freeze_columns(3)
 
+    cmap=wb.worksheets.add("20_MAPA_CORPUS")
+    title(cmap,"MAPA DO CORPUS","Visão exploratória da estrutura do corpus validado. Nenhum dado é inventado; campos permanecem vazios até haver metadados reais.","A1:O1")
+    cmap.get_range("A4:D4").values=[["Visão geral","Valor","Fonte / regra","Atualizado em"]]; hdr(cmap,"A4:D4")
+    cmap.get_range("A5:A9").values=[["Registros retidos"],["FULL TEXT — CORE"],["FULL TEXT — SUPPORT"],["Evidence_IDs"],["Claim_IDs"]]
+    cmap.get_range("A5:A9").format=LABEL
+    cmap.get_range("B5").formulas=[["=COUNTIF('07_SCREENING'!$M$5:$M$1000,\"FULL TEXT — CORE\")+COUNTIF('07_SCREENING'!$M$5:$M$1000,\"FULL TEXT — SUPPORT\")"]]
+    cmap.get_range("B6").formulas=[["=COUNTIF('07_SCREENING'!$M$5:$M$1000,\"FULL TEXT — CORE\")"]]
+    cmap.get_range("B7").formulas=[["=COUNTIF('07_SCREENING'!$M$5:$M$1000,\"FULL TEXT — SUPPORT\")"]]
+    cmap.get_range("B8").formulas=[["=COUNTA('09_MATRIZ_EVID'!$A$5:$A$500)"]]
+    cmap.get_range("B9").formulas=[["=COUNTA('11_CLAIMS'!$A$5:$A$500)"]]
+    cmap.get_range("C5:C9").values=[["Pass2 decision"],["Pass2 decision"],["Pass2 decision"],["Matriz de evidências"],["Claims ledger"]]
+    body(cmap,"A5:D9")
+
+    cmap.get_range("A12:B12").values=[["Publicações por ano","Quantidade"]]; hdr(cmap,"A12:B12")
+    cmap.get_range("D12:E12").values=[["Autores mais recorrentes","Quantidade"]]; hdr(cmap,"D12:E12")
+    cmap.get_range("G12:H12").values=[["Periódicos / fontes","Quantidade"]]; hdr(cmap,"G12:H12")
+    cmap.get_range("J12:K12").values=[["Keywords / conceitos","Quantidade"]]; hdr(cmap,"J12:K12")
+    cmap.get_range("M12:O12").values=[["Estrutura de rede","Valor","Regra / observação"]]; hdr(cmap,"M12:O12")
+    body(cmap,"A13:B40"); body(cmap,"D13:E40"); body(cmap,"G13:H40"); body(cmap,"J13:K40"); body(cmap,"M13:O40")
+    cmap.get_range("M13:M17").values=[["Método de aresta"],["Clusters"],["Artigos-ponte"],["Cobertura de enriquecimento"],["Warnings"]]
+    cmap.get_range("M13:M17").format=LABEL
+    cmap.get_range("N13:O17").values=[
+      ["","Somente preencher quando existir modelo real de rede."],
+      ["","Não gerar clusters bibliométricos por similaridade semântica apenas."],
+      ["","Exigir base operacional: citação, coautoria, acoplamento, cocitação ou coocorrência."],
+      ["","Registrar OpenAlex/Crossref ou outra fonte quando realmente utilizada."],
+      ["","Metadados ausentes devem permanecer explicitamente ausentes."],
+    ]
+    body(cmap,"M13:O17")
+    cmap.merge_cells("A43:O43")
+    cmap.get_range("A43").values=[["A aba é uma visão do corpus validado. Use scripts/build_corpus_map.py ou ferramenta equivalente para preencher somente com metadados reais. Mapa exploratório não transforma o desenho em bibliometria."]]
+    cmap.get_range("A43:O43").format={"fill":LIGHT_BLUE,"font":{"italic":True,"color":NAVY},"wrap_text":True}
+    widths(cmap,{"A":24,"B":14,"C":28,"D":18,"E":14,"F":4,"G":30,"H":14,"I":4,"J":30,"K":14,"L":4,"M":24,"N":24,"O":48})
+    cmap.freeze_panes.freeze_rows(4)
+
     wb.worksheets.get_item("05_PROTOCOLO").get_range("A5:G11").values=[
       ["Tipo de artigo/revisão","[A DEFINIR]","Depende da finalidade e da auditoria de novidade","PLANNED","v0",date.today(),""],
       ["Escopo","[A DEFINIR]","","PLANNED","v0",date.today(),""],
