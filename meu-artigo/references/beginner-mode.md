@@ -28,31 +28,32 @@ The agent should not require the user to supply a ready-made search strategy.
 
 When tools allow, automatically:
 
-1. check whether Google Drive, Consensus, Scite, and Firecrawl/web are available;
-2. surface install/connect actions for missing available integrations;
-3. create/resume the canonical Google Drive workspace;
-4. create `CONTINUIDADE.md` and the master tracking matrix;
-5. persist the user's original research problem verbatim;
-6. restate the problem without changing its meaning;
-7. perform a small novelty and terminology audit immediately;
-8. propose a provisional question/contribution when needed;
-9. explain whether the novelty survived;
-10. choose the likely article/review track and explain it briefly;
-11. build conceptual search blocks;
-12. create database-specific search strings;
-13. log all searches;
-14. ingest and validate exports;
-15. deduplicate;
-16. prepare and assist screening;
-17. locate lawful full text;
-18. build the evidence matrix;
-19. synthesize cross-source categories;
-20. build a claim-to-evidence ledger;
-21. draft from evidence;
-22. audit claims, references, and counts;
-23. update the continuity file and matrix before ending.
+1. inspect which research capabilities are available on the current platform;
+2. map available tools to persistent storage, academic discovery, citation verification, web/publisher retrieval, indexed databases, and script execution;
+3. surface install/connect actions for useful missing integrations when the platform supports them;
+4. create/resume the canonical persistent workspace;
+5. create `CONTINUIDADE.md` and the master tracking matrix;
+6. persist the user's original research problem verbatim;
+7. restate the problem without changing its meaning;
+8. perform a small novelty and terminology audit immediately;
+9. propose a provisional question/contribution when needed;
+10. explain whether the novelty survived;
+11. choose the likely article/review track and explain it briefly;
+12. build conceptual search blocks;
+13. create database-specific search strings;
+14. log all searches;
+15. ingest and validate exports;
+16. deduplicate;
+17. prepare and assist screening;
+18. locate lawful full text;
+19. build the evidence matrix;
+20. synthesize cross-source categories;
+21. build a claim-to-evidence ledger;
+22. draft from evidence;
+23. audit claims, references, and counts;
+24. update the continuity file and matrix before ending.
 
-The user should not need to know Boolean syntax, Drive folder design, spreadsheet schemas, plugin names, export field names, or deduplication mechanics.
+The user should not need to know Boolean syntax, workspace folder design, spreadsheet schemas, connector/plugin names, export field names, or deduplication mechanics.
 
 ## What must stay visible to the user
 
