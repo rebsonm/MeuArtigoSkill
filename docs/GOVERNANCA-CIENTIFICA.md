@@ -239,3 +239,22 @@ Essa camada existe porque responde perguntas essenciais:
 - Qual era o estado oficial?
 
 Se uma funcionalidade não melhora uma dessas respostas, ela não entra no núcleo.
+
+
+## GATE-0006 — robustez dos claims
+
+Antes da aprovação do GATE-0006, os claims materiais devem ser confrontados com:
+
+- evidência favorável;
+- evidência contrária;
+- explicações alternativas;
+- condições de contorno;
+- dependência de uma única fonte;
+- força da formulação;
+- classificação [L]/[I]/[P].
+
+Um claim pode ser ROBUST, QUALIFIED, REVISE, REJECT ou NOT_APPLICABLE.
+
+QUALIFIED significa que a condição/limite precisa aparecer no manuscrito.
+
+A aderência à revista pode ser verificada no mesmo gate quando houver revista-alvo, mas nunca pode justificar omitir evidência contrária.
