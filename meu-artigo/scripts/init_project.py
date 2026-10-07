@@ -166,6 +166,8 @@ def main()->int:
             "scientific_decision_log_enabled":True,
             "human_validation_gates_enabled":True,
             "scientific_snapshots_enabled":True,
+            "corpus_map_enabled":True,
+            "grounded_corpus_mode_enabled":True,
         },ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
     for rel,h in TABLES.items():write_csv(root/rel,h)
@@ -297,6 +299,8 @@ Updated: {date.today().isoformat()}
 - Scientific decision log: ACTIVE
 - Human validation gates: ACTIVE
 - Scientific snapshots: ACTIVE
+- Corpus Map: AVAILABLE AFTER RETAINED CORPUS
+- Grounded Corpus Mode: AVAILABLE AFTER VALIDATED FULL TEXT
 
 ## 4. Canonical workspace links
 - Project root: local mirror
@@ -313,6 +317,8 @@ Updated: {date.today().isoformat()}
 - Human validation gates: 00_Gestao_e_Continuidade/18_Human_Validation_Gates.csv
 - Scientific snapshots: 00_Gestao_e_Continuidade/19_Snapshots.csv
 - Snapshot directory: 00_Gestao_e_Continuidade/Snapshots/
+- Corpus Map: 04_Evidencias_e_Sintese/MAPA_CORPUS.md (generated only when real retained corpus exists)
+- Corpus Map data: 04_Evidencias_e_Sintese/MAPA_CORPUS.json
 - Manuscript: not started
 
 ## 5. Frozen decisions
@@ -324,6 +330,8 @@ Updated: {date.today().isoformat()}
 - Material scientific decisions receive DEC_ID values.
 - Seven default human validation gates govern critical scientific transitions without interrupting routine autonomy.
 - Frozen project states receive SNAP_ID values and SHA-256 manifests.
+- Corpus mapping remains data-driven and exploratory unless the research design explicitly adopts bibliometrics.
+- Grounded Corpus Mode is restricted to validated full text and never silently supplements from model memory.
 
 ## 6. Search status
 - Not started.
