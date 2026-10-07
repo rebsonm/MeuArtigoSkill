@@ -13,6 +13,10 @@ REQUIRED=[
 "00_Gestao_e_Continuidade/05_Evidence_Matrix.csv",
 "00_Gestao_e_Continuidade/11_CADA_Control.csv",
 "00_Gestao_e_Continuidade/12_PM_Sync.csv",
+"00_Gestao_e_Continuidade/13_Traceability_Log.csv",
+"00_Gestao_e_Continuidade/14_AI_Use_Log.csv",
+"00_Gestao_e_Continuidade/15_CADA_Dashboard.csv",
+"00_Gestao_e_Continuidade/RASTREABILIDADE.md",
 ]
 PASS1={"","INCLUDE","BORDERLINE","EXCLUDE"}
 PASS2={"","FULL TEXT — CORE","FULL TEXT — SUPPORT","EXCLUDE","FULL TEXT - CORE","FULL TEXT - SUPPORT"}
@@ -20,6 +24,9 @@ EPI={"","L","I","P","[L]","[I]","[P]"}
 CADA_STATUS={"CAPTURED","ASSIGNED","READY","IN_PROGRESS","WAITING","BLOCKED","DONE","CANCELLED","SUPERSEDED"}
 CADA_TERMINAL={"DONE","CANCELLED","SUPERSEDED"}
 DEADLINE_TYPES={"EXTERNAL","USER_SET","INTERNAL_TARGET","DEPENDENCY","TO_DEFINE"}
+TRACE_STATUS={"PLANNED","IN_PROGRESS","COMPLETE","INVALID","SUPERSEDED"}
+AI_MATERIALITY={"ASSISTIVE","SUBSTANTIVE","ADMINISTRATIVE","NOT_APPLICABLE"}
+AI_DECISION={"","ACCEPTED","MODIFIED","REJECTED","PENDING"}
 
 def rows(path):
     with path.open("r",encoding="utf-8-sig",newline="") as f:
@@ -45,6 +52,11 @@ def main():
                 warnings.append("PROJECT_CONFIG research_input is empty")
             if cfg_data.get("cada_governance") is not True:
                 warnings.append("PROJECT_CONFIG cada_governance is not true")
+            if cfg_data.get("traceability_enabled") is not True:
+                warnings.append("PROJECT_CONFIG traceability_enabled is not true")
+            mode=cfg_data.get("work_management_mode")
+            if mode not in {"MATRIX_ONLY","MATRIX_PLUS_EXTERNAL"}:
+                warnings.append(f"PROJECT_CONFIG unexpected work_management_mode={mode!r}")
         except Exception as e:
             errors.append(f"invalid PROJECT_CONFIG.json: {e}")
 
@@ -128,6 +140,70 @@ def main():
         sync_rows=list(rows(sync))
         if not sync_rows:
             warnings.append(f"PROJECT_CONFIG selects work_management_provider={pm!r} but 12_PM_Sync has no rows yet")
+
+    trace=root/"00_Gestao_e_Continuidade/13_Traceability_Log.csv"
+    trace_ids=set()
+    if trace.exists():
+        for i,r in enumerate(rows(trace),2):
+            tid=(r.get("Trace_ID") or "").strip()
+            status=(r.get("Status") or "").strip().upper()
+            action=(r.get("Action_summary") or "").strip()
+            if not tid:
+                errors.append(f"trace row {i}: missing Trace_ID")
+                continue
+            if tid in trace_ids:
+                errors.append(f"trace row {i}: duplicate Trace_ID {tid}")
+            trace_ids.add(tid)
+            if not tid.startswith("TRACE-"):
+                warnings.append(f"trace row {i}: nonstandard Trace_ID {tid!r}")
+            if not action:
+                errors.append(f"trace row {i}: {tid} lacks Action_summary")
+            if status and status not in TRACE_STATUS:
+                warnings.append(f"trace row {i}: unexpected Status {status!r}")
+            cid=(r.get("CADA_ID") or "").strip()
+            if cid and cada_ids and cid not in cada_ids:
+                warnings.append(f"trace row {i}: CADA_ID {cid} not found in 11_CADA_Control")
+
+    ai=root/"00_Gestao_e_Continuidade/14_AI_Use_Log.csv"
+    ai_ids=set()
+    if ai.exists():
+        for i,r in enumerate(rows(ai),2):
+            aid=(r.get("AI_Use_ID") or "").strip()
+            if not aid:
+                continue
+            if aid in ai_ids:
+                errors.append(f"AI-use row {i}: duplicate AI_Use_ID {aid}")
+            ai_ids.add(aid)
+            if not aid.startswith("AIUSE-"):
+                warnings.append(f"AI-use row {i}: nonstandard AI_Use_ID {aid!r}")
+            materiality=(r.get("Materiality") or "").strip().upper()
+            if materiality and materiality not in AI_MATERIALITY:
+                warnings.append(f"AI-use row {i}: unexpected Materiality {materiality!r}")
+            decision=(r.get("Accepted_modified_or_rejected") or "").strip().upper()
+            if decision not in AI_DECISION:
+                warnings.append(f"AI-use row {i}: unexpected decision {decision!r}")
+            trace_id=(r.get("Trace_ID") or "").strip()
+            if trace_id and trace_ids and trace_id not in trace_ids:
+                warnings.append(f"AI-use row {i}: Trace_ID {trace_id} not found in 13_Traceability_Log")
+            review=(r.get("Human_review_method") or "").strip()
+            if materiality=="SUBSTANTIVE" and not review:
+                errors.append(f"AI-use row {i}: substantive AI use {aid} lacks Human_review_method")
+            if materiality=="SUBSTANTIVE" and decision in {"","PENDING"}:
+                warnings.append(f"AI-use row {i}: substantive AI use {aid} has no final human decision")
+
+    dashboard=root/"00_Gestao_e_Continuidade/15_CADA_Dashboard.csv"
+    if dashboard.exists():
+        metrics={(r.get("Metric") or "").strip():(r.get("Value") or "").strip() for r in rows(dashboard)}
+        for metric in ["Management_mode","Current_scientific_stage","Next_CADA_ID","Next_action","Traceability_gaps"]:
+            if metric not in metrics:
+                warnings.append(f"CADA dashboard lacks metric {metric!r}")
+
+    rast=root/"00_Gestao_e_Continuidade/RASTREABILIDADE.md"
+    if rast.exists():
+        rs=rast.read_text(encoding="utf-8",errors="replace")
+        for heading in ["## Process provenance","## AI use","## Human validation checkpoints","## Provenance gaps"]:
+            if heading not in rs:
+                warnings.append(f"RASTREABILIDADE.md lacks {heading!r}")
 
     cont=root/"00_Gestao_e_Continuidade/CONTINUIDADE.md"
     if cont.exists():
