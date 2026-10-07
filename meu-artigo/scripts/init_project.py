@@ -43,7 +43,7 @@ TABLES = {
 "00_Gestao_e_Continuidade/06_Journal_Dialogue.csv":["Journal_article","Why_relevant","What_it_already_says","What_new_article_adds","Use_in_manuscript","Citation_status","Notes"],
 "00_Gestao_e_Continuidade/07_Normative_Corpus.csv":["ID","Institution","Document","Year","Jurisdiction","Authority_type","Scope","Relevant_constructs","Mechanisms","Lifecycle_stage","Binding_status","URL","Include_status","Version_or_access_date","Notes"],
 "00_Gestao_e_Continuidade/08_Synthesis_Log.csv":["Synthesis_ID","Category_or_theme","Evidence_IDs","Cross_source_pattern","Contradictions","Boundary_conditions","Inference","Epistemic_status","Decision","Notes"],
-"00_Gestao_e_Continuidade/09_Claims_Ledger.csv":["Claim_ID","Manuscript_section","Claim_text","Claim_type","Evidence_IDs","Locator_status","Strength","Draft_status","Notes"],
+"00_Gestao_e_Continuidade/09_Claims_Ledger.csv":["Claim_ID","Manuscript_section","Claim_text","Claim_type","Evidence_IDs","Counter_Evidence_IDs","Locator_status","Alternative_explanations","Boundary_conditions","Single_source_dependency","Strength","Robustness_status","Robustness_notes","Trace_IDs","Gate_ID","Human_validation","Draft_status","Notes"],
 "00_Gestao_e_Continuidade/10_Submission_Checklist.csv":["Item","Requirement","Source_of_requirement","Status","Evidence_or_file","Notes"],
 "00_Gestao_e_Continuidade/11_CADA_Control.csv":["CADA_ID","Item_type","Title","Description","Scientific_stage","Captured_at","Source_or_trigger","Assigned_to","Execution_mode","Priority","Dependency_IDs","Next_action","Deadline","Deadline_type","Status","Evidence_of_progress","Completion_evidence","Related_artifact","Related_research_IDs","Blocker","Last_updated","External_manager","External_item_ID","Notes"],
 "00_Gestao_e_Continuidade/12_PM_Sync.csv":["CADA_ID","Provider","Workspace_or_site","Container_ID","External_item_ID","External_URL","External_status","External_assignee","External_due","Canonical_status","Canonical_assignee","Canonical_deadline","Last_pushed_at","Last_pulled_at","Sync_status","Conflict","Notes"],
@@ -126,8 +126,8 @@ def seed_gates(path:Path):
         ["GATE-0003","SEARCH_STRATEGY","03-04","Estratégia de busca","Strings e filtros preparados e testados.","Blocos conceituais, strings literais, filtros e bases.","","","","","PENDING","","","","","","","PENDING","Execução das buscas canônicas",""],
         ["GATE-0004","CORPUS_FREEZE","08-09","Congelamento do corpus","Screening/full text encerrados e contagens reconciliadas.","Corpus elegível, exclusões, duplicatas e contagens finais.","","","","","PENDING","","","","","","","PENDING","Extração/síntese final do corpus",""],
         ["GATE-0005","SYNTHESIS","10","Síntese e produto teórico","Síntese entre fontes estabilizada.","Categorias, contradições, inferências e proposições/modelo.","","","","","PENDING","","","","","","","PENDING","Redação substantiva do manuscrito",""],
-        ["GATE-0006","CLAIMS_AUDIT","12-13","Claims e auditoria científica","Claims principais ligados às evidências e auditoria final executada.","Claims, Evidence_IDs, locators, limites e uso de IA.","","","","","PENDING","","","","","","","PENDING","Liberação da versão final",""],
-        ["GATE-0007","SUBMISSION_RELEASE","14","Liberação para submissão","Versão canônica, checklist e transparência prontos.","Manuscrito final, relatório de transparência, disclosures e arquivos de submissão.","","","","","PENDING","","","","","","","PENDING","Submissão externa",""],
+        ["GATE-0006","CLAIMS_AUDIT","12-13","Claims e auditoria científica","Claims principais ligados às evidências; evidência contrária, explicações alternativas, dependência de fonte e limites auditados.","Claims, Evidence_IDs, Counter_Evidence_IDs, locators, explicações alternativas, condições de contorno, dependência de fonte, robustez, uso de IA e aderência editorial aplicável.","","","","","PENDING","","","","","","","PENDING","Liberação da versão final",""],
+        ["GATE-0007","SUBMISSION_RELEASE","14","Liberação para submissão","Versão canônica, checklist, perfil da revista e transparência reconciliados.","Manuscrito final, JOURNAL_PROFILE, conformidade com regras oficiais, relatório de transparência, disclosures e arquivos de submissão.","","","","","PENDING","","","","","","","PENDING","Submissão externa",""],
     ]
     with path.open("w",newline="",encoding="utf-8-sig") as f:
         w=csv.writer(f)
@@ -140,10 +140,18 @@ def main()->int:
     ap.add_argument("--name",required=True)
     ap.add_argument("--problem",default="")
     ap.add_argument("--article-type",default="undecided")
+    ap.add_argument("--target-journal",default="")
+    ap.add_argument("--journal-guidelines-source",default="",help="Official author-guidelines URL/file when already known")
+    ap.add_argument("--journal-template-source",default="",help="Official journal template/layout URL/file when already known")
     ap.add_argument("--pm-provider",default="",help="Optional primary work manager: clickup, jira, trello, or equivalent")
     a=ap.parse_args()
 
     pm=(a.pm_provider or "").strip().lower()
+    target_journal=(a.target_journal or "").strip()
+    journal_guidelines=(a.journal_guidelines_source or "").strip()
+    journal_template=(a.journal_template_source or "").strip()
+    journal_mode="JOURNAL_NEUTRAL" if not target_journal else "JOURNAL_AWARE_PENDING_PROFILE"
+    journal_profile_status="TO_DEFINE" if not target_journal else ("LOADED" if (journal_guidelines or journal_template) else "PENDING_RULES")
     root=Path(a.path).resolve()/f"ARTIGO_{slug(a.name)}_{date.today().year}"
     root.mkdir(parents=True,exist_ok=True)
     for f in FOLDERS:(root/f).mkdir(parents=True,exist_ok=True)
@@ -168,6 +176,63 @@ def main()->int:
             "scientific_snapshots_enabled":True,
             "corpus_map_enabled":True,
             "grounded_corpus_mode_enabled":True,
+            "target_journal":target_journal or None,
+            "journal_construction_mode":journal_mode,
+            "journal_profile_status":journal_profile_status,
+            "journal_aware_construction_enabled":True,
+            "claim_robustness_audit_enabled":True,
+        },ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+
+    journal_profile=root/"06_Submissao/Regras_da_Revista/JOURNAL_PROFILE.json"
+    if not journal_profile.exists():
+        journal_profile.write_text(json.dumps({
+            "schema_version":"1.0",
+            "status":journal_profile_status,
+            "construction_mode":journal_mode,
+            "journal_name":target_journal,
+            "journal_url":"",
+            "guidelines_source":journal_guidelines,
+            "template_source":journal_template,
+            "rules_verified_at":"",
+            "official_rules_verified":False,
+            "article_type":"",
+            "formal_contract":{
+                "word_or_page_limit":"",
+                "section_requirements":[],
+                "abstract_rules":"",
+                "keyword_rules":"",
+                "reference_style":"",
+                "tables_figures_rules":"",
+                "anonymization_rules":"",
+                "title_page_rules":"",
+                "cover_letter":"",
+                "highlights":"",
+                "graphical_abstract":"",
+                "supplementary_material":"",
+                "ai_policy":"",
+                "data_policy":"",
+                "orcid":"",
+                "credit_taxonomy":"",
+                "conflicts_of_interest":"",
+                "funding_statement":"",
+                "ethics_statement":"",
+                "fees":"",
+                "file_formats":"",
+                "other_requirements":[]
+            },
+            "scientific_profile":{
+                "aims_scope":"",
+                "contribution_profile":"",
+                "common_article_genres":"",
+                "journal_dialogue_notes":"",
+                "recent_relevant_articles":[]
+            },
+            "planning":{
+                "provisional_section_budget":{},
+                "required_submission_artifacts":[]
+            },
+            "source_files_or_urls":[x for x in [journal_guidelines,journal_template] if x],
+            "notes":""
         },ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
     for rel,h in TABLES.items():write_csv(root/rel,h)
@@ -253,6 +318,12 @@ This file explains how the article is being constructed. It complements CONTINUI
 ## AI use
 - No substantive AI-use event has yet been recorded in 14_AI_Use_Log.
 
+## Journal-aware construction
+- Target journal: {target_journal or 'TO_DEFINE'}
+- Construction mode: {journal_mode}
+- Journal profile status: {journal_profile_status}
+- Rules/template source: {journal_guidelines or journal_template or 'not supplied'}
+
 ## Method and search provenance
 - Not started.
 
@@ -301,6 +372,9 @@ Updated: {date.today().isoformat()}
 - Scientific snapshots: ACTIVE
 - Corpus Map: AVAILABLE AFTER RETAINED CORPUS
 - Grounded Corpus Mode: AVAILABLE AFTER VALIDATED FULL TEXT
+- Journal-aware construction: {journal_mode}
+- Journal profile: {journal_profile_status}
+- Claim robustness audit: ACTIVE AT GATE-0006
 
 ## 4. Canonical workspace links
 - Project root: local mirror
@@ -319,6 +393,7 @@ Updated: {date.today().isoformat()}
 - Snapshot directory: 00_Gestao_e_Continuidade/Snapshots/
 - Corpus Map: 04_Evidencias_e_Sintese/MAPA_CORPUS.md (generated only when real retained corpus exists)
 - Corpus Map data: 04_Evidencias_e_Sintese/MAPA_CORPUS.json
+- Journal profile: 06_Submissao/Regras_da_Revista/JOURNAL_PROFILE.json
 - Manuscript: not started
 
 ## 5. Frozen decisions
@@ -332,6 +407,9 @@ Updated: {date.today().isoformat()}
 - Frozen project states receive SNAP_ID values and SHA-256 manifests.
 - Corpus mapping remains data-driven and exploratory unless the research design explicitly adopts bibliometrics.
 - Grounded Corpus Mode is restricted to validated full text and never silently supplements from model memory.
+- If a target journal is known, its official rules/template must shape manuscript presentation from the beginning.
+- Journal rules may shape presentation and architecture, never scientific findings or evidence.
+- Material claims must undergo robustness/contestability review before GATE-0006 is approved.
 
 ## 6. Search status
 - Not started.
@@ -352,7 +430,11 @@ Updated: {date.today().isoformat()}
 - Not started.
 
 ## 12. Journal/submission status
-- Not started.
+- Target journal: {target_journal or 'TO_DEFINE'}
+- Construction mode: {journal_mode}
+- Journal profile status: {journal_profile_status}
+- Guidelines/template source: {journal_guidelines or journal_template or 'not supplied'}
+- Submission checklist: not started.
 
 ## 13. Open issues and blockers
 - Refine research object and run novelty audit.
@@ -416,6 +498,9 @@ Updated: {date.today().isoformat()}
                 "--project-name",a.name,
                 "--problem",a.problem,
                 "--article-type",a.article_type,
+                "--target-journal",target_journal,
+                "--journal-mode",journal_mode,
+                "--journal-profile-status",journal_profile_status,
                 "--pm-provider",(pm or "NONE"),
             ]
             try:
