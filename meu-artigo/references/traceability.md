@@ -272,3 +272,21 @@ DEC_ID → CADA_ID → TRACE_ID → Evidence/Claim → GATE_ID → SNAP_ID → E
 ```
 
 This is not a requirement that every object link to every other object. It is a provenance path for material scientific transitions.
+
+
+## Corpus Map and grounded analysis
+
+Corpus-map generation is a material process event and should create a TRACE_ID.
+
+Record:
+
+- retained corpus state or SNAP_ID;
+- Record_IDs used;
+- metadata/enrichment source;
+- algorithm/rule;
+- output artifacts;
+- metadata coverage and warnings.
+
+Grounded Corpus Mode must preserve the Record_ID/Evidence_ID/locator chain for material answers.
+
+If AI interpretation materially affects synthesis, categories, propositions, or claims, also record AI_Use_ID and the real human review action.
