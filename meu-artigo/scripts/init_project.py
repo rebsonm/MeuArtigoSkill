@@ -300,7 +300,7 @@ Updated: {date.today().isoformat()}
 
 ## 4. Canonical workspace links
 - Project root: local mirror
-- Master matrix: 00_Gestao_e_Continuidade/MATRIZ_MESTRA_${slug(a.name)}.xlsx when generator is available; CSV mirrors remain canonical-compatible
+- Master matrix: 00_Gestao_e_Continuidade/MATRIZ_MESTRA_{slug(a.name)}.xlsx when generator is available; CSV mirrors remain canonical-compatible
 - Protocol: 00_Gestao_e_Continuidade/PROTOCOLO.md
 - C.A.D.A. control: 00_Gestao_e_Continuidade/11_CADA_Control.csv
 - PM sync: 00_Gestao_e_Continuidade/12_PM_Sync.csv
@@ -462,36 +462,8 @@ Updated: {date.today().isoformat()}
 [TO DEFINE]
 """,encoding="utf-8")
 
-    # Create the initial frozen snapshot after canonical initialization.
-    snapshot_status="NOT_CREATED"
-    snap_table=root/"00_Gestao_e_Continuidade/19_Snapshots.csv"
-    try:
-        with snap_table.open("r",encoding="utf-8-sig",newline="") as f:
-            existing_snaps=list(csv.DictReader(f))
-    except Exception:
-        existing_snaps=[]
-    if not existing_snaps:
-        snap_script=Path(__file__).with_name("create_snapshot.py")
-        if snap_script.exists():
-            cmd=[
-                sys.executable,str(snap_script),str(root),
-                "--milestone","Project initialization",
-                "--stage","00",
-                "--trigger","INITIALIZATION",
-                "--cada-ids","CADA-0001",
-                "--change-summary","Initial research input and canonical workspace state."
-            ]
-            try:
-                subprocess.run(cmd,check=True,capture_output=True,text=True)
-                snapshot_status="CREATED"
-            except Exception as exc:
-                snapshot_status=f"FAILED: {type(exc).__name__}"
-        else:
-            snapshot_status="SKIPPED: script_missing"
-
     print(root)
     print(f"matrix_status={matrix_status}")
-    print(f"snapshot_status={snapshot_status}")
     return 0
 
 if __name__=="__main__":
