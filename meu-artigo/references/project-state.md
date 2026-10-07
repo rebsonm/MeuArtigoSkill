@@ -4,13 +4,13 @@
 
 Treat chat as an interface, not as project memory. Persist decisions, strings, counts, files, exclusions, evidence, synthesis decisions, and next actions outside the conversation.
 
-When Google Drive is available, use the canonical Drive workspace in `drive-workspace.md`. When it is not, create a local mirror with `scripts/init_project.py` and upload/synchronize it later.
+When a persistent cloud/file workspace is available, use the canonical schema in `drive-workspace.md`. Google Drive is the reference implementation. When persistent storage is unavailable, create a local mirror with `scripts/init_project.py` and synchronize it later.
 
 ## Source of truth
 
 The canonical continuity artifact is `CONTINUIDADE.md`. A resumed agent must read it before taking substantive action.
 
-The canonical tracking artifact is the master matrix, preferably a native Google Sheet, with tabs for project metadata, protocol, search log, screening, full text, evidence, synthesis, claims, and submission.
+The canonical tracking artifact is the master matrix, preferably a native structured spreadsheet/table in the connected workspace, with tabs/sections for project metadata, protocol, search log, screening, full text, evidence, synthesis, claims, and submission.
 
 ## Status vocabulary
 
@@ -50,6 +50,6 @@ When resuming:
 7. continue from the documented `Next valid action`;
 8. update continuity before ending.
 
-## Required Drive details
+## Required workspace details
 
-Read `drive-workspace.md` before creating or repairing a project workspace. It defines the folder tree, master-sheet tabs, schemas, naming rules, snapshot policy, and continuity-file structure.
+Read `drive-workspace.md` before creating or repairing a project workspace. It defines the reference folder tree, master-matrix tabs/sections, schemas, naming rules, snapshot policy, and continuity-file structure.
