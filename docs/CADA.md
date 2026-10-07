@@ -101,7 +101,7 @@ O Meu Artigo funciona mesmo para quem nunca usou uma ferramenta formal de gestã
 
 ### Modo 1 — Planilha C.A.D.A. (`MATRIX_ONLY`)
 
-É o modo universal e padrão.
+É o modo universal e padrão. A implementação visual oficial está documentada em [MATRIZ-CADA.md](./MATRIZ-CADA.md).
 
 A própria matriz-mestra funciona como gerenciador do projeto. O pesquisador acompanha etapa, responsável, próxima ação, prazo, status, bloqueios e evidências diretamente na planilha.
 
