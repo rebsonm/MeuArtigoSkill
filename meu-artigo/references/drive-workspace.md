@@ -16,6 +16,7 @@ ARTIGO_<short-title>_<YYYY>/
 │   ├── CONTINUIDADE.md
 │   ├── PROTOCOLO.md
 │   ├── PROJECT_CONFIG.json
+│   ├── RASTREABILIDADE.md
 │   └── MATRIZ_MESTRA_<short-title>
 ├── 01_Auditoria_de_Novidade/
 │   ├── Notas_de_Auditoria/
@@ -122,6 +123,14 @@ Updated: <ISO date/time>
 
 Update this file after every material stage, after any invalid search/export, after a major methodological change, and before ending a long work session.
 
+## `RASTREABILIDADE.md`
+
+This is the human-readable process-provenance artifact. Unlike `CONTINUIDADE.md`, which describes the current state and next action, `RASTREABILIDADE.md` explains how material parts of the project were constructed.
+
+Maintain references to major method changes, canonical search versions, corpus milestones, evidence/synthesis decisions, AI-assisted steps, human verification, manuscript versions, and submission artifacts.
+
+Use `13_Traceability_Log` as the structured source and keep this Markdown file as the readable synthesis.
+
 ## Master tracking matrix
 
 Create one structured master matrix named `MATRIZ_MESTRA_<short-title>`. Prefer a native spreadsheet when the platform supports it. Use the following tabs. Keep tabs even if some remain unused; mark them `NOT APPLICABLE` rather than deleting them when doing so improves continuity.
@@ -224,6 +233,32 @@ CADA_ID | Provider | Workspace_or_site | Container_ID | External_item_ID | Exter
 
 Use only when a work-management provider is connected. Preserve one row per CADA_ID × provider.
 
+### `13_Traceability_Log`
+
+```text
+Trace_ID | Timestamp | Scientific_stage | CADA_ID | Actor | AI_platform_or_tool | Model_or_version | Action_type | Action_summary | Input_or_source | Source_or_artifact_IDs | Decision_or_output | Rationale | Artifact_before | Artifact_after | Verification_method | Human_validation | Related_Search_IDs | Related_Record_IDs | Related_Evidence_IDs | Related_Claim_IDs | Prompt_or_instruction_summary | Reproducibility_information | Materiality | Status | Notes
+```
+
+Use stable `TRACE-####` identifiers. Record material scientific-process events, not every conversational action.
+
+### `14_AI_Use_Log`
+
+```text
+AI_Use_ID | Date | Scientific_stage | CADA_ID | Trace_ID | Platform_or_tool | Model_or_version | Purpose | Input_category | Output_category | Materiality | Human_review_method | Human_decision | Accepted_modified_or_rejected | Related_artifacts | Disclosure_required | Disclosure_text_or_note | Notes
+```
+
+Use stable `AIUSE-####` identifiers for material AI use. This tab supports transparency and journal-specific disclosure.
+
+### `15_CADA_Dashboard`
+
+```text
+Metric | Value | Last_updated | Notes
+```
+
+This is a derived human-readable management view. Suggested metrics include current stage, active/blocked/overdue items, next action, external deadline, completion rate, traceability gaps, substantive AI uses pending human review, and external-manager sync health.
+
+The dashboard is never the source of truth; derive it from canonical tables.
+
 ## Snapshot and filename rules
 
 Preserve stage history. Use names that encode stage, source, version, count, and date when useful.
@@ -260,8 +295,10 @@ When persistent storage is connected:
 6. populate `00_Projeto` with the user's original problem and current project state;
 7. record plugin/tool status;
 8. initialize `11_CADA_Control` with the first actionable project items;
-9. if a work-management provider is connected, choose one primary provider and initialize `12_PM_Sync`;
-10. run the first novelty audit;
-11. persist results before expanding the search.
+9. initialize `13_Traceability_Log`, `14_AI_Use_Log`, `15_CADA_Dashboard`, and `RASTREABILIDADE.md`;
+10. set management mode to `MATRIX_ONLY` by default;
+11. if a work-management provider is connected and useful, switch to `MATRIX_PLUS_EXTERNAL`, choose one primary provider, and initialize `12_PM_Sync`;
+12. run the first novelty audit;
+13. persist results before expanding the search.
 
 Do not wait for the manuscript stage to create project state. Persistence begins before the first substantive search.
