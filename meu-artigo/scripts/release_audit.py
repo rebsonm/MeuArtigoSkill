@@ -18,6 +18,7 @@ REQUIRED=[
     "VERSION",
     "CHANGELOG.md",
     "CITATION.cff",
+    ".github/workflows/release-audit.yml",
     "README.md",
     "docs/COMECE-AQUI.md",
     "docs/MATRIZ-CADA.md",
