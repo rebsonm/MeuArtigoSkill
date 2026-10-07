@@ -152,6 +152,26 @@ Documentação: [docs/MATRIZ-CADA.md](./docs/MATRIZ-CADA.md)
 
 Especificação técnica: [meu-artigo/references/spreadsheet-template.md](./meu-artigo/references/spreadsheet-template.md)
 
+## Construção orientada à revista
+
+No início de um projeto, o Meu Artigo pergunta se o pesquisador já possui uma revista-alvo e solicita as **diretrizes oficiais para autores e o template/layout**, quando existirem.
+
+Se esses materiais forem fornecidos, a Skill cria um `JOURNAL_PROFILE` e passa a construir o manuscrito considerando desde cedo estrutura, extensão, resumo, referências, anonimização, declarações, política de IA e demais requisitos do periódico.
+
+Se ainda não houver revista definida, o projeto segue normalmente em `JOURNAL_NEUTRAL`.
+
+A revista orienta a **apresentação e arquitetura do manuscrito**, nunca os resultados ou a força das evidências.
+
+Veja [docs/JOURNAL-AWARE.md](./docs/JOURNAL-AWARE.md).
+
+## Auditoria de robustez dos claims
+
+Antes de congelar os claims principais, o Meu Artigo verifica não apenas se existe evidência favorável, mas também evidência contrária, explicações alternativas, condições de contorno e dependência excessiva de uma única fonte.
+
+Essa auditoria acontece dentro do `GATE-0006`, sem criar nova camada de gestão.
+
+Veja [docs/ROBUSTEZ-CLAIMS.md](./docs/ROBUSTEZ-CLAIMS.md).
+
 ## Exportação interoperável da proveniência
 
 O Meu Artigo consegue transformar a trilha interna de rastreabilidade em um **pacote auditável e legível por máquinas**.
@@ -422,6 +442,8 @@ MeuArtigoSkill/
 │   ├── MATRIZ-CADA.md
 │   ├── RASTREABILIDADE.md
 │   ├── GOVERNANCA-CIENTIFICA.md
+│   ├── JOURNAL-AWARE.md
+│   ├── ROBUSTEZ-CLAIMS.md
 │   ├── MAPA-CORPUS.md
 │   ├── INTEROPERABILIDADE.md
 │   ├── CHATGPT.md
