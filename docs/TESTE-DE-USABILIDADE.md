@@ -156,6 +156,25 @@ Observar se:
 
 Falha se a IA apenas produzir documentos finais sem deixar proveniência suficiente para reconstruir o processo.
 
+## Cenário G — pacote auditável e interoperabilidade
+
+Quando o projeto já tiver rastreabilidade suficiente, pedir:
+
+> Gere um pacote auditável deste artigo.
+
+Observar se:
+
+- a IA gera ou propõe export W3C PROV / RO-Crate sem exigir que o usuário conheça os padrões;
+- o pacote recebe `EXPORT-####`;
+- `16_INTEROPERABILIDADE` registra o export;
+- existe `ro-crate-metadata.json`;
+- existe `provenance/prov.jsonld`;
+- existe `manifest-sha256.txt`;
+- o validador confirma a estrutura/checksums;
+- full texts protegidos não são incluídos automaticamente;
+- warnings de proveniência ficam visíveis;
+- a IA não confunde “pacote válido” com “pesquisa cientificamente válida”.
+
 ## Formulário de avaliação
 
 Escala de 1 a 5:
