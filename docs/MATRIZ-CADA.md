@@ -140,3 +140,24 @@ Ela pode mostrar evolução temporal, autores, periódicos/fontes, keywords/conc
 Campos sem suporte permanecem vazios. Clusters e artigos-ponte exigem uma definição real de rede; a Skill não cria uma aparência bibliométrica com agrupamentos semânticos arbitrários.
 
 Veja [MAPA-CORPUS.md](./MAPA-CORPUS.md).
+
+
+## Revista-alvo desde a construção
+
+A planilha não ganha uma nova aba para revista.
+
+A informação é distribuída de forma funcional:
+
+- `03_PROJETO`: revista-alvo, modo editorial e status do perfil;
+- `06_Journal_Dialogue`: diálogo científico com o periódico;
+- `13_SUBMISSAO`: regras formais e conformidade;
+- `17_DECISOES`: mudança material de revista;
+- `00_PAINEL`: revista-alvo e modo editorial.
+
+As regras canônicas ficam em `JOURNAL_PROFILE.json`.
+
+## Robustez dos claims
+
+A aba `11_CLAIMS` inclui evidência contrária, explicações alternativas, condições de contorno, dependência de fonte única e status de robustez.
+
+Isso permite que o GATE-0006 avalie não apenas "há citação?", mas "o claim resiste à contestação?".
