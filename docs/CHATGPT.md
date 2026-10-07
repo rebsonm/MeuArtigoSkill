@@ -47,7 +47,7 @@ Não envie o ZIP completo do repositório como substituto da pasta da Skill, por
 
 Use algo como:
 
-> Use `$meu-artigo`. Meu problema de pesquisa é: [problema]. Quero desenvolver um artigo científico e ainda não defini a revista.
+> Use `$meu-artigo`. Meu problema de pesquisa é: [problema]. Quero desenvolver um artigo científico, acompanhar o passo a passo pelo C.A.D.A. e ainda não defini a revista.
 
 Para o teste de usabilidade, não explique à IA como a Skill deveria funcionar.
 
@@ -89,6 +89,20 @@ Preferido para contexto/grafo de citação, verificação bibliográfica e full 
 ### Firecrawl / web
 Preferido para páginas de periódicos, editoras, repositórios, documentação oficial, normas e instruções de submissão.
 
+### Gestão C.A.D.A.: ClickUp, Jira ou Trello
+
+A gestão C.A.D.A. funciona mesmo sem um gerenciador externo.
+
+Quando desejar o espelho operacional, o ChatGPT pode usar, quando conectados:
+
+- **ClickUp**;
+- **Atlassian**, para Jira;
+- **Trello**.
+
+A Skill deve usar um único gerenciador principal por artigo, registrar a escolha e manter `11_CADA_Control` como controle canônico. O vínculo com tickets/cards fica em `12_PM_Sync`.
+
+Esses três provedores são alternativas entre si; por isso não são declarados simultaneamente como dependências obrigatórias em `agents/openai.yaml`.
+
 ## Scopus e Web of Science
 
 Não presumir connector direto.
@@ -107,7 +121,7 @@ Quando necessárias:
 2. instalar/ativar apenas a Skill;
 3. fornecer um problema de pesquisa inédito;
 4. não explicar ao modelo o fluxo esperado;
-5. observar workspace, preflight, auditoria de novidade e registro de estado;
+5. observar workspace, preflight, painel C.A.D.A., auditoria de novidade e registro de estado;
 6. interromper o projeto;
 7. abrir outro chat e pedir apenas: **“Continue meu artigo.”**
 
