@@ -131,3 +131,57 @@ Do not treat these as equivalent:
 - high citation count vs methodological quality.
 
 Use role labels such as `FOUNDATIONAL`, `CORE`, `SUPPORT`, `CONTEXT`, `METHOD`, `CONTRASTING`, or domain-specific equivalents when useful. Keep these separate from formal quality appraisal scales.
+
+
+## Adversarial claim robustness audit
+
+Before a material Claim_ID is frozen, do more than confirm that at least one source supports it.
+
+Audit:
+
+- supporting Evidence_IDs;
+- counter-evidence or contradictory findings in the retained corpus;
+- plausible alternative explanations;
+- boundary conditions;
+- single-source dependence;
+- whether the wording is stronger than the evidence;
+- whether the claim is [L], [I], or [P];
+- what would change if a central supporting source/evidence item were removed.
+
+Suggested claims-ledger fields:
+
+```text
+Claim_ID
+Manuscript_section
+Claim_text
+Claim_type
+Evidence_IDs
+Counter_Evidence_IDs
+Locator_status
+Alternative_explanations
+Boundary_conditions
+Single_source_dependency
+Strength
+Robustness_status
+Robustness_notes
+Trace_IDs
+Gate_ID
+Human_validation
+Draft_status
+Notes
+```
+
+Robustness status:
+
+- NOT_AUDITED
+- ROBUST
+- QUALIFIED
+- REVISE
+- REJECT
+- NOT_APPLICABLE
+
+`QUALIFIED` means the claim may remain, but its boundary/qualification must appear in the manuscript.
+
+Do not treat disagreement as noise to be removed. Contradictory evidence may expose heterogeneity, boundary conditions, or a more precise theoretical contribution.
+
+The purpose is to test whether a claim survives reasonable contestation, not to manufacture certainty.
