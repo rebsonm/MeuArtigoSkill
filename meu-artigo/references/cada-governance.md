@@ -4,6 +4,8 @@
 
 C.A.D.A. is the operational governance layer of Meu Artigo. It gives the researcher a visible step-by-step view of the work while preserving scientific rigor.
 
+The canonical implementation is the spreadsheet/matrix itself. External task managers are optional mirrors.
+
 C.A.D.A. does **not** replace the scientific method, article design, review protocol, screening rules, evidence appraisal, analysis, or reporting standard.
 
 The scientific workflow answers:
@@ -224,6 +226,20 @@ Maintain a concise dashboard:
 ```
 
 This dashboard is for orientation. The canonical detailed list remains `11_CADA_Control`.
+
+## Spreadsheet management
+
+Read `cada-matrix.md`.
+
+The default mode is `MATRIX_ONLY`. The researcher can manage the entire article through `11_CADA_Control` and `15_CADA_Dashboard` without knowing any task-management software.
+
+## Relationship to traceability
+
+C.A.D.A. manages the work; traceability preserves how the scientific work actually occurred.
+
+Read `traceability.md`.
+
+Do not overload C.A.D.A. rows with every provenance event. Link CADA_ID to one or more Trace_ID values instead.
 
 ## Management-tool integration
 
