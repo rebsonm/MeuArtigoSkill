@@ -60,7 +60,14 @@ C.A.D.A. never replaces the scientific method. It manages the work required to e
 
 Every meaningful operational unit receives a stable `CADA_ID`. Maintain `11_CADA_Control` and the concise C.A.D.A. dashboard inside `CONTINUIDADE.md`.
 
-If ClickUp, Jira/Atlassian, Trello, or an equivalent task manager is available, mirror C.A.D.A. items there according to `references/work-management.md`. The persistent scientific workspace remains the source of truth.
+The **spreadsheet/matrix is the universal default management mode**. Read `references/cada-matrix.md`. A user never needs ClickUp, Jira, Trello, or project-management expertise to use C.A.D.A.
+
+Use one of two modes:
+
+- `MATRIX_ONLY` — canonical spreadsheet/matrix only;
+- `MATRIX_PLUS_EXTERNAL` — the same canonical matrix plus one external manager mirror.
+
+If ClickUp, Jira/Atlassian, Trello, or an equivalent task manager is available, it may mirror C.A.D.A. items according to `references/work-management.md`. The persistent scientific workspace remains the source of truth.
 
 ## Choose the methodological track
 
@@ -89,11 +96,32 @@ Maintain these canonical artifacts:
 - manuscript;
 - submission checklist;
 - C.A.D.A. control table;
-- optional project-manager synchronization table.
+- optional project-manager synchronization table;
+- scientific-process traceability log;
+- AI-use transparency log;
+- C.A.D.A. spreadsheet dashboard;
+- human-readable `RASTREABILIDADE.md` provenance summary.
 
 Read `references/drive-workspace.md` and `references/project-state.md` for the canonical workspace tree, master tracking matrix, tab schemas, versioning rules, and recovery flow. Treat the Drive layout as the reference schema even when another storage system is used. Run `scripts/init_project.py` when a filesystem workspace is available or persistent cloud storage is temporarily unavailable.
 
-Before ending any material stage, update `CONTINUIDADE.md` with what is frozen, what changed, tool/plugin status, exact counts, unresolved issues, canonical links, the C.A.D.A. dashboard, and the next valid action. Update the master matrix and any connected work-management mirror in the same stage. Another agent should be able to continue without reading the original chat.
+Before ending any material stage, update `CONTINUIDADE.md` with what is frozen, what changed, tool/plugin status, exact counts, unresolved issues, canonical links, the C.A.D.A. dashboard, and the next valid action. Update the master matrix, traceability artifacts, AI-use log when applicable, and any connected work-management mirror in the same stage. Another agent should be able to continue without reading the original chat.
+
+## Preserve scientific-process traceability
+
+Treat traceability as a first-class output of the project. Read `references/traceability.md`.
+
+Maintain:
+
+- `RASTREABILIDADE.md` — human-readable provenance summary;
+- `13_Traceability_Log` — structured record of material scientific-process events;
+- `14_AI_Use_Log` — AI-specific use, purpose, materiality, human validation, and disclosure readiness;
+- links between CADA_ID, Trace_ID, Search_ID, Record_ID, Evidence_ID, Claim_ID, and canonical artifacts.
+
+Do not attempt to archive every conversational token. Log material actions that affect method, corpus, evidence, synthesis, claims, manuscript state, or disclosure.
+
+For substantive AI-assisted work, record tool/platform, model/version when known, purpose, input/output category, human review method, final human decision, and related artifacts. Never claim human validation without an actual verification action.
+
+The final goal is that a researcher, coauthor, reviewer, editor, or future agent can reconstruct how important parts of the article were built.
 
 ## Stage 1 — Audit the idea before exhaustive searching
 
@@ -371,3 +399,5 @@ Read only what the current task needs:
 - `references/beginner-mode.md` — user-facing flow for researchers with little AI/tooling experience.
 - `references/cada-governance.md` — C.A.D.A. governance, stage roadmap, work-item schema, deadlines, statuses, and completion evidence.
 - `references/work-management.md` — optional ClickUp/Jira/Trello synchronization and source-of-truth rules.
+- `references/cada-matrix.md` — spreadsheet-first C.A.D.A. management mode and dashboard.
+- `references/traceability.md` — research-process provenance, Trace IDs, AI-use logging, and final transparency audit.
