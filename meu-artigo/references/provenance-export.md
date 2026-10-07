@@ -46,6 +46,15 @@ Full-text PDFs are excluded by default because they may contain licensed/copyrig
 
 Use PROV-O concepts wherever they fit.
 
+### Scientific governance mapping
+
+- DEC_ID → `prov:Entity` representing a material scientific decision;
+- GATE_ID → `prov:Activity` representing a human validation action;
+- SNAP_ID → `prov:Entity` representing a frozen project state;
+- validator/researcher → `prov:Agent`.
+
+A decision may `prov:wasDerivedFrom` linked Evidence_IDs. A snapshot may `prov:wasGeneratedBy` its gate activity and `prov:wasDerivedFrom` the previous snapshot.
+
 ### Entity
 
 Examples:
