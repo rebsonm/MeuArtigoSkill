@@ -175,6 +175,18 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
         sh.get_range(f"A4:{end}4").values=[heads]; hdr(sh,f"A4:{end}4")
         body(sh,f"A5:{end}500"); widths(sh,wmap); sh.freeze_panes.freeze_rows(4)
 
+    interop=wb.worksheets.add("16_INTEROPERABILIDADE")
+    title(interop,"INTEROPERABILIDADE E PACOTES DE PROVENIÊNCIA","Histórico de exports W3C PROV / RO-Crate, fixidade e validação.","A1:M1")
+    ih=["Export_ID","Timestamp","Padrões","Pacote / URL","SHA-256 do pacote","Validação","TRACE events","PROV entities","PROV activities","PROV agents","RO-Crate files","Warnings","Observações"]
+    interop.get_range("A4:M4").values=[ih]; hdr(interop,"A4:M4")
+    body(interop,"A5:M200")
+    interop.get_range("B5:B200").format.number_format="yyyy-mm-dd hh:mm"
+    interop.get_range("F5:F200").data_validation={"rule":{"type":"list","values":["VALID","INVALID","PENDING"]}}
+    interop.get_range("F5:F200").conditional_formats.add_custom('=F5="VALID"',{"fill":LIGHT_GREEN,"font":{"color":GREEN,"bold":True}})
+    interop.get_range("F5:F200").conditional_formats.add_custom('=F5="INVALID"',{"fill":LIGHT_RED,"font":{"color":RED,"bold":True}})
+    widths(interop,{"A":14,"B":20,"C":30,"D":48,"E":68,"F":16,"G":13,"H":14,"I":14,"J":12,"K":14,"L":48,"M":30})
+    interop.freeze_panes.freeze_rows(4)
+
     wb.worksheets.get_item("05_PROTOCOLO").get_range("A5:G11").values=[
       ["Tipo de artigo/revisão","[A DEFINIR]","Depende da finalidade e da auditoria de novidade","PLANNED","v0",date.today(),""],
       ["Escopo","[A DEFINIR]","","PLANNED","v0",date.today(),""],
