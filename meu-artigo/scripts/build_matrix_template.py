@@ -89,6 +89,11 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
       "STATUS_GERAL":["PLANNED","IN_PROGRESS","COMPLETE","VALID","INVALID","SUPERSEDED","PENDING ACCESS","FROZEN","NOT APPLICABLE"],
       "MODO_GESTAO":["MATRIX_ONLY","MATRIX_PLUS_EXTERNAL"],
       "PROVIDER_PM":["NONE","CLICKUP","JIRA","TRELLO","OTHER"],
+      "DECISION_TYPE":["QUESTION_CONTRIBUTION","METHOD","SCOPE","SEARCH","SCREENING","FULL_TEXT","EVIDENCE","SYNTHESIS","CLAIM","MANUSCRIPT","JOURNAL","SUBMISSION","OTHER"],
+      "DECISION_STATUS":["PROPOSED","APPROVED","REJECTED","FROZEN","SUPERSEDED"],
+      "GATE_DECISION":["PENDING","APPROVED","APPROVED_WITH_CHANGES","REJECTED","NOT_APPLICABLE"],
+      "GATE_STATUS":["PENDING","READY","COMPLETED","NOT_APPLICABLE"],
+      "SNAPSHOT_STATUS":["VALID","INVALID","PENDING"],
     }
     rows=[]
     for ln,vals in lists.items():
@@ -187,6 +192,51 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
     widths(interop,{"A":14,"B":20,"C":30,"D":48,"E":68,"F":16,"G":13,"H":14,"I":14,"J":12,"K":14,"L":48,"M":30})
     interop.freeze_panes.freeze_rows(4)
 
+    dec=wb.worksheets.add("17_DECISOES")
+    title(dec,"DECISÕES CIENTÍFICAS","O que decidimos, por quê, com base em quê e qual foi o impacto.","A1:T1")
+    dh=["DEC_ID","Timestamp","Etapa","Tipo","Pergunta decisória","Decisão","Alternativas consideradas","Justificativa","Evidence_IDs","Record_IDs","CADA_ID","Trace_ID","Gate_ID","Status","Decidido por","Impacto","Artefatos afetados","Versão resultante","Supersede DEC_ID","Observações"]
+    dec.get_range("A4:T4").values=[dh]; hdr(dec,"A4:T4"); body(dec,"A5:T300")
+    dec.get_range("B5:B300").format.number_format="yyyy-mm-dd hh:mm"
+    dec.get_range("D5:D300").data_validation={"rule":{"type":"list","values":lists["DECISION_TYPE"]}}
+    dec.get_range("N5:N300").data_validation={"rule":{"type":"list","values":lists["DECISION_STATUS"]}}
+    dec.get_range("N5:N300").conditional_formats.add_custom('=N5="FROZEN"',{"fill":LIGHT_GREEN,"font":{"color":GREEN,"bold":True}})
+    dec.get_range("N5:N300").conditional_formats.add_custom('=N5="REJECTED"',{"fill":LIGHT_RED,"font":{"color":RED,"bold":True}})
+    widths(dec,{"A":14,"B":20,"C":12,"D":22,"E":42,"F":44,"G":40,"H":52,"I":24,"J":24,"K":14,"L":14,"M":14,"N":16,"O":18,"P":42,"Q":36,"R":18,"S":18,"T":30})
+    dec.freeze_panes.freeze_rows(4); dec.freeze_panes.freeze_columns(5)
+
+    gates=wb.worksheets.add("18_VALIDACOES")
+    title(gates,"VALIDAÇÕES HUMANAS CRÍTICAS","Poucos gates, apenas nos pontos em que o avanço exige responsabilidade científica humana.","A1:T1")
+    gh=["GATE_ID","Tipo","Etapa","Nome","Condição de entrada","Itens a validar","DEC_IDs","CADA_IDs","Evidence_IDs","Snapshot antes","Decisão","Validado por","Data","Método de validação","Evidência da validação","Trace_ID","Snapshot depois","Status","Transição bloqueada","Observações"]
+    gates.get_range("A4:T4").values=[gh]; hdr(gates,"A4:T4"); body(gates,"A5:T100")
+    gate_seed=[
+      ["GATE-0001","QUESTION_CONTRIBUTION","01","Pergunta e contribuição","Auditoria inicial de novidade concluída.","Pergunta, objetivo, contribuição e limites propostos.","","CADA-0002","","","PENDING","","","","","","","PENDING","Definição do desenho metodológico",""],
+      ["GATE-0002","METHOD_PROTOCOL","02-03","Método e protocolo","Desenho metodológico e protocolo v1 preparados.","Método, critérios, escopo, papéis das bases e regras de screening.","","CADA-0003","","","PENDING","","","","","","","PENDING","Busca em escala",""],
+      ["GATE-0003","SEARCH_STRATEGY","03-04","Estratégia de busca","Strings e filtros preparados e testados.","Blocos conceituais, strings literais, filtros e bases.","","","","","PENDING","","","","","","","PENDING","Execução das buscas canônicas",""],
+      ["GATE-0004","CORPUS_FREEZE","08-09","Congelamento do corpus","Screening/full text encerrados e contagens reconciliadas.","Corpus elegível, exclusões, duplicatas e contagens finais.","","","","","PENDING","","","","","","","PENDING","Extração/síntese final do corpus",""],
+      ["GATE-0005","SYNTHESIS","10","Síntese e produto teórico","Síntese entre fontes estabilizada.","Categorias, contradições, inferências e proposições/modelo.","","","","","PENDING","","","","","","","PENDING","Redação substantiva do manuscrito",""],
+      ["GATE-0006","CLAIMS_AUDIT","12-13","Claims e auditoria científica","Claims principais ligados às evidências e auditoria final executada.","Claims, Evidence_IDs, locators, limites e uso de IA.","","","","","PENDING","","","","","","","PENDING","Liberação da versão final",""],
+      ["GATE-0007","SUBMISSION_RELEASE","14","Liberação para submissão","Versão canônica, checklist e transparência prontos.","Manuscrito final, relatório de transparência, disclosures e arquivos de submissão.","","","","","PENDING","","","","","","","PENDING","Submissão externa",""],
+    ]
+    gates.get_range("A5:T11").values=gate_seed
+    gates.get_range("K5:K100").data_validation={"rule":{"type":"list","values":lists["GATE_DECISION"]}}
+    gates.get_range("R5:R100").data_validation={"rule":{"type":"list","values":lists["GATE_STATUS"]}}
+    gates.get_range("M5:M100").format.number_format="yyyy-mm-dd hh:mm"
+    gates.get_range("R5:R100").conditional_formats.add_custom('=R5="READY"',{"fill":LIGHT_AMBER,"font":{"color":AMBER,"bold":True}})
+    gates.get_range("R5:R100").conditional_formats.add_custom('=R5="COMPLETED"',{"fill":LIGHT_GREEN,"font":{"color":GREEN,"bold":True}})
+    widths(gates,{"A":14,"B":24,"C":12,"D":30,"E":44,"F":52,"G":22,"H":22,"I":24,"J":16,"K":24,"L":20,"M":20,"N":42,"O":40,"P":16,"Q":16,"R":18,"S":34,"T":30})
+    gates.freeze_panes.freeze_rows(4); gates.freeze_panes.freeze_columns(4)
+
+    snaps=wb.worksheets.add("19_SNAPSHOTS")
+    title(snaps,"SNAPSHOTS CIENTÍFICOS","Estados congelados, verificáveis e comparáveis do projeto.","A1:Q1")
+    sh=["SNAP_ID","Timestamp","Marco","Etapa","Trigger","Gate_ID","DEC_IDs","CADA_IDs","SNAP anterior","Caminho / URL","Manifest","SHA-256 do manifest","Artefatos canônicos","Resumo da mudança","Validação","EXPORT_ID","Observações"]
+    snaps.get_range("A4:Q4").values=[sh]; hdr(snaps,"A4:Q4"); body(snaps,"A5:Q200")
+    snaps.get_range("B5:B200").format.number_format="yyyy-mm-dd hh:mm"
+    snaps.get_range("O5:O200").data_validation={"rule":{"type":"list","values":lists["SNAPSHOT_STATUS"]}}
+    snaps.get_range("O5:O200").conditional_formats.add_custom('=O5="VALID"',{"fill":LIGHT_GREEN,"font":{"color":GREEN,"bold":True}})
+    snaps.get_range("O5:O200").conditional_formats.add_custom('=O5="INVALID"',{"fill":LIGHT_RED,"font":{"color":RED,"bold":True}})
+    widths(snaps,{"A":14,"B":20,"C":30,"D":12,"E":18,"F":14,"G":22,"H":22,"I":16,"J":46,"K":46,"L":68,"M":54,"N":48,"O":16,"P":14,"Q":30})
+    snaps.freeze_panes.freeze_rows(4); snaps.freeze_panes.freeze_columns(3)
+
     wb.worksheets.get_item("05_PROTOCOLO").get_range("A5:G11").values=[
       ["Tipo de artigo/revisão","[A DEFINIR]","Depende da finalidade e da auditoria de novidade","PLANNED","v0",date.today(),""],
       ["Escopo","[A DEFINIR]","","PLANNED","v0",date.today(),""],
@@ -251,6 +301,15 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
         chart=dash.charts.add("bar",dash.get_range("A19:B28")); chart.title_text="Situação dos itens C.A.D.A."; chart.has_legend=False; chart.set_position("A31","F46")
     except Exception:
         pass
+
+    dash.merge_cells("H19:L19"); dash.get_range("H19").values=[["GOVERNANÇA CIENTÍFICA"]]; dash.get_range("H19:L19").format=SECTION
+    dash.get_range("H20:H23").values=[["Próximo gate"],["Decisões registradas"],["Snapshots"],["Gate status"]]; dash.get_range("H20:H23").format=LABEL
+    for rr in range(20,24): dash.merge_cells(f"I{rr}:L{rr}")
+    dash.get_range("I20").formulas=[["=IFERROR(INDEX('18_VALIDACOES'!$A$5:$A$100,MATCH(\"READY\",'18_VALIDACOES'!$R$5:$R$100,0)),IFERROR(INDEX('18_VALIDACOES'!$A$5:$A$100,MATCH(\"PENDING\",'18_VALIDACOES'!$R$5:$R$100,0)),\"—\"))"]]
+    dash.get_range("I21").formulas=[["=COUNTA('17_DECISOES'!$A$5:$A$300)"]]
+    dash.get_range("I22").formulas=[["=COUNTA('19_SNAPSHOTS'!$A$5:$A$200)"]]
+    dash.get_range("I23").formulas=[["=IF(I20=\"—\",\"—\",IFERROR(INDEX('18_VALIDACOES'!$R$5:$R$100,MATCH(I20,'18_VALIDACOES'!$A$5:$A$100,0)),\"—\"))"]]
+    body(dash,"H20:L23")
 
     dash.get_range("H31:L31").values=[["Etapa","Nome","Resultado esperado","Itens ativos","Situação"]]; hdr(dash,"H31:L31")
     dash.get_range("H32:J46").values=STAGES
