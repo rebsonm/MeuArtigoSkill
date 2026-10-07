@@ -31,6 +31,10 @@ DEADLINE_TYPES={"EXTERNAL","USER_SET","INTERNAL_TARGET","DEPENDENCY","TO_DEFINE"
 TRACE_STATUS={"PLANNED","IN_PROGRESS","COMPLETE","INVALID","SUPERSEDED"}
 AI_MATERIALITY={"ASSISTIVE","SUBSTANTIVE","ADMINISTRATIVE","NOT_APPLICABLE"}
 AI_DECISION={"","ACCEPTED","MODIFIED","REJECTED","PENDING"}
+JOURNAL_MODES={"JOURNAL_NEUTRAL","JOURNAL_AWARE_PENDING_PROFILE","JOURNAL_AWARE"}
+JOURNAL_PROFILE_STATUS={"TO_DEFINE","PENDING_RULES","LOADED","VERIFIED","SUPERSEDED"}
+CLAIM_ROBUSTNESS={"","NOT_AUDITED","ROBUST","QUALIFIED","REVISE","REJECT","NOT_APPLICABLE"}
+HUMAN_VALIDATION={"","PENDING","VALIDATED","REVISED","REJECTED","NOT_APPLICABLE"}
 
 def rows(path):
     with path.open("r",encoding="utf-8-sig",newline="") as f:
@@ -61,8 +65,37 @@ def main():
             mode=cfg_data.get("work_management_mode")
             if mode not in {"MATRIX_ONLY","MATRIX_PLUS_EXTERNAL"}:
                 warnings.append(f"PROJECT_CONFIG unexpected work_management_mode={mode!r}")
+            jmode=cfg_data.get("journal_construction_mode")
+            if jmode and jmode not in JOURNAL_MODES:
+                errors.append(f"PROJECT_CONFIG unexpected journal_construction_mode={jmode!r}")
+            jpstatus=cfg_data.get("journal_profile_status")
+            if jpstatus and jpstatus not in JOURNAL_PROFILE_STATUS:
+                errors.append(f"PROJECT_CONFIG unexpected journal_profile_status={jpstatus!r}")
         except Exception as e:
             errors.append(f"invalid PROJECT_CONFIG.json: {e}")
+
+    journal_profile=root/"06_Submissao/Regras_da_Revista/JOURNAL_PROFILE.json"
+    journal_data={}
+    if journal_profile.exists():
+        try:
+            journal_data=json.loads(journal_profile.read_text(encoding="utf-8"))
+            jstatus=str(journal_data.get("status","")).strip()
+            jmode=str(journal_data.get("construction_mode","")).strip()
+            if jstatus and jstatus not in JOURNAL_PROFILE_STATUS:
+                errors.append(f"JOURNAL_PROFILE unexpected status={jstatus!r}")
+            if jmode and jmode not in JOURNAL_MODES:
+                errors.append(f"JOURNAL_PROFILE unexpected construction_mode={jmode!r}")
+            if journal_data.get("official_rules_verified") and not str(journal_data.get("rules_verified_at","")).strip():
+                warnings.append("JOURNAL_PROFILE marks official rules verified but rules_verified_at is empty")
+            if jmode=="JOURNAL_AWARE" and not str(journal_data.get("journal_name","")).strip():
+                errors.append("JOURNAL_PROFILE is JOURNAL_AWARE but journal_name is empty")
+        except Exception as e:
+            errors.append(f"invalid JOURNAL_PROFILE.json: {e}")
+    else:
+        if str(cfg_data.get("target_journal") or "").strip():
+            errors.append("target journal is defined but JOURNAL_PROFILE.json is missing")
+        else:
+            warnings.append("JOURNAL_PROFILE.json not found; journal-neutral projects should still preserve the canonical profile scaffold")
 
     log=root/"00_Gestao_e_Continuidade/02_Search_Log.csv"
     if log.exists():
@@ -195,6 +228,28 @@ def main():
             if materiality=="SUBSTANTIVE" and decision in {"","PENDING"}:
                 warnings.append(f"AI-use row {i}: substantive AI use {aid} has no final human decision")
 
+    claims_path=root/"00_Gestao_e_Continuidade/09_Claims_Ledger.csv"
+    claim_rows=[]
+    if claims_path.exists():
+        for i,r in enumerate(rows(claims_path),2):
+            claim_rows.append(r)
+            cid=(r.get("Claim_ID") or "").strip()
+            if not cid:
+                continue
+            robustness=(r.get("Robustness_status") or "").upper().strip()
+            human=(r.get("Human_validation") or "").upper().strip()
+            draft=(r.get("Draft_status") or "").upper().strip()
+            if robustness not in CLAIM_ROBUSTNESS:
+                errors.append(f"claim row {i}: {cid} has invalid Robustness_status={robustness!r}")
+            if human not in HUMAN_VALIDATION:
+                errors.append(f"claim row {i}: {cid} has invalid Human_validation={human!r}")
+            if draft in {"VERIFIED","FROZEN","FINAL","READY"} and robustness in {"","NOT_AUDITED","REVISE","REJECT"}:
+                errors.append(f"claim row {i}: {cid} is {draft} but robustness status is {robustness or 'empty'}")
+            if robustness in {"ROBUST","QUALIFIED"} and human in {"","PENDING"}:
+                warnings.append(f"claim row {i}: {cid} is {robustness} but human validation is pending")
+            if robustness=="QUALIFIED" and not (r.get("Boundary_conditions") or "").strip() and not (r.get("Robustness_notes") or "").strip():
+                warnings.append(f"claim row {i}: {cid} is QUALIFIED without an explicit boundary/robustness note")
+
     dashboard=root/"00_Gestao_e_Continuidade/15_CADA_Dashboard.csv"
     if dashboard.exists():
         metrics={(r.get("Metric") or "").strip():(r.get("Value") or "").strip() for r in rows(dashboard)}
@@ -254,6 +309,30 @@ def main():
                 errors.append(f"gate row {i}: completed {gid} lacks validator")
             if status=="COMPLETED" and not (r.get("Validation_method") or "").strip():
                 errors.append(f"gate row {i}: completed {gid} lacks validation method")
+
+    gate_state={}
+    if gates.exists():
+        for r in rows(gates):
+            gid=(r.get("GATE_ID") or "").strip()
+            if gid:
+                gate_state[gid]=r
+
+    g6=gate_state.get("GATE-0006",{})
+    if (g6.get("Status") or "").upper()=="COMPLETED" and (g6.get("Decision") or "").upper() in {"APPROVED","APPROVED_WITH_CHANGES"}:
+        for i,r in enumerate(claim_rows,2):
+            cid=(r.get("Claim_ID") or "").strip()
+            if not cid:
+                continue
+            robustness=(r.get("Robustness_status") or "").upper().strip()
+            if robustness in {"","NOT_AUDITED","REVISE","REJECT"}:
+                errors.append(f"GATE-0006 approved while claim {cid} remains {robustness or 'not audited'}")
+
+    g7=gate_state.get("GATE-0007",{})
+    if (g7.get("Status") or "").upper()=="COMPLETED" and (g7.get("Decision") or "").upper() in {"APPROVED","APPROVED_WITH_CHANGES"}:
+        target=str((journal_data or {}).get("journal_name") or cfg_data.get("target_journal") or "").strip()
+        if target:
+            if (journal_data or {}).get("status")!="VERIFIED" or (journal_data or {}).get("official_rules_verified") is not True:
+                errors.append("GATE-0007 approved for a defined target journal without VERIFIED official journal rules")
 
     snaps=root/"00_Gestao_e_Continuidade/19_Snapshots.csv"
     if snaps.exists():
