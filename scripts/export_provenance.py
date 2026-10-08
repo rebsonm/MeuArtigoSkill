@@ -482,7 +482,7 @@ def canonical_files(root: Path, include_fulltext: bool) -> list[Path]:
     mgmt = root / MGMT
     if mgmt.exists():
         for p in mgmt.rglob("*"):
-            if p.is_file():
+            if p.is_file() and p.name != "ANONYMIZATION_PROFILE.json":
                 candidates.append(p)
     for rel in ["05_Manuscrito/Versao_Canonica", "06_Submissao/Regras_da_Revista", "06_Submissao/Arquivos_Finais", "06_Submissao/Comprovantes"]:
         d = root / rel

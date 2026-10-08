@@ -462,6 +462,8 @@ Substantive use must not be treated as validated until a real human review metho
 
 ## 13_SUBMISSAO
 
+This sheet must include the external-file anonymization checks before release: visible identity, hidden metadata/comments/revisions, filenames/paths/private links, participant/case identifiers when applicable, and the final `ANONYMIZATION_AUDIT` result. Do not create a new worksheet or ID family for anonymization; use the existing submission checklist and GATE-0007.
+
 Columns:
 
 `Item | Requisito | Fonte do requisito | Status | Prazo | Evidência / arquivo | Trace_ID | Observações`

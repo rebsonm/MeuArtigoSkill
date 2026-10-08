@@ -141,10 +141,12 @@ GATE-0003 — Search strategy
 GATE-0004 — Corpus freeze
 GATE-0005 — Synthesis / theoretical output
 GATE-0006 — Claims / final scientific audit
-GATE-0007 — Submission release
+GATE-0007 — Submission release, including anonymization and outgoing-file audit
 ```
 
 Adapt or mark NOT_APPLICABLE when the design makes a gate irrelevant. Do not invent additional gates unless there is a genuine scientific-risk reason.
+
+For GATE-0007, anonymization is part of the existing submission-release gate rather than a new gate. Approval requires a VERIFIED anonymization profile or explicit NOT_REQUIRED rationale, journal-rule reconciliation when applicable, and a passing audit of the exact outgoing files.
 
 ### Canonical table: `18_VALIDACOES`
 

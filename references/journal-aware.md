@@ -141,6 +141,9 @@ When `construction_mode = JOURNAL_AWARE`:
 - reserve space for required declarations and supplementary artifacts;
 - shape the journal-dialogue analysis around the outlet's actual scope and published conversation;
 - use the journal's reference and anonymization rules during drafting, not only at final formatting;
+- apply `references/anonymization.md` as the minimum release-control baseline even when the journal rules are brief;
+- keep identified title-page/declaration files separate from the anonymized manuscript when blind review requires it;
+- run `scripts/audit_anonymization.py` on the exact outgoing files before GATE-0007;
 - keep `13_SUBMISSAO` synchronized with the formal contract.
 
 Do not use universal word percentages as if they were journal rules. Any section budget that is not explicitly imposed by the journal must be marked as a planning estimate.
