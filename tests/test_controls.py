@@ -7,6 +7,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import zipfile
 
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(SCRIPTS))
@@ -48,6 +49,34 @@ class Controls(unittest.TestCase):
         reports = sorted((self.root / "06_Submissao/Anonimizacao").glob("*.json"))
         return result, json.loads(reports[-1].read_text(encoding="utf-8"))
 
+
+    def make_ooxml_with_metadata(self, path):
+        content_types='''<?xml version="1.0" encoding="UTF-8"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+  <Default Extension="xml" ContentType="application/xml"/>
+  <Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/>
+  <Override PartName="/docProps/app.xml" ContentType="application/vnd.openxmlformats-officedocument.extended-properties+xml"/>
+</Types>'''
+        rels='''<?xml version="1.0" encoding="UTF-8"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/>
+  <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/>
+</Relationships>'''
+        core='''<?xml version="1.0" encoding="UTF-8"?>
+<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:creator>Python</dc:creator></cp:coreProperties>'''
+        app='''<?xml version="1.0" encoding="UTF-8"?>
+<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties">
+<Application>Python</Application></Properties>'''
+        document='''<?xml version="1.0" encoding="UTF-8"?>
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body/></w:document>'''
+        with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as z:
+            z.writestr("[Content_Types].xml", content_types)
+            z.writestr("_rels/.rels", rels)
+            z.writestr("docProps/core.xml", core)
+            z.writestr("docProps/app.xml", app)
+            z.writestr("word/document.xml", document)
+
     def dedupe(self, records):
         path = self.root / "input.csv"
         write_csv(path, ["title", "doi", "authors", "year"], records)
@@ -85,6 +114,31 @@ class Controls(unittest.TestCase):
         row = {"title": "Specific title", "authors": "Example A", "year": "2020"}
         self.assertEqual(len(self.dedupe([row, {**row, "doi": "10.1234/a"},
                                           {**row, "doi": "10.1234/b"}])), 2)
+
+
+    def test_ooxml_generator_metadata_blocks_release(self):
+        self.profile()
+        path = self.final / "manuscript.docx"
+        self.make_ooxml_with_metadata(path)
+        result, report = self.audit()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual(report["result"], "FAIL")
+        kinds = {f["kind"] for f in report["findings"]}
+        self.assertIn("OOXML_DOCUMENT_PROPERTIES_PRESENT", kinds)
+
+    def test_metadata_sanitizer_removes_ooxml_generator_metadata(self):
+        self.profile()
+        path = self.final / "manuscript.docx"
+        self.make_ooxml_with_metadata(path)
+        cleaned = run("sanitize_metadata.py", path, "--in-place")
+        self.assertEqual(cleaned.returncode, 0, cleaned.stderr)
+        with zipfile.ZipFile(path) as z:
+            self.assertFalse(any(n.lower().startswith("docprops/") for n in z.namelist()))
+            self.assertTrue(all(tuple(i.date_time) == (1980, 1, 1, 0, 0, 0) for i in z.infolist()))
+        result, report = self.audit()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(report["result"], "PASS")
+        self.assertEqual(report["metadata_policy"], "ZERO_NONESSENTIAL_METADATA")
 
     def test_empty_audit_cannot_be_acknowledged(self):
         self.profile()

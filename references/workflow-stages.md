@@ -327,6 +327,7 @@ Before declaring the manuscript ready, verify:
 - the anonymization profile is verified or explicitly NOT_REQUIRED with rationale;
 - the exact outgoing files have a PASS or PASS_WITH_HUMAN_REVIEW anonymization audit when anonymization applies;
 - hidden metadata, comments/revisions, filenames, paths and visual outputs have been checked for identity leakage;
+- `EXTERNAL_ANONYMIZED` files contain no nonessential descriptive/provenance metadata, including Creator/Producer/Generator/Application, generation/edit timestamps, XMP/EXIF/IPTC or tool labels such as Python/pypdf/ReportLab/Matplotlib/LibreOffice;
 - continuity state is updated.
 
 Run `scripts/validate_project.py` when using the standard workspace. When local spreadsheet generation is available, also use `scripts/build_matrix_template.py` or let `scripts/init_project.py` invoke it automatically. Use `scripts/governance_events.py`, `scripts/create_snapshot.py`, `scripts/compare_snapshots.py`, and `scripts/generate_transparency_report.py` for deterministic governance operations. Use `scripts/build_corpus_map.py` for corpus mapping when a retained corpus exists, and `scripts/release_audit.py` before a release.
@@ -338,7 +339,7 @@ When the user is ready to submit:
 1. verify the target journal/conference requirements from an authoritative current source;
 2. complete `10_Submission_Checklist`;
 3. freeze the canonical manuscript and supplementary files;
-4. create separate identified and anonymized derivatives when required, and audit the exact outgoing files with `scripts/audit_anonymization.py`;
+4. create separate identified and anonymized derivatives when required, sanitize the exact anonymized files with `scripts/sanitize_metadata.py`, then audit those exact files with `scripts/audit_anonymization.py`;
 5. preserve the exact submitted versions;
 6. record the submission date, identifier/receipt, and any next external deadline;
 7. create/update the corresponding C.A.D.A. items;

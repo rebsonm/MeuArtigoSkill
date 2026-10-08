@@ -22,7 +22,7 @@ Antes de compartilhar ou submeter um arquivo para avaliação cega, a Skill deve
 - nomes dos próprios arquivos;
 - notas, planilhas ocultas e metadados de imagens/PDF quando aplicável.
 
-A Skill não deve considerar um documento anônimo apenas porque o nome não aparece na primeira página.
+A Skill não deve considerar um documento anônimo apenas porque o nome não aparece na primeira página. Em arquivos `EXTERNAL_ANONYMIZED`, o padrão é `ZERO_NONESSENTIAL_METADATA`: não pode permanecer identificação do software ou processo de geração. Campos como Author, Creator, Producer, Generator, Application, Company, criação/modificação, XMP, EXIF, IPTC e equivalentes devem ser removidos quando não forem tecnicamente necessários para renderizar o arquivo. Assim, “gerado com Python”, `pypdf`, ReportLab, Matplotlib, LibreOffice ou outro gerador também é tratado como vazamento de metadados.
 
 ## Perfil confidencial
 
@@ -44,13 +44,19 @@ Arquivos identificados, como folha de rosto, declaração de autoria, ORCID ou f
 
 A Skill não remove automaticamente auto-citações. A política da revista deve ser seguida para evitar que a anonimização prejudique a integridade das referências.
 
-## Auditoria
+## Sanitização e auditoria
 
-O script:
+A sequência para arquivos anonimizados é:
 
-`scripts/audit_anonymization.py`
+`python scripts/sanitize_metadata.py <arquivos> --in-place`
 
-analisa os arquivos efetivamente destinados ao compartilhamento e gera relatório em:
+seguido de:
+
+`python scripts/audit_anonymization.py <projeto> <arquivos>`
+
+O sanitizador remove propriedades descritivas/proveniência e normaliza metadados de pacote quando isso pode ser feito sem alterar o conteúdo científico. Se um formato não puder ser limpo com segurança, ele falha e o arquivo permanece bloqueado. Comentários ou revisões que possam alterar o conteúdo não são aceitos/rejeitados silenciosamente.
+
+O auditor analisa os arquivos efetivamente destinados ao compartilhamento e gera relatório em:
 
 `06_Submissao/Anonimizacao/`
 

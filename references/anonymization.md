@@ -72,7 +72,11 @@ Do not automatically delete legitimate self-citations. Follow the journal's blin
 
 ### File and package metadata
 
-Check and, when the output format permits, remove:
+For `EXTERNAL_ANONYMIZED`, use the strict policy `ZERO_NONESSENTIAL_METADATA`.
+
+This means that anonymity is not limited to ownership/identity fields. Remove nonessential descriptive and provenance metadata even when it does not name the author. Generator traces are prohibited in released anonymized files. Examples include `Python`, `pypdf`, ReportLab, Matplotlib, LibreOffice, Microsoft Office, or any other tool named in Creator/Producer/Generator/Application fields.
+
+Check and remove:
 
 - document creator/author;
 - last modified by;
@@ -87,10 +91,16 @@ Check and, when the output format permits, remove:
 - EXIF or image metadata when relevant;
 - spreadsheet hidden sheets/notes containing identity;
 - presentation speaker notes/comments containing identity;
-- PDF metadata;
+- PDF Info dictionaries, XMP metadata, document IDs and producer/creator fields;
+- OOXML core, extended and custom document properties;
+- ZIP/package comments, original package timestamps and other provenance-bearing package fields;
+- EXIF, XMP, IPTC, PNG textual/time chunks, JPEG comments and equivalent image metadata;
+- generator/application names such as Python, pypdf, ReportLab, Matplotlib, LibreOffice or another creation tool;
 - filenames that contain names, initials, affiliations, usernames or institutional identifiers.
 
-A visually anonymous document is not considered anonymous if hidden metadata still discloses identity.
+Technical structures strictly required to decode/render the file are not treated as descriptive metadata. Everything else that reveals authorship, editing history, generation software, generation time, environment or provenance must be removed from `EXTERNAL_ANONYMIZED`.
+
+A visually anonymous document is not considered anonymous if hidden metadata or generator information remains.
 
 ## Participant and case de-identification
 
@@ -114,12 +124,13 @@ Before producing an external/shareable file:
 3. inspect or configure `ANONYMIZATION_PROFILE.json`;
 4. generate the external derivative without unnecessary identity;
 5. separate identified title-page/declaration artifacts from the blinded manuscript when required;
-6. remove hidden metadata/comments/revisions where the format supports them;
-7. run `scripts/audit_anonymization.py` on the actual files to be shared;
-8. resolve every HIGH finding;
-9. visually inspect PDF/image outputs and any item that automation cannot fully inspect;
-10. record the audit report and human review;
-11. only then release or submit the files.
+6. run `scripts/sanitize_metadata.py` on the exact external derivative, removing all nonessential descriptive/provenance metadata without changing scientific meaning;
+7. verify that generator fields such as Creator/Producer/Generator/Application are absent, including values that identify Python or a specific library/tool;
+8. run `scripts/audit_anonymization.py` on the actual files to be shared;
+9. resolve every HIGH finding and every metadata-verification blocking error;
+10. visually inspect PDF/image outputs and any item that automation cannot fully inspect;
+11. record the audit report and human review;
+12. only then release or submit the files.
 
 Do not claim an artifact is anonymous if the audit is missing, failed, or still requires unresolved human review.
 
@@ -149,7 +160,7 @@ GATE-0007 cannot be approved for an external submission bundle unless:
 - the anonymization profile is `VERIFIED` or explicitly `NOT_REQUIRED`;
 - `NOT_REQUIRED` has a documented reason;
 - the target-journal anonymization rules were checked when a journal is defined;
-- the exact outgoing files have an audit result of `PASS` or `PASS_WITH_HUMAN_REVIEW`;
+- the exact outgoing files have an audit result of `PASS` or `PASS_WITH_HUMAN_REVIEW` under `ZERO_NONESSENTIAL_METADATA`;
 - identified and anonymized artifacts are not accidentally mixed;
 - final human review confirms that the released package does not reveal identity contrary to the destination's rules.
 

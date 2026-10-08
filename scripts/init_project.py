@@ -185,13 +185,15 @@ def main()->int:
             "anonymization_policy_enabled":True,
             "default_external_artifact_mode":"EXTERNAL_ANONYMIZED",
             "anonymization_profile_status":"TO_CONFIGURE",
+            "metadata_policy":"ZERO_NONESSENTIAL_METADATA",
         },ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
     anonymization_profile=root/"00_Gestao_e_Continuidade/ANONYMIZATION_PROFILE.json"
     if not anonymization_profile.exists():
         anonymization_profile.write_text(json.dumps({
-            "schema_version":"1.0",
+            "schema_version":"1.1",
             "status":"TO_CONFIGURE",
+            "metadata_policy":"ZERO_NONESSENTIAL_METADATA",
             "default_external_artifact_mode":"EXTERNAL_ANONYMIZED",
             "blind_review_mode":"AUTO",
             "sensitive_terms":{
@@ -210,6 +212,9 @@ def main()->int:
             },
             "rules":{
                 "strip_document_metadata":True,
+                "strip_all_nonessential_metadata":True,
+                "forbid_generator_metadata":True,
+                "normalize_package_timestamps":True,
                 "remove_comments_and_revision_authors":True,
                 "inspect_hidden_content":True,
                 "inspect_filenames_and_paths":True,
@@ -281,7 +286,7 @@ def main()->int:
     if not submission_existing:
         submission_rows=[
             ["Anonimização: conteúdo visível","Autores, afiliações, contatos, agradecimentos e outros identificadores compatíveis com a modalidade de revisão.","Política Meu Artigo + regras oficiais da revista","PENDING","",""],
-            ["Anonimização: metadados ocultos","Propriedades do documento, comentários, revisões, notas, planilhas ocultas e metadados devem ser auditados.","Política Meu Artigo + regras oficiais da revista","PENDING","",""],
+            ["Anonimização: metadados ocultos","Política ZERO_NONESSENTIAL_METADATA: remover Author/Creator/Producer/Generator/Application, criação/modificação, propriedades OOXML, XMP/EXIF/IPTC, comentários, revisões, notas, timestamps de pacote e demais proveniências não essenciais; nenhum rótulo como Python/pypdf/ReportLab/Matplotlib/LibreOffice pode permanecer.","Política Meu Artigo + regras oficiais da revista","PENDING","",""],
             ["Anonimização: nomes, caminhos e links","Nome de arquivo, caminhos locais, links privados e identificadores de conta não devem revelar autoria indevidamente.","Política Meu Artigo","PENDING","",""],
             ["Anonimização: participantes/casos","Identificadores de participantes, organizações e locais devem respeitar confidencialidade e protocolo aplicável.","Política Meu Artigo + protocolo do estudo","PENDING","",""],
             ["Anonimização: auditoria final","Os arquivos exatos de saída devem ter ANONYMIZATION_AUDIT PASS ou PASS_WITH_HUMAN_REVIEW antes da liberação externa.","Política Meu Artigo","PENDING","",""],

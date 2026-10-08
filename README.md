@@ -175,11 +175,11 @@ O Meu Artigo trata anonimização como uma etapa de liberação, não como simpl
 
 Arquivos internos podem permanecer identificados quando isso é necessário para a gestão do projeto. Já arquivos destinados a circulação externa usam, por padrão, o modo `EXTERNAL_ANONYMIZED` quando a identidade não é necessária ou quando as regras da revista ainda não estão definidas.
 
-A verificação considera conteúdo visível e também possíveis vazamentos em propriedades do documento, comentários, controle de alterações, notas, planilhas ocultas, nomes de arquivos, caminhos locais, links privados, afiliações, ORCID, contatos, agradecimentos, financiamento e metadados de PDF/imagens.
+A verificação considera conteúdo visível e também possíveis vazamentos em propriedades do documento, comentários, controle de alterações, notas, planilhas ocultas, nomes de arquivos, caminhos locais, links privados, afiliações, ORCID, contatos, agradecimentos, financiamento e metadados de PDF/imagens. Para arquivos `EXTERNAL_ANONYMIZED`, a política é `ZERO_NONESSENTIAL_METADATA`: também são removidos metadados neutros de geração, como Creator, Producer, Generator, Application, datas de criação/modificação, XMP/EXIF/IPTC e identificadores equivalentes. Portanto, um PDF que ainda informe “gerado com Python”, `pypdf`, ReportLab, Matplotlib, LibreOffice ou outro gerador não passa na liberação.
 
 Cada projeto mantém um `ANONYMIZATION_PROFILE.json` confidencial. Esse arquivo nunca deve ser incluído em pacotes externos, snapshots compartilháveis ou submissões cegas.
 
-Antes da liberação externa, os arquivos exatos de saída devem passar por `scripts/audit_anonymization.py`, que gera um `ANONYMIZATION_AUDIT`. O GATE-0007 não deve ser aprovado enquanto houver achados de alto risco ou revisão pendente.
+Antes da liberação externa, a sequência obrigatória é `scripts/sanitize_metadata.py` → `scripts/audit_anonymization.py`. O primeiro remove metadados descritivos/proveniência que não são necessários para a integridade do arquivo; o segundo audita os arquivos exatos de saída e gera um `ANONYMIZATION_AUDIT`. O GATE-0007 não deve ser aprovado enquanto houver qualquer metadado residual bloqueante, achado de alto risco ou revisão pendente.
 
 Veja [docs/ANONIMIZACAO.md](./docs/ANONIMIZACAO.md).
 

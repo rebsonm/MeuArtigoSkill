@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Strengthen anonymized outputs with `ZERO_NONESSENTIAL_METADATA`: remove creator/producer/generator/application fields, generation/edit timestamps, OOXML properties, PDF Info/XMP/document IDs, image EXIF/XMP/IPTC and equivalent nonessential provenance.
+- Add `scripts/sanitize_metadata.py` so anonymized outgoing files are cleaned before the deterministic anonymization audit.
+- Treat residual generator labels such as Python, pypdf, ReportLab, Matplotlib or LibreOffice as release-blocking metadata.
+- Add regression tests proving OOXML generator metadata fails audit and is removed by the sanitizer.
+
 - Preserve conflicting DOI records, corroborate exact-title merges with author/year and retain Unicode titles.
 - Bind anonymization audits to exact outgoing file/profile hashes; reject empty scope and unverified profiles.
 - Default decisions to proposals and require explicit human attribution/evidence for completed decisions.

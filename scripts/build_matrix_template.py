@@ -192,7 +192,7 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
         if name=="13_SUBMISSAO":
             sh.get_range("A5:H9").values=[
               ["Anonimização: conteúdo visível","Autores, afiliações, contatos, agradecimentos e identificadores coerentes com a modalidade de revisão.","Política Meu Artigo + revista","PENDING",None,"","",""],
-              ["Anonimização: metadados ocultos","Propriedades, comentários, revisões, notas, conteúdo oculto e metadados devem ser auditados.","Política Meu Artigo + revista","PENDING",None,"","",""],
+              ["Anonimização: metadados ocultos","ZERO_NONESSENTIAL_METADATA: remover Author/Creator/Producer/Generator/Application, datas, propriedades OOXML, XMP/EXIF/IPTC, comentários/revisões, timestamps de pacote e rótulos do gerador (Python/pypdf/ReportLab/Matplotlib/LibreOffice etc.).","Política Meu Artigo + revista","PENDING",None,"","",""],
               ["Anonimização: nomes, caminhos e links","Nome de arquivo, caminhos locais, links privados e contas não devem revelar autoria indevidamente.","Política Meu Artigo","PENDING",None,"","",""],
               ["Anonimização: participantes/casos","Identificadores de participantes, organizações e locais respeitam confidencialidade e protocolo.","Política Meu Artigo + protocolo","PENDING",None,"","",""],
               ["Anonimização: auditoria final","Arquivos exatos de saída possuem ANONYMIZATION_AUDIT PASS ou PASS_WITH_HUMAN_REVIEW.","Política Meu Artigo","PENDING",None,"","",""],
