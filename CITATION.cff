@@ -5,8 +5,8 @@ type: software
 authors:
   - family-names: "Mendes"
     given-names: "Rebson de Morais"
-version: "0.6.0-beta.1"
-date-released: "2026-10-07"
+version: "0.7.0-beta.1"
+date-released: "2026-10-08"
 repository-code: "https://github.com/rebsonm/MeuArtigoSkill"
 url: "https://github.com/rebsonm/MeuArtigoSkill"
 license: "NOASSERTION"
@@ -16,4 +16,5 @@ abstract: >-
   It combines C.A.D.A. operational governance, evidence-to-claim
   traceability, journal-aware manuscript construction, adversarial claim
   robustness checks, human validation gates, frozen scientific snapshots,
-  AI-use transparency, and interoperable provenance export.
+  AI-use transparency, high-rigor anonymization controls for generated
+  external artifacts, and interoperable provenance export.

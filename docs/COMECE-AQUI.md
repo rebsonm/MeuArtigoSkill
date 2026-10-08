@@ -103,6 +103,8 @@ Você não precisa preparar:
 
 A Skill deve ajudar a construir isso a partir do problema de pesquisa e mostrar o passo a passo por meio da gestão **C.A.D.A.**.
 
+Quando gerar arquivos para enviar a revista, avaliador ou terceiro, a Skill também deve aplicar a política de anonimização. O padrão para arquivos externos é não expor identidade desnecessariamente e auditar o arquivo final, inclusive metadados ocultos. Veja [ANONIMIZACAO.md](./ANONIMIZACAO.md).
+
 Você **não precisa conhecer ClickUp, Jira ou Trello**. A planilha/matriz do projeto já funciona como gerenciador completo no modo `MATRIX_ONLY`, com um painel visual próprio. Se você já usa alguma ferramenta de gestão e sua IA tiver essa integração, pode optar pelo modo `MATRIX_PLUS_EXTERNAL`.
 
 Além de acompanhar tarefas, a Skill também mantém uma trilha de **rastreabilidade da construção do artigo**, registrando decisões materiais, alterações, fontes, uso de IA e validações humanas.
@@ -199,6 +201,7 @@ Depois da primeira utilização, fique à vontade para explorar:
 - [GOVERNANCA-CIENTIFICA.md](./GOVERNANCA-CIENTIFICA.md) — como decisões, validação humana e snapshots funcionam;
 - [JOURNAL-AWARE.md](./JOURNAL-AWARE.md) — como a revista-alvo orienta a construção desde o início;
 - [ROBUSTEZ-CLAIMS.md](./ROBUSTEZ-CLAIMS.md) — como claims importantes são confrontados antes de congelar;
+- [ANONIMIZACAO.md](./ANONIMIZACAO.md) — como arquivos externos são anonimizados e auditados antes de compartilhar/submeter;
 - [MAPA-CORPUS.md](./MAPA-CORPUS.md) — como funciona o mapa do corpus e a consulta grounded;
 - `../SKILL.md` — instrução central;
 - `../references/` — metodologia detalhada;

@@ -4,6 +4,29 @@ All notable changes to Meu Artigo are recorded here.
 
 The project follows semantic versioning while in beta. Breaking changes may still occur before 1.0.0, but they must be documented.
 
+## 0.7.0-beta.1 — 2026-10-08
+
+### Added
+
+- High-rigor anonymization as a core release-control policy for generated and shareable artifacts.
+- Confidential `ANONYMIZATION_PROFILE.json` with explicit identity/sensitive-term categories.
+- Default `EXTERNAL_ANONYMIZED` mode when identity is unnecessary or destination rules are not yet known.
+- Deterministic `scripts/audit_anonymization.py` for filenames, visible text, OOXML package content/metadata, configured identity terms, common personal identifiers, local paths and PDF checks.
+- `ANONYMIZATION_AUDIT` reports with PASS, PASS_WITH_HUMAN_REVIEW, REVIEW_REQUIRED and FAIL states.
+- Submission-checklist items for visible identity, hidden metadata, comments/revisions, filenames/paths/links, participant/case identifiers and final outgoing-file audit.
+- GATE-0007 enforcement requiring VERIFIED anonymization state or explicit NOT_REQUIRED rationale, plus a passing audit when anonymization applies.
+- User-facing anonymization documentation in `docs/ANONIMIZACAO.md` and full specification in `references/anonymization.md`.
+
+### Privacy and scientific guardrails
+
+- Internal identified sources and external anonymized derivatives are kept separate.
+- The confidential anonymization profile is excluded from snapshots and provenance exports.
+- A visually anonymous document is not considered anonymous if hidden metadata still reveals identity.
+- PDF/image outputs require explicit human visual review when automation cannot guarantee inspection.
+- Self-citations are not automatically deleted; journal-specific blind-review rules must be followed without distorting the scientific record.
+- Anonymization may not silently alter findings, evidence, methodological facts, limitations or claim meaning.
+- Participant/case de-identification does not replace ethics review, consent, data-protection duties or the research protocol when those apply.
+
 ## 0.6.0-beta.1 — 2026-10-07
 
 ### Packaging correction

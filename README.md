@@ -1,6 +1,6 @@
 # Meu Artigo — Skill para pesquisa e construção de artigos científicos
 
-**Versão atual:** `0.6.0-beta.1`
+**Versão atual:** `0.7.0-beta.1`
 
 **Status de distribuição:** beta fechado · repositório privado · implementação ainda não liberada para distribuição pública · veja [CHANGELOG.md](./CHANGELOG.md) · metadados de citação em [CITATION.cff](./CITATION.cff)
 
@@ -81,7 +81,8 @@ A Skill conduz o pesquisador por um fluxo completo:
 27. gera o Mapa do Corpus somente com metadados reais do corpus retido;
 28. oferece Grounded Corpus Mode para perguntas limitadas ao full text validado;
 29. gera relatório de transparência para revisor/editor;
-30. exporta proveniência interoperável em W3C PROV/RO-Crate com SHA-256.
+30. exporta proveniência interoperável em W3C PROV/RO-Crate com SHA-256;
+31. aplica anonimização de alto rigor aos arquivos externos, incluindo conteúdo visível, metadados ocultos, comentários, revisões, nomes de arquivo, caminhos, links e inspeção final antes da liberação.
 
 ## Gestão do passo a passo com C.A.D.A.
 
@@ -167,6 +168,20 @@ Se ainda não houver revista definida, o projeto segue normalmente em `JOURNAL_N
 A revista orienta a **apresentação e arquitetura do manuscrito**, nunca os resultados ou a força das evidências.
 
 Veja [docs/JOURNAL-AWARE.md](./docs/JOURNAL-AWARE.md).
+
+## Anonimização de alto rigor
+
+O Meu Artigo trata anonimização como uma etapa de liberação, não como simples remoção do nome da primeira página.
+
+Arquivos internos podem permanecer identificados quando isso é necessário para a gestão do projeto. Já arquivos destinados a circulação externa usam, por padrão, o modo `EXTERNAL_ANONYMIZED` quando a identidade não é necessária ou quando as regras da revista ainda não estão definidas.
+
+A verificação considera conteúdo visível e também possíveis vazamentos em propriedades do documento, comentários, controle de alterações, notas, planilhas ocultas, nomes de arquivos, caminhos locais, links privados, afiliações, ORCID, contatos, agradecimentos, financiamento e metadados de PDF/imagens.
+
+Cada projeto mantém um `ANONYMIZATION_PROFILE.json` confidencial. Esse arquivo nunca deve ser incluído em pacotes externos, snapshots compartilháveis ou submissões cegas.
+
+Antes da liberação externa, os arquivos exatos de saída devem passar por `scripts/audit_anonymization.py`, que gera um `ANONYMIZATION_AUDIT`. O GATE-0007 não deve ser aprovado enquanto houver achados de alto risco ou revisão pendente.
+
+Veja [docs/ANONIMIZACAO.md](./docs/ANONIMIZACAO.md).
 
 ## Auditoria de robustez dos claims
 
@@ -509,4 +524,4 @@ Qualquer eventual estudo científico com participantes deverá ser planejado sep
 
 ## Estado do projeto
 
-Esta é uma Skill de pesquisa em evolução, atualmente em `0.6.0-beta.1`. Seu objetivo é transformar o uso de IA na escrita científica de uma sequência de conversas isoladas em um **pipeline de pesquisa auditável, persistente, retomável e portável entre agentes**.
+Esta é uma Skill de pesquisa em evolução, atualmente em `0.7.0-beta.1`. Seu objetivo é transformar o uso de IA na escrita científica de uma sequência de conversas isoladas em um **pipeline de pesquisa auditável, persistente, retomável e portável entre agentes**.
