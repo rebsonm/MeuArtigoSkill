@@ -29,6 +29,7 @@ FOLDERS = [
     "05_Manuscrito/Versao_Canonica",
     "06_Submissao/Regras_da_Revista",
     "06_Submissao/Arquivos_Finais",
+    "06_Submissao/Anonimizacao",
     "06_Submissao/Comprovantes",
     "99_Arquivo_Historico",
 ]
@@ -127,7 +128,7 @@ def seed_gates(path:Path):
         ["GATE-0004","CORPUS_FREEZE","08-09","Congelamento do corpus","Screening/full text encerrados e contagens reconciliadas.","Corpus elegível, exclusões, duplicatas e contagens finais.","","","","","PENDING","","","","","","","PENDING","Extração/síntese final do corpus",""],
         ["GATE-0005","SYNTHESIS","10","Síntese e produto teórico","Síntese entre fontes estabilizada.","Categorias, contradições, inferências e proposições/modelo.","","","","","PENDING","","","","","","","PENDING","Redação substantiva do manuscrito",""],
         ["GATE-0006","CLAIMS_AUDIT","12-13","Claims e auditoria científica","Claims principais ligados às evidências; evidência contrária, explicações alternativas, dependência de fonte e limites auditados.","Claims, Evidence_IDs, Counter_Evidence_IDs, locators, explicações alternativas, condições de contorno, dependência de fonte, robustez, uso de IA e aderência editorial aplicável.","","","","","PENDING","","","","","","","PENDING","Liberação da versão final",""],
-        ["GATE-0007","SUBMISSION_RELEASE","14","Liberação para submissão","Versão canônica, checklist, perfil da revista e transparência reconciliados.","Manuscrito final, JOURNAL_PROFILE, conformidade com regras oficiais, relatório de transparência, disclosures e arquivos de submissão.","","","","","PENDING","","","","","","","PENDING","Submissão externa",""],
+        ["GATE-0007","SUBMISSION_RELEASE","14","Liberação para submissão","Versão canônica, checklist, perfil da revista, anonimização e transparência reconciliados.","Manuscrito final, JOURNAL_PROFILE, conformidade com regras oficiais, perfil de anonimização, relatório ANONYMIZATION_AUDIT, metadados ocultos, disclosures e arquivos de submissão.","","","","","PENDING","","","","","","","PENDING","Submissão externa",""],
     ]
     with path.open("w",newline="",encoding="utf-8-sig") as f:
         w=csv.writer(f)
@@ -181,6 +182,43 @@ def main()->int:
             "journal_profile_status":journal_profile_status,
             "journal_aware_construction_enabled":True,
             "claim_robustness_audit_enabled":True,
+            "anonymization_policy_enabled":True,
+            "default_external_artifact_mode":"EXTERNAL_ANONYMIZED",
+            "anonymization_profile_status":"TO_CONFIGURE",
+        },ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+
+    anonymization_profile=root/"00_Gestao_e_Continuidade/ANONYMIZATION_PROFILE.json"
+    if not anonymization_profile.exists():
+        anonymization_profile.write_text(json.dumps({
+            "schema_version":"1.0",
+            "status":"TO_CONFIGURE",
+            "default_external_artifact_mode":"EXTERNAL_ANONYMIZED",
+            "blind_review_mode":"AUTO",
+            "sensitive_terms":{
+                "author_names":[],
+                "name_variants":[],
+                "emails":[],
+                "orcids":[],
+                "affiliations":[],
+                "departments_units":[],
+                "institutional_identifiers":[],
+                "case_site_names":[],
+                "participant_identifiers":[],
+                "account_usernames":[],
+                "local_path_tokens":[],
+                "custom_terms":[]
+            },
+            "rules":{
+                "strip_document_metadata":True,
+                "remove_comments_and_revision_authors":True,
+                "inspect_hidden_content":True,
+                "inspect_filenames_and_paths":True,
+                "inspect_visual_outputs":True,
+                "separate_identified_title_page":True
+            },
+            "verified_by":"",
+            "verified_at":"",
+            "notes":"CONFIDENTIAL CONTROL FILE. Never include in external/shareable packages."
         },ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
     journal_profile=root/"06_Submissao/Regras_da_Revista/JOURNAL_PROFILE.json"
@@ -236,6 +274,21 @@ def main()->int:
         },ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
     for rel,h in TABLES.items():write_csv(root/rel,h)
+
+    submission_path=root/"00_Gestao_e_Continuidade/10_Submission_Checklist.csv"
+    with submission_path.open("r",encoding="utf-8-sig",newline="") as f:
+        submission_existing=list(csv.DictReader(f))
+    if not submission_existing:
+        submission_rows=[
+            ["Anonimização: conteúdo visível","Autores, afiliações, contatos, agradecimentos e outros identificadores compatíveis com a modalidade de revisão.","Política Meu Artigo + regras oficiais da revista","PENDING","",""],
+            ["Anonimização: metadados ocultos","Propriedades do documento, comentários, revisões, notas, planilhas ocultas e metadados devem ser auditados.","Política Meu Artigo + regras oficiais da revista","PENDING","",""],
+            ["Anonimização: nomes, caminhos e links","Nome de arquivo, caminhos locais, links privados e identificadores de conta não devem revelar autoria indevidamente.","Política Meu Artigo","PENDING","",""],
+            ["Anonimização: participantes/casos","Identificadores de participantes, organizações e locais devem respeitar confidencialidade e protocolo aplicável.","Política Meu Artigo + protocolo do estudo","PENDING","",""],
+            ["Anonimização: auditoria final","Os arquivos exatos de saída devem ter ANONYMIZATION_AUDIT PASS ou PASS_WITH_HUMAN_REVIEW antes da liberação externa.","Política Meu Artigo","PENDING","",""],
+        ]
+        with submission_path.open("w",newline="",encoding="utf-8-sig") as f:
+            w=csv.writer(f); w.writerow(TABLES["00_Gestao_e_Continuidade/10_Submission_Checklist.csv"]); w.writerows(submission_rows)
+
     seed_cada(root/"00_Gestao_e_Continuidade/11_CADA_Control.csv",a.name,pm)
     seed_gates(root/"00_Gestao_e_Continuidade/18_Human_Validation_Gates.csv")
 

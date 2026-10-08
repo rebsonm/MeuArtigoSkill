@@ -64,6 +64,22 @@ If the user supplies a target journal and rules/template:
 5. populate/update the submission checklist from verified rules;
 6. use the profile to guide manuscript architecture, length planning, required declarations, anonymization, reference style, and journal dialogue from the start.
 
+## Treat anonymization as a release gate
+
+Read `references/anonymization.md` before generating any external/shareable manuscript, supplementary file, transparency artifact, review package, or submission bundle.
+
+Default behavior:
+
+- internal canonical artifacts may remain identified when identity is operationally necessary;
+- external/shareable artifacts default to `EXTERNAL_ANONYMIZED` whenever identity is unnecessary or journal rules are not yet known;
+- identified title pages, authorship declarations, ORCID forms, and similar files must be generated separately from the blinded manuscript;
+- never assume that visible-name removal is sufficient: inspect document properties, comments, tracked changes, hidden notes/sheets, file paths, filenames, links, image/PDF metadata, acknowledgements, funding, affiliations, and other identity-bearing traces;
+- maintain `00_Gestao_e_Continuidade/ANONYMIZATION_PROFILE.json` as a confidential control file and never include it in external packages;
+- run `scripts/audit_anonymization.py` on the exact outgoing files before external release;
+- do not call a file anonymous while HIGH findings or unresolved review requirements remain.
+
+Anonymization must not silently change findings, evidence, sample facts, methodological details, limitations, or claim meaning. Follow the target journal's self-citation and blind-review rules instead of deleting scientifically necessary references by default.
+
 If the user has a journal but has not supplied rules/template, use `JOURNAL_AWARE_PENDING_PROFILE` and request the official material without blocking scientific work.
 
 If the user has no target journal, record `JOURNAL_NEUTRAL` and continue. Do not force an early journal choice. Before full manuscript consolidation, surface the target-journal decision again when it is scientifically useful.
@@ -510,6 +526,10 @@ Before declaring the manuscript ready, verify:
 - no citations were invented or cited from search snippets without source verification;
 - limitations include real scope and access constraints;
 - target-journal rules are satisfied against the current verified JOURNAL_PROFILE when a journal is defined;
+- every external/shareable artifact has the correct identified/anonymized mode;
+- the anonymization profile is verified or explicitly NOT_REQUIRED with rationale;
+- the exact outgoing files have a PASS or PASS_WITH_HUMAN_REVIEW anonymization audit when anonymization applies;
+- hidden metadata, comments/revisions, filenames, paths and visual outputs have been checked for identity leakage;
 - continuity state is updated.
 
 Run `scripts/validate_project.py` when using the standard workspace. When local spreadsheet generation is available, also use `scripts/build_matrix_template.py` or let `scripts/init_project.py` invoke it automatically. Use `scripts/governance_events.py`, `scripts/create_snapshot.py`, `scripts/compare_snapshots.py`, and `scripts/generate_transparency_report.py` for deterministic governance operations. Use `scripts/build_corpus_map.py` for corpus mapping when a retained corpus exists, and `scripts/release_audit.py` before a release.
@@ -521,11 +541,12 @@ When the user is ready to submit:
 1. verify the target journal/conference requirements from an authoritative current source;
 2. complete `10_Submission_Checklist`;
 3. freeze the canonical manuscript and supplementary files;
-4. preserve the exact submitted versions;
-5. record the submission date, identifier/receipt, and any next external deadline;
-6. create/update the corresponding C.A.D.A. items;
-7. synchronize the primary external work manager when connected;
-8. preserve reviewer/editor follow-up as new C.A.D.A. work items rather than overwriting the submitted state.
+4. create separate identified and anonymized derivatives when required, and audit the exact outgoing files with `scripts/audit_anonymization.py`;
+5. preserve the exact submitted versions;
+6. record the submission date, identifier/receipt, and any next external deadline;
+7. create/update the corresponding C.A.D.A. items;
+8. synchronize the primary external work manager when connected;
+9. preserve reviewer/editor follow-up as new C.A.D.A. work items rather than overwriting the submitted state.
 
 Do not claim a submission occurred unless the user or an authorized tool actually completed it.
 
@@ -550,7 +571,8 @@ Read only what the current task needs:
 - `references/cada-governance.md` — C.A.D.A. governance, stage roadmap, work-item schema, deadlines, statuses, and completion evidence.
 - `references/work-management.md` — optional ClickUp/Jira/Trello synchronization and source-of-truth rules.
 - `references/cada-matrix.md` — spreadsheet-first C.A.D.A. management mode and dashboard.
-- `references/spreadsheet-template.md` — canonical 16-sheet workbook design, formulas, validations, views, and generation priority.
+- `references/spreadsheet-template.md` — canonical 21-sheet workbook design, formulas, validations, views, and generation priority.
+- `references/anonymization.md` — high-rigor anonymization policy for generated/shareable artifacts, metadata, blind review, and release audit.
 - `references/traceability.md` — research-process provenance, Trace IDs, AI-use logging, and final transparency audit.
 - `references/provenance-export.md` — W3C PROV-O mapping, RO-Crate 1.3 packaging, SHA-256 fixity, export/validation rules.
 - `references/scientific-governance.md` — DEC_ID decisions, human validation gates, SNAP_ID frozen states, and reviewer/editor transparency.

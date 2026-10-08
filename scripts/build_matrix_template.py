@@ -98,6 +98,8 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
       "JOURNAL_PROFILE_STATUS":["TO_DEFINE","PENDING_RULES","LOADED","VERIFIED","SUPERSEDED"],
       "CLAIM_ROBUSTNESS":["NOT_AUDITED","ROBUST","QUALIFIED","REVISE","REJECT","NOT_APPLICABLE"],
       "HUMAN_VALIDATION":["PENDING","VALIDATED","REVISED","REJECTED","NOT_APPLICABLE"],
+      "ANONYMIZATION_STATUS":["TO_CONFIGURE","CONFIGURED","VERIFIED","NOT_REQUIRED"],
+      "EXTERNAL_ARTIFACT_MODE":["EXTERNAL_ANONYMIZED","EXTERNAL_IDENTIFIED","INTERNAL_IDENTIFIED"],
     }
     rows=[]
     for ln,vals in lists.items():
@@ -127,10 +129,12 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
       ["Modo de gestão","MATRIX_PLUS_EXTERNAL" if pm_provider!="NONE" else "MATRIX_ONLY","FROZEN",date.today()],
       ["Gerenciador externo",pm_provider,"NOT APPLICABLE" if pm_provider=="NONE" else "IN_PROGRESS",date.today()],
       ["Rastreabilidade habilitada","SIM","FROZEN",date.today()],
+      ["Modo padrão de arquivo externo","EXTERNAL_ANONYMIZED","FROZEN",date.today()],
+      ["Perfil de anonimização","TO_CONFIGURE","PLANNED",date.today()],
     ]
-    proj.get_range("A5:D20").values=vals; body(proj,"A5:D20")
-    proj.get_range("D5:D20").format.number_format="yyyy-mm-dd"
-    proj.get_range("C5:C20").data_validation={"rule":{"type":"list","values":lists["STATUS_GERAL"]}}
+    proj.get_range("A5:D22").values=vals; body(proj,"A5:D22")
+    proj.get_range("D5:D22").format.number_format="yyyy-mm-dd"
+    proj.get_range("C5:C22").data_validation={"rule":{"type":"list","values":lists["STATUS_GERAL"]}}
     widths(proj,{"A":28,"B":70,"C":20,"D":18}); proj.freeze_panes.freeze_rows(4)
 
     cada=wb.worksheets.add("01_CADA")
@@ -185,6 +189,14 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
         end=chr(64+len(heads)) if len(heads)<=26 else "Z"
         sh.get_range(f"A4:{end}4").values=[heads]; hdr(sh,f"A4:{end}4")
         body(sh,f"A5:{end}500"); widths(sh,wmap); sh.freeze_panes.freeze_rows(4)
+        if name=="13_SUBMISSAO":
+            sh.get_range("A5:H9").values=[
+              ["Anonimização: conteúdo visível","Autores, afiliações, contatos, agradecimentos e identificadores coerentes com a modalidade de revisão.","Política Meu Artigo + revista","PENDING",None,"","",""],
+              ["Anonimização: metadados ocultos","Propriedades, comentários, revisões, notas, conteúdo oculto e metadados devem ser auditados.","Política Meu Artigo + revista","PENDING",None,"","",""],
+              ["Anonimização: nomes, caminhos e links","Nome de arquivo, caminhos locais, links privados e contas não devem revelar autoria indevidamente.","Política Meu Artigo","PENDING",None,"","",""],
+              ["Anonimização: participantes/casos","Identificadores de participantes, organizações e locais respeitam confidencialidade e protocolo.","Política Meu Artigo + protocolo","PENDING",None,"","",""],
+              ["Anonimização: auditoria final","Arquivos exatos de saída possuem ANONYMIZATION_AUDIT PASS ou PASS_WITH_HUMAN_REVIEW.","Política Meu Artigo","PENDING",None,"","",""],
+            ]
 
     interop=wb.worksheets.add("16_INTEROPERABILIDADE")
     title(interop,"INTEROPERABILIDADE E PACOTES DE PROVENIÊNCIA","Histórico de exports W3C PROV / RO-Crate, fixidade e validação.","A1:M1")
@@ -221,7 +233,7 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
       ["GATE-0004","CORPUS_FREEZE","08-09","Congelamento do corpus","Screening/full text encerrados e contagens reconciliadas.","Corpus elegível, exclusões, duplicatas e contagens finais.","","","","","PENDING","","","","","","","PENDING","Extração/síntese final do corpus",""],
       ["GATE-0005","SYNTHESIS","10","Síntese e produto teórico","Síntese entre fontes estabilizada.","Categorias, contradições, inferências e proposições/modelo.","","","","","PENDING","","","","","","","PENDING","Redação substantiva do manuscrito",""],
       ["GATE-0006","CLAIMS_AUDIT","12-13","Claims e auditoria científica","Claims principais ligados às evidências; evidência contrária, explicações alternativas, dependência de fonte e limites auditados.","Claims, Evidence_IDs, Counter_Evidence_IDs, locators, explicações alternativas, condições de contorno, dependência de fonte, robustez, uso de IA e aderência editorial aplicável.","","","","","PENDING","","","","","","","PENDING","Liberação da versão final",""],
-      ["GATE-0007","SUBMISSION_RELEASE","14","Liberação para submissão","Versão canônica, checklist, perfil da revista e transparência reconciliados.","Manuscrito final, JOURNAL_PROFILE, conformidade com regras oficiais, relatório de transparência, disclosures e arquivos de submissão.","","","","","PENDING","","","","","","","PENDING","Submissão externa",""],
+      ["GATE-0007","SUBMISSION_RELEASE","14","Liberação para submissão","Versão canônica, checklist, perfil da revista, anonimização e transparência reconciliados.","Manuscrito final, JOURNAL_PROFILE, perfil de anonimização, ANONYMIZATION_AUDIT, metadados ocultos, conformidade com regras oficiais, disclosures e arquivos exatos de submissão.","","","","","PENDING","","","","","","","PENDING","Submissão externa",""],
     ]
     gates.get_range("A5:T11").values=gate_seed
     gates.get_range("K5:K100").data_validation={"rule":{"type":"list","values":lists["GATE_DECISION"]}}

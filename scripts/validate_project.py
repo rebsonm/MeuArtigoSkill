@@ -21,6 +21,7 @@ REQUIRED=[
 "00_Gestao_e_Continuidade/17_Decision_Log.csv",
 "00_Gestao_e_Continuidade/18_Human_Validation_Gates.csv",
 "00_Gestao_e_Continuidade/19_Snapshots.csv",
+"00_Gestao_e_Continuidade/ANONYMIZATION_PROFILE.json",
 ]
 PASS1={"","INCLUDE","BORDERLINE","EXCLUDE"}
 PASS2={"","FULL TEXT — CORE","FULL TEXT — SUPPORT","EXCLUDE","FULL TEXT - CORE","FULL TEXT - SUPPORT"}
@@ -35,6 +36,8 @@ JOURNAL_MODES={"JOURNAL_NEUTRAL","JOURNAL_AWARE_PENDING_PROFILE","JOURNAL_AWARE"
 JOURNAL_PROFILE_STATUS={"TO_DEFINE","PENDING_RULES","LOADED","VERIFIED","SUPERSEDED"}
 CLAIM_ROBUSTNESS={"","NOT_AUDITED","ROBUST","QUALIFIED","REVISE","REJECT","NOT_APPLICABLE"}
 HUMAN_VALIDATION={"","PENDING","VALIDATED","REVISED","REJECTED","NOT_APPLICABLE"}
+ANON_STATUS={"TO_CONFIGURE","CONFIGURED","VERIFIED","NOT_REQUIRED"}
+EXTERNAL_ARTIFACT_MODE={"EXTERNAL_ANONYMIZED","EXTERNAL_IDENTIFIED","INTERNAL_IDENTIFIED"}
 
 def rows(path):
     with path.open("r",encoding="utf-8-sig",newline="") as f:
@@ -73,6 +76,29 @@ def main():
                 errors.append(f"PROJECT_CONFIG unexpected journal_profile_status={jpstatus!r}")
         except Exception as e:
             errors.append(f"invalid PROJECT_CONFIG.json: {e}")
+
+    anonymization_profile=root/"00_Gestao_e_Continuidade/ANONYMIZATION_PROFILE.json"
+    anonymization_data={}
+    if anonymization_profile.exists():
+        try:
+            anonymization_data=json.loads(anonymization_profile.read_text(encoding="utf-8"))
+            astatus=str(anonymization_data.get("status","")).strip().upper()
+            if astatus not in ANON_STATUS:
+                errors.append(f"ANONYMIZATION_PROFILE unexpected status={astatus!r}")
+            amode=str(anonymization_data.get("default_external_artifact_mode","")).strip().upper()
+            if amode and amode not in EXTERNAL_ARTIFACT_MODE:
+                errors.append(f"ANONYMIZATION_PROFILE unexpected default_external_artifact_mode={amode!r}")
+            groups=anonymization_data.get("sensitive_terms")
+            if not isinstance(groups,dict):
+                errors.append("ANONYMIZATION_PROFILE sensitive_terms must be an object")
+            elif any(not isinstance(v,list) for v in groups.values()):
+                errors.append("ANONYMIZATION_PROFILE sensitive_terms values must be arrays")
+            if astatus=="NOT_REQUIRED" and not str(anonymization_data.get("notes") or "").strip():
+                errors.append("ANONYMIZATION_PROFILE is NOT_REQUIRED without rationale in notes")
+        except Exception as e:
+            errors.append(f"invalid ANONYMIZATION_PROFILE.json: {e}")
+    else:
+        errors.append("ANONYMIZATION_PROFILE.json is missing")
 
     journal_profile=root/"06_Submissao/Regras_da_Revista/JOURNAL_PROFILE.json"
     journal_data={}
@@ -333,6 +359,22 @@ def main():
         if target:
             if (journal_data or {}).get("status")!="VERIFIED" or (journal_data or {}).get("official_rules_verified") is not True:
                 errors.append("GATE-0007 approved for a defined target journal without VERIFIED official journal rules")
+        astatus=str((anonymization_data or {}).get("status") or "").upper()
+        if astatus not in {"VERIFIED","NOT_REQUIRED"}:
+            errors.append("GATE-0007 approved without VERIFIED anonymization profile or explicit NOT_REQUIRED rationale")
+        if astatus=="VERIFIED":
+            audit_dir=root/"06_Submissao/Anonimizacao"
+            valid_results={"PASS","PASS_WITH_HUMAN_REVIEW"}
+            valid_audits=[]
+            for p in sorted(audit_dir.glob("ANONYMIZATION_AUDIT_*.json")) if audit_dir.exists() else []:
+                try:
+                    ad=json.loads(p.read_text(encoding="utf-8"))
+                    if str(ad.get("result") or "").upper() in valid_results:
+                        valid_audits.append(p)
+                except Exception:
+                    continue
+            if not valid_audits:
+                errors.append("GATE-0007 approved without a passing ANONYMIZATION_AUDIT report")
 
     snaps=root/"00_Gestao_e_Continuidade/19_Snapshots.csv"
     if snaps.exists():

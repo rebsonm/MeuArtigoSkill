@@ -28,12 +28,14 @@ REQUIRED=[
     "docs/MAPA-CORPUS.md",
     "docs/JOURNAL-AWARE.md",
     "docs/ROBUSTEZ-CLAIMS.md",
+    "docs/ANONIMIZACAO.md",
     "SKILL.md",
     "references/corpus-map.md",
     "references/grounded-corpus.md",
     "references/journal-aware.md",
     "references/scientific-governance.md",
     "references/provenance-export.md",
+    "references/anonymization.md",
     "scripts/build_matrix_template.py",
     "scripts/build_corpus_map.py",
     "scripts/governance_events.py",
@@ -43,6 +45,7 @@ REQUIRED=[
     "scripts/export_provenance.py",
     "scripts/validate_provenance_package.py",
     "scripts/validate_project.py",
+    "scripts/audit_anonymization.py",
 ]
 
 def main()->int:
@@ -76,8 +79,8 @@ def main()->int:
 
     # Core feature references.
     required_terms={
-        "SKILL.md":["DEC_ID","GATE_ID","SNAP_ID","W3C PROV","RO-Crate","Grounded Corpus","Corpus Map","JOURNAL_PROFILE","JOURNAL_NEUTRAL","Counter_Evidence_IDs","Robustness_status"],
-        "README.md":["DEC_ID","GATE_ID","SNAP_ID","RO-Crate","Mapa do Corpus","JOURNAL_PROFILE","robustez dos claims"],
+        "SKILL.md":["DEC_ID","GATE_ID","SNAP_ID","W3C PROV","RO-Crate","Grounded Corpus","Corpus Map","JOURNAL_PROFILE","JOURNAL_NEUTRAL","Counter_Evidence_IDs","Robustness_status","ANONYMIZATION_PROFILE","audit_anonymization.py"],
+        "README.md":["DEC_ID","GATE_ID","SNAP_ID","RO-Crate","Mapa do Corpus","JOURNAL_PROFILE","robustez dos claims","anonimização","ANONYMIZATION_AUDIT"],
     }
     for label,terms in required_terms.items():
         text=skill if label=="SKILL.md" else readme
@@ -90,12 +93,12 @@ def main()->int:
     for sheet in ["16_INTEROPERABILIDADE","17_DECISOES","18_VALIDACOES","19_SNAPSHOTS","20_MAPA_CORPUS"]:
         if sheet not in matrix:
             errors.append(f"workbook generator missing sheet: {sheet}")
-    for term in ["Counter_Evidence_IDs","Explicações alternativas","Dependência de fonte única","Robustez","Revista-alvo","Modo de construção editorial"]:
+    for term in ["Counter_Evidence_IDs","Explicações alternativas","Dependência de fonte única","Robustez","Revista-alvo","Modo de construção editorial","Anonimização: auditoria final","Modo padrão de arquivo externo"]:
         if term not in matrix:
             errors.append(f"workbook generator missing journal/robustness field: {term}")
 
     init_script=(ROOT/"scripts/init_project.py").read_text(encoding="utf-8") if (ROOT/"scripts/init_project.py").exists() else ""
-    for term in ["JOURNAL_PROFILE.json","JOURNAL_NEUTRAL","claim_robustness_audit_enabled","Counter_Evidence_IDs"]:
+    for term in ["JOURNAL_PROFILE.json","JOURNAL_NEUTRAL","claim_robustness_audit_enabled","Counter_Evidence_IDs","ANONYMIZATION_PROFILE.json","anonymization_policy_enabled"]:
         if term not in init_script:
             errors.append(f"project initializer missing journal/robustness capability: {term}")
 
