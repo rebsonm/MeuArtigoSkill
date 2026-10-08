@@ -274,6 +274,12 @@ Essa preocupação é consistente com diretrizes editoriais recentes. A Revista 
 
 Veja [docs/RASTREABILIDADE.md](./docs/RASTREABILIDADE.md) e [docs/GOVERNANCA-CIENTIFICA.md](./docs/GOVERNANCA-CIENTIFICA.md).
 
+## Exemplo de ponta a ponta
+
+Veja o [exemplo ilustrativo](docs/EXEMPLO-FLUXO.md): da pergunta inicial à evidência, à afirmação e à decisão humana. Os conteúdos são didáticos e não representam uma pesquisa executada.
+
+A relação entre arquivos de controle e abas visuais está no [mapa de armazenamento](references/storage-mapping.md). O gerador de planilha cria a estrutura; não deve ser confundido com sincronização automática.
+
 ## O que o usuário precisa trazer
 
 No mínimo, um destes elementos:

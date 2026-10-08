@@ -381,3 +381,8 @@ A governance feature belongs in the core only when it answers at least one of:
 - What was the official state at that moment?
 
 If it does not materially improve one of these answers, keep it outside the core.
+
+
+## Explicit human decision recording
+
+scripts/governance_events.py decision defaults to PROPOSED with no assumed researcher. APPROVED, FROZEN or REJECTED requires --decided-by and --evidence referencing the actual human response; evidence is retained in decision Notes. Completed gate decisions require --validated-by, --method and --evidence. A command records an attestation, not independent proof of human identity.

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Validate the canonical local mirror of a Meu Artigo project."""
 from __future__ import annotations
-import argparse,csv,json
+import argparse,csv,json,hashlib
 from pathlib import Path
 
 REQUIRED=[
@@ -369,12 +369,24 @@ def main():
             for p in sorted(audit_dir.glob("ANONYMIZATION_AUDIT_*.json")) if audit_dir.exists() else []:
                 try:
                     ad=json.loads(p.read_text(encoding="utf-8"))
-                    if str(ad.get("result") or "").upper() in valid_results:
+                    if str(ad.get("result") or "").upper() not in valid_results:
+                        continue
+                    final_dir = root / "06_Submissao/Arquivos_Finais"
+                    outgoing = {
+                        f.relative_to(root).as_posix(): hashlib.sha256(f.read_bytes()).hexdigest()
+                        for f in final_dir.rglob("*") if f.is_file()
+                    }
+                    manifest = ad.get("file_manifest") or []
+                    audited = {item["path"]: item["sha256"] for item in manifest}
+                    profile_hash = hashlib.sha256(anonymization_profile.read_bytes()).hexdigest()
+                    if (outgoing and audited == outgoing and len(manifest) == len(outgoing)
+                            and ad.get("profile_sha256") == profile_hash
+                            and not ad.get("blocking_errors")):
                         valid_audits.append(p)
                 except Exception:
                     continue
             if not valid_audits:
-                errors.append("GATE-0007 approved without a passing ANONYMIZATION_AUDIT report")
+                errors.append("GATE-0007 approved without a passing ANONYMIZATION_AUDIT bound to the current outgoing files and profile")
 
     snaps=root/"00_Gestao_e_Continuidade/19_Snapshots.csv"
     if snaps.exists():

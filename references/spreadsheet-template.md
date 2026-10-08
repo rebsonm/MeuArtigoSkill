@@ -714,3 +714,8 @@ Robustness values:
 - NOT_APPLICABLE
 
 A claim marked QUALIFIED must carry the qualification into the manuscript.
+
+
+## Canonical backend and view mapping
+
+Read [storage mapping](storage-mapping.md) before exporting, synchronizing or resolving conflicts between CSV tables and workbook views. The template generator does not synchronize existing research data.

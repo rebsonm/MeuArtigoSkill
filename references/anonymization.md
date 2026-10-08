@@ -180,3 +180,10 @@ Anonymization may change identity-bearing presentation but must not silently cha
 - source attribution needed for scientific integrity.
 
 When removing an identifier would make the method misleading or irreproducible, use a transparent neutral placeholder and preserve restoration instructions for the post-review identified version.
+
+
+## Audit binding (schema 2.0)
+
+The auditor rejects empty scopes and profiles other than VERIFIED or justified NOT_REQUIRED. Reports include project-relative file paths and SHA-256 hashes plus the profile hash; keep audit reports internal because paths can be sensitive. Legacy reports without these bindings cannot authorize release.
+
+For GATE-0007 in anonymized mode, audit the complete 06_Submissao/Arquivos_Finais directory. The validator requires an exact match of its current file set and hashes and the current profile. Adding, removing, renaming or changing a file invalidates prior coverage. Re-audit after any change. Human-review acknowledgement records a real completed review; it cannot override an empty scope or invalid profile.

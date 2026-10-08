@@ -24,6 +24,12 @@ jobs:
       - name: Static release audit
         run: python scripts/release_audit.py
 
+      - name: Behavioral regression tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Provenance smoke test
+        run: python scripts/smoke_test_provenance.py
+
       - name: Upload installable Skill bundle
         if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4

@@ -9,6 +9,7 @@ content.
 """
 from __future__ import annotations
 
+import hashlib
 import argparse
 import json
 import re
@@ -186,10 +187,23 @@ def main() -> int:
     findings: list[dict] = []
     manual: list[dict] = []
 
+    blocking_errors = []
+    status = profile.get("status")
+    if status not in {"VERIFIED", "NOT_REQUIRED"}:
+        blocking_errors.append("Anonymization profile must be VERIFIED or NOT_REQUIRED.")
+    if status == "NOT_REQUIRED" and not str(profile.get("notes") or "").strip():
+        blocking_errors.append("NOT_REQUIRED requires a rationale.")
     if not files:
+        blocking_errors.append("No outgoing files found.")
         manual.append({"file": "", "reason": "No outgoing files found in the requested audit scope."})
 
+    fingerprints = []
     for file in files:
+        try:
+            relative = file.relative_to(root).as_posix()
+            fingerprints.append({"path": relative, "sha256": hashlib.sha256(file.read_bytes()).hexdigest()})
+        except (ValueError, OSError):
+            blocking_errors.append("Audit files must be readable and inside the project.")
         scan_filename(file, findings, terms)
         ext = file.suffix.lower()
         if ext in TEXT_EXTS:
@@ -209,7 +223,7 @@ def main() -> int:
     high = [f for f in findings if f["severity"] == "HIGH"]
     medium = [f for f in findings if f["severity"] == "MEDIUM"]
 
-    if high:
+    if high or blocking_errors:
         result = "FAIL"
     elif (medium or manual) and not args.acknowledge_human_review:
         result = "REVIEW_REQUIRED"
@@ -219,7 +233,10 @@ def main() -> int:
         result = "PASS"
 
     report = {
-        "schema_version": "1.0",
+        "schema_version": "2.0",
+        "blocking_errors": blocking_errors,
+        "file_manifest": fingerprints,
+        "profile_sha256": hashlib.sha256((root / PROFILE_REL).read_bytes()).hexdigest(),
         "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
         "project": root.name,
         "profile_status": profile.get("status", "TO_CONFIGURE"),
@@ -238,7 +255,7 @@ def main() -> int:
 
     outdir = Path(args.output_dir).resolve() if args.output_dir else root / DEFAULT_OUT_REL
     outdir.mkdir(parents=True, exist_ok=True)
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     out = outdir / f"ANONYMIZATION_AUDIT_{stamp}.json"
     out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 

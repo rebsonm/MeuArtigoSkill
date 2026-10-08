@@ -46,16 +46,15 @@ def norm_doi(value: str) -> str:
 
 
 def norm_title(value: str) -> str:
-    s = unicodedata.normalize("NFKD", str(value or "")).encode("ascii", "ignore").decode()
-    s = s.lower()
-    s = re.sub(r"[^a-z0-9]+", " ", s)
+    s = unicodedata.normalize("NFKC", str(value or "")).casefold()
+    s = "".join(c if c.isalnum() else " " for c in s)
     return re.sub(r"\s+", " ", s).strip()
 
 
 def first_author(value: str) -> str:
-    s = unicodedata.normalize("NFKD", str(value or "")).encode("ascii", "ignore").decode().lower()
+    s = unicodedata.normalize("NFKC", str(value or "")).casefold()
     s = re.split(r";|\band\b|\|", s)[0]
-    return re.sub(r"[^a-z]+", "", s)
+    return "".join(c for c in s if c.isalpha())
 
 
 def read_tabular(path: Path) -> list[dict[str, str]]:
@@ -113,14 +112,27 @@ def main() -> int:
         if rec["_norm_doi"] and rec["_norm_doi"] in doi_index:
             match = doi_index[rec["_norm_doi"]]; reason = "exact_doi"
         elif rec["_norm_title"] and rec["_norm_title"] in title_index:
-            match = title_index[rec["_norm_title"]]; reason = "exact_title"
+            for candidate in title_index[rec["_norm_title"]]:
+                prior = canonical[candidate]
+                conflicting_doi = (rec["_norm_doi"] and prior["_norm_doi"]
+                                   and rec["_norm_doi"] != prior["_norm_doi"])
+                if (not conflicting_doi and rec["_first_author"] and rec["_year"]
+                        and rec["_first_author"] == prior["_first_author"]
+                        and rec["_year"] == prior["_year"]):
+                    match = candidate
+                    reason = "exact_title_author_year"
+                    break
 
         if match is None:
             ci = len(canonical)
             canonical.append(rec)
             if rec["_norm_doi"]: doi_index[rec["_norm_doi"]] = ci
-            if rec["_norm_title"]: title_index[rec["_norm_title"]] = ci
+            if rec["_norm_title"]: title_index.setdefault(rec["_norm_title"], []).append(ci)
         else:
+            if rec["_norm_doi"]:
+                doi_index[rec["_norm_doi"]] = match
+                if not canonical[match]["_norm_doi"]:
+                    canonical[match]["_norm_doi"] = rec["_norm_doi"]
             exact_audit.append({
                 "duplicate_source_file": rec["_source_file"],
                 "duplicate_source_row": rec["_source_row"],
@@ -139,10 +151,10 @@ def main() -> int:
         for j in range(i + 1, len(canonical)):
             b = canonical[j]
             tb = b["_norm_title"]
-            if not tb or ta == tb: continue
+            if not tb: continue
             author_ok = a["_first_author"] and a["_first_author"] == b["_first_author"]
             year_ok = a["_year"] and b["_year"] and a["_year"] == b["_year"]
-            if not (author_ok or year_ok): continue
+            if ta != tb and not (author_ok or year_ok): continue
             score = SequenceMatcher(None, ta, tb).ratio()
             if score >= args.fuzzy_threshold:
                 fuzzy.append({

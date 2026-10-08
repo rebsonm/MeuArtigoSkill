@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Preserve conflicting DOI records, corroborate exact-title merges with author/year and retain Unicode titles.
+- Bind anonymization audits to exact outgoing file/profile hashes; reject empty scope and unverified profiles.
+- Default decisions to proposals and require explicit human attribution/evidence for completed decisions.
+- Add behavioral regression tests and provenance smoke test to CI.
+- Shorten skill entrypoint, retain detailed stage procedures, document storage mapping and add an explicitly illustrative walkthrough.
+
 All notable changes to Meu Artigo are recorded here.
 
 The project follows semantic versioning while in beta. Breaking changes may still occur before 1.0.0, but they must be documented.

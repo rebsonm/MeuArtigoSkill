@@ -101,3 +101,8 @@ Before manuscript consolidation, if the project is still JOURNAL_NEUTRAL, surfac
 Before considering GATE-0006 ready, recover the claims ledger and inspect Robustness_status, Counter_Evidence_IDs, Alternative_explanations, Boundary_conditions, Single_source_dependency, and Human_validation for material claims.
 
 Do not treat a claim as validated merely because Evidence_IDs are present.
+
+
+## Canonical backend and view mapping
+
+Read [storage mapping](storage-mapping.md) before exporting, synchronizing or resolving conflicts between CSV tables and workbook views. The template generator does not synchronize existing research data.

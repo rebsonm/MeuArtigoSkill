@@ -15,7 +15,8 @@ Examples:
     --gate-id GATE-0002 \
     --decision APPROVED \
     --validated-by "Researcher" \
-    --method "Reviewed protocol v1 and search criteria."
+    --method "Reviewed protocol v1 and search criteria." \
+    --evidence "Reference to the actual reviewer response"
 """
 from __future__ import annotations
 
@@ -140,6 +141,10 @@ def record_decision(args)->int:
     if status in {"APPROVED","FROZEN"} and not args.rationale.strip():
         raise SystemExit("approved/frozen decision requires --rationale")
 
+    if status in {"APPROVED","FROZEN","REJECTED"}:
+        if not args.decided_by.strip() or not args.evidence.strip():
+            raise SystemExit("human decision requires --decided-by and --evidence")
+
     path=root/DEC_FILE
     ensure_csv(path,DEC_HEADERS)
     did=next_id(path,"DEC_ID","DEC")
@@ -175,7 +180,7 @@ def record_decision(args)->int:
         "Affected_artifacts":args.artifacts,
         "Resulting_version":args.resulting_version,
         "Supersedes_DEC_ID":args.supersedes,
-        "Notes":args.notes,
+        "Notes":args.notes + (f"\nHuman decision evidence: {args.evidence}" if args.evidence else ""),
     })
     print(f"decision_id={did}")
     print(f"trace_id={tid}")
@@ -200,6 +205,8 @@ def record_gate(args)->int:
     if decision not in {"PENDING","NOT_APPLICABLE"}:
         if not args.validated_by.strip():
             raise SystemExit("completed human validation requires --validated-by")
+        if not args.evidence.strip():
+            raise SystemExit("completed human validation requires --evidence")
         if not args.method.strip():
             raise SystemExit("completed human validation requires --method")
 
@@ -278,8 +285,9 @@ def main()->int:
     d.add_argument("--record-ids",default="")
     d.add_argument("--cada-id",default="")
     d.add_argument("--gate-id",default="")
-    d.add_argument("--status",default="APPROVED")
-    d.add_argument("--decided-by",default="RESEARCHER")
+    d.add_argument("--status",default="PROPOSED")
+    d.add_argument("--decided-by",default="")
+    d.add_argument("--evidence",default="",help="Reference to the actual human decision")
     d.add_argument("--impact",default="")
     d.add_argument("--artifacts",default="")
     d.add_argument("--resulting-version",default="")

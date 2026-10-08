@@ -191,7 +191,7 @@ Ele não é um dump do workspace privado.
 
 ## Scripts
 
-Registrar decisão:
+Registrar uma proposta (estado padrão PROPOSED, sem aprovação humana presumida):
 
 ```bash
 python scripts/governance_events.py decision /projeto \
@@ -201,6 +201,8 @@ python scripts/governance_events.py decision /projeto \
   --rationale "..."
 ```
 
+Para aprovar uma decisão, informar também `--status APPROVED`, `--decided-by` e `--evidence`, com referência à manifestação humana real.
+
 Aprovar um gate:
 
 ```bash
@@ -208,7 +210,8 @@ python scripts/governance_events.py gate /projeto \
   --gate-id GATE-0002 \
   --decision APPROVED \
   --validated-by "Pesquisador" \
-  --method "Revisão do protocolo e das strings"
+  --method "Revisão do protocolo e das strings" \
+  --evidence "Referência à resposta real do pesquisador"
 ```
 
 Ao aprovar um gate, o snapshot pós-gate é criado automaticamente.
