@@ -45,7 +45,7 @@ Use algo como:
 
 > Use `$meu-artigo`. Meu problema de pesquisa é: [problema]. Quero desenvolver um artigo científico, acompanhar o passo a passo pelo C.A.D.A. e ainda não defini a revista.
 
-Para o teste de usabilidade, não explique à IA como a Skill deveria funcionar.
+Na primeira utilização, basta apresentar seu problema de pesquisa e deixar a própria Skill orientar o fluxo.
 
 ## Compatibilidade técnica
 
@@ -111,7 +111,7 @@ Quando necessárias:
 4. validar o arquivo recebido;
 5. registrar a rodada na matriz.
 
-## Teste recomendado
+## Verificação funcional recomendada
 
 1. iniciar um chat novo;
 2. instalar/ativar apenas a Skill;
@@ -123,9 +123,9 @@ Quando necessárias:
 
 ## Se não houver Skills na sua conta
 
-Para um teste comparável do mecanismo nativo, prefira Claude ou Gemini se sua conta nessas plataformas suportar Skills.
+Para uma experiência comparável do mecanismo nativo, prefira Claude ou Gemini se sua conta nessas plataformas suportar Skills.
 
-Você pode usar `SKILL.md` como contexto manual em uma conversa comum, mas isso deve ser registrado como **modo de compatibilidade**, não como teste da instalação nativa da Skill.
+Você pode usar `SKILL.md` como contexto manual em uma conversa comum, mas isso deve ser registrado como **modo de compatibilidade**, não como uso da instalação nativa da Skill.
 
 ## Regra de portabilidade
 

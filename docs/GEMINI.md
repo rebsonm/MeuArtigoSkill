@@ -96,7 +96,7 @@ O C.A.D.A. continua funcionando mesmo sem integração com ClickUp, Jira ou Trel
 
 Nunca presumir acesso direto.
 
-## Teste recomendado
+## Verificação funcional recomendada
 
 Avalie:
 

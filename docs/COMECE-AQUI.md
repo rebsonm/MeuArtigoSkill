@@ -83,7 +83,7 @@ Depois de baixar, siga o guia correspondente. **A opção de instalar Skills dep
 
 As três usam o mesmo núcleo metodológico. O que muda é a forma de instalar e quais integrações cada plataforma consegue acessar.
 
-## 6. Como começar o teste
+## 6. Como começar a usar
 
 No ChatGPT, importe o ZIP completo em **Plugins → Habilidades → Criar/Carregar do computador**. Depois de instalar/importar a Skill na sua IA, abra uma conversa nova e escreva algo como:
 
@@ -107,20 +107,20 @@ Você **não precisa conhecer ClickUp, Jira ou Trello**. A planilha/matriz do pr
 
 Além de acompanhar tarefas, a Skill também mantém uma trilha de **rastreabilidade da construção do artigo**, registrando decisões materiais, alterações, fontes, uso de IA e validações humanas.
 
-## 7. O que NÃO fazer no primeiro teste
+## 7. Primeira utilização
 
-Para conseguirmos avaliar se a Skill é realmente autoexplicativa:
+Para experimentar o funcionamento normal da Skill:
 
-- não leia o `SKILL.md` antes da primeira tentativa;
-- não tente adivinhar o fluxo que o criador espera;
-- não ensine a IA a usar a Skill;
-- não adapte seu comportamento para “ajudar o teste”.
+- comece com um problema ou ideia real de pesquisa;
+- não é necessário ler o `SKILL.md` antes de usar;
+- não é necessário conhecer previamente o fluxo interno;
+- deixe a própria Skill orientar as etapas e pergunte sempre que algo não estiver claro.
 
 Use como usaria uma ferramenta real.
 
-Se algo ficar confuso, isso é um resultado importante do teste.
+Se algo ficar confuso ou parecer metodologicamente inadequado, você pode registrar o ponto e, se desejar, encaminhá-lo como sugestão livre ao autor.
 
-## 8. Teste de continuidade
+## 8. Como verificar a continuidade do seu próprio projeto
 
 Depois que o trabalho avançar um pouco:
 
@@ -183,22 +183,15 @@ seguir o guia da sua IA
 informar seu problema de pesquisa
 ```
 
-## 12. Quero ajudar com feedback
+## 12. Quero enviar uma sugestão ou relatar um problema
 
-Use o [protocolo de teste](./TESTE-DE-USABILIDADE.md).
+Não existe formulário, escala de percepção ou protocolo de avaliação de usuários no projeto.
 
-Você não precisa preencher tudo durante o uso. O mais importante é registrar:
-
-- onde ficou confuso;
-- o que a IA pediu sem necessidade;
-- o que ela deveria ter feito automaticamente;
-- se inventou alguma informação;
-- se conseguiu retomar em outro chat;
-- o que funcionou muito bem.
+Se quiser contribuir, envie livremente uma observação, crítica metodológica, relato de erro ou sugestão de melhoria. Não há roteiro obrigatório nem coleta padronizada de respostas.
 
 ## 13. Quero entender o projeto por dentro
 
-Depois do primeiro teste, fique à vontade para explorar:
+Depois da primeira utilização, fique à vontade para explorar:
 
 - [CADA.md](./CADA.md) — como funciona a gestão do passo a passo;
 - [MATRIZ-CADA.md](./MATRIZ-CADA.md) — como funciona o painel/planilha oficial;
@@ -210,6 +203,4 @@ Depois do primeiro teste, fique à vontade para explorar:
 - `../SKILL.md` — instrução central;
 - `../references/` — metodologia detalhada;
 - `../scripts/` — automações determinísticas;
-- `TESTE-DE-USABILIDADE.md` — desenho da avaliação com usuários.
 
-O objetivo não é esconder o funcionamento, mas evitar que conhecer o mecanismo antes da primeira tentativa influencie o teste.

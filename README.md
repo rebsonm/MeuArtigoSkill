@@ -296,7 +296,6 @@ Guias:
 - [ChatGPT / Codex](./docs/CHATGPT.md)
 - [Claude](./docs/CLAUDE.md)
 - [Gemini](./docs/GEMINI.md)
-- [Protocolo de teste com usuários](./docs/TESTE-DE-USABILIDADE.md)
 
 ## Integrações de pesquisa
 
@@ -500,19 +499,13 @@ Eles não substituem julgamento científico.
 
 O nome e a documentação principal estão em português, mas a Skill deve responder no idioma do usuário e adaptar estratégias de busca às línguas relevantes para o campo científico.
 
-## Testes com usuários
+## Sugestões e relatos de uso
 
-Para testar a Skill com pessoas que não participaram do desenvolvimento, use [docs/TESTE-DE-USABILIDADE.md](./docs/TESTE-DE-USABILIDADE.md).
+O repositório não contém formulário de percepção, escala de avaliação, amostra de participantes ou protocolo de coleta de dados com usuários.
 
-O protocolo inclui:
+Comentários externos são tratados apenas como sugestões espontâneas de desenvolvimento, relatos de erro ou críticas metodológicas livres. Eles não fazem parte de um instrumento padronizado de pesquisa.
 
-- teste cego de onboarding;
-- teste de busca;
-- teste obrigatório de retomada em nova conversa;
-- comparação entre plataformas;
-- critérios de falha crítica;
-- ficha mínima de registro;
-- classificação do feedback em CORE, ADAPTER, UX e TOOLING.
+Qualquer eventual estudo científico com participantes deverá ser planejado separadamente do funcionamento da Skill e seguir, antes de qualquer coleta, as exigências éticas e institucionais aplicáveis.
 
 ## Estado do projeto
 

@@ -47,7 +47,7 @@ A pasta deve manter seu `SKILL.md` e arquivos de suporte.
 
 > Use a Skill Meu Artigo. Meu problema de pesquisa é: [problema]. Quero construir o artigo com rastreabilidade, continuidade e gestão C.A.D.A.
 
-Para o teste, não descreva previamente o nosso workflow.
+Na primeira utilização, basta apresentar o problema de pesquisa e deixar a própria Skill orientar o fluxo.
 
 ## Compatibilidade
 
@@ -106,9 +106,9 @@ Não invente conectores.
 
 Quando houver login institucional, o usuário pode precisar executar a busca ou autenticar uma sessão autorizada. A Skill prepara query, filtros, export, validação e continuidade.
 
-## Teste recomendado
+## Verificação funcional recomendada
 
-Use um problema nunca discutido com o Claude usado no teste.
+Use, de preferência, um problema ainda não discutido naquela conversa.
 
 Observe:
 

@@ -8,6 +8,9 @@ The project follows semantic versioning while in beta. Breaking changes may stil
 
 ### Packaging correction
 
+- Removed the structured user-evaluation protocol, perception form, participant sample guidance, and standardized feedback collection from the repository.
+- External comments are now documented only as voluntary development suggestions or methodological critiques, not as a research data-collection instrument.
+
 - Documented the validated ChatGPT installation path: import the full ZIP downloaded from GitHub.
 - Removed the incorrect assumption that Plus accounts cannot use Skills; availability is now documented as account/rollout-dependent, with a successful Plus test recorded on 2026-10-07.
 - Added icon packaging/configuration guidance for `assets/icon.svg` and `agents/openai.yaml`.
@@ -62,7 +65,6 @@ No new management ID or workbook tab was introduced. Journal awareness reuses th
 - Corpus Map specification and generator.
 - Grounded Corpus Mode for evidence-bounded AI consultation over validated full text.
 - Cross-platform guidance for ChatGPT/Codex, Claude, and Gemini.
-- Usability-testing protocol.
 
 ### Scientific guardrails
 
