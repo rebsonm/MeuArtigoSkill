@@ -277,6 +277,15 @@ def record_gate(args)->int:
         if report["errors"]:
             raise SystemExit("cannot approve claim audit: "+"; ".join(report["errors"][:5]))
 
+    if args.gate_id=="GATE-0006" and decision in {"APPROVED","APPROVED_WITH_CHANGES"} and cfg.get("claim_integrity_required") is True:
+        from claim_integrity import audit_project as check_claim_integrity
+        try:
+            integrity=check_claim_integrity(root,strict=True,freeze=True)
+        except (ValueError,OSError) as exc:
+            raise SystemExit(f"cannot approve claim freeze: {exc}")
+        if integrity["errors"]:
+            raise SystemExit("cannot approve claim freeze: "+"; ".join(integrity["errors"][:6]))
+
     tid=record_trace(
         root,
         stage=target.get("Scientific_stage") or "",

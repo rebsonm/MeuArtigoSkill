@@ -198,6 +198,10 @@ The project gates regulate actual scientific decisions; they do not empirically 
 
 In new projects (`critical_appraisal_required=true`), all material Evidence_IDs linked to claims, including contrary evidence, require type-specific human appraisals before claim freeze. `scripts/appraise_evidence.py` and `docs/AVALIACAO-CRITICA-FONTES.md` specify documented criterion-level ratings, reasons, reviewer, limitations and reference to the original review. Evidence marked INSUFFICIENT_INFORMATION or DO_NOT_USE_FOR_CLAIM cannot be relied upon. QUALIFIED use must retain the stated caveats. Technical validation does not authenticate human identity or establish research quality.
 
+### GATE-0006 claim provenance and novelty limits
+
+For new projects with claim_integrity_required=true, GATE-0006 cannot approve material claims without their epistemic burden: [L] cited evidence and locators, [I] explicit interpretive warrant and boundary conditions, [P] documented nearest prior sources, contribution delta, scoped novelty and actual search reference. A universal novelty/priority claim is blocked until appropriately rewritten. Validation requires the real researcher's original response reference; the model must not draft that response on their behalf. See [claim integrity](../docs/CONTROLE-CLAIMS-E-ORIGINALIDADE.md). The code validates structural consistency only, not semantic support or novelty as an empirical fact.
+
 ### GATE-0006 robustness requirement
 
 GATE-0006 is not satisfied merely because each claim has a supporting citation.

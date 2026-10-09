@@ -60,6 +60,10 @@ A Skill acrescenta avaliação por tipo de fonte — quantitativa, qualitativa, 
 
 O repositório inclui um benchmark reproduzível, com referências reais e contagens publicadas, para comparar saídas **efetivamente produzidas** pela Skill. O verificador aponta divergências, cobertura e aspectos não avaliados; confirmação de DOI não substitui avaliação de claims ou categorias teóricas. Uma etapa opcional consulta metadados públicos gratuitos e publica o relatório observado no GitHub Actions. Veja [Avaliação de qualidade científica](./docs/AVALIACAO-QUALIDADE-CIENTIFICA.md).
 
+## Controle de originalidade, inferências e apoio das fontes
+
+O Meu Artigo distingue afirmações baseadas na literatura [L], inferências analíticas [I] e propostas próprias [P]. Antes de finalizar um claim, o verificador gratuito em Python exige vínculos com fontes, justificativa da inferência ou comparação explícita com os trabalhos anteriores, conforme o tipo. Afirmações absolutas de ineditismo são sinalizadas e impedem o congelamento do manuscrito enquanto não forem delimitadas. O mecanismo mantém os mesmos IDs e a planilha existente. Isso não demonstra originalidade real nem substitui exame humano. Consulte [Controle de claims](./docs/CONTROLE-CLAIMS-E-ORIGINALIDADE.md).
+
 ## Decisões científicas com compreensão explícita
 
 Nos novos projetos, os gates científicos existentes pedem ao pesquisador que explique brevemente, com suas próprias palavras, por que aprovou uma escolha e qual limitação reconhece. O modo iniciante apresenta explicações acessíveis e mantém a autonomia entre os gates. Os textos humanos são registrados no controle atual, sem novas abas, identificadores ou serviços pagos. Isso reforça a responsabilidade decisória, mas não equivale a atestar compreensão profunda. Consulte [Validação formativa](./docs/VALIDACAO-FORMATIVA.md).
