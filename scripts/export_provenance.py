@@ -3,9 +3,11 @@
 
 No third-party Python dependencies are required.
 
-Default package excludes full-text PDFs. The canonical spreadsheet, project
-logs, protocol, traceability, evidence/claims tables, manuscript/submission
-files, and provenance metadata are included when present.
+PRIVATE mode (default) is a confidential audit package and must never be
+shared externally without separate review. COLLABORATIVE and PUBLIC modes
+fail closed by excluding original project records and PROV identities.
+COLLABORATIVE permits only individually hash-approved, plain-text canonical
+manuscripts after documented human confidentiality review.
 """
 from __future__ import annotations
 
@@ -478,7 +480,75 @@ def provenance_warnings(root: Path) -> list[str]:
             warnings.append(f"{r.get('Search_ID','?')}: executed search without Literal_query")
     return warnings
 
-def canonical_files(root: Path, include_fulltext: bool) -> list[Path]:
+EXTERNAL_AUDIENCES = {"COLLABORATIVE", "PUBLIC"}
+COLLAB_ALLOWED = "05_Manuscrito/Versao_Canonica/"
+COLLAB_EXTENSIONS = {".md", ".txt"}
+COLLAB_SIZE_LIMIT = 2 * 1024 * 1024
+# Conservative guard, not a substitute for a contextual confidentiality review.
+SENSITIVE_PATTERNS = (
+    re.compile(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}", re.I),
+    re.compile(r"(?i)\b(?:api[_ -]?key|access[_ -]?token|client[_ -]?secret|password|senha)\s*[:=]\s*\S+"),
+    re.compile(r"(?i)\b(?:cpf|cnpj)\s*[:=]\s*[\d.\-/ ]{11,20}"),
+    re.compile(r"(?i)https?://[^\s]+[?&](?:token|key|access_token|sig|signature)="),
+)
+
+def approved_collaborative_files(root: Path, manifest_ref: str, audience: str) -> list[Path]:
+    """Fail-closed whitelist for externally shared canonical plain-text manuscripts.
+
+    Exact SHA-256 is bound to a real (but not machine-authenticated) review
+    record. A human must still inspect names, figures, confidential ideas,
+    consent, manuscript embargoes and repository/journal policy.
+    """
+    if audience == "PUBLIC":
+        if manifest_ref:
+            raise ValueError("PUBLIC mode never embeds project files; remove approved manifest")
+        return []
+    if not manifest_ref:
+        return []
+    manifest_path = (root / manifest_ref).resolve()
+    if (not manifest_path.is_relative_to(root) or not manifest_path.is_file()
+            or manifest_path.is_symlink()):
+        raise ValueError("Collaborative approval manifest must be a regular project-local file")
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if manifest.get("schema_version") != 1 or manifest.get("audience") != "COLLABORATIVE":
+        raise ValueError("Collaborative approval manifest has invalid schema or audience")
+    reviewed_by = str(manifest.get("reviewed_by") or "").strip()
+    reviewed_at = str(manifest.get("reviewed_at") or "").strip()
+    review_scope = str(manifest.get("review_scope") or "").strip()
+    if (len(reviewed_by) < 5 or reviewed_by.lower() in {"ai", "agent", "chatgpt", "llm", "model"}
+            or len(reviewed_at) < 10 or len(review_scope) < 20):
+        raise ValueError("Collaborative sharing requires a substantive human review attestation")
+    items = manifest.get("files")
+    if not isinstance(items, list) or not items:
+        raise ValueError("Approval manifest requires one or more individually reviewed files")
+    approved, seen = [], set()
+    for item in items:
+        if not isinstance(item, dict):
+            raise ValueError("Approval manifest file entries must be objects")
+        rel = str(item.get("path") or "").replace("\\", "/")
+        expected = str(item.get("sha256") or "").strip().lower()
+        if (not rel.startswith(COLLAB_ALLOWED) or ".." in Path(rel).parts
+                or Path(rel).is_absolute() or rel in seen):
+            raise ValueError("Only distinct canonical manuscript text files can be shared")
+        seen.add(rel)
+        src = (root / rel).resolve()
+        if (not src.is_relative_to(root) or not src.is_file() or src.is_symlink()
+                or src.suffix.lower() not in COLLAB_EXTENSIONS):
+            raise ValueError("Unapproved, symlinked, non-text or external file")
+        if src.stat().st_size > COLLAB_SIZE_LIMIT:
+            raise ValueError("Collaborative file exceeds conservative size limit")
+        if not re.fullmatch(r"[a-f0-9]{64}", expected) or file_sha256(src) != expected:
+            raise ValueError("Collaborative file changed since human approval")
+        body = src.read_text(encoding="utf-8", errors="strict")
+        if any(pattern.search(body) for pattern in SENSITIVE_PATTERNS):
+            raise ValueError("Possible personal data or credential in shared text; redact and re-approve")
+        approved.append(src)
+    return approved
+
+def canonical_files(root: Path, include_fulltext: bool, *,
+                    audience: str = "PRIVATE", approved_files=None) -> list[Path]:
+    if audience != "PRIVATE":
+        return sorted(approved_files or [])
     candidates = []
     mgmt = root / MGMT
     if mgmt.exists():
@@ -529,12 +599,13 @@ def canonical_files(root: Path, include_fulltext: bool) -> list[Path]:
             out.append(p)
     return sorted(out)
 
-def build_ro_crate(root: Path, crate_dir: Path, project_name: str, prov_stats: dict, warnings: list[str], include_fulltext: bool) -> tuple[dict, list[Path]]:
+def build_ro_crate(root: Path, crate_dir: Path, project_name: str, prov_stats: dict, warnings: list[str],
+                   include_fulltext: bool, *, audience: str = "PRIVATE", approved_files=None) -> tuple[dict, list[Path]]:
     payload = crate_dir / "payload"
     payload.mkdir(parents=True, exist_ok=True)
     packaged: list[Path] = []
 
-    for src in canonical_files(root, include_fulltext):
+    for src in canonical_files(root, include_fulltext, audience=audience, approved_files=approved_files):
         rel = src.relative_to(root)
         dst = payload / rel
         dst.parent.mkdir(parents=True, exist_ok=True)
@@ -578,7 +649,7 @@ def build_ro_crate(root: Path, crate_dir: Path, project_name: str, prov_stats: d
 
     # Tools from AI log as contextual SoftwareApplication entities.
     seen_tools = set()
-    for r in read_csv(root, AI_FILE):
+    for r in (read_csv(root, AI_FILE) if audience == "PRIVATE" else []):
         tool = (r.get("Platform_or_tool") or "").strip()
         if not tool:
             continue
@@ -678,6 +749,10 @@ def main() -> int:
     ap.add_argument("project_path")
     ap.add_argument("--output-dir", default="")
     ap.add_argument("--include-fulltext", action="store_true")
+    ap.add_argument("--audience", choices=["PRIVATE", "COLLABORATIVE", "PUBLIC"],
+                    default="PRIVATE", help="PRIVATE is confidential; external modes are redacted by default")
+    ap.add_argument("--approved-files-manifest", default="",
+                    help="Project-local file-level human review manifest (COLLABORATIVE only)")
     ap.add_argument("--confirm-rights-review", action="store_true", help="Explicitly attest review of each source rights record")
     ap.add_argument("--cada-id", default="")
     ap.add_argument("--no-record-export-event", action="store_true")
@@ -692,7 +767,18 @@ def main() -> int:
         except Exception:
             cfg = {}
     project_name = cfg.get("project_name") or root.name
+    if args.audience != "PRIVATE":
+        # Project names can themselves disclose private research topics.
+        project_name = "redacted-project"
 
+    if args.audience != "PRIVATE" and args.include_fulltext:
+        ap.error("External packages never include full texts, even if rights are documented")
+    if args.audience != "COLLABORATIVE" and args.approved_files_manifest:
+        ap.error("Only COLLABORATIVE may use a file approval manifest")
+    try:
+        approved_files = approved_collaborative_files(root, args.approved_files_manifest, args.audience)
+    except (ValueError, OSError, UnicodeError, json.JSONDecodeError) as exc:
+        ap.error(f"External content review failed: {exc}")
     rights_decisions=[]
     if args.include_fulltext:
         if not args.confirm_rights_review:
@@ -705,20 +791,36 @@ def main() -> int:
     if not args.no_record_export_event:
         append_export_trace(root, args.cada_id)
 
-    prov_doc, prov_stats = build_prov(root)
-    warnings = provenance_warnings(root)
+    if args.audience == "PRIVATE":
+        prov_doc, prov_stats = build_prov(root)
+        warnings = provenance_warnings(root)
+        warnings.append("PRIVATE AUDIT EXPORT: may contain personal or confidential data; do not share externally")
+    else:
+        # Absolutely no raw actors, search strings, claims, evidence, file paths
+        # or sensitive identifiers are reconstructed into external PROV graphs.
+        prov_doc = {
+            "@context": {"prov": PROV_NS, "rdfs": "http://www.w3.org/2000/01/rdf-schema#"},
+            "@graph": [{"@id": "urn:meuartigo:export:redacted",
+                        "@type": "prov:Activity",
+                        "rdfs:label": "Redacted export boundary; no raw scientific events included"}]
+        }
+        prov_stats = {"trace_events": 0, "entities": 0, "activities": 1, "agents": 0}
+        warnings = ["External export is a redacted boundary, NOT complete research provenance",
+                    "Human review is attested, not authenticated, for separately approved text files"]
 
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     export_rows = read_csv(root, EXPORT_LOG)
     export_id = next_id(export_rows, "Export_ID", "EXPORT")
     base_out = Path(args.output_dir).resolve() if args.output_dir else root / "06_Submissao/Arquivos_Finais"
-    crate_name = f"RO_CRATE_{slug(project_name)}_{stamp}"
+    crate_name = f"RO_CRATE_{args.audience}_{slug(project_name)}_{stamp}"
     crate_dir = base_out / crate_name
     if crate_dir.exists():
         shutil.rmtree(crate_dir)
     crate_dir.mkdir(parents=True, exist_ok=True)
 
-    ro_doc, packaged = build_ro_crate(root, crate_dir, project_name, prov_stats, warnings, args.include_fulltext)
+    ro_doc, packaged = build_ro_crate(root, crate_dir, project_name, prov_stats, warnings,
+                                       args.include_fulltext, audience=args.audience,
+                                       approved_files=approved_files)
 
     prov_dir = crate_dir / "provenance"
     if args.include_fulltext:
@@ -753,6 +855,8 @@ def main() -> int:
         "timestamp": now_iso(),
         "standards": ["W3C PROV-O", f"RO-Crate {RO_CRATE_VERSION}", "SHA-256"],
         "project": project_name,
+        "audience": args.audience,
+        "externally_shareable_without_contextual_review": False,
         "trace_events": prov_stats["trace_events"],
         "prov_entities": prov_stats["entities"],
         "prov_activities": prov_stats["activities"],
@@ -768,6 +872,8 @@ def main() -> int:
         f"# Provenance export report — {export_id}",
         "",
         f"- Project: {project_name}",
+        f"- Intended audience: {args.audience}",
+        "- External redacted exports are not complete project provenance; review before sharing.",
         f"- Timestamp: {report['timestamp']}",
         f"- Standards: W3C PROV-O; RO-Crate {RO_CRATE_VERSION}; SHA-256",
         f"- TRACE events: {prov_stats['trace_events']}",
