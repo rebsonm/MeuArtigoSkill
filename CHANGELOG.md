@@ -2,10 +2,21 @@
 # Changelog
 
 <a id="unreleased"></a>
-##Unreleased
+## Unreleased
+
+No additional changes have been recorded since `0.9.0-beta.1`.
+
+<a id="090-beta1-2026-10-09"></a>
+## 0.9.0-beta.1 — 2026-10-09
+
+### English-source migration and researcher-language interaction
+
+- Translate the Skill entrypoint, maintained public documentation, source-code display text and current installation guides to English while preserving stable technical identifiers, bibliography and historical URL anchors.
+- Instruct the assistant to respond in the language of the researcher’s substantive messages by default, independently of the English source code and the journal/manuscript language.
+- Add project-level AUTO/explicit interaction language settings, compatibility safeguards, an untranslated-prose audit and an English-source release blocker. These controls are not an independent live multilingual evaluation.
 
 <a id="robustez-do-processo-de-desenvolvimento-ainda-não-publicada-como-nova-release"></a>
-### Robustness of the development process (not yet published as a new release)
+### Robustness of the development process (included in this release)
 
 - Centralize the executable version in `VERSION`, update the consistency audit and add README, CITATION and CHANGELOG metadata synchronizer; the actual notes for each version remain required.
 - Separate the CI audit, strictly reading, from the manual and irreversible publication of releases; no common changes to the main branch automatically produce a new tag.
@@ -14,7 +25,7 @@
 - Add automated regressions of publication policy, versions and document exposure.
 
 <a id="rotas-metodológicas-operacionais-etapa-de-desenvolvimento-sem-nova-release"></a>
-### Operational methodological routes (development stage, without new release)
+### Operational methodological routes (included in this release)
 
 - Adapt initialization and scientific validation to integrative, systematic, problematizing, theoretical, qualitative, quantitative, mixed and design science designs, with an explicitly undefined provisional category.
 - Link the methodological choice to real human decision in the same DEC/TRACE/GATE set, preserving compatibility with previous projects.
@@ -25,7 +36,7 @@
 - Explicitly separate metadata, literal passage, recorded human judgment and empirical finding; prevent freezing empirical findings without analysis trail, gates and evidence references, maintaining existing controls.
 
 <a id="etapa-4-contexto-progressivo-adaptadores-e-curadoria-não-publicada"></a>
-### Step 4 — progressive context, adapters, and curation (unpublished)
+### Step 4 — progressive context, adapters, and curation (included in this release)
 
 - Reduce `SKILL.md` to a scientific contract and selective reference router, maintaining verification, human review, rights and storage requirements.
 - Create an essential script for beginners and a reading index by stage; minimal presentation does not eliminate controls or identify non-existent results.
