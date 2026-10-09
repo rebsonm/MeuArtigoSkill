@@ -48,6 +48,10 @@ A instalação nativa depende da plataforma e do plano atual:
 
 Se o menu de Skills não aparecer, abra o guia da plataforma antes de concluir que houve erro no repositório.
 
+## Avaliação de qualidade científica
+
+O repositório inclui um benchmark reproduzível, com referências reais e contagens publicadas, para comparar saídas **efetivamente produzidas** pela Skill. O verificador aponta divergências, cobertura e aspectos não avaliados; confirmação de DOI não substitui avaliação de claims ou categorias teóricas. Uma etapa opcional consulta metadados públicos gratuitos e publica o relatório observado no GitHub Actions. Veja [Avaliação de qualidade científica](./docs/AVALIACAO-QUALIDADE-CIENTIFICA.md).
+
 ## Decisões científicas com compreensão explícita
 
 Nos novos projetos, os gates científicos existentes pedem ao pesquisador que explique brevemente, com suas próprias palavras, por que aprovou uma escolha e qual limitação reconhece. O modo iniciante apresenta explicações acessíveis e mantém a autonomia entre os gates. Os textos humanos são registrados no controle atual, sem novas abas, identificadores ou serviços pagos. Isso reforça a responsabilidade decisória, mas não equivale a atestar compreensão profunda. Consulte [Validação formativa](./docs/VALIDACAO-FORMATIVA.md).

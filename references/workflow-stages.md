@@ -146,6 +146,10 @@ Lack of access is not a scientific exclusion criterion. Keep the item pending an
 
 Do not claim to have read full text when only an abstract or snippets were available.
 
+## Optional scientific quality benchmark
+
+For Skill-level assessment or release comparisons, follow [quality evaluation](../docs/AVALIACAO-QUALIDADE-CIENTIFICA.md). Use the frozen factual casepack in `benchmarks/public_review_reference_v1.json`; keep real Skill outputs and any independent claim assessments separate from the published reference. Report denominator and coverage per dimension. A live Crossref/OpenAlex metadata pilot alone does not measure interpretation, category construction, or general scientific validity.
+
 ## Stage 8 — Extract evidence, not summaries alone
 
 For each included source, populate a structured evidence matrix. Adapt fields to the field and article, but preserve the logic:
