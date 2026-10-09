@@ -43,8 +43,8 @@ def sync(root: Path, release_date: str) -> list[str]:
         "CHANGELOG.md": root/"CHANGELOG.md",
     }
     contents = {name: p.read_text(encoding="utf-8") for name,p in paths.items()}
-    readme = replace_once(r"^\*\*Versão atual:\*\* `[^`]+`",
-                          f"**Versão atual:** `{version}`",
+    readme = replace_once(r"^\*\*Current version:\*\* `[^`]+`",
+                          f"**Current version:** `{version}`",
                           contents["README.md"], "README version")
     citation = replace_once(r'^version:\s*"[^"]+"',
                              f'version: "{version}"',
@@ -64,13 +64,13 @@ def sync(root: Path, release_date: str) -> list[str]:
             raise ValueError("CHANGELOG must retain at least one past version")
         boundary = m.end() + n.start()
         release_content = changelog[m.end():boundary].strip()
-        if release_content.startswith("Nenhuma alteração adicional registrada"):
+        if release_content.startswith(("No additional changes have been recorded", "Nenhuma alteração adicional registrada")):
             release_content = ""
         if not release_content:
-            release_content = f"- Consulte [as notas da versão](docs/{notes.name})."
+            release_content = f"- See the [release notes](docs/{notes.name})."
         changelog = (
             changelog[:m.start()] +
-            f"## Unreleased\n\nNenhuma alteração adicional registrada desde `{version}`.\n\n" +
+            f"## Unreleased\n\nNo additional changes have been recorded since `{version}`.\n\n" +
             f"{header}\n\n{release_content}\n\n" + changelog[boundary:]
         )
     # First validate all edits, *then* write. Rerunning is safe.
