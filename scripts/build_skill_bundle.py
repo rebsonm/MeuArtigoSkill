@@ -43,6 +43,9 @@ def list_sources(root: Path) -> list[Path]:
         if not folder.is_dir() or folder.is_symlink():
             raise ValueError(f"Package directory missing or linked: {dirname}")
         for path in sorted(folder.rglob("*")):
+            # Ignore only generated interpreter caches, never unrecognized data.
+            if "__pycache__" in path.relative_to(root).parts or path.suffix.lower() in {".pyc",".pyo"}:
+                continue
             if path.is_symlink():
                 raise ValueError(f"Symlink cannot enter public bundle: {path}")
             if path.is_file():
