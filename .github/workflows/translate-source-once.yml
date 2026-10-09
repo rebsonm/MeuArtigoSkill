@@ -1,4 +1,4 @@
-name: Temporary English-source migration probe
+name: Temporary English-source migration
 
 on:
   push:
@@ -9,31 +9,38 @@ on:
       - 'scripts/translate_source_once.py'
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  probe:
+  translate-public-documentation:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 55
     steps:
-      - name: Inspect public machine-translation reachability (no research data)
+      - name: Checkout authorized development branch
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          ref: stage5-english-source-auto-user-language-20261009
+          persist-credentials: true
+      - name: Configure Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: "3.12"
+      - name: Translate public maintained Markdown, protect source structures
         shell: bash
         run: |
-          set -e
-          python - <<'PY'
-          import urllib.parse, urllib.request
-          url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=pt&tl=en&dt=t&q="+urllib.parse.quote("Este é um teste de conectividade.")
-          try:
-              with urllib.request.urlopen(url,timeout=20) as reply:
-                  data=reply.read(400).decode("utf-8","replace")
-                  print("PUBLIC_TEST_STATUS",reply.status,"RESULT",data[:280])
-          except Exception as exc:
-              print("PUBLIC_TEST_FAILED",type(exc).__name__,str(exc)[:200])
-              raise
-          sample="## 1. Família de revisão\\n\\nZXQSEGMENT001ZXQ\\n\\nA revisão identifica fontes e resultados da pesquisa.\\n\\nZXQSEGMENT002ZXQ\\n\\n- **Atenção:** conferir [documentação](ZXQLINK001ZXQ)."
-          url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=pt&tl=en&dt=t&q="+urllib.parse.quote(sample)
-          with urllib.request.urlopen(url,timeout=20) as reply:
-              import json
-              result=json.load(reply)
-          print("MARKER_PROBE",repr("".join(x[0] for x in result[0])))
-          PY
+          python scripts/translate_source_once.py || echo "Some entries need editorial follow-up; preserving successfully translated documents"
+      - name: Record translation only on development branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- docs references CHANGELOG.md CONTRIBUTING.md SECURITY.md
+          if ! git diff --cached --quiet; then
+            git commit -m "stage5: translate maintained public Markdown sources into English [skip ci]"
+            git push origin HEAD:stage5-english-source-auto-user-language-20261009
+          else
+            echo "No changes to commit"
+          fi
+      - name: Report unresolved Portuguese language signals
+        run: python scripts/audit_source_language.py
