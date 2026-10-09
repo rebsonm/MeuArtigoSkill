@@ -48,6 +48,10 @@ A instalação nativa depende da plataforma e do plano atual:
 
 Se o menu de Skills não aparecer, abra o guia da plataforma antes de concluir que houve erro no repositório.
 
+## Verificação de fontes e passagens
+
+A Skill inclui verificação bibliográfica independente do texto produzido pela IA: consultas gratuitas ao Crossref/OpenAlex, reconciliação de DOI e metadados, avisos de atualização editorial e localização de passagens em arquivos disponíveis localmente. Não exige serviços pagos e não envia PDFs inteiros a essas APIs. Divergências e resultados inconclusivos permanecem visíveis para revisão humana; metadados corretos não equivalem a comprovação do conteúdo de um argumento. Consulte [Verificação de fontes](./docs/VERIFICACAO-FONTES.md).
+
 ## O que a Skill faz
 
 A Skill conduz o pesquisador por um fluxo completo:

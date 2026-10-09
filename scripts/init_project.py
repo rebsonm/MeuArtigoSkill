@@ -207,6 +207,7 @@ def main()->int:
             "journal_profile_status":journal_profile_status,
             "journal_aware_construction_enabled":True,
             "claim_robustness_audit_enabled":True,
+            "source_verification_required":True,
             "anonymization_policy_enabled":True,
             "default_external_artifact_mode":"EXTERNAL_ANONYMIZED",
             "anonymization_profile_status":"TO_CONFIGURE",
