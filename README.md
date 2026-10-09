@@ -113,6 +113,10 @@ A Skill conduz o pesquisador por um fluxo completo:
 30. exporta proveniência interoperável em W3C PROV/RO-Crate com SHA-256;
 31. aplica anonimização de alto rigor aos arquivos externos, incluindo conteúdo visível, metadados ocultos, comentários, revisões, nomes de arquivo, caminhos, links e inspeção final antes da liberação.
 
+## Direitos autorais e PDFs do corpus
+
+O código do Meu Artigo é público, mas **os PDFs de terceiros não se tornam públicos por isso**. A autorização para ler e analisar um texto é diferente da autorização para redistribuí-lo. O controle RT-09 registra a origem, licença ou permissão, evidências, atribuição e hash do arquivo na tabela de full text existente. O exportador RO-Crate exclui textos integrais por padrão e bloqueia a inclusão de documentos sem direitos de redistribuição documentados. Sem novas abas, identificadores ou serviços pagos. Consulte [Direitos dos PDFs e full text](./docs/DIREITOS-FULLTEXT-E-PDFS.md).
+
 ## C.A.D.A.: gestão operacional não é validação científica
 
 O C.A.D.A. organiza demandas, responsáveis, prazos e comprovação de providências administrativas. A qualidade metodológica depende dos procedimentos científicos e da revisão humana, nunca do percentual de tarefas concluídas. O novo controle separa indicadores de gestão, registros científicos e recibos de execução no relatório de transparência; bloqueia aprovações que usam apenas `CADA-0001` ou `DONE` como suposta prova científica. Há um [protocolo comparativo com e sem C.A.D.A.](./docs/LIMITES-CADA-E-COMPARACAO.md), **ainda sem dados coletados nem efeitos demonstrados**. Python padrão, sem novas abas ou serviços pagos.

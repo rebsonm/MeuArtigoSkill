@@ -142,6 +142,11 @@ If one researcher is screening:
 
 If multiple real reviewers participate, document their actual independent/joint procedures and agreement handling.
 
+## Rights to read versus rights to redistribute
+
+A legitimate institutional, personal, publisher or repository PDF may be retained for authorized academic reading without being exportable as a public copy. For each local full text use the existing 04_FullText_Tracker.csv rights fields. A DOI, paywall status or generic license description is not evidence that the **specific article** may be redistributed. See [full-text rights](../docs/DIREITOS-FULLTEXT-E-PDFS.md). If access is unavailable, record uncertainty and pursue authorized routes; that alone is not a scientific exclusion reason.
+
+
 ## Full-text retrieval
 
 For each full-text candidate, track:

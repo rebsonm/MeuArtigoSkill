@@ -20,6 +20,7 @@ import tempfile
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
+from rights_audit import authorize_external_fulltext
 from urllib.parse import quote
 
 RO_CRATE_VERSION = "1.3"
@@ -506,7 +507,23 @@ def canonical_files(root: Path, include_fulltext: bool) -> list[Path]:
     seen = set()
     out = []
     for p in candidates:
+        # Archives can hide licensed full texts and must not bypass the
+        # explicit rights checker as nested ZIP/TAR/RAR payloads.
+        if p.suffix.lower() in {".zip",".7z",".rar",".tar",".gz",".bz2",".xz"}:
+            continue
+        # Outside the authorized corpus, non-manuscript PDFs have unknown
+        # redistribution rights; exporting metadata is safer.
+        rel=p.relative_to(root)
+        if p.suffix.lower()==".pdf" and not include_fulltext and (
+            rel.parts[0]==MGMT or rel.parts[0]=="06_Submissao" and
+            len(rel.parts)>1 and rel.parts[1]=="Regras_da_Revista"
+        ):
+            continue
+        if p.is_symlink():
+            continue
         rp = p.resolve()
+        if not rp.is_relative_to(root):
+            continue
         if rp not in seen:
             seen.add(rp)
             out.append(p)
@@ -661,6 +678,7 @@ def main() -> int:
     ap.add_argument("project_path")
     ap.add_argument("--output-dir", default="")
     ap.add_argument("--include-fulltext", action="store_true")
+    ap.add_argument("--confirm-rights-review", action="store_true", help="Explicitly attest review of each source rights record")
     ap.add_argument("--cada-id", default="")
     ap.add_argument("--no-record-export-event", action="store_true")
     args = ap.parse_args()
@@ -675,6 +693,15 @@ def main() -> int:
             cfg = {}
     project_name = cfg.get("project_name") or root.name
 
+    rights_decisions=[]
+    if args.include_fulltext:
+        if not args.confirm_rights_review:
+            ap.error("--include-fulltext requires --confirm-rights-review and file-by-file rights evidence")
+        try:
+            rights_decisions=authorize_external_fulltext(root)
+        except (ValueError,OSError) as exc:
+            ap.error(str(exc))
+    # Fail closed before modifying trace, export log or output filesystem.
     if not args.no_record_export_event:
         append_export_trace(root, args.cada_id)
 
@@ -694,6 +721,31 @@ def main() -> int:
     ro_doc, packaged = build_ro_crate(root, crate_dir, project_name, prov_stats, warnings, args.include_fulltext)
 
     prov_dir = crate_dir / "provenance"
+    if args.include_fulltext:
+        rights_manifest=prov_dir/"FULLTEXT_RIGHTS.json"
+        public_entries=[
+            {"record_id":item["record_id"],
+             "path":item["path"],"sha256":item["sha256"],
+             "rights_basis":item["rights_basis"],
+             "license_uri":item["license_uri"],
+             "attribution":item["attribution"]}
+            for item in rights_decisions
+        ]
+        rights_manifest.write_text(
+            json.dumps({"schema_version":1,"scope":"THIS_EXPORT_ONLY",
+                        "legal_rights_independently_verified":False,
+                        "documents":public_entries},ensure_ascii=False,indent=2)+"\n",
+            encoding="utf-8"
+        )
+        ro_doc["@graph"].append({
+            "@id":"provenance/FULLTEXT_RIGHTS.json","@type":"File",
+            "name":"Per-file full-text rights attestations",
+            "encodingFormat":"application/json"
+        })
+        next(node for node in ro_doc["@graph"] if node.get("@id")=="./")["hasPart"].append(
+            {"@id":"provenance/FULLTEXT_RIGHTS.json"}
+        )
+        packaged.append(rights_manifest)
     (prov_dir / "prov.jsonld").write_text(json.dumps(prov_doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     report = {
@@ -707,6 +759,8 @@ def main() -> int:
         "prov_agents": prov_stats["agents"],
         "ro_crate_payload_files": len(packaged),
         "fulltext_included": bool(args.include_fulltext),
+        "fulltext_rights_entries": len(rights_decisions),
+        "rights_legally_certified": False,
         "warnings": warnings,
     }
     (prov_dir / "provenance-report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -722,6 +776,7 @@ def main() -> int:
         f"- PROV agents: {prov_stats['agents']}",
         f"- Payload files: {len(packaged)}",
         f"- Full-text corpus included: {'yes' if args.include_fulltext else 'no'}",
+        f"- Full-text rights attestations: {len(rights_decisions)} (not independent legal certification)",
         "",
         "## Provenance warnings",
     ]
@@ -757,7 +812,7 @@ def main() -> int:
         "Prov_agents": prov_stats["agents"],
         "RO_Crate_files": len(packaged) + 5,
         "Warnings": " | ".join(warnings),
-        "Notes": "Full text included" if args.include_fulltext else "Full text excluded by default",
+        "Notes": "Full text included after source-by-source rights attestations" if args.include_fulltext else "Full text excluded by default",
     })
     append_traceability_export(root, export_id, zip_path, zip_hash, validation)
 

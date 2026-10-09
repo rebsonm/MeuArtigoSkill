@@ -97,4 +97,9 @@ Before external artifacts, read [anonymization](references/anonymization.md). Ke
 
 Run scripts/validate_project.py before release. Use scripts/governance_events.py for recorded decisions, scripts/create_snapshot.py and scripts/compare_snapshots.py for freezes, and scripts/generate_transparency_report.py for a report based solely on canonical data. These tools record/check state; they do not establish scientific validity.
 
+## Full-text rights and copyright
+
+Read [full-text rights](docs/DIREITOS-FULLTEXT-E-PDFS.md) before accessing, storing, sending or redistributing any PDF or complete article text. A public Skill repository, DOI, accessible full-text URL, subscription, CAFe or institutional library access do not by themselves grant the right to redistribute a PDF. Use the existing Record_ID in 04_FullText_Tracker.csv to preserve file-specific access basis, license, original rights source, review, attribution and SHA-256. Keep unknown or restricted rights as such, without excluding the article scientifically. Full texts are excluded from provenance packages by default. The exporter requires explicit `--confirm-rights-review` and qualifying per-file rights records for `--include-fulltext`. Never invent licenses or assume the repository's LICENSE covers third-party articles. Run `scripts/rights_audit.py`; the technical checker cannot independently certify legal rights.
+
+
 For optional interoperable audit packages, read [provenance export](references/provenance-export.md): W3C PROV, RO-Crate and SHA-256 support provenance and fixity. Do not claim submission occurred without actual completion by the user or an authorized tool.

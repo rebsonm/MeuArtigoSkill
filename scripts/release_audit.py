@@ -53,6 +53,8 @@ REQUIRED=[
     "scripts/trace_execution.py",
     "scripts/screening_review.py",
     "docs/SCREENING-AUDITAVEL.md",
+    "scripts/rights_audit.py",
+    "docs/DIREITOS-FULLTEXT-E-PDFS.md",
     "scripts/audit_governance_boundary.py",
     "benchmarks/cada_comparison_protocol_v1.json",
     "docs/LIMITES-CADA-E-COMPARACAO.md",
