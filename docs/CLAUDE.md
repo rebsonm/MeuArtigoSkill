@@ -8,12 +8,12 @@ Este documento descreve como usar **Meu Artigo** em Claude. A metodologia centra
 
 O Claude oferece Skills personalizadas em superfícies como `claude.ai` e Claude Code, segundo a [documentação oficial da Anthropic](https://platform.claude.com/docs/pt-BR/agents-and-tools/agent-skills/overview). Disponibilidade e permissões variam conforme conta e produto. O suporte anunciado a Skills **não equivale à validação de todos os recursos do Meu Artigo**.
 
-A instalação e a retomada de projetos usando o ZIP `v0.8.0-beta.4` ainda precisam de verificação em ambiente real.
+A instalação e a retomada de projetos usando o ZIP `v0.8.0-beta.5` ainda precisam de verificação em ambiente real.
 
 ## 1. Baixe o ZIP preparado
 
-1. Abra [a Release v0.8.0-beta.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.4).
-2. Baixe **`MeuArtigoSkill-v0.8.0-beta.4.zip`** (não o `Source code (zip)`).
+1. Abra [a Release v0.8.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.5).
+2. Baixe **`MeuArtigoSkill-v0.8.0-beta.5.zip`** (não o `Source code (zip)`).
 3. Se desejar, confirme o hash usando `SHA256SUMS.txt`.
 
 ## 2A. Instalação no claude.ai
