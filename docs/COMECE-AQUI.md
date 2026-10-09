@@ -1,46 +1,46 @@
-# Comece aqui — usando o Meu Artigo pelo GitHub
+# Getting started with Meu Artigo on GitHub
 
-## Status atual de acesso
+## Public access and experimental status
 
-O Meu Artigo está em **versão beta pública**. O repositório, o código e a documentação podem ser acessados sem convite. A Skill permanece em desenvolvimento e seu uso deve respeitar os limites científicos documentados.
+Meu Artigo is an **experimental public beta**. Its source and project
+documentation can be consulted without an invitation or a GitHub
+account. Download and installation do not grant permission to
+redistribute third-party research PDFs or claim that the Skill has
+been scientifically validated.
 
-A beta pode ser consultada e instalada publicamente. Isso não autoriza a redistribuição de PDFs científicos de terceiros nem significa que a qualidade científica da Skill tenha sido validada empiricamente.
+This guide is designed for researchers who have **never used GitHub**.
+You do not need programming skills, Git, a command line, or a pull request
+to use the published installer.
 
-Este guia foi escrito para pesquisadores que **nunca usaram Git ou GitHub**, mas querem testar a Skill sem depender de alguém para instalar por eles.
+## 1. What this repository contains
 
-Você não precisa saber programação. Também não precisa instalar Git, abrir terminal, criar branch ou fazer commit para usar a Skill.
+A GitHub repository is a project folder with a public change history.
+Here it includes the main `SKILL.md` instructions, methodological
+references, helper scripts, platform guides, public-beta installation
+notes, the C.A.D.A. management layer and license/attribution records.
 
-## 1. O que é esta página?
+The automatically displayed `README.md` introduces the project
+rather than reproducing all technical documentation.
 
-Você está em um **repositório do GitHub**.
+## 2. Do I need a GitHub account?
 
-Um repositório é simplesmente uma pasta de projeto publicada na internet, com histórico de versões. Neste caso, ele contém:
+Not to read, inspect or download a public release. You may need
+a GitHub account to contribute, create issues or collaborate.
+Connection to third-party apps or academic sources is a **separate**
+authorization process and may require a different account.
 
-- a Skill `Meu Artigo`;
-- instruções de uso;
-- referências metodológicas;
-- pequenos scripts auxiliares;
-- documentação para ChatGPT, Claude e Gemini.
+## 3. Choose the installable release ZIP
 
-O arquivo que aparece automaticamente na página inicial chama-se `README.md`. Ele funciona como a página de apresentação do projeto.
+Open the [published beta release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.8),
+then download the specifically prepared
+`MeuArtigoSkill-v0.8.0-beta.8.zip` attachment. Verify its SHA-256
+digest using `SHA256SUMS.txt` if appropriate.
 
-## 2. Preciso criar conta no GitHub?
+**Do not confuse** that installable ZIP with GitHub's automatically
+generated `Source code (zip)` archive. The published Skill ZIP
+has the expected installation layout and a validated manifest.
 
-O repositório é público: não é necessária conta GitHub para consultar os arquivos ou obter um ZIP do código. Instalar, conectar plataformas e autorizar acesso a dados privados são operações separadas.
-
-Você só precisaria de conta para ações como comentar, abrir uma Issue, favoritar o projeto ou colaborar diretamente no código.
-
-Para testar a Skill, basta baixar os arquivos.
-
-## 3. Como baixar
-
-**Preferência: versão identificada.** Abra [Releases](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.8), baixe `MeuArtigoSkill-v0.8.0-beta.8.zip` e, se desejar, confira o hash no `SHA256SUMS.txt`. Diferentemente do ZIP de código-fonte, esse pacote é preparado especificamente para instalar a Skill, com manifesto e licença. Consulte [implantação beta](IMPLANTACAO-BETA.md).
-
-**Alternativa para consultar o código do projeto:** o botão **Code → Download ZIP** obtém uma cópia do repositório, que pode não corresponder a uma versão publicada. **Para instalar, prefira sempre o ZIP preparado em Releases.**
-
-**No ChatGPT, quando houver suporte a Skills, utilize o upload do ZIP instalável completo:** a interface documenta esse recurso, mas a beta atual ainda precisa de teste funcional específico. Descompacte apenas se quiser inspecionar os arquivos ou usar outra plataforma.
-
-Depois de descompactar, você verá algo parecido com:
+The downloaded package contains a tree similar to:
 
 ```text
 MeuArtigoSkill/
@@ -52,161 +52,140 @@ MeuArtigoSkill/
 └── README.md
 ```
 
-O **ZIP de Releases é o pacote instalável recomendado**; o repositório também contém o código-fonte e o histórico de desenvolvimento. A pasta `docs/` contém guias de instalação e teste; `references/` e `scripts/` fazem parte do funcionamento da Skill.
+When the platform permits ZIP import, retain the entire package
+so reference documents remain available. Only unpack if you want
+to inspect contents or your platform requires a directory.
 
-**Para pesquisadores iniciantes:** a documentação agora oferece
-um [fluxo essencial](../references/fluxo-essencial.md) que mostra somente
-o próximo passo científico, a decisão necessária e a principal
-limitação, em vez de expor todas as planilhas e regras ao mesmo tempo.
-O [índice de métodos](../references/INDICE-METODOLOGICO.md)
-ajuda a localizar apenas os autores e a abordagem pertinentes.
-Nenhum desses resumos reduz a auditoria científica.
+## 4. Which file matters?
 
-## 4. Qual arquivo eu uso?
+`SKILL.md` is the Skill entrypoint. The `references/` folder
+contains detailed method and process guidance; `scripts/` contains
+deterministic helper programs; `agents/` contains optional adapters
+for particular products. The `docs/` folder includes installation,
+limits, provenance, scientific safeguards and source-licensing policy.
 
-Na raiz do bundle, o arquivo principal é:
+You **do not** need to read or understand every file to begin.
+The Skill follows a progressive approach, opening relevant
+instructions only when that research stage actually requires them.
 
-```text
-SKILL.md
-```
+## 5. Choose your AI platform
 
-Ele contém as instruções centrais da Skill.
+The Skill's scientific contract is shared, but specific installation
+and execution capabilities vary by account and product:
 
-Quando sua IA permitir importar um **ZIP**, no ChatGPT prefira o ZIP completo baixado diretamente do GitHub, porque ele preserva a estrutura e os arquivos auxiliares. Ele contém:
+- [ChatGPT / Codex](./CHATGPT.md)
+- [Claude / Claude Code](./CLAUDE.md)
+- [Gemini](./GEMINI.md)
 
-- `references/` — regras metodológicas detalhadas;
-- `scripts/` — rotinas auxiliares;
-- `agents/` — configuração específica de algumas plataformas.
+Consult the [compatibility matrix](COMPATIBILIDADE-PLATAFORMAS.md)
+to distinguish vendor features from Meu Artigo actions
+that have actually been evaluated.
 
-## 5. Escolha sua IA
+## 6. Start in your own language — automatically
 
-Depois de baixar, siga o guia correspondente. **A opção de instalar Skills depende do plano/conta de cada plataforma**, então leia o início do guia antes de procurar os menus:
+**The repository is written in English; you do not have to be.**
 
-- [Quero usar no ChatGPT / Codex](./CHATGPT.md)
-- [Quero usar no Claude](./CLAUDE.md)
-- [Quero usar no Gemini](./GEMINI.md)
+If your account supports installing Skills, import the full ZIP
+following the platform guide. Open a new conversation and describe
+the research problem **in your usual language**.
 
-As três usam o mesmo núcleo metodológico, mas as funções disponíveis e os mecanismos de instalação podem variar. A [matriz de compatibilidade](COMPATIBILIDADE-PLATAFORMAS.md) distingue o suporte anunciado pelos fornecedores dos testes ainda pendentes da Skill.
+Examples of what a researcher might say, without any language pack:
 
-## 6. Como começar a usar
+- A Portuguese-speaking researcher may directly describe the study
+  in Portuguese, and the assistant should respond in Portuguese.
+- A Spanish-speaking researcher may begin in Spanish and receive
+  Spanish explanations.
+- An English-speaking researcher may begin in English and receive
+  English responses.
 
-Se a sua conta oferecer Skills, no ChatGPT use **Plugins → Habilidades → Criar → Carregar do computador** para importar o ZIP completo. Depois de instalar/importar a Skill na sua IA, abra uma conversa nova e escreva algo como:
+If you prefer a specific language, state it directly in the
+conversation. The **manuscript language is independent**: you can
+discuss the project in Portuguese while preparing the paper in
+English for an international journal. See the
+[language policy](../references/language-policy.md).
 
-> Use a Skill Meu Artigo. Meu problema de pesquisa é: [descreva seu problema]. Quero desenvolver um artigo científico.
+The Skill may ask for the *research problem* and whether you have
+a *target journal* with official author rules and a template.
+You are not expected to prepare your own Boolean search strings,
+spreadsheets, evidence matrix, deduplication logic or complete
+research protocol before the first interaction.
 
-Logo no início, a Skill deve primeiro verificar o Google Drive. Se ele não estiver conectado, ela deve orientar a conexão e verificar novamente. Se ainda assim não houver acesso, ela deve perguntar claramente se você deseja continuar sem Drive usando apenas arquivos/resultados do Work ou armazenamento local. Ela só pode adotar esse fallback após sua confirmação afirmativa.
+## 7. Storage is an explicit prerequisite
 
-Depois de resolver a persistência, a Skill também deve perguntar se você já possui **revista-alvo**. Se possuir, tenha à mão o link/arquivo das normas para autores e, se existir, o template/layout da revista. Se ainda não tiver revista definida, isso não impede o início do projeto.
+Before substantive literature searching or drafting, the Skill
+checks whether Google Drive is connected and **actually writable**.
+Drive is the standard canonical location for the project's
+continuity, research documents, protocols, matrix and manuscript.
 
-Você não precisa preparar:
+If Drive is unavailable, the Skill should explain how to connect it
+and check again. If access still fails, the assistant must ask
+whether you **explicitly authorize** an alternative local/Work
+workspace. Without your affirmative decision, it must not pretend
+that files were saved to Drive or begin substantive research in
+a default local workspace.
 
-- string booleana;
-- planilha;
-- protocolo;
-- revisão;
-- pasta no Drive — a Skill cria/retoma a estrutura depois de confirmar a conexão;
-- critérios de inclusão;
-- matriz de evidências.
+## 8. Research workflow and decisions
 
-A Skill deve ajudar a construir isso a partir do problema de pesquisa e mostrar o passo a passo por meio da gestão **C.A.D.A.**.
+Once authorized storage is available, the Skill should preserve
+the original question, propose method-appropriate options and
+organize source searches, analysis and writing according to the
+actual research design. A bibliographic literature review has
+different controls from a qualitative interview study, a
+quantitative analysis or design science evaluation.
 
-Quando gerar arquivos para enviar a revista, avaliador ou terceiro, a Skill também deve aplicar a política de anonimização. O padrão para arquivos externos é não expor identidade desnecessariamente e auditar o arquivo final, inclusive metadados ocultos. Veja [ANONIMIZACAO.md](./ANONIMIZACAO.md).
+The management method C.A.D.A. tracks responsibilities, the next
+task and deadlines without replacing scientific decisions.
 
-Você **não precisa conhecer ClickUp, Jira ou Trello**. A planilha/matriz do projeto já funciona como gerenciador completo no modo `MATRIX_ONLY`, com um painel visual próprio. Se você já usa alguma ferramenta de gestão e sua IA tiver essa integração, pode optar pelo modo `MATRIX_PLUS_EXTERNAL`.
+When producing material for journals, reviewers or external
+collaborators, follow the journal's verified instructions and
+the [anonymization policy](./ANONIMIZACAO.md), including visible
+and hidden document metadata, source rights and truthful AI-use
+disclosure.
 
-Além de acompanhar tarefas, a Skill também mantém uma trilha de **rastreabilidade da construção do artigo**, registrando decisões materiais, alterações, fontes, uso de IA e validações humanas.
+An external management app such as ClickUp, Jira or Trello is
+optional. The default canonical matrix can manage the project
+without these services.
 
-## 7. Primeira utilização
+## 9. Check continuity of your research project
 
-Para experimentar o funcionamento normal da Skill:
+The assistant should preserve a real, updated `CONTINUIDADE.md`,
+original research input, material decisions, pending scientific
+gates, progress and the next valid action in the authorized
+workspace. To resume in another session, ask to continue the
+existing article and inspect the actual persistent state rather
+than recreating the project from a guessed conversation history.
 
-- comece com um problema ou ideia real de pesquisa;
-- não é necessário ler o `SKILL.md` antes de usar;
-- não é necessário conhecer previamente o fluxo interno;
-- deixe a própria Skill orientar as etapas e pergunte sempre que algo não estiver claro.
+Successful local generation is **not** proof that a Google Drive
+upload occurred. Ask for the verifiable source when there is doubt.
 
-Use como usaria uma ferramenta real.
+## 10. Updating to a newer version
 
-Se algo ficar confuso ou parecer metodologicamente inadequado, você pode registrar o ponto e, se desejar, encaminhá-lo como sugestão livre ao autor.
+Check the [Releases page](https://github.com/rebsonm/MeuArtigoSkill/releases)
+and choose the version's prepared ZIP. Review its release notes,
+the [CHANGELOG](../CHANGELOG.md) and any migration requirements.
+Keep the research project's real source files and canonical
+records; installing a newer Skill must not silently rewrite
+earlier scientific decisions.
 
-## 8. Como verificar a continuidade do seu próprio projeto
+## 11. If you want to explore GitHub
 
-Depois que o trabalho avançar um pouco:
+- **Repository:** project and development history.
+- **README.md:** plain-language project overview.
+- **Release:** an immutable named distribution with notes.
+- **Source code archive:** a repository copy that may differ from
+  the tested Skill installer.
+- **Issue:** a report or discussion about a problem.
+- **Pull request:** a proposed change requiring review/checks.
+- **Commit:** a recorded source revision.
 
-1. encerre aquela conversa;
-2. abra uma conversa nova;
-3. disponibilize a Skill novamente;
-4. disponibilize os arquivos persistidos do projeto, quando necessário;
-5. escreva apenas:
+## 12. Feedback, support and further reading
 
-> Continue meu artigo.
+You can inspect the files, use a supported beta installer,
+or report confusing behavior and evidence problems through the
+repository's issue and contribution mechanisms.
 
-A Skill deve conseguir recuperar o estado a partir de `CONTINUIDADE.md`, protocolo, matriz e demais artefatos, sem exigir que você conte toda a história novamente.
-
-## 9. Quero atualizar para a versão mais recente
-
-Como você está usando a versão baixada do GitHub, a forma mais simples é:
-
-1. consultar a [lista de Releases](https://github.com/rebsonm/MeuArtigoSkill/releases);
-2. baixar o ZIP **instalável** da versão identificada mais recente;
-3. conferir a integridade quando necessário e atualizar a Skill pela função da sua plataforma, preservando os arquivos e decisões do projeto.
-
-O GitHub mantém todo o histórico de alterações, portanto versões anteriores não desaparecem do projeto.
-
-## 10. Vocabulário mínimo do GitHub
-
-Você não precisa dominar estes termos para usar a Skill, mas eles ajudam a entender a página:
-
-| Termo | Significado prático |
-|---|---|
-| **Repository / repositório** | A pasta completa do projeto publicada no GitHub |
-| **README** | O texto de apresentação que aparece na página inicial |
-| **main** | A versão principal/atual do projeto |
-| **Code** | Botão onde você encontra a opção de baixar o projeto |
-| **Download ZIP** | Baixa uma cópia do projeto sem precisar usar Git |
-| **commit** | Um registro de uma alteração feita no projeto |
-| **branch** | Uma linha paralela de desenvolvimento; você não precisa usar para testar |
-| **clone** | Baixar o projeto usando Git; também não é necessário para o teste |
-| **Issue** | Espaço do GitHub para relatar problema, sugestão ou discussão |
-| **release** | Uma versão publicada formalmente, quando o projeto utiliza esse recurso |
-
-## 11. Quero apenas testar, não aprender Git
-
-Perfeito.
-
-Seu caminho é simplesmente:
-
-```text
-GitHub → Releases
-   ↓
-baixar MeuArtigoSkill-v0.8.0-beta.8.zip
-   ↓
-seguir o guia da sua IA
-   ↓
-fazer o upload ou descompactar, conforme a plataforma
-   ↓
-informar seu problema de pesquisa
-```
-
-## 12. Quero enviar uma sugestão ou relatar um problema
-
-Existe um [protocolo preparado para avaliação futura com usuários](PROTOCOLO-BETA-USUARIOS.md), **ainda não executado**. Não há coleta de opiniões, sessões agendadas nem resultados de participantes neste momento.
-
-Se desejar, você pode encaminhar espontaneamente uma observação, crítica metodológica, relato de erro ou sugestão de melhoria. **Esse envio livre não constitui participação em um estudo estruturado.** Para orientações de contribuição, consulte [CONTRIBUTING.md](../CONTRIBUTING.md) e não divulgue dados sensíveis em Issues públicas.
-
-## 13. Quero entender o projeto por dentro
-
-Depois da primeira utilização, fique à vontade para explorar:
-
-- [CADA.md](./CADA.md) — como funciona a gestão do passo a passo;
-- [MATRIZ-CADA.md](./MATRIZ-CADA.md) — como funciona o painel/planilha oficial;
-- [RASTREABILIDADE.md](./RASTREABILIDADE.md) — como o processo de construção do artigo fica auditável;
-- [GOVERNANCA-CIENTIFICA.md](./GOVERNANCA-CIENTIFICA.md) — como decisões, validação humana e snapshots funcionam;
-- [JOURNAL-AWARE.md](./JOURNAL-AWARE.md) — como a revista-alvo orienta a construção desde o início;
-- [ROBUSTEZ-CLAIMS.md](./ROBUSTEZ-CLAIMS.md) — como claims importantes são confrontados antes de congelar;
-- [ANONIMIZACAO.md](./ANONIMIZACAO.md) — como arquivos externos são anonimizados e auditados antes de compartilhar/submeter;
-- [MAPA-CORPUS.md](./MAPA-CORPUS.md) — como funciona o mapa do corpus e a consulta grounded;
-- `../SKILL.md` — instrução central;
-- `../references/` — metodologia detalhada;
-- `../scripts/` — automações determinísticas;
-
+See [contributing](../CONTRIBUTING.md), [security](../SECURITY.md),
+[release details](IMPLANTACAO-BETA.md), and the
+[method-specific guides](ROTAS-METODOLOGICAS.md).
+Neither a successful installation nor a completed software
+audit guarantees academic publication or scientific quality.
