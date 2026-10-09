@@ -157,6 +157,8 @@ def audit(claim_rows,evidence_rows,search_rows,*,strict=False,freeze=False,heade
                 errors.append(f"{claim_id}: final claim needs traceable researcher review evidence")
         if not is_final:
             counts["pending"]+=1
+    if freeze and counts["claims"]==0:
+        errors.append("cannot freeze an empty scientific claims ledger")
     return {"errors":errors,"warnings":warnings,"counts":counts,
             "semantic_support_proven":False,"novelty_proven":False}
 
