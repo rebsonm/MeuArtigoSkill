@@ -1,7 +1,7 @@
 <a id="construção-orientada-à-revista"></a>
 # Magazine-oriented construction
 
-My Article does not treat the target magazine as just a formatting step at the end.
+Meu Artigo does not treat the target magazine as just a formatting step at the end.
 
 When the researcher already knows which journal he intends to submit to, Skill asks for the **official rules, template or layout of the journal** and uses this information from the beginning of the manuscript construction.
 
