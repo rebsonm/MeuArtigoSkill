@@ -33,9 +33,11 @@ class QualityBenchmarkTests(unittest.TestCase):
         return file
 
     def test_real_publication_reference_is_well_formed(self):
-        self.assertEqual(len(self.reference), 3)
+        self.assertEqual(len(self.reference), 4)
         self.assertEqual(self.reference["ai_diffusion_review"]["reported_counts"]["included"], 73)
         self.assertEqual(self.reference["governance_integration_review"]["reported_counts"]["included"], 67)
+        self.assertEqual(self.reference["brazilian_governance_integrative_review"]["reported_counts"]["included"], 13)
+        self.assertEqual(self.reference["brazilian_governance_integrative_review"]["reported_counts"]["identified"], 400)
 
     def test_derived_stage_totals_are_reconciled_without_adding_records(self):
         flow = self.reference["ai_diffusion_review"]["derived_counts"]
@@ -126,7 +128,7 @@ class QualityBenchmarkTests(unittest.TestCase):
     def test_offline_pilot_records_inability_to_verify(self):
         result = q.pilot(self.reference_path, offline=True)
         self.assertEqual(result["verified_metadata"], 0)
-        self.assertEqual(result["unverified_metadata"], 3)
+        self.assertEqual(result["unverified_metadata"], 4)
         self.assertFalse(any(x["claims_scientifically_adjudicated"] for x in result["results"]))
 
     def test_pilot_mocked_provider_verification_is_not_semantic_validation(self):
@@ -139,7 +141,7 @@ class QualityBenchmarkTests(unittest.TestCase):
                 "display_name": row["title"], "publication_year": row["published_year"],
                 "is_retracted": False}}
         result = q.pilot(self.reference_path, fetcher=fetch)
-        self.assertEqual(result["verified_metadata"], 3)
+        self.assertEqual(result["verified_metadata"], 4)
         self.assertEqual(result["results"][0]["interpretation"], "BIBLIOGRAPHIC_IDENTITY_ONLY")
 
     def test_wrong_reference_hash_blocks_comparison(self):
