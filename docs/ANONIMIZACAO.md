@@ -1,11 +1,11 @@
 <a id="anonimização-de-arquivos"></a>
 # File anonymization
 
-My Article adopts anonymization by default for external files when the identity of the authors is not necessary.
+Meu Artigo adopts anonymization by default for external files when the identity of the authors is not necessary.
 
 The rule is simple:
 
-`arquivo interno identificado -> derivado externo anonimizado -> auditoria -> revisão humana -> envio`
+`identified internal file -> anonymized external derivative -> audit -> human review -> sharing`
 
 <a id="o-que-é-verificado"></a>
 ## What is checked
@@ -54,11 +54,11 @@ The Skill does not automatically remove self-citations. The journal's policy mus
 
 The sequence for anonymized files is:
 
-`python scripts/sanitize_metadata.py <arquivos> --in-place`
+`python scripts/sanitize_metadata.py <files> --in-place`
 
 followed by:
 
-`python scripts/audit_anonymization.py <projeto> <arquivos>`
+`python scripts/audit_anonymization.py <project> <files>`
 
 The sanitizer removes descriptive properties/provenance and normalizes package metadata when this can be done without altering the scientific content. If a format cannot be safely cleaned, it fails and the file remains locked. Comments or revisions that may change the content are not silently accepted/rejected.
 
