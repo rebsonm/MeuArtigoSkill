@@ -6,7 +6,7 @@
 
 Utilize a página [Releases do GitHub](https://github.com/rebsonm/MeuArtigoSkill/releases), procurando `v0.8.0-beta.8`, e escolha `MeuArtigoSkill-v0.8.0-beta.8.zip`. O arquivo `SHA256SUMS.txt` da mesma versão permite conferir a integridade do download. A alternativa `Code → Download ZIP` representa a versão atual da branch, que pode ser diferente da versão fixa publicada.
 
-O ZIP da Skill tem `SKILL.md` na raiz, além de `agents/`, `assets/`, `references/`, `scripts/`, `docs/`, `benchmarks/`, `LICENSE`, `CITATION.cff`, `VERSION` e manifest de SHA-256. Os dados de usuários, PDFs de terceiros, tokens, arquivos temporários e corpus científicos **não entram** nesse pacote.
+O ZIP da Skill tem `SKILL.md` na raiz, além de `agents/`, `assets/`, `references/`, `scripts/`, `docs/`, `benchmarks/`, `LICENSE`, `NOTICE`, `CITATION.cff`, `VERSION` e manifest de SHA-256. Os dados de usuários, PDFs de terceiros, tokens, arquivos temporários e corpus científicos **não entram** nesse pacote.
 
 ## Instalação
 
