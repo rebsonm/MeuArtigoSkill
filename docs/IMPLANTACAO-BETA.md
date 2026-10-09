@@ -1,14 +1,14 @@
 # Experimental public beta installation — Meu Artigo
 
-**Last published release:** `0.8.0-beta.8`.
+**Prepared release:** `0.9.0-beta.1`.
 **Status:** public experimental beta for voluntary use,
 not a scientifically validated research method.
 
 ## Obtaining the package
 
 Open the [GitHub Releases page](https://github.com/rebsonm/MeuArtigoSkill/releases),
-find `v0.8.0-beta.8` and choose the exact installable
-`MeuArtigoSkill-v0.8.0-beta.8.zip`.
+find `v0.9.0-beta.1` and choose the exact installable
+`MeuArtigoSkill-v0.9.0-beta.1.zip`.
 Use that version's `SHA256SUMS.txt` to check integrity.
 The alternative **Code → Download ZIP** is a snapshot
 of the current development branch, which may not match
@@ -65,7 +65,7 @@ The scientific manuscript language follows an independent
 journal or researcher decision:
 [language policy](../references/language-policy.md).
 
-The currently published `v0.8.0-beta.8` **predates**
+The currently published `v0.9.0-beta.1` **predates**
 this source migration. A later English-first beta can
 only be published after remaining source documents are
 translated and reviewed. Do not treat development-branch
