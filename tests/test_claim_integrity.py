@@ -124,6 +124,37 @@ class ClaimIntegrityTests(unittest.TestCase):
         self.assertFalse(check["errors"])
         self.assertTrue(check["warnings"])
 
+    def test_gate6_requires_bounded_claims_before_human_approval(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            folder=Path(tmp)/ci.MGMT
+            folder.mkdir()
+            def save(name,cols,items):
+                with (folder/name).open("w",encoding="utf-8-sig",newline="") as stream:
+                    writer=csv.DictWriter(stream,fieldnames=cols)
+                    writer.writeheader()
+                    writer.writerows(items)
+            (folder/"PROJECT_CONFIG.json").write_text(json.dumps({"claim_integrity_required":True}))
+            candidate={**self.claim,"Claim_type":"PROPOSITION","Draft_status":"READY"}
+            save("09_Claims_Ledger.csv",list(candidate)+[x for x in ci.EXTRA_COLUMNS if x not in candidate],[candidate])
+            save("05_Evidence_Matrix.csv",list(self.evidence[0]),self.evidence)
+            save("02_Search_Log.csv",list(self.search[0]),self.search)
+            import governance_events as gov
+            save("18_Human_Validation_Gates.csv",gov.GATE_HEADERS,
+                 [{"GATE_ID":"GATE-0006","Status":"READY","Name":"Claims audit"}])
+            cmd=[sys.executable,str(ROOT/"scripts/governance_events.py"),
+                 "gate",tmp,"--gate-id","GATE-0006",
+                 "--decision","APPROVED","--validated-by","Researcher",
+                 "--method","Direct claims review",
+                 "--evidence","Actual researcher response in project conversation",
+                 "--no-snapshot"]
+            blocked=subprocess.run(cmd,capture_output=True,text=True)
+            self.assertNotEqual(blocked.returncode,0)
+            self.assertIn("cannot approve claim freeze",blocked.stderr)
+            self.assertFalse((folder/"13_Traceability_Log.csv").exists())
+
+    def test_empty_claim_corpus_cannot_be_frozen(self):
+        self.assertTrue(ci.audit([],self.evidence,self.search,freeze=True)["errors"])
+
     def test_cli_rejects_frozen_claim_without_prior_work(self):
         with tempfile.TemporaryDirectory() as tmp:
             folder=Path(tmp)/ci.MGMT
