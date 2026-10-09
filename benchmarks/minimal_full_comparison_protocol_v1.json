@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "status": "PLANNED_NOT_EXECUTED",
+  "question": "Does a progressive minimal presentation reduce operational burden without weakening independently verified research provenance or scientific safeguards?",
+  "design": "prospective randomized or counterbalanced within-subject usability study; adapt to ethical and resource constraints",
+  "arms": {
+    "MINIMAL": {
+      "visibility": "one next action, necessary researcher decision and salient warning",
+      "scientific_controls": "UNCHANGED"
+    },
+    "FULL": {
+      "visibility": "detailed registers, provenance, decisions and counts",
+      "scientific_controls": "UNCHANGED"
+    }
+  },
+  "controlled_conditions": [
+    "identical scientific task and eligibility protocol",
+    "same underlying project schema and source documents",
+    "same available tools and model version",
+    "same original researcher decision gates",
+    "no fabricated or retroactively copied logs"
+  ],
+  "primary_metrics": [
+    {
+      "name": "time_per_validated_action",
+      "unit": "seconds",
+      "data": null
+    },
+    {
+      "name": "record_accuracy",
+      "unit": "verified_events/checked_events",
+      "data": null
+    },
+    {
+      "name": "unjustified_gate_approvals",
+      "unit": "count",
+      "data": null
+    },
+    {
+      "name": "user_confusion_or_workload",
+      "unit": "predefined ordinal rubric",
+      "data": null
+    }
+  ],
+  "safety_metrics": [
+    {
+      "name": "missing_or_fabricated_evidence",
+      "data": null
+    },
+    {
+      "name": "incorrect_inclusion_exclusion",
+      "data": null
+    },
+    {
+      "name": "unsupported_claims",
+      "data": null
+    }
+  ],
+  "independent_audit": "Compare recorded logs with actual observed tool events and researcher responses; do not accept AI-created logs as independent evidence.",
+  "sample_size_planned": null,
+  "sample_size_observed": 0,
+  "participant_results": [],
+  "causal_effect_established": false,
+  "scientific_quality_validated": false,
+  "ethics": "Assess applicable consent/data processing and institutional ethics requirements before involving people.",
+  "no_user_data_embedded": true
+}

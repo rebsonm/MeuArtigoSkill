@@ -39,6 +39,16 @@ ABSOLUTE_RX=re.compile(
     r"|unprecedented|never\s+(?:been|previously)\s+studied"
     r"|no\s+prior\s+(?:studies|research)|only\s+(?:study|research))\b", re.I
 )
+# A conclusion that the literature search did not identify a prior
+# contribution is an inferential [I] statement, NOT the proposition [P].
+# The pattern is intentionally narrow: interpretive synonyms still need review.
+NOVELTY_CONCLUSION_RX=re.compile(
+    r"\b(?:novidade\s+(?:sobreviveu|confirmada|foi\s+confirmada|permanece)"
+    r"|a\s+busca\s+(?:nao\s+encontrou|nao\s+identificou)\s+(?:estudos|pesquisas|trabalhos)"
+    r"|nao\s+foram\s+(?:encontrados|identificados)\s+(?:estudos|trabalhos)"
+    r"|novelty\s+(?:survives|was\s+confirmed|is\s+confirmed)"
+    r"|search\s+found\s+no\s+(?:prior\s+studies|previous\s+studies))\b",re.I
+)
 WORD_RX=re.compile(r"\b\w+\b", re.UNICODE)
 
 def clean(value):
@@ -60,6 +70,9 @@ def type_of(value):
 
 def contains_unbounded_novelty(value):
     return bool(ABSOLUTE_RX.search(normalized(value)))
+
+def is_novelty_conclusion(value):
+    return bool(NOVELTY_CONCLUSION_RX.search(normalized(value)))
 
 def read_table(path):
     if not path.exists():
@@ -114,6 +127,24 @@ def audit(claim_rows,evidence_rows,search_rows,*,strict=False,freeze=False,heade
             counts["unsupported_novelty_phrases"]+=1
             msg=f"{claim_id}: categorical priority/novelty language needs narrower wording; search metadata cannot prove universal absence"
             (errors if mandatory else warnings).append(msg)
+        if is_novelty_conclusion(text):
+            if kind!="I":
+                (errors if mandatory else warnings).append(
+                    f"{claim_id}: conclusion about search novelty must be a bounded [I] inference, not [L]/[P] or empirical result")
+            if not substantive(row.get("Novelty_scope")):
+                (errors if mandatory else warnings).append(
+                    f"{claim_id}: novelty inference needs a documented, narrow corpus/search scope")
+            search_ids=refs(row.get("Novelty_search_ref"))
+            if not search_ids:
+                (errors if mandatory else warnings).append(
+                    f"{claim_id}: novelty inference needs actual Search_ID provenance")
+            for sr in search_ids:
+                query=search_index.get(sr)
+                if not query:
+                    errors.append(f"{claim_id}: unknown novelty Search_ID {sr}")
+                elif mandatory and (not clean(query.get("Literal_query")) or
+                                    clean(query.get("Status")).upper() in {"","PLANNED","INVALID","SUPERSEDED"}):
+                    errors.append(f"{claim_id}: novelty inference refers to unexecuted search {sr}")
         if kind=="L":
             if not listed:
                 (errors if mandatory else warnings).append(f"{claim_id}: [L] requires a cited Evidence_ID")

@@ -15,6 +15,10 @@ Ele contém exclusivamente fatos bibliográficos e totais de seleção identific
 
 Este é um conjunto pequeno, intencional e público. Não constitui amostra probabilística de periódicos, gabarito definitivo de categorias ou validação externa da qualidade da Skill.
 
+## Reprodução prospectiva de uma revisão integrativa
+
+Além do conjunto atual, há um [caso de reprodução integrativa preparado](REPRODUCAO-REVISAO-INTEGRATIVA.md), com protocolo em `benchmarks/integrative_replication_protocol_v1.json`. O caso é o artigo real de Straub et al. (2023), sobre conceitos e um framework de IA no governo. **Nenhum resultado da reprodução foi produzido**. A divergência entre os totais de conceitos/termos informados no resumo e nos destaques precisa de conferência antes da comparação.
+
 ## Como executar sem aplicativos pagos
 
 Apenas Python 3.10+ e biblioteca padrão. O verificador de metadados utiliza os endpoints públicos do Crossref e OpenAlex já adotados pela Skill. Não exige chave paga; uma chave gratuita do OpenAlex é opcional para limites de consulta maiores.

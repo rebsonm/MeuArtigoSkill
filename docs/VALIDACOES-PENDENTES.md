@@ -1,6 +1,6 @@
 # Matriz de validações ainda pendentes
 
-Versão de referência: `0.8.0-beta.3`. Atualizar somente depois de cada avaliação **real**, sem preencher resultados não observados.
+Versão de referência: `0.8.0-beta.4`. Atualizar somente depois de cada avaliação **real**, sem preencher resultados não observados.
 
 | Código | Avaliação pendente | Condição para execução | Estado |
 |---|---|---|---|
@@ -9,7 +9,8 @@ Versão de referência: `0.8.0-beta.3`. Atualizar somente depois de cada avalia�
 | T-03 / RT-08 | Qualidade de fontes, locators, claims, seleção e síntese frente a avaliações independentes | Corpus legítimo e revisão científica independente | PENDENTE |
 | T-04 / RT-07 | Efeitos do C.A.D.A. sobre prazo, retrabalho e rastreabilidade | Episódios comparáveis e protocolo prospectivo | PENDENTE |
 | T-05 / RT-09–10 | Uso autorizado de PDFs e aderência à política editorial de uma revista real | Documentos e normas oficiais com verificação humana | PENDENTE |
+| T-06 | Comparação da apresentação mínima com a completa sem retirar controles científicos | Protocolo prospectivo [preparado](MODO-NUCLEO-MINIMO.md); observações reais e auditor independente | PENDENTE |
 
-Os testes automatizados e o piloto público de metadados **não concluem** qualquer uma dessas cinco avaliações. A qualidade científica da Skill não está certificada, e o ganho causal atribuível ao C.A.D.A. não foi estabelecido.
+Os testes automatizados e o piloto público de metadados **não concluem** qualquer uma dessas seis avaliações. A qualidade científica da Skill não está certificada, e o ganho causal atribuível ao C.A.D.A. não foi estabelecido.
 
 Essas avaliações não são pré-requisito para publicar uma **beta pública identificada e explicitamente experimental**, mas são necessárias antes de alegar validação científica ampla ou superioridade operacional comprovada.

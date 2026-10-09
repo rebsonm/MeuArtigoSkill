@@ -29,6 +29,8 @@ From the user's research problem, identify the intended knowledge product:
 
 Do not force a method label before this is clear.
 
+For justification, use the conditional [methodological foundations](methodological-foundations.md). Torraco (2005), Whittemore & Knafl (2005), Snyder (2019), and Elsbach & van Knippenberg (2020) inform integrative review design; Rethlefsen et al. (2021) informs transparent reporting of searches, **not** automatic recategorization as systematic. Alvesson & Sandberg (2011) may inform question problematization, while Bispo (2023) helps position the type of contribution. Empirical and design science sources apply when those methods are truly chosen.
+
 ## Integrative review
 
 Prefer an **integrative literature review** when the goal is to integrate heterogeneous conceptual and/or empirical literature to produce a richer conceptual understanding, new framework, model, taxonomy, propositions, research agenda, or theoretical synthesis.
@@ -46,7 +48,7 @@ An integrative review may use rigorous and reproducible procedures such as:
 - backward/forward snowballing;
 - purposive or theoretical deepening where explicitly justified.
 
-These procedures make the review more rigorous; they do not by themselves make it systematic.
+These procedures make the review more rigorous; they do not by themselves make it systematic. **Keep critical appraisal/data evaluation as an explicit step**, distinct from CORE/SUPPORT prioritization and from DOI validity. The appropriateness of appraisal depends on each source's method, epistemic role and limitations (Whittemore & Knafl, 2005).
 
 For literature-intensive conceptual articles, a defensible description is often:
 

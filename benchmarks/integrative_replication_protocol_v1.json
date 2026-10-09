@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "status": "PLANNED_NOT_EXECUTED",
+  "design": "published_integrative_review_reference",
+  "reference": {
+    "authors": [
+      "Vincent J. Straub",
+      "Deborah Morgan",
+      "Jonathan Bright",
+      "Helen Margetts"
+    ],
+    "title": "Artificial intelligence in government: Concepts, standards, and a unified framework",
+    "year": 2023,
+    "doi": "10.1016/j.giq.2023.101881",
+    "journal": "Government Information Quarterly",
+    "volume": "40",
+    "issue": "4",
+    "article": "101881",
+    "source_url": "https://doi.org/10.1016/j.giq.2023.101881",
+    "method_reported": "integrative literature review plus co-occurrence analysis",
+    "published_conceptual_axes": [
+      "operational fitness",
+      "epistemic alignment",
+      "normative divergence"
+    ],
+    "published_term_count_not_reconciled": {
+      "highlight": "64 different concepts",
+      "abstract": "69 key terms",
+      "adjudication": "UNKNOWN; verify complete article before scoring"
+    }
+  },
+  "methodology_reference_dois": [
+    "10.1177/1534484305278283",
+    "10.1111/j.1365-2648.2005.03621.x",
+    "10.1111/joms.12581",
+    "10.1016/j.jbusres.2019.07.039"
+  ],
+  "required_preconditions": [
+    "lawful access to original full methods and eligible texts",
+    "exact search strategy and coverage reconciled or state APPROXIMATION",
+    "freeze version and datasets before run",
+    "document actual human reviewer and original decisions",
+    "separate concept counts from record counts",
+    "document missing information without imputation"
+  ],
+  "metrics": [
+    {
+      "name": "nonexistent_reference_rate",
+      "numerator": null,
+      "denominator": null
+    },
+    {
+      "name": "locator_text_match_rate",
+      "numerator": null,
+      "denominator": null
+    },
+    {
+      "name": "screening_count_reconciliation",
+      "numerator": null,
+      "denominator": null
+    },
+    {
+      "name": "conceptual_category_agreement",
+      "numerator": null,
+      "denominator": null
+    },
+    {
+      "name": "claim_support_human_adjudication",
+      "numerator": null,
+      "denominator": null
+    }
+  ],
+  "observations": [],
+  "reproduction_results": null,
+  "independent_review": null,
+  "scientific_quality_validated": false,
+  "limitations": [
+    "published highlights and abstract show 64 vs 69 concept/term counts; unresolved",
+    "true reproduction not possible unless original sampling/query is obtainable",
+    "integrative synthesis is interpretive; disagreements require reasoned independent adjudication"
+  ],
+  "no_user_data_embedded": true
+}

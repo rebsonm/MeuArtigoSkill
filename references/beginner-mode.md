@@ -39,7 +39,7 @@ When tools allow, automatically:
 9. restate the problem without changing its meaning;
 10. perform a small novelty and terminology audit immediately;
 11. propose a provisional question/contribution when needed;
-12. explain whether the novelty survived;
+12. explain which near works were found, what may remain distinct **within that limited search**, and what is uncertain; label the conclusion [I] rather than claiming proven originality;
 13. choose the likely article/review track and explain it briefly;
 14. build conceptual search blocks;
 15. create database-specific search strings;

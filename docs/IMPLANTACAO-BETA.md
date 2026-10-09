@@ -1,10 +1,10 @@
 # Implantação da beta pública — Meu Artigo
 
-**Versão preparada:** 0.8.0-beta.3 • **Estado:** beta pública para avaliação voluntária de uso, não validação científica.
+**Versão preparada:** 0.8.0-beta.4 • **Estado:** beta pública para avaliação voluntária de uso, não validação científica.
 
 ## Obtenção
 
-Utilize a página [Releases do GitHub](https://github.com/rebsonm/MeuArtigoSkill/releases), procurando `v0.8.0-beta.3`, e escolha `MeuArtigoSkill-v0.8.0-beta.3.zip`. O arquivo `SHA256SUMS.txt` da mesma versão permite conferir a integridade do download. A alternativa `Code → Download ZIP` representa a versão atual da branch, que pode ser diferente da versão fixa publicada.
+Utilize a página [Releases do GitHub](https://github.com/rebsonm/MeuArtigoSkill/releases), procurando `v0.8.0-beta.4`, e escolha `MeuArtigoSkill-v0.8.0-beta.4.zip`. O arquivo `SHA256SUMS.txt` da mesma versão permite conferir a integridade do download. A alternativa `Code → Download ZIP` representa a versão atual da branch, que pode ser diferente da versão fixa publicada.
 
 O ZIP da Skill tem `SKILL.md` na raiz, além de `agents/`, `assets/`, `references/`, `scripts/`, `docs/`, `benchmarks/`, `LICENSE`, `CITATION.cff`, `VERSION` e manifest de SHA-256. Os dados de usuários, PDFs de terceiros, tokens, arquivos temporários e corpus científicos **não entram** nesse pacote.
 
@@ -40,7 +40,7 @@ Os testes podem criar fixtures **descartáveis** e não constituem investigaçã
 
 Os projetos mais antigos não devem ser promovidos artificialmente às novas regras. Antes de migrar, preserve backups/snapshots e aplique somente as mudanças compatíveis de schema, mantendo decisões e originais. Atualizar a Skill **não** atualiza automaticamente as planilhas ou projetos existentes nem altera o estado do Drive sem ação registrada.
 
-Guarde a referência de versão `v0.8.0-beta.3`, os arquivos científicos originais e as instruções editoriais vigentes. Para problemas, consulte [CONTRIBUTING](../CONTRIBUTING.md) e [SECURITY](../SECURITY.md).
+Guarde a referência de versão `v0.8.0-beta.4`, os arquivos científicos originais e as instruções editoriais vigentes. Para problemas, consulte [CONTRIBUTING](../CONTRIBUTING.md) e [SECURITY](../SECURITY.md).
 
 ## O que ainda não está comprovado
 

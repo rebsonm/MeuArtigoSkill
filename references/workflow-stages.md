@@ -21,7 +21,7 @@ For the closest neighboring papers, record:
 - what they already do;
 - where they overlap with the new idea;
 - what they do not do;
-- whether the proposed novelty survives;
+- whether, **within the documented search scope**, a particular contribution appears unaddressed; treat this as [I] with search evidence, boundaries and alternative explanations, not as a declaration that novelty was proved;
 - how the research question or contribution should be narrowed.
 
 Revise the contribution before scaling the search. Prefer a narrower defensible contribution over a broad unsupported novelty claim.

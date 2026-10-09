@@ -27,6 +27,17 @@ A minuta pode ter pendências; a final só é emitida após reconciliação e po
 
 O texto final é uma proposta para conferência de colocação no manuscrito e na carta, não evidência de submissão. A Skill não consegue autenticar pessoas, confirmar automaticamente que todo uso de IA foi registrado nem garantir aceitação editorial.
 
+## Versão breve para o periódico
+
+A declaração concisa agrega apenas ferramentas e finalidades que estão nos registros reais; a auditoria completa continua acessível para conferência. O limite de texto corresponde a **uma página editorial aproximada** e não garante uma folha A4 em qualquer formatação. Se o material ultrapassar o limite, o gerador não omite eventos silenciosamente: orienta revisar a redação mantendo o registro integral.
+
+```bash
+python scripts/editorial_ai_disclosure.py compact /projeto
+python scripts/editorial_ai_disclosure.py compact-final /projeto
+```
+
+`compact` produz minuta mesmo com pendências (claramente sinalizadas); `compact-final` exige uma declaração completa validada, regras da revista verificadas e atestação humana vinculada ao histórico. A declaração breve final recebe hash de integridade no relatório de auditoria e sua alteração posterior invalida a conferência. Não confundir o texto preparado com envio aceito pela revista.
+
 ## Referências gerais
 
 - ICMJE, `https://www.icmje.org/recommendations/browse/artificial-intelligence/`
