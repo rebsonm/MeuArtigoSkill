@@ -49,12 +49,12 @@ class Stage4RouterTests(unittest.TestCase):
         ):
             with self.subTest(section=old_section):
                 self.assertIn(old_section, self.foundation)
-        self.assertIn("identificação bibliográfica", self.index)
-        self.assertIn("metadados", self.index)
-        self.assertIn("não", self.index)
+        self.assertIn("bibliographic metadata", self.index)
+        self.assertIn("consulted", self.index)
+        self.assertIn("do not", self.index.lower())
 
     def test_progressive_mode_does_not_disable_scientific_controls(self):
-        self.assertIn("não",self.context.lower())
+        self.assertIn("shorter entrypoint",self.context.lower())
         self.assertIn("MINIMAL",self.context)
         self.assertIn("FULL",self.context)
         self.assertIn("CONTINUIDADE.md",self.context)
@@ -75,7 +75,7 @@ class Stage4RouterTests(unittest.TestCase):
     def test_beginner_routing_is_not_universal_review_flow(self):
         beginner=(ROOT/"references/beginner-mode.md").read_text(encoding="utf-8")
         self.assertIn("fluxo-essencial.md",beginner)
-        self.assertIn("quantitativo",beginner)
+        self.assertIn("quantitative",beginner)
         self.assertIn("MINIMAL",beginner)
         self.assertIn("UNDECIDED",beginner)
 
