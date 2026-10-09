@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-beta.1`.
+
+## 0.8.0-beta.1 — 2026-10-09
+
+### Marco A — distribuição pública organizada
+
+- Alinhar README, guia inicial, versão e metadados de citação a uma beta pública.
+- Corrigir o identificador MIT em CITATION.cff e incluir LICENSE no pacote distribuível.
+- Criar ZIP verificável com manifesto de hashes, arquivo SHA256SUMS e bloqueio de PDFs/corpora privados.
+- Automatizar GitHub Release prerelease após testes de CI para versão fixada.
+- Publicar guias de implantação e primeiro uso, política de segurança e contribuição e protocolo de avaliação com usuários ainda não executado.
+- Separar explicitamente as avaliações científicas e testes reais pendentes.
+
+### Correções técnicas consolidadas (RT-01 a RT-10)
+
+
 - Generate journal-aware AI-use disclosures only from recorded AI events, with explicit categories and human review evidence.
 - Require an official journal policy and a hash-bound researcher attestation of log completeness before the final statement.
 - Verify policy, AI log and final statement integrity at GATE-0007 and keep incomplete cases as drafts.

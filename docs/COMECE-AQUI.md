@@ -4,7 +4,7 @@
 
 O Meu Artigo está em **versão beta pública**. O repositório, o código e a documentação podem ser acessados sem convite. A Skill permanece em desenvolvimento e seu uso deve respeitar os limites científicos documentados.
 
-Enquanto o acesso não for aberto pelo autor, as instruções abaixo devem ser entendidas como o fluxo previsto para usuários autorizados/testadores futuros, e não como convite para distribuição pública.
+A beta pode ser consultada e instalada publicamente. Isso não autoriza a redistribuição de PDFs científicos de terceiros nem significa que a qualidade científica da Skill tenha sido validada empiricamente.
 
 Este guia foi escrito para pesquisadores que **nunca usaram Git ou GitHub**, mas querem testar a Skill sem depender de alguém para instalar por eles.
 
@@ -34,6 +34,10 @@ Para testar a Skill, basta baixar os arquivos.
 
 ## 3. Como baixar
 
+**Preferência: versão identificada.** Abra [Releases](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.1), baixe `MeuArtigoSkill-v0.8.0-beta.1.zip` e, se desejar, confira o hash no `SHA256SUMS.txt`. Diferentemente do ZIP de código-fonte, esse pacote é preparado especificamente para instalar a Skill, com manifesto e licença. Consulte [implantação beta](IMPLANTACAO-BETA.md).
+
+**Alternativa para acompanhar o desenvolvimento:**
+
 Na página principal do repositório:
 
 1. procure o botão verde **Code**;
@@ -41,7 +45,7 @@ Na página principal do repositório:
 3. escolha **Download ZIP**;
 4. salve o arquivo no computador.
 
-**Se você vai instalar no ChatGPT, não precisa descompactar:** o procedimento validado é importar diretamente esse ZIP completo. Descompacte apenas se quiser inspecionar os arquivos ou usar outra plataforma.
+**Se você vai instalar no ChatGPT, não precisa descompactar o ZIP instalável:** o procedimento validado é importar diretamente esse ZIP completo. Descompacte apenas se quiser inspecionar os arquivos ou usar outra plataforma.
 
 Depois de descompactar, você verá algo parecido com:
 
