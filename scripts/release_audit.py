@@ -33,6 +33,11 @@ REQUIRED=[
     "docs/MODO-NUCLEO-MINIMO.md",
     "docs/REPRODUCAO-REVISAO-INTEGRATIVA.md",
     "references/methodological-foundations.md",
+    "references/language-policy.md",
+    "scripts/language_config.py",
+    "scripts/audit_source_language.py",
+    "tests/test_language_policy.py",
+    "docs/ENGLISH-SOURCE-MIGRATION.md",
     "references/INDICE-METODOLOGICO.md",
     "references/CONTEXTO-POR-ETAPA.md",
     "references/fluxo-essencial.md",
@@ -162,7 +167,7 @@ def main()->int:
         errors.append("CITATION.cff must identify Apache-2.0")
     if "Rebson de Morais Mendes" not in (ROOT/"NOTICE").read_text(encoding="utf-8"):
         errors.append("NOTICE must preserve original author attribution")
-    if f"**Versão atual:** `{version}`" not in readme:
+    if f"**Current version:** `{version}`" not in readme:
         errors.append("README does not display current VERSION")
     if "Enquanto o acesso não for aberto pelo autor" in onboarding:
         errors.append("Onboarding still falsely describes public repository as restricted")
