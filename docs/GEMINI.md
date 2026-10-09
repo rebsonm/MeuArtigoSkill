@@ -11,8 +11,8 @@ Google documents importing `SKILL.md`, a directory containing
 Gemini accounts. Availability depends on product, account and
 region; see [official guidance](https://support.google.com/gemini/answer/17094296?hl=en).
 
-1. Download `MeuArtigoSkill-v0.8.0-beta.8.zip` from
-   [the published release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.8).
+1. Download `MeuArtigoSkill-v0.9.0-beta.1.zip` from
+   [the published release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.1).
 2. Open Gemini's Skills section if it is available in your account.
 3. Follow the import flow shown by the actual product and choose
    the prepared ZIP (rather than GitHub's source-code archive).
