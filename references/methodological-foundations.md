@@ -15,6 +15,12 @@ Três níveis que não se confundem:
 
 Em todo artigo, distinguir **[L] literatura sustentada e localizável**, **[I] inferência analítica delimitada**, **[P] proposição original do autor**. Ter DOI real, arquivo em mãos, citação correta ou tarefa concluída não prova que um claim é semanticamente sustentado nem que o artigo apresenta contribuição inédita.
 
+## Roteiro de consulta seletiva
+
+Este mapa é extenso por necessidade de fundamentação, **não para ser integralmente aplicado a cada pesquisa**. Consulte somente o caminho pertinente: revisões e artigos conceituais (seções 1–2), desenho geral e métodos quantitativos/mistos (seção 3), tradições qualitativas específicas (seção 4), artefatos e avaliação (seção 5), ética/IA (seção 6), adequação da evidência (seção 7), orientações operacionais (seções 8–9) e bibliografia (seção 10). Preserve os princípios gerais de rastreabilidade e limites científicos; não imponha requisitos de métodos irrelevantes ao desenho escolhido.
+
+**Decisão mínima para iniciantes:** (i) que pergunta quero responder; (ii) que inferência seria defensável; (iii) que dados e método a sustentariam; (iv) o que permanece fora do alcance. Os detalhes da Cebola de Pesquisa ajudam a revisar essas decisões, não a substituir o julgamento do autor.
+
 ## 1. Famílias de revisão: delimitar o que se promete
 
 ### 1.1. Revisão integrativa: cinco obras com funções diferentes
