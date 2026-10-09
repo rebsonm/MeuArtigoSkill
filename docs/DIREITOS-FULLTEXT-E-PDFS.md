@@ -1,4 +1,4 @@
-# RT-09 — Uso de textos completos, licenças e direitos de redistribuição
+# Uso de textos completos, licenças e direitos de redistribuição
 
 ## Quatro permissões diferentes
 
