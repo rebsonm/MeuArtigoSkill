@@ -26,7 +26,7 @@ PORTUGUESE_WORDS=re.compile(
     r"utiliza(?:r|ção)|verificar|verificação|"
     r"responsabilidade|necessário|metodologia|"
     r"procedimento(?:s)?|perguntas|respostas|"
-    r"conclusão|projeto(?:s)?|artigo(?:s)?|"
+    r"conclusão|projeto(?:s)?|"
     r"atualização|alterações|realizada(?:s)?|"
     r"executada(?:s)?|construção|processo(?:s)?|"
     r"disponível|permitido|relatório(?:s)?|"
