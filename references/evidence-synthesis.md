@@ -270,4 +270,4 @@ The purpose is to test whether a claim survives reasonable contestation, not to 
 
 ## Complementary administration literature
 
-For integrative synthesis and contribution typology, consult [the complementary PPGA methodological bibliography](ppga-methodological-foundations.md). Record the scope of the review, the problematized assumption, the theoretical/practical/methodological/didactic contribution and the supporting evidence separately. Do not infer semantic originality from a bibliographic gap alone.
+For integrative synthesis and contribution typology, consult [the methodological bibliography](methodological-foundations.md). Record the scope of the review, the problematized assumption, the theoretical/practical/methodological/didactic contribution and the supporting evidence separately. Do not infer semantic originality from a bibliographic gap alone.
