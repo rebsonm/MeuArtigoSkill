@@ -291,6 +291,8 @@ As perguntas do quadro são uma **síntese operacional própria** apoiada nas ob
 
 ## 8. Como a Skill deve mobilizar o mapa — e quando não mobilizar
 
+**Para qualquer artigo empírico, a escolha do método deve começar pela compatibilidade entre pergunta, inferência desejada e dados possíveis**, usando a Cebola de Pesquisa apenas como guia de coerência. Não pedir ao usuário para selecionar estatística, paradigma ou tecnologia antes de entender o problema. Em um projeto quantitativo, esclarecer o que é descrição, associação, predição ou estimativa de efeito; em métodos mistos, pedir a razão para combinar vertentes e identificar como serão realmente integradas. Referência principal: seção 3 deste mapa.
+
 ### Na formulação do problema
 Apresentar a pergunta e duas escolhas reais: construir uma síntese fundamentada ou desafiar pressupostos existentes. Mobilizar Elsbach/van Knippenberg, Alvesson/Sandberg e Bispo apenas quando correspondam à contribuição pretendida. Perguntar ao pesquisador o porquê de sua escolha e uma limitação que reconhece.
 
@@ -315,7 +317,9 @@ A Skill pode explicar termos difíceis, mostrar alternativas e preparar material
 | --- | --- | --- |
 | Revisões e relato | Elsbach & van Knippenberg; Alvesson & Sandberg; Grant & Booth; Snyder; Torraco; Whittemore & Knafl; Rethlefsen et al. | Textos pertinentes consultados para Elsbach, Alvesson/Sandberg e Grant/Booth; metadados/descrições editoriais para Snyder, Torraco, Whittemore/Knafl e PRISMA-S |
 | Contribuição e publicação | Bispo; Grant & Pollock; Bono & McNamara; Ragins; Barney; Campbell & Aguilera | Textos pertinentes consultados |
-| Coerência dos desenhos | Creswell & Creswell; Myers; Merriam & Tisdell; Saunders/Lewis/Thornhill | Textos e fichas das edições consultados |
+| Coerência dos desenhos / Cebola de Pesquisa | Saunders/Lewis/Thornhill; Creswell & Creswell; Myers; Merriam & Tisdell | Livro de Saunders consultado na edição de 2023, capítulos 4–5, e Creswell & Creswell (2021) consultado; não reproduzir figura editorial |
+| Quantitativos e limites de inferência | Creswell & Creswell; Saunders/Lewis/Thornhill; Bono & McNamara; Appelbaum et al. | Obras/trechos consultados para os três primeiros; metadados e descrição pública de JARS–Quant verificados para o último |
+| Métodos mistos e integração | Creswell & Creswell; Saunders/Lewis/Thornhill; Fetters/Curry/Creswell; Levitt et al. | Textos consultados para os três primeiros; descrição editorial e metadados JARS–Mixed verificados para Levitt et al. |
 | Análise qualitativa | Braun & Clarke; Miles/Huberman/Saldaña; Saldaña; Suddaby | Textos consultados |
 | Caso e fenomenologia | Yin; Eisenhardt; Gill | Textos consultados |
 | Grounded theory, narrativa e pesquisa-ação | Glaser & Strauss; Charmaz; Strauss & Corbin; Rhodes & Brown; Llewellyn; Soin & Scheytt; Thiollent | Materiais identificados; conferir texto e edição antes de atribuir interpretações específicas |
@@ -344,6 +348,12 @@ Os DOIs a seguir foram confirmados nos textos, nas fichas ou nas páginas editor
 - GRANT, A. M.; POLLOCK, T. G. Publishing in AMJ—Part 3: Setting the Hook. *Academy of Management Journal*, 2011. https://doi.org/10.5465/amj.2011.4000.
 - RAGINS, B. R. Editor’s Comments: Reflections on the Craft of Clear Writing. *Academy of Management Review*, 37(4), 493–501, 2012.
 
+### Planejamento quantitativo, Cebola de Pesquisa e métodos mistos
+- APPELBAUM, M. et al. Journal article reporting standards for quantitative research in psychology: The APA Publications and Communications Board task force report. *American Psychologist*, 73(1), 3–25, 2018. https://doi.org/10.1037/amp0000191. **Diretriz de relato; adoção conforme área e revista.**
+- FETTERS, M. D.; CURRY, L. A.; CRESWELL, J. W. Achieving Integration in Mixed Methods Designs—Principles and Practices. *Health Services Research*, 48(6 Pt 2), 2134–2156, 2013. https://doi.org/10.1111/1475-6773.12117.
+- LEVITT, H. M. et al. Journal article reporting standards for qualitative primary, qualitative meta-analytic, and mixed methods research in psychology. *American Psychologist*, 73(1), 26–46, 2018. https://doi.org/10.1037/amp0000151. **Padrão de relato, não certificado de qualidade científica.**
+- SAUNDERS, M. N. K.; LEWIS, P.; THORNHILL, A. *Research Methods for Business Students*. 9th ed. Pearson, 2023. **Ver capítulo 4, figura 4.1 e capítulo 5; a figura de Saunders é descrita aqui, não reproduzida.**
+
 ### Desenho e abordagens qualitativas
 - BRAUN, V.; CLARKE, V. Using thematic analysis in psychology. *Qualitative Research in Psychology*, 3(2), 77–101, 2006. https://doi.org/10.1191/1478088706qp063oa.
 - BRAUN, V.; CLARKE, V. *Thematic Analysis: A Practical Guide*. London: SAGE, 2022.
@@ -354,7 +364,6 @@ Os DOIs a seguir foram confirmados nos textos, nas fichas ou nas páginas editor
 - MILES, M. B.; HUBERMAN, A. M.; SALDAÑA, J. *Qualitative Data Analysis: A Methods Sourcebook*. 3rd ed. SAGE, 2014.
 - MYERS, M. D. *Qualitative Research in Business & Management*. 2nd ed. SAGE, 2013.
 - SALDAÑA, J. *The Coding Manual for Qualitative Researchers*. SAGE, 2009.
-- SAUNDERS, M. N. K.; LEWIS, P.; THORNHILL, A. *Research Methods for Business Students*. 9th ed. Pearson, 2023 (edição examinada).
 - SUDDABY, R. From the Editors: What Grounded Theory Is Not. *Academy of Management Journal*, 2006.
 - YIN, R. K. *Case Study Research and Applications: Design and Methods*. 6th ed. SAGE, 2018.
 
