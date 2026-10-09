@@ -51,7 +51,7 @@ The pages list external products subject to change. Don't
 declare here import, execution, integration with Drive, writing,
 resumption of observed My Article projects or performance
 on these platforms. The most recent public version identified in the
-repository is `v0.8.0-beta.8`; branch `main` may contain code
+repository is `v0.9.0-beta.1`; branch `main` may contain code
 later until manual publication of another release.
 
 <a id="falhas-normais-e-resposta-segura"></a>
