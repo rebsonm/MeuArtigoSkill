@@ -44,6 +44,7 @@ class MethodRoutesTests(unittest.TestCase):
     def test_review_corpus_and_quant_data_have_distinct_gate_types(self):
         with tempfile.TemporaryDirectory() as folder:
             dest = Path(folder) / "18_Gates.csv"
+            dest.write_text("GATE_ID,Status\n", encoding="utf-8")
             init_project.seed_gates(dest, "QUANTITATIVE")
             with dest.open("r", encoding="utf-8-sig", newline="") as f:
                 gates = list(csv.DictReader(f))
