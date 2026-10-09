@@ -2,7 +2,7 @@
 
 **Versão atual:** `0.7.0-beta.1`
 
-**Status de distribuição:** beta fechado · repositório privado · implementação ainda não liberada para distribuição pública · veja [CHANGELOG.md](./CHANGELOG.md) · metadados de citação em [CITATION.cff](./CITATION.cff)
+**Status de distribuição:** repositório público · versão beta em desenvolvimento · código e documentação disponíveis para consulta e instalação · veja [CHANGELOG.md](./CHANGELOG.md) · metadados de citação em [CITATION.cff](./CITATION.cff)
 
 **Meu Artigo** é uma Skill **multiplataforma** para pesquisa e construção de artigos científicos. Ela transforma um problema, pergunta ou ideia de pesquisa fornecida pelo usuário em um **processo científico rastreável, persistente, orientado por evidências e auditável quanto à sua própria construção**. O núcleo metodológico vive em `SKILL.md`; diferenças entre ChatGPT, Claude e Gemini ficam isoladas em adapters/documentação de plataforma.
 
@@ -12,7 +12,7 @@ Ela não entrega um “artigo pronto por mágica” e não reutiliza o conteúdo
 
 ## 🚀 Nunca usou GitHub? Comece aqui
 
-> **Nota de acesso:** este guia está preservado para a futura fase de testes. Enquanto o projeto estiver em beta fechado, o repositório e a implementação permanecem restritos aos acessos autorizados.
+> **Acesso público:** o código e a documentação podem ser consultados ou obtidos neste repositório sem convite. A versão continua beta, e controles técnicos aprovados não significam que seus resultados científicos foram validados empiricamente.
 
 Você **não precisa saber Git, programação nem terminal** para testar o Meu Artigo.
 
@@ -51,6 +51,10 @@ Se o menu de Skills não aparecer, abra o guia da plataforma antes de concluir q
 ## Screening com revisão humana rastreável
 
 A triagem diferencia **sugestões da IA** de **decisões finais atribuídas à revisão humana**. O mecanismo gratuito em Python exige motivo, identificação do revisor, referência à manifestação original e registro das divergências. Projetos novos não podem congelar o corpus com decisões incompletas. A implementação reaproveita a aba 07_SCREENING e o CSV canônico, sem nova aba ou ID. Consulte [Screening auditável](./docs/SCREENING-AUDITAVEL.md). A presença dos campos não autentica, sozinha, a identidade do revisor.
+
+## Avaliação crítica da qualidade metodológica das fontes
+
+A Skill acrescenta avaliação por tipo de fonte — quantitativa, qualitativa, métodos mistos, revisão, conceitual, normativa ou outra — sem confundir existência de DOI, prestígio do periódico ou popularidade com rigor do estudo. O código fornece checklists adaptáveis, exige justificativa, limitações e referência à avaliação do pesquisador e bloqueia o uso de evidências materialmente inadequadas no congelamento final. Não atribui notas universais automáticas nem inventa pareceristas. Leia [Avaliação crítica de fontes](./docs/AVALIACAO-CRITICA-FONTES.md).
 
 ## Avaliação de qualidade científica
 

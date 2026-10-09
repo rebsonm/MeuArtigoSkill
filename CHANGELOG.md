@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Update public README and installation documentation to match the repository's intended public beta distribution.
+- Introduce type-specific, no-cost critical appraisal for empirical quantitative, qualitative, mixed methods, reviews, conceptual, normative and other sources.
+- Retain criterion-level judgments, documented limitations and real human response references inside the existing evidence matrix.
+- Require appraisals of materially cited evidence before claim freeze in new projects and reject reliance on sources judged insufficient or unsuitable.
+- Preserve older workspaces and add offline adversarial regression tests without equating checklist completion with scientific validity.
+
 - Separate AI-only screening suggestions from researcher-attributed final Pass1/Pass2 selection decisions in existing screening records.
 - Require evidence and rationale for exclusions, resolve AI-human disagreements explicitly, and block corpus freeze when human screening remains incomplete.
 - Provide a standard-library screening CLI with adversarial regression tests for omitted, conflicting, and retrospectively altered decisions.

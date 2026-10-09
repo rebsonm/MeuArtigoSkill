@@ -257,6 +257,26 @@ def record_gate(args)->int:
         if findings["errors"]:
             raise SystemExit("cannot approve corpus freeze: "+"; ".join(findings["errors"][:5]))
 
+    if args.gate_id=="GATE-0006" and decision in {"APPROVED","APPROVED_WITH_CHANGES"} and cfg.get("critical_appraisal_required") is True:
+        from appraise_evidence import load as read_evidence_matrix, audit as check_appraisal
+        import re
+        try:
+            _, evidence_headers, evidence_rows=read_evidence_matrix(root)
+        except ValueError as exc:
+            raise SystemExit(f"cannot approve claim audit: {exc}")
+        claims_path=root/MGMT/"09_Claims_Ledger.csv"
+        if not claims_path.is_file():
+            raise SystemExit("cannot approve claim audit without claims ledger")
+        used=set()
+        for claim in rows(claims_path):
+            if not (claim.get("Claim_ID") or "").strip():
+                continue
+            for key in ("Evidence_IDs","Counter_Evidence_IDs"):
+                used.update(x for x in re.split(r"[;,\s]+",claim.get(key) or "") if x)
+        report=check_appraisal(evidence_rows,required_ids=used,enforce=True,headers=evidence_headers)
+        if report["errors"]:
+            raise SystemExit("cannot approve claim audit: "+"; ".join(report["errors"][:5]))
+
     tid=record_trace(
         root,
         stage=target.get("Scientific_stage") or "",
