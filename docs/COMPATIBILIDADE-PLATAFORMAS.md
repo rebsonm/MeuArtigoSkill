@@ -8,6 +8,27 @@ Esta página distingue **o que os fornecedores documentam** da **verificação e
 | **Claude** | Claude suporta Skills personalizadas via claude.ai e Claude Code. | Organização da pasta e compatibilidade estrutural do arquivo `SKILL.md`. | Upload desta beta, scripts permitidos, conectores disponíveis e persistência real. |
 | **Gemini** | Google documenta upload de `SKILL.md`, pasta ou ZIP contendo `SKILL.md` na raiz; o recurso varia por conta/região. | O ZIP contém a estrutura exigida; testes automatizados independentes da interface. | Importação e fluxo completo, possibilidades de execução, Drive e limitações de rede. |
 
+## Operação específica: capacidade anunciada versus observada
+
+Para cada sessão, consulte o
+[preflight por capacidades](../references/platform-capability-preflight.md).
+Importar ou instalar um pacote é uma operação; criar/sincronizar o
+workspace canônico é outra. Recurso disponível não equivale a
+execução. Sem recibo verificável, registrar `UNVERIFIED`, mesmo que
+o modelo descreva uma operação bem-sucedida.
+
+Na documentação oficial consultada em outubro de 2026:
+- ChatGPT: opções para contas e ambientes elegíveis, com
+  permissões dependentes do espaço de trabalho;
+- Claude: claude.ai e Claude Code têm mecanismos diferentes de
+  instalação e disponibilidade de execução;
+- Gemini: exige atenção à disponibilidade gradual, formatos de
+  referência e impossibilidade declarada de usar scripts que
+  exigem acesso à internet nas Skills.
+
+Essas observações são **capacidade informada por fornecedor**,
+não certificação de compatibilidade funcional da beta publicada.
+
 ## Fontes oficiais
 
 - [Skills no ChatGPT — OpenAI](https://help.openai.com/pt-br/articles/20001066-skills-no-chatgpt)

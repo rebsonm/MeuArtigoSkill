@@ -1,5 +1,11 @@
 # Apresentação progressiva — núcleo mínimo e fluxo completo
 
+O arquivo `SKILL.md` da etapa 4 também opera como **roteador
+de leitura seletiva** para diminuir a quantidade de instruções carregadas
+a cada tarefa. Essa seleção de referência é diferente de alternar o
+modo de apresentação. Consulte
+[roteamento por etapa](../references/CONTEXTO-POR-ETAPA.md).
+
 O modo **núcleo mínimo** reduz a quantidade de informação operacional exibida ao pesquisador. **Não elimina registros, verificações, gates ou exigências de comprovação**: ambos os modos utilizam os mesmos arquivos e critérios científicos.
 
 | Aspecto | Núcleo mínimo | Completo |

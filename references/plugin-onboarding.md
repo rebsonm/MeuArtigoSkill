@@ -31,6 +31,11 @@ When available, these are useful implementations of the roles above:
 
 These names are **not methodological requirements**. Equivalent services may fulfill the same roles.
 
+Para não presumir capacidades de ChatGPT, Claude ou Gemini, consulte
+[preflight de capacidades por plataforma](platform-capability-preflight.md).
+Uma interface que importa `SKILL.md` não garante Python, acesso a
+Scopus, escrita no Drive ou recibo verificável.
+
 ## First-run preflight
 
 Storage is a blocking preflight. Resolve it before novelty scanning, protocol construction, screening, synthesis, drafting, or creating a local canonical project.

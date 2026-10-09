@@ -40,6 +40,24 @@ Use algo como:
 
 Na primeira utilização, basta apresentar seu problema de pesquisa e deixar a própria Skill orientar o fluxo.
 
+## Preflight específico do ChatGPT
+
+A [documentação oficial](https://help.openai.com/pt-br/articles/20001066-skills-in-chatgpt)
+descreve Skills para contas qualificadas de ambientes de trabalho e
+disponibilidade dependente da configuração do produto. Verifique a
+presença efetiva do menu e as permissões no ambiente utilizado, sem
+inferir elegibilidade a partir do nome do modelo ou de instalação anterior.
+O fato de um plugin incluir uma Skill não significa que os aplicativos
+ou conectores relacionados já estejam autenticados. Uma importação
+bem-sucedida **não** constitui comprovação de execução do Meu Artigo.
+
+Antes da primeira busca, aplique
+[preflight por capacidades](../references/platform-capability-preflight.md).
+Confirme gravação real no Drive, suporte aos scripts nesta superfície
+e autenticidade dos retornos. Faltando prova, classifique ações externas
+como `UNVERIFIED`; não confunda ações do ChatGPT Work, do ambiente
+de plugins e de uma interface apenas conversacional.
+
 ## Compatibilidade técnica
 
 A raiz do bundle contém:

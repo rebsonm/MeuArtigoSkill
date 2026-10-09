@@ -20,6 +20,14 @@
 - Registrar que avaliações empíricas do desempenho da Skill continuam pendentes.
 - Separar explicitamente metadados, passagem literal, juízo humano registrado e achado empírico; impedir congelar achados empíricos sem trilha de análise, gates e referências de evidência, mantendo os controles existentes.
 
+### Etapa 4 — contexto progressivo, adaptadores e curadoria (não publicada)
+
+- Reduzir o `SKILL.md` a contrato científico e roteador seletivo de referências, mantendo as exigências de verificação, revisão humana, direitos e armazenamento.
+- Criar roteiro essencial para iniciantes e índice de leitura por etapa; a apresentação mínima não elimina controles nem identifica resultados inexistentes.
+- Registrar capacidades por plataforma separando suporte documentado de ações verificadas na sessão para ChatGPT, Claude e Gemini.
+- Indexar o mapa metodológico completo por método e estatuto de consulta declarado, sem alterar fontes, inventar leituras, atualizar DOIs por suposição ou usar automaticamente a bibliografia nos artigos.
+- Adicionar verificações estruturais para prevenir regressões do carregamento progressivo sem alegar avaliação empírica de usabilidade.
+
 ## 0.8.0-beta.8 — 2026-10-09
 
 ### Etapa 1 — atribuição autoral e proteção de pacotes

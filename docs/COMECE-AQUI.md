@@ -54,6 +54,14 @@ MeuArtigoSkill/
 
 O **ZIP de Releases é o pacote instalável recomendado**; o repositório também contém o código-fonte e o histórico de desenvolvimento. A pasta `docs/` contém guias de instalação e teste; `references/` e `scripts/` fazem parte do funcionamento da Skill.
 
+**Para pesquisadores iniciantes:** a documentação agora oferece
+um [fluxo essencial](../references/fluxo-essencial.md) que mostra somente
+o próximo passo científico, a decisão necessária e a principal
+limitação, em vez de expor todas as planilhas e regras ao mesmo tempo.
+O [índice de métodos](../references/INDICE-METODOLOGICO.md)
+ajuda a localizar apenas os autores e a abordagem pertinentes.
+Nenhum desses resumos reduz a auditoria científica.
+
 ## 4. Qual arquivo eu uso?
 
 Na raiz do bundle, o arquivo principal é:
