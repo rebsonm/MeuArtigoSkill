@@ -43,8 +43,8 @@ def sync(root: Path, release_date: str) -> list[str]:
         "CHANGELOG.md": root/"CHANGELOG.md",
     }
     contents = {name: p.read_text(encoding="utf-8") for name,p in paths.items()}
-    readme = replace_once(r"^\*\*Versão atual:\*\* \`[^\`]+\`",
-                          f"**Versão atual:** \`{version}\`",
+    readme = replace_once(r"^\*\*Versão atual:\*\* `[^`]+`",
+                          f"**Versão atual:** `{version}`",
                           contents["README.md"], "README version")
     citation = replace_once(r'^version:\s*"[^"]+"',
                              f'version: "{version}"',
@@ -70,7 +70,7 @@ def sync(root: Path, release_date: str) -> list[str]:
             release_content = f"- Consulte [as notas da versão](docs/{notes.name})."
         changelog = (
             changelog[:m.start()] +
-            f"## Unreleased\n\nNenhuma alteração adicional registrada desde \`{version}\`.\n\n" +
+            f"## Unreleased\n\nNenhuma alteração adicional registrada desde `{version}`.\n\n" +
             f"{header}\n\n{release_content}\n\n" + changelog[boundary:]
         )
     # First validate all edits, *then* write. Rerunning is safe.
