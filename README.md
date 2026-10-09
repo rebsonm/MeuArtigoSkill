@@ -48,6 +48,10 @@ A instalação nativa depende da plataforma e do plano atual:
 
 Se o menu de Skills não aparecer, abra o guia da plataforma antes de concluir que houve erro no repositório.
 
+## Comprovação de eventos e rastreabilidade
+
+A Skill diferencia execução comprovada de ação apenas declarada. Operações locais permitidas podem produzir recibos técnicos com resultado da execução e hashes dos artefatos. Buscas externas e ações não observadas permanecem como não verificadas, sem inventar comprovantes. Isso não exige planos pagos, novos identificadores ou novas abas. Consulte [Comprovação de eventos](./docs/COMPROVACAO-EVENTOS.md).
+
 ## Verificação de fontes e passagens
 
 A Skill inclui verificação bibliográfica independente do texto produzido pela IA: consultas gratuitas ao Crossref/OpenAlex, reconciliação de DOI e metadados, avisos de atualização editorial e localização de passagens em arquivos disponíveis localmente. Não exige serviços pagos e não envia PDFs inteiros a essas APIs. Divergências e resultados inconclusivos permanecem visíveis para revisão humana; metadados corretos não equivalem a comprovação do conteúdo de um argumento. Consulte [Verificação de fontes](./docs/VERIFICACAO-FONTES.md).

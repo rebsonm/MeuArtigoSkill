@@ -8,6 +8,10 @@ Google Drive is the default canonical project memory. Before substantive researc
 
 If fallback was authorized and Drive later becomes available, migrate/synchronize the project to Drive before treating new Drive artifacts as canonical. Preserve the fallback history and do not silently discard either state.
 
+## Recorded execution evidence
+
+Confirmed local operations should be recorded with `scripts/trace_execution.py` and their receipts stored at `00_Gestao_e_Continuidade/TRACE_RECEIPTS/`. Do not equate an automatically generated TRACE row with proof that a database search, external service action or human approval actually occurred. New projects enforce `trace_receipts_required=true`; older `COMPLETE` statuses are legacy and require explicit reconciliation before any claim of confirmed execution. Audit receipts when resuming and before an external transparency report. Keep receipts synchronized to Drive when it is canonical.
+
 ## Source of truth
 
 The canonical continuity artifact is `CONTINUIDADE.md`. A resumed agent must read it before taking substantive action and must also verify that the recorded storage backend is still accessible. A missing Drive connection is not permission to switch to Work/local storage.

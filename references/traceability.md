@@ -83,6 +83,12 @@ Notes
 
 Use stable `TRACE-####` identifiers.
 
+## Execution receipts and reliability
+
+Read [event verification](../docs/COMPROVACAO-EVENTOS.md). A TRACE row is an assertion about an event; it is not the event itself. Use `scripts/trace_execution.py run` for supported local operations to capture the subprocess exit and hashes of declared inputs/outputs directly. Store the receipt in the project workspace and reference it from the existing `Reproducibility_information` field. The validator checks the receipt and its artifact binding.
+
+Controlled states for operational verification: `CONFIRMED` (captured local execution), `UNVERIFIED` (statement not independently observed), `PARTIAL`, `FAILED`. Historical `COMPLETE` is legacy only, not confirmation. External searches, Drive actions, website submissions and emails remain `UNVERIFIED` unless a trustworthy tool response can be captured and verified; do not fabricate a provider receipt. Hashes reveal changes to files relative to their recorded state but do not establish who performed an external action or whether the result is scientifically valid. Manual scientific/gate decisions have a different human-attestation basis and must not be mislabeled as machine-proven executions.
+
 ### `14_AI_Use_Log`
 
 AI-specific disclosure/provenance table:

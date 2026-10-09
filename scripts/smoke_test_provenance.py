@@ -24,7 +24,7 @@ def main()->int:
             [["CADA-0001","Initialize","00","Continue","DONE","Workspace created"]])
         write_csv(mgmt/"13_Traceability_Log.csv",
             ["Trace_ID","Timestamp","Scientific_stage","CADA_ID","Actor","AI_platform_or_tool","Action_type","Action_summary","Input_or_source","Source_or_artifact_IDs","Artifact_before","Artifact_after","Verification_method","Human_validation","Related_Evidence_IDs","Related_Record_IDs","Materiality","Status"],
-            [["TRACE-0001","2026-10-07T03:00:00Z","00","CADA-0001","SCRIPT","init_project.py","WORKSPACE_INITIALIZATION","Initialize","Input","","","Matrix","file check","PENDING","","","ADMINISTRATIVE","COMPLETE"]])
+            [["TRACE-0001","2026-10-07T03:00:00Z","00","CADA-0001","SCRIPT","init_project.py","WORKSPACE_INITIALIZATION","Initialize","Input","","","Matrix","file check","PENDING","","","ADMINISTRATIVE","UNVERIFIED"]])
         write_csv(mgmt/"02_Search_Log.csv",
             ["Search_ID","Date","Database_or_source","Literal_query","Filters","Records_found","Records_exported","Status"],
             [["S-0001","2026-10-07","Scopus","TITLE-ABS-KEY(test)","","1","1","VALID"]])

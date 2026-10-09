@@ -133,8 +133,8 @@ def append_export_trace(root: Path, cada_id: str = "") -> str:
         "Prompt_or_instruction_summary": "Export a standardized audit/provenance package.",
         "Reproducibility_information": "Run export_provenance.py on the canonical project root.",
         "Materiality": "ADMINISTRATIVE",
-        "Status": "COMPLETE",
-        "Notes": "",
+        "Status": "UNVERIFIED",
+        "Notes": "Generated audit package is not an execution receipt.",
     }
     write_csv_row(path, headers, row)
     return trace_id

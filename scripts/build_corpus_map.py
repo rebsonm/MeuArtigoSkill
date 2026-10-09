@@ -83,7 +83,7 @@ def append_trace(root:Path, retained_ids:list[str], json_path:Path, md_path:Path
             "Prompt_or_instruction_summary":"",
             "Reproducibility_information":"Run build_corpus_map.py against the same canonical project state.",
             "Materiality":"ASSISTIVE",
-            "Status":"COMPLETE",
+            "Status":"UNVERIFIED",
             "Notes":" | ".join(warnings),
         })
     return tid
