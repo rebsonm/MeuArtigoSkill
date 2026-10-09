@@ -55,13 +55,13 @@ Essa é uma **lista de verificação operacional própria**, não uma reproduç�
 
 A escolha desses estados continua sendo humana. O código rejeita inconsistências objetivas, como afirmar SUITABLE_FOR_CLAIM quando há item NO ou UNCLEAR, ou registrar critério sem fundamento. **Não conclui**, com base em quantos itens foram marcados YES, que a fonte é válida.
 
-## GATE-0006 e integração com RT-01/RT-04
+## Integração da avaliação crítica com a verificação das fontes e das evidências
 
 Novos projetos possuem critical_appraisal_required=true. Na aprovação do GATE-0006, o validador exige avaliação crítica para as Evidence_IDs efetivamente ligadas aos claims materiais (inclusive evidências contrárias). Uma evidência usada com julgamento INSUFFICIENT_INFORMATION ou DO_NOT_USE_FOR_CLAIM bloqueia o gate enquanto fundamentar o claim. Evidências qualificadas requerem justificativa científica e claims corretamente limitados.
 
 Em projetos antigos, o modo não é ativado retroativamente. O campo Appraisal_criteria armazena JSON estruturado e os outros seis campos ficam na mesma linha da fonte. Atualizações posteriores requerem versionamento e novo registro de decisão: não sobrescrever silenciosamente avaliações já realizadas.
 
-Uma alteração na matriz de evidências modifica seu SHA-256; portanto, relatórios de verificação de fontes do RT-01 deverão ser **regenerados** após a conclusão das avaliações antes do congelamento final.
+Uma alteração na matriz de evidências modifica seu SHA-256; portanto, relatórios de verificação de fontes deverão ser **regenerados** após a conclusão das avaliações antes do congelamento final.
 
 ## Limitações
 
