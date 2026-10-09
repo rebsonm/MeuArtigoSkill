@@ -1,4 +1,4 @@
-# RT-10 — Declaração editorial de uso de IA
+# Declaração editorial de uso de IA
 
 O Meu Artigo usa exclusivamente os eventos registrados em `14_AI_Use_Log.csv` para preparar a declaração editorial. A Skill não pode reconstruir um histórico imaginado, inventar ferramentas, atribuir revisão humana sem resposta real ou apresentar o texto como aprovado pela revista.
 
