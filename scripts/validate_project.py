@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse,csv,json,hashlib
 from pathlib import Path
 from formative_gates import gate_issues
+from screening_review import audit_rows as audit_screening_rows
 
 REQUIRED=[
 "00_Gestao_e_Continuidade/CONTINUIDADE.md",
@@ -171,6 +172,30 @@ def main():
                 warnings.append(f"screening row {i}: nonstandard Pass1_decision {p1!r}")
             if p2 not in {x.upper() for x in PASS2}:
                 warnings.append(f"screening row {i}: nonstandard Pass2_decision {p2!r}")
+
+    # Human review and AI proposal are independent facts.  Prevent an AI-only
+    # proposal or a bare decision cell from counting as validated screening.
+    if scr.exists():
+        with scr.open("r", encoding="utf-8-sig", newline="") as stream:
+            screening_headers=csv.DictReader(stream).fieldnames or []
+        gate_path=root/"00_Gestao_e_Continuidade/18_Human_Validation_Gates.csv"
+        g4_approved=False
+        if gate_path.is_file():
+            g4_approved=any(
+                (r.get("GATE_ID") or "").strip()=="GATE-0004"
+                and (r.get("Status") or "").upper()=="COMPLETED"
+                and (r.get("Decision") or "").upper() in {"APPROVED","APPROVED_WITH_CHANGES"}
+                for r in rows(gate_path)
+            )
+        require_human=cfg_data.get("screening_human_decisions_required") is True
+        checked=audit_screening_rows(
+            list(rows(scr)),enforce=require_human,
+            freeze=require_human and g4_approved,headers=screening_headers,
+        )
+        for problem in checked["errors"]:
+            errors.append("screening audit: "+problem)
+        for problem in checked["warnings"]:
+            warnings.append("screening audit: "+problem)
 
     ev=root/"00_Gestao_e_Continuidade/05_Evidence_Matrix.csv"
     if ev.exists():

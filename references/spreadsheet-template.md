@@ -299,6 +299,8 @@ Literal executed strings are immutable.
 
 ## 07_SCREENING
 
+The existing sheet keeps its first 18 columns and appends 12 provenance columns for separating AI suggestions from human-final screening decisions. Dashboard formulas and Pass1/Pass2 positions are unchanged. In new projects, human review evidence and reasons are required before GATE-0004. See `docs/SCREENING-AUDITAVEL.md`.
+
 Columns:
 
 ```text
@@ -320,6 +322,18 @@ Duplicata
 Canonical_ID
 Trace_ID
 Observações
+Pass1 proposta IA
+Pass1 motivo IA
+Pass1 fonte IA
+Pass1 revisado por
+Pass1 evidência revisão
+Pass1 resolução divergência
+Pass2 proposta IA
+Pass2 motivo IA
+Pass2 fonte IA
+Pass2 revisado por
+Pass2 evidência revisão
+Pass2 resolução divergência
 ```
 
 Pass 1:

@@ -124,6 +124,12 @@ CORE/SUPPORT are prioritization labels, not evidence-quality ratings.
 
 For a systematic review, do not use priority labels to bypass full eligibility assessment.
 
+## Deterministic separation of AI proposals and scientific decisions
+
+Read [screening audit](../docs/SCREENING-AUDITAVEL.md). New projects set `screening_human_decisions_required=true`. AI recommendations are saved in `Pass1_AI_proposal`/`Pass2_AI_proposal` with source and rationale; they can never silently become final decisions. `scripts/screening_review.py` records the researcher's actual Pass1/Pass2 decision, reason, reviewer and source of their response. Disagreement requires documented resolution, not replacement of the original AI proposal. If review is pending, the record remains pending and GATE-0004 cannot approve incomplete screening.
+
+The code verifies evidence-reference fields, not real authorship; keep a verifiable link to the researcher's response. A model's suggestion is not an independent second human reviewer.
+
 ## Single-reviewer integrity
 
 If one researcher is screening:

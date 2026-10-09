@@ -126,7 +126,7 @@ For integrative/conceptual synthesis, use two passes by default:
 
 Record a short reason for exclusions. Screen only records that are new after deduplication when a complementary database is added.
 
-For single-author work, do not simulate independent double screening. Instead use a second pass for borderline cases plus a documented sample recheck of included/excluded records. If genuine multiple reviewers exist, record their real procedure.
+For new projects, save AI suggestions separately from actual researcher-final Pass1 and Pass2 decisions. See `docs/SCREENING-AUDITAVEL.md` and `scripts/screening_review.py`. Check exclusion reasons, BORDERLINE records, mismatches, and real source references before GATE-0004. AI suggestions alone are not eligible for inclusion/exclusion counts. For single-author work, do not simulate independent double screening. Instead use a second pass for borderline cases plus a documented sample recheck of included/excluded records. If genuine multiple reviewers exist, record their real procedure.
 
 For systematic reviews, follow the stricter design described in `references/review-design.md` rather than substituting priority sampling for full eligibility assessment.
 
