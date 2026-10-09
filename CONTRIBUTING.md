@@ -1,45 +1,93 @@
-# Contribuindo para Meu Artigo
+# Contributing to Meu Artigo
 
-O projeto é público e distribuído sob licença Apache 2.0. A versão beta aceita correções de documentação, melhorias técnicas e sugestões metodológicas fundamentadas. **Nenhum relato ou contribuição autoriza divulgar documentos acadêmicos protegidos, projetos de terceiros, credenciais ou dados pessoais.**
+The repository is public and distributed under Apache License 2.0.
+This experimental beta welcomes documentation corrections,
+engineering contributions and methodologically grounded feedback.
+**Contributing does not authorize disclosure of protected academic
+texts, third-party projects, account credentials or personal data.**
 
-## Antes de contribuir
+## Before contributing
 
-1. Consulte [guia de implantação beta](docs/IMPLANTACAO-BETA.md), [testes pendentes](docs/VALIDACOES-PENDENTES.md) e [segurança](SECURITY.md).
-2. Veja se já existe uma Issue semelhante. Registre o comportamento observado, a versão da Skill, o passo executado, o resultado esperado e o resultado efetivo. Não atribua testes ou resultados a pessoas que não participaram.
-3. Para mudanças de código, crie branch e pull request para a `main`. Mantenha compatibilidade com IDs e tabelas existentes; não adicione abas ou serviços pagos sem justificativa.
-4. Execute `python scripts/release_audit.py`, `python -m unittest discover -s tests -v` e `python scripts/smoke_test_provenance.py`. Descreva quais controles foram afetados e anexe resultados técnicos, sem dados sensíveis.
-5. Diferencie testes de software de evidência de qualidade científica. Fixtures sintéticas são permitidas **apenas** em testes descartáveis; não devem ser apresentadas como corpus ou publicação real.
+1. Read the [beta installation guide](docs/IMPLANTACAO-BETA.md),
+   [pending validations](docs/VALIDACOES-PENDENTES.md) and
+   [security policy](SECURITY.md).
+2. Check existing Issues. Describe the observed behavior, exact
+   Skill version, steps, expected and actual results.
+   Do not claim human participants or evaluations that did not occur.
+3. For source changes, create a branch and a pull request to
+   protected `main`. Preserve established schema and ID
+   compatibility; do not introduce new sheets or paid services
+   without a documented need and review.
+4. Run `python scripts/release_audit.py`,
+   `python -m unittest discover -s tests -v` and
+   `python scripts/smoke_test_provenance.py`. Describe
+   which controls were affected, without publishing sensitive data.
+5. Distinguish engineering regression tests from independent
+   scientific evaluation. Synthetic fixtures are suitable for
+   disposable **software tests only**, never evidence presented
+   as a real research corpus or publication.
 
-## Requisitos de integridade
+## English source and user-language interaction
 
-As consultas a fontes precisam ter proveniência verificável. Não invente DOI, pesquisa executada, avaliador, estudo, métrica de eficiência, comparação empírica ou aceite editorial. Documente limites, riscos de viés, direitos de PDFs e revisão humana realmente efetuada.
+All maintained contributor documentation, source instructions and
+software-provided human-facing text should be authored in **English**.
+A researcher **does not have to interact in English**: the installed
+Skill follows their direct conversation language automatically.
+The manuscript language is independently chosen by the
+researcher or required by the journal. Consult
+[language policy](references/language-policy.md).
 
-Ao sugerir alteração metodológica, identifique a fundamentação, o problema que resolve e os impactos sobre as regras existentes. Não reproduza longos trechos de artigos protegidos.
+When modifying language-sensitive behavior, preserve
+technical identifiers, original source quotations and existing
+files' scientific provenance. Run
+`python scripts/audit_source_language.py` to identify
+untranslated documents. The manual release workflow requires
+`python scripts/audit_source_language.py --strict`,
+followed by editorial review; no automated language detector
+proves translation equivalence or live multilingual accuracy.
 
-## Problemas de segurança
+## Scientific integrity requirements
 
-Não abra Issue pública com tokens, informação pessoal, métodos de exploração ou documentos confidenciais. Siga [SECURITY.md](SECURITY.md). Uma Issue não é canal privado.
+Every consulted source, executed query, decision and conclusion
+needs authentic evidence appropriate to its claim. Never invent
+a DOI, execution, reviewer, study, efficiency metric,
+comparative result, editorial acceptance or causal effect.
+Document uncertainty, bias, full-text rights and genuinely
+performed human review.
 
-## Política de manutenção
+A proposed change to methodology must identify the actual
+foundation, the problem being addressed and its consequences
+for existing decision and evidence safeguards. Do not copy
+substantial copyrighted third-party text into the repository.
 
-Contribuições passam por revisão técnica e não constituem aprovação automática. Releases beta usam numeração explícita; mudanças incompatíveis precisam ser descritas no changelog. O mantenedor pode rejeitar sugestões que comprometam rastreabilidade, direitos de terceiros ou rigor científico.
+## Security incidents
 
+Do not use public Issues to disclose tokens, private user
+data, confidential PDFs or vulnerability exploitation details.
+Follow [SECURITY.md](SECURITY.md), using a private report
+channel where available.
 
-## Licença, atribuição e contribuições
+## Maintenance and attribution
 
-Os materiais originais do repositório são distribuídos sob Apache License 2.0.
-Ao redistribuir versões modificadas, observe as condições da licença,
-inclusive manutenção de avisos de copyright e atribuição pertinentes,
-conteúdo de NOTICE e indicação de arquivos modificados. A orientação
-acadêmica sobre como citar o projeto está em CITATION.cff; não se deve
-representar a citação científica formal como requisito adicional à licença.
-Contribuições de terceiros devem respeitar sua titularidade e permissões.
+Contributions are technically reviewed; submission is not
+automatic acceptance. Beta versions use explicit identifiers.
+Backward-incompatible changes require changelog entries
+and consideration of real existing research workspaces.
 
+The current repository is licensed under **Apache-2.0**.
+Redistributors of modified work must preserve applicable
+copyright and NOTICE attribution, include the license and
+indicate changed files as required by the terms. The software
+citation suggested in `CITATION.cff` is recommended, **not**
+an additional license obligation. Respect third-party
+copyright and independent contribution rights.
 
-## Procedimento de desenvolvimento e releases
+## Release workflow
 
-Alterações devem seguir branch, Pull Request, verificação obrigatória de CI e
-integração à branch principal. O guia para sincronizar metadados de versão e
-publicar uma beta manualmente está em [publicação e versionamento](docs/GUIA-DE-RELEASES.md).
-A versão distribuída mais recente não muda automaticamente com commits na branch
-principal; não declare validação empírica a partir da aprovação de testes técnicos.
+Changes follow branch → pull request → required
+`audit` → protected `main`. Follow
+[releases and versioning](docs/GUIA-DE-RELEASES.md)
+for metadata synchronization and deliberate manual publishing.
+Merging to `main` does not publish a new beta.
+No successful CI job justifies claiming real scientific
+validation or operational benefit.
