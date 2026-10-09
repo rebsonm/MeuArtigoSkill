@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Add a reproducible quality-calibration framework with a frozen set of factual citations and published review-selection totals.
+- Score observed manuscript outputs against published DOI/title/count facts and local textual locators, reporting explicit coverage and non-evaluated dimensions rather than invented success rates.
+- Separate independent claim adjudications and conceptual-category review from metadata matching and software tests.
+- Introduce an optional-cost-free public metadata pilot via Crossref/OpenAlex and an observable GitHub Actions report.
+- Include adversarial offline regression tests; real scientific quality and complete review replication remain unclaimed until independent empirical evaluation.
+
+
 - Require a researcher's recorded rationale and acknowledged limitation before approving scientific gates in new projects, while preserving autonomy between gates.
 - Store structured formative explanations in the existing validation table and check their presence and consistency during project validation.
 - Keep the submission gate operational and preserve backward compatibility for projects created before the formative control was enabled.

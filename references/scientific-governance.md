@@ -190,6 +190,10 @@ Gate status:
 - COMPLETED
 - NOT_APPLICABLE
 
+### Independent quality evaluation is distinct from a gate
+
+The project gates regulate actual scientific decisions; they do not empirically validate the research-assistant Skill. A separate, reproducible quality benchmark is described in [quality evaluation](../docs/AVALIACAO-QUALIDADE-CIENTIFICA.md). Scores on frozen public bibliographic facts must not be called independent semantic validation or substitute for a real review-replication protocol. Claims and conceptual categories require independently justified adjudication.
+
 ### GATE-0006 robustness requirement
 
 GATE-0006 is not satisfied merely because each claim has a supporting citation.

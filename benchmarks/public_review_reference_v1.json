@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "reference_set": "public_review_methods_v1",
+  "frozen_on": "2026-10-09",
+  "purpose": "Small real-publication calibration set; not a proof of scientific validity or an LLM performance benchmark by itself.",
+  "methodological_anchor": {
+    "title": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews",
+    "doi": "10.1136/bmj.n71",
+    "url": "https://www.bmj.com/content/372/bmj.n71"
+  },
+  "cases": [
+    {
+      "case": "ai_diffusion_review",
+      "title": "AI adoption and diffusion in public administration: A systematic literature review and future research agenda",
+      "doi": "10.1016/j.giq.2022.101774",
+      "published_year": 2023,
+      "authors": "Rohit Madan; Mona Ashok",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0740624X22001101",
+      "independent_pdf": "https://centaur.reading.ac.uk/107999/8/1-s2.0-S0740624X22001101-main.pdf",
+      "reported_counts": {
+        "database_records": 221,
+        "other_records": 27,
+        "screened": 166,
+        "full_text_reviewed": 117,
+        "included": 73
+      },
+      "derived_counts": {
+        "identified": 248,
+        "duplicates_removed": 82,
+        "screened_excluded": 49,
+        "full_text_excluded": 44
+      },
+      "reported_terms": [
+        "technology-organisational-environmental (TOE)",
+        "absorptive capacity",
+        "AI tensions"
+      ],
+      "evidence_status": "Official publisher article and an institutional repository version; counts transcribed from the published screening paragraph."
+    },
+    {
+      "case": "governance_integration_review",
+      "title": "Integrating AI in Public Governance: A Systematic Review",
+      "doi": "10.3390/digital5040059",
+      "published_year": 2025,
+      "authors": "Amal Aarab; Abdenbi El Marzouki; Omar Boubker; Badreddine El Moutaqi",
+      "source": "https://www.mdpi.com/2673-6470/5/4/59",
+      "reported_counts": {
+        "included": 67
+      },
+      "derived_counts": {},
+      "reported_terms": [
+        "data access and interoperability",
+        "digital infrastructure and process redesign",
+        "workforce competencies",
+        "institutional leadership"
+      ],
+      "evidence_status": "Publisher abstract and full article. No missing identification/screening stage is invented."
+    },
+    {
+      "case": "prisma_reporting_guideline",
+      "title": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews",
+      "doi": "10.1136/bmj.n71",
+      "published_year": 2021,
+      "authors": "Matthew J. Page; Joanne E. McKenzie; Patrick M. Bossuyt",
+      "source": "https://www.bmj.com/content/372/bmj.n71",
+      "reported_counts": {},
+      "derived_counts": {},
+      "reported_terms": [],
+      "evidence_status": "Methodological reporting guideline, not itself a replicated review. Metadata calibration only."
+    }
+  ],
+  "limits": [
+    "The reference set records publisher-reported aggregates, not individual screening decisions or original exports.",
+    "Derived counts are arithmetic implications of reported stage totals, not additional observations.",
+    "A published synthesis is not an absolute gold standard for conceptual categories.",
+    "No real PDF text, claim adjudications or model-generated analyses are stored as fabricated ground truth."
+  ]
+}

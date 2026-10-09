@@ -1,0 +1,53 @@
+name: Public scientific quality calibration
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "scripts/quality_benchmark.py"
+      - "tests/test_quality_benchmark.py"
+      - "benchmarks/**"
+      - ".github/workflows/scientific-quality-calibration.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/quality_benchmark.py"
+      - "tests/test_quality_benchmark.py"
+      - "benchmarks/**"
+      - ".github/workflows/scientific-quality-calibration.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  metadata-calibration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate offline scoring controls
+        run: python -m unittest discover -s tests -p 'test_quality_benchmark.py' -v
+      - name: Query actual public scholarly metadata
+        run: python scripts/quality_benchmark.py pilot --output public_metadata_pilot.json
+      - name: Summarize observed coverage without claiming scientific validity
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open("public_metadata_pilot.json", encoding="utf-8"))
+          print("reference_cases=", d["case_count"])
+          print("real_metadata_verified=", d["verified_metadata"])
+          print("unverified_or_conflicting=", d["unverified_metadata"])
+          print("scope=public bibliographic identity only")
+          print("scientific_quality_validated=false")
+          PY
+      - name: Preserve real pilot report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-metadata-pilot
+          path: public_metadata_pilot.json
+          if-no-files-found: warn
+          retention-days: 30
