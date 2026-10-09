@@ -1,83 +1,85 @@
 # Meu Artigo
 
-**Uma Skill para planejar, organizar e desenvolver artigos científicos com apoio de inteligência artificial, sem perder o controle das fontes e das decisões de pesquisa.**
+**A scientific writing Skill that helps researchers plan, organize and develop manuscripts with AI while preserving source traceability and human responsibility for scientific decisions.**
 
-O **Meu Artigo** acompanha o pesquisador desde a ideia inicial até a preparação do manuscrito para submissão. Em vez de tratar o artigo como uma sequência de pedidos isolados à IA, organiza as etapas em um processo contínuo, com histórico de trabalho, referências consultadas, atividades pendentes e decisões que precisam ser tomadas pelo autor.
+Meu Artigo supports the journey from an initial research idea to a submission-ready manuscript. Rather than treating a paper as disconnected AI prompts, it maintains a continuous workflow with verified sources, documented progress, pending decisions, journal requirements and resumable research state.
 
-O projeto está disponível em **repositório público**, em **versão beta**.
+The project is available in a **public GitHub repository** as an **experimental beta**.
 
-**Versão atual:** `0.8.0-beta.8` · [Ver versões e downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). Seu uso é gratuito, embora algumas bases científicas e plataformas integradas possam exigir contas, assinaturas ou acesso institucional.
+**Current version:** `0.8.0-beta.8` · [Releases and downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). The source code is free; third-party academic databases, platforms and subscriptions may have separate access requirements.
 
-**[Baixar a versão beta](https://github.com/rebsonm/MeuArtigoSkill/releases) · [Guia de instalação](./docs/COMECE-AQUI.md) · [Como começar](#como-começar)**
+**[Get the beta](https://github.com/rebsonm/MeuArtigoSkill/releases) · [Installation guide](./docs/COMECE-AQUI.md) · [Getting started](#getting-started)**
 
-## O que você pode fazer
+## English source, your language when you use it
 
-- **Transformar uma ideia em projeto de artigo:** delimitar o problema, formular a pergunta de pesquisa e organizar objetivos e contribuição pretendida.
-- **Planejar a pesquisa bibliográfica:** elaborar estratégias de busca, organizar resultados, identificar duplicidades e acompanhar a seleção de estudos.
-- **Trabalhar com as fontes de forma responsável:** conferir referências, distinguir o que foi efetivamente consultado e organizar evidências relevantes.
-- **Construir a argumentação:** relacionar afirmações às fontes, diferenciar interpretações de informações encontradas na literatura e reconhecer limitações.
-- **Preparar o manuscrito:** desenvolver seções, resumo e referências em diálogo com as orientações da revista escolhida.
-- **Retomar o trabalho de onde parou:** manter o andamento do projeto e as decisões registradas, mesmo quando mudar de conversa.
-- **Acompanhar pendências e prazos:** visualizar o que já avançou, o que precisa de revisão e o próximo passo.
+**The repository and its instructions are being standardized in English. This does not mean you must speak English.** The installed Skill follows the researcher's conversational language automatically and respects any explicit language choice. It can answer Portuguese questions in Portuguese, Spanish questions in Spanish, and English questions in English — without changing its source code or installing a translation pack.
 
-A disponibilidade de algumas atividades depende do acesso às bases, dos arquivos fornecidos pelo pesquisador e das funções oferecidas por sua plataforma de IA.
+The **manuscript language is chosen separately** according to the researcher's instructions or the selected journal's author guidelines. You may communicate in Portuguese while preparing an English-language article. Machine-readable identifiers, source citations and original quotations are not silently translated. See the [interaction language policy](./references/language-policy.md).
 
-## C.A.D.A.: organização do trabalho de pesquisa
+## What you can do
 
-O Meu Artigo utiliza o método **C.A.D.A. — Capturar, Atribuir, Definir prazo e Acompanhar** para ajudar a administrar as providências necessárias ao desenvolvimento de um artigo.
+- **Turn an idea into a research project:** delimit the problem, formulate questions, organize objectives and define the intended contribution.
+- **Choose a suitable research design:** theoretical and conceptual studies, reviews, qualitative, quantitative and mixed-method approaches, or design science, subject to researcher decisions.
+- **Organize bibliographic research:** design searches, record actual retrieval, track duplicates and document human selection decisions when needed.
+- **Use sources responsibly:** check bibliographic identity, distinguish consulted passages from metadata-only records and record supporting evidence and limitations.
+- **Develop arguments:** link statements to sources, distinguish literature [L], inference [I] and original proposals [P], and consider counterevidence.
+- **Write and prepare the manuscript:** follow real journal instructions, apply relevant anonymization and disclose actual AI assistance.
+- **Resume work safely:** preserve authorized project state between sessions without inventing earlier actions.
+- **Track responsibilities and deadlines:** use C.A.D.A. to show the next task and outstanding decisions.
 
-| Etapa | Na prática |
+Specific functions depend on the AI platform, the tools actually connected, institutional database access and lawful availability of sources.
+
+## C.A.D.A. — operational research workflow management
+
+Meu Artigo uses **C.A.D.A.** (*Capturar, Atribuir, Definir prazo, Acompanhar*) for documenting and following through on administrative research tasks. The name is maintained as a proper name; in English, its four stages mean **Capture, Assign, Set a deadline and Follow up**.
+
+| Stage | Practical meaning |
 | --- | --- |
-| **Capturar** | Registrar uma atividade ou pendência relevante |
-| **Atribuir** | Identificar quem deve realizar ou decidir |
-| **Definir prazo** | Estabelecer datas e prioridades quando necessário |
-| **Acompanhar** | Verificar o andamento e documentar a conclusão |
+| Capture | Record a relevant task or open issue |
+| Assign | Identify responsibility for completing or deciding |
+| Set a deadline | Record a realistic due date or dependency |
+| Follow up | Track progress and document completion |
 
-O C.A.D.A. ajuda a organizar o processo. **Não substitui a metodologia científica**, a leitura crítica das fontes nem o julgamento do pesquisador.
+C.A.D.A. supports **operational management**. It does not replace research methods, critical source appraisal, researcher judgment or scientific validation.
 
-## Como funciona
+## How it works
 
-1. **Você apresenta sua ideia.** Pode começar com uma pergunta, um tema, um problema ou um texto em desenvolvimento.
-2. **A Skill ajuda a estruturar a pesquisa.** O planejamento é ajustado ao tipo de estudo pretendido, sem impor automaticamente o mesmo método a todos os artigos.
-3. **As etapas passam a ser acompanhadas.** Buscas, documentos, decisões, evidências e tarefas ficam organizados conforme os recursos disponíveis.
-4. **Você mantém as decisões científicas.** A IA pode sugerir caminhos, mas escolhas metodológicas, interpretação de resultados e aprovação do conteúdo pertencem ao pesquisador.
-5. **O manuscrito é desenvolvido e revisado.** Quando há revista-alvo, suas orientações são consideradas na preparação dos documentos.
+1. **Describe your research idea** in your usual language.
+2. **Agree on the research direction** with method-specific guidance and explicit human decisions at consequential steps.
+3. **Build a traceable workspace** with sources, justified actions, evidence and next steps in an authorized persistent store.
+4. **Retain scientific responsibility.** The assistant may propose alternatives, but the researcher decides the design, interpretation and approval.
+5. **Prepare and review the paper** according to the chosen journal's verified rules and the actual scientific evidence.
 
-## Como começar
+## Getting started
 
-1. Acesse a [página de versões](https://github.com/rebsonm/MeuArtigoSkill/releases) e baixe o arquivo ZIP da versão beta mais recente.
-2. Siga o [guia de instalação](./docs/COMECE-AQUI.md) correspondente à plataforma que pretende utilizar.
-3. Inicie uma conversa e apresente seu problema de pesquisa.
+1. Go to [Releases](https://github.com/rebsonm/MeuArtigoSkill/releases) and choose the latest published beta's **installable ZIP**, not the automatically generated repository source archive.
+2. Follow the [installation and first-use guide](./docs/COMECE-AQUI.md) for your AI platform.
+3. Start a conversation using your own language and describe the research problem. For example, in English: *“I want to write a research article about difficulties in AI adoption in small public organizations. Help me develop the research question and organize the workflow.”* Equally, Portuguese and Spanish requests work under the same language policy.
 
-Por exemplo:
+Platform guides: [ChatGPT](./docs/CHATGPT.md) · [Claude](./docs/CLAUDE.md) · [Gemini](./docs/GEMINI.md)
 
-> Quero elaborar um artigo científico sobre as dificuldades de adoção de inteligência artificial em pequenas organizações públicas. Ajude-me a definir o problema, planejar a pesquisa e acompanhar as etapas até a elaboração do manuscrito.
+Importing a Skill does not confirm authenticated Google Drive access, direct Scopus/Web of Science access or the ability to execute Python in the current platform. The project must verify each capability before treating the corresponding action as completed.
 
-**Guias por plataforma:** [ChatGPT](./docs/CHATGPT.md) · [Claude](./docs/CLAUDE.md) · [Gemini](./docs/GEMINI.md)
+## Who is this for?
 
-A possibilidade de importar uma Skill e de utilizar integrações varia conforme a plataforma e a conta. Você não precisa conhecer programação ou GitHub para começar.
+Undergraduate and graduate students, researchers, faculty and professionals preparing academic manuscripts, literature reviews and structured scientific studies. It also supports teams resuming existing projects and retrieving actual prior scientific decisions.
 
-## Para quem é
+## Research integrity and limitations
 
-O Meu Artigo pode apoiar estudantes de graduação e pós-graduação, pesquisadores, professores e profissionais que desenvolvem artigos científicos, revisões de literatura ou trabalhos acadêmicos estruturados.
+**Meu Artigo assists research; it does not replace the researcher.** It must not fabricate references, data, source access, executed searches, peer review, human decisions or findings. Verified bibliographic metadata does not by itself support a claim's interpretation. Source consultation, interpretation and empirical results have separate evidence requirements.
 
-Também pode ser útil para quem já iniciou um artigo, mas precisa organizar fontes, recuperar decisões anteriores ou planejar as etapas de revisão e submissão.
+Full-text use must respect copyright and access conditions. Any AI disclosure must reflect actual assistance and the journal's instructions.
 
-## Pesquisa responsável
+**This is an experimental beta.** Engineering tests have been run, but independent empirical evidence of scientific article quality, effectiveness and productivity improvements is still pending. No manuscript publication or editorial acceptance is guaranteed.
 
-**O Meu Artigo é um apoio à pesquisa, não um substituto do pesquisador.** A Skill procura distinguir informações respaldadas por fontes, interpretações propostas e decisões que exigem revisão humana. Não deve inventar referências, dados de pesquisa, leituras ou resultados.
+## More information
 
-O uso de textos completos deve respeitar os direitos autorais e as condições de acesso. Quando a revista exigir uma declaração de uso de IA, ela deve refletir as atividades efetivamente realizadas e ser conferida pelo autor.
+- [Getting started](./docs/COMECE-AQUI.md)
+- [First-use checklist](./docs/CHECKLIST-PRIMEIRO-USO.md)
+- [Development history](./CHANGELOG.md)
+- [How to cite this software](./CITATION.cff)
+- [License](./LICENSE)
+- [Contributing and reporting problems](./CONTRIBUTING.md)
+- [Automatic conversation language](./references/language-policy.md)
 
-**Esta é uma versão beta.** Os recursos técnicos foram submetidos a testes automatizados, mas a qualidade científica dos artigos produzidos e eventuais ganhos de eficiência ainda precisam de avaliações independentes. Nenhuma publicação ou aceitação editorial é garantida.
-
-## Saiba mais
-
-- [Guia para quem está começando](./docs/COMECE-AQUI.md)
-- [Orientações para o primeiro uso](./docs/CHECKLIST-PRIMEIRO-USO.md)
-- [Histórico de versões](./CHANGELOG.md)
-- [Como citar o software](./CITATION.cff)
-- [Licença do projeto](./LICENSE)
-- [Contribuições e relatos de problemas](./CONTRIBUTING.md)
-
-O código e a documentação originais do projeto passam a ser distribuídos sob a **Apache License 2.0**, com reconhecimento do autor original no arquivo [NOTICE](./NOTICE). A redistribuição deve preservar a licença, os avisos aplicáveis e a indicação de arquivos alterados; veja as condições completas em [LICENSE](./LICENSE). A citação acadêmica sugerida em [CITATION.cff](./CITATION.cff) é recomendada, mas não é uma condição adicional da licença. Versões anteriormente publicadas sob MIT mantêm os direitos já concedidos. A licença não cobre automaticamente PDFs, artigos ou dados de terceiros.
+The project's current code and original documentation are distributed under the **Apache License 2.0**, retaining original author attribution in [NOTICE](./NOTICE). Applicable license and modification notices must be preserved. The scholarly software citation in `CITATION.cff` is recommended, not a condition imposed by Apache-2.0. Earlier MIT-licensed versions retain previously granted rights. The code license does not cover unrelated third-party research documents or PDFs.
