@@ -39,7 +39,7 @@ REQUIRED=[
     "tests/test_language_policy.py",
     "docs/ENGLISH-SOURCE-MIGRATION.md",
     "references/INDICE-METODOLOGICO.md",
-    'references/CONTEXTO-PER-ETAPA.md',
+    'references/CONTEXTO-POR-ETAPA.md',
     "references/fluxo-essencial.md",
     "references/platform-capability-preflight.md",
     "tests/test_stage4_routing.py",
@@ -210,7 +210,7 @@ def main()->int:
     # Core feature references.
     required_terms={
         "SKILL.md":["DEC_ID","GATE_ID","SNAP_ID","W3C PROV","RO-Crate","Grounded Corpus","Corpus Map","JOURNAL_PROFILE","JOURNAL_NEUTRAL","Counter_Evidence_IDs","Robustness_status","ANONYMIZATION_PROFILE","audit_anonymization.py","sanitize_metadata.py","ZERO_NONESSENTIAL_METADATA","GOOGLE_DRIVE_FIRST","WORK_FALLBACK"],
-        "README.md":['My Article',"C.A.D.A.","Getting started","researcher","sources","beta"],
+        "README.md":["Meu Artigo","C.A.D.A.","Getting started","researcher","sources","beta"],
     }
     for label,terms in required_terms.items():
         text=skill if label=="SKILL.md" else readme
