@@ -232,6 +232,11 @@ def record_gate(args)->int:
         if not args.method.strip():
             raise SystemExit("completed human validation requires --method")
 
+    if decision in {"APPROVED","APPROVED_WITH_CHANGES"} and cfg.get("cada_science_boundary_required") is True:
+        from audit_governance_boundary import management_only
+        if management_only(args.evidence) or management_only(args.method):
+            raise SystemExit("scientific gate approval needs an independent review source, not a C.A.D.A. task status")
+
     formative_notes=args.notes
     if formative:
         encoded=encode_formative(

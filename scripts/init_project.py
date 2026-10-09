@@ -183,6 +183,8 @@ def main()->int:
             "created":date.today().isoformat(),
             "status":"INITIALIZED",
             "cada_governance":True,
+            "cada_science_boundary_required":True,
+            "cada_role":"OPERATIONAL_MANAGEMENT_NOT_SCIENTIFIC_METHOD",
             "storage_policy":"GOOGLE_DRIVE_FIRST",
             "storage_mode":storage_mode,
             "storage_state":storage_state,

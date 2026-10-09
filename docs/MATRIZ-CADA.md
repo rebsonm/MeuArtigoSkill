@@ -89,6 +89,12 @@ A planilha organiza e conecta o processo, mas cada tipo de registro possui seu p
 
 O dashboard é derivado dessas abas e nunca deve substituir os registros canônicos.
 
+## Limites de gestão e avaliação de contribuição
+
+A aba `01_CADA` e os indicadores do painel medem execução administrativa. Busca, triagem, avaliação de fontes, argumentação, decisões científicas e resultados acadêmicos exigem verificações independentes; completar a tarefa correspondente NÃO prova a validade da pesquisa. O C.A.D.A. é tratado como camada gerencial, não como método de revisão ou certificação científica.
+
+Leia [Limites e comparação do C.A.D.A.](LIMITES-CADA-E-COMPARACAO.md), que documenta a auditoria gratuita em Python e um protocolo prospectivo com e sem C.A.D.A. Sem dados empíricos comparáveis, os efeitos sobre tempo, retrabalho e qualidade científica permanecem hipóteses.
+
 ## Princípio
 
 A planilha não foi desenhada apenas para controlar tarefas.

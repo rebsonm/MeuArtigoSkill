@@ -105,6 +105,10 @@ Questions block:
 
 Include a C.A.D.A. status chart and a 00–14 stage roadmap.
 
+## Operational versus scientific indicators
+
+The C.A.D.A. dashboard and task completion ratio measure **administrative progress**, not scientifically validated manuscripts. In the same canonical workbook, scientific protocol, source verification, screening, evidence, claims and human gates are reported separately, with their own validity conditions. Never label C.A.D.A. DONE, high task throughput or fewer overdue actions as proof of scientific rigor or C.A.D.A. efficacy. The [RT-07 boundary audit](../docs/LIMITES-CADA-E-COMPARACAO.md) uses existing records without extra tabs or IDs. A prospective evaluation protocol has no results yet.
+
 ## 01_CADA
 
 Columns:

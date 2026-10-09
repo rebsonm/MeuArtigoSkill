@@ -6,6 +6,8 @@ import argparse, csv, json
 from datetime import datetime, timezone
 from pathlib import Path
 
+from audit_governance_boundary import audit as audit_cada_boundary
+
 MGMT="00_Gestao_e_Continuidade"
 
 def rows(root:Path, name:str)->list[dict[str,str]]:
@@ -117,6 +119,8 @@ def report_data(root:Path)->dict:
         if (r.get("Status") or "").upper() not in {"COMPLETED","NOT_APPLICABLE"}
     ]
 
+    boundary=audit_cada_boundary(root,strict=False)
+
     return {
         "generated_at":datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
         "project":project,
@@ -156,6 +160,7 @@ def report_data(root:Path)->dict:
             "interop_exports":len([r for r in interop if (r.get("Export_ID") or "").strip()]),
             "corpus_map_generated":1 if corpus_map else 0,
         },
+        "governance_boundary":boundary,
         "executed_searches":executed_searches,
         "decisions":decisions,
         "gates":gates,
@@ -207,6 +212,16 @@ def main()->int:
         f"- Original research input: {p.get('research_input') or p.get('Problema original') or 'Not available in canonical project metadata'}",
         f"- Article/review design: {p.get('article_type') or p.get('Desenho metodológico') or 'Not yet frozen'}",
         f"- Management mode: {p.get('work_management_mode') or p.get('Modo de gestão') or 'Not recorded'}",
+        "",
+        "## 1.1. Operational management versus scientific evidence",
+        f"- C.A.D.A. recorded tasks: {data['governance_boundary']['management_activity']['recorded_tasks']}",
+        f"- C.A.D.A. tasks marked DONE: {data['governance_boundary']['management_activity']['tasks_marked_done']}",
+        f"- C.A.D.A. DONE entries with no independent completion proof: {data['governance_boundary']['management_activity']['done_without_meaningful_completion_evidence']}",
+        "- DONE denotes an operational status only; it is not proof of scientific rigor.",
+        f"- Recorded scientific gate approvals: {data['governance_boundary']['scientific_registers']['gate_approvals_recorded']}",
+        f"- Recorded Evidence_IDs and claims: {data['governance_boundary']['scientific_registers']['evidence_records']} / {data['governance_boundary']['scientific_registers']['claims_registered']}",
+        "- Scientific entries are reported separately; their counts do not certify methodological quality.",
+        "- Causal efficiency improvement from C.A.D.A.: NOT_MEASURED (prospective comparison pending).",
         "",
         "## 1.5. Journal-aware construction",
         f"- Target journal: {(data.get('journal_profile') or {}).get('journal_name') or p.get('target_journal') or 'TO_DEFINE'}",

@@ -18,6 +18,14 @@ C.A.D.A. answers:
 
 Use C.A.D.A. across every scientific stage.
 
+## Strict separation from methodological validation
+
+C.A.D.A. is a **management intervention** (what must be done, by whom, by when, with what operational artifact). It is not part of the scientific validity criterion, selection algorithm, evidence strength, peer judgment, or empirical treatment efficacy. A CADA_ID and DONE are not a Search_ID, Evidence_ID, a human GATE approval or scientific proof.
+
+The offline audit `scripts/audit_governance_boundary.py` exposes management, science registers and process receipts as separate groups; it rejects scientific gates that cite only the completion of a task. It reports `scientific_quality_validated=false` and `causal_CADA_effect_established=false`. See [RT-07 explanation](../docs/LIMITES-CADA-E-COMPARACAO.md) and the unexecuted protocol at `benchmarks/cada_comparison_protocol_v1.json`.
+
+The proposed benefit (less administrative delay, rework, and asymmetry) is a hypothesis for independent evaluation. Keep scientific protocols and gates identical with and without the management layer; do not invent efficacy metrics from dashboard completion rates.
+
 ## The four operations
 
 ### C — Capturar

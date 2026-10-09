@@ -124,6 +124,10 @@ Rules:
 
 ---
 
+## Science integrity independent of administrative status
+
+A C.A.D.A. task marked DONE or a management dashboard count cannot justify a methodological conclusion, a completed scientific gate or a verified source. The [management/science boundary audit](../docs/LIMITES-CADA-E-COMPARACAO.md) checks that approvals have actual review evidence rather than merely a task identifier or completion status. A verified execution receipt also does not establish interpretation accuracy. Any causal improvement in efficiency or scientific quality remains unmeasured until independently evaluated.
+
 ## Human Validation Gates
 
 A gate is a controlled transition at a small number of scientifically consequential points.

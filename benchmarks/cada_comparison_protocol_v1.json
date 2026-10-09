@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "status": "PROTOCOL_ONLY_NOT_EXECUTED",
+  "title": "Paired comparison of research administrative coordination with and without C.A.D.A.",
+  "objective": "Estimate whether a documented C.A.D.A. work-management layer reduces administrative delay, rework and incomplete follow-up without changing the scientific methodology.",
+  "causal_status": "HYPOTHESIS_ONLY",
+  "arms": [
+    {
+      "id": "CADA_ON",
+      "management_layer_enabled": true,
+      "scientific_protocol": "SAME_FROZEN_RESEARCH_PROTOCOL",
+      "scientific_gates": "SAME_REQUIRED_GATES",
+      "difference": "Use C.A.D.A. to capture, assign, set deadlines and track eligible administrative actions."
+    },
+    {
+      "id": "CADA_OFF",
+      "management_layer_enabled": false,
+      "scientific_protocol": "SAME_FROZEN_RESEARCH_PROTOCOL",
+      "scientific_gates": "SAME_REQUIRED_GATES",
+      "difference": "Use the pre-specified conventional task coordination process. Keep identical scientific quality safeguards and document activities without C.A.D.A. identifiers."
+    }
+  ],
+  "paired_units": {
+    "unit": "Documented administrative research-demand episode requiring a verifiable action and closure.",
+    "inclusion": "Episodes with explicit object, responsible party, next action, temporal expectation and evidence of completion.",
+    "exclusion": "Highly discretionary decisions, contested scientific judgment, unresolved political negotiation, arbitrary legal adjudication and inherently incomparable tasks.",
+    "matching": "Predefine pairs by work type, effort, complexity, input completeness and baseline stage before assignment."
+  },
+  "allocation": {
+    "design": "Prospective matched alternating or randomized assignment where feasible; report deviations.",
+    "research_protocol_frozen_before_assignment": true,
+    "researcher_responsibility": "Use same scientific protocol and human gate rules in both arms.",
+    "avoid_contamination": "Record cross-arm spillover, learning, differences in tooling or staffing and other co-interventions."
+  },
+  "measurement_sources": [
+    "Task entry/receipt timestamps from the same independent event recorder in both arms",
+    "Versioned evidence of output and required correction requests",
+    "Independent reviewer assessment of scientific safeguards and claim/citation quality"
+  ],
+  "primary_outcomes": [
+    {
+      "name": "time_to_first_action",
+      "definition": "Elapsed hours from recorded capture to first verifiable action",
+      "unit": "hours",
+      "source": "paired task event receipts",
+      "direction": "lower"
+    },
+    {
+      "name": "time_to_closure",
+      "definition": "Elapsed hours from accepted assignment to documented closure",
+      "unit": "hours",
+      "source": "verified completion records",
+      "direction": "lower"
+    },
+    {
+      "name": "administrative_rework",
+      "definition": "Number of documented avoidable reopen/rework cycles per episode",
+      "unit": "cycles",
+      "source": "versioned revisions and closure records",
+      "direction": "lower"
+    },
+    {
+      "name": "unresolved_deadlines",
+      "definition": "Share of due tasks lacking verifiable completion at cutoff",
+      "unit": "fraction",
+      "source": "original agreed due dates and outcomes",
+      "direction": "lower"
+    }
+  ],
+  "scientific_safety_outcomes": [
+    {
+      "name": "protocol_compliance",
+      "assessment": "Independent audit of identical research protocol and human gates",
+      "interpretation": "Safety check, not an effect of C.A.D.A. itself"
+    },
+    {
+      "name": "claim_support_errors",
+      "assessment": "Independent blinded human review against source material",
+      "interpretation": "Not inferred from task completion or Trace_ID counts"
+    },
+    {
+      "name": "screening_error_or_disagreement",
+      "assessment": "Independent document-level review of actual eligibility choices",
+      "interpretation": "Scientific outcome requiring expert judgments"
+    }
+  ],
+  "analysis_plan": {
+    "estimand": "Within-pair difference in operational outcomes; specify baseline covariates and missingness.",
+    "unit_of_analysis": "Paired documented episode",
+    "missing_data": "Show unmatched, censored or inaccessible events; never fill missing with invented values.",
+    "uncertainty": "Report descriptive effect distributions and appropriate interval/uncertainty only if supported by adequate real data.",
+    "quality_controls": "Freeze outcome definitions, code version and eligibility before first comparison.",
+    "public_claim_limit": "No effectiveness statement unless real pairs, baseline comparability and uncertainty are documented."
+  },
+  "threats_to_validity": [
+    "Learning and order effects",
+    "Selection of easier tasks into an arm",
+    "Extra tooling and reminders accidentally given to CADA_ON",
+    "Researcher awareness and nonblinded task handling",
+    "Crossover or spillover between workflows",
+    "Missing event receipts and undocumented follow-up",
+    "Changes in scientific protocol between comparison arms"
+  ],
+  "results": null,
+  "observations": [],
+  "effect_estimate": null,
+  "note": "Prepared protocol only. No interventions assigned, records collected, sample analyzed, efficacy proven or expert ratings obtained."
+}

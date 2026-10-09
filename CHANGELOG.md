@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Separate C.A.D.A. operational task completion from scientific decisions, evidence and execution receipts in deterministic reports.
+- Prevent management-only DONE/identifier attestations from serving as scientific validation for new project gates.
+- Add a cost-free auditable boundary check, compatibility-preserving project flag and regression tests.
+- Freeze an unexecuted with/without C.A.D.A. comparative protocol using identical scientific safeguards and independently measured administrative outcomes; no invented efficacy findings.
+
 - Enforce distinct provenance expectations for [L] source-supported statements, [I] analytical inferences, and [P] proposed contributions.
 - Require nearby prior works, contribution differences, a bounded novelty scope and existing search references before freezing original propositions.
 - Detect categorical universal-priority language and hold such claims for rewriting rather than accepting an unverifiable 'first-ever' assertion.
