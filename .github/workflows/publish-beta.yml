@@ -1,0 +1,88 @@
+name: Publish beta (manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      acknowledgement:
+        description: 'Digite publish-beta para confirmar uma nova publicação'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  publish-beta:
+    name: Publish new tagged public-beta release
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout release source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+
+      - name: Require explicit human release confirmation
+        env:
+          ACK: ${{ inputs.acknowledgement }}
+        run: |
+          if [[ "$ACK" != "publish-beta" ]]; then
+            echo "::error::This manual release requires typing publish-beta."
+            exit 1
+          fi
+
+      - name: Recheck code and documentation on the release commit
+        run: |
+          python scripts/release_audit.py
+          python -m unittest discover -s tests -v
+          python scripts/check_documentation_links.py
+          python scripts/audit_public_docs.py
+          python scripts/smoke_test_provenance.py
+
+      - name: Build, verify and hash immutable release artifacts
+        run: |
+          python scripts/build_skill_bundle.py
+          python scripts/build_skill_bundle.py --verify "dist/MeuArtigoSkill-v$(cat VERSION).zip"
+          (cd dist && sha256sum -c SHA256SUMS.txt)
+
+      - name: Confirm release version is unused
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          VERSION="$(cat VERSION)"
+          TAG="v${VERSION}"
+          test -f "docs/NOTAS-DA-VERSAO-${VERSION}.md"
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "::error::Release $TAG already exists and must not be replaced."
+            exit 1
+          fi
+          if git ls-remote --tags origin "refs/tags/$TAG" | grep -q .; then
+            echo "::error::Tag $TAG exists; refusing to move or overwrite it."
+            exit 1
+          fi
+
+      - name: Publish new tagged prerelease exactly once
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          VERSION="$(cat VERSION)"
+          TAG="v${VERSION}"
+          gh release create "$TAG" \
+            "dist/MeuArtigoSkill-${TAG}.zip" \
+            "dist/SHA256SUMS.txt" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title "Meu Artigo $TAG — beta pública" \
+            --notes-file "docs/NOTAS-DA-VERSAO-${VERSION}.md" \
+            --prerelease \
+            --latest=false
