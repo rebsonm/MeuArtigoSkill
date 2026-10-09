@@ -24,6 +24,8 @@ REQUIRED=[
     "docs/PROTOCOLO-BETA-USUARIOS.md",
     "docs/VALIDACOES-PENDENTES.md",
     "docs/NOTAS-DA-VERSAO-0.8.0-beta.1.md",
+    "docs/NOTAS-DA-VERSAO-0.8.0-beta.2.md",
+    "tests/test_public_communication.py",
     "scripts/build_skill_bundle.py",
     "tests/test_bundle_release.py",
     "CHANGELOG.md",
@@ -120,14 +122,21 @@ def main()->int:
         errors.append("Onboarding still falsely describes public repository as restricted")
     if "beta pública" not in onboarding.lower():
         errors.append("Public-beta access is not described in onboarding")
-    if not re.fullmatch(r"0\.8\.0-beta\.1", version):
-        errors.append("Current release audit expects the public beta version 0.8.0-beta.1")
+    if not re.fullmatch(r"0\.8\.0-beta\.2", version):
+        errors.append("Current release audit expects the public beta version 0.8.0-beta.2")
     if not all(name in workflow for name in ["LICENSE", "SHA256SUMS.txt",
                                                "build_skill_bundle.py", "gh release create",
                                                "contents: write", "--prerelease"]):
         errors.append("CI workflow lacks verified installable beta release publication")
     if "PENDENTE" not in (ROOT/"docs/VALIDACOES-PENDENTES.md").read_text(encoding="utf-8"):
         errors.append("Pending empirical validations must remain explicitly documented")
+
+    # Avoid internal implementation notes in the public landing page.
+    for exposed in [r"\bRT-\d{2}\b", r"\bGATE-\d{4}\b", r"\bDEC_ID\b",
+                    r"\bSNAP_ID\b", r"\bscripts/[A-Za-z0-9_]+\.py\b",
+                    r"\bCADA-\d{4}\b", r"\bGATE_ID\b", r"\bTRACE_ID\b"]:
+        if re.search(exposed, readme, flags=re.IGNORECASE):
+            errors.append(f"README contains an internal control reference: {exposed}")
 
     # Python syntax audit without importing optional dependencies.
     for p in sorted((ROOT/"scripts").glob("*.py")):
@@ -139,7 +148,7 @@ def main()->int:
     # Core feature references.
     required_terms={
         "SKILL.md":["DEC_ID","GATE_ID","SNAP_ID","W3C PROV","RO-Crate","Grounded Corpus","Corpus Map","JOURNAL_PROFILE","JOURNAL_NEUTRAL","Counter_Evidence_IDs","Robustness_status","ANONYMIZATION_PROFILE","audit_anonymization.py","sanitize_metadata.py","ZERO_NONESSENTIAL_METADATA","GOOGLE_DRIVE_FIRST","WORK_FALLBACK"],
-        "README.md":["DEC_ID","GATE_ID","SNAP_ID","RO-Crate","Mapa do Corpus","JOURNAL_PROFILE","robustez dos claims","anonimização","ANONYMIZATION_AUDIT","ZERO_NONESSENTIAL_METADATA","WORK_FALLBACK"],
+        "README.md":["Meu Artigo","C.A.D.A.","Como começar","pesquisador","fontes","versão beta"],
     }
     for label,terms in required_terms.items():
         text=skill if label=="SKILL.md" else readme

@@ -34,7 +34,7 @@ Para testar a Skill, basta baixar os arquivos.
 
 ## 3. Como baixar
 
-**Preferência: versão identificada.** Abra [Releases](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.1), baixe `MeuArtigoSkill-v0.8.0-beta.1.zip` e, se desejar, confira o hash no `SHA256SUMS.txt`. Diferentemente do ZIP de código-fonte, esse pacote é preparado especificamente para instalar a Skill, com manifesto e licença. Consulte [implantação beta](IMPLANTACAO-BETA.md).
+**Preferência: versão identificada.** Abra [Releases](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.2), baixe `MeuArtigoSkill-v0.8.0-beta.2.zip` e, se desejar, confira o hash no `SHA256SUMS.txt`. Diferentemente do ZIP de código-fonte, esse pacote é preparado especificamente para instalar a Skill, com manifesto e licença. Consulte [implantação beta](IMPLANTACAO-BETA.md).
 
 **Alternativa para acompanhar o desenvolvimento:**
 
