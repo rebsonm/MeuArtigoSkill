@@ -12,12 +12,15 @@ permissions:
 jobs:
   audit:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: "3.12"
 
@@ -30,6 +33,9 @@ jobs:
       - name: Check local documentation links
         run: python scripts/check_documentation_links.py
 
+      - name: Audit public documentation for leaks
+        run: python scripts/audit_public_docs.py
+
       - name: Provenance smoke test
         run: python scripts/smoke_test_provenance.py
 
@@ -39,91 +45,13 @@ jobs:
           python scripts/build_skill_bundle.py --verify "dist/MeuArtigoSkill-v$(cat VERSION).zip"
           (cd dist && sha256sum -c SHA256SUMS.txt)
 
-      - name: Upload installable Skill bundle
+      - name: Upload checked Skill bundle as CI artifact (not a release)
         if: github.event_name != 'pull_request'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: MeuArtigoSkill
+          name: MeuArtigoSkill-ci
           path: |
-            SKILL.md
-            agents/
-            assets/
-            references/
-            scripts/
-            docs/
-            benchmarks/
-            README.md
-            CHANGELOG.md
-            VERSION
-            CITATION.cff
-            LICENSE
-            NOTICE
-            CONTRIBUTING.md
-            SECURITY.md
             dist/MeuArtigoSkill-v*.zip
             dist/SHA256SUMS.txt
           if-no-files-found: error
           retention-days: 30
-
-
-  publish-beta:
-    name: Publish tagged public-beta release
-    needs: audit
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Check target beta version
-        id: beta
-        shell: bash
-        run: |
-          if [[ "$(cat VERSION)" == "0.8.0-beta.8" ]]; then
-            echo "publish=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "publish=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Build and hash public Skill ZIP
-        if: steps.beta.outputs.publish == 'true'
-        run: |
-          python scripts/build_skill_bundle.py
-          python scripts/build_skill_bundle.py --verify "dist/MeuArtigoSkill-v$(cat VERSION).zip"
-          (cd dist && sha256sum -c SHA256SUMS.txt)
-
-      - name: Update previous beta release notes
-        if: steps.beta.outputs.publish == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        shell: bash
-        run: |
-          if gh release view "v0.8.0-beta.1" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            gh release edit "v0.8.0-beta.1" --repo "$GITHUB_REPOSITORY" --notes-file "docs/NOTAS-DA-VERSAO-0.8.0-beta.1.md"
-          fi
-
-      - name: Create tagged prerelease if absent
-        if: steps.beta.outputs.publish == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        shell: bash
-        run: |
-          TAG="v$(cat VERSION)"
-          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            echo "Release $TAG already published; not replacing existing assets."
-            exit 0
-          fi
-          gh release create "$TAG" \
-            "dist/MeuArtigoSkill-$TAG.zip" \
-            "dist/SHA256SUMS.txt" \
-            --repo "$GITHUB_REPOSITORY" \
-            --target "$GITHUB_SHA" \
-            --title "Meu Artigo $TAG — beta pública" \
-            --notes-file "docs/NOTAS-DA-VERSAO-0.8.0-beta.8.md" \
-            --prerelease \
-            --latest=false
