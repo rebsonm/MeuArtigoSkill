@@ -48,6 +48,10 @@ A instalação nativa depende da plataforma e do plano atual:
 
 Se o menu de Skills não aparecer, abra o guia da plataforma antes de concluir que houve erro no repositório.
 
+## Screening com revisão humana rastreável
+
+A triagem diferencia **sugestões da IA** de **decisões finais atribuídas à revisão humana**. O mecanismo gratuito em Python exige motivo, identificação do revisor, referência à manifestação original e registro das divergências. Projetos novos não podem congelar o corpus com decisões incompletas. A implementação reaproveita a aba 07_SCREENING e o CSV canônico, sem nova aba ou ID. Consulte [Screening auditável](./docs/SCREENING-AUDITAVEL.md). A presença dos campos não autentica, sozinha, a identidade do revisor.
+
 ## Avaliação de qualidade científica
 
 O repositório inclui um benchmark reproduzível, com referências reais e contagens publicadas, para comparar saídas **efetivamente produzidas** pela Skill. O verificador aponta divergências, cobertura e aspectos não avaliados; confirmação de DOI não substitui avaliação de claims ou categorias teóricas. Uma etapa opcional consulta metadados públicos gratuitos e publica o relatório observado no GitHub Actions. Veja [Avaliação de qualidade científica](./docs/AVALIACAO-QUALIDADE-CIENTIFICA.md).

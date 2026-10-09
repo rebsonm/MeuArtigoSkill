@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 from datetime import date, datetime
+import re
 from pathlib import Path
 
 from artifact_tool import Workbook, SpreadsheetFile
@@ -49,11 +50,19 @@ STAGES=[
 ["14","Submissão","Arquivos, checklist, protocolo e comprovante preservados."],
 ]
 
+def excel_column(index:int)->str:
+    result=""
+    while index:
+        index, remainder=divmod(index-1,26)
+        result=chr(65+remainder)+result
+    return result
+
+
 def title(sheet, text, subtitle, span):
     sheet.merge_cells(span)
     sheet.get_range(span.split(":")[0]).values=[[text]]
     sheet.get_range(span).format=TITLE
-    a,b=span.split(":"); c1=a[0]; c2=b[0]
+    a,b=span.split(":"); c1=re.match(r"[A-Z]+",a).group(); c2=re.match(r"[A-Z]+",b).group()
     sheet.merge_cells(f"{c1}2:{c2}2")
     sheet.get_range(f"{c1}2").values=[[subtitle]]
     sheet.get_range(f"{c1}2:{c2}2").format={"fill":LIGHT_BLUE,"font":{"italic":True,"color":NAVY},"vertical_alignment":"center","wrap_text":True}
@@ -177,7 +186,7 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
       ("04_EVIDENCIAS","MAPA DE EVIDÊNCIAS — VISÃO SINTÉTICA","Uma visão de alto nível das evidências que sustentam a argumentação.",["Evidence_ID","Fonte / Citação","Conceito / Categoria","Achado / contribuição","Papel","Força / relevância","Claim_IDs","Locator / trecho","Status","Observações"],"A1:J1",{"A":14,"B":38,"C":28,"D":48,"E":18,"F":18,"G":18,"H":34,"I":16,"J":30}),
       ("05_PROTOCOLO","PROTOCOLO DO ESTUDO","Decisões metodológicas versionadas e justificadas.",["Item","Decisão","Justificativa","Status","Versão","Atualizado em","Trace_ID"],"A1:G1",{"A":28,"B":44,"C":54,"D":16,"E":10,"F":16,"G":16}),
       ("06_BUSCAS","LOG DE BUSCAS BIBLIOGRÁFICAS","Cada string executada deve permanecer versionada e rastreável.",["Search_ID","Data","Base / Fonte","Blocos conceituais","String literal","Filtros","Encontrados","Exportados","Arquivo / URL","Status","Iteração","Trace_ID","Validação","Observações"],"A1:N1",{"A":14,"B":13,"C":20,"D":38,"E":64,"F":38,"G":12,"H":12,"I":34,"J":16,"K":10,"L":16,"M":16,"N":32}),
-      ("07_SCREENING","SCREENING","Decisões de inclusão/exclusão preservadas com justificativa e proveniência.",["Record_ID","Fonte","Search_ID","Título","Autores","Ano","DOI / ID","Resumo","Tipo","Idioma","Pass1","Motivo Pass1","Pass2","Motivo Pass2","Duplicata","Canonical_ID","Trace_ID","Observações"],"A1:R1",{"A":14,"B":16,"C":14,"D":48,"E":30,"F":9,"G":24,"H":60,"I":16,"J":12,"K":16,"L":30,"M":22,"N":30,"O":22,"P":16,"Q":16,"R":26}),
+      ("07_SCREENING","SCREENING","Separe recomendações da IA de decisões efetivamente revisadas pelo pesquisador.",["Record_ID","Fonte","Search_ID","Título","Autores","Ano","DOI / ID","Resumo","Tipo","Idioma","Pass1","Motivo Pass1","Pass2","Motivo Pass2","Duplicata","Canonical_ID","Trace_ID","Observações","Pass1 proposta IA","Pass1 motivo IA","Pass1 fonte IA","Pass1 revisado por","Pass1 evidência revisão","Pass1 resolução divergência","Pass2 proposta IA","Pass2 motivo IA","Pass2 fonte IA","Pass2 revisado por","Pass2 evidência revisão","Pass2 resolução divergência"],"A1:AD1",{"A":14,"B":16,"C":14,"D":48,"E":30,"F":9,"G":24,"H":60,"I":16,"J":12,"K":16,"L":30,"M":22,"N":30,"O":22,"P":16,"Q":16,"R":26,"S":20,"T":38,"U":32,"V":24,"W":40,"X":40,"Y":22,"Z":38,"AA":32,"AB":24,"AC":40,"AD":40}),
       ("08_FULL_TEXT","CONTROLE DE FULL TEXT","Acesso, versão, decisão e vínculo com a matriz de evidências.",["Record_ID","Prioridade","Status full text","Versão acessada","Fonte de acesso","Data de acesso","Decisão","Motivo exclusão","Evidence_ID","Arquivo / URL","Observações"],"A1:K1",{"A":14,"B":12,"C":18,"D":18,"E":28,"F":14,"G":14,"H":32,"I":14,"J":38,"K":30}),
       ("09_MATRIZ_EVID","MATRIZ DE EVIDÊNCIAS — DETALHADA","Extração estruturada para síntese horizontal, linhagem conceitual e redação ancorada em fontes.",["Evidence_ID","Citação","DOI / ID","Conceito","Definição / claim","Papel na literatura","Base da classificação","Fonte primária","Linhagem conceitual / relação","Problema / tensão","Mecanismo / achado","Desenho / tipo de fonte","Amostra / dados","Contexto","Processo / etapa","Atores / papéis","Ação / decisão","Evidência observável","Condições de contorno","Limitações","Transferibilidade","Papel / força","Locator","Rótulo epistêmico","Observações"],"A1:Y1",{"A":14,"B":36,"C":24,"D":26,"E":42,"F":24,"G":38,"H":22,"I":42,"J":36,"K":42,"L":24,"M":28,"N":24,"O":22,"P":22,"Q":24,"R":34,"S":34,"T":30,"U":34,"V":20,"W":34,"X":18,"Y":28}),
       ("10_SINTESE","SÍNTESE ENTRE FONTES","Convergências, contradições, limites e inferências explicitamente rastreadas.",["Synthesis_ID","Tema / Categoria","Evidence_IDs","Padrão entre fontes","Contradições","Condições de contorno","Inferência","Status epistêmico","Decisão","Claim_IDs","Trace_ID"],"A1:K1",{"A":14,"B":28,"C":28,"D":46,"E":36,"F":36,"G":44,"H":18,"I":30,"J":24,"K":16}),
@@ -188,7 +197,7 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
     ]
     for name,ttl,subt,heads,span,wmap in definitions:
         sh=wb.worksheets.add(name); title(sh,ttl,subt,span)
-        end=chr(64+len(heads)) if len(heads)<=26 else "Z"
+        end=excel_column(len(heads))
         sh.get_range(f"A4:{end}4").values=[heads]; hdr(sh,f"A4:{end}4")
         body(sh,f"A5:{end}500"); widths(sh,wmap); sh.freeze_panes.freeze_rows(4)
         if name=="09_MATRIZ_EVID":
@@ -308,6 +317,8 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
     ]
     wb.worksheets.get_item("07_SCREENING").get_range("K5:K1000").data_validation={"rule":{"type":"list","values":lists["PASS1"]}}
     wb.worksheets.get_item("07_SCREENING").get_range("M5:M1000").data_validation={"rule":{"type":"list","values":lists["PASS2"]}}
+    wb.worksheets.get_item("07_SCREENING").get_range("S5:S1000").data_validation={"rule":{"type":"list","values":lists["PASS1"]}}
+    wb.worksheets.get_item("07_SCREENING").get_range("Y5:Y1000").data_validation={"rule":{"type":"list","values":lists["PASS2"]}}
     wb.worksheets.get_item("09_MATRIZ_EVID").get_range("T5:T500").data_validation={"rule":{"type":"list","values":lists["EPISTEMICO"]}}
     ai=wb.worksheets.get_item("12_USO_IA")
     ai.get_range("K5:K500").data_validation={"rule":{"type":"list","values":lists["MATERIALIDADE_IA"]}}

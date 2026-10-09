@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Separate AI-only screening suggestions from researcher-attributed final Pass1/Pass2 selection decisions in existing screening records.
+- Require evidence and rationale for exclusions, resolve AI-human disagreements explicitly, and block corpus freeze when human screening remains incomplete.
+- Provide a standard-library screening CLI with adversarial regression tests for omitted, conflicting, and retrospectively altered decisions.
+- Extend 07_SCREENING with provenance columns while retaining original decision positions, dashboard formulas, and canonical IDs.
+
 - Add a reproducible quality-calibration framework with a frozen set of factual citations and published review-selection totals.
 - Score observed manuscript outputs against published DOI/title/count facts and local textual locators, reporting explicit coverage and non-evaluated dimensions rather than invented success rates.
 - Separate independent claim adjudications and conceptual-category review from metadata matching and software tests.

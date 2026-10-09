@@ -243,6 +243,20 @@ def record_gate(args)->int:
         )
         formative_notes=(args.notes.rstrip()+"\n" if args.notes.strip() else "")+encoded
 
+    # A corpus may only be frozen when every nonduplicate screened record
+    # has a defensible selection decision backed by human review evidence.
+    if args.gate_id=="GATE-0004" and decision in {"APPROVED","APPROVED_WITH_CHANGES"} and cfg.get("screening_human_decisions_required") is True:
+        from screening_review import read_table, audit_rows as screening_audit
+        try:
+            _, headers, screening_rows=read_table(root)
+        except ValueError as exc:
+            raise SystemExit(f"cannot approve corpus freeze: {exc}")
+        if not screening_rows:
+            raise SystemExit("cannot approve corpus freeze: screened corpus has no records")
+        findings=screening_audit(screening_rows,enforce=True,freeze=True,headers=headers)
+        if findings["errors"]:
+            raise SystemExit("cannot approve corpus freeze: "+"; ".join(findings["errors"][:5]))
+
     tid=record_trace(
         root,
         stage=target.get("Scientific_stage") or "",

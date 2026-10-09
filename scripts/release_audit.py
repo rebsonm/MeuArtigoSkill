@@ -49,6 +49,8 @@ REQUIRED=[
     "scripts/validate_project.py",
     "scripts/verify_sources.py",
     "scripts/trace_execution.py",
+    "scripts/screening_review.py",
+    "docs/SCREENING-AUDITAVEL.md",
     "scripts/quality_benchmark.py",
     "benchmarks/public_review_reference_v1.json",
     "docs/AVALIACAO-QUALIDADE-CIENTIFICA.md",

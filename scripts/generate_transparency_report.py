@@ -74,6 +74,9 @@ def report_data(root:Path)->dict:
     included=sum(1 for r in screening if (r.get("Pass1_decision") or "").upper()=="INCLUDE")
     borderline=sum(1 for r in screening if (r.get("Pass1_decision") or "").upper()=="BORDERLINE")
     excluded=sum(1 for r in screening if (r.get("Pass1_decision") or "").upper()=="EXCLUDE")
+    from screening_review import audit_rows as audit_screening_rows
+    screening_checks=audit_screening_rows(screening,enforce=True)
+
     substantive=[r for r in ai if (r.get("Materiality") or "").upper()=="SUBSTANTIVE"]
     substantive_pending=[
         r for r in substantive
@@ -123,6 +126,11 @@ def report_data(root:Path)->dict:
             "screening_include":included,
             "screening_borderline":borderline,
             "screening_exclude":excluded,
+            "screening_ai_suggestions":screening_checks["counts"]["ai_suggestions"],
+            "screening_unreviewed_suggestions":screening_checks["counts"]["unreviewed_suggestions"],
+            "screening_recorded_pass1":screening_checks["counts"]["recorded_pass1"],
+            "screening_recorded_pass2":screening_checks["counts"]["recorded_pass2"],
+            "screening_documentation_errors":len(screening_checks["errors"]),
             "fulltext_records":len(fulltext),
             "evidence_items":len(evidence),
             "synthesis_items":len(synthesis),
@@ -233,6 +241,11 @@ def main()->int:
         f"- Pass-1 INCLUDE: {c['screening_include']}",
         f"- Pass-1 BORDERLINE: {c['screening_borderline']}",
         f"- Pass-1 EXCLUDE: {c['screening_exclude']}",
+        f"- AI screening suggestions (not final decisions): {c['screening_ai_suggestions']}",
+        f"- Suggestions awaiting human review: {c['screening_unreviewed_suggestions']}",
+        f"- Recorded Pass-1/Pass-2 final decisions: {c['screening_recorded_pass1']} / {c['screening_recorded_pass2']}",
+        f"- Screening provenance problems: {c['screening_documentation_errors']}",
+        "- Recorded reviewer fields are attestations, not independent authentication of human identity.",
         f"- Full-text tracker records: {c['fulltext_records']}",
         "",
         "### Executed searches",
