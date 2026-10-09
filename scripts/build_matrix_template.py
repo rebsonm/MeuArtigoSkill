@@ -7,7 +7,7 @@ references/spreadsheet-template.md.
 
 Usage:
   python build_matrix_template.py --output /path/MATRIZ_MESTRA_projeto.xlsx \
-      --project-name "Projeto" --problem "Problema..." --article-type undecided
+      --project-name "Project" --problem "Research problem..." --article-type undecided
 """
 from __future__ import annotations
 
@@ -37,7 +37,7 @@ STAGES=[
 ["01","Auditoria de novidade","Literatura mais próxima avaliada; contribuição/pergunta refinada."],
 ["02",'Method/design','Type of article/review defined and justified.'],
 ["03","Protocolo",'Frozen scope, criteria, bases, search families and rules.'],
-["04","Execução das buscas","Buscas executadas e registradas."],
+["04","Search execution","Searches performed and documented."],
 ["05","Validation de exports","Exports conferidos; rodadas inválidas isoladas."],
 ["06","Deduplicação","Corpus canônico e auditoria de duplicatas."],
 ["07","Screening","Decisões e justificativas registradas."],
@@ -47,7 +47,7 @@ STAGES=[
 ["11",'Dialogue with magazine','Journal adherence and conversation recorded.'],
 ["12","Manuscrito",'Writing anchored in evidence and provenance.'],
 ["13","Auditoria final",'Method, counts, claims, AI and references reconciled.'],
-["14","Submissão","Arquivos, checklist, protocolo e comprovante preservados."],
+["14","Submissão","Files, checklist, protocol and receipts preserved."],
 ]
 
 def excel_column(index:int)->str:
@@ -83,7 +83,7 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
     wb=Workbook.create()
 
     cfg=wb.worksheets.add("15_CONFIG")
-    title(cfg,"CONFIGURAÇÕES E DICIONÁRIOS","Listas controladas, etapas e parâmetros.","A1:H1")
+    title(cfg,"CONFIGURATION AND VOCABULARIES","Controlled lists, stages and settings.","A1:H1")
     cfg.get_range("A4:D4").values=[["Lista","Value","Descrição","Ordem"]]; hdr(cfg,"A4:D4")
     lists={
       "CADA_STATUS":["CAPTURED","ASSIGNED","READY","IN_PROGRESS","WAITING","BLOCKED","DONE","CANCELLED","SUPERSEDED"],
@@ -172,7 +172,7 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
     cada.freeze_panes.freeze_rows(4); cada.freeze_panes.freeze_columns(3)
 
     tl=wb.worksheets.add("02_LINHA_TEMPO")
-    title(tl,"LINHA DO TEMPO E RASTREABILIDADE","Como chegamos até aqui: eventos materiais da construção científica.","A1:T1")
+    title(tl,"TIMELINE AND TRACEABILITY","How we arrived here: material events in the scientific development process.","A1:T1")
     th=["Trace_ID","Timestamp","Stage","CADA_ID","Actor","Tool / AI","Model / version","Action type",'Action summary','Input/Source',"Decision / output","Rationale","Artifact before","Artifact after",'Verification method','Human validation',"Related IDs","Materiality","Status",'Observations']
     tl.get_range("A4:T4").values=[th]; hdr(tl,"A4:T4")
     tl.get_range("A5:T5").values=[["TRACE-0001",datetime.now(),"00","CADA-0001","SCRIPT","build_matrix_template.py","","WORKSPACE_INITIALIZATION","Inicialização da matriz C.A.D.A. e rastreabilidade.","Entrada inicial","Estrutura canônica criada",'Start provenance before substantive search',"","Matrix created","Conferência dos artefatos","PENDING","CADA-0001","ADMINISTRATIVE","COMPLETE",""]]
@@ -250,7 +250,7 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
       ["GATE-0004","CORPUS_FREEZE","08-09","Corpus freeze","Screening and full-text review closed with reconciled counts.","Eligible corpus, exclusions, duplicates and final counts.","","","","","PENDING","","","","","","","PENDING","Extração/síntese final do corpus",""],
       ["GATE-0005","SYNTHESIS","10","Synthesis and theoretical product","Cross-source synthesis stabilized.","Categories, contradictions, inferences and propositions/models.","","","","","PENDING","","","","","","","PENDING","Substantive manuscript drafting",""],
       ["GATE-0006","CLAIMS_AUDIT","12-13","Claims and scientific audit",'Main claims linked to evidence; contrary evidence, alternative explanations, source dependence and audited limits.','Claims, Evidence_IDs, Counter_Evidence_IDs, locators, alternative explanations, boundary conditions, source dependency, robustness, use of AI, and applicable editorial adherence.',"","","","","PENDING","","","","","","","PENDING","Final version release",""],
-      ["GATE-0007","SUBMISSION_RELEASE","14","Submission readiness approval",'Canonical version, checklist, magazine profile, anonymization and transparency reconciled.',"Manuscrito final, JOURNAL_PROFILE, perfil de anonimização, ANONYMIZATION_AUDIT, metadados ocultos, conformidade com regras oficiais, disclosures e arquivos exatos de submissão.","","","","","PENDING","","","","","","","PENDING","External submission",""],
+      ["GATE-0007","SUBMISSION_RELEASE","14","Submission readiness approval",'Canonical version, checklist, magazine profile, anonymization and transparency reconciled.',"Final manuscript, JOURNAL_PROFILE, anonymization profile, ANONYMIZATION_AUDIT, hidden metadata, verified official rules, AI-use disclosures and exact submission artifacts.","","","","","PENDING","","","","","","","PENDING","External submission",""],
     ]
     gates.get_range("A5:T11").values=gate_seed
     gates.get_range("K5:K100").data_validation={"rule":{"type":"list","values":lists["GATE_DECISION"]}}
@@ -287,14 +287,14 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
 
     cmap.get_range("A12:B12").values=[["Publicações por ano","Count"]]; hdr(cmap,"A12:B12")
     cmap.get_range("D12:E12").values=[['Most recurring authors',"Count"]]; hdr(cmap,"D12:E12")
-    cmap.get_range("G12:H12").values=[["Periódicos / fontes","Count"]]; hdr(cmap,"G12:H12")
+    cmap.get_range("G12:H12").values=[["Journals / sources","Count"]]; hdr(cmap,"G12:H12")
     cmap.get_range("J12:K12").values=[["Keywords / conceitos","Count"]]; hdr(cmap,"J12:K12")
     cmap.get_range("M12:O12").values=[["Estrutura de rede","Value","Regra / observação"]]; hdr(cmap,"M12:O12")
     body(cmap,"A13:B40"); body(cmap,"D13:E40"); body(cmap,"G13:H40"); body(cmap,"J13:K40"); body(cmap,"M13:O40")
     cmap.get_range("M13:M17").values=[['edge method'],["Clusters"],["Artigos-ponte"],["Cobertura de enriquecimento"],["Warnings"]]
     cmap.get_range("M13:M17").format=LABEL
     cmap.get_range("N13:O17").values=[
-      ["","Somente preencher quando existir modelo real de rede."],
+      ["","Populate only if there is a real, documented network model."],
       ["",'Do not generate bibliometric clusters based on semantic similarity alone.'],
       ["",'Require operational basis: citation, co-authorship, coupling, co-citation or co-occurrence.'],
       ["",'Register OpenAlex/Crossref or other source when actually used.'],
@@ -335,7 +335,7 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
 
     dash=wb.worksheets.add("00_PAINEL")
     title(dash,'MEU ARTIGO — SCIENTIFIC GOVERNANCE PANEL',"Where are we? What remains? How did we get here? Where was AI used?","A1:L1")
-    dash.get_range("A4:B4").values=[["Projeto","Value"]]; hdr(dash,"A4:B4")
+    dash.get_range("A4:B4").values=[["Project","Value"]]; hdr(dash,"A4:B4")
     dash.get_range("A5:A11").values=[['Title'],['Current stage'],["Management mode"],["External work manager"],["Last updated"],["Target journal"],["Modo editorial"]]
     dash.get_range("A5:A11").format=LABEL
     dash.get_range("B5").formulas=[["=IFERROR(INDEX('03_PROJETO'!$B$5:$B$30,MATCH(\"Short project title\",'03_PROJETO'!$A$5:$A$30,0)),\"[TO DEFINE]\")"]]
