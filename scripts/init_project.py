@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse, csv, json, re, subprocess, sys
 from datetime import date
 from pathlib import Path
+from method_routes import ROUTES, gate_rows, infer_route, new_profile
 
 FOLDERS = [
     "00_Gestao_e_Continuidade",
@@ -116,7 +117,7 @@ def seed_cada(path:Path, project_name:str, pm_provider:str):
         w.writeheader(); w.writerows(rows)
 
 
-def seed_gates(path:Path):
+def seed_gates(path:Path, route:str="UNDECIDED"):
     with path.open("r",encoding="utf-8-sig",newline="") as f:
         existing=list(csv.DictReader(f))
     if existing:
@@ -133,7 +134,7 @@ def seed_gates(path:Path):
     with path.open("w",newline="",encoding="utf-8-sig") as f:
         w=csv.writer(f)
         w.writerow(TABLES["00_Gestao_e_Continuidade/18_Human_Validation_Gates.csv"])
-        w.writerows(rows)
+        w.writerows(gate_rows(route, rows))
 
 def main()->int:
     ap=argparse.ArgumentParser()
@@ -141,6 +142,7 @@ def main()->int:
     ap.add_argument("--name",required=True)
     ap.add_argument("--problem",default="")
     ap.add_argument("--article-type",default="undecided")
+    ap.add_argument("--method-route",choices=ROUTES,default="",help="Specific research route. Ambiguous article types stay UNDECIDED; confirmation remains human.")
     ap.add_argument("--target-journal",default="")
     ap.add_argument("--journal-guidelines-source",default="",help="Official author-guidelines URL/file when already known")
     ap.add_argument("--journal-template-source",default="",help="Official journal template/layout URL/file when already known")
@@ -151,6 +153,7 @@ def main()->int:
     ap.add_argument("--fallback-authorized-by",default="",help="Required for WORK_FALLBACK; exact actor/user who explicitly authorized continuing without Drive")
     ap.add_argument("--fallback-authorized-at",default="",help="ISO date/time of explicit fallback authorization")
     a=ap.parse_args()
+    method_route=a.method_route or infer_route(a.article_type)
 
     pm=(a.pm_provider or "").strip().lower()
     storage_mode=(a.storage_mode or "").strip().upper()
@@ -180,6 +183,9 @@ def main()->int:
             "project_name":a.name,
             "research_input":a.problem,
             "article_type":a.article_type,
+            "method_route":method_route,
+            "method_route_governance_required":True,
+            "method_route_version":1,
             "created":date.today().isoformat(),
             "status":"INITIALIZED",
             "cada_governance":True,
@@ -339,7 +345,11 @@ def main()->int:
             w=csv.writer(f); w.writerow(TABLES["00_Gestao_e_Continuidade/10_Submission_Checklist.csv"]); w.writerows(submission_rows)
 
     seed_cada(root/"00_Gestao_e_Continuidade/11_CADA_Control.csv",a.name,pm)
-    seed_gates(root/"00_Gestao_e_Continuidade/18_Human_Validation_Gates.csv")
+    method_profile=root/"00_Gestao_e_Continuidade/METHOD_PROFILE.json"
+    if not method_profile.exists():
+        method_profile.write_text(json.dumps(new_profile(method_route, a.article_type),
+            ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    seed_gates(root/"00_Gestao_e_Continuidade/18_Human_Validation_Gates.csv",method_route)
 
     trace=root/"00_Gestao_e_Continuidade/13_Traceability_Log.csv"
     with trace.open("r",encoding="utf-8-sig",newline="") as f:
@@ -460,6 +470,8 @@ Updated: {date.today().isoformat()}
 {a.problem or '[USER INPUT REQUIRED]'}
 
 ## 2. Current research object
+- Scientific route: {method_route} — pending actual researcher confirmation
+- Route configuration: 00_Gestao_e_Continuidade/METHOD_PROFILE.json
 - Current question: [TO REFINE]
 - Objective: [TO REFINE]
 - Intended contribution: [TO REFINE]
@@ -467,6 +479,7 @@ Updated: {date.today().isoformat()}
 - Scope and exclusions: [TO DEFINE]
 
 ## 3. Tool and plugin status
+- Method route: {method_route} — planning only, not scientific validation
 - Storage policy: GOOGLE_DRIVE_FIRST
 - Storage mode: {storage_mode}
 - Storage state: {storage_state}
@@ -650,6 +663,13 @@ Updated: {date.today().isoformat()}
 ## Article/review design
 {a.article_type}
 
+## Method route and coherence profile
+- Proposed route: {method_route}
+- Human confirmation: PENDING_HUMAN_DECISION
+- Canonical planning profile: 00_Gestao_e_Continuidade/METHOD_PROFILE.json
+- Evidence of executed collection, analysis or evaluation: NOT_EXECUTED
+- Method-specific controls: consult the route profile; do not imply execution of research.
+
 ## Target journal / editorial contract
 - Target journal: {target_journal or 'TO_DEFINE'}
 - Construction mode: {journal_mode}
@@ -662,7 +682,7 @@ Updated: {date.today().isoformat()}
 [TO DEFINE]
 
 ## Databases and source roles
-[TO DEFINE]
+[TO DEFINE WHEN RELEVANT TO THE CHOSEN METHOD; NOT AN AUTOMATIC REVIEW PROTOCOL]
 
 ## Date/language/document-type rules
 [TO DEFINE]
@@ -677,10 +697,10 @@ Updated: {date.today().isoformat()}
 [TO DEFINE AND VERSION]
 
 ## Screening and full-text rules
-[TO DEFINE]
+[TO DEFINE IF THIS STUDY USES BIBLIOGRAPHIC ELIGIBILITY/SCREENING]
 
 ## Synthesis/stopping rule
-[TO DEFINE]
+[TO DEFINE PER METHOD ROUTE: theoretical synthesis, empirical analysis, integration or artefact evaluation]
 """,encoding="utf-8")
 
     print(root)

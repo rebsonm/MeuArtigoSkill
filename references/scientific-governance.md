@@ -148,7 +148,24 @@ GATE-0006 — Claims / final scientific audit
 GATE-0007 — Submission release, including anonymization and outgoing-file audit
 ```
 
-Adapt or mark NOT_APPLICABLE when the design makes a gate irrelevant. Do not invent additional gates unless there is a genuine scientific-risk reason.
+In method-aware new projects, the **meaning** of the existing GATE-0003,
+GATE-0004 and GATE-0005 varies according to the route documented in
+[operational method routes](../docs/ROTAS-METODOLOGICAS.md). A quantitative
+data audit is not a freeze of screened bibliographic studies; a mixed-method
+integration audit is not merely a theoretical synthesis. GATE-0002–GATE-0007
+require the preceding scientific gate to have been approved, or for the
+literature-positioning stage only, exceptionally and human-justifiably
+marked not applicable. A route selection requires a real `DEC_ID`.
+
+Older workspaces, without `method_route_governance_required`, continue
+to use their existing rules; never rewrite historical decisions or gates.
+
+Adapt or mark NOT_APPLICABLE when the design makes a gate irrelevant, **but do
+not use that status to bypass methodological choice, data/artefact readiness,
+substantive analysis/integration/evaluation, or scientific-claim audit** in
+new route-aware projects. A truly irrelevant contextual-literature step
+requires an attributable human rationale and source. Do not invent additional
+gates unless there is a genuine scientific-risk reason.
 
 For GATE-0007, anonymization is part of the existing submission-release gate rather than a new gate. Approval requires a VERIFIED anonymization profile or explicit NOT_REQUIRED rationale, journal-rule reconciliation when applicable, and a passing audit of the exact outgoing files.
 

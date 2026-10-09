@@ -15,6 +15,17 @@ Três níveis que não se confundem:
 
 Em todo artigo, distinguir **[L] literatura sustentada e localizável**, **[I] inferência analítica delimitada**, **[P] proposição original do autor**. Ter DOI real, arquivo em mãos, citação correta ou tarefa concluída não prova que um claim é semanticamente sustentado nem que o artigo apresenta contribuição inédita.
 
+## Instrumentação da escolha metodológica
+
+A implementação prática está em [rotas metodológicas](../docs/ROTAS-METODOLOGICAS.md).
+A descrição da Cebola de Pesquisa e das famílias de pesquisa, nas seções
+posteriores, funciona como **orientação condicional**. O programa apenas
+verifica a presença, o vínculo e o estado formal de decisões/evidências; não
+calcula poder estatístico, identifica efeitos causais, comprova validade
+epistemológica ou interpreta automaticamente dados qualitativos. O autor
+precisa documentar a escolha e os limites, sem transformar categorias
+metodológicas em uma escala automática de qualidade.
+
 ## Roteiro de consulta seletiva
 
 Este mapa é extenso por necessidade de fundamentação, **não para ser integralmente aplicado a cada pesquisa**. Consulte somente o caminho pertinente: revisões e artigos conceituais (seções 1–2), desenho geral e métodos quantitativos/mistos (seção 3), tradições qualitativas específicas (seção 4), artefatos e avaliação (seção 5), ética/IA (seção 6), adequação da evidência (seção 7), orientações operacionais (seções 8–9) e bibliografia (seção 10). Preserve os princípios gerais de rastreabilidade e limites científicos; não imponha requisitos de métodos irrelevantes ao desenho escolhido.

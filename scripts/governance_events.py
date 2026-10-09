@@ -29,6 +29,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from formative_gates import SCIENTIFIC_GATES, APPROVALS, response_issues, encode_formative
+from method_routes import approval_issues
 
 MGMT="00_Gestao_e_Continuidade"
 DEC_FILE=f"{MGMT}/17_Decision_Log.csv"
@@ -237,6 +238,19 @@ def record_gate(args)->int:
         if management_only(args.evidence) or management_only(args.method):
             raise SystemExit("scientific gate approval needs an independent review source, not a C.A.D.A. task status")
 
+    # A route-aware project cannot bypass a critical methodological stage
+    # by marking it NOT_APPLICABLE without attributable human reasoning.
+    if cfg.get("method_route_governance_required") is True:
+        if decision in APPROVALS:
+            route_problems=approval_issues(root,cfg,args.gate_id)
+            if route_problems:
+                raise SystemExit("method-route gate not ready: "+"; ".join(route_problems[:8]))
+        if decision=="NOT_APPLICABLE":
+            if args.gate_id in {"GATE-0002","GATE-0004","GATE-0005","GATE-0006"}:
+                raise SystemExit("critical methodological/scientific gate cannot be bypassed as NOT_APPLICABLE")
+            if not args.validated_by.strip() or not args.evidence.strip() or len(args.notes.strip())<40:
+                raise SystemExit("NOT_APPLICABLE requires a real reviewer, evidence and a substantive design-specific reason")
+
     formative_notes=args.notes
     if formative:
         encoded=encode_formative(
@@ -250,7 +264,10 @@ def record_gate(args)->int:
 
     # A corpus may only be frozen when every nonduplicate screened record
     # has a defensible selection decision backed by human review evidence.
-    if args.gate_id=="GATE-0004" and decision in {"APPROVED","APPROVED_WITH_CHANGES"} and cfg.get("screening_human_decisions_required") is True:
+    if (args.gate_id=="GATE-0004"
+            and (cfg.get("method_route_governance_required") is not True or target.get("Gate_type")=="CORPUS_FREEZE")
+            and decision in {"APPROVED","APPROVED_WITH_CHANGES"}
+            and cfg.get("screening_human_decisions_required") is True):
         from screening_review import read_table, audit_rows as screening_audit
         try:
             _, headers, screening_rows=read_table(root)
@@ -290,6 +307,17 @@ def record_gate(args)->int:
             raise SystemExit(f"cannot approve claim freeze: {exc}")
         if integrity["errors"]:
             raise SystemExit("cannot approve claim freeze: "+"; ".join(integrity["errors"][:6]))
+
+    # Distinguish bibliographic/locator checks from actual empirical findings.
+    if (args.gate_id=="GATE-0006" and decision in {"APPROVED","APPROVED_WITH_CHANGES"}
+            and cfg.get("method_route_governance_required") is True):
+        from scientific_evidence_tiers import audit as evidence_tier_audit
+        try:
+            tier_report=evidence_tier_audit(root,freeze=True)
+        except (OSError,ValueError,TypeError) as exc:
+            raise SystemExit(f"cannot inspect scientific evidence layers: {type(exc).__name__}")
+        if tier_report["errors"]:
+            raise SystemExit("cannot approve empirical provenance: "+"; ".join(tier_report["errors"][:6]))
 
     if (args.gate_id=="GATE-0007" and decision in {"APPROVED","APPROVED_WITH_CHANGES"}
             and cfg.get("editorial_ai_disclosure_required") is True):

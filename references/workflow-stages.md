@@ -2,6 +2,22 @@
 
 Read the section for the current stage; retain its controls when executing that stage.
 
+**Scope of the numbered stages:** Sections 2–9 below operationalize
+**bibliographic review projects**. The sequence is **not obligatory**
+for empirical qualitative, quantitative, mixed-method or design science
+studies, or for non-exhaustive theoretical/problematising contributions.
+Use the [methodological routes](../docs/ROTAS-METODOLOGICAS.md) to replace
+inapplicable search/screening requirements with actual data, material,
+analysis, integration or artefact evaluation decisions. The existing seven
+scientific gates are adapted to each selected method; no new gates or ID
+families are needed. Researchers must authorize consequential decisions;
+there is no automatic execution of scientific studies.
+
+At all routes retain the universal safeguards: original input,
+source consultation traceability, critical appraisal appropriate to
+evidence type, [L]/[I]/[P] separation, AI disclosure, researcher decisions,
+scientific limits and journal-specific rules.
+
 ## Stage 1 — Audit the idea before exhaustive searching
 
 Convert the user input into a provisional research object:
