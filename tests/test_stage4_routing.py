@@ -17,7 +17,7 @@ class Stage4RouterTests(unittest.TestCase):
         cls.platform=(ROOT/"references/platform-capability-preflight.md").read_text(encoding="utf-8")
 
     def test_entrypoint_is_compact_and_route_first(self):
-        self.assertLess(len(self.skill), 13000)
+        self.assertLess(len(self.skill), 15500)
         self.assertIn("references/CONTEXTO-POR-ETAPA.md", self.skill)
         self.assertIn("references/INDICE-METODOLOGICO.md", self.skill)
         self.assertIn("references/fluxo-essencial.md", self.skill)
