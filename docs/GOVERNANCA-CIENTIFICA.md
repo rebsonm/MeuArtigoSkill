@@ -20,7 +20,7 @@ Three questions were missing:
 
 > What exactly was the official status of the project at that time?
 
-My Article answers these questions with three identifiers.
+Meu Artigo answers these questions with three identifiers.
 
 ---
 
@@ -35,13 +35,13 @@ Example:
 DEC-0014
 
 Pergunta decisória:
-Qual desenho de revisão melhor responde ao objetivo?
+Which review design best answers the objective?
 
 Decisão:
-Revisão integrativa.
+Integrative review.
 
 Alternativas consideradas:
-Revisão sistemática; scoping review.
+Systematic review or scoping review.
 
 Justificativa:
 O objetivo exige síntese conceitual de literatura heterogênea.
@@ -172,7 +172,7 @@ The chain exists to reconstruct material scientific transitions.
 <a id="relatório-para-revisoreditor"></a>
 ## Report to Reviewer/Editor
 
-My Article can generate:
+Meu Artigo can generate:
 
 ```text
 RELATORIO_TRANSPARENCIA_<timestamp>.md
@@ -202,10 +202,10 @@ It is not a dump of the private workspace.
 Register a proposal (default state PROPOSED, no human approval assumed):
 
 ```bash
-python scripts/governance_events.py decision /projeto \
+python scripts/governance_events.py decision /project \
   --type METHOD \
   --question "Qual desenho metodológico?" \
-  --decision "Revisão integrativa" \
+  --decision "Integrative review" \
   --rationale "..."
 ```
 
@@ -214,12 +214,12 @@ To approve a decision, also inform `--status APPROVED`, `--decided-by` and `--ev
 Approve a gate:
 
 ```bash
-python scripts/governance_events.py gate /projeto \
+python scripts/governance_events.py gate /project \
   --gate-id GATE-0002 \
   --decision APPROVED \
-  --validated-by "Pesquisador" \
+  --validated-by "Researcher" \
   --method "Revisão do protocolo e das strings" \
-  --evidence "Referência à resposta real do pesquisador"
+  --evidence "Reference to the researcher’s actual response"
 ```
 
 When approving a gate, the post-gate snapshot is automatically created.
@@ -238,7 +238,7 @@ python scripts/compare_snapshots.py SNAP_A SNAP_B
 Generate report:
 
 ```bash
-python scripts/generate_transparency_report.py /projeto
+python scripts/generate_transparency_report.py /project
 ```
 
 ---
