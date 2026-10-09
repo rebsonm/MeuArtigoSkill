@@ -98,6 +98,8 @@ Optionally also maintain a human-readable:
 }
 ```
 
+An official `ai_disclosure_policy` now records verified source/date, statement placement and category-specific editorial rules. `ai_disclosure_attestation` records the researcher's direct confirmation of the AI-use log and its hash. Free-text `formal_contract.ai_policy` alone does not authorize a final declaration. See [editorial AI declaration](../docs/DECLARACAO-EDITORIAL-IA.md).
+
 Never fill an unknown field by guessing.
 
 ## Two layers

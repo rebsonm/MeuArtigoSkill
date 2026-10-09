@@ -291,6 +291,16 @@ def record_gate(args)->int:
         if integrity["errors"]:
             raise SystemExit("cannot approve claim freeze: "+"; ".join(integrity["errors"][:6]))
 
+    if (args.gate_id=="GATE-0007" and decision in {"APPROVED","APPROVED_WITH_CHANGES"}
+            and cfg.get("editorial_ai_disclosure_required") is True):
+        from editorial_ai_disclosure import verify_final
+        try:
+            problems=verify_final(root)
+        except (ValueError,OSError) as exc:
+            raise SystemExit(f"AI editorial disclosure not ready: {type(exc).__name__}")
+        if problems:
+            raise SystemExit("AI editorial disclosure not ready: "+"; ".join(problems[:5]))
+
     tid=record_trace(
         root,
         stage=target.get("Scientific_stage") or "",

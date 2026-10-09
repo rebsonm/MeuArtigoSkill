@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Generate journal-aware AI-use disclosures only from recorded AI events, with explicit categories and human review evidence.
+- Require an official journal policy and a hash-bound researcher attestation of log completeness before the final statement.
+- Verify policy, AI log and final statement integrity at GATE-0007 and keep incomplete cases as drafts.
+- Preserve the same AI-use sheet and identifiers and add offline regression tests; no paid services.
+
+
 - Separate lawful local full-text access from rights to redistribute source documents.
 - Extend existing Record_ID tracker and 08_FULL_TEXT worksheet with source-specific rights basis, license evidence, attribution, permission scope and SHA-256.
 - Require per-file documented rights plus explicit attestation for optional full-text RO-Crate export, failing closed before logging or copying documents.

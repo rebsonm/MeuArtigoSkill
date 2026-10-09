@@ -119,6 +119,13 @@ def report_data(root:Path)->dict:
         if (r.get("Status") or "").upper() not in {"COMPLETED","NOT_APPLICABLE"}
     ]
 
+    from editorial_ai_disclosure import assess as check_ai_disclosure
+    try:
+        disclosure=check_ai_disclosure(root)
+    except (ValueError,OSError):
+        disclosure={"status":"NOT_READY","count":0,"errors":["Editorial AI evidence missing"],
+                    "warnings":[],"journal":"","location":""}
+
     boundary=audit_cada_boundary(root,strict=False)
 
     return {
@@ -161,6 +168,7 @@ def report_data(root:Path)->dict:
             "corpus_map_generated":1 if corpus_map else 0,
         },
         "governance_boundary":boundary,
+        "editorial_ai_disclosure":disclosure,
         "executed_searches":executed_searches,
         "decisions":decisions,
         "gates":gates,
@@ -364,6 +372,12 @@ def main()->int:
         lines.append("- No substantive AI use recorded.")
 
     lines += [
+        "",
+        "### Editorial AI disclosure",
+        f"- AI disclosure status: {data['editorial_ai_disclosure']['status']}",
+        f"- AI use records considered: {data['editorial_ai_disclosure']['count']}",
+        f"- Disclosure policy or evidence problems: {len(data['editorial_ai_disclosure']['errors'])}",
+        "- Editorial acceptance and final manuscript placement are not independently certified.",
         "",
         "## 8. Interoperability / provenance exports",
         f"- W3C PROV / RO-Crate exports: {c['interop_exports']}",
