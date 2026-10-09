@@ -77,6 +77,9 @@ def convert_source(path):
     for token in line_tokens:
         if token.type!=tokenize.STRING:
             continue
+        if token.start[0] != token.end[0]:
+            # A multiline literal requires structural/editorial review.
+            continue
         literal=token.string
         if literal.lower().startswith(("r'",'r"','b"', "b'", "f'",'f"')):
             continue
