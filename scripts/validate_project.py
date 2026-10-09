@@ -199,6 +199,7 @@ def main():
         if gate_path.is_file():
             g4_approved=any(
                 (r.get("GATE_ID") or "").strip()=="GATE-0004"
+                and (r.get("Gate_type") or "").strip()=="CORPUS_FREEZE"
                 and (r.get("Status") or "").upper()=="COMPLETED"
                 and (r.get("Decision") or "").upper() in {"APPROVED","APPROVED_WITH_CHANGES"}
                 for r in rows(gate_path)
