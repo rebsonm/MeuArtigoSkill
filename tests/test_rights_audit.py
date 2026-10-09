@@ -97,6 +97,12 @@ class RightsTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"source-specific"):
             rights.authorize_external_fulltext(self.root)
 
+    def test_generic_license_page_is_not_specific_article_rights_evidence(self):
+        row={**self.row,"Rights_evidence":"https://creativecommons.org/licenses/by/4.0/"}
+        self.write_tracker([row])
+        with self.assertRaisesRegex(ValueError,"source-specific"):
+            rights.authorize_external_fulltext(self.root)
+
     def test_missing_attribution_is_not_a_valid_export(self):
         self.write_tracker([{**self.row,"Attribution_text":""}])
         with self.assertRaisesRegex(ValueError,"attribution"):
