@@ -75,6 +75,18 @@ Do not convert a project into a systematic review merely because it uses PRISMA-
 
 PRISMA is primarily a reporting guideline for systematic reviews. Elements such as a transparent identification/screening flow can inspire reporting in other designs, but do not change the method label.
 
+## Empirical design coherence: research onion
+
+When the user proposes empirical research, consult [the expanded methodological foundations](methodological-foundations.md#31-a-cebola-de-pesquisa-research-onion-integração-das-escolhas) before labeling the design. Interpret Saunders, Lewis and Thornhill's research onion as an aid for aligning question, philosophical premises (where pertinent), deductive/inductive/abductive reasoning, method choice, strategy, temporal horizon and actual collection/analysis procedures. These choices constrain one another but are not deterministic. Do not force a single philosophy on all quantitative or mixed studies or require the researcher to complete six artificial gates.
+
+**Quantitative:** first distinguish descriptive, associational, predictive and causal aims, then identify unit/population, measure and sampling, time structure, analysis plan and inferential limitations. A regression or before/after contrast does not independently warrant causal language. Do not claim computed power, executed tests or verified model assumptions without data and execution receipts.
+
+**Mixed:** require a substantive reason for both quantitative and qualitative strands, each with appropriate quality criteria. Distinguish convergent, explanatory sequential (QUAN → QUAL) and exploratory sequential (QUAL → QUAN) designs. Record the point of actual integration — connecting, building, merging or embedding — and its expected meta-inference; preserve discordance. Adjacent sections with percentages and interviews do not by themselves constitute integrated mixed methods.
+
+**Qualitative:** retain epistemological and interpretive requirements of the chosen tradition rather than imposing quantitative criteria as a universal threshold.
+
+These are methodological prompts and safeguards, **not** performance certification or a new mandatory spreadsheet/identifier family.
+
 ## Empirical article guardrail
 
 For an empirical article, this skill can build:
