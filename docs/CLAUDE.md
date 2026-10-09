@@ -41,6 +41,20 @@ Na primeira utilização, basta apresentar o problema de pesquisa e deixar a pr�
 
 Claude reconhece Skills estruturadas com `SKILL.md`, arquivos de referência e scripts executáveis. A arquitetura de divulgação progressiva — metadados no frontmatter, instruções centrais e referências lidas sob demanda — é compatível com este repositório.
 
+## Preflight específico do Claude
+
+Segundo a documentação da Anthropic, no `claude.ai` Skills
+personalizadas podem ser importadas via ZIP, sujeitas ao plano e
+execução de código habilitada; no Claude Code as Skills são
+diretórios `SKILL.md` locais. Essas superfícies não devem ser
+tratadas como execução idêntica. Não presumir que ferramentas
+Python, filesystem, MCP e acesso à rede estejam disponíveis apenas
+porque o upload/instalação ocorreu.
+
+Leia o [preflight por capacidades](../references/platform-capability-preflight.md)
+antes de escolher uma automação. Teste efetivamente as operações
+autorizadas; não transformar mensagem textual em recibo.
+
 ## MCP e conectores
 
 O núcleo da Skill **não pressupõe nomes de ferramentas do ChatGPT**.
