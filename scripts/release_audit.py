@@ -17,6 +17,7 @@ ROOT=Path(__file__).resolve().parents[1]
 REQUIRED=[
     "VERSION",
     "LICENSE",
+    "NOTICE",
     "CONTRIBUTING.md",
     "SECURITY.md",
     "docs/IMPLANTACAO-BETA.md",
@@ -28,6 +29,7 @@ REQUIRED=[
     "docs/NOTAS-DA-VERSAO-0.8.0-beta.3.md",
     "docs/NOTAS-DA-VERSAO-0.8.0-beta.6.md",
     "docs/NOTAS-DA-VERSAO-0.8.0-beta.7.md",
+    "docs/NOTAS-DA-VERSAO-0.8.0-beta.8.md",
     "docs/MODO-NUCLEO-MINIMO.md",
     "docs/REPRODUCAO-REVISAO-INTEGRATIVA.md",
     "references/methodological-foundations.md",
@@ -120,22 +122,24 @@ def main()->int:
     else:
         errors.append("VERSION is empty")
 
-    # Public beta release consistency. The code is MIT, but third-party
+    # Public beta release consistency. The code is Apache-2.0, but third-party
     # article PDFs are NOT relicensed or distributable as software.
     license_text=(ROOT/"LICENSE").read_text(encoding="utf-8") if (ROOT/"LICENSE").exists() else ""
     onboarding=(ROOT/"docs/COMECE-AQUI.md").read_text(encoding="utf-8") if (ROOT/"docs/COMECE-AQUI.md").exists() else ""
     workflow=(ROOT/".github/workflows/release-audit.yml").read_text(encoding="utf-8") if (ROOT/".github/workflows/release-audit.yml").exists() else ""
-    if not license_text.startswith("MIT License"):
-        errors.append("Repository source license must match declared MIT")
-    if 'license: "MIT"' not in citation and "license: MIT" not in citation:
-        errors.append("CITATION.cff must identify the actual MIT source license")
+    if not license_text.lstrip().startswith("Apache License") or "END OF TERMS AND CONDITIONS" not in license_text:
+        errors.append("Repository source license must contain Apache License 2.0 terms")
+    if 'license: "Apache-2.0"' not in citation and "license: Apache-2.0" not in citation:
+        errors.append("CITATION.cff must identify Apache-2.0")
+    if "Rebson de Morais Mendes" not in (ROOT/"NOTICE").read_text(encoding="utf-8"):
+        errors.append("NOTICE must preserve original author attribution")
     if f"**Versão atual:** `{version}`" not in readme:
         errors.append("README does not display current VERSION")
     if "Enquanto o acesso não for aberto pelo autor" in onboarding:
         errors.append("Onboarding still falsely describes public repository as restricted")
     if "beta pública" not in onboarding.lower():
         errors.append("Public-beta access is not described in onboarding")
-    if not re.fullmatch(r"0\.8\.0-beta\.7", version):
+    if not re.fullmatch(r"0\.8\.0-beta\.8", version):
         errors.append("Current release audit expects the public beta version 0.8.0-beta.7")
     if not all(name in workflow for name in ["LICENSE", "SHA256SUMS.txt",
                                                "build_skill_bundle.py", "gh release create",
