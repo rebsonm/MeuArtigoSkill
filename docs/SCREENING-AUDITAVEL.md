@@ -30,11 +30,11 @@ The old fields Pass1_decision/Pass1_reason and Pass2_decision/Pass2_reason conti
 
 Requires Python 3.10+ and standard library. Examples of form of command, not actual decisions:
 
-    python scripts/screening_review.py propose "/projeto" --stage pass1 --record-id "R-0001" --proposal BORDERLINE --reason "O resumo possui indicadores pertinentes mas não descreve o contexto de aplicação." --source "Referência à saída real do agente"
+    python scripts/screening_review.py propose "/project" --stage pass1 --record-id "R-0001" --proposal BORDERLINE --reason "The abstract presents potentially relevant indicators but does not describe the application context." --source "Referência à saída real do agente"
 
 Only after the researcher actually examines the data and expresses his decision:
 
-    python scripts/screening_review.py decide "/projeto" --stage pass1 --record-id "R-0001" --decision INCLUDE --reason "O resumo demonstra aderência ao critério de inclusão referente à governança documental." --reviewer "Pesquisador" --evidence "Referência à manifestação original do pesquisador" --disagreement-reason "O pesquisador identificou aderência ao conceito central que a recomendação inicial não reconheceu."
+    python scripts/screening_review.py decide "/project" --stage pass1 --record-id "R-0001" --decision INCLUDE --reason "The abstract meets the predefined inclusion criterion on document governance." --reviewer "Pesquisador" --evidence "Referência à manifestação original do pesquisador" --disagreement-reason "O pesquisador identificou aderência ao conceito central que a recomendação inicial não reconheceu."
 
 When there is disagreement, the last argument will be mandatory. The original decision is preserved: it is not permitted to silently replace an already recorded judgment. Subsequent revisions must have a new record in the existing DEC_ID/TRACE_ID, with justification and a versioned copy of the previous state.
 
@@ -43,11 +43,11 @@ Running the script only confirms that the table has changed. A name entered in -
 <a id="auditoria-e-congelamento"></a>
 ## Audit and freeze
 
-    python scripts/screening_review.py audit "/projeto" --strict
+    python scripts/screening_review.py audit "/project" --strict
 
 To check if there are pending elements before freezing the corpus:
 
-    python scripts/screening_review.py audit "/projeto" --strict --freeze
+    python scripts/screening_review.py audit "/project" --strict --freeze
 
 In new projects, the screening_human_decisions_required=true parameter activates cross-validation by the main validate_project.py script. Approved GATE-0004 cannot proceed with unappreciated suggestions, absent reviewers, unjustified deletions, unresolved disagreements, or unduplicated records without decisions completed on applicable passages.
 
