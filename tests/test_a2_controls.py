@@ -98,7 +98,7 @@ class CompactAIDisclosureTests(unittest.TestCase):
   self.assertLessEqual(len(output),3000)
   self.assertLessEqual(len(output.splitlines()),32)
   self.assertIn("Fixture Tool",output)
-  self.assertIn("revisão final",output.lower())
+  self.assertIn("final author review",output.lower())
  def test_pending_is_never_disguised_as_final(self):
   x=self.sample();x["errors"]=["official journal rules not verified"]
   self.assertIn("MINUTA COM PENDÊNCIAS",ed.render_compact(x))
