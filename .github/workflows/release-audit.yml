@@ -83,7 +83,7 @@ jobs:
         id: beta
         shell: bash
         run: |
-          if [[ "$(cat VERSION)" == "0.8.0-beta.4" ]]; then
+          if [[ "$(cat VERSION)" == "0.8.0-beta.5" ]]; then
             echo "publish=true" >> "$GITHUB_OUTPUT"
           else
             echo "publish=false" >> "$GITHUB_OUTPUT"
@@ -123,6 +123,6 @@ jobs:
             --repo "$GITHUB_REPOSITORY" \
             --target "$GITHUB_SHA" \
             --title "Meu Artigo $TAG — beta pública" \
-            --notes-file "docs/NOTAS-DA-VERSAO-0.8.0-beta.4.md" \
+            --notes-file "docs/NOTAS-DA-VERSAO-0.8.0-beta.5.md" \
             --prerelease \
             --latest=false
