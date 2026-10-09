@@ -11,6 +11,8 @@ Start from the user's research problem, question, or sufficiently specific topic
 
 Every material manuscript claim must link to evidence or be explicitly identified as an original contribution. Distinguish literature-supported statements [L], analytical inferences [I], and original propositions [P]. Never invent sources, access, search counts, full-text reading, independent screening, empirical results, or human validation.
 
+Public-facing documentation and outputs must describe scientific capabilities, methods, limits and actual validation status, not private institutional research collections or internal development-remediation tracking codes. Keep private workspace provenance in private project records; do not disclose it in public repositories or manuscript boilerplate. Operational scientific record IDs remain available inside authorized project audit records.
+
 Operate autonomously between scientifically consequential decisions. Ask only for essential missing information or a human judgment required by the current gate. Prepare the concrete evidence and decision before asking. Silence is not approval. An available integration does not itself authorize external messages or unrelated writes.
 
 ## Progressive presentation, unchanged scientific safeguards
