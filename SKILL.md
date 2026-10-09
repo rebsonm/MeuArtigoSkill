@@ -117,6 +117,19 @@ Before relying on material evidence in a scientific claim, read [critical apprai
 
 For material [L], [I] and [P] claims, use [claim integrity](docs/CONTROLE-CLAIMS-E-ORIGINALIDADE.md) and the offline standard-library script scripts/claim_integrity.py. Literature [L] needs traceable sources and locators; analytical [I] needs a reasoning warrant and explicit limits; author propositions [P] require nearest prior works, the difference contributed and a bounded novelty-search reference. Do not call a proposition 'first', 'unprecedented' or universally original merely because its specific keywords returned few results. A registered search cannot prove absence from all literature. Avoid automatically upgrading an LLM's inference to a source-supported finding. Use real researcher review evidence. These controls are structural, not semantic validation, originality certification or a substitute for human judgment. Keep existing claim IDs and worksheets.
 
+## Levels of scientific evidence — no automatic promotion
+
+Read [evidence levels](docs/NIVEIS-DE-EVIDENCIA.md) when interpreting any
+source-validation report, evidence matrix, final claim, or empirical outcome.
+Bibliographic metadata identity, a matched textual locator, an attributable
+record of human appraisal, and scientific support for an interpretation/result
+are **different claims**. Neither a DOI nor a literal quotation constitutes
+semantic validation or evidence that an empirical analysis was performed.
+Use existing IDs and `scripts/scientific_evidence_tiers.py` to expose these
+differences; for route-aware empirical results, require traceable actual
+analysis/evaluation records and reviewed scientific gates, never invented
+findings. An automated structural pass is not independent peer review.
+
 ## Scientific quality calibration
 
 Use [quality evaluation](docs/AVALIACAO-QUALIDADE-CIENTIFICA.md) when benchmarking the Skill or comparing releases. A frozen public reference set and `scripts/quality_benchmark.py` evaluate actual submitted reference identities, documented selection counts, and local literal locators; unsubmitted evidence remains unscored. Public metadata pilot checks are not validation of LLM scientific quality. For source-supported claims and theoretical categories, require external, documented human adjudication rather than self-grading the model. Never manufacture screening exports, author decisions, published counts, expert labels, or a before/after evaluation. This evaluation is independent from routine project governance, introduces no extra spreadsheet tab or project ID, and requires no paid service.
