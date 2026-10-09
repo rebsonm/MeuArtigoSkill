@@ -1,48 +1,64 @@
-# Compatibilidade entre plataformas — Meu Artigo
+# Cross-platform compatibility — Meu Artigo
 
-Esta página distingue **o que os fornecedores documentam** da **verificação efetiva desta versão do Meu Artigo**. Uma plataforma reconhecer o formato `SKILL.md` não significa que todas as integrações, scripts e funcionalidades do projeto executem corretamente.
+**Vendor support for the Skill format is not evidence that every Meu Artigo
+workflow works on that platform.** This document separates supplier
+documentation from verified performance of this particular beta.
 
-| Plataforma | Importação de Skill: o que está documentado | O que está comprovado nesta versão | O que ainda exige teste real |
+| Platform | Documented installation mechanism | What was technically checked here | What still needs actual use |
 | --- | --- | --- | --- |
-| **ChatGPT** | Contas elegíveis podem carregar Skills em **Plugins → Habilidades → Criar → Carregar do computador**. | Estrutura do ZIP e testes automatizados independentes da interface. Há registro anterior de importação de versão diferente; **não valida a beta atual**. | Instalação da `v0.8.0-beta.8`, ativação, integração com Drive, execução de tarefas e retomada entre conversas. |
-| **Claude** | Claude suporta Skills personalizadas via claude.ai e Claude Code. | Organização da pasta e compatibilidade estrutural do arquivo `SKILL.md`. | Upload desta beta, scripts permitidos, conectores disponíveis e persistência real. |
-| **Gemini** | Google documenta upload de `SKILL.md`, pasta ou ZIP contendo `SKILL.md` na raiz; o recurso varia por conta/região. | O ZIP contém a estrutura exigida; testes automatizados independentes da interface. | Importação e fluxo completo, possibilidades de execução, Drive e limitações de rede. |
+| **ChatGPT** | Eligible environments can import Skills, subject to workspace and product settings | Installable ZIP structure, entrypoint and offline source-code regression tests | Actual installation, tool execution, writable Google Drive, real research state and cross-session continuation |
+| **Claude** | Personal Skills via supported Claude applications and Claude Code, with product-specific restrictions | `SKILL.md`, reference layout and static file/package checks | Installed runtime, available MCP servers, scripts, write permissions and persistent recovery |
+| **Gemini** | Eligible accounts can import `SKILL.md`, folder or ZIP with root `SKILL.md`, subject to eligibility and changing capabilities | Valid bundle structure and static package checks | Actual import, execution limitations, Drive, references and conversation continuation |
 
-## Operação específica: capacidade anunciada versus observada
+## Installed capability versus observed operation
 
-Para cada sessão, consulte o
-[preflight por capacidades](../references/platform-capability-preflight.md).
-Importar ou instalar um pacote é uma operação; criar/sincronizar o
-workspace canônico é outra. Recurso disponível não equivale a
-execução. Sem recibo verificável, registrar `UNVERIFIED`, mesmo que
-o modelo descreva uma operação bem-sucedida.
+For each actual session, use the [capability preflight](../references/platform-capability-preflight.md).
+Installation is one operation; verified workspace creation, academic
+retrieval and publication are separate ones. If no authoritative
+receipt exists, an external action stays `UNVERIFIED` even if the
+assistant describes it confidently.
 
-Na documentação oficial consultada em outubro de 2026:
-- ChatGPT: opções para contas e ambientes elegíveis, com
-  permissões dependentes do espaço de trabalho;
-- Claude: claude.ai e Claude Code têm mecanismos diferentes de
-  instalação e disponibilidade de execução;
-- Gemini: exige atenção à disponibilidade gradual, formatos de
-  referência e impossibilidade declarada de usar scripts que
-  exigem acesso à internet nas Skills.
+Vendor documentation available in October 2026 described:
+- ChatGPT Skills in eligible environments, subject to product and
+  workspace configuration;
+- distinct Claude Skill installation paths for Claude applications
+  and Claude Code;
+- gradual Gemini availability, restricted reference formats and
+  lack of support for network-dependent scripts inside imported Skills.
 
-Essas observações são **capacidade informada por fornecedor**,
-não certificação de compatibilidade funcional da beta publicada.
+These are **vendor statements**, not an independent compatibility
+certification of Meu Artigo.
 
-## Fontes oficiais
+## Official vendor documentation
 
-- [Skills no ChatGPT — OpenAI](https://help.openai.com/pt-br/articles/20001066-skills-no-chatgpt)
+- [Skills in ChatGPT — OpenAI](https://help.openai.com/pt-br/articles/20001066-skills-in-chatgpt)
 - [Agent Skills — Anthropic](https://platform.claude.com/docs/pt-BR/agents-and-tools/agent-skills/overview)
-- [Criar e gerenciar Skills — Google Gemini](https://support.google.com/gemini/answer/17094296?hl=pt-BR)
+- [Creating and managing Skills — Google Gemini](https://support.google.com/gemini/answer/17094296?hl=en)
 
-Essas fontes orientam **disponibilidade e instalação de Skills**. Não garantem que a plataforma ofereça Scopus, Web of Science, navegação autenticada, todas as ações de Google Drive ou execução local. Verifique cada operação antes de registrar uma etapa como concluída.
+Account and runtime capabilities can change; follow the official
+documentation and verify the current user environment.
 
-## Padrão de armazenamento
+## Storage and language policy
 
-Google Drive é o destino persistente preferencial. É preciso confirmar conexão e permissão de escrita; a simples presença do aplicativo não é comprovante de sincronização. Se o Drive continuar indisponível, a Skill deve pedir **autorização explícita para utilizar outra forma de armazenamento** e não avançar sem essa autorização.
+Google Drive is the standard persistent research workspace. Check
+actual connection and **write permission** before substantive work.
+If Drive cannot be used after attempted connection, obtain an
+**explicit affirmative** choice for an alternative Work/local
+workspace. An available connector is not proof of synchronization.
 
-## Como registrar um teste futuro
+The repository is authored in English, but conversational prompts,
+onboarding and answers follow the researcher's language; the
+manuscript follows journal/author requirements independently.
+See [language policy](../references/language-policy.md).
 
-Para cada plataforma, registrar a versão exata da Skill, a superfície utilizada, os recursos disponíveis, o que foi executado, os comprovantes de escrita/retomada e as limitações. Não tratar importação bem-sucedida como validação científica ou demonstração de compatibilidade integral.
+## Reporting future functional evaluations
 
-A execução dos testes funcionais entre plataformas permanece **PENDENTE** e integra o [plano de validações](VALIDACOES-PENDENTES.md). Os [guias individuais](COMECE-AQUI.md) são para instalação e primeiros passos, não relatórios de desempenho.
+Record the exact software version, platform and surface, available
+features, completed real actions, receipts or verified continued
+state and limitations. Successful import is not a scientific
+validation. Functional comparisons among platforms remain
+**PENDING** in the [evaluation register](VALIDACOES-PENDENTES.md).
+
+The individual [getting started](COMECE-AQUI.md) and platform
+guides explain supported approaches; they are not performance
+reports.
