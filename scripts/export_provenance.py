@@ -538,8 +538,12 @@ def approved_collaborative_files(root: Path, manifest_ref: str, audience: str) -
             raise ValueError("Symlinked manuscript file is forbidden")
         src = source_path.resolve()
         if (not src.is_relative_to(root) or not src.is_file()
+                or not src.relative_to(root).as_posix().startswith(COLLAB_ALLOWED)
                 or src.suffix.lower() not in COLLAB_EXTENSIONS):
             raise ValueError("Unapproved, symlinked, non-text or external file")
+        if (any(pattern.search(rel) for pattern in SENSITIVE_PATTERNS)
+                or re.search(r"(?i)\b(?:private|confidential|restricted|sigiloso|secreto)\b", rel)):
+            raise ValueError("Filename contains a potentially sensitive identifier")
         if src.stat().st_size > COLLAB_SIZE_LIMIT:
             raise ValueError("Collaborative file exceeds conservative size limit")
         if not re.fullmatch(r"[a-f0-9]{64}", expected) or file_sha256(src) != expected:
