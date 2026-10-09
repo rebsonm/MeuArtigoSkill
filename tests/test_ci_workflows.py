@@ -20,7 +20,7 @@ class CIWorkflowSafetyTests(unittest.TestCase):
             ("Beta publisher", self.release),
             ("Scientific metadata calibration", self.quality),
         ]:
-            actions = re.findall(r"(?m)^\s*-\s+uses:\s*(\S+)", body)
+            actions = re.findall(r"(?m)^\s*(?:-\s*)?uses:\s*(\S+)", body)
             self.assertTrue(actions, f"{name}: no pinned actions")
             for action in actions:
                 self.assertRegex(action, r"^[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+@[a-f0-9]{40}$",
