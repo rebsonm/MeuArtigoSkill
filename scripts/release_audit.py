@@ -27,6 +27,7 @@ REQUIRED=[
     "docs/NOTAS-DA-VERSAO-0.8.0-beta.2.md",
     "docs/NOTAS-DA-VERSAO-0.8.0-beta.3.md",
     "docs/NOTAS-DA-VERSAO-0.8.0-beta.6.md",
+    "docs/NOTAS-DA-VERSAO-0.8.0-beta.7.md",
     "docs/MODO-NUCLEO-MINIMO.md",
     "docs/REPRODUCAO-REVISAO-INTEGRATIVA.md",
     "references/methodological-foundations.md",
@@ -134,8 +135,8 @@ def main()->int:
         errors.append("Onboarding still falsely describes public repository as restricted")
     if "beta pública" not in onboarding.lower():
         errors.append("Public-beta access is not described in onboarding")
-    if not re.fullmatch(r"0\.8\.0-beta\.6", version):
-        errors.append("Current release audit expects the public beta version 0.8.0-beta.6")
+    if not re.fullmatch(r"0\.8\.0-beta\.7", version):
+        errors.append("Current release audit expects the public beta version 0.8.0-beta.7")
     if not all(name in workflow for name in ["LICENSE", "SHA256SUMS.txt",
                                                "build_skill_bundle.py", "gh release create",
                                                "contents: write", "--prerelease"]):
