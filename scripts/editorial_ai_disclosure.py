@@ -99,68 +99,70 @@ def assess(root):
   "researcher_placement_verified":False
  }
 def render(result):
- lines=["# Declaração editorial de IA — minuta",
-        "",'Magazine:'+result["journal"],
-        "Local previsto: "+(result["location"] or "A CONFIRMAR"),
-        "Situação: "+result["status"],""]
+ def safe(x): return clean(x).replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
+ lines=["# AI-use editorial disclosure — draft","",
+        "Journal: "+safe(result["journal"]),
+        "Required section: "+safe(result["location"] or "TO CONFIRM"),
+        "Status: "+result["status"],""]
  if result["uses"]:
-  lines+=["## Declaração proposta","",
-          "Ferramentas de IA foram utilizadas nas atividades registradas a seguir.",
-          'The authors remain responsible for the sources, interpretations and final content.',""]
+  lines+=["## Proposed disclosure","",
+          "AI tools were used for the documented activities below.",
+          "The authors remain responsible for source accuracy, interpretations and final content.",""]
   for event in result["uses"]:
-   def safe(x): return clean(x).replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
    lines.append("- "+safe(event["category"])+": "+safe(event["tool"])+" ("+
-                safe(event["model"])+"); finalidade: "+safe(event["purpose"])+
-                '; revision:'+safe(event["review"] or 'not described')+
-                "; decisão: "+safe(event["decision"])+".")
+                safe(event["model"])+"); purpose: "+safe(event["purpose"])+
+                "; human review: "+safe(event["review"] or "not described")+
+                "; decision: "+safe(event["decision"])+".")
  else:
-  lines+=["According to the researcher's documented review, no use was declared in the record.",
-           'The conclusion depends on the veracity of this human manifestation.',""]
+  lines+=["According to the researcher's documented review, no AI use was declared in the examined record.",
+          "An empty log does not independently prove that AI was not used.",
+          "This statement requires a genuine researcher attestation.",""]
  if result["errors"]:
-  lines+=["## Pendências",*("- "+x for x in result["errors"])]
+  lines+=["## Outstanding requirements",*("- "+x for x in result["errors"])]
  return "\n".join(lines)+"\n"
-def render_compact(result):
- """Brief declaration for editorial use; never silently omit recorded activities.
 
- This is a text-length target, not a claim of a physically printed A4 page.
- """
- def safe(x):
-  return clean(x).replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
- if result["errors"]:
-  # Draft can exist but must expose its non-final status.
-  status="MINUTA COM PENDÊNCIAS"
- else:
-  status='READY FOR FINAL AUTHOR REVIEW'
+
+def render_compact(result):
+ """Brief, source-grounded disclosure; no implication of editorial acceptance."""
+ def safe(x): return clean(x).replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
+ status="DRAFT WITH OUTSTANDING REQUIREMENTS" if result["errors"] else "READY FOR FINAL AUTHOR REVIEW"
  groups={}
  for u in result["uses"]:
   k=(u["category"],u["tool"],u["model"])
   groups.setdefault(k,[]).append(u["purpose"])
- lines=["# Transparência sobre uso de IA — versão breve","",
-        'Periodical:'+safe(result["journal"] or "A CONFIRMAR"),
-        "Local exigido: "+safe(result["location"] or "A CONFIRMAR"),
-        "Situação: "+status,""]
+ lines=["# AI-use transparency — concise draft","",
+        "Journal: "+safe(result["journal"] or "TO CONFIRM"),
+        "Required section: "+safe(result["location"] or "TO CONFIRM"),
+        "Status: "+status,""]
  if not groups:
-  lines.append("According to the researcher's documented statement, there was no use of AI declared in the record examined. An empty log does not, in itself, prove lack of use.")
+  lines.append("According to the researcher's documented statement, no AI use was declared in the examined record. An empty log alone does not prove non-use.")
  else:
-  lines.append("Ferramentas e finalidades declaradas (conforme registros efetivos):")
+  lines.append("Declared tools and purposes, according to actual records:")
+  labels={
+    "ADMIN_SUPPORT":"administrative support",
+    "LITERATURE_SEARCH":"literature search assistance",
+    "SCREENING":"screening assistance",
+    "EVIDENCE_EXTRACTION":"evidence organization",
+    "DATA_ANALYSIS":"data analysis assistance",
+    "DRAFTING_EDITING":"drafting and editing support",
+    "FIGURES":"figure preparation",
+    "OTHER":"other documented activity",
+  }
   for (category,tool,model),purposes in sorted(groups.items()):
    unique=list(dict.fromkeys(clean(p) for p in purposes))
-   category_label={
-   "ADMIN_SUPPORT":"apoio administrativo","LITERATURE_SEARCH":"apoio à busca bibliográfica",
-   "SCREENING":"apoio à triagem","EVIDENCE_EXTRACTION":'organization of evidence',
-   "DATA_ANALYSIS":'data analysis support',"DRAFTING_EDITING":"apoio à redação/edição",
-   "FIGURES":"apoio à preparação de figuras","OTHER":"outra atividade descrita"
-  }.get(category,category)
-  lines.append("- "+safe(category_label)+": "+safe(tool)+" ("+safe(model)+") — "+safe("; ".join(unique))+".")
+   lines.append("- "+safe(labels.get(category,category))+": "+safe(tool)+" ("+
+                safe(model)+") — "+safe("; ".join(unique))+".")
   lines.append("")
-  lines.append('The researcher remains responsible for reviewing results, accuracy of sources, interpretation, and final content.')
- lines+=["",'Text subject to current periodical instructions and human positioning verification. The issue does not indicate editorial acceptance.']
+  lines.append("The researcher remains responsible for reviewing results, source accuracy, interpretation and final content.")
+ lines+=["","The wording is subject to actual journal rules and human approval; this draft does not certify editorial acceptance."]
  if result["errors"]:
-  lines.append("Pendências: "+str(len(result["errors"]))+"; consultar a auditoria completa antes de enviar.")
+  lines.append("Outstanding requirements: "+str(len(result["errors"]))+
+               "; review the full audit before submission.")
  output="\n".join(lines)+"\n"
  if len(output)>3000 or len(lines)>32:
-  raise ValueError("Recorded AI usage exceeds one-page text budget; retain the full report and ask the researcher to revise a faithful brief statement.")
+  raise ValueError("Recorded AI use exceeds concise disclosure length; retain the full audit and obtain a faithful researcher-reviewed summary.")
  return output
+
 
 def verify_final(root):
  root=Path(root).resolve(); current=assess(root)
