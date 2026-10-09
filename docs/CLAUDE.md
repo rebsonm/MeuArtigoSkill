@@ -6,42 +6,30 @@ Este documento descreve como usar **Meu Artigo** em Claude. A metodologia centra
 
 ## Antes de tentar instalar
 
-Segundo a documentação oficial atual da Anthropic, Skills personalizadas no **claude.ai** podem ser enviadas em **Settings → Features** e estão disponíveis nos planos **Pro, Max, Team e Enterprise** quando a execução de código está habilitada.
+O Claude oferece Skills personalizadas em superfícies como `claude.ai` e Claude Code, segundo a [documentação oficial da Anthropic](https://platform.claude.com/docs/pt-BR/agents-and-tools/agent-skills/overview). Disponibilidade e permissões variam conforme conta e produto. O suporte anunciado a Skills **não equivale à validação de todos os recursos do Meu Artigo**.
 
-Claude Code também reconhece Skills baseadas em filesystem.
+A instalação e a retomada de projetos usando o ZIP `v0.8.0-beta.3` ainda precisam de verificação em ambiente real.
 
-Fonte oficial:
+## 1. Baixe o ZIP preparado
 
-- https://platform.claude.com/docs/pt-BR/agents-and-tools/agent-skills/overview
-
-## 1. Baixe pelo GitHub
-
-Na página do repositório:
-
-1. clique em **Code**;
-2. clique em **Download ZIP**;
-3. descompacte o arquivo;
-4. entre na pasta descompactada; a raiz já é o bundle da Skill.
+1. Abra [a Release v0.8.0-beta.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.3).
+2. Baixe **`MeuArtigoSkill-v0.8.0-beta.3.zip`** (não o `Source code (zip)`).
+3. Se desejar, confirme o hash usando `SHA256SUMS.txt`.
 
 ## 2A. Instalação no claude.ai
 
-1. use o ZIP baixado do GitHub ou compacte a pasta raiz descompactada;
-2. abra o Claude;
-3. acesse **Settings → Features**;
-4. localize a área de Skills personalizadas;
-5. faça upload do ZIP;
-6. confirme a Skill.
+Se a sua conta apresentar a opção de Skills personalizadas nas configurações:
 
-Cada usuário precisa instalar sua própria cópia no claude.ai.
+1. acesse a área de Skills/recursos pessoais do Claude, conforme a interface atual;
+2. selecione o upload de uma Skill;
+3. envie o ZIP completo da Release;
+4. confira se `SKILL.md` e os arquivos de apoio foram reconhecidos.
+
+Os nomes das seções e a disponibilidade podem variar; confira a documentação oficial da sua interface antes de concluir que houve falha.
 
 ## 2B. Instalação no Claude Code
 
-Se você usa Claude Code:
-
-- coloque a Skill pessoal em `~/.claude/skills/`; ou
-- coloque-a no projeto em `.claude/skills/`.
-
-A pasta deve manter seu `SKILL.md` e arquivos de suporte.
+No Claude Code, descompacte o ZIP preparado preservando a pasta `MeuArtigoSkill` e coloque-a em `~/.claude/skills/` (escopo pessoal) ou em `.claude/skills/` (escopo do projeto), se esse for o mecanismo suportado pela sua versão. A pasta da Skill deve conter `SKILL.md` em sua raiz.
 
 ## 3. Comece em uma conversa nova
 
@@ -91,12 +79,15 @@ Quando a superfície permitir execução local, prefira executá-los em vez de r
 
 Se Google Drive estiver conectado, reproduza o workspace canônico definido em `references/drive-workspace.md`.
 
-Se não estiver:
+Se não estiver conectado:
 
-1. crie o espelho local com `init_project.py`;
-2. mantenha `CONTINUIDADE.md` atualizado;
-3. sincronize depois com armazenamento persistente;
-4. não dependa do histórico da conversa.
+1. explique ao usuário que o fluxo padrão utiliza o Google Drive e solicite a conexão;
+2. verifique novamente se o Drive está disponível e gravável, sem presumir êxito;
+3. se continuar indisponível, peça **autorização afirmativa e explícita** para continuar com armazenamento local/Work;
+4. somente depois da autorização crie o espelho local com `init_project.py` e mantenha `CONTINUIDADE.md` atualizado;
+5. trate o armazenamento local como alternativa autorizada para esse projeto; não o apresente como sincronizado no Drive.
+
+Sem autorização, não inicie atividades científicas substantivas com persistência local presumida.
 
 ## Scopus e Web of Science
 

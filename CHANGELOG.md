@@ -2,7 +2,17 @@
 
 ## Unreleased
 
-Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-beta.2`.
+Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-beta.3`.
+
+## 0.8.0-beta.3 — 2026-10-09
+
+### Marco A.1 — documentação e compatibilidade
+
+- Recomendar o pacote ZIP instalável da Release, em vez do download automático do código-fonte, em todos os guias de plataforma.
+- Corrigir o guia de primeiros passos sobre o protocolo futuro de avaliação com usuários, ainda não executado.
+- Esclarecer a diferença entre formato suportado pelas plataformas e compatibilidade funcional comprovada do Meu Artigo, preservando as pendências científicas.
+- Harmonizar o armazenamento canônico com Google Drive e exigir autorização antes do fallback, também no Claude e Gemini.
+- Acrescentar conferência automática de links e referências locais, com testes de regressão.
 
 ## 0.8.0-beta.2 — 2026-10-09
 

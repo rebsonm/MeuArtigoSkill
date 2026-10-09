@@ -9,8 +9,9 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 README=ROOT/"README.md"
-RELEASE=ROOT/"docs"/"NOTAS-DA-VERSAO-0.8.0-beta.2.md"
-OLD_RELEASE=ROOT/"docs"/"NOTAS-DA-VERSAO-0.8.0-beta.1.md"
+RELEASE=ROOT/"docs"/"NOTAS-DA-VERSAO-0.8.0-beta.3.md"
+OLD_RELEASE=ROOT/"docs"/"NOTAS-DA-VERSAO-0.8.0-beta.2.md"
+FIRST_RELEASE=ROOT/"docs"/"NOTAS-DA-VERSAO-0.8.0-beta.1.md"
 CODES=[
     r"\bRT-\d{2}\b",
     r"\bGATE-\d{4}\b",
@@ -28,12 +29,12 @@ class PublicCommunicationTests(unittest.TestCase):
             self.assertNotRegex(readme,re.compile(pattern,re.I),
                 f"Developer-only term in public README: {pattern}")
         self.assertIn("repositório público",readme)
-        self.assertIn("0.8.0-beta.2",readme)
+        self.assertIn("0.8.0-beta.3",readme)
         for word in ("pesquisador","fontes","C.A.D.A.","Como começar","versão beta"):
             self.assertIn(word.lower(),readme.lower())
 
     def test_public_release_notes_do_not_expose_internal_remediation_codes(self):
-        for path in [RELEASE,OLD_RELEASE]:
+        for path in [RELEASE,OLD_RELEASE,FIRST_RELEASE]:
             doc=path.read_text(encoding="utf-8")
             for pattern in CODES:
                 self.assertNotRegex(doc,re.compile(pattern,re.I),
@@ -49,7 +50,7 @@ class PublicCommunicationTests(unittest.TestCase):
 
     def test_beta_version_and_release_notes_agree(self):
         version=(ROOT/"VERSION").read_text(encoding="utf-8").strip()
-        self.assertEqual(version,"0.8.0-beta.2")
+        self.assertEqual(version,"0.8.0-beta.3")
         self.assertIn(version,README.read_text(encoding="utf-8"))
         self.assertIn(version,RELEASE.read_text(encoding="utf-8"))
 
