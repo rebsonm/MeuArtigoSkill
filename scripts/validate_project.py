@@ -10,6 +10,7 @@ from claim_integrity import audit as audit_claim_integrity
 from audit_governance_boundary import audit as audit_cada_boundary
 from rights_audit import audit_project as audit_fulltext_rights
 from method_routes import GATE_VARIANTS, ROUTES, load as read_method_profile, profile_issues
+from language_config import settings_issues
 from scientific_evidence_tiers import audit as audit_evidence_tiers
 
 REQUIRED=[
@@ -69,6 +70,7 @@ def main():
     if cfg.exists():
         try:
             cfg_data=json.loads(cfg.read_text(encoding="utf-8"))
+            errors.extend("language settings: "+issue for issue in settings_issues(cfg_data))
             if not str(cfg_data.get("research_input","")).strip():
                 warnings.append("PROJECT_CONFIG research_input is empty")
             if cfg_data.get("cada_governance") is not True:
