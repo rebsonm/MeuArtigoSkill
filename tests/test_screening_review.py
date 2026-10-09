@@ -201,6 +201,14 @@ class ScreeningReviewTests(unittest.TestCase):
         check=screening.audit_rows(self.data(),enforce=True,freeze=True)
         self.assertFalse(check["errors"])
 
+    def test_duplicate_cannot_reference_itself(self):
+        row=self.data()[0]
+        row["Duplicate_status"]="DUPLICATE"
+        row["Canonical_record_id"]="R-0001"
+        self.create([row])
+        audit=screening.audit_rows(self.data(),enforce=True,freeze=True)
+        self.assertTrue(any("valid distinct canonical record" in x for x in audit["errors"]))
+
     def test_excel_template_has_separate_proposal_and_review_columns(self):
         script=(SCRIPTS/"build_matrix_template.py").read_text(encoding="utf-8")
         for label in ("Pass1 proposta IA","Pass1 revisado por","Pass2 proposta IA","Pass2 evidência revisão"):
