@@ -23,6 +23,8 @@ A distribuição é beta e sujeita a atualizações. Prefira releases identifica
 A política abrange a linha `0.8.x-beta` e futuras versões publicadas, sem garantia de atualizações para versões anteriores. Consulte [CHANGELOG.md](CHANGELOG.md).
 
 
+Veja também [exportação segura](docs/EXPORTACAO-SEGURA.md).
+
 ## Compartilhamento de pacotes de proveniência
 
 O exportador possui públicos distintos: o perfil PRIVATE, padrão, gera um pacote
