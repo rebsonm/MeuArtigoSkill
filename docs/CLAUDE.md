@@ -11,8 +11,8 @@ and local Skills in Claude Code. Check
 [official documentation](https://platform.claude.com/docs/pt-BR/agents-and-tools/agent-skills/overview)
 for current conditions, permissions and interface wording.
 
-1. Download the prepared ZIP from [the published beta](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.8);
-   prefer `MeuArtigoSkill-v0.8.0-beta.8.zip` over GitHub's source archive.
+1. Download the prepared ZIP from [the published beta](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.1);
+   prefer `MeuArtigoSkill-v0.9.0-beta.1.zip` over GitHub's source archive.
 2. If your claude.ai account exposes custom Skills, use its Skill upload
    feature and select the complete bundle.
 3. In a supported Claude Code environment, unpack the prepared Skill
