@@ -307,6 +307,17 @@ def record_gate(args)->int:
         if integrity["errors"]:
             raise SystemExit("cannot approve claim freeze: "+"; ".join(integrity["errors"][:6]))
 
+    # Distinguish bibliographic/locator checks from actual empirical findings.
+    if (args.gate_id=="GATE-0006" and decision in {"APPROVED","APPROVED_WITH_CHANGES"}
+            and cfg.get("method_route_governance_required") is True):
+        from scientific_evidence_tiers import audit as evidence_tier_audit
+        try:
+            tier_report=evidence_tier_audit(root,freeze=True)
+        except (OSError,ValueError,TypeError) as exc:
+            raise SystemExit(f"cannot inspect scientific evidence layers: {type(exc).__name__}")
+        if tier_report["errors"]:
+            raise SystemExit("cannot approve empirical provenance: "+"; ".join(tier_report["errors"][:6]))
+
     if (args.gate_id=="GATE-0007" and decision in {"APPROVED","APPROVED_WITH_CHANGES"}
             and cfg.get("editorial_ai_disclosure_required") is True):
         from editorial_ai_disclosure import verify_final
