@@ -287,7 +287,7 @@ CADA_ID / decisão de protocolo
 
 Isso aproxima a construção do artigo de um processo auditável, especialmente importante em pesquisa assistida por IA.
 
-Essa preocupação é consistente com diretrizes editoriais recentes. A Revista de Ciências da Administração, por exemplo, determina que usos substantivos de IA sejam descritos nos métodos e que ferramenta, versão, finalidade e procedimentos de validação humana sejam explicitados para assegurar rastreabilidade. Ricardo Limongi também possui trabalhos publicados sobre IA, integridade científica e transparência algorítmica.
+Essa preocupação é consistente com diretrizes editoriais recentes. A Revista de Ciências da Administração, por exemplo, determina que usos substantivos de IA sejam descritos nos métodos e que ferramenta, versão, finalidade e procedimentos de validação humana sejam explicitados para assegurar rastreabilidade.
 
 Veja [docs/RASTREABILIDADE.md](./docs/RASTREABILIDADE.md) e [docs/GOVERNANCA-CIENTIFICA.md](./docs/GOVERNANCA-CIENTIFICA.md).
 
