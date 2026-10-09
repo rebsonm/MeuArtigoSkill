@@ -30,9 +30,9 @@ class PublicCommunicationTests(unittest.TestCase):
         for pattern in CODES:
             self.assertNotRegex(readme,re.compile(pattern,re.I),
                 f"Developer-only term in public README: {pattern}")
-        self.assertIn("repositório público",readme)
+        self.assertIn("public GitHub repository",readme)
         self.assertIn(read_version(ROOT),readme)
-        for word in ("pesquisador","fontes","C.A.D.A.","Como começar","versão beta"):
+        for word in ("researcher","sources","C.A.D.A.","Getting started","experimental beta"):
             self.assertIn(word.lower(),readme.lower())
 
     def test_public_release_notes_do_not_expose_internal_remediation_codes(self):
