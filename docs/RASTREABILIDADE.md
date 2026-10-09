@@ -1,82 +1,92 @@
-# Rastreabilidade no Meu Artigo
+<a id="rastreabilidade-no-meu-artigo"></a>
+# Traceability in My Article
 
-## Ideia central
+<a id="ideia-central"></a>
+## Central idea
 
-O Meu Artigo não busca apenas ajudar a produzir um manuscrito.
+My Article does not just seek to help you produce a manuscript.
 
-Ele busca permitir que o pesquisador consiga **reconstruir como o manuscrito foi produzido**.
+It seeks to allow the researcher to **reconstruct how the manuscript was produced**.
 
-Na era da IA, isso significa preservar a proveniência do processo:
+In the age of AI, this means preserving the provenance of the process:
 
-- quais buscas foram executadas;
-- quais arquivos foram usados;
-- quais decisões metodológicas foram tomadas;
-- o que foi alterado e por quê;
-- onde a IA participou;
-- qual ferramenta/modelo foi usado quando conhecido;
-- como o pesquisador verificou o resultado;
-- de quais evidências derivam as principais afirmações.
+- which searches were performed;
+- which files were used;
+- what methodological decisions were made;
+- what was changed and why;
+- where AI participated;
+- which tool/model was used when known;
+- how the researcher verified the result;
+- from which evidence the main statements derive.
 
-## Gestão não é rastreabilidade
+<a id="gestão-não-é-rastreabilidade"></a>
+## Management is not traceability
 
-O projeto separa duas funções:
+The project separates two functions:
 
-### C.A.D.A. — gestão
+<a id="cada-gestão"></a>
+### C.A.D.A. — management
 
-Responde:
+Answer:
 
-> Onde estamos, o que falta, quem é responsável, qual o prazo e o que comprova a conclusão?
+> Where are we, what is missing, who is responsible, what is the deadline and what proves completion?
 
-### Rastreabilidade — proveniência científica
+<a id="rastreabilidade-proveniência-científica"></a>
+### Traceability — scientific provenance
 
-Responde:
+Answer:
 
-> Como chegamos até aqui, que decisões construíram o artigo, com quais fontes/ferramentas e como foram verificadas?
+> How did we get here, what decisions constructed the article, with what sources/tools and how were they verified?
 
-Isso evita tentar usar uma simples lista de tarefas como registro metodológico.
+This avoids trying to use a simple to-do list as a methodological record.
 
-## Três níveis de controle
+<a id="três-níveis-de-controle"></a>
+## Three levels of control
 
-### 1. Planilha C.A.D.A. — modo universal
+<a id="1-planilha-cada-modo-universal"></a>
+### 1. C.A.D.A Spreadsheet. — universal mode
 
-Não exige Trello, Jira ou ClickUp.
+Does not require Trello, Jira or ClickUp.
 
-A própria matriz-mestra funciona como gerenciador do projeto.
+The master matrix itself functions as the project manager.
 
-A aba `11_CADA_Control` permite acompanhar:
+The `11_CADA_Control` tab allows you to monitor:
 
-- etapa;
-- responsável;
-- próxima ação;
-- prazo;
+- step;
+- responsible;
+- next action;
+- term;
 - status;
-- prioridade;
-- dependências;
-- bloqueios;
-- evidência de avanço;
-- evidência de conclusão.
+- priority;
+- dependencies;
+- locks;
+- evidence of advancement;
+- evidence of completion.
 
-Esse é o **modo padrão e universal** de gestão.
+This is the **standard and universal** way of management.
 
-### 2. Gerenciador externo — modo opcional
+<a id="2-gerenciador-externo-modo-opcional"></a>
+### 2. External manager — optional mode
 
-ClickUp, Jira/Atlassian e Trello podem espelhar o C.A.D.A. para quem já usa essas ferramentas.
+ClickUp, Jira/Atlassian and Trello can mirror C.A.D.A. for those who already use these tools.
 
-O vínculo é registrado em `12_PM_Sync`.
+The link is registered to `12_PM_Sync`.
 
-O gerenciador externo nunca substitui a matriz científica.
+The external manager never replaces the scientific matrix.
 
-### 3. Trilha de rastreabilidade — proveniência
+<a id="3-trilha-de-rastreabilidade-proveniência"></a>
+### 3. Traceability trail — provenance
 
-A aba `13_Traceability_Log` registra eventos materiais do processo científico.
+The `13_Traceability_Log` tab records material events of the scientific process.
 
-A aba `14_AI_Use_Log` registra especificamente usos de IA relevantes para transparência e eventual declaração editorial.
+The `14_AI_Use_Log` tab specifically records AI uses relevant for transparency and eventual editorial disclosure.
 
-O arquivo `RASTREABILIDADE.md` mantém uma síntese legível da construção do projeto.
+The `RASTREABILIDADE.md` file maintains a readable summary of the project construction.
 
-## O que fica rastreável
+<a id="o-que-fica-rastreável"></a>
+## What is trackable
 
-Um exemplo:
+An example:
 
 ```text
 Claim C-17
@@ -94,72 +104,76 @@ CADA-0054
 PROTOCOLO v3
 ```
 
-Assim, uma afirmação importante pode ser ligada às evidências e ao processo que levou à sua incorporação no manuscrito.
+Thus, an important claim can be linked to the evidence and process that led to its incorporation into the manuscript.
 
-## E a IA?
+<a id="e-a-ia"></a>
+## What about AI?
 
-Para usos materiais de IA, a Skill procura registrar:
+For material uses of AI, Skill seeks to record:
 
-- plataforma/ferramenta;
-- modelo/versão quando disponível;
-- finalidade;
-- etapa científica;
-- tipo de entrada;
-- tipo de saída;
-- se o uso foi assistivo ou substantivo;
-- como ocorreu a revisão humana;
-- se o resultado foi aceito, alterado ou rejeitado;
-- artefatos relacionados;
-- necessidade de declaração editorial.
+- platform/tool;
+- model/version when available;
+- purpose;
+- scientific stage;
+- input type;
+- type of output;
+- whether the use was assistive or noun;
+- how the human review occurred;
+- whether the result was accepted, changed or rejected;
+- related artifacts;
+- need for editorial declaration.
 
-O objetivo não é salvar toda conversa ou todo prompt.
+The goal is not to save every conversation or every prompt.
 
-A regra é registrar **eventos materialmente relevantes à construção científica**.
+The rule is to record **events materially relevant to scientific construction**.
 
-## Transparência editorial
+<a id="transparência-editorial"></a>
+## Editorial transparency
 
-Essa arquitetura está alinhada com uma tendência editorial crescente de exigir transparência sobre o uso de IA em pesquisa.
+This architecture is in line with a growing editorial trend to demand transparency about the use of AI in research.
 
-A Revista de Ciências da Administração, por exemplo, determina que aplicações substantivas de IA sejam descritas nos métodos, com ferramenta, versão, finalidade e procedimentos de validação humana, para assegurar rastreabilidade.
+The Revista de Ciências da Administração, for example, determines that substantive AI applications be described in the methods, with tool, version, purpose and human validation procedures, to ensure traceability.
 
-Referência editorial pública:
+Public editorial reference:
 
-- Diretrizes para uso de IA — Revista de Ciências da Administração: https://periodicos.ufsc.br/index.php/adm/Diretrizes_para_uso_de_IA
+- Guidelines for using AI — Journal of Administration Sciences: https://periodicos.ufsc.br/index.php/adm/Diretrizes_para_uso_de_IA
 
-## Limites de atribuição
+<a id="limites-de-atribuição"></a>
+## Assignment limits
 
-Fundamentos acadêmicos e editoriais devem estar ligados a fontes identificáveis e verificáveis. Afirmações atribuídas a palestras ou apresentações não documentadas não devem ser registradas como citações ou evidências confirmadas.
+Academic and editorial foundations must be linked to identifiable and verifiable sources. Statements attributed to undocumented lectures or presentations should not be recorded as quotations or confirmed evidence.
 
-## Resultado esperado
+<a id="resultado-esperado"></a>
+## Expected result
 
-Ao final de um projeto, deve ser possível responder:
+At the end of a project, it should be possible to answer:
 
-> Como este artigo foi construído?
+> How was this article constructed?
 
-sem depender apenas da memória do autor ou do histórico de um chat.
-
-Esse é o papel da camada de rastreabilidade do Meu Artigo.
-
-
-## Interoperabilidade
-
-A rastreabilidade também pode ser exportada em formatos padronizados:
-
-- **W3C PROV-O** para representar entidades, atividades, agentes e relações de proveniência;
-- **RO-Crate 1.3** para empacotar o objeto de pesquisa e seus metadados;
-- **SHA-256** para verificar fixidade dos arquivos do pacote.
-
-Isso é uma camada de exportação. O pesquisador não precisa conhecer esses padrões para usar o Meu Artigo.
-
-Veja `../meu-artigo/references/provenance-export.md`.
+without relying solely on the author's memory or chat history.This is the role of the My Article traceability layer.
 
 
-## Decisão, responsabilidade e estado congelado
+<a id="interoperabilidade"></a>
+## Interoperability
 
-A rastreabilidade distingue:
+Traceability can also be exported in standardized formats:
 
-- `DEC_ID`: por que uma escolha científica foi feita;
-- `GATE_ID`: onde o pesquisador humano validou uma transição crítica;
-- `SNAP_ID`: qual era o estado oficial do projeto naquele momento.
+- **W3C PROV-O** to represent entities, activities, agents and provenance relationships;
+- **RO-Crate 1.3** to package the research object and its metadata;
+- **SHA-256** to check the fixity of the package files.
 
-Isso permite reconstruir não apenas o que aconteceu, mas também decisões, responsabilidade humana e mudanças entre versões.
+This is an export layer. The researcher does not need to know these standards to use My Article.
+
+See `../meu-artigo/references/provenance-export.md`.
+
+
+<a id="decisão-responsabilidade-e-estado-congelado"></a>
+## Decision, responsibility and frozen state
+
+Traceability distinguishes:
+
+- `DEC_ID`: why a scientific choice was made;
+- `GATE_ID`: where the human researcher validated a critical transition;
+- `SNAP_ID`: what was the official status of the project at that time.
+
+This allows you to reconstruct not only what happened, but also decisions, human responsibility, and changes between versions.

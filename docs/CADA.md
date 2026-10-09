@@ -1,89 +1,97 @@
-# C.A.D.A. no Meu Artigo
+<a id="cada-no-meu-artigo"></a>
+# C.A.D.A. in My Article
 
-## Para que serve
+<a id="para-que-serve"></a>
+## What is it for
 
-No Meu Artigo, o **C.A.D.A. é a camada de gestão do trabalho científico**.
+In My Article, the **C.A.D.A. It is the management layer of scientific work**.
 
-Ele não substitui método de pesquisa, revisão integrativa, revisão sistemática, protocolo, análise ou evidência.
+It does not replace research method, integrative review, systematic review, protocol, analysis or evidence.
 
-Ele organiza o passo a passo para que o pesquisador saiba, a qualquer momento:
+It organizes step by step so that the researcher knows, at any time:
 
-- onde o artigo está;
-- o que já foi feito;
-- o que precisa acontecer depois;
-- quem é responsável;
-- qual é o prazo;
-- o que está bloqueado;
-- qual evidência comprova que uma etapa avançou.
+- where the article is;
+- what has already been done;
+- what needs to happen next;
+- who is responsible;
+- what is the deadline;
+- what is blocked;
+- which evidence proves that a stage has advanced.
 
-## O ciclo
+<a id="o-ciclo"></a>
+## The cycle
 
-### C — Capturar
+<a id="c-capturar"></a>
+### C — Capture
 
-Registrar uma unidade de trabalho quando surge uma ação, decisão, dependência, prazo ou bloqueio verificável.
+Record a unit of work when a verifiable action, decision, dependency, deadline, or block arises.
 
-Exemplos:
+Examples:
 
-- executar auditoria de novidade;
-- validar export da Web of Science;
-- rever artigos BORDERLINE;
-- obter full text;
-- revisar uma seção do manuscrito;
-- atender uma exigência da revista.
+- perform novelty audit;
+- validate export from Web of Science;
+- review BORDERLINE articles;
+- get full text;
+- review a section of the manuscript;
+- meet a magazine requirement.
 
-Cada item recebe um identificador estável:
+Each item is assigned a stable identifier:
 
 `CADA-0001`, `CADA-0002`, ...
 
-### A — Atribuir
+<a id="a-atribuir"></a>
+### A — Assign
 
-Definir:
+Set:
 
-- responsável;
-- etapa científica;
-- prioridade;
-- dependências;
-- artefato relacionado;
-- se a IA pode executar sozinha ou precisa de decisão humana.
+- responsible;
+- scientific stage;
+- priority;
+- dependencies;
+- related artifact;
+- whether AI can perform alone or needs human decision.
 
-### D — Definir prazo
+<a id="d-definir-prazo"></a>
+### D — Set deadline
 
-Todo item ativo deve ter uma expectativa temporal.
+Every active item must have a time expectation.
 
-O Meu Artigo distingue:
+My Article distinguishes:
 
-- **EXTERNAL** — prazo real de revista, congresso, instituição etc.;
-- **USER_SET** — prazo definido pelo pesquisador;
-- **INTERNAL_TARGET** — meta operacional interna;
-- **DEPENDENCY** — depende da conclusão de outro item;
-- **TO_DEFINE** — ainda precisa ser definido.
+- **EXTERNAL** — actual term of magazine, congress, institution, etc.;
+- **USER_SET** — deadline defined by the researcher;
+- **INTERNAL_TARGET** — internal operational target;
+- **DEPENDENCY** — depends on the completion of another item;
+- **TO_DEFINE** — still needs to be defined.
 
-Isso evita transformar uma meta interna em “prazo oficial”.
+This avoids turning an internal goal into an “official deadline”.
 
-### A — Acompanhar
+<a id="a-acompanhar"></a>
+### A — Follow
 
-O item permanece acompanhado até:
+The item remains tracked until:
 
 - DONE;
-- CANCELLED;
+- CANCELED;
 - SUPERSEDED.
 
-Quando possível, a conclusão precisa de evidência.
+When possible, the conclusion needs evidence.
 
-Exemplos:
+Examples:
 
-- arquivo de export validado;
-- protocolo atualizado;
-- linha da matriz criada;
-- full text armazenado;
-- Evidence_ID criado;
-- comprovante de submissão salvo.
+- validated export file;
+- updated protocol;
+- created matrix line;
+- full text stored;
+- Evidence_ID created;
+- proof of submission saved.
 
-## C.A.D.A. não significa criar um cartão para cada artigo encontrado
+<a id="cada-não-significa-criar-um-cartão-para-cada-artigo-encontrado"></a>
+## C.A.D.A. does not mean creating a card for each item found
 
-A gestão trabalha em nível útil de projeto.
+Management works at a useful project level.
 
-Por exemplo:
+For example:
 
 ```text
 CADA-0030 — Etapa 07: Screening
@@ -93,60 +101,66 @@ CADA-0030 — Etapa 07: Screening
   CADA-0034 — Congelar contagens do screening
 ```
 
-Os registros bibliográficos individuais continuam nas tabelas de screening/evidência.
+Individual bibliographic records remain in the screening/evidence tables.
 
-## Dois modos de gestão
+<a id="dois-modos-de-gestão"></a>
+## Two management modes
 
-O Meu Artigo funciona mesmo para quem nunca usou uma ferramenta formal de gestão de tarefas.
+My Article works even for those who have never used a formal task management tool.
 
-### Modo 1 — Planilha C.A.D.A. (`MATRIX_ONLY`)
+<a id="modo-1-planilha-cada-matrix_only"></a>
+### Mode 1 — C.A.D.A Spreadsheet. (`MATRIX_ONLY`)
 
-É o modo universal e padrão. A implementação visual oficial está documentada em [MATRIZ-CADA.md](./MATRIZ-CADA.md).
+It is the universal and default mode. The official visual implementation is documented in [MATRIZ-CADA.md](./MATRIZ-CADA.md).
 
-A própria matriz-mestra funciona como gerenciador do projeto. O pesquisador acompanha etapa, responsável, próxima ação, prazo, status, bloqueios e evidências diretamente na planilha.
+The master matrix itself functions as the project manager. The researcher tracks the stage, person responsible, next action, deadline, status, blocks and evidence directly in the spreadsheet.
 
-A aba `15_CADA_Dashboard` oferece uma visão resumida para quem prefere não trabalhar com filtros e tabelas detalhadas.
+The `15_CADA_Dashboard` tab offers a summary view for those who prefer not to work with detailed filters and tables.
 
-### Modo 2 — Planilha + gerenciador externo (`MATRIX_PLUS_EXTERNAL`)
+<a id="modo-2-planilha-gerenciador-externo-matrix_plus_external"></a>
+### Mode 2 — Spreadsheet + external manager (`MATRIX_PLUS_EXTERNAL`)
 
-A mesma matriz continua sendo canônica, mas os itens podem ser espelhados em ClickUp, Jira ou Trello.
+The same matrix remains canonical, but items can be mirrored in ClickUp, Jira or Trello.
 
-Isso é uma conveniência de gestão, não uma exigência.
+This is a management convenience, not a requirement.
 
-## Onde fica o controle
+<a id="onde-fica-o-controle"></a>
+## Where is the control
 
-A matriz-mestra contém:
+The master matrix contains:
 
+<a id="11_cada_control"></a>
 ### `11_CADA_Control`
 
-É a fonte operacional principal.
+It is the main operational source.
 
-Campos incluem:
+Fields include:
 
-- CADA_ID;
-- título;
-- etapa científica;
-- responsável;
-- próxima ação;
-- prazo;
-- tipo de prazo;
+- EACH_ID;
+- title;
+- scientific stage;
+- responsible;
+- next action;
+- term;
+- type of deadline;
 - status;
-- dependências;
-- bloqueio;
-- evidência de avanço;
-- evidência de conclusão;
-- artefato relacionado;
-- gerenciador externo.
+- dependencies;
+- blocking;
+- evidence of advancement;
+- evidence of conclusion;
+- related artifact;
+- external manager.
 
+<a id="12_pm_sync"></a>
 ### `12_PM_Sync`
 
-É opcional. Pode permanecer vazio quando o projeto usa apenas a planilha.
+It's optional. May remain empty when the project uses the spreadsheet only.
 
 
 
-Registra a correspondência entre o item C.A.D.A. e um card/ticket/tarefa externa.
+Registers the correspondence between item C.A.D.A. and an external card/ticket/task.
 
-Exemplo:
+Example:
 
 ```text
 CADA-0042
@@ -157,27 +171,27 @@ External status: In Progress
 Sync status: OK
 ```
 
+<a id="15_cada_dashboard"></a>
 ### `15_CADA_Dashboard`
 
-É a visão de gestão da planilha.
+It is the management view of the spreadsheet.
 
-Pode mostrar:
+It can show:- current scientific stage;
+- number of active items;
+- blocked items;
+- expired items;
+- upcoming deadlines;
+- completion rate;
+- next action;
+- responsible;
+- traceability gaps;
+- substantive uses of AI not yet reviewed;
+- health of the external synchronization, when it exists.
 
-- etapa científica atual;
-- quantidade de itens ativos;
-- itens bloqueados;
-- itens vencidos;
-- próximos prazos;
-- taxa de conclusão;
-- próxima ação;
-- responsável;
-- lacunas de rastreabilidade;
-- usos substantivos de IA ainda sem revisão;
-- saúde da sincronização externa, quando existir.
+<a id="painel-em-continuidademd"></a>
+## Panel in CONTINUIDADE.md
 
-## Painel em CONTINUIDADE.md
-
-O arquivo de continuidade contém um resumo:
+The continuity file contains a summary:
 
 ```text
 ## C.A.D.A. dashboard
@@ -206,21 +220,22 @@ Last sync:
 Conflicts:
 ```
 
-Assim, uma conversa nova pode entender rapidamente onde o trabalho parou.
+This way, a new conversation can quickly understand where the work left off.
 
-## Relação com rastreabilidade
+<a id="relação-com-rastreabilidade"></a>
+## Relationship with traceability
 
-C.A.D.A. gerencia o trabalho. A rastreabilidade registra como o trabalho científico aconteceu.
+C.A.D.A. manages the work. Traceability records how scientific work happened.
 
-Por isso, além de `11_CADA_Control`, o projeto mantém:
+Therefore, in addition to `11_CADA_Control`, the project maintains:
 
 - `13_Traceability_Log`;
 - `14_AI_Use_Log`;
 - `RASTREABILIDADE.md`.
 
-Um item C.A.D.A. pode gerar vários eventos de rastreabilidade.
+A C.A.D.A. item can generate several traceability events.
 
-Exemplo:
+Example:
 
 ```text
 CADA-0042 — validar export WoS
@@ -230,42 +245,47 @@ CADA-0042 — validar export WoS
   TRACE-0107 — novo export validado
 ```
 
-Veja [RASTREABILIDADE.md](./RASTREABILIDADE.md).
+See [TRACEABILITY.md](./RASTREABILIDADE.md).
 
-## Integração com ClickUp, Jira ou Trello
+<a id="integração-com-clickup-jira-ou-trello"></a>
+## Integration with ClickUp, Jira or Trello
 
-A Skill pode usar um gerenciador externo como **espelho operacional**.
+The Skill can use an external manager as an **operational mirror**.
 
-Ela usa apenas um principal por artigo, salvo se o usuário pedir explicitamente outro arranjo.
+It uses only one principal per article, unless the user explicitly requests another arrangement.
 
+<a id="clickup"></a>
 ### ClickUp
 
-Pode usar tarefas-pai para etapas científicas e subtarefas para unidades C.A.D.A.
+You can use parent tasks for scientific steps and subtasks for C.A.D.A units.
 
+<a id="jira-atlassian"></a>
 ### Jira / Atlassian
 
-Pode usar um Epic para o artigo e Tasks/Stories com o identificador C.A.D.A.
+You can use an Epic for the article and Tasks/Stories with the identifier C.A.D.A.
 
+<a id="trello"></a>
 ### Trello
 
-Pode usar um board com listas como:
+You can use a board with lists like:
 
-- Capturado;
-- Próxima ação;
-- Em andamento;
-- Aguardando/Bloqueado;
-- Concluído.
+- Captured;
+- Next action;
+- In progress;
+- Waiting/Blocked;
+- Completed.
 
-## Regra de ouro
+<a id="regra-de-ouro"></a>
+## Rule of thumb
 
-O card/ticket **não é a evidência científica**.
+The card/ticket **is not scientific evidence**.
 
-Se um ticket estiver marcado como Done, mas o export não foi salvo ou a decisão não está registrada no protocolo, a etapa científica não está necessariamente concluída.
+If a ticket is marked as Done, but the export has not been saved or the decision is not recorded in the protocol, the scientific step is not necessarily completed.
 
-A fonte de verdade continua sendo o workspace científico:
+The source of truth remains the scientific workspace:
 
 - `CONTINUIDADE.md`;
-- protocolo;
+- protocol;
 - Search Log;
 - screening;
 - full-text tracker;
@@ -274,15 +294,16 @@ A fonte de verdade continua sendo o workspace científico:
 - Claims Ledger;
 - `11_CADA_Control`.
 
-O gerenciador externo serve para tornar o trabalho visível e acompanhável.
+The external manager serves to make the work visible and followable.
 
-## Resultado esperado
+<a id="resultado-esperado"></a>
+## Expected result
 
-A Skill deve conseguir responder a qualquer momento:
+The Skill must be able to respond at any time:
 
-> Onde estamos?
+> Where are we?
 
-com algo semelhante a:
+with something similar to:
 
 ```text
 Etapa atual: 06 — Deduplicação
@@ -310,4 +331,4 @@ Gerenciador:
 - ClickUp — sincronizado
 ```
 
-Essa visão é a principal função do C.A.D.A. no Meu Artigo.
+This vision is the main function of C.A.D.A. in My Article.

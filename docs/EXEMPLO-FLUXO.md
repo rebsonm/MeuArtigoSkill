@@ -1,15 +1,15 @@
-# Exemplo ilustrativo de uso
+<a id="exemplo-ilustrativo-de-uso"></a>
+# Illustrative example of use
 
-Este exemplo é inventado para explicar o fluxo. Não contém fontes reais, busca executada, resultados de pesquisa ou aprovação humana real. Não deve ser importado para um projeto científico.
+This example is invented to explain the flow. Contains no actual sources, performed search, search results, or actual human approval. It should not be imported into a scientific project.
 
-1. **Entrada:** “Por que pequenos municípios enfrentam dificuldades para adotar IA em compras públicas?”
-2. **Novidade:** a skill procura trabalhos próximos e apresenta o que já foi explicado. Sem busca real, a novidade permanece NÃO VERIFICADA.
-3. **Pergunta proposta:** “Como a capacidade técnica local influencia a adoção?” O pesquisador pode aceitar, ajustar ou rejeitar; ainda é uma proposta.
-4. **Extração ilustrativa:** suponha que um texto fornecido descreva dificuldades de capacitação em um contexto delimitado. A matriz registra fonte, passagem, página, contexto e limitações. Sem texto acessível, nenhum Evidence_ID é apresentado como validado.
-5. **Afirmação proporcional:** “No contexto descrito pela fonte, a capacitação foi apontada como dificuldade.” A skill não transforma isso em “capacitação causa o fracasso de todos os municípios”.
-6. **Contestação:** procurar evidências contrárias e explicações alternativas, como infraestrutura ou desenho institucional. Registrar o que foi procurado e encontrado.
-7. **Decisão humana:** mostrar a afirmação, suas fontes e limites para julgamento. Somente após resposta explícita registrar responsável, decisão e referência à resposta.
-8. **Entrega:** manuscrito com afirmações rastreáveis, pendências visíveis e auditoria dos arquivos exatos antes da liberação.
+1. **Input:** “Why do small municipalities face difficulties adopting AI in public procurement?”
+2. **New:** the skill searches for nearby jobs and presents what has already been explained. Without real search, the novelty remains UNVERIFIED.
+3. **Proposed question:** “How does local technical capacity influence adoption?” The researcher can accept, adjust or reject; It's still a proposal.
+4. **Illustrative extraction:** suppose that a text provided describes training difficulties in a delimited context. The matrix records source, passage, page, context, and limitations. Without accessible text, no Evidence_ID is presented as validated.
+5. **Proportional statement:** “In the context described by the source, training was highlighted as a difficulty.” The skill does not transform this into “training causes the failure of all municipalities”.
+6. **Contest:** look for contrary evidence and alternative explanations, such as infrastructure or institutional design. Record what was looked for and found.
+7. **Human decision:** show the statement, its sources and limits for judgment. Only after an explicit response record the person responsible, decision and reference to the response.
+8. **Delivery:** manuscript with traceable claims, visible issues and audit of exact files before release.
 
-O pesquisador acompanha pergunta, evidências, decisões e próxima ação no painel. A infraestrutura de IDs permanece disponível para auditoria.
-
+The researcher tracks the question, evidence, decisions and next action on the panel. The ID infrastructure remains available for auditing.

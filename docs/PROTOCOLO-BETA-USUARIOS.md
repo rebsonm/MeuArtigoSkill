@@ -1,42 +1,49 @@
-# Protocolo proposto para avaliações futuras da beta
+<a id="protocolo-proposto-para-avaliações-futuras-da-beta"></a>
+# Proposed protocol for future beta evaluations
 
-**Situação: PLANEJADO — NÃO EXECUTADO.** Não há participantes recrutados, sessões realizadas, percentuais de sucesso, declarações atribuídas a usuários ou resultados de avaliação registrados neste documento.
+**Status: PLANNED — NOT EXECUTED.** There are no participants recruited, sessions held, success percentages, statements attributed to users or evaluation results recorded in this document.
 
-## Objetivo e escopo
+<a id="objetivo-e-escopo"></a>
+## Objective and scope
 
-Quando houver testadores voluntários, avaliar instalação, navegação, compreensão dos limites científicos, continuidade dos projetos e falhas operacionais em ChatGPT/Claude/Gemini. Este protocolo é de **usabilidade e funcionamento**, não substitui a avaliação científica independente nem o estudo com/sem C.A.D.A.
+When there are volunteer testers, evaluate installation, navigation, understanding of scientific limits, project continuity and operational failures in ChatGPT/Claude/Gemini. This protocol is for **usability and functioning**, it does not replace independent scientific evaluation or study with/without C.A.D.A.
 
-## Preparação (antes das sessões)
+<a id="preparação-antes-das-sessões"></a>
+## Preparation (before sessions)
 
-- Congelar versão e instruções para cada rodada e registrar diferenças entre plataformas.
-- Selecionar tarefas não sigilosas, com dados cuja utilização seja autorizada. Não criar fontes falsas para simular uma pesquisa real.
-- Informar ao voluntário o objetivo da avaliação, o tratamento dos registros e o direito de interromper a participação.
-- Aplicar as regras institucionais e éticas pertinentes antes de coletar dados pessoais ou realizar investigação com participantes, quando aplicáveis.
-- Não solicitar credenciais, acesso a contas de terceiros, dados de saúde, textos protegidos nem material confidencial.
+- Freeze version and instructions for each round and record differences between platforms.
+- Select non-confidential tasks, with data whose use is authorized. Do not create fake sources to simulate a real search.
+- Inform the volunteer of the objective of the evaluation, the treatment of records and the right to interrupt participation.
+- Apply the relevant institutional and ethical rules before collecting personal data or carrying out research with participants, when applicable.
+- Do not request credentials, access to third-party accounts, health data, protected texts or confidential material.
 
-## Tarefas propostas
+<a id="tarefas-propostas"></a>
+## Proposed tasks
 
-1. Encontrar o release e instalar a Skill, se a conta permitir.
-2. Iniciar projeto novo com pergunta de pesquisa própria e verificar o armazenamento escolhido.
-3. Informar política de periódico ou prosseguir em modo neutro quando não houver revista-alvo.
-4. Entender diferenças entre proposta da IA, decisão científica humana e pendências.
-5. Identificar onde estão as evidências, os registros de IA, os relatórios e as limitações.
-6. Encontrar instruções para reportar um problema sem expor dados privados.
+1. Find the release and install the Skill, if the account allows it.
+2. Start a new project with your own research question and check the chosen storage.
+3. Inform journal policy or continue in neutral mode when there is no target journal.
+4. Understand differences between AI proposal, human scientific decision and pending issues.
+5. Identify where the evidence, AI logs, reports, and limitations are.
+6. Find instructions for reporting an issue without exposing private data.
 
-## Medidas a coletar *somente após execução real*
+<a id="medidas-a-coletar-somente-após-execução-real"></a>
+## Measures to be collected *only after actual execution*
 
-- Conclusão por tarefa (sim/não/parcial), categoria e gravidade dos obstáculos;
-- tempo para encontrar ou concluir ações, apenas quando eventos observáveis estiverem disponíveis;
-- erros de interpretação entre gestão C.A.D.A. e validade científica;
-- diferenças de funções disponíveis conforme plataforma/conta;
-- feedback voluntário e exemplos desidentificados, preservando a palavra original quando autorizado.
+- Completion by task (yes/no/partial), category and severity of obstacles;
+- time to find or complete actions, only when observable events are available;
+- errors of interpretation between C.A.D.A. management. and scientific validity;
+- differences in available functions depending on platform/account;
+- voluntary feedback and de-identified examples, preserving the original word when authorized.
 
-As métricas devem mostrar denominadores, perdas, viés de seleção e limitações. Não estimar benefícios sobre artigos ou qualidade científica a partir da conclusão de telas e etapas.
+Metrics should show denominators, losses, selection bias and limitations. Do not estimate benefits on articles or scientific quality from the completion of screens and steps.
 
-## Critérios para revisão da beta
+<a id="critérios-para-revisão-da-beta"></a>
+## Beta review criteria
 
-Problemas que exponham dados, divulguem PDFs sem autorização, inventem evidências ou atribuam aprovação humana inexistente terão prioridade máxima. Corrigir o código, executar testes de regressão e atualizar a documentação antes de divulgar alterações.
+Issues that expose data, disclose PDFs without authorization, invent evidence, or attribute non-existent human approval will be given top priority. Fix code, run regression tests, and update documentation before releasing changes.
 
-## Relatório final
+<a id="relatório-final"></a>
+## Final report
 
-Se a rodada vier a ocorrer, gerar um relatório identificado pela data, versão, ambiente, participantes consentidos, procedimento, registros reais, resultados e ressalvas. **Não gerar esse relatório como se a coleta já tivesse ocorrido.**
+If the round occurs, generate a report identified by date, version, environment, consented participants, procedure, actual records, results and reservations. **Do not generate this report as if the collection had already occurred.**

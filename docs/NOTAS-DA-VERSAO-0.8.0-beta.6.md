@@ -1,20 +1,24 @@
-# Meu Artigo — versão beta 0.8.0-beta.6
+<a id="meu-artigo-versão-beta-080-beta6"></a>
+# My Article — beta version 0.8.0-beta.6
 
-Esta versão aprofunda a fundamentação metodológica que sustenta escolhas de pesquisa e de escrita acadêmica, preservando a autonomia intelectual do pesquisador e os controles científicos existentes.
+This version deepens the methodological foundation that supports research and academic writing choices, preserving the researcher's intellectual autonomy and existing scientific controls.
 
-## Fundamentação metodológica ampliada
+<a id="fundamentação-metodológica-ampliada"></a>
+## Expanded methodological foundation
 
-- Mapa crítico organizado por famílias de revisão, problematização, contribuição, redação, coerência de desenho, análise qualitativa, estudos de caso, teoria fundamentada, fenomenologia, narrativa, design science e uso responsável da IA.
-- Exposição das diferenças entre abordagens e dos limites de transferência dos métodos, sem impor um único padrão científico a todos os artigos.
-- Referências com notas analíticas e orientações operacionais, separando consulta textual de verificação bibliográfica e de regras próprias da Skill.
-- Avaliação da qualidade das fontes condicionada ao tipo de evidência e à afirmação que ela pretende sustentar.
-- Bibliografia revista para corrigir possíveis inconsistências de edição e registrar somente dados efetivamente identificados.
-- Proteção da origem de coleções particulares: nenhum caminho, identificador privado ou acompanhamento de desenvolvimento integra a fundamentação pública.
+- Critical map organized by families of review, problematization, contribution, writing, design coherence, qualitative analysis, case studies, grounded theory, phenomenology, narrative, design science and responsible use of AI.
+- Exposure of the differences between approaches and the limits of transferring methods, without imposing a single scientific standard on all articles.
+- References with analytical notes and operational guidelines, separating textual consultation from bibliographical verification and Skill's own rules.
+- Assessment of the quality of sources depending on the type of evidence and the statement it intends to support.
+- Bibliography revised to correct possible editing inconsistencies and record only effectively identified data.
+- Protection of the origin of private collections: no path, private identifier or development tracking is part of the public foundation.
 
-## Instalação
+<a id="instalação"></a>
+## Installation
 
-Baixe **MeuArtigoSkill-v0.8.0-beta.6.zip** na seção de arquivos desta versão. O arquivo SHA256SUMS.txt acompanha o pacote. As orientações estão no [guia de instalação](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/COMECE-AQUI.md).
+Download **MyArticleSkill-v0.8.0-beta.6.zip** from the files section of this release. The SHA256SUMS.txt file accompanies the package. Guidelines are in [installation guide](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/COMECE-AQUI.md).
 
-## Limites científicos
+<a id="limites-científicos"></a>
+## Scientific limits
 
-A expansão é **bibliográfica e metodológica**, não uma validação empírica de desempenho. Textos consultados não significam que os livros tenham sido lidos integralmente, nem que cada obra deva ser citada no manuscrito do usuário. Não foram fabricados estudos com pessoas, pareceres, ganhos causais ou resultados de comparação. A pesquisa, a interpretação das fontes e a autoria permanecem sob responsabilidade do pesquisador.
+The expansion is **bibliographical and methodological**, not an empirical validation of performance. Texts consulted do not mean that the books have been read in full, nor that each work must be cited in the user's manuscript. No studies with people, opinions, causal gains or comparison results were manufactured. The research, interpretation of sources and authorship remain the responsibility of the researcher.

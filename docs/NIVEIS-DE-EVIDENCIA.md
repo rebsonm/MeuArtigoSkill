@@ -1,75 +1,76 @@
-# Níveis distintos de comprovação científica
+<a id="níveis-distintos-de-comprovação-científica"></a>
+# Different levels of scientific proof
 
-O **Meu Artigo** não transforma automaticamente um registro de sistema em
-confirmação científica. Há quatro perguntas diferentes e nenhum nível pode
-ser inferido do anterior. Esse desdobramento é uma **regra de integridade do
-software**, não uma escala metodológica validada por terceiros.
+**My Article** does not automatically transform a system record into
+scientific confirmation. There are four different questions and no level can
+be inferred from the previous one. This unfolding is a **rule of integrity of the
+software**, not a methodological scale validated by third parties.
 
-| Nível | O que é constatável | O que ainda não foi demonstrado |
+| Level | What is verifiable | What has not yet been demonstrated |
 |---|---|---|
-| 1. Identidade bibliográfica | Metadados do DOI, título, ano e autoria correspondem a registros acadêmicos consultados | Leitura do texto original, qualidade metodológica ou adequação à afirmação |
-| 2. Passagem literal consultável | Uma sequência textual aparece em arquivo realmente acessível e identificado; relatório pode registrar hash e localização | Que a interpretação feita do trecho é correta ou representativa do estudo |
-| 3. Julgamento humano documentado | A matriz declara validação/apreciação humana e aponta para uma manifestação original | Autenticidade independente da identidade do revisor e validade científica da conclusão |
-| 4. Resultado empírico sustentado | Existem dados/materiais, procedimentos efetivamente realizados e análise/avaliação rastreável | Validade de inferência, ausência de vieses, generalização ou reprodução independente |
+| 1. Bibliographic identity | DOI metadata, title, year and author correspond to academic records consulted | Reading of the original text, methodological quality or adequacy to the statement |
+| 2. Queryable literal passage | A textual sequence appears in a truly accessible and identified file; report can record hash and location | That the interpretation made of the excerpt is correct or representative of the study |
+| 3. Documented human judgment | The matrix declares human validation/appreciation and points to an original manifestation | Authenticity independent of the reviewer's identity and scientific validity of the conclusion |
+| 4. Sustained empirical result | There are data/materials, procedures actually carried out and traceable analysis/evaluation | Validity of inference, absence of bias, generalization or independent reproduction |
 
-## Procedimento com os mesmos arquivos
+<a id="procedimento-com-os-mesmos-arquivos"></a>
+## Procedure with the same files
 
-- `05_Evidence_Matrix.csv`: registrar o que realmente foi examinado,
-  `Evidence_ID`, o localizador e o papel da fonte.
-- `SOURCE_VERIFICATION.json`: resultado da verificação de metadados e
-  passagens conforme `scripts/verify_sources.py`, vinculado por SHA-256 à
-  matriz. Apenas `metadata_status=VERIFIED` indica conferência documental de
-  identidade bibliográfica; apenas `locator_status=MATCHED` indica que um
-  trecho literal pôde ser encontrado na cópia consultada. Ambos podem estar
-  ausentes e jamais provam suporte semântico.
-- `09_Claims_Ledger.csv`: registrar `Claim_type`, fonte, `Trace_IDs`,
-  limites, `Researcher_review_evidence` e status de revisão científica.
-  As categorias **[L], [I] e [P] continuam independentes**: texto de fonte,
-  inferência delimitada e proposição original não são intercambiáveis.
-- `17_Decision_Log.csv`, `18_Human_Validation_Gates.csv` e
-  `METHOD_PROFILE.json`: preservar manifestações originais do pesquisador,
-  método escolhido e ligação a materiais, análises e integração quando
-  houver afirmações sobre resultados empíricos.
-- `EMPIRICAL_RESULT`: ao congelar as afirmações em projetos novos com rotas
-  explícitas, exigir rota empírica/design science, referência documental
-  de materiais e análise realmente realizada, decisões válidas de
-  `GATE-0004` e `GATE-0005`, `Trace_IDs` e revisão humana rastreável.
-  A presença desses campos **ainda não certifica** o achado ou a identidade
-  de quem revisou: deve-se examinar as fontes originais e as condições da
-  inferência. Um estudo apenas planejado permanece sem resultados.
+- `05_Evidence_Matrix.csv`: record what was actually examined,
+  `Evidence_ID`, the source locator and role.
+- `SOURCE_VERIFICATION.json`: metadata check result and
+  passages according to `scripts/verify_sources.py`, linked by SHA-256 to
+  matrix. Only `metadata_status=VERIFIED` indicates document verification of
+  bibliographic identity; only `locator_status=MATCHED` indicates that a
+  literal excerpt could be found in the consulted copy. Both can be
+  absent and never prove semantic support.
+- `09_Claims_Ledger.csv`: register `Claim_type`, source, `Trace_IDs`,
+  limits, `Researcher_review_evidence`, and scientific review status.
+  The categories **[L], [I] and [P] remain independent**: source text,
+  Bounded inference and original proposition are not interchangeable.
+- `17_Decision_Log.csv`, `18_Human_Validation_Gates.csv` and
+  `METHOD_PROFILE.json`: preserve the researcher's original statements,
+  chosen method and link to materials, analysis and integration when
+  there are claims about empirical results.
+- `EMPIRICAL_RESULT`: when freezing assertions in new projects with routes
+  explicit, require empirical route/design science, documentary reference
+  of materials and analysis actually carried out, valid decisions of
+  `GATE-0004` and `GATE-0005`, `Trace_IDs` and human traceable review.
+  The presence of these fields **does not yet certify** the find or identity
+  of those who reviewed: one must examine the original sources and the conditions of the
+  inference. A barely planned study remains without results.
 
-Execute a inspeção conservadora de forma local, no workspace já autorizado:
+Run the conservative inspection locally, in the already authorized workspace:
 
 ```bash
 python scripts/scientific_evidence_tiers.py /caminho/do/projeto
 python scripts/scientific_evidence_tiers.py /caminho/do/projeto --freeze
 ```
 
-A saída distingue contagens de **indícios documentais** e inclui os limites
+The output distinguishes counts from **documentary evidence** and includes the limits
 `bibliographic_identity_proves_text_read=false`,
 `literal_locator_proves_claim_semantics=false`,
-`human_review_record_authenticates_reviewer=false` e
+`human_review_record_authenticates_reviewer=false` and
 `empirical_scientific_result_independently_validated=false`.
-Não produz pontuação de qualidade científica e não requer uma nova aba ou
-família de identificadores.
+Does not produce scientific quality scores and does not require a new tab or
+family of identifiers.
 
-A auditoria de fechamento `GATE-0006` usa essa verificação quando o
-projeto tem governança metodológica ativa. Em projetos mais antigos,
-a escolha de uma nova rota e a migração dos registros científicos requerem
-decisão documentada: nunca preencher retroativamente uma validação.
+The `GATE-0006` closing audit uses this check when the
+project has active methodological governance. In older projects,
+the choice of a new route and the migration of scientific records require
+documented decision: never retroactively complete a validation.
 
-## Limites e auditabilidade
-
-- Uma simples referência de arquivo ou URL em `METHOD_PROFILE.json`
-  **não prova** que o arquivo existe, está atualizado ou foi examinado.
-  Sempre confira evidência original e permissões do projeto, inclusive
-  quando Google Drive é o repositório canônico.
-- A auditoria do script só verifica presença e coerência formal dos
-  registros. Nenhum resultado de campo, análise estatística ou avaliação
-  de artefato foi executado pelo ato de preencher esse protocolo.
-- O reconhecimento de uma sequência literal não comprova a fidelidade
-  semântica da interpretação; isso requer leitura contextualizada.
-- Nenhuma inferência causal deve ser feita exclusivamente a partir de
-  correlação, contraste simples antes/depois ou aprovação do protocolo.
-- Os relatórios de testes de engenharia e os *gates* não equivalem a
-  avaliação científica independente da Skill, que continua pendente.
+<a id="limites-e-auditabilidade"></a>
+## Limits and auditability- A simple file reference or URL in `METHOD_PROFILE.json`
+  **does not prove** that the file exists, is up to date, or has been examined.
+  Always check original evidence and project permissions, including
+  when Google Drive is the canonical repository.
+- The script audit only checks presence and formal coherence of
+  records. No field results, statistical analysis or evaluation
+  artifact was performed by the act of completing this protocol.
+- Recognition of a literal sequence does not prove fidelity
+  semantics of interpretation; This requires contextualized reading.
+- No causal inference should be made exclusively from
+  correlation, simple before/after contrast or protocol approval.
+- Engineering test reports and *gates* do not equate to
+  independent scientific evaluation of Skill, which remains pending.

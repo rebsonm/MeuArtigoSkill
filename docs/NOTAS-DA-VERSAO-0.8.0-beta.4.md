@@ -1,21 +1,25 @@
-# Meu Artigo — versão beta 0.8.0-beta.4
+<a id="meu-artigo-versão-beta-080-beta4"></a>
+# My Article — beta version 0.8.0-beta.4
 
-O **Meu Artigo** passa a oferecer uma apresentação simplificada do andamento da pesquisa, preservando as verificações e as decisões científicas que já faziam parte da ferramenta.
+**My Article** now offers a simplified presentation of the progress of the research, preserving the verifications and scientific decisions that were already part of the tool.
 
-## O que há de novo
+<a id="o-que-há-de-novo"></a>
+## What's new
 
-- **Núcleo mínimo:** mostra o próximo passo, as decisões necessárias e os riscos mais relevantes sem exigir que o pesquisador acompanhe todos os registros técnicos.
-- **Fundamentação metodológica ampliada:** orientações de revisão integrativa, tipos de contribuição científica, pesquisa qualitativa e desenvolvimento de artefatos, aplicadas conforme o desenho escolhido.
-- **Maior cuidado com originalidade:** uma busca que não localizou trabalhos próximos é apresentada como conclusão limitada ao material pesquisado, não como prova de ineditismo.
-- **Declaração breve de uso de IA:** texto conciso para conferência pelo autor e adequação às regras do periódico, com histórico completo preservado.
-- **Preparação para futuras avaliações:** procedimentos de comparação entre formas de apresentação e de reprodução de uma revisão publicada. Nenhuma dessas avaliações foi realizada nesta atualização.
+- **Minimum core:** shows the next step, the necessary decisions and the most relevant risks without requiring the researcher to keep track of all technical records.
+- **Extended methodological foundation:** integrative review guidelines, types of scientific contribution, qualitative research and development of artifacts, applied according to the chosen design.
+- **Greater care with originality:** a search that did not locate similar works is presented as a conclusion limited to the material researched, not as proof of originality.
+- **Brief statement of AI use:** concise text for checking by the author and adapting to the journal's rules, with complete history preserved.
+- **Preparation for future evaluations:** comparison procedures between forms of presentation and reproduction of a published review. No such assessments were performed in this update.
 
-## Instalação
+<a id="instalação"></a>
+## Installation
 
-Baixe o arquivo **MeuArtigoSkill-v0.8.0-beta.4.zip** e consulte o [guia de instalação](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/COMECE-AQUI.md). O arquivo **SHA256SUMS.txt** permite conferir a integridade do download.
+Download the **MyArticleSkill-v0.8.0-beta.4.zip** file and refer to the [installation guide](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/COMECE-AQUI.md). The **SHA256SUMS.txt** file allows you to check the integrity of the download.
 
-## Responsabilidade científica e limitações
+<a id="responsabilidade-científica-e-limitações"></a>
+## Scientific responsibility and limitations
 
-As decisões metodológicas, a leitura das fontes, a interpretação de resultados e a submissão permanecem sob responsabilidade do pesquisador. O Meu Artigo é uma **beta pública**: aprovação de testes técnicos não significa validação científica integral, ganhos de produtividade comprovados ou aceitação editorial garantida. Não foram simuladas avaliações com participantes.
+Methodological decisions, reading of sources, interpretation of results and submission remain the responsibility of the researcher. My Article is a **public beta**: approval of technical tests does not mean full scientific validation, proven productivity gains or guaranteed editorial acceptance. There were no simulated evaluations with participants.
 
-O software original é distribuído sob licença MIT; isso não transfere direitos sobre artigos ou livros de terceiros.
+The original software is distributed under the MIT license; This does not transfer rights to third-party articles or books.

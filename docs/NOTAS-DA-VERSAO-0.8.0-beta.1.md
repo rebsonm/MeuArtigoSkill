@@ -1,26 +1,30 @@
-# Meu Artigo — versão beta 0.8.0-beta.1
+<a id="meu-artigo-versão-beta-080-beta1"></a>
+# My Article — beta version 0.8.0-beta.1
 
-Primeira versão beta pública consolidada do **Meu Artigo**, uma Skill para apoiar o planejamento e a elaboração de artigos científicos.
+First consolidated public beta version of **My Article**, a Skill to support the planning and preparation of scientific articles.
 
-## Principais recursos
+<a id="principais-recursos"></a>
+## Key Features
 
-- Organização das etapas do artigo, desde a formulação da pergunta até a preparação do manuscrito.
-- Planejamento de pesquisas bibliográficas e acompanhamento da seleção de estudos.
-- Organização das fontes, evidências e decisões científicas.
-- Acompanhamento das atividades pelo método C.A.D.A.
-- Apoio à preparação de documentos conforme as orientações da revista-alvo.
-- Continuidade do projeto entre sessões, conforme os recursos da plataforma.
+- Organization of the stages of the article, from formulating the question to preparing the manuscript.
+- Planning bibliographical research and monitoring the selection of studies.
+- Organization of sources, evidence and scientific decisions.
+- Monitoring of activities using the C.A.D.A method.
+- Support in the preparation of documents according to the guidelines of the target magazine.
+- Continuity of the project between sessions, depending on the platform's resources.
 
-## Como começar
+<a id="como-começar"></a>
+## How to get started
 
-Baixe **MeuArtigoSkill-v0.8.0-beta.1.zip** e consulte o [guia de instalação](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/COMECE-AQUI.md).
+Download **MyArticleSkill-v0.8.0-beta.1.zip** and refer to the [](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/COMECE-AQUI.md) installation guide.
 
-**Recomendação:** utilize a [versão beta mais recente](https://github.com/rebsonm/MeuArtigoSkill/releases), que contém as atualizações de apresentação e documentação.
+**Recommendation:** use the latest beta version](https://github.com/rebsonm/MeuArtigoSkill/releases), which contains presentation and documentation updates.
 
-## Limites
+<a id="limites"></a>
+## Limits
 
-O Meu Artigo não substitui o julgamento do pesquisador. Conferência de fontes, decisões metodológicas e conteúdo final permanecem sob sua responsabilidade.
+My Article does not replace the researcher's judgment. Checking sources, methodological decisions and final content remain your responsibility.
 
-A versão beta possui testes técnicos, mas sua qualidade científica em utilização real ainda não foi validada de forma abrangente. A ferramenta não garante publicação.
+The beta version has technical tests, but its scientific quality in real use has not yet been comprehensively validated. The tool does not guarantee publication.
 
-Código original sob licença MIT; obras de terceiros mantêm seus próprios direitos.
+Original code under MIT license; Third-party works retain their own rights.

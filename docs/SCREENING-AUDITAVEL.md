@@ -1,62 +1,66 @@
-# Screening auditável: separar sugestões da IA de decisões científicas
+<a id="screening-auditável-separar-sugestões-da-ia-de-decisões-científicas"></a>
+# Auditable screening: separate AI suggestions from scientific decisions
 
-Este procedimento utiliza a **mesma** tabela 03_Screening.csv e a **mesma** aba 07_SCREENING da matriz-mestra. Não introduz novas abas, famílias de IDs, contas pagas ou exigência de dois revisores humanos fictícios.
+This procedure uses the **same** 03_Screening.csv table and the **same** 07_SCREENING tab of the master matrix. It does not introduce new tabs, ID families, paid accounts, or the requirement for two fictitious human reviewers.
 
-## O que significa cada etapa
+<a id="o-que-significa-cada-etapa"></a>
+## What each step means
 
-**Pass1**: triagem de título e resumo; decisão final humana INCLUDE, BORDERLINE ou EXCLUDE.
+**Pass1**: title and abstract screening; final human decision INCLUDE, BORDERLINE or EXCLUDE.
 
-**Pass2**: priorização após revisão mais próxima de título/resumo para os registros retidos em Pass1; valores FULL TEXT — CORE, FULL TEXT — SUPPORT ou EXCLUDE. Pass2 não substitui a avaliação de elegibilidade efetiva do texto completo em 04_FullText_Tracker.csv. Prioridade CORE/SUPPORT não significa qualidade metodológica.
+**Pass2**: prioritization after the closest title/summary review for records retained in Pass1; FULL TEXT — CORE, FULL TEXT — SUPPORT or EXCLUDE values. Pass2 does not replace the actual full-text eligibility assessment in 04_FullText_Tracker.csv. CORE/SUPPORT priority does not mean methodological quality.
 
-Uma IA pode **propor** cada uma das decisões, explicando o motivo e apontando onde a sugestão foi produzida. Essa proposta nunca é escrita nos campos finais. A decisão só é registrada no campo final após uma resposta efetiva e atribuída ao pesquisador, preservando a referência à mensagem/documento que a originou.
+An AI can **propose** each of the decisions, explaining the reason and pointing out where the suggestion was produced. This proposal is never written in the final fields. The decision is only recorded in the final field after an effective response and attributed to the researcher, preserving the reference to the message/document that originated it.
 
-## Campos adicionais nas tabelas já existentes
+<a id="campos-adicionais-nas-tabelas-já-existentes"></a>
+## Additional fields in existing tables
 
-Para cada Pass1 e Pass2, a matriz possui:
-- AI_proposal — decisão sugerida pela IA, ainda provisória;
-- AI_reason — justificativa da sugestão, sem presumi-la verdadeira;
-- AI_source — referência à mensagem ou saída real do modelo;
-- reviewed_by — revisor humano identificado;
-- review_evidence — referência à manifestação efetiva do revisor;
-- disagreement_reason — razão registrada quando a decisão humana diverge da sugestão.
+For each Pass1 and Pass2, the matrix has:
+- AI_proposal — decision suggested by the AI, still provisional;
+- AI_reason — justification of the suggestion, without assuming it to be true;
+- AI_source — reference to the actual message or output of the model;
+- reviewed_by — identified human reviewer;
+- review_evidence — reference to the reviewer’s effective statement;
+- disagreement_reason — reason recorded when the human decision diverges from the suggestion.
 
-Os campos antigos Pass1_decision/Pass1_reason e Pass2_decision/Pass2_reason continuam representando a decisão final, sua motivação e o protocolo empregado. IDs de pesquisa existentes são preservados.
+The old fields Pass1_decision/Pass1_reason and Pass2_decision/Pass2_reason continue to represent the final decision, its motivation and the protocol used. Existing search IDs are preserved.
 
-## Execução gratuita
+<a id="execução-gratuita"></a>
+## Free execution
 
-Requer Python 3.10+ e biblioteca padrão. Exemplos de forma de comando, não de decisões reais:
+Requires Python 3.10+ and standard library. Examples of form of command, not actual decisions:
 
     python scripts/screening_review.py propose "/projeto" --stage pass1 --record-id "R-0001" --proposal BORDERLINE --reason "O resumo possui indicadores pertinentes mas não descreve o contexto de aplicação." --source "Referência à saída real do agente"
 
-Somente depois de o pesquisador realmente examinar os dados e manifestar sua decisão:
+Only after the researcher actually examines the data and expresses his decision:
 
     python scripts/screening_review.py decide "/projeto" --stage pass1 --record-id "R-0001" --decision INCLUDE --reason "O resumo demonstra aderência ao critério de inclusão referente à governança documental." --reviewer "Pesquisador" --evidence "Referência à manifestação original do pesquisador" --disagreement-reason "O pesquisador identificou aderência ao conceito central que a recomendação inicial não reconheceu."
 
-Quando houver discordância, o último argumento será obrigatório. A decisão original é preservada: não é permitido substituir silenciosamente um julgamento já gravado. Revisões posteriores devem ter novo registro no DEC_ID/TRACE_ID existente, com justificação e cópia versionada do estado anterior.
+When there is disagreement, the last argument will be mandatory. The original decision is preserved: it is not permitted to silently replace an already recorded judgment. Subsequent revisions must have a new record in the existing DEC_ID/TRACE_ID, with justification and a versioned copy of the previous state.
 
-A execução do script confirma apenas que a tabela foi alterada. Um nome digitado em --reviewer não autentica a identidade humana nem comprova que o usuário leu o documento; o campo --evidence deve apontar para a mensagem ou revisão real e precisa ser conferido externamente.
+Running the script only confirms that the table has changed. A name entered in --reviewer does not authenticate human identity or prove that the user has read the document; the --evidence field must point to the actual message or review and must be checked externally.
 
-## Auditoria e congelamento
+<a id="auditoria-e-congelamento"></a>
+## Audit and freeze
 
     python scripts/screening_review.py audit "/projeto" --strict
 
-Para conferir se há elementos pendentes antes de congelar o corpus:
+To check if there are pending elements before freezing the corpus:
 
     python scripts/screening_review.py audit "/projeto" --strict --freeze
 
-Nos projetos novos, o parâmetro screening_human_decisions_required=true ativa a validação cruzada pelo script principal validate_project.py. O GATE-0004 aprovado não pode prosseguir com sugestões não apreciadas, revisores ausentes, exclusões sem justificativa, divergências sem resolução ou registros não duplicados sem decisões concluídas nas passagens aplicáveis.
+In new projects, the screening_human_decisions_required=true parameter activates cross-validation by the main validate_project.py script. Approved GATE-0004 cannot proceed with unappreciated suggestions, absent reviewers, unjustified deletions, unresolved disagreements, or unduplicated records without decisions completed on applicable passages.
 
-O estado BORDERLINE exige uma resolução na Pass2 antes do congelamento. Duplicatas realmente identificadas exigem vínculo Canonical_record_id; sugestões do modelo não servem, isoladamente, para afirmar que um item é duplicado.
+The BORDERLINE state requires a resolution in Pass2 before freezing. Truly identified duplicates require Canonical_record_id link; The model's suggestions do not serve, in isolation, to state that an item is duplicated.
 
-Projetos antigos mantêm a compatibilidade enquanto não ativarem a regra. Caso precisem migrar, as colunas novas são acrescentadas quando o primeiro evento é registrado, **sem inventar revisões retroativas**. Para auditar registros antigos sem modificá-los, execute audit --strict; a correção dos registros deve se basear em evidências humanas reais.
+Old projects maintain compatibility as long as they do not activate the rule. If they need to migrate, new columns are added when the first event is registered, **without inventing retroactive revisions**. To audit old records without modifying them, run audit --strict; the correction of records must be based on real human evidence.
 
-## Integridade e limitações
+<a id="integridade-e-limitações"></a>
+## Integrity and limitations- Do not use AI as a second independent human reviewer. If there is only one researcher, inform screening by a single reviewer and rechecking of BORDERLINE and INCLUDE/EXCLUDE sample, according to protocol.
+- Do not delete sources just because the full text is inaccessible. This means PENDING ACCESS in the full-text track, not scientific irrelevance.
+- Do not transform the AI ​​suggestion into a final decision silently, nor generate a justification or a fictitious human reviewer.
+- Require a clear reason for EXCLUDE and re-examine borderline cases; Potentially relevant sources should remain retained until necessary review.
+- Batch review is only valid when the protocol documents a human procedure actually performed, with criteria, coverage and reference to the evaluation record. Do not automatically assign individual reviews to the generic approval of a list.
+- Without access to the canonical Google Drive, local CSVs and artifacts can only be authorized staging. Sync reviews and evidence references to the original workspace before asserting that the canonical matrix is ​​up to date.
 
-- Não usar a IA como segundo revisor humano independente. Havendo apenas um pesquisador, informar screening por revisor único e rechecagem de BORDERLINE e amostra de INCLUDE/EXCLUDE, conforme protocolo.
-- Não excluir fontes apenas porque o texto completo está inacessível. Isso significa PENDING ACCESS na trilha de texto integral, não irrelevância científica.
-- Não transformar a sugestão da IA em decisão final silenciosamente, nem gerar uma justificativa ou um revisor humano fictício.
-- Exigir motivo claro para EXCLUDE e reexaminar os casos limítrofes; fontes potencialmente relevantes devem permanecer retidas até a revisão necessária.
-- Revisão em lote só é válida quando o protocolo documenta um procedimento humano realmente realizado, com critérios, cobertura e referência ao registro de avaliação. Não atribuir automaticamente avaliações individuais à aprovação genérica de uma lista.
-- Sem acesso ao Google Drive canônico, os CSVs e artefatos locais podem ser apenas staging autorizado. Sincronize revisões e referências de evidência ao workspace original antes de afirmar que a matriz canônica está atualizada.
-
-Este controle é procedimental; não mede por si só sensibilidade/especificidade da triagem ou concordância entre avaliadores humanos. Essas afirmações exigem avaliação empírica separada.
+This control is procedural; does not itself measure screening sensitivity/specificity or agreement between human raters. These claims require separate empirical assessment.

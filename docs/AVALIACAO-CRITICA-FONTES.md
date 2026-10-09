@@ -1,35 +1,38 @@
-# Avaliação crítica da qualidade das fontes
+<a id="avaliação-crítica-da-qualidade-das-fontes"></a>
+# Critical assessment of font quality
 
-Este componente verifica se a fonte é metodologicamente adequada à finalidade para a qual está sendo usada no artigo. **DOI verdadeiro não significa evidência robusta.** A Skill não emite automaticamente uma nota de qualidade nem substitui o julgamento do pesquisador.
+This component checks whether the source is methodologically suitable for the purpose for which it is being used in the article. **True DOI does not mean robust evidence.** Skill does not automatically issue a quality score or replace the researcher's judgment.
 
-## Abrangência gratuita
+<a id="abrangência-gratuita"></a>
+## Free coverage
 
-Requer Python 3.10+ e apenas a biblioteca padrão. O procedimento usa os mesmos Evidence_ID, a matriz canônica 05_Evidence_Matrix.csv e a aba existente 09_MATRIZ_EVID. Nenhum novo ID, nova aba ou serviço pago.
+Requires Python 3.10+ and the standard library only. The procedure uses the same Evidence_ID, the canonical matrix 05_Evidence_Matrix.csv and the existing tab 09_MATRIZ_EVID. No new ID, new tab or paid service.
 
-Famílias de critérios — ajustáveis ao desenho do artigo e ao protocolo:
-- QUANTITATIVE: adequação do desenho, amostragem/viés, mensuração e análise;
-- QUALITATIVE: adequação do desenho, amostragem/contexto, rastreabilidade da análise e reflexividade/limites;
-- MIXED_METHODS: componentes quantitativo e qualitativo, integração de resultados e limitações da combinação;
-- REVIEW: pergunta e escopo, cobertura de busca, seleção/extração e métodos de síntese/apreciação;
-- CONCEPTUAL: precisão dos conceitos, coerência dos argumentos, diálogo com alternativas e limites de alcance;
-- NORMATIVE: autoridade/versão, jurisdição/vigência, interpretação e distinção entre norma e achado empírico;
-- OTHER: natureza da fonte, procedência, adequação ao claim e incerteza.
+Criteria families — adjustable to article design and protocol:
+- QUANTITATIVE: adequacy of design, sampling/bias, measurement and analysis;
+- QUALITATIVE: adequacy of design, sampling/context, traceability of analysis and reflexivity/limits;
+- MIXED_METHODS: quantitative and qualitative components, integration of results and limitations of the combination;
+- REVIEW: question and scope, search coverage, selection/extraction and synthesis/appreciation methods;
+- CONCEPTUAL: precision of concepts, coherence of arguments, dialogue with alternatives and limits of scope;
+- NORMATIVE: authority/version, jurisdiction/validity, interpretation and distinction between norm and empirical finding;
+- OTHER: nature of the source, origin, suitability for the claim and uncertainty.
 
-Essa é uma **lista de verificação operacional própria**, não uma reprodução nem certificação oficial de JBI, CASP, MMAT ou de outra escala. Quando a pesquisa ou revista exige instrumento validado específico, seguir suas regras e registrar a versão original; não fingir equivalência do checklist geral.
+This is **our own operational checklist**, not a reproduction or official certification of JBI, CASP, MMAT or other scale. When the research or magazine requires a specific validated instrument, follow its rules and register the original version; do not pretend to be equivalent to the general checklist.
 
-## Procedimento
+<a id="procedimento"></a>
+## Procedure
 
-1. Classifique a fonte por desenho real, não pelo prestígio ou fator de impacto da revista. Obras de natureza diferente não são comparáveis por um escore universal.
-2. Gere um formulário estrutural sem preencher respostas automaticamente:
+1. Classify the font by actual design, not by the magazine's prestige or impact factor. Works of different nature are not comparable using a universal score.
+2. Generate a structural form without auto-filling responses:
 
        python scripts/appraise_evidence.py template --family QUALITATIVE
 
-   Salve o JSON em um arquivo temporário no workspace do projeto e preencha cada item com:
-   - rating: YES, NO, UNCLEAR ou NOT_APPLICABLE;
-   - basis: explicação fundamentada no texto efetivamente consultado, com indicação de seção/página se disponível.
+   Save the JSON to a temporary file in the project workspace and fill each item with:
+   - rating: YES, NO, UNCLEAR or NOT_APPLICABLE;
+   - basis: explanation based on the text actually consulted, with section/page indication if available.
 
-3. A Skill pode preparar um quadro de informações para facilitar a leitura. **Não pode afirmar que realizou revisão humana** nem gerar respostas atribuídas ao usuário.
-4. Após uma avaliação real do pesquisador, registre-a no CSV canônico, por exemplo:
+3. Skill can prepare an information board for easy reading. **Cannot claim to have performed human review** nor generate responses attributed to the user.
+4. After an actual evaluation by the researcher, record it in the canonical CSV, for example:
 
        python scripts/appraise_evidence.py record "/caminho/do/projeto" \
          --evidence-id "EVID-0001" --family QUALITATIVE \
@@ -40,36 +43,37 @@ Essa é uma **lista de verificação operacional própria**, não uma reproduç�
          --reviewer "Pesquisador" \
          --review-evidence "Referência à manifestação humana original"
 
-   Os textos acima são somente exemplos de **formato**. Não representam fonte examinada ou decisão humana real.
+   The texts above are just examples of **format**. They do not represent an examined source or actual human decision.
 
-5. Para auditar documentação:
+5. To audit documentation:
 
        python scripts/appraise_evidence.py audit "/caminho/do/projeto" --strict
 
-## Julgamento científico registrado
+<a id="julgamento-científico-registrado"></a>
+## Registered scientific judgment
 
-- SUITABLE_FOR_CLAIM: avaliação humana registrada sem ressalvas nos itens aplicáveis. Só é permitido quando os itens do checklist são YES. Ainda assim, não é uma certificação automática da fonte.
-- USE_WITH_CAVEATS: a fonte pode ser usada com restrições explicitadas, mantendo a qualificação nos claims.
-- INSUFFICIENT_INFORMATION: o material disponível é insuficiente para sustentar o claim pretendido.
-- DO_NOT_USE_FOR_CLAIM: o pesquisador julgou que não deve fundamentar a afirmação proposta.
+- SUITABLE_FOR_CLAIM: human assessment registered without reservations on applicable items. It is only allowed when the checklist items are YES. Still, it is not an automatic certification of the source.
+- USE_WITH_CAVEATS: the source can be used with explicit restrictions, maintaining the qualification in the claims.
+- INSUFFICIENT_INFORMATION: the available material is insufficient to support the intended claim.
+- DO_NOT_USE_FOR_CLAIM: the researcher judged that the proposed statement should not be substantiated.
 
-A escolha desses estados continua sendo humana. O código rejeita inconsistências objetivas, como afirmar SUITABLE_FOR_CLAIM quando há item NO ou UNCLEAR, ou registrar critério sem fundamento. **Não conclui**, com base em quantos itens foram marcados YES, que a fonte é válida.
+The choice of these states remains human. The code rejects objective inconsistencies, such as asserting SUITABLE_FOR_CLAIM when there is a NO or UNCLEAR item, or registering criteria without basis. **Does not conclude**, based on how many items were marked YES, that the source is valid.
 
-## Integração da avaliação crítica com a verificação das fontes e das evidências
+<a id="integração-da-avaliação-crítica-com-a-verificação-das-fontes-e-das-evidências"></a>
+## Integration of critical assessment with verification of sources and evidenceNew projects have critical_appraisal_required=true. When approving GATE-0006, the validator requires critical evaluation of the Evidence_IDs effectively linked to material claims (including contrary evidence). Evidence used with the INSUFFICIENT_INFORMATION or DO_NOT_USE_FOR_CLAIM judgment blocks the gate while substantiating the claim. Qualified evidence requires scientific justification and correctly limited claims.
 
-Novos projetos possuem critical_appraisal_required=true. Na aprovação do GATE-0006, o validador exige avaliação crítica para as Evidence_IDs efetivamente ligadas aos claims materiais (inclusive evidências contrárias). Uma evidência usada com julgamento INSUFFICIENT_INFORMATION ou DO_NOT_USE_FOR_CLAIM bloqueia o gate enquanto fundamentar o claim. Evidências qualificadas requerem justificativa científica e claims corretamente limitados.
+In older designs, the mode is not retroactively enabled. The Appraisal_criteria field stores structured JSON and the other six fields are on the same line in the source. Subsequent updates require versioning and new decision recording: do not silently overwrite evaluations already carried out.
 
-Em projetos antigos, o modo não é ativado retroativamente. O campo Appraisal_criteria armazena JSON estruturado e os outros seis campos ficam na mesma linha da fonte. Atualizações posteriores requerem versionamento e novo registro de decisão: não sobrescrever silenciosamente avaliações já realizadas.
+A change to the evidence matrix modifies its SHA-256; therefore, source verification reports will need to be **regenerated** after evaluations are completed before final freezing.
 
-Uma alteração na matriz de evidências modifica seu SHA-256; portanto, relatórios de verificação de fontes deverão ser **regenerados** após a conclusão das avaliações antes do congelamento final.
+<a id="limitações"></a>
+## Limitations
 
-## Limitações
+- A name entered as a reviewer does not authenticate the person's identity.
+- Completion does not prove real quality, correct interpretation or access to the full text.
+- Information obtained only by summary must continue to be marked as such; Do not extrapolate the criticism beyond the material accessed.
+- Do not automatically exclude fonts with reservations. The relevance and argumentative weight depend on the question and the type of statement.
+- Conceptual books, standards and empirical studies have distinct epistemological functions. Do not mix normative authority and empirical demonstration.
+- In projects with canonical Drive, synchronize the CSVs, human manifestations and completed checklist before stating that the official workspace is updated.
 
-- Um nome digitado como revisor não autentica a identidade da pessoa.
-- Preenchimento não comprova qualidade real, interpretação correta nem acesso ao full text.
-- Informação obtida apenas por resumo deve continuar marcada como tal; não extrapolar a crítica além do material acessado.
-- Não excluir automaticamente fontes com ressalvas. A pertinência e o peso argumentativo dependem da pergunta e do tipo de afirmação.
-- Livros conceituais, normas e estudos empíricos têm funções epistemológicas distintas. Não misturar autoridade normativa e demonstração empírica.
-- Em projetos com Drive canônico, sincronizar os CSVs, manifestações humanas e checklist preenchido antes de afirmar que o workspace oficial está atualizado.
-
-A ferramenta é um registro auditável da avaliação crítica, **não uma revisão por pares independente**.
+The tool is an auditable record of critical assessment, **not an independent peer review**.

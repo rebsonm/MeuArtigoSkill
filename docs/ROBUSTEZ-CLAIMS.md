@@ -1,63 +1,69 @@
-# Auditoria de robustez dos claims
+<a id="auditoria-de-robustez-dos-claims"></a>
+# Claims robustness audit
 
-O Meu Artigo não verifica apenas se uma afirmação possui alguma evidência.
+My Article does not just check whether a statement has any evidence.
 
-Antes de congelar os claims principais, ele também pergunta:
+Before freezing the main claims, it also asks:
 
-> Esta afirmação resiste à contestação?
+> Does this statement stand up to challenge?
 
-A auditoria acontece dentro do `GATE-0006 — Claims / auditoria científica`. Não cria nova aba nem novo identificador.
+The audit takes place within `GATE-0006 — Claims / auditoria científica`. Does not create a new tab or new identifier.
 
-## Para cada claim material
+<a id="para-cada-claim-material"></a>
+## For each claim material
 
-A Skill verifica, quando aplicável:
+Skill checks, when applicable:
 
-- evidências que sustentam o claim;
-- evidências contrárias no próprio corpus;
-- explicações alternativas plausíveis;
-- condições de contorno;
-- dependência excessiva de uma única fonte;
-- força e qualidade da sustentação;
-- se a formulação vai além do que a evidência permite;
-- classificação epistêmica: literatura `[L]`, inferência `[I]` ou proposição `[P]`.
+- evidence that supports the claim;
+- contrary evidence in the corpus itself;
+- plausible alternative explanations;
+- boundary conditions;
+- excessive dependence on a single source;
+- strength and quality of support;
+- if the formulation goes beyond what the evidence allows;
+- epistemic classification: literature `[L]`, inference `[I]` or proposition `[P]`.
 
-## Teste de dependência
+<a id="teste-de-dependência"></a>
+## Dependency testing
 
-Quando houver uma evidência central, a Skill deve perguntar:
+When there is central evidence, the Skill should ask:
 
-> Se esta evidência fosse retirada, o claim continuaria defensável?
+> If this evidence were removed, would the claim remain defensible?
 
-Isso não é um teste estatístico universal. É uma checagem de dependência argumentativa.
+This is not a universal statistical test. It's an argumentative dependency check.
 
+<a id="status"></a>
 ## Status
 
-O ledger pode registrar:
+The ledger can record:
 
 - `NOT_AUDITED`;
 - `ROBUST`;
-- `QUALIFIED` — defensável, mas exige condição/limite explícito;
+- `QUALIFIED` — defensible, but requires explicit condition/limit;
 - `REVISE`;
 - `REJECT`;
 - `NOT_APPLICABLE`.
 
-Um claim `QUALIFIED` deve carregar a qualificação para o manuscrito.
+A claim `QUALIFIED` must carry the qualification for the manuscript.
 
-## Regra
+<a id="regra"></a>
+## Rule
 
-Evidência contrária não deve ser tratada automaticamente como motivo para excluir o claim.
+Contrary evidence should not be automatically treated as a reason to exclude the claim.
 
-Ela pode:
+She can:
 
-- reduzir sua força;
-- restringir seu contexto;
-- exigir reformulação;
-- revelar heterogeneidade;
-- criar uma contribuição teórica mais precisa.
+- reduce its strength;
+- restrict your context;
+- require reformulation;
+- reveal heterogeneity;
+- create a more precise theoretical contribution.
 
-## Validação humana
+<a id="validação-humana"></a>
+## Human validation
 
-A IA pode identificar candidatos a contradição ou explicações alternativas.
+AI can identify candidate contradictions or alternative explanations.
 
-A decisão de congelar um claim material permanece humana e é registrada no GATE-0006.
+The decision to freeze a material claim remains human and is recorded in GATE-0006.
 
-O objetivo é reduzir claims plausíveis porém frágeis e tornar explícitos os limites da argumentação.
+The objective is to reduce plausible but fragile claims and make the limits of the argument explicit.

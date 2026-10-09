@@ -1,59 +1,63 @@
-# Mapa do Corpus e Grounded Corpus Mode
+<a id="mapa-do-corpus-e-grounded-corpus-mode"></a>
+# Corpus Map and Grounded Corpus Mode
 
-## O que o Mapa do Corpus responde?
+<a id="o-que-o-mapa-do-corpus-responde"></a>
+## What does the Corpus Map answer?
 
-> Como o corpus validado está organizado?
+> How is the validated corpus organized?
 
-Ele complementa a rastreabilidade e a matriz de evidências.
+It complements the traceability and evidence matrix.
 
-Não substitui o método da pesquisa e não transforma automaticamente o estudo em bibliometria.
+It does not replace the research method and does not automatically transform the study into bibliometrics.
 
-A aba oficial é:
+The official tab is:
 
 `20_MAPA_CORPUS`
 
-Ela pode mostrar, quando os metadados reais permitirem:
+It can show, when the actual metadata allows:
 
-- quantidade de registros retidos;
-- CORE e SUPPORT;
-- evolução por ano;
-- autores recorrentes;
-- periódicos/fontes;
-- keywords e conceitos;
-- cobertura de DOI/OpenAlex;
-- estrutura de rede;
+- number of records retained;
+- CORE and SUPPORT;
+- evolution per year;
+- recurring authors;
+- periodicals/sources;
+- keywords and concepts;
+- DOI/OpenAlex coverage;
+- network structure;
 - clusters;
-- artigos-ponte;
-- warnings de cobertura.
+- bridge articles;
+- coverage warnings.
 
-Campos sem dados permanecem vazios. A Skill não inventa metadados para “completar” o mapa.
+Fields without data remain empty. The Skill does not invent metadata to “complete” the map.
 
-## Quando clusters podem aparecer?
+<a id="quando-clusters-podem-aparecer"></a>
+## When can clusters appear?
 
-Somente quando existe uma relação de rede real, por exemplo:
+Only when there is a real network relationship, for example:
 
-- citação;
-- coautoria;
-- acoplamento bibliográfico;
-- cocitação;
-- coocorrência de keywords.
+- quote;
+- co-authorship;
+- bibliographic coupling;
+- cocitation;
+- co-occurrence of keywords.
 
-Um agrupamento semântico sugerido por IA não deve ser apresentado como cluster bibliométrico sem essa base.
+A semantic cluster suggested by AI should not be presented as a bibliometric cluster without this basis.
 
+<a id="grounded-corpus-mode"></a>
 ## Grounded Corpus Mode
 
-O Grounded Corpus Mode responde outra pergunta:
+Grounded Corpus Mode answers another question:
 
-> O que o corpus validado realmente sustenta?
+> What does the validated corpus really support?
 
-Quando ativado, a IA trabalha somente sobre fontes elegíveis do corpus com full text efetivamente disponível.
+When activated, the AI ​​only works on eligible sources in the corpus with full text actually available.
 
-Por padrão:
+By default:
 
 - `FULL TEXT — CORE`;
 - `FULL TEXT — SUPPORT`.
 
-A resposta deve apontar, quando disponível:
+The answer should indicate, when available:
 
 ```text
 afirmação
@@ -63,11 +67,12 @@ afirmação
   ↳ [L] ou [I]
 ```
 
-Se o corpus não sustentar a resposta, a Skill deve dizer isso.
+If the corpus does not support the answer, the Skill should say so.
 
-Ela não pode completar silenciosamente com memória do modelo.
+It cannot complete silently with model memory.
 
-## Relação entre os dois
+<a id="relação-entre-os-dois"></a>
+## Relationship between the two
 
 ```text
 CORPUS VALIDADO
@@ -79,30 +84,32 @@ CORPUS VALIDADO
              "o que ele sustenta?"
 ```
 
-## Proveniência
+<a id="proveniência"></a>
+## Provenance
 
-A geração do mapa e análises materiais no Grounded Corpus Mode entram na rastreabilidade.
+Map generation and material analysis in Grounded Corpus Mode are included in traceability.
 
-Quando aplicável, registrar:
+When applicable, record:
 
 - TRACE_ID;
-- SNAP_ID/corpus de entrada;
+- SNAP_ID/input corpus;
 - Record_IDs;
 - Evidence_IDs;
-- fonte de enriquecimento;
-- regras/algoritmos;
+- source of enrichment;
+- rules/algorithms;
 - AI_Use_ID;
-- validação humana.
+- human validation.
 
-## Implementação
+<a id="implementação"></a>
+## Implementation
 
-Gerar mapa em projeto local:
+Generate map in local project:
 
 ```bash
 python scripts/build_corpus_map.py /caminho/do/projeto
 ```
 
-Saídas:
+Outputs:
 
 ```text
 04_Evidencias_e_Sintese/
@@ -110,18 +117,19 @@ Saídas:
 └── MAPA_CORPUS.md
 ```
 
-A aba `20_MAPA_CORPUS` é a visualização humana correspondente na matriz oficial.
+The `20_MAPA_CORPUS` tab is the corresponding human view in the official matrix.
 
-## Regra anti-Frankenstein
+<a id="regra-anti-frankenstein"></a>
+## Anti-Frankenstein rule
 
-O Meu Artigo não exige banco vetorial específico, OpenAlex, Zotero ou qualquer fornecedor de RAG.
+My Article does not require a specific vector database, OpenAlex, Zotero or any RAG provider.
 
-Essas ferramentas podem ser usadas quando disponíveis.
+These tools can be used when available.
 
-O núcleo exige apenas:
+The core only requires:
 
-- corpus elegível;
-- proveniência;
-- ligação com evidências;
-- transparência sobre limites;
-- validação humana para conclusões científicas materiais.
+- eligible corpus;
+- provenance;
+- connection with evidence;
+- transparency about limits;
+- human validation for material scientific conclusions.

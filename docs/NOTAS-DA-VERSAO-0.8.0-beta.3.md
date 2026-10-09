@@ -1,25 +1,29 @@
-# Meu Artigo — versão beta 0.8.0-beta.3
+<a id="meu-artigo-versão-beta-080-beta3"></a>
+# My Article — beta version 0.8.0-beta.3
 
-Atualização dos guias de instalação e das orientações de uso do **Meu Artigo**, para tornar mais simples e consistente o primeiro contato de pesquisadores com a Skill.
+Update of the installation guides and usage guidelines for **My Article**, to make researchers' first contact with the Skill simpler and more consistent.
 
-## O que mudou
+<a id="o-que-mudou"></a>
+## What changed
 
-- Os guias do ChatGPT, Claude e Gemini agora indicam diretamente o **ZIP preparado na página de versões do GitHub**.
-- O guia inicial passou a distinguir sugestões espontâneas de usuários de uma avaliação organizada, que está apenas planejada.
-- As instruções esclarecem o que cada plataforma anuncia sobre Skills e o que ainda precisa ser verificado nesta versão do Meu Artigo.
-- Orientações de armazenamento foram harmonizadas: o Google Drive é o destino padrão; alternativas só devem ser adotadas com autorização explícita do pesquisador.
-- Links e referências internas da documentação passaram por conferência automatizada.
+- The ChatGPT, Claude and Gemini guides now directly point to the prepared **ZIP on the GitHub releases page**.
+- The initial guide began to distinguish between spontaneous user suggestions and an organized evaluation, which is merely planned.
+- The instructions clarify what each platform announces about Skills and what still needs to be verified in this version of My Article.
+- Storage guidelines have been harmonized: Google Drive is the default destination; Alternatives should only be adopted with explicit authorization from the researcher.
+- Internal documentation links and references underwent automated checking.
 
-## Instalação
+<a id="instalação"></a>
+## Installation
 
-Baixe **MeuArtigoSkill-v0.8.0-beta.3.zip** nesta página e siga o [guia de primeiros passos](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/COMECE-AQUI.md). O arquivo **SHA256SUMS.txt** permite conferir a integridade do pacote.
+Download **MyArticleSkill-v0.8.0-beta.3.zip** from this page and follow the [getting started guide](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/COMECE-AQUI.md). The **SHA256SUMS.txt** file allows you to check the integrity of the package.
 
-A instalação de Skills depende dos recursos habilitados em sua plataforma. O suporte a um formato de importação não garante que todas as funcionalidades estejam disponíveis.
+Installing Skills depends on the features enabled on your platform. Supporting an import format does not guarantee that all functionality is available.
 
-## Limites
+<a id="limites"></a>
+## Limits
 
-O Meu Artigo continua em beta. As melhorias desta atualização são de documentação e distribuição: **não representam uma nova validação científica**. A qualidade dos resultados, a efetividade do C.A.D.A. e o funcionamento completo nas diferentes plataformas permanecem sujeitos a avaliação real.
+My Article remains in beta. The improvements in this update are documentation and distribution improvements: **do not represent new scientific validation**. The quality of the results, the effectiveness of C.A.D.A. and full functioning on different platforms remain subject to real assessment.
 
-O pesquisador mantém a responsabilidade pelas fontes, metodologia e conteúdo final. A Skill não garante publicação ou aceitação editorial.
+The researcher maintains responsibility for sources, methodology and final content. Skill does not guarantee publication or editorial acceptance.
 
-O software original é distribuído sob licença MIT; materiais científicos de terceiros mantêm seus próprios direitos.
+The original software is distributed under the MIT license; Third-party scientific materials retain their own rights.

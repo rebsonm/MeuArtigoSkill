@@ -1,27 +1,30 @@
-# Interoperabilidade — W3C PROV, RO-Crate e SHA-256
+<a id="interoperabilidade-w3c-prov-ro-crate-e-sha-256"></a>
+# Interoperability — W3C PROV, RO-Crate and SHA-256
 
-## O que isso muda para quem usa o Meu Artigo?
+<a id="o-que-isso-muda-para-quem-usa-o-meu-artigo"></a>
+## What does this change for those who use My Article?
 
-Quase nada na rotina.
+Almost nothing in the routine.
 
-O pesquisador continua trabalhando com:
+The researcher continues to work with:
 
-- Painel;
+- Panel;
 - C.A.D.A.;
-- linha do tempo;
-- protocolo;
-- buscas;
-- evidências;
+- timeline;
+- protocol;
+- searches;
+- evidence;
 - claims;
-- registro de uso de IA.
+- record of AI usage.
 
-A interoperabilidade aparece quando o projeto precisa ser **auditado, preservado, compartilhado ou submetido**.
+Interoperability appears when the project needs to be **audited, preserved, shared or submitted**.
 
-A Skill pode então gerar um pacote padronizado.
+The Skill can then generate a standardized package.
 
-## O pacote auditável
+<a id="o-pacote-auditável"></a>
+## The auditable package
 
-Exemplo:
+Example:
 
 ```text
 RO_CRATE_meu-projeto_20261007T030000Z/
@@ -42,26 +45,27 @@ RO_CRATE_meu-projeto_20261007T030000Z/
     └── 06_Submissao/
 ```
 
-Por padrão, o corpus de full text não é incluído, porque pode conter arquivos protegidos por licença ou direitos autorais.
+By default, the full text corpus is not included because it may contain files protected by license or copyright.
 
+<a id="w3c-prov-o"></a>
 ## W3C PROV-O
 
-O W3C PROV é usado para expressar proveniência de forma interoperável.
+W3C PROV is used to express provenance in an interoperable way.
 
-No Meu Artigo:
+In My Article:
 
-| Meu Artigo | PROV |
+| My Article | PROV |
 |---|---|
-| CADA_ID | contexto/plano |
+| EACH_ID | context/plan |
 | TRACE_ID | Activity |
 | Search_ID | Activity |
 | Record_ID | Entity |
 | Evidence_ID | Entity |
-| Claim_ID | Entity |
-| pesquisador | Agent |
-| IA/script | Agent |
+| claim_ID | Entity |
+| researcher | Agent |
+| AI/script | Agent |
 
-Exemplos de relações:
+Examples of relationships:
 
 ```text
 Claim
@@ -81,131 +85,139 @@ TRACE
 Pesquisador / IA / script
 ```
 
-Referência oficial:
+Official reference:
 
 https://www.w3.org/TR/prov-o/
 
+<a id="ro-crate-13"></a>
 ## RO-Crate 1.3
 
-RO-Crate empacota o objeto de pesquisa e seus metadados em JSON-LD.
+RO-Crate packages the search object and its metadata in JSON-LD.
 
-O arquivo principal é:
+The main file is:
 
 `ro-crate-metadata.json`
 
-O Meu Artigo usa a versão 1.3:
+My Article uses version 1.3:
 
 https://w3id.org/ro/crate/1.3
 
-A raiz do pacote é representada como um `Dataset`, e os arquivos são relacionados por `hasPart`.
+The package root is represented as `Dataset`, and files are referenced by `hasPart`.
 
-O arquivo W3C PROV fica dentro do próprio RO-Crate.
+The W3C PROV file is inside the RO-Crate itself.
 
-## SHA-256
+<a id="sha-256"></a>
+##SHA-256
 
-O pacote também inclui:
+The package also includes:
 
 `manifest-sha256.txt`
 
-Cada arquivo recebe um hash SHA-256.
+Each file is given a SHA-256 hash.
 
-Se qualquer byte do arquivo mudar, o hash muda.
+If any byte of the file changes, the hash changes.
 
-Isso permite verificar **fixidade**: se o pacote continua exatamente igual ao que foi exportado.
+This allows you to check **fixity**: whether the package remains exactly the same as it was exported.
 
-Fixidade não prova que a pesquisa está correta. Ela apenas ajuda a demonstrar que os arquivos não foram alterados desde a geração do manifesto.
+Fixity does not prove that the research is correct. It only helps demonstrate that the files have not been changed since the manifest was generated.
 
-## Relatório de proveniência
+<a id="relatório-de-proveniência"></a>
+## Provenance report
 
-A exportação produz um relatório com:
+The export produces a report with:
 
-- quantidade de TRACE events;
-- número de entidades PROV;
-- atividades PROV;
-- agentes PROV;
-- arquivos no RO-Crate;
-- claims sem Evidence_ID;
-- C.A.D.A. concluído sem evidência de conclusão;
-- uso substantivo de IA aguardando validação humana;
-- busca executada sem string literal;
-- outros gaps detectados.
+- number of TRACE events;
+- number of PROV entities;
+- PROV activities;
+- PROV agents;
+- files in RO-Crate;
+- claims without Evidence_ID;
+- C.A.D.A. completed without evidence of completion;
+- substantive use of AI awaiting human validation;
+- search performed without literal string;
+- other gaps detected.
 
-## Registro na planilha
+<a id="registro-na-planilha"></a>
+## Record in spreadsheet
 
-A planilha possui a aba:
+The spreadsheet has the tab:
 
 `16_INTEROPERABILIDADE`
 
-Cada export recebe um ID:
+Each export receives an ID:
 
 `EXPORT-0001`
 
-E registra:
+And records:
 
-- data/hora;
-- padrões;
-- caminho/URL;
-- SHA-256 do pacote;
-- status da validação;
-- contagens do PROV;
-- quantidade de arquivos do RO-Crate;
+- date/time;
+- patterns;
+- path/URL;
+- SHA-256 of the package;
+- validation status;
+- PROV counts;
+- number of RO-Crate files;
 - warnings.
 
+<a id="scripts"></a>
 ## Scripts
 
-Gerar:
+Generate:
 
 ```bash
 python scripts/export_provenance.py /caminho/ARTIGO_projeto_2026
 ```
 
-Validar:
+Validate:
 
 ```bash
 python scripts/validate_provenance_package.py /caminho/RO_CRATE_projeto.zip
 ```
 
-Por padrão, o pacote é salvo em:
+By default, the package is saved in:
 
 `06_Submissao/Arquivos_Finais/`
 
-## Quando gerar?
+<a id="quando-gerar"></a>
+## When to generate?
 
-Não é necessário gerar a cada ação.
+It is not necessary to generate with each action.
 
-Momentos úteis:
+Useful moments:
 
-- protocolo congelado;
-- corpus congelado;
-- síntese concluída;
-- versão do manuscrito congelada;
-- antes da submissão;
-- depois da submissão;
-- quando revisor/editor solicita transparência;
-- quando o pesquisador quer um snapshot auditável.
+- frozen protocol;
+- frozen corpus;
+- synthesis completed;
+- frozen version of the manuscript;
+- before submission;
+- after submission;
+- when reviewer/editor requests transparency;
+- when the researcher wants an auditable snapshot.
 
-## O que isso permite afirmar?
+<a id="o-que-isso-permite-afirmar"></a>
+## What does this allow us to say?
 
-Permite afirmar que o projeto possui uma **trilha de proveniência padronizada e intercambiável**.
+It allows us to state that the project has a **standardized and interchangeable provenance trail**.
 
-Não permite afirmar automaticamente que o estudo é:
+It does not automatically allow us to state that the study is:
 
-- válido;
-- reproduzível em sentido estrito;
-- livre de erros;
-- metodologicamente correto.
+- valid;
+- reproducible in the strict sense;
+- error free;
+- methodologically correct.
 
-Essas continuam sendo questões científicas.
+These remain scientific questions.
 
-## Princípio do Meu Artigo
+<a id="princípio-do-meu-artigo"></a>
+## Principle of My Article
 
-A interface humana pode continuar simples:
+The human interface can remain simple:
 
 ```text
 Painel → C.A.D.A. → Rastreabilidade
 ```
 
-Por baixo:
+Underneath:
 
 ```text
 TRACE / Evidence / Claim
@@ -217,14 +229,13 @@ TRACE / Evidence / Claim
 SHA-256 / pacote auditável
 ```
 
-A complexidade técnica fica na Skill, não no pesquisador.
+The technical complexity lies with the Skill, not the researcher.
 
 
-## Compartilhamento e sigilo
-
-A exportação completa deve permanecer no público `PRIVATE`, pois contém registros
-internos e pode revelar informações confidenciais. Os públicos `PUBLIC` e
-`COLLABORATIVE` removem nomes e eventos individuais, e o segundo só aceita arquivos
-textuais autorizados um a um e vinculados por SHA-256. A integridade criptográfica
-não significa anonimização nem autorização de publicação. Consulte
-[exportação segura](EXPORTACAO-SEGURA.md) antes de compartilhar arquivos.
+<a id="compartilhamento-e-sigilo"></a>
+## Sharing and confidentialityThe full export must remain in public `PRIVATE` as it contains records
+internal and may reveal confidential information. The audiences `PUBLIC` and
+`COLLABORATIVE` remove individual names and events, and the second only accepts files
+textual texts authorized one by one and linked by SHA-256. Cryptographic integrity
+does not mean anonymization or authorization for publication. Consult
+[secure export](EXPORTACAO-SEGURA.md) before sharing files.

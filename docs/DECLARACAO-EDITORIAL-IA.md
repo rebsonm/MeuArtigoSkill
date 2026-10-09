@@ -1,20 +1,24 @@
-# Declaração editorial de uso de IA
+<a id="declaração-editorial-de-uso-de-ia"></a>
+# AI Usage Editorial Statement
 
-O Meu Artigo usa exclusivamente os eventos registrados em `14_AI_Use_Log.csv` para preparar a declaração editorial. A Skill não pode reconstruir um histórico imaginado, inventar ferramentas, atribuir revisão humana sem resposta real ou apresentar o texto como aprovado pela revista.
+My Article exclusively uses the events recorded in `14_AI_Use_Log.csv` to prepare the editorial statement. Skill cannot reconstruct an imagined history, invent tools, assign human review without real feedback, or present the text as approved by the magazine.
 
-## Política específica do periódico
+<a id="política-específica-do-periódico"></a>
+## Periodical specific policy
 
-Em `06_Submissao/Regras_da_Revista/JOURNAL_PROFILE.json`, o objeto `ai_disclosure_policy` registra: `status=VERIFIED`, `source` oficial, `verified_at`, `statement_location`, `category_rules` por categoria e, quando aplicável, `require_model_version`. As decisões permitidas são `ALLOWED`, `PROHIBITED` e `EDITORIAL_REVIEW`. Qualquer regra ausente ou proibitiva bloqueia a declaração final. O campo antigo `ai_policy` não equivale a uma política conferida.
+In `06_Submissao/Regras_da_Revista/JOURNAL_PROFILE.json`, the `ai_disclosure_policy` object records: `status=VERIFIED`, `source` official, `verified_at`, `statement_location`, `category_rules` by category, and, when applicable, `require_model_version`. The allowed decisions are `ALLOWED`, `PROHIBITED`, and `EDITORIAL_REVIEW`. Any missing or prohibitive rule blocks the final declaration. The old field `ai_policy` is not equivalent to a checked policy.
 
-O objeto `ai_disclosure_attestation` exige manifestação real do pesquisador sobre a completude do log, data, autoria, referência da resposta e SHA-256 exato do CSV. Um log vazio não prova por si que nenhuma IA foi utilizada.
+The `ai_disclosure_attestation` object requires a real statement from the researcher about the completeness of the log, date, authorship, response reference and exact SHA-256 of the CSV. An empty log does not in itself prove that no AI was used.
 
-## Uso da tabela existente
+<a id="uso-da-tabela-existente"></a>
+## Use of existing table
 
-A aba `12_USO_IA` e o arquivo `14_AI_Use_Log.csv` acrescentam três colunas sem criar novas abas ou IDs: `Disclosure_category`, `Human_review_evidence` e `Confidentiality_review`. As categorias: ADMIN_SUPPORT, LITERATURE_SEARCH, SCREENING, EVIDENCE_EXTRACTION, DATA_ANALYSIS, DRAFTING_EDITING, FIGURES e OTHER.
+The `12_USO_IA` tab and the `14_AI_Use_Log.csv` file add three columns without creating new tabs or IDs: `Disclosure_category`, `Human_review_evidence` and `Confidentiality_review`. The categories: ADMIN_SUPPORT, LITERATURE_SEARCH, SCREENING, EVIDENCE_EXTRACTION, DATA_ANALYSIS, DRAFTING_EDITING, FIGURES and OTHER.
 
-Para eventos substantivos, informe a revisão humana e sua referência real. Um `Disclosure_required=NO` não supera a política do periódico. Não inclua prompts completos, textos restritos ou dados pessoais na declaração pública.
+For substantive events, report human review and your actual reference. A `Disclosure_required=NO` does not overcome journal policy. Do not include full prompts, restricted text or personal data in the public statement.
 
-## Comandos
+<a id="comandos"></a>
+## Commands
 
 ```bash
 python scripts/editorial_ai_disclosure.py audit /projeto
@@ -23,24 +27,26 @@ python scripts/editorial_ai_disclosure.py final /projeto
 python scripts/editorial_ai_disclosure.py verify-final /projeto
 ```
 
-A minuta pode ter pendências; a final só é emitida após reconciliação e política verificada. Ela fica em `06_Submissao/Regras_da_Revista/AI_DISCLOSURE_FINAL.md`, associada ao relatório com hashes `00_Gestao_e_Continuidade/AI_DISCLOSURE_AUDIT.json`. O `GATE-0007` revalida ambos.
+The draft may have pending issues; the final is only issued after reconciliation and policy verified. It is located at `06_Submissao/Regras_da_Revista/AI_DISCLOSURE_FINAL.md`, associated with the report with hashes `00_Gestao_e_Continuidade/AI_DISCLOSURE_AUDIT.json`. `GATE-0007` revalidates both.
 
-O texto final é uma proposta para conferência de colocação no manuscrito e na carta, não evidência de submissão. A Skill não consegue autenticar pessoas, confirmar automaticamente que todo uso de IA foi registrado nem garantir aceitação editorial.
+The final text is a proposal for placement in the manuscript and letter, not evidence of submission. Skill cannot authenticate people, automatically confirm that all AI use has been recorded, or guarantee editorial acceptance.
 
-## Versão breve para o periódico
+<a id="versão-breve-para-o-periódico"></a>
+## Short version for the journal
 
-A declaração concisa agrega apenas ferramentas e finalidades que estão nos registros reais; a auditoria completa continua acessível para conferência. O limite de texto corresponde a **uma página editorial aproximada** e não garante uma folha A4 em qualquer formatação. Se o material ultrapassar o limite, o gerador não omite eventos silenciosamente: orienta revisar a redação mantendo o registro integral.
+The concise statement only aggregates tools and purposes that are in the actual records; the full audit remains accessible for review. The text limit corresponds to **an approximate editorial page** and does not guarantee an A4 sheet in any format. If the material exceeds the limit, the generator does not silently omit events: it advises reviewing the writing while keeping the full record.
 
 ```bash
 python scripts/editorial_ai_disclosure.py compact /projeto
 python scripts/editorial_ai_disclosure.py compact-final /projeto
 ```
 
-`compact` produz minuta mesmo com pendências (claramente sinalizadas); `compact-final` exige uma declaração completa validada, regras da revista verificadas e atestação humana vinculada ao histórico. A declaração breve final recebe hash de integridade no relatório de auditoria e sua alteração posterior invalida a conferência. Não confundir o texto preparado com envio aceito pela revista.
+`compact` produces drafts even with pending issues (clearly flagged); `compact-final` requires a complete validated declaration, verified journal rules, and history-linked human attestation. The final brief statement is integrity hashed in the audit report and its subsequent change invalidates the check. Do not confuse the prepared text with submission accepted by the magazine.
 
-## Referências gerais
+<a id="referências-gerais"></a>
+## General references
 
 - ICMJE, `https://www.icmje.org/recommendations/browse/artificial-intelligence/`
 - COPE, `https://doi.org/10.24318/cCVRZBms`
 
-Essas orientações não substituem as regras oficiais de cada revista. Não se deve atribuir autoria a uma IA, nem supor que revisão humana foi efetiva por existir uma coluna preenchida. Permanecem obrigatórios os controles de anonimização e uso lícito de PDFs. Não se requer serviço pago.
+These guidelines do not replace the official rules of each magazine. You should not attribute authorship to an AI, nor assume that human review was effective because there is a filled column. Anonymization controls and the legal use of PDFs remain mandatory. No paid service required.

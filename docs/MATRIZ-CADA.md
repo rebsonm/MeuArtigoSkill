@@ -1,64 +1,71 @@
-# Matriz C.A.D.A. — template oficial do Meu Artigo
+<a id="matriz-cada-template-oficial-do-meu-artigo"></a>
+# Matrix C.A.D.A. — official My Article template
 
-A planilha é o **modo padrão de gestão** do Meu Artigo.
+The spreadsheet is the **default management mode** of My Article.
 
-O pesquisador não precisa conhecer Jira, ClickUp, Trello ou qualquer outra ferramenta de gestão.
+The researcher does not need to know Jira, ClickUp, Trello or any other management tool.
 
-## O que a planilha responde
+<a id="o-que-a-planilha-responde"></a>
+## What the spreadsheet answers
 
-A primeira aba, `00_PAINEL`, foi desenhada para responder rapidamente:
+The first tab, `00_PAINEL`, was designed to respond quickly:
 
-- Onde estamos?
-- O que falta?
-- O que faço agora?
-- O que está bloqueado?
-- Qual é o prazo?
-- Como chegamos até aqui?
-- Qual evidência sustenta esta afirmação?
-- Onde a IA participou?
-- Como essa participação foi validada?
+- Where are we?
+- What's missing?
+- What do I do now?
+- What is blocked?
+- What is the deadline?
+- How did we get here?
+- What evidence supports this statement?
+- Where did AI participate?
+- How was this participation validated?
 
-## As 21 abas
+<a id="as-21-abas"></a>
+## The 21 tabs
 
-| Aba | Função |
+| Tab | Function |
 |---|---|
-| `00_PAINEL` | cockpit de governança científica |
-| `01_CADA` | tarefas, responsáveis, próxima ação, prazo, status e evidências |
-| `02_LINHA_TEMPO` | rastreabilidade cronológica do processo |
-| `03_PROJETO` | identidade científica do projeto |
-| `04_EVIDENCIAS` | mapa sintético de evidências |
-| `05_PROTOCOLO` | decisões metodológicas versionadas |
-| `06_BUSCAS` | strings, filtros, contagens e exports |
-| `07_SCREENING` | seleção e justificativas |
-| `08_FULL_TEXT` | acesso e decisão de textos completos |
-| `09_MATRIZ_EVID` | extração detalhada de evidências |
-| `10_SINTESE` | padrões, contradições, limites e inferências |
-| `11_CLAIMS` | afirmações do manuscrito ligadas às evidências |
-| `12_USO_IA` | ferramenta/modelo, finalidade e validação humana |
-| `13_SUBMISSAO` | requisitos e comprovantes |
-| `14_PM_SYNC` | sincronização opcional com gerenciador externo |
-| `15_CONFIG` | vocabulários e parâmetros |
-| `16_INTEROPERABILIDADE` | exports W3C PROV/RO-Crate, SHA-256 e validação |
-| `17_DECISOES` | decisões científicas materiais, alternativas e justificativas |
-| `18_VALIDACOES` | gates de validação humana em transições críticas |
-| `19_SNAPSHOTS` | estados congelados e comparáveis do projeto |
-| `20_MAPA_CORPUS` | visão exploratória e data-driven do corpus validado |
+| `00_PAINEL` | scientific governance cockpit |
+| `01_CADA` | tasks, responsible, next action, deadline, status and evidence |
+| `02_LINHA_TEMPO` | chronological traceability of the process |
+| `03_PROJETO` | scientific identity of the project |
+| `04_EVIDENCIAS` | synthetic evidence map |
+| `05_PROTOCOLO` | versioned methodological decisions |
+| `06_BUSCAS` | strings, filters, counts and exports |
+| `07_SCREENING` | selection and justifications |
+| `08_FULL_TEXT` | full text access and decision |
+| `09_MATRIZ_EVID` | detailed evidence extraction |
+| `10_SINTESE` | patterns, contradictions, limits and inferences |
+| `11_CLAIMS` | manuscript claims linked to evidence |
+| `12_USO_IA` | tool/model, purpose and human validation |
+| `13_SUBMISSAO` | requirements and proof |
+| `14_PM_SYNC` | optional synchronization with external manager |
+| `15_CONFIG` | vocabularies and parameters |
+| `16_INTEROPERABILIDADE` | exports W3C PROV/RO-Crate, SHA-256 and validation |
+| `17_DECISOES` | material scientific decisions, alternatives and justifications |
+| `18_VALIDACOES` | human validation gates in critical transitions |
+| `19_SNAPSHOTS` | frozen and comparable project states |
+| `20_MAPA_CORPUS` | exploratory and data-driven view of the validated corpus |
 
-## Dois modos
+<a id="dois-modos"></a>
+## Two modes
 
+<a id="matrix_only"></a>
 ### MATRIX_ONLY
 
-É o padrão.
+It's the default.
 
-A planilha é suficiente para gerir todo o projeto.
+The spreadsheet is enough to manage the entire project.
 
+<a id="matrix_plus_external"></a>
 ### MATRIX_PLUS_EXTERNAL
 
-A planilha continua sendo canônica, mas os itens de `01_CADA` também podem ser espelhados em ClickUp, Jira ou Trello.
+The spreadsheet remains canonical, but items from `01_CADA` can also be mirrored in ClickUp, Jira or Trello.
 
-## Geração automática
+<a id="geração-automática"></a>
+## Automatic generation
 
-Em ambientes com `artifact_tool`, use:
+In environments with `artifact_tool`, use:
 
 ```bash
 python scripts/build_matrix_template.py \
@@ -67,58 +74,60 @@ python scripts/build_matrix_template.py \
   --problem "Meu problema de pesquisa"
 ```
 
-O `scripts/init_project.py` tenta executar esse gerador automaticamente.
+`scripts/init_project.py` attempts to run this generator automatically.
 
-Se o ambiente não tiver `artifact_tool`, a IA deve reproduzir a mesma estrutura em uma planilha nativa usando:
+If the environment does not have `artifact_tool`, the AI must reproduce the same structure in a native spreadsheet using:
 
 `references/spreadsheet-template.md`
 
-Quando nenhuma ferramenta visual de planilha existir, os CSVs do workspace são o modo de compatibilidade final.
+When no visual spreadsheet tool exists, workspace CSVs are the final compatibility mode.
 
-## Fonte de verdade
+<a id="fonte-de-verdade"></a>
+## Source of truth
 
-A planilha organiza e conecta o processo, mas cada tipo de registro possui seu papel:
+The spreadsheet organizes and connects the process, but each type of record has its role:
 
-- `01_CADA`: gestão;
-- `02_LINHA_TEMPO`: processo/proveniência;
-- `05_PROTOCOLO`: decisões metodológicas;
-- `06_BUSCAS`: execução bibliográfica;
-- `09_MATRIZ_EVID`: evidência;
-- `11_CLAIMS`: argumento do manuscrito;
-- `12_USO_IA`: transparência sobre IA.
+- `01_CADA`: management;
+- `02_LINHA_TEMPO`: process/source;
+- `05_PROTOCOLO`: methodological decisions;
+- `06_BUSCAS`: bibliographic execution;
+- `09_MATRIZ_EVID`: evidence;
+- `11_CLAIMS`: manuscript argument;
+- `12_USO_IA`: transparency about AI.
 
-O dashboard é derivado dessas abas e nunca deve substituir os registros canônicos.
+The dashboard is derived from these tabs and should never replace the canonical records.
 
-## Limites de gestão e avaliação de contribuição
+<a id="limites-de-gestão-e-avaliação-de-contribuição"></a>
+## Management limits and contribution assessment
 
-A aba `01_CADA` e os indicadores do painel medem execução administrativa. Busca, triagem, avaliação de fontes, argumentação, decisões científicas e resultados acadêmicos exigem verificações independentes; completar a tarefa correspondente NÃO prova a validade da pesquisa. O C.A.D.A. é tratado como camada gerencial, não como método de revisão ou certificação científica.
+The `01_CADA` tab and dashboard indicators measure administrative execution. Searching, screening, evaluating sources, arguing, scientific decisions and academic results require independent verification; completing the corresponding task does NOT prove the validity of the survey. The C.A.D.A. it is treated as a management layer, not as a scientific review or certification method.
 
-Leia [Limites e comparação do C.A.D.A.](LIMITES-CADA-E-COMPARACAO.md), que documenta a auditoria gratuita em Python e um protocolo prospectivo com e sem C.A.D.A. Sem dados empíricos comparáveis, os efeitos sobre tempo, retrabalho e qualidade científica permanecem hipóteses.
+Read [C.A.D.A. limits and comparison](LIMITES-CADA-E-COMPARACAO.md), which documents free auditing in Python and a forward-looking protocol with and without C.A.D.A. Without comparable empirical data, the effects on time, rework, and scientific quality remain hypotheses.
 
-## Princípio
+<a id="princípio"></a>
+## PrincipleThe spreadsheet was not designed just to control tasks.
 
-A planilha não foi desenhada apenas para controlar tarefas.
+It combines:
 
-Ela combina:
+**management + evidence + provenance + AI transparency + continuity**
 
-**gestão + evidência + proveniência + transparência de IA + continuidade**
-
-Esse é o papel da matriz no Meu Artigo.
+This is the role of the matrix in My Article.
 
 
-## Exportação auditável
+<a id="exportação-auditável"></a>
+## Auditable export
 
-A aba `16_INTEROPERABILIDADE` registra cada pacote gerado pela Skill.
+The `16_INTEROPERABILIDADE` tab records each package generated by the Skill.
 
-O pacote contém:
+The package contains:
 
 - `ro-crate-metadata.json` — RO-Crate 1.3;
-- `provenance/prov.jsonld` — grafo W3C PROV-O;
-- `manifest-sha256.txt` — fixidade dos arquivos;
-- relatório de proveniência;
-- artefatos canônicos do projeto.
+- `provenance/prov.jsonld` — W3C PROV-O graph;
+- `manifest-sha256.txt` — file fixity;
+- provenance report;
+- canonical artifacts of the project.
 
-A exportação pode ser feita com:
+Export can be done with:
 
 ```bash
 python scripts/export_provenance.py /caminho/do/projeto
@@ -126,44 +135,48 @@ python scripts/validate_provenance_package.py /caminho/do/pacote.zip
 ```
 
 
-## Governança sem burocratizar
+<a id="governança-sem-burocratizar"></a>
+## Governance without bureaucratization
 
-As novas abas não criam mais trabalho cotidiano:
+The new tabs no longer create day-to-day work:
 
-- `17_DECISOES` só recebe decisões materialmente científicas;
-- `18_VALIDACOES` contém apenas sete gates padrão;
-- `19_SNAPSHOTS` registra estados congelados, não cada edição.
+- `17_DECISOES` only receives materially scientific decisions;
+- `18_VALIDACOES` contains only seven standard gates;
+- `19_SNAPSHOTS` records frozen states, not each edit.
 
-O pesquisador continua usando principalmente `00_PAINEL`, `01_CADA` e as abas científicas da etapa atual.
-
-
-## Mapa do Corpus
-
-A aba `20_MAPA_CORPUS` só apresenta dados reais do corpus.
-
-Ela pode mostrar evolução temporal, autores, periódicos/fontes, keywords/conceitos e estrutura de rede quando os metadados existirem.
-
-Campos sem suporte permanecem vazios. Clusters e artigos-ponte exigem uma definição real de rede; a Skill não cria uma aparência bibliométrica com agrupamentos semânticos arbitrários.
-
-Veja [MAPA-CORPUS.md](./MAPA-CORPUS.md).
+The researcher continues to mainly use `00_PAINEL`, `01_CADA` and the scientific tabs from the current stage.
 
 
-## Revista-alvo desde a construção
+<a id="mapa-do-corpus"></a>
+## Corpus Map
 
-A planilha não ganha uma nova aba para revista.
+The `20_MAPA_CORPUS` tab only presents real corpus data.
 
-A informação é distribuída de forma funcional:
+It can show temporal evolution, authors, journals/sources, keywords/concepts and network structure when metadata exists.
 
-- `03_PROJETO`: revista-alvo, modo editorial e status do perfil;
-- `06_Journal_Dialogue`: diálogo científico com o periódico;
-- `13_SUBMISSAO`: regras formais e conformidade;
-- `17_DECISOES`: mudança material de revista;
-- `00_PAINEL`: revista-alvo e modo editorial.
+Unsupported fields remain empty. Clusters and bridge articles require a real network definition; the Skill does not create a bibliometric appearance with arbitrary semantic groupings.
 
-As regras canônicas ficam em `JOURNAL_PROFILE.json`.
+See [CORPUS-MAP.md](./MAPA-CORPUS.md).
 
-## Robustez dos claims
 
-A aba `11_CLAIMS` inclui evidência contrária, explicações alternativas, condições de contorno, dependência de fonte única e status de robustez.
+<a id="revista-alvo-desde-a-construção"></a>
+## Target magazine since construction
 
-Isso permite que o GATE-0006 avalie não apenas "há citação?", mas "o claim resiste à contestação?".
+The spreadsheet does not have a new magazine tab.
+
+The information is distributed in a functional way:
+
+- `03_PROJETO`: target magazine, editorial mode and profile status;
+- `06_Journal_Dialogue`: scientific dialogue with the journal;
+- `13_SUBMISSAO`: formal rules and compliance;
+- `17_DECISOES`: magazine material change;
+- `00_PAINEL`: target magazine and editorial mode.
+
+The canonical rules are in `JOURNAL_PROFILE.json`.
+
+<a id="robustez-dos-claims"></a>
+## Robustness of claims
+
+The `11_CLAIMS` tab includes counterevidence, alternative explanations, boundary conditions, single-source dependence, and robustness status.
+
+This allows GATE-0006 to evaluate not just "is there a citation?", but "does the claim stand up to challenge?".

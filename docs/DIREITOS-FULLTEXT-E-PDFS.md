@@ -1,84 +1,88 @@
-# Uso de textos completos, licenças e direitos de redistribuição
+<a id="uso-de-textos-completos-licenças-e-direitos-de-redistribuição"></a>
+# Full text usage, licenses and redistribution rights
 
-## Quatro permissões diferentes
+<a id="quatro-permissões-diferentes"></a>
+## Four different permissions
 
-1. **Descoberta bibliográfica:** um DOI, um registro Crossref/OpenAlex ou um link encontrado identifica uma publicação. NÃO determina licença ou permissão de download.
-2. **Acesso local:** leitura via biblioteca institucional, CAPES/CAFe, repositório, editor ou arquivo recebido legitimamente. Acesso legítimo não concede automaticamente permissão para publicar o PDF.
-3. **Análise científica:** examinar, fichar e citar trechos na medida cabível à autorização e às normas aplicáveis. Não carregar nem enviar PDFs completos para APIs externas sem autorização apropriada.
-4. **Redistribuição externa:** colocar a cópia integral em ZIP, RO-Crate, site, repositório público ou arquivo compartilhável exige uma autorização compatível **para aquele arquivo específico**.
+1. **Bibliographic discovery:** a DOI, a Crossref/OpenAlex record or a found link identifies a publication. DOES NOT determine license or download permission.
+2. **Local access:** reading via institutional library, CAPES/CAFe, repository, publisher or legitimately received file. Legitimate access does not automatically grant permission to publish the PDF.
+3. **Scientific analysis:** examine, record and cite excerpts to the extent applicable to the authorization and applicable standards. Do not upload or send full PDFs to external APIs without appropriate authorization.
+4. **External Redistribution:** Placing the full copy in ZIP, RO-Crate, website, public repository or shareable file requires compatible authorization **for that specific file**.
 
-O código da Skill é público; isso NÃO faz os PDFs baixados pelo pesquisador serem públicos ou licenciados sob a mesma licença do código. Metadados, fichamentos e citações não transmitem automaticamente o direito de republicar o texto integral.
+The Skill code is public; This does NOT make the PDFs downloaded by the researcher public or licensed under the same license as the code. Metadata, listings and citations do not automatically convey the right to republish the full text.
 
-## Registros sem novas planilhas
+<a id="registros-sem-novas-planilhas"></a>
+## Records without new sheets
 
-O controle aproveita os registros com Record_ID do arquivo canônico
-\`00_Gestao_e_Continuidade/04_FullText_Tracker.csv\` e a aba existente
-\`08_FULL_TEXT\`. Foram acrescentadas nove colunas, preservando as anteriores:
+The control leverages records with Record_ID from the canonical file
+\`00_Gestao_e_Continuidade/04_FullText_Tracker.csv\` and the existing tab
+\`08_FULL_TEXT\`. Nine columns were added, preserving the previous ones:
 
-- Access_basis — OPEN_ACCESS, INSTITUTIONAL_ACCESS, PERSONAL_AUTHORIZED, DIRECT_PERMISSION ou UNKNOWN;
-- Rights_basis — UNKNOWN, ALL_RIGHTS_RESERVED, CC0_1_0, CC_BY_4_0, CC_BY_SA_4_0, PUBLIC_DOMAIN, DIRECT_PERMISSION, INSTITUTIONAL_ACCESS ou PERSONAL_ACCESS;
-- License_URI — licença aplicável à versão exata, quando cabível;
-- Rights_evidence — página da publicação com licença específica ou referência a autorização documental;
-- Permission_scope — escopo preciso, inclusive PUBLIC_REDISTRIBUTION quando uma permissão individual autorizar;
-- Attribution_text — crédito, licença e avisos necessários;
-- Source_sha256 — SHA-256 do documento efetivamente armazenado;
-- Rights_reviewed_by — atribuição da revisão documental a uma pessoa, NÃO autenticação independente;
-- Rights_review_evidence — referência verificável à manifestação original de revisão.
+- Access_basis — OPEN_ACCESS, INSTITUTIONAL_ACCESS, PERSONAL_AUTHORIZED, DIRECT_PERMISSION or UNKNOWN;
+- Rights_basis — UNKNOWN, ALL_RIGHTS_RESERVED, CC0_1_0, CC_BY_4_0, CC_BY_SA_4_0, PUBLIC_DOMAIN, DIRECT_PERMISSION, INSTITUTIONAL_ACCESS or PERSONAL_ACCESS;
+- License_URI — license applicable to the exact version, when applicable;
+- Rights_evidence — publication page with specific license or reference to documentary authorization;
+- Permission_scope — precise scope, including PUBLIC_REDISTRIBUTION when an individual permission authorizes;
+- Attribution_text — credit, license and required notices;
+- Source_sha256 — SHA-256 of the document actually stored;
+- Rights_reviewed_by — attribution of the document review to a person, NOT independent authentication;
+- Rights_review_evidence — verifiable reference to the original review statement.
 
-Os documentos devem permanecer na área \`03_Screening_e_FullText/FullText_Corpus\`, vinculados à coluna existente \`File_or_URL\` por **caminho relativo ao workspace**. Links externos podem constar como referência de acesso, mas não autorizam empacotamento sem o arquivo verificado.
+Documents must remain in the \`03_Screening_e_FullText/FullText_Corpus\` area, linked to the existing column \`File_or_URL\` by **path relative to the workspace**. External links may appear as an access reference, but do not authorize packaging without the verified file.
 
-## Conduta operacional
+<a id="conduta-operacional"></a>
+## Operational conduct
 
-Para registrar fonte, confirmar quem disponibilizou o arquivo, qual versão foi acessada e sua base de acesso. Buscar licença no site da própria publicação ou autorização específica de quem detém os direitos; o endereço genérico da licença Creative Commons **não demonstra que um artigo específico está sob aquela licença**. Salvar a referência a essa verificação no tracker, mantendo o arquivo de autorização fora de pacotes compartilháveis quando contiver informação pessoal.
+To register a source, confirm who made the file available, which version was accessed and its access base. Search for a license on the publication's own website or specific authorization from whoever holds the rights; the generic Creative Commons license address **does not demonstrate that a specific article is under that license**. Save the reference to this check in the tracker, keeping the authorization file out of shareable packages when it contains personal information.
 
-**Para análise interna**: arquivos autorizados podem permanecer no corpus privado conforme os direitos efetivos de acesso. Em caso de acesso incerto, registrar UNKNOWN e não assumir que o acesso foi permitido. A falta de acesso ao texto integral deve permanecer \`PENDING ACCESS\`, não EXCLUDE.
+**For internal analysis**: authorized files may remain in the private corpus according to effective access rights. In case of uncertain access, register UNKNOWN and do not assume that access was permitted. Lack of full text access should remain \`PENDING ACCESS\`, not DELETE.
 
-**Para exportação externa**: o padrão de \`scripts/export_provenance.py\` continua **sem PDFs/textos integrais**. A opção \`--include-fulltext\` agora falha sem confirmação explícita e sem uma avaliação positiva, arquivo por arquivo, do hash, da licença/permissão, da fonte da evidência e da revisão humana.
+**For external export**: The default of \`scripts/export_provenance.py\` remains **no PDFs/full texts**. The \`--include-fulltext\` option now fails without explicit confirmation and without a positive file-by-file hash, license/permission, evidence source, and human review evaluation.It is not allowed to export documents with unknown license, all rights reserved, personal or institutional access as the only basis through the automated flow. The CC BY-NC and CC BY-ND licenses are not treated as general authorization for public redistribution because they carry contextual restrictions; Special cases require legal/human analysis and specific authorization. For CC BY/CC BY-SA you need credit and meet the applicable conditions. Automated verification only ensures consistency of annotations; does not certify the legal validity of the license, the existence of the permittee or that all equal sharing obligations have been fulfilled.
 
-Não se permite exportar pelo fluxo automatizado documentos com licença desconhecida, todos os direitos reservados, acesso pessoal ou institucional como única base. As licenças CC BY-NC e CC BY-ND não são tratadas como autorização geral de redistribuição pública porque trazem restrições contextuais; casos especiais exigem uma análise jurídica/humana e autorização específica. Para CC BY/CC BY-SA é preciso crédito e atender às condições aplicáveis. A verificação automatizada só garante consistência das anotações; não certifica a validade jurídica da licença, a existência do permissionário ou que todas as obrigações de compartilhamento igual foram cumpridas.
-
-Páginas oficiais de apoio:
+Official support pages:
 - CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
 - CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
-- Licenças CC no Brasil: https://br.creativecommons.net/licencas/
+- CC licenses in Brazil: https://br.creativecommons.net/licencas/
 
-## Comandos gratuitos
+<a id="comandos-gratuitos"></a>
+## Free commands
 
-Auditoria do tracker e do corpus (não publica arquivos):
+Tracker and corpus audit (does not publish files):
 
 \`\`\`bash
-python scripts/rights_audit.py /caminho/do/projeto
-python scripts/rights_audit.py /caminho/do/projeto --strict
-python scripts/rights_audit.py /caminho/do/projeto --check-export
+python scripts/rights_audit.py /path/of/project
+python scripts/rights_audit.py /path/of/project --strict
+python scripts/rights_audit.py /path/of/project --check-export
 \`\`\`
 
-Exportar somente a proveniência e os artefatos padrão sem PDFs brutos:
+Export only provenance and standard artifacts without raw PDFs:
 
 \`\`\`bash
-python scripts/export_provenance.py /caminho/do/projeto
+python scripts/export_provenance.py /path/of/project
 \`\`\`
 
-Somente quando cada documento estiver comprovadamente autorizado para redistribuição ampla e o pesquisador de fato tiver examinado os documentos de direitos:
+Only when each document is demonstrably authorized for broad redistribution and the researcher has actually examined the rights documents:
 
 \`\`\`bash
-python scripts/export_provenance.py /caminho/do/projeto \
+python scripts/export_provenance.py /path/of/project \
   --include-fulltext --confirm-rights-review
 \`\`\`
 
-O exportador interrompe a operação **antes** de gravar o evento TRACE/EXPORT, criar ZIPs ou copiar fontes quando não houver documentação suficiente. Em exportações permitidas, inclui \`provenance/FULLTEXT_RIGHTS.json\` com as atribuições e os hashes dos documentos. O manifesto de direitos é uma atestação auditável, **não parecer jurídico, autorização nova nem licença concedida pela Skill**.
+The exporter stops the operation **before** recording the TRACE/EXPORT event, creating ZIPs, or copying fonts when there is not enough documentation. In allowed exports, includes \`provenance/FULLTEXT_RIGHTS.json\` with the document assignments and hashes. The manifesto of rights is an auditable attestation, **not a legal opinion, new authorization or license granted by Skill**.
 
-ZIPs e arquivos compactados aninhados são omitidos do pacote padrão: poderiam conter PDFs não identificados e contornar a análise de direitos. Arquivos de fonte com symlinks ou caminhos fora do corpus também são rejeitados.
+ZIPs and nested compressed files are omitted from the default package: they could contain unidentified PDFs and bypass rights analysis. Source files with symlinks or paths outside the corpus are also rejected.
 
-## Transparência e privacidade
+<a id="transparência-e-privacidade"></a>
+## Transparency and privacy
 
-- Não armazenar senhas de CAFe, tokens de biblioteca, credenciais e cookies nos registros.
-- Não burlar paywalls ou controles tecnológicos para obter conteúdo.
-- Não enviar PDFs restritos a modelos, serviços de IA ou repositórios externos sem uma base jurídica e autorização compatíveis.
-- Não incorporar longas passagens protegidas ao relatório público apenas para demonstrar rastreabilidade.
-- Os campos de licença e revisão são anotações do pesquisador; um texto atribuído a um humano pode ser forjado e exige conferência.
-- O registro de obras em domínio público depende de avaliação por jurisdição, prazo de proteção e versão do documento. Uma etiqueta PUBLIC_DOMAIN isolada não é prova jurídica.
-- Os controles de anonimização e regras específicas de periódico continuam sendo obrigatórios e independentes.
+- Do not store CAFe passwords, library tokens, credentials and cookies in records.
+- Do not circumvent paywalls or technological controls to obtain content.
+- Do not submit restricted PDFs to templates, AI services, or external repositories without a compatible legal basis and authorization.
+- Do not incorporate long protected passages into the public report just to demonstrate traceability.
+- The license and review fields are researcher notes; a text attributed to a human can be forged and requires checking.
+- The registration of works in the public domain depends on assessment by jurisdiction, protection period and version of the document. A PUBLIC_DOMAIN tag alone is not legal evidence.
+- Anonymization controls and journal-specific rules continue to be mandatory and independent.
 
-**Escopo de segurança:** o controle é conservador, não substitui aconselhamento jurídico e pode bloquear uma distribuição que venha a ser legalmente permitida em certo contexto. Nessa hipótese, revisar os direitos e registrar uma autorização adequada; não remover o bloqueio ou marcar uma licença falsa para avançar.
+**Scope of security:** control is conservative, does not replace legal advice and may block distribution that may be legally permitted in a certain context. In this case, review the rights and register an appropriate authorization; Do not remove the block or mark a false license to move forward.
 
-Nos projetos antigos, novos campos permanecem em branco até revisão genuína. Não preencher retrospectivamente permissões que nunca foram concedidas. Nos novos projetos, \`fulltext_rights_audit_required=true\` liga avisos e inconsistências à validação canônica, e o exportador protege a redistribuição independentemente da configuração de projeto.
+In old projects, new fields remain blank until genuine review. Do not retrospectively complete permissions that were never granted. In new projects, \`fulltext_rights_audit_required=true\` binds warnings and inconsistencies to canonical validation, and the exporter protects redistribution regardless of project configuration.
