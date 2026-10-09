@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Add conceptual-lineage fields to `09_MATRIZ_EVID` for foundational/canonical literature, classic critiques, methodological foundations, contemporary updates, empirical support, contrary evidence and contextual sources.
+- Require an explicit classification basis so publication age or citation count alone cannot define a work as “classic”.
+- Track whether origin/definition attributions were checked against the primary source (`PRIMARY_VERIFIED`, `SECONDARY_ONLY`, `NOT_VERIFIED`, `NOT_APPLICABLE`).
+- Preserve dual anchoring between foundational/canonical literature and contemporary developments without imposing mechanical citation quotas.
+
 - Add a blocking Google Drive-first storage gate before substantive research.
 - Require the Skill to request/verify Google Drive connection before creating canonical project state.
 - Require explicit affirmative user authorization before using Work/platform/local artifacts as `WORK_FALLBACK`.

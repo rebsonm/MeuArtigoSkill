@@ -24,6 +24,10 @@ Citation
 DOI_or_persistent_ID
 Construct_or_concept
 Definition_or_claim
+Literature_role
+Role_classification_basis
+Primary_source_status
+Conceptual_lineage_or_relation
 Problem_tension_or_risk
 Mechanism_relationship_or_finding
 Study_design_or_source_type
@@ -43,6 +47,43 @@ Notes
 ```
 
 Not every field fits every discipline. Remove irrelevant fields rather than filling them with invented content.
+
+## Conceptual lineage and classic literature
+
+For material concepts, theories, constructs, mechanisms, and methods, do not treat the literature as a flat list of citations. Reconstruct the relevant conceptual lineage when the evidence supports it:
+
+`origin/foundation -> consolidation -> important critique -> contemporary development/use`
+
+Not every concept requires every link. Do not manufacture a lineage merely to fill fields.
+
+Use the existing `09_MATRIZ_EVID` and classify the role of each source where relevant:
+
+- `FOUNDATIONAL` — introduces or materially formulates the concept, theory, mechanism, or framework;
+- `CANONICAL` — consolidates a formulation that became a central reference in the field;
+- `CLASSIC_CRITIQUE` — a historically important critique that materially redirected or bounded the debate;
+- `METHOD_FOUNDATIONAL` — foundational source for a method, design, measurement approach, or analytical procedure;
+- `CONTEMPORARY_UPDATE` — updates, extends, revises, or recontextualizes the concept in current literature;
+- `EMPIRICAL_SUPPORT` — provides empirical support relevant to the concept/mechanism without being foundational;
+- `CONTRARY_EVIDENCE` — provides evidence or argument that contradicts, limits, or challenges the dominant formulation;
+- `CONTEXT` — provides background/context without carrying the conceptual lineage;
+- `OTHER` — use only with an explicit explanation.
+
+Do not classify a source as classic merely because it is old, highly cited, or frequently repeated by later papers. The classification must be justified in `Role_classification_basis` using evidence such as original formulation, recognized consolidation, field-shaping critique, or repeated treatment as a foundational reference in authoritative literature.
+
+For historical or conceptual attribution claims such as “X introduced”, “X proposed”, “X defined”, or “the original formulation”, prefer the primary source. Record `Primary_source_status` as:
+
+- `PRIMARY_VERIFIED` — the primary source was actually consulted;
+- `SECONDARY_ONLY` — attribution is currently supported only by a secondary source;
+- `NOT_VERIFIED` — primary-source status remains unresolved;
+- `NOT_APPLICABLE` — the row does not make an origin/foundation attribution.
+
+Never imply direct consultation of a classic work when only a secondary source was read. If the primary source is unavailable, preserve the secondary attribution transparently and avoid wording that overstates verification.
+
+Use `Conceptual_lineage_or_relation` to record how the source relates to the lineage of the concept, for example: original formulation, consolidation of definition, critique of boundary conditions, contemporary extension, transfer to a new context, or methodological adaptation.
+
+The purpose is dual anchoring: where appropriate, a material theoretical claim should be able to connect both to its foundational/canonical basis and to the contemporary state of the discussion. Do not enforce mechanical citation quotas such as “one classic plus two recent sources per paragraph”.
+
+This is part of the evidence architecture, not a new review method, new sheet, or new ID family.
 
 ## Concept operationalization traceability
 
@@ -157,7 +198,7 @@ Do not treat these as equivalent:
 - citation presence vs causal influence;
 - high citation count vs methodological quality.
 
-Use role labels such as `FOUNDATIONAL`, `CORE`, `SUPPORT`, `CONTEXT`, `METHOD`, `CONTRASTING`, or domain-specific equivalents when useful. Keep these separate from formal quality appraisal scales.
+Use the controlled literature-role labels defined above when the conceptual lineage matters. Keep literature role separate from methodological quality, evidence strength, citation count, and publication age.
 
 
 ## Adversarial claim robustness audit

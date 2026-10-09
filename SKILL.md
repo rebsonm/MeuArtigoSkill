@@ -55,6 +55,8 @@ Use scripts/dedupe_records.py for compatible exports. Conflicting DOIs must rema
 
 Grounded Corpus Mode uses only validated eligible full text; give Record_IDs, Evidence_IDs and locators and disclose unsupported answers. Read [grounded corpus](references/grounded-corpus.md) when answering corpus questions. Corpus Map is optional exploration of real metadata, not a change of review design; read [corpus map](references/corpus-map.md).
 
+In the evidence matrix, preserve conceptual lineage where relevant: distinguish foundational/canonical works, classic critiques, methodological foundations, contemporary updates, empirical support, and contrary evidence. Do not call a work “classic” merely because it is old or highly cited. For claims about who introduced/defined/proposed a concept, verify the primary source when reasonably accessible; otherwise mark the attribution as secondary-only rather than implying direct consultation. Read [evidence/synthesis](references/evidence-synthesis.md).
+
 ## Decisions, continuity, and release
 
 Read [traceability](references/traceability.md) and [scientific governance](references/scientific-governance.md) for material events. Preserve CADA_ID, TRACE_ID, Evidence_ID and Claim_ID links. Use DEC_ID for material decisions, GATE_ID for actual human checkpoints and SNAP_ID for meaningful freezes. Proposals remain PROPOSED until explicit human judgment and evidence are recorded.

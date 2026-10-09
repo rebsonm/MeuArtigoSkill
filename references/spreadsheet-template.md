@@ -362,6 +362,10 @@ Citação
 DOI / ID
 Conceito
 Definição / claim
+Papel na literatura
+Base da classificação
+Fonte primária
+Linhagem conceitual / relação
 Problema / tensão
 Mecanismo / achado
 Desenho / tipo de fonte
@@ -384,6 +388,37 @@ Epistemic labels:
 - [L]
 - [I]
 - [P]
+
+### Literatura clássica e linhagem conceitual
+
+A própria `09_MATRIZ_EVID` deve registrar a função intelectual da referência, sem criar nova aba ou novo ID.
+
+Valores controlados em `Papel na literatura`:
+
+- FOUNDATIONAL
+- CANONICAL
+- CLASSIC_CRITIQUE
+- METHOD_FOUNDATIONAL
+- CONTEMPORARY_UPDATE
+- EMPIRICAL_SUPPORT
+- CONTRARY_EVIDENCE
+- CONTEXT
+- OTHER
+
+`Base da classificação` deve justificar por que a obra exerce esse papel. Idade ou número de citações, isoladamente, não tornam uma obra clássica.
+
+`Fonte primária` usa:
+
+- PRIMARY_VERIFIED
+- SECONDARY_ONLY
+- NOT_VERIFIED
+- NOT_APPLICABLE
+
+`Linhagem conceitual / relação` registra, quando aplicável, a posição da obra na sequência origem/fundação, consolidação, crítica relevante e desenvolvimento contemporâneo.
+
+Atribuições como “X introduziu”, “X definiu” ou “formulação original” exigem consulta da fonte primária quando razoavelmente acessível. Se apenas uma fonte secundária foi consultada, isso deve permanecer explícito.
+
+Não impor quotas artificiais de citações clássicas/recentes. A meta é dupla ancoragem conceitual quando pertinente, não decoração bibliográfica.
 
 For material constructs or categories requiring operationalization, extend the existing evidence rows with: canonical definition; definition-source Evidence_IDs; mechanism or relationship; dimension or category; indicator or observable; interpretation rule; boundary or exclusion rule; epistemic label; Trace_IDs; and human validation.
 
