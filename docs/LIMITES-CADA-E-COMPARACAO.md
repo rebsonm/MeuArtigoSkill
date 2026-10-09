@@ -1,4 +1,4 @@
-# RT-07 — Escopo do C.A.D.A. e protocolo de avaliação independente
+# Escopo do C.A.D.A. e protocolo de avaliação independente
 
 ## O que o C.A.D.A. faz e o que não faz
 
@@ -23,13 +23,13 @@ python scripts/audit_governance_boundary.py audit /projeto --strict --output 00_
 python scripts/audit_governance_boundary.py check-plan benchmarks/cada_comparison_protocol_v1.json
 ```
 
-O relatório separa **atividades de gestão**, **registros científicos** e **comprovantes técnicos**. Ele identifica tarefas marcadas DONE com evidência operacional vazia ou tautológica e gates com apenas “DONE”/“CADA-0001” como suposta prova científica. A verificação de origem/qualidade científica permanece nos scripts especializados dos RT-01, RT-04, RT-05 e RT-06; este controle NÃO os substitui.
+O relatório separa **atividades de gestão**, **registros científicos** e **comprovantes técnicos**. Ele identifica tarefas marcadas DONE com evidência operacional vazia ou tautológica e gates com apenas “DONE”/“CADA-0001” como suposta prova científica. A verificação de origem/qualidade científica permanece nos mecanismos especializados de verificação de fontes, evidências, registros e revisão humana; este controle NÃO os substitui.
 
 O módulo retorna `scientific_quality_validated=false` e `causal_CADA_effect_established=false`. Tarefas concluídas, prazos registrados e eventos rastreados não são medidas válidas da qualidade acadêmica.
 
 Projetos novos usam `cada_science_boundary_required=true`. Projetos anteriores só migram após decisão explícita: conservar seus registros e não inferir que uma anotação histórica é prova técnica.
 
-## RT-07 comparativo: protocolo preparado, sem execução empírica
+## Protocolo comparativo: preparado, sem execução empírica
 
 O arquivo `benchmarks/cada_comparison_protocol_v1.json` é o protocolo prospectivo para uma futura comparação **com C.A.D.A. / sem C.A.D.A.**, com aplicação a episódios administrativos de pesquisa que sejam comparáveis.
 
