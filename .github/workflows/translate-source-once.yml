@@ -30,4 +30,10 @@ jobs:
           except Exception as exc:
               print("PUBLIC_TEST_FAILED",type(exc).__name__,str(exc)[:200])
               raise
+          sample="## 1. Família de revisão\\n\\nZXQSEGMENT001ZXQ\\n\\nA revisão identifica fontes e resultados da pesquisa.\\n\\nZXQSEGMENT002ZXQ\\n\\n- **Atenção:** conferir [documentação](ZXQLINK001ZXQ)."
+          url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=pt&tl=en&dt=t&q="+urllib.parse.quote(sample)
+          with urllib.request.urlopen(url,timeout=20) as reply:
+              import json
+              result=json.load(reply)
+          print("MARKER_PROBE",repr("".join(x[0] for x in result[0])))
           PY
