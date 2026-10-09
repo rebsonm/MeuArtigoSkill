@@ -1,14 +1,20 @@
 # Meu Artigo — Skill para pesquisa e construção de artigos científicos
 
-**Versão atual:** `0.7.0-beta.1`
+**Versão atual:** `0.8.0-beta.1`
 
-**Status de distribuição:** repositório público · versão beta em desenvolvimento · código e documentação disponíveis para consulta e instalação · veja [CHANGELOG.md](./CHANGELOG.md) · metadados de citação em [CITATION.cff](./CITATION.cff)
+**Status de distribuição:** beta pública em desenvolvimento · código e documentação sob [MIT](./LICENSE) · [Release fixa v0.8.0-beta.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.1) · [Changelog](./CHANGELOG.md) · [Como citar](./CITATION.cff)
+
+**Baixe o ZIP instalável da Release**, não o arquivo de código-fonte por engano. O release também fornece `SHA256SUMS.txt`; a distribuição contém `SKILL.md` na raiz, manifesto de integridade e licença. A aprovação dos testes automatizados **não** representa validação científica dos artigos produzidos. Veja [implantação beta](./docs/IMPLANTACAO-BETA.md) e [validações pendentes](./docs/VALIDACOES-PENDENTES.md).
 
 **Meu Artigo** é uma Skill **multiplataforma** para pesquisa e construção de artigos científicos. Ela transforma um problema, pergunta ou ideia de pesquisa fornecida pelo usuário em um **processo científico rastreável, persistente, orientado por evidências e auditável quanto à sua própria construção**. O núcleo metodológico vive em `SKILL.md`; diferenças entre ChatGPT, Claude e Gemini ficam isoladas em adapters/documentação de plataforma.
 
 Ela não entrega um “artigo pronto por mágica” e não reutiliza o conteúdo de um projeto anterior. O que a Skill reutiliza é um **método de trabalho**: organização do projeto, auditoria de novidade, protocolo, buscas bibliográficas, registro das decisões, deduplicação, screening, full text, matriz de evidências, síntese, redação e auditoria final. Todo esse fluxo é acompanhado por uma camada de gestão **C.A.D.A.**, para tornar o passo a passo visível e rastreável.
 
 > O tema, a pergunta de pesquisa, os conceitos, as strings de busca, as fontes, as categorias analíticas e as conclusões pertencem sempre ao projeto do novo usuário.
+
+## Beta pública — implantação e acompanhamento
+
+Para instalação, consulte [implantação](./docs/IMPLANTACAO-BETA.md) e [checklist de primeiro uso](./docs/CHECKLIST-PRIMEIRO-USO.md). O [protocolo de avaliação com usuários](./docs/PROTOCOLO-BETA-USUARIOS.md) está preparado, **mas não foi executado**. Contribuições técnicas são recebidas conforme [CONTRIBUTING.md](./CONTRIBUTING.md), e questões sensíveis devem seguir [SECURITY.md](./SECURITY.md). Os testes funcionais e a validação científica restantes constam na [matriz de pendências](./docs/VALIDACOES-PENDENTES.md).
 
 ## 🚀 Nunca usou GitHub? Comece aqui
 

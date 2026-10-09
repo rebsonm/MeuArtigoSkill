@@ -30,6 +30,12 @@ jobs:
       - name: Provenance smoke test
         run: python scripts/smoke_test_provenance.py
 
+      - name: Build and verify installable beta ZIP
+        run: |
+          python scripts/build_skill_bundle.py
+          python scripts/build_skill_bundle.py --verify "dist/MeuArtigoSkill-v$(cat VERSION).zip"
+          (cd dist && sha256sum -c SHA256SUMS.txt)
+
       - name: Upload installable Skill bundle
         if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4
@@ -47,5 +53,63 @@ jobs:
             CHANGELOG.md
             VERSION
             CITATION.cff
+            LICENSE
+            CONTRIBUTING.md
+            SECURITY.md
+            dist/MeuArtigoSkill-v*.zip
+            dist/SHA256SUMS.txt
           if-no-files-found: error
           retention-days: 30
+
+
+  publish-beta:
+    name: Publish tagged public-beta release
+    needs: audit
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check target beta version
+        id: beta
+        shell: bash
+        run: |
+          if [[ "$(cat VERSION)" == "0.8.0-beta.1" ]]; then
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build and hash public Skill ZIP
+        if: steps.beta.outputs.publish == 'true'
+        run: |
+          python scripts/build_skill_bundle.py
+          python scripts/build_skill_bundle.py --verify "dist/MeuArtigoSkill-v$(cat VERSION).zip"
+          (cd dist && sha256sum -c SHA256SUMS.txt)
+
+      - name: Create tagged prerelease if absent
+        if: steps.beta.outputs.publish == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          TAG="v$(cat VERSION)"
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release $TAG already published; not replacing existing assets."
+            exit 0
+          fi
+          gh release create "$TAG" \
+            "dist/MeuArtigoSkill-$TAG.zip" \
+            "dist/SHA256SUMS.txt" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title "Meu Artigo $TAG — beta pública" \
+            --notes-file "docs/NOTAS-DA-VERSAO-0.8.0-beta.1.md" \
+            --prerelease \
+            --latest=false

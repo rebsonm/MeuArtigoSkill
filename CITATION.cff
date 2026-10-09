@@ -5,11 +5,11 @@ type: software
 authors:
   - family-names: "Mendes"
     given-names: "Rebson de Morais"
-version: "0.7.0-beta.1"
-date-released: "2026-10-08"
+version: "0.8.0-beta.1"
+date-released: "2026-10-09"
 repository-code: "https://github.com/rebsonm/MeuArtigoSkill"
 url: "https://github.com/rebsonm/MeuArtigoSkill"
-license: "NOASSERTION"
+license: "MIT"
 abstract: >-
   Meu Artigo is a cross-platform scientific-workflow skill for managing,
   tracing, validating, and documenting AI-assisted article construction.
