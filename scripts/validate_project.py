@@ -10,6 +10,7 @@ from claim_integrity import audit as audit_claim_integrity
 from audit_governance_boundary import audit as audit_cada_boundary
 from rights_audit import audit_project as audit_fulltext_rights
 from method_routes import GATE_VARIANTS, ROUTES, load as read_method_profile, profile_issues
+from scientific_evidence_tiers import audit as audit_evidence_tiers
 
 REQUIRED=[
 "00_Gestao_e_Continuidade/CONTINUIDADE.md",
@@ -376,6 +377,11 @@ def main():
             freeze=g6_final,headers=claim_headers)
         errors.extend("claim integrity: "+p for p in claim_audit["errors"])
         warnings.extend("claim integrity: "+p for p in claim_audit["warnings"])
+
+    if cfg_data.get("method_route_governance_required") is True:
+        tiers=audit_evidence_tiers(root,freeze=g6_final if cfg_data.get("claim_integrity_required") is True else False)
+        errors.extend("evidence levels: "+item for item in tiers["errors"])
+        warnings.extend("evidence levels: "+item for item in tiers["warnings"])
 
     dashboard=root/"00_Gestao_e_Continuidade/15_CADA_Dashboard.csv"
     if dashboard.exists():
