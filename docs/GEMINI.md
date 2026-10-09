@@ -8,12 +8,12 @@ Este documento descreve como usar **Meu Artigo** nos apps Gemini. A metodologia 
 
 O Google documenta o carregamento de Skills nos apps Gemini, mas a função depende dos requisitos da conta, da região, do produto e das condições atuais. Consulte as [instruções oficiais do Gemini](https://support.google.com/gemini/answer/17094296?hl=pt-BR).
 
-A documentação informa que uma Skill pode ser importada por `SKILL.md`, pasta ou ZIP com `SKILL.md` na raiz. **Isso confirma o formato de upload, não a execução completa da Skill Meu Artigo**; a beta `v0.8.0-beta.6` ainda precisa ser testada em ambiente real.
+A documentação informa que uma Skill pode ser importada por `SKILL.md`, pasta ou ZIP com `SKILL.md` na raiz. **Isso confirma o formato de upload, não a execução completa da Skill Meu Artigo**; a beta `v0.8.0-beta.7` ainda precisa ser testada em ambiente real.
 
 ## 1. Baixe a versão identificada
 
-1. Abra [a Release v0.8.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.6).
-2. Baixe **`MeuArtigoSkill-v0.8.0-beta.6.zip`**, em vez do ZIP automático de código-fonte.
+1. Abra [a Release v0.8.0-beta.7](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.7).
+2. Baixe **`MeuArtigoSkill-v0.8.0-beta.7.zip`**, em vez do ZIP automático de código-fonte.
 3. Para conferir a integridade, use o `SHA256SUMS.txt` da mesma versão.
 
 ## 2. Instale no Gemini
