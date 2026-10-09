@@ -23,14 +23,14 @@ Old projects, without this option, preserve their compatibility; Enabling the mo
 Command example **with demonstrative answers only in the documentation**:
 
 ```bash
-python scripts/governance_events.py gate /caminho/do/projeto \
+python scripts/governance_events.py gate /path/to/project \
   --gate-id GATE-0002 \
   --decision APPROVED \
-  --validated-by "Pesquisador" \
+  --validated-by "Researcher" \
   --method "Revisão do protocolo metodológico" \
-  --evidence "Referência à mensagem original do pesquisador" \
+  --evidence "Reference to the researcher’s original message" \
   --researcher-rationale "O desenho reúne perspectivas teóricas diferentes para esclarecer uma questão conceitual." \
-  --researcher-limitation "A abrangência depende das fontes consultadas e das escolhas de seleção da literatura."
+  --researcher-limitation "Coverage depends on the sources consulted and the literature-selection decisions."
 ```
 
 The texts above **do not represent real human response** and cannot be copied as evidence of an effective decision. In normal use, extract these arguments from the user's direct expression, not from text suggested by the agent.
