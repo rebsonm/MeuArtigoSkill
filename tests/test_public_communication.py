@@ -44,7 +44,7 @@ class PublicCommunicationTests(unittest.TestCase):
     def test_public_docs_exclude_private_collections_and_internal_roadmap_codes(self):
         """Private source provenance and internal development tickets stay outside public docs."""
         forbidden = re.compile(
-            r"\\bPPGA\\b|ppga-methodological|\\bRT-\\d{2}\\b|\\bP-\\d{2}\\b|\\bT-\\d{2}\\b",
+            r"\bPPGA\b|ppga-methodological|\bRT-\d{2}\b|\bP-\d{2}\b|\bT-\d{2}\b",
             re.I,
         )
         docs = [ROOT/"README.md", ROOT/"SKILL.md", ROOT/"CHANGELOG.md"]
