@@ -122,21 +122,13 @@ Essa arquitetura está alinhada com uma tendência editorial crescente de exigir
 
 A Revista de Ciências da Administração, por exemplo, determina que aplicações substantivas de IA sejam descritas nos métodos, com ferramenta, versão, finalidade e procedimentos de validação humana, para assegurar rastreabilidade.
 
-Ricardo Limongi também publicou trabalhos sobre IA, integridade científica, ética e transparência algorítmica, reforçando a relevância do tema.
+Referência editorial pública:
 
-Referências públicas:
-
-- Limongi, R. (2024). *O uso de inteligência artificial na pesquisa científica com integridade e ética*. Future Studies Research Journal. DOI: https://doi.org/10.24023/FutureJournal/2175-5825/2024.v16i1.845
-- Limongi, R., Rodrigues, J. M., Gupta, R., & Artigas, E. M. (2025/2026). *The Use of Artificial Intelligence in Management Research Methods*. Revista de Administração Contemporânea. DOI: https://doi.org/10.1590/1982-7849rac2025250509
 - Diretrizes para uso de IA — Revista de Ciências da Administração: https://periodicos.ufsc.br/index.php/adm/Diretrizes_para_uso_de_IA
 
-## Importante sobre a palestra
+## Limites de atribuição
 
-A ideia relatada pelo autor do projeto a partir de uma palestra de Ricardo Limongi — de que revisores precisam de maior rastreabilidade na era da IA — é uma motivação relevante para o desenvolvimento.
-
-Porém, enquanto a gravação, slide ou publicação específica da palestra não estiver identificada, essa fala não deve ser apresentada no artigo ou na documentação científica como citação textual/verificável de Limongi.
-
-Use as publicações verificáveis acima para fundamentação acadêmica.
+Fundamentos acadêmicos e editoriais devem estar ligados a fontes identificáveis e verificáveis. Afirmações atribuídas a palestras ou apresentações não documentadas não devem ser registradas como citações ou evidências confirmadas.
 
 ## Resultado esperado
 
