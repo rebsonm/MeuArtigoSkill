@@ -2,7 +2,13 @@
 
 ## Unreleased
 
-Nenhuma alteração adicional registrada desde `0.8.0-beta.8`.
+### Robustez do processo de desenvolvimento (ainda não publicada como nova release)
+
+- Centralizar a versão executável em `VERSION`, atualizar a auditoria de consistência e adicionar sincronizador dos metadados de README, CITATION e CHANGELOG; as notas reais de cada versão continuam exigidas.
+- Separar a auditoria de CI, estritamente de leitura, da publicação manual e irreversível das releases; nenhuma alteração comum na branch principal produz uma nova tag automaticamente.
+- Fixar GitHub Actions em SHAs verificados e suprimir credenciais persistentes de checkout.
+- Ampliar o exame de materiais públicos para documentos Markdown da raiz, referências, documentação e modelos do GitHub; rejeitar referências privadas e formatos reconhecíveis de segredo sem imprimir seu conteúdo.
+- Adicionar regressões automatizadas da política de publicação, das versões e da exposição documental.
 
 ## 0.8.0-beta.8 — 2026-10-09
 
