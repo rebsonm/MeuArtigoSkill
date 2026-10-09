@@ -52,6 +52,21 @@ Segundo a documentação atual do Gemini:
 
 Os scripts deste repositório são locais e determinísticos. Ainda assim, a execução depende da superfície e das permissões do Gemini.
 
+## Preflight específico do Gemini
+
+A [documentação oficial](https://support.google.com/gemini/answer/17094296?hl=pt-BR)
+registra que Skills estão em disponibilização gradual e que scripts
+**que exigem internet** não são suportados dentro da Skill.
+Arquivos binários como `.xlsx` não são aceitos como referência
+nesse upload. Isso não proíbe a existência da planilha canônica
+em Drive, mas exige que sua criação e edição por ferramentas externas
+sejam realmente verificadas em vez de presumidas.
+
+Antes de iniciar o projeto, confira
+[preflight por capacidades](../references/platform-capability-preflight.md)
+e use apenas integrações efetivamente disponíveis. Não relatar
+scripts Python executados ou uploads concluídos sem recibo.
+
 ## Integrações
 
 Não tente reproduzir literalmente `agents/openai.yaml`.
