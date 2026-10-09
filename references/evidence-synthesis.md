@@ -267,3 +267,7 @@ Robustness status:
 Do not treat disagreement as noise to be removed. Contradictory evidence may expose heterogeneity, boundary conditions, or a more precise theoretical contribution.
 
 The purpose is to test whether a claim survives reasonable contestation, not to manufacture certainty.
+
+## Complementary administration literature
+
+For integrative synthesis and contribution typology, consult [the complementary PPGA methodological bibliography](ppga-methodological-foundations.md). Record the scope of the review, the problematized assumption, the theoretical/practical/methodological/didactic contribution and the supporting evidence separately. Do not infer semantic originality from a bibliographic gap alone.

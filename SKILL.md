@@ -38,6 +38,8 @@ For a new project:
 
 For inexperienced users, apply [beginner mode](references/beginner-mode.md). A manager mirror is optional; use [work management](references/work-management.md) only when enabled. Keep one primary manager per article unless explicitly requested otherwise.
 
+For additional methodological orientation in administration research, consult [the methodological foundation map](references/ppga-methodological-foundations.md). Preserve the distinction between works cited from verified bibliographic metadata and copies actually consulted in a private collection; do not expose private Drive file IDs in the public repository.
+
 ## Choose the scientific path
 
 - Integrative/conceptual/theoretical: support synthesis of heterogeneous literature and explicit original contributions.
