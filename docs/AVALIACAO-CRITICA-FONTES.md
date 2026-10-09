@@ -60,7 +60,9 @@ This is **our own operational checklist**, not a reproduction or official certif
 The choice of these states remains human. The code rejects objective inconsistencies, such as asserting SUITABLE_FOR_CLAIM when there is a NO or UNCLEAR item, or registering criteria without basis. **Does not conclude**, based on how many items were marked YES, that the source is valid.
 
 <a id="integração-da-avaliação-crítica-com-a-verificação-das-fontes-e-das-evidências"></a>
-## Integration of critical assessment with verification of sources and evidenceNew projects have critical_appraisal_required=true. When approving GATE-0006, the validator requires critical evaluation of the Evidence_IDs effectively linked to material claims (including contrary evidence). Evidence used with the INSUFFICIENT_INFORMATION or DO_NOT_USE_FOR_CLAIM judgment blocks the gate while substantiating the claim. Qualified evidence requires scientific justification and correctly limited claims.
+## Integration of critical appraisal with source and evidence verification
+
+New projects have critical_appraisal_required=true. When approving GATE-0006, the validator requires critical evaluation of the Evidence_IDs effectively linked to material claims (including contrary evidence). Evidence used with the INSUFFICIENT_INFORMATION or DO_NOT_USE_FOR_CLAIM judgment blocks the gate while substantiating the claim. Qualified evidence requires scientific justification and correctly limited claims.
 
 In older designs, the mode is not retroactively enabled. The Appraisal_criteria field stores structured JSON and the other six fields are on the same line in the source. Subsequent updates require versioning and new decision recording: do not silently overwrite evaluations already carried out.
 
