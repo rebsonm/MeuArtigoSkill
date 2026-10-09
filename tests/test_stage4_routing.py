@@ -59,7 +59,7 @@ class Stage4RouterTests(unittest.TestCase):
         self.assertIn("FULL",self.context)
         self.assertIn("CONTINUIDADE.md",self.context)
         mode=(ROOT/"docs/MODO-NUCLEO-MINIMO.md").read_text(encoding="utf-8")
-        self.assertIn("não elimina registros",mode)
+        self.assertIn("não elimina registros",mode.lower())
         self.assertIn("CONTEXTO-POR-ETAPA.md",mode)
 
     def test_platform_capability_not_claimed_as_real_execution(self):
