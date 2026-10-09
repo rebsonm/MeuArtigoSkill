@@ -41,6 +41,22 @@ class PublicCommunicationTests(unittest.TestCase):
                 self.assertNotRegex(doc,re.compile(pattern,re.I),
                     f"Developer-only term in public release note {path.name}")
 
+    def test_public_docs_exclude_private_collections_and_internal_roadmap_codes(self):
+        """Private source provenance and internal development tickets stay outside public docs."""
+        forbidden = re.compile(
+            r"\\bPPGA\\b|ppga-methodological|\\bRT-\\d{2}\\b|\\bP-\\d{2}\\b|\\bT-\\d{2}\\b",
+            re.I,
+        )
+        docs = [ROOT/"README.md", ROOT/"SKILL.md", ROOT/"CHANGELOG.md"]
+        docs += list((ROOT/"docs").rglob("*.md"))
+        docs += list((ROOT/"references").rglob("*.md"))
+        for path in docs:
+            self.assertNotRegex(
+                path.read_text(encoding="utf-8"), forbidden,
+                f"Private institutional provenance or internal development code in {path}"
+            )
+        self.assertFalse((ROOT/"references"/"ppga-methodological-foundations.md").exists())
+
     def test_links_in_readme_resolve_to_real_repository_documents(self):
         text=README.read_text(encoding="utf-8")
         for target in re.findall(r"\[[^\]]+\]\(([^)]+)\)",text):
