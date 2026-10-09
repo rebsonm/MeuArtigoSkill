@@ -26,36 +26,37 @@ The agent should not require the user to supply a ready-made search strategy.
 
 ## What the agent should do automatically
 
-When tools allow, automatically:
+Follow [the essential beginner flow](fluxo-essencial.md), while preserving
+all scientific controls. Do **not** impose a long universal sequence of
+bibliographic searches on every article type.
 
-1. inspect which research capabilities are available on the current platform;
-2. map available tools to persistent storage, academic discovery, citation verification, web/publisher retrieval, indexed databases, and script execution;
-3. surface install/connect actions for useful missing integrations when the platform supports them;
-4. create/resume the canonical persistent workspace;
-5. create `CONTINUIDADE.md` and the master tracking matrix;
-6. initialize the C.A.D.A. control layer and visible step-by-step dashboard;
-7. if a supported work manager is connected, choose one primary provider and mirror the C.A.D.A. items;
-8. persist the user's original research problem verbatim;
-9. restate the problem without changing its meaning;
-10. perform a small novelty and terminology audit immediately;
-11. propose a provisional question/contribution when needed;
-12. explain which near works were found, what may remain distinct **within that limited search**, and what is uncertain; label the conclusion [I] rather than claiming proven originality;
-13. choose the likely article/review track and explain it briefly;
-14. build conceptual search blocks;
-15. create database-specific search strings;
-16. log all searches;
-17. ingest and validate exports;
-18. deduplicate;
-19. prepare and assist screening;
-20. locate lawful full text;
-21. build the evidence matrix;
-22. synthesize cross-source categories;
-23. build a claim-to-evidence ledger;
-24. draft from evidence;
-25. audit claims, references, and counts;
-26. update the continuity file, C.A.D.A. dashboard, matrix, and external manager before ending.
+1. Check actual platform/storage capabilities; create or resume a
+   canonical workspace **only after** the Drive write preflight or
+   explicitly authorized local/Work fallback.
+2. Preserve the researcher's original problem and show a provisional,
+   bounded question and contribution; run a **small novelty check**
+   only when authorized and tools really permit it.
+3. Explain the plausible methodological routes in ordinary language,
+   then record the researcher's actual choice and limitation at the
+   appropriate human gate; leave the route UNDECIDED if unresolved.
+4. Prepare **only the method-specific workflow**: reviews use justified
+   bibliographic searches, deduplication and screening when applicable;
+   empirical projects require actual material/data and analysis; mixed
+   designs need genuine integration; design science needs artefact
+   construction and separate evaluation.
+5. Execute routine operations without unnecessary interruptions,
+   verifying any tool results, source identities and file permissions.
+   Distinguish proposed, unverified and executed events; never synthesize
+   counts, participant statements, outcomes or external confirmations.
+6. Keep links to source and claim evidence, contrary findings,
+   justifications and journal rules; for any scientific gate
+   require the real researcher's response and appropriate proof.
+7. Save the observed progress and next valid action in the
+   authorized persistent project workspace.
 
-The user should not need to know Boolean syntax, workspace folder design, spreadsheet schemas, connector/plugin names, export field names, or deduplication mechanics. The user should, however, always be able to understand the visible project roadmap and current C.A.D.A. state.
+In MINIMAL, show **one next action, one decision if required, and one
+material risk/limitation**. In FULL, show the detailed existing state
+on demand; neither mode changes actual verification or gate requirements.
 
 ## What must stay visible to the user
 
