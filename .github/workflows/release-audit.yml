@@ -80,7 +80,7 @@ jobs:
         id: beta
         shell: bash
         run: |
-          if [[ "$(cat VERSION)" == "0.8.0-beta.1" ]]; then
+          if [[ "$(cat VERSION)" == "0.8.0-beta.2" ]]; then
             echo "publish=true" >> "$GITHUB_OUTPUT"
           else
             echo "publish=false" >> "$GITHUB_OUTPUT"
@@ -92,6 +92,16 @@ jobs:
           python scripts/build_skill_bundle.py
           python scripts/build_skill_bundle.py --verify "dist/MeuArtigoSkill-v$(cat VERSION).zip"
           (cd dist && sha256sum -c SHA256SUMS.txt)
+
+      - name: Update previous beta release notes
+        if: steps.beta.outputs.publish == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          if gh release view "v0.8.0-beta.1" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "v0.8.0-beta.1" --repo "$GITHUB_REPOSITORY" --notes-file "docs/NOTAS-DA-VERSAO-0.8.0-beta.1.md"
+          fi
 
       - name: Create tagged prerelease if absent
         if: steps.beta.outputs.publish == 'true'
@@ -110,6 +120,6 @@ jobs:
             --repo "$GITHUB_REPOSITORY" \
             --target "$GITHUB_SHA" \
             --title "Meu Artigo $TAG — beta pública" \
-            --notes-file "docs/NOTAS-DA-VERSAO-0.8.0-beta.1.md" \
+            --notes-file "docs/NOTAS-DA-VERSAO-0.8.0-beta.2.md" \
             --prerelease \
             --latest=false

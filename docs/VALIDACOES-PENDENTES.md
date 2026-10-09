@@ -1,6 +1,6 @@
 # Matriz de validações ainda pendentes
 
-Versão de referência: `0.8.0-beta.1`. Atualizar somente depois de cada avaliação **real**, sem preencher resultados não observados.
+Versão de referência: `0.8.0-beta.2`. Atualizar somente depois de cada avaliação **real**, sem preencher resultados não observados.
 
 | Código | Avaliação pendente | Condição para execução | Estado |
 |---|---|---|---|

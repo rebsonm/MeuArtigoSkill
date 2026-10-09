@@ -2,7 +2,16 @@
 
 ## Unreleased
 
-Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-beta.1`.
+Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-beta.2`.
+
+## 0.8.0-beta.2 — 2026-10-09
+
+### Clareza da comunicação pública
+
+- Reformular a página inicial para explicar a proposta, os benefícios e os limites do Meu Artigo sem identificadores internos de testes, etapas de desenvolvimento ou detalhes de implementação.
+- Atualizar as notas públicas de lançamento e manter explicações técnicas nos locais apropriados da documentação do projeto.
+- Introduzir verificação automatizada para impedir que identificadores de manutenção e desenvolvimento reapareçam na apresentação pública.
+- Preservar os mesmos recursos de pesquisa da versão anterior; atualização de apresentação e documentação.
 
 ## 0.8.0-beta.1 — 2026-10-09
 
