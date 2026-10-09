@@ -16,8 +16,18 @@ Para erros funcionais que não contenham informação sensível, abra uma Issue 
 
 Os validadores oferecem controles de consistência e proveniência; não garantem segurança absoluta, conformidade legal completa, revisão científica independente nem autorização de redistribuição de PDFs. Um registro `CONFIRMED` ou `VALIDATED` não autentica, por si, a identidade de quem o digitou.
 
-A distribuição é beta e sujeita a atualizações. Prefira releases identificados e confira o SHA-256 do ZIP oficial. Não execute conteúdo de fontes não confiáveis nem forneça permissões de escrita mais amplas do que as necessárias. Direitos autorais e compartilhamento de PDFs são tratados em [RT-09](docs/DIREITOS-FULLTEXT-E-PDFS.md).
+A distribuição é beta e sujeita a atualizações. Prefira releases identificados e confira o SHA-256 do ZIP oficial. Não execute conteúdo de fontes não confiáveis nem forneça permissões de escrita mais amplas do que as necessárias. Direitos autorais e compartilhamento de PDFs são tratados em [direitos de textos completos](docs/DIREITOS-FULLTEXT-E-PDFS.md).
 
 ## Versões
 
 A política abrange a linha `0.8.x-beta` e futuras versões publicadas, sem garantia de atualizações para versões anteriores. Consulte [CHANGELOG.md](CHANGELOG.md).
+
+
+## Compartilhamento de pacotes de proveniência
+
+O exportador possui públicos distintos: o perfil PRIVATE, padrão, gera um pacote
+confidencial e não deve ser enviado a terceiros sem revisão; PUBLIC exporta somente
+informações estruturais neutras, sem conteúdo científico ou identidades; e
+COLLABORATIVE só pode incluir textos de manuscrito explicitamente revisados,
+autorizados e conferidos por SHA-256. Mesmo após controles automáticos, revisão
+humana contextual é indispensável antes de qualquer compartilhamento externo.
