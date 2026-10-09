@@ -152,4 +152,4 @@ Avoid inflated or incorrect labels such as:
 
 ## Further methodological foundations
 
-Consult [complementary methodological bibliography](ppga-methodological-foundations.md) when choosing an integrative, problematizing or systematic review. Distinguish Elsbach and Van Knippenberg (2020) from Alvesson and Sandberg (2020), use Bispo (2023) to name the intended theoretical/practical/methodological/didactic contribution, and retain Torraco (2005), Whittemore and Knafl (2005), Snyder (2019) and Rethlefsen et al. (2021) for their distinct roles. Bibliographic evidence does not grant permission to redistribute copyrighted PDFs.
+Consult [complementary methodological bibliography](methodological-foundations.md) when choosing an integrative, problematizing or systematic review. Distinguish Elsbach and Van Knippenberg (2020) from Alvesson and Sandberg (2020), use Bispo (2023) to name the intended theoretical/practical/methodological/didactic contribution, and retain Torraco (2005), Whittemore and Knafl (2005), Snyder (2019) and Rethlefsen et al. (2021) for their distinct roles. Bibliographic evidence does not grant permission to redistribute copyrighted PDFs.
