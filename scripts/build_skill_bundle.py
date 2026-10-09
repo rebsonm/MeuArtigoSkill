@@ -11,6 +11,7 @@ import hashlib
 import json
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
+from version_info import read_version
 
 ROOT = Path(__file__).resolve().parents[1]
 ROOT_FILES = ("SKILL.md", "README.md", "CHANGELOG.md", "VERSION",
@@ -58,7 +59,7 @@ def list_sources(root: Path) -> list[Path]:
 def package(root: Path, destination: Path) -> dict:
     root = root.resolve()
     files = list_sources(root)
-    version = (root / "VERSION").read_text(encoding="utf-8").strip()
+    version = read_version(root)
     if not version:
         raise ValueError("Missing package version")
     expected = f"MeuArtigoSkill-v{version}.zip"
@@ -125,7 +126,7 @@ def main(argv=None):
     if args.verify:
         result = verify_package(Path(args.verify))
     else:
-        version = (root / "VERSION").read_text(encoding="utf-8").strip()
+        version = read_version(root)
         path = Path(args.out) if args.out else root / "dist" / f"MeuArtigoSkill-v{version}.zip"
         result = package(root, path)
         print(f"bundle={path}")
