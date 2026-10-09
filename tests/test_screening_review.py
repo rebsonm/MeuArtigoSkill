@@ -211,7 +211,7 @@ class ScreeningReviewTests(unittest.TestCase):
 
     def test_excel_template_has_separate_proposal_and_review_columns(self):
         script=(SCRIPTS/"build_matrix_template.py").read_text(encoding="utf-8")
-        for label in ("Pass1 proposta IA","Pass1 revisado por","Pass2 proposta IA","Pass2 evidência revisão"):
+        for label in ("Pass1 AI proposal","Pass1 reviewed by","Pass2 AI proposal","Pass2 review evidence"):
             self.assertIn(label,script)
         self.assertIn('end=excel_column(len(heads))',script)
         self.assertIn('"A1:AD1"',script)
