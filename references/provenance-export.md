@@ -16,6 +16,18 @@ Official references:
 
 Do not claim conformance to a specialized RO-Crate profile unless the project actually satisfies that profile.
 
+## Audience and confidentiality boundary
+
+**Never treat the default full-fidelity export as public.** The exporter defaults
+to `PRIVATE`, carrying confidential research records and canonical files.
+The explicitly selected `PUBLIC` audience yields a redacted, metadata-only
+RO-Crate and PROV boundary; `COLLABORATIVE` accepts only individually reviewed,
+SHA-256-bound canonical manuscript text files through an explicit manifest.
+External audiences do **not** include the full scientific provenance graph and
+cannot include full texts, even when a private rights record exists.
+The external output is intentionally insufficient to reproduce the underlying
+research; label it accordingly. Consult [safe export guide](../docs/EXPORTACAO-SEGURA.md).
+
 ## Export artifacts
 
 The canonical export produces:
