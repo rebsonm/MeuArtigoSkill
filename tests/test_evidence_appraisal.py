@@ -187,7 +187,7 @@ class EvidenceAppraisalTests(unittest.TestCase):
     def test_public_repo_docs_dont_claim_private_access(self):
         readme=(ROOT/"README.md").read_text(encoding="utf-8").lower()
         guide=(ROOT/"docs/COMECE-AQUI.md").read_text(encoding="utf-8").lower()
-        self.assertIn("repositório público",readme)
+        self.assertIn("public github repository",readme)
         self.assertNotIn("repositório privado",readme)
         self.assertNotIn("repositório está privado",guide)
 
