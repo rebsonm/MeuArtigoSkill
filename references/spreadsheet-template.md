@@ -504,6 +504,10 @@ Claim type:
 
 The goal is backward traceability from manuscript to evidence and process provenance.
 
+## AI-use editorial disclosure fields
+
+The 12_USO_IA worksheet keeps the original 18 columns and appends Disclosure_category, Human_review_evidence and Confidentiality_review, linked to the canonical 14_AI_Use_Log.csv. Journal policy and original researcher attestation are verified independently before GATE-0007. See docs/DECLARACAO-EDITORIAL-IA.md.
+
 ## 12_USO_IA
 
 Columns:

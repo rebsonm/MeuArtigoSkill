@@ -113,6 +113,10 @@ A Skill conduz o pesquisador por um fluxo completo:
 30. exporta proveniência interoperável em W3C PROV/RO-Crate com SHA-256;
 31. aplica anonimização de alto rigor aos arquivos externos, incluindo conteúdo visível, metadados ocultos, comentários, revisões, nomes de arquivo, caminhos, links e inspeção final antes da liberação.
 
+## Transparência editorial de IA
+
+O RT-10 organiza registros reais de ferramentas, finalidades, decisões e revisão humana para preparar uma declaração adequada à revista-alvo. Sem política editorial oficial verificada e confirmação da completude do histórico pelo pesquisador, o texto permanece minuta. O `GATE-0007` rejeita declarações finais desatualizadas. Consulte [Declaração editorial de IA](./docs/DECLARACAO-EDITORIAL-IA.md). A Skill não promete aceitação editorial.
+
 ## Direitos autorais e PDFs do corpus
 
 O código do Meu Artigo é público, mas **os PDFs de terceiros não se tornam públicos por isso**. A autorização para ler e analisar um texto é diferente da autorização para redistribuí-lo. O controle RT-09 registra a origem, licença ou permissão, evidências, atribuição e hash do arquivo na tabela de full text existente. O exportador RO-Crate exclui textos integrais por padrão e bloqueia a inclusão de documentos sem direitos de redistribuição documentados. Sem novas abas, identificadores ou serviços pagos. Consulte [Direitos dos PDFs e full text](./docs/DIREITOS-FULLTEXT-E-PDFS.md).

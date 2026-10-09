@@ -508,6 +508,20 @@ def main():
         except (OSError,ValueError) as exc:
             errors.append(f"full-text rights audit could not run: {type(exc).__name__}")
 
+    # Keep the editorial AI declaration tied to the actual log and policy.
+    if cfg_data.get("editorial_ai_disclosure_required") is True:
+        from editorial_ai_disclosure import assess,verify_final
+        try:
+            disclosure=assess(root)
+            if disclosure["errors"]:
+                warnings.extend("editorial AI disclosure: "+e for e in disclosure["errors"])
+            gate7=gate_state.get("GATE-0007",{})
+            if (gate7.get("Status") or "").upper()=="COMPLETED" and (
+                gate7.get("Decision") or "").upper() in {"APPROVED","APPROVED_WITH_CHANGES"}:
+                errors.extend("editorial AI disclosure: "+e for e in verify_final(root))
+        except (ValueError,OSError) as exc:
+            warnings.append(f"editorial AI disclosure unresolved: {type(exc).__name__}")
+
     g7=gate_state.get("GATE-0007",{})
     if (g7.get("Status") or "").upper()=="COMPLETED" and (g7.get("Decision") or "").upper() in {"APPROVED","APPROVED_WITH_CHANGES"}:
         target=str((journal_data or {}).get("journal_name") or cfg_data.get("target_journal") or "").strip()

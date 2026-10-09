@@ -49,7 +49,7 @@ TABLES = {
 "00_Gestao_e_Continuidade/11_CADA_Control.csv":["CADA_ID","Item_type","Title","Description","Scientific_stage","Captured_at","Source_or_trigger","Assigned_to","Execution_mode","Priority","Dependency_IDs","Next_action","Deadline","Deadline_type","Status","Evidence_of_progress","Completion_evidence","Related_artifact","Related_research_IDs","Blocker","Last_updated","External_manager","External_item_ID","Notes"],
 "00_Gestao_e_Continuidade/12_PM_Sync.csv":["CADA_ID","Provider","Workspace_or_site","Container_ID","External_item_ID","External_URL","External_status","External_assignee","External_due","Canonical_status","Canonical_assignee","Canonical_deadline","Last_pushed_at","Last_pulled_at","Sync_status","Conflict","Notes"],
 "00_Gestao_e_Continuidade/13_Traceability_Log.csv":["Trace_ID","Timestamp","Scientific_stage","CADA_ID","Actor","AI_platform_or_tool","Model_or_version","Action_type","Action_summary","Input_or_source","Source_or_artifact_IDs","Decision_or_output","Rationale","Artifact_before","Artifact_after","Verification_method","Human_validation","Related_Search_IDs","Related_Record_IDs","Related_Evidence_IDs","Related_Claim_IDs","Prompt_or_instruction_summary","Reproducibility_information","Materiality","Status","Notes"],
-"00_Gestao_e_Continuidade/14_AI_Use_Log.csv":["AI_Use_ID","Date","Scientific_stage","CADA_ID","Trace_ID","Platform_or_tool","Model_or_version","Purpose","Input_category","Output_category","Materiality","Human_review_method","Human_decision","Accepted_modified_or_rejected","Related_artifacts","Disclosure_required","Disclosure_text_or_note","Notes"],
+"00_Gestao_e_Continuidade/14_AI_Use_Log.csv":["AI_Use_ID","Date","Scientific_stage","CADA_ID","Trace_ID","Platform_or_tool","Model_or_version","Purpose","Input_category","Output_category","Materiality","Human_review_method","Human_decision","Accepted_modified_or_rejected","Related_artifacts","Disclosure_required","Disclosure_text_or_note","Notes","Disclosure_category","Human_review_evidence","Confidentiality_review"],
 "00_Gestao_e_Continuidade/15_CADA_Dashboard.csv":["Metric","Value","Last_updated","Notes"],
 "00_Gestao_e_Continuidade/16_Interoperabilidade.csv":["Export_ID","Timestamp","Standards","Package_path_or_URL","Package_SHA256","Validation_status","Trace_events","Prov_entities","Prov_activities","Prov_agents","RO_Crate_files","Warnings","Notes"],
 "00_Gestao_e_Continuidade/17_Decision_Log.csv":["DEC_ID","Timestamp","Scientific_stage","Decision_type","Decision_question","Decision","Alternatives_considered","Rationale","Evidence_IDs","Record_IDs","CADA_ID","Trace_ID","Gate_ID","Status","Decided_by","Impact","Affected_artifacts","Resulting_version","Supersedes_DEC_ID","Notes"],
@@ -216,6 +216,7 @@ def main()->int:
             "source_verification_required":True,
             "trace_receipts_required":True,
             "fulltext_rights_audit_required":True,
+            "editorial_ai_disclosure_required":True,
             "anonymization_policy_enabled":True,
             "default_external_artifact_mode":"EXTERNAL_ANONYMIZED",
             "anonymization_profile_status":"TO_CONFIGURE",
@@ -296,6 +297,14 @@ def main()->int:
                 "fees":"",
                 "file_formats":"",
                 "other_requirements":[]
+            },
+            "ai_disclosure_policy":{
+                "status":"PENDING","source":"","verified_at":"",
+                "statement_location":"","category_rules":{}
+            },
+            "ai_disclosure_attestation":{
+                "status":"PENDING","reviewed_by":"","reviewed_at":"",
+                "evidence_ref":"","ai_log_sha256":""
             },
             "scientific_profile":{
                 "aims_scope":"",
