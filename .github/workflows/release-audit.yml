@@ -57,6 +57,7 @@ jobs:
             VERSION
             CITATION.cff
             LICENSE
+            NOTICE
             CONTRIBUTING.md
             SECURITY.md
             dist/MeuArtigoSkill-v*.zip
@@ -83,7 +84,7 @@ jobs:
         id: beta
         shell: bash
         run: |
-          if [[ "$(cat VERSION)" == "0.8.0-beta.7" ]]; then
+          if [[ "$(cat VERSION)" == "0.8.0-beta.8" ]]; then
             echo "publish=true" >> "$GITHUB_OUTPUT"
           else
             echo "publish=false" >> "$GITHUB_OUTPUT"
@@ -123,6 +124,6 @@ jobs:
             --repo "$GITHUB_REPOSITORY" \
             --target "$GITHUB_SHA" \
             --title "Meu Artigo $TAG — beta pública" \
-            --notes-file "docs/NOTAS-DA-VERSAO-0.8.0-beta.7.md" \
+            --notes-file "docs/NOTAS-DA-VERSAO-0.8.0-beta.8.md" \
             --prerelease \
             --latest=false

@@ -1,6 +1,6 @@
 # Contribuindo para Meu Artigo
 
-O projeto é público e distribuído sob licença MIT. A versão beta aceita correções de documentação, melhorias técnicas e sugestões metodológicas fundamentadas. **Nenhum relato ou contribuição autoriza divulgar documentos acadêmicos protegidos, projetos de terceiros, credenciais ou dados pessoais.**
+O projeto é público e distribuído sob licença Apache 2.0. A versão beta aceita correções de documentação, melhorias técnicas e sugestões metodológicas fundamentadas. **Nenhum relato ou contribuição autoriza divulgar documentos acadêmicos protegidos, projetos de terceiros, credenciais ou dados pessoais.**
 
 ## Antes de contribuir
 
@@ -23,3 +23,14 @@ Não abra Issue pública com tokens, informação pessoal, métodos de exploraç
 ## Política de manutenção
 
 Contribuições passam por revisão técnica e não constituem aprovação automática. Releases beta usam numeração explícita; mudanças incompatíveis precisam ser descritas no changelog. O mantenedor pode rejeitar sugestões que comprometam rastreabilidade, direitos de terceiros ou rigor científico.
+
+
+## Licença, atribuição e contribuições
+
+Os materiais originais do repositório são distribuídos sob Apache License 2.0.
+Ao redistribuir versões modificadas, observe as condições da licença,
+inclusive manutenção de avisos de copyright e atribuição pertinentes,
+conteúdo de NOTICE e indicação de arquivos modificados. A orientação
+acadêmica sobre como citar o projeto está em CITATION.cff; não se deve
+representar a citação científica formal como requisito adicional à licença.
+Contribuições de terceiros devem respeitar sua titularidade e permissões.

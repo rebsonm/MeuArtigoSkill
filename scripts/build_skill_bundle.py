@@ -14,7 +14,7 @@ from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 ROOT_FILES = ("SKILL.md", "README.md", "CHANGELOG.md", "VERSION",
-              "CITATION.cff", "LICENSE", "CONTRIBUTING.md", "SECURITY.md")
+              "CITATION.cff", "LICENSE", "NOTICE", "CONTRIBUTING.md", "SECURITY.md")
 DIR_TYPES = {
     "agents": {".yaml", ".yml"},
     "assets": {".svg", ".png"},
@@ -65,7 +65,7 @@ def package(root: Path, destination: Path) -> dict:
     if destination.name != expected:
         raise ValueError(f"Unexpected package filename; expected {expected}")
     manifest = {"schema_version": 1, "version": version,
-                "entrypoint": "SKILL.md", "license": "MIT",
+                "entrypoint": "SKILL.md", "license": "Apache-2.0",
                 "scientific_quality_validated": False,
                 "files": {p.relative_to(root).as_posix(): sha256(p.read_bytes()) for p in files}}
     if manifest["files"].get("LICENSE") != sha256((root / "LICENSE").read_bytes()):
@@ -100,7 +100,7 @@ def verify_package(path: Path) -> dict:
                name.startswith(".") or "\\" in name for name in names):
             raise ValueError("Unsafe ZIP member path")
         manifest = json.loads(z.read(MANIFEST))
-        if manifest.get("entrypoint") != "SKILL.md" or manifest.get("license") != "MIT":
+        if manifest.get("entrypoint") != "SKILL.md" or manifest.get("license") != "Apache-2.0":
             raise ValueError("Wrong bundle entrypoint or license")
         items = manifest.get("files") or {}
         if set(items) != set(names) - {MANIFEST}:
@@ -108,8 +108,10 @@ def verify_package(path: Path) -> dict:
         for name, expected in items.items():
             if sha256(z.read(name)) != expected:
                 raise ValueError(f"Package member checksum mismatch: {name}")
-        if not z.read("LICENSE").startswith(b"MIT License"):
-            raise ValueError("Published package missing source license")
+        if not z.read("LICENSE").lstrip().startswith(b"Apache License"):
+            raise ValueError("Published package missing Apache-2.0 license")
+        if not z.read("NOTICE").startswith(b"Meu Artigo"):
+            raise ValueError("Published package missing author attribution NOTICE")
         return manifest
 
 

@@ -2,7 +2,18 @@
 
 ## Unreleased
 
-Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-beta.7`.
+Nenhuma alteração adicional registrada desde `0.8.0-beta.8`.
+
+## 0.8.0-beta.8 — 2026-10-09
+
+### Etapa 1 — atribuição autoral e proteção de pacotes
+
+- Adotar Apache License 2.0, preservar autoria no NOTICE, adaptar distribuição, documentação e pacote instalável.
+- Distinguir exigências legais de aviso e atribuição da **citação acadêmica recomendada**, que não constitui restrição adicional de licença.
+- Separar pacotes de proveniência PRIVATE, PUBLIC e COLLABORATIVE, com exportação externa redigida e compartilhamento colaborativo restrito a textos explicitamente revisados e vinculados por hash.
+- Preservar auditoria privada integral, bloquear textos completos em públicos externos e ampliar testes adversariais de privacidade.
+- Corrigir vestígio documental corrente; preservar histórico e releases imutáveis, sem revogar licenças de versões anteriores.
+- Manter proteção administrativa da branch como pendência explícita; não afirmar validação científica independente.
 
 ## 0.8.0-beta.7 — 2026-10-09
 

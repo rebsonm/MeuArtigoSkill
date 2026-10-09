@@ -6,7 +6,7 @@ O **Meu Artigo** acompanha o pesquisador desde a ideia inicial até a preparaç�
 
 O projeto está disponível em **repositório público**, em **versão beta**.
 
-**Versão atual:** `0.8.0-beta.7` · [Ver versões e downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). Seu uso é gratuito, embora algumas bases científicas e plataformas integradas possam exigir contas, assinaturas ou acesso institucional.
+**Versão atual:** `0.8.0-beta.8` · [Ver versões e downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). Seu uso é gratuito, embora algumas bases científicas e plataformas integradas possam exigir contas, assinaturas ou acesso institucional.
 
 **[Baixar a versão beta](https://github.com/rebsonm/MeuArtigoSkill/releases) · [Guia de instalação](./docs/COMECE-AQUI.md) · [Como começar](#como-começar)**
 
@@ -80,4 +80,4 @@ O uso de textos completos deve respeitar os direitos autorais e as condições d
 - [Licença do projeto](./LICENSE)
 - [Contribuições e relatos de problemas](./CONTRIBUTING.md)
 
-O software é distribuído sob licença MIT. Essa licença não se estende automaticamente a artigos, PDFs ou outros conteúdos de terceiros utilizados em uma pesquisa.
+O código e a documentação originais do projeto passam a ser distribuídos sob a **Apache License 2.0**, com reconhecimento do autor original no arquivo [NOTICE](./NOTICE). A redistribuição deve preservar a licença, os avisos aplicáveis e a indicação de arquivos alterados; veja as condições completas em [LICENSE](./LICENSE). A citação acadêmica sugerida em [CITATION.cff](./CITATION.cff) é recomendada, mas não é uma condição adicional da licença. Versões anteriormente publicadas sob MIT mantêm os direitos já concedidos. A licença não cobre automaticamente PDFs, artigos ou dados de terceiros.

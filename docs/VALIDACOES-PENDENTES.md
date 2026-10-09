@@ -1,6 +1,6 @@
 # Matriz de validações ainda pendentes
 
-Versão de referência: `0.8.0-beta.7`. Atualizar somente depois de cada avaliação **real**, sem preencher resultados não observados.
+Versão de referência: `0.8.0-beta.8`. Atualizar somente depois de cada avaliação **real**, sem preencher resultados não observados.
 
 | Avaliação pendente | Condição para execução | Estado |
 |---|---|---|
@@ -14,3 +14,9 @@ Versão de referência: `0.8.0-beta.7`. Atualizar somente depois de cada avalia�
 Os testes automatizados e o piloto público de metadados **não concluem** qualquer uma dessas seis avaliações. A qualidade científica da Skill não está certificada, e o ganho causal atribuível ao C.A.D.A. não foi estabelecido.
 
 Essas avaliações não são pré-requisito para publicar uma **beta pública identificada e explicitamente experimental**, mas são necessárias antes de alegar validação científica ampla ou superioridade operacional comprovada.
+
+
+A proteção da branch principal exige permissão administrativa no GitHub e é
+acompanhada separadamente da aprovação técnica de releases. A inclusão de
+perfis externos redigidos não constitui certificação de anonimização ou
+liberação jurídica para compartilhamento de manuscritos.
