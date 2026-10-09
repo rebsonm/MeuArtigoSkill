@@ -11,6 +11,7 @@ from __future__ import annotations
 import ast
 import re
 from pathlib import Path
+from version_info import read_version, release_notes_path
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -29,7 +30,6 @@ REQUIRED=[
     "docs/NOTAS-DA-VERSAO-0.8.0-beta.3.md",
     "docs/NOTAS-DA-VERSAO-0.8.0-beta.6.md",
     "docs/NOTAS-DA-VERSAO-0.8.0-beta.7.md",
-    "docs/NOTAS-DA-VERSAO-0.8.0-beta.8.md",
     "docs/MODO-NUCLEO-MINIMO.md",
     "docs/REPRODUCAO-REVISAO-INTEGRATIVA.md",
     "references/methodological-foundations.md",
@@ -48,6 +48,15 @@ REQUIRED=[
     "CHANGELOG.md",
     "CITATION.cff",
     ".github/workflows/release-audit.yml",
+    ".github/workflows/publish-beta.yml",
+    "scripts/version_info.py",
+    "scripts/audit_public_docs.py",
+    "tests/test_version_info.py",
+    "scripts/sync_version.py",
+    "tests/test_sync_version.py",
+    "tests/test_ci_workflows.py",
+    "docs/GUIA-DE-RELEASES.md",
+    "tests/test_public_documentation_audit.py",
     "README.md",
     "docs/COMECE-AQUI.md",
     "docs/MATRIZ-CADA.md",
@@ -110,7 +119,13 @@ def main()->int:
         if not (ROOT/rel).exists():
             errors.append(f"missing required file: {rel}")
 
-    version=(ROOT/"VERSION").read_text(encoding="utf-8").strip() if (ROOT/"VERSION").exists() else ""
+    try:
+        version=read_version(ROOT)
+    except ValueError as exc:
+        version=""
+        errors.append(str(exc))
+    if version and not release_notes_path(ROOT).is_file():
+        errors.append(f"missing current release notes: {release_notes_path(ROOT).relative_to(ROOT)}")
     citation=(ROOT/"CITATION.cff").read_text(encoding="utf-8") if (ROOT/"CITATION.cff").exists() else ""
     changelog=(ROOT/"CHANGELOG.md").read_text(encoding="utf-8") if (ROOT/"CHANGELOG.md").exists() else ""
     readme=(ROOT/"README.md").read_text(encoding="utf-8") if (ROOT/"README.md").exists() else ""
@@ -119,8 +134,8 @@ def main()->int:
     if version:
         if f'version: "{version}"' not in citation and f"version: {version}" not in citation:
             errors.append("CITATION.cff version does not match VERSION")
-        if version not in changelog:
-            errors.append("CHANGELOG.md does not contain current VERSION")
+        if not re.search(r"(?m)^## "+re.escape(version)+r"\s+[—-]", changelog):
+            errors.append("CHANGELOG.md lacks a headed section for current VERSION")
     else:
         errors.append("VERSION is empty")
 
@@ -141,12 +156,23 @@ def main()->int:
         errors.append("Onboarding still falsely describes public repository as restricted")
     if "beta pública" not in onboarding.lower():
         errors.append("Public-beta access is not described in onboarding")
-    if not re.fullmatch(r"0\.8\.0-beta\.8", version):
-        errors.append("Current release audit expects the public beta version 0.8.0-beta.7")
-    if not all(name in workflow for name in ["LICENSE", "SHA256SUMS.txt",
-                                               "build_skill_bundle.py", "gh release create",
-                                               "contents: write", "--prerelease"]):
-        errors.append("CI workflow lacks verified installable beta release publication")
+    publisher=(ROOT/".github/workflows/publish-beta.yml").read_text(encoding="utf-8") if (ROOT/".github/workflows/publish-beta.yml").exists() else ""
+    if not all(name in workflow for name in [
+        "pull_request:", "push:", "branches: [main]", "audit:",
+        "build_skill_bundle.py", "check_documentation_links.py",
+        "audit_public_docs.py", "contents: read"
+    ]):
+        errors.append("CI workflow lacks mandatory checks and read-only permission")
+    if "gh release create" in workflow or "contents: write" in workflow:
+        errors.append("CI audit workflow must not publish releases or grant write privileges")
+    if not all(name in publisher for name in [
+        "workflow_dispatch:", "refs/heads/main", "contents: write",
+        "gh release create", "--prerelease", "VERSION", "SHA256SUMS.txt",
+        "NOTAS-DA-VERSAO-", "build_skill_bundle.py"
+    ]):
+        errors.append("Manual beta release workflow is incomplete")
+    if re.search(r"0\\.8\\.0-beta\\.\\d+", publisher + workflow):
+        errors.append("Workflows must derive version dynamically from VERSION")
     if "PENDENTE" not in (ROOT/"docs/VALIDACOES-PENDENTES.md").read_text(encoding="utf-8"):
         errors.append("Pending empirical validations must remain explicitly documented")
 

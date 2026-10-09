@@ -8,15 +8,12 @@ import unittest
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
+import sys
+sys.path.insert(0,str(ROOT/"scripts"))
+from version_info import read_version, release_notes_path
 README=ROOT/"README.md"
-RELEASE=ROOT/"docs"/"NOTAS-DA-VERSAO-0.8.0-beta.8.md"
-OLD_RELEASE=ROOT/"docs"/"NOTAS-DA-VERSAO-0.8.0-beta.2.md"
-FIRST_RELEASE=ROOT/"docs"/"NOTAS-DA-VERSAO-0.8.0-beta.1.md"
-THIRD_RELEASE=ROOT/"docs"/"NOTAS-DA-VERSAO-0.8.0-beta.3.md"
-FOURTH_RELEASE=ROOT/"docs"/"NOTAS-DA-VERSAO-0.8.0-beta.4.md"
-FIFTH_RELEASE=ROOT/"docs"/"NOTAS-DA-VERSAO-0.8.0-beta.5.md"
-SIXTH_RELEASE=ROOT/"docs"/"NOTAS-DA-VERSAO-0.8.0-beta.6.md"
-SEVENTH_RELEASE=ROOT/"docs"/"NOTAS-DA-VERSAO-0.8.0-beta.7.md"
+RELEASE=release_notes_path(ROOT)
+HISTORICAL_RELEASES=sorted((ROOT/"docs").glob("NOTAS-DA-VERSAO-*.md"))
 CODES=[
     r"\bRT-\d{2}\b",
     r"\bGATE-\d{4}\b",
@@ -34,12 +31,12 @@ class PublicCommunicationTests(unittest.TestCase):
             self.assertNotRegex(readme,re.compile(pattern,re.I),
                 f"Developer-only term in public README: {pattern}")
         self.assertIn("repositório público",readme)
-        self.assertIn("0.8.0-beta.8",readme)
+        self.assertIn(read_version(ROOT),readme)
         for word in ("pesquisador","fontes","C.A.D.A.","Como começar","versão beta"):
             self.assertIn(word.lower(),readme.lower())
 
     def test_public_release_notes_do_not_expose_internal_remediation_codes(self):
-        for path in [RELEASE,OLD_RELEASE,FIRST_RELEASE,THIRD_RELEASE,FOURTH_RELEASE,FIFTH_RELEASE,SIXTH_RELEASE,SEVENTH_RELEASE]:
+        for path in HISTORICAL_RELEASES:
             doc=path.read_text(encoding="utf-8")
             for pattern in CODES:
                 self.assertNotRegex(doc,re.compile(pattern,re.I),
@@ -73,7 +70,7 @@ class PublicCommunicationTests(unittest.TestCase):
 
     def test_beta_version_and_release_notes_agree(self):
         version=(ROOT/"VERSION").read_text(encoding="utf-8").strip()
-        self.assertEqual(version,"0.8.0-beta.8")
+        self.assertEqual(version,read_version(ROOT))
         self.assertIn(version,README.read_text(encoding="utf-8"))
         self.assertIn(version,RELEASE.read_text(encoding="utf-8"))
 
