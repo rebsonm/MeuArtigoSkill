@@ -95,6 +95,14 @@ def evidence_reference(text):
     # record, not just the generic Creative Commons license description.
     if len(s)<16 or any(x in s.lower() for x in ["placeholder","to define","pending permission"]):
         return False
+    if s.lower().startswith((
+        "https://creativecommons.org/licenses/",
+        "https://creativecommons.org/publicdomain/",
+        "https://br.creativecommons.net/licencas",
+    )):
+        # A generic license deed does not prove that this particular article
+        # or exact manuscript version is available under that license.
+        return False
     return (s.startswith("https://") or s.startswith("permission:") or
             s.startswith("repository:") or s.startswith("document:"))
 
