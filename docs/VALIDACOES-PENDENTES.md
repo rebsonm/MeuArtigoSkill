@@ -1,22 +1,32 @@
-# Matriz de validações ainda pendentes
+# Pending independent scientific and operational evaluations
 
-Versão de referência: `0.8.0-beta.8`. Atualizar somente depois de cada avaliação **real**, sem preencher resultados não observados.
+Reference public version: `v0.8.0-beta.8`. Update this register only after
+a genuine evaluation has taken place and has inspectable evidence. A change
+to repository code, an automated regression test or a fabricated participant
+response is **not** an empirical evaluation.
 
-| Avaliação pendente | Condição para execução | Estado |
-|---|---|---|
-| Fluxo completo de artigo, da inicialização à entrega com fontes reais | Projeto autorizado, documentos e decisões de pesquisador | PENDENTE |
-| Instalação, continuidade e Google Drive em ChatGPT/Claude/Gemini | Acesso efetivo às plataformas e contas conectadas; consulte [compatibilidade](COMPATIBILIDADE-PLATAFORMAS.md) | PENDENTE |
-| Qualidade de fontes, locators, claims, seleção e síntese frente a avaliações independentes | Corpus legítimo e revisão científica independente | PENDENTE |
-| Efeitos do C.A.D.A. sobre prazo, retrabalho e rastreabilidade | Episódios comparáveis e protocolo prospectivo | PENDENTE |
-| Uso autorizado de PDFs e aderência à política editorial de uma revista real | Documentos e normas oficiais com verificação humana | PENDENTE |
-| Comparação da apresentação mínima com a completa sem retirar controles científicos | Protocolo prospectivo [preparado](MODO-NUCLEO-MINIMO.md); observações reais e auditor independente | PENDENTE |
+| Pending evaluation | Required execution condition | Status |
+| --- | --- | --- |
+| Complete research article flow from initialization to deliverable | Authorized project, real source documents and actual researcher's decisions | PENDING |
+| Installation, project continuation and Google Drive on ChatGPT, Claude and Gemini | Access to the actual platforms, permissions and connected accounts; see [compatibility](COMPATIBILIDADE-PLATAFORMAS.md) | PENDING |
+| Independent review of source quality, exact locators, claims, eligibility and synthesis | Lawfully available research corpus and a real independent scientific reviewer | PENDING |
+| Effect of C.A.D.A. on delivery times, rework and traceability | Comparable real administrative episodes and prospective evaluation protocol | PENDING |
+| Copyright-compliant PDFs and a real journal's instructions | Original papers, applicable licenses and official author rules, with real review | PENDING |
+| Minimal versus full presentation under identical scientific controls | Prospective [comparison protocol](MODO-NUCLEO-MINIMO.md), observed events and an independent evaluator | PENDING |
+| Automatic researcher-language interaction versus English repository source | Actual multilingual conversations on installed supported platforms and observed outputs; [language policy](../references/language-policy.md) | PENDING |
 
-Os testes automatizados e o piloto público de metadados **não concluem** qualquer uma dessas seis avaliações. A qualidade científica da Skill não está certificada, e o ganho causal atribuível ao C.A.D.A. não foi estabelecido.
+Automated code tests and limited metadata checks do **not** complete any
+of these scientific or human-facing evaluations. The Skill's scientific
+quality is not certified; the causal benefit of C.A.D.A. has not been
+established. Multilingual interaction instructions are implemented as
+software policy, not yet independently confirmed in each platform.
 
-Essas avaliações não são pré-requisito para publicar uma **beta pública identificada e explicitamente experimental**, mas são necessárias antes de alegar validação científica ampla ou superioridade operacional comprovada.
+These evaluations are **not prerequisites** for releasing an
+**accurately labeled experimental public beta**, but they must be
+completed before claiming broad scientific validation, superior
+productivity or reliable cross-platform multilingual performance.
 
-
-A proteção da branch principal exige permissão administrativa no GitHub e é
-acompanhada separadamente da aprovação técnica de releases. A inclusão de
-perfis externos redigidos não constitui certificação de anonimização ou
-liberação jurídica para compartilhamento de manuscritos.
+Main-branch protection is maintained through the active GitHub
+ruleset. Editorial anonymization remains subject to inspection of
+the exact shared files and the journal's applicable legal and
+ethical conditions.
