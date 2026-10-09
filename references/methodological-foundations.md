@@ -1,5 +1,5 @@
 <a id="fundamentação-metodológica-aplicada-meu-artigo"></a>
-# Applied methodological foundation — My Article
+# Applied methodological foundation — Meu Artigo
 
 <a id="escopo-estatuto-das-fontes-e-princípio-de-utilização"></a>
 ## Scope, status of sources and principle of use
@@ -21,13 +21,7 @@ In every article, distinguish **[L] supported and localizable literature**, **[I
 ## Instrumentation of methodological choice
 
 The practical implementation is in [methodological routes](../docs/ROTAS-METODOLOGICAS.md).
-The description of the Research Onion and the research families, in the sections
-later, it works as **conditional guidance**. The program just
-verifies the presence, link and formal status of decisions/evidence; no
-calculates statistical power, identifies causal effects, proves validity
-epistemological or automatically interprets qualitative data. The author
-needs to document choice and limits, without transforming categories
-methodologies on an automatic quality scale.
+The description of the Research Onion and the research families in later sections provides **conditional guidance**. The program verifies only the presence, links and formal status of documented decisions and evidence. It does not calculate statistical power, identify causal effects, demonstrate epistemological validity or interpret qualitative material automatically. Researchers must explain their methodological decisions and limits; labels alone do not form an automatic quality scale.
 
 **Quick Index:** To limit context load, start at
 [selective methodological index](INDICE-METODOLOGICO.md), which links
@@ -36,7 +30,9 @@ document. The index does not confirm new readings or modify references,
 DOIs, editions or interpretations of this map.
 
 <a id="roteiro-de-consulta-seletiva"></a>
-## Selective query scriptThis map is extensive due to the need for justification, **not to be fully applied to each research**. See only the pertinent path: conceptual reviews and articles (sections 1–2), general design and quantitative/mixed methods (section 3), specific qualitative traditions (section 4), artifacts and evaluation (section 5), ethics/IA (section 6), adequacy of evidence (section 7), operational guidance (sections 8–9), and bibliography (section 10). Preserve the general principles of traceability and scientific limits; do not impose method requirements that are irrelevant to the chosen design.
+## Selective reading guide
+
+This map is extensive due to the need for justification, **not to be fully applied to each research**. See only the pertinent path: conceptual reviews and articles (sections 1–2), general design and quantitative/mixed methods (section 3), specific qualitative traditions (section 4), artifacts and evaluation (section 5), ethics/IA (section 6), adequacy of evidence (section 7), operational guidance (sections 8–9), and bibliography (section 10). Preserve the general principles of traceability and scientific limits; do not impose method requirements that are irrelevant to the chosen design.
 
 **Minimum decision for beginners:** (i) what question do I want to answer; (ii) what inference would be defensible; (iii) what data and method would support it; (iv) what remains out of reach. The details in Research Onion help review these decisions, not replace the author's judgment.
 
@@ -69,7 +65,9 @@ DOIs, editions or interpretations of this map.
 **Operational synthesis between these works:** first delimit purpose and review family (Snyder; Grant and Booth); then explain what constitutes knowledge production (Torraco; Elsbach and van Knippenberg) or review of assumptions (Alvesson and Sandberg); establish your own assessment of sources (Whittemore and Knafl); finally accurately report recovery procedures (PRISMA-S, when relevant). **There is no universal ranking of superiority between these paths.**
 
 <a id="2-problema-contribuição-e-escrita-científica"></a>
-## 2. Problem, contribution and scientific writing**Bispo (2023), Theoretical, Practical, Methodological and Didactic Contributions in Scientific Articles** — *text consulted*. Differentiates the four types of contribution and notes the importance of aligning contribution, format, focus and scope of the journal. **Application:** before writing, the researcher must state: who can learn what from the article, in what dimension it intends to contribute and what evidence would allow this claim to be defended. The same study can dialogue with several dimensions, but it should not promise practical results demonstrated when it only elaborates an artifact. DOI: https://doi.org/10.1590/1982-7849rac2023220256.por.
+## 2. Problem, contribution and scientific writing
+
+**Bispo (2023), Theoretical, Practical, Methodological and Didactic Contributions in Scientific Articles** — *text consulted*. Differentiates the four types of contribution and notes the importance of aligning contribution, format, focus and scope of the journal. **Application:** before writing, the researcher must state: who can learn what from the article, in what dimension it intends to contribute and what evidence would allow this claim to be defended. The same study can dialogue with several dimensions, but it should not promise practical results demonstrated when it only elaborates an artifact. DOI: https://doi.org/10.1590/1982-7849rac2023220256.por.
 
 **Grant and Pollock (2011), Publishing in AMJ—Part 3: Setting the Hook** — *text consulted*. They organize the introduction into substantive questions: **who cares? What do we know/don't know and why does it matter? What will we learn?** **Application:** check that the introduction indicates the academic conversation, the relevant problem, the specific tension/gap, the contribution and the research strategy. **Limit:** do not transform this architecture into standardized writing or an artificial justification for originality. DOI: https://doi.org/10.5465/amj.2011.4000.
 
@@ -84,7 +82,9 @@ DOIs, editions or interpretations of this map.
 **Joint contribution check:** (1) identify conversation and importance (Grant/Pollock); (2) locate assumptions and alternatives (Alvesson/Sandberg); (3) define the nature of the contribution (Bishop); (4) compare the proposal to nearby works (Barney); (5) check editorial coherence and adherence (Campbell/Aguilera); (6) review for clarity without erasing reservations (Ragins). This sequence is a **Skill heuristic**, not a formal protocol claimed by any of these authors.
 
 <a id="3-coerência-do-desenho-paradigmas-e-inferência"></a>
-## 3. Design coherence: paradigms and inference**Creswell and Creswell (2021, 5th Brazilian edition), Research project: qualitative, quantitative and mixed methods** — *text and editorial sheet consulted*. They emphasize the coherence between philosophical assumptions, problem, type of question, strategy and techniques. **Application:** declare whether the aim is to interpret meanings, describe patterns, estimate relationships, evaluate effects or integrate evidence; only then choose sampling, collection and analysis. A combination of quantitative and qualitative data is not automatically a mixed methods study; logic of integration and justification is required. ISBN of the edition examined: 978-65-81334-19-2.
+## 3. Design coherence: paradigms and inference
+
+**Creswell and Creswell (2021, 5th Brazilian edition), Research project: qualitative, quantitative and mixed methods** — *text and editorial sheet consulted*. They emphasize the coherence between philosophical assumptions, problem, type of question, strategy and techniques. **Application:** declare whether the aim is to interpret meanings, describe patterns, estimate relationships, evaluate effects or integrate evidence; only then choose sampling, collection and analysis. A combination of quantitative and qualitative data is not automatically a mixed methods study; logic of integration and justification is required. ISBN of the edition examined: 978-65-81334-19-2.
 
 **Myers (2013, 2nd ed.), Qualitative Research in Business & Management** — *text and edition consulted*. Guides the choice between positivist, interpretative and critical research in Administration and articulates methods of collection, analysis, triangulation and writing. **Application:** do not require neutrality, statistical reliability or intercoder agreement as universal quality criteria for any interpretative study. Ask what epistemological position has been taken and what evidence is appropriate to it. ISBN of the examined edition: 978-0-85702-974-4 (paperback).
 
@@ -113,7 +113,9 @@ The onion is an **instrument of coherence**, not an automatic classification or 
 **Didactic, non-rigid path:** first explain the question and the desired inference; step through the six layers to detect incompatibilities; justify the chosen alternative and a relevant limit. The Skill must show the researcher **enough to understand the decision** and maintain complete details in the study documentation, without multiplying bureaucratic approvals. Reopen decisions if real data or constraints require change; never retroactively rewrite the design as if it was foreseen from the beginning.
 
 <a id="32-métodos-quantitativos-da-pergunta-à-inferência-responsável"></a>
-### 3.2. Quantitative methods: from question to responsible inference**Main sources consulted:** Creswell and Creswell (2021), especially survey and experiment planning; Saunders, Lewis and Thornhill (2023), chapters on drawing and techniques; Bono and McNamara (2011), on question, constructs and specification. **Additional report verified by public source:** Appelbaum et al. (2018), JARS–Quant standards, DOI https://doi.org/10.1037/amp0000191. **Scope of verification:** books on applied statistics and econometrics were identified in the bibliographic catalog, but their copies without extractable text were not taken as the basis of specific passages in this round; do not attribute unexamined content to them.
+### 3.2. Quantitative methods: from question to responsible inference
+
+**Main sources consulted:** Creswell and Creswell (2021), especially survey and experiment planning; Saunders, Lewis and Thornhill (2023), chapters on drawing and techniques; Bono and McNamara (2011), on question, constructs and specification. **Additional report verified by public source:** Appelbaum et al. (2018), JARS–Quant standards, DOI https://doi.org/10.1037/amp0000191. **Scope of verification:** books on applied statistics and econometrics were identified in the bibliographic catalog, but their copies without extractable text were not taken as the basis of specific passages in this round; do not attribute unexamined content to them.
 
 **Choose the type of question first:**
 
@@ -142,7 +144,9 @@ The onion is an **instrument of coherence**, not an automatic classification or 
 **JARS–Quant (Appelbaum et al., 2018):** guidelines for communicating quantitative research transparently, including distinctions between primary, secondary, and exploratory hypotheses/analyses, as well as information specific to observational, longitudinal, experimental designs, and particular techniques. It is **report** guidance, developed for Psychology; Its application to Administration depends on the periodical and the actual design. It does not replace a methodological plan, validation of hypotheses or transparency regarding subsequent data exploration.
 
 <a id="33-métodos-mistos-a-integração-é-uma-contribuição-não-um-ornamento"></a>
-### 3.3. Mixed methods: integration is a contribution, not an ornament**Sources consulted:** Creswell and Creswell (2021, chapter 10 and introductory discussion on projects); Saunders, Lewis and Thornhill (2023, distinction between mono-method, multi-method and mixed); Fetters, Curry and Creswell (2013), *Achieving Integration in Mixed Methods Designs—Principles and Practices* ([DOI](https://doi.org/10.1111/1475-6773.12117), public editorial text and metadata consulted); Levitt et al. (2018), JARS–Qual/Mixed ([DOI](https://doi.org/10.1037/amp0000151), public reference and editorial description verified).
+### 3.3. Mixed methods: integration is a contribution, not an ornament
+
+**Sources consulted:** Creswell and Creswell (2021, chapter 10 and introductory discussion on projects); Saunders, Lewis and Thornhill (2023, distinction between mono-method, multi-method and mixed); Fetters, Curry and Creswell (2013), *Achieving Integration in Mixed Methods Designs—Principles and Practices* ([DOI](https://doi.org/10.1111/1475-6773.12117), public editorial text and metadata consulted); Levitt et al. (2018), JARS–Qual/Mixed ([DOI](https://doi.org/10.1037/amp0000151), public reference and editorial description verified).
 
 **Defining rule:** a mixed methods study mobilizes **substantial quantitative and qualitative** components, articulated to answer a question that **an isolated strand would not answer in the same way**. It is necessary to demonstrate **when, where and how integration occurs**. The simple presence of interviews and percentages in the same article is not enough.
 
@@ -225,7 +229,9 @@ The Research Onion must appear as a **compact training support** when choosing t
 ## 4. Qualitative research: differences that cannot disappear
 
 <a id="41-análise-temática-e-análise-qualitativa-de-dados"></a>
-### 4.1. Thematic analysis and qualitative data analysis**Braun and Clarke (2006), Using thematic analysis in psychology** — *article consulted*. They present flexible thematic analysis and require explanation of assumptions, treatment of patterns and analytical decisions. DOI: https://doi.org/10.1191/1478088706qp063oa.
+### 4.1. Thematic analysis and qualitative data analysis
+
+**Braun and Clarke (2006), Using thematic analysis in psychology** — *article consulted*. They present flexible thematic analysis and require explanation of assumptions, treatment of patterns and analytical decisions. DOI: https://doi.org/10.1191/1478088706qp063oa.
 
 **Braun and Clarke (2022), Thematic Analysis: A Practical Guide** — *book consulted*. They develop reflective thematic analysis, with emphasis on situated subjectivity, familiarization, coding and **interpretative construction of themes**. They discuss coding reliability approaches, *codebook* approaches, and reflective approaches as different members of the thematic family. **Application:** if the researcher adopts reflective thematic analysis, do not mechanically require Kappa nor treat themes as objects that simply “emerge” in a neutral way. AI can suggest codes and patterns, but it should not claim independent human reflexivity, interpretation, or coding. ISBN consulted: 978-1-4739-5324-6.
 
