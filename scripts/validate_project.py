@@ -8,6 +8,7 @@ from screening_review import audit_rows as audit_screening_rows
 from appraise_evidence import audit as audit_appraisals
 from claim_integrity import audit as audit_claim_integrity
 from audit_governance_boundary import audit as audit_cada_boundary
+from rights_audit import audit_project as audit_fulltext_rights
 
 REQUIRED=[
 "00_Gestao_e_Continuidade/CONTINUIDADE.md",
@@ -497,6 +498,15 @@ def main():
                             errors.append("GATE-0006 verified source file changed after source check")
             except (OSError,ValueError,TypeError,KeyError) as exc:
                 errors.append(f"GATE-0006 cannot validate source-verification report: {type(exc).__name__}")
+
+    # Local PDF availability never implies export/redistribution permission.
+    if cfg_data.get("fulltext_rights_audit_required") is True:
+        try:
+            rights_report=audit_fulltext_rights(root,strict=False)
+            errors.extend("full-text rights: "+m for m in rights_report["errors"])
+            warnings.extend("full-text rights: "+m for m in rights_report["warnings"])
+        except (OSError,ValueError) as exc:
+            errors.append(f"full-text rights audit could not run: {type(exc).__name__}")
 
     g7=gate_state.get("GATE-0007",{})
     if (g7.get("Status") or "").upper()=="COMPLETED" and (g7.get("Decision") or "").upper() in {"APPROVED","APPROVED_WITH_CHANGES"}:

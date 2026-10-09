@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Separate lawful local full-text access from rights to redistribute source documents.
+- Extend existing Record_ID tracker and 08_FULL_TEXT worksheet with source-specific rights basis, license evidence, attribution, permission scope and SHA-256.
+- Require per-file documented rights plus explicit attestation for optional full-text RO-Crate export, failing closed before logging or copying documents.
+- Keep ordinary exports metadata-only by default and exclude nested archives that may conceal protected PDFs; a software check does not establish legal certification.
+
 - Separate C.A.D.A. operational task completion from scientific decisions, evidence and execution receipts in deterministic reports.
 - Prevent management-only DONE/identifier attestations from serving as scientific validation for new project gates.
 - Add a cost-free auditable boundary check, compatibility-preserving project flag and regression tests.

@@ -12,6 +12,9 @@ It is a behavior of the Skill, not a separate methodological design.
 
 Use only sources that the project has legitimately retained for full-text analysis.
 
+Even a lawfully accessible article may be restricted to private/institutional use. Do not send its full content to third-party AI services or publish its PDF without permission. Read [full-text rights](../docs/DIREITOS-FULLTEXT-E-PDFS.md).
+Use only sources that the project has legitimately retained for full-text analysis.
+
 Default eligible states are FULL TEXT — CORE and FULL TEXT — SUPPORT, with full text actually available.
 
 Do not treat abstracts/snippets as full-text grounding.

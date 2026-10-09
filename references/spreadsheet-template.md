@@ -350,6 +350,10 @@ Pass 2:
 - FULL TEXT — SUPPORT
 - EXCLUDE
 
+## Rights fields on the existing FULL TEXT sheet
+
+The existing 08_FULL_TEXT worksheet retains its first 11 columns. Nine new columns record Access_basis, Rights_basis, License_URI, Rights_evidence, Permission_scope, Attribution_text, Source_sha256, Rights_reviewed_by, and Rights_review_evidence. This does not create another worksheet or research identifier. DOI or institutional access is not a redistribution license. See docs/DIREITOS-FULLTEXT-E-PDFS.md.
+
 ## 08_FULL_TEXT
 
 Columns:

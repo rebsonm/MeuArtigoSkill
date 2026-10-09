@@ -18,7 +18,7 @@ The workbook generator creates a template; it does not implement bidirectional s
 | 01_Protocolo.csv | 05_PROTOCOLO | Item; Decision→Decisão; Rationale→Justificativa; Version→Versão |
 | 02_Search_Log.csv | 06_BUSCAS | Search_ID; Literal_query→String literal; Records_found→Encontrados; Records_exported→Exportados |
 | 03_Screening.csv | 07_SCREENING | Record_ID; Pass1_decision→Pass1; Pass2_decision→Pass2; Canonical_record_id→Canonical_ID |
-| 04_FullText_Tracker.csv | 08_FULL_TEXT | Record_ID; Full_text_status→Status full text; Evidence_matrix_id→Evidence_ID |
+| 04_FullText_Tracker.csv | 08_FULL_TEXT | Record_ID; Full_text_status→Status full text; Evidence_matrix_id→Evidence_ID; Access_basis→Base de acesso; Rights_basis→Base de direitos; License_URI→URI licença; Rights_evidence→Evidência de direitos; Source_sha256→SHA-256 fonte; Rights_reviewed_by→Revisor de direitos |
 | 05_Evidence_Matrix.csv | 09_MATRIZ_EVID | Evidence_ID; Citation→Citação; Supporting_locator→Locator; Epistemic_label→Rótulo epistêmico |
 | 06_Journal_Dialogue.csv | No dedicated sheet | Preserve as auxiliary table; do not discard during export |
 | 07_Normative_Corpus.csv | No dedicated sheet | Preserve as auxiliary table when applicable |

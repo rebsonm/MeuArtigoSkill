@@ -42,6 +42,9 @@ A ZIP package is generated from that directory.
 
 Full-text PDFs are excluded by default because they may contain licensed/copyrighted material. Include them only when the user explicitly intends to package them and has the right to do so.
 
+The exporter enforces this at runtime: `--include-fulltext` needs `--confirm-rights-review` and an individually reviewed hash-bound rights record in 04_FullText_Tracker.csv. It fails before producing the export if any corpus file lacks permission. Qualified packages contain FULLTEXT_RIGHTS.json for attribution, but that file is an attestation, not independent legal certification. Nested archives are omitted from standard project packages. See [full-text rights](../docs/DIREITOS-FULLTEXT-E-PDFS.md).
+
+
 ## W3C PROV mapping
 
 Use PROV-O concepts wherever they fit.
