@@ -167,6 +167,7 @@ def audit_rows(rows, *, enforce=False, freeze=False, headers=None):
              "recorded_pass1":0,"recorded_pass2":0,"recorded_exclusions":0,
              "disagreements":0,"unresolved_at_freeze":0}
     seen=set()
+    all_record_ids={clean(x.get("Record_ID")) for x in rows if clean(x.get("Record_ID"))}
     if enforce and headers is not None:
         missing=[x for x in EXTRA_COLUMNS if x not in headers]
         if missing and rows:
@@ -191,8 +192,10 @@ def audit_rows(rows, *, enforce=False, freeze=False, headers=None):
             errors.append(f"{rid}: invalid Pass2 decision")
         if p2 and p1 not in {"INCLUDE","BORDERLINE"}:
             errors.append(f"{rid}: Pass2 recorded without a retained Pass1")
-        if is_duplicate and not clean(row.get("Canonical_record_id")):
-            errors.append(f"{rid}: duplicate status lacks canonical record reference")
+        if is_duplicate:
+            canonical_id=clean(row.get("Canonical_record_id"))
+            if not canonical_id or canonical_id==rid or canonical_id not in all_record_ids:
+                errors.append(f"{rid}: duplicate status lacks a valid distinct canonical record reference")
         for stage,info in STAGES.items():
             prefix=info["prefix"]
             ai=canonical(row.get(f"{prefix}_AI_proposal"))
