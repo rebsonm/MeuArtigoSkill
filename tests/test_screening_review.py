@@ -188,7 +188,16 @@ class ScreeningReviewTests(unittest.TestCase):
         check=screening.audit_rows(self.data(),enforce=True,freeze=True)
         self.assertTrue(any("canonical record" in x for x in check["errors"]))
         row["Canonical_record_id"]="R-0002"
-        self.create([row])
+        # A duplicate cannot be the sole record in a frozen research corpus.
+        # This real test fixture includes a reviewed canonical record as well.
+        canonical_record={
+            "Record_ID":"R-0002",
+            "Pass1_decision":"EXCLUDE",
+            "Pass1_reason":"The canonical record does not meet the documented scientific eligibility criteria.",
+            "Pass1_reviewed_by":"Human reviewer",
+            "Pass1_review_evidence":"Researcher decision recorded in conversation",
+        }
+        self.create([row, canonical_record])
         check=screening.audit_rows(self.data(),enforce=True,freeze=True)
         self.assertFalse(check["errors"])
 
