@@ -1,10 +1,10 @@
 <a id="cada-no-meu-artigo"></a>
-# C.A.D.A. in My Article
+# C.A.D.A. in Meu Artigo
 
 <a id="para-que-serve"></a>
 ## What is it for
 
-In My Article, the **C.A.D.A. It is the management layer of scientific work**.
+In Meu Artigo, the **C.A.D.A. It is the management layer of scientific work**.
 
 It does not replace research method, integrative review, systematic review, protocol, analysis or evidence.
 
@@ -56,7 +56,7 @@ Set:
 
 Every active item must have a time expectation.
 
-My Article distinguishes:
+Meu Artigo distinguishes:
 
 - **EXTERNAL** — actual term of magazine, congress, institution, etc.;
 - **USER_SET** — deadline defined by the researcher;
@@ -94,7 +94,7 @@ Management works at a useful project level.
 For example:
 
 ```text
-CADA-0030 — Etapa 07: Screening
+CADA-0030 — Stage 07: Screening
   CADA-0031 — Triar registros novos da Scopus
   CADA-0032 — Rever BORDERLINE
   CADA-0033 — Rechecar amostra de exclusões
@@ -106,7 +106,7 @@ Individual bibliographic records remain in the screening/evidence tables.
 <a id="dois-modos-de-gestão"></a>
 ## Two management modes
 
-My Article works even for those who have never used a formal task management tool.
+Meu Artigo works even for those who have never used a formal task management tool.
 
 <a id="modo-1-planilha-cada-matrix_only"></a>
 ### Mode 1 — C.A.D.A Spreadsheet. (`MATRIX_ONLY`)
@@ -306,7 +306,7 @@ The Skill must be able to respond at any time:
 with something similar to:
 
 ```text
-Etapa atual: 06 — Deduplicação
+Current stage: 06 — Deduplicação
 
 Concluído:
 - buscas Scopus e WoS
@@ -324,11 +324,11 @@ Próxima ação:
 Prazo:
 - meta interna: 09/10
 
-Evidência de avanço:
+Progress evidence:
 - arquivo GLOBAL_DEDUP_v02.csv
 
 Gerenciador:
 - ClickUp — sincronizado
 ```
 
-This vision is the main function of C.A.D.A. in My Article.
+This vision is the main function of C.A.D.A. in Meu Artigo.
