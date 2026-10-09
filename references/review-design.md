@@ -29,6 +29,15 @@ From the user's research problem, identify the intended knowledge product:
 
 Do not force a method label before this is clear.
 
+**Implementation:** The [operational route matrix](../docs/ROTAS-METODOLOGICAS.md)
+distinguishes eight substantive paths and an explicit `UNDECIDED` state.
+The `--article-type` description is not sufficient to approve a route.
+A real researcher confirms and records a `METHOD` decision; planning
+entries in `METHOD_PROFILE.json` remain unverified until appropriate
+material and analysis evidence exists. These are Skill workflow policies,
+not checklists alleged to be authored or validated by the sources cited here.
+
+
 For justification, use the conditional [methodological foundations](methodological-foundations.md). Torraco (2005), Whittemore & Knafl (2005), Snyder (2019), and Elsbach & van Knippenberg (2020) inform integrative review design; Rethlefsen et al. (2021) informs transparent reporting of searches, **not** automatic recategorization as systematic. Alvesson & Sandberg (2011) may inform question problematization, while Bispo (2023) helps position the type of contribution. Empirical and design science sources apply when those methods are truly chosen.
 
 ## Integrative review
