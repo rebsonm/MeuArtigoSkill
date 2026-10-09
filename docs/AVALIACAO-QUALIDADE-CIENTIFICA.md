@@ -43,7 +43,9 @@ python scripts/quality_benchmark.py pilot --offline --output benchmark_offline.j
 The result of \`pilot\` is just calibration of external bibliography, **not evaluation of AI-generated academic text**.
 
 <a id="2-comparar-um-resultado-real-da-skill"></a>
-### 2. Compare a real Skill resultExecute the same scientific work script, with frozen criteria, in base mode and updated mode, preserving the **really** obtained results. Prepare each output in the format of observations:
+### 2. Compare a real Skill result
+
+Execute the same scientific work script, with frozen criteria, in base mode and updated mode, preserving the **really** obtained results. Prepare each output in the format of observations:
 
 \`\`\`json
 {
