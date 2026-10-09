@@ -9,6 +9,7 @@ from appraise_evidence import audit as audit_appraisals
 from claim_integrity import audit as audit_claim_integrity
 from audit_governance_boundary import audit as audit_cada_boundary
 from rights_audit import audit_project as audit_fulltext_rights
+from method_routes import GATE_VARIANTS, ROUTES, load as read_method_profile, profile_issues
 
 REQUIRED=[
 "00_Gestao_e_Continuidade/CONTINUIDADE.md",
@@ -103,6 +104,17 @@ def main():
             jmode=cfg_data.get("journal_construction_mode")
             if jmode and jmode not in JOURNAL_MODES:
                 errors.append(f"PROJECT_CONFIG unexpected journal_construction_mode={jmode!r}")
+            # Legacy projects have no route gate and are kept compatible.
+            if cfg_data.get("method_route_governance_required") is True:
+                route=str(cfg_data.get("method_route") or "").strip()
+                if route not in ROUTES:
+                    errors.append("PROJECT_CONFIG declares unknown scientific method route")
+                else:
+                    try:
+                        method_doc=read_method_profile(root)
+                        errors.extend("method profile: "+item for item in profile_issues(method_doc,route))
+                    except (OSError,ValueError,TypeError) as exc:
+                        errors.append(f"method profile cannot be read: {type(exc).__name__}")
             jpstatus=cfg_data.get("journal_profile_status")
             if jpstatus and jpstatus not in JOURNAL_PROFILE_STATUS:
                 errors.append(f"PROJECT_CONFIG unexpected journal_profile_status={jpstatus!r}")
@@ -417,6 +429,27 @@ def main():
             if not gid.startswith("GATE-"): warnings.append(f"gate row {i}: nonstandard GATE_ID {gid!r}")
             status=(r.get("Status") or "").upper()
             decision=(r.get("Decision") or "").upper()
+            if cfg_data.get("method_route_governance_required") is True:
+                route=cfg_data.get("method_route")
+                if gid in {"GATE-0002","GATE-0004","GATE-0005","GATE-0006"} and decision=="NOT_APPLICABLE":
+                    errors.append(f"gate row {i}: {gid} cannot bypass a critical scientific decision")
+                if gid in GATE_VARIANTS.get(route,{}):
+                    expected_type=GATE_VARIANTS[route][gid][0]
+                    if (r.get("Gate_type") or "").strip()!=expected_type:
+                        errors.append(f"gate row {i}: {gid} type does not match method route {route}")
+                if (status=="COMPLETED" and decision in {"APPROVED","APPROVED_WITH_CHANGES"}):
+                    try:
+                        method_doc=read_method_profile(root)
+                        errors.extend(f"gate row {i}: {gid} "+item for item in profile_issues(
+                            method_doc,route,gate=gid))
+                    except (OSError,ValueError,TypeError):
+                        errors.append(f"gate row {i}: missing route evidence profile for approved {gid}")
+                if decision=="NOT_APPLICABLE" and gid=="GATE-0003" and (
+                    len((r.get("Notes") or "").strip())<40 or
+                    not (r.get("Validated_by") or "").strip() or
+                    not (r.get("Validation_evidence") or "").strip()):
+                    errors.append("GATE-0003 marked not applicable without documented human justification")
+
             if status=="COMPLETED" and decision not in {"APPROVED","APPROVED_WITH_CHANGES","REJECTED"}:
                 errors.append(f"gate row {i}: completed {gid} lacks valid decision")
             if status=="COMPLETED" and not (r.get("Validated_by") or "").strip():
