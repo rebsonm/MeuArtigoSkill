@@ -368,6 +368,9 @@ Absence of access is not scientific exclusion.
 
 ## 09_MATRIZ_EVID
 
+The existing sheet adds seven appraisal columns after the original 25: study/source family, criterion-level reasons and ratings, appraisal judgment, limitations, reviewer, review evidence and scientific rationale. The first 25 columns and existing references remain in place. See `docs/AVALIACAO-CRITICA-FONTES.md`. No new ID family, worksheet or automated universal quality score is introduced.
+
+
 Detailed evidence matrix:
 
 ```text

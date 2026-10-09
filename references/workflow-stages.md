@@ -215,6 +215,10 @@ Do not silently supplement a grounded answer with model memory or unrestricted w
 
 Grounded retrieval does not replace human validation before a synthesis, theoretical category, material inference, or key manuscript claim is frozen.
 
+## Critical appraisal before scientific claims
+
+Prior to final synthesis and claim freeze, consult `docs/AVALIACAO-CRITICA-FONTES.md`. The free, deterministic `scripts/appraise_evidence.py` offers unanswered type-specific checklists. Require genuine human rationale and acknowledged limitations, linked by existing Evidence_ID. A valid DOI does not establish rigor; conceptual and normative materials are assessed by their own standards, not by inappropriate quantitative scales. A completed checklist is a record of judgment, not external certification.
+
 ## Stage 9 — Synthesize across sources
 
 Move from paper-by-paper summaries to cross-source comparison. Look for:

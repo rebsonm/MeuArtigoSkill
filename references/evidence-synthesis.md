@@ -18,6 +18,10 @@ Do not let the manuscript become a sequence of paper summaries. Convert each sou
 
 Read [source verification](source-verification.md). Use the deterministic script for DOI/metadata reconciliation and exact local passage matching when code execution is available. Record findings under the existing Evidence_IDs; do not create more ID families. A legitimate source lacking a DOI is not excluded automatically. Bibliographic identity and quotation presence are distinct from the claim's meaning, evidence quality and human scientific judgment. Never self-certify an [L] assertion using only a model-generated report.
 
+## Critical appraisal by source type
+
+Bibliographic identity, textual presence, methodological quality and claim support are separate dimensions. See [critical appraisal](../docs/AVALIACAO-CRITICA-FONTES.md). Use `scripts/appraise_evidence.py` to record design-specific human judgments on quantitative, qualitative, mixed-methods, review, conceptual, normative or other materials in existing evidence rows. Do not compute a universal automated quality score or present normative authority as empirical proof. Evidence with recorded limitations can still be used when claims are appropriately qualified. The code validates recorded basis and consistency, not the truth of reviewer conclusions.
+
 ## Evidence matrix schema
 
 Adapt fields to the project, but start from:

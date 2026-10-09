@@ -48,6 +48,8 @@ REQUIRED=[
     "scripts/validate_provenance_package.py",
     "scripts/validate_project.py",
     "scripts/verify_sources.py",
+    "scripts/appraise_evidence.py",
+    "docs/AVALIACAO-CRITICA-FONTES.md",
     "scripts/trace_execution.py",
     "scripts/screening_review.py",
     "docs/SCREENING-AUDITAVEL.md",

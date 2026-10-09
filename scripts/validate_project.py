@@ -5,6 +5,7 @@ import argparse,csv,json,hashlib
 from pathlib import Path
 from formative_gates import gate_issues
 from screening_review import audit_rows as audit_screening_rows
+from appraise_evidence import audit as audit_appraisals
 
 REQUIRED=[
 "00_Gestao_e_Continuidade/CONTINUIDADE.md",
@@ -419,6 +420,27 @@ def main():
             robustness=(r.get("Robustness_status") or "").upper().strip()
             if robustness in {"","NOT_AUDITED","REVISE","REJECT"}:
                 errors.append(f"GATE-0006 approved while claim {cid} remains {robustness or 'not audited'}")
+
+    # Methodological suitability is separate from DOI identity and literal locators.
+    # Require documented human appraisal only for the material evidence linked
+    # to claims when GATE-0006 is approved; keep historic projects compatible.
+    if ev.exists():
+        evidence_items=list(rows(ev))
+        quality_required=cfg_data.get("critical_appraisal_required") is True
+        approved=(g6.get("Status") or "").upper()=="COMPLETED" and (g6.get("Decision") or "").upper() in {"APPROVED","APPROVED_WITH_CHANGES"}
+        used=set()
+        if approved and quality_required:
+            import re
+            for claim in claim_rows:
+                if not (claim.get("Claim_ID") or "").strip():
+                    continue
+                for field in ("Evidence_IDs","Counter_Evidence_IDs"):
+                    used.update(x for x in re.split(r"[;,\s]+",(claim.get(field) or "")) if x)
+        with ev.open("r",encoding="utf-8-sig",newline="") as stream:
+            ev_columns=csv.DictReader(stream).fieldnames or []
+        appraisal=audit_appraisals(evidence_items,required_ids=used,
+                                  enforce=approved and quality_required,headers=ev_columns)
+        errors.extend("critical appraisal: "+x for x in appraisal["errors"])
 
     # Newly initialized projects require independently checkable source records.
     if (g6.get("Status") or "").upper()=="COMPLETED" and (g6.get("Decision") or "").upper() in {"APPROVED","APPROVED_WITH_CHANGES"} and cfg_data.get("source_verification_required") is True:

@@ -77,6 +77,8 @@ def report_data(root:Path)->dict:
     from screening_review import audit_rows as audit_screening_rows
     screening_checks=audit_screening_rows(screening,enforce=True)
 
+    from appraise_evidence import audit as audit_critical_appraisals
+    quality=audit_critical_appraisals(evidence)
     substantive=[r for r in ai if (r.get("Materiality") or "").upper()=="SUBSTANTIVE"]
     substantive_pending=[
         r for r in substantive
@@ -133,6 +135,10 @@ def report_data(root:Path)->dict:
             "screening_documentation_errors":len(screening_checks["errors"]),
             "fulltext_records":len(fulltext),
             "evidence_items":len(evidence),
+            "appraised_evidence_items":quality["counts"]["assessed"],
+            "unappraised_evidence_items":quality["counts"]["unassessed"],
+            "appraisal_items_with_caveats":quality["counts"]["with_caveats"],
+            "appraisal_documentation_errors":len(quality["errors"]),
             "synthesis_items":len(synthesis),
             "claims":len([r for r in claims if (r.get("Claim_ID") or "").strip()]),
             "claims_robust":len(claims_robust),
@@ -247,6 +253,11 @@ def main()->int:
         f"- Screening provenance problems: {c['screening_documentation_errors']}",
         "- Recorded reviewer fields are attestations, not independent authentication of human identity.",
         f"- Full-text tracker records: {c['fulltext_records']}",
+        f"- Evidence items with documented appraisal: {c['appraised_evidence_items']}",
+        f"- Evidence items without appraisal: {c['unappraised_evidence_items']}",
+        f"- Appraisals requiring caveats: {c['appraisal_items_with_caveats']}",
+        f"- Appraisal documentation problems: {c['appraisal_documentation_errors']}",
+        "- Appraisal records are attributed judgments; they do not independently certify scientific quality or reviewer identity.",
         "",
         "### Executed searches",
     ]

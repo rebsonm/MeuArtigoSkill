@@ -2,7 +2,7 @@
 
 ## Status atual de acesso
 
-O Meu Artigo está em **beta fechado**. O repositório está privado e este guia permanece documentado para a futura liberação de testes.
+O Meu Artigo está em **versão beta pública**. O repositório, o código e a documentação podem ser acessados sem convite. A Skill permanece em desenvolvimento e seu uso deve respeitar os limites científicos documentados.
 
 Enquanto o acesso não for aberto pelo autor, as instruções abaixo devem ser entendidas como o fluxo previsto para usuários autorizados/testadores futuros, e não como convite para distribuição pública.
 
@@ -26,7 +26,7 @@ O arquivo que aparece automaticamente na página inicial chama-se `README.md`. E
 
 ## 2. Preciso criar conta no GitHub?
 
-Quando o repositório estiver público, normalmente não será necessária conta apenas para leitura/download. **Na fase atual, o repositório está privado e exige acesso autorizado.**
+O repositório é público: não é necessária conta GitHub para consultar os arquivos ou obter um ZIP do código. Instalar, conectar plataformas e autorizar acesso a dados privados são operações separadas.
 
 Você só precisaria de conta para ações como comentar, abrir uma Issue, favoritar o projeto ou colaborar diretamente no código.
 

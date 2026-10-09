@@ -194,6 +194,10 @@ Gate status:
 
 The project gates regulate actual scientific decisions; they do not empirically validate the research-assistant Skill. A separate, reproducible quality benchmark is described in [quality evaluation](../docs/AVALIACAO-QUALIDADE-CIENTIFICA.md). Scores on frozen public bibliographic facts must not be called independent semantic validation or substitute for a real review-replication protocol. Claims and conceptual categories require independently justified adjudication.
 
+### GATE-0006 critical appraisal requirement
+
+In new projects (`critical_appraisal_required=true`), all material Evidence_IDs linked to claims, including contrary evidence, require type-specific human appraisals before claim freeze. `scripts/appraise_evidence.py` and `docs/AVALIACAO-CRITICA-FONTES.md` specify documented criterion-level ratings, reasons, reviewer, limitations and reference to the original review. Evidence marked INSUFFICIENT_INFORMATION or DO_NOT_USE_FOR_CLAIM cannot be relied upon. QUALIFIED use must retain the stated caveats. Technical validation does not authenticate human identity or establish research quality.
+
 ### GATE-0006 robustness requirement
 
 GATE-0006 is not satisfied merely because each claim has a supporting citation.
