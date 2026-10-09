@@ -1,7 +1,7 @@
 <a id="matriz-cada-template-oficial-do-meu-artigo"></a>
-# Matrix C.A.D.A. — official My Article template
+# Matrix C.A.D.A. — official Meu Artigo template
 
-The spreadsheet is the **default management mode** of My Article.
+The spreadsheet is the **default management mode** of Meu Artigo.
 
 The researcher does not need to know Jira, ClickUp, Trello or any other management tool.
 
@@ -71,7 +71,7 @@ In environments with `artifact_tool`, use:
 python scripts/build_matrix_template.py \
   --output MATRIZ_MESTRA_meu-projeto.xlsx \
   --project-name "Meu projeto" \
-  --problem "Meu problema de pesquisa"
+  --problem "My research problem"
 ```
 
 `scripts/init_project.py` attempts to run this generator automatically.
@@ -111,7 +111,7 @@ It combines:
 
 **management + evidence + provenance + AI transparency + continuity**
 
-This is the role of the matrix in My Article.
+This is the role of the matrix in Meu Artigo.
 
 
 <a id="exportação-auditável"></a>
@@ -130,7 +130,7 @@ The package contains:
 Export can be done with:
 
 ```bash
-python scripts/export_provenance.py /caminho/do/projeto
+python scripts/export_provenance.py /path/to/project
 python scripts/validate_provenance_package.py /caminho/do/pacote.zip
 ```
 
