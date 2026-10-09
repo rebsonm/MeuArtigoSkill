@@ -1,55 +1,66 @@
-# Roteamento de contexto por tarefa científica
+# Progressive context routing by scientific stage
 
-A entrada `SKILL.md` contém o contrato invariável. Este documento decide
-**o que ler agora**, não quais garantias descartar. Carregar cada referência
-somente quando a ação real o exige; não colar toda a biblioteca em todo chat.
-O modelo não deve marcar etapas como cumpridas porque leu as instruções.
+The main `SKILL.md` establishes the invariant research contract.
+This guide determines **which detailed instructions to load now**,
+not which safeguards to discard. Load a specific reference when the
+research activity actually requires it; avoid pasting the entire
+documentation corpus into every context.
 
-## Estado mínimo para retomar, em cinco fatos
+The research assistant must not claim that a phase was completed
+merely because it read a corresponding document.
 
-1. Questão original e pergunta/contribuição atuais (texto original preservado).
-2. Tipo de investigação e gate atual, com decisão humana ainda pendente quando for o caso.
-3. Registro canônico no armazenamento efetivamente autorizado e seu último estado verificável.
-4. Última operação **comprovada**, distinguindo evidência externa e `UNVERIFIED`.
-5. Um próximo passo executável e risco/bloqueio prioritário.
+## Five essential facts for legitimate continuation
 
-Esses são **itens exibidos/consultados de um estado existente**, não uma
-nova tabela, nova aba ou nova família de IDs. O `CONTINUIDADE.md` não pode
-ser refeito a partir de suposições do modelo.
+1. Original research problem plus the current question/contribution.
+2. Study family and current scientific gate, including any unresolved
+   real researcher decision.
+3. Authorized canonical storage location and last genuinely
+   verifiable project state.
+4. Last **proven execution**, distinguishing external evidence
+   from the `UNVERIFIED` state.
+5. The next valid action and highest-priority substantive risk.
 
-## Seleção de referências sem reabrir todo o projeto
+These are **existing project-state attributes**, not a new table,
+sheet or ID family. `CONTINUIDADE.md` must not be reconstructed
+from model guesses.
 
-| Situação/gate | Módulo necessário | Carregar adicionalmente apenas se... |
+## Which module to read
+
+| Situation / gate | First module | Additional material only if needed |
 | --- | --- | --- |
-| Início sem projeto | `plugin-onboarding.md`, `drive-workspace.md`, `storage-mapping.md`, `fluxo-essencial.md` | Iniciante: `beginner-mode.md`; editor: `journal-aware.md` |
-| Retomada | `project-state.md`, `CONTINUIDADE.md` real, último protocolo | O último estado indicar procedimento especializado |
-| Questão e novidade | `review-design.md`, `INDICE-METODOLOGICO.md` | Tema exigir autores/abordagens: trechos localizados do mapa completo |
-| Método / GATE-0002 | `../docs/ROTAS-METODOLOGICAS.md`, `INDICE-METODOLOGICO.md` | Apenas o ramo qualitativo, quantitativo, misto, design science ou revisão |
-| Busca **bibliográfica pertinente** | `search-screening.md`, `tool-orchestration.md` | Caso exista revisão com busca estruturada: `workflow-stages.md` |
-| Seleção e fontes | `../docs/SCREENING-AUDITAVEL.md`, `evidence-synthesis.md` | Triagem humana realmente relevante à família de revisão |
-| Materiais e análise empíricos | `../docs/ROTAS-METODOLOGICAS.md`, `../docs/NIVEIS-DE-EVIDENCIA.md` | Estratégia de análise específica exigir fundamentação adicional |
-| Síntese / claims | `../docs/CONTROLE-CLAIMS-E-ORIGINALIDADE.md`, `../docs/AVALIACAO-CRITICA-FONTES.md` | Fontes com qualidade heterogênea ou resultados controversos |
-| Revista e fechamento | `journal-aware.md`, `../docs/ANONIMIZACAO.md`, `../docs/DECLARACAO-EDITORIAL-IA.md` | Normas oficiais exigirem controle adicional |
-| Comprovação/compartilhamento | `../docs/COMPROVACAO-EVENTOS.md`, `../docs/EXPORTACAO-SEGURA.md` | Pacote, recibo ou destinatário externo exigirem auditabilidade |
+| New project | `plugin-onboarding.md`, `drive-workspace.md`, `storage-mapping.md`, `fluxo-essencial.md` | Beginner: `beginner-mode.md`; target journal: `journal-aware.md` |
+| Resume existing work | `project-state.md` and actual stored `CONTINUIDADE.md` / protocol | Actual saved state indicates specialized work |
+| Research question and novelty | `review-design.md`, `INDICE-METODOLOGICO.md` | The topic warrants specific source authors/approaches |
+| Method and GATE-0002 | `../docs/ROTAS-METODOLOGICAS.md`, `INDICE-METODOLOGICO.md` | Relevant qualitative/quantitative/mixed/review/design-science branch |
+| Real bibliographic searches | `search-screening.md`, `tool-orchestration.md` | A structured review calls for `workflow-stages.md` |
+| Human source selection | `../docs/SCREENING-AUDITAVEL.md`, `evidence-synthesis.md` | Study design genuinely uses bibliographic screening |
+| Empirical materials and analysis | `../docs/ROTAS-METODOLOGICAS.md`, `../docs/NIVEIS-DE-EVIDENCIA.md` | Actual method requires more analytical guidance |
+| Synthesis and claims | `../docs/CONTROLE-CLAIMS-E-ORIGINALIDADE.md`, `../docs/AVALIACAO-CRITICA-FONTES.md` | Conflicting or heterogeneous sources demand more |
+| Journal and submission | `journal-aware.md`, `../docs/ANONIMIZACAO.md`, `../docs/DECLARACAO-EDITORIAL-IA.md` | Journal requires additional safeguards |
+| External evidence and sharing | `../docs/COMPROVACAO-EVENTOS.md`, `../docs/EXPORTACAO-SEGURA.md` | A real receipt, recipient or export must be checked |
 
-## Regra de “carregar quando necessário”
+## Load only when necessary
 
-- **Gatilho:** citar a razão concreta para abrir um módulo.
-- **Escopo:** ler a seção necessária, não a documentação inteira por padrão.
-- **Ação:** executar somente operações autorizadas e efetivamente disponíveis.
-- **Prova:** registrar apenas ações com resultado ou recibo real.
-- **Handoff:** guardar último estado verificável e próxima decisão, não uma
-  longa repetição de políticas; as políticas permanecem no pacote da Skill.
+1. **Trigger:** identify the concrete reason for opening a module.
+2. **Scope:** read the relevant section, not all references by default.
+3. **Operation:** use only authorized tools demonstrably available.
+4. **Proof:** record a task as executed only when its result is actually
+   confirmed by trustworthy evidence.
+5. **Handoff:** persist the last valid state and next decision rather
+   than repeatedly copying policy text; the policy remains in the
+   installed Skill.
 
-O modo MINIMAL muda apenas a apresentação externa; toda verificação
-apropriada ao desenho continua obrigatória, inclusive revisões humanas,
-direitos de PDFs, uso real de IA, controles do arquivo de submissão e
-inconsistências entre registros. `FULL` abre detalhes sem criar provas novas.
+MINIMAL changes only presentation. FULL exposes detailed records.
+Both preserve design-appropriate research checks, human review,
+source rights, actual AI-use disclosure, safeguards for the exact
+submission file and honest cross-platform limits. Both interact
+**in the researcher's language**, independently of English source
+instructions; see [language policy](language-policy.md).
 
-## Falhas que este roteador não resolve sozinho
+## Limits
 
-Um modelo pode ignorar instruções mesmo com um arquivo menor.
-A publicação de um guia não comprova obediência em sessões longas.
-O evento de consulta a um texto não comprova leitura nem compreensão,
-e um registro redigido pela IA não é recibo independente. Comprovação,
-qualidade científica e resultados de avaliação permanecem temas distintos.
+A shorter entrypoint does not guarantee that an LLM will obey all
+instructions during long sessions. A source citation does not prove
+full reading, and an AI-generated activity log cannot authenticate
+an external event by itself. Research quality and scientific
+comparative outcomes require separate independent evaluation.
