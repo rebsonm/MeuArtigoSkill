@@ -101,7 +101,7 @@ class CompactAIDisclosureTests(unittest.TestCase):
   self.assertIn("final author review",output.lower())
  def test_pending_is_never_disguised_as_final(self):
   x=self.sample();x["errors"]=["official journal rules not verified"]
-  self.assertIn("MINUTA COM PENDÊNCIAS",ed.render_compact(x))
+  self.assertIn("DRAFT WITH OUTSTANDING REQUIREMENTS",ed.render_compact(x))
  def test_length_limit_rejects_omission(self):
   x=self.sample()
   x["uses"][0]["purpose"]="Content requiring faithful disclosure. "*300
