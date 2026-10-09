@@ -223,7 +223,7 @@ def main()->int:
     for sheet in ["16_INTEROPERABILIDADE","17_DECISOES","18_VALIDACOES","19_SNAPSHOTS","20_MAPA_CORPUS"]:
         if sheet not in matrix:
             errors.append(f"workbook generator missing sheet: {sheet}")
-    for term in ["Counter_Evidence_IDs","Explicações alternativas",'Single source dependency',"Robustez","Revista-alvo","Modo de construção editorial","Anonimização: auditoria final","Modo padrão de arquivo externo","Papel na literatura","Base da classificação",'Primary source',"Linhagem conceitual / relação","FOUNDATIONAL","CLASSIC_CRITIQUE","CONTEMPORARY_UPDATE"]:
+    for term in ["Counter_Evidence_IDs","Alternative explanations",'Single source dependency',"Robustness","Target journal","Editorial construction mode","Anonymization: final audit","Default external-file mode","Role in literature","Basis of classification",'Primary source',"Conceptual lineage / relation","FOUNDATIONAL","CLASSIC_CRITIQUE","CONTEMPORARY_UPDATE"]:
         if term not in matrix:
             errors.append(f"workbook generator missing journal/robustness field: {term}")
 
