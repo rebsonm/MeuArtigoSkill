@@ -42,6 +42,7 @@ jobs:
             references/
             scripts/
             docs/
+            benchmarks/
             README.md
             CHANGELOG.md
             VERSION

@@ -7,6 +7,7 @@ from formative_gates import gate_issues
 from screening_review import audit_rows as audit_screening_rows
 from appraise_evidence import audit as audit_appraisals
 from claim_integrity import audit as audit_claim_integrity
+from audit_governance_boundary import audit as audit_cada_boundary
 
 REQUIRED=[
 "00_Gestao_e_Continuidade/CONTINUIDADE.md",
@@ -559,6 +560,12 @@ def main():
         ]:
             if heading not in s:
                 warnings.append(f"CONTINUIDADE.md lacks {heading!r}")
+
+    # Distinguish administrative task completion from science-method quality.
+    if cfg_data.get("cada_science_boundary_required") is True:
+        boundary=audit_cada_boundary(root,strict=True)
+        errors.extend("management/science boundary: "+item for item in boundary["integrity"]["errors"])
+        warnings.extend("management/science boundary: "+item for item in boundary["integrity"]["warnings"])
 
     for w in warnings: print("WARNING:",w)
     for e in errors: print("ERROR:",e)
