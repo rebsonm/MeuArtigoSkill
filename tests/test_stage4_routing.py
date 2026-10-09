@@ -39,11 +39,11 @@ class Stage4RouterTests(unittest.TestCase):
 
     def test_original_methodology_and_bibliography_preserved(self):
         for old_section in (
-            "## 1. Famílias de revisão",
-            "## 3. Coerência do desenho",
-            "## 4. Pesquisa qualitativa",
-            "## 5. Pesquisa com artefatos",
-            "## 10. Referências bibliográficas selecionadas",
+            "## 1. Review families",
+            "## 3. Design coherence",
+            "## 4. Qualitative research",
+            "## 5. Research with artifacts",
+            "## 10. Selected bibliographic references",
             "https://doi.org/10.1111/joms.12582",
             "https://doi.org/10.1111/joms.12581",
         ):
