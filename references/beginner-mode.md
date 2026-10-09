@@ -100,13 +100,22 @@ User:
 
 Agent behavior:
 
-1. Treat this as the new project's substantive input.
-2. Do not reuse old constructs or strings from another project.
+1. Preserve the original problem and resolve actual Drive storage access
+   or explicitly authorized WORK_FALLBACK before substantive research.
+2. Map available tools and identify which operations are really possible.
 3. Clarify/refine only what is scientifically necessary.
-4. Run a small novelty scan and show the nearest literature.
-5. Propose a defensible question and contribution as proposals.
-6. Create a protocol and workspace.
-7. Proceed autonomously through structured search/evidence synthesis as far as access permits.
-8. Explain blockers in simple language and preserve state.
+4. Propose a provisional question and contribution, then conduct a
+   small novelty scan **only when authorized and technically available**.
+5. Present possible qualitative, quantitative, mixed, theoretical or
+   review routes, in ordinary language (qualitativo, quantitativo,
+   misto, teórico ou revisão), and require the researcher's actual
+   method decision before freezing it.
+6. Create the route-appropriate protocol and use only pertinent
+   acquisition/search, empirical analysis, synthesis or evaluation
+   procedures. Do not force a systematic-review sequence on fieldwork
+   or conceptual work.
+7. Explain blockers plainly, log only demonstrated actions and save
+   the authorized canonical state for future continuation.
 
-The user should feel that they are directing the research problem while the skill handles the research workflow infrastructure.
+The user directs the research problem and scientific decisions while
+the Skill organizes verifiable workflow infrastructure.
