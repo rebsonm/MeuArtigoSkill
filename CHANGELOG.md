@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-beta.4`.
+- Remover da documentação pública referências a acervos acadêmicos privados e identificadores do acompanhamento interno de desenvolvimento; preservar integralmente os controles de pesquisa e sua bibliografia científica.
 
 ## 0.8.0-beta.4 — 2026-10-09
 
@@ -16,7 +16,7 @@ Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-be
 
 ## 0.8.0-beta.3 — 2026-10-09
 
-### Marco A.1 — documentação e compatibilidade
+### Documentação e compatibilidade
 
 - Recomendar o pacote ZIP instalável da Release, em vez do download automático do código-fonte, em todos os guias de plataforma.
 - Corrigir o guia de primeiros passos sobre o protocolo futuro de avaliação com usuários, ainda não executado.
@@ -35,7 +35,7 @@ Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-be
 
 ## 0.8.0-beta.1 — 2026-10-09
 
-### Marco A — distribuição pública organizada
+### Distribuição pública organizada
 
 - Alinhar README, guia inicial, versão e metadados de citação a uma beta pública.
 - Corrigir o identificador MIT em CITATION.cff e incluir LICENSE no pacote distribuível.
@@ -44,7 +44,7 @@ Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-be
 - Publicar guias de implantação e primeiro uso, política de segurança e contribuição e protocolo de avaliação com usuários ainda não executado.
 - Separar explicitamente as avaliações científicas e testes reais pendentes.
 
-### Correções técnicas consolidadas (RT-01 a RT-10)
+### Correções técnicas consolidadas
 
 
 - Generate journal-aware AI-use disclosures only from recorded AI events, with explicit categories and human review evidence.
