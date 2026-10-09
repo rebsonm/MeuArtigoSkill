@@ -107,8 +107,7 @@ Agent behavior:
 4. Propose a provisional question and contribution, then conduct a
    small novelty scan **only when authorized and technically available**.
 5. Present possible qualitative, quantitative, mixed, theoretical or
-   review routes, in ordinary language (qualitativo, quantitativo,
-   misto, teórico ou revisão), and require the researcher's actual
+   review routes, in ordinary language, and require the researcher's actual
    method decision before freezing it.
 6. Create the route-appropriate protocol and use only pertinent
    acquisition/search, empirical analysis, synthesis or evaluation
