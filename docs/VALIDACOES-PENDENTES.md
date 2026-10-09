@@ -2,14 +2,14 @@
 
 Versão de referência: `0.8.0-beta.4`. Atualizar somente depois de cada avaliação **real**, sem preencher resultados não observados.
 
-| Código | Avaliação pendente | Condição para execução | Estado |
-|---|---|---|---|
-| T-01 | Fluxo completo de artigo, da inicialização à entrega com fontes reais | Projeto autorizado, documentos e decisões de pesquisador | PENDENTE |
-| T-02 | Instalação, continuidade e Google Drive em ChatGPT/Claude/Gemini | Acesso efetivo às plataformas e contas conectadas; consulte [compatibilidade](COMPATIBILIDADE-PLATAFORMAS.md) | PENDENTE |
-| T-03 / RT-08 | Qualidade de fontes, locators, claims, seleção e síntese frente a avaliações independentes | Corpus legítimo e revisão científica independente | PENDENTE |
-| T-04 / RT-07 | Efeitos do C.A.D.A. sobre prazo, retrabalho e rastreabilidade | Episódios comparáveis e protocolo prospectivo | PENDENTE |
-| T-05 / RT-09–10 | Uso autorizado de PDFs e aderência à política editorial de uma revista real | Documentos e normas oficiais com verificação humana | PENDENTE |
-| T-06 | Comparação da apresentação mínima com a completa sem retirar controles científicos | Protocolo prospectivo [preparado](MODO-NUCLEO-MINIMO.md); observações reais e auditor independente | PENDENTE |
+| Avaliação pendente | Condição para execução | Estado |
+|---|---|---|
+| Fluxo completo de artigo, da inicialização à entrega com fontes reais | Projeto autorizado, documentos e decisões de pesquisador | PENDENTE |
+| Instalação, continuidade e Google Drive em ChatGPT/Claude/Gemini | Acesso efetivo às plataformas e contas conectadas; consulte [compatibilidade](COMPATIBILIDADE-PLATAFORMAS.md) | PENDENTE |
+| Qualidade de fontes, locators, claims, seleção e síntese frente a avaliações independentes | Corpus legítimo e revisão científica independente | PENDENTE |
+| Efeitos do C.A.D.A. sobre prazo, retrabalho e rastreabilidade | Episódios comparáveis e protocolo prospectivo | PENDENTE |
+| Uso autorizado de PDFs e aderência à política editorial de uma revista real | Documentos e normas oficiais com verificação humana | PENDENTE |
+| Comparação da apresentação mínima com a completa sem retirar controles científicos | Protocolo prospectivo [preparado](MODO-NUCLEO-MINIMO.md); observações reais e auditor independente | PENDENTE |
 
 Os testes automatizados e o piloto público de metadados **não concluem** qualquer uma dessas seis avaliações. A qualidade científica da Skill não está certificada, e o ganho causal atribuível ao C.A.D.A. não foi estabelecido.
 
