@@ -116,30 +116,30 @@ Include the C.A.D.A. status chart and a 00–14 stage roadmap.
 The C.A.D.A. dashboard and task completion ratio measure **administrative progress**, not scientifically validated manuscripts. In the same canonical workbook, scientific protocol, source verification, screening, evidence, claims and human gates are reported separately, with their own validity conditions. Never label C.A.D.A. DONE, high task throughput or fewer overdue actions as proof of scientific rigor or C.A.D.A. efficacy. The [governance boundary audit](../docs/LIMITES-CADA-E-COMPARACAO.md) uses existing records without extra tabs or IDs. A prospective evaluation protocol has no results yet.
 
 <a id="01_cada"></a>
-## 01_EACH
+## 01_CADA
 
 Columns:
 
 ```text
 CADA_ID
-Etapa
-Tarefa
-Responsável
-Próxima ação
-Prazo
-Tipo de prazo
+Stage
+Task
+Owner
+Next action
+Deadline
+Deadline type
 Status
-Prioridade
-Dependências
-Bloqueio
-Evidência de avanço
-Evidência de conclusão
-Artefato relacionado
-Última atualização
+Priority
+Dependencies
+Blocker
+Progress evidence
+Completion evidence
+Related artifact
+Last updated
 Trace_IDs
 PM Provider
 External Item ID
-Observações
+Notes
 ```
 
 Controlled values:
@@ -187,7 +187,7 @@ Formatting:
 Freeze header + first three columns.
 
 <a id="02_linha_tempo"></a>
-## 02_TIME_LINE
+## 02_LINHA_TEMPO
 
 This is the readable traceability log.
 
@@ -196,24 +196,24 @@ Columns:
 ```text
 Trace_ID
 Timestamp
-Etapa
+Stage
 CADA_ID
-Ator
-Ferramenta / IA
-Modelo / versão
-Tipo de ação
-Resumo da ação
-Entrada / Fonte
-Decisão / Saída
-Justificativa
-Artefato antes
-Artefato depois
-Método de verificação
-Validação humana
-IDs relacionados
-Materialidade
+Actor
+Tool / AI
+Model / version
+Action type
+Action summary
+Input / source
+Decision / output
+Rationale
+Artifact before
+Artifact after
+Verification method
+Human validation
+Related IDs
+Materiality
 Status
-Observações
+Notes
 ```
 
 Actor:
@@ -237,7 +237,7 @@ Materiality:
 
 Columns:
 
-`Campo | Valor | Status | Última atualização`
+`Campo | Valor | Status | Last updated`
 
 Required rows:
 
@@ -265,15 +265,15 @@ Columns:
 
 ```text
 Evidence_ID
-Fonte / Citação
-Conceito / Categoria
-Achado / contribuição
-Papel
-Força / relevância
+Source / citation
+Concept / category
+Finding / contribution
+Role
+Strength / relevance
 Claim_IDs
-Locator / trecho
+Locator / passage
 Status
-Observações
+Notes
 ```
 
 This is a user-facing summary, not a replacement for `09_MATRIZ_EVID`.
@@ -283,7 +283,7 @@ This is a user-facing summary, not a replacement for `09_MATRIZ_EVID`.
 
 Columns:
 
-`Item | Decisão | Justificativa | Status | Versão | Atualizado em | Trace_ID`
+`Item | Decision | Rationale | Status | Version | Updated at | Trace_ID`
 
 Never silently overwrite an executed/frozen methodological decision. Version it.
 
@@ -294,19 +294,19 @@ Columns:
 
 ```text
 Search_ID
-Data
-Base / Fonte
-Blocos conceituais
-String literal
-Filtros
-Encontrados
-Exportados
-Arquivo / URL
+Date
+Database / source
+Conceptual blocks
+Literal search query
+Filters
+Records found
+Records exported
+File / URL
 Status
-Iteração
+Iteration
 Trace_ID
-Validação
-Observações
+Validation
+Notes
 ```
 
 Literal executed strings are immutable.
@@ -320,35 +320,35 @@ Columns:
 
 ```text
 Record_ID
-Fonte
+Source
 Search_ID
-Título
-Autores
-Ano
+Title
+Authors
+Year
 DOI / ID
-Resumo
-Tipo
-Idioma
+Abstract
+Type
+Language
 Pass1
-Motivo Pass1
+Pass1 rationale
 Pass2
-Motivo Pass2
-Duplicata
+Pass2 rationale
+Duplicate
 Canonical_ID
 Trace_ID
-Observações
-Pass1 proposta IA
-Pass1 motivo IA
-Pass1 fonte IA
-Pass1 revisado por
-Pass1 evidência revisão
-Pass1 resolução divergência
-Pass2 proposta IA
-Pass2 motivo IA
-Pass2 fonte IA
-Pass2 revisado por
-Pass2 evidência revisão
-Pass2 resolução divergência
+Notes
+Pass1 AI proposal
+Pass1 AI rationale
+Pass1 AI source
+Pass1 reviewed by
+Pass1 review evidence
+Pass1 disagreement resolution
+Pass2 AI proposal
+Pass2 AI rationale
+Pass2 AI source
+Pass2 reviewed by
+Pass2 review evidence
+Pass2 disagreement resolution
 ```
 
 Pass 1:
@@ -373,16 +373,16 @@ Columns:
 
 ```text
 Record_ID
-Prioridade
-Status full text
-Versão acessada
-Fonte de acesso
-Data de acesso
-Decisão
-Motivo exclusão
+Priority
+Full-text status
+Accessed version
+Access source
+Access date
+Decision
+Exclusion reason
 Evidence_ID
-Arquivo / URL
-Observações
+File / URL
+Notes
 ```
 
 Absence of access is not scientific exclusion.
@@ -390,37 +390,37 @@ Absence of access is not scientific exclusion.
 <a id="09_matriz_evid"></a>
 ## 09_MATRIZ_EVID
 
-The existing sheet adds seven appraisal columns after the original 25: study/source family, criterion-level reasons and ratings, appraisal judgment, limitations, reviewer, review evidence and scientific rationale. The first 25 columns and existing references remain in place. See `docs/AVALIACAO-CRITICA-FONTES.md`. In the new ID family, worksheet or automated universal quality score is introduced.
+The existing sheet adds seven appraisal columns after the original 25: study/source family, criterion-level reasons and ratings, appraisal judgment, limitations, reviewer, review evidence and scientific rationale. The first 25 columns and existing references remain in place. See `docs/AVALIACAO-CRITICA-FONTES.md`. No new ID family, worksheet or universal automated quality score is introduced.
 
 
 Detailed evidence matrix:
 
 ```text
 Evidence_ID
-Citação
+Citation
 DOI / ID
-Conceito
-Definição / claim
-Papel na literatura
-Base da classificação
-Fonte primária
-Linhagem conceitual / relação
-Problema / tensão
-Mecanismo / achado
-Desenho / tipo de fonte
-Amostra / dados
-Contexto
-Processo / etapa
-Atores / papéis
-Ação / decisão
-Evidência observável
-Condições de contorno
-Limitações
-Transferibilidade
-Papel / força
+Concept
+Definition / claim
+Role in literature
+Basis of classification
+Primary source
+Conceptual lineage / relation
+Problem / tension
+Mechanism / finding
+Design / source type
+Sample / data
+Context
+Process / stage
+Actors / roles
+Action / decision
+Observable evidence
+Boundary conditions
+Limitations
+Transferability
+Role / strength
 Locator
-Rótulo epistêmico
-Observações
+Epistemic label
+Notes
 ```
 
 Epistemic labels:
@@ -433,7 +433,7 @@ Epistemic labels:
 
 `09_MATRIZ_EVID` itself must register the intellectual function of the reference, without creating a new tab or new ID.
 
-Values controlled in `Papel na literatura`:
+Values controlled in `Role in literature`:
 
 - FOUNDATIONAL
 - CANONICAL
@@ -445,16 +445,16 @@ Values controlled in `Papel na literatura`:
 - CONTEXT
 - OTHER
 
-`Base da classificação` must justify why the work plays this role. Age or number of citations alone do not make a work classic.
+`Basis of classification` must justify why the work plays this role. Age or number of citations alone do not make a work classic.
 
-`Fonte primária` uses:
+`Primary source` uses:
 
 - PRIMARY_VERIFIED
 - SECONDARY_ONLY
 - NOT_VERIFIED
 - NOT_APPLICABLE
 
-`Linhagem conceitual / relação` records, when applicable, the position of the work in the sequence origin/foundation, consolidation, relevant criticism and contemporary development.
+`Conceptual lineage / relation` records, when applicable, the position of the work in the sequence origin/foundation, consolidation, relevant criticism and contemporary development.
 
 Attributions such as “X introduced,” “X defined,” or “original formulation” require consultation of the primary source when reasonably accessible. If only one secondary source was consulted, this should remain explicit.
 
@@ -471,35 +471,37 @@ Columns:
 
 ```text
 Synthesis_ID
-Tema / Categoria
+Theme / category
 Evidence_IDs
-Padrão entre fontes
-Contradições
-Condições de contorno
-Inferência
-Status epistêmico
-Decisão
+Cross-source pattern
+Contradictions
+Boundary conditions
+Inference
+Epistemic status
+Decision
 Claim_IDs
 Trace_ID
 ```
 
 <a id="11_claims"></a>
-## 11_CLAIMSSix columns are appended after the existing claims columns for reasoning warrants, prior-work comparisons, contribution differences, novelty scope, search references and real researcher reviews. Original cell positions remain stable and no new worksheet or management ID is created. See docs/CONTROLE-CLAIMS-E-ORIGINALIDADE.md.
+## 11_CLAIMS
+
+Six columns are appended after the existing claims columns for reasoning warrants, prior-work comparisons, contribution differences, novelty scope, search references and real researcher reviews. Original cell positions remain stable and no new worksheet or management ID is created. See docs/CONTROLE-CLAIMS-E-ORIGINALIDADE.md.
 
 Columns:
 
 ```text
 Claim_ID
-Seção do manuscrito
-Claim / afirmação
-Tipo
+Manuscript section
+Claim / assertion
+Type
 Evidence_IDs
 Locators
 Trace_IDs
-Força
-Verificação
-Status de redação
-Observações
+Strength
+Verification
+Draft status
+Notes
 ```
 
 Additional claim integrity columns:
@@ -531,23 +533,23 @@ Columns:
 
 ```text
 AI_Use_ID
-Data
-Etapa
+Date
+Stage
 CADA_ID
 Trace_ID
-Plataforma / ferramenta
-Modelo / versão
-Finalidade
-Categoria de entrada
-Categoria de saída
-Materialidade
-Método de revisão humana
-Decisão humana
-Aceito / modificado / rejeitado
-Artefatos relacionados
-Disclosure necessário
-Texto / nota de disclosure
-Observações
+Platform / tool
+Model / version
+Purpose
+Input category
+Output category
+Materiality
+Human review method
+Human decision
+Accepted / modified / rejected
+Related artifacts
+Disclosure required
+Disclosure text / note
+Notes
 ```
 
 Substantive use must not be treated as validated until a real human review method is recorded.
@@ -559,7 +561,7 @@ This sheet must include the external-file anonymization checks before release: v
 
 Columns:
 
-`Item | Requisito | Fonte do requisito | Status | Prazo | Evidência / arquivo | Trace_ID | Observações`
+`Item | Requirement | Requirement source | Status | Deadline | Evidence / file | Trace_ID | Notes`
 
 Preserve the exact submitted version and receipt/identifier.
 
@@ -577,17 +579,17 @@ Workspace / site
 Container ID
 External item ID
 External URL
-Status externo
-Responsável externo
-Prazo externo
-Status canônico
-Responsável canônico
-Prazo canônico
-Último push
-Último pull
+External status
+External owner
+External deadline
+Canonical status
+Canonical owner
+Canonical deadline
+Last push
+Last pull
 Sync status
-Conflito
-Observações
+Conflict
+Notes
 ```
 
 The external task manager never becomes scientific source of truth.
@@ -686,14 +688,14 @@ Timestamp
 Padrões
 Pacote / URL
 SHA-256 do pacote
-Validação
+Validation
 TRACE events
 PROV entities
 PROV activities
 PROV agents
 RO-Crate files
 Warnings
-Observações
+Notes
 ```
 
 Use stable `EXPORT-####` IDs.
