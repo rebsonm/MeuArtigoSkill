@@ -2,7 +2,7 @@
 
 **Versão atual:** `0.8.0-beta.1`
 
-**Status de distribuição:** beta pública em desenvolvimento · código e documentação sob [MIT](./LICENSE) · [Release fixa v0.8.0-beta.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.1) · [Changelog](./CHANGELOG.md) · [Como citar](./CITATION.cff)
+**Status de distribuição:** repositório público · beta pública em desenvolvimento · código e documentação sob [MIT](./LICENSE) · [Release fixa v0.8.0-beta.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.1) · [Changelog](./CHANGELOG.md) · [Como citar](./CITATION.cff)
 
 **Baixe o ZIP instalável da Release**, não o arquivo de código-fonte por engano. O release também fornece `SHA256SUMS.txt`; a distribuição contém `SKILL.md` na raiz, manifesto de integridade e licença. A aprovação dos testes automatizados **não** representa validação científica dos artigos produzidos. Veja [implantação beta](./docs/IMPLANTACAO-BETA.md) e [validações pendentes](./docs/VALIDACOES-PENDENTES.md).
 
