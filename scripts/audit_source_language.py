@@ -109,38 +109,3 @@ def main(argv=None) -> int:
 
 if __name__=="__main__":
     raise SystemExit(main())
-, "", content)
-        words=PORTUGUESE_WORDS.findall(content)
-        # A few Portuguese source titles or user-language examples are fine.
-        threshold=7 if path.suffix.lower()==".md" else 12
-        if len(words)>=threshold:
-            unresolved.append({
-                "path":path.relative_to(root).as_posix(),
-                "portuguese_indicators":len(words),
-            })
-    return {
-        "source_files_scanned":scanned,
-        "source_files_requiring_editorial_language_review":len(unresolved),
-        "unresolved":sorted(unresolved,key=lambda f:(-f["portuguese_indicators"],f["path"])),
-        "unreadable":unreadable,
-        "all_source_translated_verified":False,
-        "method":"non-exhaustive Portuguese indicator scan; human editorial review also required",
-    }
-
-
-def main(argv=None) -> int:
-    p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--repo",default=str(ROOT))
-    p.add_argument("--strict",action="store_true")
-    args=p.parse_args(argv)
-    result=audit(Path(args.repo))
-    print(json.dumps(result,indent=2,ensure_ascii=False))
-    if result["unreadable"]:
-        return 1
-    if args.strict and result["unresolved"]:
-        return 2
-    return 0
-
-
-if __name__=="__main__":
-    raise SystemExit(main())
