@@ -520,7 +520,11 @@ def main():
                 gate7.get("Decision") or "").upper() in {"APPROVED","APPROVED_WITH_CHANGES"}:
                 errors.extend("editorial AI disclosure: "+e for e in verify_final(root))
         except (ValueError,OSError) as exc:
-            warnings.append(f"editorial AI disclosure unresolved: {type(exc).__name__}")
+            pending=gate_state.get("GATE-0007",{})
+            final=(pending.get("Status") or "").upper()=="COMPLETED" and (
+                pending.get("Decision") or "").upper() in {"APPROVED","APPROVED_WITH_CHANGES"}
+            (errors if final else warnings).append(
+                f"editorial AI disclosure unresolved: {type(exc).__name__}")
 
     g7=gate_state.get("GATE-0007",{})
     if (g7.get("Status") or "").upper()=="COMPLETED" and (g7.get("Decision") or "").upper() in {"APPROVED","APPROVED_WITH_CHANGES"}:
