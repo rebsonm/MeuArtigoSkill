@@ -45,6 +45,9 @@ def scoped_files(root: Path) -> list[Path]:
         if not path.is_file() or path.is_symlink() or path.name in OMIT:
             continue
         rel=path.relative_to(root)
+        # The scanner stores Portuguese trigger words as DATA, not untranslated UI/source prose.
+        if rel.as_posix() == "scripts/audit_source_language.py":
+            continue
         if any(part.startswith(".") and part not in {".github"} for part in rel.parts):
             continue
         if any(part in {"dist","__pycache__",".git","assets","tests","benchmarks"} for part in rel.parts):
