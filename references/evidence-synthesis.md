@@ -120,6 +120,10 @@ Do not invent an indicator merely to complete the chain. Keep a source definitio
 
 This traceability belongs inside the existing evidence/synthesis architecture; it does not create a new canonical sheet or ID family. Use `09_MATRIZ_EVID`, `10_SINTESE`, `17_DECISOES`, `18_VALIDACOES`, and TRACE events as appropriate.
 
+## Originality and inference integrity
+
+Read [claim integrity](../docs/CONTROLE-CLAIMS-E-ORIGINALIDADE.md). The free deterministic script checks the difference between source-supported [L], inferential [I] and originally proposed [P] claims using the canonical Claims Ledger. [L] requires existing evidence IDs and locators; [I] requires an explicit warranted reasoning step and stated conditions; [P] requires related prior works, contribution delta, search trace and a bounded novelty scope. Originality is not proved by a negative search or an abstract-only comparison. Statements of universal precedence ('first study', 'inédito', 'never studied') should be revised before claim freeze. Preserve empirical findings as a distinct type, not as unverified [P] proposals. Human review is still essential.
+
 ## L/I/P discipline
 
 Use internal epistemic labels:

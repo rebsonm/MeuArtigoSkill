@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Enforce distinct provenance expectations for [L] source-supported statements, [I] analytical inferences, and [P] proposed contributions.
+- Require nearby prior works, contribution differences, a bounded novelty scope and existing search references before freezing original propositions.
+- Detect categorical universal-priority language and hold such claims for rewriting rather than accepting an unverifiable 'first-ever' assertion.
+- Add standard-library claim-integrity audit, reuse canonical ledger columns and GATE-0006, and preserve the scientific-validity limitations of automated checks.
+
 - Update public README and installation documentation to match the repository's intended public beta distribution.
 - Introduce type-specific, no-cost critical appraisal for empirical quantitative, qualitative, mixed methods, reviews, conceptual, normative and other sources.
 - Retain criterion-level judgments, documented limitations and real human response references inside the existing evidence matrix.

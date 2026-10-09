@@ -461,6 +461,8 @@ Trace_ID
 
 ## 11_CLAIMS
 
+Six columns are appended after the existing claims columns for reasoning warrants, prior-work comparisons, contribution differences, novelty scope, search references and real researcher reviews. Original cell positions remain stable and no new worksheet or management ID is created. See docs/CONTROLE-CLAIMS-E-ORIGINALIDADE.md.
+
 Columns:
 
 ```text
@@ -476,6 +478,15 @@ Verificação
 Status de redação
 Observações
 ```
+
+Additional claim integrity columns:
+
+- Inference_warrant
+- Nearest_prior_Evidence_IDs
+- Contribution_delta
+- Novelty_scope
+- Novelty_search_ref
+- Researcher_review_evidence
 
 Claim type:
 - LITERATURE

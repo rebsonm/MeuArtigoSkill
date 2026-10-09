@@ -53,6 +53,8 @@ REQUIRED=[
     "scripts/trace_execution.py",
     "scripts/screening_review.py",
     "docs/SCREENING-AUDITAVEL.md",
+    "scripts/claim_integrity.py",
+    "docs/CONTROLE-CLAIMS-E-ORIGINALIDADE.md",
     "scripts/quality_benchmark.py",
     "benchmarks/public_review_reference_v1.json",
     "docs/AVALIACAO-QUALIDADE-CIENTIFICA.md",

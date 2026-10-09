@@ -6,6 +6,7 @@ from pathlib import Path
 from formative_gates import gate_issues
 from screening_review import audit_rows as audit_screening_rows
 from appraise_evidence import audit as audit_appraisals
+from claim_integrity import audit as audit_claim_integrity
 
 REQUIRED=[
 "00_Gestao_e_Continuidade/CONTINUIDADE.md",
@@ -340,6 +341,26 @@ def main():
                 warnings.append(f"claim row {i}: {cid} is {robustness} but human validation is pending")
             if robustness=="QUALIFIED" and not (r.get("Boundary_conditions") or "").strip() and not (r.get("Robustness_notes") or "").strip():
                 warnings.append(f"claim row {i}: {cid} is QUALIFIED without an explicit boundary/robustness note")
+
+    # Provenance integrity and bounded originality are required at final claim freeze.
+    if cfg_data.get("claim_integrity_required") is True:
+        source_claims=root/"00_Gestao_e_Continuidade/09_Claims_Ledger.csv"
+        with source_claims.open("r",encoding="utf-8-sig",newline="") as f:
+            claim_headers=csv.DictReader(f).fieldnames or []
+        evidence_rows=list(rows(root/"00_Gestao_e_Continuidade/05_Evidence_Matrix.csv"))
+        search_rows=list(rows(root/"00_Gestao_e_Continuidade/02_Search_Log.csv"))
+        gate_file=root/"00_Gestao_e_Continuidade/18_Human_Validation_Gates.csv"
+        g6_final=gate_file.exists() and any(
+            (g.get("GATE_ID") or "").strip()=="GATE-0006"
+            and (g.get("Status") or "").upper()=="COMPLETED"
+            and (g.get("Decision") or "").upper() in {"APPROVED","APPROVED_WITH_CHANGES"}
+            for g in rows(gate_file)
+        )
+        claim_audit=audit_claim_integrity(
+            claim_rows,evidence_rows,search_rows,strict=True,
+            freeze=g6_final,headers=claim_headers)
+        errors.extend("claim integrity: "+p for p in claim_audit["errors"])
+        warnings.extend("claim integrity: "+p for p in claim_audit["warnings"])
 
     dashboard=root/"00_Gestao_e_Continuidade/15_CADA_Dashboard.csv"
     if dashboard.exists():
