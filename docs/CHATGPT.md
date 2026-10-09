@@ -10,12 +10,12 @@ A instalação de Skills no ChatGPT depende da elegibilidade da conta, da dispon
 
 **O que está documentado:** em contas elegíveis, o caminho é **Plugins → Habilidades → Criar → Carregar do computador**. A presença da opção deve ser verificada no próprio ambiente. Experiências pontuais de versões anteriores, inclusive com contas de outros planos, não comprovam disponibilidade geral nem compatibilidade integral desta beta.
 
-**O que ainda falta validar:** importação e execução ponta a ponta do arquivo `v0.8.0-beta.3` em contas elegíveis do ChatGPT, inclusive retomada e gravação no Drive.
+**O que ainda falta validar:** importação e execução ponta a ponta do arquivo `v0.8.0-beta.4` em contas elegíveis do ChatGPT, inclusive retomada e gravação no Drive.
 
 ## 1. Baixe a versão oficial do GitHub
 
-1. Abra [a versão beta publicada](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.3).
-2. Baixe **`MeuArtigoSkill-v0.8.0-beta.3.zip`**, na seção de arquivos disponibilizados.
+1. Abra [a versão beta publicada](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.4).
+2. Baixe **`MeuArtigoSkill-v0.8.0-beta.4.zip`**, na seção de arquivos disponibilizados.
 3. Se desejar conferir a integridade, utilize o `SHA256SUMS.txt` do mesmo lançamento.
 4. Preserve o ZIP completo; **não use o arquivo automático `Source code (zip)` como primeira opção de instalação**.
 

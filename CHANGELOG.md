@@ -2,7 +2,17 @@
 
 ## Unreleased
 
-Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-beta.3`.
+Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-beta.4`.
+
+## 0.8.0-beta.4 — 2026-10-09
+
+### Fundamentação e segurança da comunicação científica
+
+- Adicionar os modos mínimo e completo de apresentação sem dispensar registros e validações.
+- Integrar referências metodológicas aplicáveis a revisões e artigos com desenhos distintos.
+- Tratar afirmações de ausência de literatura como inferências limitadas [I].
+- Oferecer declaração editorial breve, preservando a auditoria integral.
+- Preparar dois protocolos de avaliação futura sem resultados ou participantes fictícios.
 
 ## 0.8.0-beta.3 — 2026-10-09
 

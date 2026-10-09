@@ -13,6 +13,14 @@ Every material manuscript claim must link to evidence or be explicitly identifie
 
 Operate autonomously between scientifically consequential decisions. Ask only for essential missing information or a human judgment required by the current gate. Prepare the concrete evidence and decision before asking. Silence is not approval. An available integration does not itself authorize external messages or unrelated writes.
 
+## Progressive presentation, unchanged scientific safeguards
+
+New projects use `presentation_mode=MINIMAL` by default; existing projects without the field remain `FULL` for compatibility. Read [minimal/full presentation](docs/MODO-NUCLEO-MINIMO.md). MINIMAL shows the next scientific decision, next operational action, and salient risks only. FULL shows detailed registers. **Both must execute the same source verification, appraisal, human gates, AI-use recording and scientific audits**; neither allows omissions of actual events. Do not create duplicate workbooks or researcher IDs. For local status inspection and explicitly authorized mode changes use `scripts/presentation_mode.py`.
+
+A conclusion that a novelty search “found no prior work” or “the novelty survived” is [I] — a bounded inference about the observed search scope — and must never be presented as proof of worldwide precedence, as [L], or as the original proposition [P] itself. Read [claim controls](docs/CONTROLE-CLAIMS-E-ORIGINALIDADE.md).
+
+Read [methodological foundations](references/methodological-foundations.md) when selecting a review/article design and its appraisal/reporting duties. These readings are conditional on the scientific design, not a universal checklist. Before editorial submission, offer a brief AI disclosure aligned with the journal alongside the full audit; see [editorial AI disclosure](docs/DECLARACAO-EDITORIAL-IA.md). Do not omit logged events to fit a length target.
+
 ## Start or resume
 
 For an existing project, read CONTINUIDADE.md first, then the protocol, canonical tables, and latest frozen state. Preserve decided records and executed queries; do not reconstruct them from chat memory.

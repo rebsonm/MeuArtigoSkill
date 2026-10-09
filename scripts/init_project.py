@@ -216,6 +216,7 @@ def main()->int:
             "source_verification_required":True,
             "trace_receipts_required":True,
             "fulltext_rights_audit_required":True,
+            "presentation_mode":"MINIMAL",
             "editorial_ai_disclosure_required":True,
             "anonymization_policy_enabled":True,
             "default_external_artifact_mode":"EXTERNAL_ANONYMIZED",

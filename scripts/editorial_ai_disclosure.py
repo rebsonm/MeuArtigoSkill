@@ -119,6 +119,49 @@ def render(result):
  if result["errors"]:
   lines+=["## Pendências",*("- "+x for x in result["errors"])]
  return "\n".join(lines)+"\n"
+def render_compact(result):
+ """Brief declaration for editorial use; never silently omit recorded activities.
+
+ This is a text-length target, not a claim of a physically printed A4 page.
+ """
+ def safe(x):
+  return clean(x).replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
+ if result["errors"]:
+  # Draft can exist but must expose its non-final status.
+  status="MINUTA COM PENDÊNCIAS"
+ else:
+  status="PRONTO PARA REVISÃO FINAL DO AUTOR"
+ groups={}
+ for u in result["uses"]:
+  k=(u["category"],u["tool"],u["model"])
+  groups.setdefault(k,[]).append(u["purpose"])
+ lines=["# Transparência sobre uso de IA — versão breve","",
+        "Periódico: "+safe(result["journal"] or "A CONFIRMAR"),
+        "Local exigido: "+safe(result["location"] or "A CONFIRMAR"),
+        "Situação: "+status,""]
+ if not groups:
+  lines.append("Segundo manifestação documentada do pesquisador, não houve uso de IA declarado no registro examinado. Um log vazio não comprova, por si, ausência de uso.")
+ else:
+  lines.append("Ferramentas e finalidades declaradas (conforme registros efetivos):")
+  for (category,tool,model),purposes in sorted(groups.items()):
+   unique=list(dict.fromkeys(clean(p) for p in purposes))
+   category_label={
+   "ADMIN_SUPPORT":"apoio administrativo","LITERATURE_SEARCH":"apoio à busca bibliográfica",
+   "SCREENING":"apoio à triagem","EVIDENCE_EXTRACTION":"organização de evidências",
+   "DATA_ANALYSIS":"apoio à análise de dados","DRAFTING_EDITING":"apoio à redação/edição",
+   "FIGURES":"apoio à preparação de figuras","OTHER":"outra atividade descrita"
+  }.get(category,category)
+  lines.append("- "+safe(category_label)+": "+safe(tool)+" ("+safe(model)+") — "+safe("; ".join(unique))+".")
+  lines.append("")
+  lines.append("O pesquisador permanece responsável pela revisão dos resultados, precisão das fontes, interpretação e conteúdo final.")
+ lines+=["","Texto sujeito às instruções vigentes do periódico e à verificação humana de posicionamento. A emissão não atesta aceite editorial."]
+ if result["errors"]:
+  lines.append("Pendências: "+str(len(result["errors"]))+"; consultar a auditoria completa antes de enviar.")
+ output="\n".join(lines)+"\n"
+ if len(output)>3000 or len(lines)>32:
+  raise ValueError("Recorded AI usage exceeds one-page text budget; retain the full report and ask the researcher to revise a faithful brief statement.")
+ return output
+
 def verify_final(root):
  root=Path(root).resolve(); current=assess(root)
  errors=list(current["errors"])
@@ -134,13 +177,17 @@ def verify_final(root):
     if previous.get(k)!=current.get(k): errors.append(k+" changed after disclosure")
    if previous.get("final_sha256")!=checksum(statement):
     errors.append("final AI statement changed after audit")
+   if previous.get("compact_final_sha256"):
+    compact_path=root/"06_Submissao/Regras_da_Revista/AI_DISCLOSURE_COMPACT_FINAL.md"
+    if not compact_path.is_file() or previous["compact_final_sha256"]!=checksum(compact_path):
+     errors.append("compact editorial AI statement changed since audit")
   except (ValueError,OSError):
    errors.append("final AI audit unreadable")
  return errors
 def main(argv=None):
  p=argparse.ArgumentParser(description=__doc__)
  sub=p.add_subparsers(dest="cmd",required=True)
- for operation in ("audit","draft","final","verify-final"):
+ for operation in ("audit","draft","final","compact","compact-final","verify-final"):
   sp=sub.add_parser(operation);sp.add_argument("project")
  args=p.parse_args(argv)
  try:
@@ -153,13 +200,28 @@ def main(argv=None):
   if args.cmd=="audit":
    print(json.dumps(result,ensure_ascii=False,indent=2))
    return 1 if result["errors"] else 0
-  if args.cmd=="final" and result["errors"]:
+  if args.cmd in ("final","compact-final") and result["errors"]:
    print(json.dumps({"status":"BLOCKED","errors":result["errors"]},ensure_ascii=False))
    return 1
-  destination=root/(FINAL if args.cmd=="final" else DRAFT)
+  compact=args.cmd in ("compact","compact-final")
+  destination=root/(
+   "06_Submissao/Regras_da_Revista/AI_DISCLOSURE_COMPACT_FINAL.md" if args.cmd=="compact-final" else
+   "06_Submissao/Regras_da_Revista/AI_DISCLOSURE_COMPACT_DRAFT.md" if args.cmd=="compact" else
+   FINAL if args.cmd=="final" else DRAFT)
   destination.parent.mkdir(parents=True,exist_ok=True)
-  destination.write_text(render(result),encoding="utf-8")
-  if args.cmd=="final":
+  destination.write_text(render_compact(result) if compact else render(result),encoding="utf-8")
+  if args.cmd in ("final","compact-final"):
+   if args.cmd=="compact-final":
+    # A brief statement never replaces the complete policy-bound full declaration.
+    issues=verify_final(root)
+    if issues:
+     destination.unlink(missing_ok=True)
+     raise ValueError("Full editorial AI disclosure needs verification before compact final: "+"; ".join(issues[:3]))
+    old=json.loads((root/AUDIT).read_text(encoding="utf-8"))
+    old["compact_final_sha256"]=checksum(destination)
+    (root/AUDIT).write_text(json.dumps(old,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    print(json.dumps({"status":result["status"],"file":str(destination)},ensure_ascii=False))
+    return 0
    result["final_sha256"]=checksum(destination)
    path=root/AUDIT;path.parent.mkdir(parents=True,exist_ok=True)
    path.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")

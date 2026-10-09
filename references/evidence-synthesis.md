@@ -14,6 +14,8 @@
 
 Do not let the manuscript become a sequence of paper summaries. Convert each source into comparable analytical units and synthesize relationships across sources.
 
+Choose source appraisal and research-design requirements using [methodological foundations](methodological-foundations.md). For integrative reviews, quality appraisal is an identifiable analytical stage, not a synonym for CORE/SUPPORT or DOI verification. Distinguish scientific relevance from methodological trustworthiness and from legal authority.
+
 ## Independent source and locator checks
 
 Read [source verification](source-verification.md). Use the deterministic script for DOI/metadata reconciliation and exact local passage matching when code execution is available. Record findings under the existing Evidence_IDs; do not create more ID families. A legitimate source lacking a DOI is not excluded automatically. Bibliographic identity and quotation presence are distinct from the claim's meaning, evidence quality and human scientific judgment. Never self-certify an [L] assertion using only a model-generated report.

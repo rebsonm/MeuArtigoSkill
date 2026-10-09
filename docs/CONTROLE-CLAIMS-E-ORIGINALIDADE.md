@@ -26,6 +26,10 @@ Literature claims require citations and locators. Inferences require evidence, t
 
 The audit flags categorical universal precedence such as 'primeiro estudo', 'inédito', 'first-ever' and 'no prior studies'. A recorded search cannot demonstrate the absence of every prior publication; rewrite claims to a defensible scope rather than merely filling a validation field. The language patterns are incomplete and may flag legitimate historical quotations, so a scientist must still review the text and attribution.
 
+### Search-based novelty conclusions are [I]
+
+Assertions such as “a novidade sobreviveu” or “a busca não identificou estudos anteriores” are **inferences [I]** about a specific corpus, period, strategy and access conditions, not scientific propositions [P] or source-backed facts [L]. Use the existing `Novelty_scope` and `Novelty_search_ref` fields, plus `Inference_warrant` and `Boundary_conditions`, to document what was searched and what remains uncertain. The standalone [P] contribution is a separate claim, compared with nearest prior works. The script catches defined textual patterns but cannot semantically classify every paraphrase. Human confirmation is still mandatory.
+
 Search_ID presence means there is a recorded search, not proof of worldwide novelty or full coverage. The software cannot check conceptual originality, deep logical validity, correctness of an interpretation or actual human authorship. Always use qualified language and document limitations. The empirical quality benchmark remains a separate process.
 
 Google Drive-first remains the workspace rule: local CSV mutations must be synchronized with the authorized canonical project state, preserving historical evidence and actual scientific decisions.
