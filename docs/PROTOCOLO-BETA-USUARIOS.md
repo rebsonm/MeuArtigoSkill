@@ -4,7 +4,7 @@
 
 ## Objetivo e escopo
 
-Quando houver testadores voluntários, avaliar instalação, navegação, compreensão dos limites científicos, continuidade dos projetos e falhas operacionais em ChatGPT/Claude/Gemini. Este protocolo é de **usabilidade e funcionamento**, não substitui a avaliação científica independente do RT-08 nem o estudo com/sem C.A.D.A.
+Quando houver testadores voluntários, avaliar instalação, navegação, compreensão dos limites científicos, continuidade dos projetos e falhas operacionais em ChatGPT/Claude/Gemini. Este protocolo é de **usabilidade e funcionamento**, não substitui a avaliação científica independente nem o estudo com/sem C.A.D.A.
 
 ## Preparação (antes das sessões)
 
