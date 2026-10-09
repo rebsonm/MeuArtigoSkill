@@ -10,6 +10,15 @@
 - Ampliar o exame de materiais públicos para documentos Markdown da raiz, referências, documentação e modelos do GitHub; rejeitar referências privadas e formatos reconhecíveis de segredo sem imprimir seu conteúdo.
 - Adicionar regressões automatizadas da política de publicação, das versões e da exposição documental.
 
+### Rotas metodológicas operacionais (etapa de desenvolvimento, sem nova release)
+
+- Adaptar a inicialização e a validação científica aos desenhos integrativo, sistemático, problematizador, teórico, qualitativo, quantitativo, misto e design science, com categoria provisória explicitamente indefinida.
+- Vincular a escolha metodológica a decisão humana real no mesmo conjunto DEC/TRACE/GATE, preservando compatibilidade com projetos anteriores.
+- Adequar os gates de seleção de corpus para decisões sobre materiais empíricos, dados, análise e integração, sem impor triagem bibliográfica a métodos que não a utilizam.
+- Incorporar a Cebola de Pesquisa como auxílio de coerência, não certificação; distinguir inferência quantitativa, integração de métodos mistos e avaliação de artefatos.
+- Bloquear aprovação de resultados apenas planejados, atalhos de NOT_APPLICABLE em gates críticos ou interpretações automáticas sem proveniência.
+- Registrar que avaliações empíricas do desempenho da Skill continuam pendentes.
+
 ## 0.8.0-beta.8 — 2026-10-09
 
 ### Etapa 1 — atribuição autoral e proteção de pacotes
