@@ -2,7 +2,17 @@
 
 ## Unreleased
 
-- Remover da documentação pública referências a acervos acadêmicos privados e identificadores do acompanhamento interno de desenvolvimento; preservar integralmente os controles de pesquisa e sua bibliografia científica.
+Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-beta.5`.
+
+## 0.8.0-beta.5 — 2026-10-09
+
+### Documentação pública e privacidade da curadoria
+
+- Consolidar a fundamentação metodológica pública sem expor origem de bibliotecas ou coleções particulares.
+- Substituir códigos internos de acompanhamento por descrições claras das melhorias e avaliações ainda não executadas.
+- Adicionar verificação automatizada contra reaparecimento desses termos em documentos públicos.
+- Preservar integralmente procedimentos e limites científicos já implementados; nenhuma nova validação empírica foi realizada.
+
 
 ## 0.8.0-beta.4 — 2026-10-09
 
