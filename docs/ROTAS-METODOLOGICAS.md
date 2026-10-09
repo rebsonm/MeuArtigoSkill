@@ -136,6 +136,11 @@ prévio realmente não for pertinente, a exceção requer autoria, prova
 da decisão e justificativa substantiva. `GATE-0007` pode permanecer
 pendente quando não houver intenção de submeter a uma revista.
 
+Em particular, a verificação bibliográfica não prova interpretação
+científica: consultar [níveis de evidência](NIVEIS-DE-EVIDENCIA.md)
+antes de congelar qualquer `EMPIRICAL_RESULT`. Revisão humana registrada
+também não é autenticação independente da pessoa ou do resultado.
+
 ## 6. Linhagem e limites da evidência
 
 - [L] evidencia o que uma fonte ou conjunto de dados acessível realmente
