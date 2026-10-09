@@ -1,0 +1,33 @@
+name: Temporary English-source migration probe
+
+on:
+  push:
+    branches:
+      - stage5-english-source-auto-user-language-20261009
+    paths:
+      - '.github/workflows/translate-source-once.yml'
+      - 'scripts/translate_source_once.py'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Inspect public machine-translation reachability (no research data)
+        shell: bash
+        run: |
+          set -e
+          python - <<'PY'
+          import urllib.parse, urllib.request
+          url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=pt&tl=en&dt=t&q="+urllib.parse.quote("Este é um teste de conectividade.")
+          try:
+              with urllib.request.urlopen(url,timeout=20) as reply:
+                  data=reply.read(400).decode("utf-8","replace")
+                  print("PUBLIC_TEST_STATUS",reply.status,"RESULT",data[:280])
+          except Exception as exc:
+              print("PUBLIC_TEST_FAILED",type(exc).__name__,str(exc)[:200])
+              raise
+          PY
