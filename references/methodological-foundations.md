@@ -1,359 +1,367 @@
-# Fundamentação metodológica aplicada — Meu Artigo
+<a id="fundamentação-metodológica-aplicada-meu-artigo"></a>
+# Applied methodological foundation — Meu Artigo
 
-## Escopo, estatuto das fontes e princípio de utilização
+<a id="escopo-estatuto-das-fontes-e-princípio-de-utilização"></a>
+## Scope, status of sources and principle of use
 
-Este documento é um **mapa crítico de fundamentos metodológicos e de escrita científica**, não uma revisão sistemática, uma recomendação de que todos os trabalhos usem o mesmo método nem uma certificação de qualidade das obras. Seu objetivo é dar substância às decisões assistidas pela Skill: formular o problema, selecionar o desenho, buscar e examinar fontes, interpretar materiais, construir a contribuição, redigir e preparar a submissão. Uma obra só deve orientar uma decisão quando o seu objeto, pressupostos e critérios forem pertinentes à pesquisa em andamento.
+This document is a **critical map of methodological foundations and scientific writing**, not a systematic review, a recommendation that all works use the same method, nor a certification of the quality of the works. Its objective is to give substance to the decisions assisted by the Skill: formulate the problem, select the design, search and examine sources, interpret materials, construct the contribution, write and prepare the submission. A work should only guide a decision when its object, assumptions and criteria are relevant to the research in progress.
 
-**Situação da consulta:** as exposições detalhadas abaixo distinguem (a) obras cujos textos e passagens pertinentes foram consultados para esta fundamentação e (b) referências verificadas bibliograficamente por metadados públicos, descrição editorial ou referência acadêmica, sem reivindicação de leitura integral. Consultar trechos de um livro não equivale a ler criticamente toda a obra. Nada autoriza atribuir aos autores protocolos específicos da Skill, que são **operacionalizações próprias** inspiradas por princípios metodológicos. Não são reproduções oficiais de checklists externos.
+**Status of consultation:** the presentations detailed below distinguish (a) works whose texts and pertinent passages were consulted for this justification and (b) references bibliographically verified by public metadata, editorial description or academic reference, without claiming full reading. Consulting excerpts from a book is not equivalent to critically reading the entire work. Nothing authorizes attributing specific Skill protocols to authors, which are **proper operationalizations** inspired by methodological principles. They are not official reproductions of external checklists.
 
-**Limite de proveniência pública:** registrar no projeto particular de cada pesquisador os acessos, excertos e localizadores efetivamente utilizados. Não divulgar, na documentação da Skill, o nome ou a estrutura de bibliotecas pessoais, pastas, identificadores privados, relatórios internos de desenvolvimento ou PDFs de terceiros. As referências acadêmicas legítimas são citadas independentemente do lugar de consulta.
+**Public provenance limit:** register in each researcher's private project the accesses, excerpts and locators actually used. Do not disclose, in Skill documentation, the name or structure of personal libraries, folders, private identifiers, internal development reports or third-party PDFs. Legitimate academic references are cited regardless of the place of consultation.
 
-Três níveis que não se confundem:
-- **Obra consultada:** suas teses e procedimentos relevantes foram conferidos no texto acessível; isso não comprova leitura integral nem validade de todas as suas afirmações.
-- **Referência bibliográfica verificada:** autoria, título ou DOI/edição conferidos em fonte editorial, sem análise aprofundada do texto completo nesta atualização.
-- **Regra de aplicação da Skill:** tradução instrumental nossa do argumento metodológico, a ser ativada condicionalmente e submetida ao julgamento científico do pesquisador.
+Three levels that cannot be confused:
+- **Work consulted:** its relevant theses and procedures were checked in the accessible text; This does not prove the full reading or validity of all its statements.
+- **Verified bibliographic reference:** authorship, title or DOI/edition checked in an editorial source, without in-depth analysis of the full text in this update.
+- **Skill application rule:** our instrumental translation of the methodological argument, to be activated conditionally and submitted to the researcher's scientific judgment.
 
-Em todo artigo, distinguir **[L] literatura sustentada e localizável**, **[I] inferência analítica delimitada**, **[P] proposição original do autor**. Ter DOI real, arquivo em mãos, citação correta ou tarefa concluída não prova que um claim é semanticamente sustentado nem que o artigo apresenta contribuição inédita.
+In every article, distinguish **[L] supported and localizable literature**, **[I] delimited analytical inference**, **[P] the author's original proposition**. Having a real DOI, file in hand, correct citation or completed task does not prove that a claim is semantically supported nor that the article presents an original contribution.
 
-## Instrumentação da escolha metodológica
+<a id="instrumentação-da-escolha-metodológica"></a>
+## Instrumentation of methodological choice
 
-A implementação prática está em [rotas metodológicas](../docs/ROTAS-METODOLOGICAS.md).
-A descrição da Cebola de Pesquisa e das famílias de pesquisa, nas seções
-posteriores, funciona como **orientação condicional**. O programa apenas
-verifica a presença, o vínculo e o estado formal de decisões/evidências; não
-calcula poder estatístico, identifica efeitos causais, comprova validade
-epistemológica ou interpreta automaticamente dados qualitativos. O autor
-precisa documentar a escolha e os limites, sem transformar categorias
-metodológicas em uma escala automática de qualidade.
+The practical implementation is in [methodological routes](../docs/ROTAS-METODOLOGICAS.md).
+The description of the Research Onion and the research families in later sections provides **conditional guidance**. The program verifies only the presence, links and formal status of documented decisions and evidence. It does not calculate statistical power, identify causal effects, demonstrate epistemological validity or interpret qualitative material automatically. Researchers must explain their methodological decisions and limits; labels alone do not form an automatic quality scale.
 
-**Índice rápido:** para limitar a carga de contexto, comece no
-[índice metodológico seletivo](INDICE-METODOLOGICO.md), que vincula
-rotas de pesquisa aos trechos e à situação de consulta declarada neste
-documento. O índice não comprova novas leituras nem modifica referências,
-DOIs, edições ou interpretações deste mapa.
+**Quick Index:** To limit context load, start at
+[selective methodological index](INDICE-METODOLOGICO.md), which links
+search routes to sections and the query situation declared in this
+document. The index does not confirm new readings or modify references,
+DOIs, editions or interpretations of this map.
 
-## Roteiro de consulta seletiva
+<a id="roteiro-de-consulta-seletiva"></a>
+## Selective reading guide
 
-Este mapa é extenso por necessidade de fundamentação, **não para ser integralmente aplicado a cada pesquisa**. Consulte somente o caminho pertinente: revisões e artigos conceituais (seções 1–2), desenho geral e métodos quantitativos/mistos (seção 3), tradições qualitativas específicas (seção 4), artefatos e avaliação (seção 5), ética/IA (seção 6), adequação da evidência (seção 7), orientações operacionais (seções 8–9) e bibliografia (seção 10). Preserve os princípios gerais de rastreabilidade e limites científicos; não imponha requisitos de métodos irrelevantes ao desenho escolhido.
+This map is extensive due to the need for justification, **not to be fully applied to each research**. See only the pertinent path: conceptual reviews and articles (sections 1–2), general design and quantitative/mixed methods (section 3), specific qualitative traditions (section 4), artifacts and evaluation (section 5), ethics/IA (section 6), adequacy of evidence (section 7), operational guidance (sections 8–9), and bibliography (section 10). Preserve the general principles of traceability and scientific limits; do not impose method requirements that are irrelevant to the chosen design.
 
-**Decisão mínima para iniciantes:** (i) que pergunta quero responder; (ii) que inferência seria defensável; (iii) que dados e método a sustentariam; (iv) o que permanece fora do alcance. Os detalhes da Cebola de Pesquisa ajudam a revisar essas decisões, não a substituir o julgamento do autor.
+**Minimum decision for beginners:** (i) what question do I want to answer; (ii) what inference would be defensible; (iii) what data and method would support it; (iv) what remains out of reach. The details in Research Onion help review these decisions, not replace the author's judgment.
 
-## 1. Famílias de revisão: delimitar o que se promete
+<a id="1-famílias-de-revisão-delimitar-o-que-se-promete"></a>
+## 1. Review families: define what is promised
 
-### 1.1. Revisão integrativa: cinco obras com funções diferentes
+<a id="11-revisão-integrativa-cinco-obras-com-funções-diferentes"></a>
+### 1.1. Integrative review: five works with different functions
 
-**Torraco (2005), Writing Integrative Literature Reviews: Guidelines and Examples** — *referência bibliográfica verificada; texto integral não declarado consultado aqui*. O artigo situa a revisão integrativa como modalidade de pesquisa que deve gerar conhecimento além do levantamento de referências. **Aplicação:** uma revisão que apenas enumera fontes é insuficiente para reivindicar síntese integrativa. Definir o objeto, justificar o recorte, explicitar categorias/tensões e formular conhecimento resultante. **Limite:** não transpor o artigo para um checklist obrigatório de todas as pesquisas nem alegar que a obra foi lida integralmente. DOI: https://doi.org/10.1177/1534484305278283.
+**Torraco (2005), Writing Integrative Literature Reviews: Guidelines and Examples** — *verified bibliographical reference; undeclared full text consulted here*. The article situates the integrative review as a research modality that should generate knowledge beyond the survey of references. **Application:** a review that merely enumerates sources is insufficient to claim integrative synthesis. Define the object, justify the selection, explain categories/tensions and formulate resulting knowledge. **Limit:** do not include the article in a mandatory checklist of all research nor claim that the work has been read in its entirety. DOI: https://doi.org/10.1177/1534484305278283.
 
-**Whittemore e Knafl (2005), The integrative review: updated methodology** — *identidade e resumo acadêmico verificados; sem leitura integral declarada*. Sua contribuição distingue etapas de identificação do problema, busca da literatura, **avaliação dos dados**, análise e apresentação. **Aplicação:** cada estudo precisa ser apreciado quanto ao tipo de evidência, pertinência, desenho, possíveis vieses e limitações antes de sustentar uma conclusão. O rótulo de centralidade CORE/SUPPORT refere-se à utilidade argumentativa e **não é julgamento de qualidade metodológica**. **Limite:** o procedimento foi formulado em contexto de investigação em saúde; sua transposição à Administração exige justificar fontes heterogêneas e critérios próprios para trabalhos teóricos, normativos e empíricos. DOI: https://doi.org/10.1111/j.1365-2648.2005.03621.x.
+**Whittemore and Knafl (2005), The integrative review: updated methodology** — *identity and academic summary verified; without declared full reading*. Your contribution distinguishes stages of problem identification, literature search, **data evaluation**, analysis and presentation. **Application:** each study needs to be assessed regarding the type of evidence, relevance, design, possible biases and limitations before supporting a conclusion. The CORE/SUPPORT centrality label refers to argumentative utility and **is not a judgment of methodological quality**. **Limit:** the procedure was formulated in the context of health research; its transposition to Administration requires justifying heterogeneous sources and criteria specific to theoretical, normative and empirical work. DOI: https://doi.org/10.1111/j.1365-2648.2005.03621.x.
 
-**Snyder (2019), Literature review as a research methodology: An overview and guidelines** — *artigo e descrição editorial consultados*. Diferencia finalidades, estratégias e problemas típicos de revisões, com ênfase na adequação entre questão, método e transparência. **Aplicação:** declarar qual tipo de revisão se fez, o grau de estruturação das buscas, a seleção real e o tipo de síntese. A existência de consultas a Scopus e Web of Science **não transforma** uma revisão conceitual ou integrativa em sistemática. DOI: https://doi.org/10.1016/j.jbusres.2019.07.039.
+**Snyder (2019), Literature review as a research methodology: An overview and guidelines** — *article and editorial description consulted*. Differentiates purposes, strategies and typical problems of reviews, with an emphasis on the adequacy between issue, method and transparency. **Application:** declare what type of review was carried out, the degree of structuring of the searches, the actual selection and the type of synthesis. The existence of consultations with Scopus and Web of Science **does not transform** a conceptual or integrative review into a systematic one. DOI: https://doi.org/10.1016/j.jbusres.2019.07.039.
 
-**Grant e Booth (2009), A typology of reviews** — *artigo consultado*. Compararam 14 tipos de revisão utilizando as dimensões SALSA: **Search, Appraisal, Synthesis, Analysis**. Demonstram que rótulos são parcialmente sobrepostos e que não se deve supor um método idêntico por trás de todos. **Aplicação:** ao escolher o desenho, a Skill deve explicitar o que será feito em busca, avaliação, síntese e análise, em vez de oferecer um nome de método desacompanhado de operações. **Limite:** SALSA é uma estrutura analítica de comparação, não um selo de revisão sistemática e não obriga a mesma estratégia de recuperação para todos os tipos. DOI: https://doi.org/10.1111/j.1471-1842.2009.00848.x.
+**Grant and Booth (2009), A typology of reviews** — *article consulted*. They compared 14 types of reviews using the SALSA dimensions: **Search, Appraisal, Synthesis, Analysis**. They demonstrate that labels are partially overlapping and that one should not assume an identical method behind them all. **Application:** when choosing the design, the Skill must explain what will be done in search, evaluation, synthesis and analysis, instead of offering a method name unaccompanied by operations. **Threshold:** SALSA is a comparison analytical framework, not a systematic review badge, and does not mandate the same retrieval strategy for all types. DOI: https://doi.org/10.1111/j.1471-1842.2009.00848.x.**Elsbach and van Knippenberg (2020), Creating High-Impact Literature Reviews: An Argument for “Integrative Reviews”** — *text consulted*. They argue that the integrative review represents the field in a well-founded way, **justifiably delimits its space** and, through critical analysis and synthesis, builds a perspective that was not explicit in each isolated study. **Application:** record the chosen analytical space and compare approximations, divergences, assumptions and frontiers before proposing a new model or agenda. **Risk:** using article count as a substitute for conceptual integration. DOI: https://doi.org/10.1111/joms.12581.
 
-**Elsbach e van Knippenberg (2020), Creating High-Impact Literature Reviews: An Argument for “Integrative Reviews”** — *texto consultado*. Defendem que a revisão integrativa representa o campo de maneira fundamentada, **delimita justificadamente seu espaço** e, por análise crítica e síntese, constrói uma perspectiva que não estava explícita em cada estudo isolado. **Aplicação:** registrar o espaço analítico escolhido e comparar aproximações, divergências, pressupostos e fronteiras antes de propor um novo modelo ou agenda. **Risco:** usar a contagem de artigos como substituta da integração conceitual. DOI: https://doi.org/10.1111/joms.12581.
+<a id="12-problematização-contraponto-à-acumulação-de-estudos"></a>
+### 1.2. Problematization: counterpoint to the accumulation of studies
 
-### 1.2. Problematização: contraponto à acumulação de estudos
+**Alvesson and Sandberg (2011), Generating Research Questions Through Problematization** — *text consulted*. They dispute the exclusive dependence on finding gaps (*gap-spotting*) and advocate formulating questions based on assumptions that deserve to be questioned. **Application:** identify: dominant assumption; authors who use it; evidence and conditions under which it works; plausible explanatory alternative; question generated by the change of premise. A supposed gap does not automatically produce a scientific contribution. DOI: https://doi.org/10.5465/amr.2009.0188.
 
-**Alvesson e Sandberg (2011), Generating Research Questions Through Problematization** — *texto consultado*. Contestam a dependência exclusiva de encontrar lacunas (*gap-spotting*) e defendem formular perguntas a partir de pressupostos que merecem ser questionados. **Aplicação:** identificar: pressuposto dominante; autores que o utilizam; evidências e condições em que funciona; alternativa explicativa plausível; pergunta gerada pela mudança de premissa. Uma suposta lacuna não produz automaticamente contribuição científica. DOI: https://doi.org/10.5465/amr.2009.0188.
+**Alvesson and Sandberg (2020), The Problematizing Review** — *text consulted*. They present an explicit counterpoint to Elsbach and van Knippenberg and defend four principles: **reflexivity; broader but selective reading; problematize instead of accumulate; and “less can be more”**. The problematizing review opens up possibilities for interpretation; It is not just cumulative construction. **Application:** the Skill can suggest a problematizing path when the objective is to reconstruct assumptions, even without the promise of exhaustive coverage. Record the choice of the selective corpus, its logic and what was left out. **Productive tension:** integrative and problematizing review should not be artificially merged into a single eligibility ritual. DOI: https://doi.org/10.1111/joms.12582.
 
-**Alvesson e Sandberg (2020), The Problematizing Review** — *texto consultado*. Apresentam contraponto explícito a Elsbach e van Knippenberg e defendem quatro princípios: **reflexividade; leitura mais ampla, porém seletiva; problematizar em vez de acumular; e “menos pode ser mais”**. A revisão problematizadora abre possibilidades de interpretação; não é somente construção cumulativa. **Aplicação:** a Skill pode sugerir uma trilha problematizadora quando o objetivo for reconstruir pressupostos, mesmo sem promessa de cobertura exaustiva. Registrar a escolha do corpus seletivo, sua lógica e o que ficou de fora. **Tensão produtiva:** revisão integrativa e problematizadora não devem ser artificialmente fundidas num ritual único de elegibilidade. DOI: https://doi.org/10.1111/joms.12582.
+<a id="13-relato-reprodutível-de-buscas"></a>
+### 1.3. Reproducible reporting of searches
 
-### 1.3. Relato reprodutível de buscas
+**Rethlefsen et al. (2021), PRISMA-S** — *text and editorial metadata verified*. Guideline for reporting searches in systematic reviews and related types: sources, full strategies, dates, limits, interfaces, changes and update methods. There are versions published in two journals; the reference used here is the *Journal of the Medical Library Association*. **Application:** preserve the actually executed string, base, platform, date and counts; differentiate proposed queries from performed queries. **Limit:** reporting searches according to useful aspects of PRISMA-S does not authorize labeling any review as systematic; Reporting guidelines do not replace design or critical assessment. DOI: https://doi.org/10.5195/jmla.2021.962.
 
-**Rethlefsen et al. (2021), PRISMA-S** — *texto e metadados editoriais verificados*. Diretriz para relatar buscas em revisões sistemáticas e tipos relacionados: fontes, estratégias completas, datas, limites, interfaces, mudanças e métodos de atualização. Há versões publicadas em dois periódicos; a referência aqui utilizada é a do *Journal of the Medical Library Association*. **Aplicação:** preservar a string efetivamente executada, base, plataforma, data e contagens; diferenciar consultas propostas de consultas realizadas. **Limite:** relatar buscas segundo aspectos úteis de PRISMA-S não autoriza rotular qualquer revisão como sistemática; diretrizes de relato não substituem desenho nem avaliação crítica. DOI: https://doi.org/10.5195/jmla.2021.962.
+**Operational synthesis between these works:** first delimit purpose and review family (Snyder; Grant and Booth); then explain what constitutes knowledge production (Torraco; Elsbach and van Knippenberg) or review of assumptions (Alvesson and Sandberg); establish your own assessment of sources (Whittemore and Knafl); finally accurately report recovery procedures (PRISMA-S, when relevant). **There is no universal ranking of superiority between these paths.**
 
-**Síntese operacional entre essas obras:** primeiro delimitar finalidade e família de revisão (Snyder; Grant e Booth); depois explicitar o que constitui produção de conhecimento (Torraco; Elsbach e van Knippenberg) ou revisão de pressupostos (Alvesson e Sandberg); estabelecer avaliação própria das fontes (Whittemore e Knafl); finalmente relatar com precisão os procedimentos de recuperação (PRISMA-S, quando pertinente). **Não há um ranking universal de superioridade entre esses caminhos.**
+<a id="2-problema-contribuição-e-escrita-científica"></a>
+## 2. Problem, contribution and scientific writing
 
-## 2. Problema, contribuição e escrita científica
+**Bispo (2023), Theoretical, Practical, Methodological and Didactic Contributions in Scientific Articles** — *text consulted*. Differentiates the four types of contribution and notes the importance of aligning contribution, format, focus and scope of the journal. **Application:** before writing, the researcher must state: who can learn what from the article, in what dimension it intends to contribute and what evidence would allow this claim to be defended. The same study can dialogue with several dimensions, but it should not promise practical results demonstrated when it only elaborates an artifact. DOI: https://doi.org/10.1590/1982-7849rac2023220256.por.
 
-**Bispo (2023), Contribuições Teóricas, Práticas, Metodológicas e Didáticas em Artigos Científicos** — *texto consultado*. Diferencia os quatro tipos de contribuição e observa a importância de alinhar contribuição, formato, foco e escopo do periódico. **Aplicação:** antes da redação, o pesquisador deve enunciar: quem pode aprender o quê com o artigo, em qual dimensão ele pretende contribuir e qual evidência permitiria defender essa pretensão. Um mesmo estudo pode dialogar com várias dimensões, mas não deve prometer resultados práticos demonstrados quando apenas elaborou um artefato. DOI: https://doi.org/10.1590/1982-7849rac2023220256.por.
+**Grant and Pollock (2011), Publishing in AMJ—Part 3: Setting the Hook** — *text consulted*. They organize the introduction into substantive questions: **who cares? What do we know/don't know and why does it matter? What will we learn?** **Application:** check that the introduction indicates the academic conversation, the relevant problem, the specific tension/gap, the contribution and the research strategy. **Limit:** do not transform this architecture into standardized writing or an artificial justification for originality. DOI: https://doi.org/10.5465/amj.2011.4000.
 
-**Grant e Pollock (2011), Publishing in AMJ—Part 3: Setting the Hook** — *texto consultado*. Organizam a introdução em perguntas substantivas: **quem se importa? o que sabemos/não sabemos e por que isso importa? o que aprenderemos?** **Aplicação:** conferir se a introdução indica a conversa acadêmica, o problema relevante, a tensão/lacuna específica, a contribuição e a estratégia de investigação. **Limite:** não transformar essa arquitetura em redação padronizada ou em justificativa artificial de ineditismo. DOI: https://doi.org/10.5465/amj.2011.4000.
+**Bono and McNamara (2011), Publishing in AMJ—Part 2: Research Design** — *text consulted*. They identify recurring problems in the compatibility between question and design, operationalization of constructs and model specification. **Application:** prohibit causal inference based only on cross-sectional comparison; separate explanatory, descriptive, interpretative and evaluative questions; explain threats to validity and alternatives. DOI: https://doi.org/10.5465/amj.2011.64869103.
 
-**Bono e McNamara (2011), Publishing in AMJ—Part 2: Research Design** — *texto consultado*. Identificam problemas recorrentes na compatibilidade entre pergunta e desenho, operacionalização dos construtos e especificação do modelo. **Aplicação:** proibir inferência causal baseada apenas em comparação transversal; separar pergunta explicativa, descritiva, interpretativa e avaliativa; explicitar ameaças à validade e alternativas. DOI: https://doi.org/10.5465/amj.2011.64869103.
+**Ragins (2012), Reflections on the Craft of Clear Writing** — *text consulted*. He maintains that clarity requires attention from the reader, an intelligible sequence of ideas and rewriting; Conceptual opacity should not be confused with sophistication. **Application:** audit long sentences, repetition of concepts, functionless paragraphs and unnecessary acronyms, without suppressing scientifically important qualifications or uncertainties. Reference: *Academy of Management Review*, 37(4), 493–501 (confirm editorial DOI before final bibliographic inclusion).
 
-**Ragins (2012), Reflections on the Craft of Clear Writing** — *texto consultado*. Sustenta que clareza exige atenção ao leitor, sequência inteligível de ideias e reescrita; opacidade conceitual não deve ser confundida com sofisticação. **Aplicação:** auditar frases longas, repetição de conceitos, parágrafos sem função e siglas desnecessárias, sem suprimir qualificações ou incertezas cientificamente importantes. Referência: *Academy of Management Review*, 37(4), 493–501 (confirmar DOI editorial antes de inclusão bibliográfica final).
+**Barney (2018), Positioning a Theory Paper for Publication** — *text consulted*. It differentiates the theoretical conversation that the author intends to integrate, the contribution and the way of presenting it. **Application:** in a theoretical article, require explicit contrast with the closest alternatives, limits of concepts and consequences of the proposition; The structure of the introduction must make the difference intelligible to the reader. DOI: https://doi.org/10.5465/amr.2018.0112.
 
-**Barney (2018), Positioning a Theory Paper for Publication** — *texto consultado*. Diferencia a conversa teórica que o autor pretende integrar, a contribuição e a forma de apresentá-la. **Aplicação:** em artigo teórico, exigir contraste explícito com as alternativas mais próximas, limites de conceitos e consequências da proposição; a estrutura da introdução deve tornar a diferença inteligível ao leitor. DOI: https://doi.org/10.5465/amr.2018.0112.
+**Campbell and Aguilera (2022), Why I Rejected Your Paper** — *text consulted*. They discuss weaknesses in theoretical articles: inadequacy for the journal, excessive breadth, unclear contribution and loss of coherence during reviews. **Application:** an editorial review of Skill must control conceptual dispersion and number of propositions, and preserve the central thesis after suggestions from reviewers. **Limit:** criteria from a particular journal do not become universal requirements. DOI: https://doi.org/10.5465/amr.2022.0331.
 
-**Campbell e Aguilera (2022), Why I Rejected Your Paper** — *texto consultado*. Discutem fragilidades de artigos teóricos: inadequação ao periódico, excesso de amplitude, contribuição pouco clara e perda de coerência durante revisões. **Aplicação:** uma revisão editorial da Skill deve controlar dispersão conceitual e número de proposições, e preservar a tese central após sugestões de pareceristas. **Limite:** critérios de um periódico particular não viram exigências universais. DOI: https://doi.org/10.5465/amr.2022.0331.
+**Joint contribution check:** (1) identify conversation and importance (Grant/Pollock); (2) locate assumptions and alternatives (Alvesson/Sandberg); (3) define the nature of the contribution (Bishop); (4) compare the proposal to nearby works (Barney); (5) check editorial coherence and adherence (Campbell/Aguilera); (6) review for clarity without erasing reservations (Ragins). This sequence is a **Skill heuristic**, not a formal protocol claimed by any of these authors.
 
-**Verificação conjunta de contribuição:** (1) identificar conversa e importância (Grant/Pollock); (2) localizar pressupostos e alternativas (Alvesson/Sandberg); (3) definir a natureza da contribuição (Bispo); (4) comparar a proposta a trabalhos próximos (Barney); (5) verificar coerência e aderência editorial (Campbell/Aguilera); (6) revisar a clareza sem apagar ressalvas (Ragins). Esta sequência é uma **heurística da Skill**, não protocolo formal reivindicado por qualquer desses autores.
+<a id="3-coerência-do-desenho-paradigmas-e-inferência"></a>
+## 3. Design coherence: paradigms and inference
 
-## 3. Coerência do desenho: paradigmas e inferência
+**Creswell and Creswell (2021, 5th Brazilian edition), Research project: qualitative, quantitative and mixed methods** — *text and editorial sheet consulted*. They emphasize the coherence between philosophical assumptions, problem, type of question, strategy and techniques. **Application:** declare whether the aim is to interpret meanings, describe patterns, estimate relationships, evaluate effects or integrate evidence; only then choose sampling, collection and analysis. A combination of quantitative and qualitative data is not automatically a mixed methods study; logic of integration and justification is required. ISBN of the edition examined: 978-65-81334-19-2.
 
-**Creswell e Creswell (2021, 5ª edição brasileira), Projeto de pesquisa: métodos qualitativo, quantitativo e misto** — *texto e ficha editorial consultados*. Enfatizam a coerência entre pressupostos filosóficos, problema, tipo de pergunta, estratégia e técnicas. **Aplicação:** declarar se se busca interpretar sentidos, descrever padrões, estimar relações, avaliar efeitos ou integrar evidências; só então escolher amostragem, coleta e análise. Uma combinação de dados quantitativos e qualitativos não é automaticamente estudo de métodos mistos; é necessária lógica de integração e justificativa. ISBN da edição examinada: 978-65-81334-19-2.
+**Myers (2013, 2nd ed.), Qualitative Research in Business & Management** — *text and edition consulted*. Guides the choice between positivist, interpretative and critical research in Administration and articulates methods of collection, analysis, triangulation and writing. **Application:** do not require neutrality, statistical reliability or intercoder agreement as universal quality criteria for any interpretative study. Ask what epistemological position has been taken and what evidence is appropriate to it. ISBN of the examined edition: 978-0-85702-974-4 (paperback).
 
-**Myers (2013, 2ª ed.), Qualitative Research in Business & Management** — *texto e edição consultados*. Orienta a escolha entre pesquisa positivista, interpretativa e crítica em Administração e articula métodos de coleta, análise, triangulação e escrita. **Aplicação:** não exigir neutralidade, confiabilidade estatística ou concordância intercodificadores como critérios universais de qualidade de todo estudo interpretativo. Perguntar qual posição epistemológica foi assumida e que evidência é apropriada a ela. ISBN da edição examinada: 978-0-85702-974-4 (brochura).
+**Merriam and Tisdell (2016, 4th ed.), Qualitative Research: A Guide to Design and Implementation** — *text and edition consulted*. It brings together question elaboration, selection of participants/cases, collection and analysis strategies, validity/credibility and reflexivity. **Application:** in qualitative design, explain the relationship between selection, context, sources, role of the researcher and transfer possibilities. A rich description or more interviews do not by themselves solve a problem of epistemological coherence.
 
-**Merriam e Tisdell (2016, 4ª ed.), Qualitative Research: A Guide to Design and Implementation** — *texto e edição consultados*. Reúne elaboração de perguntas, seleção de participantes/casos, estratégias de coleta e análise, validade/credibilidade e reflexividade. **Aplicação:** em desenho qualitativo, explicitar relação entre seleção, contexto, fontes, papel do pesquisador e possibilidades de transferência. Uma descrição rica ou mais entrevistas não resolve por si só um problema de coerência epistemológica.
+**Saunders, Lewis and Thornhill, Research Methods for Business Students** — *text and file consulted*. The copy consulted has **9th edition, 2023**, although some file names may suggest another year; cite the effective edition, never infer the year from the name of a PDF. The so-called *research onion* helps to distinguish philosophy, approach to theory, strategy, time horizon and procedures. **Application:** use the model as an aid to check design decisions, not as a rigid recipe or mandatory condition in articles of all approaches.
 
-**Saunders, Lewis e Thornhill, Research Methods for Business Students** — *texto e ficha consultados*. O exemplar consultado traz **9ª edição, 2023**, embora alguns nomes de arquivos possam sugerir outro ano; citar a edição efetiva, nunca inferir ano a partir do nome de um PDF. O chamado *research onion* ajuda a distinguir filosofia, abordagem à teoria, estratégia, horizonte temporal e procedimentos. **Aplicação:** usar o modelo como ajuda para conferir decisões de desenho, não como receita rígida ou condição obrigatória em artigos de todas as abordagens.
+**Decisional rule:** the design should not be chosen due to the convenience of the tool, the abundance of results in the databases, familiarity with software or the desire to appear rigorous. The Skill must state alternatives and a limitation before requesting a substantive decision from the researcher.
 
-**Regra decisória:** o desenho não deve ser escolhido por conveniência da ferramenta, pela abundância de resultados nas bases, por familiaridade com um software ou pelo desejo de parecer rigoroso. A Skill deve expor alternativas e uma limitação antes de solicitar a decisão substantiva do pesquisador.
+<a id="31-a-cebola-de-pesquisa-research-onion-integração-das-escolhas"></a>
+### 3.1. The Research Onion (*Research Onion*): integration of choices
 
-### 3.1. A Cebola de Pesquisa (*Research Onion*): integração das escolhas
+**Source consulted:** Saunders, Lewis and Thornhill, *Research Methods for Business Students*, 9th ed. (2023), chapters 4 and 5, especially figure 4.1. The figure in this edition credits the drawing by Mark N. K. Saunders (2022), developed from Saunders et al. (2019). The model is here **interpreted and explained in original words**, without reproduction of the editorial figure. Complement: Creswell and Creswell (2021, chapters 1, 8, 9 and 10). These works present the articulation between assumptions, question, design, procedure and interpretation.
 
-**Fonte consultada:** Saunders, Lewis e Thornhill, *Research Methods for Business Students*, 9ª ed. (2023), capítulos 4 e 5, especialmente a figura 4.1. A figura dessa edição credita o desenho de Mark N. K. Saunders (2022), desenvolvido a partir de Saunders et al. (2019). O modelo é aqui **interpretado e explicado em palavras originais**, sem reprodução da figura editorial. Complemento: Creswell e Creswell (2021, capítulos 1, 8, 9 e 10). Essas obras apresentam a articulação entre pressupostos, pergunta, desenho, procedimento e interpretação.
-
-A cebola é um **instrumento de coerência**, não uma classificação automática ou uma checklist que prove rigor. Na obra consultada, o percurso atravessa filosofia, abordagem ao desenvolvimento da teoria, escolha metodológica, estratégias, horizonte temporal e, no centro, técnicas e procedimentos (acesso, ética, seleção de amostra, coleta e análise). Saunders observa expressamente que as relações entre as camadas são relevantes, mas **não determinísticas**: não é correto traçar uma linha rígida entre uma filosofia e um único conjunto admissível de métodos.
-
-| Camada, da exterior para o centro | Alternativas/questões que o pesquisador considera | Decisão explicitável no projeto | Alerta contra automatização indevida |
+The onion is an **instrument of coherence**, not an automatic classification or a checklist that proves rigor. In the work consulted, the path crosses philosophy, approach to theory development, methodological choice, strategies, time horizon and, at the center, techniques and procedures (access, ethics, sample selection, collection and analysis). Saunders expressly notes that the relationships between the layers are relevant, but **not deterministic**: it is not correct to draw a hard line between a philosophy and a single admissible set of methods.| Layer, from the outside to the center | Alternatives/issues that the researcher considers | Decision made explicit in the project | Warning against undue automation |
 | --- | --- | --- | --- |
-| **1. Filosofia** | Positivismo, realismo crítico, interpretativismo, pós-modernismo, pragmatismo; pressupostos ontológicos, epistemológicos e axiológicos | O que contará como conhecimento e como o pesquisador se posiciona diante do objeto? | Não declarar automaticamente que “quantitativo = positivismo” ou “misto = pragmatismo” |
-| **2. Abordagem à teoria** | Dedução, indução, abdução | Testar proposições derivadas de teoria? Construir interpretações a partir do material? Alternar observação e teoria para formular explicações? | Dedução não é sinônimo exclusivo de estatística; abdução não é um atalho para atribuir causalidade |
-| **3. Escolha metodológica** | Mono-método quantitativo/qualitativo, multimétodo quantitativo/qualitativo, métodos mistos simples/complexos | Quais tipos de dados e lógicas analíticas são necessários para responder à questão? | Duas técnicas qualitativas não tornam o estudo “misto”; dados numéricos acessórios não tornam toda pesquisa quantitativa |
-| **4. Estratégias** | Levantamento (*survey*), experimento, análise de documentos/arquivos, estudo de caso, etnografia, *grounded theory*, pesquisa-ação, investigação narrativa, estratégias combinadas | Qual arranjo de investigação é defensável em função da pergunta, dos dados acessíveis e do contexto? | Estratégia não é apenas “ferramenta de coleta”; caso único não prova efeito, experimento exige intervenção/manipulação real |
-| **5. Horizonte temporal** | Transversal e longitudinal, com ondas ou períodos explicitados | Uma fotografia do fenômeno responde à pergunta, ou é necessário observar mudança ao longo do tempo? | Não deduzir evolução, efeito ou tendência com dados exclusivamente transversais |
-| **6. Técnicas e procedimentos** | Acesso, ética, população/casos, amostragem, tamanho amostral, instrumentos, coleta, tratamento de ausentes, análise, integração e reporte | Como as evidências serão produzidas, interpretadas, protegidas e auditadas? | Um plano de análise não é execução; instrumento proposto não é instrumento validado |
+| **1. Philosophy** | Positivism, critical realism, interpretivism, postmodernism, pragmatism; ontological, epistemological and axiological assumptions | What will count as knowledge and how does the researcher position themselves in relation to the object? | Do not automatically declare that “quantitative = positivism” or “mixed = pragmatism” |
+| **2. Approach to theory** | Deduction, induction, abduction | Test propositions derived from theory? Build interpretations from the material? Alternate observation and theory to formulate explanations? | Deduction is not exclusively synonymous with statistics; abduction is not a shortcut to attributing causality |
+| **3. Methodological choice** | Quantitative/qualitative mono-method, quantitative/qualitative multi-method, simple/complex mixed methods | What types of data and analytics are needed to answer the question? | Two qualitative techniques do not make the study “mixed”; accessory numerical data does not make all research quantitative |
+| **4. Strategies** | Survey (*survey*), experiment, document/file analysis, case study, ethnography, *grounded theory*, action research, narrative investigation, combined strategies | What research arrangement is defensible given the question, accessible data, and context? | Strategy is not just a “collection tool”; single case does not prove effect, experiment requires real intervention/manipulation |
+| **5. Time horizon** | Transverse and longitudinal, with explicit waves or periods | Does a photograph of the phenomenon answer the question, or is it necessary to observe change over time? | Do not deduce evolution, effect or trend with exclusively cross-sectional data |
+| **6. Techniques and procedures** | Access, ethics, population/cases, sampling, sample size, instruments, collection, treatment of absentees, analysis, integration and reporting | How will evidence be produced, interpreted, protected and audited? | An analysis plan is not execution; proposed instrument is not a validated instrument |
 
-**Leitura dos três raciocínios teóricos:** dedução parte de proposições teoricamente sustentadas e as coloca à prova; indução desenvolve interpretações ou proposições a partir da investigação empírica; abdução alterna conjecturas, material empírico e explicações alternativas. A pesquisa empírica pode integrar movimentos diferentes, desde que descreva o que aconteceu e por quê. Essa distinção deriva da discussão e da tabela 4.4 da edição consultada de Saunders; os exemplos abaixo são formulações didáticas da Skill.
+**Reading of the three theoretical reasonings:** deduction starts from theoretically supported propositions and puts them to the test; induction develops interpretations or propositions from empirical investigation; Abduction alternates conjecture, empirical material and alternative explanations. Empirical research can integrate different movements, as long as it describes what happened and why. This distinction derives from the discussion and table 4.4 of the consulted edition of Saunders; The examples below are Skill didactic formulations.
 
-**Caminho didático, não rígido:** explicitar primeiro a pergunta e a inferência desejada; percorrer as seis camadas para detectar incompatibilidades; justificar a alternativa escolhida e um limite relevante. A Skill deve mostrar ao pesquisador **o suficiente para entender a decisão** e conservar o detalhamento completo na documentação do estudo, sem multiplicar aprovações burocráticas. Reabrir decisões se dados ou restrições reais exigirem mudança; nunca reescrever retroativamente o desenho como se estivesse previsto desde o início.
+**Didactic, non-rigid path:** first explain the question and the desired inference; step through the six layers to detect incompatibilities; justify the chosen alternative and a relevant limit. The Skill must show the researcher **enough to understand the decision** and maintain complete details in the study documentation, without multiplying bureaucratic approvals. Reopen decisions if real data or constraints require change; never retroactively rewrite the design as if it was foreseen from the beginning.
 
-### 3.2. Métodos quantitativos: da pergunta à inferência responsável
+<a id="32-métodos-quantitativos-da-pergunta-à-inferência-responsável"></a>
+### 3.2. Quantitative methods: from question to responsible inference
 
-**Fontes principais consultadas:** Creswell e Creswell (2021), especialmente planejamento de levantamentos e experimentos; Saunders, Lewis e Thornhill (2023), capítulos sobre desenho e técnicas; Bono e McNamara (2011), sobre pergunta, construtos e especificação. **Complemento de relato verificado por fonte pública:** Appelbaum et al. (2018), padrões JARS–Quant, DOI https://doi.org/10.1037/amp0000191. **Escopo da verificação:** livros de estatística aplicada e econometria foram identificados em catálogo bibliográfico, mas suas cópias sem texto extraível não foram tomadas como base de passagens específicas nesta rodada; não atribuir-lhes conteúdo não examinado.
+**Main sources consulted:** Creswell and Creswell (2021), especially survey and experiment planning; Saunders, Lewis and Thornhill (2023), chapters on drawing and techniques; Bono and McNamara (2011), on question, constructs and specification. **Additional report verified by public source:** Appelbaum et al. (2018), JARS–Quant standards, DOI https://doi.org/10.1037/amp0000191. **Scope of verification:** books on applied statistics and econometrics were identified in the bibliographic catalog, but their copies without extractable text were not taken as the basis of specific passages in this round; do not attribute unexamined content to them.
 
-**Escolher primeiro o tipo de pergunta:**
+**Choose the type of question first:**
 
-| Finalidade | Formulação adequada | Dados/desenho frequentemente pertinentes | Inferência máxima sem pressupostos adicionais |
+| Purpose | Appropriate formulation | Frequently relevant data/design | Maximum inference without additional assumptions |
 | --- | --- | --- | --- |
-| **Descrição** | Qual é a distribuição de um indicador nas unidades observadas? | Registros administrativos; levantamento; estatística descritiva | Retrato dos registros e, se amostragem apropriada, da população-alvo delimitada |
-| **Associação** | X e Y variam conjuntamente após especificar controles relevantes? | Dados transversais ou longitudinais; correlação/regressão justificada | Associação condicionada às variáveis e ao desenho, não causalidade demonstrada |
-| **Predição** | Até que ponto variáveis observadas antecipam um resultado em dados novos? | Bases separadas de desenvolvimento/avaliação; validação temporal ou fora da amostra | Desempenho preditivo observado nas condições de teste, não explicação causal |
-| **Comparação de grupos** | Qual a diferença entre grupos e qual a incerteza? | Grupos comparáveis; instrumentos consistentes; justificativa de testes | Diferença estimada; interpretar seleção/confundimento antes de qualquer claim causal |
-| **Mudança no tempo** | Como variou um indicador em períodos observados? | Séries temporais, painéis ou medidas repetidas, com registros datados | Evolução temporal descritiva; não atribuir a mudança a um evento sem desenho identificador |
-| **Avaliação de efeito causal** | Qual efeito de uma intervenção comparada a contrafactual defensável? | Experimento randomizado quando viável, ou desenho quase-experimental adequadamente justificado | Efeito apenas sob hipóteses de identificação explícitas, diagnósticos e limitações |
+| **Description** | What is the distribution of an indicator across observed units? | Administrative records; lifting; descriptive statistics | Portrait of records and, if appropriate sampling, of the delimited target population |
+| **Association** | Do X and Y vary together after specifying relevant controls? | Cross-sectional or longitudinal data; justified correlation/regression | Association conditioned on variables and design, not demonstrated causality |
+| **Prediction** | To what extent observed variables anticipate a result in new data? | Separate development/evaluation bases; temporal or out-of-sample validation | Predictive performance observed in test conditions, not causal explanation |
+| **Group comparison** | What is the difference between groups and what is the uncertainty? | Comparable groups; consistent instruments; test justification | Estimated difference; interpret selection/confounding before any causal claim |
+| **Change in time** | How did an indicator vary in observed periods? | Time series, panels or repeated measures, with dated records | Descriptive temporal evolution; do not attribute the change to an event without drawing identifier |
+| **Evaluation of causal effect** | What is the effect of an intervention compared to a defensible counterfactual? | Randomized experiment when feasible, or adequately justified quasi-experimental design | Effect only under explicit identification assumptions, diagnoses and limitations |
 
-**Pontos de controle do desenho quantitativo (específicos, não cosméticos):**
+**Quantitative design control points (specific, not cosmetic):**1. **Population and unit of analysis.** Define whether the unit is a person, organization, event, process or period; identify universe, criteria, coverage, selection and possible groupings. Do not confuse number of records with number of independent units.
+2. **Constructs and operationalization.** Formulate theoretical definition, observed variable, source, scale, period, direction of coding and validity of the measure. Administrative proxy does not automatically equate to the theoretical concept.
+3. **Sampling and power/precision.** Justify inclusion/exclusion, probabilistic strategy or not, available size, losses and, when appropriate, precision or power of the study. Never fabricate power calculations or call convenience random sampling.
+4. **Data quality and governance.** Document origin, time window, version, linking, duplicates, missing values, errors, transformations and cleaning decisions. Preserve previous result before modifying data.
+5. **Proportional analytical plan.** Differentiate between description, hypothesis testing, predictive modeling, explanation and causal inference. Specify target estimates when effect is intended, justifiable variables/controls, assumptions and sensitivity analyses.
+6. **Estimates and uncertainty.** Report effect size/coefficient, unit, confidence intervals or appropriate measures, assumptions, effective sample, and transparency of exploratory analyses. Isolated p-value does not prove substantive importance or truth of the hypothesis.
+7. **Validity and alternative explanations.** Examine confounding, selection, reverse causality, measurement, temporality, inadequate specification, sample loss and transferability. The greater the allegation, the greater the duty to support.
+8. **Observable reproducibility.** When possible and authorized, preserve dictionary, processing rules, code actually executed, environment, results and versions. Do not claim statistical execution without accessed data nor confuse valid script with validated scientific results.
 
-1. **População e unidade de análise.** Definir se a unidade é pessoa, organização, evento, processo ou período; identificar universo, critérios, cobertura, seleção e eventuais agrupamentos. Não confundir quantidade de registros com número de unidades independentes.
-2. **Construtos e operacionalização.** Formular definição teórica, variável observada, fonte, escala, período, sentido de codificação e validade da medida. Proxy administrativa não equivale automaticamente ao conceito teórico.
-3. **Amostragem e poder/precisão.** Justificar inclusão/exclusão, estratégia probabilística ou não, tamanho disponível, perdas e, quando apropriado, precisão ou poder do estudo. Nunca fabricar cálculo de poder ou chamar conveniência de amostragem aleatória.
-4. **Qualidade e governança dos dados.** Documentar origem, janela temporal, versão, vinculação, duplicidades, valores ausentes, erros, transformações e decisões de limpeza. Preservar resultado anterior antes de modificar dados.
-5. **Plano analítico proporcional.** Diferenciar descrição, teste de hipóteses, modelagem preditiva, explicação e inferência causal. Especificar estimando-alvo quando se pretende efeito, variáveis/controles justificáveis, suposições e análises de sensibilidade.
-6. **Estimativas e incerteza.** Relatar tamanho de efeito/coeficiente, unidade, intervalos de confiança ou medidas apropriadas, pressupostos, amostra efetiva e transparência de análises exploratórias. Valor de p isolado não prova importância substantiva nem verdade da hipótese.
-7. **Validade e explicações alternativas.** Examinar confundimento, seleção, causalidade reversa, mensuração, temporalidade, especificação inadequada, perda amostral e transferibilidade. Quanto maior a alegação, maior o dever de sustentação.
-8. **Reprodutibilidade observável.** Quando possível e autorizado, conservar dicionário, regras de tratamento, código realmente executado, ambiente, resultados e versões. Não afirmar execução estatística sem dados acessados nem confundir script válido com resultados científicos validados.
+**Designs that should not be equated:** cross-sectional survey, experiment, quasi-experiment, longitudinal panel, time series analysis and correlational study allow different questions and inferences. Techniques such as regression, fixed effects, interrupted series or differences-in-differences should only be proposed if there is a compatible data configuration and identifying argument. A numerical estimate does not eliminate the need for a counterfactual to the effect claim.
 
-**Desenhos que não devem ser equiparados:** levantamento transversal, experimento, quase-experimento, painel longitudinal, análise de série temporal e estudo correlacional permitem perguntas e inferências distintas. Técnicas como regressão, efeitos fixos, séries interrompidas ou diferenças-em-diferenças só devem ser propostas se existir configuração dos dados e argumento identificador compatíveis. Uma estimativa numérica não elimina a necessidade de um contrafactual para a alegação de efeito.
+**Compatibility with the onion:** a quantitative deductive design can employ questionnaires or secondary data, on a transversal or longitudinal horizon, under a justified philosophy. But philosophical guidance alone **does not ensure** measurement reliability, randomization, exogeneity, representative sample, or causal validity. The actual empirical conditions decide the scope of the conclusion.
 
-**Compatibilidade com a cebola:** um desenho dedutivo quantitativo pode empregar questionários ou dados secundários, em horizonte transversal ou longitudinal, sob filosofia justificada. Mas a orientação filosófica por si só **não assegura** confiabilidade de medidas, aleatorização, exogeneidade, amostra representativa ou validade causal. As condições empíricas reais decidem o alcance da conclusão.
+**JARS–Quant (Appelbaum et al., 2018):** guidelines for communicating quantitative research transparently, including distinctions between primary, secondary, and exploratory hypotheses/analyses, as well as information specific to observational, longitudinal, experimental designs, and particular techniques. It is **report** guidance, developed for Psychology; Its application to Administration depends on the periodical and the actual design. It does not replace a methodological plan, validation of hypotheses or transparency regarding subsequent data exploration.
 
-**JARS–Quant (Appelbaum et al., 2018):** diretrizes para comunicar pesquisa quantitativa de modo transparente, incluindo distinção entre hipóteses/análises primárias, secundárias e exploratórias, além de informações específicas para desenhos observacionais, longitudinais, experimentais e técnicas particulares. É orientação de **relato**, desenvolvida para Psicologia; sua aplicação à Administração depende do periódico e do desenho real. Não substitui plano metodológico, validação das hipóteses ou transparência sobre exploração posterior dos dados.
+<a id="33-métodos-mistos-a-integração-é-uma-contribuição-não-um-ornamento"></a>
+### 3.3. Mixed methods: integration is a contribution, not an ornament
 
-### 3.3. Métodos mistos: a integração é uma contribuição, não um ornamento
+**Sources consulted:** Creswell and Creswell (2021, chapter 10 and introductory discussion on projects); Saunders, Lewis and Thornhill (2023, distinction between mono-method, multi-method and mixed); Fetters, Curry and Creswell (2013), *Achieving Integration in Mixed Methods Designs—Principles and Practices* ([DOI](https://doi.org/10.1111/1475-6773.12117), public editorial text and metadata consulted); Levitt et al. (2018), JARS–Qual/Mixed ([DOI](https://doi.org/10.1037/amp0000151), public reference and editorial description verified).
 
-**Fontes consultadas:** Creswell e Creswell (2021, capítulo 10 e discussão introdutória sobre projetos); Saunders, Lewis e Thornhill (2023, distinção entre mono-método, multimétodo e misto); Fetters, Curry e Creswell (2013), *Achieving Integration in Mixed Methods Designs—Principles and Practices* ([DOI](https://doi.org/10.1111/1475-6773.12117), texto e metadados editoriais públicos consultados); Levitt et al. (2018), JARS–Qual/Mixed ([DOI](https://doi.org/10.1037/amp0000151), referência e descrição editorial públicas verificadas).
+**Defining rule:** a mixed methods study mobilizes **substantial quantitative and qualitative** components, articulated to answer a question that **an isolated strand would not answer in the same way**. It is necessary to demonstrate **when, where and how integration occurs**. The simple presence of interviews and percentages in the same article is not enough.
 
-**Regra definidora:** um estudo de métodos mistos mobiliza componentes **quantitativos e qualitativos substanciais**, articulados para responder a uma pergunta que **uma vertente isolada não responderia da mesma maneira**. É necessário demonstrar **quando, onde e como ocorre a integração**. A simples presença de entrevistas e percentuais no mesmo artigo não basta.
+**Difference between choices for the third onion layer:**
 
-**Diferença entre escolhas da terceira camada da cebola:**
-
-| Escolha | Exemplo estrutural | O que exige relatar |
+| Choose | Structural example | What requires reporting |
 | --- | --- | --- |
-| Mono-método quantitativo | Um levantamento com estratégia e dados quantitativos centrais | População, variáveis, instrumentos, qualidade dos dados e inferência |
-| Multimétodo quantitativo | Duas técnicas quantitativas no mesmo estudo | Articulação entre técnicas, sem rotular como misto |
-| Mono-método qualitativo | Entrevistas em estudo interpretativo | Contexto, amostragem, reflexividade, análise e limitações |
-| Multimétodo qualitativo | Entrevistas e observação com análises qualitativas | Relação entre fontes e interpretações, sem rotular como misto |
-| **Métodos mistos** | Estimativas quantitativas **e** investigação qualitativa integradas | Objetivos de cada vertente, timing, amostras, pontos de integração e meta-inferência |
+| Quantitative mono-method | A survey with strategy and central quantitative data | Population, variables, instruments, data quality and inference |
+| Quantitative multimethod | Two quantitative techniques in the same study | Articulation between techniques, without labeling them as mixed |
+| Qualitative mono-method | Interpretive study interviews | Context, sampling, reflexivity, analysis and limitations |
+| Qualitative multimethod | Interviews and observation with qualitative analyzes | Relationship between sources and interpretations, without labeling as mixed |
+| **Mixed methods** | Integrated quantitative estimates **and** qualitative research | Objectives for each aspect, timing, samples, integration points and meta-inference |
 
-**Três desenhos centrais descritos por Creswell e retomados por Fetters e colaboradores:**
+**Three central drawings described by Creswell and taken up by Fetters and collaborators:**
 
-| Desenho | Sequência lógica | Integração justificável | Questão que permanece aberta se faltar integração |
+| Drawing | Logical sequence | Justifiable integration | Question that remains open if integration is lacking |
 | --- | --- | --- | --- |
-| **Convergente** | QUAN e QUAL desenvolvidos em paralelo e reunidos | Comparar convergências, complementaridades e discrepâncias para produzir interpretação conjunta | Por que não bastariam dois estudos independentes? |
-| **Sequencial explanatório** | QUAN → QUAL | Selecionar casos/participantes ou perguntas qualitativas à luz dos resultados quantitativos para explicar padrões, anomalias ou mecanismos | As entrevistas realmente esclarecem os resultados numéricos? |
-| **Sequencial exploratório** | QUAL → QUAN | Usar categorias, experiências ou construtos identificados na primeira fase para desenvolver/adaptar instrumentos, variáveis ou hipóteses a serem examinados quantitativamente | O instrumento deriva das evidências qualitativas e foi efetivamente examinado na segunda fase? |
+| **Convergent** | QUAN and QUAL developed in parallel and brought together | Compare convergences, complementarities and discrepancies to produce joint interpretation | Why wouldn't two independent studies suffice? |
+| **Explanatory sequence** | QUAN → WHICH | Select cases/participants or qualitative questions in light of quantitative results to explain patterns, anomalies, or mechanisms | Do interviews really clarify numerical results? |
+| **Exploratory sequence** | WHICH → QUAN | Use categories, experiences or constructs identified in the first phase to develop/adapt instruments, variables or hypotheses to be examined quantitatively | Did the instrument derive from qualitative evidence and was it effectively examined in the second phase? |
 
-Creswell também discute componentes mistos **incorporados** a experimentos, avaliações e projetos participativos. O enquadramento como “métodos mistos” depende de contribuição substantiva e integração real, não de acrescentar um depoimento ilustrativo a uma tabela numérica.
+Creswell also discusses mixed components **incorporated** into experiments, evaluations, and participatory projects. Framing as “mixed methods” depends on substantive contribution and real integration, not on adding an illustrative statement to a numerical table.
 
-**Quatro maneiras de integrar, sistematizadas por Fetters, Curry e Creswell (2013):**
-- **Connecting (conectar):** uma base ou fase orienta a amostragem da outra; registrar a regra e os casos selecionados.
-- **Building (construir):** a análise de uma vertente informa o instrumento/protocolo da outra; registrar a passagem justificável entre achado e instrumento.
-- **Merging (combinar):** reunir achados de ambas as vertentes para comparar convergências e diferenças, sem somar mecanicamente números e citações.
-- **Embedding (incorporar):** integrar uma vertente em momentos específicos de um estudo maior, com motivo e papel explícitos.
+**Four ways to integrate, systematized by Fetters, Curry and Creswell (2013):**
+- **Connecting:** one base or phase guides the sampling of the other; record the rule and selected cases.
+- **Building:** the analysis of one aspect informs the instrument/protocol of the other; record the justifiable passage between finding and instrument.
+- **Merging:** bring together findings from both aspects to compare convergences and differences, without mechanically adding numbers and citations.
+- **Embedding:** integrate an aspect into specific moments of a larger study, with an explicit reason and role.**Three levels of integration:** design (why and when to join), method (how to connect or merge collection/analysis) and interpretation/report (what is learned from the combination). Fetters et al. they also describe **joint displays**: charts/tables/figures that place quantitative and qualitative findings in an analytical relationship, allowing new interpretations to be derived, and not just embellishing the text. When evidence contradicts one another, maintain the disagreement and investigate its cause; do not force consensus.
 
-**Três níveis de integração:** desenho (por que e quando juntar), método (como conectar ou mesclar coleta/análise) e interpretação/relato (o que se aprende da combinação). Fetters et al. descrevem também **joint displays**: quadros/tabelas/figuras que colocam achados quantitativos e qualitativos em relação analítica, permitindo derivar novas interpretações, e não apenas enfeitar o texto. Quando as evidências se contradizem, manter a discordância e investigar sua causa; não forçar consenso.
+**Example of joint display as a structure only, without fictitious results:**
 
-**Exemplo de joint display apenas como estrutura, sem resultados fictícios:**
-
-| Pergunta integrada | Achado QUAN verificado | Achado QUAL verificado | Convergência, expansão ou discordância | Meta-inferência provisória e limite |
+| Integrated question | QUAN finding verified | QUAL finding verified | Convergence, expansion or disagreement | Provisional and threshold meta-inference |
 | --- | --- | --- | --- | --- |
-| [questão efetivamente definida] | [estimativa observada, fonte, N e incerteza] | [tema/trecho e localizador realmente conferidos] | [juízo justificado sobre o encaixe] | [interpretação sustentada por ambas as vertentes; contradições preservadas] |
+| [issue effectively defined] | [observed estimate, source, N and uncertainty] | [theme/excerpt and finder actually checked] | [justified judgment about fitting] | [interpretation supported by both sides; contradictions preserved] |
 
-Esses colchetes são **campos vazios de exemplo**, não dados, participantes, testes ou observações executados. Se uma coluna não estiver sustentada, declarar a lacuna; não preenchê-la com texto plausível produzido pela IA.
+These brackets are **empty example fields**, not performed data, participants, tests, or observations. If a column is not supported, declare the gap; do not fill it with plausible text produced by AI.
 
-**Perguntas específicas para rigor dos métodos mistos:**
+**Specific questions for rigor of mixed methods:**
 
-1. O que a combinação acrescenta à pergunta, em comparação a apenas um dos caminhos?
-2. Qual é a prioridade relativa (QUAN, QUAL ou equilibrada) e o timing real de cada vertente?
-3. Qual população/amostra/seleção atende cada vertente e onde as amostras se conectam?
-4. Qual qualidade é esperada **em cada vertente**, considerando seus pressupostos distintos?
-5. Qual integração efetivamente aconteceu: conexão, construção, combinação ou incorporação?
-6. O que se conclui **a partir da integração** que não se poderia concluir das vertentes isoladas?
-7. Quais resultados divergem, por que podem divergir e que incerteza isso mantém?
-8. Que direitos, consentimentos, privacidade e possíveis identificações cruzadas afetam a combinação dos dados?
+1. What does the combination add to the question, compared to just one of the paths?
+2. What is the relative priority (QUAN, QUAL or balanced) and the real timing of each aspect?
+3. Which population/sample/selection meets each strand and where do the samples connect?
+4. What quality is expected **in each aspect**, considering their different assumptions?
+5. Which integration actually took place: connection, construction, combination or incorporation?
+6. What can be concluded **from the integration** that could not be concluded from the isolated aspects?
+7. What results differ, why might they differ, and what uncertainty does this maintain?
+8. What rights, consents, privacy and possible cross-identifications affect data combination?
 
-**JARS–Mixed:** orientação editorial complementar para comunicar objetivos das vertentes, lógica da integração, procedimentos, resultados e interpretação sem ocultar disparidades. Não é um carimbo de qualidade: a norma específica de cada periódico tem prioridade, e regras de Psicologia não são automaticamente obrigatórias em Administração.
+**JARS–Mixed:** complementary editorial guidance to communicate strand objectives, integration logic, procedures, results and interpretation without hiding disparities. It is not a stamp of quality: the specific rules of each journal have priority, and Psychology rules are not automatically mandatory in Administration.
 
-### 3.4. Exemplos comparativos de projeto — todos hipotéticos, sem coleta realizada
+<a id="34-exemplos-comparativos-de-projeto-todos-hipotéticos-sem-coleta-realizada"></a>
+### 3.4. Comparative project examples — all hypothetical, with no collection carried out
 
-Os exemplos mostram o papel orientador das camadas. Não são resultados nem planos impostos ao usuário.
+The examples show the guiding role of layers. They are not results or plans imposed on the user.
 
-**Exemplo A — quantitativo descritivo/associativo.** Pergunta: “Como variam os tempos registrados de tramitação segundo características de demandas e períodos?” O pesquisador poderia utilizar registros autorizados, definir demanda como unidade de análise, delimitar janela temporal, tratar datas faltantes e estimar distribuições e associações com incerteza adequada. **Não pode concluir que uma ferramenta causou redução de tempo** apenas porque observou diferenças entre períodos ou grupos.
+**Example A — descriptive/associative quantitative.** Question: “How do recorded processing times vary according to characteristics of demands and periods?” The researcher could use authorized records, define demand as the unit of analysis, delimit a time window, treat missing dates and estimate distributions and associations with adequate uncertainty. **You cannot conclude that a tool caused time reduction** just because you observed differences between periods or groups.
 
-**Exemplo B — qualitativo interpretativo.** Pergunta: “Como profissionais compreendem atrasos na tramitação de demandas e atribuem sentido às práticas de acompanhamento?” Escolha metodológica condicionada à natureza da experiência e ao acesso real a entrevistas/documentos. Reflexividade e critérios de qualidade são próprios do desenho escolhido; não é pesquisa quantitativa fracassada nem precisa produzir percentuais para ser legítima.
+**Example B — interpretative qualitative.** Question: “How do professionals understand delays in processing demands and attribute meaning to monitoring practices?” Methodological choice conditioned by the nature of the experience and real access to interviews/documents. Reflectivity and quality criteria are specific to the chosen design; It is not failed quantitative research nor does it need to produce percentages to be legitimate.**Example C — explanatory sequential mix.** Question: “What delay patterns appear in the records and how do agents understand the organizational mechanisms associated with these patterns?” A QUAN phase describes the patterns; subsequent QUAL selection is informed by observed cases or anomalies; integration confronts estimates and interpretations. **Without the second phase actually executed and integrated, the study cannot be reported as complete.**
 
-**Exemplo C — misto sequencial explanatório.** Pergunta: “Quais padrões de atraso aparecem nos registros e como os agentes compreendem os mecanismos organizacionais associados a esses padrões?” Uma fase QUAN descreve os padrões; a seleção QUAL subsequente é informada por casos ou anomalias observados; a integração confronta estimativas e interpretações. **Sem a segunda fase realmente executada e integrada, o estudo não pode ser reportado como completo.**
+**Example D — exploratory sequential mix.** Question: “What dimensions of administrative friction are perceived and how can they be operationalized and examined in a delimited population?” A QUAL phase substantiates constructs/items; a subsequent QUAN phase examines the properties and distribution of the measures; the instrument-evidence bridge is made explicit. The preliminary development of a scale does not equate to its validation.
 
-**Exemplo D — misto sequencial exploratório.** Pergunta: “Quais dimensões da fricção administrativa são percebidas e como podem ser operacionalizadas e examinadas em uma população delimitada?” Uma fase QUAL fundamenta construtos/itens; uma fase QUAN subsequente examina as propriedades e distribuição das medidas; a ponte instrumento-evidência é explicitada. O desenvolvimento preliminar de uma escala não equivale a sua validação.
+**Example E — intervention evaluation.** Question: “What effect does a procedure have on processing time, relative to a valid comparison?” The answer requires a design that supports counterfactuals and observes results; Interviews can integrate analysis of mechanisms and implementation. **The use of C.A.D.A. as task organization does not constitute, in itself, an experimental treatment or evidence of the effect.**
 
-**Exemplo E — avaliação de intervenção.** Pergunta: “Qual efeito de um procedimento sobre o tempo de processamento, relativamente a uma comparação válida?” A resposta exige um desenho que sustente contrafactual e observe resultados; entrevistas podem integrar análise de mecanismos e implementação. **O uso de C.A.D.A. como organização de tarefas não constitui, por si, tratamento experimental nem evidência do efeito.**
+<a id="35-como-operacionalizar-a-cebola-na-skill-sem-ampliar-o-teatro-da-rastreabilidade"></a>
+### 3.5. How to operationalize the onion in Skill without expanding the “traceability theater”
 
-### 3.5. Como operacionalizar a cebola na Skill sem ampliar o “teatro da rastreabilidade”
+The Research Onion must appear as a **compact training support** when choosing the design and be documented in depth here. Do not add new ID families, tabs, mandatory forms or artificial logs. For a specific article:
 
-A Cebola de Pesquisa deve aparecer como **apoio formativo compacto** na escolha do desenho e estar documentada em profundidade aqui. Não acrescentar novas famílias de IDs, abas, formulários obrigatórios ou logs artificiais. Para um artigo concreto:
+1. **Brief diagnosis:** AI identifies what the user wants to *describe, interpret, explain, predict, evaluate or integrate*, showing two relevant methodological alternatives and their respective limitations.
+2. **Coherence between layers:** record in the existing protocol a concise synthesis of philosophy/assumptions when relevant, logic of theory, methodological choice, strategy, horizon and real procedures. Do not invent philosophical decisions if the user has not yet defined it.
+3. **Selective attention:** in quantitative, focus monitoring on measurements, sample, treatment, inference and causal limits; in mixed, in the **separate quality of the strands and in integration**; in qualitative terms, in epistemological coherence and in the interpretative chain.
+4. **Formative gate only where it matters:** the researcher explains, in their own language, why their choice responds to the problem and what limit they recognize. AI clarifies difficult terms and keeps the decision pending if understanding is lacking; **never produces a false human justification**.
+5. **Observable execution:** scripts, instruments, statistical analyses, coding, interviews, and data must be recorded as **predicted**, **actually executed**, or **not verified**. Do not convert model/script into achieved result.
+6. **Prospective correction:** when the data contradicts the initial project, record the real change and the reason, preserving the previous state, instead of fabricating a retrospectively perfect plan.
+7. **Proportional communication:** in the final article, report the chosen design and the chain of evidence, do not dump the entire onion taxonomy or Skill's internal controls.
 
-1. **Diagnóstico breve:** a IA identifica o que o usuário quer *descrever, interpretar, explicar, predizer, avaliar ou integrar*, mostrando duas alternativas metodológicas pertinentes e as respectivas limitações.
-2. **Coerência entre camadas:** registrar no protocolo já existente uma síntese concisa de filosofia/pressupostos quando relevantes, lógica da teoria, escolha metodológica, estratégia, horizonte e procedimentos reais. Não inventar decisão filosófica se o usuário ainda não a definiu.
-3. **Atenção seletiva:** em quantitativos, concentrar acompanhamento em medidas, amostra, tratamento, inferência e limites causais; em mistos, na **qualidade separada das vertentes e na integração**; em qualitativos, na coerência epistemológica e no encadeamento interpretativo.
-4. **Gate formativo somente onde importa:** o pesquisador explica, em linguagem própria, por que sua escolha responde ao problema e qual limite reconhece. A IA esclarece termos difíceis e mantém a decisão pendente se faltar compreensão; **nunca produz uma falsa justificativa humana**.
-5. **Execução observável:** scripts, instrumentos, análises estatísticas, codificação, entrevistas e dados devem ser registrados como **previstos**, **realmente executados** ou **não verificados**. Não converter modelo/roteiro em resultado realizado.
-6. **Correção prospectiva:** quando os dados contradisserem o projeto inicial, registrar a mudança real e o motivo, preservando o estado anterior, em vez de fabricar um planejamento retrospectivamente perfeito.
-7. **Comunicação proporcional:** no artigo final, relatar o desenho escolhido e a cadeia de evidência, não despejar toda a taxonomia da cebola ou os controles internos da Skill.
+**Governance rule for AI:** use Saunders and Creswell to **ask better methodological questions**, not to researcher choose a philosophy or automatically convert objectives into procedures. The methodological inference made by Skill is a **proposal subject to criticism**, not a human scientific decision.
 
-**Regra de governança para a IA:** use Saunders e Creswell para **fazer perguntas metodológicas melhores**, não para escolher pelo pesquisador uma filosofia ou converter automaticamente objetivos em procedimentos. A inferência metodológica feita pela Skill é uma **proposta passível de crítica**, não uma decisão científica humana.
+<a id="4-pesquisa-qualitativa-diferenças-que-não-podem-desaparecer"></a>
+## 4. Qualitative research: differences that cannot disappear
 
-## 4. Pesquisa qualitativa: diferenças que não podem desaparecer
+<a id="41-análise-temática-e-análise-qualitativa-de-dados"></a>
+### 4.1. Thematic analysis and qualitative data analysis
 
-### 4.1. Análise temática e análise qualitativa de dados
+**Braun and Clarke (2006), Using thematic analysis in psychology** — *article consulted*. They present flexible thematic analysis and require explanation of assumptions, treatment of patterns and analytical decisions. DOI: https://doi.org/10.1191/1478088706qp063oa.
 
-**Braun e Clarke (2006), Using thematic analysis in psychology** — *artigo consultado*. Apresentam análise temática flexível e exigem explicitação de pressupostos, tratamento dos padrões e decisões analíticas. DOI: https://doi.org/10.1191/1478088706qp063oa.
+**Braun and Clarke (2022), Thematic Analysis: A Practical Guide** — *book consulted*. They develop reflective thematic analysis, with emphasis on situated subjectivity, familiarization, coding and **interpretative construction of themes**. They discuss coding reliability approaches, *codebook* approaches, and reflective approaches as different members of the thematic family. **Application:** if the researcher adopts reflective thematic analysis, do not mechanically require Kappa nor treat themes as objects that simply “emerge” in a neutral way. AI can suggest codes and patterns, but it should not claim independent human reflexivity, interpretation, or coding. ISBN consulted: 978-1-4739-5324-6.
 
-**Braun e Clarke (2022), Thematic Analysis: A Practical Guide** — *livro consultado*. Desenvolvem a análise temática reflexiva, com destaque para subjetividade situada, familiarização, codificação e **construção interpretativa de temas**. Discutem abordagens de confiabilidade de codificação, abordagens por *codebook* e abordagens reflexivas como membros diferentes da família temática. **Aplicação:** se o pesquisador adota análise temática reflexiva, não exigir mecanicamente Kappa nem tratar temas como objetos que simplesmente “emergem” de modo neutro. IA pode sugerir códigos e padrões, mas não deve reivindicar reflexividade, interpretação ou codificação humana independente. ISBN consultado: 978-1-4739-5324-6.
+**Miles, Huberman and Saldaña (2014, 3rd ed.), Qualitative Data Analysis: A Methods Sourcebook** — *book consulted*. Works on data condensation operations, *displays* and preparation/verification of conclusions, associated with the documentation of the analytical chain. **Application:** build matrices and comparisons that allow you to revisit evidence, contrasts and negative cases, without confusing visual organization with completed analysis. ISBN: 978-1-4522-5787-7.
 
-**Miles, Huberman e Saldaña (2014, 3ª ed.), Qualitative Data Analysis: A Methods Sourcebook** — *livro consultado*. Trabalha operações de condensação dos dados, *displays* e elaboração/verificação de conclusões, associadas à documentação do encadeamento analítico. **Aplicação:** construir matrizes e comparações que permitam revisitar evidências, contrastes e casos negativos, sem confundir organização visual com análise concluída. ISBN: 978-1-4522-5787-7.
+**Saldaña (2009), The Coding Manual for Qualitative Researchers** — *book consulted*. Differentiates coding cycles and highlights analytical memos as part of the interpretative construction. **Application:** record definition, change and justification of codes, as well as the excerpts that support them; refuse the saturation claim just because a taxonomy has been fulfilled. ISBN: 978-1-84787-549-5.
 
-**Saldaña (2009), The Coding Manual for Qualitative Researchers** — *livro consultado*. Diferencia ciclos de codificação e destaca memos analíticos como parte da construção interpretativa. **Aplicação:** registrar definição, alteração e justificativa de códigos, bem como os trechos que lhes dão sustentação; recusar a afirmação de saturação só porque uma taxonomia foi preenchida. ISBN: 978-1-84787-549-5.
+**Decisive distinction:** coding, thematic analysis and synthesis of a review are not synonymous. Categories produced to organize literature are not automatically topics of empirical research; a grouping by frequency does not demonstrate interpretative relevance.
 
-**Distinção decisiva:** codificação, análise temática e síntese de uma revisão não são sinônimos. Categorias produzidas para organizar literatura não são automaticamente temas de pesquisa empírica; um agrupamento por frequência não demonstra relevância interpretativa.
+<a id="42-estudos-de-caso-e-construção-de-teoria"></a>
+### 4.2. Case studies and theory building
 
-### 4.2. Estudos de caso e construção de teoria
+**Yin (2018, 6th ed.), Case Study Research and Applications: Design and Methods** — *book and editorial sheet consulted*. Highlights the delimitation of the case, propositions/issues, multiple sources, chain of evidence and analysis of rival explanations. **Application:** require unit of analysis, context, period, justification of the case and tracking between materials and conclusions. The use of the term “case” in a document does not automatically constitute a case study. ISBN: 978-1-5063-3616-9.
 
-**Yin (2018, 6ª ed.), Case Study Research and Applications: Design and Methods** — *livro e ficha editorial consultados*. Salienta a delimitação do caso, proposições/questões, múltiplas fontes, cadeia de evidências e análise de explicações rivais. **Aplicação:** exigir unidade de análise, contexto, período, justificativa do caso e rastreio entre materiais e conclusões. O uso do termo “caso” num documento não constitui automaticamente estudo de caso. ISBN: 978-1-5063-3616-9.
+**Eisenhardt (1989), Building Theories from Case Study Research** — *article consulted*. Develops an iterative and inductive approach to theory building with analysis within and between cases, continuous approach to data and replication logic. **Application:** distinguish the descriptive study of a single case from the ambition to produce theoretical propositions from cases. Without data from multiple cases, do not claim inter-case comparison performed. Reference: *Academy of Management Review*, 14(4), 532–550.
 
-**Eisenhardt (1989), Building Theories from Case Study Research** — *artigo consultado*. Desenvolve abordagem iterativa e indutiva de construção de teoria com análise dentro e entre casos, aproximação contínua aos dados e lógica de replicação. **Aplicação:** distinguir o estudo descritivo de um único caso da ambição de produzir proposições teóricas a partir de casos. Sem dados de múltiplos casos, não reivindicar comparação intercasos realizada. Referência: *Academy of Management Review*, 14(4), 532–550.
+<a id="43-teoria-fundamentada"></a>
+### 4.3. Grounded theory
 
-### 4.3. Teoria fundamentada
+**Suddaby (2006), What Grounded Theory Is Not** — *article consulted*. Warns against using *grounded theory* as a rhetorical label for generic analyzes and against mixing contradictory epistemological assumptions. **Application:** ask about the chosen lineage and the effective procedures of constant comparison, theoretical sampling, memos and conceptual elaboration. Having codes is not enough.**Glaser and Strauss (1967), The Discovery of Grounded Theory; Charmaz (2006), Constructing Grounded Theory; Strauss and Corbin (1998), Basics of Qualitative Research** — *works identified in the collection and bibliographic metadata; without full critical reading claimed in this justification*. They represent non-interchangeable historical and epistemological orientations. **Application:** require justification of the chosen aspect and prevent the Skill from mixing the language of a constructivist approach with criteria from another for convenience.
 
-**Suddaby (2006), What Grounded Theory Is Not** — *artigo consultado*. Alerta contra usar *grounded theory* como rótulo retórico para análises genéricas e contra misturar pressupostos epistemológicos contraditórios. **Aplicação:** perguntar pela linhagem escolhida e pelos procedimentos efetivos de comparação constante, amostragem teórica, memos e elaboração conceitual. Ter códigos não basta.
+<a id="44-fenomenologia-e-pesquisa-narrativa"></a>
+### 4.4. Phenomenology and narrative research
 
-**Glaser e Strauss (1967), The Discovery of Grounded Theory; Charmaz (2006), Constructing Grounded Theory; Strauss e Corbin (1998), Basics of Qualitative Research** — *obras identificadas no acervo e nos metadados bibliográficos; sem leitura crítica integral reivindicada nesta fundamentação*. Representam orientações históricas e epistemológicas não intercambiáveis. **Aplicação:** requerer justificativa da vertente escolhida e evitar que a Skill misture a linguagem de uma abordagem construtivista com critérios de outra por conveniência.
+**Gill (2014), The Possibilities of Phenomenology for Organizational Research** — *article consulted*. Contrasts five ways of working with phenomenology and discusses differences in relation to other traditions, including narrative. **Application:** before developing categories, determine whether the question deals with lived experience and its structure/meaning, and which phenomenological tradition will provide the basis for interpretation. Do not classify every interview about perceptions as phenomenology. DOI: https://doi.org/10.1177/1094428113518348.
 
-### 4.4. Fenomenologia e pesquisa narrativa
+**Rhodes and Brown (2005), Narrative, Organizations and Research; Llewellyn (1999), Narratives in Accounting and Management Research; Soin and Scheytt (2006), Making the Case for Narrative Methods in Cross-Cultural Organizational Research** — *bibliographic references identified in reading guide; original texts not examined in this update*. **Provisional application guidance:** narrative research must justify the treatment of temporality, sequence of events, characters, context and construction of meaning, avoiding converting stories into a simple list of themes. Confirm complete bibliography, primary sources and nuances of each work before assigning specific theses.
 
-**Gill (2014), The Possibilities of Phenomenology for Organizational Research** — *artigo consultado*. Contrasta cinco maneiras de trabalhar fenomenologia e discute diferenças em relação a outras tradições, inclusive narrativa. **Aplicação:** antes de elaborar categorias, determinar se a pergunta trata da experiência vivida e de sua estrutura/significado, e qual tradição fenomenológica dará base à interpretação. Não classificar toda entrevista sobre percepções como fenomenologia. DOI: https://doi.org/10.1177/1094428113518348.
+**Guiding contrast:** phenomenology seeks to understand the lived experience of the phenomenon; Narrative examines ways of telling, organizing and meaning experiences over time. The approaches can dialogue, but should not be amalgamated under a generic code of “qualitative analysis”.
 
-**Rhodes e Brown (2005), Narrative, Organizations and Research; Llewellyn (1999), Narratives in Accounting and Management Research; Soin e Scheytt (2006), Making the Case for Narrative Methods in Cross-Cultural Organizational Research** — *referências bibliográficas identificadas em roteiro de leitura; textos originais não examinados nesta atualização*. **Orientação de aplicação provisória:** pesquisa narrativa deve justificar tratamento de temporalidade, sequência de acontecimentos, personagens, contexto e construção de sentido, evitando converter histórias em simples lista de temas. Confirmar bibliografia completa, fontes primárias e nuances de cada trabalho antes de atribuir teses específicas.
+<a id="45-pesquisa-ação-e-alternativas-participativas"></a>
+### 4.5. Action research and participatory alternatives
 
-**Contraste orientador:** fenomenologia procura compreender a experiência vivida do fenômeno; narrativa examina modos de contar, organizar e significar experiências no tempo. As abordagens podem dialogar, mas não devem ser amalgamadas sob um código genérico de “análise qualitativa”.
+**Thiollent, Action research methodology** — *work identified; unconfirmed full version and content for final reference*. Action research involves more than proposing an intervention: it requires that the design documents participation, a concrete problem, action and reflection on the transformation effectively monitored. **Application:** do not describe as action research the isolated creation of an application or an implementation plan without corresponding empirical interaction. Only use definitive bibliographic citations after checking the edition.
 
-### 4.5. Pesquisa-ação e alternativas participativas
+<a id="5-pesquisa-com-artefatos-design-science-e-avaliação"></a>
+## 5. Research with artifacts: design science and evaluation
 
-**Thiollent, Metodologia da pesquisa-ação** — *obra identificada; versão e conteúdo integral não confirmados para referência final*. Pesquisa-ação envolve mais que propor uma intervenção: exige que o desenho documente participação, problema concreto, ação e reflexão sobre a transformação efetivamente acompanhada. **Aplicação:** não descrever como pesquisa-ação a criação isolada de um aplicativo ou um plano de implementação sem interação empírica correspondente. Só usar citação bibliográfica definitiva após conferir a edição.
+**Hevner, March, Park and Ram (2004), Design Science in Information Systems Research** — *article consulted*. Distinguishes explanatory research and artifact construction and formulates guidance on problem relevance, informed research and evaluation. **Application:** separate the description of the artifact from evidence of usefulness and effectiveness; document the environment, problem, requirements and assessment method actually used. DOI: check article metadata in *MIS Quarterly*, 28(1), 75–105, before issuing automated final citation.
 
-## 5. Pesquisa com artefatos: design science e avaliação
+**Peffers et al. (2007–2008), A Design Science Research Methodology for Information Systems Research** — *article consulted*. Problem structure, objectives, design/development, demonstration, evaluation and communication. **Application:** do not confuse functional demonstration or script execution with scientific evaluation of the artifact. The order of activities may vary justifiably; it is not authorization to produce missing observations. DOI: https://doi.org/10.2753/MIS0742-1222240302.**Gregor and Hevner (2013), Positioning and Presenting Design Science Research for Maximum Impact** — *article consulted*. They delimit contributions by previous knowledge about problem and solution, proposing to position the different degrees of novelty of the artifact. **Application:** compare the artifact to existing mechanisms: what is reapplication, adaptation, combination or extension? Record plausible contribution and its limits. The existence of a software version does not prove causal gain. Reference: *MIS Quarterly*, 37(2), 337–355.
 
-**Hevner, March, Park e Ram (2004), Design Science in Information Systems Research** — *artigo consultado*. Distingue investigação explicativa e construção de artefatos e formula orientações sobre relevância do problema, pesquisa fundamentada e avaliação. **Aplicação:** separar a descrição do artefato de evidências de utilidade e eficácia; documentar ambiente, problema, requisitos e método de avaliação efetivamente utilizado. DOI: verificar metadados do artigo em *MIS Quarterly*, 28(1), 75–105, antes de emitir citação final automatizada.
+**Sein et al. (2011), Action Design Research** — *article consulted*. Recognizes the construction of the artifact in the organizational context, with articulated construction, intervention and evaluation. **Application:** only adopt this nomenclature when there is actually documented contextual participation/intervention. Organization-independent simulation is not equivalent to *action design research*. Reference: *MIS Quarterly*, 35(1), 37–56.
 
-**Peffers et al. (2007–2008), A Design Science Research Methodology for Information Systems Research** — *artigo consultado*. Estrutura problema, objetivos, desenho/desenvolvimento, demonstração, avaliação e comunicação. **Aplicação:** não confundir demonstração funcional ou execução de scripts com avaliação científica do artefato. A ordem das atividades pode variar justificadamente; não é autorização para produzir observações ausentes. DOI: https://doi.org/10.2753/MIS0742-1222240302.
+**Dresch, Lacerda and Antunes, Design Science Research: research method for advancing science and technology** — *work identified in digital edition; bibliographic reference and edition to be completed before final citation*. Guides the applied discussion of artifacts in Administration. **Application:** useful for selecting artifact classes, approaching assessment, and building prescriptive knowledge; do not attribute a specific result to the work without verified passage.
 
-**Gregor e Hevner (2013), Positioning and Presenting Design Science Research for Maximum Impact** — *artigo consultado*. Delimitam contribuições pelo conhecimento anterior sobre problema e solução, propondo posicionar os diferentes graus de novidade do artefato. **Aplicação:** comparar o artefato aos mecanismos existentes: o que é reaplicação, adaptação, combinação ou extensão? Registrar contribuição plausível e seus limites. A existência de uma versão de software não comprova ganho causal. Referência: *MIS Quarterly*, 37(2), 337–355.
+**Explicit boundary:** a managerial method of organizing scientific tasks does not therefore become a method of bibliographic review, nor does the quality of the activity record prove epistemological rigor. To claim a reduction in time, rework or an increase in quality, independent observations and a design that allows for the separation of effects would be necessary. Future comparison protocols can be prepared, but never filled with fictitious effects.
 
-**Sein et al. (2011), Action Design Research** — *artigo consultado*. Reconhece a construção do artefato no contexto organizacional, com construção, intervenção e avaliação articuladas. **Aplicação:** somente adotar essa nomenclatura quando houver de fato a participação/intervenção contextual documentada. Simulação independente de organização não equivale a *action design research*. Referência: *MIS Quarterly*, 35(1), 37–56.
+<a id="6-uso-ético-da-ia-integridade-e-responsabilização"></a>
+## 6. Ethical use of AI, integrity and accountability
 
-**Dresch, Lacerda e Antunes, Design Science Research: método de pesquisa para avanço da ciência e tecnologia** — *obra identificada em edição digital; referência bibliográfica e edição a completar antes de citação final*. Orienta a discussão aplicada de artefatos em Administração. **Aplicação:** útil para selecionar classes de artefato, abordagem de avaliação e construção de conhecimento prescritivo; não atribuir resultado específico à obra sem passagem verificada.
+**Sampaio, Sabbatini and Limongi (2024), Guidelines for the ethical and responsible use of Generative Artificial Intelligence: a practical guide for researchers** — *book and passages consulted; identified bibliographic record*. The text deals with understanding tools, human authorship, transparency, integrity, plagiarism, originality, copyright, human agency, AI literacy, biases, hallucinations, privacy and security. It also highlights variation in outputs and the relevance of identifying tool dates and limitations. Reference: São Paulo, Editora Intercom, 2024, ISBN 978-85-8208-142-6.
 
-**Fronteira explícita:** um método gerencial de organização das tarefas científicas não se converte por isso em método de revisão bibliográfica, tampouco a qualidade do registro de atividades prova rigor epistemológico. Para reivindicar redução de tempo, retrabalho ou aumento de qualidade, seriam necessárias observações independentes e desenho que permita separar efeitos. Protocolos de comparação futuros podem ser preparados, mas nunca preenchidos com efeitos fictícios.
+**Conditional and verifiable applications:**
+1. **Authorship and training:** IA can recommend; You should not fill out a justification as if it were the researcher's intellectual response. Retain real human input in critical decisions.
+2. **Provenance and hallucinations:** check DOI and metadata via external path; for material citations, check passage and context in the accessible text. Correct metadata **does not certify** semantic support.
+3. **Transparency:** discriminate effective uses of AI in search, screening, synthesis, writing, translation, imaging and administrative operations; not generate a statement asserting uses or revisions that did not occur.
+4. **Privacy and rights:** distinguish access from redistribution permission. Do not make protected PDFs, confidential data, credentials, restricted institutional documents or private addresses public.
+5. **Editorial policy:** consult the journal's current official rules and produce a brief statement appropriate to the case. An extensive history may remain in the research folder for auditing, but does not need to be attached indiscriminately to the submission.**Epistemological position:** AI tools are not human co-authors, independent reviewers, or final arbiters of the method; Detecting that an excerpt appears in the file is a different task from judging whether it supports the proposed interpretation.
 
-## 6. Uso ético da IA, integridade e responsabilização
+<a id="7-avaliação-crítica-procedimento-condicionado-ao-tipo-de-evidência"></a>
+## 7. Critical evaluation: procedure depending on the type of evidence
 
-**Sampaio, Sabbatini e Limongi (2024), Diretrizes para o uso ético e responsável da Inteligência Artificial Generativa: um guia prático para pesquisadores** — *livro e passagens consultados; ficha bibliográfica identificada*. O texto trata de compreensão das ferramentas, autoria humana, transparência, integridade, plágio, originalidade, direitos autorais, agência humana, letramento em IA, vieses, alucinações, privacidade e segurança. Também destaca variação de saídas e a relevância de identificar datas e limitações das ferramentas. Referência: São Paulo, Editora Intercom, 2024, ISBN 978-85-8208-142-6.
+Avoid a universal score for source, book, standard, theoretical essay, quantitative study, qualitative research and review article. Assess the **adequacy of the statement in which each piece of evidence is used**, recording limits.
 
-**Aplicações condicionais e verificáveis:**
-1. **Autoria e formação:** IA pode recomendar; não deve preencher uma justificativa como se fosse resposta intelectual do pesquisador. Conservar manifestação humana real em decisões críticas.
-2. **Proveniência e alucinações:** verificar DOI e metadados por caminho externo; para citações materiais, conferir passagem e contexto no texto acessível. Metadados corretos **não certificam** suporte semântico.
-3. **Transparência:** discriminar usos efetivos de IA em busca, triagem, síntese, redação, tradução, imagem e operações administrativas; não gerar uma declaração afirmando usos ou revisões que não ocorreram.
-4. **Privacidade e direitos:** distinguir acesso de permissão de redistribuição. Não tornar públicos PDFs protegidos, dados sigilosos, credenciais, documentos institucionais restritos ou endereços privados.
-5. **Política editorial:** consultar a norma oficial vigente do periódico e produzir declaração breve apropriada ao caso. Um histórico extenso pode permanecer na pasta de pesquisa para auditoria, mas não precisa ser anexado indiscriminadamente à submissão.
-
-**Posição epistemológica:** ferramentas de IA não são coautores humanos, revisores independentes nem árbitros finais do método; detectar que um trecho aparece no arquivo é tarefa diferente de julgar se ele sustenta a interpretação proposta.
-
-## 7. Avaliação crítica: procedimento condicionado ao tipo de evidência
-
-Evitar uma pontuação universal para fonte, livro, norma, ensaio teórico, estudo quantitativo, pesquisa qualitativa e artigo de revisão. Avaliar a **adequação à afirmação em que cada evidência é empregada**, registrando limites.
-
-| Natureza da evidência | Perguntas de avaliação apropriadas | Erro a evitar |
+| Nature of evidence | Appropriate Assessment Questions | Mistake to avoid |
 | --- | --- | --- |
-| Quantitativa observacional/experimental | Desenho, temporalidade, mensuração, confundimento, modelagem, vieses, incerteza | Inferir causalidade somente de correlação |
-| Qualitativa interpretativa | Coerência epistemológica, acesso ao campo, reflexividade, cadeia interpretativa, caso negativo, contexto | Exigir coeficiente de concordância como prova universal de rigor |
-| Métodos mistos | Justificativa da integração, momento, peso e tratamento de divergências entre vertentes | Chamar de misto qualquer artigo com números e entrevistas |
-| Revisão integrativa | Delimitação, recuperação proporcional, avaliação crítica, integração de evidências, fontes contrárias e limites | Confundir CORE com alta qualidade; presumir exaustividade |
-| Revisão problematizadora | Pressupostos interrogados, alternativas, reflexividade, justificativa da seleção | Cobrar a mesma acumulação exaustiva que a abordagem explicitamente critica |
-| Estudo de caso | Fronteiras do caso, fontes, encadeamento, explicações rivais e transferibilidade analítica | Generalizar estatisticamente sem base |
-| Análise temática reflexiva | Reflexividade, coerência da interpretação, material analisado, construção de temas | Alegar “temas emergiram automaticamente” ou segundo codificador humano inexistente |
-| Grounded theory | Vertente, comparação constante, memos, amostragem teórica e geração de conceitos | Confundir codificação descritiva genérica com teoria fundamentada |
-| Fenomenologia | Tradição assumida, relação pesquisador-experiência, descrição/interpretação dos sentidos | Tratar percepção medida por questionário como fenomenologia automática |
-| Narrativa | Histórias, temporalidade, construção do relato, contexto e interpretação | Reduzir histórias a frequências de palavras |
-| Design science | Requisitos, antecedentes, artefato, demonstração, avaliação observada, contribuição delimitada | Confundir funcionamento do código com efetividade científica |
-| Normas e documentos institucionais | Autoridade, vigência, escopo, hierarquia, versão e aplicabilidade | Usar autoridade normativa como prova empírica de eficácia |
+| Quantitative observational/experimental | Design, temporality, measurement, confounding, modeling, biases, uncertainty | Infer causality from correlation only |
+| Interpretive qualitative | Epistemological coherence, access to the field, reflexivity, interpretative chain, negative case, context | Require agreement coefficient as universal proof of rigor |
+| Mixed methods | Justification of integration, timing, weight and treatment of divergences between aspects | Call any article with numbers and interviews mixed |
+| Integrative review | Delimitation, proportional recovery, critical evaluation, integration of evidence, contrary sources and limits | Confusing CORE with high quality; assume exhaustiveness |
+| Problematizing review | Interrogated assumptions, alternatives, reflexivity, justification for selection | Charge the same exhaustive accumulation that the approach explicitly criticizes |
+| Case study | Case boundaries, sources, chaining, rival explanations and analytical transferability | Generalize statistically without basis |
+| Reflective thematic analysis | Reflexivity, coherence of interpretation, analyzed material, construction of themes | Claiming “themes emerged automatically” or non-existent second human coder |
+| Grounded theory | Strand, constant comparison, memos, theoretical sampling and concept generation | Confusing generic descriptive coding with grounded theory |
+| Phenomenology | Assumed tradition, researcher-experience relationship, description/interpretation of meanings | Treating perception measured by questionnaire as automatic phenomenology |
+| Narrative | Stories, temporality, story construction, context and interpretation | Reduce Stories to Word Frequencies |
+| Design science | Requirements, background, artifact, demonstration, observed evaluation, bounded contribution | Confusing code functioning with scientific effectiveness |
+| Institutional standards and documents | Authority, validity, scope, hierarchy, version and applicability | Using normative authority as empirical evidence of effectiveness |
 
-As perguntas do quadro são uma **síntese operacional própria** apoiada nas obras acima; não são uma escala validada que dispense leitura, interpretação e controle humano. A falta de texto integral é pendência de acesso, não automaticamente motivo de exclusão científica.
+The questions in the table are a **own operational synthesis** supported by the works above; They are not a validated scale that does not require reading, interpretation and human control. The lack of full text is a pending access, not automatically a reason for scientific exclusion.
 
-## 8. Como a Skill deve mobilizar o mapa — e quando não mobilizar
+<a id="8-como-a-skill-deve-mobilizar-o-mapa-e-quando-não-mobilizar"></a>
+## 8. How the Skill should mobilize the map — and when not to mobilize
 
-**Para qualquer artigo empírico, a escolha do método deve começar pela compatibilidade entre pergunta, inferência desejada e dados possíveis**, usando a Cebola de Pesquisa apenas como guia de coerência. Não pedir ao usuário para selecionar estatística, paradigma ou tecnologia antes de entender o problema. Em um projeto quantitativo, esclarecer o que é descrição, associação, predição ou estimativa de efeito; em métodos mistos, pedir a razão para combinar vertentes e identificar como serão realmente integradas. Referência principal: seção 3 deste mapa.
+**For any empirical article, the choice of method must begin with the compatibility between the question, desired inference and possible data**, using the Research Onion only as a guide for coherence. Do not ask the user to select statistics, paradigm or technology before understanding the problem. In a quantitative project, clarify what is a description, association, prediction or estimate of effect; in mixed methods, ask for the reason for combining strands and identify how they will actually be integrated. Main reference: section 3 of this map.<a id="na-formulação-do-problema"></a>
+### In formulating the problem
+Present the question and two real choices: build a reasoned synthesis or challenge existing assumptions. Mobilize Elsbach/van Knippenberg, Alvesson/Sandberg and Bispo only when they correspond to the intended contribution. Ask the researcher why he or she chose it and a limitation that he or she recognizes.
 
-### Na formulação do problema
-Apresentar a pergunta e duas escolhas reais: construir uma síntese fundamentada ou desafiar pressupostos existentes. Mobilizar Elsbach/van Knippenberg, Alvesson/Sandberg e Bispo apenas quando correspondam à contribuição pretendida. Perguntar ao pesquisador o porquê de sua escolha e uma limitação que reconhece.
+<a id="no-protocolo-e-nas-buscas"></a>
+### In protocol and searches
+Relate the chosen strategy to the review family, not to as many bases as possible. Record executed queries, limits, updates and actual counts; use Grant/Booth, Snyder, Whittemore/Knafl and PRISMA-S in their respective areas. A negative novelty search produces inference **[I] conditional on scope**, not proof of universal priority.
 
-### No protocolo e nas buscas
-Relacionar a estratégia escolhida à família da revisão, não ao máximo de bases possível. Registrar consultas executadas, limites, atualizações e contagens reais; recorrer a Grant/Booth, Snyder, Whittemore/Knafl e PRISMA-S nos seus respectivos âmbitos. Uma busca de novidade negativa produz inferência **[I] condicionada ao escopo**, não prova de prioridade universal.
+<a id="na-triagem-análise-e-síntese"></a>
+### In screening, analysis and synthesis
+Separate AI suggestion from the decision attributable to the researcher. Adapt evaluation of sources to the design. Document divergence or lack of evidence and distinguish complete material consulted from summaries. In interpretive approaches, preserve memos and reflexivity; never simulate second human evaluation.
 
-### Na triagem, análise e síntese
-Separar sugestão da IA da decisão atribuível ao pesquisador. Adequar avaliação das fontes ao desenho. Documentar divergência ou ausência de evidência e distinguir material integral consultado de resumos. Em abordagens interpretativas, conservar memos e reflexividade; nunca simular segunda avaliação humana.
+<a id="na-contribuição-e-redação"></a>
+### In contribution and writing
+Compare the proposition with its effective conceptual neighbors. Explain the type and limits of the contribution. Prepare an introduction that shows relevance, conversation and expected advancement, but do not replace findings with editorial rhetoric. Use Grant/Pollock, Bishop, Barney and Campbell/Aguilera as guiding references — not as mandatory textual templates.
 
-### Na contribuição e redação
-Confrontar a proposição com os vizinhos conceituais efetivos. Explicitar tipo e limites da contribuição. Preparar introdução que mostre relevância, conversa e avanço esperado, mas não substituir achado por retórica editorial. Usar Grant/Pollock, Bispo, Barney e Campbell/Aguilera como referências de orientação — não como moldes textuais obrigatórios.
+<a id="na-submissão"></a>
+### On submission
+Apply the magazine's current instructions as a priority; check anonymization, citations and output files. Provide a proportional and truthful statement of AI use in accordance with editorial policy, preserving full records in the researcher's authorized space. Do not include private technical traces or protected PDFs in the public package.
 
-### Na submissão
-Aplicar prioritariamente as instruções atuais da revista; conferir anonimização, citações e arquivos de saída. Fornecer uma declaração proporcional e verdadeira de uso de IA conforme a política editorial, preservando registros integrais no espaço autorizado do pesquisador. Não incluir rastros técnicos privados nem PDFs protegidos no pacote público.
+<a id="no-suporte-a-iniciantes"></a>
+### Supporting beginners
+The Skill can explain difficult terms, show alternatives and prepare decision material, but a gate does not equate to understanding just because it contains a “pass”. Ask about the reasons and limitations of choice in scientific transitions; if the researcher does not know, teach the concept and keep the decision open. The system records that there was a response, but does not **certify** learning or human identity.
 
-### No suporte a iniciantes
-A Skill pode explicar termos difíceis, mostrar alternativas e preparar material de decisão, mas um gate não equivale a compreensão somente por conter um “aprovado”. Perguntar pelas razões e limitações da escolha nas transições científicas; se o pesquisador não souber, ensinar o conceito e manter a decisão aberta. O sistema registra que houve uma resposta, mas não **certifica** aprendizagem ou identidade humana.
-
-## 9. Matriz de referência rápida e nível de consulta
-
-| Núcleo | Referências prioritárias | Evidência de consulta nesta fundamentação |
+<a id="9-matriz-de-referência-rápida-e-nível-de-consulta"></a>
+## 9. Quick reference matrix and query level| Core | Priority references | Evidence of consultation on this basis |
 | --- | --- | --- |
-| Revisões e relato | Elsbach & van Knippenberg; Alvesson & Sandberg; Grant & Booth; Snyder; Torraco; Whittemore & Knafl; Rethlefsen et al. | Textos pertinentes consultados para Elsbach, Alvesson/Sandberg e Grant/Booth; metadados/descrições editoriais para Snyder, Torraco, Whittemore/Knafl e PRISMA-S |
-| Contribuição e publicação | Bispo; Grant & Pollock; Bono & McNamara; Ragins; Barney; Campbell & Aguilera | Textos pertinentes consultados |
-| Coerência dos desenhos / Cebola de Pesquisa | Saunders/Lewis/Thornhill; Creswell & Creswell; Myers; Merriam & Tisdell | Livro de Saunders consultado na edição de 2023, capítulos 4–5, e Creswell & Creswell (2021) consultado; não reproduzir figura editorial |
-| Quantitativos e limites de inferência | Creswell & Creswell; Saunders/Lewis/Thornhill; Bono & McNamara; Appelbaum et al. | Obras/trechos consultados para os três primeiros; metadados e descrição pública de JARS–Quant verificados para o último |
-| Métodos mistos e integração | Creswell & Creswell; Saunders/Lewis/Thornhill; Fetters/Curry/Creswell; Levitt et al. | Textos consultados para os três primeiros; descrição editorial e metadados JARS–Mixed verificados para Levitt et al. |
-| Análise qualitativa | Braun & Clarke; Miles/Huberman/Saldaña; Saldaña; Suddaby | Textos consultados |
-| Caso e fenomenologia | Yin; Eisenhardt; Gill | Textos consultados |
-| Grounded theory, narrativa e pesquisa-ação | Glaser & Strauss; Charmaz; Strauss & Corbin; Rhodes & Brown; Llewellyn; Soin & Scheytt; Thiollent | Materiais identificados; conferir texto e edição antes de atribuir interpretações específicas |
-| Artefatos e design science | Hevner et al.; Peffers et al.; Gregor & Hevner; Sein et al.; Dresch/Lacerda/Antunes | Textos consultados para os quatro primeiros; identificação bibliográfica para Dresch e colaboradores |
-| Integridade e IA | Sampaio, Sabbatini & Limongi | Texto e ficha consultados |
+| Reviews and reporting | Elsbach & van Knippenberg; Alvesson & Sandberg; Grant & Booth; Snyder; Torraco; Whittemore & Knafl; Rethlefsen et al. | Relevant texts consulted for Elsbach, Alvesson/Sandberg and Grant/Booth; metadata/editorial descriptions for Snyder, Torraco, Whittemore/Knafl and PRISMA-S |
+| Contribution and publication | Bishop; Grant & Pollock; Bono & McNamara; Ragins; Barney; Campbell & Aguilera | Relevant texts consulted |
+| Coherence of drawings / Research Onion | Saunders/Lewis/Thornhill; Creswell & Creswell; Myers; Merriam & Tisdell | Book by Saunders consulted in the 2023 edition, chapters 4–5, and Creswell & Creswell (2021) consulted; do not reproduce editorial figure |
+| Quantitative and limits of inference | Creswell & Creswell; Saunders/Lewis/Thornhill; Bono & McNamara; Appelbaum et al. | Works/excerpts consulted for the first three; JARS–Quant metadata and public description checked for last |
+| Mixed methods and integration | Creswell & Creswell; Saunders/Lewis/Thornhill; Fetters/Curry/Creswell; Levitt et al. | Texts consulted for the first three; editorial description and verified JARS–Mixed metadata for Levitt et al. |
+| Qualitative analysis | Braun & Clarke; Miles/Huberman/Saldaña; Saldaña; Suddaby | Texts consulted |
+| Case and phenomenology | Yin; Eisenhardt; Gill | Texts consulted |
+| Grounded theory, narrative and action research | Glaser & Strauss; Charmaz; Strauss & Corbin; Rhodes & Brown; Llewellyn; Soin & Scheytt; Thiollent | Identified materials; check text and editing before assigning specific interpretations |
+| Artifacts and design science | Hevner et al.; Peffers et al.; Gregor & Hevner; Sein et al.; Dresch/Lacerda/Antunes | Texts consulted for the first four; bibliographic identification for Dresch and collaborators |
+| Integrity and AI | Sampaio, Sabbatini & Limongi | Text and file consulted |
 
-## 10. Referências bibliográficas selecionadas
+<a id="10-referências-bibliográficas-selecionadas"></a>
+## 10. Selected bibliographic references
 
-Os DOIs a seguir foram confirmados nos textos, nas fichas ou nas páginas editoriais consultadas. Para livros sem DOI, indicar edição e ISBN quando confirmados. Não completar metadados duvidosos por adivinhação.
+The following DOIs were confirmed in the texts, files or editorial pages consulted. For books without DOI, indicate edition and ISBN when confirmed. Do not complete dubious metadata by guesswork.
 
-### Revisão, problematização e contribuição
+<a id="revisão-problematização-e-contribuição"></a>
+### Review, problematization and contribution
 - ALVESSON, M.; SANDBERG, J. Generating Research Questions Through Problematization. *Academy of Management Review*, 2011. https://doi.org/10.5465/amr.2009.0188.
 - ALVESSON, M.; SANDBERG, J. The Problematizing Review: A Counterpoint to Elsbach and Van Knippenberg’s Argument for Integrative Reviews. *Journal of Management Studies*, 57(6), 1290–1304, 2020. https://doi.org/10.1111/joms.12582.
 - BISPO, M. de S. Contribuições Teóricas, Práticas, Metodológicas e Didáticas em Artigos Científicos. *Revista de Administração Contemporânea*, 27(1), e220256, 2023. https://doi.org/10.1590/1982-7849rac2023220256.por.
@@ -364,46 +372,50 @@ Os DOIs a seguir foram confirmados nos textos, nas fichas ou nas páginas editor
 - TORRACO, R. J. Writing Integrative Literature Reviews: Guidelines and Examples. *Human Resource Development Review*, 4(3), 356–367, 2005. https://doi.org/10.1177/1534484305278283.
 - WHITTEMORE, R.; KNAFL, K. The integrative review: updated methodology. *Journal of Advanced Nursing*, 52(5), 546–553, 2005. https://doi.org/10.1111/j.1365-2648.2005.03621.x.
 
-### Escrita e posicionamento acadêmico
+<a id="escrita-e-posicionamento-acadêmico"></a>
+### Writing and academic placement
 - BARNEY, J. B. Editor’s Comments: Positioning a Theory Paper for Publication. *Academy of Management Review*, 43(3), 345–348, 2018. https://doi.org/10.5465/amr.2018.0112.
 - BONO, J. E.; McNAMARA, G. Publishing in AMJ—Part 2: Research Design. *Academy of Management Journal*, 2011. https://doi.org/10.5465/amj.2011.64869103.
 - CAMPBELL, J. T.; AGUILERA, R. V. Why I Rejected Your Paper: Common Pitfalls in Writing Theory Papers and How to Avoid Them. *Academy of Management Review*, 2022. https://doi.org/10.5465/amr.2022.0331.
 - GRANT, A. M.; POLLOCK, T. G. Publishing in AMJ—Part 3: Setting the Hook. *Academy of Management Journal*, 2011. https://doi.org/10.5465/amj.2011.4000.
 - RAGINS, B. R. Editor’s Comments: Reflections on the Craft of Clear Writing. *Academy of Management Review*, 37(4), 493–501, 2012.
 
-### Planejamento quantitativo, Cebola de Pesquisa e métodos mistos
+<a id="planejamento-quantitativo-cebola-de-pesquisa-e-métodos-mistos"></a>
+### Quantitative planning, Research Onion and mixed methods
 - APPELBAUM, M. et al. Journal article reporting standards for quantitative research in psychology: The APA Publications and Communications Board task force report. *American Psychologist*, 73(1), 3–25, 2018. https://doi.org/10.1037/amp0000191. **Diretriz de relato; adoção conforme área e revista.**
 - FETTERS, M. D.; CURRY, L. A.; CRESWELL, J. W. Achieving Integration in Mixed Methods Designs—Principles and Practices. *Health Services Research*, 48(6 Pt 2), 2134–2156, 2013. https://doi.org/10.1111/1475-6773.12117.
 - LEVITT, H. M. et al. Journal article reporting standards for qualitative primary, qualitative meta-analytic, and mixed methods research in psychology. *American Psychologist*, 73(1), 26–46, 2018. https://doi.org/10.1037/amp0000151. **Padrão de relato, não certificado de qualidade científica.**
-- SAUNDERS, M. N. K.; LEWIS, P.; THORNHILL, A. *Research Methods for Business Students*. 9th ed. Pearson, 2023. **Ver capítulo 4, figura 4.1 e capítulo 5; a figura de Saunders é descrita aqui, não reproduzida.**
-
-### Desenho e abordagens qualitativas
+- SAUNDERS, M. N. K.; LEWIS, P.; THORNHILL, A. *Research Methods for Business Students*. 9th edition. Pearson, 2023. **See chapter 4, figure 4.1 and chapter 5; Saunders' figure is described here, not reproduced.**<a id="desenho-e-abordagens-qualitativas"></a>
+### Design and qualitative approaches
 - BRAUN, V.; CLARKE, V. Using thematic analysis in psychology. *Qualitative Research in Psychology*, 3(2), 77–101, 2006. https://doi.org/10.1191/1478088706qp063oa.
 - BRAUN, V.; CLARKE, V. *Thematic Analysis: A Practical Guide*. London: SAGE, 2022.
-- CRESWELL, J. W.; CRESWELL, J. D. *Projeto de pesquisa: métodos qualitativo, quantitativo e misto*. 5. ed. Porto Alegre: Penso, 2021.
+- CRESWELL, J. W.; CRESWELL, J. D. *Research project: qualitative, quantitative and mixed methods*. 5. ed. Porto Alegre: I think, 2021.
 - EISENHARDT, K. M. Building Theories from Case Study Research. *Academy of Management Review*, 14(4), 532–550, 1989.
 - GILL, M. J. The Possibilities of Phenomenology for Organizational Research. *Organizational Research Methods*, 2014. https://doi.org/10.1177/1094428113518348.
-- MERRIAM, S. B.; TISDELL, E. J. *Qualitative Research: A Guide to Design and Implementation*. 4th ed. Jossey-Bass, 2016.
+- MERRIAM, S. B.; TISDELL, E. J. *Qualitative Research: A Guide to Design and Implementation*. 4th edition. Jossey-Bass, 2016.
 - MILES, M. B.; HUBERMAN, A. M.; SALDAÑA, J. *Qualitative Data Analysis: A Methods Sourcebook*. 3rd ed. SAGE, 2014.
 - MYERS, M. D. *Qualitative Research in Business & Management*. 2nd ed. SAGE, 2013.
 - SALDAÑA, J. *The Coding Manual for Qualitative Researchers*. SAGE, 2009.
 - SUDDABY, R. From the Editors: What Grounded Theory Is Not. *Academy of Management Journal*, 2006.
-- YIN, R. K. *Case Study Research and Applications: Design and Methods*. 6th ed. SAGE, 2018.
+- YIN, R. K. *Case Study Research and Applications: Design and Methods*. 6th edition. SAGE, 2018.
 
-### Artefatos, design science e integridade científica
+<a id="artefatos-design-science-e-integridade-científica"></a>
+### Artifacts, design science and scientific integrity
 - GREGOR, S.; HEVNER, A. R. Positioning and Presenting Design Science Research for Maximum Impact. *MIS Quarterly*, 37(2), 337–355, 2013.
 - HEVNER, A. R.; MARCH, S. T.; PARK, J.; RAM, S. Design Science in Information Systems Research. *MIS Quarterly*, 28(1), 75–105, 2004.
 - PEFFERS, K. et al. A Design Science Research Methodology for Information Systems Research. *Journal of Management Information Systems*, 24(3), 45–77/78, 2007–2008. https://doi.org/10.2753/MIS0742-1222240302.
 - SEIN, M. K. et al. Action Design Research. *MIS Quarterly*, 35(1), 37–56, 2011.
-- SAMPAIO, R. C.; SABBATINI, M.; LIMONGI, R. *Diretrizes para o uso ético e responsável da Inteligência Artificial Generativa: um guia prático para pesquisadores*. São Paulo: Editora Intercom, 2024. ISBN 978-85-8208-142-6.
+- SAMPAIO, R. C.; SABBATINI, M.; LIMONGI, R. *Guidelines for the ethical and responsible use of Generative Artificial Intelligence: a practical guide for researchers*. São Paulo: Editora Intercom, 2024. ISBN 978-85-8208-142-6.
 
-### Orientação para completar outras entradas
-Fontes fundamentais adicionais foram identificadas para narrativa, teoria fundamentada, pesquisa-ação e design science em Administração, mas não receberam aqui uma leitura crítica que autorize atribuir-lhes procedimentos específicos. Antes de ampliar a lista final, verificar edições e consultar diretamente, conforme a abordagem escolhida, os trabalhos de Glaser e Strauss; Charmaz; Strauss e Corbin; Rhodes e Brown; Llewellyn; Soin e Scheytt; Thiollent; Dresch, Lacerda e Antunes. **Não incluir a lista inteira automaticamente nas referências de um artigo:** citar apenas obras pertinentes e efetivamente utilizadas para construir sua argumentação ou método.
+<a id="orientação-para-completar-outras-entradas"></a>
+### Guidance for completing other entries
+Additional fundamental sources were identified for narrative, grounded theory, action research and design science in Administration, but they have not received a critical reading here that authorizes attributing specific procedures to them. Before expanding the final list, check editions and consult directly, depending on the chosen approach, the works of Glaser and Strauss; Charmaz; Strauss and Corbin; Rhodes and Brown; Llewellyn; Soin and Scheytt; Thiollent; Dresch, Lacerda and Antunes. **Do not automatically include the entire list in the references of an article:** cite only pertinent works effectively used to construct your argument or method.
 
-## 11. Limites e responsabilidade editorial
+<a id="11-limites-e-responsabilidade-editorial"></a>
+## 11. Limits and editorial responsibility
 
-Este documento oferece fundamentação de desenho e governança do processo científico, não garante desempenho, originalidade, confiabilidade intercodificadores, validade empírica ou melhora de produtividade. Uma Skill é um conjunto de instruções e ferramentas sujeitas a falhas; auditorias determinísticas identificam inconsistências específicas e não substituem a avaliação independente da adequação da fonte ao argumento.
+This document provides a basis for the design and governance of the scientific process, it does not guarantee performance, originality, intercoder reliability, empirical validity or productivity improvements. A Skill is a set of instructions and tools that are subject to failure; Deterministic audits identify specific inconsistencies and are not a substitute for independent assessment of the source's suitability for the argument.
 
-Antes de entregar um artigo: preservar o corpus e as buscas realmente executadas, confrontar citações materiais com os textos e localizadores acessíveis, reter contraevidências, registrar a decisão do pesquisador, conferir normas oficiais da revista e divulgar uso efetivo de IA na extensão requerida. Não reutilizar automaticamente esta bibliografia como se cada fonte tivesse sido consultada no projeto corrente.
+Before submitting an article: preserve the corpus and the searches actually performed, compare material citations with accessible texts and locators, retain counter-evidence, record the researcher's decision, check the journal's official standards and publicize the effective use of AI to the extent required. Do not automatically reuse this bibliography as if each source had been consulted in the current project.
 
-*Revisão desta fundamentação: outubro de 2026. Referências e interpretações precisam ser rechecadas quando um artigo concreto escolher seus métodos, edição ou normas editoriais.*
+*Revision of this rationale: October 2026. References and interpretations need to be rechecked when a specific article chooses its methods, editing or editorial standards.*

@@ -90,7 +90,7 @@ class EditorialAITests(unittest.TestCase):
  def test_empty_log_needs_author_attestation(self):
   self.make_log([]);self.confirm();self.save_profile()
   r=ed.assess(self.root);self.assertFalse(r["errors"])
-  self.assertIn("nenhum uso foi declarado",ed.render(r))
+  self.assertIn("no AI use was declared",ed.render(r))
  def test_journal_can_require_model_version(self):
   event=dict(self.event);event["Model_or_version"]=""
   self.make_log([event]);self.confirm()

@@ -1,44 +1,47 @@
-# Governança científica — decisões, validação humana e snapshots
+<a id="governança-científica-decisões-validação-humana-e-snapshots"></a>
+# Scientific governance — decisions, human validation and snapshots
 
-## Por que existe esta camada?
+<a id="por-que-existe-esta-camada"></a>
+## Why does this layer exist?
 
-O C.A.D.A. responde muito bem:
+The C.A.D.A. responds very well:
 
-> O que precisamos fazer agora?
+> What do we need to do now?
 
-A rastreabilidade responde:
+Traceability responds:
 
-> O que aconteceu durante a construção do artigo?
+> What happened during the construction of the article?
 
-Faltavam três perguntas:
+Three questions were missing:
 
-> Por que tomamos esta decisão?
+> Why did we make this decision?
 
-> Em que momento o pesquisador humano assumiu explicitamente a responsabilidade por uma transição crítica?
+> At what point did the human researcher explicitly assume responsibility for a critical transition?
 
-> Qual era exatamente o estado oficial do projeto naquele momento?
+> What exactly was the official status of the project at that time?
 
-O Meu Artigo responde a essas perguntas com três identificadores.
+Meu Artigo answers these questions with three identifiers.
 
 ---
 
-## DEC_ID — decisão científica
+<a id="dec_id-decisão-científica"></a>
+## DEC_ID — scientific decision
 
-Um `DEC_ID` registra uma decisão que realmente muda o estudo.
+A `DEC_ID` records a decision that actually changes the study.
 
-Exemplo:
+Example:
 
 ```text
 DEC-0014
 
 Pergunta decisória:
-Qual desenho de revisão melhor responde ao objetivo?
+Which review design best answers the objective?
 
 Decisão:
-Revisão integrativa.
+Integrative review.
 
 Alternativas consideradas:
-Revisão sistemática; scoping review.
+Systematic review or scoping review.
 
 Justificativa:
 O objetivo exige síntese conceitual de literatura heterogênea.
@@ -53,31 +56,32 @@ Status:
 FROZEN
 ```
 
-Não se cria DEC_ID para formatação, nome de arquivo ou pequenas escolhas administrativas.
+DEC_ID is not created for formatting, file name or small administrative choices.
 
 ---
 
-## GATE_ID — validação humana crítica
+<a id="gate_id-validação-humana-crítica"></a>
+## GATE_ID — critical human validation
 
-A IA continua autônoma na rotina.
+AI remains autonomous in its routine.
 
-Ela **não pede aprovação a cada passo**.
+She **doesn't ask for approval at every step**.
 
-Existem apenas sete gates padrão:
+There are only seven default gates:
 
-| Gate | Momento |
+| Gate | Moment |
 |---|---|
-| `GATE-0001` | pergunta e contribuição |
-| `GATE-0002` | método e protocolo |
-| `GATE-0003` | estratégia de busca |
-| `GATE-0004` | congelamento do corpus |
-| `GATE-0005` | síntese / produto teórico |
-| `GATE-0006` | claims / auditoria científica |
-| `GATE-0007` | liberação para submissão |
+| `GATE-0001` | question and contribution |
+| `GATE-0002` | method and protocol |
+| `GATE-0003` | search strategy |
+| `GATE-0004` | corpus freezing |
+| `GATE-0005` | synthesis / theoretical product |
+| `GATE-0006` | claims / scientific audit |
+| `GATE-0007` | release for submission |
 
-Quando um gate fica `READY`, a Skill apresenta somente o que precisa de julgamento humano.
+When a gate is `READY`, the Skill only presents what needs human judgment.
 
-Exemplo:
+Example:
 
 ```text
 GATE-0004 — Congelamento do corpus
@@ -97,15 +101,16 @@ Decisão humana:
 APPROVED
 ```
 
-Depois da aprovação, o sistema cria automaticamente um snapshot.
+After approval, the system automatically creates a snapshot.
 
 ---
 
-## SNAP_ID — estado científico congelado
+<a id="snap_id-estado-científico-congelado"></a>
+## SNAP_ID — frozen scientific status
 
-Um `SNAP_ID` preserva a versão oficial do projeto em um marco.
+A `SNAP_ID` preserves the official version of the project in a milestone.
 
-Exemplos:
+Examples:
 
 ```text
 SNAP-0001 — pergunta/contribuição aprovada
@@ -117,27 +122,28 @@ SNAP-0006 — claims aprovados
 SNAP-0007 — versão liberada para submissão
 ```
 
-Cada snapshot possui:
+Each snapshot has:
 
-- arquivos canônicos;
+- canonical files;
 - manifest SHA-256;
-- gate que o originou;
-- decisões relacionadas;
-- CADA_IDs;
-- resumo da mudança;
-- vínculo com o snapshot anterior.
+- gate that originated it;
+- related decisions;
+- EACH_IDs;
+- summary of the change;
+- link with the previous snapshot.
 
-Assim é possível perguntar:
+So you can ask:
 
-> O que mudou entre SNAP-0003 e SNAP-0004?
+> What changed between SNAP-0003 and SNAP-0004?
 
-O script `compare_snapshots.py` responde quais arquivos foram adicionados, removidos ou alterados.
+The `compare_snapshots.py` script answers which files were added, removed, or changed.
 
 ---
 
-## Cadeia de custódia científica
+<a id="cadeia-de-custódia-científica"></a>
+## Scientific chain of custody
 
-Quando aplicável:
+When applicable:
 
 ```text
 DEC_ID
@@ -157,113 +163,116 @@ Manuscrito
 EXPORT_ID / RO-Crate
 ```
 
-Não é obrigatório que todo objeto passe por todos os IDs.
+It is not mandatory that every object passes through all IDs.
 
-A cadeia existe para reconstruir transições científicas materiais.
+The chain exists to reconstruct material scientific transitions.
 
 ---
 
-## Relatório para Revisor/Editor
+<a id="relatório-para-revisoreditor"></a>
+## Report to Reviewer/Editor
 
-O Meu Artigo pode gerar:
+Meu Artigo can generate:
 
 ```text
 RELATORIO_TRANSPARENCIA_<timestamp>.md
 RELATORIO_TRANSPARENCIA_<timestamp>.json
 ```
 
-O relatório contém apenas o que está registrado nos artefatos canônicos:
+The report contains only what is recorded in the canonical artifacts:
 
-1. identidade do projeto;
-2. desenho e protocolo;
-3. buscas e corpus;
-4. decisões científicas;
-5. gates humanos;
+1. project identity;
+2. design and protocol;
+3. searches and corpus;
+4. scientific decisions;
+5. human gates;
 6. snapshots;
-7. evidências e claims;
-8. uso substantivo de IA e validação humana;
-9. exports W3C PROV / RO-Crate;
-10. lacunas de rastreabilidade ainda abertas.
+7. evidence and claims;
+8. substantive use of AI and human validation;
+9. exports W3C PROV/RO-Crate;
+10. traceability gaps still open.
 
-Ele não é um dump do workspace privado.
+It is not a dump of the private workspace.
 
 ---
 
+<a id="scripts"></a>
 ## Scripts
 
-Registrar uma proposta (estado padrão PROPOSED, sem aprovação humana presumida):
+Register a proposal (default state PROPOSED, no human approval assumed):
 
 ```bash
-python scripts/governance_events.py decision /projeto \
+python scripts/governance_events.py decision /project \
   --type METHOD \
   --question "Qual desenho metodológico?" \
-  --decision "Revisão integrativa" \
+  --decision "Integrative review" \
   --rationale "..."
 ```
 
-Para aprovar uma decisão, informar também `--status APPROVED`, `--decided-by` e `--evidence`, com referência à manifestação humana real.
+To approve a decision, also inform `--status APPROVED`, `--decided-by` and `--evidence`, with reference to the real human manifestation.
 
-Aprovar um gate:
+Approve a gate:
 
 ```bash
-python scripts/governance_events.py gate /projeto \
+python scripts/governance_events.py gate /project \
   --gate-id GATE-0002 \
   --decision APPROVED \
-  --validated-by "Pesquisador" \
+  --validated-by "Researcher" \
   --method "Revisão do protocolo e das strings" \
-  --evidence "Referência à resposta real do pesquisador"
+  --evidence "Reference to the researcher’s actual response"
 ```
 
-Ao aprovar um gate, o snapshot pós-gate é criado automaticamente.
+When approving a gate, the post-gate snapshot is automatically created.
 
-### Justificativa formativa dos gates científicos
+<a id="justificativa-formativa-dos-gates-científicos"></a>
+### Formative justification of scientific gates
 
-Para novos projetos, a aprovação dos gates GATE-0001 a GATE-0006 exige a explicação do próprio pesquisador sobre **por que escolheu aquele caminho** e **qual é uma limitação ou risco**. A Skill deve explicar a proposta antes, sem redigir a resposta que será atribuída ao pesquisador. Os campos são inseridos no mesmo comando com `--researcher-rationale` e `--researcher-limitation` e vinculados à manifestação humana original indicada em `--evidence`. O comando ilustrativo acima continua válido para projetos anteriores, sem o modo formativo habilitado; para projetos novos, complemente-o com essas duas opções. A documentação detalhada está em [Validação formativa](VALIDACAO-FORMATIVA.md).
+For new projects, approval of gates GATE-0001 to GATE-0006 requires the researcher himself to explain **why he chose that path** and **what is a limitation or risk**. Skill must explain the proposal first, without writing the answer that will be attributed to the researcher. The fields are entered in the same command with `--researcher-rationale` and `--researcher-limitation` and linked to the original human manifestation indicated in `--evidence`. The illustrative command above remains valid for previous projects, without formative mode enabled; for new projects, complement it with these two options. Detailed documentation is in [Formative validation](VALIDACAO-FORMATIVA.md).Automatic control prevents approvals without a minimally substantive explanation; does not constitute a test of understanding or proof of human authorship.
 
-O controle automático impede aprovações sem explicação minimamente substantiva; não constitui teste de compreensão ou prova da autoria humana.
-
-Comparar snapshots:
+Compare snapshots:
 
 ```bash
 python scripts/compare_snapshots.py SNAP_A SNAP_B
 ```
 
-Gerar relatório:
+Generate report:
 
 ```bash
-python scripts/generate_transparency_report.py /projeto
+python scripts/generate_transparency_report.py /project
 ```
 
 ---
 
-## Regra anti-Frankenstein
+<a id="regra-anti-frankenstein"></a>
+## Anti-Frankenstein rule
 
-Essa camada existe porque responde perguntas essenciais:
+This layer exists because it answers essential questions:
 
-- O que foi decidido?
-- Por que?
-- Com base em quê?
-- Quem validou?
-- O que mudou?
-- Qual era o estado oficial?
+- What was decided?
+- Why?
+- Based on what?
+- Who validated it?
+- What changed?
+- What was the official status?
 
-Se uma funcionalidade não melhora uma dessas respostas, ela não entra no núcleo.
+If a feature doesn't improve one of these answers, it doesn't go into the core.
 
 
-## GATE-0006 — robustez dos claims
+<a id="gate-0006-robustez-dos-claims"></a>
+## GATE-0006 — robustness of claims
 
-Antes da aprovação do GATE-0006, os claims materiais devem ser confrontados com:
+Before approval of GATE-0006, material claims must be compared with:
 
-- evidência favorável;
-- evidência contrária;
-- explicações alternativas;
-- condições de contorno;
-- dependência de uma única fonte;
-- força da formulação;
-- classificação [L]/[I]/[P].
+- favorable evidence;
+- contrary evidence;
+- alternative explanations;
+- boundary conditions;
+- dependence on a single source;
+- strength of the formulation;
+- classification [L]/[I]/[P].
 
-Um claim pode ser ROBUST, QUALIFIED, REVISE, REJECT ou NOT_APPLICABLE.
+A claim can be ROBUST, QUALIFIED, REVISE, REJECT or NOT_APPLICABLE.
 
-QUALIFIED significa que a condição/limite precisa aparecer no manuscrito.
+QUALIFIED means that the condition/threshold needs to appear in the manuscript.
 
-A aderência à revista pode ser verificada no mesmo gate quando houver revista-alvo, mas nunca pode justificar omitir evidência contrária.
+Adherence to the magazine can be checked at the same gate when there is a target magazine, but it can never justify omitting contrary evidence.

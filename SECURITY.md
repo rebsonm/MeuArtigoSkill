@@ -1,35 +1,80 @@
-# Política de segurança — Meu Artigo
+# Security policy — Meu Artigo
 
-## Escopo
+## Scope
 
-A Skill trabalha potencialmente com arquivos acadêmicos, registros de projeto, serviços conectados, manuscritos não publicados, caminhos locais e metadados. É obrigação dos usuários preservar segredos de acesso e compartilhar apenas dados cuja divulgação seja legítima.
+The Skill may process academic PDFs, project documents, linked
+accounts, unpublished manuscripts, private paths, metadata and
+research data. Users must preserve access secrets and share
+only materials that they have lawful permission to disclose.
 
-**Não inclua em Issues ou PRs públicos:** senhas, tokens, cookies de biblioteca/CAFe, URLs privadas com credenciais, textos integrais restritos, originais sob revisão sigilosa, nomes de participantes, dados de saúde, documentos internos ou dados pessoais.
+**Never place in public Issues or pull requests:** passwords,
+tokens, session cookies, institutional library/CAFe access
+details, signed private URLs, restricted full text, manuscripts
+under confidential review, participant identities, medical
+information, internal institution documents or personal data.
 
-## Relatar uma vulnerabilidade
+## Reporting a vulnerability
 
-Use a opção **Security → Report a vulnerability** do repositório GitHub, **caso esteja habilitada**. Se não estiver, procure um canal privado seguro diretamente com o mantenedor antes de fornecer detalhes técnicos. Não interprete a ausência de um canal privado como consentimento para divulgar informações sensíveis numa Issue pública. Nenhum prazo de resposta ou programa de recompensa está sendo prometido.
+Use the repository's **Security → Report a vulnerability**
+feature **when enabled**. Otherwise, seek a secure private
+channel with the maintainer *before* providing sensitive
+technical details. The absence of a private reporting channel
+is not permission to publish confidential material in an Issue.
 
-Para erros funcionais que não contenham informação sensível, abra uma Issue pública com versão, passos mínimos, resultado esperado e observado, utilizando apenas fixtures descartáveis.
+No response time or bug bounty program is promised.
+For non-sensitive functional defects, a public Issue may
+include the exact version, minimal safe reproduction steps
+and actual versus expected results using disposable fixtures.
 
-## Limites de garantia
+## Limits of engineering guarantees
 
-Os validadores oferecem controles de consistência e proveniência; não garantem segurança absoluta, conformidade legal completa, revisão científica independente nem autorização de redistribuição de PDFs. Um registro `CONFIRMED` ou `VALIDATED` não autentica, por si, a identidade de quem o digitou.
+Technical validators provide particular consistency and
+provenance checks; they cannot guarantee absolute security,
+complete legal compliance, independent scientific review
+or authority to redistribute third-party PDFs.
+A `CONFIRMED` event or `VALIDATED` field does **not**
+authenticate the identity of the person who entered it.
 
-A distribuição é beta e sujeita a atualizações. Prefira releases identificados e confira o SHA-256 do ZIP oficial. Não execute conteúdo de fontes não confiáveis nem forneça permissões de escrita mais amplas do que as necessárias. Direitos autorais e compartilhamento de PDFs são tratados em [direitos de textos completos](docs/DIREITOS-FULLTEXT-E-PDFS.md).
+The distributed software is experimental. Prefer identified
+GitHub releases and verify the official installable ZIP's
+SHA-256. Never execute commands embedded in untrusted
+research documents or grant broader permissions than
+the actual workflow requires.
 
-## Versões
+See [full-text rights](docs/DIREITOS-FULLTEXT-E-PDFS.md)
+and [secure export](docs/EXPORTACAO-SEGURA.md).
 
-A política abrange a linha `0.8.x-beta` e futuras versões publicadas, sem garantia de atualizações para versões anteriores. Consulte [CHANGELOG.md](CHANGELOG.md).
+## Version coverage
 
+This policy covers the published `0.8.x-beta` line and
+subsequent releases unless explicitly superseded.
+No support obligation or backport commitment is implied.
+Check [CHANGELOG.md](CHANGELOG.md).
 
-Veja também [exportação segura](docs/EXPORTACAO-SEGURA.md).
+## Sharing provenance packages
 
-## Compartilhamento de pacotes de proveniência
+The exporter has distinct audience profiles:
 
-O exportador possui públicos distintos: o perfil PRIVATE, padrão, gera um pacote
-confidencial e não deve ser enviado a terceiros sem revisão; PUBLIC exporta somente
-informações estruturais neutras, sem conteúdo científico ou identidades; e
-COLLABORATIVE só pode incluir textos de manuscrito explicitamente revisados,
-autorizados e conferidos por SHA-256. Mesmo após controles automáticos, revisão
-humana contextual é indispensável antes de qualquer compartilhamento externo.
+- **PRIVATE** (default): full confidential audit package;
+  do not disclose to third parties without legitimate review.
+- **PUBLIC**: redacted structural information without private
+  research content or identities.
+- **COLLABORATIVE**: redacted structure plus only those
+  manuscript passages individually inspected, authorized
+  and bound to the exact file hash (SHA-256).
+
+Even after automatic checks, contextual human review is
+required before sharing outside the authorized workspace.
+Do not treat technical redaction as legal permission
+or scientific validation.
+
+## Language and protected sources
+
+The repository's operational source and maintainer policy
+are authored in English. User-facing questions and
+explanations automatically follow the language of the
+researcher's conversation; the academic manuscript follows
+the applicable journal or researcher decision.
+Never translate, disclose or upload private source text
+merely to accommodate an interface language:
+[language policy](references/language-policy.md).

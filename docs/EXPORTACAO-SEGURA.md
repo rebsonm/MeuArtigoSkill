@@ -1,44 +1,48 @@
-# Exportação segura de proveniência — separação por público
+<a id="exportação-segura-de-proveniência-separação-por-público"></a>
+# Secure provenance export — separation by audience
 
-Este documento define três **perfis de distribuição**, implementados em `scripts/export_provenance.py`.
-Nenhum perfil concede direitos para compartilhar material acadêmico protegido, manuscritos
-confidenciais, dados pessoais ou conteúdo sujeito a embargo.
+This document defines three **distribution profiles**, implemented in `scripts/export_provenance.py`.
+No profile grants rights to share protected academic material, manuscripts
+confidential, personal data or content subject to embargo.
 
-## 1. PRIVATE — auditoria interna (padrão)
+<a id="1-private-auditoria-interna-padrão"></a>
+## 1. PRIVATE — internal audit (standard)
 
 ```bash
 python scripts/export_provenance.py /caminho/do/projeto --audience PRIVATE
 ```
 
-Este perfil mantém o pacote integral de proveniência, registros internos, controles,
-e arquivos canônicos elegíveis, conforme as regras de direitos para textos completos.
-O pacote tem prefixo `RO_CRATE_PRIVATE_` e **não deve ser redistribuído**
-sem avaliação separada. Seus dados podem incluir nomes, histórico de decisões,
-citações, comentários, documentos sob revisão e identificadores pessoais.
-O fato de um SHA-256 corresponder aos arquivos não significa ausência de dados sensíveis.
+This profile maintains the full provenance package, internal records, controls,
+and eligible canonical files, according to the rights rules for full texts.
+The package has prefix `RO_CRATE_PRIVATE_` and **should not be redistributed**
+no separate assessment. Your data may include names, decision history,
+citations, comments, documents under review, and personal identifiers.
+The fact that a SHA-256 matches the files does not mean the absence of sensitive data.
 
-Para incluir textos completos na exportação **privada**, continuam exigidos
-`--include-fulltext --confirm-rights-review` e os registros individuais de direitos,
-conforme [direitos de arquivos completos](DIREITOS-FULLTEXT-E-PDFS.md).
-**Nem esse mecanismo autentica juridicamente a permissão de redistribuição.**
+To include full texts in the **private** export, it is still required
+`--include-fulltext --confirm-rights-review` and the individual rights records,
+as per [full file rights](DIREITOS-FULLTEXT-E-PDFS.md).
+**Nor does this mechanism legally authenticate redistribution permission.**
 
-## 2. PUBLIC — estrutura neutra, sem dados da pesquisa
+<a id="2-public-estrutura-neutra-sem-dados-da-pesquisa"></a>
+## 2. PUBLIC — neutral structure, without research data
 
 ```bash
 python scripts/export_provenance.py /caminho/do/projeto --audience PUBLIC
 ```
 
-Gera estrutura RO-Crate com descrição técnica e grafo PROV **deliberadamente
-redigido**, sem nomes de projeto, registros, evidências, buscas, textos,
-documentos, metadados de identificadores científicos ou corpus. Não aceita
-inclusão de textos completos nem exceções por manifesto de arquivos.
+Generates RO-Crate structure with technical description and PROV graph **deliberately
+redacted**, without project names, records, evidence, searches, texts,
+documents, metadata of scientific identifiers or corpus. Not accepted
+inclusion of full texts nor exceptions per file manifest.
 
-**Limitação funcional explícita:** é um artefato de transparência sobre o
-limite de exportação, **não uma reprodução pública auditável da pesquisa**.
-Não se deve descrevê-lo como pacote integral ou evidência independente
-da qualidade do manuscrito.
+**Explicit functional limitation:** is an artifact of transparency about the
+export limit, **not an auditable public reproduction of the research**.
+It should not be described as a complete package or independent evidence
+the quality of the manuscript.
 
-## 3. COLLABORATIVE — colaboração com arquivos especificamente autorizados
+<a id="3-collaborative-colaboração-com-arquivos-especificamente-autorizados"></a>
+## 3. COLLABORATIVE — collaboration with specifically authorized files
 
 ```bash
 python scripts/export_provenance.py /caminho/do/projeto \
@@ -46,12 +50,12 @@ python scripts/export_provenance.py /caminho/do/projeto \
   --approved-files-manifest aprovacao-colaboracao.json
 ```
 
-Sem manifesto, o resultado também é apenas a estrutura neutra.
-Com manifesto, só admite arquivos textuais `.md` e `.txt` dentro da
-pasta canônica `05_Manuscrito/Versao_Canonica/`, cada um vinculado a um
-SHA-256 exato, com revisão de conteúdo e autorização humana declaradas.
+Without a manifesto, the result is also just the neutral structure.
+With manifest, it only supports textual files `.md` and `.txt` within the
+canonical folder `05_Manuscrito/Versao_Canonica/`, each linked to a
+Accurate SHA-256, with declared content review and human authorization.
 
-**Estrutura do manifesto, a ser preenchido com avaliação verdadeira:**
+**Structure of the manifesto, to be completed with true assessment:**
 
 ```json
 {
@@ -69,31 +73,30 @@ SHA-256 exato, com revisão de conteúdo e autorização humana declaradas.
 }
 ```
 
-O exemplo é **um modelo vazio**, não uma declaração de revisão realizada.
-Os arquivos devem ser conferidos manualmente antes de criar o manifesto.
-Alterações de bytes invalidam a aprovação anterior. Links simbólicos,
-arquivos fora da pasta, arquivos binários, dados pessoais evidentes e
-indicadores típicos de credenciais são recusados.
+The example is **an empty template**, not a review performed statement.
+The files must be checked manually before creating the manifest.
+Byte changes invalidate the previous approval. Symbolic links,
+files outside the folder, binary files, obvious personal data and
+Typical credential indicators are declined.
 
-A verificação de padrões técnicos não detecta todas as formas de informação
-confidencial, direitos morais, material inédito, trechos protegidos, dados
-identificáveis indiretamente, figuras ou compromissos com periódicos. A
-**responsabilidade por essa análise permanece humana**. Os campos
-`reviewed_by`/`reviewed_at` são declarações, não prova de identidade.
+Technical standards checking does not detect all forms of information
+confidential, moral rights, unpublished material, protected excerpts, data
+indirectly identifiable figures or commitments to periodicals. A
+**responsibility for this analysis remains human**. The fields
+`reviewed_by`/`reviewed_at` are statements, not proof of identity.
 
-## Limites comuns e consistência dos relatos
+<a id="limites-comuns-e-consistência-dos-relatos"></a>
+## Common limits and consistency of reports
 
-- Exportar é diferente de **publicar**. A permissão deve considerar finalidade
-  e destinatários específicos.
-- Modos externos nunca incluem o grafo PROV completo de eventos individuais,
-  mesmo quando um manuscrito foi autorizado, para evitar reidentificação por
-  cruzamento de IDs e campos auxiliares.
-- O relatório inclui o perfil de público e avisa que exportações externas
-  são reduzidas; não declarar cobertura total da pesquisa.
-- Não colocar nomes, URLs privadas ou documentos sensíveis em Issues públicas,
-  testes, pacotes de instalação ou notas de versões.
-- Para interoperabilidade privada integral, use `PRIVATE` e distribuição
-  restrita, com as verificações institucionais e editoriais pertinentes.
-
-A escolha de licença do **código da Skill** (Apache-2.0) não modifica as
-licenças, direitos e sigilo de **dados e obras usados no projeto científico**.
+- Exporting is different from **publishing**. Permission must consider purpose
+  and specific recipients.
+- External modes never include the complete PROV graph of individual events,
+  even when a manuscript has been authorized, to avoid re-identification by
+  crossing of IDs and auxiliary fields.
+- The report includes the audience profile and warns that external exports
+  are reduced; do not declare full coverage of the research.
+- Do not place names, private URLs or sensitive documents in public Issues,
+  tests, installation packages or release notes.
+- For full private interoperability, use `PRIVATE` and distribution
+  restricted, with the relevant institutional and editorial checks.Choosing the license for the **Skill code** (Apache-2.0) does not modify the
+licenses, rights and confidentiality of **data and works used in the scientific project**.

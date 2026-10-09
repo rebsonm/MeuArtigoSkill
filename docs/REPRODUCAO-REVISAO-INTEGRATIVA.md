@@ -1,20 +1,22 @@
-# Caso de referência — reprodução prospectiva de revisão integrativa
+<a id="caso-de-referência-reprodução-prospectiva-de-revisão-integrativa"></a>
+# Reference case — prospective reproduction of integrative review
 
-**Status: preparado; a reprodução não foi executada.** Caso publicado e real: Straub, V. J.; Morgan, D.; Bright, J.; Margetts, H. (2023), *Artificial intelligence in government: Concepts, standards, and a unified framework*. Government Information Quarterly, 40(4), 101881. [DOI](https://doi.org/10.1016/j.giq.2023.101881).
+**Status: prepared; reproduction was not performed.** Published and real case: Straub, V. J.; Morgan, D.; Bright, J.; Margetts, H. (2023), *Artificial intelligence in government: Concepts, standards, and a unified framework*. Government Information Quarterly, 40(4), 101881. [DOI](https://doi.org/10.1016/j.giq.2023.101881).
 
-O estudo declara revisão integrativa com análise de coocorrência conceitual e apresenta os conceitos **operational fitness**, **epistemic alignment** e **normative divergence**, usados na construção de tipologia. O texto editorial público contém uma divergência entre **64** (destaques) e **69** (resumo) para conceitos/termos; **não adotar nenhum desses números como gabarito até verificar o texto e as unidades contadas**. Não há nesta Skill dados artificiais apresentados como resultado da reprodução.
+The study declares an integrative review with conceptual co-occurrence analysis and presents the concepts **operational fitness**, **epistemic alignment** and **normative divergence**, used in typology construction. The public editorial text contains a divergence between **64** (highlights) and **69** (summary) for concepts/terms; **do not adopt any of these numbers as a template until you check the text and the units counted**. There is no artificial data presented as a result of reproduction in this Skill.
 
-## Protocolo preparado, sem execução
+<a id="protocolo-preparado-sem-execução"></a>
+## Protocol prepared, no execution
 
-1. Registrar versão, data, bases acessíveis e termos exatos **após consultar os métodos completos do artigo**.
-2. Diferenciar conjuntos de trabalhos e unidades conceituais; não tratar número de termos como número de artigos.
-3. Executar buscas reais no mesmo horizonte temporal e, se impossível recuperar a estratégia original, classificar como **reconstrução aproximada**, não reprodução estrita.
-4. Conferir o fluxograma de seleção, numeradores/denominadores e justificativas quando existirem no artigo e seus suplementos; não preencher números não publicados.
-5. Avaliar DOI/títulos reais, retratações, possíveis locators e sustentação de afirmações em fonte primária.
-6. Comparar grupos conceituais (incluindo os três conceitos citados) sem exigir identidade mecânica: diferença interpretativa justificada pode ser contribuição, não erro.
-7. Solicitar avaliação independente dos claims e categorias; sem avaliador real, manter o campo pendente.
-8. Documentar cobertura, omissões, divergências e limitações de acesso/licenças antes de comunicar resultados.
+1. Record version, date, accessible bases and exact terms **after consulting the full article methods**.
+2. Differentiate sets of work and conceptual units; do not treat number of terms as number of articles.
+3. Run real searches in the same time horizon and, if impossible to recover the original strategy, classify as **approximate reconstruction**, not strict reproduction.
+4. Check the selection flowchart, numerators/denominators and justifications when they exist in the article and its supplements; Do not fill in unpublished numbers.
+5. Evaluate DOI/real titles, retractions, possible locators and support for statements in primary sources.
+6. Compare conceptual groups (including the three concepts mentioned) without requiring mechanical identity: justified interpretative difference can be a contribution, not an error.
+7. Request independent evaluation of claims and categories; no real evaluator, keep field pending.
+8. Document coverage, omissions, discrepancies and access/license limitations before communicating results.
 
-Critérios futuros: taxa de referências inexistentes; precisão textual dos locators **em fontes legitimamente acessíveis**; diferença de contagens com denominadores; divergência de classificação submetida a julgamento independente; tempo/retrabalho apenas quando medidos, não estimados.
+Future criteria: non-existent referral rate; textual accuracy of locators **in legitimately accessible sources**; difference of counts with denominators; classification divergence subject to independent judgment; time/rework only when measured, not estimated.
 
-O benchmark anterior de metadados de **revisões sistemáticas** permanece distinto: não reclassificar automaticamente seus artigos como revisão integrativa nem transplantar suas contagens. Não distribuir textos integrais de terceiros no pacote.
+The previous metadata benchmark for **systematic reviews** remains distinct: neither automatically reclassifying your articles as an integrative review nor transplanting your counts. Do not distribute third-party full texts in the package.

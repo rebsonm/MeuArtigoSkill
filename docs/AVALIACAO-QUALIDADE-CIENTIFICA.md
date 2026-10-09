@@ -1,45 +1,51 @@
-# Benchmark de qualidade científica: calibração pública e comparação reproduzível
+<a id="benchmark-de-qualidade-científica-calibração-pública-e-comparação-reproduzível"></a>
+# Scientific quality benchmark: public calibration and reproducible comparison
 
-O benchmark distingue três níveis de evidência: **(1) fatos publicados conferíveis**, **(2) resultados efetivamente produzidos pela Skill** e **(3) julgamentos científicos independentes**. Eles não são intercambiáveis.
+The benchmark distinguishes three levels of evidence: **(1) verifiable published facts**, **(2) results actually produced by Skill** and **(3) independent scientific judgments**. They are not interchangeable.
 
-## Conjunto de referência congelado
+<a id="conjunto-de-referência-congelado"></a>
+## Frozen reference set
 
-Arquivo: \`benchmarks/public_review_reference_v1.json\`.
+File: \`benchmarks/public_review_reference_v1.json\`.
 
-Ele contém exclusivamente fatos bibliográficos e totais de seleção identificados em artigos reais, com links para os respectivos editores e, quando disponível, um repositório institucional:
+It exclusively contains bibliographic facts and selection totals identified in real articles, with links to the respective publishers and, when available, an institutional repository:
 
-1. Madan, R.; Ashok, M. *AI adoption and diffusion in public administration: A systematic literature review and future research agenda*. Government Information Quarterly 40(1), article 101774, 2023, DOI [10.1016/j.giq.2022.101774](https://doi.org/10.1016/j.giq.2022.101774). Na seção de triagem: 221 resultados da busca, 27 adicionais, 166 após remoção de duplicatas, 117 examinados integralmente e 73 incluídos. As diferenças **248**, **82**, **49** e **44** são cálculos aritméticos a partir desses totais publicados, não registros observados separadamente.
-2. Aarab, A.; El Marzouki, A.; Boubker, O.; El Moutaqi, B. *Integrating AI in Public Governance: A Systematic Review*. Digital 5(4), 59, 2025, DOI [10.3390/digital5040059](https://doi.org/10.3390/digital5040059). Inclui 67 estudos. Outros números de etapas não são preenchidos se ausentes no conjunto congelado.
-3. Goulart, J. de M.; Picalho, A. C.; Colombo, J. E. M.; Melo, P. A.; Fadel, L. M. *Processos de Governança em Inteligência artificial em Órgãos Públicos Brasileiros: revisão integrativa*. IJKEM, 2025, DOI [10.5007/2316-6517.2025.e109331](https://doi.org/10.5007/2316-6517.2025.e109331). O resumo do periódico informa **400 documentos recuperados**, **13 incluídos** (6 dissertações, 2 teses e 5 artigos), e cinco eixos temáticos. Etapas intermediárias não são inventadas. É a referência mais direta para uma futura replicação de **revisão integrativa**, que exigirá acesso à lista completa dos estudos e aos critérios de análise.
-4. Page, M. J., et al. *The PRISMA 2020 statement*. BMJ 372:n71, 2021, DOI [10.1136/bmj.n71](https://doi.org/10.1136/bmj.n71). É uma diretriz de reporte; **não** é uma revisão a reproduzir. Participa apenas da calibração dos metadados.
+1. Madan, R.; Ashok, M. *AI adoption and diffusion in public administration: A systematic literature review and future research agenda*. Government Information Quarterly 40(1), article 101774, 2023, DOI [10.1016/j.giq.2022.101774](https://doi.org/10.1016/j.giq.2022.101774). In the screening section: 221 search results, 27 additional, 166 after removing duplicates, 117 fully examined and 73 included. The differences **248**, **82**, **49** and **44** are arithmetic calculations from these published totals, not separately observed records.
+2. Aarab, A.; El Marzouki, A.; Boubker, O.; El Moutaqi, B. *Integrating AI in Public Governance: A Systematic Review*. Digital 5(4), 59, 2025, DOI [10.3390/digital5040059](https://doi.org/10.3390/digital5040059). Includes 67 studies. Other step numbers are not populated if missing in the frozen set.
+3. Goulart, J. de M.; Picalho, A. C.; Colombo, J. E. M.; Melo, P. A.; Fadel, L. M. *Governance Processes in Artificial Intelligence in Brazilian Public Bodies: integrative review*. IJKEM, 2025, DOI [10.5007/2316-6517.2025.e109331](https://doi.org/10.5007/2316-6517.2025.e109331). The journal summary reports **400 documents retrieved**, **13 included** (6 dissertations, 2 theses and 5 articles), and five thematic axes. Intermediate steps are not invented. It is the most direct reference for a future **integrative review** replication, which will require access to the full list of studies and analysis criteria.
+4. Page, M.J., et al. *The PRISMA 2020 statement*. BMJ 372:n71, 2021, DOI [10.1136/bmj.n71](https://doi.org/10.1136/bmj.n71). It is a reporting guideline; **not** a review to reproduce. Participates only in metadata calibration.
 
-Este é um conjunto pequeno, intencional e público. Não constitui amostra probabilística de periódicos, gabarito definitivo de categorias ou validação externa da qualidade da Skill.
+This is a small, intentional, public set. It does not constitute a probabilistic sample of periodicals, a definitive template for categories or external validation of the Skill's quality.
 
-## Reprodução prospectiva de uma revisão integrativa
+<a id="reprodução-prospectiva-de-uma-revisão-integrativa"></a>
+## Prospective reproduction of an integrative review
 
-Além do conjunto atual, há um [caso de reprodução integrativa preparado](REPRODUCAO-REVISAO-INTEGRATIVA.md), com protocolo em `benchmarks/integrative_replication_protocol_v1.json`. O caso é o artigo real de Straub et al. (2023), sobre conceitos e um framework de IA no governo. **Nenhum resultado da reprodução foi produzido**. A divergência entre os totais de conceitos/termos informados no resumo e nos destaques precisa de conferência antes da comparação.
+In addition to the current set, there is a [prepared integrative reproduction case](REPRODUCAO-REVISAO-INTEGRATIVA.md), with protocol in `benchmarks/integrative_replication_protocol_v1.json`. The case is the actual paper by Straub et al. (2023), on concepts and a framework for AI in government. **No reproduction results were produced**. The divergence between the total concepts/terms reported in the summary and in the highlights needs to be checked before comparison.
 
-## Como executar sem aplicativos pagos
+<a id="como-executar-sem-aplicativos-pagos"></a>
+## How to run without paid apps
 
-Apenas Python 3.10+ e biblioteca padrão. O verificador de metadados utiliza os endpoints públicos do Crossref e OpenAlex já adotados pela Skill. Não exige chave paga; uma chave gratuita do OpenAlex é opcional para limites de consulta maiores.
+Python 3.10+ and standard library only. The metadata checker uses the public Crossref and OpenAlex endpoints already adopted by Skill. Does not require paid key; a free OpenAlex key is optional for higher query limits.
 
-### 1. Verificar os metadados reais
+<a id="1-verificar-os-metadados-reais"></a>
+### 1. Check the actual metadata
 
 \`\`\`bash
 python scripts/quality_benchmark.py pilot --output benchmark_pilot.json
 \`\`\`
 
-O comando realiza consultas **reais**, identifica inconclusões, contradições e alertas conhecidos. Nunca informa resultado verificado quando os serviços estão inacessíveis. Para validar a estrutura sem usar rede:
+The command performs **real** queries, identifies inconclusions, contradictions and known alerts. Never reports verified results when services are inaccessible. To validate the structure without using a network:
 
 \`\`\`bash
 python scripts/quality_benchmark.py pilot --offline --output benchmark_offline.json
 \`\`\`
 
-O resultado do \`pilot\` é apenas calibração de bibliografia externa, **não é avaliação de texto acadêmico gerado por IA**.
+The result of \`pilot\` is just calibration of external bibliography, **not evaluation of AI-generated academic text**.
 
-### 2. Comparar um resultado real da Skill
+<a id="2-comparar-um-resultado-real-da-skill"></a>
+### 2. Compare a real Skill result
 
-Execute o mesmo roteiro de trabalho científico, com critérios congelados, no modo-base e no modo-atualizado, preservando os resultados obtidos **realmente**. Prepare cada saída no formato de observações:
+Execute the same scientific work script, with frozen criteria, in base mode and updated mode, preserving the **really** obtained results. Prepare each output in the format of observations:
 
 \`\`\`json
 {
@@ -57,45 +63,46 @@ Execute o mesmo roteiro de trabalho científico, com critérios congelados, no m
 }
 \`\`\`
 
-O exemplo mostra **apenas a estrutura e os metadados publicados**, não resultados fictícios da Skill. Os campos de \`stage_counts\`, \`locators\` e \`claims\` devem ser preenchidos somente após a execução real; não copie contagens do conjunto de referência para fingir que a Skill as reproduziu.
+The example shows **only the published structure and metadata**, not dummy Skill results. The \`stage_counts\`, \`locators\` and \`claims\` fields must be filled in only after the actual execution; do not copy counts from the reference set to pretend the Skill reproduced them.
 
-Avalie:
+Rate:
 
 \`\`\`bash
 python scripts/quality_benchmark.py evaluate \
-  --candidate /caminho/resultado_observado.json \
-  --workspace /caminho/do/projeto \
-  --output /caminho/relatorio_qualidade.json
+  --candidate /path/resultado_observado.json \
+  --workspace /path/of/project \
+  --output /path/relatorio_qualidade.json
 \`\`\`
 
-Para comparação antes/depois, acrescente \`--baseline /caminho/baseline_observado.json\`. Sem observação para uma dimensão, a métrica é **null / não avaliada**, nunca 100%. Diferenças de versões só são interpretáveis com a mesma tarefa, fonte, período, critérios e denominadores.
+For before/after comparison, add \`--baseline /caminho/baseline_observado.json\`. Without observation for a dimension, the metric is **null / not evaluated**, never 100%. Version differences are only interpretable with the same task, source, period, criteria and denominators.
 
-## Dimensões e limitações das métricas
+<a id="dimensões-e-limitações-das-métricas"></a>
+## Dimensions and limitations of metrics
 
-| Dimensão | Quando é mensurável | Limitação |
+| Dimension | When is it measurable | Limitation |
 | --- | --- | --- |
-| Identidade bibliográfica | Quando o trabalho informa DOI ou título comparável a uma referência congelada | Não mede se novas citações desconhecidas foram inventadas; uma auditoria mais ampla exige checar **todas** as referências geradas |
-| Contagens/fluxos | Quando a execução apresenta seus próprios números | Precisão descritiva sobre os números publicados não reproduz a busca histórica nem decisões individuais |
-| Localizadores | Quando o projeto dispõe do texto de origem legalmente acessível | MATCHED significa presença textual; não garante suporte semântico nem qualidade do estudo |
-| Claims científicos | **Somente** com julgamentos fundamentados, externos às predições e entregues separadamente | Um campo JSON de "revisor" não autentica independência; discordâncias devem ser adjudicadas |
-| Categorias teóricas | Quando existe uma rubrica e comparação independente contextualizada | Categorias novas justificadas não devem ser penalizadas apenas por diferirem da publicação-base |
-| Tempo/retrabalho/usabilidade | Em desenho de avaliação próprio, com protocolo e métricas operacionais | Não corresponde à validade científica do manuscrito |
+| Bibliographic identity | When the work reports a DOI or title comparable to a frozen reference | It does not measure whether new unknown quotes were invented; a broader audit requires checking **all** generated references |
+| Counts/flows | When the run comes up with its own numbers | Descriptive precision on published numbers does not reproduce the historical search or individual decisions |
+| Locators | When the project has the source text legally accessible | MATCHED means textual presence; does not guarantee semantic support or quality of the study |
+| Scientific claims | **Only** with reasoned judgments, outside the predictions and delivered separately | A "reviewer" JSON field does not authenticate independence; disagreements must be adjudicated |
+| Theoretical categories | When there is a rubric and independent comparison contextualized | New justified categories should not be penalized just because they differ from the base publication |
+| Time/rework/usability | In-house evaluation design, with protocol and operational metrics | Does not correspond to the scientific validity of the manuscript |
 
-## Julgamento independente
+<a id="julgamento-independente"></a>
+## Independent judgment
 
-O arquivo opcional de anotações requer \`schema_version: 1\`, \`reviewer_reference\` com a referência documental à avaliação real, e \`claims\` com \`claim_id\` e \`label\` (SUPPORTED, NOT_SUPPORTED ou UNCERTAIN). Ele é informado por \`--adjudications\`.
+The optional notes file requires \`schema_version: 1\`, \`reviewer_reference\` with the documentary reference to the actual assessment, and \`claims\` with \`claim_id\` and \`label\` (SUPPORTED, NOT_SUPPORTED, or UNCERTAIN). It is reported by \`--adjudications\`.
 
-**Não** gere esse arquivo com as próprias respostas que serão avaliadas e não faça a IA declarar uma revisão "cega" inexistente. Um avaliador deve consultar as evidências diretamente e justificar divergências. Respeite o enquadramento ético aplicável caso a avaliação envolva participantes humanos.
+**Do not** generate this file with the very answers that will be evaluated and do not have the AI ​​declare a non-existent "blind" review. An evaluator must consult the evidence directly and justify discrepancies. Respect the applicable ethical framework if the assessment involves human participants.
 
-## Protocolo de decisão
+<a id="protocolo-de-decisão"></a>
+## Decision protocol
 
-1. Congelar corpus, data, método, critérios e versão da Skill.
-2. Executar roteiro-base e guardar saída bruta, hashes e eventuais indisponibilidades.
-3. Executar versão alterada nas mesmas condições, de preferência com ordem contrabalanceada e informação de modelo/ferramentas documentada.
-4. Auditar toda referência adicionada e checar fontes/locators originais.
-5. Obter revisão independente dos claims e das categorias, sem aceitar o próprio modelo como gabarito.
-6. Publicar cobertura, denominadores, erros, discordâncias e limites; não converter um piloto pequeno em "qualidade científica validada".
+1. Freeze corpus, date, method, criteria and Skill version.
+2. Execute base script and save raw output, hashes and possible unavailability.
+3. Run modified version under the same conditions, preferably with counterbalanced order and documented model/tool ​​information.
+4. Audit all added references and check original sources/locators.
+5. Obtain an independent review of the claims and categories, without accepting the model itself as a template.
+6. Publish coverage, denominators, errors, disagreements and limits; not convert a small pilot into "validated scientific quality".The tests in \`tests/test_quality_benchmark.py\` use controlled mutations and disposable files to verify the **software**; are not presented as research data. The pilot that uses real APIs has a separate execution and report with the responses actually observed.
 
-Os testes em \`tests/test_quality_benchmark.py\` usam mutações controladas e arquivos descartáveis para verificar o **software**; não são apresentados como dados de pesquisa. O piloto que utiliza APIs reais tem execução separada e relatório com as respostas efetivamente observadas.
-
-Este conjunto inicial não substitui uma replicação completa de uma revisão integrativa publicada. Tal replicação requer acesso aos registros exportados, decisões de seleção, corpus e categorização primária, que não devem ser inventados ou extraídos apenas do resumo do artigo.
+This starter set does not replace a full replication of a published integrative review. Such replication requires access to exported records, selection decisions, corpus and primary categorization, which should not be invented or extracted solely from the article abstract.

@@ -1,159 +1,215 @@
-# Rotas metodológicas operacionais — Meu Artigo
+# Operational research-method routes — Meu Artigo
 
-O desenho científico é uma **decisão do pesquisador**, e não uma propriedade
-inferida da disponibilidade de ferramentas, bases de dados ou de um modelo de IA.
-Este roteiro operacionaliza de modo **condicional** fundamentos já documentados
-em [fundamentação metodológica](../references/methodological-foundations.md)
-e [desenho de artigo/revisão](../references/review-design.md). A implementação
-não constitui instrumento metodológico validado nem metodologia específica
-atribuída aos autores consultados.
+The scientific design is a **researcher decision**, not something
+automatically determined by the AI model's tools, database access
+or favorite method. This document operationalizes the conditional
+methodological foundations in
+[methodology](../references/methodological-foundations.md)
+and [article/review design](../references/review-design.md).
+The rules are software **workflow policies**, not external
+instruments claimed to be authored or validated by the cited
+methodologists.
 
-## 1. Decisão e continuidade
+The repository's documents are in English. Explain these choices,
+scientific gates and limitations to the **researcher in the language
+of their actual conversation**. Journal/manuscript language is a
+separate choice: [language policy](../references/language-policy.md).
 
-- Inicializar o projeto preserva o texto original do problema. O argumento
-  `--article-type` é apenas um rótulo; classes ambíguas ficam `UNDECIDED`.
-  O argumento opcional `--method-route` seleciona um caminho provisório.
-- O planejamento é guardado em
-  `00_Gestao_e_Continuidade/METHOD_PROFILE.json`, sem novos identificadores
-  de decisões, planilhas ou *gates*.
-- A escolha só pode ser confirmada com **decisão humana real**, referência
-  verificável de sua manifestação e justificativa registrada:
+## 1. Researcher decision and safe continuation
+
+- During project initialization, preserve the researcher's original
+  problem and article description. `--article-type` is a descriptive
+  label, not confirmed scientific classification; ambiguous labels
+  remain `UNDECIDED`. Optional `--method-route` selects a provisional
+  method-specific scaffold.
+- The canonical planning document is
+  `00_Gestao_e_Continuidade/METHOD_PROFILE.json`. It does not
+  introduce a new decision identifier, worksheet or scientific gate.
+- The chosen route becomes confirmed **only by a real researcher**
+  with an attributable rationale and a reference to the original
+  declaration:
+
   ```bash
-  python scripts/choose_method_route.py PROJETO \
+  python scripts/choose_method_route.py PROJECT \
     --route QUANTITATIVE \
-    --decided-by "Pesquisador responsável" \
-    --evidence "REFERENCIA_REAL_DA_MANIFESTACAO" \
-    --rationale "JUSTIFICATIVA_REAL_FORMULADA_PELO_PESQUISADOR"
+    --decided-by "Real researcher" \
+    --evidence "ACTUAL_DECISION_REFERENCE" \
+    --rationale "The researcher's substantive original rationale"
   ```
-  Os trechos em maiúsculas são campos para dados reais; o comando **não**
-  preenche respostas sozinho. A identidade alegada é registrada, não
-  criptograficamente autenticada. O programa utiliza os registros DEC e TRACE
-  já existentes e preserva os demais documentos.
-- Se a pesquisa avançou a *gates* decisivos, a alteração automática de rota
-  é bloqueada; exige revisão humana dos procedimentos e estados existentes,
-  nunca reconstrução ou apagamento silencioso.
-- A rota pode ser reexaminada pelo pesquisador. Para projetos antigos sem
-  `method_route_governance_required`, não há migração automática de
-  avaliações, arquivos ou decisões: a compatibilidade é preservada.
 
-## 2. Panorama dos caminhos
+  The uppercase placeholders above must be replaced with
+  **actual information**. The script does not create a researcher's
+  response or authenticate the claimed person. It uses existing
+  `DEC_ID` and TRACE provenance structures and preserves
+  previously recorded project materials.
 
-| Rota | Pergunta científica central | Evidência/atividade relevante | Etapa que não deve ser imposta |
-|---|---|---|---|
-| `INTEGRATIVE_REVIEW` | Que entendimento novo resulta da integração crítica? | Busca delimitada, avaliação de estudos, categorias, tensões | Cobertura universal apenas por usar bases indexadas |
-| `SYSTEMATIC_REVIEW` | Qual resposta decorre do conjunto elegível definido em protocolo? | Busca abrangente proporcional, elegibilidade, risco de viés, síntese | Uso automático da etiqueta sistemática só por seguir PRISMA |
-| `PROBLEMATIZING_REVIEW` | Quais pressupostos precisam ser desafiados? | Literatura teoricamente seletiva, contraposições, reformulação | Triagem exaustiva como requisito universal |
-| `CONCEPTUAL_THEORY` | Que mecanismo, argumento ou proposição se justifica? | Trabalhos próximos, linhagem conceitual, objeções, fronteiras | Coleta de campo e teste estatístico obrigatório |
-| `QUALITATIVE` | Que sentidos, práticas ou processos ocorrem em um contexto? | Casos, participantes, documentos, reflexividade e interpretação | Supor que confiabilidade estatística define toda pesquisa interpretativa |
-| `QUANTITATIVE` | Que descrição, associação, predição ou efeito é defensável? | Unidades, instrumentos, amostra observada, análise executada | Declarar causalidade a partir de correlação ou teste isolado |
-| `MIXED_METHODS` | Por que e como integrar componentes QUAN e QUAL? | Vertentes substantivas, ponto real de integração, discordâncias | Tratar gráficos mais entrevistas como integração automática |
-| `DESIGN_SCIENCE` | Que artefato resolve um problema e com que evidência de avaliação? | Problema, requisitos, construção verificável, avaliação real | Alegar efetividade só porque o artefato foi desenhado |
+- Once consequential method/evidence gates have been concluded,
+  automatic route switching is blocked. A real researcher must
+  review the prior protocol, decisions and evidence before any
+  deliberate migration. Never delete or reconstruct prior science.
+- Older projects without
+  `method_route_governance_required` are kept compatible without
+  retroactively filling gates, authorship or decisions.
 
-## 3. A Cebola de Pesquisa como conferência de coerência
+## 2. Method-specific routes
 
-O perfil contempla as seis camadas explicadas em
-[fundamentos](../references/methodological-foundations.md#31-a-cebola-de-pesquisa-research-onion-integração-das-escolhas):
-posição filosófica pertinente, lógica de desenvolvimento da teoria,
-escolha metodológica, estratégia de investigação, horizonte temporal e
-procedimentos/técnicas. Registra também a justificativa de **coerência**
-entre pergunta, inferência visada e métodos.
+| Route code | Scientific question | Appropriate evidence or activity | What must not be universally imposed |
+| --- | --- | --- | --- |
+| `INTEGRATIVE_REVIEW` | What explanatory understanding results from critical integration? | Documented bounded search, source appraisal, thematic tensions and contribution | Pretending complete coverage merely because indexed databases were searched |
+| `SYSTEMATIC_REVIEW` | What conclusion follows from a genuinely defined eligibility protocol? | Proportionate comprehensive search, selection, risk-of-bias assessment and synthesis | Calling a search systematic just because PRISMA was mentioned |
+| `PROBLEMATIZING_REVIEW` | Which underlying assumptions should be questioned? | Theoretically purposeful literature, counterpositions and revision of assumptions | Exhaustive screening as an automatic requirement |
+| `CONCEPTUAL_THEORY` | What mechanism, framework, proposition or argument is defensible? | Nearby research, lineage of concepts, alternative explanations and boundaries | Mandatory fieldwork or statistical tests for purely conceptual research |
+| `QUALITATIVE` | What meanings, practices or organizational processes occur in context? | Cases, interviews or documents legitimately obtained and analyzed, reflexivity | Treating statistical inter-rater reliability as universally required for interpretive work |
+| `QUANTITATIVE` | What descriptive, associative, predictive or causal inference is supportable? | Defined units, sample, measures, real data, executed statistical analysis | Calling an association causal without valid identification |
+| `MIXED_METHODS` | Why and how must substantive QUAL and QUAN strands be integrated? | Distinct strands, actual point of integration, discrepancies and meta-inference | Claiming methods are integrated merely because both appear in a paper |
+| `DESIGN_SCIENCE` | What artefact addresses a problem, and how is its evaluation supported? | Requirements, justified construction, actual evaluation and traceable results | Claiming effectiveness solely from the existence of a prototype |
 
-As camadas **não têm correspondência determinística**. A posição
-filosófica não é uma classificação imposta pelo algoritmo. Nos projetos
-empíricos, a decisão de liberar o desenho verifica apenas que estratégia,
-procedimentos e justificativa foram documentados; sua suficiência
-epistemológica é avaliada pelo pesquisador, e não pelo código. Para
-outros desenhos, preencher cada campo da cebola é opcional, desde que
-seja explicitado o argumento pertinente ao tipo de pesquisa.
+If the intended design is genuinely unclear, use `UNDECIDED` and
+present alternatives to the researcher. Do not invent consent or
+pretend that availability of a survey, LLM or corpus implies a route.
 
-A interface **MINIMAL** pede somente a próxima decisão substantiva e seu
-principal limite. A interface **FULL** expõe o registro técnico completo.
-Os controles científicos subjacentes permanecem idênticos.
+## 3. Research Onion as a coherence check
 
-## 4. Controles particulares
+The planning profile records six commonly discussed layers of
+Saunders' **Research Onion**:
+philosophical position where relevant; theory development logic;
+methodological choice; research strategy; time horizon; and
+techniques/procedures. It also asks for the coherence rationale
+connecting question, intended inference, data and method.
 
-**Quantitativo:** diferenciar `DESCRIPTIVE`, `ASSOCIATIONAL`,
-`PREDICTIVE` e `CAUSAL` antes de propor inferências.
-Registrar população/unidade, amostragem, mensuração, fontes de dados,
-análise e limitações inferenciais. Para linguagem causal, requer-se
-justificativa de identificação apropriada (por exemplo, contrafactual,
-intervenção ou hipótese explícita e defensável); um modelo de regressão
-não identifica efeito por si. Cálculo de poder, teste de pressupostos,
-estimação e significância só podem ser relatados após execução e evidência.
+These layers do **not** map deterministically onto particular
+tools, results or epistemologies. The assistant must not
+automatically assign a philosophical worldview from a method.
+For empirical routes, the software only checks that a strategy,
+procedures and coherence explanation have been documented;
+their adequacy requires the researcher's critical evaluation.
+For conceptual/review routes, every layer need not be separately
+filled if it does not serve the research argument.
 
-**Qualitativo:** declarar tradição metodológica quando pertinente
-(fenomenologia, narrativa, estudo de caso, *grounded theory* etc.),
-unidade/fenômeno, seleção, materiais, análise e reflexividade.
-Critérios de qualidade devem respeitar a tradição; não impor Kappa ou
-saturação como regra universal.
+The `MINIMAL` interface shows the next substantive decision
+and material risk. `FULL` can expose detailed records. The
+**underlying scientific controls are identical**, and neither
+presentation mode constitutes scientific validation.
 
-**Misto:** declarar desenho `CONVERGENT`,
-`EXPLANATORY_SEQUENTIAL`, `EXPLORATORY_SEQUENTIAL` ou `EMBEDDED`,
-componentes QUAN e QUAL e o mecanismo de integração `CONNECTING`,
-`BUILDING`, `MERGING` ou `EMBEDDING`. Explicitar a contribuição
-da integração, o ponto temporal/analítico e como serão examinados
-resultados divergentes. **Plano de integração não equivale a integração
-executada.** A liberação final requer referência ao artefato real
-da integração.
+## 4. Controls by method family
 
-**Design science:** diferenciar fundamentação do problema,
-características do artefato, decisões de construção e avaliação
-empírica/analítica efetivamente conduzida. Protótipo disponível não é
-prova de utilidade ou de adoção.
+**Quantitative:** distinguish `DESCRIPTIVE`,
+`ASSOCIATIONAL`, `PREDICTIVE` and `CAUSAL` claims before
+proposing analysis. Record population/units, sampling,
+constructs/measures, source data, analysis plan and
+inferential limitations. For causal claims, specify a defensible
+identification strategy and assumptions appropriate to the
+research design; a regression coefficient alone is not a
+causal estimate. Do not report power calculations, tests,
+uncertainty intervals or significance as performed unless
+they were actually executed and are traceable.
 
-**Teoria e revisões:** a lógica de seleção de literatura e o significado
-de “síntese” dependem da família de estudo. Somente revisões que
-efetivamente operam com elegibilidade/corpus passam por congelamento
-bibliográfico. Identificação e leitura de fontes continuam
-rastreáveis em todo trabalho quando utilizadas.
+**Qualitative:** declare the relevant tradition, such as
+phenomenology, narrative, grounded theory or case research
+where appropriate. Describe the phenomenon/case, setting,
+participant or material selection, analysis and reflexivity.
+Quality criteria are tradition-specific; do not demand Kappa
+or saturation for every interpretive design.
 
-## 5. Os mesmos sete gates, funções adequadas ao desenho
+**Mixed methods:** document one of
+`CONVERGENT`, `EXPLANATORY_SEQUENTIAL`,
+`EXPLORATORY_SEQUENTIAL` or `EMBEDDED`; substantial
+QUAL and QUAN strands; and integration mechanism
+`CONNECTING`, `BUILDING`, `MERGING` or
+`EMBEDDING`. Explain why integration is essential, the
+time/analytic point and how disagreement will be examined.
+A proposed integration plan is **not evidence of integration
+performed**. A final claim of integrated results requires
+reference to the real integration output.
 
-`GATE-0001` pergunta e contribuição; `GATE-0002` escolha
-metodológica e protocolo; `GATE-0003` estratégia relevante de
-literatura/fundamentação; `GATE-0004` corpus **bibliográfico**
-ou materiais/dados/artefato **empírico**; `GATE-0005` síntese,
-análise real, integração ou avaliação conforme a rota;
-`GATE-0006` integridade das afirmações e apreciação científica;
-`GATE-0007` conformidade com a revista e arquivos de submissão.
+**Design science:** separate knowledge of the practical
+problem, artefact requirements, actual construction choices
+and evaluation genuinely performed. A versioned prototype
+does not demonstrate adoption, utility or effectiveness.
 
-Nenhum *gate* é considerado aprovado apenas por conclusão de tarefa
-C.A.D.A., por um campo preenchido ou por decisão sintética da IA.
-A cada aprovação de novo projeto, o *gate* anterior deve estar
-devidamente decidido. Ações intermediárias podem ser autônomas, mas
-escolhas científicas críticas continuam sob decisão humana.
+**Theory and reviews:** choose literature selection and
+synthesis rules appropriate to the review family.
+Only a review genuinely using bibliographic eligibility
+and a bounded review corpus passes through literature
+corpus-freeze controls. Source identification and provenance
+remain traceable whenever scientific literature is used.
 
-Nos desenhos empíricos, `GATE-0004` exige registro de **materiais
-efetivamente obtidos/construídos** e referência de onde verificá-los.
-`GATE-0005` exige registro de **análise/avaliação executada** e sua
-evidência original; métodos mistos ainda exigem evidência da integração.
-Um estado declarado no perfil é um **registro** e não comprova, por si,
-a execução científica: a auditoria das evidências permanece obrigatória.
+## 5. Same seven human scientific gates; method-adapted meanings
 
-Não marcar `NOT_APPLICABLE` para contornar planejamento, material,
-análise e auditoria científica. Se o posicionamento bibliográfico
-prévio realmente não for pertinente, a exceção requer autoria, prova
-da decisão e justificativa substantiva. `GATE-0007` pode permanecer
-pendente quando não houver intenção de submeter a uma revista.
+`GATE-0001`: research question and intended contribution.
 
-Em particular, a verificação bibliográfica não prova interpretação
-científica: consultar [níveis de evidência](NIVEIS-DE-EVIDENCIA.md)
-antes de congelar qualquer `EMPIRICAL_RESULT`. Revisão humana registrada
-também não é autenticação independente da pessoa ou do resultado.
+`GATE-0002`: scientific route, method choice and appropriate
+protocol, based on a traceable real researcher decision.
 
-## 6. Linhagem e limites da evidência
+`GATE-0003`: relevant literature/search strategy or theoretical
+positioning; the exact purpose differs across methods.
 
-- [L] evidencia o que uma fonte ou conjunto de dados acessível realmente
-  sustenta; [I] identifica interpretação delimitada; [P] explicita a
-  proposição original. **A existência de um DOI ou de um arquivo não
-  prova suporte semântico de uma afirmação.**
-- Uma decisão `APPROVED` exige revisão humana real e referência.
-  Conferências automatizadas validam **estrutura e integridade formal**,
-  não qualidade teórica, adequação causal ou resultados de campo.
-- Nenhum código pode inferir resultados quantitativos, depoimentos,
-  análises qualitativas, avaliações de artefatos, aprovações éticas,
-  participação de pessoas ou impacto do C.A.D.A.
-- O Drive segue canônico quando conectado; arquivos locais são estágio
-  autorizado, nunca autorização automática para sincronizar ou compartilhar
-  pesquisa. Revisões textuais, anexos de periódicos e textos integrais
-  respeitam as regras de direitos e confidencialidade.
+`GATE-0004`: either a **bibliographic corpus** for an actual
+review or real **empirical materials/data/artefact construction**
+for the corresponding method.
+
+`GATE-0005`: actual synthesis, statistical/qualitative
+analysis, mixed-method integration or design-science
+evaluation, depending on route.
+
+`GATE-0006`: provenance, limits, scientific claim
+integrity, contrary evidence and actual researcher review.
+
+`GATE-0007`: verified journal rules, manuscript
+files, submission readiness and evidence of external actions.
+
+These are the **existing identifiers**, not a new gate family.
+Filling a spreadsheet cell, completing a C.A.D.A. task
+or drafting a plausible LLM explanation does not approve a gate.
+For new route-aware projects, each approval checks the
+required prior state and the relevant method-specific evidence.
+
+At `GATE-0004`, empirical routes require an actual
+materials/data/artefact reference and an explicit record
+that they have been obtained or constructed.
+At `GATE-0005`, the relevant analysis/evaluation must
+have really occurred, with original evidence recorded.
+Mixed-method research additionally needs evidence of the
+actual integration, not only plans.
+
+A declared evidence state is an **auditable claim made
+in a record**, not independent proof of research execution.
+Original artifacts, source quality and actual researcher
+review must still be inspected.
+
+Do not mark `NOT_APPLICABLE` merely to bypass
+methodological planning, empirical materials, substantive
+analysis or scientific-claim audit. A genuinely irrelevant
+literature-positioning substage requires a substantive
+human rationale and evidence reference. If no journal
+submission is intended, the submission gate may
+remain pending without pretending it was completed.
+
+## 6. Source lineage and epistemic limitations
+
+- **[L]**: assertion supported by actual consulted evidence.
+- **[I]**: bounded author inference with a stated warrant.
+- **[P]**: original proposal with nearest prior works,
+  a contribution delta and limits.
+
+A DOI match or the presence of a document file is not
+proof that its text semantically supports a claim.
+See [evidence levels](NIVEIS-DE-EVIDENCIA.md).
+
+No code in this Skill should claim to have performed a
+survey, interview, analysis, artifact evaluation,
+human approval, ethics decision or causal assessment
+solely by populating a profile. An `APPROVED` record
+requires a real human decision, but recording a person's
+name does not cryptographically authenticate them.
+
+Workspace content, AI use, permissions, participant data
+and source licenses must be handled under the authorized
+storage and sharing policy. A local file is not a proven
+Google Drive upload. Journal rules and third-party PDF
+rights remain applicable.
+
+Neither these routing rules nor the software tests
+constitute independent scientific validation of the
+Skill or the effect of C.A.D.A. Independent evaluations
+are listed in [pending validations](VALIDACOES-PENDENTES.md).

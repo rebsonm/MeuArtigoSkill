@@ -1,29 +1,33 @@
-# Meu Artigo — versão beta 0.8.0-beta.2
+<a id="meu-artigo-versão-beta-080-beta2"></a>
+# My Article — beta version 0.8.0-beta.2
 
-O **Meu Artigo** ajuda a transformar uma ideia de pesquisa em um processo organizado de desenvolvimento de artigos científicos, com acompanhamento de etapas, fontes consultadas, decisões do pesquisador e preparação para submissão.
+**My Article** helps transform a research idea into an organized process of developing scientific articles, with monitoring of steps, sources consulted, researcher decisions and preparation for submission.
 
-Nesta atualização, a página de apresentação foi reorganizada para facilitar a compreensão do projeto por estudantes, professores e pesquisadores, sem misturar instruções internas de desenvolvimento com a descrição destinada ao público.
+In this update, the presentation page was reorganized to facilitate the understanding of the project by students, teachers and researchers, without mixing internal development instructions with the description intended for the public.
 
-## O que você encontra nesta versão
+<a id="o-que-você-encontra-nesta-versão"></a>
+## What you find in this version
 
-- Planejamento de artigos a partir de um tema, pergunta ou problema de pesquisa.
-- Apoio à busca bibliográfica, organização e avaliação crítica de fontes.
-- Acompanhamento das etapas e pendências com o método C.A.D.A.
-- Organização das evidências utilizadas na elaboração do manuscrito.
-- Orientação para adequação às exigências da revista-alvo.
-- Recursos de rastreabilidade e continuidade do trabalho entre sessões.
-- Guias para começar a utilizar a Skill em plataformas compatíveis.
+- Planning articles based on a topic, question or research problem.
+- Support for bibliographic search, organization and critical evaluation of sources.
+- Monitoring of stages and pending issues with the C.A.D.A method.
+- Organization of evidence used in preparing the manuscript.
+- Guidance to adapt to the requirements of the target magazine.
+- Traceability and work continuity features between sessions.
+- Guides to start using the Skill on compatible platforms.
 
-## Como instalar
+<a id="como-instalar"></a>
+## How to install
 
-Baixe o arquivo **MeuArtigoSkill-v0.8.0-beta.2.zip** disponibilizado nesta página e siga o [guia de instalação](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/COMECE-AQUI.md).
+Download the **MeuArtigoSkill-v0.8.0-beta.2.zip** file available on this page and follow the [installation guide](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/COMECE-AQUI.md).
 
-A disponibilização dos recursos e das integrações depende da plataforma, da conta e das fontes a que o pesquisador tem acesso. O arquivo **SHA256SUMS.txt** permite conferir a integridade do download.
+The availability of resources and integrations depends on the platform, account and sources the researcher has access to. The **SHA256SUMS.txt** file allows you to check the integrity of the download.
 
-## Uma observação importante
+<a id="uma-observação-importante"></a>
+## An important note
 
-O Meu Artigo é uma ferramenta de apoio: **as decisões metodológicas, a conferência das fontes, a interpretação dos resultados e o conteúdo final do artigo continuam sob responsabilidade do pesquisador**.
+My Article is a support tool: **methodological decisions, checking of sources, interpretation of results and the final content of the article remain the responsibility of the researcher**.
 
-Esta é uma versão beta. A ferramenta possui testes técnicos automatizados, mas seus resultados científicos e eventuais ganhos de eficiência ainda precisam de avaliação independente. O uso da Skill não garante publicação ou aceitação de um artigo.
+This is a beta version. The tool has automated technical tests, but its scientific results and possible efficiency gains still need independent evaluation. Using the Skill does not guarantee publication or acceptance of an article.
 
-O software original é distribuído sob licença MIT, sem transferir automaticamente direitos sobre documentos de terceiros.
+The original software is distributed under the MIT license, without automatically transferring rights to third-party documents.

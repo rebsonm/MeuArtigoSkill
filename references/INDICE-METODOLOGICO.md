@@ -1,66 +1,68 @@
-# Índice seletivo da fundamentação metodológica
+# Selective index of the methodological foundations
 
-**Fonte:** [mapa metodológico completo](methodological-foundations.md),
-mantido integralmente. Este índice **não acrescenta** livros, resultados
-de busca nem alega leitura de obras não consultadas. Os qualificadores
-de consulta abaixo reproduzem o estatuto de consulta declarado no
-mapa original de outubro de 2026; não são verificações novas.
+**Source:** [the complete methodological foundations](methodological-foundations.md),
+preserved without rewriting its bibliography or source evidence
+status. This index neither adds literature nor asserts new readings.
+The declared consultation statuses reproduce the original October
+2026 methodological map and require source-level verification when
+used in an individual paper.
 
-## Regra de mobilização
+## Retrieval policy
 
-- **Essencial em todos os projetos:** alinhar pergunta, método, inferência
-  pretendida, natureza do material, limites, proveniência e controle
-  das afirmações [L]/[I]/[P]. Não implica que todos os autores
-  abaixo devam ser citados.
-- **Condicional:** ler somente a seção e os autores da rota escolhida.
-- **Complementar:** trazer escrita/publicação, ferramentas, normas
-  de relato e outras tradições **somente se contribuírem concretamente**
-  para o artigo e se os textos relevantes forem realmente acessíveis.
+- **Essential to every project:** align research question, study
+  design, intended inference, nature of evidence, limitations,
+  provenance and statements classified [L], [I] and [P].
+  This does not imply that every author listed must be cited.
+- **Conditional:** load only the section and sources relevant
+  to the research route genuinely chosen by the researcher.
+- **Supplementary:** load writing, journal dialogue, reporting
+  standards and neighboring traditions when they materially
+  support the article and relevant texts are actually available.
 
-A escolha de autor para fundamentar o artigo deve registrar **o que
-foi efetivamente consultado no projeto do usuário**. Identificação
-bibliográfica realizada na elaboração desta Skill não substitui
-leitura ou citação controlada no estudo corrente.
+The source's consultation status in the Skill does **not**
+prove it was consulted for the researcher's own paper.
+Actual article claims need their own source checks, quotations,
+location and researcher judgment.
 
-## Rotas e fontes como estão classificadas na fundamentação
+## Methods and references as already classified
 
-| Rota / necessidade | Abordar quando | Fundamentos indicados no mapa | Estatuto da consulta declarado pelo mapa |
+| Research path | When relevant | Authors identified in the underlying map | Declared status in that map |
 | --- | --- | --- | --- |
-| Integrativa | Integrar criticamente fontes heterogêneas | Elsbach & van Knippenberg; Torraco; Whittemore & Knafl; Snyder; Grant & Booth | Elsbach e Grant/Booth: textos pertinentes consultados; Torraco, Whittemore/Knafl, Snyder: referências/metadados e descrições |
-| Problematização / teórico | Examinar pressupostos e argumentar contribuição | Alvesson & Sandberg (2011, 2020); Bispo; Barney | Textos pertinentes consultados |
-| Sistemática / relatos de buscas | Protocolo e elegibilidade abrangentes realmente aplicados | Grant & Booth; Rethlefsen et al. (PRISMA-S); Snyder | Grant/Booth: consultado; PRISMA-S e Snyder: metadados/descrição editorial; PRISMA-S é diretriz de relato |
-| Desenho da pesquisa | Coerência entre pergunta, método e inferência | Saunders/Lewis/Thornhill (Cebola de Pesquisa); Creswell & Creswell; Myers; Merriam & Tisdell | Saunders, Creswell e Myers: texto/edição consultados; demais distinções no documento original |
-| Quantitativo | Descrição, associação, predição, causalidade e inferência | Saunders; Creswell; Bono & McNamara; Appelbaum et al. | Primeiros: textos/trechos consultados; Appelbaum: JARS–Quant identificado em material público |
-| Misto | Vertentes QUAN+QUAL e ponto real de integração | Fetters/Curry/Creswell; Creswell; Saunders; Levitt et al. | Três primeiros: material consultado; Levitt: descrição editorial e metadados JARS–Mixed |
-| Qualitativo | Interpretação, reflexividade, análise de dados | Braun & Clarke; Miles/Huberman/Saldaña; Saldaña; Suddaby | Textos pertinentes consultados |
-| Casos e fenomenologia | Delimitação de caso ou experiência vivida | Yin; Eisenhardt; Gill | Textos pertinentes consultados |
-| Teoria fundamentada, narrativa, pesquisa-ação | Tradição realmente adotada | Glaser & Strauss; Charmaz; Strauss & Corbin; Rhodes & Brown; Llewellyn; Soin & Scheytt; Thiollent | **Identificados, não declarar leitura crítica dessas obras sem conferência** |
-| Design science | Requisitos, construção e avaliação de artefatos | Hevner et al.; Peffers et al.; Gregor & Hevner; Sein et al.; Dresch/Lacerda/Antunes | Quatro primeiros: textos consultados; Dresch e colaboradores: identificação bibliográfica |
-| Escrita / diálogo com revista | Relevância, gancho, limites da contribuição | Grant & Pollock; Ragins; Campbell & Aguilera | Textos pertinentes consultados |
-| Ética e uso de IA | Limites da IA e responsabilidade editorial | Sampaio, Sabbatini & Limongi | Texto e ficha consultados |
+| Integrative review | Critically integrate heterogeneous literature | Elsbach & van Knippenberg; Torraco; Whittemore & Knafl; Snyder; Grant & Booth | Relevant texts consulted for Elsbach and Grant/Booth; bibliographic/description checks for Torraco, Whittemore/Knafl and Snyder |
+| Problematization / theory | Question underlying assumptions and support a bounded contribution | Alvesson & Sandberg (2011, 2020); Bispo; Barney | Relevant texts consulted |
+| Systematic review/search reporting | Execute a genuine comprehensive and reproducible eligibility protocol | Grant & Booth; Rethlefsen et al. (PRISMA-S); Snyder | Grant/Booth consulted; PRISMA-S and Snyder verified through public bibliographic/editorial data; PRISMA-S is a reporting standard |
+| General study design | Align question, method and inference | Saunders/Lewis/Thornhill (Research Onion); Creswell & Creswell; Myers; Merriam & Tisdell | Saunders, Creswell and Myers: original texts/editions consulted; consult the map for nuances |
+| Quantitative work | Descriptive, associative, predictive or causal inference | Saunders; Creswell; Bono & McNamara; Appelbaum et al. | Relevant works for the first authors consulted; Appelbaum/JARS–Quant identified in public material |
+| Mixed methods | Substantive QUAN–QUAL strands and a real integration point | Fetters/Curry/Creswell; Creswell; Saunders; Levitt et al. | First three consulted; Levitt/JARS–Mixed based on editorial description and metadata |
+| Qualitative analysis | Interpretive evidence, reflexivity and analytical quality | Braun & Clarke; Miles/Huberman/Saldaña; Saldaña; Suddaby | Relevant texts consulted |
+| Case and phenomenology | Bound a case or examine lived experience | Yin; Eisenhardt; Gill | Relevant texts consulted |
+| Grounded theory, narrative or action research | Relevant tradition is explicitly selected | Glaser & Strauss; Charmaz; Strauss & Corbin; Rhodes & Brown; Llewellyn; Soin & Scheytt; Thiollent | Identified; do **not** claim full critical review without additional text examination |
+| Design science | Define requirements, build and separately evaluate an artefact | Hevner et al.; Peffers et al.; Gregor & Hevner; Sein et al.; Dresch/Lacerda/Antunes | First four consulted; Dresch and colleagues bibliographically identified |
+| Scholarly writing and journal dialogue | Relevance, framing, nearest theoretical neighbors and claim limits | Grant & Pollock; Ragins; Campbell & Aguilera | Relevant texts consulted |
+| AI ethics and integrity | Researchers' accountability for AI-supported claims | Sampaio, Sabbatini & Limongi | Text and source notes consulted |
 
-## Onde ler dentro do mapa completo
+## Section routing within the full map
 
-- **§1:** revisões integrativas, problematização e PRISMA-S.
-- **§2:** problema, contribuição e escrita.
-- **§3.1:** Cebola de Pesquisa, sem uso determinístico.
-- **§3.2:** inferência quantitativa e limites causais.
-- **§3.3:** métodos mistos e integração.
-- **§4.1–4.5:** análises qualitativas, casos, teoria fundamentada,
-  fenomenologia, narrativa e pesquisa-ação.
-- **§5:** design science e avaliação do artefato.
-- **§6–7:** ética/IA e apreciação crítica por família de evidência.
-- **§8–9:** aplicação condicional e estatuto de consulta.
-- **§10:** referências bibliográficas tal como declaradas no documento
-  original; verificar DOI, edição e trecho antes de incluir no artigo.
-- **§11:** limites e responsabilidade editorial.
+- **§1:** integrative review, problematization and PRISMA-S.
+- **§2:** scientific problem, contribution and scholarly writing.
+- **§3.1:** Research Onion, without deterministic labels.
+- **§3.2:** quantitative inference and causal limitations.
+- **§3.3:** mixed methods and substantive integration.
+- **§4.1–4.5:** qualitative analysis, case research,
+  grounded theory, phenomenology, narrative and action research.
+- **§5:** design science and artefact evaluation.
+- **§6–7:** AI ethics and type-appropriate critical appraisal.
+- **§8–9:** conditional application and declared source status.
+- **§10:** actual selected bibliography; verify DOI, edition
+  and source text before citing in a new paper.
+- **§11:** limits and editorial responsibility.
 
-## Cautelas de procedência
+## Evidentiary safeguards
 
-O mapa declara textos/trechos consultados para algumas fontes e apenas
-identificação/descrição de outras. **Não elevar automaticamente o estatuto**
-de uma referência porque ela aparece no índice, ou porque a Skill
-possui bibliografia. O trabalho individual exige suas próprias
-consultas, citações, excertos, julgamentos e direito de uso.
-Não reproduzir figuras protegidas nem exportar PDFs privados ou de
-terceiros fora das permissões.
+The source map differentiates relevant text consultation from
+bibliographic metadata verification. **Do not upgrade a source's
+consultation status** merely because it appears in this index or
+the package's bibliography. A new scientific manuscript requires
+its own checked evidence, proper permissions and bounded citations.
+Original bibliographic titles and legally restricted figures/PDFs
+must not be silently translated, copied or redistributed.

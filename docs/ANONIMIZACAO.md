@@ -1,65 +1,71 @@
-# Anonimização de arquivos
+<a id="anonimização-de-arquivos"></a>
+# File anonymization
 
-O Meu Artigo adota anonimização por padrão para arquivos externos quando a identidade dos autores não é necessária.
+Meu Artigo adopts anonymization by default for external files when the identity of the authors is not necessary.
 
-A regra é simples:
+The rule is simple:
 
-`arquivo interno identificado -> derivado externo anonimizado -> auditoria -> revisão humana -> envio`
+`identified internal file -> anonymized external derivative -> audit -> human review -> sharing`
 
-## O que é verificado
+<a id="o-que-é-verificado"></a>
+## What is checked
 
-Antes de compartilhar ou submeter um arquivo para avaliação cega, a Skill deve verificar conteúdo visível e informações escondidas, incluindo:
+Before sharing or submitting a file for blind review, Skill must check visible content and hidden information, including:
 
-- nomes de autores e coautores;
-- afiliações, departamentos e instituições;
-- e-mails, ORCID, telefone e outros identificadores;
-- agradecimentos, financiamento e contribuições autorais que revelem autoria;
-- nomes de organizações, participantes ou locais quando a confidencialidade exigir;
-- comentários e controle de alterações;
-- autor/criador e "última modificação por" nas propriedades do arquivo;
-- caminhos locais do computador;
-- links privados;
-- nomes dos próprios arquivos;
-- notas, planilhas ocultas e metadados de imagens/PDF quando aplicável.
+- names of authors and co-authors;
+- affiliations, departments and institutions;
+- emails, ORCID, telephone and other identifiers;
+- acknowledgments, financing and copyright contributions that reveal authorship;
+- names of organizations, participants or locations when confidentiality requires;
+- comments and change control;
+- author/creator and "last modified by" in the file properties;
+- local computer paths;
+- private links;
+- names of the files themselves;
+- notes, hidden sheets and image/PDF metadata where applicable.
 
-A Skill não deve considerar um documento anônimo apenas porque o nome não aparece na primeira página. Em arquivos `EXTERNAL_ANONYMIZED`, o padrão é `ZERO_NONESSENTIAL_METADATA`: não pode permanecer identificação do software ou processo de geração. Campos como Author, Creator, Producer, Generator, Application, Company, criação/modificação, XMP, EXIF, IPTC e equivalentes devem ser removidos quando não forem tecnicamente necessários para renderizar o arquivo. Assim, “gerado com Python”, `pypdf`, ReportLab, Matplotlib, LibreOffice ou outro gerador também é tratado como vazamento de metadados.
+Skill should not consider a document anonymous just because the name does not appear on the first page. In `EXTERNAL_ANONYMIZED` files, the default is `ZERO_NONESSENTIAL_METADATA`: no identification of the software or generation process can remain. Fields such as Author, Creator, Producer, Generator, Application, Company, creation/modification, XMP, EXIF, IPTC and equivalents should be removed when they are not technically necessary to render the file. Therefore, “generated with Python”, `pypdf`, ReportLab, Matplotlib, LibreOffice or another generator is also treated as a metadata leak.
 
-## Perfil confidencial
+<a id="perfil-confidencial"></a>
+## Confidential profile
 
-Cada projeto possui um arquivo interno:
+Each project has an internal file:
 
 `00_Gestao_e_Continuidade/ANONYMIZATION_PROFILE.json`
 
-Ele registra os termos que precisam ser procurados antes de uma liberação externa. Esse arquivo é confidencial e não entra nos pacotes enviados a revista, avaliador ou terceiro.
+It records the terms that need to be searched for before an external release. This file is confidential and does not appear in packages sent to the magazine, evaluator or third party.
 
-## Arquivos internos e externos
+<a id="arquivos-internos-e-externos"></a>
+## Internal and external files
 
-Arquivos internos podem manter autoria quando isso for necessário para gestão do projeto.
+Internal files can maintain authorship when this is necessary for project management.
 
-Para circulação externa, a regra padrão é `EXTERNAL_ANONYMIZED`.
+For external circulation, the default rule is `EXTERNAL_ANONYMIZED`.
 
-Arquivos identificados, como folha de rosto, declaração de autoria, ORCID ou formulário do periódico, são gerados separadamente quando exigidos.
+Identified files, such as cover page, declaration of authorship, ORCID or journal form, are generated separately when required.
 
-## Auto-citação
+<a id="auto-citação"></a>
+## Self-citation
 
-A Skill não remove automaticamente auto-citações. A política da revista deve ser seguida para evitar que a anonimização prejudique a integridade das referências.
+The Skill does not automatically remove self-citations. The journal's policy must be followed to prevent anonymization from damaging the integrity of references.
 
-## Sanitização e auditoria
+<a id="sanitização-e-auditoria"></a>
+## Sanitization and audit
 
-A sequência para arquivos anonimizados é:
+The sequence for anonymized files is:
 
-`python scripts/sanitize_metadata.py <arquivos> --in-place`
+`python scripts/sanitize_metadata.py <files> --in-place`
 
-seguido de:
+followed by:
 
-`python scripts/audit_anonymization.py <projeto> <arquivos>`
+`python scripts/audit_anonymization.py <project> <files>`
 
-O sanitizador remove propriedades descritivas/proveniência e normaliza metadados de pacote quando isso pode ser feito sem alterar o conteúdo científico. Se um formato não puder ser limpo com segurança, ele falha e o arquivo permanece bloqueado. Comentários ou revisões que possam alterar o conteúdo não são aceitos/rejeitados silenciosamente.
+The sanitizer removes descriptive properties/provenance and normalizes package metadata when this can be done without altering the scientific content. If a format cannot be safely cleaned, it fails and the file remains locked. Comments or revisions that may change the content are not silently accepted/rejected.
 
-O auditor analisa os arquivos efetivamente destinados ao compartilhamento e gera relatório em:
+The auditor analyzes the files actually intended for sharing and generates reports on:
 
 `06_Submissao/Anonimizacao/`
 
-O GATE-0007 de liberação para submissão não deve ser aprovado enquanto houver achado de alto risco ou revisão necessária não resolvida.
+GATE-0007 release for submission should not be approved while there is a high-risk finding or unresolved required review.
 
-A especificação completa está em [references/anonymization.md](../references/anonymization.md).
+The full specification is at [references/anonymization.md](../references/anonymization.md).

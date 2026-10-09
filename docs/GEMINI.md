@@ -1,114 +1,80 @@
-# Adapter — Gemini
+# Gemini adapter — Meu Artigo
 
-> Se você nunca usou GitHub, comece por [COMECE-AQUI.md](./COMECE-AQUI.md).
+Start with the shared [Getting started guide](COMECE-AQUI.md).
+The scientific instructions are in `SKILL.md`; this document
+covers Gemini-specific installation and runtime limitations.
 
-Este documento descreve como usar **Meu Artigo** nos apps Gemini. A metodologia central continua em `SKILL.md`.
+## Installation and documented format
 
-## Antes de tentar instalar
+Google documents importing `SKILL.md`, a directory containing
+`SKILL.md`, or a ZIP with that file at the root for eligible
+Gemini accounts. Availability depends on product, account and
+region; see [official guidance](https://support.google.com/gemini/answer/17094296?hl=en).
 
-O Google documenta o carregamento de Skills nos apps Gemini, mas a função depende dos requisitos da conta, da região, do produto e das condições atuais. Consulte as [instruções oficiais do Gemini](https://support.google.com/gemini/answer/17094296?hl=pt-BR).
+1. Download `MeuArtigoSkill-v0.9.0-beta.1.zip` from
+   [the published release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.1).
+2. Open Gemini's Skills section if it is available in your account.
+3. Follow the import flow shown by the actual product and choose
+   the prepared ZIP (rather than GitHub's source-code archive).
+4. Check that `SKILL.md` and supporting files are recognized.
 
-A documentação informa que uma Skill pode ser importada por `SKILL.md`, pasta ou ZIP com `SKILL.md` na raiz. **Isso confirma o formato de upload, não a execução completa da Skill Meu Artigo**; a beta `v0.8.0-beta.8` ainda precisa ser testada em ambiente real.
+Being able to import the ZIP proves neither access to Drive
+nor capability to run the full research workflow.
 
-## 1. Baixe a versão identificada
+## Source language versus response language
 
-1. Abra [a Release v0.8.0-beta.8](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.8).
-2. Baixe **`MeuArtigoSkill-v0.8.0-beta.8.zip`**, em vez do ZIP automático de código-fonte.
-3. Para conferir a integridade, use o `SHA256SUMS.txt` da mesma versão.
+The repository's English authoring policy is independent of
+the conversation: a Portuguese-speaking researcher receives
+Portuguese questions and explanations, a Spanish-speaking
+researcher receives Spanish, and so forth unless they
+explicitly request another language. The manuscript follows
+journal or researcher instructions independently. Read
+[the language contract](../references/language-policy.md).
 
-## 2. Instale no Gemini
+Do not translate machine-readable IDs, commands or source
+quotations by default.
 
-Se o recurso de Skills estiver disponível em sua conta:
+## Runtime limitations
 
-1. abra a página de Habilidades no Gemini;
-2. escolha a opção de upload, conforme a interface exibida;
-3. selecione o ZIP da Release, contendo `SKILL.md` na raiz;
-4. confira o conteúdo importado e conclua a criação.
+Google's published guidance notes that scripts requiring
+internet access are not supported **inside imported Gemini Skills**;
+binary formats such as `.xlsx` are not suitable reference
+attachments for the Skill importer. These limitations are
+not an instruction to delete the project's canonical spreadsheet,
+which can reside in Google Drive if external tools genuinely
+support it.
 
-O Google informa restrições a scripts que exigem acesso à internet. A disponibilidade de funções, recursos de execução e conexões deve ser verificada antes de qualquer afirmação de compatibilidade com o fluxo completo.
+Do **not** assume `agents/openai.yaml` is applicable here.
+Inspect the current platform's capabilities and actual
+permissions for persistence, academic discovery, publisher
+retrieval, indexed database search, local scripts and optional
+C.A.D.A. task-mirror integration.
 
-## 3. Comece em uma conversa nova
+Scopus and Web of Science may require the researcher's real
+institutional access and export. Prepare searches and
+import verified files without inventing direct connections
+or execution counts.
 
-> Use a Skill Meu Artigo. Meu problema de pesquisa é: [problema]. Quero construir o artigo com rastreabilidade, continuidade e gestão C.A.D.A.
+## Storage, research and continuation
 
-## Formato de upload documentado pelo Google
+The default canonical research store is Google Drive only
+after writable access is checked. If it is unavailable,
+explain the connection steps, recheck and ask for explicit
+affirmative permission before another Work/local store.
+Absent approval, do not begin substantive research in a
+silently chosen fallback.
 
-O Google informa que Skills podem ser carregadas por:
+Maintain the researcher's actual source, authorized
+`CONTINUIDADE.md` and human decisions; record external
+operations as unverified until authentic evidence exists.
+C.A.D.A. does not require a third-party work manager to
+function.
 
-- `SKILL.md`;
-- pasta com `SKILL.md` na raiz;
-- ZIP com `SKILL.md` na raiz.
+## Verification status
 
-Também informa que Skills criadas em outras plataformas podem ser importadas.
-
-## Limitações importantes
-
-Segundo a documentação atual do Gemini:
-
-- scripts que exigem acesso à internet não são suportados dentro de Skills;
-- ferramentas disponíveis podem variar em relação a Gems e outros modos;
-- arquivos de referência precisam acompanhar a Skill no upload;
-- importação direta do repositório GitHub não substitui o upload da Skill.
-
-Os scripts deste repositório são locais e determinísticos. Ainda assim, a execução depende da superfície e das permissões do Gemini.
-
-## Preflight específico do Gemini
-
-A [documentação oficial](https://support.google.com/gemini/answer/17094296?hl=pt-BR)
-registra que Skills estão em disponibilização gradual e que scripts
-**que exigem internet** não são suportados dentro da Skill.
-Arquivos binários como `.xlsx` não são aceitos como referência
-nesse upload. Isso não proíbe a existência da planilha canônica
-em Drive, mas exige que sua criação e edição por ferramentas externas
-sejam realmente verificadas em vez de presumidas.
-
-Antes de iniciar o projeto, confira
-[preflight por capacidades](../references/platform-capability-preflight.md)
-e use apenas integrações efetivamente disponíveis. Não relatar
-scripts Python executados ou uploads concluídos sem recibo.
-
-## Integrações
-
-Não tente reproduzir literalmente `agents/openai.yaml`.
-
-Mapeie os recursos disponíveis para:
-
-- armazenamento persistente;
-- descoberta acadêmica;
-- verificação bibliográfica;
-- web/publisher retrieval;
-- bases indexadas;
-- execução local quando disponível;
-- gerenciador de trabalho para espelhar o C.A.D.A., quando houver integração disponível.
-
-O Google Drive é o armazenamento canônico padrão da Skill. Confirme que a conexão existe e é gravável antes do trabalho substantivo. Caso não esteja disponível, solicite a conexão, verifique novamente e só prossiga com armazenamento alternativo após **autorização explícita** do pesquisador; não confunda a integração disponível na plataforma com sincronização realmente executada.
-
-## Gestão C.A.D.A.
-
-O C.A.D.A. continua funcionando mesmo sem integração com ClickUp, Jira ou Trello. Se o Gemini disponibilizar uma integração equivalente, use-a apenas como espelho operacional; preserve o workspace e `11_CADA_Control` como fontes canônicas.
-
-## Scopus e Web of Science
-
-1. gerar query e filtros;
-2. executar por acesso institucional/navegador quando necessário;
-3. exportar metadados;
-4. entregar o arquivo à Skill;
-5. validar e deduplicar;
-6. registrar a rodada.
-
-Nunca presumir acesso direto.
-
-## Verificação funcional recomendada
-
-Avalie:
-
-- reconhecimento da estrutura e referências;
-- independência do adapter OpenAI;
-- início do workflow apenas com problema de pesquisa;
-- persistência;
-- transparência das limitações;
-- retomada após nova conversa.
-
-## Regra
-
-Quando uma função não existir no Gemini, registre a limitação e continue com alternativas metodologicamente válidas. Não enfraqueça o padrão científico para imitar uma automação inexistente.
+The installable package's source layout was checked.
+Actual Gemini import, authenticated Drive writes,
+manuscript output, source checks and cross-session
+continuation remain to be evaluated on the real platform.
+A fluent response or successful importer does not prove
+scientific correctness. See [pending evaluations](VALIDACOES-PENDENTES.md).

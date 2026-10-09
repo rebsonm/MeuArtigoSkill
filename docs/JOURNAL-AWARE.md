@@ -1,54 +1,60 @@
-# Construção orientada à revista
+<a id="construção-orientada-à-revista"></a>
+# Magazine-oriented construction
 
-O Meu Artigo não trata a revista-alvo apenas como uma etapa de formatação no final.
+Meu Artigo does not treat the target magazine as just a formatting step at the end.
 
-Quando o pesquisador já sabe para qual periódico pretende submeter, a Skill pergunta pelas **regras oficiais, template ou layout da revista** e usa essas informações desde o início da construção do manuscrito.
+When the researcher already knows which journal he intends to submit to, Skill asks for the **official rules, template or layout of the journal** and uses this information from the beginning of the manuscript construction.
 
-## No início do projeto
+<a id="no-início-do-projeto"></a>
+## At the beginning of the project
 
-A Skill pergunta:
+Skill asks:
 
-> Você já tem uma revista-alvo? Se tiver, envie o link/arquivo das diretrizes para autores e o template/layout da revista, se existir.
+> Do you already have a target magazine? If so, send the author guidelines link/file and the magazine template/layout, if it exists.
 
-Se não houver revista definida, o projeto continua normalmente em:
+If there is no defined magazine, the project continues normally in:
 
 `JOURNAL_NEUTRAL`
 
-Nada é bloqueado.
+Nothing is blocked.
 
-## Quando existe revista-alvo
+<a id="quando-existe-revista-alvo"></a>
+## When there is a target magazine
 
-A Skill cria ou atualiza o perfil canônico:
+The Skill creates or updates the canonical profile:
 
 `06_Submissao/Regras_da_Revista/JOURNAL_PROFILE.json`
 
-O perfil separa duas coisas.
+The profile separates two things.
 
-**Contrato formal:** limites de palavras/páginas, estrutura exigida, resumo, palavras-chave, referências, tabelas/figuras, anonimização, arquivos, declarações, política de IA, dados, CRediT, ORCID etc.
+**Formal contract:** word/page limits, required structure, abstract, keywords, references, tables/figures, anonymization, files, statements, AI policy, data, CRediT, ORCID etc.
 
-**Perfil científico:** escopo, tipo de contribuição, diálogo com trabalhos recentes e características relevantes do periódico.
+**Scientific profile:** scope, type of contribution, dialogue with recent works and relevant characteristics of the journal.
 
-## O que muda na construção
+<a id="o-que-muda-na-construção"></a>
+## What changes in construction
 
-A estrutura do manuscrito, orçamento de extensão, checklist, arquivos de submissão e diálogo científico passam a ser orientados ao periódico desde cedo.
+The structure of the manuscript, extension budget, checklist, submission files and scientific dialogue become oriented to the journal from an early stage.
 
-Assim, o artigo não precisa ser escrito como um texto genérico para depois ser comprimido ou remontado na etapa final.
+Thus, the article does not need to be written as a generic text and then be compressed or reassembled in the final stage.
 
-## Limite científico
+<a id="limite-científico"></a>
+## Scientific limit
 
-A revista pode influenciar **como o trabalho é apresentado**.
+The magazine can influence **how work is presented**.
 
-Ela não pode influenciar artificialmente **o que os dados ou evidências dizem**.
+It cannot artificially influence **what the data or evidence says**.
 
-Por isso, mudar a revista não autoriza alterar resultados, esconder evidência contrária, mudar critérios retrospectivamente ou enfraquecer limitações.
+Therefore, changing the journal does not authorize changing results, hiding contrary evidence, changing criteria retrospectively or weakening limitations.
 
-## Se a revista mudar
+<a id="se-a-revista-mudar"></a>
+## If the magazine changes
 
-A mudança material é registrada como decisão científica/editorial, o perfil é refeito e a conformidade é recalculada.
+The material change is recorded as a scientific/editorial decision, the profile is redone and compliance is recalculated.
 
-O histórico científico permanece intacto.
+The scientific record remains intact.
 
-Em resumo:
+In summary:
 
 ```text
 Problema

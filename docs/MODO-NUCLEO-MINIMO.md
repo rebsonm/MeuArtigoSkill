@@ -1,32 +1,46 @@
-# Apresentação progressiva — núcleo mínimo e fluxo completo
+# Progressive presentation — minimal core and full view
 
-O arquivo `SKILL.md` da etapa 4 também opera como **roteador
-de leitura seletiva** para diminuir a quantidade de instruções carregadas
-a cada tarefa. Essa seleção de referência é diferente de alternar o
-modo de apresentação. Consulte
-[roteamento por etapa](../references/CONTEXTO-POR-ETAPA.md).
+The **minimal presentation** reduces the amount of operational detail
+shown to the researcher. It does **not remove** registers, checks,
+human scientific gates or evidence requirements; the two presentation
+modes share the same canonical data and safeguards.
 
-O modo **núcleo mínimo** reduz a quantidade de informação operacional exibida ao pesquisador. **Não elimina registros, verificações, gates ou exigências de comprovação**: ambos os modos utilizam os mesmos arquivos e critérios científicos.
+Stage 4 also introduced a **progressive reference router** in
+`SKILL.md`: only instructions relevant to the current scientific
+problem, research route and gate should be loaded. Selecting references
+is distinct from choosing MINIMAL/FULL presentation. See
+[context routing by stage](../references/CONTEXTO-POR-ETAPA.md).
 
-| Aspecto | Núcleo mínimo | Completo |
+| Feature | MINIMAL | FULL |
 | --- | --- | --- |
-| Conversa | Próxima providência, decisão e limitação relevante | Evidências, índices, registros e pendências detalhados |
-| Triagem de artigos | Decisões críticas e divergências | Todos os registros consultáveis |
-| Referências/claims | Somente riscos materiais e revisão requerida | Rastreamento detalhado por evidência |
-| Revisão humana | Sempre requerida | Sempre requerida |
-| Auditoria independente | Sem redução dos controles | Mesmos controles |
-| Dados e IDs | Mesma base canônica | Mesma base canônica |
+| Conversation | Next actionable step, decision and salient risk | Detailed trace, documents and open issues |
+| Article screening | Consequential decisions and contradictions | Existing screening registers |
+| Sources and claims | Material problems and required human review | Fine-grained evidence provenance |
+| Human scientific review | Always required when applicable | Same requirements |
+| Independent audit | No reduction in safeguards | Same safeguards |
+| Data, tables and identifiers | Existing canonical schema | Same canonical schema |
+| **Response language** | User's conversational language | Same conversational language |
 
-Novo projeto: `presentation_mode=MINIMAL`. Projetos antigos sem campo seguem `FULL` até decisão registrada de mudança. Escolha do modo diz respeito à **apresentação**, não ao tipo de revisão, escopo da pesquisa, autonomia para tomar decisões ou rigor da avaliação.
+New projects use `presentation_mode=MINIMAL` by default. Older
+projects missing that configuration stay in FULL until a genuine
+authorized choice is recorded. Mode selection never changes a
+project's review family, search protocol, access rights or research
+autonomy. The repository's English authoring language does not
+change the researcher's conversational language.
 
-Com Python 3.10+ e arquivos do projeto:
+For Python 3.10+ and an authorized local project:
 
 ```bash
-python scripts/presentation_mode.py /projeto
-python scripts/presentation_mode.py /projeto --mode FULL --confirmed-by "referência à solicitação explícita do pesquisador"
-python scripts/presentation_mode.py /projeto --mode MINIMAL --confirmed-by "referência à solicitação explícita do pesquisador"
+python scripts/presentation_mode.py /project
+python scripts/presentation_mode.py /project --mode FULL --confirmed-by "reference to the researcher's real request"
+python scripts/presentation_mode.py /project --mode MINIMAL --confirmed-by "reference to the researcher's real request"
 ```
 
-A alteração grava apenas as preferências no `PROJECT_CONFIG.json`, sem reescrever arquivos científicos, contagens, decisões ou evidências. O ator/texto declarados não autenticam automaticamente a identidade do pesquisador. Nem um log “bonito”, nem a conclusão de tarefas, nem a alternância entre modos demonstram qualidade científica.
+Mode updates affect only preferences in `PROJECT_CONFIG.json`.
+They do not rebuild, alter or erase scientific documents, counts,
+decisions or evidence. The text identifying the requester is an
+audit statement, **not identity authentication**.
 
-A comparação empírica entre os dois modos é **prospectiva** e segue `benchmarks/minimal_full_comparison_protocol_v1.json`; não há usuários avaliados ou resultados coletados.
+The prospective MINIMAL/FULL evaluation is specified in
+`benchmarks/minimal_full_comparison_protocol_v1.json`;
+no participant observations or actual benefits are asserted.

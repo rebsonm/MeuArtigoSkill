@@ -10,6 +10,7 @@ import argparse, csv, json, re, subprocess, sys
 from datetime import date
 from pathlib import Path
 from method_routes import ROUTES, gate_rows, infer_route, new_profile
+from language_config import project_language_settings
 
 FOLDERS = [
     "00_Gestao_e_Continuidade",
@@ -76,37 +77,37 @@ def seed_cada(path:Path, project_name:str, pm_provider:str):
     today=date.today().isoformat()
     rows=[
         {
-            "CADA_ID":"CADA-0001","Item_type":"MILESTONE","Title":"Inicializar workspace de pesquisa",
-            "Description":"Criar os artefatos canônicos e a camada de gestão C.A.D.A.","Scientific_stage":"00",
+            "CADA_ID":"CADA-0001","Item_type":"MILESTONE","Title":'Initialize research workspace',
+            "Description":"Create the canonical artifacts and C.A.D.A. operational management layer.","Scientific_stage":"00",
             "Captured_at":today,"Source_or_trigger":"project initialization","Assigned_to":"AGENT",
             "Execution_mode":"AUTONOMOUS","Priority":"HIGH","Dependency_IDs":"",
-            "Next_action":"Confirmar artefatos canônicos e iniciar auditoria de novidade.","Deadline":"",
+            "Next_action":"Verify canonical artifacts and begin the novelty audit.","Deadline":"",
             "Deadline_type":"TO_DEFINE","Status":"DONE","Evidence_of_progress":"Workspace scaffold created.",
-            "Completion_evidence":"CONTINUIDADE.md, PROTOCOLO.md e matriz local criados.",
+            "Completion_evidence":"CONTINUIDADE.md, PROTOCOLO.md and local matrix generated.",
             "Related_artifact":"00_Gestao_e_Continuidade/","Related_research_IDs":"","Blocker":"",
             "Last_updated":today,"External_manager":pm_provider or "NONE","External_item_ID":"",
             "Notes":f"Project: {project_name}",
         },
         {
-            "CADA_ID":"CADA-0002","Item_type":"TASK","Title":"Executar auditoria inicial de novidade e terminologia",
-            "Description":"Localizar literatura próxima e testar a contribuição proposta antes da busca extensiva.",
+            "CADA_ID":"CADA-0002","Item_type":"TASK","Title":"Carry out the initial novelty and terminology audit",
+            "Description":"Locate nearby literature and examine the proposed contribution before larger searches.",
             "Scientific_stage":"01","Captured_at":today,"Source_or_trigger":"project initialization",
             "Assigned_to":"AGENT","Execution_mode":"AUTONOMOUS_WITH_USER_DECISIONS","Priority":"HIGH",
-            "Dependency_IDs":"CADA-0001","Next_action":"Executar busca inicial de novidade e registrar artigos próximos.",
+            "Dependency_IDs":"CADA-0001","Next_action":"Conduct the initial novelty search and record nearby studies.",
             "Deadline":"","Deadline_type":"TO_DEFINE","Status":"READY","Evidence_of_progress":"",
-            "Completion_evidence":"Nota de auditoria + contribuição/pergunta atualizadas no workspace.",
+            "Completion_evidence":"Audit note and updated question/contribution recorded in the workspace.",
             "Related_artifact":"01_Auditoria_de_Novidade/","Related_research_IDs":"","Blocker":"",
             "Last_updated":today,"External_manager":pm_provider or "NONE","External_item_ID":"",
             "Notes":"",
         },
         {
-            "CADA_ID":"CADA-0003","Item_type":"TASK","Title":"Definir e congelar desenho metodológico e protocolo v1",
-            "Description":"Classificar o tipo de artigo/revisão e congelar critérios e estratégia antes da busca em escala.",
+            "CADA_ID":"CADA-0003","Item_type":"TASK","Title":'Define and freeze methodological design and protocol v1',
+            "Description":'Classify article/review type and freeze criteria and strategy before searching at scale.',
             "Scientific_stage":"02-03","Captured_at":today,"Source_or_trigger":"project initialization",
             "Assigned_to":"AGENT+RESEARCHER","Execution_mode":"DECISION_REQUIRED","Priority":"HIGH",
-            "Dependency_IDs":"CADA-0002","Next_action":"Aguardar auditoria de novidade; então propor desenho e protocolo v1.",
+            "Dependency_IDs":"CADA-0002","Next_action":'Wait for new audit; then propose design and protocol v1.',
             "Deadline":"","Deadline_type":"DEPENDENCY","Status":"CAPTURED","Evidence_of_progress":"",
-            "Completion_evidence":"PROTOCOLO.md versionado e decisão metodológica registrada.",
+            "Completion_evidence":"Versioned PROTOCOLO.md and recorded methodological decision.",
             "Related_artifact":"00_Gestao_e_Continuidade/PROTOCOLO.md","Related_research_IDs":"",
             "Blocker":"CADA-0002","Last_updated":today,"External_manager":pm_provider or "NONE",
             "External_item_ID":"","Notes":"",
@@ -123,13 +124,13 @@ def seed_gates(path:Path, route:str="UNDECIDED"):
     if existing:
         return
     rows=[
-        ["GATE-0001","QUESTION_CONTRIBUTION","01","Pergunta e contribuição","Auditoria inicial de novidade concluída.","Pergunta, objetivo, contribuição e limites propostos.","","CADA-0002","","","PENDING","","","","","","","PENDING","Definição do desenho metodológico",""],
-        ["GATE-0002","METHOD_PROTOCOL","02-03","Método e protocolo","Desenho metodológico e protocolo v1 preparados.","Método, critérios, escopo, papéis das bases e regras de screening.","","CADA-0003","","","PENDING","","","","","","","PENDING","Busca em escala",""],
-        ["GATE-0003","SEARCH_STRATEGY","03-04","Estratégia de busca","Strings e filtros preparados e testados.","Blocos conceituais, strings literais, filtros e bases.","","","","","PENDING","","","","","","","PENDING","Execução das buscas canônicas",""],
-        ["GATE-0004","CORPUS_FREEZE","08-09","Congelamento do corpus","Screening/full text encerrados e contagens reconciliadas.","Corpus elegível, exclusões, duplicatas e contagens finais.","","","","","PENDING","","","","","","","PENDING","Extração/síntese final do corpus",""],
-        ["GATE-0005","SYNTHESIS","10","Síntese e produto teórico","Síntese entre fontes estabilizada.","Categorias, contradições, inferências e proposições/modelo.","","","","","PENDING","","","","","","","PENDING","Redação substantiva do manuscrito",""],
-        ["GATE-0006","CLAIMS_AUDIT","12-13","Claims e auditoria científica","Claims principais ligados às evidências; evidência contrária, explicações alternativas, dependência de fonte e limites auditados.","Claims, Evidence_IDs, Counter_Evidence_IDs, locators, explicações alternativas, condições de contorno, dependência de fonte, robustez, uso de IA e aderência editorial aplicável.","","","","","PENDING","","","","","","","PENDING","Liberação da versão final",""],
-        ["GATE-0007","SUBMISSION_RELEASE","14","Liberação para submissão","Versão canônica, checklist, perfil da revista, anonimização e transparência reconciliados.","Manuscrito final, JOURNAL_PROFILE, conformidade com regras oficiais, perfil de anonimização, relatório ANONYMIZATION_AUDIT, metadados ocultos, disclosures e arquivos de submissão.","","","","","PENDING","","","","","","","PENDING","Submissão externa",""],
+        ["GATE-0001","QUESTION_CONTRIBUTION","01","Question and contribution","Initial novelty audit completed.","Proposed question, objective, contribution and limits.","","CADA-0002","","","PENDING","","","","","","","PENDING",'Definition of the methodological design',""],
+        ["GATE-0002","METHOD_PROTOCOL","02-03",'Method and protocol','Methodological design and protocol v1 prepared.','Method, criteria, scope, roles of the bases and screening rules.',"","CADA-0003","","","PENDING","","","","","","","PENDING","Larger-scale search",""],
+        ["GATE-0003","SEARCH_STRATEGY","03-04","Search strategy","Search queries and filters prepared and checked.","Conceptual blocks, literal queries, filters and databases.","","","","","PENDING","","","","","","","PENDING","Execution of canonical searches",""],
+        ["GATE-0004","CORPUS_FREEZE","08-09","Corpus freeze","Screening and full-text eligibility reconciled with actual counts.","Eligible corpus, exclusions, duplicates and final counts.","","","","","PENDING","","","","","","","PENDING","Final extraction and synthesis of the corpus",""],
+        ["GATE-0005","SYNTHESIS","10","Synthesis and theoretical contribution","Cross-source synthesis stabilized.","Categories, contradictions, inferences and propositions/models.","","","","","PENDING","","","","","","","PENDING","Substantive manuscript drafting",""],
+        ["GATE-0006","CLAIMS_AUDIT","12-13","Claims and scientific audit",'Main claims linked to evidence; contrary evidence, alternative explanations, source dependence and audited limits.','Claims, Evidence_IDs, Counter_Evidence_IDs, locators, alternative explanations, boundary conditions, source dependency, robustness, use of AI, and applicable editorial adherence.',"","","","","PENDING","","","","","","","PENDING","Final version release",""],
+        ["GATE-0007","SUBMISSION_RELEASE","14","Submission readiness approval",'Canonical version, checklist, magazine profile, anonymization and transparency reconciled.',"Final manuscript, JOURNAL_PROFILE, checked official guidelines, anonymization profile, ANONYMIZATION_AUDIT report, hidden metadata, disclosures and exact submission files.","","","","","PENDING","","","","","","","PENDING","External submission",""],
     ]
     with path.open("w",newline="",encoding="utf-8-sig") as f:
         w=csv.writer(f)
@@ -143,6 +144,9 @@ def main()->int:
     ap.add_argument("--problem",default="")
     ap.add_argument("--article-type",default="undecided")
     ap.add_argument("--method-route",choices=ROUTES,default="",help="Specific research route. Ambiguous article types stay UNDECIDED; confirmation remains human.")
+    ap.add_argument("--interaction-language",default="auto",help="AUTO follows the researcher's conversation; fixed tags like pt-BR require explicit selection")
+    ap.add_argument("--interaction-language-confirmed",action="store_true",help="Confirms the researcher explicitly selected this fixed conversation language")
+    ap.add_argument("--manuscript-language",default="undecided",help="Journal/researcher manuscript language independent from conversation, e.g. en or pt-BR")
     ap.add_argument("--target-journal",default="")
     ap.add_argument("--journal-guidelines-source",default="",help="Official author-guidelines URL/file when already known")
     ap.add_argument("--journal-template-source",default="",help="Official journal template/layout URL/file when already known")
@@ -154,6 +158,8 @@ def main()->int:
     ap.add_argument("--fallback-authorized-at",default="",help="ISO date/time of explicit fallback authorization")
     a=ap.parse_args()
     method_route=a.method_route or infer_route(a.article_type)
+    locale_settings=project_language_settings(a.interaction_language,a.manuscript_language,
+        explicitly_selected=a.interaction_language_confirmed)
 
     pm=(a.pm_provider or "").strip().lower()
     storage_mode=(a.storage_mode or "").strip().upper()
@@ -186,6 +192,7 @@ def main()->int:
             "method_route":method_route,
             "method_route_governance_required":True,
             "method_route_version":1,
+            **locale_settings,
             "created":date.today().isoformat(),
             "status":"INITIALIZED",
             "cada_governance":True,
@@ -335,11 +342,11 @@ def main()->int:
         submission_existing=list(csv.DictReader(f))
     if not submission_existing:
         submission_rows=[
-            ["Anonimização: conteúdo visível","Autores, afiliações, contatos, agradecimentos e outros identificadores compatíveis com a modalidade de revisão.","Política Meu Artigo + regras oficiais da revista","PENDING","",""],
-            ["Anonimização: metadados ocultos","Política ZERO_NONESSENTIAL_METADATA: remover Author/Creator/Producer/Generator/Application, criação/modificação, propriedades OOXML, XMP/EXIF/IPTC, comentários, revisões, notas, timestamps de pacote e demais proveniências não essenciais; nenhum rótulo como Python/pypdf/ReportLab/Matplotlib/LibreOffice pode permanecer.","Política Meu Artigo + regras oficiais da revista","PENDING","",""],
-            ["Anonimização: nomes, caminhos e links","Nome de arquivo, caminhos locais, links privados e identificadores de conta não devem revelar autoria indevidamente.","Política Meu Artigo","PENDING","",""],
-            ["Anonimização: participantes/casos","Identificadores de participantes, organizações e locais devem respeitar confidencialidade e protocolo aplicável.","Política Meu Artigo + protocolo do estudo","PENDING","",""],
-            ["Anonimização: auditoria final","Os arquivos exatos de saída devem ter ANONYMIZATION_AUDIT PASS ou PASS_WITH_HUMAN_REVIEW antes da liberação externa.","Política Meu Artigo","PENDING","",""],
+            ["Anonymization: visible content",'Authors, affiliations, contacts, acknowledgments and other identifiers compatible with the review modality.','Meu Artigo policy + official journal rules',"PENDING","",""],
+            ["Anonymization: hidden metadata",'ZERO_NONESSENTIAL_METADATA Policy: remove Author/Creator/Producer/Generator/Application, creation/modification, OOXML properties, XMP/EXIF/IPTC, comments, reviews, notes, package timestamps and other non-essential sources; no labels like Python/pypdf/ReportLab/Matplotlib/LibreOffice can remain.','Meu Artigo policy + official journal rules',"PENDING","",""],
+            ["Anonymization: names, paths and links",'File name, local paths, private links, and account identifiers must not unduly reveal authorship.','Meu Artigo policy',"PENDING","",""],
+            ["Anonymization: participants/cases","Participant, organization and location identifiers must comply with confidentiality and the applicable research protocol.",'Meu Artigo policy + study protocol',"PENDING","",""],
+            ["Anonymization: final audit","Exact output files must have ANONYMIZATION_AUDIT PASS or PASS_WITH_HUMAN_REVIEW before external release.",'Meu Artigo policy',"PENDING","",""],
         ]
         with submission_path.open("w",newline="",encoding="utf-8-sig") as f:
             w=csv.writer(f); w.writerow(TABLES["00_Gestao_e_Continuidade/10_Submission_Checklist.csv"]); w.writerows(submission_rows)

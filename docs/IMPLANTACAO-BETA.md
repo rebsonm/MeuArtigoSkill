@@ -1,47 +1,121 @@
-# Implantação da beta pública — Meu Artigo
+# Experimental public beta installation — Meu Artigo
 
-**Versão preparada:** 0.8.0-beta.8 • **Estado:** beta pública para avaliação voluntária de uso, não validação científica.
+**Prepared release:** `0.9.0-beta.1`.
+**Status:** public experimental beta for voluntary use,
+not a scientifically validated research method.
 
-## Obtenção
+## Obtaining the package
 
-Utilize a página [Releases do GitHub](https://github.com/rebsonm/MeuArtigoSkill/releases), procurando `v0.8.0-beta.8`, e escolha `MeuArtigoSkill-v0.8.0-beta.8.zip`. O arquivo `SHA256SUMS.txt` da mesma versão permite conferir a integridade do download. A alternativa `Code → Download ZIP` representa a versão atual da branch, que pode ser diferente da versão fixa publicada.
+Open the [GitHub Releases page](https://github.com/rebsonm/MeuArtigoSkill/releases),
+find `v0.9.0-beta.1` and choose the exact installable
+`MeuArtigoSkill-v0.9.0-beta.1.zip`.
+Use that version's `SHA256SUMS.txt` to check integrity.
+The alternative **Code → Download ZIP** is a snapshot
+of the current development branch, which may not match
+a published, versioned Skill distribution.
 
-O ZIP da Skill tem `SKILL.md` na raiz, além de `agents/`, `assets/`, `references/`, `scripts/`, `docs/`, `benchmarks/`, `LICENSE`, `NOTICE`, `CITATION.cff`, `VERSION` e manifest de SHA-256. Os dados de usuários, PDFs de terceiros, tokens, arquivos temporários e corpus científicos **não entram** nesse pacote.
+The Skill ZIP contains `SKILL.md` in its root, plus
+`agents/`, `assets/`, `references/`, `scripts/`,
+`docs/`, `benchmarks/`, `LICENSE`, `NOTICE`,
+`CITATION.cff`, `VERSION` and a SHA-256 manifest.
+User data, copyrighted third-party PDFs, access tokens,
+temporary working files and real private research corpora
+are **not included**.
 
-## Instalação
+## Installation and first run
 
-O mecanismo de instalação de Skills depende da plataforma e das permissões da conta. Siga [ChatGPT](CHATGPT.md), [Claude](CLAUDE.md) ou [Gemini](GEMINI.md) e consulte a [matriz de compatibilidade](COMPATIBILIDADE-PLATAFORMAS.md) antes de instalar. Verifique as opções efetivamente disponíveis na conta. Não há garantia de que todas as plataformas forneçam execução local de scripts ou as mesmas integrações.
+Installation mechanisms depend on the platform and the
+researcher's actual account. Use the appropriate
+[ChatGPT](CHATGPT.md), [Claude](CLAUDE.md) or
+[Gemini](GEMINI.md) guide and the
+[compatibility matrix](COMPATIBILIDADE-PLATAFORMAS.md).
+Not every platform offers Python execution, external
+connectors or identical storage.
 
-1. Verifique a versão do ZIP e, quando conveniente, compare seu hash com `SHA256SUMS.txt`.
-2. Importe o ZIP oficial pelo recurso de upload da plataforma, quando existir. Em ferramentas baseadas em pastas, extraia os arquivos mantendo `SKILL.md` na raiz da pasta da Skill.
-3. Inicie **um novo projeto**, descrevendo problema e objetivo de pesquisa; não aproveite corpus ou decisões de projetos anteriores.
-4. Verifique a conexão e permissão de escrita do Google Drive antes de iniciar trabalho substantivo. Sem Drive, o modo alternativo só pode ser ativado após consentimento explícito.
-5. Informe a revista-alvo e suas normas, caso já definidas. Não presuma que uma declaração de IA é permitida sem política oficial.
-6. Mantenha as decisões científicas com o pesquisador, documentação real de fonte e limitações, sem simular revisores.
-7. Nunca publique PDFs protegidos nem arquivos externos sem auditoria de anonimização e direitos.
+1. Check the ZIP version and, when appropriate, verify
+   its digest against the matching `SHA256SUMS.txt`.
+2. Import the official package where Skills are supported.
+   For directory-based tools, unpack while keeping
+   `SKILL.md` at the Skill root.
+3. Start a **new** project with the real research problem;
+   never substitute another project's data or decisions.
+4. Confirm authenticated, **writable Google Drive** access
+   before substantive work. Use an alternative workspace
+   only after explicitly affirmative authorization.
+5. Supply the target journal and actual author rules
+   when already chosen. Never invent AI disclosure
+   requirements or journal permissions.
+6. Keep substantive scientific choices and real
+   evidence under the researcher's responsibility.
+   Do not simulate human reviewers.
+7. Check PDF redistribution rights and final-file
+   anonymization before any external sharing.
 
-Use o [checklist de primeiro uso](CHECKLIST-PRIMEIRO-USO.md) para acompanhar as etapas sem criar abas ou IDs adicionais.
+The [first-use checklist](CHECKLIST-PRIMEIRO-USO.md)
+can guide this process without new worksheets or IDs.
 
-## Compatibilidade ainda não demonstrada
+## English source, automatically localized conversation
 
-O suporte documentado para instalar Skills no ChatGPT, Claude e Gemini **não valida a importação nem a operação ponta a ponta do Meu Artigo nesta beta**. A [matriz de compatibilidade](COMPATIBILIDADE-PLATAFORMAS.md) apresenta as condições documentadas e o que falta testar com ambientes reais.
+The source repository and installed developer instructions
+are being standardized in English. The AI assistant
+nevertheless responds in the language of the researcher's
+substantive conversation messages unless they explicitly
+request otherwise. No translation pack is installed.
+The scientific manuscript language follows an independent
+journal or researcher decision:
+[language policy](../references/language-policy.md).
 
-## Controles que podem ser executados offline
+The currently published `v0.9.0-beta.1` **predates**
+this source migration. A later English-first beta can
+only be published after remaining source documents are
+translated and reviewed. Do not treat development-branch
+features as already released.
 
-No clone/descompactação do repositório, com Python 3.10+ e biblioteca padrão, são executáveis:
-- `python scripts/release_audit.py` — estrutura/sintaxe/versão;
-- `python -m unittest discover -s tests -v` — regressões do software;
-- `python scripts/smoke_test_provenance.py` — verificação de proveniência demonstrativa controlada;
-- `python scripts/build_skill_bundle.py` — pacote de distribuição com manifest e SHA-256.
+## Compatibility still requiring evaluation
 
-Os testes podem criar fixtures **descartáveis** e não constituem investigação empírica da qualidade de artigos.
+Vendor documentation that a product supports importing
+Skills does **not** demonstrate that this Meu Artigo
+beta has completed an actual end-to-end project
+in that product. Follow the compatibility matrix
+and the [pending validations](VALIDACOES-PENDENTES.md).
+The same caveat applies to multilingual replies.
 
-## Compatibilidade e atualização
+## Offline engineering checks
 
-Os projetos mais antigos não devem ser promovidos artificialmente às novas regras. Antes de migrar, preserve backups/snapshots e aplique somente as mudanças compatíveis de schema, mantendo decisões e originais. Atualizar a Skill **não** atualiza automaticamente as planilhas ou projetos existentes nem altera o estado do Drive sem ação registrada.
+In the project repository or approved local environment
+with Python 3.10+:
 
-Guarde a referência de versão `v0.8.0-beta.8`, os arquivos científicos originais e as instruções editoriais vigentes. Para problemas, consulte [CONTRIBUTING](../CONTRIBUTING.md) e [SECURITY](../SECURITY.md).
+```bash
+python scripts/release_audit.py
+python -m unittest discover -s tests -v
+python scripts/smoke_test_provenance.py
+python scripts/audit_source_language.py
+python scripts/build_skill_bundle.py
+```
 
-## O que ainda não está comprovado
+These scripts test code structure, regression cases,
+provenance integrity and release packaging. They may
+use disposable test fixtures; that does **not**
+constitute empirical research into article quality.
 
-A aprovação dos testes automatizados demonstra controles técnicos, não validação científica completa, melhora causal decorrente do C.A.D.A., confiabilidade global em produção, disponibilidade de APIs externas, conformidade universal com revistas nem funcionamento idêntico em todas as plataformas. Essas frentes estão documentadas em [VALIDACOES-PENDENTES.md](VALIDACOES-PENDENTES.md).
+## Updating existing projects
+
+Before adopting a new Skill release, preserve original
+research files, frozen decisions, real source exports
+and backups. A newer Skill package must not silently
+rewrite past scientific records or prove a Google Drive
+synchronization that did not occur.
+
+Check the release notes for data/schema migration needs.
+The current source `main` may include work not yet
+in the latest public ZIP. Refer to [contributing](../CONTRIBUTING.md)
+and [security](../SECURITY.md) for safe feedback.
+
+## Scientific limitations
+
+Successful code tests do not prove complete academic
+rigor, causal gains from C.A.D.A., general production
+reliability, access to paid APIs, universal journal
+compliance or identical execution across platforms.
+Actual scientific and operational evaluations
+remain pending.

@@ -47,6 +47,9 @@ jobs:
           python scripts/audit_public_docs.py
           python scripts/smoke_test_provenance.py
 
+      - name: Require English-source migration before publication
+        run: python scripts/audit_source_language.py --strict
+
       - name: Build, verify and hash immutable release artifacts
         run: |
           python scripts/build_skill_bundle.py

@@ -33,8 +33,13 @@ REQUIRED=[
     "docs/MODO-NUCLEO-MINIMO.md",
     "docs/REPRODUCAO-REVISAO-INTEGRATIVA.md",
     "references/methodological-foundations.md",
+    "references/language-policy.md",
+    "scripts/language_config.py",
+    "scripts/audit_source_language.py",
+    "tests/test_language_policy.py",
+    "docs/ENGLISH-SOURCE-MIGRATION.md",
     "references/INDICE-METODOLOGICO.md",
-    "references/CONTEXTO-POR-ETAPA.md",
+    'references/CONTEXTO-POR-ETAPA.md',
     "references/fluxo-essencial.md",
     "references/platform-capability-preflight.md",
     "tests/test_stage4_routing.py",
@@ -162,11 +167,11 @@ def main()->int:
         errors.append("CITATION.cff must identify Apache-2.0")
     if "Rebson de Morais Mendes" not in (ROOT/"NOTICE").read_text(encoding="utf-8"):
         errors.append("NOTICE must preserve original author attribution")
-    if f"**Versão atual:** `{version}`" not in readme:
+    if f"**Current version:** `{version}`" not in readme:
         errors.append("README does not display current VERSION")
-    if "Enquanto o acesso não for aberto pelo autor" in onboarding:
+    if 'As long as access is not opened by the author' in onboarding:
         errors.append("Onboarding still falsely describes public repository as restricted")
-    if "beta pública" not in onboarding.lower():
+    if "public beta" not in onboarding.lower():
         errors.append("Public-beta access is not described in onboarding")
     publisher=(ROOT/".github/workflows/publish-beta.yml").read_text(encoding="utf-8") if (ROOT/".github/workflows/publish-beta.yml").exists() else ""
     if not all(name in workflow for name in [
@@ -185,7 +190,7 @@ def main()->int:
         errors.append("Manual beta release workflow is incomplete")
     if re.search(r"0\\.8\\.0-beta\\.\\d+", publisher + workflow):
         errors.append("Workflows must derive version dynamically from VERSION")
-    if "PENDENTE" not in (ROOT/"docs/VALIDACOES-PENDENTES.md").read_text(encoding="utf-8"):
+    if "PENDING" not in (ROOT/"docs/VALIDACOES-PENDENTES.md").read_text(encoding="utf-8"):
         errors.append("Pending empirical validations must remain explicitly documented")
 
     # Avoid internal implementation notes in the public landing page.
@@ -205,7 +210,7 @@ def main()->int:
     # Core feature references.
     required_terms={
         "SKILL.md":["DEC_ID","GATE_ID","SNAP_ID","W3C PROV","RO-Crate","Grounded Corpus","Corpus Map","JOURNAL_PROFILE","JOURNAL_NEUTRAL","Counter_Evidence_IDs","Robustness_status","ANONYMIZATION_PROFILE","audit_anonymization.py","sanitize_metadata.py","ZERO_NONESSENTIAL_METADATA","GOOGLE_DRIVE_FIRST","WORK_FALLBACK"],
-        "README.md":["Meu Artigo","C.A.D.A.","Como começar","pesquisador","fontes","versão beta"],
+        "README.md":["Meu Artigo","C.A.D.A.","Getting started","researcher","sources","beta"],
     }
     for label,terms in required_terms.items():
         text=skill if label=="SKILL.md" else readme
@@ -218,7 +223,7 @@ def main()->int:
     for sheet in ["16_INTEROPERABILIDADE","17_DECISOES","18_VALIDACOES","19_SNAPSHOTS","20_MAPA_CORPUS"]:
         if sheet not in matrix:
             errors.append(f"workbook generator missing sheet: {sheet}")
-    for term in ["Counter_Evidence_IDs","Explicações alternativas","Dependência de fonte única","Robustez","Revista-alvo","Modo de construção editorial","Anonimização: auditoria final","Modo padrão de arquivo externo","Papel na literatura","Base da classificação","Fonte primária","Linhagem conceitual / relação","FOUNDATIONAL","CLASSIC_CRITIQUE","CONTEMPORARY_UPDATE"]:
+    for term in ["Counter_Evidence_IDs","Alternative explanations",'Single source dependency',"Robustness","Target journal","Editorial construction mode","Anonymization: final audit","Default external-file mode","Role in literature","Basis of classification",'Primary source',"Conceptual lineage / relation","FOUNDATIONAL","CLASSIC_CRITIQUE","CONTEMPORARY_UPDATE"]:
         if term not in matrix:
             errors.append(f"workbook generator missing journal/robustness field: {term}")
 

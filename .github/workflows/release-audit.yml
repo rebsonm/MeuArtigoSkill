@@ -36,6 +36,9 @@ jobs:
       - name: Audit public documentation for leaks
         run: python scripts/audit_public_docs.py
 
+      - name: Report remaining Portuguese-source language signals
+        run: python scripts/audit_source_language.py
+
       - name: Provenance smoke test
         run: python scripts/smoke_test_provenance.py
 

@@ -1,21 +1,25 @@
-# Meu Artigo — versão beta 0.8.0-beta.5
+<a id="meu-artigo-versão-beta-080-beta5"></a>
+# My Article — beta version 0.8.0-beta.5
 
-Esta atualização aprimora a separação entre a documentação pública da Skill e os registros privados de seu desenvolvimento, sem alterar as decisões científicas já previstas.
+This update improves the separation between the public documentation of the Skill and the private records of its development, without changing the scientific decisions already foreseen.
 
-## O que mudou
+<a id="o-que-mudou"></a>
+## What changed
 
-- A bibliografia metodológica foi consolidada em uma referência temática única, sem atribuir a curadoria a bibliotecas particulares ou instituições específicas.
-- A documentação técnica pública foi revisada para retirar códigos de gestão interna de melhorias e avaliações.
-- O acompanhamento das avaliações científicas futuras permanece disponível, descrito por finalidade e estado, sem exposição da organização interna do desenvolvimento.
-- Uma verificação automatizada passou a apontar reintroduções de proveniência privada e identificadores internos de manutenção nos documentos públicos.
-- As proteções de fontes, triagem, decisões humanas, direitos autorais, originalidade e transparência do uso de IA foram mantidas.
+- The methodological bibliography was consolidated into a single thematic reference, without assigning curation to private libraries or specific institutions.
+- Public technical documentation was revised to remove internal management codes for improvements and evaluations.
+- Monitoring of future scientific assessments remains available, described by purpose and status, without exposure of the internal development organization.
+- An automated check now highlights reintroductions of private origin and internal maintenance identifiers in public documents.
+- Protections for sources, screening, human decisions, copyright, originality, and transparency of AI use have been maintained.
 
-## Instalação
+<a id="instalação"></a>
+## Installation
 
-Baixe **MeuArtigoSkill-v0.8.0-beta.5.zip** nesta página e siga o [guia de instalação](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/COMECE-AQUI.md). O checksum em SHA256SUMS.txt permite conferir a integridade do pacote.
+Download **MyArticleSkill-v0.8.0-beta.5.zip** from this page and follow the [](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/COMECE-AQUI.md) installation guide. The checksum in SHA256SUMS.txt allows you to check the integrity of the package.
 
-## O que ainda não foi demonstrado
+<a id="o-que-ainda-não-foi-demonstrado"></a>
+## What has not yet been demonstrated
 
-Os testes automatizados verificam implementação e consistência técnica, não qualidade científica. A avaliação independente de artigos produzidos com a Skill, a comparação de modos de apresentação e qualquer efeito causal atribuível ao C.A.D.A. permanecem pendentes de estudos com dados reais. Nenhuma avaliação com participantes ou aprovação editorial é reivindicada.
+Automated tests check implementation and technical consistency, not scientific quality. The independent evaluation of articles produced with the Skill, the comparison of presentation modes and any causal effect attributable to C.A.D.A. remain pending studies with real data. No participant review or editorial approval is claimed.
 
-A responsabilidade pelas escolhas metodológicas e pelo conteúdo final permanece com o pesquisador. Textos de terceiros seguem suas próprias licenças e direitos autorais.
+Responsibility for methodological choices and final content remains with the researcher. Third-party texts follow their own licenses and copyrights.
