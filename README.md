@@ -8,7 +8,7 @@ O projeto está disponível em **repositório público**, em **versão beta**.
 
 **Versão atual:** `0.8.0-beta.2` · [Ver versões e downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). Seu uso é gratuito, embora algumas bases científicas e plataformas integradas possam exigir contas, assinaturas ou acesso institucional.
 
-**[Baixar a versão beta](https://github.com/rebsonm/MeuArtigoSkill/releases/latest) · [Guia de instalação](./docs/COMECE-AQUI.md) · [Como começar](#como-começar)**
+**[Baixar a versão beta](https://github.com/rebsonm/MeuArtigoSkill/releases) · [Guia de instalação](./docs/COMECE-AQUI.md) · [Como começar](#como-começar)**
 
 ## O que você pode fazer
 
