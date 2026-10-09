@@ -52,6 +52,10 @@ REQUIRED=[
     "scripts/version_info.py",
     "scripts/audit_public_docs.py",
     "tests/test_version_info.py",
+    "scripts/sync_version.py",
+    "tests/test_sync_version.py",
+    "tests/test_ci_workflows.py",
+    "docs/GUIA-DE-RELEASES.md",
     "tests/test_public_documentation_audit.py",
     "README.md",
     "docs/COMECE-AQUI.md",
@@ -130,8 +134,8 @@ def main()->int:
     if version:
         if f'version: "{version}"' not in citation and f"version: {version}" not in citation:
             errors.append("CITATION.cff version does not match VERSION")
-        if version not in changelog:
-            errors.append("CHANGELOG.md does not contain current VERSION")
+        if not re.search(r"(?m)^## "+re.escape(version)+r"\s+[—-]", changelog):
+            errors.append("CHANGELOG.md lacks a headed section for current VERSION")
     else:
         errors.append("VERSION is empty")
 
@@ -152,8 +156,6 @@ def main()->int:
         errors.append("Onboarding still falsely describes public repository as restricted")
     if "beta pública" not in onboarding.lower():
         errors.append("Public-beta access is not described in onboarding")
-    if not re.fullmatch(r"0\.8\.0-beta\.8", version):
-        errors.append("Current release audit expects the public beta version 0.8.0-beta.7")
     publisher=(ROOT/".github/workflows/publish-beta.yml").read_text(encoding="utf-8") if (ROOT/".github/workflows/publish-beta.yml").exists() else ""
     if not all(name in workflow for name in [
         "pull_request:", "push:", "branches: [main]", "audit:",
