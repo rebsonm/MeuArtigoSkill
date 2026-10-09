@@ -18,7 +18,7 @@ class VersionSyncTests(unittest.TestCase):
         self.root=Path(tmp.name)
         (self.root/"docs").mkdir()
         (self.root/"VERSION").write_text("0.8.0-beta.9\n",encoding="utf-8")
-        (self.root/"README.md").write_text("**Versão atual:** `0.8.0-beta.8` · downloads\n",encoding="utf-8")
+        (self.root/"README.md").write_text("**Current version:** `0.8.0-beta.8` · downloads\n",encoding="utf-8")
         (self.root/"CITATION.cff").write_text(
             'version: "0.8.0-beta.8"\ndate-released: "2026-10-08"\n',encoding="utf-8"
         )
