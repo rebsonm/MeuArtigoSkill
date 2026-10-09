@@ -195,7 +195,7 @@ class EvidenceAppraisalTests(unittest.TestCase):
         workbook=(SCRIPTS/"build_matrix_template.py").read_text(encoding="utf-8")
         self.assertIn('"A1:AF1"',workbook)
         self.assertIn('"09_MATRIZ_EVID"',workbook)
-        self.assertIn('"Julgamento crítico"',workbook)
+        self.assertIn('"Critical appraisal judgment"',workbook)
 
 
 if __name__=="__main__":
