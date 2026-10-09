@@ -134,7 +134,7 @@ def main()->int:
         errors.append("Onboarding still falsely describes public repository as restricted")
     if "beta pública" not in onboarding.lower():
         errors.append("Public-beta access is not described in onboarding")
-    if not re.fullmatch(r"0\.8\.0-beta\.4", version):
+    if not re.fullmatch(r"0\.8\.0-beta\.5", version):
         errors.append("Current release audit expects the public beta version 0.8.0-beta.5")
     if not all(name in workflow for name in ["LICENSE", "SHA256SUMS.txt",
                                                "build_skill_bundle.py", "gh release create",
