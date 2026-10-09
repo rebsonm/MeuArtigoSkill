@@ -7,6 +7,7 @@ and original evidence remain necessary and independently auditable.
 """
 from __future__ import annotations
 
+import csv
 import json
 from pathlib import Path
 
@@ -123,6 +124,10 @@ def new_profile(route: str, article_type: str = "") -> dict:
         "schema_version": 1,
         "route": route,
         "route_confirmation": "PENDING_HUMAN_DECISION",
+        "route_decision_id": "",
+        "human_route_reviewer": "",
+        "human_route_decision_evidence": "",
+        "human_route_rationale": "",
         "initial_article_label": article_type,
         "research_question": "",
         "intended_inference": "",
@@ -189,6 +194,10 @@ def profile_issues(doc: dict, route: str, *, gate: str | None = None) -> list[st
             return ["cannot approve method before researcher selects a specific route"]
         if doc.get("route_confirmation") != "HUMAN_CONFIRMED":
             problems.append("researcher has not confirmed route classification")
+        for attestation in ("route_decision_id","human_route_reviewer",
+                            "human_route_decision_evidence","human_route_rationale"):
+            if not str(doc.get(attestation) or "").strip():
+                problems.append(f"confirmed route lacks {attestation}")
         for field in ("research_question", "intended_inference", "study_limits"):
             if not str(doc.get(field) or "").strip():
                 problems.append(f"method profile lacks {field}")
@@ -242,6 +251,38 @@ def approval_issues(root: Path, cfg: dict, gate: str) -> list[str]:
     except (ValueError, OSError, TypeError, json.JSONDecodeError) as exc:
         return [f"method profile unavailable: {type(exc).__name__}"]
     issues = profile_issues(doc, route, gate=gate)
+    gate_path = Path(root)/MGMT/"18_Human_Validation_Gates.csv"
+    with gate_path.open("r",encoding="utf-8-sig",newline="") as f:
+        gates = {row.get("GATE_ID"):row for row in csv.DictReader(f)}
+    previous = {
+        "GATE-0002":"GATE-0001", "GATE-0003":"GATE-0002",
+        "GATE-0004":"GATE-0003", "GATE-0005":"GATE-0004",
+        "GATE-0006":"GATE-0005", "GATE-0007":"GATE-0006",
+    }.get(gate)
+    if previous:
+        earlier=gates.get(previous) or {}
+        if (earlier.get("Status") or "").upper() not in {"COMPLETED","NOT_APPLICABLE"} or (
+            (earlier.get("Decision") or "").upper()
+            not in {"APPROVED","APPROVED_WITH_CHANGES","NOT_APPLICABLE"}
+        ):
+            issues.append(f"prior scientific gate {previous} is not approved")
+    if gate in {"GATE-0002", "GATE-0003", "GATE-0004", "GATE-0005", "GATE-0006", "GATE-0007"}:
+        decision_file=Path(root)/MGMT/"17_Decision_Log.csv"
+        try:
+            with decision_file.open("r",encoding="utf-8-sig",newline="") as f:
+                decisions=list(csv.DictReader(f))
+            if not any(
+                row.get("DEC_ID")==doc.get("route_decision_id")
+                and row.get("Decision_type")=="METHOD"
+                and row.get("Decision")==route
+                and row.get("Status") in {"APPROVED","FROZEN"}
+                and (row.get("Decided_by") or "").strip()
+                and (row.get("Notes") or "").strip()
+                for row in decisions
+            ):
+                issues.append("route lacks matching approved and attributable DEC_ID in decision log")
+        except OSError:
+            issues.append("route decision log cannot be read")
     if gate in {"GATE-0003", "GATE-0004", "GATE-0005", "GATE-0006", "GATE-0007"}:
         if route == "UNDECIDED":
             issues.append("method route still undecided")
