@@ -10,6 +10,7 @@ import argparse, csv, json, re, subprocess, sys
 from datetime import date
 from pathlib import Path
 from method_routes import ROUTES, gate_rows, infer_route, new_profile
+from language_config import project_language_settings
 
 FOLDERS = [
     "00_Gestao_e_Continuidade",
@@ -143,6 +144,9 @@ def main()->int:
     ap.add_argument("--problem",default="")
     ap.add_argument("--article-type",default="undecided")
     ap.add_argument("--method-route",choices=ROUTES,default="",help="Specific research route. Ambiguous article types stay UNDECIDED; confirmation remains human.")
+    ap.add_argument("--interaction-language",default="auto",help="AUTO follows the researcher's conversation; fixed tags like pt-BR require explicit selection")
+    ap.add_argument("--interaction-language-confirmed",action="store_true",help="Confirms the researcher explicitly selected this fixed conversation language")
+    ap.add_argument("--manuscript-language",default="undecided",help="Journal/researcher manuscript language independent from conversation, e.g. en or pt-BR")
     ap.add_argument("--target-journal",default="")
     ap.add_argument("--journal-guidelines-source",default="",help="Official author-guidelines URL/file when already known")
     ap.add_argument("--journal-template-source",default="",help="Official journal template/layout URL/file when already known")
@@ -154,6 +158,8 @@ def main()->int:
     ap.add_argument("--fallback-authorized-at",default="",help="ISO date/time of explicit fallback authorization")
     a=ap.parse_args()
     method_route=a.method_route or infer_route(a.article_type)
+    locale_settings=project_language_settings(a.interaction_language,a.manuscript_language,
+        explicitly_selected=a.interaction_language_confirmed)
 
     pm=(a.pm_provider or "").strip().lower()
     storage_mode=(a.storage_mode or "").strip().upper()
@@ -186,6 +192,7 @@ def main()->int:
             "method_route":method_route,
             "method_route_governance_required":True,
             "method_route_version":1,
+            **locale_settings,
             "created":date.today().isoformat(),
             "status":"INITIALIZED",
             "cada_governance":True,
