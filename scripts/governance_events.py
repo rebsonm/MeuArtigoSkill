@@ -264,7 +264,8 @@ def record_gate(args)->int:
 
     # A corpus may only be frozen when every nonduplicate screened record
     # has a defensible selection decision backed by human review evidence.
-    if (args.gate_id=="GATE-0004" and target.get("Gate_type")=="CORPUS_FREEZE"
+    if (args.gate_id=="GATE-0004"
+            and (cfg.get("method_route_governance_required") is not True or target.get("Gate_type")=="CORPUS_FREEZE")
             and decision in {"APPROVED","APPROVED_WITH_CHANGES"}
             and cfg.get("screening_human_decisions_required") is True):
         from screening_review import read_table, audit_rows as screening_audit
