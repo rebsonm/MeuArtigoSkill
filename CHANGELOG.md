@@ -2,7 +2,16 @@
 
 ## Unreleased
 
-Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-beta.5`.
+Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-beta.6`.
+
+## 0.8.0-beta.6 — 2026-10-09
+
+### Fundamentação metodológica aprofundada
+
+- Ampliar o mapa de fundamentos de cerca de 5,8 mil para mais de 40 mil caracteres, com análise da literatura e regras de uso condicionais.
+- Distinguir revisões integrativa, problematizadora e sistemática; ampliar análise qualitativa, estudos de caso, teoria fundamentada, fenomenologia, narrativa, design science, redação científica e ética de IA.
+- Separar explicitamente textos consultados, referências verificadas por metadados e orientações operacionais da Skill; conferir edições bibliográficas e preservar direitos autorais.
+- Manter origem das coleções de consulta, documentos particulares e identificadores internos fora da documentação pública. Nenhuma validação empírica reivindicada.
 
 ## 0.8.0-beta.5 — 2026-10-09
 
