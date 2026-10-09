@@ -33,20 +33,20 @@ KPI_VALUE={"fill":WHITE,"font":{"bold":True,"color":DARK,"size":14},"horizontal_
 BORDER={"top":{"style":"continuous","color":MID_GRAY},"bottom":{"style":"continuous","color":MID_GRAY},"left":{"style":"continuous","color":MID_GRAY},"right":{"style":"continuous","color":MID_GRAY}}
 
 STAGES=[
-["00","Entrada & Workspace","Problema preservado; workspace e governança inicializados."],
+["00","Entrada & Workspace",'Problem preserved; initialized workspace and governance.'],
 ["01","Auditoria de novidade","Literatura mais próxima avaliada; contribuição/pergunta refinada."],
-["02","Método / desenho","Tipo de artigo/revisão definido e justificado."],
-["03","Protocolo","Escopo, critérios, bases, famílias de busca e regras congelados."],
+["02",'Method/design','Type of article/review defined and justified.'],
+["03","Protocolo",'Frozen scope, criteria, bases, search families and rules.'],
 ["04","Execução das buscas","Buscas executadas e registradas."],
 ["05","Validação de exports","Exports conferidos; rodadas inválidas isoladas."],
 ["06","Deduplicação","Corpus canônico e auditoria de duplicatas."],
 ["07","Screening","Decisões e justificativas registradas."],
 ["08","Full text","Acesso, versão e decisão de textos completos controlados."],
-["09","Extração de evidências","Matriz de evidências preenchida."],
+["09",'Evidence extraction','Completed evidence matrix.'],
 ["10","Síntese","Categorias, convergências, contradições e limites integrados."],
-["11","Diálogo com revista","Aderência e conversa do periódico registradas."],
-["12","Manuscrito","Redação ancorada em evidências e proveniência."],
-["13","Auditoria final","Método, contagens, claims, IA e referências reconciliados."],
+["11",'Dialogue with magazine','Journal adherence and conversation recorded.'],
+["12","Manuscrito",'Writing anchored in evidence and provenance.'],
+["13","Auditoria final",'Method, counts, claims, AI and references reconciled.'],
 ["14","Submissão","Arquivos, checklist, protocolo e comprovante preservados."],
 ]
 
@@ -121,22 +121,22 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
     widths(cfg,{"A":20,"B":24,"C":48,"D":10,"F":9,"G":24,"H":58}); cfg.freeze_panes.freeze_rows(4)
 
     proj=wb.worksheets.add("03_PROJETO")
-    title(proj,"IDENTIDADE CIENTÍFICA DO PROJETO","Problema, pergunta, objetivo, contribuição, método e escopo.","A1:D1")
+    title(proj,'PROJECT’S SCIENTIFIC IDENTITY','Problem, question, objective, contribution, method and scope.',"A1:D1")
     proj.get_range("A4:D4").values=[["Campo","Valor","Status","Última atualização"]]; hdr(proj,"A4:D4")
     vals=[
-      ["Título curto do projeto",project_name,"PLANNED",date.today()],
-      ["Problema original",problem or "[INSERIR TEXTO ORIGINAL DO PESQUISADOR]","FROZEN",date.today()],
+      ['Short project title',project_name,"PLANNED",date.today()],
+      ['Original problem',problem or "[INSERIR TEXTO ORIGINAL DO PESQUISADOR]","FROZEN",date.today()],
       ["Pergunta atual","[A REFINAR]","IN_PROGRESS",date.today()],
       ["Objetivo","[A REFINAR]","IN_PROGRESS",date.today()],
       ["Contribuição pretendida","[A VALIDAR NA AUDITORIA DE NOVIDADE]","IN_PROGRESS",date.today()],
-      ["Desenho metodológico",article_type,"PLANNED",date.today()],
+      ['Methodological design',article_type,"PLANNED",date.today()],
       ["Escopo e exclusões","[A DEFINIR]","PLANNED",date.today()],
-      ["Revista-alvo",target_journal or "[NÃO DEFINIDA]","PLANNED" if not target_journal else "IN_PROGRESS",date.today()],
+      ["Revista-alvo",target_journal or '[NOT DEFINED]',"PLANNED" if not target_journal else "IN_PROGRESS",date.today()],
       ["Modo de construção editorial",journal_mode,"FROZEN" if journal_mode=="JOURNAL_NEUTRAL" else "IN_PROGRESS",date.today()],
-      ["Perfil da revista",journal_profile_status,"PLANNED" if journal_profile_status in {"TO_DEFINE","PENDING_RULES"} else "IN_PROGRESS",date.today()],
+      ['Magazine profile',journal_profile_status,"PLANNED" if journal_profile_status in {"TO_DEFINE","PENDING_RULES"} else "IN_PROGRESS",date.today()],
       ["Idiomas","Português; Inglês","PLANNED",date.today()],
       ["Período de busca","[A DEFINIR]","PLANNED",date.today()],
-      ["Etapa atual","01 — Auditoria de novidade","IN_PROGRESS",date.today()],
+      ['Current stage',"01 — Auditoria de novidade","IN_PROGRESS",date.today()],
       ["Modo de gestão","MATRIX_PLUS_EXTERNAL" if pm_provider!="NONE" else "MATRIX_ONLY","FROZEN",date.today()],
       ["Gerenciador externo",pm_provider,"NOT APPLICABLE" if pm_provider=="NONE" else "IN_PROGRESS",date.today()],
       ["Rastreabilidade habilitada","SIM","FROZEN",date.today()],
@@ -149,13 +149,13 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
     widths(proj,{"A":28,"B":70,"C":20,"D":18}); proj.freeze_panes.freeze_rows(4)
 
     cada=wb.worksheets.add("01_CADA")
-    title(cada,"GESTÃO C.A.D.A.","Capturar → Atribuir → Definir prazo → Acompanhar.","A1:S1")
-    ch=["CADA_ID","Etapa","Tarefa","Responsável","Próxima ação","Prazo","Tipo de prazo","Status","Prioridade","Dependências","Bloqueio","Evidência de avanço","Evidência de conclusão","Artefato relacionado","Última atualização","Trace_IDs","PM Provider","External Item ID","Observações"]
+    title(cada,"GESTÃO C.A.D.A.",'Capture → Assign → Set deadline → Track.',"A1:S1")
+    ch=["CADA_ID","Etapa","Tarefa","Responsável","Próxima ação","Prazo",'Type of deadline',"Status","Prioridade","Dependências","Bloqueio",'Evidence of advancement','Evidence of Conclusion',"Artefato relacionado","Última atualização","Trace_IDs","PM Provider","External Item ID",'Observations']
     cada.get_range("A4:S4").values=[ch]; hdr(cada,"A4:S4")
     seed=[
-      ["CADA-0001","00 — Entrada & Workspace","Inicializar workspace de pesquisa","AGENT","Confirmar artefatos canônicos e iniciar auditoria de novidade",None,"TO_DEFINE","DONE","ALTA","","","Workspace criado","CONTINUIDADE + protocolo + matriz","00_Gestao_e_Continuidade",date.today(),"TRACE-0001",pm_provider,"",""],
+      ["CADA-0001","00 — Entrada & Workspace",'Initialize research workspace',"AGENT","Confirmar artefatos canônicos e iniciar auditoria de novidade",None,"TO_DEFINE","DONE","ALTA","","","Workspace criado","CONTINUIDADE + protocolo + matriz","00_Gestao_e_Continuidade",date.today(),"TRACE-0001",pm_provider,"",""],
       ["CADA-0002","01 — Auditoria de novidade","Executar auditoria inicial de novidade e terminologia","AGENT","Localizar literatura próxima e testar a contribuição proposta",None,"TO_DEFINE","READY","ALTA","CADA-0001","","","","01_Auditoria_de_Novidade",date.today(),"",pm_provider,"",""],
-      ["CADA-0003","02–03 — Método / Protocolo","Definir e congelar desenho metodológico e protocolo v1","AGENT+RESEARCHER","Aguardar auditoria de novidade; depois propor método e protocolo v1",None,"DEPENDENCY","CAPTURED","ALTA","CADA-0002","CADA-0002","","","PROTOCOLO.md",date.today(),"",pm_provider,"",""],
+      ["CADA-0003",'02–03 — Method / Protocol','Define and freeze methodological design and protocol v1',"AGENT+RESEARCHER",'Wait for new audit; then propose method and protocol v1',None,"DEPENDENCY","CAPTURED","ALTA","CADA-0002","CADA-0002","","","PROTOCOLO.md",date.today(),"",pm_provider,"",""],
     ]
     cada.get_range("A5:S7").values=seed; body(cada,"A5:S500")
     cada.get_range("F5:F500").format.number_format="yyyy-mm-dd"; cada.get_range("O5:O500").format.number_format="yyyy-mm-dd"
@@ -173,9 +173,9 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
 
     tl=wb.worksheets.add("02_LINHA_TEMPO")
     title(tl,"LINHA DO TEMPO E RASTREABILIDADE","Como chegamos até aqui: eventos materiais da construção científica.","A1:T1")
-    th=["Trace_ID","Timestamp","Etapa","CADA_ID","Ator","Ferramenta / IA","Modelo / versão","Tipo de ação","Resumo da ação","Entrada / Fonte","Decisão / Saída","Justificativa","Artefato antes","Artefato depois","Método de verificação","Validação humana","IDs relacionados","Materialidade","Status","Observações"]
+    th=["Trace_ID","Timestamp","Etapa","CADA_ID","Ator","Ferramenta / IA","Modelo / versão","Tipo de ação",'Action summary','Input/Source',"Decisão / Saída","Justificativa","Artefato antes","Artefato depois",'Verification method','Human validation',"IDs relacionados","Materialidade","Status",'Observations']
     tl.get_range("A4:T4").values=[th]; hdr(tl,"A4:T4")
-    tl.get_range("A5:T5").values=[["TRACE-0001",datetime.now(),"00","CADA-0001","SCRIPT","build_matrix_template.py","","WORKSPACE_INITIALIZATION","Inicialização da matriz C.A.D.A. e rastreabilidade.","Entrada inicial","Estrutura canônica criada","Iniciar proveniência antes da pesquisa substantiva","","Matriz criada","Conferência dos artefatos","PENDING","CADA-0001","ADMINISTRATIVE","COMPLETE",""]]
+    tl.get_range("A5:T5").values=[["TRACE-0001",datetime.now(),"00","CADA-0001","SCRIPT","build_matrix_template.py","","WORKSPACE_INITIALIZATION","Inicialização da matriz C.A.D.A. e rastreabilidade.","Entrada inicial","Estrutura canônica criada",'Start provenance before substantive search',"","Matriz criada","Conferência dos artefatos","PENDING","CADA-0001","ADMINISTRATIVE","COMPLETE",""]]
     body(tl,"A5:T500"); tl.get_range("B5:B500").format.number_format="yyyy-mm-dd hh:mm"
     tl.get_range("E5:E500").data_validation={"rule":{"type":"list","values":lists["ATOR"]}}
     tl.get_range("R5:R500").data_validation={"rule":{"type":"list","values":lists["MATERIALIDADE_IA"]}}
@@ -183,17 +183,17 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
     tl.freeze_panes.freeze_rows(4); tl.freeze_panes.freeze_columns(4)
 
     definitions=[
-      ("04_EVIDENCIAS","MAPA DE EVIDÊNCIAS — VISÃO SINTÉTICA","Uma visão de alto nível das evidências que sustentam a argumentação.",["Evidence_ID","Fonte / Citação","Conceito / Categoria","Achado / contribuição","Papel","Força / relevância","Claim_IDs","Locator / trecho","Status","Observações"],"A1:J1",{"A":14,"B":38,"C":28,"D":48,"E":18,"F":18,"G":18,"H":34,"I":16,"J":30}),
+      ("04_EVIDENCIAS",'EVIDENCE MAP — SYNTHETIC VIEW','A high-level view of the evidence supporting the argument.',["Evidence_ID",'Source/Quote',"Conceito / Categoria","Achado / contribuição","Papel","Força / relevância","Claim_IDs","Locator / trecho","Status",'Observations'],"A1:J1",{"A":14,"B":38,"C":28,"D":48,"E":18,"F":18,"G":18,"H":34,"I":16,"J":30}),
       ("05_PROTOCOLO","PROTOCOLO DO ESTUDO","Decisões metodológicas versionadas e justificadas.",["Item","Decisão","Justificativa","Status","Versão","Atualizado em","Trace_ID"],"A1:G1",{"A":28,"B":44,"C":54,"D":16,"E":10,"F":16,"G":16}),
-      ("06_BUSCAS","LOG DE BUSCAS BIBLIOGRÁFICAS","Cada string executada deve permanecer versionada e rastreável.",["Search_ID","Data","Base / Fonte","Blocos conceituais","String literal","Filtros","Encontrados","Exportados","Arquivo / URL","Status","Iteração","Trace_ID","Validação","Observações"],"A1:N1",{"A":14,"B":13,"C":20,"D":38,"E":64,"F":38,"G":12,"H":12,"I":34,"J":16,"K":10,"L":16,"M":16,"N":32}),
-      ("07_SCREENING","SCREENING","Separe recomendações da IA de decisões efetivamente revisadas pelo pesquisador.",["Record_ID","Fonte","Search_ID","Título","Autores","Ano","DOI / ID","Resumo","Tipo","Idioma","Pass1","Motivo Pass1","Pass2","Motivo Pass2","Duplicata","Canonical_ID","Trace_ID","Observações","Pass1 proposta IA","Pass1 motivo IA","Pass1 fonte IA","Pass1 revisado por","Pass1 evidência revisão","Pass1 resolução divergência","Pass2 proposta IA","Pass2 motivo IA","Pass2 fonte IA","Pass2 revisado por","Pass2 evidência revisão","Pass2 resolução divergência"],"A1:AD1",{"A":14,"B":16,"C":14,"D":48,"E":30,"F":9,"G":24,"H":60,"I":16,"J":12,"K":16,"L":30,"M":22,"N":30,"O":22,"P":16,"Q":16,"R":26,"S":20,"T":38,"U":32,"V":24,"W":40,"X":40,"Y":22,"Z":38,"AA":32,"AB":24,"AC":40,"AD":40}),
-      ("08_FULL_TEXT","CONTROLE DE FULL TEXT","Acesso e análise não implicam autorização para redistribuir PDFs.",["Record_ID","Prioridade","Status full text","Versão acessada","Fonte de acesso","Data de acesso","Decisão","Motivo exclusão","Evidence_ID","Arquivo / URL","Observações","Base de acesso","Base de direitos","URI licença","Evidência de direitos","Escopo de permissão","Atribuição obrigatória","SHA-256 fonte","Revisor de direitos","Evidência de revisão"],"A1:T1",{"A":14,"B":12,"C":18,"D":18,"E":28,"F":14,"G":14,"H":32,"I":14,"J":38,"K":30,"L":22,"M":22,"N":44,"O":40,"P":30,"Q":54,"R":68,"S":25,"T":44}),
-      ("09_MATRIZ_EVID","MATRIZ DE EVIDÊNCIAS — DETALHADA","Extração estruturada para síntese horizontal, linhagem conceitual e redação ancorada em fontes.",["Evidence_ID","Citação","DOI / ID","Conceito","Definição / claim","Papel na literatura","Base da classificação","Fonte primária","Linhagem conceitual / relação","Problema / tensão","Mecanismo / achado","Desenho / tipo de fonte","Amostra / dados","Contexto","Processo / etapa","Atores / papéis","Ação / decisão","Evidência observável","Condições de contorno","Limitações","Transferibilidade","Papel / força","Locator","Rótulo epistêmico","Observações","Família de avaliação","Critérios / respostas","Julgamento crítico","Limitações da avaliação","Revisor humano","Evidência revisão","Justificativa do uso"],"A1:AF1",{"A":14,"B":36,"C":24,"D":26,"E":42,"F":24,"G":38,"H":22,"I":42,"J":36,"K":42,"L":24,"M":28,"N":24,"O":22,"P":22,"Q":24,"R":34,"S":34,"T":30,"U":34,"V":20,"W":34,"X":18,"Y":28,"Z":20,"AA":60,"AB":24,"AC":42,"AD":24,"AE":36,"AF":42}),
+      ("06_BUSCAS","LOG DE BUSCAS BIBLIOGRÁFICAS","Cada string executada deve permanecer versionada e rastreável.",["Search_ID","Data",'Base/Source',"Blocos conceituais","String literal","Filtros","Encontrados","Exportados","Arquivo / URL","Status","Iteração","Trace_ID","Validação",'Observations'],"A1:N1",{"A":14,"B":13,"C":20,"D":38,"E":64,"F":38,"G":12,"H":12,"I":34,"J":16,"K":10,"L":16,"M":16,"N":32}),
+      ("07_SCREENING","SCREENING","Separe recomendações da IA de decisões efetivamente revisadas pelo pesquisador.",["Record_ID","Fonte","Search_ID",'Title',"Autores","Ano","DOI / ID","Resumo","Tipo","Idioma","Pass1",'Reason Pass1',"Pass2",'Pass2 reason',"Duplicata","Canonical_ID","Trace_ID",'Observations',"Pass1 proposta IA",'Pass1 reason AI','Pass1 AI source',"Pass1 revisado por",'Pass1 Evidence Review',"Pass1 resolução divergência","Pass2 proposta IA",'Pass2 reason AI','Pass2 AI source',"Pass2 revisado por",'Pass2 Evidence Review',"Pass2 resolução divergência"],"A1:AD1",{"A":14,"B":16,"C":14,"D":48,"E":30,"F":9,"G":24,"H":60,"I":16,"J":12,"K":16,"L":30,"M":22,"N":30,"O":22,"P":16,"Q":16,"R":26,"S":20,"T":38,"U":32,"V":24,"W":40,"X":40,"Y":22,"Z":38,"AA":32,"AB":24,"AC":40,"AD":40}),
+      ("08_FULL_TEXT","CONTROLE DE FULL TEXT",'Access and analysis do not imply authorization to redistribute PDFs.',["Record_ID","Prioridade","Status full text","Versão acessada",'Access source',"Data de acesso","Decisão",'Reason for exclusion',"Evidence_ID","Arquivo / URL",'Observations',"Base de acesso","Base de direitos","URI licença",'Evidence of rights',"Escopo de permissão","Atribuição obrigatória",'SHA-256 source',"Revisor de direitos",'Review evidence'],"A1:T1",{"A":14,"B":12,"C":18,"D":18,"E":28,"F":14,"G":14,"H":32,"I":14,"J":38,"K":30,"L":22,"M":22,"N":44,"O":40,"P":30,"Q":54,"R":68,"S":25,"T":44}),
+      ("09_MATRIZ_EVID",'EVIDENCE MATRIX — DETAILED',"Extração estruturada para síntese horizontal, linhagem conceitual e redação ancorada em fontes.",["Evidence_ID",'Quote',"DOI / ID","Conceito",'Definition/claim',"Papel na literatura","Base da classificação",'Primary source',"Linhagem conceitual / relação",'Problem/tension',"Mecanismo / achado",'Font design/type','Sample/data',"Contexto",'Process/step',"Atores / papéis","Ação / decisão",'Observable evidence',"Condições de contorno",'Limitations',"Transferibilidade","Papel / força","Locator","Rótulo epistêmico",'Observations','Assessment family','Criteria/answers',"Julgamento crítico",'Assessment limitations','Human reviewer','Evidence review','Justification of use'],"A1:AF1",{"A":14,"B":36,"C":24,"D":26,"E":42,"F":24,"G":38,"H":22,"I":42,"J":36,"K":42,"L":24,"M":28,"N":24,"O":22,"P":22,"Q":24,"R":34,"S":34,"T":30,"U":34,"V":20,"W":34,"X":18,"Y":28,"Z":20,"AA":60,"AB":24,"AC":42,"AD":24,"AE":36,"AF":42}),
       ("10_SINTESE","SÍNTESE ENTRE FONTES","Convergências, contradições, limites e inferências explicitamente rastreadas.",["Synthesis_ID","Tema / Categoria","Evidence_IDs","Padrão entre fontes","Contradições","Condições de contorno","Inferência","Status epistêmico","Decisão","Claim_IDs","Trace_ID"],"A1:K1",{"A":14,"B":28,"C":28,"D":46,"E":36,"F":36,"G":44,"H":18,"I":30,"J":24,"K":16}),
-      ("11_CLAIMS","CLAIMS LEDGER — EVIDÊNCIA, CONTESTAÇÃO E ROBUSTEZ","Cada claim material deve mostrar sustentação, evidência contrária, limites e resultado da auditoria de robustez.",["Claim_ID","Seção do manuscrito","Claim / afirmação","Tipo","Evidence_IDs","Counter_Evidence_IDs","Locators","Explicações alternativas","Condições de contorno","Dependência de fonte única","Força","Robustez","Notas de robustez","Trace_IDs","Gate_ID","Validação humana","Status de redação","Observações","Fundamentação inferencial","Evidence_IDs literatura próxima","Diferença / contribuição","Escopo da originalidade","Search_IDs auditoria novidade","Evidência revisão pesquisador"],"A1:X1",{"A":14,"B":24,"C":56,"D":20,"E":24,"F":26,"G":34,"H":42,"I":34,"J":24,"K":14,"L":18,"M":42,"N":24,"O":14,"P":20,"Q":18,"R":28,"S":48,"T":28,"U":48,"V":42,"W":30,"X":42}),
-      ("12_USO_IA","REGISTRO DE USO DE IA","Transparência: onde a IA atuou, para quê e como houve validação humana.",["AI_Use_ID","Data","Etapa","CADA_ID","Trace_ID","Plataforma / ferramenta","Modelo / versão","Finalidade","Categoria de entrada","Categoria de saída","Materialidade","Método de revisão humana","Decisão humana","Aceito / modificado / rejeitado","Artefatos relacionados","Disclosure necessário","Texto / nota de disclosure","Observações","Categoria disclosure","Evidência revisão humana","Revisão confidencialidade"],"A1:U1",{"A":14,"B":13,"C":12,"D":14,"E":14,"F":24,"G":18,"H":36,"I":24,"J":24,"K":18,"L":40,"M":28,"N":22,"O":34,"P":18,"Q":48,"R":28,"S":24,"T":42,"U":30}),
-      ("13_SUBMISSAO","CHECKLIST DE SUBMISSÃO","Fechamento: requisitos, arquivos, prazos, comprovantes e rastreabilidade.",["Item","Requisito","Fonte do requisito","Status","Prazo","Evidência / arquivo","Trace_ID","Observações"],"A1:H1",{"A":24,"B":44,"C":30,"D":16,"E":14,"F":38,"G":16,"H":30}),
-      ("14_PM_SYNC","SINCRONIZAÇÃO COM GERENCIADOR EXTERNO","Opcional: ClickUp, Jira, Trello ou equivalente. A planilha continua canônica.",["CADA_ID","Provider","Workspace / site","Container ID","External item ID","External URL","Status externo","Responsável externo","Prazo externo","Status canônico","Responsável canônico","Prazo canônico","Último push","Último pull","Sync status","Conflito","Observações"],"A1:Q1",{"A":14,"B":14,"C":24,"D":18,"E":18,"F":38,"G":18,"H":20,"I":14,"J":18,"K":20,"L":14,"M":20,"N":20,"O":16,"P":30,"Q":30}),
+      ("11_CLAIMS",'CLAIMS LEDGER — EVIDENCE, CONTESTING AND ROBUSTNESS','Each material claim must show support, contrary evidence, limits and robustness audit results.',["Claim_ID","Seção do manuscrito","Claim / afirmação","Tipo","Evidence_IDs","Counter_Evidence_IDs","Locators","Explicações alternativas","Condições de contorno",'Single source dependency',"Força","Robustez","Notas de robustez","Trace_IDs","Gate_ID",'Human validation',"Status de redação",'Observations',"Fundamentação inferencial","Evidence_IDs literatura próxima","Diferença / contribuição","Escopo da originalidade","Search_IDs auditoria novidade",'Evidence researcher review'],"A1:X1",{"A":14,"B":24,"C":56,"D":20,"E":24,"F":26,"G":34,"H":42,"I":34,"J":24,"K":14,"L":18,"M":42,"N":24,"O":14,"P":20,"Q":18,"R":28,"S":48,"T":28,"U":48,"V":42,"W":30,"X":42}),
+      ("12_USO_IA",'AI USE LOG','Transparency: where the AI \u200b\u200bacted, for what purpose and how there was human validation.',["AI_Use_ID","Data","Etapa","CADA_ID","Trace_ID","Plataforma / ferramenta","Modelo / versão","Finalidade","Categoria de entrada","Categoria de saída","Materialidade",'Human review method','Human decision',"Aceito / modificado / rejeitado","Artefatos relacionados","Disclosure necessário","Texto / nota de disclosure",'Observations',"Categoria disclosure",'Human review evidence','Confidentiality review'],"A1:U1",{"A":14,"B":13,"C":12,"D":14,"E":14,"F":24,"G":18,"H":36,"I":24,"J":24,"K":18,"L":40,"M":28,"N":22,"O":34,"P":18,"Q":48,"R":28,"S":24,"T":42,"U":30}),
+      ("13_SUBMISSAO","CHECKLIST DE SUBMISSÃO","Fechamento: requisitos, arquivos, prazos, comprovantes e rastreabilidade.",["Item","Requisito",'Source of requirement',"Status","Prazo",'Evidence/archive',"Trace_ID",'Observations'],"A1:H1",{"A":24,"B":44,"C":30,"D":16,"E":14,"F":38,"G":16,"H":30}),
+      ("14_PM_SYNC","SINCRONIZAÇÃO COM GERENCIADOR EXTERNO","Opcional: ClickUp, Jira, Trello ou equivalente. A planilha continua canônica.",["CADA_ID","Provider","Workspace / site","Container ID","External item ID","External URL","Status externo","Responsável externo",'External deadline',"Status canônico","Responsável canônico",'Canonical term',"Último push","Último pull","Sync status","Conflito",'Observations'],"A1:Q1",{"A":14,"B":14,"C":24,"D":18,"E":18,"F":38,"G":18,"H":20,"I":14,"J":18,"K":20,"L":14,"M":20,"N":20,"O":16,"P":30,"Q":30}),
     ]
     for name,ttl,subt,heads,span,wmap in definitions:
         sh=wb.worksheets.add(name); title(sh,ttl,subt,span)
@@ -208,16 +208,16 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
             sh.get_range("AB5:AB500").data_validation={"rule":{"type":"list","values":["SUITABLE_FOR_CLAIM","USE_WITH_CAVEATS","INSUFFICIENT_INFORMATION","DO_NOT_USE_FOR_CLAIM"]}}
         if name=="13_SUBMISSAO":
             sh.get_range("A5:H9").values=[
-              ["Anonimização: conteúdo visível","Autores, afiliações, contatos, agradecimentos e identificadores coerentes com a modalidade de revisão.","Política Meu Artigo + revista","PENDING",None,"","",""],
-              ["Anonimização: metadados ocultos","ZERO_NONESSENTIAL_METADATA: remover Author/Creator/Producer/Generator/Application, datas, propriedades OOXML, XMP/EXIF/IPTC, comentários/revisões, timestamps de pacote e rótulos do gerador (Python/pypdf/ReportLab/Matplotlib/LibreOffice etc.).","Política Meu Artigo + revista","PENDING",None,"","",""],
-              ["Anonimização: nomes, caminhos e links","Nome de arquivo, caminhos locais, links privados e contas não devem revelar autoria indevidamente.","Política Meu Artigo","PENDING",None,"","",""],
-              ["Anonimização: participantes/casos","Identificadores de participantes, organizações e locais respeitam confidencialidade e protocolo.","Política Meu Artigo + protocolo","PENDING",None,"","",""],
-              ["Anonimização: auditoria final","Arquivos exatos de saída possuem ANONYMIZATION_AUDIT PASS ou PASS_WITH_HUMAN_REVIEW.","Política Meu Artigo","PENDING",None,"","",""],
+              ["Anonimização: conteúdo visível",'Authors, affiliations, contacts, acknowledgments and identifiers consistent with the review modality.','Politics My Article + magazine',"PENDING",None,"","",""],
+              ["Anonimização: metadados ocultos","ZERO_NONESSENTIAL_METADATA: remover Author/Creator/Producer/Generator/Application, datas, propriedades OOXML, XMP/EXIF/IPTC, comentários/revisões, timestamps de pacote e rótulos do gerador (Python/pypdf/ReportLab/Matplotlib/LibreOffice etc.).",'Politics My Article + magazine',"PENDING",None,"","",""],
+              ["Anonimização: nomes, caminhos e links",'File names, local paths, private links, and accounts must not unduly reveal authorship.','Politics My Article',"PENDING",None,"","",""],
+              ["Anonimização: participantes/casos","Identificadores de participantes, organizações e locais respeitam confidencialidade e protocolo.",'Policy My Article + protocol',"PENDING",None,"","",""],
+              ["Anonimização: auditoria final","Arquivos exatos de saída possuem ANONYMIZATION_AUDIT PASS ou PASS_WITH_HUMAN_REVIEW.",'Politics My Article',"PENDING",None,"","",""],
             ]
 
     interop=wb.worksheets.add("16_INTEROPERABILIDADE")
     title(interop,"INTEROPERABILIDADE E PACOTES DE PROVENIÊNCIA","Histórico de exports W3C PROV / RO-Crate, fixidade e validação.","A1:M1")
-    ih=["Export_ID","Timestamp","Padrões","Pacote / URL","SHA-256 do pacote","Validação","TRACE events","PROV entities","PROV activities","PROV agents","RO-Crate files","Warnings","Observações"]
+    ih=["Export_ID","Timestamp","Padrões","Pacote / URL","SHA-256 do pacote","Validação","TRACE events","PROV entities","PROV activities","PROV agents","RO-Crate files","Warnings",'Observations']
     interop.get_range("A4:M4").values=[ih]; hdr(interop,"A4:M4")
     body(interop,"A5:M200")
     interop.get_range("B5:B200").format.number_format="yyyy-mm-dd hh:mm"
@@ -229,7 +229,7 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
 
     dec=wb.worksheets.add("17_DECISOES")
     title(dec,"DECISÕES CIENTÍFICAS","O que decidimos, por quê, com base em quê e qual foi o impacto.","A1:T1")
-    dh=["DEC_ID","Timestamp","Etapa","Tipo","Pergunta decisória","Decisão","Alternativas consideradas","Justificativa","Evidence_IDs","Record_IDs","CADA_ID","Trace_ID","Gate_ID","Status","Decidido por","Impacto","Artefatos afetados","Versão resultante","Supersede DEC_ID","Observações"]
+    dh=["DEC_ID","Timestamp","Etapa","Tipo","Pergunta decisória","Decisão","Alternativas consideradas","Justificativa","Evidence_IDs","Record_IDs","CADA_ID","Trace_ID","Gate_ID","Status","Decidido por","Impacto","Artefatos afetados","Versão resultante","Supersede DEC_ID",'Observations']
     dec.get_range("A4:T4").values=[dh]; hdr(dec,"A4:T4"); body(dec,"A5:T300")
     dec.get_range("B5:B300").format.number_format="yyyy-mm-dd hh:mm"
     dec.get_range("D5:D300").data_validation={"rule":{"type":"list","values":lists["DECISION_TYPE"]}}
@@ -240,17 +240,17 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
     dec.freeze_panes.freeze_rows(4); dec.freeze_panes.freeze_columns(5)
 
     gates=wb.worksheets.add("18_VALIDACOES")
-    title(gates,"VALIDAÇÕES HUMANAS CRÍTICAS","Poucos gates, apenas nos pontos em que o avanço exige responsabilidade científica humana.","A1:T1")
-    gh=["GATE_ID","Tipo","Etapa","Nome","Condição de entrada","Itens a validar","DEC_IDs","CADA_IDs","Evidence_IDs","Snapshot antes","Decisão","Validado por","Data","Método de validação","Evidência da validação","Trace_ID","Snapshot depois","Status","Transição bloqueada","Observações"]
+    title(gates,'CRITICAL HUMAN VALIDATIONS','Few gates, only at points where advancement requires human scientific responsibility.',"A1:T1")
+    gh=["GATE_ID","Tipo","Etapa","Nome","Condição de entrada","Itens a validar","DEC_IDs","CADA_IDs","Evidence_IDs","Snapshot antes","Decisão","Validado por","Data",'Validation method','Evidence of validation',"Trace_ID","Snapshot depois","Status","Transição bloqueada",'Observations']
     gates.get_range("A4:T4").values=[gh]; hdr(gates,"A4:T4"); body(gates,"A5:T100")
     gate_seed=[
-      ["GATE-0001","QUESTION_CONTRIBUTION","01","Pergunta e contribuição","Auditoria inicial de novidade concluída.","Pergunta, objetivo, contribuição e limites propostos.","","CADA-0002","","","PENDING","","","","","","","PENDING","Definição do desenho metodológico",""],
-      ["GATE-0002","METHOD_PROTOCOL","02-03","Método e protocolo","Desenho metodológico e protocolo v1 preparados.","Método, critérios, escopo, papéis das bases e regras de screening.","","CADA-0003","","","PENDING","","","","","","","PENDING","Busca em escala",""],
+      ["GATE-0001","QUESTION_CONTRIBUTION","01","Pergunta e contribuição","Auditoria inicial de novidade concluída.","Pergunta, objetivo, contribuição e limites propostos.","","CADA-0002","","","PENDING","","","","","","","PENDING",'Definition of the methodological design',""],
+      ["GATE-0002","METHOD_PROTOCOL","02-03",'Method and protocol','Methodological design and protocol v1 prepared.','Method, criteria, scope, roles of the bases and screening rules.',"","CADA-0003","","","PENDING","","","","","","","PENDING","Busca em escala",""],
       ["GATE-0003","SEARCH_STRATEGY","03-04","Estratégia de busca","Strings e filtros preparados e testados.","Blocos conceituais, strings literais, filtros e bases.","","","","","PENDING","","","","","","","PENDING","Execução das buscas canônicas",""],
       ["GATE-0004","CORPUS_FREEZE","08-09","Congelamento do corpus","Screening/full text encerrados e contagens reconciliadas.","Corpus elegível, exclusões, duplicatas e contagens finais.","","","","","PENDING","","","","","","","PENDING","Extração/síntese final do corpus",""],
       ["GATE-0005","SYNTHESIS","10","Síntese e produto teórico","Síntese entre fontes estabilizada.","Categorias, contradições, inferências e proposições/modelo.","","","","","PENDING","","","","","","","PENDING","Redação substantiva do manuscrito",""],
-      ["GATE-0006","CLAIMS_AUDIT","12-13","Claims e auditoria científica","Claims principais ligados às evidências; evidência contrária, explicações alternativas, dependência de fonte e limites auditados.","Claims, Evidence_IDs, Counter_Evidence_IDs, locators, explicações alternativas, condições de contorno, dependência de fonte, robustez, uso de IA e aderência editorial aplicável.","","","","","PENDING","","","","","","","PENDING","Liberação da versão final",""],
-      ["GATE-0007","SUBMISSION_RELEASE","14","Liberação para submissão","Versão canônica, checklist, perfil da revista, anonimização e transparência reconciliados.","Manuscrito final, JOURNAL_PROFILE, perfil de anonimização, ANONYMIZATION_AUDIT, metadados ocultos, conformidade com regras oficiais, disclosures e arquivos exatos de submissão.","","","","","PENDING","","","","","","","PENDING","Submissão externa",""],
+      ["GATE-0006","CLAIMS_AUDIT","12-13","Claims e auditoria científica",'Main claims linked to evidence; contrary evidence, alternative explanations, source dependence and audited limits.','Claims, Evidence_IDs, Counter_Evidence_IDs, locators, alternative explanations, boundary conditions, source dependency, robustness, use of AI, and applicable editorial adherence.',"","","","","PENDING","","","","","","","PENDING","Liberação da versão final",""],
+      ["GATE-0007","SUBMISSION_RELEASE","14","Liberação para submissão",'Canonical version, checklist, magazine profile, anonymization and transparency reconciled.',"Manuscrito final, JOURNAL_PROFILE, perfil de anonimização, ANONYMIZATION_AUDIT, metadados ocultos, conformidade com regras oficiais, disclosures e arquivos exatos de submissão.","","","","","PENDING","","","","","","","PENDING","Submissão externa",""],
     ]
     gates.get_range("A5:T11").values=gate_seed
     gates.get_range("K5:K100").data_validation={"rule":{"type":"list","values":lists["GATE_DECISION"]}}
@@ -262,8 +262,8 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
     gates.freeze_panes.freeze_rows(4); gates.freeze_panes.freeze_columns(4)
 
     snaps=wb.worksheets.add("19_SNAPSHOTS")
-    title(snaps,"SNAPSHOTS CIENTÍFICOS","Estados congelados, verificáveis e comparáveis do projeto.","A1:Q1")
-    sh=["SNAP_ID","Timestamp","Marco","Etapa","Trigger","Gate_ID","DEC_IDs","CADA_IDs","SNAP anterior","Caminho / URL","Manifest","SHA-256 do manifest","Artefatos canônicos","Resumo da mudança","Validação","EXPORT_ID","Observações"]
+    title(snaps,"SNAPSHOTS CIENTÍFICOS",'Frozen, verifiable, and comparable project states.',"A1:Q1")
+    sh=["SNAP_ID","Timestamp","Marco","Etapa","Trigger","Gate_ID","DEC_IDs","CADA_IDs","SNAP anterior","Caminho / URL","Manifest","SHA-256 do manifest","Artefatos canônicos",'Change summary',"Validação","EXPORT_ID",'Observations']
     snaps.get_range("A4:Q4").values=[sh]; hdr(snaps,"A4:Q4"); body(snaps,"A5:Q200")
     snaps.get_range("B5:B200").format.number_format="yyyy-mm-dd hh:mm"
     snaps.get_range("O5:O200").data_validation={"rule":{"type":"list","values":lists["SNAPSHOT_STATUS"]}}
@@ -274,7 +274,7 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
 
     cmap=wb.worksheets.add("20_MAPA_CORPUS")
     title(cmap,"MAPA DO CORPUS","Visão exploratória da estrutura do corpus validado. Nenhum dado é inventado; campos permanecem vazios até haver metadados reais.","A1:O1")
-    cmap.get_range("A4:D4").values=[["Visão geral","Valor","Fonte / regra","Atualizado em"]]; hdr(cmap,"A4:D4")
+    cmap.get_range("A4:D4").values=[["Visão geral","Valor",'Source/rule',"Atualizado em"]]; hdr(cmap,"A4:D4")
     cmap.get_range("A5:A9").values=[["Registros retidos"],["FULL TEXT — CORE"],["FULL TEXT — SUPPORT"],["Evidence_IDs"],["Claim_IDs"]]
     cmap.get_range("A5:A9").format=LABEL
     cmap.get_range("B5").formulas=[["=COUNTIF('07_SCREENING'!$M$5:$M$1000,\"FULL TEXT — CORE\")+COUNTIF('07_SCREENING'!$M$5:$M$1000,\"FULL TEXT — SUPPORT\")"]]
@@ -282,37 +282,37 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
     cmap.get_range("B7").formulas=[["=COUNTIF('07_SCREENING'!$M$5:$M$1000,\"FULL TEXT — SUPPORT\")"]]
     cmap.get_range("B8").formulas=[["=COUNTA('09_MATRIZ_EVID'!$A$5:$A$500)"]]
     cmap.get_range("B9").formulas=[["=COUNTA('11_CLAIMS'!$A$5:$A$500)"]]
-    cmap.get_range("C5:C9").values=[["Pass2 decision"],["Pass2 decision"],["Pass2 decision"],["Matriz de evidências"],["Claims ledger"]]
+    cmap.get_range("C5:C9").values=[["Pass2 decision"],["Pass2 decision"],["Pass2 decision"],['Evidence matrix'],["Claims ledger"]]
     body(cmap,"A5:D9")
 
     cmap.get_range("A12:B12").values=[["Publicações por ano","Quantidade"]]; hdr(cmap,"A12:B12")
-    cmap.get_range("D12:E12").values=[["Autores mais recorrentes","Quantidade"]]; hdr(cmap,"D12:E12")
+    cmap.get_range("D12:E12").values=[['Most recurring authors',"Quantidade"]]; hdr(cmap,"D12:E12")
     cmap.get_range("G12:H12").values=[["Periódicos / fontes","Quantidade"]]; hdr(cmap,"G12:H12")
     cmap.get_range("J12:K12").values=[["Keywords / conceitos","Quantidade"]]; hdr(cmap,"J12:K12")
     cmap.get_range("M12:O12").values=[["Estrutura de rede","Valor","Regra / observação"]]; hdr(cmap,"M12:O12")
     body(cmap,"A13:B40"); body(cmap,"D13:E40"); body(cmap,"G13:H40"); body(cmap,"J13:K40"); body(cmap,"M13:O40")
-    cmap.get_range("M13:M17").values=[["Método de aresta"],["Clusters"],["Artigos-ponte"],["Cobertura de enriquecimento"],["Warnings"]]
+    cmap.get_range("M13:M17").values=[['edge method'],["Clusters"],["Artigos-ponte"],["Cobertura de enriquecimento"],["Warnings"]]
     cmap.get_range("M13:M17").format=LABEL
     cmap.get_range("N13:O17").values=[
       ["","Somente preencher quando existir modelo real de rede."],
-      ["","Não gerar clusters bibliométricos por similaridade semântica apenas."],
-      ["","Exigir base operacional: citação, coautoria, acoplamento, cocitação ou coocorrência."],
-      ["","Registrar OpenAlex/Crossref ou outra fonte quando realmente utilizada."],
+      ["",'Do not generate bibliometric clusters based on semantic similarity alone.'],
+      ["",'Require operational basis: citation, co-authorship, coupling, co-citation or co-occurrence.'],
+      ["",'Register OpenAlex/Crossref or other source when actually used.'],
       ["","Metadados ausentes devem permanecer explicitamente ausentes."],
     ]
     body(cmap,"M13:O17")
     cmap.merge_cells("A43:O43")
-    cmap.get_range("A43").values=[["A aba é uma visão do corpus validado. Use scripts/build_corpus_map.py ou ferramenta equivalente para preencher somente com metadados reais. Mapa exploratório não transforma o desenho em bibliometria."]]
+    cmap.get_range("A43").values=[['The tab is a view of the validated corpus. Use scripts/build_corpus_map.py or equivalent tool to fill in real metadata only. An exploratory map does not transform the drawing into bibliometrics.']]
     cmap.get_range("A43:O43").format={"fill":LIGHT_BLUE,"font":{"italic":True,"color":NAVY},"wrap_text":True}
     widths(cmap,{"A":24,"B":14,"C":28,"D":18,"E":14,"F":4,"G":30,"H":14,"I":4,"J":30,"K":14,"L":4,"M":24,"N":24,"O":48})
     cmap.freeze_panes.freeze_rows(4)
 
     wb.worksheets.get_item("05_PROTOCOLO").get_range("A5:G12").values=[
-      ["Tipo de artigo/revisão","[A DEFINIR]","Depende da finalidade e da auditoria de novidade","PLANNED","v0",date.today(),""],
-      ["Revista-alvo / contrato editorial",target_journal or "TO_DEFINE",f"Modo: {journal_mode}; perfil: {journal_profile_status}. Regras editoriais orientam apresentação, nunca resultados/evidências.","PLANNED" if not target_journal else "IN_PROGRESS","v0",date.today(),""],
+      ['Type of article/review',"[A DEFINIR]","Depende da finalidade e da auditoria de novidade","PLANNED","v0",date.today(),""],
+      ['Target magazine/editorial agreement',target_journal or "TO_DEFINE",f"Modo: {journal_mode}; perfil: {journal_profile_status}. Regras editoriais orientam apresentação, nunca resultados/evidências.","PLANNED" if not target_journal else "IN_PROGRESS","v0",date.today(),""],
       ["Escopo","[A DEFINIR]","","PLANNED","v0",date.today(),""],
-      ["Critérios de inclusão","[A DEFINIR]","","PLANNED","v0",date.today(),""],
-      ["Critérios de exclusão","[A DEFINIR]","","PLANNED","v0",date.today(),""],
+      ['Inclusion criteria',"[A DEFINIR]","","PLANNED","v0",date.today(),""],
+      ['Exclusion criteria',"[A DEFINIR]","","PLANNED","v0",date.today(),""],
       ["Bases e papéis","[A DEFINIR]","","PLANNED","v0",date.today(),""],
       ["Regra de full text","[A DEFINIR]","","PLANNED","v0",date.today(),""],
       ["Regra de síntese/parada","[A DEFINIR]","","PLANNED","v0",date.today(),""],
@@ -334,9 +334,9 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
 
 
     dash=wb.worksheets.add("00_PAINEL")
-    title(dash,"MEU ARTIGO — PAINEL DE GOVERNANÇA CIENTÍFICA","Onde estamos? O que falta? Como chegamos aqui? Onde a IA participou?","A1:L1")
+    title(dash,'MY ARTICLE — SCIENTIFIC GOVERNANCE PANEL',"Onde estamos? O que falta? Como chegamos aqui? Onde a IA participou?","A1:L1")
     dash.get_range("A4:B4").values=[["Projeto","Valor"]]; hdr(dash,"A4:B4")
-    dash.get_range("A5:A11").values=[["Título"],["Etapa atual"],["Modo de gestão"],["Gerenciador externo"],["Última atualização"],["Revista-alvo"],["Modo editorial"]]
+    dash.get_range("A5:A11").values=[['Title'],['Current stage'],["Modo de gestão"],["Gerenciador externo"],["Última atualização"],["Revista-alvo"],["Modo editorial"]]
     dash.get_range("A5:A11").format=LABEL
     dash.get_range("B5").formulas=[["=IFERROR(INDEX('03_PROJETO'!$B$5:$B$30,MATCH(\"Título curto do projeto\",'03_PROJETO'!$A$5:$A$30,0)),\"[DEFINIR]\")"]]
     dash.get_range("B6").formulas=[["=IFERROR(INDEX('03_PROJETO'!$B$5:$B$30,MATCH(\"Etapa atual\",'03_PROJETO'!$A$5:$A$30,0)),\"—\")"]]

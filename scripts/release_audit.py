@@ -39,7 +39,7 @@ REQUIRED=[
     "tests/test_language_policy.py",
     "docs/ENGLISH-SOURCE-MIGRATION.md",
     "references/INDICE-METODOLOGICO.md",
-    "references/CONTEXTO-POR-ETAPA.md",
+    'references/CONTEXTO-PER-ETAPA.md',
     "references/fluxo-essencial.md",
     "references/platform-capability-preflight.md",
     "tests/test_stage4_routing.py",
@@ -169,7 +169,7 @@ def main()->int:
         errors.append("NOTICE must preserve original author attribution")
     if f"**Current version:** `{version}`" not in readme:
         errors.append("README does not display current VERSION")
-    if "Enquanto o acesso não for aberto pelo autor" in onboarding:
+    if 'As long as access is not opened by the author' in onboarding:
         errors.append("Onboarding still falsely describes public repository as restricted")
     if "public beta" not in onboarding.lower():
         errors.append("Public-beta access is not described in onboarding")
@@ -210,7 +210,7 @@ def main()->int:
     # Core feature references.
     required_terms={
         "SKILL.md":["DEC_ID","GATE_ID","SNAP_ID","W3C PROV","RO-Crate","Grounded Corpus","Corpus Map","JOURNAL_PROFILE","JOURNAL_NEUTRAL","Counter_Evidence_IDs","Robustness_status","ANONYMIZATION_PROFILE","audit_anonymization.py","sanitize_metadata.py","ZERO_NONESSENTIAL_METADATA","GOOGLE_DRIVE_FIRST","WORK_FALLBACK"],
-        "README.md":["Meu Artigo","C.A.D.A.","Getting started","researcher","sources","beta"],
+        "README.md":['My Article',"C.A.D.A.","Getting started","researcher","sources","beta"],
     }
     for label,terms in required_terms.items():
         text=skill if label=="SKILL.md" else readme
@@ -223,7 +223,7 @@ def main()->int:
     for sheet in ["16_INTEROPERABILIDADE","17_DECISOES","18_VALIDACOES","19_SNAPSHOTS","20_MAPA_CORPUS"]:
         if sheet not in matrix:
             errors.append(f"workbook generator missing sheet: {sheet}")
-    for term in ["Counter_Evidence_IDs","Explicações alternativas","Dependência de fonte única","Robustez","Revista-alvo","Modo de construção editorial","Anonimização: auditoria final","Modo padrão de arquivo externo","Papel na literatura","Base da classificação","Fonte primária","Linhagem conceitual / relação","FOUNDATIONAL","CLASSIC_CRITIQUE","CONTEMPORARY_UPDATE"]:
+    for term in ["Counter_Evidence_IDs","Explicações alternativas",'Single source dependency',"Robustez","Revista-alvo","Modo de construção editorial","Anonimização: auditoria final","Modo padrão de arquivo externo","Papel na literatura","Base da classificação",'Primary source',"Linhagem conceitual / relação","FOUNDATIONAL","CLASSIC_CRITIQUE","CONTEMPORARY_UPDATE"]:
         if term not in matrix:
             errors.append(f"workbook generator missing journal/robustness field: {term}")
 

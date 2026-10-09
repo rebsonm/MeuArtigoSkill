@@ -56,11 +56,11 @@ def assess(root):
    errors.append(f"{id}: confidentiality review pending")
   if clean(row.get("Disclosure_required")).upper()=="NO":
    warnings.append(f"{id}: NO in the log does not override editorial rules")
-  model=clean(row.get("Model_or_version")) or "versão não informada"
+  model=clean(row.get("Model_or_version")) or 'uninformed version'
   uses.append({"id":id,"category":cat,"tool":tool,"model":model,"purpose":purpose,
                "review":clean(row.get("Human_review_method")),"decision":disposition})
  policy=profile.get("ai_disclosure_policy") or {}
- if policy.get("require_model_version") is True and any(u["model"]=="versão não informada" for u in uses):
+ if policy.get("require_model_version") is True and any(u["model"]=='uninformed version' for u in uses):
   errors.append("journal requires exact model/version identification")
  att=profile.get("ai_disclosure_attestation") or {}
  if not (profile.get("status")=="VERIFIED" and
@@ -100,22 +100,22 @@ def assess(root):
  }
 def render(result):
  lines=["# Declaração editorial de IA — minuta",
-        "","Revista: "+result["journal"],
+        "",'Magazine:'+result["journal"],
         "Local previsto: "+(result["location"] or "A CONFIRMAR"),
         "Situação: "+result["status"],""]
  if result["uses"]:
   lines+=["## Declaração proposta","",
           "Ferramentas de IA foram utilizadas nas atividades registradas a seguir.",
-          "Os autores permanecem responsáveis pelas fontes, interpretações e pelo conteúdo final.",""]
+          'The authors remain responsible for the sources, interpretations and final content.',""]
   for event in result["uses"]:
    def safe(x): return clean(x).replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
    lines.append("- "+safe(event["category"])+": "+safe(event["tool"])+" ("+
                 safe(event["model"])+"); finalidade: "+safe(event["purpose"])+
-                "; revisão: "+safe(event["review"] or "não descrita")+
+                '; revision:'+safe(event["review"] or 'not described')+
                 "; decisão: "+safe(event["decision"])+".")
  else:
-  lines+=["Segundo a revisão documentada do pesquisador, nenhum uso foi declarado no registro.",
-           "A conclusão depende da veracidade dessa manifestação humana.",""]
+  lines+=["According to the researcher's documented review, no use was declared in the record.",
+           'The conclusion depends on the veracity of this human manifestation.',""]
  if result["errors"]:
   lines+=["## Pendências",*("- "+x for x in result["errors"])]
  return "\n".join(lines)+"\n"
@@ -130,31 +130,31 @@ def render_compact(result):
   # Draft can exist but must expose its non-final status.
   status="MINUTA COM PENDÊNCIAS"
  else:
-  status="PRONTO PARA REVISÃO FINAL DO AUTOR"
+  status='READY FOR FINAL AUTHOR REVIEW'
  groups={}
  for u in result["uses"]:
   k=(u["category"],u["tool"],u["model"])
   groups.setdefault(k,[]).append(u["purpose"])
  lines=["# Transparência sobre uso de IA — versão breve","",
-        "Periódico: "+safe(result["journal"] or "A CONFIRMAR"),
+        'Periodical:'+safe(result["journal"] or "A CONFIRMAR"),
         "Local exigido: "+safe(result["location"] or "A CONFIRMAR"),
         "Situação: "+status,""]
  if not groups:
-  lines.append("Segundo manifestação documentada do pesquisador, não houve uso de IA declarado no registro examinado. Um log vazio não comprova, por si, ausência de uso.")
+  lines.append("According to the researcher's documented statement, there was no use of AI declared in the record examined. An empty log does not, in itself, prove lack of use.")
  else:
   lines.append("Ferramentas e finalidades declaradas (conforme registros efetivos):")
   for (category,tool,model),purposes in sorted(groups.items()):
    unique=list(dict.fromkeys(clean(p) for p in purposes))
    category_label={
    "ADMIN_SUPPORT":"apoio administrativo","LITERATURE_SEARCH":"apoio à busca bibliográfica",
-   "SCREENING":"apoio à triagem","EVIDENCE_EXTRACTION":"organização de evidências",
-   "DATA_ANALYSIS":"apoio à análise de dados","DRAFTING_EDITING":"apoio à redação/edição",
+   "SCREENING":"apoio à triagem","EVIDENCE_EXTRACTION":'organization of evidence',
+   "DATA_ANALYSIS":'data analysis support',"DRAFTING_EDITING":"apoio à redação/edição",
    "FIGURES":"apoio à preparação de figuras","OTHER":"outra atividade descrita"
   }.get(category,category)
   lines.append("- "+safe(category_label)+": "+safe(tool)+" ("+safe(model)+") — "+safe("; ".join(unique))+".")
   lines.append("")
-  lines.append("O pesquisador permanece responsável pela revisão dos resultados, precisão das fontes, interpretação e conteúdo final.")
- lines+=["","Texto sujeito às instruções vigentes do periódico e à verificação humana de posicionamento. A emissão não atesta aceite editorial."]
+  lines.append('The researcher remains responsible for reviewing results, accuracy of sources, interpretation, and final content.')
+ lines+=["",'Text subject to current periodical instructions and human positioning verification. The issue does not indicate editorial acceptance.']
  if result["errors"]:
   lines.append("Pendências: "+str(len(result["errors"]))+"; consultar a auditoria completa antes de enviar.")
  output="\n".join(lines)+"\n"

@@ -48,18 +48,18 @@ REQUIRED_DESIGN = {
 # Existing IDs/columns are deliberately retained; no new scientific gates.
 GATE_VARIANTS = {
     "INTEGRATIVE_REVIEW": {
-        "GATE-0003": ("SEARCH_STRATEGY", "Estratégia de busca", "Busca estruturada, fontes e critérios explicitados.", "Estratégias literais, escopo, filtros e execução/limites declarados."),
-        "GATE-0004": ("CORPUS_FREEZE", "Corpus elegível", "Triagem e acesso ao material efetivamente examinados.", "Corpus, decisões humanas e contagens, sem ampliar cobertura declarada."),
-        "GATE-0005": ("SYNTHESIS", "Síntese integrativa", "Evidências analisadas e comparadas.", "Tensões, convergências, explicações alternativas e proposições delimitadas."),
+        "GATE-0003": ("SEARCH_STRATEGY", "Estratégia de busca", 'Structured search, sources and criteria explained.', "Estratégias literais, escopo, filtros e execução/limites declarados."),
+        "GATE-0004": ("CORPUS_FREEZE", "Corpus elegível", "Triagem e acesso ao material efetivamente examinados.", 'Corpus, human decisions and counts, without expanding declared coverage.'),
+        "GATE-0005": ("SYNTHESIS", "Síntese integrativa", 'Evidence analyzed and compared.', "Tensões, convergências, explicações alternativas e proposições delimitadas."),
     },
     "SYSTEMATIC_REVIEW": {
-        "GATE-0003": ("SEARCH_STRATEGY", "Busca de revisão sistemática", "Estratégia abrangente compatível com protocolo e questão.", "Strings executadas, fontes, datas, atualizações e limitações."),
-        "GATE-0004": ("CORPUS_FREEZE", "Elegibilidade e corpus final", "Seleção de todos os candidatos elegíveis concluída e auditada.", "Critérios, conflitos, exclusões, contagens e avaliação de fontes."),
-        "GATE-0005": ("SYNTHESIS", "Síntese de revisão sistemática", "Síntese realizada segundo protocolo apropriado.", "Evidências elegíveis, risco de viés, heterogeneidade e limites da inferência."),
+        "GATE-0003": ("SEARCH_STRATEGY", 'Systematic review search', "Estratégia abrangente compatível com protocolo e questão.", 'Executed strings, sources, dates, updates and limitations.'),
+        "GATE-0004": ("CORPUS_FREEZE", "Elegibilidade e corpus final", "Seleção de todos os candidatos elegíveis concluída e auditada.", 'Criteria, conflicts, exclusions, counts and evaluation of sources.'),
+        "GATE-0005": ("SYNTHESIS", 'Systematic review synthesis', "Síntese realizada segundo protocolo apropriado.", 'Eligible evidence, risk of bias, heterogeneity and limits of inference.'),
     },
     "PROBLEMATIZING_REVIEW": {
-        "GATE-0003": ("SELECTIVE_LITERATURE", "Leitura crítica e seletiva", "Seleção teórica justificada, não exaustividade presumida.", "Pressupostos, contrapontos, lógica de seleção e limites documentados."),
-        "GATE-0004": ("THEORETICAL_MATERIALS", "Material teórico interpretado", "Fontes e posições comparadas com proveniência.", "Material efetivamente consultado e posições não examinadas."),
+        "GATE-0003": ("SELECTIVE_LITERATURE", "Leitura crítica e seletiva", 'Justified theoretical selection, not presumed exhaustiveness.', "Pressupostos, contrapontos, lógica de seleção e limites documentados."),
+        "GATE-0004": ("THEORETICAL_MATERIALS", "Material teórico interpretado", "Fontes e posições comparadas com proveniência.", 'Material actually consulted and positions not examined.'),
         "GATE-0005": ("THEORETICAL_ARGUMENT", "Problematização e síntese", "Tensões e alternativas justificadas.", "Mudança de pressupostos, inferências e contra-argumentos."),
     },
     "CONCEPTUAL_THEORY": {
@@ -68,24 +68,24 @@ GATE_VARIANTS = {
         "GATE-0005": ("THEORETICAL_ARGUMENT", "Contribuição teórica", "Argumento conceitual confrontado com literatura.", "Proposições, mecanismo, alternativas, implicações e limites."),
     },
     "QUALITATIVE": {
-        "GATE-0003": ("LITERATURE_POSITIONING", "Referencial e contexto", "Literatura situou fenômeno sem impor revisão sistemática.", "Fontes relevantes, perspectiva epistemológica e lacunas delimitadas."),
+        "GATE-0003": ("LITERATURE_POSITIONING", "Referencial e contexto", 'Literature located the phenomenon without imposing a systematic review.', "Fontes relevantes, perspectiva epistemológica e lacunas delimitadas."),
         "GATE-0004": ("EMPIRICAL_MATERIALS", "Material empírico qualitativo", "Material real, seleção e acesso documentados.", "Contexto, corpus empírico, consentimento/ética aplicáveis e trilha dos materiais."),
-        "GATE-0005": ("QUALITATIVE_ANALYSIS", "Análise e interpretação qualitativa", "Procedimentos efetivamente realizados.", "Evidência, interpretação, reflexividade, divergências e transferência."),
+        "GATE-0005": ("QUALITATIVE_ANALYSIS", 'Qualitative analysis and interpretation', "Procedimentos efetivamente realizados.", 'Evidence, interpretation, reflexivity, disagreements and transference.'),
     },
     "QUANTITATIVE": {
         "GATE-0003": ("LITERATURE_POSITIONING", "Fundamentação e hipóteses", "Pergunta, modelo e comparações relevantes delimitados.", "Referencial, construtos e hipóteses pertinentes, sem busca exaustiva obrigatória."),
-        "GATE-0004": ("EMPIRICAL_MATERIALS", "Dados e mensuração", "Dados reais e procedimentos de amostragem registrados.", "Unidades, amostra observada, instrumentos, variáveis, qualidade e ética."),
-        "GATE-0005": ("QUANTITATIVE_ANALYSIS", "Análise estatística e inferência", "Análises realmente executadas e suas limitações avaliadas.", "Resultados, pressupostos, incerteza e limites de identificação causal."),
+        "GATE-0004": ("EMPIRICAL_MATERIALS", 'Data and measurement', 'Actual data and sampling procedures recorded.', "Unidades, amostra observada, instrumentos, variáveis, qualidade e ética."),
+        "GATE-0005": ("QUANTITATIVE_ANALYSIS", 'Statistical analysis and inference', 'Analyzes actually performed and their limitations assessed.', "Resultados, pressupostos, incerteza e limites de identificação causal."),
     },
     "MIXED_METHODS": {
         "GATE-0003": ("LITERATURE_POSITIONING", "Justificação das vertentes", "Pergunta sustenta uso combinado de abordagens.", "Referencial e função específica de cada vertente."),
-        "GATE-0004": ("EMPIRICAL_MATERIALS", "Dados de ambas as vertentes", "Componentes QUAN e QUAL efetivamente documentados.", "Seleção e obtenção dos materiais, ética e encadeamento previstos."),
-        "GATE-0005": ("MIXED_INTEGRATION", "Integração e meta-inferência", "Integração real documentada, não mera justaposição.", "Ponto de integração, convergências, divergências e meta-inferência limitada."),
+        "GATE-0004": ("EMPIRICAL_MATERIALS", 'Data from both aspects', "Componentes QUAN e QUAL efetivamente documentados.", "Seleção e obtenção dos materiais, ética e encadeamento previstos."),
+        "GATE-0005": ("MIXED_INTEGRATION", "Integração e meta-inferência", 'Real documented integration, not mere juxtaposition.', "Ponto de integração, convergências, divergências e meta-inferência limitada."),
     },
     "DESIGN_SCIENCE": {
-        "GATE-0003": ("PROBLEM_KNOWLEDGE", "Requisitos e conhecimento anterior", "Requisitos do problema e literatura identificados.", "Base de conhecimento, interessados e requisitos justificáveis."),
-        "GATE-0004": ("ARTEFACT_CONSTRUCTION", "Artefato e processo de construção", "Artefato real e decisões de projeto documentados.", "Versões, requisitos, decisões técnicas, limitações e fonte dos materiais."),
-        "GATE-0005": ("ARTEFACT_EVALUATION", "Avaliação de artefato", "Procedimento de avaliação efetivamente executado.", "Critérios, resultados reais, limitações e alegações não demonstradas."),
+        "GATE-0003": ("PROBLEM_KNOWLEDGE", "Requisitos e conhecimento anterior", 'Problem requirements and literature identified.', "Base de conhecimento, interessados e requisitos justificáveis."),
+        "GATE-0004": ("ARTEFACT_CONSTRUCTION", "Artefato e processo de construção", 'Actual artifact and design decisions documented.', 'Versions, requirements, technical decisions, limitations and source of materials.'),
+        "GATE-0005": ("ARTEFACT_EVALUATION", 'Artifact Assessment', 'Assessment procedure effectively carried out.', 'Criteria, real results, limitations and unproven claims.'),
     },
 }
 
@@ -163,7 +163,7 @@ def gate_rows(route: str, base_rows: list[list[str]]) -> list[list[str]]:
             row[5] = ("Pergunta, inferência visada, abordagem e protocolo coerentes; "
                       "decisão do pesquisador e limites documentados.")
             row[4] = "Perfil metodológico preparado e escolhas justificadas pelo pesquisador."
-            row[18] = "Etapa pertinente ao desenho escolhido"
+            row[18] = 'Step relevant to the chosen design'
         elif gid in GATE_VARIANTS[route]:
             typ, name, entry, controls = GATE_VARIANTS[route][gid]
             row[1], row[3], row[4], row[5] = typ, name, entry, controls
