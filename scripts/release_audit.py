@@ -43,6 +43,8 @@ REQUIRED=[
     "tests/test_public_communication.py",
     "scripts/build_skill_bundle.py",
     "tests/test_bundle_release.py",
+    "tests/test_external_export_privacy.py",
+    "docs/EXPORTACAO-SEGURA.md",
     "CHANGELOG.md",
     "CITATION.cff",
     ".github/workflows/release-audit.yml",
