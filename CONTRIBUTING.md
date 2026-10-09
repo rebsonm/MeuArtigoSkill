@@ -34,3 +34,12 @@ conteúdo de NOTICE e indicação de arquivos modificados. A orientação
 acadêmica sobre como citar o projeto está em CITATION.cff; não se deve
 representar a citação científica formal como requisito adicional à licença.
 Contribuições de terceiros devem respeitar sua titularidade e permissões.
+
+
+## Procedimento de desenvolvimento e releases
+
+Alterações devem seguir branch, Pull Request, verificação obrigatória de CI e
+integração à branch principal. O guia para sincronizar metadados de versão e
+publicar uma beta manualmente está em [publicação e versionamento](docs/GUIA-DE-RELEASES.md).
+A versão distribuída mais recente não muda automaticamente com commits na branch
+principal; não declare validação empírica a partir da aprovação de testes técnicos.
