@@ -37,7 +37,9 @@
 ## 0.8.0-beta.8 — 2026-10-09
 
 <a id="etapa-1-atribuição-autoral-e-proteção-de-pacotes"></a>
-### Step 1 — copyright and package protection- Adopt Apache License 2.0, preserve authorship in NOTICE, adapt distribution, documentation and installable package.
+### Step 1 — copyright and package protection
+
+- Adopt Apache License 2.0, preserve authorship in NOTICE, adapt distribution, documentation and installable package.
 - Distinguish legal notice and attribution requirements from **recommended academic citation**, which does not constitute an additional license restriction.
 - Separate PRIVATE, PUBLIC and COLLABORATIVE provenance packages, with redacted external export and collaborative sharing restricted to texts explicitly reviewed and linked by hash.
 - Preserve full private auditing, block full texts from external audiences and expand adversarial privacy tests.
@@ -95,9 +97,11 @@
 ## 0.8.0-beta.3 — 2026-10-09
 
 <a id="documentação-e-compatibilidade"></a>
-### Documentation and compatibility- Recommend the Release installable ZIP package, rather than the automatic source code download, in all platform guides.
+### Documentation and compatibility
+
+- Recommend the Release installable ZIP package, rather than the automatic source code download, in all platform guides.
 - Correct the first steps guide on the future user evaluation protocol, which has not yet been implemented.
-- Clarify the difference between the format supported by the platforms and proven functional compatibility of My Article, preserving scientific issues.
+- Clarify the difference between the format supported by the platforms and proven functional compatibility of Meu Artigo, preserving scientific issues.
 - Harmonize canonical storage with Google Drive and require authorization before fallback, also on Claude and Gemini.
 - Add automatic checking of links and local references, with regression tests.
 
@@ -107,7 +111,7 @@
 <a id="clareza-da-comunicação-pública"></a>
 ### Clarity of public communication
 
-- Redesign the home page to explain the purpose, benefits, and limits of My Article without internal test identifiers, development steps, or implementation details.
+- Redesign the home page to explain the purpose, benefits, and limits of Meu Artigo without internal test identifiers, development steps, or implementation details.
 - Update public release notes and maintain technical explanations in the appropriate places in the project documentation.
 - Introduce automated verification to prevent maintenance and development identifiers from reappearing in the public presentation.
 - Preserve the same search features as the previous version; updating presentation and documentation.
