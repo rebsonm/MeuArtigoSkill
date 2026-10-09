@@ -8,6 +8,10 @@ Google Drive is the default canonical project memory. Before substantive researc
 
 If fallback was authorized and Drive later becomes available, migrate/synchronize the project to Drive before treating new Drive artifacts as canonical. Preserve the fallback history and do not silently discard either state.
 
+## Researcher understanding at critical gates
+
+New project configurations enable `formative_gates_required=true`. For GATE-0001 through GATE-0006, keep the researcher's own reason for a scientific choice and one limitation in the canonical `18_Human_Validation_Gates.csv` Notes field, with an external reference to the direct response. The validator checks structure and consistency, not genuine comprehension or identity. Do not infer gate approval from silence or model-written text. See `docs/VALIDACAO-FORMATIVA.md`.
+
 ## Recorded execution evidence
 
 Confirmed local operations should be recorded with `scripts/trace_execution.py` and their receipts stored at `00_Gestao_e_Continuidade/TRACE_RECEIPTS/`. Do not equate an automatically generated TRACE row with proof that a database search, external service action or human approval actually occurred. New projects enforce `trace_receipts_required=true`; older `COMPLETE` statuses are legacy and require explicit reconciliation before any claim of confirmed execution. Audit receipts when resuming and before an external transparency report. Keep receipts synchronized to Drive when it is canonical.

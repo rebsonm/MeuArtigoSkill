@@ -660,7 +660,7 @@ Columns:
 GATE_ID | Tipo | Etapa | Nome | Condição de entrada | Itens a validar | DEC_IDs | CADA_IDs | Evidence_IDs | Snapshot antes | Decisão | Validado por | Data | Método de validação | Evidência da validação | Trace_ID | Snapshot depois | Status | Transição bloqueada | Observações
 ```
 
-A gate approval must be an explicit human response.
+A gate approval must be an explicit human response. For new projects configured with `formative_gates_required=true`, approved scientific gates GATE-0001–GATE-0006 also require the researcher's own reason and acknowledged limitation in the existing Notes field, referenced by Validation_evidence. No additional sheet, ID family or extra gate is required. The automated check is structural, not a judgment of actual understanding.
 
 ## 19_SNAPSHOTS
 

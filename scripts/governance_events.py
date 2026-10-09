@@ -21,12 +21,14 @@ Examples:
 from __future__ import annotations
 
 import argparse
+import json
 import csv
 import re
 import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from formative_gates import SCIENTIFIC_GATES, APPROVALS, response_issues, encode_formative
 
 MGMT="00_Gestao_e_Continuidade"
 DEC_FILE=f"{MGMT}/17_Decision_Log.csv"
@@ -202,6 +204,26 @@ def record_gate(args)->int:
     if not target:
         raise SystemExit(f"gate not found: {args.gate_id}")
 
+    # New workspaces require the researcher's own explanation at scientific gates.
+    cfg_path=root/MGMT/"PROJECT_CONFIG.json"
+    try:
+        cfg=json.loads(cfg_path.read_text(encoding="utf-8")) if cfg_path.is_file() else {}
+    except (OSError, ValueError) as exc:
+        raise SystemExit(f"invalid project configuration: {type(exc).__name__}")
+    formative=(
+        cfg.get("formative_gates_required") is True
+        and args.gate_id in SCIENTIFIC_GATES
+        and decision in APPROVALS
+    )
+    if formative:
+        problems=response_issues(args.researcher_rationale, args.researcher_limitation)
+        if problems:
+            raise SystemExit("; ".join(problems))
+        # An LLM cannot authenticate authorship from a CLI argument.
+        # The response reference is preserved for external human review.
+        if not args.evidence.strip() or not args.validated_by.strip():
+            raise SystemExit("formative gate requires source of the actual researcher response")
+
     if decision not in {"PENDING","NOT_APPLICABLE"}:
         if not args.validated_by.strip():
             raise SystemExit("completed human validation requires --validated-by")
@@ -209,6 +231,17 @@ def record_gate(args)->int:
             raise SystemExit("completed human validation requires --evidence")
         if not args.method.strip():
             raise SystemExit("completed human validation requires --method")
+
+    formative_notes=args.notes
+    if formative:
+        encoded=encode_formative(
+            rationale=args.researcher_rationale,
+            limitation=args.researcher_limitation,
+            source=args.evidence,
+            validated_by=args.validated_by,
+            decision=decision,
+        )
+        formative_notes=(args.notes.rstrip()+"\n" if args.notes.strip() else "")+encoded
 
     tid=record_trace(
         root,
@@ -234,7 +267,7 @@ def record_gate(args)->int:
         r["Validation_evidence"]=args.evidence
         r["Trace_ID"]=tid
         r["Status"]="NOT_APPLICABLE" if decision=="NOT_APPLICABLE" else ("COMPLETED" if decision!="PENDING" else "READY")
-        r["Notes"]=args.notes
+        r["Notes"]=formative_notes
         updated.append(r)
 
     with path.open("w",encoding="utf-8-sig",newline="") as f:
@@ -303,6 +336,8 @@ def main()->int:
     g.add_argument("--method",default="")
     g.add_argument("--evidence",default="")
     g.add_argument("--notes",default="")
+    g.add_argument("--researcher-rationale",default="",help="Researcher\x27s own explanation of the scientific choice")
+    g.add_argument("--researcher-limitation",default="",help="Researcher\x27s own description of a relevant limitation")
     g.add_argument("--no-snapshot",action="store_true")
     g.set_defaults(func=record_gate)
 

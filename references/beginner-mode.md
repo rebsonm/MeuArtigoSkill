@@ -72,6 +72,10 @@ Keep the user informed of scientific decisions that materially change the paper:
 
 Do not overwhelm the user with low-level mechanics that were executed correctly.
 
+## Learn through scientific decisions
+
+For scientifically material validation gates, briefly explain *why* a methodological choice is proposed, its closest alternative, and one practical risk. Then ask the researcher, in plain language, why they choose it and which limitation they recognize. The Skill should not write the researcher's answer or present a ready-to-copy response. If the user is unsure, explain the decision more clearly and leave the gate pending until a real response is received. This is not a quiz at every operational step: routine work remains autonomous. Read [formative validation](../docs/VALIDACAO-FORMATIVA.md).
+
 ## Plain-language vocabulary
 
 When needed, explain terms simply:

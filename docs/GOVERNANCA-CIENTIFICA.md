@@ -216,6 +216,12 @@ python scripts/governance_events.py gate /projeto \
 
 Ao aprovar um gate, o snapshot pós-gate é criado automaticamente.
 
+### Justificativa formativa dos gates científicos
+
+Para novos projetos, a aprovação dos gates GATE-0001 a GATE-0006 exige a explicação do próprio pesquisador sobre **por que escolheu aquele caminho** e **qual é uma limitação ou risco**. A Skill deve explicar a proposta antes, sem redigir a resposta que será atribuída ao pesquisador. Os campos são inseridos no mesmo comando com `--researcher-rationale` e `--researcher-limitation` e vinculados à manifestação humana original indicada em `--evidence`. O comando ilustrativo acima continua válido para projetos anteriores, sem o modo formativo habilitado; para projetos novos, complemente-o com essas duas opções. A documentação detalhada está em [Validação formativa](VALIDACAO-FORMATIVA.md).
+
+O controle automático impede aprovações sem explicação minimamente substantiva; não constitui teste de compreensão ou prova da autoria humana.
+
 Comparar snapshots:
 
 ```bash

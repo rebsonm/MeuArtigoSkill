@@ -210,6 +210,10 @@ When a target journal is active, GATE-0006 may also check whether the claim arch
 
 For material literature-grounded claims, inspect SOURCE_VERIFICATION.json tied to the current Evidence Matrix. Where source verification is required, missing or stale reports and contradictory identifiers/locators block GATE-0006. Inconclusive verifications and editorial alerts require documented human examination, not an inferred VERIFIED status. A metadata or literal-text match is not a semantic claim audit.
 
+### Formative researcher judgment
+
+In new projects, `formative_gates_required=true` requires a response by the researcher at scientific approval gates GATE-0001 to GATE-0006. See [formative validation](../docs/VALIDACAO-FORMATIVA.md). Present the proposed choice, supporting basis, alternatives, and relevant limitation in accessible terms. Ask the researcher why the chosen approach fits the research question and what its most important limitation is. Keep the original human response reference. Only record their actual words as researcher rationale and limitation; never supply or silently infer these as though they were written by the researcher. A simple "approved" does not complete a formative scientific gate. Use existing `Validation_evidence` and `Notes` columns. GATE-0007 remains focused on release checks, without a mandatory didactic question. This enforces the presence and internal consistency of an explanation, not substantive understanding or authorship authentication.
+
 ### Gate behavior
 
 If a required gate is READY:
