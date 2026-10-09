@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Separate machine-captured local executions from unverified event declarations in the canonical TRACE log, preserving existing IDs and matrix sheets.
+- Add a standard-library execution recorder with hashed receipts, allowlisted scripts, output binding and an independent receipt audit.
+- Reject fabricated or altered execution receipts and old COMPLETE statuses in newly initialized projects, with regression tests for failure, partial output and unauthorized promotion.
+- Report confirmed versus unverified trace events without treating local script success as proof of external queries or scientific validity.
+
 - Add independent metadata and textual-locator checks with public free APIs and optional local PDF parsing.
 - Preserve unknown status for inaccessible identifiers, sources, services, and evidence; expose correction/retraction warnings without inferring scientific validity.
 - Link technical verification to the canonical evidence matrix and final literature-claim audit, with offline regression tests.

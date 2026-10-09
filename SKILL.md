@@ -57,6 +57,10 @@ Grounded Corpus Mode uses only validated eligible full text; give Record_IDs, Ev
 
 In the evidence matrix, preserve conceptual lineage where relevant: distinguish foundational/canonical works, classic critiques, methodological foundations, contemporary updates, empirical support, and contrary evidence. Do not call a work “classic” merely because it is old or highly cited. For claims about who introduced/defined/proposed a concept, verify the primary source when reasonably accessible; otherwise mark the attribution as secondary-only rather than implying direct consultation. Read [evidence/synthesis](references/evidence-synthesis.md).
 
+## Evidence-backed process events
+
+For local operations in the allowlist, use `scripts/trace_execution.py run` to capture the actual process exit, input/output hashes and receipt against the existing TRACE_ID. Read [event verification](docs/COMPROVACAO-EVENTOS.md). Do not label an externally performed search, export, upload or submission CONFIRMED on the basis of a model narrative or a manually written log. When there is no trusted tool receipt, preserve UNVERIFIED (a declaration is not proof). PARTIAL and FAILED outcomes remain visible. Existing C.A.D.A., decision/gate and TRACE tables stay canonical; no new ID family or worksheet is needed. Synchronize receipts and updated project state to Google Drive when Drive is canonical. Script execution does not prove a scientific conclusion.
+
 ## Source and locator verification
 
 Before freezing literature-supported claims, read [source verification](references/source-verification.md). When a script runtime is available, run scripts/verify_sources.py against the canonical project state and persist the report. It uses public free Crossref/OpenAlex queries and local text checks; no paid subscription is required. An unavailable API, DOI, full text or runtime must remain unverified, never silently approved. A DOI match checks metadata; local passage matching checks textual presence; neither establishes semantic support. Human review remains necessary for material claims and alerts. Do not upload copyrighted PDFs to external verification services.

@@ -46,6 +46,8 @@ REQUIRED=[
     "scripts/validate_provenance_package.py",
     "scripts/validate_project.py",
     "scripts/verify_sources.py",
+    "scripts/trace_execution.py",
+    "docs/COMPROVACAO-EVENTOS.md",
     "references/source-verification.md",
     "docs/VERIFICACAO-FONTES.md",
     "scripts/audit_anonymization.py",

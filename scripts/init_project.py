@@ -208,6 +208,7 @@ def main()->int:
             "journal_aware_construction_enabled":True,
             "claim_robustness_audit_enabled":True,
             "source_verification_required":True,
+            "trace_receipts_required":True,
             "anonymization_policy_enabled":True,
             "default_external_artifact_mode":"EXTERNAL_ANONYMIZED",
             "anonymization_profile_status":"TO_CONFIGURE",
@@ -341,7 +342,7 @@ def main()->int:
                 "Verification_method":"File/table creation","Human_validation":"PENDING",
                 "Related_Search_IDs":"","Related_Record_IDs":"","Related_Evidence_IDs":"","Related_Claim_IDs":"",
                 "Prompt_or_instruction_summary":"Initialize article research project.","Reproducibility_information":"Run init_project.py with project arguments.",
-                "Materiality":"ADMINISTRATIVE","Status":"COMPLETE","Notes":""
+                "Materiality":"ADMINISTRATIVE","Status":"UNVERIFIED","Notes":"Initialization scaffold recorded without independent execution receipt."
             })
 
     dash=root/"00_Gestao_e_Continuidade/15_CADA_Dashboard.csv"

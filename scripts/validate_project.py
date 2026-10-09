@@ -29,7 +29,7 @@ EPI={"","L","I","P","[L]","[I]","[P]"}
 CADA_STATUS={"CAPTURED","ASSIGNED","READY","IN_PROGRESS","WAITING","BLOCKED","DONE","CANCELLED","SUPERSEDED"}
 CADA_TERMINAL={"DONE","CANCELLED","SUPERSEDED"}
 DEADLINE_TYPES={"EXTERNAL","USER_SET","INTERNAL_TARGET","DEPENDENCY","TO_DEFINE"}
-TRACE_STATUS={"PLANNED","IN_PROGRESS","COMPLETE","INVALID","SUPERSEDED"}
+TRACE_STATUS={"PLANNED","IN_PROGRESS","COMPLETE","CONFIRMED","UNVERIFIED","PARTIAL","FAILED","INVALID","SUPERSEDED"}
 AI_MATERIALITY={"ASSISTIVE","SUBSTANTIVE","ADMINISTRATIVE","NOT_APPLICABLE"}
 AI_DECISION={"","ACCEPTED","MODIFIED","REJECTED","PENDING"}
 JOURNAL_MODES={"JOURNAL_NEUTRAL","JOURNAL_AWARE_PENDING_PROFILE","JOURNAL_AWARE"}
@@ -252,6 +252,18 @@ def main():
             cid=(r.get("CADA_ID") or "").strip()
             if cid and cada_ids and cid not in cada_ids:
                 warnings.append(f"trace row {i}: CADA_ID {cid} not found in 11_CADA_Control")
+
+    # Independently reconcile confirmed TRACE events with machine-created receipts.
+    # Legacy records remain visible but cannot be silently promoted to proof.
+    from trace_execution import audit_receipts
+    receipt_audit = audit_receipts(root, strict=cfg_data.get("trace_receipts_required") is True)
+    errors.extend(receipt_audit["errors"])
+    warnings.extend(receipt_audit["warnings"])
+    if receipt_audit["counts"]["unverified"]:
+        warnings.append(
+            f'TRACE contains {receipt_audit["counts"]["unverified"]} unverified event(s); '
+            'do not report these as confirmed executions'
+        )
 
     ai=root/"00_Gestao_e_Continuidade/14_AI_Use_Log.csv"
     ai_ids=set()
