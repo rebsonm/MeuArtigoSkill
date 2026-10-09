@@ -72,11 +72,10 @@ def audit(root: Path) -> dict:
         except (OSError,UnicodeError):
             unreadable.append(path.relative_to(root).as_posix())
             continue
-        # Preserve backwards-compatible anchor IDs as opaque technical keys.
-        # They are URL identifiers from historical Portuguese headings,
-        # not user-visible prose in the English documentation.
-        if path.suffix.lower()==".md":
-            content=re.sub(r'(?m)^\\s*<a\\s+id="[^"]+"></a>\\s*
+        # Legacy Portuguese heading slugs are stable URL identifiers, not prose.
+        if path.suffix.lower() == ".md":
+            content = re.sub(r'(?m)^\s*<a\s+id="[^"]+"></a>\s*$', '', content)
+        words = PORTUGUESE_WORDS.findall(content)
         # A few Portuguese source titles or user-language examples are fine.
         threshold=7 if path.suffix.lower()==".md" else 12
         if len(words)>=threshold:
