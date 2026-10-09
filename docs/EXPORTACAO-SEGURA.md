@@ -21,7 +21,7 @@ The fact that a SHA-256 matches the files does not mean the absence of sensitive
 
 To include full texts in the **private** export, it is still required
 `--include-fulltext --confirm-rights-review` and the individual rights records,
-as per [full file rights](RIGHTS-FULLTEXT-E-PDFS.md).
+as per [full file rights](DIREITOS-FULLTEXT-E-PDFS.md).
 **Nor does this mechanism legally authenticate redistribution permission.**
 
 <a id="2-public-estrutura-neutra-sem-dados-da-pesquisa"></a>
