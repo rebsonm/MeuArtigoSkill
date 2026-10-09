@@ -36,7 +36,7 @@ For a new project:
 4. Only after an explicit affirmative fallback authorization may the Skill initialize or treat Work/local/filesystem artifacts as the project's persistent workspace. Record the authorization, actor, date/time, storage mode, and limitation in PROJECT_CONFIG.json and CONTINUIDADE.md. If the user does not authorize fallback, remain blocked at storage onboarding and do not start novelty search, screening, synthesis, drafting, or local canonical project creation.
 5. When Google Drive is connected, create or resume the Drive workspace first and persist every material artifact there. Temporary local/Work files may be used only as staging and must be uploaded/synchronized to the canonical Drive workspace before they are treated as project state.
    Use `GOOGLE_DRIVE_FIRST` for canonical Drive storage. `WORK_FALLBACK` is allowed only after the user's explicit affirmative authorization, with actor and date documented; do not use a fallback as if it were a verified Drive synchronization.
-6. Preserve the research input and identify the likely methodological track with [review design](references/review-design.md).
+6. Preserve the research input and identify the provisional method route with [review design](references/review-design.md) and [operational method routes](docs/ROTAS-METODOLOGICAS.md). Keep ambiguous designs UNDECIDED until a genuine researcher decision. Configure the method-specific gates in the existing project; method route must never be inferred merely from available tools.
 7. Ask whether a target journal and official author rules/template exist. Read [journal-aware](references/journal-aware.md). Use JOURNAL_NEUTRAL when none is selected, JOURNAL_AWARE_PENDING_PROFILE while rules are missing, and JOURNAL_AWARE only after reading the profile. Maintain JOURNAL_PROFILE.json.
 8. Use the canonical spreadsheet in MATRIX_ONLY by default. Read [C.A.D.A.](references/cada-governance.md), [matrix](references/cada-matrix.md), [template](references/spreadsheet-template.md), and [storage mapping](references/storage-mapping.md) when setting it up. Prefer a native spreadsheet in the canonical Drive workspace, then the official generator with immediate synchronization, then CSV compatibility tables. Show 00_PAINEL.
 
@@ -46,20 +46,45 @@ For additional methodological orientation in administration research, consult [t
 
 ## Choose the scientific path
 
-- Integrative/conceptual/theoretical: support synthesis of heterogeneous literature and explicit original contributions.
-- Systematic: require comprehensive eligibility and appropriate appraisal; structured searches alone do not justify this label.
-- Empirical: require actual design, data and analyses before reporting findings.
-- Other review families: retrieve the appropriate methodological guidance; do not force an integrative design.
+Choose the research **purpose** before selecting the specific route. Read
+[operational method routes](docs/ROTAS-METODOLOGICAS.md) to distinguish:
+integrative, systematic or problematizing reviews; conceptual/theoretical
+contribution; empirical qualitative, quantitative or mixed methods; and
+design science artefact construction/evaluation. Never apply exhaustive
+bibliographic screening or freeze-of-review-corpus gates to an empirical
+design that does not use such a corpus.
+
+In new route-aware projects, `METHOD_PROFILE.json` is a private planning
+record linked to `PROJECT_CONFIG.json`. A route label from the article title
+or an initializing command remains provisional; only an actual researcher's
+reasoned choice and traceable decision, recorded through
+`scripts/choose_method_route.py`, may confirm it. Do not invent that
+decision or fill in statements purportedly given by the researcher. The
+route-specific planning fields are scaffolds, **not evidence of executed
+collection, evaluation, analysis or methodological validity**. Existing
+projects without this governance feature must not be silently migrated.
+
+Use the **research onion** conditionally to check the alignment of
+philosophical assumptions where relevant, logic of theory development,
+method choice, research strategy, time horizon, procedures and inferential
+limitations. Do not assert one-to-one relationships between philosophies
+and techniques or turn six conceptual layers into six compulsory gates.
+For QUAN, distinguish descriptive, associative, predictive and causal
+inference; for mixed, require actual QUAN–QUAL integration and preserve
+disagreements; for qualitative, choose appraisal criteria appropriate to
+the tradition; for design science, do not conflate constructing an artefact
+with evaluating its effectiveness. None of these tests certifies scientific
+soundness without real execution and independent human review.
 
 ## Execute the current stage
 
-Read only the relevant section of [detailed workflow](references/workflow-stages.md) and its references.
+Read only the relevant section of [detailed workflow](references/workflow-stages.md) and its references. **The stage table immediately below is a bibliographic-review path, not a universal empirical workflow**. For other article designs use [method-specific gates and activities](docs/ROTAS-METODOLOGICAS.md) while retaining universal provenance and scientific-claim checks.
 
 | Stage | Required output and control | Supporting reference |
 |---|---|---|
 | 1. Novelty | Compare nearest literature; narrow unsupported novelty claims | workflow-stages.md |
-| 2–4. Protocol and search | Freeze eligibility and version executable queries; preserve and validate raw exports and counts | [search/screening](references/search-screening.md), [tool roles](references/tool-orchestration.md) |
-| 5–7. Dedupe, screen, retrieve | Audit exclusions; preserve ambiguous duplicates; distinguish actual full text from abstracts | [search/screening](references/search-screening.md) |
+| 2–4. Review protocol and search | Freeze eligibility and version executable queries; preserve and validate raw exports and counts | [search/screening](references/search-screening.md), [tool roles](references/tool-orchestration.md) |
+| 5–7. Review dedupe, screen, retrieve | Audit exclusions; preserve ambiguous duplicates; distinguish actual full text from abstracts | [search/screening](references/search-screening.md) |
 | 8–9. Evidence and synthesis | Extract locators, limitations and evidence roles; compare sources; label inference | [evidence/synthesis](references/evidence-synthesis.md) |
 | 10. Normative evidence | Separate institutional authority from scientific findings; omit when irrelevant | workflow-stages.md |
 | 11–12. Journal and drafting | Draft from evidence and actual search logs; journal fit never changes findings | [journal-aware](references/journal-aware.md) |
