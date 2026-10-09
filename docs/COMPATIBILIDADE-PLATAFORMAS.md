@@ -4,7 +4,7 @@ Esta página distingue **o que os fornecedores documentam** da **verificação e
 
 | Plataforma | Importação de Skill: o que está documentado | O que está comprovado nesta versão | O que ainda exige teste real |
 | --- | --- | --- | --- |
-| **ChatGPT** | Contas elegíveis podem carregar Skills em **Plugins → Habilidades → Criar → Carregar do computador**. | Estrutura do ZIP e testes automatizados independentes da interface. Há registro anterior de importação de versão diferente; **não valida a beta atual**. | Instalação da `v0.8.0-beta.4`, ativação, integração com Drive, execução de tarefas e retomada entre conversas. |
+| **ChatGPT** | Contas elegíveis podem carregar Skills em **Plugins → Habilidades → Criar → Carregar do computador**. | Estrutura do ZIP e testes automatizados independentes da interface. Há registro anterior de importação de versão diferente; **não valida a beta atual**. | Instalação da `v0.8.0-beta.5`, ativação, integração com Drive, execução de tarefas e retomada entre conversas. |
 | **Claude** | Claude suporta Skills personalizadas via claude.ai e Claude Code. | Organização da pasta e compatibilidade estrutural do arquivo `SKILL.md`. | Upload desta beta, scripts permitidos, conectores disponíveis e persistência real. |
 | **Gemini** | Google documenta upload de `SKILL.md`, pasta ou ZIP contendo `SKILL.md` na raiz; o recurso varia por conta/região. | O ZIP contém a estrutura exigida; testes automatizados independentes da interface. | Importação e fluxo completo, possibilidades de execução, Drive e limitações de rede. |
 
