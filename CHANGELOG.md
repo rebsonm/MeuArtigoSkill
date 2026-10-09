@@ -18,6 +18,7 @@
 - Incorporar a Cebola de Pesquisa como auxílio de coerência, não certificação; distinguir inferência quantitativa, integração de métodos mistos e avaliação de artefatos.
 - Bloquear aprovação de resultados apenas planejados, atalhos de NOT_APPLICABLE em gates críticos ou interpretações automáticas sem proveniência.
 - Registrar que avaliações empíricas do desempenho da Skill continuam pendentes.
+- Separar explicitamente metadados, passagem literal, juízo humano registrado e achado empírico; impedir congelar achados empíricos sem trilha de análise, gates e referências de evidência, mantendo os controles existentes.
 
 ## 0.8.0-beta.8 — 2026-10-09
 
