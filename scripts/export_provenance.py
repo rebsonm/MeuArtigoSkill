@@ -505,9 +505,11 @@ def approved_collaborative_files(root: Path, manifest_ref: str, audience: str) -
         return []
     if not manifest_ref:
         return []
-    manifest_path = (root / manifest_ref).resolve()
-    if (not manifest_path.is_relative_to(root) or not manifest_path.is_file()
-            or manifest_path.is_symlink()):
+    manifest_raw = root / manifest_ref
+    if manifest_raw.is_symlink():
+        raise ValueError("Symlinked approval manifest is forbidden")
+    manifest_path = manifest_raw.resolve()
+    if (not manifest_path.is_relative_to(root) or not manifest_path.is_file()):
         raise ValueError("Collaborative approval manifest must be a regular project-local file")
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     if manifest.get("schema_version") != 1 or manifest.get("audience") != "COLLABORATIVE":
@@ -531,8 +533,11 @@ def approved_collaborative_files(root: Path, manifest_ref: str, audience: str) -
                 or Path(rel).is_absolute() or rel in seen):
             raise ValueError("Only distinct canonical manuscript text files can be shared")
         seen.add(rel)
-        src = (root / rel).resolve()
-        if (not src.is_relative_to(root) or not src.is_file() or src.is_symlink()
+        source_path = root / rel
+        if source_path.is_symlink():
+            raise ValueError("Symlinked manuscript file is forbidden")
+        src = source_path.resolve()
+        if (not src.is_relative_to(root) or not src.is_file()
                 or src.suffix.lower() not in COLLAB_EXTENSIONS):
             raise ValueError("Unapproved, symlinked, non-text or external file")
         if src.stat().st_size > COLLAB_SIZE_LIMIT:
