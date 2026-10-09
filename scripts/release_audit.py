@@ -171,7 +171,7 @@ def main()->int:
         errors.append("README does not display current VERSION")
     if "Enquanto o acesso não for aberto pelo autor" in onboarding:
         errors.append("Onboarding still falsely describes public repository as restricted")
-    if "beta pública" not in onboarding.lower():
+    if "public beta" not in onboarding.lower():
         errors.append("Public-beta access is not described in onboarding")
     publisher=(ROOT/".github/workflows/publish-beta.yml").read_text(encoding="utf-8") if (ROOT/".github/workflows/publish-beta.yml").exists() else ""
     if not all(name in workflow for name in [
@@ -190,7 +190,7 @@ def main()->int:
         errors.append("Manual beta release workflow is incomplete")
     if re.search(r"0\\.8\\.0-beta\\.\\d+", publisher + workflow):
         errors.append("Workflows must derive version dynamically from VERSION")
-    if "PENDENTE" not in (ROOT/"docs/VALIDACOES-PENDENTES.md").read_text(encoding="utf-8"):
+    if "PENDING" not in (ROOT/"docs/VALIDACOES-PENDENTES.md").read_text(encoding="utf-8"):
         errors.append("Pending empirical validations must remain explicitly documented")
 
     # Avoid internal implementation notes in the public landing page.
