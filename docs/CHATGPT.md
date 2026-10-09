@@ -14,8 +14,8 @@ See [official instructions](https://help.openai.com/pt-br/articles/20001066-skil
 Where available, look for **Plugins → Skills → Create → Upload from computer**
 (or equivalent localized labels in the current interface).
 
-1. Open [the current published beta](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.8).
-2. Download the specifically prepared `MeuArtigoSkill-v0.8.0-beta.8.zip`
+1. Open [the current published beta](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.1).
+2. Download the specifically prepared `MeuArtigoSkill-v0.9.0-beta.1.zip`
    and optionally check the `SHA256SUMS.txt` digest.
 3. Import the complete ZIP, **not** GitHub's automatic source-code archive.
 4. Review the platform's result rather than assuming every integrated
