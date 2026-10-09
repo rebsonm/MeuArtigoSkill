@@ -69,7 +69,7 @@ Before freezing literature-supported claims, read [source verification](referenc
 
 Read [traceability](references/traceability.md) and [scientific governance](references/scientific-governance.md) for material events. Preserve CADA_ID, TRACE_ID, Evidence_ID and Claim_ID links. Use DEC_ID for material decisions, GATE_ID for actual human checkpoints and SNAP_ID for meaningful freezes. Proposals remain PROPOSED until explicit human judgment and evidence are recorded.
 
-Default gates cover question, method, search, corpus, synthesis, claims and submission. Apply only relevant gates. Claims marked REVISE or REJECT block final freeze; QUALIFIED wording must carry its qualification into the manuscript.
+Default gates cover question, method, search, corpus, synthesis, claims and submission. For scientific gates GATE-0001 through GATE-0006, use the [formative validation](docs/VALIDACAO-FORMATIVA.md) workflow when enabled: explain the proposed decision and its boundaries, then obtain the researcher's own rationale and one limitation before recording approval. Do not invent, complete, or paraphrase a model-generated answer as the researcher's response. The submission gate retains its operational checks. Apply only relevant gates. Claims marked REVISE or REJECT block final freeze; QUALIFIED wording must carry its qualification into the manuscript.
 
 At each material stage boundary update CONTINUIDADE.md, canonical tables, RASTREABILIDADE.md and applicable AI-use records with exact counts, changes, blockers, links, and the next valid action. When Google Drive is the canonical backend, perform these updates in Drive rather than leaving the current state only in Work/local outputs. Record real human review; do not infer it from a script's execution.
 

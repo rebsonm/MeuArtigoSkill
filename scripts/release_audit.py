@@ -39,6 +39,8 @@ REQUIRED=[
     "scripts/build_matrix_template.py",
     "scripts/build_corpus_map.py",
     "scripts/governance_events.py",
+    "scripts/formative_gates.py",
+    "docs/VALIDACAO-FORMATIVA.md",
     "scripts/create_snapshot.py",
     "scripts/compare_snapshots.py",
     "scripts/generate_transparency_report.py",

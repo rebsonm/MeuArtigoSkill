@@ -3,6 +3,7 @@
 from __future__ import annotations
 import argparse,csv,json,hashlib
 from pathlib import Path
+from formative_gates import gate_issues
 
 REQUIRED=[
 "00_Gestao_e_Continuidade/CONTINUIDADE.md",
@@ -373,6 +374,9 @@ def main():
                 errors.append(f"gate row {i}: completed {gid} lacks validator")
             if status=="COMPLETED" and not (r.get("Validation_method") or "").strip():
                 errors.append(f"gate row {i}: completed {gid} lacks validation method")
+            if cfg_data.get("formative_gates_required") is True and status=="COMPLETED":
+                for issue in gate_issues(r):
+                    errors.append(f"gate row {i}: {gid} {issue}")
 
     gate_state={}
     if gates.exists():

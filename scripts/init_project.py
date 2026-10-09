@@ -199,6 +199,7 @@ def main()->int:
             "provenance_standards":["W3C PROV-O","RO-Crate 1.3","SHA-256"],
             "scientific_decision_log_enabled":True,
             "human_validation_gates_enabled":True,
+            "formative_gates_required":True,
             "scientific_snapshots_enabled":True,
             "corpus_map_enabled":True,
             "grounded_corpus_mode_enabled":True,

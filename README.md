@@ -48,6 +48,10 @@ A instalação nativa depende da plataforma e do plano atual:
 
 Se o menu de Skills não aparecer, abra o guia da plataforma antes de concluir que houve erro no repositório.
 
+## Decisões científicas com compreensão explícita
+
+Nos novos projetos, os gates científicos existentes pedem ao pesquisador que explique brevemente, com suas próprias palavras, por que aprovou uma escolha e qual limitação reconhece. O modo iniciante apresenta explicações acessíveis e mantém a autonomia entre os gates. Os textos humanos são registrados no controle atual, sem novas abas, identificadores ou serviços pagos. Isso reforça a responsabilidade decisória, mas não equivale a atestar compreensão profunda. Consulte [Validação formativa](./docs/VALIDACAO-FORMATIVA.md).
+
 ## Comprovação de eventos e rastreabilidade
 
 A Skill diferencia execução comprovada de ação apenas declarada. Operações locais permitidas podem produzir recibos técnicos com resultado da execução e hashes dos artefatos. Buscas externas e ações não observadas permanecem como não verificadas, sem inventar comprovantes. Isso não exige planos pagos, novos identificadores ou novas abas. Consulte [Comprovação de eventos](./docs/COMPROVACAO-EVENTOS.md).

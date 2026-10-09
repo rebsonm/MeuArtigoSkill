@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Require a researcher's recorded rationale and acknowledged limitation before approving scientific gates in new projects, while preserving autonomy between gates.
+- Store structured formative explanations in the existing validation table and check their presence and consistency during project validation.
+- Keep the submission gate operational and preserve backward compatibility for projects created before the formative control was enabled.
+- Add offline regression tests for unsupported approvals, contradictory rationale/limitation, direct human response references and legacy behavior.
+
 - Separate machine-captured local executions from unverified event declarations in the canonical TRACE log, preserving existing IDs and matrix sheets.
 - Add a standard-library execution recorder with hashed receipts, allowlisted scripts, output binding and an independent receipt audit.
 - Reject fabricated or altered execution receipts and old COMPLETE statuses in newly initialized projects, with regression tests for failure, partial output and unauthorized promotion.
