@@ -2,9 +2,18 @@
 
 ## Purpose
 
-Treat the persistent project workspace as the project memory. Google Drive is the reference implementation, but an equivalent cloud/file system is acceptable. The chat is never the source of truth. Every material research action must leave a durable artifact that another agent can inspect and continue.
+Treat the persistent project workspace as the project memory. Google Drive is the canonical default workspace for Meu Artigo. It must be attempted and verified before the Skill falls back to platform/Work/local artifacts. The chat is never the source of truth. Every material research action must leave a durable artifact that another agent can inspect and continue.
 
-When persistent storage is connected, create or resume this canonical logical structure before large searches. Do not create a parallel structure if a compatible project folder already exists.
+Storage resolution is a blocking first-run gate:
+
+1. check whether Google Drive is connected and writable;
+2. if not, surface the platform connection/install flow and wait for the user's authorization action;
+3. verify the connection again;
+4. if it is still unavailable, ask explicitly whether the user wants to continue without Drive using only Work/platform/local artifacts;
+5. only an explicit affirmative answer authorizes fallback;
+6. if fallback is not authorized, stop at storage onboarding rather than creating an unsynchronized local canonical project.
+
+When Drive is connected, create or resume the canonical logical structure in Drive before substantive searches. Do not create a parallel authority in Work/local storage. Local files may exist as temporary staging artifacts, but must be synchronized to Drive before they become canonical project state.
 
 ## Folder tree
 
@@ -295,9 +304,9 @@ Rules:
 
 ## Creation order on a new project
 
-When persistent storage is connected:
+First resolve storage. The normal path is Google Drive. If Drive remains unavailable, continue this list in Work/local storage only after explicit fallback authorization has been recorded.
 
-1. create the project root;
+1. create the project root in the resolved canonical backend;
 2. create the canonical folders;
 3. create `CONTINUIDADE.md` (or temporary Doc mirror + Markdown mirror);
 4. create `PROTOCOLO.md` or a native Doc mirror;
@@ -310,6 +319,8 @@ When persistent storage is connected:
 11. if a work-management provider is connected and useful, switch to `MATRIX_PLUS_EXTERNAL`, choose one primary provider, and initialize `12_PM_Sync`;
 12. run the first novelty audit;
 13. persist results before expanding the search.
+
+When the canonical backend is Google Drive, "persist" means the artifact is actually present in the Drive workspace and linked from CONTINUIDADE.md; a Work/local output alone is not sufficient. When fallback is explicitly authorized, label the workspace `WORK_FALLBACK` and record the limitation.
 
 Do not wait for the manuscript stage to create project state. Persistence begins before the first substantive search.
 

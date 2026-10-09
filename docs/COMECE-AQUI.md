@@ -89,7 +89,9 @@ No ChatGPT, importe o ZIP completo em **Plugins → Habilidades → Criar/Carreg
 
 > Use a Skill Meu Artigo. Meu problema de pesquisa é: [descreva seu problema]. Quero desenvolver um artigo científico.
 
-Logo no início, a Skill também deve perguntar se você já possui **revista-alvo**. Se possuir, tenha à mão o link/arquivo das normas para autores e, se existir, o template/layout da revista. Se ainda não tiver revista definida, isso não impede o início do projeto.
+Logo no início, a Skill deve primeiro verificar o Google Drive. Se ele não estiver conectado, ela deve orientar a conexão e verificar novamente. Se ainda assim não houver acesso, ela deve perguntar claramente se você deseja continuar sem Drive usando apenas arquivos/resultados do Work ou armazenamento local. Ela só pode adotar esse fallback após sua confirmação afirmativa.
+
+Depois de resolver a persistência, a Skill também deve perguntar se você já possui **revista-alvo**. Se possuir, tenha à mão o link/arquivo das normas para autores e, se existir, o template/layout da revista. Se ainda não tiver revista definida, isso não impede o início do projeto.
 
 Você não precisa preparar:
 
@@ -97,7 +99,7 @@ Você não precisa preparar:
 - planilha;
 - protocolo;
 - revisão;
-- pasta no Drive;
+- pasta no Drive — a Skill cria/retoma a estrutura depois de confirmar a conexão;
 - critérios de inclusão;
 - matriz de evidências.
 

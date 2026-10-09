@@ -2,9 +2,13 @@
 
 ## Authority and synchronization
 
-Choose and record the canonical backend in CONTINUIDADE.md at initialization: native spreadsheet or filesystem CSV tables. Never maintain two independent authorities.
+Resolve Google Drive first. The normal canonical backend is the Drive project workspace. Do not choose filesystem/Work storage merely because it is immediately available.
 
-In filesystem mode the CSV/JSON files below are authoritative; workbook sheets are human-facing projections. In native spreadsheet mode the mapped sheets hold canonical table data; export them to the exact CSV headers in scripts/init_project.py before running local scripts. Import script results back only after reconciling the export baseline.
+If Drive is not connected, request the connection and re-check it. If it is still unavailable, filesystem/Work may become canonical only after the user explicitly confirms that they want to continue without Drive. Record the authorization in PROJECT_CONFIG.json and CONTINUIDADE.md. Silence is not authorization.
+
+Within the resolved storage backend, choose and record the canonical table representation: native spreadsheet or filesystem CSV tables. Never maintain two independent authorities.
+
+When Drive is canonical, local CSV/JSON files are staging/processing copies unless explicitly synchronized back. A material change that exists only in Work/local output is not yet canonical. In an explicitly authorized `WORK_FALLBACK`, the local CSV/JSON files may be authoritative until migration. In native spreadsheet mode the mapped sheets hold canonical table data; export them to the exact CSV headers in scripts/init_project.py before running local scripts. Import script results back only after reconciling the export baseline.
 
 The workbook generator creates a template; it does not implement bidirectional synchronization. The agent or an explicit adapter must map fields by name, preserve stable IDs and retain fields that have no visible counterpart. Never map columns by position.
 
@@ -39,7 +43,7 @@ JOURNAL_PROFILE.json lives under 06_Submissao/Regras_da_Revista. ANONYMIZATION_P
 
 ## Stage-boundary procedure
 
-1. Record the canonical backend, file/sheet links and baseline version or hash.
+1. Record the storage policy/state, canonical backend, explicit fallback authorization when applicable, file/sheet links and baseline version or hash.
 2. Read current state; update canonical rows by stable ID.
 3. Refresh mapped views and verify row counts, IDs and critical fields.
 4. Preserve unmapped fields and auxiliary tables; record last synchronized version in CONTINUIDADE.md.

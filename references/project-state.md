@@ -4,11 +4,13 @@
 
 Treat chat as an interface, not as project memory. Persist decisions, strings, counts, files, exclusions, evidence, synthesis decisions, and next actions outside the conversation.
 
-When a persistent cloud/file workspace is available, use the canonical schema in `drive-workspace.md`. Google Drive is the reference implementation. When persistent storage is unavailable, create a local mirror with `scripts/init_project.py` and synchronize it later.
+Google Drive is the default canonical project memory. Before substantive research, verify that Drive is connected and writable. If it is not, request the platform connection flow and re-check. If Drive still cannot be used, do not silently create a local mirror. Ask the user explicitly whether they want to continue without Drive using Work/platform/local artifacts. Only after an affirmative answer may `scripts/init_project.py` or equivalent local storage become the temporary canonical fallback. Record that authorization and the storage limitation in PROJECT_CONFIG.json and CONTINUIDADE.md.
+
+If fallback was authorized and Drive later becomes available, migrate/synchronize the project to Drive before treating new Drive artifacts as canonical. Preserve the fallback history and do not silently discard either state.
 
 ## Source of truth
 
-The canonical continuity artifact is `CONTINUIDADE.md`. A resumed agent must read it before taking substantive action.
+The canonical continuity artifact is `CONTINUIDADE.md`. A resumed agent must read it before taking substantive action and must also verify that the recorded storage backend is still accessible. A missing Drive connection is not permission to switch to Work/local storage.
 
 The canonical tracking artifact is the master matrix, preferably a native structured spreadsheet/table in the connected workspace, with tabs/sections for project metadata, protocol, search log, screening, full text, evidence, synthesis, claims, submission, C.A.D.A. control, optional project-manager synchronization, traceability, AI use, and the C.A.D.A. dashboard.
 

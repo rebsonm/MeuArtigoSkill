@@ -145,9 +145,26 @@ def main()->int:
     ap.add_argument("--journal-guidelines-source",default="",help="Official author-guidelines URL/file when already known")
     ap.add_argument("--journal-template-source",default="",help="Official journal template/layout URL/file when already known")
     ap.add_argument("--pm-provider",default="",help="Optional primary work manager: clickup, jira, trello, or equivalent")
+    ap.add_argument("--storage-mode",choices=["GOOGLE_DRIVE_STAGING","WORK_FALLBACK"],default="GOOGLE_DRIVE_STAGING",
+                    help="GOOGLE_DRIVE_STAGING is temporary local staging for a Drive-canonical project. WORK_FALLBACK requires explicit user authorization.")
+    ap.add_argument("--drive-workspace-url",default="",help="Verified canonical Google Drive project root when already created")
+    ap.add_argument("--fallback-authorized-by",default="",help="Required for WORK_FALLBACK; exact actor/user who explicitly authorized continuing without Drive")
+    ap.add_argument("--fallback-authorized-at",default="",help="ISO date/time of explicit fallback authorization")
     a=ap.parse_args()
 
     pm=(a.pm_provider or "").strip().lower()
+    storage_mode=(a.storage_mode or "").strip().upper()
+    drive_workspace_url=(a.drive_workspace_url or "").strip()
+    fallback_by=(a.fallback_authorized_by or "").strip()
+    fallback_at=(a.fallback_authorized_at or "").strip()
+    if storage_mode=="WORK_FALLBACK" and not fallback_by:
+        ap.error("--storage-mode WORK_FALLBACK requires --fallback-authorized-by after explicit user confirmation")
+    storage_state=("DRIVE_WORKSPACE_READY" if (storage_mode=="GOOGLE_DRIVE_STAGING" and drive_workspace_url)
+                   else "DRIVE_STAGING_PENDING_UPLOAD" if storage_mode=="GOOGLE_DRIVE_STAGING"
+                   else "WORK_FALLBACK_AUTHORIZED")
+    fallback_authorized=(storage_mode=="WORK_FALLBACK" and bool(fallback_by))
+    if fallback_authorized and not fallback_at:
+        fallback_at=date.today().isoformat()
     target_journal=(a.target_journal or "").strip()
     journal_guidelines=(a.journal_guidelines_source or "").strip()
     journal_template=(a.journal_template_source or "").strip()
@@ -166,6 +183,14 @@ def main()->int:
             "created":date.today().isoformat(),
             "status":"INITIALIZED",
             "cada_governance":True,
+            "storage_policy":"GOOGLE_DRIVE_FIRST",
+            "storage_mode":storage_mode,
+            "storage_state":storage_state,
+            "canonical_storage_backend":"GOOGLE_DRIVE" if storage_mode=="GOOGLE_DRIVE_STAGING" else "WORK_FALLBACK",
+            "google_drive_workspace_url":drive_workspace_url or None,
+            "fallback_authorized":fallback_authorized,
+            "fallback_authorized_by":fallback_by or None,
+            "fallback_authorized_at":fallback_at or None,
             "work_management_mode":"MATRIX_PLUS_EXTERNAL" if pm else "MATRIX_ONLY",
             "work_management_provider":pm or None,
             "work_management_role":"OPTIONAL_OPERATIONAL_MIRROR",
@@ -308,9 +333,9 @@ def main()->int:
                 "Trace_ID":"TRACE-0001","Timestamp":date.today().isoformat(),"Scientific_stage":"00",
                 "CADA_ID":"CADA-0001","Actor":"SCRIPT","AI_platform_or_tool":"init_project.py",
                 "Model_or_version":"","Action_type":"WORKSPACE_INITIALIZATION",
-                "Action_summary":"Initialized canonical workspace, C.A.D.A. matrix, traceability and management artifacts.",
+                "Action_summary":"Initialized project workspace scaffold after storage mode was explicitly resolved.",
                 "Input_or_source":"User project name/problem","Source_or_artifact_IDs":"",
-                "Decision_or_output":"Canonical project structure created.","Rationale":"Start persistent provenance before substantive research.",
+                "Decision_or_output":f"Workspace scaffold created with storage_mode={storage_mode}, storage_state={storage_state}.","Rationale":"Google Drive is canonical by default; Work/local fallback is permitted only after explicit authorization.",
                 "Artifact_before":"","Artifact_after":"00_Gestao_e_Continuidade/",
                 "Verification_method":"File/table creation","Human_validation":"PENDING",
                 "Related_Search_IDs":"","Related_Record_IDs":"","Related_Evidence_IDs":"","Related_Claim_IDs":"",
@@ -364,6 +389,15 @@ This file explains how the article is being constructed. It complements CONTINUI
 - Original research input: {a.problem or '[USER INPUT REQUIRED]'}
 - Article/review design: {a.article_type}
 
+## Storage mode
+- Policy: GOOGLE_DRIVE_FIRST
+- Mode: {storage_mode}
+- State: {storage_state}
+- Drive workspace: {drive_workspace_url or 'PENDING / NOT AVAILABLE'}
+- Work/local fallback authorized: {'YES' if fallback_authorized else 'NO'}
+- Fallback authorized by: {fallback_by or 'N/A'}
+- Fallback authorized at: {fallback_at or 'N/A'}
+
 ## Management mode
 - C.A.D.A.: enabled
 - Spreadsheet/matrix: canonical
@@ -414,7 +448,14 @@ Updated: {date.today().isoformat()}
 - Scope and exclusions: [TO DEFINE]
 
 ## 3. Tool and plugin status
-- Persistent workspace: LOCAL MIRROR
+- Storage policy: GOOGLE_DRIVE_FIRST
+- Storage mode: {storage_mode}
+- Storage state: {storage_state}
+- Google Drive workspace: {drive_workspace_url or 'PENDING / NOT AVAILABLE'}
+- Work/local fallback authorized: {'YES' if fallback_authorized else 'NO'}
+- Fallback authorized by: {fallback_by or 'N/A'}
+- Fallback authorized at: {fallback_at or 'N/A'}
+- Persistent workspace: {'GOOGLE DRIVE CANONICAL / LOCAL STAGING' if storage_mode=='GOOGLE_DRIVE_STAGING' else 'WORK/LOCAL FALLBACK — EXPLICITLY AUTHORIZED'}
 - Academic discovery: UNKNOWN
 - Citation context: UNKNOWN
 - Academic web/publisher retrieval: UNKNOWN
@@ -435,7 +476,7 @@ Updated: {date.today().isoformat()}
 - Claim robustness audit: ACTIVE AT GATE-0006
 
 ## 4. Canonical workspace links
-- Project root: local mirror
+- Project root: {drive_workspace_url or ('WORK/LOCAL FALLBACK' if fallback_authorized else 'DRIVE UPLOAD/SYNC PENDING')}
 - Master matrix: 00_Gestao_e_Continuidade/MATRIZ_MESTRA_{slug(a.name)}.xlsx when generator is available; CSV mirrors remain canonical-compatible
 - Protocol: 00_Gestao_e_Continuidade/PROTOCOLO.md
 - C.A.D.A. control: 00_Gestao_e_Continuidade/11_CADA_Control.csv
@@ -455,6 +496,8 @@ Updated: {date.today().isoformat()}
 - Manuscript: not started
 
 ## 5. Frozen decisions
+- Storage policy is GOOGLE_DRIVE_FIRST.
+- Work/local storage may be canonical only after explicit fallback authorization.
 - C.A.D.A. operational governance enabled.
 - Spreadsheet/matrix management is the universal default.
 - External work manager is an optional operational mirror, never the scientific source of truth.

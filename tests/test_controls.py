@@ -202,6 +202,26 @@ class Controls(unittest.TestCase):
             path.write_text('{"result": "PASS"}', encoding="utf-8")
         self.assertNotEqual(run("validate_project.py", self.root).returncode, 0)
 
+
+    def test_work_fallback_requires_explicit_authorization(self):
+        result = run("init_project.py", "--path", self.root, "--name", "Storage Gate",
+                     "--problem", "Temporary research input", "--storage-mode", "WORK_FALLBACK")
+        self.assertNotEqual(result.returncode, 0)
+
+    def test_work_fallback_records_explicit_authorization(self):
+        result = run("init_project.py", "--path", self.root, "--name", "Storage Gate",
+                     "--problem", "Temporary research input", "--storage-mode", "WORK_FALLBACK",
+                     "--fallback-authorized-by", "Test user",
+                     "--fallback-authorized-at", "2026-10-08T21:00:00-03:00")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        project = next(self.root.glob("ARTIGO_Storage-Gate_*"))
+        cfg = json.loads((project / "00_Gestao_e_Continuidade/PROJECT_CONFIG.json").read_text(encoding="utf-8"))
+        self.assertEqual(cfg["storage_policy"], "GOOGLE_DRIVE_FIRST")
+        self.assertEqual(cfg["storage_mode"], "WORK_FALLBACK")
+        self.assertEqual(cfg["storage_state"], "WORK_FALLBACK_AUTHORIZED")
+        self.assertTrue(cfg["fallback_authorized"])
+        self.assertEqual(cfg["fallback_authorized_by"], "Test user")
+
     def test_default_decision_is_proposed_without_human(self):
         result = run("governance_events.py", "decision", self.root,
                      "--type", "METHOD", "--question", "Which design?",

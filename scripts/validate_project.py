@@ -38,6 +38,8 @@ CLAIM_ROBUSTNESS={"","NOT_AUDITED","ROBUST","QUALIFIED","REVISE","REJECT","NOT_A
 HUMAN_VALIDATION={"","PENDING","VALIDATED","REVISED","REJECTED","NOT_APPLICABLE"}
 ANON_STATUS={"TO_CONFIGURE","CONFIGURED","VERIFIED","NOT_REQUIRED"}
 EXTERNAL_ARTIFACT_MODE={"EXTERNAL_ANONYMIZED","EXTERNAL_IDENTIFIED","INTERNAL_IDENTIFIED"}
+STORAGE_MODES={"GOOGLE_DRIVE_STAGING","GOOGLE_DRIVE","WORK_FALLBACK"}
+STORAGE_STATES={"DRIVE_WORKSPACE_READY","DRIVE_STAGING_PENDING_UPLOAD","WORK_FALLBACK_AUTHORIZED"}
 
 def rows(path):
     with path.open("r",encoding="utf-8-sig",newline="") as f:
@@ -65,6 +67,30 @@ def main():
                 warnings.append("PROJECT_CONFIG cada_governance is not true")
             if cfg_data.get("traceability_enabled") is not True:
                 warnings.append("PROJECT_CONFIG traceability_enabled is not true")
+            storage_policy=str(cfg_data.get("storage_policy") or "").strip().upper()
+            storage_mode=str(cfg_data.get("storage_mode") or "").strip().upper()
+            storage_state=str(cfg_data.get("storage_state") or "").strip().upper()
+            if storage_policy:
+                if storage_policy!="GOOGLE_DRIVE_FIRST":
+                    errors.append(f"PROJECT_CONFIG unexpected storage_policy={storage_policy!r}")
+                if storage_mode not in STORAGE_MODES:
+                    errors.append(f"PROJECT_CONFIG unexpected storage_mode={storage_mode!r}")
+                if storage_state not in STORAGE_STATES:
+                    errors.append(f"PROJECT_CONFIG unexpected storage_state={storage_state!r}")
+                if storage_mode=="WORK_FALLBACK":
+                    if cfg_data.get("fallback_authorized") is not True:
+                        errors.append("WORK_FALLBACK is active without explicit fallback_authorized=true")
+                    if not str(cfg_data.get("fallback_authorized_by") or "").strip():
+                        errors.append("WORK_FALLBACK lacks fallback_authorized_by")
+                    if not str(cfg_data.get("fallback_authorized_at") or "").strip():
+                        errors.append("WORK_FALLBACK lacks fallback_authorized_at")
+                if storage_state=="DRIVE_WORKSPACE_READY" and not str(cfg_data.get("google_drive_workspace_url") or "").strip():
+                    errors.append("DRIVE_WORKSPACE_READY lacks google_drive_workspace_url")
+                if storage_state=="DRIVE_STAGING_PENDING_UPLOAD":
+                    warnings.append("Google Drive is canonical but current scaffold is still pending upload/synchronization; local/Work output is not canonical project state")
+            else:
+                warnings.append("PROJECT_CONFIG has no GOOGLE_DRIVE_FIRST storage decision; migrate legacy project state before substantive continuation")
+
             mode=cfg_data.get("work_management_mode")
             if mode not in {"MATRIX_ONLY","MATRIX_PLUS_EXTERNAL"}:
                 warnings.append(f"PROJECT_CONFIG unexpected work_management_mode={mode!r}")

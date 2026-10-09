@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Add a blocking Google Drive-first storage gate before substantive research.
+- Require the Skill to request/verify Google Drive connection before creating canonical project state.
+- Require explicit affirmative user authorization before using Work/platform/local artifacts as `WORK_FALLBACK`.
+- Record storage policy, storage state, Drive workspace URL, fallback authorization actor and timestamp in project state.
+- Treat local/Work files as staging, not canonical state, whenever Google Drive is the project backend.
+- Add validator checks and initialization safeguards so `WORK_FALLBACK` cannot be activated without explicit authorization.
+
 - Strengthen anonymized outputs with `ZERO_NONESSENTIAL_METADATA`: remove creator/producer/generator/application fields, generation/edit timestamps, OOXML properties, PDF Info/XMP/document IDs, image EXIF/XMP/IPTC and equivalent nonessential provenance.
 - Add `scripts/sanitize_metadata.py` so anonymized outgoing files are cleaned before the deterministic anonymization audit.
 - Treat residual generator labels such as Python, pypdf, ReportLab, Matplotlib or LibreOffice as release-blocking metadata.

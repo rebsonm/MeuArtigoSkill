@@ -53,9 +53,10 @@ Se o menu de Skills não aparecer, abra o guia da plataforma antes de concluir q
 A Skill conduz o pesquisador por um fluxo completo:
 
 1. recebe o problema, pergunta, fenômeno ou ideia de artigo do usuário;
-2. verifica as integrações de pesquisa disponíveis e orienta a conexão das que estiverem faltando;
-3. cria um workspace persistente e padronizado — com Google Drive como implementação de referência;
-4. registra o problema original e cria `CONTINUIDADE.md`, protocolo e matriz-mestra;
+2. verifica primeiro o Google Drive; se não estiver conectado, orienta a conexão e verifica novamente;
+3. se o Drive continuar indisponível, pergunta explicitamente se o usuário quer continuar sem ele; somente uma resposta afirmativa autoriza o uso de arquivos/resultados do Work ou armazenamento local;
+4. cria ou retoma o workspace persistente no Google Drive; quando Drive é canônico, resultados locais/Work são apenas staging até serem sincronizados;
+5. registra o problema original e cria `CONTINUIDADE.md`, protocolo e matriz-mestra;
 5. faz uma auditoria inicial de novidade e de terminologia;
 6. ajuda a refinar pergunta, objetivo e contribuição;
 7. identifica o desenho metodológico adequado, sem chamar toda busca estruturada de “revisão sistemática”;
@@ -335,7 +336,9 @@ Scopus e Web of Science não são tratados como “plugins imaginários”. Quan
 
 ## Workspace canônico persistente
 
-Google Drive é a implementação de referência. Quando ele está conectado, a Skill cria ou retoma uma estrutura como esta. Em outra plataforma, um armazenamento persistente equivalente pode reproduzir a mesma estrutura lógica:
+Google Drive é o backend canônico padrão. A Skill deve tentar e verificar sua conexão antes de qualquer trabalho substantivo. Se a conexão não existir, deve orientar a configuração e verificar novamente. Apenas se o Drive continuar indisponível e o usuário confirmar explicitamente que quer prosseguir sem ele, a Skill pode usar `WORK_FALLBACK`/armazenamento local. Resultados do Work não substituem silenciosamente o Drive.
+
+Quando o Drive está conectado, a Skill cria ou retoma uma estrutura como esta:
 
 ```text
 ARTIGO_<titulo>_<ano>/
@@ -370,7 +373,7 @@ ARTIGO_<titulo>_<ano>/
 └── 99_Arquivo_Historico/
 ```
 
-O chat não é a fonte de verdade do projeto. O **workspace persistente** é.
+O chat não é a fonte de verdade do projeto. O workspace persistente é. No fluxo normal, esse workspace é o Google Drive.
 
 ## Matriz-mestra
 

@@ -67,14 +67,14 @@ O manifesto OpenAI declara como dependências preferenciais:
 - Scite;
 - Firecrawl.
 
-Essas integrações aceleram o fluxo, mas a metodologia deve continuar quando alguma não estiver disponível, usando recursos equivalentes.
+Consensus, Scite e Firecrawl aceleram o fluxo e podem ser substituídos por capacidades equivalentes quando indisponíveis. Google Drive é diferente: ele é a camada canônica de persistência do projeto no fluxo normal.
 
-A instalação/conexão de uma integração de terceiros exige ação explícita do usuário. A Skill deve apresentar a conexão e continuar automaticamente após a autorização.
+A instalação/conexão de uma integração de terceiros exige ação explícita do usuário. No caso do Google Drive, a Skill deve verificar a conexão antes de iniciar trabalho substantivo. Se não estiver conectado, deve apresentar o fluxo de conexão, aguardar a ação do usuário e verificar novamente. Se ainda assim o Drive não estiver disponível, deve perguntar explicitamente se o usuário quer continuar sem Drive usando apenas os arquivos/resultados do Work ou armazenamento local. Somente uma resposta afirmativa autoriza esse fallback. Sem essa confirmação, a Skill não deve iniciar um workspace local canônico nem avançar para busca, screening, síntese ou redação.
 
 ## Papel das integrações
 
 ### Google Drive
-Referência principal para workspace persistente, `CONTINUIDADE.md`, protocolo, matriz-mestra, PDFs, exports, manuscrito e arquivos de submissão.
+Backend canônico padrão para workspace persistente, `CONTINUIDADE.md`, protocolo, matriz-mestra, PDFs, exports, manuscrito e arquivos de submissão. Resultados gerados no Work podem ser usados como staging, mas precisam ser gravados/sincronizados no Drive antes de serem tratados como estado canônico. O fallback `WORK_FALLBACK` só existe após autorização explícita do usuário.
 
 ### Consensus
 Preferido para descoberta inicial, calibração de termos, auditoria de novidade e literatura próxima. Não deve ser tratado como base bibliográfica exaustiva.
