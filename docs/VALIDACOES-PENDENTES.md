@@ -1,6 +1,6 @@
 # Pending independent scientific and operational evaluations
 
-Reference public version: `v0.8.0-beta.8`. Update this register only after
+Reference public version: `v0.9.0-beta.1`. Update this register only after
 a genuine evaluation has taken place and has inspectable evidence. A change
 to repository code, an automated regression test or a fabricated participant
 response is **not** an empirical evaluation.
