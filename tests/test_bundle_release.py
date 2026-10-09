@@ -20,7 +20,9 @@ class BundleTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         for filename in pkg.ROOT_FILES:
             dest = self.root / filename
-            dest.write_text("Apache License\n" if filename == "LICENSE" else "test item\n",
+            dest.write_text("Apache License\n" if filename == "LICENSE" else
+                            "Meu Artigo\nCopyright 2026 Rebson de Morais Mendes\n" if filename == "NOTICE"
+                            else "test item\n",
                             encoding="utf-8")
         (self.root / "VERSION").write_text("0.8.0-beta.8\n", encoding="utf-8")
         for dirname in pkg.DIR_TYPES:
