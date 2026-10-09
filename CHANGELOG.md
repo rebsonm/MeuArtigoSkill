@@ -2,7 +2,17 @@
 
 ## Unreleased
 
-Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-beta.6`.
+Nenhuma alteração adicional registrada desde a versão beta pública `0.8.0-beta.7`.
+
+## 0.8.0-beta.7 — 2026-10-09
+
+### Cebola de Pesquisa e coerência de desenhos empíricos
+
+- Aprofundar a Cebola de Pesquisa de Saunders como guia não determinístico de filosofia, teoria, métodos, estratégia, horizonte e procedimentos.
+- Diferenciar descrição, associação, predição e inferência causal em métodos quantitativos, com controle explícito de limitações e ausência de análises realizadas.
+- Explicar métodos mistos convergentes e sequenciais, formas de integração e meta-inferências, com atenção a discordâncias.
+- Vincular a fundamentação expandida às orientações operacionais da Skill, sem introduzir novos identificadores, abas ou gates.
+- Separar obras examinadas de metadados bibliográficos e preservar direitos autorais; atualização metodológica sem validação empírica adicional.
 
 ## 0.8.0-beta.6 — 2026-10-09
 
