@@ -26,6 +26,12 @@ epistemológica ou interpreta automaticamente dados qualitativos. O autor
 precisa documentar a escolha e os limites, sem transformar categorias
 metodológicas em uma escala automática de qualidade.
 
+**Índice rápido:** para limitar a carga de contexto, comece no
+[índice metodológico seletivo](INDICE-METODOLOGICO.md), que vincula
+rotas de pesquisa aos trechos e à situação de consulta declarada neste
+documento. O índice não comprova novas leituras nem modifica referências,
+DOIs, edições ou interpretações deste mapa.
+
 ## Roteiro de consulta seletiva
 
 Este mapa é extenso por necessidade de fundamentação, **não para ser integralmente aplicado a cada pesquisa**. Consulte somente o caminho pertinente: revisões e artigos conceituais (seções 1–2), desenho geral e métodos quantitativos/mistos (seção 3), tradições qualitativas específicas (seção 4), artefatos e avaliação (seção 5), ética/IA (seção 6), adequação da evidência (seção 7), orientações operacionais (seções 8–9) e bibliografia (seção 10). Preserve os princípios gerais de rastreabilidade e limites científicos; não imponha requisitos de métodos irrelevantes ao desenho escolhido.
