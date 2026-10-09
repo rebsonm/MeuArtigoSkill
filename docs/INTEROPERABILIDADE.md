@@ -218,3 +218,13 @@ SHA-256 / pacote auditável
 ```
 
 A complexidade técnica fica na Skill, não no pesquisador.
+
+
+## Compartilhamento e sigilo
+
+A exportação completa deve permanecer no público `PRIVATE`, pois contém registros
+internos e pode revelar informações confidenciais. Os públicos `PUBLIC` e
+`COLLABORATIVE` removem nomes e eventos individuais, e o segundo só aceita arquivos
+textuais autorizados um a um e vinculados por SHA-256. A integridade criptográfica
+não significa anonimização nem autorização de publicação. Consulte
+[exportação segura](EXPORTACAO-SEGURA.md) antes de compartilhar arquivos.
