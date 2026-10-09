@@ -115,4 +115,16 @@ class EditorialAITests(unittest.TestCase):
   r=subprocess.run(cmd,capture_output=True,text=True)
   self.assertNotEqual(r.returncode,0)
   self.assertIn("not ready",r.stderr)
+ def test_validator_rejects_manual_gate7_approval_without_disclosure(self):
+  import governance_events as gov
+  self.root.joinpath(ed.MGMT,"PROJECT_CONFIG.json").write_text(
+   json.dumps({"editorial_ai_disclosure_required":True}))
+  with (self.root/ed.MGMT/"18_Human_Validation_Gates.csv").open("w",newline="") as f:
+   writer=csv.DictWriter(f,fieldnames=gov.GATE_HEADERS)
+   writer.writeheader()
+   writer.writerow({"GATE_ID":"GATE-0007","Status":"COMPLETED","Decision":"APPROVED"})
+  res=subprocess.run([sys.executable,str(ROOT/"scripts/validate_project.py"),str(self.root)],
+    capture_output=True,text=True)
+  self.assertIn("editorial AI disclosure:",res.stdout)
+
 if __name__=="__main__": unittest.main()
