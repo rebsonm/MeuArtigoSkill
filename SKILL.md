@@ -57,6 +57,10 @@ Grounded Corpus Mode uses only validated eligible full text; give Record_IDs, Ev
 
 In the evidence matrix, preserve conceptual lineage where relevant: distinguish foundational/canonical works, classic critiques, methodological foundations, contemporary updates, empirical support, and contrary evidence. Do not call a work “classic” merely because it is old or highly cited. For claims about who introduced/defined/proposed a concept, verify the primary source when reasonably accessible; otherwise mark the attribution as secondary-only rather than implying direct consultation. Read [evidence/synthesis](references/evidence-synthesis.md).
 
+## Source and locator verification
+
+Before freezing literature-supported claims, read [source verification](references/source-verification.md). When a script runtime is available, run scripts/verify_sources.py against the canonical project state and persist the report. It uses public free Crossref/OpenAlex queries and local text checks; no paid subscription is required. An unavailable API, DOI, full text or runtime must remain unverified, never silently approved. A DOI match checks metadata; local passage matching checks textual presence; neither establishes semantic support. Human review remains necessary for material claims and alerts. Do not upload copyrighted PDFs to external verification services.
+
 ## Decisions, continuity, and release
 
 Read [traceability](references/traceability.md) and [scientific governance](references/scientific-governance.md) for material events. Preserve CADA_ID, TRACE_ID, Evidence_ID and Claim_ID links. Use DEC_ID for material decisions, GATE_ID for actual human checkpoints and SNAP_ID for meaningful freezes. Proposals remain PROPOSED until explicit human judgment and evidence are recorded.

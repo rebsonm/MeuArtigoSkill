@@ -167,7 +167,7 @@ For each included source, populate a structured evidence matrix. Adapt fields to
 
 Write from this matrix later. Do not write the literature argument from model memory.
 
-Read `references/evidence-synthesis.md`.
+Read `references/evidence-synthesis.md` and `references/source-verification.md`. Where scripts are available, run `scripts/verify_sources.py` and sync its report to the canonical workspace. Verify text locally and never infer claim support from the mere existence of a citation or passage.
 
 ## Explore the validated corpus without changing the methodology
 

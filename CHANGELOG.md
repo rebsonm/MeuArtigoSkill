@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Add independent metadata and textual-locator checks with public free APIs and optional local PDF parsing.
+- Preserve unknown status for inaccessible identifiers, sources, services, and evidence; expose correction/retraction warnings without inferring scientific validity.
+- Link technical verification to the canonical evidence matrix and final literature-claim audit, with offline regression tests.
+
 - Add conceptual-lineage fields to `09_MATRIZ_EVID` for foundational/canonical literature, classic critiques, methodological foundations, contemporary updates, empirical support, contrary evidence and contextual sources.
 - Require an explicit classification basis so publication age or citation count alone cannot define a work as “classic”.
 - Track whether origin/definition attributions were checked against the primary source (`PRIMARY_VERIFIED`, `SECONDARY_ONLY`, `NOT_VERIFIED`, `NOT_APPLICABLE`).

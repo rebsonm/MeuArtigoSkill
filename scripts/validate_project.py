@@ -379,6 +379,40 @@ def main():
             if robustness in {"","NOT_AUDITED","REVISE","REJECT"}:
                 errors.append(f"GATE-0006 approved while claim {cid} remains {robustness or 'not audited'}")
 
+    # Newly initialized projects require independently checkable source records.
+    if (g6.get("Status") or "").upper()=="COMPLETED" and (g6.get("Decision") or "").upper() in {"APPROVED","APPROVED_WITH_CHANGES"} and cfg_data.get("source_verification_required") is True:
+        report_path=root/"00_Gestao_e_Continuidade/SOURCE_VERIFICATION.json"
+        evidence_file=root/"00_Gestao_e_Continuidade/05_Evidence_Matrix.csv"
+        if not report_path.is_file():
+            errors.append("GATE-0006 approved without source-verification report")
+        else:
+            try:
+                source_report=json.loads(report_path.read_text(encoding="utf-8"))
+                if source_report.get("schema_version")!=1:
+                    errors.append("GATE-0006 source-verification report has unsupported schema")
+                if source_report.get("input_sha256")!=hashlib.sha256(evidence_file.read_bytes()).hexdigest():
+                    errors.append("GATE-0006 source-verification report is stale")
+                entries=source_report.get("checks")
+                if not isinstance(entries,list) or len(entries)!=sum(1 for _ in rows(evidence_file)):
+                    errors.append("GATE-0006 source-verification report is incomplete")
+                else:
+                    if any(x.get("result")=="FAIL" for x in entries):
+                        errors.append("GATE-0006 source-verification report contains conflicting source evidence")
+                    if any(x.get("result")!="METADATA_AND_LOCATOR_CHECKED" for x in entries):
+                        warnings.append("GATE-0006 unresolved source checks require documented human examination")
+                    for x in entries:
+                        rel=x.get("source_path")
+                        sha=x.get("source_sha256")
+                        if not rel or not sha:
+                            continue
+                        file_path=(root/rel).resolve()
+                        if not file_path.is_relative_to(root) or not file_path.is_file():
+                            errors.append("GATE-0006 verified source file is inaccessible or outside workspace")
+                        elif hashlib.sha256(file_path.read_bytes()).hexdigest()!=sha:
+                            errors.append("GATE-0006 verified source file changed after source check")
+            except (OSError,ValueError,TypeError,KeyError) as exc:
+                errors.append(f"GATE-0006 cannot validate source-verification report: {type(exc).__name__}")
+
     g7=gate_state.get("GATE-0007",{})
     if (g7.get("Status") or "").upper()=="COMPLETED" and (g7.get("Decision") or "").upper() in {"APPROVED","APPROVED_WITH_CHANGES"}:
         target=str((journal_data or {}).get("journal_name") or cfg_data.get("target_journal") or "").strip()

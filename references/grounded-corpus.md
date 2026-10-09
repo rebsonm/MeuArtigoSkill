@@ -1,5 +1,7 @@
 # Grounded Corpus Mode
 
+Before asserting that a source passage is independently located, consult `references/source-verification.md`. A textual locator match only establishes presence of words in the accessible source, not that a scientific argument is true or adequately supported.
+
 ## Purpose
 
 Grounded Corpus Mode allows the AI to answer analytical questions **only from the validated scientific corpus**, instead of mixing the project corpus with model memory or unrestricted web knowledge.

@@ -208,6 +208,8 @@ Claims marked REVISE or REJECT block final claim freeze until resolved. Claims m
 
 When a target journal is active, GATE-0006 may also check whether the claim architecture fits the journal's permitted article structure, but journal fit must never be used to suppress contradictory evidence.
 
+For material literature-grounded claims, inspect SOURCE_VERIFICATION.json tied to the current Evidence Matrix. Where source verification is required, missing or stale reports and contradictory identifiers/locators block GATE-0006. Inconclusive verifications and editorial alerts require documented human examination, not an inferred VERIFIED status. A metadata or literal-text match is not a semantic claim audit.
+
 ### Gate behavior
 
 If a required gate is READY:
