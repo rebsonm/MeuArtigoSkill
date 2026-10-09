@@ -59,7 +59,7 @@ class Stage4RouterTests(unittest.TestCase):
         self.assertIn("FULL",self.context)
         self.assertIn("CONTINUIDADE.md",self.context)
         mode=(ROOT/"docs/MODO-NUCLEO-MINIMO.md").read_text(encoding="utf-8")
-        self.assertIn("não elimina registros",mode.lower())
+        self.assertIn("does **not remove**",mode)
         self.assertIn("CONTEXTO-POR-ETAPA.md",mode)
 
     def test_platform_capability_not_claimed_as_real_execution(self):
@@ -69,7 +69,7 @@ class Stage4RouterTests(unittest.TestCase):
             with self.subTest(key=key):
                 self.assertIn(key,self.platform)
         compat=(ROOT/"docs/COMPATIBILIDADE-PLATAFORMAS.md").read_text(encoding="utf-8")
-        self.assertIn("PENDENTE",compat)
+        self.assertIn("PENDING",compat)
         self.assertIn("platform-capability-preflight.md",compat)
 
     def test_beginner_routing_is_not_universal_review_flow(self):
