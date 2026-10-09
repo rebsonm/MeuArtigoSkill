@@ -69,6 +69,140 @@ Em todo artigo, distinguir **[L] literatura sustentada e localizável**, **[I] i
 
 **Regra decisória:** o desenho não deve ser escolhido por conveniência da ferramenta, pela abundância de resultados nas bases, por familiaridade com um software ou pelo desejo de parecer rigoroso. A Skill deve expor alternativas e uma limitação antes de solicitar a decisão substantiva do pesquisador.
 
+### 3.1. A Cebola de Pesquisa (*Research Onion*): integração das escolhas
+
+**Fonte consultada:** Saunders, Lewis e Thornhill, *Research Methods for Business Students*, 9ª ed. (2023), capítulos 4 e 5, especialmente a figura 4.1. A figura dessa edição credita o desenho de Mark N. K. Saunders (2022), desenvolvido a partir de Saunders et al. (2019). O modelo é aqui **interpretado e explicado em palavras originais**, sem reprodução da figura editorial. Complemento: Creswell e Creswell (2021, capítulos 1, 8, 9 e 10). Essas obras apresentam a articulação entre pressupostos, pergunta, desenho, procedimento e interpretação.
+
+A cebola é um **instrumento de coerência**, não uma classificação automática ou uma checklist que prove rigor. Na obra consultada, o percurso atravessa filosofia, abordagem ao desenvolvimento da teoria, escolha metodológica, estratégias, horizonte temporal e, no centro, técnicas e procedimentos (acesso, ética, seleção de amostra, coleta e análise). Saunders observa expressamente que as relações entre as camadas são relevantes, mas **não determinísticas**: não é correto traçar uma linha rígida entre uma filosofia e um único conjunto admissível de métodos.
+
+| Camada, da exterior para o centro | Alternativas/questões que o pesquisador considera | Decisão explicitável no projeto | Alerta contra automatização indevida |
+| --- | --- | --- | --- |
+| **1. Filosofia** | Positivismo, realismo crítico, interpretativismo, pós-modernismo, pragmatismo; pressupostos ontológicos, epistemológicos e axiológicos | O que contará como conhecimento e como o pesquisador se posiciona diante do objeto? | Não declarar automaticamente que “quantitativo = positivismo” ou “misto = pragmatismo” |
+| **2. Abordagem à teoria** | Dedução, indução, abdução | Testar proposições derivadas de teoria? Construir interpretações a partir do material? Alternar observação e teoria para formular explicações? | Dedução não é sinônimo exclusivo de estatística; abdução não é um atalho para atribuir causalidade |
+| **3. Escolha metodológica** | Mono-método quantitativo/qualitativo, multimétodo quantitativo/qualitativo, métodos mistos simples/complexos | Quais tipos de dados e lógicas analíticas são necessários para responder à questão? | Duas técnicas qualitativas não tornam o estudo “misto”; dados numéricos acessórios não tornam toda pesquisa quantitativa |
+| **4. Estratégias** | Levantamento (*survey*), experimento, análise de documentos/arquivos, estudo de caso, etnografia, *grounded theory*, pesquisa-ação, investigação narrativa, estratégias combinadas | Qual arranjo de investigação é defensável em função da pergunta, dos dados acessíveis e do contexto? | Estratégia não é apenas “ferramenta de coleta”; caso único não prova efeito, experimento exige intervenção/manipulação real |
+| **5. Horizonte temporal** | Transversal e longitudinal, com ondas ou períodos explicitados | Uma fotografia do fenômeno responde à pergunta, ou é necessário observar mudança ao longo do tempo? | Não deduzir evolução, efeito ou tendência com dados exclusivamente transversais |
+| **6. Técnicas e procedimentos** | Acesso, ética, população/casos, amostragem, tamanho amostral, instrumentos, coleta, tratamento de ausentes, análise, integração e reporte | Como as evidências serão produzidas, interpretadas, protegidas e auditadas? | Um plano de análise não é execução; instrumento proposto não é instrumento validado |
+
+**Leitura dos três raciocínios teóricos:** dedução parte de proposições teoricamente sustentadas e as coloca à prova; indução desenvolve interpretações ou proposições a partir da investigação empírica; abdução alterna conjecturas, material empírico e explicações alternativas. A pesquisa empírica pode integrar movimentos diferentes, desde que descreva o que aconteceu e por quê. Essa distinção deriva da discussão e da tabela 4.4 da edição consultada de Saunders; os exemplos abaixo são formulações didáticas da Skill.
+
+**Caminho didático, não rígido:** explicitar primeiro a pergunta e a inferência desejada; percorrer as seis camadas para detectar incompatibilidades; justificar a alternativa escolhida e um limite relevante. A Skill deve mostrar ao pesquisador **o suficiente para entender a decisão** e conservar o detalhamento completo na documentação do estudo, sem multiplicar aprovações burocráticas. Reabrir decisões se dados ou restrições reais exigirem mudança; nunca reescrever retroativamente o desenho como se estivesse previsto desde o início.
+
+### 3.2. Métodos quantitativos: da pergunta à inferência responsável
+
+**Fontes principais consultadas:** Creswell e Creswell (2021), especialmente planejamento de levantamentos e experimentos; Saunders, Lewis e Thornhill (2023), capítulos sobre desenho e técnicas; Bono e McNamara (2011), sobre pergunta, construtos e especificação. **Complemento de relato verificado por fonte pública:** Appelbaum et al. (2018), padrões JARS–Quant, DOI https://doi.org/10.1037/amp0000191. **Escopo da verificação:** livros de estatística aplicada e econometria foram identificados em catálogo bibliográfico, mas suas cópias sem texto extraível não foram tomadas como base de passagens específicas nesta rodada; não atribuir-lhes conteúdo não examinado.
+
+**Escolher primeiro o tipo de pergunta:**
+
+| Finalidade | Formulação adequada | Dados/desenho frequentemente pertinentes | Inferência máxima sem pressupostos adicionais |
+| --- | --- | --- | --- |
+| **Descrição** | Qual é a distribuição de um indicador nas unidades observadas? | Registros administrativos; levantamento; estatística descritiva | Retrato dos registros e, se amostragem apropriada, da população-alvo delimitada |
+| **Associação** | X e Y variam conjuntamente após especificar controles relevantes? | Dados transversais ou longitudinais; correlação/regressão justificada | Associação condicionada às variáveis e ao desenho, não causalidade demonstrada |
+| **Predição** | Até que ponto variáveis observadas antecipam um resultado em dados novos? | Bases separadas de desenvolvimento/avaliação; validação temporal ou fora da amostra | Desempenho preditivo observado nas condições de teste, não explicação causal |
+| **Comparação de grupos** | Qual a diferença entre grupos e qual a incerteza? | Grupos comparáveis; instrumentos consistentes; justificativa de testes | Diferença estimada; interpretar seleção/confundimento antes de qualquer claim causal |
+| **Mudança no tempo** | Como variou um indicador em períodos observados? | Séries temporais, painéis ou medidas repetidas, com registros datados | Evolução temporal descritiva; não atribuir a mudança a um evento sem desenho identificador |
+| **Avaliação de efeito causal** | Qual efeito de uma intervenção comparada a contrafactual defensável? | Experimento randomizado quando viável, ou desenho quase-experimental adequadamente justificado | Efeito apenas sob hipóteses de identificação explícitas, diagnósticos e limitações |
+
+**Pontos de controle do desenho quantitativo (específicos, não cosméticos):**
+
+1. **População e unidade de análise.** Definir se a unidade é pessoa, organização, evento, processo ou período; identificar universo, critérios, cobertura, seleção e eventuais agrupamentos. Não confundir quantidade de registros com número de unidades independentes.
+2. **Construtos e operacionalização.** Formular definição teórica, variável observada, fonte, escala, período, sentido de codificação e validade da medida. Proxy administrativa não equivale automaticamente ao conceito teórico.
+3. **Amostragem e poder/precisão.** Justificar inclusão/exclusão, estratégia probabilística ou não, tamanho disponível, perdas e, quando apropriado, precisão ou poder do estudo. Nunca fabricar cálculo de poder ou chamar conveniência de amostragem aleatória.
+4. **Qualidade e governança dos dados.** Documentar origem, janela temporal, versão, vinculação, duplicidades, valores ausentes, erros, transformações e decisões de limpeza. Preservar resultado anterior antes de modificar dados.
+5. **Plano analítico proporcional.** Diferenciar descrição, teste de hipóteses, modelagem preditiva, explicação e inferência causal. Especificar estimando-alvo quando se pretende efeito, variáveis/controles justificáveis, suposições e análises de sensibilidade.
+6. **Estimativas e incerteza.** Relatar tamanho de efeito/coeficiente, unidade, intervalos de confiança ou medidas apropriadas, pressupostos, amostra efetiva e transparência de análises exploratórias. Valor de p isolado não prova importância substantiva nem verdade da hipótese.
+7. **Validade e explicações alternativas.** Examinar confundimento, seleção, causalidade reversa, mensuração, temporalidade, especificação inadequada, perda amostral e transferibilidade. Quanto maior a alegação, maior o dever de sustentação.
+8. **Reprodutibilidade observável.** Quando possível e autorizado, conservar dicionário, regras de tratamento, código realmente executado, ambiente, resultados e versões. Não afirmar execução estatística sem dados acessados nem confundir script válido com resultados científicos validados.
+
+**Desenhos que não devem ser equiparados:** levantamento transversal, experimento, quase-experimento, painel longitudinal, análise de série temporal e estudo correlacional permitem perguntas e inferências distintas. Técnicas como regressão, efeitos fixos, séries interrompidas ou diferenças-em-diferenças só devem ser propostas se existir configuração dos dados e argumento identificador compatíveis. Uma estimativa numérica não elimina a necessidade de um contrafactual para a alegação de efeito.
+
+**Compatibilidade com a cebola:** um desenho dedutivo quantitativo pode empregar questionários ou dados secundários, em horizonte transversal ou longitudinal, sob filosofia justificada. Mas a orientação filosófica por si só **não assegura** confiabilidade de medidas, aleatorização, exogeneidade, amostra representativa ou validade causal. As condições empíricas reais decidem o alcance da conclusão.
+
+**JARS–Quant (Appelbaum et al., 2018):** diretrizes para comunicar pesquisa quantitativa de modo transparente, incluindo distinção entre hipóteses/análises primárias, secundárias e exploratórias, além de informações específicas para desenhos observacionais, longitudinais, experimentais e técnicas particulares. É orientação de **relato**, desenvolvida para Psicologia; sua aplicação à Administração depende do periódico e do desenho real. Não substitui plano metodológico, validação das hipóteses ou transparência sobre exploração posterior dos dados.
+
+### 3.3. Métodos mistos: a integração é uma contribuição, não um ornamento
+
+**Fontes consultadas:** Creswell e Creswell (2021, capítulo 10 e discussão introdutória sobre projetos); Saunders, Lewis e Thornhill (2023, distinção entre mono-método, multimétodo e misto); Fetters, Curry e Creswell (2013), *Achieving Integration in Mixed Methods Designs—Principles and Practices* ([DOI](https://doi.org/10.1111/1475-6773.12117), texto e metadados editoriais públicos consultados); Levitt et al. (2018), JARS–Qual/Mixed ([DOI](https://doi.org/10.1037/amp0000151), referência e descrição editorial públicas verificadas).
+
+**Regra definidora:** um estudo de métodos mistos mobiliza componentes **quantitativos e qualitativos substanciais**, articulados para responder a uma pergunta que **uma vertente isolada não responderia da mesma maneira**. É necessário demonstrar **quando, onde e como ocorre a integração**. A simples presença de entrevistas e percentuais no mesmo artigo não basta.
+
+**Diferença entre escolhas da terceira camada da cebola:**
+
+| Escolha | Exemplo estrutural | O que exige relatar |
+| --- | --- | --- |
+| Mono-método quantitativo | Um levantamento com estratégia e dados quantitativos centrais | População, variáveis, instrumentos, qualidade dos dados e inferência |
+| Multimétodo quantitativo | Duas técnicas quantitativas no mesmo estudo | Articulação entre técnicas, sem rotular como misto |
+| Mono-método qualitativo | Entrevistas em estudo interpretativo | Contexto, amostragem, reflexividade, análise e limitações |
+| Multimétodo qualitativo | Entrevistas e observação com análises qualitativas | Relação entre fontes e interpretações, sem rotular como misto |
+| **Métodos mistos** | Estimativas quantitativas **e** investigação qualitativa integradas | Objetivos de cada vertente, timing, amostras, pontos de integração e meta-inferência |
+
+**Três desenhos centrais descritos por Creswell e retomados por Fetters e colaboradores:**
+
+| Desenho | Sequência lógica | Integração justificável | Questão que permanece aberta se faltar integração |
+| --- | --- | --- | --- |
+| **Convergente** | QUAN e QUAL desenvolvidos em paralelo e reunidos | Comparar convergências, complementaridades e discrepâncias para produzir interpretação conjunta | Por que não bastariam dois estudos independentes? |
+| **Sequencial explanatório** | QUAN → QUAL | Selecionar casos/participantes ou perguntas qualitativas à luz dos resultados quantitativos para explicar padrões, anomalias ou mecanismos | As entrevistas realmente esclarecem os resultados numéricos? |
+| **Sequencial exploratório** | QUAL → QUAN | Usar categorias, experiências ou construtos identificados na primeira fase para desenvolver/adaptar instrumentos, variáveis ou hipóteses a serem examinados quantitativamente | O instrumento deriva das evidências qualitativas e foi efetivamente examinado na segunda fase? |
+
+Creswell também discute componentes mistos **incorporados** a experimentos, avaliações e projetos participativos. O enquadramento como “métodos mistos” depende de contribuição substantiva e integração real, não de acrescentar um depoimento ilustrativo a uma tabela numérica.
+
+**Quatro maneiras de integrar, sistematizadas por Fetters, Curry e Creswell (2013):**
+- **Connecting (conectar):** uma base ou fase orienta a amostragem da outra; registrar a regra e os casos selecionados.
+- **Building (construir):** a análise de uma vertente informa o instrumento/protocolo da outra; registrar a passagem justificável entre achado e instrumento.
+- **Merging (combinar):** reunir achados de ambas as vertentes para comparar convergências e diferenças, sem somar mecanicamente números e citações.
+- **Embedding (incorporar):** integrar uma vertente em momentos específicos de um estudo maior, com motivo e papel explícitos.
+
+**Três níveis de integração:** desenho (por que e quando juntar), método (como conectar ou mesclar coleta/análise) e interpretação/relato (o que se aprende da combinação). Fetters et al. descrevem também **joint displays**: quadros/tabelas/figuras que colocam achados quantitativos e qualitativos em relação analítica, permitindo derivar novas interpretações, e não apenas enfeitar o texto. Quando as evidências se contradizem, manter a discordância e investigar sua causa; não forçar consenso.
+
+**Exemplo de joint display apenas como estrutura, sem resultados fictícios:**
+
+| Pergunta integrada | Achado QUAN verificado | Achado QUAL verificado | Convergência, expansão ou discordância | Meta-inferência provisória e limite |
+| --- | --- | --- | --- | --- |
+| [questão efetivamente definida] | [estimativa observada, fonte, N e incerteza] | [tema/trecho e localizador realmente conferidos] | [juízo justificado sobre o encaixe] | [interpretação sustentada por ambas as vertentes; contradições preservadas] |
+
+Esses colchetes são **campos vazios de exemplo**, não dados, participantes, testes ou observações executados. Se uma coluna não estiver sustentada, declarar a lacuna; não preenchê-la com texto plausível produzido pela IA.
+
+**Perguntas específicas para rigor dos métodos mistos:**
+
+1. O que a combinação acrescenta à pergunta, em comparação a apenas um dos caminhos?
+2. Qual é a prioridade relativa (QUAN, QUAL ou equilibrada) e o timing real de cada vertente?
+3. Qual população/amostra/seleção atende cada vertente e onde as amostras se conectam?
+4. Qual qualidade é esperada **em cada vertente**, considerando seus pressupostos distintos?
+5. Qual integração efetivamente aconteceu: conexão, construção, combinação ou incorporação?
+6. O que se conclui **a partir da integração** que não se poderia concluir das vertentes isoladas?
+7. Quais resultados divergem, por que podem divergir e que incerteza isso mantém?
+8. Que direitos, consentimentos, privacidade e possíveis identificações cruzadas afetam a combinação dos dados?
+
+**JARS–Mixed:** orientação editorial complementar para comunicar objetivos das vertentes, lógica da integração, procedimentos, resultados e interpretação sem ocultar disparidades. Não é um carimbo de qualidade: a norma específica de cada periódico tem prioridade, e regras de Psicologia não são automaticamente obrigatórias em Administração.
+
+### 3.4. Exemplos comparativos de projeto — todos hipotéticos, sem coleta realizada
+
+Os exemplos mostram o papel orientador das camadas. Não são resultados nem planos impostos ao usuário.
+
+**Exemplo A — quantitativo descritivo/associativo.** Pergunta: “Como variam os tempos registrados de tramitação segundo características de demandas e períodos?” O pesquisador poderia utilizar registros autorizados, definir demanda como unidade de análise, delimitar janela temporal, tratar datas faltantes e estimar distribuições e associações com incerteza adequada. **Não pode concluir que uma ferramenta causou redução de tempo** apenas porque observou diferenças entre períodos ou grupos.
+
+**Exemplo B — qualitativo interpretativo.** Pergunta: “Como profissionais compreendem atrasos na tramitação de demandas e atribuem sentido às práticas de acompanhamento?” Escolha metodológica condicionada à natureza da experiência e ao acesso real a entrevistas/documentos. Reflexividade e critérios de qualidade são próprios do desenho escolhido; não é pesquisa quantitativa fracassada nem precisa produzir percentuais para ser legítima.
+
+**Exemplo C — misto sequencial explanatório.** Pergunta: “Quais padrões de atraso aparecem nos registros e como os agentes compreendem os mecanismos organizacionais associados a esses padrões?” Uma fase QUAN descreve os padrões; a seleção QUAL subsequente é informada por casos ou anomalias observados; a integração confronta estimativas e interpretações. **Sem a segunda fase realmente executada e integrada, o estudo não pode ser reportado como completo.**
+
+**Exemplo D — misto sequencial exploratório.** Pergunta: “Quais dimensões da fricção administrativa são percebidas e como podem ser operacionalizadas e examinadas em uma população delimitada?” Uma fase QUAL fundamenta construtos/itens; uma fase QUAN subsequente examina as propriedades e distribuição das medidas; a ponte instrumento-evidência é explicitada. O desenvolvimento preliminar de uma escala não equivale a sua validação.
+
+**Exemplo E — avaliação de intervenção.** Pergunta: “Qual efeito de um procedimento sobre o tempo de processamento, relativamente a uma comparação válida?” A resposta exige um desenho que sustente contrafactual e observe resultados; entrevistas podem integrar análise de mecanismos e implementação. **O uso de C.A.D.A. como organização de tarefas não constitui, por si, tratamento experimental nem evidência do efeito.**
+
+### 3.5. Como operacionalizar a cebola na Skill sem ampliar o “teatro da rastreabilidade”
+
+A Cebola de Pesquisa deve aparecer como **apoio formativo compacto** na escolha do desenho e estar documentada em profundidade aqui. Não acrescentar novas famílias de IDs, abas, formulários obrigatórios ou logs artificiais. Para um artigo concreto:
+
+1. **Diagnóstico breve:** a IA identifica o que o usuário quer *descrever, interpretar, explicar, predizer, avaliar ou integrar*, mostrando duas alternativas metodológicas pertinentes e as respectivas limitações.
+2. **Coerência entre camadas:** registrar no protocolo já existente uma síntese concisa de filosofia/pressupostos quando relevantes, lógica da teoria, escolha metodológica, estratégia, horizonte e procedimentos reais. Não inventar decisão filosófica se o usuário ainda não a definiu.
+3. **Atenção seletiva:** em quantitativos, concentrar acompanhamento em medidas, amostra, tratamento, inferência e limites causais; em mistos, na **qualidade separada das vertentes e na integração**; em qualitativos, na coerência epistemológica e no encadeamento interpretativo.
+4. **Gate formativo somente onde importa:** o pesquisador explica, em linguagem própria, por que sua escolha responde ao problema e qual limite reconhece. A IA esclarece termos difíceis e mantém a decisão pendente se faltar compreensão; **nunca produz uma falsa justificativa humana**.
+5. **Execução observável:** scripts, instrumentos, análises estatísticas, codificação, entrevistas e dados devem ser registrados como **previstos**, **realmente executados** ou **não verificados**. Não converter modelo/roteiro em resultado realizado.
+6. **Correção prospectiva:** quando os dados contradisserem o projeto inicial, registrar a mudança real e o motivo, preservando o estado anterior, em vez de fabricar um planejamento retrospectivamente perfeito.
+7. **Comunicação proporcional:** no artigo final, relatar o desenho escolhido e a cadeia de evidência, não despejar toda a taxonomia da cebola ou os controles internos da Skill.
+
+**Regra de governança para a IA:** use Saunders e Creswell para **fazer perguntas metodológicas melhores**, não para escolher pelo pesquisador uma filosofia ou converter automaticamente objetivos em procedimentos. A inferência metodológica feita pela Skill é uma **proposta passível de crítica**, não uma decisão científica humana.
+
 ## 4. Pesquisa qualitativa: diferenças que não podem desaparecer
 
 ### 4.1. Análise temática e análise qualitativa de dados
