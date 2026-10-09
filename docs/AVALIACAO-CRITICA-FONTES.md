@@ -34,12 +34,12 @@ This is **our own operational checklist**, not a reproduction or official certif
 3. Skill can prepare an information board for easy reading. **Cannot claim to have performed human review** nor generate responses attributed to the user.
 4. After an actual evaluation by the researcher, record it in the canonical CSV, for example:
 
-       python scripts/appraise_evidence.py record "/caminho/do/projeto" \
+       python scripts/appraise_evidence.py record "/path/to/project" \
          --evidence-id "EVID-0001" --family QUALITATIVE \
-         --checklist "/caminho/do/projeto/criterios_avaliados.json" \
+         --checklist "/path/to/project/appraised_criteria.json" \
          --judgement USE_WITH_CAVEATS \
-         --rationale "A análise responde ao problema, mas a seleção dos participantes limita a transferência dos achados." \
-         --limitations "Os resultados são contextuais e não fundamentam extrapolação estatística para outras populações." \
+         --rationale "The analysis addresses the question, but participant selection limits transferability." \
+         --limitations "These findings are context-specific and do not justify statistical generalization to other populations." \
          --reviewer "Pesquisador" \
          --review-evidence "Referência à manifestação humana original"
 
@@ -47,7 +47,7 @@ This is **our own operational checklist**, not a reproduction or official certif
 
 5. To audit documentation:
 
-       python scripts/appraise_evidence.py audit "/caminho/do/projeto" --strict
+       python scripts/appraise_evidence.py audit "/path/to/project" --strict
 
 <a id="julgamento-científico-registrado"></a>
 ## Registered scientific judgment
