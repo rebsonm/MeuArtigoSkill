@@ -6,13 +6,13 @@ Meu Artigo supports the journey from an initial research idea to a submission-re
 
 The project is available in a **public GitHub repository** as an **experimental beta**.
 
-**Current version:** `0.8.0-beta.8` · [Releases and downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). The source code is free; third-party academic databases, platforms and subscriptions may have separate access requirements.
+**Current version:** `0.9.0-beta.1` · [Releases and downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). The source code is free; third-party academic databases, platforms and subscriptions may have separate access requirements.
 
 **[Get the beta](https://github.com/rebsonm/MeuArtigoSkill/releases) · [Installation guide](./docs/COMECE-AQUI.md) · [Getting started](#getting-started)**
 
 ## English source, your language when you use it
 
-**The repository and its instructions are being standardized in English. This does not mean you must speak English.** The installed Skill follows the researcher's conversational language automatically and respects any explicit language choice. It can answer Portuguese questions in Portuguese, Spanish questions in Spanish, and English questions in English — without changing its source code or installing a translation pack.
+**The repository and its instructions are authored in English. This does not mean you must speak English.** The installed Skill follows the researcher's conversational language automatically and respects any explicit language choice. It can answer Portuguese questions in Portuguese, Spanish questions in Spanish, and English questions in English — without changing its source code or installing a translation pack.
 
 The **manuscript language is chosen separately** according to the researcher's instructions or the selected journal's author guidelines. You may communicate in Portuguese while preparing an English-language article. Machine-readable identifiers, source citations and original quotations are not silently translated. See the [interaction language policy](./references/language-policy.md).
 
