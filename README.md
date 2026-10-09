@@ -6,7 +6,7 @@ O **Meu Artigo** acompanha o pesquisador desde a ideia inicial até a preparaç�
 
 O projeto está disponível em **repositório público**, em **versão beta**.
 
-**Versão atual:** `0.8.0-beta.2` · [Ver versões e downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). Seu uso é gratuito, embora algumas bases científicas e plataformas integradas possam exigir contas, assinaturas ou acesso institucional.
+**Versão atual:** `0.8.0-beta.3` · [Ver versões e downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). Seu uso é gratuito, embora algumas bases científicas e plataformas integradas possam exigir contas, assinaturas ou acesso institucional.
 
 **[Baixar a versão beta](https://github.com/rebsonm/MeuArtigoSkill/releases) · [Guia de instalação](./docs/COMECE-AQUI.md) · [Como começar](#como-começar)**
 

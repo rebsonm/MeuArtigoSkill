@@ -6,38 +6,31 @@ Este documento descreve como usar **Meu Artigo** em ambientes OpenAI. A metodolo
 
 ## Antes de tentar instalar
 
-A disponibilidade de Skills pode variar por conta, rollout e superfície do produto.
+A instalação de Skills no ChatGPT depende da elegibilidade da conta, da disponibilidade do recurso e das configurações do ambiente. Consulte a [documentação oficial de Skills](https://help.openai.com/pt-br/articles/20001066-skills-no-chatgpt).
 
-A documentação pública da OpenAI consultada em 07/10/2026 ainda cita Business, Enterprise, Healthcare e Edu como planos elegíveis. Porém, em teste direto no mesmo dia, a criação/importação de Skills estava funcional também em uma conta **ChatGPT Plus**.
+**O que está documentado:** em contas elegíveis, o caminho é **Plugins → Habilidades → Criar → Carregar do computador**. A presença da opção deve ser verificada no próprio ambiente. Experiências pontuais de versões anteriores, inclusive com contas de outros planos, não comprovam disponibilidade geral nem compatibilidade integral desta beta.
 
-Por isso, **não conclua a disponibilidade apenas pelo nome do plano**. O teste prático é verificar se sua conta mostra **Plugins → Habilidades/Skills** e as opções de criar/importar. Se essa área estiver disponível, siga normalmente o procedimento abaixo.
+**O que ainda falta validar:** importação e execução ponta a ponta do arquivo `v0.8.0-beta.3` em contas elegíveis do ChatGPT, inclusive retomada e gravação no Drive.
 
-Fonte oficial:
+## 1. Baixe a versão oficial do GitHub
 
-- https://help.openai.com/pt-br/articles/20001066-skills-in-chatgpt
+1. Abra [a versão beta publicada](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.3).
+2. Baixe **`MeuArtigoSkill-v0.8.0-beta.3.zip`**, na seção de arquivos disponibilizados.
+3. Se desejar conferir a integridade, utilize o `SHA256SUMS.txt` do mesmo lançamento.
+4. Preserve o ZIP completo; **não use o arquivo automático `Source code (zip)` como primeira opção de instalação**.
 
-## 1. Baixe pelo GitHub
-
-Na página do repositório:
-
-1. clique em **Code**;
-2. clique em **Download ZIP**;
-3. mantenha esse ZIP completo para a instalação no ChatGPT.
-
-Você pode descompactá-lo apenas para inspeção. A raiz do pacote contém `SKILL.md`, `references/`, `scripts/` e `agents/`.
+O arquivo instalável mantém `SKILL.md` na raiz e os recursos auxiliares. Descompactar é opcional para inspeção, não requisito para carregar no ChatGPT.
 
 ## 2. Instale no ChatGPT
 
-Quando sua conta/workspace oferecer Skills:
+Quando a sua conta oferecer o recurso:
 
-1. abra o ChatGPT;
-2. na barra lateral, entre em **Plugins**;
-3. abra a aba **Habilidades / Skills**;
-4. clique em **Criar**;
-5. escolha **Carregar do computador**;
-6. selecione **o ZIP completo baixado diretamente do GitHub**.
+1. abra o ChatGPT e acesse **Plugins → Habilidades**;
+2. selecione **Criar → Carregar do computador**;
+3. escolha o ZIP oficial da versão;
+4. acompanhe a verificação da Skill e confirme a instalação se a interface permitir.
 
-Este é o procedimento validado para o Meu Artigo. No teste de 07/10/2026, importar o ZIP completo preservou corretamente `references/`, `scripts/`, `agents/` e os demais recursos. Evite reconstruir manualmente o ZIP ou enviar apenas uma parte da estrutura quando não houver necessidade.
+O procedimento de upload está documentado pelo fornecedor; a **execução de todos os recursos do Meu Artigo nesta versão ainda depende de teste funcional real**. Se os menus forem diferentes, consulte o guia oficial acima, sem presumir erro no pacote.
 
 ## 3. Inicie em um chat novo
 

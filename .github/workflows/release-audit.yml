@@ -27,6 +27,9 @@ jobs:
       - name: Behavioral regression tests
         run: python -m unittest discover -s tests -v
 
+      - name: Check local documentation links
+        run: python scripts/check_documentation_links.py
+
       - name: Provenance smoke test
         run: python scripts/smoke_test_provenance.py
 
@@ -80,7 +83,7 @@ jobs:
         id: beta
         shell: bash
         run: |
-          if [[ "$(cat VERSION)" == "0.8.0-beta.2" ]]; then
+          if [[ "$(cat VERSION)" == "0.8.0-beta.3" ]]; then
             echo "publish=true" >> "$GITHUB_OUTPUT"
           else
             echo "publish=false" >> "$GITHUB_OUTPUT"
@@ -120,6 +123,6 @@ jobs:
             --repo "$GITHUB_REPOSITORY" \
             --target "$GITHUB_SHA" \
             --title "Meu Artigo $TAG — beta pública" \
-            --notes-file "docs/NOTAS-DA-VERSAO-0.8.0-beta.2.md" \
+            --notes-file "docs/NOTAS-DA-VERSAO-0.8.0-beta.3.md" \
             --prerelease \
             --latest=false

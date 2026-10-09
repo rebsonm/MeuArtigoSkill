@@ -34,18 +34,11 @@ Para testar a Skill, basta baixar os arquivos.
 
 ## 3. Como baixar
 
-**Preferência: versão identificada.** Abra [Releases](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.2), baixe `MeuArtigoSkill-v0.8.0-beta.2.zip` e, se desejar, confira o hash no `SHA256SUMS.txt`. Diferentemente do ZIP de código-fonte, esse pacote é preparado especificamente para instalar a Skill, com manifesto e licença. Consulte [implantação beta](IMPLANTACAO-BETA.md).
+**Preferência: versão identificada.** Abra [Releases](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.3), baixe `MeuArtigoSkill-v0.8.0-beta.3.zip` e, se desejar, confira o hash no `SHA256SUMS.txt`. Diferentemente do ZIP de código-fonte, esse pacote é preparado especificamente para instalar a Skill, com manifesto e licença. Consulte [implantação beta](IMPLANTACAO-BETA.md).
 
-**Alternativa para acompanhar o desenvolvimento:**
+**Alternativa para consultar o código do projeto:** o botão **Code → Download ZIP** obtém uma cópia do repositório, que pode não corresponder a uma versão publicada. **Para instalar, prefira sempre o ZIP preparado em Releases.**
 
-Na página principal do repositório:
-
-1. procure o botão verde **Code**;
-2. clique nele;
-3. escolha **Download ZIP**;
-4. salve o arquivo no computador.
-
-**Se você vai instalar no ChatGPT, não precisa descompactar o ZIP instalável:** o procedimento validado é importar diretamente esse ZIP completo. Descompacte apenas se quiser inspecionar os arquivos ou usar outra plataforma.
+**No ChatGPT, quando houver suporte a Skills, utilize o upload do ZIP instalável completo:** a interface documenta esse recurso, mas a beta atual ainda precisa de teste funcional específico. Descompacte apenas se quiser inspecionar os arquivos ou usar outra plataforma.
 
 Depois de descompactar, você verá algo parecido com:
 
@@ -59,7 +52,7 @@ MeuArtigoSkill/
 └── README.md
 ```
 
-A **raiz do repositório já é o bundle da Skill**. A pasta `docs/` contém guias de instalação e teste; `references/` e `scripts/` fazem parte do funcionamento da Skill.
+O **ZIP de Releases é o pacote instalável recomendado**; o repositório também contém o código-fonte e o histórico de desenvolvimento. A pasta `docs/` contém guias de instalação e teste; `references/` e `scripts/` fazem parte do funcionamento da Skill.
 
 ## 4. Qual arquivo eu uso?
 
@@ -85,11 +78,11 @@ Depois de baixar, siga o guia correspondente. **A opção de instalar Skills dep
 - [Quero usar no Claude](./CLAUDE.md)
 - [Quero usar no Gemini](./GEMINI.md)
 
-As três usam o mesmo núcleo metodológico. O que muda é a forma de instalar e quais integrações cada plataforma consegue acessar.
+As três usam o mesmo núcleo metodológico, mas as funções disponíveis e os mecanismos de instalação podem variar. A [matriz de compatibilidade](COMPATIBILIDADE-PLATAFORMAS.md) distingue o suporte anunciado pelos fornecedores dos testes ainda pendentes da Skill.
 
 ## 6. Como começar a usar
 
-No ChatGPT, importe o ZIP completo em **Plugins → Habilidades → Criar/Carregar do computador**. Depois de instalar/importar a Skill na sua IA, abra uma conversa nova e escreva algo como:
+Se a sua conta oferecer Skills, no ChatGPT use **Plugins → Habilidades → Criar → Carregar do computador** para importar o ZIP completo. Depois de instalar/importar a Skill na sua IA, abra uma conversa nova e escreva algo como:
 
 > Use a Skill Meu Artigo. Meu problema de pesquisa é: [descreva seu problema]. Quero desenvolver um artigo científico.
 
@@ -146,9 +139,9 @@ A Skill deve conseguir recuperar o estado a partir de `CONTINUIDADE.md`, protoco
 
 Como você está usando a versão baixada do GitHub, a forma mais simples é:
 
-1. voltar à página do repositório;
-2. clicar em **Code → Download ZIP** novamente;
-3. substituir a cópia antiga pela nova.
+1. consultar a [lista de Releases](https://github.com/rebsonm/MeuArtigoSkill/releases);
+2. baixar o ZIP **instalável** da versão identificada mais recente;
+3. conferir a integridade quando necessário e atualizar a Skill pela função da sua plataforma, preservando os arquivos e decisões do projeto.
 
 O GitHub mantém todo o histórico de alterações, portanto versões anteriores não desaparecem do projeto.
 
@@ -176,26 +169,22 @@ Perfeito.
 Seu caminho é simplesmente:
 
 ```text
-GitHub
+GitHub → Releases
    ↓
-Code
-   ↓
-Download ZIP
-   ↓
-Descompactar
-   ↓
-usar a pasta raiz descompactada
+baixar MeuArtigoSkill-v0.8.0-beta.3.zip
    ↓
 seguir o guia da sua IA
+   ↓
+fazer o upload ou descompactar, conforme a plataforma
    ↓
 informar seu problema de pesquisa
 ```
 
 ## 12. Quero enviar uma sugestão ou relatar um problema
 
-Não existe formulário, escala de percepção ou protocolo de avaliação de usuários no projeto.
+Existe um [protocolo preparado para avaliação futura com usuários](PROTOCOLO-BETA-USUARIOS.md), **ainda não executado**. Não há coleta de opiniões, sessões agendadas nem resultados de participantes neste momento.
 
-Se quiser contribuir, envie livremente uma observação, crítica metodológica, relato de erro ou sugestão de melhoria. Não há roteiro obrigatório nem coleta padronizada de respostas.
+Se desejar, você pode encaminhar espontaneamente uma observação, crítica metodológica, relato de erro ou sugestão de melhoria. **Esse envio livre não constitui participação em um estudo estruturado.** Para orientações de contribuição, consulte [CONTRIBUTING.md](../CONTRIBUTING.md) e não divulgue dados sensíveis em Issues públicas.
 
 ## 13. Quero entender o projeto por dentro
 

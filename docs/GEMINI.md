@@ -6,45 +6,32 @@ Este documento descreve como usar **Meu Artigo** nos apps Gemini. A metodologia 
 
 ## Antes de tentar instalar
 
-Segundo a documentação oficial atual do Google, o gerenciamento completo de Skills fica no **web app do Gemini**. A disponibilidade depende dos requisitos atuais da conta; a documentação informa, entre outros requisitos, conta Google pessoal elegível e assinatura Google AI compatível.
+O Google documenta o carregamento de Skills nos apps Gemini, mas a função depende dos requisitos da conta, da região, do produto e das condições atuais. Consulte as [instruções oficiais do Gemini](https://support.google.com/gemini/answer/17094296?hl=pt-BR).
 
-Se a opção **Skills / Habilidades** não aparecer, confira a disponibilidade da sua conta antes de concluir que houve erro no arquivo.
+A documentação informa que uma Skill pode ser importada por `SKILL.md`, pasta ou ZIP com `SKILL.md` na raiz. **Isso confirma o formato de upload, não a execução completa da Skill Meu Artigo**; a beta `v0.8.0-beta.3` ainda precisa ser testada em ambiente real.
 
-Fontes oficiais:
+## 1. Baixe a versão identificada
 
-- https://support.google.com/gemini/answer/17094296
-- https://support.google.com/gemini/answer/18560919
-
-Informações de plataforma podem mudar; estas instruções foram revisadas em 2026-10-06.
-
-## 1. Baixe pelo GitHub
-
-Na página do repositório:
-
-1. clique em **Code**;
-2. clique em **Download ZIP**;
-3. descompacte;
-4. entre na pasta descompactada; a raiz já é o bundle da Skill.
+1. Abra [a Release v0.8.0-beta.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.8.0-beta.3).
+2. Baixe **`MeuArtigoSkill-v0.8.0-beta.3.zip`**, em vez do ZIP automático de código-fonte.
+3. Para conferir a integridade, use o `SHA256SUMS.txt` da mesma versão.
 
 ## 2. Instale no Gemini
 
-No web app do Gemini:
+Se o recurso de Skills estiver disponível em sua conta:
 
-1. abra a página **Skills / Habilidades**;
-2. escolha **Upload / Fazer upload**;
-3. selecione a pasta raiz, o arquivo `SKILL.md` ou o ZIP preparado;
-4. revise a Skill;
-5. clique em **Criar**.
+1. abra a página de Habilidades no Gemini;
+2. escolha a opção de upload, conforme a interface exibida;
+3. selecione o ZIP da Release, contendo `SKILL.md` na raiz;
+4. confira o conteúdo importado e conclua a criação.
 
-O Gemini aceita uma pasta ou ZIP quando `SKILL.md` está na pasta principal da Skill.
-
-O repositório foi estruturado para que `SKILL.md` fique diretamente na raiz do bundle, junto de `references/`, `scripts/` e `agents/`.
+O Google informa restrições a scripts que exigem acesso à internet. A disponibilidade de funções, recursos de execução e conexões deve ser verificada antes de qualquer afirmação de compatibilidade com o fluxo completo.
 
 ## 3. Comece em uma conversa nova
 
 > Use a Skill Meu Artigo. Meu problema de pesquisa é: [problema]. Quero construir o artigo com rastreabilidade, continuidade e gestão C.A.D.A.
 
-## Compatibilidade verificada
+## Formato de upload documentado pelo Google
 
 O Google informa que Skills podem ser carregadas por:
 
@@ -79,7 +66,7 @@ Mapeie os recursos disponíveis para:
 - execução local quando disponível;
 - gerenciador de trabalho para espelhar o C.A.D.A., quando houver integração disponível.
 
-Se Google Drive/Workspace estiver conectado, ele é um bom candidato para o workspace canônico, conforme a conta e a superfície utilizadas.
+O Google Drive é o armazenamento canônico padrão da Skill. Confirme que a conexão existe e é gravável antes do trabalho substantivo. Caso não esteja disponível, solicite a conexão, verifique novamente e só prossiga com armazenamento alternativo após **autorização explícita** do pesquisador; não confunda a integração disponível na plataforma com sincronização realmente executada.
 
 ## Gestão C.A.D.A.
 

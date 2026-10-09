@@ -22,21 +22,21 @@ class BundleTests(unittest.TestCase):
             dest = self.root / filename
             dest.write_text("MIT License\n" if filename == "LICENSE" else "test item\n",
                             encoding="utf-8")
-        (self.root / "VERSION").write_text("0.8.0-beta.2\n", encoding="utf-8")
+        (self.root / "VERSION").write_text("0.8.0-beta.3\n", encoding="utf-8")
         for dirname in pkg.DIR_TYPES:
             (self.root / dirname).mkdir()
         (self.root / "scripts" / "minimal.py").write_text("print('ok')\n", encoding="utf-8")
         (self.root / "docs" / "guide.md").write_text("Safe installation guide\n", encoding="utf-8")
-        self.output = self.root / "dist" / "MeuArtigoSkill-v0.8.0-beta.2.zip"
+        self.output = self.root / "dist" / "MeuArtigoSkill-v0.8.0-beta.3.zip"
 
     def test_zip_preserves_root_entrypoint_and_license(self):
         m = pkg.package(self.root, self.output)
-        self.assertEqual(m["version"], "0.8.0-beta.2")
+        self.assertEqual(m["version"], "0.8.0-beta.3")
         self.assertFalse(m["scientific_quality_validated"])
         with ZipFile(self.output) as z:
             self.assertIn("SKILL.md", z.namelist())
             self.assertIn("LICENSE", z.namelist())
-            self.assertNotIn("dist/MeuArtigoSkill-v0.8.0-beta.2.zip", z.namelist())
+            self.assertNotIn("dist/MeuArtigoSkill-v0.8.0-beta.3.zip", z.namelist())
         self.assertEqual(pkg.verify_package(self.output)["files"], m["files"])
 
     def test_checksum_file_is_real_digest(self):
@@ -83,7 +83,7 @@ class BundleTests(unittest.TestCase):
 
     def test_repo_has_beta_docs_and_no_embedded_private_corpus(self):
         version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
-        self.assertEqual(version, "0.8.0-beta.2")
+        self.assertEqual(version, "0.8.0-beta.3")
         self.assertIn("MIT License", (ROOT / "LICENSE").read_text(encoding="utf-8"))
         paths = [p.relative_to(ROOT).as_posix() for p in pkg.list_sources(ROOT)]
         self.assertIn("docs/PROTOCOLO-BETA-USUARIOS.md", paths)
