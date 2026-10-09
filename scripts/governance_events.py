@@ -29,6 +29,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from formative_gates import SCIENTIFIC_GATES, APPROVALS, response_issues, encode_formative
+from method_routes import approval_issues
 
 MGMT="00_Gestao_e_Continuidade"
 DEC_FILE=f"{MGMT}/17_Decision_Log.csv"
@@ -236,6 +237,19 @@ def record_gate(args)->int:
         from audit_governance_boundary import management_only
         if management_only(args.evidence) or management_only(args.method):
             raise SystemExit("scientific gate approval needs an independent review source, not a C.A.D.A. task status")
+
+    # A route-aware project cannot bypass a critical methodological stage
+    # by marking it NOT_APPLICABLE without attributable human reasoning.
+    if cfg.get("method_route_governance_required") is True:
+        if decision in APPROVALS:
+            route_problems=approval_issues(root,cfg,args.gate_id)
+            if route_problems:
+                raise SystemExit("method-route gate not ready: "+"; ".join(route_problems[:8]))
+        if decision=="NOT_APPLICABLE":
+            if args.gate_id in {"GATE-0002","GATE-0004","GATE-0005","GATE-0006"}:
+                raise SystemExit("critical methodological/scientific gate cannot be bypassed as NOT_APPLICABLE")
+            if not args.validated_by.strip() or not args.evidence.strip() or len(args.notes.strip())<40:
+                raise SystemExit("NOT_APPLICABLE requires a real reviewer, evidence and a substantive design-specific reason")
 
     formative_notes=args.notes
     if formative:
