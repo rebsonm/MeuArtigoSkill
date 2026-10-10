@@ -1,7 +1,9 @@
 # Meu Artigo — 0.9.0-beta.2
 
-**RELEASE CANDIDATE ONLY — NOT PUBLISHED.** Version frozen in the PR #24
-development branch for engineering and researcher-evaluation preparation.
+**RELEASE CANDIDATE ONLY — NOT PUBLISHED.** The candidate was integrated
+into `main` by [PR #24](https://github.com/rebsonm/MeuArtigoSkill/pull/24)
+on 2026-10-10. Merge confirms code integration, not product or scientific
+acceptance.
 The latest tagged public release remains v0.9.0-beta.1 until a maintainer
 explicitly authorizes a new signed-off release. Do not represent the CI
 artifact as an independently validated, published, or tested-on-ChatGPT Skill.
@@ -48,8 +50,9 @@ artifact as an independently validated, published, or tested-on-ChatGPT Skill.
    installed Skill, recording actual scientific decisions and licensed sources.
 4. Test install/resume and Google Drive writes with a real authorized ChatGPT
    account. Report platform limitations and pending items.
-5. Explicit maintainer decision, then one-time manual GitHub release after
-   moving approved changes onto main. The PR itself never publishes a release.
+5. Obtain an explicit maintainer publication decision. Approved source is
+   already on `main`; publishing still requires the separate manual GitHub
+   release workflow and verification of the resulting ZIP/checksum.
 
-No release, merge, journal submission, real participant feedback, or journal
-acceptance is implied by preparing this candidate.
+No public release, journal submission, real participant feedback, or journal
+acceptance is implied by merging this software candidate.
