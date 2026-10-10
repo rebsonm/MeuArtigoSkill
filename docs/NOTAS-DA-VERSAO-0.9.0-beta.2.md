@@ -1,58 +1,70 @@
-# Meu Artigo — 0.9.0-beta.2
+# Meu Artigo — v0.9.0-beta.2
 
-**RELEASE CANDIDATE ONLY — NOT PUBLISHED.** The candidate was integrated
-into `main` by [PR #24](https://github.com/rebsonm/MeuArtigoSkill/pull/24)
-on 2026-10-10. Merge confirms code integration, not product or scientific
-acceptance.
-The latest tagged public release remains v0.9.0-beta.1 until a maintainer
-explicitly authorizes a new signed-off release. Do not represent the CI
-artifact as an independently validated, published, or tested-on-ChatGPT Skill.
+**Experimental public beta (software release).** This is an engineering
+update, **not** an independently validated research method, peer-reviewed
+product or guarantee of scientific article quality. The canonical installable
+ZIP and SHA-256 checksum are distributed through the
+[matching tagged GitHub release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.2).
+Use the official asset, not GitHub's automatic source-code ZIP.
 
-## Change summary
+## Improvements since v0.9.0-beta.1
 
-- Protect every bibliographic deduplication CSV output from formula injection
-  caused by third-party spreadsheet metadata.
-- Add consistent three-register bibliographic imports with a recoverable local
-  write-ahead journal. Failed or interrupted imports require documented rollback
-  before a project can be validated or another import can proceed.
-- Restore compatibility with the canonical traceability validator by treating
-  locally recorded bibliographic retrieval as UNVERIFIED until independently
-  attested by permitted execution receipts.
-- Treat a genuinely successful provider query returning zero records as zero
-  matches, **not** a failed network request.
-- Include optional, explicit network metadata adapters for OpenAlex,
-  Crossref and Semantic Scholar; DOI lookups from Unpaywall/OpenCitations
-  and a user-scoped Zotero metadata export, with protected external secrets.
-- Keep manually imported CSV/RIS/BibTeX research workflows as the default;
-  optional API connections are NEVER onboarding prerequisites or research
-  quality certification. Licensed Scopus/WoS APIs are not connected here.
+- **Optional bibliographic metadata adapters:** explicit opt-in Python tools
+  for bounded OpenAlex, Crossref and Semantic Scholar searches, limited
+  OpenCitations citation counts, Unpaywall DOI availability metadata, and
+  user-owned Zotero metadata, subject to authorization and network access.
+- **Manual research mode preserved:** no API keys, subscriptions, extra
+  connectors or network access are required for ordinary Skill use.
+- **Safer CSV exports:** bibliographic deduplication and audit output
+  neutralizes spreadsheet formula cells from externally retrieved metadata.
+- **Recoverable local imports:** the three related CSV registers use a
+  single-writer recovery journal. Project validation blocks operations
+  after an interrupted write until explicit recovery.
+- **Clearer trace evidence:** imported records use the existing
+  `UNVERIFIED` state until actual independent execution evidence exists;
+  a legitimate zero-result search is not misreported as network failure.
+- **Consolidated documentation:** installation, public-versus-source version,
+  scientific boundaries, privacy, citation metadata and release checks
+  have been reviewed and synchronized.
+- **Release controls:** automated code, link, privacy, packaging and
+  software regression checks, including protection against publication
+  metadata that still describes a source candidate.
 
-## Boundaries
+## Scientific safeguards retained
 
-- Provider adapters have offline mocked software tests. A real vendor search,
-  the effective provider licence, private Zotero authentication, and a live
-  ChatGPT plugin were not verified in this release-candidate work.
-- Single-project offline journal protects against interrupted local multi-file
-  writes but is not a remotely shared database or transactional Google Drive
-  implementation. Only locally authorized fallback workspaces can be modified.
-- The manual research method, scientific gates, [L]/[I]/[P], claims ledger,
-  evidence checks, and native four-column C.A.D.A. view remain unchanged.
-- A successful CI run establishes software-test success only. Independent
-  research-method evaluation and human article review are still pending.
-- Existing read-only source checks and copyright/fulltext rights rules remain.
+The [L] literature / [I] inference / [P] proposal distinction,
+human scientific decisions, C.A.D.A. operational tracking, source and claim
+provenance, journal-aware editing, anonymization, AI-use transparency,
+full-text copyright rules, and Google Drive-first policy remain in place.
+A confirmed local software event is not an independent scientific review.
 
-## Release conditions
+## Explicit limitations
 
-1. Pass release-audit CI, package manifest/hash and all regression tests.
-2. Read the actual release-candidate evaluation report and complete the human
-   acceptance criteria; do not infer these from an automated passing badge.
-3. Execute a researcher-authorized real academic end-to-end article in the
-   installed Skill, recording actual scientific decisions and licensed sources.
-4. Test install/resume and Google Drive writes with a real authorized ChatGPT
-   account. Report platform limitations and pending items.
-5. Obtain an explicit maintainer publication decision. Approved source is
-   already on `main`; publishing still requires the separate manual GitHub
-   release workflow and verification of the resulting ZIP/checksum.
+- Bibliographic adapters passed **offline simulated-response tests**;
+  vendor production usage, rate limits, licensed subscriptions, secure
+  private Zotero access and real end-to-end API operation remain unverified.
+- There is **no native hosted MCP server or live ChatGPT plugin** included
+  in this release. The API tools are opt-in local Python modules, not
+  automatic ChatGPT tool connections.
+- Licensed Scopus / Web of Science authenticated integrations and publisher
+  full-text retrieval **are not included**.
+- Multi-user transactional storage is not implemented; the local journal
+  is single-writer and does not synchronize Google Drive by itself.
+- Actual installation, Google Drive write/readback, session resumption,
+  multilingual usability and full scientific article execution with this
+  exact beta still require observed authorized tests.
+- Independent scientific validation, empirical productivity improvement,
+  publication outcomes and third-party endorsements **have not been established**.
 
-No public release, journal submission, real participant feedback, or journal
-acceptance is implied by merging this software candidate.
+## Installation and feedback
+
+1. Download `MeuArtigoSkill-v0.9.0-beta.2.zip` and `SHA256SUMS.txt`
+   from this exact GitHub release after it is available.
+2. Verify the checksum, then follow the
+   [installation guide](../docs/COMECE-AQUI.md) for your supported platform.
+3. Work only with lawfully accessible sources and confirm writing
+   permissions before declaring files saved remotely.
+4. Report non-sensitive defects through GitHub Issues; use a private channel
+   for secrets, unpublished manuscripts or protected institutional data.
+
+Existing published releases and their rights are preserved.
