@@ -12,7 +12,7 @@ as a scientific research method.
 | Capability | Observable question | If not verified |
 | --- | --- | --- |
 | Skill Loading | Are the `SKILL.md` resources and required reference accessible in the current environment? | Register format unavailable, do not promise execution |
-| Canonical persistence | Is Google Drive authenticated, with access to the project space and proven writing? | Explain the connection flow; if unavailable, obtain explicit affirmative permission for a local fallback before substantive work |
+| Canonical persistence | Is Google Drive authenticated, with access to the project space and proven writing? | Explain the connection flow; if unavailable, obtain explicit affirmative permission for `WORK_FALLBACK` before substantive work |
 | Academic discovery | Is there a tool available and what query was actually executed? | Propose consultation with status PLANNED/UNVERIFIED; do not invent results |
 | Scopus/WoS databases | Is there real access to the system and export with origin, date, filters and file checked? | Prepare strategy and instruct researcher authorized access |
 | Deterministic execution | Python/filesystem/allowed commands exist in this mode? | Do not report scripts as executed; provide manual instructions, with limitations |
