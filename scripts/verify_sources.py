@@ -24,6 +24,7 @@ import urllib.request
 from datetime import datetime, timezone
 from difflib import SequenceMatcher
 from pathlib import Path
+from source_report_integrity import manifest as capture_input_manifest
 
 MGMT = "00_Gestao_e_Continuidade"
 DOI_RX = re.compile(r"^10\.\d{4,9}/\S+$", re.I)
@@ -100,28 +101,54 @@ def metadata_fields(provider, data):
         years = (data.get("published") or {}).get("date-parts") or (data.get("issued") or {}).get("date-parts") or []
         year = str(years[0][0]) if years and years[0] else ""
         authors = [a.get("family") or "" for a in (data.get("author") or [])]
-        update = data.get("update-to") or []
+        notices = []
+        # Crossref: updated-by is recorded on the affected original; update-to
+        # is recorded on the notice pointing at the original. Preserve direction.
+        for field, direction in (("updated-by", "UPDATES_THIS_WORK"), ("update-to", "THIS_WORK_UPDATES")):
+            for raw in data.get(field) or []:
+                if not isinstance(raw, dict):
+                    continue
+                kind = str(raw.get("type") or raw.get("label") or "").strip().lower()
+                notice_doi = doi_of(raw.get("DOI") or raw.get("doi") or "")
+                if kind:
+                    notices.append({"direction": direction, "kind": kind,
+                                    "notice_doi": notice_doi or None, "provider": "crossref"})
         relation = data.get("relation") or {}
-        retracted = any("retract" in str(v).lower() for v in update)
-        retracted = retracted or any("retract" in str(k).lower() for k in relation)
-        updates = bool(update or relation.get("is-corrected-by"))
+        for key, values in relation.items():
+            direction = ("UPDATES_THIS_WORK" if key in {"is-retracted-by", "is-corrected-by", "is-updated-by"}
+                         else "THIS_WORK_UPDATES" if key in {"retracts", "corrects", "updates"} else None)
+            if direction is None:
+                continue
+            kind = "retraction" if "retract" in key else "correction" if "correct" in key else "update"
+            for raw in values if isinstance(values, list) else [values]:
+                notice_doi = doi_of(raw.get("id", "") if isinstance(raw, dict) else str(raw))
+                notices.append({"direction": direction, "kind": kind,
+                                "notice_doi": notice_doi or None, "provider": "crossref"})
+        incoming = [item for item in notices if item["direction"] == "UPDATES_THIS_WORK"]
         return {"doi": str(data.get("DOI") or ""), "title": title, "year": year, "authors": authors,
-                "retracted": bool(retracted), "updated": updates}
+                "retracted": any("retract" in item["kind"] for item in incoming),
+                "corrected": any("correct" in item["kind"] or "corrig" in item["kind"] for item in incoming),
+                "updated": bool(incoming), "notices": notices}
     primary = (data.get("authorships") or [])
     authors = [((a.get("author") or {}).get("display_name") or "") for a in primary]
     return {"doi": str(data.get("doi") or ""), "title": data.get("display_name") or data.get("title") or "",
             "year": str(data.get("publication_year") or ""), "authors": authors,
-            "retracted": data.get("is_retracted") is True, "updated": False}
+            "retracted": data.get("is_retracted") is True, "corrected": False, "updated": False, "notices": []}
 
 
 def match_metadata(doi, title, year, authors, responses):
     checks = []
     retract = False
+    corrected = False
     updated = False
+    notices = []
+    warnings = []
     for provider in ("crossref", "openalex"):
         response = responses.get(provider) or {"status": "UNAVAILABLE"}
         status = response.get("status") or "ERROR"
         item = {"provider": provider, "status": status, "http_status": response.get("http_status")}
+        if provider == "openalex" and status != "FOUND":
+            warnings.append("OPENALEX_UNAVAILABLE" if status != "NOT_FOUND" else "OPENALEX_NOT_FOUND")
         if status == "FOUND":
             info = metadata_fields(provider, response.get("data") or {})
             if doi_of(info["doi"]) != doi:
@@ -142,7 +169,9 @@ def match_metadata(doi, title, year, authors, responses):
                     if item["author_corresponds"] is False:
                         item["status"] = "AUTHOR_MISMATCH"
                 retract = retract or info["retracted"]
+                corrected = corrected or info["corrected"]
                 updated = updated or info["updated"]
+                notices.extend(info["notices"])
         checks.append(item)
     states = [x["status"] for x in checks]
     if any(s in {"DOI_MISMATCH", "TITLE_MISMATCH", "AUTHOR_MISMATCH", "YEAR_MISMATCH"} for s in states):
@@ -153,7 +182,8 @@ def match_metadata(doi, title, year, authors, responses):
         result = "NOT_FOUND"
     else:
         result = "UNVERIFIED"
-    return result, checks, retract, updated
+    notices = list({(n["direction"], n["kind"], n["notice_doi"], n["provider"]): n for n in notices}.values())
+    return result, checks, retract, corrected, updated, notices, sorted(set(warnings))
 
 
 def safe_local_path(root, raw):
@@ -239,22 +269,25 @@ def verify_row(row, root, lookup, fetcher=provider_query, offline=False, mailto=
     if not doi:
         metadata_status = "INVALID_DOI" if str(token).lower().startswith(("10.", "doi:", "https://doi.org")) else "NO_DOI"
         checks = []
-        retracted, updated = False, False
+        retracted, corrected, updated, notices, provider_warnings = False, False, False, [], []
     elif offline:
-        metadata_status, checks, retracted, updated = "UNVERIFIED", [], False, False
+        metadata_status, checks, retracted, corrected, updated, notices, provider_warnings = (
+            "UNVERIFIED", [], False, False, False, [], ["OFFLINE_NO_PROVIDER_CHECK"])
     else:
         replies = {provider: fetcher(provider, doi, mailto) for provider in ("crossref", "openalex")}
-        metadata_status, checks, retracted, updated = match_metadata(doi, title, year, authors, replies)
+        metadata_status, checks, retracted, corrected, updated, notices, provider_warnings = (
+            match_metadata(doi, title, year, authors, replies))
     locator_check = check_locator(root, filepath, locator)
     local_source, _ = safe_local_path(root, filepath)
     blockers = (metadata_status in {"INVALID_DOI", "MISMATCH", "NOT_FOUND"} or
-                locator_check["status"] in {"PASSAGE_NOT_FOUND", "OUTSIDE_WORKSPACE"})
+                locator_check["status"] in {"PASSAGE_NOT_FOUND", "PAGE_MISMATCH", "OUTSIDE_WORKSPACE"})
     review = (metadata_status != "VERIFIED" or locator_check["status"] != "MATCHED" or
-              retracted or updated)
+              retracted or corrected or updated or bool(provider_warnings))
     outcome = "FAIL" if blockers else "REVIEW_REQUIRED" if review else "METADATA_AND_LOCATOR_CHECKED"
     return {"Evidence_ID": evidence_id, "Record_ID": record_id, "doi": doi or None,
             "metadata_status": metadata_status, "metadata_checks": checks,
-            "retraction_alert": retracted, "update_alert": updated,
+            "retraction_alert": retracted, "correction_alert": corrected, "update_alert": updated,
+            "editorial_notices": notices, "provider_warnings": provider_warnings,
             "locator_status": locator_check["status"], "source_sha256": locator_check["source_sha256"],
             "source_path": local_source.relative_to(root).as_posix() if local_source else None,
             "matched_page": locator_check["matched_page"],
@@ -295,9 +328,10 @@ def verify_project(root, offline=False, mailto="", fetcher=provider_query):
         item = dict(original)
         item["Record_ID"] = record
         verified.append(verify_row(item, root, screening, cached_fetch, offline, mailto))
-    return {"schema_version": 1, "created_at_utc": datetime.now(timezone.utc).isoformat(),
+    snapshot = capture_input_manifest(root)
+    return {"schema_version": 2, "created_at_utc": datetime.now(timezone.utc).isoformat(),
             "input_file": f"{MGMT}/05_Evidence_Matrix.csv",
-            "input_sha256": digest(path), "offline": bool(offline),
+            "input_sha256": digest(path), "input_manifest": snapshot, "offline": bool(offline),
             "checks": verified,
             "summary": {"records": len(verified), "checked": sum(x["result"] == "METADATA_AND_LOCATOR_CHECKED" for x in verified),
                         "review_required": sum(x["result"] == "REVIEW_REQUIRED" for x in verified),
