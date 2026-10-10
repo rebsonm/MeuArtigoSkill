@@ -135,7 +135,7 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
         "tasks": {
             "items": (minimal_tasks if chosen == "MINIMAL" else task_items),
             "registered_total": nrows(tasks),
-            "items_partial": chosen == "MINIMAL" and len(task_items) > 3,
+            "items_partial": chosen == "MINIMAL" and len(minimal_tasks) < len(task_items),
         },
         "gates": {
             "items": (gate_items[:3] if chosen == "MINIMAL" else gate_items),
