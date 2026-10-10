@@ -1,0 +1,143 @@
+# Optional bibliographic API integrations — software pilot and continuation plan
+
+Date: 2026-10-10. This document records actual engineering status, not
+scientific empirical validation or live user entitlement to any provider.
+
+## Non-negotiable product decision
+
+**No bibliographic API is required to use Meu Artigo.** Existing manual
+searching, manual CSV/RIS/BibTeX imports, the Drive-first storage policy,
+methods, AI provenance, human scientific gates, original research question
+and C.A.D.A. four-column native view remain as before.
+
+The Skill may **once, briefly and non-blockingly** suggest optional account
+connection during the literature-search stage. Users may ignore, decline,
+disconnect or mix manual records with licensed and openly accessed sources.
+Connection credentials belong to secure, authorized execution infrastructure,
+not to the conversation or scientific project files.
+
+## Verified work in this pull request
+
+M0 — DEFAULT OFF: A missing connectors configuration yields disabled. No
+existing initializer, routes or research gates were modified. Regression tests
+use synthetic temporary workspaces and assert there is no HTTP call by default.
+
+M1 — GUIDANCE: User-language guidance exists and explains optionality,
+individual access, privacy, vendor links and how to stay in manual mode.
+Automatic one-time per-project suggestion is documented as a Skill interaction
+contract, not implemented as a stateful UI application. A built-in per-project
+"already offered" durable switch is NOT verified yet.
+
+M2 — OPEN PROVIDERS: OpenAlex / Crossref metadata-only adaptors support bounded
+queries and pagination with sanitised failure codes. The opt-in CLI can attempt
+real HTTP if run in a network-enabled authorized environment. This chat
+environment could not reach GitHub via container network; no live provider
+search or coverage claims are made. Tests use deterministic mock transport.
+API-key scope, plans and usage are determined by vendors, not the Skill.
+
+M3 — HYBRID: The CLI uses the EXISTING conservative dedupe_records.py on
+multiple manual and API exports. Exact DOI duplicates are audited, conflicting
+DOIs preserved and near matches flagged. Real retrieval may stage CSV + SHA256
+receipts; canonical local registry append is permitted ONLY on an explicitly
+authorized WORK_FALLBACK project. Drive-canonical synchronization needs a
+separate, real connected Drive write; it is NOT done by these Python scripts.
+No automated RIS/BibTeX parser is added beyond existing project capabilities.
+
+M4 — SCIENTIFIC ENRICHMENT: Official API documentation evaluated for
+OpenCitations, Retraction Watch/Crossref, Semantic Scholar, OpenAIRE, CORE,
+DOAJ, SciELO, BDTD, Europe PMC, Unpaywall. Most remain design candidates and
+have NOT been implemented or tested live. Unpaywall search was RETIRED on
+2026-09-18; use OpenAlex discovery rather than a nonexistent endpoint.
+
+M5 — SCOPUS / WOS: Optional per-provider onboarding guidance; no impersonation
+of CAFe, no API-key collection in chat. These licensed adapters are intentionally
+DISABLED until rights, credential custody, terms governing AI use and a secure
+executor are verified. No authenticated test performed.
+
+M6 — ZOTERO / FULL TEXT: Proposed only. No private Zotero API, PDF ingestion,
+full text retrieval, text mining or scientific claims falsely marked complete.
+Metadata import never implies full-text reading.
+
+M7 — RELEASE READINESS: Draft PR, offline software regression tests and CI
+release audit to be checked on the final head commit. This branch must not
+merge automatically or modify PR #22.
+
+## Provider technical reference
+
+| Vendor | API | Authentication | Allowed in this pilot |
+| --- | --- | --- | --- |
+| OpenAlex | https://api.openalex.org/works | Optional secure OPENALEX_API_KEY; vendor-specific current limits | Metadata only |
+| Crossref | https://api.crossref.org/works | Public/polite via contact email | Metadata only |
+| Scopus | https://dev.elsevier.com/ | Individual API key plus real institutional entitlement | No live integration |
+| WoS Starter | https://developer.clarivate.com/apis/wos-starter | X-ApiKey and plan authorization | No live integration |
+| WoS Expanded | https://developer.clarivate.com/apis/wos | Licensed API | No live integration |
+| Zotero | https://www.zotero.org/support/dev/web_api/v3/start | User library credential required for private collections | No live integration |
+| Semantic Scholar | https://api.semanticscholar.org/api-docs/ | Public and scoped key models | Design only |
+
+Do not fix current quotas in code without a source-of-truth refresh.
+OpenAlex and Crossref search are NOT semantic substitutes for Scopus/WoS:
+preserve per-base literal queries, date, filters, result limitations and
+the researcher's methodological decision about scope.
+
+## How to run the local Python pilot
+
+Run only within an authorized environment that already has the complete
+existing Meu Artigo project:
+
+~~~sh
+python scripts/bibliographic_workflow.py guide --lang pt
+python scripts/bibliographic_workflow.py status --project /authorized/project
+
+# No network by default; returns NOT_EXECUTED.
+python scripts/bibliographic_workflow.py search --provider openalex \
+  --query "governance accountability" --limit 50 --out-dir /private/staging
+
+# Explicit opt-in, subject to runtime network and provider limits.
+python scripts/bibliographic_workflow.py search --provider crossref \
+  --query "knowledge governance" --limit 50 --out-dir /private/staging \
+  --allow-network
+
+# Hybrid: reuse the EXISTING deduplication logic and review its audit.
+python scripts/bibliographic_workflow.py dedupe \
+  /private/scopus_manually_exported.csv /private/staging/openalex_metadata.csv \
+  --out-dir /private/review
+~~~
+
+For real local authorized WORK_FALLBACK projects, the explicit
+--commit-local switch additionally appends to original canonical project CSVs.
+Never use it on a Drive-canonical project: upload/sync and its actual receipt
+must be handled by the connected Google Drive integration.
+
+The staging receipt records what the LOCAL adapter reported; it is not a
+signed vendor response. Exporting a CSV is not scientific screening, DOI
+verification, rights confirmation, fulltext reading, evidence evaluation,
+human validation, manuscript submission or journal compliance.
+
+## Acceptance criteria before any production release
+
+1. No API connected -> no API onboarding gate, no HTTP call, normal legacy mode.
+2. One provider fails -> existing manual research workflow continues.
+3. Search results actually received -> accurate provider-specific metadata
+   CSV, reported/received counts, timestamp, SHA256 and partial status.
+4. Credentials not in logs, exports, stack traces, public bundle or Git.
+5. Existing Search_ID, Record_ID, TRACE_ID; no fabricated GATE_ID approval.
+6. Hybrid results -> original inputs preserved, original dedup audit reused.
+7. Google Drive writes -> independently confirmed; otherwise pending.
+8. Scopus/WoS and fulltexts -> require effective rights and secure execution.
+9. Native C.A.D.A. remains four fields in order, no extra displayed columns.
+10. Complete test suite and release auditors pass on final branch.
+
+## Deferred technical work requiring separate authorization
+
+- Build a secure, user-scoped credential connector with proper consent,
+  refresh/revoke, encryption and an auditable isolated executor; never
+  prototype one using chat or local project files as a secrets vault.
+- Independently confirm Elsevier/Clarivate licences and AI-processing terms.
+- Add live service integration/e2e tests only with disposable keys and a
+  provider-authorized environment, separate from public CI.
+- Add retriever modules for OpenCitations, citation corrections, OA versions,
+  institution-owned Zotero libraries, and fulltext with rights evidence.
+- Add resumable pagination/checkpoint storage and robust transactional
+  project-register writes for genuinely large, long-running multi-page runs.
+- Verify that optional onboarding is offered only once per project with a
+  real authorized persistent state write (without creating a science gate).
