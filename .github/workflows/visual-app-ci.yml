@@ -29,3 +29,6 @@ jobs:
       - name: Compile MCP server and bundle UI
         working-directory: visual-app
         run: npm run build
+      - name: Exercise MCP tool and UI resource over stdio
+        working-directory: visual-app
+        run: npm run test:smoke

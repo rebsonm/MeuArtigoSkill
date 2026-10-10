@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc --noEmit && tsc -p tsconfig.server.json && vite build",
     "start": "node dist/main.js",
-    "dev": "concurrently --raw \"vite build --watch\" \"tsx watch main.ts\""
+    "dev": "concurrently --raw \"vite build --watch\" \"tsx watch main.ts\"",
+    "test:smoke": "node scripts/smoke.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/ext-apps": "^2.0.0",

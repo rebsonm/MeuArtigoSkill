@@ -16,7 +16,8 @@ or independently evaluated UX. See the source in visual-app/.
 - MINIMAL and FULL control only what is presented; they do not alter the
   scientific checks. Small screens and light/dark host preferences are supported.
 - Tests verify missing data, task/approval separation, deadlines, storage
-  uncertainty and non-mutation.
+  uncertainty and non-mutation. A separate MCP smoke test exercises actual
+  tool discovery, tool execution and UI resource reading over stdio.
 
 This integration does not install or authenticate Drive connectors, deploy a
 hosted app, inspect ChatGPT entitlements, prove independent human approval, or
