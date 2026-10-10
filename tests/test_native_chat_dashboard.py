@@ -116,7 +116,7 @@ class NativeChatDashboardTests(unittest.TestCase):
                       native.fallback(data))
 
     def test_missing_canonical_task_does_not_substitute_next_action(self):
-        data = native.panel(self.root)
+        data = native.panel(self.root, mode="FULL")
         self.assertEqual(data["tasks"]["items"][0]["id"], "CADA-0001")
         self.assertIsNone(data["tasks"]["items"][0]["task"])
         self.assertIsNone(data["tasks"]["items"][0]["execution_owner"])
