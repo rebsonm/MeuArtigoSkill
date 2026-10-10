@@ -42,6 +42,11 @@ GUIDES = {
         "rest-api/ . Public metadata endpoint normally requires no key. "
         "For polite access set MEU_ARTIGO_CONTACT_EMAIL in your own runtime."
     ),
+    "semantic_scholar": (
+        "Semantic Scholar: https://api.semanticscholar.org/api-docs/ . "
+        "Search public metadata within the provider's rate limits. "
+        "When authorized, store SEMANTIC_SCHOLAR_API_KEY only in your protected runtime."
+    ),
     "scopus": (
         "Scopus: https://dev.elsevier.com/ . Obtain your personal developer "
         "API key and confirm actual institutional API entitlement and permitted "
@@ -284,7 +289,9 @@ def run(argv: list[str] | None = None) -> int:
         else:
             config = {}
         # A CLI search is an explicit opt-in, never a setup prerequisite.
-        key = os.environ.get("OPENALEX_API_KEY", "") if args.provider == "openalex" else ""
+        key = (os.environ.get("OPENALEX_API_KEY", "") if args.provider == "openalex"
+               else os.environ.get("SEMANTIC_SCHOLAR_API_KEY", "")
+               if args.provider == "semantic_scholar" else "")
         email = os.environ.get("MEU_ARTIGO_CONTACT_EMAIL", "")
         result = search(args.provider, args.query, limit=args.limit,
                         execute=args.allow_network, email=email, api_key=key)
