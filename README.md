@@ -27,8 +27,7 @@ does not require a custom MCP server, hosting or a change of product type.
 
 The separately developed MCP Apps UI in [draft PR #22](https://github.com/rebsonm/MeuArtigoSkill/pull/22)
 is an optional, more customized companion and remains **unmerged**. See the
-[Skill-native visual pilot guide](docs/NATIVE-CHAT-DASHBOARD.md) and
-[read-only projection](scripts/native_chat_dashboard.py).
+[Skill-native visual pilot guide](docs/NATIVE-CHAT-DASHBOARD.md).
 
 ## What you can do
 
