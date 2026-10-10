@@ -93,11 +93,15 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
         "approval_documented": documented_approval(row),
         "independently_scientifically_validated": False,
     } for row in gates]
+    # The user-requested C.A.D.A. visual table contains exactly four fields.
+    # Task (not Next_action), Owner and Deadline are canonical matrix headers.
+    # The source status remains internal for counting active tasks and never
+    # becomes a fifth visible column. Missing values are not invented.
     task_items = [] if tasks is None else [{
-        "id": text(row.get("CADA_ID"), 40),
-        "status": norm(row.get("Status")),
-        "deadline_recorded": text(row.get("Deadline"), 40) or None,
-        "completion_evidence_recorded": bool(text(row.get("Completion_evidence"))),
+        "id": text(row.get("CADA_ID"), 40) or None,
+        "task": text(row.get("Task"), 180) or None,
+        "execution_owner": text(row.get("Owner"), 100) or None,
+        "deadline": text(row.get("Deadline"), 40) or None,
     } for row in tasks]
     counts = {
         "registered_tasks": nrows(tasks),
@@ -155,6 +159,27 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
     }
 
 
+def task_table(data: dict) -> str:
+    """Exactly four visual columns, even in plain-text fallback.
+
+    The caller is responsible for supplying an authorized project; sensitive
+    project descriptions must not be sent to a third-party public display.
+    """
+    tasks = data["tasks"]
+    cols = ("ID Tarefa", "Tarefa", "Responsável execução", "Prazo")
+    if tasks["registered_total"] is None:
+        return "C.A.D.A.: canonical task register unavailable"
+    if not tasks["items"]:
+        return "C.A.D.A.: no tasks in the selected view"
+    lines = [" | ".join(cols), " | ".join("---" for _ in cols)]
+    for item in tasks["items"]:
+        values = [item["id"], item["task"], item["execution_owner"], item["deadline"]]
+        # Keep record values literal but escape table delimiters/newlines.
+        cells = [str(value or "Not recorded").replace("|", r"\\|").replace("\\n", " ") for value in values]
+        lines.append(" | ".join(cells))
+    return "\\n".join(lines)
+
+
 def fallback(data: dict) -> str:
     """Plain-text fallback for hosts without native visual presentation."""
     overview = data["overview"]
@@ -165,6 +190,7 @@ def fallback(data: dict) -> str:
         "Presentation mode: " + data["mode"],
         "Tasks recorded / active: " + str(overview["registered_tasks"]) +
         " / " + str(overview["active_tasks"]),
+        task_table(data),
         "Human approvals documented: " + str(overview["documented_gate_approvals"]),
         "Next task / gate: " + str(overview["next_task_id"]) + " / " +
         str(overview["next_gate_id"]),
