@@ -4,7 +4,13 @@ on:
     paths:
       - "visual-app/**"
       - "scripts/visual_dashboard.py"
+      - "scripts/verify_sources.py"
+      - "scripts/source_report_integrity.py"
+      - "scripts/governance_events.py"
+      - "scripts/validate_project.py"
       - "tests/test_visual_dashboard.py"
+      - "tests/test_source_integrity.py"
+      - "tests/test_source_verification.py"
       - "docs/MEU-ARTIGO-VISUAL.md"
       - ".github/workflows/visual-app-ci.yml"
 permissions:
@@ -20,6 +26,8 @@ jobs:
         with:
           python-version: "3.12"
       - run: python -m unittest discover -s tests -p 'test_visual_dashboard.py' -v
+      - run: python -m unittest discover -s tests -p 'test_source_integrity.py' -v
+      - run: python -m unittest discover -s tests -p 'test_source_verification.py' -v
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
