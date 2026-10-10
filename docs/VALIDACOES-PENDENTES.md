@@ -1,7 +1,8 @@
 # Pending independent scientific and operational evaluations
 
-Reference published version: `v0.9.0-beta.1`; an **unpublished**
-`v0.9.0-beta.2` source candidate is in `main`. Update this register only after
+Reference experimental software version: `v0.9.0-beta.2`.
+Publishing software does not complete the scientific or platform validations
+below. Update this register only after
 a genuine evaluation has taken place and has inspectable evidence. A change
 to repository code, an automated regression test or a fabricated participant
 response is **not** an empirical evaluation.

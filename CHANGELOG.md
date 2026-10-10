@@ -4,17 +4,14 @@
 <a id="unreleased"></a>
 ## Unreleased
 
-Documentation consistency review after PR #24: corrected main-versus-release
-status, historical installation and language-migration statements, release
-metadata handling, malformed guidance and unverified branch-protection claims.
-A manual-publication preflight now blocks unreleased candidate notes or a
-fabricated citation publication date. No scientific functionality changed.
+No additional changes have been recorded since `0.9.0-beta.2`.
 
 ## 0.9.0-beta.2 — 2026-10-10
 
-**Unreleased release candidate.** Engineering stabilization was merged by
-PR #24 into `main` on 2026-10-10; no public release tag, live ChatGPT
-acceptance or independent scientific validation is implied.
+**Experimental public software beta.** Engineering stabilization and
+optional bibliographic adapters were integrated through PR #24. Documentation
+and release safeguards were improved in PR #25. Neither a published package
+nor successful software checks establish independent scientific validation.
 
 - Escape formula payloads in all deduplication CSV outputs.
 - Introduce recoverable journaled local three-register writes with interruption
@@ -29,6 +26,9 @@ acceptance or independent scientific validation is implied.
   remain independent acceptance gates.
 - Track real software CI, unresolved integration conditions and
   researcher-approved human scientific decisions without false claims of completion.
+- Update installation/version guidance and add a release metadata preflight;
+  correct obsolete source-candidate statements without claiming live
+  platform, research-method or vendor API validation.
 
 
 <a id="090-beta1-2026-10-09"></a>

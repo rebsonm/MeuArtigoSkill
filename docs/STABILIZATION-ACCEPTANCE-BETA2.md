@@ -1,20 +1,22 @@
 # Stabilization and pre-review acceptance — v0.9.0-beta.2 candidate
 
-**Status: SOFTWARE CANDIDATE ONLY — NO PUBLIC RELEASE OR INDEPENDENT SCIENTIFIC VALIDATION.**
+**Historical pre-publication stabilization checklist.** Software publication
+status is recorded separately on the [v0.9.0-beta.2 release page](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.2).
+**Scientific and live-platform validation remain pending.**
 
-This checklist is for preparing voluntary expert feedback. The current tagged
-public beta is v0.9.0-beta.1. [PR #24](https://github.com/rebsonm/MeuArtigoSkill/pull/24)
-was merged into `main` on 2026-10-10; installation tests, researcher
-acceptance and a separate publication decision remain pending.
+This checklist captures engineering evidence established before publication.
+[PR #24](https://github.com/rebsonm/MeuArtigoSkill/pull/24) was merged into
+`main` on 2026-10-10. Releasing an experimental beta does not close the
+remaining researcher or installed-platform acceptance tests.
 
 ## Exact build identity and scope
 
 - Source: `main`, merged from `feat/optional-bibliographic-connectors`
   in PR #24. Historical branch references are for reproducibility only.
-- Version: `0.9.0-beta.2`, an **unpublished candidate**.
+- Version under evaluation: `0.9.0-beta.2`.
 - CI produces a deterministic candidate ZIP with checksum and manifest.
-  Its contents are the checked commit, not the historical v0.9.0-beta.1
-  downloadable release.
+  For external installation, choose the actual matching tagged release;
+  v0.9.0-beta.1 is a different, historical ZIP.
 - API connectors are optional and do **not** replace manual research.
   No installed ChatGPT plugin, Scopus/WoS entitlement, authenticated
   Zotero connection, or live Drive project sync is implied.
@@ -48,10 +50,11 @@ acceptance and a separate publication decision remain pending.
 ## Gate 3 — version and packaging
 
 - [x] Candidate `VERSION`, README, CHANGELOG, CITATION.cff and release
-      notes align to 0.9.0-beta.2; public documentation separately identifies
-      v0.9.0-beta.1 as the currently published release.
+      notes align to 0.9.0-beta.2; the earlier beta.1 distribution remains
+      immutable.
 - [x] GitHub Actions checks the candidate ZIP and its SHA-256 manifest.
-- [ ] GitHub tag and public release — **NOT AUTHORIZED**.
+- [ ] GitHub tag and public release — **not yet authorized when this
+      checklist was written**. Check the release page for the actual status.
 - [ ] Source editorial/language human proofreading on exact candidate —
       **NOT INDEPENDENTLY PERFORMED**.
 
@@ -121,6 +124,8 @@ Engineering CI: verify on the FINAL commit, not an earlier run.
 Real academic evaluation: pending.
 In-product ChatGPT install and resume: pending.
 Technical/security review for a multi-user MCP deployment: pending.
-Merge: completed in PR #24. Public release authorization: pending.
+Merge: completed in PR #24. Release approval: user requested release on
+2026-10-10. Publication outcome must be confirmed by a GitHub Release
+record, not inferred from this historical checklist.
 
 Do not mark the release ready until these statuses are backed by real receipts.

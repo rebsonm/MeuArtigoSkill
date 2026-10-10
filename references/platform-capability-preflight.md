@@ -50,10 +50,9 @@ are preflight communication, not new spreadsheets or required IDs.
 The pages list external products subject to change. Don't
 declare here import, execution, integration with Drive, writing,
 resumption of observed My Article projects or performance
-on these platforms. The most recent public version identified in the
-repository is `v0.9.0-beta.1`; `main` currently contains the unpublished
-`v0.9.0-beta.2` source candidate. Only an explicit release action makes
-that candidate a published distribution.
+on these platforms. The current release documentation references `v0.9.0-beta.2` as an
+experimental beta. Check the actual asset and tag on GitHub Releases;
+publication alone cannot establish ChatGPT platform compatibility.
 
 <a id="falhas-normais-e-resposta-segura"></a>
 ## Normal faults and safe responses

@@ -1,14 +1,14 @@
 # Experimental public beta installation — Meu Artigo
 
-**Prepared release:** `0.9.0-beta.1`.
+**Prepared release:** `0.9.0-beta.2`.
 **Status:** public experimental beta for voluntary use,
 not a scientifically validated research method.
 
 ## Obtaining the package
 
 Open the [GitHub Releases page](https://github.com/rebsonm/MeuArtigoSkill/releases),
-find `v0.9.0-beta.1` and choose the exact installable
-`MeuArtigoSkill-v0.9.0-beta.1.zip`.
+find `v0.9.0-beta.2` and choose the exact installable
+`MeuArtigoSkill-v0.9.0-beta.2.zip`.
 Use that version's `SHA256SUMS.txt` to check integrity.
 The alternative **Code → Download ZIP** is a repository source snapshot
 rather than the specially prepared, versioned Skill installer. The source
@@ -56,8 +56,8 @@ can guide this process without new worksheets or IDs.
 
 ## English source, automatically localized conversation
 
-The published `v0.9.0-beta.1` contains English-source migration rules,
-which also apply to the source candidate in `main`. The AI assistant
+The English-source migration introduced in `v0.9.0-beta.1` also applies
+to `v0.9.0-beta.2`. The AI assistant
 nevertheless responds in the language of the researcher's
 substantive conversation messages unless they explicitly
 request otherwise. No translation pack is installed.
@@ -65,10 +65,10 @@ The scientific manuscript language follows an independent
 journal or researcher decision:
 [language policy](../references/language-policy.md).
 
-The currently published `v0.9.0-beta.1` already included the
-English-source migration. The `v0.9.0-beta.2` changes integrated into
-`main` are **not** a published release; do not present their API adapters
-or stabilization results as features of the `v0.9.0-beta.1` ZIP.
+Version `v0.9.0-beta.2` adds optional bibliographic metadata adapters
+and CSV stabilization; the earlier `v0.9.0-beta.1` ZIP does not contain
+these additions. All API integrations remain opt-in and mock-tested,
+not certified as live ChatGPT connections.
 
 ## Compatibility still requiring evaluation
 

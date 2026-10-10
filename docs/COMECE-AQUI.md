@@ -31,9 +31,9 @@ authorization process and may require a different account.
 
 ## 3. Choose the installable release ZIP
 
-Open the [published beta release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.1),
+Open the [published beta release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.2),
 then download the specifically prepared
-`MeuArtigoSkill-v0.9.0-beta.1.zip` attachment. Verify its SHA-256
+`MeuArtigoSkill-v0.9.0-beta.2.zip` attachment. Verify its SHA-256
 digest using `SHA256SUMS.txt` if appropriate.
 
 **Do not confuse** that installable ZIP with GitHub's automatically

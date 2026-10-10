@@ -31,9 +31,9 @@ scientifically validated.
    capabilities and limitations; do not invent participants,
    results, corpus sizes, validation or scientific benefit.
 3. Once ready to release, update the **single canonical `VERSION`**
-   identifier. For example, the successor candidate after
-   the source candidate after `0.9.0-beta.1` is `0.9.0-beta.2`, but
-   this identifier must not be mistaken for a published GitHub release.
+   identifier. A code-only candidate may have its own version identifier,
+   but do not call it a published release until the manual publication
+   workflow creates and verifies the corresponding GitHub assets.
 4. Synchronize README, citation version/date and historical
    changelog metadata:
 
@@ -84,10 +84,9 @@ scientifically validated.
    `SHA256SUMS.txt` attachment.
 
 **Merging source code does not automatically publish it.**
-`v0.9.0-beta.1` remains the latest public release until the
-v0.9.0-beta.2 candidate finishes independent acceptance and the new
-publication process genuinely completes. Prior releases and license
-rights stay intact.
+The last published version is determined by an actual GitHub Release, not
+by `VERSION` or a merge commit. Current release documentation targets
+`v0.9.0-beta.2`; historical downloads and license rights remain intact.
 
 ## Platform and language compatibility
 
