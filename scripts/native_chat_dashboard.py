@@ -175,9 +175,9 @@ def task_table(data: dict) -> str:
     for item in tasks["items"]:
         values = [item["id"], item["task"], item["execution_owner"], item["deadline"]]
         # Keep record values literal but escape table delimiters/newlines.
-        cells = [str(value or "Not recorded").replace("|", r"\\|").replace("\\n", " ") for value in values]
+        cells = [str(value or "Not recorded").replace("|", r"\|").replace("\n", " ") for value in values]
         lines.append(" | ".join(cells))
-    return "\\n".join(lines)
+    return "\n".join(lines)
 
 
 def fallback(data: dict) -> str:
