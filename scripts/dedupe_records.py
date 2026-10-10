@@ -80,6 +80,25 @@ def read_tabular(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(f, delimiter=delimiter))
 
 
+def safe_spreadsheet_cell(value: str) -> str:
+    """Prevent imported metadata from becoming an Excel/Calc formula.
+
+    Use only when writing user-facing CSV; normalization and comparisons retain
+    the original content. Keep original inputs as the audit source of truth.
+    """
+    text = str(value or "")
+    if text.lstrip()[:1] in ("=", "+", "-", "@", "\t", "\r", "\n"):
+        return "'" + text
+    return text
+
+
+def write_safe_rows(writer: csv.DictWriter, records: list[dict[str, str]]) -> None:
+    writer.writerows([
+        {field: safe_spreadsheet_cell(row.get(field, "")) for field in writer.fieldnames}
+        for row in records
+    ])
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("inputs", nargs="+", help="Bibliographic CSV/TSV/XLSX exports")
@@ -172,13 +191,13 @@ def main() -> int:
     out = Path(args.out_dir).resolve(); out.mkdir(parents=True, exist_ok=True)
     fields = sorted(all_fields)
     with (out / "consolidated_exact_dedup.csv").open("w", newline="", encoding="utf-8-sig") as f:
-        w = csv.DictWriter(f, fieldnames=fields); w.writeheader(); w.writerows(canonical)
+        w = csv.DictWriter(f, fieldnames=fields); w.writeheader(); write_safe_rows(w, canonical)
     with (out / "exact_duplicate_audit.csv").open("w", newline="", encoding="utf-8-sig") as f:
         fields2 = ["duplicate_source_file","duplicate_source_row","canonical_source_file","canonical_source_row","reason","doi","title"]
-        w=csv.DictWriter(f, fieldnames=fields2); w.writeheader(); w.writerows(exact_audit)
+        w=csv.DictWriter(f, fieldnames=fields2); w.writeheader(); write_safe_rows(w, exact_audit)
     with (out / "near_duplicate_review.csv").open("w", newline="", encoding="utf-8-sig") as f:
         fields3 = ["source_file_a","source_row_a","title_a","doi_a","source_file_b","source_row_b","title_b","doi_b","title_similarity","author_overlap_signal","same_year_signal","decision","notes"]
-        w=csv.DictWriter(f, fieldnames=fields3); w.writeheader(); w.writerows(fuzzy)
+        w=csv.DictWriter(f, fieldnames=fields3); w.writeheader(); write_safe_rows(w, fuzzy)
 
     print(f"input_records={len(records)}")
     print(f"canonical_after_exact_dedup={len(canonical)}")
