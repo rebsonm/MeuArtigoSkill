@@ -17,7 +17,7 @@ web application.
 | View | Presented | What is *not* implied |
 | --- | --- | --- |
 | Overview | Article stage, next task, pending researcher decision | Quality or total scientific-completion percentage |
-| C.A.D.A. | Recorded management task status and due date | Completed scientific validation |
+| C.A.D.A. | Four-column table: task ID, task, execution owner, due date | Completed scientific validation |
 | Human gates | Registered decisions and review evidence | Authenticated human identity or science certification |
 | Evidence | Actual evidence counts, source checks only if audited | Real literature search, text access or semantic validation |
 | History / sync | Logs and observed transfer evidence | Live Google Drive synchronization without verification |
@@ -25,6 +25,21 @@ web application.
 Modes **MINIMAL** and **FULL** alter only presentation detail.
 Navigating tabs, filtering and toggling presentation in chat do not
 write to scientific registers or to PROJECT_CONFIG.json.
+
+## C.A.D.A. — compact table
+
+For a user interacting in Brazilian Portuguese, the C.A.D.A. view is
+limited to these four columns, in this order:
+
+| ID Tarefa | Tarefa | Responsável execução | Prazo |
+| --- | --- | --- | --- |
+
+Each row is read from `CADA_ID`, `Task`, `Owner` and `Deadline`
+in the authorized canonical C.A.D.A. register. An absent field is
+presented as "Não informado", not fabricated. Do not add status,
+priority, claim-evidence information or approval buttons to this
+table. MINIMAL can show fewer rows than FULL; neither mode changes
+the canonical register.
 
 ## Pilot workflow
 
