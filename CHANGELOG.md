@@ -4,12 +4,17 @@
 <a id="unreleased"></a>
 ## Unreleased
 
-No additional changes have been recorded since the unreleased `0.9.0-beta.2` candidate.
+Documentation consistency review after PR #24: corrected main-versus-release
+status, historical installation and language-migration statements, release
+metadata handling, malformed guidance and unverified branch-protection claims.
+A manual-publication preflight now blocks unreleased candidate notes or a
+fabricated citation publication date. No scientific functionality changed.
 
 ## 0.9.0-beta.2 — 2026-10-10
 
-**Unreleased release candidate.** Engineering stabilization only; no merge,
-tag, live ChatGPT acceptance or independent scientific validation.
+**Unreleased release candidate.** Engineering stabilization was merged by
+PR #24 into `main` on 2026-10-10; no public release tag, live ChatGPT
+acceptance or independent scientific validation is implied.
 
 - Escape formula payloads in all deduplication CSV outputs.
 - Introduce recoverable journaled local three-register writes with interruption

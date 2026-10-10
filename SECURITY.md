@@ -46,8 +46,10 @@ and [secure export](docs/EXPORTACAO-SEGURA.md).
 
 ## Version coverage
 
-This policy covers the published `0.8.x-beta` line and
-subsequent releases unless explicitly superseded.
+This policy covers historical `0.8.x-beta` and published `0.9.x-beta`
+releases as well as subsequent source candidates, unless superseded.
+Current published package: `v0.9.0-beta.1`; the `v0.9.0-beta.2` code on
+`main` is not yet a tagged distribution.
 No support obligation or backport commitment is implied.
 Check [CHANGELOG.md](CHANGELOG.md).
 

@@ -1,6 +1,7 @@
 # Pending independent scientific and operational evaluations
 
-Reference public version: `v0.9.0-beta.1`. Update this register only after
+Reference published version: `v0.9.0-beta.1`; an **unpublished**
+`v0.9.0-beta.2` source candidate is in `main`. Update this register only after
 a genuine evaluation has taken place and has inspectable evidence. A change
 to repository code, an automated regression test or a fabricated participant
 response is **not** an empirical evaluation.
@@ -26,7 +27,8 @@ These evaluations are **not prerequisites** for releasing an
 completed before claiming broad scientific validation, superior
 productivity or reliable cross-platform multilingual performance.
 
-Main-branch protection is maintained through the active GitHub
-ruleset. Editorial anonymization remains subject to inspection of
-the exact shared files and the journal's applicable legal and
-ethical conditions.
+Branch-protection and repository ruleset settings require independent
+maintainer verification in GitHub Settings; automated source audits are
+not proof that protection is enabled. Editorial anonymization remains
+subject to inspection of the exact shared files and the journal's
+applicable legal and ethical conditions.

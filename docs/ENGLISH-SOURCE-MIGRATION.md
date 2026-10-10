@@ -1,4 +1,4 @@
-# English-source migration — release gate and scope
+# English-source migration — historical record and continuing release gate
 
 ## Objective
 
@@ -63,10 +63,12 @@ Previous published beta packages are retained and not rewritten.
 
 ## Release preparation and public claims
 
-The existing public release is `v0.8.0-beta.8`.
-A proposed subsequent version is `v0.9.0-beta.1` **only after** all
-English-source migration and technical checks pass. Until then, any
-draft notes or working-branch changes are not a released artifact.
+This was the preparation plan for the English-source migration that shipped
+in the published `v0.9.0-beta.1` on 2026-10-09. It is retained to document
+historical decisions and the ongoing English-source release gate; it is not
+an instruction to republish `v0.9.0-beta.1`. On 2026-10-10, `main` includes
+an **unpublished** `v0.9.0-beta.2` source candidate. Passing source-language
+scans does not replace independent editorial or installed-platform tests.
 
 When the migration is actually complete:
 

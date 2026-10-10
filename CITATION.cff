@@ -6,7 +6,6 @@ authors:
   - family-names: "Mendes"
     given-names: "Rebson de Morais"
 version: "0.9.0-beta.2"
-date-released: "2026-10-10"
 repository-code: "https://github.com/rebsonm/MeuArtigoSkill"
 url: "https://github.com/rebsonm/MeuArtigoSkill"
 license: "Apache-2.0"
@@ -19,5 +18,6 @@ abstract: >-
   AI-use transparency, high-rigor anonymization controls for generated
   external artifacts, and interoperable provenance export.
 
-# The v0.9.0-beta.2 metadata is a release candidate in an unmerged PR.
-# The current tagged public release remains v0.9.0-beta.1.
+# This v0.9.0-beta.2 source candidate was merged into main via PR #24.
+# It is NOT yet a tagged/published release. The current tagged public
+# release remains v0.9.0-beta.1; verify release date on publication.

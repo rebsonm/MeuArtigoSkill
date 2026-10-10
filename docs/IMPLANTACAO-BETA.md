@@ -10,9 +10,9 @@ Open the [GitHub Releases page](https://github.com/rebsonm/MeuArtigoSkill/releas
 find `v0.9.0-beta.1` and choose the exact installable
 `MeuArtigoSkill-v0.9.0-beta.1.zip`.
 Use that version's `SHA256SUMS.txt` to check integrity.
-The alternative **Code → Download ZIP** is a snapshot
-of the current development branch, which may not match
-a published, versioned Skill distribution.
+The alternative **Code → Download ZIP** is a repository source snapshot
+rather than the specially prepared, versioned Skill installer. The source
+on `main` may be newer than the last published distribution.
 
 The Skill ZIP contains `SKILL.md` in its root, plus
 `agents/`, `assets/`, `references/`, `scripts/`,
@@ -56,8 +56,8 @@ can guide this process without new worksheets or IDs.
 
 ## English source, automatically localized conversation
 
-The source repository and installed developer instructions
-are being standardized in English. The AI assistant
+The published `v0.9.0-beta.1` contains English-source migration rules,
+which also apply to the source candidate in `main`. The AI assistant
 nevertheless responds in the language of the researcher's
 substantive conversation messages unless they explicitly
 request otherwise. No translation pack is installed.
@@ -65,11 +65,10 @@ The scientific manuscript language follows an independent
 journal or researcher decision:
 [language policy](../references/language-policy.md).
 
-The currently published `v0.9.0-beta.1` **predates**
-this source migration. A later English-first beta can
-only be published after remaining source documents are
-translated and reviewed. Do not treat development-branch
-features as already released.
+The currently published `v0.9.0-beta.1` already included the
+English-source migration. The `v0.9.0-beta.2` changes integrated into
+`main` are **not** a published release; do not present their API adapters
+or stabilization results as features of the `v0.9.0-beta.1` ZIP.
 
 ## Compatibility still requiring evaluation
 

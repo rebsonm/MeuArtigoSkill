@@ -9,10 +9,10 @@ as a scientific research method.
 <a id="tabela-de-papéis-não-de-nomes-de-ferramentas"></a>
 ## Table of roles, not tool names
 
-| Paper | Observable Question | No verified access |
+| Capability | Observable question | If not verified |
 | --- | --- | --- |
 | Skill Loading | Are the `SKILL.md` resources and required reference accessible in the current environment? | Register format unavailable, do not promise execution |
-| Canonical persistence | Is Google Drive authenticated, with access to the project space and proven writing? | View connection flow; unsuccessfully require explicit consent to `WORK_FALLBACK` before substantive search |
+| Canonical persistence | Is Google Drive authenticated, with access to the project space and proven writing? | Explain the connection flow; if unavailable, obtain explicit affirmative permission for `WORK_FALLBACK` before substantive work |
 | Academic discovery | Is there a tool available and what query was actually executed? | Propose consultation with status PLANNED/UNVERIFIED; do not invent results |
 | Scopus/WoS databases | Is there real access to the system and export with origin, date, filters and file checked? | Prepare strategy and instruct researcher authorized access |
 | Deterministic execution | Python/filesystem/allowed commands exist in this mode? | Do not report scripts as executed; provide manual instructions, with limitations |
@@ -21,9 +21,9 @@ as a scientific research method.
 
 **Do not fill in this table fictitiously in the project.** Use short states:
 `AVAILABLE_VERIFIED`, `AVAILABLE_NOT_TESTED`, `UNAVAILABLE`,
-`UNKNOWN`. Explicitly distinguish capacity reported by
-supplier of operation verified **in this session**. These labels
-they are preflight communication, not new spreadsheet or required ID.
+`UNKNOWN`. Explicitly distinguish a capability described by a vendor
+from an operation actually verified **in this session**. These labels
+are preflight communication, not new spreadsheets or required IDs.
 
 <a id="observações-documentais-verificadas-em-outubro-de-2026"></a>
 ## Documentary observations verified in October 2026
@@ -51,12 +51,15 @@ The pages list external products subject to change. Don't
 declare here import, execution, integration with Drive, writing,
 resumption of observed My Article projects or performance
 on these platforms. The most recent public version identified in the
-repository is `v0.9.0-beta.1`; branch `main` may contain code
-later until manual publication of another release.
+repository is `v0.9.0-beta.1`; `main` currently contains the unpublished
+`v0.9.0-beta.2` source candidate. Only an explicit release action makes
+that candidate a published distribution.
 
 <a id="falhas-normais-e-resposta-segura"></a>
-## Normal faults and safe response1. If connection still requires action from the holder, present the connection process
-   authorization; not assert that the Skill clicked or authenticated.
+## Normal faults and safe responses
+
+1. If connection still requires action from the account holder, explain the
+   authorization process; do not assert that the Skill clicked or authenticated.
 2. If there is no Scopus/WoS tool, register the query
    **planned**, the export path and the absence of proof.
 3. If a model wrote that they “uploaded to Drive” but there is no receipt
