@@ -4,7 +4,27 @@
 <a id="unreleased"></a>
 ## Unreleased
 
-No additional changes have been recorded since `0.9.0-beta.1`.
+No additional changes have been recorded since the unreleased `0.9.0-beta.2` candidate.
+
+## 0.9.0-beta.2 — 2026-10-10
+
+**Unreleased release candidate.** Engineering stabilization only; no merge,
+tag, live ChatGPT acceptance or independent scientific validation.
+
+- Escape formula payloads in all deduplication CSV outputs.
+- Introduce recoverable journaled local three-register writes with interruption
+  handling, explicit recovery and project validator blocking for pending imports.
+- Normalize optional API trace events to existing UNVERIFIED state and support
+  genuine zero-result database queries without inventing errors.
+- Add opt-in bibliographic metadata/DOI adapters for OpenAlex, Crossref,
+  Semantic Scholar, OpenCitations, Unpaywall and user-owned Zotero, only
+  exercised with offline simulated responses so far.
+- Continue protecting the manual-first workflow without API credentials;
+  journal rights, source appraisal and actual Google Drive synchronization
+  remain independent acceptance gates.
+- Track real software CI, unresolved integration conditions and
+  researcher-approved human scientific decisions without false claims of completion.
+
 
 <a id="090-beta1-2026-10-09"></a>
 ## 0.9.0-beta.1 — 2026-10-09
