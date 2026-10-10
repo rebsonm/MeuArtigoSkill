@@ -308,6 +308,18 @@ def record_gate(args)->int:
         if integrity["errors"]:
             raise SystemExit("cannot approve claim freeze: "+"; ".join(integrity["errors"][:6]))
 
+    # A source-verification record is an inspectable, immutable-input snapshot.
+    # Objective conflicts cannot be waived. Legitimate uncertainty needs an
+    # attributable EVIDENCE DEC_ID bound to the exact report digest.
+    if (args.gate_id == "GATE-0006"
+            and decision in {"APPROVED", "APPROVED_WITH_CHANGES"}
+            and cfg.get("source_verification_required") is True):
+        from source_report_integrity import assess as assess_source_report
+        report_state = assess_source_report(root, require_complete=True)
+        if report_state["status"] not in {"RECORDED_CLEAR", "REVIEWED_LIMITATIONS"}:
+            raise SystemExit("cannot approve source verification: "
+                             + "; ".join(report_state["errors"][:5] or [report_state["status"]]))
+
     # Distinguish bibliographic/locator checks from actual empirical findings.
     if (args.gate_id=="GATE-0006" and decision in {"APPROVED","APPROVED_WITH_CHANGES"}
             and cfg.get("method_route_governance_required") is True):

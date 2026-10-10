@@ -42,6 +42,16 @@ Meu Artigo uses **C.A.D.A.** (*Capturar, Atribuir, Definir prazo, Acompanhar*) f
 
 C.A.D.A. supports **operational management**. It does not replace research methods, critical source appraisal, researcher judgment or scientific validation.
 
+## Optional in-chat visual dashboard
+
+The experimental [Meu Artigo Visual](docs/MEU-ARTIGO-VISUAL.md) is a
+read-only MCP Apps companion to the Skill. It can display tasks, next actions,
+scientific review gates and evidence-register counts in a conversational
+interface when a compatible host and authorized MCP server are configured.
+It does **not** auto-install with the Skill, access Google Drive on its own,
+change research decisions, or claim that registered actions were externally
+verified. A compact CLI/text view works without MCP Apps.
+
 ## How it works
 
 1. **Describe your research idea** in your usual language.
