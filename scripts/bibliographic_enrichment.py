@@ -9,15 +9,18 @@ that keeps provider credentials in protected environment variables.
 from __future__ import annotations
 
 import argparse
+import csv
+import hashlib
 import json
 import os
+from pathlib import Path
 import re
 import sys
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote, urlencode
 from urllib.request import Request, urlopen
 
-from bibliographic_connectors import ProviderFailure, norm_doi, safe_metadata_text
+from bibliographic_connectors import FIELDS, ProviderFailure, norm_doi, safe_metadata_text
 
 UNPAYWALL = "https://api.unpaywall.org/v2/"
 CITATIONS = "https://api.opencitations.net/index/v2/citation-count/doi:"
@@ -162,6 +165,30 @@ def list_own_zotero_metadata(*, user_id: str, api_key: str,
     return base
 
 
+def export_zotero_staging(out_dir: Path, result: dict) -> dict:
+    """Save only whitelisted metadata, never notes, tokens or personal auth."""
+    if result.get("status") != "COMPLETE":
+        raise ValueError("Zotero has not been retrieved")
+    path = Path(out_dir).resolve()
+    path.mkdir(parents=True, exist_ok=True)
+    filename = path / "zotero_personal_metadata.csv"
+    with filename.open("w", encoding="utf-8-sig", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=FIELDS)
+        writer.writeheader()
+        for item in result["records"]:
+            # Defuse spreadsheet formulas without changing in-memory metadata.
+            writer.writerow({field: (
+                "'" + str(item.get(field, "")) if str(item.get(field, "")).lstrip()[:1]
+                in ("=", "+", "-", "@") else str(item.get(field, ""))
+            ) for field in FIELDS})
+    return {
+        "provider": "zotero", "status": "COMPLETE",
+        "records_exported": len(result["records"]),
+        "csv_path": str(filename), "sha256": hashlib.sha256(filename.read_bytes()).hexdigest(),
+        "drive_sync_verified": False, "scientific_validated": False,
+    }
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     subs = parser.add_subparsers(dest="command", required=True)
@@ -171,6 +198,7 @@ def main(argv=None) -> int:
     lookup.add_argument("--allow-network", action="store_true")
     zotero = subs.add_parser("zotero", help="Opt-in own Zotero private metadata")
     zotero.add_argument("--limit", type=int, default=25)
+    zotero.add_argument("--out-dir", help="User-approved private export location")
     zotero.add_argument("--allow-network", action="store_true")
     args = parser.parse_args(argv)
     try:
@@ -186,6 +214,15 @@ def main(argv=None) -> int:
                 limit=args.limit, execute=args.allow_network)
         # DOI enrichment contains only source-reported OA/citation status.
         # Zotero personal metadata output needs local researcher-approved handling.
+        if args.command == "zotero":
+            if result["status"] == "COMPLETE" and args.out_dir:
+                result = export_zotero_staging(Path(args.out_dir), result)
+            else:
+                # Do not stream a private user's complete bibliography into
+                # console logs or model context without an explicit export.
+                result = {"provider": "zotero", "status": result["status"],
+                          "records_exported": 0,
+                          "export_requires_out_dir": result["status"] == "COMPLETE"}
         print(json.dumps(result, ensure_ascii=False))
         return 0 if result["status"] in {"COMPLETE", "NOT_EXECUTED"} else 2
     except ValueError:
