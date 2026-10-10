@@ -82,8 +82,8 @@ render those natively. Neither option replaces the Skill.
 
 ## Status and validation limits
 
-This branch is a software **pilot**. The local projection has synthetic
-regression tests. No claims are made of installing the changed Skill in a
+This capability is an experimental **software pilot** in `main`.
+The local projection has synthetic regression tests. No claims are made of installing the changed Skill in a
 user account, running a live ChatGPT host compatibility test, or verifying
 Drive sync or empirical usability. Separate setup and research review
 are still required for these claims.
