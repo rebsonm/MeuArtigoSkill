@@ -94,6 +94,25 @@ researcher's existing installed Skill.
 Official reference:
 https://developers.openai.com/plugins/deploy/submission
 
+## Read-only scientific source integrity
+
+The Evidence tab now displays checks made, pending human reviews, objective
+approval-blocking conflicts, correction versus retraction alerts, bibliographic
+provider warnings and missing or stale source reports. The interface also
+warns when GATE-0006 has a documented human approval but the source controls
+no longer pass. This flag does not change or delete the approval record.
+
+These fields are derived on demand from the current authorized mirror using
+`source_report_integrity.assess()`. MCP receives only counts and short
+statuses, not source paths, original responses, DOI references, protected
+passages or researcher exception rationales. All five original views remain;
+MINIMAL/FULL and refresh are presentation-only.
+
+A limitation decision recorded in DEC_ID can support an attributable human
+assessment linked to the exact report SHA-256. It cannot turn an unverified
+source into a verified one, waive factual contradictions, or approve a gate
+via the chat panel. See [source verification](VERIFICACAO-FONTES.md).
+
 ## Provenance and meaning of dashboard values
 
 Operational metrics count task rows as *recorded*, not as objectively
