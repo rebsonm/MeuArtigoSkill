@@ -244,7 +244,7 @@ def commit_to_authorized_local_project(root: Path, outcome, export_path: Path) -
         "Decision_or_output": outcome.status,
         "Verification_method": "Local export SHA-256; remote validation not inferred",
         "Related_Search_IDs": search_id,
-        "Status": "RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+        "Status": "UNVERIFIED",
     })
     # Write staging files first and add a durable idempotency guard: a run's
     # export hash must not be recorded twice with the same Search_ID.
@@ -343,7 +343,8 @@ def run(argv: list[str] | None = None) -> int:
                               "manual_mode_available": True,
                               "hint": "Add --allow-network to expressly run the optional search."}))
             return 0
-        if result.status not in ("COMPLETE", "PARTIAL") or not result.rows:
+        if result.status not in ("COMPLETE", "PARTIAL") or (
+                result.status == "PARTIAL" and not result.rows):
             print(json.dumps({"status": result.status, "error_code": result.error_code,
                               "records_received": len(result.rows),
                               "manual_mode_available": True}))
