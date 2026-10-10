@@ -1,5 +1,7 @@
 """Offline-only synthetic tests of optional enrichment and user-owned Zotero."""
+import csv
 import json
+import tempfile
 from pathlib import Path
 import sys
 import unittest
@@ -87,6 +89,31 @@ class BibliographicEnrichmentTests(unittest.TestCase):
             self.assertNotIn(secret, payload)
         self.assertEqual(calls[0][1]["Zotero-API-Key"], "DO_NOT_LEAK_TOKEN")
         self.assertTrue(calls[0][0].startswith("https://api.zotero.org/users/100/items"))
+
+    def test_zotero_staging_is_metadata_only_and_has_no_credentials(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            outcome = {
+                "status": "COMPLETE", "records": [{
+                    "title": "=SUM(1,2)",
+                    "doi": "10.1234/example",
+                    "authors": "Example Researcher",
+                    "notes": "SECRET_NOTES",
+                    "api_key": "SENSITIVE_ZOTERO_TOKEN",
+                    "fulltext": "PRIVATE_ATTACHMENT",
+                }]
+            }
+            summary = be.export_zotero_staging(Path(tmp), outcome)
+            content = Path(summary["csv_path"]).read_text(encoding="utf-8-sig")
+            self.assertIn("'=SUM", content)
+            for secret in ("SECRET_NOTES", "SENSITIVE_ZOTERO_TOKEN",
+                           "PRIVATE_ATTACHMENT"):
+                self.assertNotIn(secret, content + json.dumps(summary))
+            self.assertFalse(summary["drive_sync_verified"])
+            self.assertFalse(summary["scientific_validated"])
+            with Path(summary["csv_path"]).open(encoding="utf-8-sig", newline="") as f:
+                rows = list(csv.DictReader(f))
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0]["doi"], "10.1234/example")
 
     def test_invalid_id_does_not_invoke_authentication(self):
         r = be.list_own_zotero_metadata(
