@@ -85,6 +85,38 @@ def _read_config(root: Path) -> dict:
     return data
 
 
+def set_provider_preference(root: Path, provider: str, enabled: bool) -> dict:
+    """Local opt-in preference only, never provider credential authorization.
+
+    Remote Drive-canonical project changes require a separate actual Drive
+    connector write and cannot be asserted from this local utility.
+    """
+    if provider not in SUPPORTED + LOCKED:
+        raise ValueError("Unsupported provider")
+    config = _read_config(root)
+    if config.get("storage_mode") != "WORK_FALLBACK" or config.get("fallback_authorized") is not True:
+        raise ValueError("Local preferences require authorized WORK_FALLBACK")
+    state = optional_config(config)
+    state["providers"][provider] = {"enabled": enabled,
+                                     "credential_verified": False,
+                                     "provider_licence_verified": False}
+    state["enabled"] = any(
+        isinstance(v, dict) and v.get("enabled") is True
+        for v in state["providers"].values())
+    config["bibliographic_connectors"] = state
+    path = root / MGMT / "PROJECT_CONFIG.json"
+    temp = path.with_name("." + path.name + "." + uuid4().hex + ".tmp")
+    try:
+        temp.write_text(json.dumps(config, ensure_ascii=False, indent=2) + "\n",
+                        encoding="utf-8")
+        os.replace(temp, path)
+    finally:
+        temp.unlink(missing_ok=True)
+    return {"provider": provider, "enabled": enabled,
+            "is_authorized_provider_credential": False,
+            "drive_sync_verified": False}
+
+
 def _read_rows(path: Path, expected: list[str]) -> list[dict[str, str]]:
     if not path.is_file():
         raise ValueError("Canonical register missing; stop rather than fabricate one")
@@ -250,6 +282,12 @@ def run(argv: list[str] | None = None) -> int:
     guide.add_argument("--lang", choices=["pt", "en"], default="pt")
     status = cmd.add_parser("status", help="Inspect optional configuration only; no HTTP")
     status.add_argument("--project", required=True)
+    configure = cmd.add_parser("configure", help="Set optional local preference (NOT API login)")
+    configure.add_argument("--project", required=True)
+    configure.add_argument("--provider", required=True, choices=list(SUPPORTED) + list(LOCKED))
+    choice = configure.add_mutually_exclusive_group(required=True)
+    choice.add_argument("--enable", action="store_true")
+    choice.add_argument("--disable", action="store_true")
     retrieve = cmd.add_parser("search", help="Explicit opt-in bounded metadata search")
     retrieve.add_argument("--provider", required=True, choices=list(SUPPORTED) + list(LOCKED))
     retrieve.add_argument("--query", required=True, help="Literal query for THIS provider")
@@ -271,6 +309,11 @@ def run(argv: list[str] | None = None) -> int:
             c = _read_config(Path(args.project))
             print(json.dumps({"bibliographic_connectors": optional_config(c),
                               "manual_mode_available": True, "network_called": False}))
+            return 0
+        if args.command == "configure":
+            updated = set_provider_preference(Path(args.project), args.provider,
+                                              enabled=bool(args.enable))
+            print(json.dumps(updated))
             return 0
         if args.command == "dedupe":
             result = subprocess.run(
