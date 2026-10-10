@@ -38,12 +38,18 @@ and preserve the manual workflow; never present mocks as a live retrieval.
 - python scripts/bibliographic_workflow.py status --project PROJECT
 - python scripts/bibliographic_workflow.py search --provider openalex --query "..." --limit 50 --out-dir STAGING --allow-network
 - python scripts/bibliographic_workflow.py search --provider crossref --query "..." --limit 50 --out-dir STAGING --allow-network
+- python scripts/bibliographic_workflow.py search --provider semantic_scholar --query "..." --limit 30 --out-dir STAGING --allow-network
 - python scripts/bibliographic_workflow.py dedupe INPUT1.csv INPUT2.csv --out-dir DEDUPED
+- python scripts/bibliographic_enrichment.py doi --provider opencitations --doi 10.1234/example --allow-network
+- python scripts/bibliographic_enrichment.py doi --provider unpaywall --doi 10.1234/example --allow-network
+- python scripts/bibliographic_enrichment.py zotero --limit 25 --allow-network
 
 The CLI's --allow-network flag is explicit opt-in. Without it the search
 does not touch the network. Provider keys are NEVER accepted as CLI arguments.
-OPENALEX_API_KEY and MEU_ARTIGO_CONTACT_EMAIL can be supplied securely in the
-local execution environment, not pasted into ChatGPT or saved with the article.
+OPENALEX_API_KEY, SEMANTIC_SCHOLAR_API_KEY, MEU_ARTIGO_CONTACT_EMAIL,
+OPENCITATIONS_ACCESS_TOKEN, ZOTERO_USER_ID and ZOTERO_API_KEY may be supplied
+by the local user's protected execution environment, never pasted into ChatGPT
+or saved with the article. DOI enrichment and Zotero have separate opt-in commands.
 
 The output CSV and sanitized receipt are staging files. --commit-local may
 append search, screening and trace rows only to WORK_FALLBACK projects with
@@ -76,12 +82,12 @@ Drive write and verify it separately. Project scientific gates are unchanged.
 | Crossref | Opt-in metadata CLI, mocked offline tests | Polite pool and pagination |
 | Scopus | Guidance ONLY | Institutional entitlements, Elsevier AI/retention terms |
 | WoS Starter / Expanded | Guidance ONLY | Plan and effective API licence |
-| OpenCitations | Candidate | Citation graph and coverage |
-| Semantic Scholar | Candidate | Academic graph, field and rate limits |
+| OpenCitations | DOI citation-count lookup, mocked offline tests | Coverage, citation context requires scientific review |
+| Semantic Scholar | Opt-in metadata-only search, mocked offline tests | Academic graph, field and rate limits |
 | Crossref / Retraction Watch | Candidate | Retractions and correction notifications |
 | OpenAIRE / CORE / DOAJ / SciELO / BDTD / Europe PMC | Candidates | OA/domain-specific coverage, provider terms |
-| Unpaywall | DOI lookup candidate | Search endpoint retired September 18, 2026; use OpenAlex |
-| Zotero | Candidate | Private user library, safely authorized access |
+| Unpaywall | Opt-in DOI OA-status/URL lookup, mocked offline tests | Search retired September 18, 2026; no PDFs downloaded |
+| Zotero | Optional own-library METADATA reader via secure runtime key, mocked offline tests | No notes, attachments or article fulltext |
 
 ## Official references — recheck when implementing later adapters
 
