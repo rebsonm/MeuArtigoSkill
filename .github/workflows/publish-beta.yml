@@ -50,6 +50,9 @@ jobs:
       - name: Require English-source migration before publication
         run: python scripts/audit_source_language.py --strict
 
+      - name: Require publication-ready documentation and citation date
+        run: python scripts/check_release_metadata.py --require-today
+
       - name: Build, verify and hash immutable release artifacts
         run: |
           python scripts/build_skill_bundle.py
