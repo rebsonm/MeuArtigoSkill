@@ -25,7 +25,8 @@ from dedupe_records import norm_doi
 
 OPEN_ALEX = "https://api.openalex.org/works"
 CROSSREF = "https://api.crossref.org/works"
-SUPPORTED = ("openalex", "crossref")
+SEMANTIC_SCHOLAR = "https://api.semanticscholar.org/graph/v1/paper/search"
+SUPPORTED = ("openalex", "crossref", "semantic_scholar")
 LOCKED = ("scopus", "wos_starter", "wos_expanded")
 RETRYABLE = {429, 500, 502, 503, 504}
 MAX_RESPONSE_BYTES = 8 * 1024 * 1024
@@ -118,9 +119,30 @@ def normalize_crossref(item: dict) -> dict[str, str]:
     }
 
 
+def normalize_semantic_scholar(item: dict) -> dict[str, str]:
+    external = item.get("externalIds") or {}
+    authors = item.get("authors") or []
+    pub_types = item.get("publicationTypes") or []
+    names = [safe_metadata_text(person.get("name"), 160)
+             for person in authors[:50] if isinstance(person, dict)] if isinstance(authors, list) else []
+    return {
+        "title": safe_metadata_text(item.get("title")),
+        "doi": norm_doi(external.get("DOI") or "") if isinstance(external, dict) else "",
+        "authors": "; ".join(filter(None, names))[:1500],
+        "year": str(item.get("year") or ""),
+        "source": "Semantic Scholar",
+        "source_id": safe_metadata_text(item.get("paperId"), 180),
+        "journal": safe_metadata_text(item.get("venue")),
+        "document_type": safe_metadata_text(
+            pub_types[0] if isinstance(pub_types, list) and pub_types else "", 80),
+        "language": "",
+        "landing_url": safe_metadata_text(item.get("url"), 350),
+    }
+
+
 def default_fetch(url: str, headers: dict[str, str], timeout: int = 20) -> dict:
     # Fixed HTTPS origins. Never accept remote URLs returned in a result.
-    if not url.startswith((OPEN_ALEX + "?", CROSSREF + "?")):
+    if not url.startswith((OPEN_ALEX + "?", CROSSREF + "?", SEMANTIC_SCHOLAR + "?")):
         raise ProviderFailure("UNSUPPORTED_ENDPOINT")
     req = Request(url, headers=headers, method="GET")
     try:
@@ -213,24 +235,35 @@ def search(provider: str, query: str, *, limit: int = 50,
                 if api_key:
                     params["api_key"] = api_key
                 url = OPEN_ALEX + "?" + urlencode(params)
-            else:
+            elif provider == "crossref":
                 params = {"query.bibliographic": query, "rows": str(page_size),
                           "cursor": cursor}
                 if email:
                     params["mailto"] = email
                 url = CROSSREF + "?" + urlencode(params)
+            else:
+                params = {"query": query, "offset": str((page - 1) * 100),
+                          "limit": str(page_size),
+                          "fields": "title,year,authors,externalIds,venue,url,publicationTypes"}
+                url = SEMANTIC_SCHOLAR + "?" + urlencode(params)
             headers = {"User-Agent": DEFAULT_USER_AGENT, "Accept": "application/json"}
+            if provider == "semantic_scholar" and api_key:
+                headers["x-api-key"] = api_key
             data = _request(fetcher, url, headers)
             if provider == "openalex":
                 raw_items = data.get("results")
                 meta = data.get("meta") or {}
                 n = meta.get("count") if isinstance(meta, dict) else None
                 normalizer = normalize_openalex
-            else:
+            elif provider == "crossref":
                 message = data.get("message") or {}
                 raw_items = message.get("items") if isinstance(message, dict) else None
                 n = message.get("total-results") if isinstance(message, dict) else None
                 normalizer = normalize_crossref
+            else:
+                raw_items = data.get("data")
+                n = data.get("total")
+                normalizer = normalize_semantic_scholar
             if not isinstance(raw_items, list):
                 raise ProviderFailure("INVALID_RESPONSE")
             if isinstance(n, int) and n >= 0:
@@ -241,7 +274,7 @@ def search(provider: str, query: str, *, limit: int = 50,
             outcome.pages_received += 1
             if len(raw_items) < page_size or not raw_items:
                 break
-            if provider == "openalex":
+            if provider in {"openalex", "semantic_scholar"}:
                 page += 1
             else:
                 next_cursor = message.get("next-cursor") if isinstance(message, dict) else None
