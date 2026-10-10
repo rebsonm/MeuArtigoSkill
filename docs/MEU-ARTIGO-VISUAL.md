@@ -82,6 +82,18 @@ Tokens should be generated privately and never committed to Git.
 Do not upload private, copyrighted, or confidential research artifacts
 to a public demonstration server. Never log project payloads.
 
+## Packaging and existing Skills-only installations
+
+Current OpenAI plugin packaging rules do not support adding a new MCP server
+directly to an **already published Skills-only plugin**. This visual companion
+must therefore be connected as a separate authorized custom MCP plugin during
+development or packaged into a new supported plugin configuration. Merely
+updating SKILL.md or merging this branch does not make a UI appear in a
+researcher's existing installed Skill.
+
+Official reference:
+https://developers.openai.com/plugins/deploy/submission
+
 ## Provenance and meaning of dashboard values
 
 Operational metrics count task rows as *recorded*, not as objectively
