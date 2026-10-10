@@ -28,7 +28,7 @@ class VisualDashboardTests(unittest.TestCase):
     def rows(self, filename, rows):
         path = self.base / filename
         with path.open("w", encoding="utf-8-sig", newline="") as out:
-            w = csv.DictWriter(out, fieldnames=list(rows[0]))
+            w = csv.DictWriter(out, fieldnames=list(dict.fromkeys(k for row in rows for k in row)))
             w.writeheader()
             w.writerows(rows)
 
