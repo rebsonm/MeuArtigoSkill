@@ -176,7 +176,9 @@ Sync status: OK
 
 It is the management view of the spreadsheet.
 
-It can show:- current scientific stage;
+It can show:
+
+- current scientific stage;
 - number of active items;
 - blocked items;
 - expired items;
