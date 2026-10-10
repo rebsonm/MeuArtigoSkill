@@ -3,12 +3,14 @@
 **Status: SOFTWARE CANDIDATE ONLY — NO PUBLIC RELEASE OR INDEPENDENT SCIENTIFIC VALIDATION.**
 
 This checklist is for preparing voluntary expert feedback. The current tagged
-public beta is v0.9.0-beta.1. The candidate remains in draft PR #24 until
-explicit human review, merge authorization and a separate release decision.
+public beta is v0.9.0-beta.1. [PR #24](https://github.com/rebsonm/MeuArtigoSkill/pull/24)
+was merged into `main` on 2026-10-10; installation tests, researcher
+acceptance and a separate publication decision remain pending.
 
 ## Exact build identity and scope
 
-- Branch: `feat/optional-bibliographic-connectors`, relative to `main`.
+- Source: `main`, merged from `feat/optional-bibliographic-connectors`
+  in PR #24. Historical branch references are for reproducibility only.
 - Version: `0.9.0-beta.2`, an **unpublished candidate**.
 - CI produces a deterministic candidate ZIP with checksum and manifest.
   Its contents are the checked commit, not the historical v0.9.0-beta.1
@@ -119,6 +121,6 @@ Engineering CI: verify on the FINAL commit, not an earlier run.
 Real academic evaluation: pending.
 In-product ChatGPT install and resume: pending.
 Technical/security review for a multi-user MCP deployment: pending.
-Publication/merge authorization: pending.
+Merge: completed in PR #24. Public release authorization: pending.
 
 Do not mark the release ready until these statuses are backed by real receipts.
