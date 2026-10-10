@@ -43,20 +43,24 @@ authorized WORK_FALLBACK project. Drive-canonical synchronization needs a
 separate, real connected Drive write; it is NOT done by these Python scripts.
 No automated RIS/BibTeX parser is added beyond existing project capabilities.
 
-M4 — SCIENTIFIC ENRICHMENT: Official API documentation evaluated for
-OpenCitations, Retraction Watch/Crossref, Semantic Scholar, OpenAIRE, CORE,
-DOAJ, SciELO, BDTD, Europe PMC, Unpaywall. Most remain design candidates and
-have NOT been implemented or tested live. Unpaywall search was RETIRED on
-2026-09-18; use OpenAlex discovery rather than a nonexistent endpoint.
+M4 — SCIENTIFIC ENRICHMENT: Optional Semantic Scholar metadata-only search,
+OpenCitations DOI citation counts and Unpaywall DOI OA-status/landing-URL
+lookups implemented with MOCK-only tests and explicit network opt-in.
+Not citation validation, open-text retrieval or confirmation of OA licence.
+Retraction Watch/Crossref, OpenAIRE, CORE, DOAJ, SciELO, BDTD and
+Europe PMC remain candidates. Unpaywall SEARCH was retired 2026-09-18;
+this module uses DOI lookup only.
 
 M5 — SCOPUS / WOS: Optional per-provider onboarding guidance; no impersonation
 of CAFe, no API-key collection in chat. These licensed adapters are intentionally
 DISABLED until rights, credential custody, terms governing AI use and a secure
 executor are verified. No authenticated test performed.
 
-M6 — ZOTERO / FULL TEXT: Proposed only. No private Zotero API, PDF ingestion,
-full text retrieval, text mining or scientific claims falsely marked complete.
-Metadata import never implies full-text reading.
+M6 — ZOTERO / FULL TEXT: An opt-in Zotero own-library metadata reader uses
+locally protected ZOTERO_USER_ID and ZOTERO_API_KEY, MOCK-tested only.
+No automatic private library connection inside ChatGPT, Zotero note,
+attachment or abstractNote export, PDF ingestion, rights confirmation
+or scientific fulltext processing. Metadata never proves article reading.
 
 M7 — RELEASE READINESS: Draft PR, offline software regression tests and CI
 release audit to be checked on the final head commit. This branch must not
@@ -71,8 +75,8 @@ merge automatically or modify PR #22.
 | Scopus | https://dev.elsevier.com/ | Individual API key plus real institutional entitlement | No live integration |
 | WoS Starter | https://developer.clarivate.com/apis/wos-starter | X-ApiKey and plan authorization | No live integration |
 | WoS Expanded | https://developer.clarivate.com/apis/wos | Licensed API | No live integration |
-| Zotero | https://www.zotero.org/support/dev/web_api/v3/start | User library credential required for private collections | No live integration |
-| Semantic Scholar | https://api.semanticscholar.org/api-docs/ | Public and scoped key models | Design only |
+| Zotero | https://www.zotero.org/support/dev/web_api/v3/start | Private user library key in protected local runtime | Metadata-only mocked adapter; no live test |
+| Semantic Scholar | https://api.semanticscholar.org/api-docs/ | Public and scoped key models | Metadata-only mocked adapter |
 
 Do not fix current quotas in code without a source-of-truth refresh.
 OpenAlex and Crossref search are NOT semantic substitutes for Scopus/WoS:
