@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc --noEmit && tsc -p tsconfig.server.json && vite build",
-    "start": "tsx main.ts",
+    "start": "node dist/main.js",
     "dev": "concurrently --raw \"vite build --watch\" \"tsx watch main.ts\""
   },
   "dependencies": {

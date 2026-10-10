@@ -24,7 +24,8 @@ function scriptPath(): string {
 }
 
 function appHtmlPath(): string {
-  return path.join(currentDir, "mcp-app.html").replace("/dist/mcp-app.html", "/dist/mcp-app.html");
+  const built = path.join(currentDir, "dist", "mcp-app.html");
+  return existsSync(built) ? built : path.join(currentDir, "mcp-app.html");
 }
 
 function summarize(data: any): string {

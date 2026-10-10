@@ -1,0 +1,31 @@
+name: Meu Artigo Visual checks
+on:
+  pull_request:
+    paths:
+      - "visual-app/**"
+      - "scripts/visual_dashboard.py"
+      - "tests/test_visual_dashboard.py"
+      - "docs/MEU-ARTIGO-VISUAL.md"
+      - ".github/workflows/visual-app-ci.yml"
+permissions:
+  contents: read
+jobs:
+  visual-regressions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m unittest discover -s tests -p 'test_visual_dashboard.py' -v
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install visual app dependencies
+        working-directory: visual-app
+        run: npm install --no-audit --no-fund
+      - name: Compile MCP server and bundle UI
+        working-directory: visual-app
+        run: npm run build
