@@ -21,6 +21,8 @@ from uuid import uuid4
 
 from bibliographic_connectors import FIELDS, LOCKED, SUPPORTED, capabilities, search
 from init_project import TABLES
+from register_transaction import (apply_register_transaction, has_pending_transaction,
+                                  recover_pending_transaction, PendingTransaction)
 
 MGMT = "00_Gestao_e_Continuidade"
 SEARCH = f"{MGMT}/02_Search_Log.csv"
@@ -142,7 +144,7 @@ def _atomic_csv(path: Path, headers: list[str], rows: list[dict]) -> None:
         with temp.open("w", encoding="utf-8-sig", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=headers)
             writer.writeheader()
-            writer.writerows([{h: row.get(h, "") for h in headers} for row in rows])
+            writer.writerows([{h: _csv_safe(row.get(h, "")) for h in headers} for row in rows])
         os.replace(temp, path)
     finally:
         temp.unlink(missing_ok=True)
@@ -193,6 +195,8 @@ def commit_to_authorized_local_project(root: Path, outcome, export_path: Path) -
     config = _read_config(root)
     if config.get("storage_mode") != "WORK_FALLBACK" or config.get("fallback_authorized") is not True:
         raise ValueError("Canonical write requires explicitly authorized WORK_FALLBACK")
+    if has_pending_transaction(root):
+        raise PendingTransaction("RECOVER_PENDING_IMPORT_BEFORE_WRITING")
     if not outcome.executed_at or outcome.status not in {"COMPLETE", "PARTIAL"}:
         raise ValueError("No executed bibliographic result to register")
     search_headers = TABLES[SEARCH]
@@ -252,9 +256,11 @@ def commit_to_authorized_local_project(root: Path, outcome, export_path: Path) -
         raise ValueError("This export appears already registered")
     srows.append(srow); trows.append(trow)
     # All three canonical files have been checked before any write.
-    _atomic_csv(root / SCREENING, screening_headers, rrows)
-    _atomic_csv(root / SEARCH, search_headers, srows)
-    _atomic_csv(root / TRACE, trace_headers, trows)
+    apply_register_transaction(root, {
+        SEARCH: (search_headers, srows),
+        SCREENING: (screening_headers, rrows),
+        TRACE: (trace_headers, trows),
+    }, _csv_safe)
     return {"Search_ID": search_id, "Trace_ID": trace_id,
             "new_records": len(outcome.rows),
             "scientific_approval": False, "drive_synced": False}
@@ -288,6 +294,8 @@ def run(argv: list[str] | None = None) -> int:
     choice = configure.add_mutually_exclusive_group(required=True)
     choice.add_argument("--enable", action="store_true")
     choice.add_argument("--disable", action="store_true")
+    repair = cmd.add_parser("recover-local", help="Explicitly rollback/reconcile interrupted local CSV import")
+    repair.add_argument("--project", required=True)
     retrieve = cmd.add_parser("search", help="Explicit opt-in bounded metadata search")
     retrieve.add_argument("--provider", required=True, choices=list(SUPPORTED) + list(LOCKED))
     retrieve.add_argument("--query", required=True, help="Literal query for THIS provider")
@@ -314,6 +322,13 @@ def run(argv: list[str] | None = None) -> int:
             updated = set_provider_preference(Path(args.project), args.provider,
                                               enabled=bool(args.enable))
             print(json.dumps(updated))
+            return 0
+        if args.command == "recover-local":
+            root = Path(args.project).resolve()
+            cfg = _read_config(root)
+            if cfg.get("storage_mode") != "WORK_FALLBACK" or cfg.get("fallback_authorized") is not True:
+                raise ValueError("Recovery requires authorized local fallback project")
+            print(json.dumps(recover_pending_transaction(root)))
             return 0
         if args.command == "dedupe":
             result = subprocess.run(
@@ -362,7 +377,7 @@ def run(argv: list[str] | None = None) -> int:
             payload["project_registry_updated"] = True
         print(json.dumps(payload, ensure_ascii=False))
         return 0 if result.status == "COMPLETE" else 3
-    except (OSError, ValueError, json.JSONDecodeError, csv.Error):
+    except (OSError, ValueError, PendingTransaction, json.JSONDecodeError, csv.Error):
         # Fixed sanitised error; no raw URLs, keys, source text or server payload.
         print("ERROR: INVALID_OR_UNAUTHORIZED_LOCAL_OPERATION", file=sys.stderr)
         return 1
