@@ -37,11 +37,16 @@ API-key scope, plans and usage are determined by vendors, not the Skill.
 
 M3 — HYBRID: The CLI uses the EXISTING conservative dedupe_records.py on
 multiple manual and API exports. Exact DOI duplicates are audited, conflicting
-DOIs preserved and near matches flagged. Real retrieval may stage CSV + SHA256
-receipts; canonical local registry append is permitted ONLY on an explicitly
-authorized WORK_FALLBACK project. Drive-canonical synchronization needs a
-separate, real connected Drive write; it is NOT done by these Python scripts.
-No automated RIS/BibTeX parser is added beyond existing project capabilities.
+DOIs preserved and near matches flagged. All dedupe CSV outputs neutralize
+spreadsheet formula cells while preserving original input files for audit.
+Real retrieval may stage CSV + SHA256 receipts. Canonical local registry append
+is permitted ONLY on an explicitly authorized WORK_FALLBACK project. The
+three related CSV registers use a recoverable single-writer journal: on an
+interrupted update, the project validator blocks progress until an explicit
+rollback/reconciliation is performed. This is not a multi-user database
+transaction and does not provide live remote synchronization. Google Drive
+canonical writes must be independently verified by the actual connector.
+No automated RIS/BibTeX parser is added beyond existing capabilities.
 
 M4 — SCIENTIFIC ENRICHMENT: Optional Semantic Scholar metadata-only search,
 OpenCitations DOI citation counts and Unpaywall DOI OA-status/landing-URL
@@ -107,10 +112,15 @@ python scripts/bibliographic_workflow.py dedupe \
   --out-dir /private/review
 ~~~
 
-For real local authorized WORK_FALLBACK projects, the explicit
---commit-local switch additionally appends to original canonical project CSVs.
-Never use it on a Drive-canonical project: upload/sync and its actual receipt
-must be handled by the connected Google Drive integration.
+For real, explicitly authorized local fallback projects, the explicit
+--commit-local switch additionally appends to the original three canonical
+project CSVs using the recoverable journal. Do not modify the registers
+manually or run concurrent writers during an import. If an interrupted
+journal is detected, stop research and run:
+`python scripts/bibliographic_workflow.py recover-local --project /authorized/project`.
+Inspect the recovery result and rerun validation. Never use this on a
+Drive-canonical project: upload/sync and its actual receipt must be handled
+by the real connected Google Drive integration.
 
 The staging receipt records what the LOCAL adapter reported; it is not a
 signed vendor response. Exporting a CSV is not scientific screening, DOI
@@ -141,7 +151,8 @@ human validation, manuscript submission or journal compliance.
   provider-authorized environment, separate from public CI.
 - Add retriever modules for OpenCitations, citation corrections, OA versions,
   institution-owned Zotero libraries, and fulltext with rights evidence.
-- Add resumable pagination/checkpoint storage and robust transactional
-  project-register writes for genuinely large, long-running multi-page runs.
+- Upgrade single-writer recoverable local CSV journals to a concurrency-safe
+  transactional persistence design before any multi-user or remote operation.
+  Add resumable pagination/checkpoints for large, long-running searches.
 - Verify that optional onboarding is offered only once per project with a
   real authorized persistent state write (without creating a science gate).
