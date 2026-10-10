@@ -171,6 +171,20 @@ class OptionalConnectorTests(unittest.TestCase):
         recorded = bw._read_rows(self.root / bw.TRACE, init_project.TABLES[bw.TRACE])
         self.assertEqual(recorded[0]["Status"], "UNVERIFIED")
 
+    def test_local_screening_csv_escapes_formula_metadata_without_approval(self):
+        outcome = bc.search("openalex", "realistic synthetic scenario", execute=True,
+            fetcher=lambda url, headers: {"meta": {"count": 1},
+                "results": [oa(title="=SUM(1,2)")]})
+        out = self.root / "safe-screening"
+        bw.export_staging(self.root, out, outcome)
+        bw.commit_to_authorized_local_project(self.root, outcome,
+                                               out / "openalex_metadata.csv")
+        entries = bw._read_rows(self.root / bw.SCREENING,
+                                 init_project.TABLES[bw.SCREENING])
+        self.assertTrue(entries[0]["Title"].startswith("'=SUM"))
+        self.assertEqual(entries[0]["Pass1_decision"], "")
+        self.assertFalse(bw.optional_config(bw._read_config(self.root))["enabled"])
+
     def test_local_commit_preserves_scientific_gates_and_ids(self):
         result = bc.search("openalex", "synthetic search", execute=True,
                            fetcher=lambda url, h: {
