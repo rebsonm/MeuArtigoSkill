@@ -223,22 +223,15 @@ path, record the limitation and do not simulate an operation. Consult the
 [ChatGPT](docs/CHATGPT.md), [Claude](docs/CLAUDE.md) and
 [Gemini](docs/GEMINI.md). Adapters never relax scientific or ethical controls.
 
-**Skill-native visual panels:** When the researcher asks to see current
-progress, tasks, decisions, sources or an article dashboard, read the actual
-authorized project state and present a concise dashboard *in this chat*.
-Use the host's existing native visual elements when available and a compact
-text/Markdown fallback otherwise. Do **not** require installing, deploying
-or migrating to an MCP plugin just to display charts/cards/tables.
-Show five optional views (overview, C.A.D.A., human gates, evidence, and
-history/synchronization), with MINIMAL/FULL affecting **presentation only**.
-Follow the [native chat dashboard contract](references/native-chat-dashboard.md).
-Never invent totals, percentages, confirmed remote activity, scientific
-approvals or source verification; native navigation never changes canonical
-records. For an authorized local mirror, the read-only
-`scripts/native_chat_dashboard.py` provides a presentation-neutral JSON
-projection. A connected Drive project must still be read from the actually
-authorized canonical workspace. The MCP Apps customization is **optional**,
-not a replacement for the Skill.
+**Native in-chat visual dashboard:** For progress requests, read the
+authorized canonical project and follow the
+[native presentation contract](references/native-chat-dashboard.md).
+Show overview, C.A.D.A., human gates, evidence and history/sync with
+host-native visual elements where available, otherwise Markdown.
+MINIMAL/FULL alters only the display. Never require MCP hosting,
+invent data or imply that navigation approves scientific work.
+An authorized local project can use the read-only
+`scripts/native_chat_dashboard.py`; Drive remains canonical when used.
 
 For **each response**, in the researcher's active conversational language:
 state confirmed facts, material uncertainty and the next valid action.
