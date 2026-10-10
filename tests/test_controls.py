@@ -84,6 +84,26 @@ class Controls(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         return read_csv(self.root / "out/consolidated_exact_dedup.csv")
 
+    def test_all_dedup_csv_outputs_escape_untrusted_spreadsheet_formulas(self):
+        records = [
+            {"title": "=HYPERLINK(\"https://bad.example\")", "doi": "10.1234/a",
+             "authors": "@DANGEROUS", "year": "2024"},
+            {"title": "+1+1", "doi": "10.1234/a", "authors": "@DANGEROUS", "year": "2024"},
+            {"title": "=HYPERLINK(\"https://bad.example\")", "doi": "10.1234/b",
+             "authors": "@DANGEROUS", "year": "2024"},
+        ]
+        self.dedupe(records)
+        for name in ("consolidated_exact_dedup.csv", "exact_duplicate_audit.csv",
+                     "near_duplicate_review.csv"):
+            with (self.root / "out" / name).open(encoding="utf-8-sig", newline="") as stream:
+                rows = list(csv.DictReader(stream))
+            self.assertTrue(rows)
+            for row in rows:
+                for value in row.values():
+                    self.assertFalse(str(value).lstrip().startswith(("=", "+", "-", "@")),
+                                     (name, row))
+        self.assertEqual(records[0]["title"], '=HYPERLINK("https://bad.example")')
+
     def test_conflicting_dois_same_title_are_retained(self):
         records = [{"title": "Introduction", "doi": doi, "authors": "Example A", "year": "2020"}
                    for doi in ["10.1234/a", "10.1234/b"]]
