@@ -17,14 +17,14 @@ Never claim native widgets are supported on every host.
 ## Source-of-truth gate: do this before rendering
 
 1. When resuming, identify the actual authorized project and read its
-   \`CONTINUIDADE.md\` first. Then consult the relevant canonical registers
+   `CONTINUIDADE.md` first. Then consult the relevant canonical registers
    and, for human approval and source integrity, their actual receipts.
 2. For Google Drive projects, use the **connected and authorized Drive**
    to read their canonical records. Never make a local mirror silently
    authoritative. Confirm that the connection and synchronization
    were actually observed; otherwise display them as unverified.
 3. For an authorized local/Work project with Python available, optionally
-   run \`scripts/native_chat_dashboard.py PROJECT --format json\`.
+   run `scripts/native_chat_dashboard.py PROJECT --format json`.
    Its output is a presentation-neutral read-only projection of the
    existing registers. It is **not** source verification.
 4. If a project is not selected, offer a small "choose existing project"
@@ -38,7 +38,7 @@ A native host may show cards, compact grids, progress lists or selectable
 tabs. These are *display elements*, not project state transitions.
 For small screens choose vertical stacks. Default to the concise overview;
 disclose detail progressively. Use the user's conversational language per
-\`references/language-policy.md\`; never translate canonical identifiers.
+`references/language-policy.md`; never translate canonical identifiers.
 Do not use an unfamiliar UI widget if the host does not support it.
 
 1. **Overview:** article/project name, recorded scientific stage, next
@@ -50,8 +50,9 @@ Do not use an unfamiliar UI widget if the host does not support it.
    exact order in Portuguese conversations:
    `ID Tarefa | Tarefa | Responsável execução | Prazo`.
    Map those columns to the existing canonical C.A.D.A. fields
-   `CADA_ID`, `Task`, `Owner`, and `Deadline`, respectively.
-   Do **not** mistake `Next_action` for `Task`, invent a responsible
+   `CADA_ID`, `Title`, `Assigned_to`, and `Deadline`, respectively.
+   Older workbook imports may use `Task` and `Owner` as fallback aliases.
+   Do **not** mistake `Next_action` for the actual task, invent a responsible
    person or assign a due date when the source field is blank.
    Display missing values as "Não informado" (or an equivalent in the
    researcher's language). Do not add status, priority, progress,
@@ -77,7 +78,7 @@ The existing MINIMAL/FULL setting changes **amount of information only**.
 A user tapping FULL or changing tabs must not modify PROJECT_CONFIG.json,
 registers, gates or methodological choices. Treat any in-chat toggle as an
 ephemeral UI preference. Persistent mode changes require the existing
-attributable human action via \`presentation_mode.set_mode\`, not a visual
+attributable human action via `presentation_mode.set_mode`, not a visual
 toggle.
 
 ## Renderer choice and graceful fallback
@@ -90,8 +91,8 @@ toggle.
 - If native elements are not supported, show one brief Markdown status
   table and a clear next action. The research process must work equally
   well in plain text. Do not rely on HTML, custom JavaScript, or host-
-  specific component syntax in \`SKILL.md\`.
-- Do not require \`visual-app/\` or MCP to display the Skill's native
+  specific component syntax in `SKILL.md`.
+- Do not require `visual-app/` or MCP to display the Skill's native
   presentation. Those remain an optional and separately reviewable
   extension.
 
@@ -114,7 +115,7 @@ distinct.
 
 ## Test and evaluation honesty
 
-\`tests/test_native_chat_dashboard.py\` checks the local read-only JSON
+`tests/test_native_chat_dashboard.py` checks the local read-only JSON
 projection, its visibility boundaries and missing data behavior using
 synthetic fixtures. It cannot test a ChatGPT renderer, connected Drive,
 quality of scientific claims or actual user experience.
