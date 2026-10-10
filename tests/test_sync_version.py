@@ -41,6 +41,27 @@ class VersionSyncTests(unittest.TestCase):
                       (self.root/"CITATION.cff").read_text(encoding="utf-8"))
         self.assertEqual(sync_version.sync(self.root,"2026-10-09"),[])
 
+    def test_source_candidate_without_release_date_can_be_synced(self):
+        cff = self.root / "CITATION.cff"
+        cff.write_text('version: "0.8.0-beta.8"\n', encoding="utf-8")
+        changes = sync_version.sync(self.root, "2026-10-09")
+        self.assertIn("CITATION.cff", changes)
+        content = cff.read_text(encoding="utf-8")
+        self.assertIn('date-released: "2026-10-09"', content)
+        self.assertEqual(content.count("date-released:"), 1)
+        self.assertEqual(sync_version.sync(self.root, "2026-10-09"), [])
+
+    def test_candidate_changelog_date_is_reconciled_not_duplicated(self):
+        changelog = self.root / "CHANGELOG.md"
+        content = changelog.read_text(encoding="utf-8")
+        changelog.write_text(content.replace("## 0.8.0-beta.8 — 2026-10-08",
+                                            "## 0.8.0-beta.9 — 2026-10-08"),
+                             encoding="utf-8")
+        sync_version.sync(self.root, "2026-10-09")
+        final = changelog.read_text(encoding="utf-8")
+        self.assertEqual(final.count("## 0.8.0-beta.9 — "), 1)
+        self.assertIn("## 0.8.0-beta.9 — 2026-10-09", final)
+
     def test_missing_real_release_notes_blocks_all_writes(self):
         (self.root/"docs/NOTAS-DA-VERSAO-0.8.0-beta.9.md").unlink()
         before=(self.root/"README.md").read_text(encoding="utf-8")
