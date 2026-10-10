@@ -5,6 +5,9 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 MODULE_PATH = Path(__file__).resolve().parents[1] / "scripts/verify_sources.py"
 spec = importlib.util.spec_from_file_location("verify_sources", MODULE_PATH)
