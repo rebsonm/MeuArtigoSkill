@@ -69,8 +69,9 @@ scientifically validated.
    `SHA256SUMS.txt` attachment.
 
 **Merging source code does not automatically publish it.**
-`v0.8.0-beta.8` remains the latest public release until the
-new process genuinely completes. Prior releases and license
+`v0.9.0-beta.1` remains the latest public release until the
+v0.9.0-beta.2 candidate finishes independent acceptance and the new
+publication process genuinely completes. Prior releases and license
 rights stay intact.
 
 ## Platform and language compatibility
