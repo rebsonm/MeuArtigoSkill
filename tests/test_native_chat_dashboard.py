@@ -121,6 +121,45 @@ class NativeChatDashboardTests(unittest.TestCase):
         self.assertIsNone(data["tasks"]["items"][0]["task"])
         self.assertIsNone(data["tasks"]["items"][0]["execution_owner"])
 
+    def test_canonical_csv_fields_match_project_initializer(self):
+        # This checks the production CSV schema instead of a fabricated
+        # Excel-only Task/Owner fixture (regression found during review).
+        import init_project
+        required = ("CADA_ID", "Title", "Assigned_to", "Deadline")
+        fields = init_project.TABLES["00_Gestao_e_Continuidade/11_CADA_Control.csv"]
+        self.assertTrue(all(field in fields for field in required))
+        self.write("11_CADA_Control.csv", [
+            {"CADA_ID": "CADA-0200", "Title": "Review the manuscript",
+             "Assigned_to": "Researcher", "Deadline": "2026-10-20",
+             "Status": "READY", "Next_action": "Different next action",
+             "Task": "Obsolete Excel title", "Owner": "Wrong Excel owner"}
+        ])
+        row = native.panel(self.root)["tasks"]["items"][0]
+        self.assertEqual(set(row), {"id", "task", "execution_owner", "deadline"})
+        self.assertEqual(row, {
+            "id": "CADA-0200", "task": "Review the manuscript",
+            "execution_owner": "Researcher", "deadline": "2026-10-20",
+        })
+        self.assertNotIn("Different next action", json.dumps(native.panel(self.root)))
+        self.assertNotIn("Obsolete Excel title", json.dumps(native.panel(self.root)))
+
+    def test_minimal_prioritizes_active_work_and_marks_hidden_rows(self):
+        self.write("11_CADA_Control.csv", [
+            {"CADA_ID": "CADA-0001", "Title": "Old work",
+             "Assigned_to": "Researcher", "Status": "DONE"},
+            {"CADA_ID": "CADA-0002", "Title": "Second completed task",
+             "Assigned_to": "Researcher", "Status": "DONE"},
+            {"CADA_ID": "CADA-0003", "Title": "Pending work",
+             "Assigned_to": "Agent", "Status": "READY"},
+        ])
+        minimal = native.panel(self.root, mode="MINIMAL")["tasks"]
+        full = native.panel(self.root, mode="FULL")["tasks"]
+        self.assertEqual([item["id"] for item in minimal["items"]], ["CADA-0003"])
+        self.assertTrue(minimal["items_partial"])
+        self.assertEqual([item["id"] for item in full["items"]],
+                         ["CADA-0001", "CADA-0002", "CADA-0003"])
+        self.assertFalse(full["items_partial"])
+
     def test_no_mutation_even_when_mode_override(self):
         before = {file: file.read_bytes() for file in self.mgmt.iterdir() if file.is_file()}
         native.panel(self.root, mode="FULL")
