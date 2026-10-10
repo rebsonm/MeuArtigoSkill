@@ -66,9 +66,9 @@ Previous published beta packages are retained and not rewritten.
 This was the preparation plan for the English-source migration that shipped
 in the published `v0.9.0-beta.1` on 2026-10-09. It is retained to document
 historical decisions and the ongoing English-source release gate; it is not
-an instruction to republish `v0.9.0-beta.1`. On 2026-10-10, `main` includes
-an **unpublished** `v0.9.0-beta.2` source candidate. Passing source-language
-scans does not replace independent editorial or installed-platform tests.
+an instruction to republish `v0.9.0-beta.1`. The experimental beta.2
+continues the language policy; source-language scans cannot replace
+independent editorial or installed-platform tests.
 
 When the migration is actually complete:
 
