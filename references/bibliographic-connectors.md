@@ -44,7 +44,7 @@ and preserve the manual workflow; never present mocks as a live retrieval.
 - python scripts/bibliographic_workflow.py dedupe INPUT1.csv INPUT2.csv --out-dir DEDUPED
 - python scripts/bibliographic_enrichment.py doi --provider opencitations --doi 10.1234/example --allow-network
 - python scripts/bibliographic_enrichment.py doi --provider unpaywall --doi 10.1234/example --allow-network
-- python scripts/bibliographic_enrichment.py zotero --limit 25 --allow-network
+- python scripts/bibliographic_enrichment.py zotero --limit 25 --out-dir PRIVATE_STAGING --allow-network
 
 The CLI's --allow-network flag is explicit opt-in. Without it the search
 does not touch the network. Provider keys are NEVER accepted as CLI arguments.
