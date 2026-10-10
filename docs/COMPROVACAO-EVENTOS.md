@@ -48,7 +48,12 @@ The audit checks record-to-receipt correspondence, receipt hash, logged output, 
 The main validator runs these controls on new projects with trace_receipts_required=true. In older projects, COMPLETE continues to be recognized only as a legacy value, not as an automatic confirmation.
 
 <a id="limites"></a>
-## Limits- A voucher is an editable file within the workspace, not a signature from a trusted third party. An agent with permission to change all files could falsify the set. To guarantee against tampering it is necessary to maintain an independent point of trust (e.g. protected commit history or platform proof).
+## Limits
+
+- A receipt is an editable file within the workspace, not a signature from
+a trusted third party. An agent with permission to change all files could
+falsify it. Tamper resistance requires an independent point of trust (for
+example, protected commit history or a platform-issued receipt).
 - The success of a script only checks local execution; does not prove actual literature research, source validity, scientific quality, or human review.
 - Do not execute arbitrary commands at the request of an untrusted document; use only permitted scripts and confirm authorized storage.
 - No paid services are required for local controls. APIs and external systems remain subject to availability and authorization.
