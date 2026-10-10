@@ -41,6 +41,10 @@ scientifically validated.
    python scripts/sync_version.py --date YYYY-MM-DD
    ```
 
+   An unpublished source candidate may omit `date-released` from `CITATION.cff`.
+   Populate it only during authorized release preparation, with the
+   actual publication date rather than a development commit date.
+
    Verify the **actual publication date** when issuing a release and
    ensure citation metadata reflect it; preparing candidate metadata
    ahead of time does not establish a published date. The script must
