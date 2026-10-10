@@ -16,7 +16,7 @@ disconnect or mix manual records with licensed and openly accessed sources.
 Connection credentials belong to secure, authorized execution infrastructure,
 not to the conversation or scientific project files.
 
-## Verified work in this pull request
+## Software implemented and documented in PR #24 (merged into main)
 
 M0 — DEFAULT OFF: A missing connectors configuration yields disabled. No
 existing initializer, routes or research gates were modified. Regression tests
@@ -67,9 +67,10 @@ No automatic private library connection inside ChatGPT, Zotero note,
 attachment or abstractNote export, PDF ingestion, rights confirmation
 or scientific fulltext processing. Metadata never proves article reading.
 
-M7 — RELEASE READINESS: Draft PR, offline software regression tests and CI
-release audit to be checked on the final head commit. This branch must not
-merge automatically or modify PR #22.
+M7 — RELEASE READINESS: PR #24 was merged into `main` following passing
+offline regression and release-audit checks. The v0.9.0-beta.2 source
+candidate remains unpublished; scientific end-to-end and installed-platform
+acceptance tests are pending. This work did not merge or modify PR #22.
 
 ## Provider technical reference
 
