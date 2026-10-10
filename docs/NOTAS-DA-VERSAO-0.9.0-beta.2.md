@@ -61,7 +61,7 @@ A confirmed local software event is not an independent scientific review.
 1. Download `MeuArtigoSkill-v0.9.0-beta.2.zip` and `SHA256SUMS.txt`
    from this exact GitHub release after it is available.
 2. Verify the checksum, then follow the
-   [installation guide](../docs/COMECE-AQUI.md) for your supported platform.
+   [installation guide](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/COMECE-AQUI.md) for your supported platform.
 3. Work only with lawfully accessible sources and confirm writing
    permissions before declaring files saved remotely.
 4. Report non-sensitive defects through GitHub Issues; use a private channel
