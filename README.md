@@ -16,6 +16,20 @@ The project is available in a **public GitHub repository** as an **experimental 
 
 The **manuscript language is chosen separately** according to the researcher's instructions or the selected journal's author guidelines. You may communicate in Portuguese while preparing an English-language article. Machine-readable identifiers, source citations and original quotations are not silently translated. See the [interaction language policy](./references/language-policy.md).
 
+## Visual project progress without a plugin
+
+The Skill can present **native visual status panels in the chat** when the
+active ChatGPT environment supports them, with a plain-text fallback
+elsewhere. Ask for the Meu Artigo dashboard to see overview, C.A.D.A. tasks,
+researcher decisions, evidence, and history/synchronization. This uses the
+existing authorized canonical records, not an independent database. It
+does not require a custom MCP server, hosting or a change of product type.
+
+The separately developed MCP Apps UI in [draft PR #22](https://github.com/rebsonm/MeuArtigoSkill/pull/22)
+is an optional, more customized companion and remains **unmerged**. See the
+[Skill-native visual pilot guide](docs/NATIVE-CHAT-DASHBOARD.md) and
+[read-only projection](scripts/native_chat_dashboard.py).
+
 ## What you can do
 
 - **Turn an idea into a research project:** delimit the problem, formulate questions, organize objectives and define the intended contribution.
