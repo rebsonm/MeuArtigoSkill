@@ -93,16 +93,21 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
         "approval_documented": documented_approval(row),
         "independently_scientifically_validated": False,
     } for row in gates]
-    # The user-requested C.A.D.A. visual table contains exactly four fields.
-    # Task (not Next_action), Owner and Deadline are canonical matrix headers.
-    # The source status remains internal for counting active tasks and never
-    # becomes a fifth visible column. Missing values are not invented.
-    task_items = [] if tasks is None else [{
-        "id": text(row.get("CADA_ID"), 40) or None,
-        "task": text(row.get("Task"), 180) or None,
-        "execution_owner": text(row.get("Owner"), 100) or None,
-        "deadline": text(row.get("Deadline"), 40) or None,
-    } for row in tasks]
+    # Canonical CSV schema (init_project.py): CADA_ID, Title, Assigned_to,
+    # Deadline. The separate Excel workbook uses Task/Owner; accept those
+    # names only as compatibility aliases for legacy imports. Never use
+    # Next_action as the task title or derive a missing responsible person.
+    # Status stays internal for counts and selecting the next useful rows.
+    def compact_task(row: dict[str, str]) -> dict:
+        return {
+            "id": text(row.get("CADA_ID"), 40) or None,
+            "task": text(row.get("Title") or row.get("Task"), 180) or None,
+            "execution_owner": text(row.get("Assigned_to") or row.get("Owner"), 100) or None,
+            "deadline": text(row.get("Deadline"), 40) or None,
+        }
+    task_items = [] if tasks is None else [compact_task(row) for row in tasks]
+    active_task_items = [compact_task(row) for row in active]
+    minimal_tasks = active_task_items[:3] if active_task_items else task_items[:3]
     counts = {
         "registered_tasks": nrows(tasks),
         "tasks_reported_done": None if tasks is None else sum(
@@ -112,7 +117,8 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
         "documented_gate_approvals": None if gates is None else sum(
             x["approval_documented"] for x in gate_items),
     }
-    # No free-form excerpts, document paths, source DOIs, review texts or user IDs.
+    # Task titles and execution assignees come from the authorized project.
+    # Never expose unrelated notes, source paths, protected text or review excerpts.
     return {
         "schema": "MEU_ARTIGO_NATIVE_PANEL_V1",
         "mode": chosen,
@@ -127,7 +133,7 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
             "scientific_progress_percentage": None,
         },
         "tasks": {
-            "items": (task_items[:3] if chosen == "MINIMAL" else task_items),
+            "items": (minimal_tasks if chosen == "MINIMAL" else task_items),
             "registered_total": nrows(tasks),
             "items_partial": chosen == "MINIMAL" and len(task_items) > 3,
         },
