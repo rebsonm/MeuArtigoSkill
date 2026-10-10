@@ -32,7 +32,7 @@ artifact as an independently validated, published, or tested-on-ChatGPT Skill.
   ChatGPT plugin were not verified in this release-candidate work.
 - Single-project offline journal protects against interrupted local multi-file
   writes but is not a remotely shared database or transactional Google Drive
-  implementation. Only explicitly authorized WORK_FALLBACK files can be modified.
+  implementation. Only locally authorized fallback workspaces can be modified.
 - The manual research method, scientific gates, [L]/[I]/[P], claims ledger,
   evidence checks, and native four-column C.A.D.A. view remain unchanged.
 - A successful CI run establishes software-test success only. Independent
