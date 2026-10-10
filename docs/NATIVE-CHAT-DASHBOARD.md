@@ -34,8 +34,10 @@ limited to these four columns, in this order:
 | ID Tarefa | Tarefa | Responsável execução | Prazo |
 | --- | --- | --- | --- |
 
-Each row is read from `CADA_ID`, `Task`, `Owner` and `Deadline`
-in the authorized canonical C.A.D.A. register. An absent field is
+Each row is read from `CADA_ID`, `Title`, `Assigned_to` and `Deadline`
+in the authorized canonical C.A.D.A. CSV register. Older Excel imports
+may use `Task` and `Owner` when the canonical headings are absent.
+MINIMAL prioritizes active tasks; FULL shows every recorded task. An absent field is
 presented as "Não informado", not fabricated. Do not add status,
 priority, claim-evidence information or approval buttons to this
 table. MINIMAL can show fewer rows than FULL; neither mode changes
@@ -45,7 +47,7 @@ the canonical register.
 
 1. Ask in the researcher's usual language: "Show the Meu Artigo panel for
    my current project."
-2. Identify and read the authorized \`CONTINUIDADE.md\` and the relevant
+2. Identify and read the authorized `CONTINUIDADE.md` and the relevant
    canonical records, preferably directly from the connected Drive.
 3. Build the five views from the real state, labeling any unavailable
    register explicitly as unavailable. Default to MINIMAL.
@@ -65,7 +67,7 @@ python scripts/native_chat_dashboard.py /authorized/project --mode FULL --format
 The Python script consumes the existing canonical configuration and
 registers and never writes to them. It deliberately reports local Drive
 synchronization as **not verified in this session** and reports mere
-presence of \`SOURCE_VERIFICATION.json\`, never unverified health checks.
+presence of `SOURCE_VERIFICATION.json`, never unverified health checks.
 A host may add real fresh audit results after separately checking them.
 
 ## Relationship to PR #22
