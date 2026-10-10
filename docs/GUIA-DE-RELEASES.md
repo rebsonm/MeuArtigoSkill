@@ -8,7 +8,7 @@ scientifically validated.
 ## Separate CI and publishing responsibilities
 
 1. **Release audit** (`.github/workflows/release-audit.yml`) runs on
-   pull requests and pushes to the protected main branch. Its required
+   pull requests and pushes to the main branch. Its required
    check remains named `audit`. It checks software regression tests,
    copyright/privacy controls, documentation, provenance and bundle
    integrity with `contents: read`. It cannot publish releases.
@@ -32,9 +32,8 @@ scientifically validated.
    results, corpus sizes, validation or scientific benefit.
 3. Once ready to release, update the **single canonical `VERSION`**
    identifier. For example, the successor candidate after
-   `0.8.0-beta.8` may be `0.9.0-beta.1`, but only if
-   all intended source-language and quality requirements have
-   actually been satisfied.
+   the source candidate after `0.9.0-beta.1` is `0.9.0-beta.2`, but
+   this identifier must not be mistaken for a published GitHub release.
 4. Synchronize README, citation version/date and historical
    changelog metadata:
 
@@ -42,9 +41,10 @@ scientifically validated.
    python scripts/sync_version.py --date YYYY-MM-DD
    ```
 
-   Use the **actual** release date and manually written release
-   notes. The script must not manufacture a scientific narrative
-   or initiate publishing.
+   Verify the **actual publication date** when issuing a release and
+   ensure citation metadata reflect it; preparing candidate metadata
+   ahead of time does not establish a published date. The script must
+   not manufacture a scientific narrative or initiate publishing.
 
 5. Run engineering, documentation, source-language and package checks
    locally or in an authorized CI environment:
@@ -62,7 +62,8 @@ scientifically validated.
 6. Open a pull request and require the `audit` check to pass.
    Review version metadata, license, author attribution,
    package source, source-language completeness and public notes.
-   Merge into the protected `main`.
+   Merge into `main` only after applying the repository's actual,
+   verified review and branch-protection requirements.
 7. Manually dispatch `Publish beta` from `main` and enter the
    required confirmation. Inspect the newly created immutable
    release, `MeuArtigoSkill-v<version>.zip`, SHA-256 digest and
