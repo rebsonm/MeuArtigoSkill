@@ -13,6 +13,8 @@ import sys
 from datetime import date
 from pathlib import Path
 
+from source_report_integrity import assess as assess_source_report
+
 MGMT = "00_Gestao_e_Continuidade"
 FILES = {
     "tasks": "11_CADA_Control.csv",
@@ -91,6 +93,12 @@ def view(project: Path, *, today: date | None = None, mode: str | None = None) -
 
     base = root / MGMT
     tables = {key: csv_rows(base, key) for key in FILES}
+    # Read-only integrity check; do not expose paths, DOI or source passages.
+    source_state = assess_source_report(root, require_complete=True)
+    source_public = {key: source_state[key] for key in (
+        "status", "checked", "pending_review", "blocked", "reviewed_limitations",
+        "editorial_retraction_alerts", "editorial_correction_alerts",
+        "editorial_updates", "provider_warnings", "report_missing", "report_stale")}
     tasks = tables["tasks"]
     gates = tables["gates"]
     active = [] if tasks is None else [t for t in tasks if norm(t.get("Status")) not in TERMINAL]
@@ -117,6 +125,12 @@ def view(project: Path, *, today: date | None = None, mode: str | None = None) -
     } for g in gates]
     ready_gates = [g for g in rows_gates if g["status"].upper() == "READY"]
     # Gate is never shown as "approved" without decision, validator and evidence recorded.
+    for gate in rows_gates:
+        if gate["id"] == "GATE-0006":
+            gate["source_controls_status"] = source_public["status"]
+            gate["approval_with_open_source_controls"] = (
+                gate["documented_approval"]
+                and source_public["status"] not in {"RECORDED_CLEAR", "REVIEWED_LIMITATIONS"})
     approved_gates = sum(g["documented_approval"] for g in rows_gates) if gates is not None else None
 
     task_view = lambda t: {
@@ -182,6 +196,9 @@ def view(project: Path, *, today: date | None = None, mode: str | None = None) -
             "ai_uses_registered": metric(ai_rows),
             "substantive_ai_uses_pending_review": ai_review_pending,
             "submission_checks_registered": metric(tables["submissions"]),
+            "source_verification": source_public,
+            "gates_approved_with_source_conflicts": sum(
+                bool(g.get("approval_with_open_source_controls")) for g in rows_gates),
         },
         "traceability": {
             "events_registered": metric(trace),
@@ -215,6 +232,9 @@ def plain_text(data: dict) -> str:
         "Validações científicas documentadas: " + str(sc["gates_approved_documented"]) + "/" + str(sc["gates_total"]),
         "Próxima ação: " + (nxt["action"] + " [" + nxt["id"] + "]" if nxt else "Não identificada nos registros"),
         "Próximo gate pronto: " + (sc["next_ready_gate"]["name"] if sc["next_ready_gate"] else "Nenhum marcado como READY"),
+        "Integridade das fontes: " + sc["source_verification"]["status"]
+        + " | divergências: " + str(sc["source_verification"]["blocked"])
+        + " | revisão pendente: " + str(sc["source_verification"]["pending_review"]),
         "Estado do armazenamento (declarado): " + data["project"]["storage_state"],
         "Importante: progresso C.A.D.A. não equivale a validação científica.",
     ])
