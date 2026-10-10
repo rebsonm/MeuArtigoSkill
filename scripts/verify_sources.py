@@ -358,8 +358,17 @@ def main(argv=None):
     except (OSError, ValueError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
-    print(json.dumps({"report": str(out), **report["summary"]}, ensure_ascii=False))
-    return 2 if args.strict and (report["summary"]["failed"] or report["summary"]["review_required"]) else 0
+    from source_report_integrity import assess as assess_source_report
+    state = assess_source_report(root, require_complete=True)
+    print(json.dumps({"report": str(out), **report["summary"],
+                      "integrity_status": state["status"],
+                      "identity_issues": len(report["input_manifest"]["identity_issues"])},
+                     ensure_ascii=False))
+    if args.strict and (
+            report["summary"]["failed"] or report["summary"]["review_required"]
+            or state["status"] != "RECORDED_CLEAR"):
+        return 2
+    return 0
 
 
 if __name__ == "__main__":
