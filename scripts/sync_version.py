@@ -49,13 +49,28 @@ def sync(root: Path, release_date: str) -> list[str]:
     citation = replace_once(r'^version:\s*"[^"]+"',
                              f'version: "{version}"',
                              contents["CITATION.cff"], "CITATION version")
-    citation = replace_once(r'^date-released:\s*"[^"]+"',
-                             f'date-released: "{release_date}"',
-                             citation, "CITATION release date")
+    # A source-only candidate may correctly omit date-released: it has not
+    # yet been published. Insert the actual date only during release prep.
+    if re.search(r"(?m)^date-released:\s*", citation):
+        citation = replace_once(r'^date-released:\s*"[^"]+"',
+                                 f'date-released: "{release_date}"',
+                                 citation, "CITATION release date")
+    else:
+        citation = replace_once(r'^version:\s*"[^"]+"',
+                                 f'version: "{version}"\ndate-released: "{release_date}"',
+                                 citation, "CITATION date insertion")
 
     changelog = contents["CHANGELOG.md"]
     header = f"## {version} — {release_date}"
-    if header not in changelog:
+    candidate_headers = re.findall(
+        rf"(?m)^## {re.escape(version)} — \d{{4}}-\d{{2}}-\d{{2}}$",
+        changelog)
+    if len(candidate_headers) > 1:
+        raise ValueError("Ambiguous duplicate headings for current VERSION")
+    if candidate_headers and candidate_headers[0] != header:
+        # Reconcile a candidate header with the actual published date.
+        changelog = changelog.replace(candidate_headers[0], header, 1)
+    elif header not in changelog:
         m = re.search(r"(?m)^## Unreleased\s*\n", changelog)
         if not m:
             raise ValueError("CHANGELOG is missing Unreleased section")
