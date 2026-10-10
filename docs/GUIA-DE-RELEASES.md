@@ -63,6 +63,16 @@ scientifically validated.
    python scripts/build_skill_bundle.py
    ```
 
+   Before starting the manual publication workflow, verify that the
+   release notes no longer describe the version as an unpublished candidate,
+   `CITATION.cff` carries the actual publication date, and README links
+   explicitly to the version being published. The manual workflow will
+   fail closed if these documentary conditions are not met:
+
+   ```bash
+   python scripts/check_release_metadata.py --require-today
+   ```
+
 6. Open a pull request and require the `audit` check to pass.
    Review version metadata, license, author attribution,
    package source, source-language completeness and public notes.
