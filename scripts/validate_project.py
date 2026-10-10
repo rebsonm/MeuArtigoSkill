@@ -60,6 +60,12 @@ def main():
     a=ap.parse_args()
     root=Path(a.project_path).resolve()
     errors=[];warnings=[]
+    # Never validate a workspace while a three-register API import is
+    # interrupted. Recovery is explicit and restricted to authorized local
+    # fallback storage; do not silently create a synthetic success report.
+    from register_transaction import has_pending_transaction
+    if has_pending_transaction(root):
+        errors.append("Interrupted bibliographic CSV import: explicitly recover the pending transaction before validating this project")
     cfg_data={}
 
     for rel in REQUIRED:

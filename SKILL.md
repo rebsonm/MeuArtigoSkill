@@ -125,7 +125,7 @@ consulted in the researcher's particular study merely because it is indexed.
 | --- | --- |
 | Beginner research support | [beginner mode](references/beginner-mode.md), [essential flow](references/fluxo-essencial.md) |
 | Theory, review, qualitative, quantitative, mixed or design science route | [method routes](docs/ROTAS-METODOLOGICAS.md), [method index](references/INDICE-METODOLOGICO.md) |
-| Bibliographic retrieval relevant to design | [review stages](references/workflow-stages.md), [search and screening](references/search-screening.md), [tool orchestration](references/tool-orchestration.md) |
+| Bibliographic retrieval relevant to design | [review stages](references/workflow-stages.md), [search and screening](references/search-screening.md), [optional bibliographic APIs](references/bibliographic-connectors.md) |
 | Human screening decisions | [auditable screening](docs/SCREENING-AUDITAVEL.md) |
 | Evidence synthesis or critical assessment | [synthesis](references/evidence-synthesis.md), [critical appraisal](docs/AVALIACAO-CRITICA-FONTES.md) |
 | Eligible textual corpus or exploration | [Grounded Corpus Mode](references/grounded-corpus.md), [Corpus Map](references/corpus-map.md) |

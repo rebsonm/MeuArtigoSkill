@@ -81,6 +81,22 @@ but installing the Skill never installs/authenticates third-party
 accounts on the user's behalf. Where a connector is absent, explain
 a lawful manual path and record an unverified action correctly.
 
+## Optional bibliographic API automation (not required)
+
+The default scientific workflow **never requires** a bibliographic API
+credential. At the actual literature-search phase, the Skill may briefly
+offer optional help connecting the researcher's own sources; refusal or
+silence must never interrupt manual importing and scientific review.
+
+An opt-in CLI pilot for OpenAlex/Crossref metadata, private CSV staging and
+the existing hybrid deduplicator is described in the
+[optional bibliography guide](OPTIONAL-BIBLIOGRAPHIC-APIS.md) and its
+[Skill source contract](../references/bibliographic-connectors.md).
+This command-line tool is NOT a remotely hosted ChatGPT plugin.
+Scopus/WoS and other licensed sources are not falsely described as
+authenticated or live-testable without the researcher's own entitlements.
+Never paste tokens or passwords into this chat or a project document.
+
 ## ChatGPT-native visual dashboard
 
 A user may ask `$meu-artigo` to show project progress directly in the
