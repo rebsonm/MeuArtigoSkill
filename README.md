@@ -5,11 +5,11 @@
 Meu Artigo supports the journey from an initial research idea to a submission-ready manuscript. Rather than treating a paper as disconnected AI prompts, it maintains a continuous workflow with verified sources, documented progress, pending decisions, journal requirements and resumable research state.
 
 The project is available in a **public GitHub repository** as an **experimental beta**.
-The `main` branch now contains the **unpublished v0.9.0-beta.2 software candidate** following [PR #24](https://github.com/rebsonm/MeuArtigoSkill/pull/24). The most recent public tagged download is still **v0.9.0-beta.1**. Optional API adapters in the source must not be attributed to the older published ZIP.
+The [v0.9.0-beta.2 experimental release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.2) incorporates the optional bibliographic API pilot and stabilization fixes from PR #24, together with the documentation and publication safeguards from PR #25. A passing software audit does not constitute scientific validation.
 
 **Current version:** `0.9.0-beta.2` · [Releases and downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). The source code is free; third-party academic databases, platforms and subscriptions may have separate access requirements.
 
-**[Download the published beta (v0.9.0-beta.1)](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.1)** · [Installation guide](./docs/COMECE-AQUI.md) · [Unpublished beta.2 candidate notes](./docs/NOTAS-DA-VERSAO-0.9.0-beta.2.md)
+**[Download beta v0.9.0-beta.2](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.2)** · [Installation guide](./docs/COMECE-AQUI.md) · [Release notes and limitations](./docs/NOTAS-DA-VERSAO-0.9.0-beta.2.md)
 
 ## English source, your language when you use it
 
@@ -82,7 +82,7 @@ Undergraduate and graduate students, researchers, faculty and professionals prep
 
 Bibliographic APIs are optional. Manual researcher-guided searches, imports
 and evidence appraisal remain the default when no API is authorized. The
-beta.2 source candidate on `main` includes mock-tested OpenAlex, Crossref and
+v0.9.0-beta.2 software beta includes mock-tested OpenAlex, Crossref and
 Semantic Scholar metadata adapters plus limited DOI/Zotero metadata support.
 **It has not been live-validated as a ChatGPT integration.** Scopus/WoS
 and licensed fulltext connections are not enabled; use only with actual
