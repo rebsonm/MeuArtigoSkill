@@ -99,6 +99,30 @@ class OptionalConnectorTests(unittest.TestCase):
         self.assertEqual(parse_qs(urlsplit(urls[0]).query)["cursor"], ["*"])
         self.assertEqual(parse_qs(urlsplit(urls[1]).query)["cursor"], ["paging-2"])
 
+    def test_semantic_scholar_uses_own_search_semantics_and_redacts_api_key(self):
+        calls = []
+        def fake(url, headers):
+            calls.append((url, headers))
+            return {"total": 1, "data": [{
+                "paperId": "PAPER01", "title": "Governance of evidence",
+                "year": 2025, "venue": "Test Venue",
+                "authors": [{"name": "Example Author"}],
+                "externalIds": {"DOI": "10.1234/sample"},
+                "url": "https://www.semanticscholar.org/paper/PAPER01",
+                "abstract": "CONFIDENTIAL_NOT_FOR_EXPORT",
+            }]}
+        result = bc.search("semantic_scholar", "governance evidence",
+                           api_key="DO_NOT_LOG_SEMANTIC_KEY",
+                           execute=True, fetcher=fake)
+        self.assertEqual(result.status, "COMPLETE")
+        self.assertEqual(result.rows[0]["doi"], "10.1234/sample")
+        self.assertEqual(result.rows[0]["authors"], "Example Author")
+        self.assertNotIn("CONFIDENTIAL_NOT_FOR_EXPORT", json.dumps(result.rows))
+        self.assertEqual(calls[0][1]["x-api-key"], "DO_NOT_LOG_SEMANTIC_KEY")
+        self.assertNotIn("DO_NOT_LOG_SEMANTIC_KEY", calls[0][0])
+        self.assertEqual(parse_qs(urlsplit(calls[0][0]).query)["query"],
+                         ["governance evidence"])
+
     def test_throttling_avoids_invented_success(self):
         def rate_limited(url, headers):
             raise bc.ProviderFailure("RATE_LIMITED")
