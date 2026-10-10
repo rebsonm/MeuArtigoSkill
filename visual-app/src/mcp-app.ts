@@ -87,7 +87,14 @@ function render(): void {
   } else if (tab === "gates") {
     const box = panel("Validações humanas — não equivalem a tarefas");
     if (!s.gates?.length) empty(box, "Nenhum gate encontrado nos registros.");
-    else s.gates.forEach((gate: Obj) => item(box, val(gate.name), val(gate.id) + (gate.documented_approval ? " · aprovação registrada com evidência" : " · aprovação não comprovada pelos campos exigidos"), val(gate.status)));
+    else s.gates.forEach((gate: Obj) => {
+      const sourceConcern = gate.approval_with_open_source_controls === true;
+      const label = sourceConcern
+        ? " · aprovação registrada, mas controles das fontes apresentam problemas"
+        : gate.documented_approval ? " · aprovação documentada (não é certificação científica)"
+          : " · aprovação não comprovada pelos campos exigidos";
+      item(box, val(gate.name), val(gate.id) + label, sourceConcern ? "Revisar fontes" : val(gate.status));
+    });
     content.append(box);
   } else if (tab === "sources") {
     const metrics = add(content, "div", "grid");
@@ -95,6 +102,33 @@ function render(): void {
     kpi(metrics, s.screening_records_registered, "Registros em triagem");
     kpi(metrics, s.evidence_rows_registered, "Linhas de evidência");
     kpi(metrics, s.claims_registered, "Claims registrados");
+    const quality = s.source_verification || {};
+    const health = panel("Estado das verificações de fontes");
+    const descriptions: Record<string, string> = {
+      MISSING: "Relatório não encontrado",
+      STALE: "Relatório desatualizado; os arquivos ou registros mudaram",
+      BLOCKED: "Divergências objetivas impedem a aprovação",
+      REVIEW_REQUIRED: "Pendências precisam de avaliação humana específica",
+      REVIEWED_LIMITATIONS: "Limitações com manifestação humana registrada; fontes não estão automaticamente verificadas",
+      RECORDED_CLEAR: "Checagens registradas sem pendências detectadas; interpretação científica ainda exige revisão",
+    };
+    add(health, "div", "title", descriptions[quality.status] || "Estado de verificação desconhecido");
+    const healthMetrics = add(health, "div", "grid");
+    kpi(healthMetrics, quality.checked, "Verificações realizadas");
+    kpi(healthMetrics, quality.pending_review, "Pendências de revisão");
+    kpi(healthMetrics, quality.blocked, "Divergências bloqueantes");
+    kpi(healthMetrics, quality.reviewed_limitations, "Limitações documentadas");
+    if (quality.report_missing) add(health, "p", "note", "O relatório de verificação ainda não existe.");
+    else if (quality.report_stale) add(health, "p", "note", "O relatório não corresponde aos registros e arquivos atuais; é necessário gerar nova verificação.");
+    if (s.gates_approved_with_source_conflicts) add(health, "p", "note", "Há aprovação humana registrada, porém os controles de fonte impedem considerá-la regular.");
+    content.append(health);
+    const editorial = panel("Avisos editoriais e disponibilidade");
+    item(editorial, "Retratações sinalizadas", val(quality.editorial_retraction_alerts), quality.editorial_retraction_alerts ? "Revisar" : undefined);
+    item(editorial, "Correções sinalizadas", val(quality.editorial_correction_alerts), quality.editorial_correction_alerts ? "Revisar" : undefined);
+    item(editorial, "Atualizações editoriais sinalizadas", val(quality.editorial_updates));
+    item(editorial, "Alertas de serviços bibliográficos", val(quality.provider_warnings));
+    add(editorial, "p", "note", "Avisos editoriais exigem análise do contexto. Um alerta ou exceção humana não altera automaticamente o estado de uma fonte.");
+    content.append(editorial);
     const box = panel("Integridade das fontes e afirmações");
     item(box, "Afirmações que requerem revisão", val(s.claims_needing_review) + " registradas com pendências de robustez ou validação");
     item(box, "Usos substantivos de IA pendentes", val(s.substantive_ai_uses_pending_review) + " registros");
