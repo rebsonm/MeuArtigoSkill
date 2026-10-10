@@ -149,6 +149,28 @@ class OptionalConnectorTests(unittest.TestCase):
                          "LOCAL_EXECUTION_RECORD_NOT_INDEPENDENT_PROVIDER_RECEIPT")
         self.assertFalse(receipt["drive_sync_verified"])
 
+    def test_empty_real_search_is_success_not_transport_failure(self):
+        empty = bc.search("openalex", "bounded query", limit=15,
+                          execute=True, fetcher=lambda url, headers: {
+                              "meta": {"count": 0}, "results": []})
+        self.assertEqual(empty.status, "COMPLETE")
+        self.assertEqual(empty.reported_total, 0)
+        self.assertEqual(empty.rows, [])
+        out = self.root / "empty-result"
+        receipt = bw.export_staging(self.root, out, empty)
+        self.assertEqual(receipt["status"], "COMPLETE")
+        self.assertEqual(receipt["records_received"], 0)
+
+    def test_trace_from_api_uses_existing_validator_state(self):
+        outcome = bc.search("openalex", "sample", execute=True,
+            fetcher=lambda url, h: {"meta": {"count": 1}, "results": [oa()]})
+        out = self.root / "stage-trace"
+        bw.export_staging(self.root, out, outcome)
+        bw.commit_to_authorized_local_project(self.root, outcome,
+                                               out / "openalex_metadata.csv")
+        recorded = bw._read_rows(self.root / bw.TRACE, init_project.TABLES[bw.TRACE])
+        self.assertEqual(recorded[0]["Status"], "UNVERIFIED")
+
     def test_local_commit_preserves_scientific_gates_and_ids(self):
         result = bc.search("openalex", "synthetic search", execute=True,
                            fetcher=lambda url, h: {
