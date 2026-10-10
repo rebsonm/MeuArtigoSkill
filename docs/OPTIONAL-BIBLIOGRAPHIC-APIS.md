@@ -69,8 +69,9 @@ or scientific fulltext processing. Metadata never proves article reading.
 
 M7 — RELEASE READINESS: PR #24 was merged into `main` following passing
 offline regression and release-audit checks. The v0.9.0-beta.2 source
-candidate remains unpublished; scientific end-to-end and installed-platform
-acceptance tests are pending. This work did not merge or modify PR #22.
+pilot is packaged as experimental `v0.9.0-beta.2` software. Scientific
+end-to-end and installed-platform tests remain pending. PR #22 was
+not merged or changed by this work.
 
 ## Provider technical reference
 
