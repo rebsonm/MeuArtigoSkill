@@ -82,6 +82,45 @@ class NativeChatDashboardTests(unittest.TestCase):
         self.assertEqual(a["overview"], b["overview"])
         self.assertTrue(a["tasks"]["items_partial"])
 
+    def test_cada_only_requested_four_columns_and_correct_mappings(self):
+        self.write("11_CADA_Control.csv", [
+            {"CADA_ID": "CADA-0001", "Task": "Review manuscript",
+             "Owner": "Researcher", "Deadline": "2026-10-19",
+             "Status": "READY", "Next_action": "Do not display this next step",
+             "Completion_evidence": "Private proof"},
+            {"CADA_ID": "CADA-0002", "Task": "Check sources",
+             "Owner": "Team", "Deadline": "", "Status": "BLOCKED"},
+        ])
+        data = native.panel(self.root)
+        row = data["tasks"]["items"][0]
+        self.assertEqual(set(row), {"id", "task", "execution_owner", "deadline"})
+        self.assertEqual(row, {"id": "CADA-0001", "task": "Review manuscript",
+                               "execution_owner": "Researcher", "deadline": "2026-10-19"})
+        self.assertEqual(data["tasks"]["items"][1]["deadline"], None)
+        self.assertNotIn("Do not display this next step", json.dumps(data))
+        self.assertNotIn("Private proof", json.dumps(data))
+
+    def test_text_fallback_has_four_columns_and_missing_fields(self):
+        self.write("11_CADA_Control.csv", [
+            {"CADA_ID": "CADA-0009", "Task": "Compile | evidence",
+             "Owner": "", "Deadline": "", "Status": "READY"}
+        ])
+        data = native.panel(self.root, mode="FULL")
+        lines = native.task_table(data).splitlines()
+        self.assertEqual(lines[0], "ID Tarefa | Tarefa | Responsável execução | Prazo")
+        self.assertEqual(lines[1], "--- | --- | --- | ---")
+        self.assertIn(r"Compile \| evidence", lines[2])
+        self.assertIn("Not recorded", lines[2])
+        self.assertEqual(len(lines), 3)
+        self.assertIn("ID Tarefa | Tarefa | Responsável execução | Prazo",
+                      native.fallback(data))
+
+    def test_missing_canonical_task_does_not_substitute_next_action(self):
+        data = native.panel(self.root)
+        self.assertEqual(data["tasks"]["items"][0]["id"], "CADA-0001")
+        self.assertIsNone(data["tasks"]["items"][0]["task"])
+        self.assertIsNone(data["tasks"]["items"][0]["execution_owner"])
+
     def test_no_mutation_even_when_mode_override(self):
         before = {file: file.read_bytes() for file in self.mgmt.iterdir() if file.is_file()}
         native.panel(self.root, mode="FULL")
