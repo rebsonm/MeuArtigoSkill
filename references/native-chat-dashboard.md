@@ -46,9 +46,18 @@ Do not use an unfamiliar UI widget if the host does not support it.
    blocker, known synchronization state and last verified state timestamp.
    Operational fractions may be shown only with a precise denominator.
    Never show a scientific quality or completion percentage.
-2. **C.A.D.A. tasks:** task ID, state, due date and evidence-of-completion
-   indicator when actually recorded. A DONE task is a management
-   statement, not proof of completion or gate approval.
+2. **C.A.D.A. tasks:** use one **simple four-column table**, in this
+   exact order in Portuguese conversations:
+   `ID Tarefa | Tarefa | Responsável execução | Prazo`.
+   Map those columns to the existing canonical C.A.D.A. fields
+   `CADA_ID`, `Task`, `Owner`, and `Deadline`, respectively.
+   Do **not** mistake `Next_action` for `Task`, invent a responsible
+   person or assign a due date when the source field is blank.
+   Display missing values as "Não informado" (or an equivalent in the
+   researcher's language). Do not add status, priority, progress,
+   completion proofs or scientific validation as table columns.
+   Existing status and evidence controls remain available to the
+   underlying governance workflow but are not shown in this simple view.
 3. **Human validation:** actual GATE_ID, approval status, validator
    evidence present/missing, next required decision. "Approval recorded"
    is distinct from authenticated approval and independent scientific
