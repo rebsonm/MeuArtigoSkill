@@ -36,6 +36,8 @@ and preserve the manual workflow; never present mocks as a live retrieval.
 
 - python scripts/bibliographic_workflow.py guide --lang pt
 - python scripts/bibliographic_workflow.py status --project PROJECT
+- python scripts/bibliographic_workflow.py configure --project PROJECT --provider openalex --enable
+- python scripts/bibliographic_workflow.py configure --project PROJECT --provider openalex --disable
 - python scripts/bibliographic_workflow.py search --provider openalex --query "..." --limit 50 --out-dir STAGING --allow-network
 - python scripts/bibliographic_workflow.py search --provider crossref --query "..." --limit 50 --out-dir STAGING --allow-network
 - python scripts/bibliographic_workflow.py search --provider semantic_scholar --query "..." --limit 30 --out-dir STAGING --allow-network
@@ -50,6 +52,11 @@ OPENALEX_API_KEY, SEMANTIC_SCHOLAR_API_KEY, MEU_ARTIGO_CONTACT_EMAIL,
 OPENCITATIONS_ACCESS_TOKEN, ZOTERO_USER_ID and ZOTERO_API_KEY may be supplied
 by the local user's protected execution environment, never pasted into ChatGPT
 or saved with the article. DOI enrichment and Zotero have separate opt-in commands.
+
+The configure command records an optional preference only on an explicitly
+authorized local WORK_FALLBACK project; it is NOT credential authorization.
+Removing an optional preference is not equivalent to revoking a token at the
+provider; the researcher must revoke keys at the actual vendor when required.
 
 The output CSV and sanitized receipt are staging files. --commit-local may
 append search, screening and trace rows only to WORK_FALLBACK projects with
