@@ -223,6 +223,16 @@ path, record the limitation and do not simulate an operation. Consult the
 [ChatGPT](docs/CHATGPT.md), [Claude](docs/CLAUDE.md) and
 [Gemini](docs/GEMINI.md). Adapters never relax scientific or ethical controls.
 
+**Native in-chat visual dashboard:** For progress requests, read the
+authorized canonical project and follow the
+[native presentation contract](references/native-chat-dashboard.md).
+Show overview, C.A.D.A., human gates, evidence and history/sync with
+host-native visual elements where available, otherwise Markdown.
+MINIMAL/FULL alters only the display. Never require MCP hosting,
+invent data or imply that navigation approves scientific work.
+An authorized local project can use the read-only
+`scripts/native_chat_dashboard.py`; Drive remains canonical when used.
+
 For **each response**, in the researcher's active conversational language:
 state confirmed facts, material uncertainty and the next valid action.
 Avoid flooding an inexperienced researcher with internal record names
