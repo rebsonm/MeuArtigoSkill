@@ -183,6 +183,31 @@ class OptionalConnectorTests(unittest.TestCase):
             bw.commit_to_authorized_local_project(self.root, result,
                                                     out / "openalex_metadata.csv")
 
+    def test_opt_in_can_be_reversed_without_keys_or_network(self):
+        self.assertEqual(bw.optional_config(bw._read_config(self.root))["enabled"], False)
+        state = bw.set_provider_preference(self.root, "openalex", True)
+        self.assertTrue(state["enabled"])
+        self.assertFalse(state["is_authorized_provider_credential"])
+        self.assertFalse(state["drive_sync_verified"])
+        cfg = bw._read_config(self.root)
+        self.assertTrue(cfg["bibliographic_connectors"]["enabled"])
+        self.assertEqual(cfg["bibliographic_connectors"]["providers"]["openalex"], {
+            "enabled": True,
+            "credential_verified": False,
+            "provider_licence_verified": False})
+        state = bw.set_provider_preference(self.root, "openalex", False)
+        self.assertFalse(state["enabled"])
+        self.assertFalse(bw.optional_config(bw._read_config(self.root))["enabled"])
+
+    def test_local_preference_cannot_change_drive_canonical_project(self):
+        path = self.mgmt / "PROJECT_CONFIG.json"
+        path.write_text(json.dumps({"storage_mode": "GOOGLE_DRIVE_STAGING"}),
+                        encoding="utf-8")
+        before = path.read_bytes()
+        with self.assertRaises(ValueError):
+            bw.set_provider_preference(self.root, "openalex", True)
+        self.assertEqual(path.read_bytes(), before)
+
     def test_manual_mode_help_does_not_require_provider(self):
         self.assertEqual(bw.run(["status", "--project", str(self.root)]), 0)
         self.assertEqual(bw.run(["guide", "--lang", "pt"]), 0)
