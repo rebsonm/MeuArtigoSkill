@@ -255,6 +255,8 @@ def assess(root: Path, *, require_complete: bool = True) -> dict:
             state["pending_review"] += 1
             if exceptions.get(str(entry.get("Evidence_ID") or "")):
                 state["reviewed_limitations"] += 1
+    if require_complete and not entries:
+        state["errors"].append("source report contains no checked evidence records")
     if state["blocked"] or state["errors"]:
         state["status"] = "BLOCKED"
     elif state["pending_review"]:
