@@ -81,6 +81,21 @@ but installing the Skill never installs/authenticates third-party
 accounts on the user's behalf. Where a connector is absent, explain
 a lawful manual path and record an unverified action correctly.
 
+## ChatGPT-native visual dashboard
+
+A user may ask `$meu-artigo` to show project progress directly in the
+conversation. Use native UI cards, tables or charts when the active host
+supports them; otherwise fall back to clear Markdown. This feature is
+**part of the Skill's presentation contract** and does not require a new
+MCP app, hosting or a custom plugin. Use real authorized Drive state
+or an explicitly authorized local project; preserve human scientific
+decisions, unknown data and read-only navigation.
+
+See [native dashboard pilot](NATIVE-CHAT-DASHBOARD.md).
+Importing a different or older Skill package does not automatically
+install these changed instructions. A generated native view does not
+establish that a permanent custom app was installed.
+
 ## Functional limitations
 
 For the installed version, verify actual first-run behavior,
