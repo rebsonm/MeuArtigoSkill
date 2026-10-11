@@ -6,7 +6,7 @@
 
 - Bibliographic CSV schema/identity validation, structured rejection of malformed and unidentified records, exact-duplicate provenance and review-only fuzzy candidates.
 - Optional XLSX dependency diagnostics and portable CLI operation without artifact_tool installed.
-- Multiple TRACE_ID parsing with historical PARTIAL and UNVERIFIED states preserved; differentiation of logged but NOT_EXECUTED searches.
+- Multi-reference trace parsing with incomplete and unverified states preserved; distinction between logged but unexecuted queries and verified searches.
 - Build source identity recorded only when a clean expected Git checkout is observable, plus out-of-archive package hashes/receipts.
 - PR #22 scientific source verification/integrity controls, including report staleness, editorial warnings, objective conflicts and no AI substitution for human approval, ported onto maintained beta.2 source.
 - Experimental read-only MCP Apps dashboard with nine research modules, guided next-action and onboarding flows, responsive dark-mobile layout and original Meu Artigo SVG icon.
