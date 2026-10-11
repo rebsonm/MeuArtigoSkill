@@ -278,6 +278,45 @@ class HeaderValidationTests(unittest.TestCase):
         self.assertEqual(records[0]["Authors"], "Souza, C.")
         self.assertEqual(records[0]["Author Full Names"], "Souza, Carla")
 
+    def test_publication_date_and_publication_year_are_complementary(self):
+        path = self.root / "wos_dates.tsv"
+        with path.open("w", encoding="utf-8", newline="") as fh:
+            writer = csv.DictWriter(
+                fh, delimiter="\t",
+                fieldnames=["Authors", "Article Title", "Publication Date",
+                            "Publication Year", "DOI"],
+            )
+            writer.writeheader()
+            writer.writerow({
+                "Authors": "Nascimento, R.", "Article Title": "Administrative systems",
+                "Publication Date": "OCT 12", "Publication Year": "2025",
+                "DOI": "10.1234/wos-dates",
+            })
+        result = self.execute(path)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        record = self.read_csv("consolidated_exact_dedup.csv")[0]
+        self.assertEqual(record["Publication Date"], "OCT 12")
+        self.assertEqual(record["Publication Year"], "2025")
+        self.assertEqual(record["_year"], "2025")
+
+    def test_two_competing_year_level_fields_remain_ambiguous(self):
+        path = self.root / "year_aliases.csv"
+        path.write_text(
+            "Title,Year,Publication Year,DOI\n"
+            "Example,2024,2025,10.1234/year-conflict\n",
+            encoding="utf-8",
+        )
+        self.assert_quarantine(path, "AMBIGUOUS_BIBLIOGRAPHIC_HEADERS", 1)
+
+    def test_two_competing_date_level_fields_remain_ambiguous(self):
+        path = self.root / "date_aliases.csv"
+        path.write_text(
+            "Title,Publication Date,Date,DOI\n"
+            "Example,OCT 12,NOV 20,10.1234/date-conflict\n",
+            encoding="utf-8",
+        )
+        self.assert_quarantine(path, "AMBIGUOUS_BIBLIOGRAPHIC_HEADERS", 1)
+
     def test_two_short_author_aliases_remain_ambiguous(self):
         path = self.root / "short_aliases.csv"
         path.write_text(
