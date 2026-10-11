@@ -27,6 +27,7 @@ FILES = {
     "ai": "14_AI_Use_Log.csv",
     "sync": "12_PM_Sync.csv",
     "submissions": "10_Submission_Checklist.csv",
+    "snapshots": "19_Snapshots.csv",
 }
 TERMINAL = {"DONE", "CANCELLED", "CANCELED", "SUPERSEDED"}
 APPROVALS = {"APPROVED", "APPROVED_WITH_CHANGES"}
@@ -44,6 +45,24 @@ def csv_rows(base: Path, name: str) -> list[dict[str, str]] | None:
         return None
     with path.open("r", encoding="utf-8-sig", newline="") as f:
         return list(csv.DictReader(f))
+
+def optional_profile(path: Path) -> dict:
+    """A missing or invalid editorial profile is not an approval."""
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError, UnicodeError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def compact_statuses(records: list[dict[str, str]] | None, field: str, limit: int = 12) -> list[dict]:
+    if records is None:
+        return []
+    return [{"id": short(r.get("Search_ID"), 40),
+             "source": short(r.get("Database_or_source"), 90),
+             "status": short(r.get(field), 40),
+             "date": short(r.get("Date"), 32)} for r in records[:limit]]
+
 
 def norm(value: object) -> str:
     return str(value or "").strip().upper()
@@ -160,6 +179,33 @@ def view(project: Path, *, today: date | None = None, mode: str | None = None) -
         or norm(c.get("Robustness_status")) in {"NOT_AUDITED", "REVISE", "REJECT", ""}
         for c in claims
     )
+    evidence_rows = tables["evidence"]
+    labels = None if evidence_rows is None else {
+        label: sum(norm(row.get("Epistemic_label")).strip("[]") == label
+                   for row in evidence_rows)
+        for label in ("L", "I", "P")
+    }
+    labeled_unknown = None if evidence_rows is None else sum(
+        norm(row.get("Epistemic_label")).strip("[]") not in {"L", "I", "P"}
+        for row in evidence_rows
+    )
+    submissions = tables["submissions"]
+    editorial_pending = None if submissions is None else sum(
+        norm(r.get("Status")) not in {"DONE", "COMPLETED", "CONFIRMED", "NOT_REQUIRED"}
+        for r in submissions
+    )
+    journal = optional_profile(root / "06_Submissao/Regras_da_Revista/JOURNAL_PROFILE.json")
+    anon = optional_profile(base / "ANONYMIZATION_PROFILE.json")
+    gate7 = next((g for g in rows_gates if g["id"] == "GATE-0007"), None)
+    journal_ready = bool(journal.get("status") == "VERIFIED" and journal.get("official_rules_verified") is True)
+    anon_ready = bool(norm(anon.get("status")) in {"VERIFIED", "NOT_REQUIRED"})
+    # Readiness is intentionally a conservative display-only summary. It
+    # never authorizes a submission, confirms journal compliance or releases Gate7.
+    editorial_ready = bool(gate7 and gate7["documented_approval"] and journal_ready
+                           and anon_ready and submissions is not None
+                           and editorial_pending == 0)
+    snapshots = tables["snapshots"]
+    last_snapshot = snapshots[-1] if snapshots else None
     sync_rows = tables["sync"]
     sync_conflicts = None if sync_rows is None else sum(bool(short(s.get("Conflict"))) and norm(s.get("Conflict")) not in {"NONE", "NO", "FALSE"} for s in sync_rows)
 
@@ -182,6 +228,10 @@ def view(project: Path, *, today: date | None = None, mode: str | None = None) -
             "completion_percent": percentage,
             "next_action": task_view(current) if current else None,
             "tasks": [task_view(t) for t in sorted(active, key=lambda t: task_key(t, today))[:30]] if mode == "FULL" else [],
+            "status_counts": None if tasks is None else {
+                status: sum(norm(t.get("Status")) == status for t in tasks)
+                for status in ("CAPTURED", "ASSIGNED", "READY", "IN_PROGRESS", "WAITING", "BLOCKED", "DONE")
+            },
         },
         "scientific": {
             "gates_total": metric(gates), "gates_approved_documented": approved_gates,
@@ -189,13 +239,28 @@ def view(project: Path, *, today: date | None = None, mode: str | None = None) -
             "gates": rows_gates,
             "searches_logged": metric(search_rows),
             "searches_marked_complete_in_register": search_reported,
+            "searches": compact_statuses(search_rows, "Status") if mode == "FULL" else [],
             "screening_records_registered": metric(tables["records"]),
-            "evidence_rows_registered": metric(tables["evidence"]),
+            "evidence_rows_registered": metric(evidence_rows),
+            "epistemic_counts": labels,
+            "epistemic_unclassified": labeled_unknown,
             "claims_registered": metric(claims),
             "claims_needing_review": needs_claim_review,
             "ai_uses_registered": metric(ai_rows),
             "substantive_ai_uses_pending_review": ai_review_pending,
-            "submission_checks_registered": metric(tables["submissions"]),
+            "submission_checks_registered": metric(submissions),
+            "editorial": {
+                "journal_status": short(journal.get("status") or "UNKNOWN", 40),
+                "journal_official_rules_verified": journal_ready,
+                "journal_name": short(journal.get("journal_name"), 100),
+                "anonymization_status": short(anon.get("status") or "UNKNOWN", 40),
+                "anonymization_profile_ready": anon_ready,
+                "checklist_count": metric(submissions),
+                "pending_checklist_items": editorial_pending,
+                "gate7_approval_recorded": bool(gate7 and gate7["documented_approval"]),
+                "ready_to_submit": editorial_ready,
+                "note": "Display summary only; final release additionally requires verified disclosure, audit hashes and genuine researcher authorization.",
+            },
             "source_verification": source_public,
             "gates_approved_with_source_conflicts": sum(
                 bool(g.get("approval_with_open_source_controls")) for g in rows_gates),
@@ -205,13 +270,27 @@ def view(project: Path, *, today: date | None = None, mode: str | None = None) -
             "latest_events": [{
                 "id": short(t.get("Trace_ID"), 40), "when": short(t.get("Timestamp"), 40),
                 "summary": short(t.get("Action_summary")), "status": short(t.get("Status"), 40),
-            } for t in (trace or [])[-5:][::-1]] if mode == "FULL" else [],
+            } for t in (trace or [])[-12:][::-1]] if mode == "FULL" else [],
         },
         "synchronization": {
             "external_manager_links_registered": metric(sync_rows),
             "conflicts_registered": sync_conflicts,
             "drive_synchronized_now": None,
+            "snapshots_registered": metric(snapshots),
+            "last_recorded_snapshot": None if not last_snapshot else {
+                "id": short(last_snapshot.get("SNAP_ID"), 40),
+                "when": short(last_snapshot.get("Timestamp"), 40),
+                "status": short(last_snapshot.get("Validation_status"), 40),
+                "has_manifest_sha256": bool(short(last_snapshot.get("Manifest_SHA256"))),
+            },
             "note": "Storage state is declared in config; live external synchronization is not verified by this read-only view.",
+        },
+        "onboarding": {
+            "canonical_config_present": True,
+            "drive_live_permission_verified": False,
+            "local_registers_present": len(tables) - sum(t is None for t in tables.values()),
+            "local_registers_expected": len(tables),
+            "requires_manual_connection": storage in {"GOOGLE_DRIVE", "GOOGLE_DRIVE_STAGING"},
         },
         "missing_registers": [FILES[key] for key, table in tables.items() if table is None],
         "warnings": [
