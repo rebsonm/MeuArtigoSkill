@@ -10,6 +10,7 @@ import re
 import shutil
 from datetime import datetime, timezone
 from pathlib import Path
+from transaction_coordinator import require_no_conflict
 
 MGMT="00_Gestao_e_Continuidade"
 SNAP_DIR=f"{MGMT}/Snapshots"
@@ -110,6 +111,10 @@ def main()->int:
     a=ap.parse_args()
 
     root=Path(a.project).resolve()
+    # A gate may create its own snapshot while its journal is prepared;
+    # all other snapshot attempts must stop on pending research operations.
+    allowed=("gate_snapshot",) if a.trigger=="HUMAN_GATE" and a.gate_id else ()
+    require_no_conflict(root, allow=allowed)
     table=root/SNAP_FILE
     ensure(table,SNAP_HEADERS)
     existing=rows(table)

@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 import shutil
 from uuid import uuid4
+from transaction_coordinator import require_no_conflict
 
 MGMT = "00_Gestao_e_Continuidade"
 JOURNAL_NAME = ".pending_gate_snapshot"
@@ -72,6 +73,7 @@ def recover_gate_snapshot(root: Path) -> dict:
     blocker; resolving such a collision requires an explicit audit.
     """
     root = Path(root).resolve()
+    require_no_conflict(root, allow=("gate_snapshot",))
     journal = journal_dir(root)
     if not has_pending_gate_snapshot(root):
         return {"status": "NO_PENDING_GATE_SNAPSHOT"}
@@ -141,6 +143,7 @@ def recover_gate_snapshot(root: Path) -> dict:
 def protect_gate_snapshot(root: Path):
     root = Path(root).resolve()
     mgmt = root / MGMT
+    require_no_conflict(root, allow=("gate_snapshot",))
     baseline = sorted(_snapshot_names(root))
     journal = journal_dir(root)
     try:

@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 import shutil
 from uuid import uuid4
+from transaction_coordinator import require_no_conflict
 
 MGMT = "00_Gestao_e_Continuidade"
 JOURNAL = ".pending_method_route_change"
@@ -60,6 +61,7 @@ def _manifest_write(folder: Path, content: dict) -> None:
 def recover_method_route(root: Path) -> dict:
     """Explicitly reconcile a pending local journal; never infer a gate approval."""
     root = Path(root).resolve()
+    require_no_conflict(root, allow=("method_route",))
     folder = journal_dir(root)
     if not folder.exists() and not folder.is_symlink():
         return {"status": "NO_PENDING_METHOD_ROUTE"}
@@ -111,6 +113,7 @@ def protect_method_route(root: Path):
     """Rollback normal failures; crashes leave a visible, recoverable journal."""
     root = Path(root).resolve()
     mgmt = root / MGMT
+    require_no_conflict(root, allow=("method_route",))
     folder = journal_dir(root)
     try:
         folder.mkdir(mode=0o700)

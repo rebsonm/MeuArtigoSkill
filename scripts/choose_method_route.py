@@ -16,6 +16,7 @@ import sys
 import tempfile
 
 from method_routes import GATE_VARIANTS, MGMT, ROUTES, new_profile
+from transaction_coordinator import require_no_conflict
 from method_route_transaction import (has_pending_method_route, protect_method_route,
                                       recover_method_route, PendingMethodRouteTransaction)
 
@@ -28,6 +29,7 @@ def _load_csv(path: Path) -> tuple[list[str], list[dict]]:
 
 def choose(root: Path, route: str, reviewer: str, evidence: str, rationale: str) -> str:
     root = Path(root).resolve()
+    require_no_conflict(root, allow=("method_route",))
     if has_pending_method_route(root):
         raise PendingMethodRouteTransaction(
             "METHOD_ROUTE_TRANSACTION_PENDING_RECOVERY_REQUIRED")
