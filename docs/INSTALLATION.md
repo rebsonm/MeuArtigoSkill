@@ -11,7 +11,7 @@
 | **Update a plugin I already own** | Open **my existing plugin**, then **Upload new version / Enviar nova versão** | A compatible, newer **plugin** ZIP; never a Skill or GitHub source ZIP | Eligible plugin owners/editors with the actual package |
 | **Read the source code** | GitHub | **Code → Download ZIP** | Everyone; **not an installation ZIP** |
 
-**Important:** The beta.4 source has been merged to `main`, but the last public installable **Skill release** is still **beta.2**. The owner's private **plugin** runs beta.4. These are different distribution channels, not an automatic upgrade.
+**Important:** The beta.4 source has been merged to `main`, but the last public installable **Skill release** is still **beta.2**. The owner's private **plugin** has a beta.5 PNG-icon presentation update, while its scientific core remains beta.4. These are different distribution channels, not an automatic upgrade.
 
 ## A. Install the public Skill (recommended public entry path)
 
