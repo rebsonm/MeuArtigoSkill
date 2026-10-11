@@ -168,6 +168,27 @@ def main() -> int:
     if not (0 < args.fuzzy_threshold <= 1):
         ap.error("--fuzzy-threshold must be between 0 and 1")
     out = Path(args.out_dir).resolve()
+    out.mkdir(parents=True, exist_ok=True)
+    # Exclusive directory creation is atomic across competing processes.
+    # If the process is interrupted, the marker remains as a fail-closed signal.
+    lock = out / ".dedupe_import_in_progress"
+    try:
+        lock.mkdir()
+    except FileExistsError:
+        print(
+            "ERROR: OUTPUT_DIRECTORY_LOCKED; another import is running or "
+            "an earlier attempt was interrupted. Inspect its outputs and "
+            "choose a new --out-dir.",
+            file=__import__("sys").stderr,
+        )
+        return 2
+    try:
+        return run_import(out, args)
+    finally:
+        lock.rmdir()
+
+
+def run_import(out: Path, args: argparse.Namespace) -> int:
     if any((out / name).exists() for name in GENERATED_OUTPUT_FILES):
         print(
             "ERROR: OUTPUT_DIRECTORY_ALREADY_HAS_RESULTS; choose a new "
