@@ -78,6 +78,11 @@ class NextStepPhase5Tests(unittest.TestCase):
 
     def complete_task(self, index, evidence="Synthetic operational receipt"):
         self.tasks[index].update(Status="DONE", Completion_evidence=evidence)
+        # Mimic the real workflow's requirement to keep continuity current.
+        if index == 1:
+            self.continuity.write_text(
+                "# Synthetic research continuity\nNext valid action: CADA-0003\n"
+                "PRIVATE_RESEARCH_CONTEXT_AND_REVIEW_NOTES", encoding="utf-8")
         self.write()
 
     def approve_gate_structurally(self, index):
@@ -220,6 +225,42 @@ class NextStepPhase5Tests(unittest.TestCase):
             self.assertNotIn("CONTAINS_PRIVATE_LITERATURE", text)
             self.assertNotIn("PRIVATE_RESEARCH_CONTEXT", text)
             self.assertNotIn("SYNTHTETIC_RESEARCHER", text)
+
+    def test_stale_continuity_blocks_technical_advancement(self):
+        self.continuity.write_text(
+            "## 14. Next valid action\n- CADA_ID: CADA-0003\n",
+            encoding="utf-8")
+        r = self.check()
+        self.assertEqual(r["status"], "CONTINUITY_RECONCILIATION_REQUIRED")
+        self.assertIn("CONTINUITY_NEXT_ACTION_MISMATCH", r["blockers"])
+        self.assertFalse(r["technical_preparation_possible"])
+        self.assertTrue(r["requires_human_decision"])
+
+    def test_conflicting_continuity_next_sections_require_reconciliation(self):
+        self.continuity.write_text(
+            "## 14. Next valid action\n- CADA_ID: CADA-0002\n"
+            "### Next valid action\n- CADA_ID: CADA-0003\n",
+            encoding="utf-8")
+        r = self.check()
+        self.assertEqual(r["status"], "BLOCKED")
+        self.assertIn("CONTINUITY_CONFLICTING_NEXT_ACTIONS", r["blockers"])
+
+    def test_initializer_style_continuity_identifies_same_cada_id_twice(self):
+        source = (
+            "## 14. Next valid action\n- CADA_ID: CADA-0002\n"
+            "## 15. Other section\n- CADA_ID: CADA-9999\n"
+            "### Next valid action\n- CADA_ID: CADA-0002\n"
+        )
+        self.assertEqual(router.recorded_next_ids(source),
+                         ["CADA-0002", "CADA-0002"])
+
+    def test_researcher_only_assignment_never_becomes_autonomous(self):
+        self.tasks[1]["Assigned_to"] = "RESEARCHER"
+        self.tasks[1]["Execution_mode"] = "AUTONOMOUS"
+        self.write()
+        r = self.check()
+        self.assertEqual(r["status"], "HUMAN_TASK_DECISION_REQUIRED")
+        self.assertFalse(r["technical_preparation_possible"])
 
     def test_all_next_intents_are_read_only_and_idempotent(self):
         original = {p.name: p.read_bytes() for p in self.mgmt.iterdir() if p.is_file()}
