@@ -113,6 +113,10 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
     if integrity["errors"]:
         navigation["status"] = "CADA_CONTINUITY_INTEGRITY_REVIEW"
         navigation["technical_preparation_possible"] = False
+        # An inconsistent last completion cannot authorize *any* proposed
+        # next step, even if the router alone found a plausible candidate.
+        navigation["next_task_id"] = None
+        navigation["next_gate_id"] = None
         navigation["blockers"] = sorted(set(
             navigation["blockers"] + ["CADA_CONTINUITY_INTEGRITY_REVIEW"]))
     # MINIMAL lists the actual eligible task first, if present, so a
