@@ -12,6 +12,7 @@ import argparse
 import csv
 import hashlib
 import json
+import re
 from pathlib import Path
 
 from claim_integrity import type_of
@@ -34,6 +35,14 @@ def audit(project: Path, *, freeze: bool = False) -> dict:
     evidence_file = root / MGMT / "05_Evidence_Matrix.csv"
     report_file = root / MGMT / "SOURCE_VERIFICATION.json"
     claims = csv_rows(root / MGMT / "09_Claims_Ledger.csv")
+    # TRACE is a provenance register: the presence of a nonempty string in
+    # Claim.Trace_IDs is not sufficient to link an empirical result to work.
+    trace_rows = csv_rows(root / MGMT / "13_Traceability_Log.csv") if freeze else []
+    trace_map = {}
+    for event in trace_rows:
+        tid = str(event.get("Trace_ID") or "").strip()
+        if tid:
+            trace_map.setdefault(tid, []).append(event)
     gates = {
         x.get("GATE_ID"): x for x in csv_rows(root / MGMT / "18_Human_Validation_Gates.csv")
     }
@@ -93,8 +102,20 @@ def audit(project: Path, *, freeze: bool = False) -> dict:
                 "APPROVED", "APPROVED_WITH_CHANGES"
             ):
                 issues.append(f"{cid}: {gate} lacks actual human approval")
-        if not (row.get("Trace_IDs") or "").strip():
+        trace_ids = [
+            token for token in re.split(r"[,;\s]+", (row.get("Trace_IDs") or "").strip())
+            if token
+        ]
+        if not trace_ids:
             issues.append(f"{cid}: empirical claim has no existing TRACE_ID reference to analytic provenance")
+        for trace_id in trace_ids:
+            matches = trace_map.get(trace_id, [])
+            if len(matches) != 1:
+                issues.append(f"{cid}: TRACE_ID {trace_id} missing or ambiguous in canonical trace register")
+            elif (matches[0].get("Status") or "").strip().upper() in {
+                "PLANNED", "FAILED", "INVALID", "SUPERSEDED"
+            }:
+                issues.append(f"{cid}: TRACE_ID {trace_id} describes a failed or unfinished operation")
         if not (row.get("Researcher_review_evidence") or "").strip():
             issues.append(f"{cid}: no original researcher review reference for this empirical result")
 
