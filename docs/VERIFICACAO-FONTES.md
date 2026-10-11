@@ -85,56 +85,58 @@ necessary; scientific validation requires an independent substantive review.
 
 See `scripts/source_report_integrity.py` for read-only evaluation and
 `tests/test_source_integrity.py` for deliberately synthetic regressions.
-## Integridade de status, proveniência e verificação durante a execução
+## Status integrity, provenance and verification during execution
 
-O verificador registra o hash SHA-256 do JSON retornado por cada provedor
-Crossref/OpenAlex, mantendo no relatório apenas o resumo bibliográfico e o
-digest, sem reproduzir metadados extensos ou textos protegidos. Esse hash
-permite comparar a resposta recebida com uma cópia legítima, mas **não**
-autentica o servidor remoto nem prova, por si só, uma busca externa real.
+The verifier records the SHA-256 digest of the JSON returned by each
+Crossref/OpenAlex provider, retaining only bibliographic summaries and
+hashes in the report, not extensive metadata or copyrighted full text.
+A hash allows a locally preserved genuine response to be compared with
+what was processed, but **does not authenticate the remote server** or
+independently prove a real external API request.
 
-Qualquer indisponibilidade ou ausência de resposta de um dos provedores é
-identificada explicitamente como aviso, mesmo que outro provedor confirme
-os metadados. Portanto, o resultado requer revisão, não uma declaração
-automática de validação integral.
+Provider unavailability or missing responses are explicitly recorded as
+warnings even when another provider corroborates the metadata. Partial
+provider coverage must therefore trigger review rather than a
+declaration of fully verified provenance.
 
-Antes e depois de cada lote, o sistema recalcula o manifesto dos arquivos
-canônicos e documentos locais utilizados. Se houver alterações durante
-a execução, rejeita o relatório novo com
-`SOURCE_INPUTS_CHANGED_DURING_VERIFICATION`. A substituição do relatório
-oficial é atômica: falhas na escrita não devem sobrescrever sua última
-versão íntegra.
+Before and after each batch, the verifier recalculates the manifest for
+canonical registers and referenced local files. Changes during the run
+block the new report with
+`SOURCE_INPUTS_CHANGED_DURING_VERIFICATION`. Replacing an existing
+official report is atomic; write failures cannot overwrite its last
+verified intact version.
 
-A auditoria `source_report_integrity.py` também verifica coerência interna:
-`METADATA_AND_LOCATOR_CHECKED` somente é admissível com identidade
-`VERIFIED`, verificação de trecho `MATCHED`, SHA-256 atual do arquivo
-local, ausência de advertências/alertas pendentes e pelo menos um resultado
-positivo de provedor. Um relatório marcado como offline não pode conter
-identidade supostamente verificada por consulta ao vivo. Alertas de retratação
-ou correção ligados ao trabalho examinado não podem ser ocultados em um
-resumo de sucesso. Contradições bloqueiam GATE-0006.
+The existing `source_report_integrity.py` audit also checks internal
+consistency: `METADATA_AND_LOCATOR_CHECKED` is allowed only with
+`VERIFIED` identity, a `MATCHED` text passage, the current SHA-256
+of its local source, no unresolved warnings or alerts, and at least one
+positive provider response. Offline reports cannot simultaneously claim
+that a live metadata query verified an article. Retraction or correction
+notices associated with the examined work must not be hidden by a
+success summary. Contradictions block GATE-0006.
 
-Esses controles não demonstram que uma afirmação científica é verdadeira,
-não substituem análise metodológica nem autenticam uma resposta humana.
-Resultados com retratações, correções ou verificação incompleta exigem
-interpretação documentada pelo pesquisador e jamais exclusão automática.
+These controls do not demonstrate that any scientific statement is true,
+replace methodological analysis or authenticate a human decision.
+Retractions, corrections and incomplete checks require a documented
+researcher interpretation rather than automatic article exclusion.
 
-## Conferência integrada das citações de [L] no Gate 6
+## Integrated verification of literature [L] citations at Gate 6
 
-Na auditoria final, `scripts/claim_source_integrity.py` compara cada
-`Evidence_ID` citado por uma afirmação [L] com o registro efetivo de
-`SOURCE_VERIFICATION.json`. O campo `Locator_status=MATCHED` em
-`09_Claims_Ledger.csv` **não é prova por si só**: todas as evidências
-citadas precisam ter passagem literalmente localizada (`MATCHED`) no
-relatório válido. Quando houver localização indisponível, a afirmação não
-pode se declarar `MATCHED`; as limitações exigem registro humano de
-avaliação e o status `REVIEWED_LIMITATIONS` no relatório. Divergências,
-links ausentes ou relatórios obsoletos impedem a aprovação do Gate 6.
-O verificador de projeto reaplica a mesma regra após aprovações históricas,
-sem substituir ou apagar registros de decisões humanas.
+At final audit, the existing `scripts/claim_source_integrity.py`
+compares each `Evidence_ID` cited by a literature [L] claim against
+the effective `SOURCE_VERIFICATION.json` report. A
+`Locator_status=MATCHED` cell in `09_Claims_Ledger.csv` is **not
+self-validating**: every cited evidence item must have a literally
+matched passage in the current verified report.
 
-Este é um
-controle estrutural de **consistência de citações**, não uma verificação
-semântica nem autenticação da autoria da avaliação. Nos testes, todos
-os pesquisadores e textos são fictícios; a homologação em Google Drive
-permanece etapa posterior.
+If a locator is unavailable, the claim cannot independently declare
+itself `MATCHED`; limitations need a recorded human assessment and
+`REVIEWED_LIMITATIONS` in the source report. Missing links, stale
+reports or contradictory records prevent Gate 6 approval. The project
+validator reapplies this same rule even after earlier approvals,
+without changing or deleting the history of human decisions.
+
+This is a **structural citation-consistency check**, not semantic
+verification or authentication of the evaluator's identity.
+All test researchers and source text are synthetic; real Google Drive
+homologation remains a subsequent authorized evaluation.
