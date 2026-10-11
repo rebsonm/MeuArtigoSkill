@@ -17,9 +17,8 @@ import re
 import sys
 
 import cada_continuity_transaction as tx
-from next_step_router import (EXPECTED_GATES, EXECUTABLE, TERMINAL, clean,
-                              documented_gate, ids, resolve,
-                              stage_num, task_dependencies_met, upper)
+from next_step_router import (EXECUTABLE, TERMINAL, clean, resolve,
+                              pending_human_gate, next_eligible_task, upper)
 from trace_execution import (ALLOWED_SCRIPTS, CANONICAL_ACTIONS, RECEIPTS,
                              file_state, sha256, trace_rows)
 
@@ -116,25 +115,10 @@ def confirm_local_execution(root: Path, trace_id: str, cada_id: str,
 
 
 def choose_next(rows: list[dict], gates: list[dict]) -> tuple[dict | None, str | None]:
-    by_gate = {clean(x.get("GATE_ID")): x for x in gates}
-    if len(by_gate) != 7 or set(by_gate) != set(EXPECTED_GATES):
-        raise ValueError("SEVEN_SCIENTIFIC_GATES_REQUIRED")
-    gate = next((by_gate[k] for k in EXPECTED_GATES
-                 if not documented_gate(by_gate[k])), None)
-    next_gate_id = clean(gate.get("GATE_ID")) if gate else None
-    gate_stage = stage_num(gate.get("Scientific_stage")) if gate else None
-    by_id = {clean(x.get("CADA_ID")): x for x in rows}
-    for task in rows:
-        if upper(task.get("Status")) not in EXECUTABLE or not clean(task.get("Next_action")):
-            continue
-        dependency_ok, _ = task_dependencies_met(task, by_id)
-        if not dependency_ok:
-            continue
-        item_stage = stage_num(task.get("Scientific_stage"))
-        if gate_stage is not None and item_stage is not None and item_stage > gate_stage:
-            continue
-        return task, next_gate_id
-    return None, next_gate_id
+    """Use the same conservative task/gate selection as the read-only router."""
+    gate = pending_human_gate(gates)
+    task, _ = next_eligible_task(rows, gate)
+    return task, clean(gate.get("GATE_ID")) if gate else None
 
 
 def update_continuity(text: str, *, previous: str, next_task: dict | None,
