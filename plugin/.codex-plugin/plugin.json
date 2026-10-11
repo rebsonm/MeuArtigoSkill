@@ -1,0 +1,27 @@
+{
+  "name": "meu-artigo",
+  "version": "0.9.0-beta.2",
+  "description": "Assistente científico para planejar, desenvolver, revisar e acompanhar artigos com evidências rastreáveis, decisões humanas e método C.A.D.A.",
+  "author": {
+    "name": "Rebson Mendes"
+  },
+  "interface": {
+    "capabilities": [
+      "Interactive"
+    ],
+    "category": "Productivity",
+    "defaultPrompt": [
+      "Quero iniciar um artigo científico usando Meu Artigo. Verifique as conexões e o armazenamento antes de avançar.",
+      "Continue meu artigo a partir do estado efetivamente salvo no projeto, sem refazer decisões anteriores.",
+      "Mostre o painel de andamento do meu artigo, com C.A.D.A., gates científicos, evidências, pendências e próximos passos."
+    ],
+    "developerName": "Rebson Mendes",
+    "displayName": "Meu Artigo",
+    "longDescription": "Apoia a construção e continuidade de artigos científicos com rigor metodológico, [L]/[I]/[P], governança de evidências, método C.A.D.A., sete gates de decisão humana, adaptação a periódicos e controles de integridade. Integrações e execução de scripts dependem dos recursos efetivamente disponíveis.",
+    "shortDescription": "Pesquisa científica rastreável",
+    "logo": "./assets/icon.svg",
+    "composerIcon": "./assets/icon.svg"
+  },
+  "skills": "./skills",
+  "keywords": []
+}
