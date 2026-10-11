@@ -258,8 +258,9 @@ def view(project: Path, *, today: date | None = None, mode: str | None = None) -
                 "checklist_count": metric(submissions),
                 "pending_checklist_items": editorial_pending,
                 "gate7_approval_recorded": bool(gate7 and gate7["documented_approval"]),
-                "ready_to_submit": editorial_ready,
-                "note": "Display summary only; final release additionally requires verified disclosure, audit hashes and genuine researcher authorization.",
+                "preliminary_controls_met": editorial_ready,
+                "ready_to_submit": False,
+                "note": "The dashboard cannot certify final disclosure, outgoing file hashes, journal compliance or a genuine signed researcher release. Ready-to-submit is always unverified here.",
             },
             "source_verification": source_public,
             "gates_approved_with_source_conflicts": sum(
