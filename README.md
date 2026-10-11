@@ -22,7 +22,7 @@ Meu Artigo helps a researcher move from a research problem to a reviewable artic
 - **Science governance:** seven human-reviewed gates, trace IDs, immutable-purpose snapshots, evidence and ethical boundaries.
 - **C.A.D.A. administrative organization:** Capture, Assign, Define a deadline, and Track verifiable next actions.
 - **Journal-aware manuscript:** official journal requirements, rights, anonymization, disclosure and pre-submission checks.
-- **Continuity and status:** `CONTINUIDADE.md` and project tables, with summaries directly **in conversation** where the host permits; optional local `scripts/native_chat_dashboard.py` reads an authorized project without making scientific decisions.
+- **Continuity and status:** `CONTINUIDADE.md` and project tables, with summaries directly **in conversation** where the host permits; an optional local read-only status helper can read an authorized project without making scientific decisions.
 
 The default storage policy is `GOOGLE_DRIVE_FIRST`: access **and write capability must be verified** before any canonical work is claimed. A local fallback requires explicit researcher authorization. A previous project's data or sources cannot silently become another project's corpus.
 
