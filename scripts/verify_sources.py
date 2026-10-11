@@ -13,6 +13,7 @@ import hashlib
 import json
 import os
 import re
+import tempfile
 import shutil
 import subprocess
 import sys
@@ -147,8 +148,15 @@ def match_metadata(doi, title, year, authors, responses):
         response = responses.get(provider) or {"status": "UNAVAILABLE"}
         status = response.get("status") or "ERROR"
         item = {"provider": provider, "status": status, "http_status": response.get("http_status")}
-        if provider == "openalex" and status != "FOUND":
-            warnings.append("OPENALEX_UNAVAILABLE" if status != "NOT_FOUND" else "OPENALEX_NOT_FOUND")
+        # Store a digest of the raw provider response, not a false claim that
+        # the provider's identity or network access was independently certified.
+        item["response_sha256"] = hashlib.sha256(
+            json.dumps(response, ensure_ascii=False, sort_keys=True, default=str).encode("utf-8")
+        ).hexdigest()
+        if status != "FOUND":
+            warnings.append(provider.upper() + (
+                "_NOT_FOUND" if status == "NOT_FOUND" else "_UNAVAILABLE"
+            ))
         if status == "FOUND":
             info = metadata_fields(provider, response.get("data") or {})
             if doi_of(info["doi"]) != doi:
@@ -315,6 +323,7 @@ def verify_project(root, offline=False, mailto="", fetcher=provider_query):
     path = root / MGMT / "05_Evidence_Matrix.csv"
     if not path.is_file():
         raise FileNotFoundError(f"Evidence matrix not found: {path}")
+    before = capture_input_manifest(root)
     screening, links = index_project(root)
     verified = []
     cache = {}
@@ -329,6 +338,8 @@ def verify_project(root, offline=False, mailto="", fetcher=provider_query):
         item["Record_ID"] = record
         verified.append(verify_row(item, root, screening, cached_fetch, offline, mailto))
     snapshot = capture_input_manifest(root)
+    if snapshot != before:
+        raise ValueError("SOURCE_INPUTS_CHANGED_DURING_VERIFICATION")
     return {"schema_version": 2, "created_at_utc": datetime.now(timezone.utc).isoformat(),
             "input_file": f"{MGMT}/05_Evidence_Matrix.csv",
             "input_sha256": digest(path), "input_manifest": snapshot, "offline": bool(offline),
@@ -354,7 +365,24 @@ def main(argv=None):
     try:
         report = verify_project(root, offline=args.offline, mailto=args.mailto)
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        if out.is_symlink():
+            raise ValueError("SYMLINK_SOURCE_REPORT_NOT_ALLOWED")
+        # Write the complete report before replacing the last canonical
+        # report. A failed write must not leave truncated validation evidence.
+        temp = None
+        try:
+            with tempfile.NamedTemporaryFile(
+                    mode="w", encoding="utf-8", dir=out.parent,
+                    prefix=".source-verification-", suffix=".tmp",
+                    delete=False) as stream:
+                temp = Path(stream.name)
+                stream.write(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+                stream.flush()
+                os.fsync(stream.fileno())
+            os.replace(temp, out)
+        finally:
+            if temp is not None:
+                temp.unlink(missing_ok=True)
     except (OSError, ValueError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
