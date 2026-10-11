@@ -2,6 +2,8 @@
 
 **Choose the prepared Skill archive rather than GitHub's source download.** No coding is necessary for a researcher.
 
+**Previously published experimental beta:** [beta.1 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip). This historical fallback remains downloadable while the beta.4 prerelease assets are not yet available; neither beta is stable.
+
 ## Install the published Skill
 
 1. **[Download MeuArtigoSkill-v0.9.0-beta.4.zip](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip)** once its tagged **Pre-release** assets and `SHA256SUMS.txt` are visible. Until then, an earlier published beta remains available.
