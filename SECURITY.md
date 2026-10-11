@@ -48,8 +48,9 @@ and [secure export](docs/EXPORTACAO-SEGURA.md).
 
 This policy covers historical `0.8.x-beta` and published `0.9.x-beta`
 releases as well as subsequent source candidates, unless superseded.
-Current published package: `v0.9.0-beta.1`; the `v0.9.0-beta.2` code on
-`main` is not yet a tagged distribution.
+Current experimental public recommendation: `v0.9.0-beta.4` (published as a
+GitHub Pre-release on 2026-10-11, with its tagged ZIP and SHA-256). Historical
+beta.1 and beta.2 packages remain available.
 No support obligation or backport commitment is implied.
 Check [CHANGELOG.md](CHANGELOG.md).
 
