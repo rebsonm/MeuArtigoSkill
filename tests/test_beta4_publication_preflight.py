@@ -25,7 +25,7 @@ class Beta4PublicPreparationTests(unittest.TestCase):
     def test_versioned_publication_metadata_ready_but_not_claimed_published(self):
         self.assertEqual(self.version, "0.9.0-beta.4")
         self.assertEqual(audit_release_metadata(ROOT, expected_date="2026-10-11"), [])
-        self.assertIn("release workflow", self.readme.lower())
+        self.assertIn("publication workflow", self.readme.lower())
         self.assertIn("release assets appear", self.readme.lower())
         self.assertIn("pre-release", self.notes.lower())
         self.assertIn("not a stable", self.notes.lower())
