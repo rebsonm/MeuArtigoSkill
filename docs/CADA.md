@@ -343,3 +343,14 @@ It updates C.A.D.A., `CONTINUIDADE.md` and the derived dashboard in
 one journal-protected operation, preserving gate decisions. Interrupted
 writes are recoverable; remote Drive projects require independent
 authorized sync and cannot use this local writer.
+
+## Phase 5 integrated C.A.D.A. integrity audit
+
+The local verifier `cada_continuity_integrity.py` compares the last
+recorded technical completion with the existing TRACE receipt and
+unaltered output, current task status, `CONTINUIDADE.md` next action,
+and current `15_CADA_Dashboard.csv` metrics. The global project
+validator and read-only native panel report conflicts; further
+C.A.D.A. completion is blocked until reconciliation. No additional
+sheet, new ID family, scientific gate approval or remote Drive
+authorization is inferred from the check.
