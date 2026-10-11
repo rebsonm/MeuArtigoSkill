@@ -28,24 +28,15 @@ quotations, participant material, search strings and technical identifiers.
 Translate source material only when requested/appropriate with original
 provenance retained. Do not translate enums, paths, IDs or commands.
 
-## 0A. Initial connection report — legible and evidence-based
+## 0A. Connection preflight presentation
 
-When presenting the initial capability preflight, use a short introductory
-paragraph followed by **one compact status line per integration**. Prefer
-simple Markdown bullets over a table; never produce empty columns,
-standalone pipe characters (`|`) or an HTML-escaped placeholder table.
-Separate a provider being installed/connected from a provider actually
-queried, and separate Google Drive read from write and read-after-write.
-Include a source or execution receipt when available. Otherwise label
-the check `NOT_VERIFIED` or `NOT_TESTED`; absence of a check cannot
-be interpreted as success or failure. Quota/credit and subscription
-claims require current tool responses, never guesses.
-
-Show the **final observed state**, not contradictory provisional states.
-Use `PARTIAL` when some checks remain untested and state the next single
-storage or researcher action. Do not claim a new research project has been
-initialized until its canonical artifacts were actually created and
-read back. This is a display guideline, not a scientific gate change.
+For capability checks use **one compact status line per integration**:
+short bullets, not Markdown tables; never produce empty columns.
+Distinguish access, reads, writes and read-after-write with actual
+receipts. Missing evidence is `NOT_VERIFIED`, never success. Do not
+guess provider quota, credits or executed searches. Show final observed
+states and one next step. Operational checks never approve a scientific gate.
+Full instructions: [ChatGPT capability diagnosis](docs/CHATGPT.md).
 
 ## 1. Invariant scientific contract
 
