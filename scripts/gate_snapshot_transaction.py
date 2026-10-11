@@ -107,9 +107,12 @@ def recover_gate_snapshot(root: Path) -> dict:
         elif entry.get("existed") is not False:
             raise PendingGateSnapshot("INVALID_GATE_MANIFEST")
     if data["state"] == "COMMITTED":
-        if any((not (root / MGMT / e["name"]).is_file()
-                or _hash(root / MGMT / e["name"]) != e.get("after_sha256"))
-               for e in entries):
+        if any(
+            ((root / MGMT / e["name"]).exists() != (e.get("after_sha256") is not None))
+            or ((root / MGMT / e["name"]).is_file()
+                and _hash(root / MGMT / e["name"]) != e.get("after_sha256"))
+            for e in entries
+        ):
             raise PendingGateSnapshot("COMMITTED_GATE_OUTPUT_CHANGED_MANUAL_REVIEW_REQUIRED")
         if set(data.get("committed_snapshot_names", [])) != newly_created:
             raise PendingGateSnapshot("COMMITTED_GATE_SNAPSHOT_MISMATCH_MANUAL_REVIEW_REQUIRED")
@@ -167,9 +170,14 @@ def protect_gate_snapshot(root: Path):
         yield
         for entry in entries:
             path = mgmt / entry["name"]
-            if not path.is_file() or path.is_symlink():
-                raise PendingGateSnapshot("MISSING_GATE_OUTPUT")
-            entry["after_sha256"] = _hash(path)
+            if path.is_symlink() or (path.exists() and not path.is_file()):
+                raise PendingGateSnapshot("UNSAFE_GATE_OUTPUT")
+            if not path.is_file():
+                if entry["existed"] or entry["name"] != "19_Snapshots.csv":
+                    raise PendingGateSnapshot("MISSING_GATE_OUTPUT")
+                entry["after_sha256"] = None
+            else:
+                entry["after_sha256"] = _hash(path)
         state["state"] = "COMMITTED"
         state["committed_snapshot_names"] = sorted(_snapshot_names(root) - set(baseline))
         _write_manifest(journal, state)
