@@ -16,9 +16,7 @@ import os
 from pathlib import Path
 import re
 import sys
-from urllib.error import HTTPError, URLError
 from urllib.parse import quote, urlencode
-from urllib.request import Request, urlopen
 
 from bibliographic_connectors import FIELDS, ProviderFailure, norm_doi, safe_metadata_text
 
@@ -29,30 +27,13 @@ MAX_BYTES = 3_000_000
 
 
 def _fetch(url: str, headers: dict[str, str], *, fetcher=None):
-    if not url.startswith((UNPAYWALL, CITATIONS, ZOTERO)):
-        raise ProviderFailure("UNSUPPORTED_ENDPOINT")
+    from provider_http_security import read_json, validate_url
+    # Also verify mock-target URLs, without granting an alternate endpoint.
+    validate_url(url)
     if fetcher is not None:
         return fetcher(url, headers)
-    try:
-        with urlopen(Request(url, headers=headers, method="GET"), timeout=20) as response:
-            body = response.read(MAX_BYTES + 1)
-        if len(body) > MAX_BYTES:
-            raise ProviderFailure("RESPONSE_TOO_LARGE")
-        return json.loads(body)
-    except HTTPError as exc:
-        if exc.code == 401:
-            raise ProviderFailure("AUTH_FAILED") from None
-        if exc.code == 403:
-            raise ProviderFailure("LICENSE_BLOCKED") from None
-        if exc.code == 429:
-            raise ProviderFailure("RATE_LIMITED") from None
-        if exc.code == 404:
-            raise ProviderFailure("NOT_FOUND") from None
-        raise ProviderFailure("PROVIDER_UNAVAILABLE" if exc.code >= 500 else "INVALID_REQUEST") from None
-    except (URLError, TimeoutError):
-        raise ProviderFailure("NETWORK_ERROR") from None
-    except (ValueError, UnicodeError):
-        raise ProviderFailure("INVALID_RESPONSE") from None
+    return read_json(url, headers, max_bytes=MAX_BYTES,
+                     missing_status="NOT_FOUND")
 
 
 def lookup_doi(provider: str, doi: str, *, email: str = "",
@@ -117,7 +98,10 @@ def list_own_zotero_metadata(*, user_id: str, api_key: str,
             "scientific_validated": False}
     if not execute:
         return base
-    if not (user_id and user_id.isdigit() and api_key):
+    if (not isinstance(user_id, str)
+            or not re.fullmatch(r"[0-9]{1,30}", user_id)
+            or not isinstance(api_key, str) or not api_key.strip()
+            or "\\r" in api_key or "\\n" in api_key):
         base["status"] = "NOT_CONFIGURED"
         return base
     if not 1 <= limit <= 100:
@@ -129,14 +113,16 @@ def list_own_zotero_metadata(*, user_id: str, api_key: str,
                "User-Agent": "MeuArtigoSkill-metadata/0.9"}
     try:
         payload = _fetch(url, headers, fetcher=fetcher)
-        if not isinstance(payload, list):
+        if not isinstance(payload, list) or len(payload) > limit:
             raise ProviderFailure("INVALID_RESPONSE")
         records = []
-        for item in payload[:limit]:
+        for item in payload:
             data = item.get("data") if isinstance(item, dict) else None
             if not isinstance(data, dict):
-                continue
+                raise ProviderFailure("INVALID_RESPONSE")
             raw_creators = data.get("creators") or []
+            if not isinstance(raw_creators, list):
+                raise ProviderFailure("INVALID_RESPONSE")
             authors = []
             for person in raw_creators[:40] if isinstance(raw_creators, list) else []:
                 if not isinstance(person, dict):
@@ -169,18 +155,37 @@ def export_zotero_staging(out_dir: Path, result: dict) -> dict:
     """Save only whitelisted metadata, never notes, tokens or personal auth."""
     if result.get("status") != "COMPLETE":
         raise ValueError("Zotero has not been retrieved")
-    path = Path(out_dir).resolve()
+    target = Path(out_dir)
+    if target.is_symlink():
+        raise ValueError("PRIVATE_STAGING_SYMLINK_NOT_ALLOWED")
+    path = target.resolve()
     path.mkdir(parents=True, exist_ok=True)
     filename = path / "zotero_personal_metadata.csv"
-    with filename.open("w", encoding="utf-8-sig", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=FIELDS)
-        writer.writeheader()
-        for item in result["records"]:
-            # Defuse spreadsheet formulas without changing in-memory metadata.
-            writer.writerow({field: (
-                "'" + str(item.get(field, "")) if str(item.get(field, "")).lstrip()[:1]
-                in ("=", "+", "-", "@") else str(item.get(field, ""))
-            ) for field in FIELDS})
+    if filename.exists() or filename.is_symlink():
+        raise ValueError("PRIVATE_STAGING_ALREADY_EXISTS")
+    if not isinstance(result.get("records"), list) or any(
+            not isinstance(item, dict) for item in result["records"]):
+        raise ValueError("INVALID_PRIVATE_METADATA_RECORDS")
+    # Create the complete private CSV in a same-directory temporary file.
+    # Hard-linking then publishing guarantees create-only semantics (even if
+    # another export races) rather than overwriting a researcher's library.
+    from uuid import uuid4
+    temp = path / (".zotero-private-" + uuid4().hex + ".tmp")
+    try:
+        with temp.open("x", encoding="utf-8-sig", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=FIELDS)
+            writer.writeheader()
+            for item in result["records"]:
+                # Whitelist bibliographic metadata: never notes/tags/attachments.
+                writer.writerow({field: (
+                    "'" + str(item.get(field, "")) if str(item.get(field, "")).lstrip()[:1]
+                    in ("=", "+", "-", "@") else str(item.get(field, ""))
+                ) for field in FIELDS})
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.link(temp, filename)
+    finally:
+        temp.unlink(missing_ok=True)
     return {
         "provider": "zotero", "status": "COMPLETE",
         "records_exported": len(result["records"]),
