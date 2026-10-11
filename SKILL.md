@@ -215,6 +215,15 @@ submission without external confirmation. See
 
 ## 5. Platforms and interaction presentation
 
+Optional **Meu Artigo Visual** can display the same canonical status as an
+MCP Apps dashboard; see [visual integration](docs/MEU-ARTIGO-VISUAL.md).
+Use the visual tool only after actual installation/connection and authorized
+project access. If unavailable, report a compact textual progress view instead.
+Neither the UI nor a cached card is canonical memory. Read the current
+registers before showing status, mark unknown or unverifiable states honestly,
+and never let a visual task completion stand in for researcher approval.
+
+
 Importing a Skill does not imply tool access, authenticated accounts,
 Python execution, browsing or cloud writing. Check the present platform's
 actual capabilities and permissions; when missing, give a truthful manual
