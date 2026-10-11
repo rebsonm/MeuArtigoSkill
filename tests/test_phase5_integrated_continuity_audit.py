@@ -72,9 +72,8 @@ class Phase5IntegratedAuditTests(unittest.TestCase):
         self.assertTrue(local["continuation"]["last_operational_proof_checked"])
         self.assertFalse(local["continuation"]["technical_preparation_possible"])
         self.assertEqual(local["continuation"]["next_gate_id"], "GATE-0001")
-        self.assertEqual(local["tasks"]["items"][0].keys(),
-                         {"id", "task", "execution_owner", "deadline"}.keys()
-                         if False else local["tasks"]["items"][0].keys())
+        self.assertEqual(set(local["tasks"]["items"][0]),
+                         {"id", "task", "execution_owner", "deadline"})
         self.assertEqual(self.fixture.gates.read_bytes().count(b"PENDING"), 14)
 
     def test_dashboard_active_count_forgery_is_blocked(self):
@@ -147,14 +146,14 @@ class Phase5IntegratedAuditTests(unittest.TestCase):
             "- CADA_ID: NONE", "- CADA_ID: CADA-0002"), encoding="utf-8")
         self.assertIn("CADA_CONTINUITY_STALE_NEXT_TASK", self.inspect()["errors"])
 
-    def test_missing_dashboard_marker_skips_legacy_projects_only(self):
+    def test_missing_dashboard_markers_with_evidence_cannot_hide_integrity_record(self):
         def remove_completion(rows):
             rows[:] = [r for r in rows if r["Metric"] not in (
                 "Last_trace_event", "Last_completed_CADA_ID")]
         self.mutate_csv(self.fixture.dashboard, remove_completion)
-        self.assertEqual(self.inspect()["status"], "NOT_APPLICABLE_LEGACY")
-        # This is an explicit compatibility compromise, not proof of
-        # scientific validity or a reconstructed completed project.
+        self.assertEqual(self.inspect()["status"], "BLOCKED")
+        self.assertIn("CADA_COMPLETION_PROOF_WITHOUT_DASHBOARD_MARKERS",
+                      self.inspect()["errors"])
         self.assertFalse(self.inspect()["last_operational_proof_checked"])
 
     def test_pending_journal_blocks_panel_and_global_validator(self):
