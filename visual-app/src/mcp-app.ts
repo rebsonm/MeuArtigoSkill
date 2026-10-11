@@ -267,8 +267,12 @@ function render(): void {
   root.replaceChildren();
   $("integrity-badge").textContent = state ? "LEITURA LOCAL · DRIVE NÃO VERIFICADO" : "SEM DADOS DO PROJETO";
   if (!state) {
-    header("Continuidade", "Nenhum projeto carregado", "Abra com a ferramenta do projeto autorizado. Dados fictícios não serão substituídos.");
-    empty(root, "Nenhuma configuração canônica foi fornecida ou a leitura falhou.");
+    header("Primeiro uso", "Vamos organizar seu artigo", "Antes de exibir dados, a conexão e o projeto canônico precisam estar disponíveis.");
+    const p = section(root, "Verificações iniciais", "highlight");
+    item(p, "1. Vincular projeto autorizado", "Confirme a identidade do projeto e o acesso aos registros canônicos.", "Pendente", "warning");
+    item(p, "2. Conferir Drive canônico", "É necessário verificar permissões e sincronização em um serviço conectado.", "Não verificado", "warning");
+    item(p, "3. Carregar estado atual", "Somente registros realmente acessíveis serão exibidos.", "Pendente", "warning");
+    note(p, "Nenhum projeto foi criado e nenhuma decisão científica foi inferida. A interface não disponibiliza acesso remoto ao Drive.");
     return;
   }
   switch (tab) {
