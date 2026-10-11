@@ -122,6 +122,28 @@ class InstallationArchiveTests(unittest.TestCase):
         self.assertEqual(structured.returncode, 0, structured.stderr)
         self.assertEqual(json.loads(structured.stdout)["kind"], "PLUGIN")
 
+    def test_actual_built_plugin_candidate_passes_preflight(self):
+        from build_plugin_bundle import build
+        from version_info import read_version
+        with tempfile.TemporaryDirectory() as d:
+            output = Path(d) / f"MeuArtigoPlugin-v{read_version(ROOT)}-candidate.zip"
+            receipt = build(ROOT, output)
+            self.assertTrue(output.is_file())
+            self.assertEqual(receipt["version"], read_version(ROOT))
+            result = diagnose(output, "plugin")
+            self.assertTrue(result["valid"], result)
+            self.assertEqual(result["kind"], "PLUGIN")
+
+    def test_actual_built_skill_passes_preflight(self):
+        from build_skill_bundle import package
+        from version_info import read_version
+        with tempfile.TemporaryDirectory() as d:
+            output = Path(d) / f"MeuArtigoSkill-v{read_version(ROOT)}.zip"
+            package(ROOT, output)
+            result = diagnose(output, "skill")
+            self.assertTrue(result["valid"], result)
+            self.assertEqual(result["kind"], "SKILL")
+
     def test_cli_rejects_wrong_type_with_exit_2(self):
         make_zip(self.file, {"SKILL.md": self.entry})
         proc = subprocess.run(
