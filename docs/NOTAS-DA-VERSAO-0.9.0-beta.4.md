@@ -24,7 +24,7 @@ The candidate is subject to branch GitHub Actions tests for Python scientific sa
 
 **Still pending and blocking any production/UX-complete claim:** pixel/render comparisons to the 12 owner-approved conceptual screens, live ChatGPT MCP App connection, OAuth/per-user isolation, genuine Google Drive synchronization, user accessibility tests and actual researcher Gate 4/Gate 7 decisions. External Scopus/WoS and paid research APIs remain governed by real access and evidence.
 
-The source candidate intentionally omits `date-released` from CITATION.cff, contains no new release tag and has no published release link. `scripts/check_release_metadata.py` must block public publishing until the owner authorizes a true release and actual publication metadata is prepared.
+The source candidate intentionally omits `date-released` from CITATION.cff, contains no new release tag and has no published release link. The publication preflight must block release until the owner authorizes publication and verifies real release metadata.
 
 ## How to review
 
