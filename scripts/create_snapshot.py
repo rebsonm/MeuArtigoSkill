@@ -112,10 +112,23 @@ def main()->int:
     sid=next_id(table)
     previous=(existing[-1].get("SNAP_ID") or "") if existing else ""
 
-    snap_dir=root/SNAP_DIR/f"{sid}_{slug(a.milestone)}"
-    if snap_dir.exists(): shutil.rmtree(snap_dir)
-    payload=snap_dir/"payload"
-    payload.mkdir(parents=True,exist_ok=True)
+    snap_root = root / SNAP_DIR
+    snap_dir = snap_root / f"{sid}_{slug(a.milestone)}"
+    # Never overwrite a frozen snapshot, even if its registry row was lost,
+    # its milestone changed, or a previous copy was interrupted. A missing
+    # register is not permission to destroy historical research evidence.
+    if (snap_root.is_symlink() or snap_dir.is_symlink()
+            or snap_dir.exists() or any(snap_root.glob(f"{sid}_*"))):
+        print(
+            "ERROR: SNAPSHOT_ID_COLLISION_OR_UNSAFE_ROOT; preserve existing "
+            "snapshot data and reconcile the registry before retrying.",
+            file=__import__("sys").stderr,
+        )
+        return 2
+    # Exclusive directory creation also rejects a concurrent snapshot writer.
+    snap_dir.mkdir(parents=True, exist_ok=False)
+    payload = snap_dir / "payload"
+    payload.mkdir()
 
     artifacts=[]
     for src in canonical_files(root):

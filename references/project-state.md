@@ -61,6 +61,16 @@ Use explicit states:
 - Prefer immutable identifiers such as DOI, WoS UT, Scopus EID, PubMed ID, or another persistent identifier over row numbers.
 - Reconcile manuscript counts only from canonical files.
 
+## Snapshot collision and interruption safety
+
+Snapshots are immutable research evidence. If a snapshot directory already
+exists for a would-be `SNAP_ID` (including a different milestone name or an
+incomplete directory whose registry row is missing), snapshot creation fails
+closed. Never delete the folder to force success. Reconcile the original
+manifest, files, snapshot register and gate reference before retrying; do not
+claim an interrupted snapshot was validated. These local protections do not
+prove a Google Drive copy was completed.
+
 ## Recovery rules
 
 When resuming:
