@@ -101,6 +101,24 @@ automatic recovery refuses to delete or silently declare that folder valid:
 its evidence requires reconciliation. Historical decisions are preserved;
 the code cannot authenticate human identity or confirm Google Drive writes.
 
+## Cross-operation consistency and interlocks
+
+Three recoverable local workflows share canonical files: bibliographic
+metadata imports, human method-route selection and gate/snapshot recording.
+When an operation leaves its journal behind, **other** workflows that touch
+these records refuse to write or perform independent rollback. Recovery is
+explicit and journal-specific; reconcile existing data before trying another
+operation. Gate-initiated snapshots are allowed only in their controlled
+workflow; a direct snapshot request cannot proceed while another research
+journal is pending. Do not manually remove journal folders.
+
+This interlock is a *fail-closed pending-journal check*, not a multi-process
+mutex or a replacement for exclusive filesystem locking. Independent direct
+writers, concurrent starts racing before journal creation and external Google
+Drive synchronization are not covered. Do not run concurrent local writers;
+the final homologation must validate end-to-end Drive state separately.
+No synthetic test constitutes human scientific approval.
+
 ## Recovery rules
 
 When resuming:
