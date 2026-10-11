@@ -87,3 +87,32 @@ The local projection has synthetic regression tests. No claims are made of insta
 user account, running a live ChatGPT host compatibility test, or verifying
 Drive sync or empirical usability. Separate setup and research review
 are still required for these claims.
+
+## Fase 5: navegação segura com o comando "próximo"
+
+A projeção local agora disponibiliza `continuation` com um código
+de estado, próximo CADA_ID, próximo GATE_ID, exigência de decisão
+humana, elegibilidade de preparação técnica e bloqueios. Ao contrário
+da indicação legada da *primeira tarefa ativa*, a recomendação leva
+em conta a continuidade canônica, dependências com evidência, sete
+gates e journals transacionais pendentes. O layout C.A.D.A. mantém
+**exatamente quatro colunas**. MINIMAL e FULL mostram a mesma
+classificação, apenas com quantidades diferentes de detalhes.
+
+Exemplo em um projeto local explicitamente autorizado:
+
+```bash
+python scripts/next_step_router.py /caminho/do/projeto --intent proximo
+python scripts/native_chat_dashboard.py /caminho/do/projeto --format json
+```
+
+Esse comando **não é um "autopilot" que modifica arquivos**:
+`technical_preparation_possible=true` apenas permite que o agente
+considere executar uma tarefa técnica registrada, com permissões
+reais e observação de seus resultados. Não concede autorização
+para aceitar um protocolo, escolher um método pelo pesquisador,
+aprovar um gate, registrar uma manifestação humana ou inventar
+uma sincronização com o Google Drive. Dependências, ações e status
+devem ser confirmados no armazenamento efetivamente canônico.
+Os testes utilizam projetos fictícios e não constituem
+homologação de interface ou avaliação científica.

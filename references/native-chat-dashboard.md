@@ -80,6 +80,23 @@ ephemeral UI preference. Persistent mode changes require the existing
 attributable human action via `presentation_mode.set_mode`, not a visual
 toggle.
 
+## Safe continuation panel
+
+The read-only local projector now provides a compact `continuation` object,
+derived from `scripts/next_step_router.py`, separate from its legacy
+`overview.next_task_id` first-active-row indicator. This object contains
+only IDs, generic status/blocker codes, and whether documented technical
+preparation may proceed. It does **not** return `Next_action` prose,
+confidential continuity text, source excerpts or researcher review evidence.
+MINIMAL and FULL must produce the same routing classification.
+
+Navigation status never authorizes actual actions; agents still need their
+existing execution rights and must record actual outcomes in the canonical
+store. The `próximo` command is an expression of navigation intent, not
+approval of GATE-0001–GATE-0007. A documented approval is not proof of the
+researcher's identity. If continuity, dependencies, storage or transactions
+are unverified, surface the blocker rather than moving to a later stage.
+
 ## Renderer choice and graceful fallback
 
 - If host-provided native visual elements are available, use their
