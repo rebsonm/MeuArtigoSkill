@@ -29,6 +29,11 @@ def audit(root: Path) -> dict:
         "drive_sync_verified": False,
     }
     issues = report["errors"]
+    legacy_copy = root / "CONTINUIDADE.md"
+    if legacy_copy.exists() or legacy_copy.is_symlink():
+        issues.append("ROOT_CONTINUITY_COPY_REQUIRES_RECONCILIATION")
+        report["status"] = "BLOCKED"
+        return report
     if "cada_continuity" in active_journals(root):
         issues.append("PENDING_CADA_CONTINUITY_TRANSACTION")
         report["status"] = "BLOCKED"
