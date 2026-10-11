@@ -113,6 +113,54 @@ def task_dependencies_met(task: dict, by_id: dict[str, dict]) -> tuple[bool, str
     return True, None
 
 
+def pending_human_gate(gates: list[dict]) -> dict | None:
+    """Shared gate order for navigation and C.A.D.A. state transitions.
+
+    The presence of an approval record is not independent authentication.
+    """
+    keys = [clean(row.get("GATE_ID")) for row in gates]
+    if len(keys) != len(EXPECTED_GATES) or set(keys) != set(EXPECTED_GATES):
+        raise ValueError("SEVEN_GATES_NOT_PRESENT_OR_UNEXPECTED")
+    lookup = {clean(row["GATE_ID"]): row for row in gates}
+    return next(
+        (lookup[gid] for gid in EXPECTED_GATES
+         if not documented_gate(lookup[gid])), None)
+
+
+def next_eligible_task(tasks: list[dict], gate: dict | None) -> tuple[dict | None, tuple[str, str] | None]:
+    """Select one ready operational task without crossing a human gate.
+
+    Reused by the read-only router and post-TRACE continuity writer so they
+    cannot silently disagree about which task is eligible. No side effects.
+    """
+    by_id = {clean(row.get("CADA_ID")): row for row in tasks}
+    first_blocked = None
+    gate_stage = stage_num(gate.get("Scientific_stage")) if gate else None
+    for task in tasks:
+        status = upper(task.get("Status"))
+        if status in TERMINAL:
+            continue
+        tid = clean(task.get("CADA_ID"))
+        reason = None
+        if status not in EXECUTABLE:
+            reason = "TASK_NOT_READY"
+        elif not clean(task.get("Next_action")):
+            reason = "MISSING_RECORDED_NEXT_ACTION"
+        else:
+            ok, why = task_dependencies_met(task, by_id)
+            if not ok:
+                reason = why
+        if reason is None:
+            task_stage = stage_num(task.get("Scientific_stage"))
+            if gate_stage is not None and task_stage is not None and task_stage > gate_stage:
+                reason = "PRIOR_HUMAN_GATE_NOT_DOCUMENTED"
+        if reason is None:
+            return task, first_blocked
+        if first_blocked is None:
+            first_blocked = (tid, reason)
+    return None, first_blocked
+
+
 def resolve(project: Path) -> dict:
     """Classify next permitted work without modifying canonical artifacts."""
     root = Path(project).resolve()
@@ -183,48 +231,15 @@ def resolve(project: Path) -> dict:
     result["blockers"].extend(gate_problems + task_problems)
     if result["blockers"]:
         return result
-    gate_by_id = {clean(row.get("GATE_ID")): row for row in gates}
-    if set(gate_by_id) != set(EXPECTED_GATES):
+    try:
+        next_gate = pending_human_gate(gates)
+    except ValueError:
         result["blockers"].append("SEVEN_GATES_NOT_PRESENT_OR_UNEXPECTED")
         return result
-    next_gate = next(
-        (gate_by_id[gid] for gid in EXPECTED_GATES
-         if not documented_gate(gate_by_id[gid])), None)
     if next_gate is not None:
         result["next_gate_id"] = clean(next_gate.get("GATE_ID"))
 
-    # A recorded DONE without completion evidence does not satisfy an
-    # operational dependency. Never promote C.A.D.A. DONE to gate approval.
-    by_id = {clean(row.get("CADA_ID")): row for row in tasks}
-    first_blocked = None
-    candidate = None
-    gate_stage = stage_num(next_gate.get("Scientific_stage")) if next_gate else None
-    for task in tasks:
-        status = upper(task.get("Status"))
-        if status in TERMINAL:
-            continue
-        tid = clean(task.get("CADA_ID"))
-        if status not in EXECUTABLE:
-            if first_blocked is None:
-                first_blocked = (tid, "TASK_NOT_READY")
-            continue
-        if not clean(task.get("Next_action")):
-            if first_blocked is None:
-                first_blocked = (tid, "MISSING_RECORDED_NEXT_ACTION")
-            continue
-        ok, why = task_dependencies_met(task, by_id)
-        if not ok:
-            if first_blocked is None:
-                first_blocked = (tid, why)
-            continue
-        task_stage = stage_num(task.get("Scientific_stage"))
-        if (gate_stage is not None and task_stage is not None
-                and task_stage > gate_stage):
-            if first_blocked is None:
-                first_blocked = (tid, "PRIOR_HUMAN_GATE_NOT_DOCUMENTED")
-            continue
-        candidate = task
-        break
+    candidate, first_blocked = next_eligible_task(tasks, next_gate)
 
     if candidate:
         result["next_task_id"] = clean(candidate.get("CADA_ID"))

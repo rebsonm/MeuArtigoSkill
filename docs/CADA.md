@@ -136,7 +136,7 @@ It is the main operational source.
 
 Fields include:
 
-- EACH_ID;
+- CADA_ID;
 - title;
 - scientific stage;
 - responsible;

@@ -12,8 +12,8 @@ import json
 import sys
 from pathlib import Path
 
-from presentation_mode import read_config, view as existing_presentation
-from next_step_router import resolve as resolve_next_step
+from presentation_mode import read_config
+from next_step_router import (TERMINAL, documented_gate, resolve as resolve_next_step)
 from cada_continuity_integrity import audit as audit_cada_continuity
 
 MGMT = "00_Gestao_e_Continuidade"
@@ -25,10 +25,6 @@ FILES = {
     "trace": "13_Traceability_Log.csv",
     "sync": "12_PM_Sync.csv",
 }
-APPROVALS = {"APPROVED", "APPROVED_WITH_CHANGES"}
-TERMINAL_TASKS = {"DONE", "COMPLETED", "CANCELLED", "CANCELED", "SUPERSEDED"}
-
-
 def text(value: object, max_length: int = 80) -> str:
     """Limit presentation of technical IDs and state fields only."""
     return str(value or "").strip()[:max_length]
@@ -40,24 +36,20 @@ def norm(value: object) -> str:
 
 def read_table(folder: Path, filename: str) -> list[dict[str, str]] | None:
     file = folder / filename
-    if not file.is_file():
+    if file.is_symlink() or not file.is_file():
         return None
     with file.open("r", encoding="utf-8-sig", newline="") as stream:
-        return list(csv.DictReader(stream))
+        reader = csv.DictReader(stream)
+        headers = reader.fieldnames or []
+        if not headers or len(headers) != len(set(headers)):
+            return None
+        rows = list(reader)
+    # A malformed CSV must not silently become a plausible scientific count.
+    return None if any(None in row for row in rows) else rows
 
 
 def nrows(items: list[dict[str, str]] | None) -> int | None:
     return None if items is None else len(items)
-
-
-def documented_approval(row: dict[str, str]) -> bool:
-    """Presence of a recorded approval is not authentication or scientific proof."""
-    return (
-        norm(row.get("Status")) == "COMPLETED"
-        and norm(row.get("Decision")) in APPROVALS
-        and bool(text(row.get("Validated_by")))
-        and bool(text(row.get("Validation_evidence")))
-    )
 
 
 def report_indicator(root: Path) -> str:
@@ -76,23 +68,26 @@ def report_indicator(root: Path) -> str:
 
 def panel(root: Path, *, mode: str | None = None) -> dict:
     root = Path(root).resolve()
-    # Reuse the existing scientific presentation layer and config validation.
-    base = existing_presentation(root)
+    # One read of canonical config: do not recompute a second, raw "next"
+    # from the legacy presentation layer or read private next-action prose.
     config = read_config(root)
-    chosen = norm(mode or base["mode"])
+    saved_mode = config.get("presentation_mode", "FULL")
+    if saved_mode not in {"MINIMAL", "FULL"}:
+        raise ValueError("Unsupported saved presentation mode")
+    chosen = norm(mode or saved_mode)
     if chosen not in {"MINIMAL", "FULL"}:
         raise ValueError("Unsupported presentation mode")
     folder = root / MGMT
     tables = {key: read_table(folder, filename) for key, filename in FILES.items()}
     tasks, gates = tables["tasks"], tables["gates"]
     active = [] if tasks is None else [
-        row for row in tasks if norm(row.get("Status")) not in TERMINAL_TASKS
+        row for row in tasks if norm(row.get("Status")) not in TERMINAL
     ]
     gate_items = [] if gates is None else [{
         "id": text(row.get("GATE_ID"), 40),
         "status": norm(row.get("Status")),
         "decision_recorded": norm(row.get("Decision")) or None,
-        "approval_documented": documented_approval(row),
+        "approval_documented": documented_gate(row),
         "independently_scientifically_validated": False,
     } for row in gates]
     # Canonical CSV schema (init_project.py): CADA_ID, Title, Assigned_to,
@@ -109,10 +104,8 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
         }
     task_items = [] if tasks is None else [compact_task(row) for row in tasks]
     active_task_items = [compact_task(row) for row in active]
-    minimal_tasks = active_task_items[:3] if active_task_items else task_items[:3]
-    # Separate "first active row" (a projection) from the *safe next
-    # action* (which checks dependencies, scientific gates and recovery).
-    # Only return identifiers/statuses, never confidential Next_action text.
+    # Only the established router decides the next eligible task/gate;
+    # task-row order and the raw gate Status alone are not authoritative.
     navigation = resolve_next_step(root)
     integrity = audit_cada_continuity(root)
     # Do not advertise a technical action when the last evidenced
@@ -120,8 +113,21 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
     if integrity["errors"]:
         navigation["status"] = "CADA_CONTINUITY_INTEGRITY_REVIEW"
         navigation["technical_preparation_possible"] = False
-        navigation["blockers"] = sorted(set(
+        # An inconsistent last completion cannot authorize *any* proposed
+        # next step, even if the router alone found a plausible candidate.
+        navigation["next_task_id"] = None
+        navigation["next_gate_id"] = None
+        navigation["blockers"] = list(dict.fromkeys(
             navigation["blockers"] + ["CADA_CONTINUITY_INTEGRITY_REVIEW"]))
+    # MINIMAL lists the actual eligible task first, if present, so a
+    # BLOCKED/CAPTURED row cannot conceal it beyond the first three rows.
+    active_for_minimal = active_task_items if active_task_items else task_items
+    eligible_id = navigation["next_task_id"]
+    priority = next((item for item in active_for_minimal
+                     if item["id"] == eligible_id), None)
+    minimal_tasks = ([priority] if priority else []) + [
+        item for item in active_for_minimal if item is not priority
+    ][:3 - bool(priority)]
     counts = {
         "registered_tasks": nrows(tasks),
         "tasks_reported_done": None if tasks is None else sum(
@@ -141,9 +147,10 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
         "scientific_quality_independently_validated": False,
         "overview": {
             **counts,
-            "next_task_id": text(active[0].get("CADA_ID"), 40) if active else None,
-            "next_gate_id": next((x["id"] for x in gate_items
-                                  if x["status"] != "COMPLETED"), None),
+            # Backwards-compatible field names, now safe aliases of the
+            # single authoritative continuation classifier.
+            "next_task_id": navigation["next_task_id"],
+            "next_gate_id": navigation["next_gate_id"],
             "scientific_progress_percentage": None,
         },
         "continuation": {
@@ -226,11 +233,11 @@ def fallback(data: dict) -> str:
         " / " + str(overview["active_tasks"]),
         task_table(data),
         "Human approvals documented: " + str(overview["documented_gate_approvals"]),
-        "Next task / gate (raw register): " + str(overview["next_task_id"]) + " / " +
-        str(overview["next_gate_id"]),
-        "Safe continuation: " + data["continuation"]["status"] + " / " +
-        str(data["continuation"]["next_task_id"]) + " / " +
-        str(data["continuation"]["next_gate_id"]),
+        "Next step: " + data["continuation"]["status"] +
+        " | C.A.D.A.: " + str(data["continuation"]["next_task_id"]) +
+        " | human gate: " + str(data["continuation"]["next_gate_id"]),
+        "First blocker: " + (data["continuation"]["blockers"][0]
+                             if data["continuation"]["blockers"] else "None recorded"),
         "Evidence / claims recorded: " + str(evidence["registered_evidence_rows"]) +
         " / " + str(evidence["registered_claims"]),
         "Source verification report: " + evidence["source_report_presence"],
