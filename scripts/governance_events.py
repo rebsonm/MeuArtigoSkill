@@ -30,6 +30,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from formative_gates import SCIENTIFIC_GATES, APPROVALS, response_issues, encode_formative
 from method_routes import approval_issues
+from gate_snapshot_transaction import (protect_gate_snapshot, has_pending_gate_snapshot,
+                                       recover_gate_snapshot, PendingGateSnapshot)
 
 MGMT="00_Gestao_e_Continuidade"
 DEC_FILE=f"{MGMT}/17_Decision_Log.csv"
@@ -195,6 +197,8 @@ def record_gate(args)->int:
     if decision not in GATE_DECISIONS:
         raise SystemExit(f"invalid gate decision: {decision}")
     path=root/GATE_FILE
+    if has_pending_gate_snapshot(root):
+        raise PendingGateSnapshot("PENDING_GATE_SNAPSHOT_MUST_BE_RECOVERED")
     ensure_csv(path,GATE_HEADERS)
     gate_rows=rows(path)
     target=None
@@ -341,57 +345,60 @@ def record_gate(args)->int:
         if problems:
             raise SystemExit("AI editorial disclosure not ready: "+"; ".join(problems[:5]))
 
-    tid=record_trace(
-        root,
-        stage=target.get("Scientific_stage") or "",
-        cada_id=(target.get("CADA_IDs") or ""),
-        action_type="HUMAN_VALIDATION_GATE",
-        summary=f"{args.gate_id}: {target.get('Name') or target.get('Gate_type')}",
-        decision_output=decision,
-        rationale=args.notes or target.get("Items_to_validate") or "",
-        evidence_ids=target.get("Evidence_IDs") or "",
-        human_validation=args.validated_by,
-    )
+    # The trace event, gate decision and linked snapshot register are a single
+    # local recovery unit. Nothing here authenticates the human's identity.
+    with protect_gate_snapshot(root):
+        tid=record_trace(
+            root,
+            stage=target.get("Scientific_stage") or "",
+            cada_id=(target.get("CADA_IDs") or ""),
+            action_type="HUMAN_VALIDATION_GATE",
+            summary=f"{args.gate_id}: {target.get('Name') or target.get('Gate_type')}",
+            decision_output=decision,
+            rationale=args.notes or target.get("Items_to_validate") or "",
+            evidence_ids=target.get("Evidence_IDs") or "",
+            human_validation=args.validated_by,
+        )
 
-    updated=[]
-    for r in gate_rows:
-        if (r.get("GATE_ID") or "").strip()!=args.gate_id:
-            updated.append(r); continue
-        r=dict(r)
-        r["Decision"]=decision
-        r["Validated_by"]=args.validated_by
-        r["Validation_date"]=now_iso() if decision!="PENDING" else ""
-        r["Validation_method"]=args.method
-        r["Validation_evidence"]=args.evidence
-        r["Trace_ID"]=tid
-        r["Status"]="NOT_APPLICABLE" if decision=="NOT_APPLICABLE" else ("COMPLETED" if decision!="PENDING" else "READY")
-        r["Notes"]=formative_notes
-        updated.append(r)
+        updated=[]
+        for r in gate_rows:
+            if (r.get("GATE_ID") or "").strip()!=args.gate_id:
+                updated.append(r); continue
+            r=dict(r)
+            r["Decision"]=decision
+            r["Validated_by"]=args.validated_by
+            r["Validation_date"]=now_iso() if decision!="PENDING" else ""
+            r["Validation_method"]=args.method
+            r["Validation_evidence"]=args.evidence
+            r["Trace_ID"]=tid
+            r["Status"]="NOT_APPLICABLE" if decision=="NOT_APPLICABLE" else ("COMPLETED" if decision!="PENDING" else "READY")
+            r["Notes"]=formative_notes
+            updated.append(r)
 
-    with path.open("w",encoding="utf-8-sig",newline="") as f:
-        w=csv.DictWriter(f,fieldnames=GATE_HEADERS)
-        w.writeheader()
-        w.writerows([{h:r.get(h,"") for h in GATE_HEADERS} for r in updated])
+        with path.open("w",encoding="utf-8-sig",newline="") as f:
+            w=csv.DictWriter(f,fieldnames=GATE_HEADERS)
+            w.writeheader()
+            w.writerows([{h:r.get(h,"") for h in GATE_HEADERS} for r in updated])
 
-    snapshot_id=""
-    if decision in {"APPROVED","APPROVED_WITH_CHANGES"} and not args.no_snapshot:
-        snap_script=Path(__file__).with_name("create_snapshot.py")
-        if snap_script.exists():
-            cmd=[
-                sys.executable,str(snap_script),str(root),
-                "--milestone",target.get("Name") or args.gate_id,
-                "--stage",target.get("Scientific_stage") or "",
-                "--trigger","HUMAN_GATE",
-                "--gate-id",args.gate_id,
-                "--dec-ids",target.get("DEC_IDs") or "",
-                "--cada-ids",target.get("CADA_IDs") or "",
-                "--change-summary",args.notes or f"State frozen after {args.gate_id} {decision}."
-            ]
-            run=subprocess.run(cmd,check=True,capture_output=True,text=True)
-            for line in run.stdout.splitlines():
-                if line.startswith("snapshot_id="):
-                    snapshot_id=line.split("=",1)[1].strip()
-                    break
+        snapshot_id=""
+        if decision in {"APPROVED","APPROVED_WITH_CHANGES"} and not args.no_snapshot:
+            snap_script=Path(__file__).with_name("create_snapshot.py")
+            if snap_script.exists():
+                cmd=[
+                    sys.executable,str(snap_script),str(root),
+                    "--milestone",target.get("Name") or args.gate_id,
+                    "--stage",target.get("Scientific_stage") or "",
+                    "--trigger","HUMAN_GATE",
+                    "--gate-id",args.gate_id,
+                    "--dec-ids",target.get("DEC_IDs") or "",
+                    "--cada-ids",target.get("CADA_IDs") or "",
+                    "--change-summary",args.notes or f"State frozen after {args.gate_id} {decision}."
+                ]
+                run=subprocess.run(cmd,check=True,capture_output=True,text=True)
+                for line in run.stdout.splitlines():
+                    if line.startswith("snapshot_id="):
+                        snapshot_id=line.split("=",1)[1].strip()
+                        break
 
     print(f"gate_id={args.gate_id}")
     print(f"trace_id={tid}")
@@ -438,6 +445,11 @@ def main()->int:
     g.add_argument("--researcher-limitation",default="",help="Researcher\x27s own description of a relevant limitation")
     g.add_argument("--no-snapshot",action="store_true")
     g.set_defaults(func=record_gate)
+
+    rec=sub.add_parser("recover-gate", help="Recover interrupted local gate/snapshot changes")
+    rec.add_argument("project")
+    rec.set_defaults(func=lambda a: print(json.dumps(recover_gate_snapshot(Path(a.project))))
+                     or 0)
 
     args=ap.parse_args()
     return args.func(args)

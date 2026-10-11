@@ -87,6 +87,20 @@ scientific gate. Recovery does not prove external Drive synchronization.
 The journal protects these five files only; changes made by unrelated writers
 or other processes outside this protocol are not transactionally protected.
 
+## Human gate and snapshot recovery
+
+The local `governance_events.py gate` workflow now journals TRACE,
+human-validation gates and the snapshot register as one recoverable unit.
+Before any new snapshot appears, an ordinary failure restores original
+registers. Abrupt interruptions leave
+`00_Gestao_e_Continuidade/.pending_gate_snapshot` as a visible blocker;
+`python scripts/governance_events.py recover-gate PROJECT` performs
+explicit, verified recovery of a PREPARED local operation. If an interrupted
+operation has already created a snapshot folder, the journal stays and
+automatic recovery refuses to delete or silently declare that folder valid:
+its evidence requires reconciliation. Historical decisions are preserved;
+the code cannot authenticate human identity or confirm Google Drive writes.
+
 ## Recovery rules
 
 When resuming:
