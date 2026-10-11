@@ -183,6 +183,23 @@ def _request(fetcher: Callable, url: str, headers: dict[str, str],
     raise ProviderFailure("PROVIDER_UNAVAILABLE")
 
 
+def _provider_item_valid(provider: str, item: dict) -> bool:
+    """Reject structurally corrupt provider rows instead of silently dropping them.
+
+    Missing optional bibliographic fields are permitted; a field that claims
+    to contain a structured object but instead contains a list/string is not.
+    """
+    expected = {
+        "openalex": {"primary_location": dict, "authorships": list},
+        "crossref": {"title": list, "author": list, "published": dict, "issued": dict},
+        "semantic_scholar": {"externalIds": dict, "authors": list, "publicationTypes": list},
+    }
+    return all(
+        item.get(field) is None or isinstance(item[field], typ)
+        for field, typ in expected[provider].items()
+    )
+
+
 def capabilities(provider: str) -> dict:
     if provider in SUPPORTED:
         return {
@@ -251,6 +268,8 @@ def search(provider: str, query: str, *, limit: int = 50,
             if provider == "semantic_scholar" and api_key:
                 headers["x-api-key"] = api_key
             data = _request(fetcher, url, headers)
+            if not isinstance(data, dict):
+                raise ProviderFailure("INVALID_RESPONSE")
             if provider == "openalex":
                 raw_items = data.get("results")
                 meta = data.get("meta") or {}
@@ -274,7 +293,8 @@ def search(provider: str, query: str, *, limit: int = 50,
             # Validate the entire page before adding ANY of its rows. A
             # corrupt provider payload cannot quietly drop individual works
             # and convert an incomplete response into COMPLETE.
-            if any(not isinstance(item, dict) for item in raw_items):
+            if any(not isinstance(item, dict) or not _provider_item_valid(provider, item)
+                   for item in raw_items):
                 raise ProviderFailure("INVALID_RESPONSE")
             try:
                 normalized = [normalizer(item) for item in raw_items[:remaining]]
