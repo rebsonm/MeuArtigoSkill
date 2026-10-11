@@ -5,13 +5,12 @@
 When a researcher asks "show the dashboard", "where is my paper?",
 "next step" or equivalent in their own language, present a concise, grounded
 dashboard directly **in the conversation**. This is part of the Skill's
-presentation rules, not a request to migrate the Skill to a plugin. Native
+presentation rules, not a separate installation. Native
 chat widgets, if available in the active host, are a rendering capability
 supplied by the host; this repository does **not** install a new UI engine.
 
-This feature is entirely independent of the optional MCP Apps companion
-proposed in PR #22. The Skill remains usable without an MCP server,
-deployment, URL, custom plugin or subscription to another service.
+This presentation belongs to the Skill itself. It does not require an
+external hosted interface or a separate subscription.
 Never claim native widgets are supported on every host.
 
 ## Source-of-truth gate: do this before rendering
@@ -92,7 +91,7 @@ toggle.
   table and a clear next action. The research process must work equally
   well in plain text. Do not rely on HTML, custom JavaScript, or host-
   specific component syntax in `SKILL.md`.
-- Do not require `visual-app/` or MCP to display the Skill's native
+- Do not require `an external dashboard to display the Skill's native
   presentation. Those remain an optional and separately reviewable
   extension.
 
