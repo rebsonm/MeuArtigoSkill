@@ -34,3 +34,5 @@ maintainer verification in GitHub Settings; automated source audits are
 not proof that protection is enabled. Editorial anonymization remains
 subject to inspection of the exact shared files and the journal's
 applicable legal and ethical conditions.
+
+The developer-only synthetic methodological response calibration in `benchmarks/methodological_response_reference_v1.json` checks only predeclared field-level software behavior. It has not supplied independent semantic judgments, live model runs or validation of a complete research project. All empirical evaluations above remain PENDING.
