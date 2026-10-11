@@ -30,6 +30,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from formative_gates import SCIENTIFIC_GATES, APPROVALS, response_issues, encode_formative
 from method_routes import approval_issues
+from transaction_coordinator import require_no_conflict
 from gate_snapshot_transaction import (protect_gate_snapshot, has_pending_gate_snapshot,
                                        recover_gate_snapshot, PendingGateSnapshot)
 
@@ -137,6 +138,9 @@ def record_trace(root:Path, *, stage:str, cada_id:str, action_type:str,
 
 def record_decision(args)->int:
     root=Path(args.project).resolve()
+    # Method-route selection invokes this decision writer inside its journal.
+    # Gate and import journals must not be rolled back across this event.
+    require_no_conflict(root, allow=("method_route",))
     dtype=args.type.upper()
     status=args.status.upper()
     if dtype not in DEC_TYPES:
@@ -193,6 +197,7 @@ def record_decision(args)->int:
 
 def record_gate(args)->int:
     root=Path(args.project).resolve()
+    require_no_conflict(root, allow=("gate_snapshot",))
     decision=args.decision.upper()
     if decision not in GATE_DECISIONS:
         raise SystemExit(f"invalid gate decision: {decision}")
