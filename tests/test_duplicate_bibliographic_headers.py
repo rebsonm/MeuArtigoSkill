@@ -199,6 +199,85 @@ class HeaderValidationTests(unittest.TestCase):
         self.assertEqual(self.read_csv("consolidated_exact_dedup.csv")[0]["_first_author"],
                          "barroscarla")
 
+    def test_scopus_full_documented_header_pattern_is_importable(self):
+        # Column pattern from published Scopus export descriptions, not live data.
+        fields = [
+            "Authors", "Author full names", "Author(s) ID", "Title", "Year",
+            "Source title", "Volume", "Issue", "Art. No.", "Page start",
+            "Page end", "Page count", "Cited by", "DOI", "Link",
+            "Affiliations", "Authors with affiliations", "Abstract",
+            "Author Keywords", "Index Keywords", "Molecular Sequence Numbers",
+            "Chemicals/CAS", "Tradenames", "Manufacturers",
+            "Funding Details", "Funding Texts", "References",
+            "Correspondence Address", "Editors", "Publisher",
+            "Sponsors", "Conference name", "Conference date",
+            "Conference location", "Conference code", "ISSN", "ISBN",
+            "CODEN", "PubMed ID", "Language of Original Document",
+            "Abbreviated Source Title", "Document Type",
+            "Publication Stage", "Open Access", "Source", "EID",
+        ]
+        self.assertEqual(len(fields), 46)
+        path = self.root / "scopus_fields.csv"
+        with path.open("w", encoding="utf-8", newline="") as file:
+            writer = csv.DictWriter(file, fieldnames=fields)
+            writer.writeheader()
+            writer.writerow({
+                "Authors": "Almeida, J.", "Author full names": "Almeida, Joana",
+                "Title": "Knowledge management", "Year": "2025",
+                "DOI": "10.1234/scopus-full", "References": "Mock citation",
+            })
+        result = self.execute(path)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        records = self.read_csv("consolidated_exact_dedup.csv")
+        self.assertEqual(len(records), 1)
+        self.assertTrue(set(fields).issubset(records[0].keys()))
+        self.assertEqual(records[0]["Authors"], "Almeida, J.")
+        self.assertEqual(records[0]["Author full names"], "Almeida, Joana")
+
+    def test_wos_full_documented_header_pattern_is_importable(self):
+        # Column pattern from published WoS tab-delimited examples, synthetic row.
+        fields = [
+            "Authors", "Book Authors", "Book Editors", "Book Group Authors",
+            "Author Full Names", "Book Author Full Names", "Group Authors",
+            "Article Title", "Source Title", "Book Series Title",
+            "Language", "Document Type", "Conference Title",
+            "Conference Date", "Conference Location", "Conference Sponsor",
+            "Conference Host", "Author Keywords", "Keywords Plus", "Abstract",
+            "Addresses", "Affiliations", "Reprint Addresses",
+            "Email Addresses", "Researcher Ids", "ORCIDs", "Funding Orgs",
+            "Funding Name Preferred", "Funding Text",
+            "Cited Reference Count", "Times Cited, WoS Core",
+            "Times Cited, All Databases", "180 Day Usage Count",
+            "Since 2013 Usage Count", "Publisher", "Publisher City",
+            "Publisher Address", "ISSN", "eISSN", "ISBN",
+            "Journal Abbreviation", "Journal ISO Abbreviation",
+            "Publication Date", "Publication Year", "Volume", "Issue",
+            "Special Issue", "Start Page", "End Page", "Article Number",
+            "DOI", "DOI Link", "Book DOI", "Early Access Date",
+            "Number of Pages", "WoS Categories", "Web of Science Index",
+            "Research Areas", "IDS Number", "Pubmed Id",
+            "Open Access Designations", "Date of Export",
+            "UT (Unique WOS ID)", "Web of Science Record",
+        ]
+        self.assertEqual(len(fields), 64)
+        path = self.root / "wos_fields.tsv"
+        with path.open("w", encoding="utf-8", newline="") as file:
+            writer = csv.DictWriter(file, fieldnames=fields, delimiter="\t")
+            writer.writeheader()
+            writer.writerow({
+                "Authors": "Souza, C.", "Author Full Names": "Souza, Carla",
+                "Article Title": "Public institutions",
+                "Publication Year": "2024", "DOI": "10.1234/wos-full",
+                "Times Cited, WoS Core": "3",
+            })
+        result = self.execute(path)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        records = self.read_csv("consolidated_exact_dedup.csv")
+        self.assertEqual(len(records), 1)
+        self.assertTrue(set(fields).issubset(records[0].keys()))
+        self.assertEqual(records[0]["Authors"], "Souza, C.")
+        self.assertEqual(records[0]["Author Full Names"], "Souza, Carla")
+
     def test_two_short_author_aliases_remain_ambiguous(self):
         path = self.root / "short_aliases.csv"
         path.write_text(
