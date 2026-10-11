@@ -9,7 +9,18 @@ The [v0.9.0-beta.2 experimental release](https://github.com/rebsonm/MeuArtigoSki
 
 **Current version:** `0.9.0-beta.4` (**merged to main, but not a published GitHub release**). **Latest published Skill ZIP:** `v0.9.0-beta.2`. **Private ChatGPT plugin:** `0.9.0-beta.4` (updated separately using a validated plugin package). [Releases and downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). The source code is free; third-party academic databases, platforms and subscriptions may have separate access requirements.
 
-**[Download beta v0.9.0-beta.2](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.2)** · [Installation guide](./docs/COMECE-AQUI.md) · [Release notes and limitations](./docs/NOTAS-DA-VERSAO-0.9.0-beta.2.md)
+**New here? [Choose the correct installer — 2-minute guide](./docs/INSTALLATION.md)**
+
+| Your goal | Download or next step |
+| --- | --- |
+| **Install the public Skill** | **[Download the verified Skill ZIP (beta.2)](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.2/MeuArtigoSkill-v0.9.0-beta.2.zip)** → open **Habilidades / Skills** |
+| **Install a ChatGPT plugin** | Requires a separately prepared **plugin ZIP**. The beta.4 plugin is **private**, not a public one-click installation yet |
+| **Update a plugin you own** | Open the existing plugin → **Enviar nova versão / Upload new version** with the correct plugin ZIP |
+| **Read the code** | GitHub's **Code → Download ZIP** downloads source, **not** an installer |
+
+**Avoid the common mistake:** a GitHub source ZIP is **not** accepted by ChatGPT's plugin importer. A Skill ZIP and a plugin ZIP are different packages. See [installation errors and fixes](./docs/INSTALLATION.md#d-common-error-messages-and-what-to-do).
+
+[Full installation guide](./docs/COMECE-AQUI.md) · [Release notes and limitations](./docs/NOTAS-DA-VERSAO-0.9.0-beta.2.md)
 
 ## English source, your language when you use it
 
@@ -119,7 +130,7 @@ runs beta.4; that does **not** create a public beta.4 release.
 2. Follow the [installation and first-use guide](./docs/COMECE-AQUI.md) for your AI platform.
 3. Start a conversation using your own language and describe the research problem. For example, in English: *“I want to write a research article about difficulties in AI adoption in small public organizations. Help me develop the research question and organize the workflow.”* Equally, Portuguese and Spanish requests work under the same language policy.
 
-Platform guides: [ChatGPT](./docs/CHATGPT.md) · [Claude](./docs/CLAUDE.md) · [Gemini](./docs/GEMINI.md)
+Platform guides: [ChatGPT](./docs/CHATGPT.md) · [Claude](./docs/CLAUDE.md) · [Gemini](./docs/GEMINI.md) · [Installation help](./docs/INSTALLATION.md)
 
 Importing a Skill does not confirm authenticated Google Drive access, direct Scopus/Web of Science access or the ability to execute Python in the current platform. The project must verify each capability before treating the corresponding action as completed.
 
