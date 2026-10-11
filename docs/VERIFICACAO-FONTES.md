@@ -85,3 +85,36 @@ necessary; scientific validation requires an independent substantive review.
 
 See `scripts/source_report_integrity.py` for read-only evaluation and
 `tests/test_source_integrity.py` for deliberately synthetic regressions.
+## Integridade de status, proveniência e verificação durante a execução
+
+O verificador registra o hash SHA-256 do JSON retornado por cada provedor
+Crossref/OpenAlex, mantendo no relatório apenas o resumo bibliográfico e o
+digest, sem reproduzir metadados extensos ou textos protegidos. Esse hash
+permite comparar a resposta recebida com uma cópia legítima, mas **não**
+autentica o servidor remoto nem prova, por si só, uma busca externa real.
+
+Qualquer indisponibilidade ou ausência de resposta de um dos provedores é
+identificada explicitamente como aviso, mesmo que outro provedor confirme
+os metadados. Portanto, o resultado requer revisão, não uma declaração
+automática de validação integral.
+
+Antes e depois de cada lote, o sistema recalcula o manifesto dos arquivos
+canônicos e documentos locais utilizados. Se houver alterações durante
+a execução, rejeita o relatório novo com
+`SOURCE_INPUTS_CHANGED_DURING_VERIFICATION`. A substituição do relatório
+oficial é atômica: falhas na escrita não devem sobrescrever sua última
+versão íntegra.
+
+A auditoria `source_report_integrity.py` também verifica coerência interna:
+`METADATA_AND_LOCATOR_CHECKED` somente é admissível com identidade
+`VERIFIED`, verificação de trecho `MATCHED`, SHA-256 atual do arquivo
+local, ausência de advertências/alertas pendentes e pelo menos um resultado
+positivo de provedor. Um relatório marcado como offline não pode conter
+identidade supostamente verificada por consulta ao vivo. Alertas de retratação
+ou correção ligados ao trabalho examinado não podem ser ocultados em um
+resumo de sucesso. Contradições bloqueiam GATE-0006.
+
+Esses controles não demonstram que uma afirmação científica é verdadeira,
+não substituem análise metodológica nem autenticam uma resposta humana.
+Resultados com retratações, correções ou verificação incompleta exigem
+interpretação documentada pelo pesquisador e jamais exclusão automática.
