@@ -14,11 +14,12 @@ on `main` may be newer than the last published distribution.
 
 The Skill ZIP contains `SKILL.md` in its root, plus
 `agents/`, `assets/`, `references/`, `scripts/`,
-`docs/`, `benchmarks/`, `LICENSE`, `NOTICE`,
+`docs/`, `LICENSE`, `NOTICE`,
 `CITATION.cff`, `VERSION` and a SHA-256 manifest.
 User data, copyrighted third-party PDFs, access tokens,
 temporary working files and real private research corpora
-are **not included**.
+are **not included**. Development benchmarks, tests and release-maintenance
+scripts remain in the source repository, not in the prepared installer.
 
 ## Installation and first run
 
