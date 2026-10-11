@@ -82,13 +82,17 @@ toggle.
 
 ## Safe continuation panel
 
-The read-only local projector now provides a compact `continuation` object,
-derived from `scripts/next_step_router.py`, separate from its legacy
-`overview.next_task_id` first-active-row indicator. This object contains
-only IDs, generic status/blocker codes, and whether documented technical
-preparation may proceed. It does **not** return `Next_action` prose,
-confidential continuity text, source excerpts or researcher review evidence.
-MINIMAL and FULL must produce the same routing classification.
+The read-only local projector uses **one** authoritative
+`continuation` classification from `scripts/next_step_router.py`.
+For backwards compatibility, `overview.next_task_id` and
+`overview.next_gate_id` are aliases of these same safe values, **not**
+competing first-active-row predictions. This prevents a BLOCKED or CAPTURED
+row from appearing as an executable task and keeps undocumented human gates
+pending. The four-column C.A.D.A. table remains unchanged; MINIMAL
+prioritizes the eligible task when one exists. The fallback prints the safe
+next step only once with its first blocker. Neither view exposes the raw
+`Next_action` prose, continuity text, source excerpts or review evidence.
+MINIMAL and FULL preserve the same classification and scientific controls.
 
 Navigation status never authorizes actual actions; agents still need their
 existing execution rights and must record actual outcomes in the canonical
