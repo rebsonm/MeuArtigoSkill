@@ -254,3 +254,30 @@ reconciliation rather than overwriting someone else's work. A COMMITTED
 journal is cleared only when all three outputs match. These protections
 do not create a cross-process database transaction, external authentication
 or independent scientific validation.
+
+## Phase 5 integrated integrity and conservative project validation
+
+After a local PR-49 C.A.D.A. completion, the read-only
+`scripts/cada_continuity_integrity.py` audits the three canonical
+operational artifacts **together**: the last completed CADA_ID, TRACE
+receipt and current output hash; `11_CADA_Control.csv` status;
+`CONTINUIDADE.md` next-action markers and change-log linkage; and
+`15_CADA_Dashboard.csv` current counts, task and gate IDs. The
+`validate_project.py` command checks this audit, and the native chat
+dashboard shows a generic integrity status/error count without leaking
+research notes or source material. A broken audit disables proposed
+technical preparation in the panel and prevents another evidenced
+C.A.D.A. write until records are reconciled.
+
+A pending `.pending_cada_continuity` journal independently blocks
+project validation, even when three CSV/Markdown files happen to
+exist. Explicit verified recovery is required. Audit is read-only and
+does not approve scientific gates, authenticate a reviewer or verify
+remote Drive synchronization. Legacy projects without a previous
+evidenced C.A.D.A. completion are left NOT_APPLICABLE_LEGACY; when a
+task has a TRACE-linked completion but its dashboard pointers have
+been deleted, the mismatch is explicitly blocked instead of silently
+treating it as legacy. Only local confirmed executions are checked;
+the audit does not itself validate interpretation, causality, external
+API retrieval, paper quality or claimed human reviews.
+

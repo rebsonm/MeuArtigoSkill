@@ -243,6 +243,14 @@ def complete(root: Path, cada_id: str, trace_id: str) -> dict:
     if not re.fullmatch(r"CADA-\d{4,}", cada_id):
         raise ValueError("INVALID_CADA_ID")
 
+    # Never compound an already broken C.A.D.A. state into a second
+    # apparently successful transition. Legacy projects without a PR-49
+    # completion marker are not grandfathered into an approval.
+    from cada_continuity_integrity import audit as audit_continuity
+    previous = audit_continuity(root)
+    if previous["errors"]:
+        raise ValueError("CADA_PREVIOUS_CONTINUITY_INTEGRITY_REVIEW_REQUIRED")
+
     # A verified next-step route must already permit technical preparation
     # for the *same* CADA_ID. This also enforces journal interlocks.
     current = resolve(root)
