@@ -1,8 +1,8 @@
 # Meu Artigo Visual — optional in-chat scientific cockpit (MVP)
 
-Status: **experimental integration on the post-beta.2 maintenance branch**. This is a read-only
-companion to the Skill, not a new scientific method, project database,
-or independently evaluated UX. See the source in visual-app/.
+Status: **experimental beta.4 source integration, not a deployed ChatGPT MCP App**.
+This is a read-only companion to the Skill, not a new scientific method,
+project database or independently evaluated UX. See the source in visual-app/.
 
 ## What is actually implemented
 
