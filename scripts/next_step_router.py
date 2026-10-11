@@ -19,7 +19,7 @@ from transaction_coordinator import active_journals
 MGMT = "00_Gestao_e_Continuidade"
 GATES = f"{MGMT}/18_Human_Validation_Gates.csv"
 TASKS = f"{MGMT}/11_CADA_Control.csv"
-CONTINUITY = "CONTINUIDADE.md"
+CONTINUITY = f"{MGMT}/CONTINUIDADE.md"
 EXPECTED_GATES = tuple(f"GATE-{i:04d}" for i in range(1, 8))
 APPROVALS = {"APPROVED", "APPROVED_WITH_CHANGES"}
 TERMINAL = {"DONE", "COMPLETED", "CANCELLED", "CANCELED", "SUPERSEDED"}
@@ -141,6 +141,13 @@ def resolve(project: Path) -> dict:
             raise ValueError()
     except (OSError, UnicodeError, ValueError):
         result["blockers"].append("INVALID_PROJECT_CONFIG")
+        return result
+
+    # An old root-level copy can contradict the canonical management
+    # document. Never choose either silently or migrate research text.
+    legacy_copy = root / "CONTINUIDADE.md"
+    if legacy_copy.exists() or legacy_copy.is_symlink():
+        result["blockers"].append("ROOT_CONTINUITY_COPY_REQUIRES_RECONCILIATION")
         return result
 
     # A chat is not durable project memory. Inspect the continuity artifact

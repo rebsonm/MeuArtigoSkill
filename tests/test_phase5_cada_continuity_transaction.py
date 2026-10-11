@@ -56,7 +56,7 @@ class Phase5RecordedCompletionTests(unittest.TestCase):
         }), encoding="utf-8")
         self.taskfile = self.mgmt / "11_CADA_Control.csv"
         self.dashboard = self.mgmt / "15_CADA_Dashboard.csv"
-        self.continuity = self.root / "CONTINUIDADE.md"
+        self.continuity = self.root / router.CONTINUITY
         self.gates = self.mgmt / "18_Human_Validation_Gates.csv"
         self.tracefile = self.mgmt / "13_Traceability_Log.csv"
         self.tasks = [

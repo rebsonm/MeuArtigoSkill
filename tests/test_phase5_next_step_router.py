@@ -41,7 +41,7 @@ class NextStepPhase5Tests(unittest.TestCase):
             "presentation_mode": "MINIMAL",
             "work_management_mode": "MATRIX_ONLY",
         }), encoding="utf-8")
-        self.continuity = self.root / "CONTINUIDADE.md"
+        self.continuity = self.root / router.CONTINUITY
         self.continuity.write_text(
             "# Synthetic research continuity\nNext valid action: CADA-0002\n"
             "PRIVATE_RESEARCH_CONTEXT_AND_REVIEW_NOTES", encoding="utf-8")
