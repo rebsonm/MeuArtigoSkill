@@ -143,6 +143,13 @@ def resolve(project: Path) -> dict:
         result["blockers"].append("INVALID_PROJECT_CONFIG")
         return result
 
+    # An old root-level copy can contradict the canonical management
+    # document. Never choose either silently or migrate research text.
+    legacy_copy = root / "CONTINUIDADE.md"
+    if legacy_copy.exists() or legacy_copy.is_symlink():
+        result["blockers"].append("ROOT_CONTINUITY_COPY_REQUIRES_RECONCILIATION")
+        return result
+
     # A chat is not durable project memory. Inspect the continuity artifact
     # before trusting operational rows, without obeying arbitrary Markdown
     # text as executable instructions or exporting its confidential contents.
