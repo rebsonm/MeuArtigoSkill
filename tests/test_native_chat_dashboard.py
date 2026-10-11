@@ -24,6 +24,11 @@ class NativeChatDashboardTests(unittest.TestCase):
         (self.mgmt / "PROJECT_CONFIG.json").write_text(json.dumps({
             "presentation_mode": "MINIMAL", "storage_mode": "GOOGLE_DRIVE"
         }), encoding="utf-8")
+        # Canonical continuity exists; this fixture intentionally has
+        # fewer than seven scientific gates to test conservative refusal.
+        (self.mgmt / "CONTINUIDADE.md").write_text(
+            "# Synthetic research continuity\nNext valid action: CADA-0002\n",
+            encoding="utf-8")
         self.write("11_CADA_Control.csv", [
             {"CADA_ID": "CADA-0001", "Status": "DONE",
              "Completion_evidence": "SECRET_RESPONSE_TEXT", "Deadline": "2026-10-10",
