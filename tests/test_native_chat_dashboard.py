@@ -71,7 +71,14 @@ class NativeChatDashboardTests(unittest.TestCase):
         p = native.panel(self.root)
         self.assertEqual(p["overview"]["tasks_reported_done"], 1)
         self.assertEqual(p["overview"]["active_tasks"], 3)
-        self.assertEqual(p["overview"]["next_gate_id"], "GATE-0002")
+        # Only four gate rows exist in this disposable fixture, so the
+        # safe router cannot infer which one is the next of seven gates.
+        self.assertIsNone(p["overview"]["next_gate_id"])
+        self.assertEqual(p["overview"]["next_gate_id"],
+                         p["continuation"]["next_gate_id"])
+        self.assertEqual(p["continuation"]["status"], "BLOCKED")
+        self.assertIn("SEVEN_GATES_NOT_PRESENT_OR_UNEXPECTED",
+                      p["continuation"]["blockers"])
 
     def test_minimal_truncation_is_presentation_only(self):
         a = native.panel(self.root)
