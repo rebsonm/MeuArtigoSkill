@@ -28,15 +28,8 @@ quotations, participant material, search strings and technical identifiers.
 Translate source material only when requested/appropriate with original
 provenance retained. Do not translate enums, paths, IDs or commands.
 
-## 0A. Connection preflight presentation
-
-For capability checks use **one compact status line per integration**:
-short bullets, not Markdown tables; never produce empty columns.
-Distinguish access, reads, writes and read-after-write with actual
-receipts. Missing evidence is `NOT_VERIFIED`, never success. Do not
-guess provider quota, credits or executed searches. Show final observed
-states and one next step. Operational checks never approve a scientific gate.
-Full instructions: [ChatGPT capability diagnosis](docs/CHATGPT.md).
+## 0A. Preflight
+Use bullets, no empty tables; cite real checks. See [guidance](docs/CHATGPT.md).
 
 ## 1. Invariant scientific contract
 
