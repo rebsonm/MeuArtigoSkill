@@ -83,7 +83,9 @@ navigation, a separate next-action flow and mobile dark-mode layout in **source 
 It remains an unhosted companion until a verified authorized host, runtime and
 data adapter are connected. [Phase 3](docs/PLUGIN_MIGRATION_PHASE3.md) and
 [Phase 4 UX acceptance](docs/PHASE4_UX_REGRESSION_AND_ACCEPTANCE.md)
-distinguish engineering checks from pending screenshot fidelity.
+distinguish engineering checks from pending screenshot fidelity. The
+[unpublished beta.4 review guide](docs/PHASE5_RELEASE_CANDIDATE_REVIEW.md)
+explains the separate candidate ZIPs, software checks and remaining deployment blockers.
 
 ## How it works
 
