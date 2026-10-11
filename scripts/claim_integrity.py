@@ -12,6 +12,7 @@ import re
 import sys
 import unicodedata
 from pathlib import Path
+from collections import Counter
 
 MGMT="00_Gestao_e_Continuidade"
 CLAIMS=f"{MGMT}/09_Claims_Ledger.csv"
@@ -91,6 +92,15 @@ def audit(claim_rows,evidence_rows,search_rows,*,strict=False,freeze=False,heade
             "empirical_result":0,"unsupported_novelty_phrases":0,"pending":0}
     all_evidence={clean(r.get("Evidence_ID")):r for r in evidence_rows if clean(r.get("Evidence_ID"))}
     search_index={clean(r.get("Search_ID")):r for r in search_rows if clean(r.get("Search_ID"))}
+    evidence_counts=Counter(clean(r.get("Evidence_ID")) for r in evidence_rows if clean(r.get("Evidence_ID")))
+    search_counts=Counter(clean(r.get("Search_ID")) for r in search_rows if clean(r.get("Search_ID")))
+    if strict or freeze:
+        for identifier, count in sorted(evidence_counts.items()):
+            if count > 1:
+                errors.append(f"ambiguous duplicated Evidence_ID {identifier}; do not select an arbitrary citation")
+        for identifier, count in sorted(search_counts.items()):
+            if count > 1:
+                errors.append(f"ambiguous duplicated Search_ID {identifier}; cannot prove novelty from an arbitrary search")
     seen=set()
     if strict and headers is not None and claim_rows:
         absent=[key for key in EXTRA_COLUMNS if key not in headers]
@@ -114,8 +124,15 @@ def audit(claim_rows,evidence_rows,search_rows,*,strict=False,freeze=False,heade
         listed=refs(row.get("Evidence_IDs"))
         nearby=refs(row.get("Nearest_prior_Evidence_IDs"))
         counter=refs(row.get("Counter_Evidence_IDs"))
-        if len(set(listed))!=len(listed) or len(set(nearby))!=len(nearby):
+        if any(len(set(group)) != len(group) for group in (listed, nearby, counter)):
             errors.append(f"{claim_id}: duplicate evidence identifier")
+        overlap = set(listed).intersection(counter)
+        if overlap:
+            explanation = (row.get("Robustness_notes") or "") + " " + (row.get("Alternative_explanations") or "")
+            if (strict or freeze) and not substantive(explanation):
+                errors.append(f"{claim_id}: an Evidence_ID is both supporting and counter-evidence without a documented explanation")
+            else:
+                warnings.append(f"{claim_id}: the same evidence is supporting and counter-evidence; review the qualified interpretation")
         for evidence_id in {*listed,*nearby,*counter}:
             if evidence_id not in all_evidence:
                 errors.append(f"{claim_id}: unknown Evidence_ID {evidence_id}")
@@ -149,12 +166,23 @@ def audit(claim_rows,evidence_rows,search_rows,*,strict=False,freeze=False,heade
             if not listed:
                 (errors if mandatory else warnings).append(f"{claim_id}: [L] requires a cited Evidence_ID")
             if mandatory:
-                if not clean(row.get("Locator_status")):
+                locator_status=clean(row.get("Locator_status")).upper()
+                if not locator_status:
                     errors.append(f"{claim_id}: [L] locator status missing; metadata presence is not semantic support")
+                elif locator_status in {"PASSAGE_NOT_FOUND", "PAGE_MISMATCH", "OUTSIDE_WORKSPACE"}:
+                    errors.append(f"{claim_id}: [L] literal source locator has an objective contradiction")
                 for evidence_id in listed:
                     src=all_evidence.get(evidence_id)
-                    if src is not None and not clean(src.get("Supporting_locator")):
-                        errors.append(f"{claim_id}: [L] evidence {evidence_id} lacks a source locator")
+                    if src is not None:
+                        if not clean(src.get("Supporting_locator")):
+                            errors.append(f"{claim_id}: [L] evidence {evidence_id} lacks a source locator")
+                        # In the canonical modern matrix there must be a
+                        # checkable citation or persistent source identity.
+                        # Legacy reduced fixtures without these columns keep
+                        # the historical locator-only diagnostic.
+                        if ("Citation" in src or "DOI_or_persistent_ID" in src) and not (
+                                clean(src.get("Citation")) or clean(src.get("DOI_or_persistent_ID"))):
+                            errors.append(f"{claim_id}: [L] evidence {evidence_id} lacks bibliographic citation or persistent identifier")
         if kind=="I":
             if not listed:
                 (errors if mandatory else warnings).append(f"{claim_id}: [I] must identify the source evidence for the inference")
@@ -165,6 +193,12 @@ def audit(claim_rows,evidence_rows,search_rows,*,strict=False,freeze=False,heade
         if kind=="P":
             if not nearby:
                 (errors if mandatory else warnings).append(f"{claim_id}: [P] requires nearest prior works (identifiable Evidence_IDs) for comparison")
+            if mandatory:
+                for evidence_id in nearby:
+                    src=all_evidence.get(evidence_id)
+                    if src is not None and ("Citation" in src or "DOI_or_persistent_ID" in src) and not (
+                            clean(src.get("Citation")) or clean(src.get("DOI_or_persistent_ID"))):
+                        errors.append(f"{claim_id}: [P] nearest prior evidence {evidence_id} lacks a source citation or persistent identifier")
             if not substantive(row.get("Contribution_delta")):
                 (errors if mandatory else warnings).append(f"{claim_id}: [P] requires a specific contribution versus prior work")
             if not substantive(row.get("Novelty_scope")):
