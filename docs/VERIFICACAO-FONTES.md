@@ -118,3 +118,23 @@ Esses controles não demonstram que uma afirmação científica é verdadeira,
 não substituem análise metodológica nem autenticam uma resposta humana.
 Resultados com retratações, correções ou verificação incompleta exigem
 interpretação documentada pelo pesquisador e jamais exclusão automática.
+
+## Conferência integrada das citações de [L] no Gate 6
+
+Na auditoria final, `scripts/claim_source_integrity.py` compara cada
+`Evidence_ID` citado por uma afirmação [L] com o registro efetivo de
+`SOURCE_VERIFICATION.json`. O campo `Locator_status=MATCHED` em
+`09_Claims_Ledger.csv` **não é prova por si só**: todas as evidências
+citadas precisam ter passagem literalmente localizada (`MATCHED`) no
+relatório válido. Quando houver localização indisponível, a afirmação não
+pode se declarar `MATCHED`; as limitações exigem registro humano de
+avaliação e o status `REVIEWED_LIMITATIONS` no relatório. Divergências,
+links ausentes ou relatórios obsoletos impedem a aprovação do Gate 6.
+O verificador de projeto reaplica a mesma regra após aprovações históricas,
+sem substituir ou apagar registros de decisões humanas.
+
+Este é um
+controle estrutural de **consistência de citações**, não uma verificação
+semântica nem autenticação da autoria da avaliação. Nos testes, todos
+os pesquisadores e textos são fictícios; a homologação em Google Drive
+permanece etapa posterior.

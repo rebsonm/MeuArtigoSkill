@@ -543,6 +543,16 @@ def main():
         if source_state["status"] == "REVIEWED_LIMITATIONS":
             warnings.append("GATE-0006 has documented human limitations; sources are not automatically verified")
 
+    # A recorded Gate 6 also needs the [L] claim locator assertions to
+    # agree with the current source report, not just pass the separate audits.
+    if (g6.get("Status") or "").upper() == "COMPLETED" and (
+            g6.get("Decision") or "").upper() in {"APPROVED", "APPROVED_WITH_CHANGES"} and (
+            cfg_data.get("source_verification_required") is True):
+        from claim_source_integrity import audit as audit_claim_source
+        claim_source = audit_claim_source(root, freeze=True)
+        errors.extend("GATE-0006 claim-source integrity: " + x for x in claim_source["errors"])
+        warnings.extend("GATE-0006 claim-source integrity: " + x for x in claim_source["warnings"])
+
     # Local PDF availability never implies export/redistribution permission.
     if cfg_data.get("fulltext_rights_audit_required") is True:
         try:
