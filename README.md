@@ -7,7 +7,7 @@ Meu Artigo supports the journey from an initial research idea to a submission-re
 The project is available in a **public GitHub repository** as an **experimental beta**.
 The [v0.9.0-beta.2 experimental release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.2) incorporates the optional bibliographic API pilot and stabilization fixes from PR #24, together with the documentation and publication safeguards from PR #25. A passing software audit does not constitute scientific validation.
 
-**Source version:** `0.9.0-beta.4` (**merged to main, but not a published GitHub release**). **Latest published Skill ZIP:** `v0.9.0-beta.2`. **Private ChatGPT plugin:** `0.9.0-beta.4` (updated separately using a validated plugin package). [Releases and downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). The source code is free; third-party academic databases, platforms and subscriptions may have separate access requirements.
+**Current version:** `0.9.0-beta.4` (**merged to main, but not a published GitHub release**). **Latest published Skill ZIP:** `v0.9.0-beta.2`. **Private ChatGPT plugin:** `0.9.0-beta.4` (updated separately using a validated plugin package). [Releases and downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). The source code is free; third-party academic databases, platforms and subscriptions may have separate access requirements.
 
 **[Download beta v0.9.0-beta.2](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.2)** · [Installation guide](./docs/COMECE-AQUI.md) · [Release notes and limitations](./docs/NOTAS-DA-VERSAO-0.9.0-beta.2.md)
 
