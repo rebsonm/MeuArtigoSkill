@@ -46,18 +46,18 @@ def audit(project: Path, *, freeze: bool = False) -> dict:
         "empirical_result_claims": 0,
     }
     if report_file.is_file() and evidence_file.is_file():
-        try:
+        # A stale report cannot contribute even bibliographic/locator counts.
+        from source_report_integrity import assess as assess_source_report
+        source_state = assess_source_report(root, require_complete=False)
+        if source_state["status"] in {"RECORDED_CLEAR", "REVIEWED_LIMITATIONS", "REVIEW_REQUIRED"}:
             report = json.loads(report_file.read_text(encoding="utf-8"))
-            if report.get("input_sha256") == hashlib.sha256(evidence_file.read_bytes()).hexdigest():
-                for item in report.get("checks", []):
-                    if item.get("metadata_status") == "VERIFIED":
-                        tiers["bibliographic_identity_checked"] += 1
-                    if item.get("locator_status") == "MATCHED":
-                        tiers["literal_passage_matched"] += 1
-            else:
-                warnings.append("source verification report does not match current Evidence Matrix")
-        except (ValueError, TypeError):
-            warnings.append("source verification report is not readable")
+            for item in report.get("checks", []):
+                if item.get("metadata_status") == "VERIFIED":
+                    tiers["bibliographic_identity_checked"] += 1
+                if item.get("locator_status") == "MATCHED":
+                    tiers["literal_passage_matched"] += 1
+        else:
+            warnings.append("source verification report is missing, stale, or has integrity conflicts")
     for row in claims:
         if not (row.get("Claim_ID") or "").strip():
             continue
