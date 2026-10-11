@@ -4,7 +4,8 @@
 Exact DOI/title duplicates are consolidated. Fuzzy title matches are only flagged
 for manual/agent audit and are never removed automatically.
 
-Supported input: CSV, TSV/TXT, XLSX (XLSX requires openpyxl).
+Supported input: CSV, TSV/TXT, XLSX (openpyxl), XLS (xlrd >= 2).
+Optional legacy Excel dependencies must be installed in the executing environment.
 """
 
 from __future__ import annotations
@@ -187,8 +188,62 @@ def append_distinct(previous: str, new: str) -> str:
     return ";".join(values)
 
 
+def xls_cell_text(cell, xlrd, datemode: int) -> str:
+    """Normalize legacy Excel numbers/dates without changing original inputs."""
+    if cell.ctype in (xlrd.XL_CELL_EMPTY, xlrd.XL_CELL_BLANK):
+        return ""
+    if cell.ctype == xlrd.XL_CELL_DATE:
+        return xlrd.xldate.xldate_as_datetime(cell.value, datemode).isoformat(sep=" ")
+    if cell.ctype == xlrd.XL_CELL_NUMBER and isinstance(cell.value, float):
+        return str(int(cell.value)) if cell.value.is_integer() else str(cell.value)
+    return str(cell.value)
+
+
+def read_legacy_xls(path: Path) -> list[dict[str, str]]:
+    """Read-only BIFF/OLE XLS from WoS; retain columns for header validation."""
+    try:
+        import xlrd
+    except ImportError as exc:
+        raise SystemExit(
+            "Legacy .xls input requires optional xlrd >= 2.0.2; "
+            "install it in the runtime or export a verified CSV/XLSX copy."
+        ) from exc
+    try:
+        workbook = xlrd.open_workbook(str(path), on_demand=True)
+    except (OSError, xlrd.XLRDError) as exc:
+        raise ValueError("UNREADABLE_LEGACY_XLS") from exc
+    try:
+        if workbook.nsheets < 1:
+            return []
+        sheet = workbook.sheet_by_index(0)
+        if sheet.nrows < 1:
+            return []
+        headers = [xls_cell_text(cell, xlrd, workbook.datemode)
+                   for cell in sheet.row(0)]
+        try:
+            validate_headers(headers)
+        except HeaderValidationError as exc:
+            exc.rows = [
+                [xls_cell_text(cell, xlrd, workbook.datemode)
+                 for cell in sheet.row(idx)]
+                for idx in range(1, sheet.nrows)
+            ]
+            raise
+        return [
+            dict(zip(headers, [
+                xls_cell_text(cell, xlrd, workbook.datemode)
+                for cell in sheet.row(idx)
+            ]))
+            for idx in range(1, sheet.nrows)
+        ]
+    finally:
+        workbook.release_resources()
+
+
 def read_tabular(path: Path) -> list[dict[str, str]]:
     suffix = path.suffix.lower()
+    if suffix == ".xls":
+        return read_legacy_xls(path)
     if suffix == ".xlsx":
         try:
             from openpyxl import load_workbook

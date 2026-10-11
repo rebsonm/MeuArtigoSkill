@@ -156,12 +156,24 @@ year-level field takes precedence for the normalized year. Two competing
 year-level aliases (`Year` plus `Publication Year`) or two date-level
 aliases remain ambiguous and are quarantined.
 
-**Supported-format boundary:** the importer handles tabular CSV, TSV and
-optional XLSX, including WoS tab-delimited files, but it is **not a parser
-for WoS tagged plain-text `FN/VR/AU/AF/TI/ER` records**. Use a licensed,
-authorized tabular export or make and verify a conversion; never treat a
-tagged .txt as a validated tabular import. These exceptions concern field
-formats and do not verify the scientific content.
+**Supported-format boundary:** the importer handles tabular CSV, TSV,
+optional XLSX (`openpyxl`) and, in the development branch, **legacy binary
+Excel .xls** (`xlrd>=2.0.2`). WoS `savedrecs.xls` workbooks are read-only;
+original bytes are not rewritten or converted in place. Install the optional
+reader in the authorized runtime or use a separately verified CSV/XLSX copy.
+Legacy XLS date/numeric values are normalized for import without fabricating
+scientific identifiers. The first worksheet is read as a table; it must have
+unique or compatible headings, and ambiguous sheets are quarantined by input.
+This reader is an **opt-in runtime dependency**, not a bundled or authenticated
+WoS connector. The original XLS and its recorded SHA-256 remain the provenance
+source. Do not interpret successful parsing as an institutional rights check.
+
+**WoS tagged plain-text `FN/VR/AU/AF/TI/ER` records are still NOT
+tabular CSV/TSV/XLS and remain unsupported**. Convert and verify separately
+before import, while preserving original content and provenance. Passing
+synthetic XLS tests does not constitute a live-provider or real-file
+homologation. Manual testing with licensed real exports was **waived for
+this development iteration by the maintainer**, not declared passed.
 
 Tests use **synthetic examples matching documented Scopus/WoS headers**, not
 licensed live exports. True end-to-end homologation awaits authorized real
