@@ -4,8 +4,11 @@
 <a id="unreleased"></a>
 ## Unreleased
 
-Corrective maintenance in progress on an **unreleased branch**, with no change to
-the published `0.9.0-beta.2` release or the installed ChatGPT plugin.
+Corrective maintenance in progress on an **unreleased branch**. The
+published GitHub `0.9.0-beta.2` release remains untouched. The separate
+private ChatGPT plugin received a narrowly scoped **icon-only**
+`0.9.0-beta.3` manifest hotfix; its research Skill and scientific gates
+were not updated by this source migration.
 
 - Validate bibliographic export schemas and identities, quarantine malformed records,
   preserve merged `Record_ID`/`Search_ID` provenance, and keep fuzzy pairs unmerged.
@@ -18,6 +21,15 @@ the published `0.9.0-beta.2` release or the installed ChatGPT plugin.
   external build receipt with the package SHA-256.
 - Add isolated incident regressions and branch-scoped CI. Detailed behavior:
   [Phase-2 engineering notes](docs/POST_BETA2_CORRECTIONS_PHASE2.md).
+
+- Port PR #22 MCP Apps five-view dashboard, source-report integrity,
+  corrective source warnings and no-human-approval semantics onto the
+  maintained post-beta.2 branch with Visual CI and offline smoke tests.
+- Add plugin manifests that reference the original Skill icon, a
+  deterministic skills-only plugin candidate builder and icon/package tests.
+- Document the separation between the private plugin's presentation hotfix,
+  GitHub source maintenance, the unhosted MCP Apps prototype and Drive access.
+  [Phase 3 migration evidence](docs/PLUGIN_MIGRATION_PHASE3.md).
 
 ## 0.9.0-beta.2 — 2026-10-10
 
