@@ -41,6 +41,8 @@ def short(value: object, limit: int = 180) -> str:
 
 def csv_rows(base: Path, name: str) -> list[dict[str, str]] | None:
     path = base / FILES[name]
+    if not path.resolve().is_relative_to(base.resolve()):
+        raise ValueError("A canonical register resolves outside the authorized project")
     if not path.is_file():
         return None
     with path.open("r", encoding="utf-8-sig", newline="") as f:
@@ -94,6 +96,8 @@ def view(project: Path, *, today: date | None = None, mode: str | None = None) -
     today = today or date.today()
     root = Path(project).resolve()
     cfg_path = root / MGMT / "PROJECT_CONFIG.json"
+    if not cfg_path.resolve().is_relative_to(root):
+        raise ValueError("Canonical PROJECT_CONFIG.json resolves outside the authorized project")
     if not cfg_path.is_file():
         raise ValueError("Canonical PROJECT_CONFIG.json not found; no demo data substituted")
     cfg = json.loads(cfg_path.read_text(encoding="utf-8"))
@@ -205,7 +209,7 @@ def view(project: Path, *, today: date | None = None, mode: str | None = None) -
                            and anon_ready and submissions is not None
                            and editorial_pending == 0)
     snapshots = tables["snapshots"]
-    last_snapshot = snapshots[-1] if snapshots else None
+    last_snapshot = max(snapshots, key=lambda x: short(x.get("Timestamp"))) if snapshots else None
     sync_rows = tables["sync"]
     sync_conflicts = None if sync_rows is None else sum(bool(short(s.get("Conflict"))) and norm(s.get("Conflict")) not in {"NONE", "NO", "FALSE"} for s in sync_rows)
 
@@ -213,7 +217,7 @@ def view(project: Path, *, today: date | None = None, mode: str | None = None) -
         "schema": "meu-artigo-visual/v1",
         "mode": mode,
         "project": {
-            "title": short(cfg.get("project_name") or cfg.get("project_title") or cfg.get("title") or root.name),
+            "title": short(cfg.get("project_name") or cfg.get("project_title") or cfg.get("title") or "Projeto sem título"),
             "method_route": short(cfg.get("method_route") or cfg.get("research_route") or "UNDECIDED", 60),
             "storage_mode": storage,
             "storage_state": storage_state or "UNKNOWN",
