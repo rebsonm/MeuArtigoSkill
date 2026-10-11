@@ -111,10 +111,14 @@ class Controls(unittest.TestCase):
         self.assertEqual(len(read_csv(self.root / "out/near_duplicate_review.csv")), 1)
 
     def test_title_requires_author_and_year(self):
+        # Behavior migrated after INC-002: title alone is quarantined, not canonical.
         self.assertEqual(len(self.dedupe([
             {"title": "Editorial", "authors": "Example A", "year": "2020"},
             {"title": "Editorial", "authors": "Example B", "year": "2020"},
-            {"title": "Editorial"}])), 3)
+            {"title": "Editorial"}])), 2)
+        rejected = read_csv(self.root / "out/rejected_records.csv")
+        self.assertEqual(len(rejected), 1)
+        self.assertEqual(rejected[0]["_reject_reason"], "MISSING_BIBLIOGRAPHIC_IDENTITY")
 
     def test_corroborated_title_merges(self):
         row = {"title": "Specific title", "authors": "Example A", "year": "2020"}
