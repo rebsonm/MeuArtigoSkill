@@ -1,17 +1,15 @@
 # Experimental public beta installation — Meu Artigo
 
-**Experimental beta for external testing:** `0.9.0-beta.4` (prepared for the separate prerelease publication workflow; availability must be checked on GitHub).
+**Recommended experimental beta for external testing:** [v0.9.0-beta.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4), published as a GitHub **Pre-release** on 2026-10-11 (UTC).
 **Status:** public experimental beta for voluntary use,
 not a scientifically validated research method.
 
-**Previously published experimental beta:** [beta.1 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip). Until the beta.4 prerelease assets appear, this older beta remains an option. Neither release is stable.
+**Historical experimental beta:** [beta.1 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip) remains available for comparison and reproducibility. Neither release is stable.
 
 ## Obtaining the package
 
-Once available, download the **[prepared beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip)** from its published tagged prerelease.
-Use that version's `SHA256SUMS.txt` to check integrity. The source file
-and prepared metadata alone do not mean this release has been published;
-if it is not yet visible, earlier beta releases remain available.
+Download the **[published beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip)** and matching [SHA256SUMS.txt](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/SHA256SUMS.txt) from its tagged GitHub Pre-release.
+The GitHub release contains both verified upload entries. Older betas remain available in the Releases history.
 The alternative **Code → Download ZIP** is a repository source snapshot
 rather than the specially prepared, versioned Skill installer. The source
 on `main` may be newer than the last published distribution.
@@ -37,7 +35,7 @@ connectors or identical storage.
 
 1. Check the ZIP version and, when appropriate, verify
    its digest against the matching `SHA256SUMS.txt`.
-2. Import the official package where Skills are supported.
+2. Import the versioned published Skill package where Skills are supported.
    For directory-based tools, unpack while keeping
    `SKILL.md` at the Skill root.
 3. Start a **new** project with the real research problem;
@@ -59,7 +57,7 @@ can guide this process without new worksheets or IDs.
 
 ## English source, automatically localized conversation
 
-The English-source migration is included in the official `v0.9.0-beta.1` release. The AI assistant
+The English-source migration was introduced in the historical `v0.9.0-beta.1` release and remains in beta.4. The AI assistant
 nevertheless responds in the language of the researcher's
 substantive conversation messages unless they explicitly
 request otherwise. No translation pack is installed.
@@ -67,10 +65,9 @@ The scientific manuscript language follows an independent
 journal or researcher decision:
 [language policy](../references/language-policy.md).
 
-An earlier beta.1 ZIP does **not** contain the later workflow, optional
+An earlier beta.1 ZIP does **not** contain the newer workflow, optional
 bibliographic adapters or C.A.D.A. stabilization. For external testing of
-these changes, use the matching beta.4 ZIP **only after it has been
-published**, rather than substituting the source checkout.
+these changes, use the **now-published** beta.4 ZIP rather than the source checkout.
 
 ## Compatibility still requiring evaluation
 
