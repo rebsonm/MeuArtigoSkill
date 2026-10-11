@@ -9,6 +9,8 @@ The software is hosted in a **public GitHub repository**. **Every 0.9.0-beta rel
 
 Meu Artigo helps a researcher move from a research problem to a reviewable article through method-appropriate steps. It distinguishes **[L]** consulted literature, **[I]** defensible inference, and **[P]** original propositions. C.A.D.A. tracks administrative tasks without confusing task completion with scientific validity. **Seven scientific gates** remain controlled by real researcher decisions.
 
+**Previously published experimental beta:** [beta.1 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip). This historical fallback remains downloadable while the beta.4 prerelease assets are not yet available; neither beta is stable.
+
 ## Getting started
 
 1. **[Download the beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip)** once the tagged prerelease and its checksum are visible. Before publication, use an already published earlier beta; never substitute the source-code ZIP.
