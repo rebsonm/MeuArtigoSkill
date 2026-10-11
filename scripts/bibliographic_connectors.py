@@ -17,9 +17,7 @@ import json
 import os
 import time
 from typing import Callable
-from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
-from urllib.request import Request, urlopen
 
 from dedupe_records import norm_doi
 
@@ -141,32 +139,14 @@ def normalize_semantic_scholar(item: dict) -> dict[str, str]:
 
 
 def default_fetch(url: str, headers: dict[str, str], timeout: int = 20) -> dict:
-    # Fixed HTTPS origins. Never accept remote URLs returned in a result.
-    if not url.startswith((OPEN_ALEX + "?", CROSSREF + "?", SEMANTIC_SCHOLAR + "?")):
-        raise ProviderFailure("UNSUPPORTED_ENDPOINT")
-    req = Request(url, headers=headers, method="GET")
-    try:
-        with urlopen(req, timeout=timeout) as response:
-            body = response.read(MAX_RESPONSE_BYTES + 1)
-        if len(body) > MAX_RESPONSE_BYTES:
-            raise ProviderFailure("RESPONSE_TOO_LARGE")
-        data = json.loads(body)
-        if not isinstance(data, dict):
-            raise ProviderFailure("INVALID_RESPONSE")
-        return data
-    except HTTPError as exc:
-        code = exc.code
-        if code == 401:
-            raise ProviderFailure("AUTH_FAILED") from None
-        if code == 403:
-            raise ProviderFailure("LICENSE_BLOCKED") from None
-        if code == 429:
-            raise ProviderFailure("RATE_LIMITED") from None
-        raise ProviderFailure("PROVIDER_UNAVAILABLE" if code >= 500 else "INVALID_REQUEST") from None
-    except (TimeoutError, URLError):
-        raise ProviderFailure("NETWORK_ERROR") from None
-    except (UnicodeError, json.JSONDecodeError):
-        raise ProviderFailure("INVALID_RESPONSE") from None
+    # The shared transport checks exact HTTPS provider paths and refuses
+    # HTTP redirects, including those that would forward API credentials.
+    from provider_http_security import read_json
+    data = read_json(url, headers, max_bytes=MAX_RESPONSE_BYTES,
+                     timeout=timeout, missing_status="INVALID_REQUEST")
+    if not isinstance(data, dict):
+        raise ProviderFailure("INVALID_RESPONSE")
+    return data
 
 
 def _request(fetcher: Callable, url: str, headers: dict[str, str],
