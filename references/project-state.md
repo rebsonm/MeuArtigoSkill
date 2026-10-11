@@ -131,8 +131,14 @@ authenticate the person who approved a previous gate, or write to any file.
 It returns only task/gate identifiers and generic codes, never private
 research notes, quoted text or the full `Next_action`.
 
-The next candidate task must be READY/IN_PROGRESS, contain a recorded
-Next_action, have genuinely completed dependencies with operational evidence,
+The local resolver also compares `CADA_ID` markers in the
+`Next valid action` sections of `CONTINUIDADE.md` to the eligible C.A.D.A.
+task. Conflicting markers or a mismatch disable technical preparation and
+require reconciliation; private continuity prose is not returned. Such
+markers are structured hints, not executable instructions, and their absence
+never proves a task was completed. The next candidate task must be
+READY/IN_PROGRESS, contain a recorded Next_action, have genuinely completed
+dependencies with operational evidence,
 and not skip a still-unapproved earlier human gate. The execution mode must
 explicitly allow agent preparation. Decisions assigned to the researcher,
 unrecognized execution modes, missing evidence, duplicate identifiers or
