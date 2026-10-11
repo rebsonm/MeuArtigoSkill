@@ -111,6 +111,37 @@ class PostBeta2ImportTests(unittest.TestCase):
         audit = records_in(self.out / "exact_duplicate_audit.csv")
         self.assertEqual(audit[0]["duplicate_Record_ID"], "R-2")
 
+    def test_identical_filenames_from_distinct_directories_keep_input_identity(self):
+        first = self.root / "scopus" / "records.csv"
+        second = self.root / "wos" / "records.csv"
+        first.parent.mkdir()
+        second.parent.mkdir()
+        headers = ["Title", "DOI", "Record_ID", "Search_ID"]
+        write_csv(first, headers,
+                  [{"Title": "Same work", "DOI": "10.1234/same",
+                    "Record_ID": "R-1", "Search_ID": "S-1"}])
+        write_csv(second, headers,
+                  [{"Title": "Same work", "DOI": "10.1234/same",
+                    "Record_ID": "R-2", "Search_ID": "S-2"}])
+        result = subprocess.run(
+            [sys.executable, str(SCRIPTS / "dedupe_records.py"),
+             str(first), str(second), "--out-dir", str(self.out)],
+            capture_output=True, text=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        saved = records_in(self.out / "consolidated_exact_dedup.csv")
+        self.assertEqual(len(saved), 1)
+        self.assertEqual(saved[0]["_merged_Record_IDs"], "R-1;R-2")
+        self.assertEqual(saved[0]["_merged_Search_IDs"], "S-1;S-2")
+        self.assertEqual(saved[0]["_source_input_id"], "INPUT-0001")
+        self.assertIn("INPUT-0001:records.csv:2", saved[0]["_source_locations"])
+        self.assertIn("INPUT-0002:records.csv:2", saved[0]["_source_locations"])
+        audit = records_in(self.out / "exact_duplicate_audit.csv")
+        self.assertEqual(audit[0]["canonical_source_file"], "records.csv")
+        self.assertEqual(audit[0]["duplicate_source_file"], "records.csv")
+        self.assertEqual(audit[0]["canonical_source_input_id"], "INPUT-0001")
+        self.assertEqual(audit[0]["duplicate_source_input_id"], "INPUT-0002")
+
     def test_fuzzy_titles_are_candidates_only(self):
         write_csv(self.export, ["Title", "Authors", "Year"],
                   [{"Title": "Tool for classroom use", "Authors": "Scholar", "Year": "2025"},
