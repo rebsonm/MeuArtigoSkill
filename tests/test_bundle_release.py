@@ -91,7 +91,11 @@ class BundleTests(unittest.TestCase):
         self.assertIn("Apache License", (ROOT / "LICENSE").read_text(encoding="utf-8"))
         self.assertIn("Rebson de Morais Mendes", (ROOT / "NOTICE").read_text(encoding="utf-8"))
         paths = [p.relative_to(ROOT).as_posix() for p in pkg.list_sources(ROOT)]
-        self.assertIn("docs/PROTOCOLO-BETA-USUARIOS.md", paths)
+        self.assertNotIn("docs/PROTOCOLO-BETA-USUARIOS.md", paths)
+        self.assertNotIn("scripts/release_audit.py", paths)
+        self.assertNotIn("scripts/build_skill_bundle.py", paths)
+        self.assertNotIn("docs/NOTAS-DA-VERSAO-0.9.0-beta.4.md", paths)
+        self.assertNotIn("benchmarks/public_review_reference_v1.json", paths)
         self.assertIn("SECURITY.md", paths)
         self.assertNotIn("tests/test_bundle_release.py", paths)
         self.assertFalse(any(p.endswith(".pdf") or ".env" in p for p in paths))
