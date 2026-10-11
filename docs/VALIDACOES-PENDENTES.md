@@ -1,6 +1,7 @@
 # Pending independent scientific and operational evaluations
 
-Reference experimental software version: `v0.9.0-beta.2`.
+Reference officially recommended public experimental Skill: `v0.9.0-beta.1`.
+Later historical and development versions need separate real-world validation.
 Publishing software does not complete the scientific or platform validations
 below. Update this register only after
 a genuine evaluation has taken place and has inspectable evidence. A change

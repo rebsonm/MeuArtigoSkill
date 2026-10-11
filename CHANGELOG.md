@@ -3,7 +3,7 @@
 
 ## Unreleased
 
-The public codebase has been simplified to a **Skill-only** research workflow. The scientific gates, C.A.D.A., literature workflows and research protections remain. This source-only change does not publish a new release or validate scientific outcomes.
+The public codebase is now **Skill-only**. **v0.9.0-beta.1 is the officially recommended public installation**. Later `v0.9.0-beta.2` remains a historical prerelease; `v0.9.0-beta.4` is unreleased development code. Scientific gates, C.A.D.A. and research protections remain. This documentation change does not publish a new release or validate scientific outcomes.
 
 ## 0.9.0-beta.4 — 2026-10-11
 

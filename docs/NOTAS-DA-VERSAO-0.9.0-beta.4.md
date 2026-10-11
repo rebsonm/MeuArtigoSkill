@@ -1,6 +1,6 @@
 # Meu Artigo — v0.9.0-beta.4 (unpublished Skill source)
 
-**Experimental Skill code, not a new published Release.** Last public Skill distribution is v0.9.0-beta.2.
+**Experimental Skill code, not a new published Release.** Official recommended public Skill release is v0.9.0-beta.1. The later v0.9.0-beta.2 remains historically available; beta.4 is development-only.
 
 ## Research and operational improvements
 

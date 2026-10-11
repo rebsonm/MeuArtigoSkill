@@ -9,7 +9,7 @@ redistribute third-party research PDFs or claim that the Skill has
 been scientifically validated.
 
 **Installing the Skill?** Start with the [two-minute installation guide](INSTALLATION.md).
-Use the published Skill release ZIP, rather than the repository source archive.
+Use the officially recommended beta.1 Skill release ZIP, rather than the repository source archive.
 
 This guide is designed for researchers who have **never used GitHub**.
 You do not need programming skills, Git, a command line, or a pull request
@@ -34,8 +34,8 @@ authorization process and may require a different account.
 
 ## 3. Choose the installable release ZIP
 
-Use this direct link: **[download the published Skill beta.2 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.2/MeuArtigoSkill-v0.9.0-beta.2.zip)**.
-The expected filename is `MeuArtigoSkill-v0.9.0-beta.2.zip`.
+Use this direct link: **[download the official Skill beta.1 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip)**.
+The expected filename is `MeuArtigoSkill-v0.9.0-beta.1.zip`.
 This is for a supported **Skills** installer. Verify its SHA-256
 digest using `SHA256SUMS.txt` if appropriate.
 
@@ -163,8 +163,8 @@ upload occurred. Ask for the verifiable source when there is doubt.
 
 ## 10. Updating to a newer version
 
-Check the [Releases page](https://github.com/rebsonm/MeuArtigoSkill/releases)
-and choose the version's prepared ZIP. Review its release notes,
+For public installation, use the [official beta.1 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip).
+The Releases page also lists historical prereleases that are not the current recommendation. Review its release notes,
 the [CHANGELOG](../CHANGELOG.md) and any migration requirements.
 Keep the research project's real source files and canonical
 records; installing a newer Skill must not silently rewrite

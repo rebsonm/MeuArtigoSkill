@@ -1,14 +1,12 @@
 # Experimental public beta installation — Meu Artigo
 
-**Prepared release:** `0.9.0-beta.2`.
+**Officially recommended prepared Skill release:** `0.9.0-beta.1`.
 **Status:** public experimental beta for voluntary use,
 not a scientifically validated research method.
 
 ## Obtaining the package
 
-Open the [GitHub Releases page](https://github.com/rebsonm/MeuArtigoSkill/releases),
-find `v0.9.0-beta.2` and choose the exact installable
-`MeuArtigoSkill-v0.9.0-beta.2.zip`.
+Download the **[official prepared beta.1 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip)**.
 Use that version's `SHA256SUMS.txt` to check integrity.
 The alternative **Code → Download ZIP** is a repository source snapshot
 rather than the specially prepared, versioned Skill installer. The source
@@ -56,8 +54,7 @@ can guide this process without new worksheets or IDs.
 
 ## English source, automatically localized conversation
 
-The English-source migration introduced in `v0.9.0-beta.1` also applies
-to `v0.9.0-beta.2`. The AI assistant
+The English-source migration is included in the official `v0.9.0-beta.1` release. The AI assistant
 nevertheless responds in the language of the researcher's
 substantive conversation messages unless they explicitly
 request otherwise. No translation pack is installed.
@@ -65,10 +62,9 @@ The scientific manuscript language follows an independent
 journal or researcher decision:
 [language policy](../references/language-policy.md).
 
-Version `v0.9.0-beta.2` adds optional bibliographic metadata adapters
-and CSV stabilization; the earlier `v0.9.0-beta.1` ZIP does not contain
-these additions. All API integrations remain opt-in and mock-tested,
-not certified as live ChatGPT connections.
+The official beta.1 ZIP does **not** contain later optional bibliographic
+adapters or CSV stabilization. Other historical prereleases may remain
+published but are not the recommended public distribution.
 
 ## Compatibility still requiring evaluation
 
@@ -106,8 +102,8 @@ rewrite past scientific records or prove a Google Drive
 synchronization that did not occur.
 
 Check the release notes for data/schema migration needs.
-The current source `main` may include work not yet
-in the latest public ZIP. Refer to [contributing](../CONTRIBUTING.md)
+The current development source on `main` may contain features not included
+in the officially recommended beta.1 Skill ZIP. Refer to [contributing](../CONTRIBUTING.md)
 and [security](../SECURITY.md) for safe feedback.
 
 ## Scientific limitations
