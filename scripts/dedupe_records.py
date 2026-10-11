@@ -47,6 +47,10 @@ def sha256_stream(path: Path) -> str:
     return digest.hexdigest()
 
 
+class OptionalExcelParserUnavailable(ValueError):
+    """A missing opt-in reader is a per-input failure, not a fatal batch error."""
+
+
 class HeaderValidationError(ValueError):
     """Ambiguous input headers, with untouched positional rows for quarantine."""
 
@@ -204,7 +208,7 @@ def read_legacy_xls(path: Path) -> list[dict[str, str]]:
     try:
         import xlrd
     except ImportError as exc:
-        raise SystemExit(
+        raise OptionalExcelParserUnavailable(
             "Legacy .xls input requires optional xlrd >= 2.0.2; "
             "install it in the runtime or export a verified CSV/XLSX copy."
         ) from exc
@@ -248,7 +252,9 @@ def read_tabular(path: Path) -> list[dict[str, str]]:
         try:
             from openpyxl import load_workbook
         except ImportError as e:
-            raise SystemExit("XLSX input requires openpyxl; convert to CSV or install openpyxl.") from e
+            raise OptionalExcelParserUnavailable(
+                "XLSX input requires openpyxl; convert to CSV or install openpyxl."
+            ) from e
         wb = load_workbook(path, read_only=True, data_only=True)
         try:
             ws = wb.active
@@ -395,6 +401,19 @@ def run_import(out: Path, args: argparse.Namespace) -> int:
                     "_source_row": str(row_idx), "_reject_reason": exc.reason,
                     "_raw_record": repr(original_cells)[:3000],
                 })
+            continue
+        except OptionalExcelParserUnavailable as exc:
+            file_entry["read_status"] = "MISSING_OPTIONAL_EXCEL_PARSER"
+            try:
+                file_entry["content_sha256"] = sha256_stream(p)
+                file_entry["size_bytes"] = p.stat().st_size
+            except OSError:
+                pass
+            diagnostics.append({
+                "source_file": p.name, "source_input_id": source_input_id,
+                "reason": "MISSING_OPTIONAL_EXCEL_PARSER", "affected_records": 0,
+                "error_type": type(exc).__name__, "instruction": str(exc),
+            })
             continue
         except (OSError, ValueError, StopIteration, csv.Error) as exc:
             diagnostics.append({"source_file": p.name, "source_input_id": source_input_id, "reason": "UNREADABLE_EXPORT",
