@@ -16,7 +16,7 @@ from datetime import date, datetime
 import re
 from pathlib import Path
 
-from artifact_tool import Workbook, SpreadsheetFile
+
 
 
 NAVY="#17324D"; TEAL="#1F6E6A"; BLUE="#2D6CDF"; LIGHT_BLUE="#EAF2FF"
@@ -80,6 +80,13 @@ def widths(sheet, mapping):
     for col,w in mapping.items(): sheet.get_range(f"{col}:{col}").format.column_width=w
 
 def build(output:Path, project_name:str, problem:str, article_type:str, pm_provider:str="NONE", target_journal:str="", journal_mode:str="JOURNAL_NEUTRAL", journal_profile_status:str="TO_DEFINE"):
+    # Optional runtime dependency: CLI --help and dependency checking remain accessible.
+    try:
+        from artifact_tool import Workbook, SpreadsheetFile
+    except (ImportError, ModuleNotFoundError) as exc:
+        raise RuntimeError("XLSX_UNAVAILABLE: optional artifact_tool is unavailable. "
+                           "No XLSX was generated; retain canonical CSV tables from init_project.py. "
+                           "Use a compatible runtime with artifact_tool to generate the visual workbook.") from exc
     wb=Workbook.create()
 
     cfg=wb.worksheets.add("15_CONFIG")
@@ -409,9 +416,10 @@ def build(output:Path, project_name:str, problem:str, article_type:str, pm_provi
     return output
 
 def main():
-    ap=argparse.ArgumentParser()
-    ap.add_argument("--output",required=True)
-    ap.add_argument("--project-name",required=True)
+    ap=argparse.ArgumentParser(description="Generate an optional visual XLSX workbook; CSV remains canonical when XLSX is unavailable.")
+    ap.add_argument("--check-deps", action="store_true", help="Check actual artifact_tool import without generating or changing files")
+    ap.add_argument("--output")
+    ap.add_argument("--project-name")
     ap.add_argument("--problem",default="")
     ap.add_argument("--article-type",default="undecided")
     ap.add_argument("--target-journal",default="")
@@ -419,8 +427,26 @@ def main():
     ap.add_argument("--journal-profile-status",default="TO_DEFINE")
     ap.add_argument("--pm-provider",default="NONE")
     a=ap.parse_args()
-    path=build(Path(a.output),a.project_name,a.problem,a.article_type,(a.pm_provider or "NONE").upper(),a.target_journal,a.journal_mode,a.journal_profile_status)
+    if a.check_deps:
+        try:
+            from artifact_tool import Workbook, SpreadsheetFile
+        except (ImportError, ModuleNotFoundError) as exc:
+            print("XLSX_UNAVAILABLE: artifact_tool cannot be imported (" + type(exc).__name__ + "). "
+                  "Canonical CSV tables remain supported; no XLSX generated.")
+            return 2
+        print("XLSX_DEPENDENCY_AVAILABLE: artifact_tool import succeeded; generation not attempted.")
+        return 0
+    if not a.output or not a.project_name:
+        ap.error("--output and --project-name are required for XLSX generation")
+    try:
+        path=build(Path(a.output),a.project_name,a.problem,a.article_type,
+                   (a.pm_provider or "NONE").upper(),a.target_journal,
+                   a.journal_mode,a.journal_profile_status)
+    except RuntimeError as exc:
+        ap.exit(2, str(exc) + "\n")
     print(path)
+    return 0
+
 
 if __name__=="__main__":
-    main()
+    raise SystemExit(main())
