@@ -17,10 +17,14 @@ from difflib import SequenceMatcher
 from pathlib import Path
 
 ALIASES = {
-    "title": ["title", "article title", "document title", "ti"],
-    "doi": ["doi", "digital object identifier", "di"],
-    "authors": ["authors", "author", "author full names", "au"],
-    "year": ["year", "publication year", "py"],
+    "title": ["title", "article title", "document title", "ti", "paper title", "work title", "dc.title"],
+    "doi": ["doi", "digital object identifier", "di", "doi url", "doi_url"],
+    "authors": ["authors", "author", "author full names", "au", "author names", "creators", "creator"],
+    "year": ["year", "publication year", "publication_year", "py", "published year", "publication date", "date"],
+    "stable_id": ["openalex_id", "openalex id", "pmid", "pubmed id", "arxiv_id", "arxiv id"],
+    "version": ["version", "version id", "version_id", "edition", "publication version"],
+    "record_id": ["record_id", "record id"],
+    "search_id": ["search_id", "search id"],
 }
 DOI_RE = re.compile(r"^10\.\d{4,9}/\S+$", re.I)
 
@@ -55,6 +59,54 @@ def first_author(value: str) -> str:
     s = unicodedata.normalize("NFKC", str(value or "")).casefold()
     s = re.split(r";|\band\b|\|", s)[0]
     return "".join(c for c in s if c.isalpha())
+
+
+def normal_year(value: str) -> str:
+    m = re.search(r"(?<!\d)((?:19|20)\d{2})(?!\d)", str(value or ""))
+    return m.group(1) if m else ""
+
+
+def normal_stable_id(value: str) -> str:
+    """Only clearly recognizable persistent identifiers establish identity."""
+    raw = str(value or "").strip()
+    if re.fullmatch(r"W\d{5,}", raw, re.I):
+        return "openalex:" + raw.upper()
+    if re.fullmatch(r"\d{4,10}", raw):
+        return "pmid:" + raw
+    if re.fullmatch(r"\d{4}\.\d{4,5}(?:v\d+)?", raw):
+        return "arxiv:" + raw.lower()
+    return ""
+
+
+def identity_reason(row: dict[str, str]) -> str:
+    """Return empty on reliable bibliographic identity, otherwise a reason."""
+    doi = norm_doi(pick(row, "doi"))
+    title = norm_title(pick(row, "title"))
+    author = first_author(pick(row, "authors"))
+    year = normal_year(pick(row, "year"))
+    stable_id = normal_stable_id(pick(row, "stable_id"))
+    if doi or (title and author and year) or (title and stable_id):
+        return ""
+    return "MISSING_BIBLIOGRAPHIC_IDENTITY"
+
+
+def available_schema(headers: list[str]) -> bool:
+    found = {norm_header(h) for h in headers}
+    has = lambda field: bool(found.intersection(ALIASES[field]))
+    return has("doi") or (has("title") and has("authors") and has("year")) or (has("title") and has("stable_id"))
+
+
+def identifier_list(row: dict[str, str], key: str) -> str:
+    return pick(row, key)
+
+
+def append_distinct(previous: str, new: str) -> str:
+    values = [x for x in previous.split(";") if x]
+    for v in new.split(";"):
+        v = v.strip()
+        if v and v not in values:
+            values.append(v)
+    return ";".join(values)
 
 
 def read_tabular(path: Path) -> list[dict[str, str]]:
@@ -100,80 +152,134 @@ def write_safe_rows(writer: csv.DictWriter, records: list[dict[str, str]]) -> No
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser(description="Conservative, schema-validated bibliographic consolidation.")
     ap.add_argument("inputs", nargs="+", help="Bibliographic CSV/TSV/XLSX exports")
     ap.add_argument("--out-dir", required=True)
     ap.add_argument("--fuzzy-threshold", type=float, default=0.94)
     args = ap.parse_args()
 
-    records = []
+    if not (0 < args.fuzzy_threshold <= 1):
+        ap.error("--fuzzy-threshold must be between 0 and 1")
+    out = Path(args.out_dir).resolve()
+    records, rejected, diagnostics = [], [], []
     all_fields = set()
-    for f in args.inputs:
-        p = Path(f).resolve()
-        for idx, row in enumerate(read_tabular(p), start=2):
-            row = {str(k): "" if v is None else str(v) for k, v in row.items()}
+
+    for filename in args.inputs:
+        p = Path(filename).resolve()
+        try:
+            source = read_tabular(p)
+        except (OSError, ValueError, StopIteration, csv.Error) as exc:
+            diagnostics.append({"source_file": p.name, "reason": "UNREADABLE_EXPORT",
+                                "affected_records": 0, "error_type": type(exc).__name__})
+            continue
+        if not source:
+            diagnostics.append({"source_file": p.name, "reason": "EMPTY_EXPORT",
+                                "affected_records": 0})
+            continue
+        header = list(source[0].keys())
+        if not available_schema([str(h) for h in header if h is not None]):
+            diagnostics.append({"source_file": p.name, "reason": "MISSING_BIBLIOGRAPHIC_SCHEMA",
+                                "affected_records": len(source),
+                                "available_headers": [str(h) for h in header if h is not None]})
+            for idx, raw in enumerate(source, 2):
+                rejected.append({"_source_file": p.name, "_source_row": str(idx),
+                                 "_reject_reason": "MISSING_BIBLIOGRAPHIC_SCHEMA",
+                                 "_raw_record": repr(raw)[:3000]})
+            continue
+
+        for idx, raw in enumerate(source, 2):
+            if None in raw or any(isinstance(v, (list, dict, tuple)) for v in raw.values()):
+                rejected.append({"_source_file": p.name, "_source_row": str(idx),
+                                 "_reject_reason": "MALFORMED_ROW",
+                                 "_raw_record": repr(raw)[:3000]})
+                continue
+            row = {str(k): "" if v is None else str(v) for k, v in raw.items()}
+            reason = identity_reason(row)
+            if reason:
+                rejected.append({"_source_file": p.name, "_source_row": str(idx),
+                                 "_reject_reason": reason, "_raw_record": repr(row)[:3000]})
+                continue
             row["_source_file"] = p.name
             row["_source_row"] = str(idx)
             row["_norm_doi"] = norm_doi(pick(row, "doi"))
             row["_norm_title"] = norm_title(pick(row, "title"))
             row["_first_author"] = first_author(pick(row, "authors"))
-            row["_year"] = pick(row, "year")
+            row["_year"] = normal_year(pick(row, "year"))
+            row["_stable_id"] = normal_stable_id(pick(row, "stable_id"))
+            row["_version"] = pick(row, "version").strip().casefold()
+            row["_merged_Record_IDs"] = identifier_list(row, "record_id")
+            row["_merged_Search_IDs"] = identifier_list(row, "search_id")
+            row["_source_locations"] = f"{p.name}:{idx}"
             records.append(row)
             all_fields.update(row.keys())
 
-    canonical = []
-    exact_audit = []
-    doi_index = {}
-    title_index = {}
-
+    canonical, exact_audit, doi_index, title_index = [], [], {}, {}
     for rec in records:
-        match = None; reason = ""
-        if rec["_norm_doi"] and rec["_norm_doi"] in doi_index:
-            match = doi_index[rec["_norm_doi"]]; reason = "exact_doi"
-        elif rec["_norm_title"] and rec["_norm_title"] in title_index:
-            for candidate in title_index[rec["_norm_title"]]:
+        match, reason = None, ""
+        if rec["_norm_doi"]:
+            for candidate in doi_index.get(rec["_norm_doi"], []):
                 prior = canonical[candidate]
-                conflicting_doi = (rec["_norm_doi"] and prior["_norm_doi"]
-                                   and rec["_norm_doi"] != prior["_norm_doi"])
-                if (not conflicting_doi and rec["_first_author"] and rec["_year"]
+                versions_conflict = bool(rec["_version"] and prior["_version"]
+                                         and rec["_version"] != prior["_version"])
+                if not versions_conflict:
+                    match, reason = candidate, "exact_doi"
+                    break
+        if match is None and rec["_norm_title"]:
+            for candidate in title_index.get(rec["_norm_title"], []):
+                prior = canonical[candidate]
+                conflicting_doi = bool(rec["_norm_doi"] and prior["_norm_doi"]
+                                       and rec["_norm_doi"] != prior["_norm_doi"])
+                versions_conflict = bool(rec["_version"] and prior["_version"]
+                                         and rec["_version"] != prior["_version"])
+                if (not conflicting_doi and not versions_conflict
+                        and rec["_first_author"] and rec["_year"]
                         and rec["_first_author"] == prior["_first_author"]
                         and rec["_year"] == prior["_year"]):
-                    match = candidate
-                    reason = "exact_title_author_year"
+                    match, reason = candidate, "exact_title_author_year"
                     break
-
         if match is None:
             ci = len(canonical)
             canonical.append(rec)
-            if rec["_norm_doi"]: doi_index[rec["_norm_doi"]] = ci
-            if rec["_norm_title"]: title_index.setdefault(rec["_norm_title"], []).append(ci)
-        else:
             if rec["_norm_doi"]:
-                doi_index[rec["_norm_doi"]] = match
-                if not canonical[match]["_norm_doi"]:
-                    canonical[match]["_norm_doi"] = rec["_norm_doi"]
+                doi_index.setdefault(rec["_norm_doi"], []).append(ci)
+            if rec["_norm_title"]:
+                title_index.setdefault(rec["_norm_title"], []).append(ci)
+        else:
+            prior = canonical[match]
+            if rec["_norm_doi"]:
+                existing = doi_index.setdefault(rec["_norm_doi"], [])
+                if match not in existing:
+                    existing.append(match)
+                if not prior["_norm_doi"]:
+                    prior["_norm_doi"] = rec["_norm_doi"]
+            for field in ("_merged_Record_IDs", "_merged_Search_IDs", "_source_locations"):
+                prior[field] = append_distinct(prior[field], rec[field])
             exact_audit.append({
                 "duplicate_source_file": rec["_source_file"],
                 "duplicate_source_row": rec["_source_row"],
-                "canonical_source_file": canonical[match]["_source_file"],
-                "canonical_source_row": canonical[match]["_source_row"],
+                "canonical_source_file": prior["_source_file"],
+                "canonical_source_row": prior["_source_row"],
+                "duplicate_Record_ID": identifier_list(rec, "record_id"),
+                "duplicate_Search_ID": identifier_list(rec, "search_id"),
+                "canonical_Record_ID": identifier_list(prior, "record_id"),
+                "canonical_Search_ID": identifier_list(prior, "search_id"),
                 "reason": reason,
-                "doi": rec["_norm_doi"],
-                "title": pick(rec, "title"),
+                "doi": rec["_norm_doi"], "title": pick(rec, "title"),
             })
 
     fuzzy = []
-    for i in range(len(canonical)):
-        a = canonical[i]
+    for i, a in enumerate(canonical):
         ta = a["_norm_title"]
-        if not ta: continue
-        for j in range(i + 1, len(canonical)):
-            b = canonical[j]
+        if not ta:
+            continue
+        for b in canonical[i+1:]:
             tb = b["_norm_title"]
-            if not tb: continue
-            author_ok = a["_first_author"] and a["_first_author"] == b["_first_author"]
-            year_ok = a["_year"] and b["_year"] and a["_year"] == b["_year"]
-            if ta != tb and not (author_ok or year_ok): continue
+            if not tb:
+                continue
+            author_ok = bool(a["_first_author"] and a["_first_author"] == b["_first_author"])
+            year_ok = bool(a["_year"] and b["_year"] and a["_year"] == b["_year"])
+            if ta != tb and not (author_ok or year_ok):
+                continue
             score = SequenceMatcher(None, ta, tb).ratio()
             if score >= args.fuzzy_threshold:
                 fuzzy.append({
@@ -188,21 +294,55 @@ def main() -> int:
                     "notes": "Do not remove automatically.",
                 })
 
-    out = Path(args.out_dir).resolve(); out.mkdir(parents=True, exist_ok=True)
-    fields = sorted(all_fields)
-    with (out / "consolidated_exact_dedup.csv").open("w", newline="", encoding="utf-8-sig") as f:
-        w = csv.DictWriter(f, fieldnames=fields); w.writeheader(); write_safe_rows(w, canonical)
-    with (out / "exact_duplicate_audit.csv").open("w", newline="", encoding="utf-8-sig") as f:
-        fields2 = ["duplicate_source_file","duplicate_source_row","canonical_source_file","canonical_source_row","reason","doi","title"]
-        w=csv.DictWriter(f, fieldnames=fields2); w.writeheader(); write_safe_rows(w, exact_audit)
-    with (out / "near_duplicate_review.csv").open("w", newline="", encoding="utf-8-sig") as f:
-        fields3 = ["source_file_a","source_row_a","title_a","doi_a","source_file_b","source_row_b","title_b","doi_b","title_similarity","author_overlap_signal","same_year_signal","decision","notes"]
-        w=csv.DictWriter(f, fieldnames=fields3); w.writeheader(); write_safe_rows(w, fuzzy)
+    for reason, count in sorted(__import__("collections").Counter(
+            item["_reject_reason"] for item in rejected).items()):
+        diagnostics.append({"source_file": "MULTIPLE", "reason": reason,
+                            "affected_records": count})
+    out.mkdir(parents=True, exist_ok=True)
+    summary = {"input_records": len(records) + len(rejected),
+               "valid_records": len(records),
+               "rejected_records": len(rejected),
+               "canonical_after_exact_dedup": len(canonical),
+               "exact_duplicates": len(exact_audit),
+               "near_duplicate_pairs_to_review": len(fuzzy),
+               "diagnostics": diagnostics}
+    (out / "import_diagnostics.json").write_text(
+        __import__("json").dumps(summary, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8")
+    with (out / "rejected_records.csv").open("w", newline="", encoding="utf-8-sig") as f:
+        w = csv.DictWriter(f, fieldnames=["_source_file", "_source_row",
+                                          "_reject_reason", "_raw_record"])
+        w.writeheader()
+        write_safe_rows(w, rejected)
 
-    print(f"input_records={len(records)}")
+    if not canonical:
+        print("ERROR: no valid bibliographic records; see import_diagnostics.json", file=__import__("sys").stderr)
+        return 2
+
+    with (out / "consolidated_exact_dedup.csv").open("w", newline="", encoding="utf-8-sig") as f:
+        w = csv.DictWriter(f, fieldnames=sorted(all_fields))
+        w.writeheader()
+        write_safe_rows(w, canonical)
+    with (out / "exact_duplicate_audit.csv").open("w", newline="", encoding="utf-8-sig") as f:
+        fields = ["duplicate_source_file", "duplicate_source_row", "canonical_source_file",
+                  "canonical_source_row", "duplicate_Record_ID", "duplicate_Search_ID",
+                  "canonical_Record_ID", "canonical_Search_ID", "reason", "doi", "title"]
+        w = csv.DictWriter(f, fieldnames=fields)
+        w.writeheader()
+        write_safe_rows(w, exact_audit)
+    with (out / "near_duplicate_review.csv").open("w", newline="", encoding="utf-8-sig") as f:
+        fields = ["source_file_a", "source_row_a", "title_a", "doi_a", "source_file_b",
+                  "source_row_b", "title_b", "doi_b", "title_similarity",
+                  "author_overlap_signal", "same_year_signal", "decision", "notes"]
+        w = csv.DictWriter(f, fieldnames=fields)
+        w.writeheader()
+        write_safe_rows(w, fuzzy)
+
+    print(f"input_records={summary['input_records']}")
     print(f"canonical_after_exact_dedup={len(canonical)}")
     print(f"exact_duplicates={len(exact_audit)}")
     print(f"near_duplicate_pairs_to_review={len(fuzzy)}")
+    print(f"rejected_records={len(rejected)}")
     return 0
 
 

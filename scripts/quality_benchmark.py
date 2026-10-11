@@ -90,13 +90,15 @@ def pilot(reference_path=DEFAULT_REFERENCE, *, offline=False, fetcher=provider_q
             p: ({"status": "OFFLINE"} if offline else fetcher(p, doi, ""))
             for p in ("crossref", "openalex")
         }
-        outcome, checks, retracted, updated = match_metadata(
+        outcome, checks, retracted, corrected, updated, notices, provider_warnings = match_metadata(
             doi, source["title"], str(source["published_year"]), source.get("authors", ""), response
         )
         results.append({
             "case": case_id, "doi": doi,
             "metadata_status": outcome, "provider_checks": checks,
-            "retraction_alert": retracted, "update_alert": updated,
+            "retraction_alert": retracted, "correction_alert": corrected,
+            "update_alert": updated, "editorial_notices": notices,
+            "provider_warnings": provider_warnings,
             "interpretation": "BIBLIOGRAPHIC_IDENTITY_ONLY",
             "full_text_evaluated": False,
             "claims_scientifically_adjudicated": False,

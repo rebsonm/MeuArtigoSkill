@@ -215,6 +215,11 @@ submission without external confirmation. See
 
 ## 5. Platforms and interaction presentation
 
+Optional **Meu Artigo Visual**: see [MCP Apps integration](docs/MEU-ARTIGO-VISUAL.md).
+Only use it with a connected server and authorized, current project state.
+Otherwise use textual progress. UI or cached cards are never canonical or
+proof of human approval. Mark unverified states honestly.
+
 Importing a Skill does not imply tool access, authenticated accounts,
 Python execution, browsing or cloud writing. Check the present platform's
 actual capabilities and permissions; when missing, give a truthful manual

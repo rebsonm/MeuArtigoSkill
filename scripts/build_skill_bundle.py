@@ -9,6 +9,8 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
+import subprocess
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 from version_info import read_version
@@ -26,6 +28,7 @@ DIR_TYPES = {
 }
 MANIFEST = "BUNDLE_MANIFEST.json"
 FIXED_DATE = (2026, 10, 9, 0, 0, 0)
+REPOSITORY = "https://github.com/rebsonm/MeuArtigoSkill"
 
 
 def sha256(data: bytes) -> str:
@@ -56,6 +59,33 @@ def list_sources(root: Path) -> list[Path]:
     return sorted(found, key=lambda p: p.relative_to(root).as_posix())
 
 
+
+def source_provenance(root: Path) -> dict[str, str | None]:
+    """Attest a clean, exact git checkout when demonstrable; otherwise UNKNOWN."""
+    unknown = {"build_source_commit": None, "source_verification": "UNVERIFIED"}
+    if not (root / ".git").exists():
+        return unknown
+
+    def read(*args):
+        p = subprocess.run(["git", "-C", str(root), *args],
+                           capture_output=True, text=True, timeout=5, check=False)
+        return p.stdout.strip() if p.returncode == 0 else None
+
+    try:
+        head = read("rev-parse", "--verify", "HEAD")
+        dirty = read("status", "--porcelain", "--untracked-files=no")
+        remote = read("config", "--get", "remote.origin.url")
+    except (OSError, subprocess.TimeoutExpired):
+        return unknown
+    if not head or not re.fullmatch(r"[0-9a-f]{40}", head):
+        return unknown
+    # Whitelist the exact expected remote; do not leak credential-bearing URLs.
+    permitted = {REPOSITORY, REPOSITORY + ".git",
+                 "git@github.com:rebsonm/MeuArtigoSkill.git"}
+    if dirty is None or dirty != "" or remote not in permitted:
+        return unknown
+    return {"build_source_commit": head, "source_verification": "CLEAN_GIT_CHECKOUT"}
+
 def package(root: Path, destination: Path) -> dict:
     root = root.resolve()
     files = list_sources(root)
@@ -65,9 +95,13 @@ def package(root: Path, destination: Path) -> dict:
     expected = f"MeuArtigoSkill-v{version}.zip"
     if destination.name != expected:
         raise ValueError(f"Unexpected package filename; expected {expected}")
-    manifest = {"schema_version": 1, "version": version,
+    provenance = source_provenance(root)
+    manifest = {"schema_version": 2, "version": version,
                 "entrypoint": "SKILL.md", "license": "Apache-2.0",
                 "scientific_quality_validated": False,
+                "repository_origin_claim": REPOSITORY,
+                "build_source_commit": provenance["build_source_commit"],
+                "source_verification": provenance["source_verification"],
                 "files": {p.relative_to(root).as_posix(): sha256(p.read_bytes()) for p in files}}
     if manifest["files"].get("LICENSE") != sha256((root / "LICENSE").read_bytes()):
         raise ValueError("License checksum is inconsistent")
@@ -87,8 +121,18 @@ def package(root: Path, destination: Path) -> dict:
                                       sort_keys=True, indent=2).encode("utf-8") + b"\n")
     verify_package(destination)
     checksums = destination.parent / "SHA256SUMS.txt"
-    checksums.write_text(f"{sha256(destination.read_bytes())}  {destination.name}\n",
-                         encoding="utf-8")
+    package_digest = sha256(destination.read_bytes())
+    checksums.write_text(f"{package_digest}  {destination.name}\n", encoding="utf-8")
+    # The package digest must be outside its ZIP to avoid a self-referential hash.
+    (destination.parent / "BUNDLE_BUILD_RECEIPT.json").write_text(
+        json.dumps({"schema_version": 1, "package_name": destination.name,
+                    "package_sha256": package_digest, "version": version,
+                    "repository_origin_claim": REPOSITORY,
+                    "build_source_commit": provenance["build_source_commit"],
+                    "source_verification": provenance["source_verification"],
+                    "distribution_type": "SKILL_ZIP_NOT_INSTALLED_PLUGIN",
+                    "scientific_quality_validated": False},
+                   sort_keys=True, indent=2) + "\n", encoding="utf-8")
     return manifest
 
 

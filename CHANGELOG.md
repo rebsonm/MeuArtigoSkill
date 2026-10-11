@@ -4,7 +4,49 @@
 <a id="unreleased"></a>
 ## Unreleased
 
-No additional changes have been recorded since `0.9.0-beta.2`.
+No additional changes have been recorded since the unpublished beta.4 candidate.
+
+## 0.9.0-beta.4 — 2026-10-11
+
+**UNRELEASED SOURCE CANDIDATE ONLY — NOT PUBLISHED.** Prepared for review; no release tag or installed-plugin update.
+
+
+Corrective maintenance in progress on an **unreleased branch**. The
+published GitHub `0.9.0-beta.2` release remains untouched. The separate
+private ChatGPT plugin received a narrowly scoped **icon-only**
+`0.9.0-beta.3` manifest hotfix; its research Skill and scientific gates
+were not updated by this source migration.
+
+- Validate bibliographic export schemas and identities, quarantine malformed records,
+  preserve merged `Record_ID`/`Search_ID` provenance, and keep fuzzy pairs unmerged.
+- Defer optional `artifact_tool` loading until XLSX generation; provide diagnostic
+  preflight and preserve canonical CSV fallback without claiming an XLSX exists.
+- Recognize historical `PARTIAL` AI-use decisions as non-final and split lists of
+  linked trace identifiers without inventing confirmations; distinguish
+  `NOT_EXECUTED` definitions from executed search rows.
+- Include verifiable clean Git source provenance when available and emit an
+  external build receipt with the package SHA-256.
+- Add isolated incident regressions and branch-scoped CI. Detailed behavior:
+  [Phase-2 engineering notes](docs/POST_BETA2_CORRECTIONS_PHASE2.md).
+
+- Port PR #22 MCP Apps five-view dashboard, source-report integrity,
+  corrective source warnings and no-human-approval semantics onto the
+  maintained post-beta.2 branch with Visual CI and offline smoke tests.
+- Add plugin manifests that reference the original Skill icon, a
+  deterministic skills-only plugin candidate builder and icon/package tests.
+- Document the separation between the private plugin's presentation hotfix,
+  GitHub source maintenance, the unhosted MCP Apps prototype and Drive access.
+  [Phase 3 migration evidence](docs/PLUGIN_MIGRATION_PHASE3.md).
+
+- Expand the experimental visual interface to the owner's 12 approved
+  experience states (nine modules, first-use and next-action flows, plus mobile
+  dark mode). Add read-only canonical search, L/I/P and editorial summaries,
+  recorded snapshot states and no-project recovery. Canonical-file symlink
+  escape checks and safe missing-project labels also added.
+- Phase-4 offline engineering audit: 384 Python tests and MCP build/smoke
+  passed. **Rendered visual parity, real Drive access and real host
+  deployment remain pending.** See
+  [Phase-4 UX acceptance](docs/PHASE4_UX_REGRESSION_AND_ACCEPTANCE.md).
 
 ## 0.9.0-beta.2 — 2026-10-10
 

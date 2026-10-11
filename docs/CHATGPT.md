@@ -4,7 +4,28 @@ If this is your first GitHub Skill, start with
 [Getting started](COMECE-AQUI.md).
 
 The common scientific instructions remain in `SKILL.md`.
-The adapter is a product configuration, not a separate academic method.
+The plugin migration uses a namespaced copy at
+`skills/meu-artigo/SKILL.md`, retaining the same seven gates and
+researcher decisions. This adapter is a product configuration, not a new
+academic method.
+
+## Private plugin and MCP Apps distinction
+
+The private ChatGPT plugin is a separate installation identity from the
+public Skill release. The icon-only plugin hotfix `0.9.0-beta.3` references
+the original `assets/icon.svg` using `logo` and `composerIcon`.
+Its skill core remains at its pre-migration version. No visual MCP tool is
+installed by that icon update.
+
+The beta.4 source candidate includes the read-only visual dashboard
+reconciled from PR #22 through consolidated PR #27, together with
+`scripts/build_plugin_bundle.py` for review-only plugin packaging. Main
+source integration does **not** deploy `visual-app`, register a live MCP
+connection, enable writable Drive, or update the installed private plugin. For a custom visual dashboard,
+an authorized remote MCP deployment/connection and actual read access to
+the user's canonical project must be verified. See
+[plugin migration](PLUGIN_MIGRATION_PHASE3.md) and
+[visual integration](MEU-ARTIGO-VISUAL.md).
 
 ## Installation and availability
 

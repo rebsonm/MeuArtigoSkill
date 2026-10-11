@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Validate the canonical local mirror of a Meu Artigo project."""
 from __future__ import annotations
-import argparse,csv,json,hashlib
+import argparse,csv,json,hashlib,re
 from pathlib import Path
 from formative_gates import gate_issues
 from screening_review import audit_rows as audit_screening_rows
@@ -41,6 +41,7 @@ DEADLINE_TYPES={"EXTERNAL","USER_SET","INTERNAL_TARGET","DEPENDENCY","TO_DEFINE"
 TRACE_STATUS={"PLANNED","IN_PROGRESS","COMPLETE","CONFIRMED","UNVERIFIED","PARTIAL","FAILED","INVALID","SUPERSEDED"}
 AI_MATERIALITY={"ASSISTIVE","SUBSTANTIVE","ADMINISTRATIVE","NOT_APPLICABLE"}
 AI_DECISION={"","ACCEPTED","MODIFIED","REJECTED","PENDING"}
+# PARTIAL is a historical note, not a final human decision. Do not erase it.
 JOURNAL_MODES={"JOURNAL_NEUTRAL","JOURNAL_AWARE_PENDING_PROFILE","JOURNAL_AWARE"}
 JOURNAL_PROFILE_STATUS={"TO_DEFINE","PENDING_RULES","LOADED","VERIFIED","SUPERSEDED"}
 CLAIM_ROBUSTNESS={"","NOT_AUDITED","ROBUST","QUALIFIED","REVISE","REJECT","NOT_APPLICABLE"}
@@ -53,6 +54,11 @@ STORAGE_STATES={"DRIVE_WORKSPACE_READY","DRIVE_STAGING_PENDING_UPLOAD","WORK_FAL
 def rows(path):
     with path.open("r",encoding="utf-8-sig",newline="") as f:
         yield from csv.DictReader(f)
+
+def split_reference_ids(value: str) -> list[str]:
+    """Parse historic semicolon/comma-separated links without merging distinct IDs."""
+    return [ref for ref in re.split(r"[;,\s]+", str(value or "").strip()) if ref]
+
 
 def main():
     ap=argparse.ArgumentParser()
@@ -181,7 +187,9 @@ def main():
         for i,r in enumerate(rows(log),2):
             st=(r.get("Status") or "").upper()
             if st and st not in {"PLANNED","INVALID","SUPERSEDED"} and not (r.get("Literal_query") or "").strip():
-                errors.append(f"search row {i}: executed search lacks Literal_query")
+                description = ("non-executed search definition" if st == "NOT_EXECUTED"
+                               else "logged search")
+                errors.append(f"search row {i}: {description} lacks Literal_query; status={st} (no execution inferred)")
 
     scr=root/"00_Gestao_e_Continuidade/03_Screening.csv"
     if scr.exists():
@@ -333,15 +341,18 @@ def main():
             if materiality and materiality not in AI_MATERIALITY:
                 warnings.append(f"AI-use row {i}: unexpected Materiality {materiality!r}")
             decision=(r.get("Accepted_modified_or_rejected") or "").strip().upper()
-            if decision not in AI_DECISION:
+            if decision == "PARTIAL":
+                warnings.append(f"AI-use row {i}: historical PARTIAL is not a final human decision")
+            elif decision not in AI_DECISION:
                 warnings.append(f"AI-use row {i}: unexpected decision {decision!r}")
-            trace_id=(r.get("Trace_ID") or "").strip()
-            if trace_id and trace_ids and trace_id not in trace_ids:
-                warnings.append(f"AI-use row {i}: Trace_ID {trace_id} not found in 13_Traceability_Log")
+            trace_refs=(r.get("Trace_ID") or "").strip()
+            for trace_id in split_reference_ids(trace_refs):
+                if trace_id not in trace_ids:
+                    warnings.append(f"AI-use row {i}: Trace_ID {trace_id} not found in 13_Traceability_Log")
             review=(r.get("Human_review_method") or "").strip()
             if materiality=="SUBSTANTIVE" and not review:
                 errors.append(f"AI-use row {i}: substantive AI use {aid} lacks Human_review_method")
-            if materiality=="SUBSTANTIVE" and decision in {"","PENDING"}:
+            if materiality=="SUBSTANTIVE" and decision in {"","PENDING","PARTIAL"}:
                 warnings.append(f"AI-use row {i}: substantive AI use {aid} has no final human decision")
 
     claims_path=root/"00_Gestao_e_Continuidade/09_Claims_Ledger.csv"
@@ -513,39 +524,18 @@ def main():
                                   enforce=approved and quality_required,headers=ev_columns)
         errors.extend("critical appraisal: "+x for x in appraisal["errors"])
 
-    # Newly initialized projects require independently checkable source records.
-    if (g6.get("Status") or "").upper()=="COMPLETED" and (g6.get("Decision") or "").upper() in {"APPROVED","APPROVED_WITH_CHANGES"} and cfg_data.get("source_verification_required") is True:
-        report_path=root/"00_Gestao_e_Continuidade/SOURCE_VERIFICATION.json"
-        evidence_file=root/"00_Gestao_e_Continuidade/05_Evidence_Matrix.csv"
-        if not report_path.is_file():
-            errors.append("GATE-0006 approved without source-verification report")
-        else:
-            try:
-                source_report=json.loads(report_path.read_text(encoding="utf-8"))
-                if source_report.get("schema_version")!=1:
-                    errors.append("GATE-0006 source-verification report has unsupported schema")
-                if source_report.get("input_sha256")!=hashlib.sha256(evidence_file.read_bytes()).hexdigest():
-                    errors.append("GATE-0006 source-verification report is stale")
-                entries=source_report.get("checks")
-                if not isinstance(entries,list) or len(entries)!=sum(1 for _ in rows(evidence_file)):
-                    errors.append("GATE-0006 source-verification report is incomplete")
-                else:
-                    if any(x.get("result")=="FAIL" for x in entries):
-                        errors.append("GATE-0006 source-verification report contains conflicting source evidence")
-                    if any(x.get("result")!="METADATA_AND_LOCATOR_CHECKED" for x in entries):
-                        warnings.append("GATE-0006 unresolved source checks require documented human examination")
-                    for x in entries:
-                        rel=x.get("source_path")
-                        sha=x.get("source_sha256")
-                        if not rel or not sha:
-                            continue
-                        file_path=(root/rel).resolve()
-                        if not file_path.is_relative_to(root) or not file_path.is_file():
-                            errors.append("GATE-0006 verified source file is inaccessible or outside workspace")
-                        elif hashlib.sha256(file_path.read_bytes()).hexdigest()!=sha:
-                            errors.append("GATE-0006 verified source file changed after source check")
-            except (OSError,ValueError,TypeError,KeyError) as exc:
-                errors.append(f"GATE-0006 cannot validate source-verification report: {type(exc).__name__}")
+    # Source evidence must be bound to ALL canonical inputs, local files and
+    # exact ID mappings; reviewed uncertainty never overrides a contradiction.
+    if (g6.get("Status") or "").upper() == "COMPLETED" and (
+            g6.get("Decision") or "").upper() in {"APPROVED", "APPROVED_WITH_CHANGES"} and (
+            cfg_data.get("source_verification_required") is True):
+        from source_report_integrity import assess as assess_source_report
+        source_state = assess_source_report(root, require_complete=True)
+        errors.extend("GATE-0006 source verification: " + error for error in source_state["errors"])
+        if source_state["status"] not in {"RECORDED_CLEAR", "REVIEWED_LIMITATIONS"} and not source_state["errors"]:
+            errors.append("GATE-0006 source verification is not ready")
+        if source_state["status"] == "REVIEWED_LIMITATIONS":
+            warnings.append("GATE-0006 has documented human limitations; sources are not automatically verified")
 
     # Local PDF availability never implies export/redistribution permission.
     if cfg_data.get("fulltext_rights_audit_required") is True:
