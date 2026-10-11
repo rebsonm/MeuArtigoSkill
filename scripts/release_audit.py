@@ -123,6 +123,7 @@ REQUIRED=[
     "benchmarks/public_review_reference_v1.json",
     "benchmarks/methodological_response_reference_v1.json",
     "tests/test_phase6_methodological_response_calibration.py",
+    "tests/test_phase6_compact_cada_ux.py",
     "docs/AVALIACAO-QUALIDADE-CIENTIFICA.md",
     ".github/workflows/scientific-quality-calibration.yml",
     "docs/COMPROVACAO-EVENTOS.md",
