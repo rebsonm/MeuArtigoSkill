@@ -20,6 +20,40 @@ Choose source appraisal and research-design requirements using [methodological f
 
 Read [source verification](source-verification.md). Use the deterministic script for DOI/metadata reconciliation and exact local passage matching when code execution is available. Record findings under the existing Evidence_IDs; do not create more ID families. A legitimate source lacking a DOI is not excluded automatically. Bibliographic identity and quotation presence are distinct from the claim's meaning, evidence quality and human scientific judgment. Never self-certify an [L] assertion using only a model-generated report.
 
+## Provenance of claims, citations and empirical trace records
+
+In new freeze/strict audits, `scripts/claim_integrity.py` rejects
+duplicated `Evidence_ID` or `Search_ID` keys. An ambiguous evidence row
+must never be silently selected as the citation supporting [L], the warrant
+for [I], or the nearest prior work compared with [P]. Duplicate references
+within `Counter_Evidence_IDs` are also invalid.
+
+A frozen [L] assertion requires an existing supporting `Evidence_ID`,
+a source locator and, where the modern Evidence Matrix has bibliographic
+columns, a citation or persistent source identifier. An objectively
+contradictory locator status (`PASSAGE_NOT_FOUND`, `PAGE_MISMATCH`,
+`OUTSIDE_WORKSPACE`) blocks claim freeze. Metadata identity, a locator
+field or even a literal passage match cannot themselves certify that the
+literature supports the interpretation. An [I] still requires reasoning
+and defensible limits. A [P] must document identifiable prior works,
+specific contribution and bounded novelty search; a novelty search log
+does not prove absolute originality.
+
+The same `Evidence_ID` may contain qualified findings both supporting
+and countering an interpretation, but freeze/strict audits then require
+a substantive explanation under `Robustness_notes` or
+`Alternative_explanations`. Do not erase or arbitrarily recategorize it.
+
+For empirical results in new route-governed projects, `Trace_IDs` must
+refer to unique existing rows in the canonical TRACE register; IDs that
+are missing, repeated, or marked PLANNED/FAILED/INVALID/SUPERSEDED do
+not establish an executed analysis. `UNVERIFIED` remains an unverified
+event—not a human-attested scientific result. The script records a
+structural relationship only and explicitly returns
+`empirical_scientific_result_independently_validated=false`.
+No automatic gate approval, changes to researcher decisions or new
+identifiers are authorized by this check.
+
 ## Critical appraisal by source type
 
 Bibliographic identity, textual presence, methodological quality and claim support are separate dimensions. See [critical appraisal](../docs/AVALIACAO-CRITICA-FONTES.md). Use `scripts/appraise_evidence.py` to record design-specific human judgments on quantitative, qualitative, mixed-methods, review, conceptual, normative or other materials in existing evidence rows. Do not compute a universal automated quality score or present normative authority as empirical proof. Evidence with recorded limitations can still be used when claims are appropriately qualified. The code validates recorded basis and consistency, not the truth of reviewer conclusions.
