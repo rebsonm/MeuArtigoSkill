@@ -2,7 +2,7 @@ name: Release audit
 
 on:
   push:
-    branches: [main]
+    branches: [main, "fix/post-beta2-plugin-migration-20261011"]
   pull_request:
   workflow_dispatch:
 
