@@ -212,10 +212,18 @@ def read_tabular(path: Path) -> list[dict[str, str]]:
     delimiter = "\t" if suffix in {".tsv", ".txt"} else ","
     with path.open("r", encoding="utf-8-sig", newline="") as f:
         sample = f.read(4096); f.seek(0)
-        try:
-            delimiter = csv.Sniffer().sniff(sample, delimiters=",\t;").delimiter
-        except csv.Error:
-            pass
+        # WoS tab-delimited headers may contain commas inside *quoted* field
+        # names (e.g. "Times Cited, WoS Core"). Sniffer can incorrectly
+        # choose comma for a valid TSV. Prefer the explicit extension and
+        # visible header separator before applying heuristic detection.
+        first_line = sample.splitlines()[0] if sample else ""
+        if suffix == ".tsv" or (suffix == ".txt" and "\t" in first_line):
+            delimiter = "\t"
+        else:
+            try:
+                delimiter = csv.Sniffer().sniff(sample, delimiters=",\t;").delimiter
+            except csv.Error:
+                pass
         reader = csv.DictReader(f, delimiter=delimiter)
         if reader.fieldnames is not None:
             try:
