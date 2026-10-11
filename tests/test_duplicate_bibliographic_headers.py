@@ -136,6 +136,110 @@ class HeaderValidationTests(unittest.TestCase):
         self.assertEqual([r["read_status"] for r in manifest["inputs"]],
                          ["DUPLICATE_HEADER", "READABLE"])
 
+    def test_scopus_authors_and_author_full_names_are_complementary(self):
+        # Synthetically reconstructed from documented Scopus CSV field layout.
+        path = self.root / "scopus_representative.csv"
+        with path.open("w", encoding="utf-8", newline="") as fh:
+            writer = csv.writer(fh)
+            writer.writerow(["Authors", "Author full names", "Author(s) ID",
+                             "Title", "Year", "Source title", "DOI", "EID"])
+            writer.writerow(["Silva, M.", "Silva, Maria", "12345678900",
+                             "A bibliometric study", "2025", "Journal X",
+                             "10.1234/scopus", "2-s2.0-12345"])
+        result = self.execute(path)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        records = self.read_csv("consolidated_exact_dedup.csv")
+        self.assertEqual(len(records), 1)
+        self.assertEqual(records[0]["Authors"], "Silva, M.")
+        self.assertEqual(records[0]["Author full names"], "Silva, Maria")
+        self.assertEqual(records[0]["_first_author"], "silvam")
+        self.assertEqual(records[0]["_norm_doi"], "10.1234/scopus")
+        self.assertEqual(self.read_csv("rejected_records.csv"), [])
+
+    def test_wos_tagged_columns_au_af_ti_py_di_are_complementary(self):
+        # Representative WoS tab-delimited tags (not an actual licensed export).
+        path = self.root / "wos_representative.tsv"
+        with path.open("w", encoding="utf-8", newline="") as fh:
+            writer = csv.writer(fh, delimiter="\t")
+            writer.writerow(["AU", "AF", "TI", "PY", "DI", "UT"])
+            writer.writerow(["Souza, A", "Souza, Ana", "A public administration study",
+                             "2024", "10.1234/wos", "WOS:000000"])
+        result = self.execute(path)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        record = self.read_csv("consolidated_exact_dedup.csv")[0]
+        self.assertEqual(record["AU"], "Souza, A")
+        self.assertEqual(record["AF"], "Souza, Ana")
+        self.assertEqual(record["_first_author"], "souzaa")
+        self.assertEqual(record["_norm_doi"], "10.1234/wos")
+        self.assertEqual(self.read_csv("rejected_records.csv"), [])
+
+    def test_wos_long_headers_authors_and_full_names_are_complementary(self):
+        path = self.root / "wos_long.tsv"
+        with path.open("w", encoding="utf-8", newline="") as fh:
+            writer = csv.writer(fh, delimiter="\t")
+            writer.writerow(["Authors", "Author Full Names", "Article Title",
+                             "Publication Year", "DOI"])
+            writer.writerow(["Costa, J", "Costa, João", "Public governance",
+                             "2023", "10.1234/governance"])
+        result = self.execute(path)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        row = self.read_csv("consolidated_exact_dedup.csv")[0]
+        self.assertEqual(row["Authors"], "Costa, J")
+        self.assertEqual(row["Author Full Names"], "Costa, João")
+        self.assertEqual(row["_norm_title"], "public governance")
+
+    def test_wos_full_names_af_can_stand_alone_without_au(self):
+        path = self.root / "wos_fullonly.tsv"
+        with path.open("w", encoding="utf-8", newline="") as fh:
+            writer = csv.writer(fh, delimiter="\t")
+            writer.writerow(["AF", "TI", "PY"])
+            writer.writerow(["Barros, Carla", "Digitalization and governance", "2022"])
+        result = self.execute(path)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(self.read_csv("consolidated_exact_dedup.csv")[0]["_first_author"],
+                         "barroscarla")
+
+    def test_two_short_author_aliases_remain_ambiguous(self):
+        path = self.root / "short_aliases.csv"
+        path.write_text(
+            "Authors,Author names,Author full names,Title,Year\n"
+            "Smith J,Smith John,Smith John,Research,2025\n",
+            encoding="utf-8",
+        )
+        self.assert_quarantine(path, "AMBIGUOUS_BIBLIOGRAPHIC_HEADERS", 1)
+
+    def test_title_synonyms_still_quarantined_even_if_equal(self):
+        path = self.root / "title_aliases.csv"
+        path.write_text(
+            "Title,Article Title,DOI\nSame title,Same title,10.1234/same\n",
+            encoding="utf-8",
+        )
+        self.assert_quarantine(path, "AMBIGUOUS_BIBLIOGRAPHIC_HEADERS", 1)
+
+    def test_wos_doi_tag_and_doi_header_remain_ambiguous(self):
+        path = self.root / "doi_aliases.tsv"
+        path.write_text(
+            "DI\tDOI\tTI\n10.1234/a\t10.1234/b\tExample\n",
+            encoding="utf-8",
+        )
+        self.assert_quarantine(path, "AMBIGUOUS_BIBLIOGRAPHIC_HEADERS", 1)
+
+    @unittest.skipUnless(importlib.util.find_spec("openpyxl"),
+                         "Optional openpyxl is unavailable in this environment")
+    def test_xlsx_complementary_authors_still_valid(self):
+        from openpyxl import Workbook
+        path = self.root / "scopus_repr.xlsx"
+        book = Workbook()
+        book.active.append(["Authors", "Author full names", "Title", "DOI"])
+        book.active.append(["Lima, R.", "Lima, Regina", "Governance", "10.1234/xlsx"])
+        book.save(path)
+        book.close()
+        result = self.execute(path)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = self.read_csv("consolidated_exact_dedup.csv")[0]
+        self.assertEqual(data["Authors"], "Lima, R.")
+        self.assertEqual(data["Author full names"], "Lima, Regina")
+
     @unittest.skipUnless(importlib.util.find_spec("openpyxl"),
                          "Optional openpyxl is unavailable in this environment")
     def test_xlsx_duplicate_header_does_not_overwrite_cells(self):
