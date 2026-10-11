@@ -282,3 +282,22 @@ The user should always be able to answer:
 - Who/what owns it?
 - What is the deadline?
 - What proves the work advanced?
+
+## Verified operational transitions (Phase 5)
+
+Technical-task completion cannot follow directly from the user's short
+"próximo" message, a model-authored assertion or a filled `Completion_evidence`
+cell. In an authorized local fallback, an explicitly recorded successful
+allowlisted script execution may generate a confirmed local TRACE receipt.
+`update_cada_continuity.py` then binds that receipt to the task's
+`CADA_ID`, scientific stage and expected output artifact. Only then may
+it mark that task DONE and update the canonical continuity and derived
+dashboard as one recoverable operation. It cannot promote a C.A.D.A.
+event to `GATE-0001`–`GATE-0007` approval, a scientific claim, a
+journal submission or remote synchronization.
+
+If a task requires human judgment, lacks a matching executed artifact,
+has invalid dependencies or is in a later stage than the current gate,
+the command refuses to mark it DONE. A confirmed **local script run**
+does not certify that an external database search was performed or that
+the resulting argument is scientifically defensible.
