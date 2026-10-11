@@ -49,19 +49,19 @@ def recorded_next_ids(markdown: str) -> list[str]:
     stored = []
     in_section = False
     for line in markdown.splitlines():
-        if re.match(r"^#{2,3}\\s+", line):
+        if re.match(r"^#{2,3}\s+", line):
             in_section = bool(re.search(
                 r"(?:next valid action|pr[oó]xima a[cç][aã]o v[aá]lida)",
                 line, flags=re.IGNORECASE))
         if in_section:
-            match = re.search(r"^\\s*-\\s*CADA_ID:\\s*(CADA-\\d{4,})\\s*$", line)
+            match = re.search(r"^\s*-\s*CADA_ID:\s*(CADA-\d{4,})\s*$", line)
             if match:
                 stored.append(match.group(1))
     # Also support lightweight continuity notes with an unambiguous inline ID.
     if not stored:
         for line in markdown.splitlines():
             match = re.search(
-                r"(?:next valid action|pr[oó]xima a[cç][aã]o v[aá]lida):\\s*(CADA-\\d{4,})",
+                r"(?:next valid action|pr[oó]xima a[cç][aã]o v[aá]lida):\s*(CADA-\d{4,})",
                 line, flags=re.IGNORECASE)
             if match:
                 stored.append(match.group(1))
