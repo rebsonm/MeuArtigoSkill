@@ -289,3 +289,43 @@ com políticas dos provedores, segurança de todo o sistema operacional,
 sincronização efetiva com Drive nem validação científica. O uso das
 APIs permanece estritamente opcional; não conectar não bloqueia o
 trabalho manual. Não alterar ou publicar uma release por estes testes.
+
+## PR #47 — Verificação integrada das fontes manuais e APIs
+
+A consolidação de Scopus e Web of Science a partir de exportações manuais
+(CSV, TSV, XLSX ou XLS com leitor opcional autorizado) pode ser combinada
+com metadados obtidos por OpenAlex/Crossref/Semantic Scholar, sem pedir
+credenciais de bases licenciadas nem simular acesso CAFe. O mesmo
+`scripts/dedupe_records.py` continua responsável pela deduplicação
+conservadora: identidade exata por DOI ou combinação de título, autor
+e ano quando apropriado; registros próximos são marcados
+`REVIEW_REQUIRED`, nunca eliminados automaticamente.
+
+A identificação por DOI exige a correspondência integral ao formato
+normalizado (sufixos espúrios com espaços/texto adicional não podem
+gerar falsa identidade exata). Cada exportação original é vinculada a
+seu `INPUT-xxxx` e SHA-256; o deduplicador calcula a assinatura antes
+e depois da leitura e confere novamente todos os arquivos observados
+antes de publicar resultados derivados. Se qualquer arquivo for
+alterado durante o processamento, aborta o lote sem publicar como
+íntegra a consolidação. Essa salvaguarda não é um bloqueio de escrita
+para múltiplos processos independentes, nem certifica assinaturas digitais.
+
+Se algum arquivo manual não for legível ou contiver registros
+rejeitados, os resultados válidos continuam disponíveis para
+inspeção, mas `import_diagnostics.json` indica
+`status=PARTIAL_INPUTS` e `requires_researcher_review=true`;
+o terminal também apresenta `import_status=PARTIAL_INPUTS`.
+Por compatibilidade com fluxos antigos, o CLI pode retornar código
+0 quando há outros resultados válidos: **o código de saída isolado
+não comprova completude da importação**. O relatório de diagnóstico
+e a proveniência precisam ser inspecionados antes de novos gates.
+Lotes sem qualquer evidência bibliográfica válida continuam falhando.
+
+A deduplicação gera um estágio de conferência, não aprova triagem,
+não congela o corpus, não altera decisões humanas e não sincroniza
+o Google Drive. Uma importação opcional separada e autorizada no
+`WORK_FALLBACK` pode registrar metadados API na planilha de
+screening, ainda com decisões e `Status` científicos pendentes.
+Nem testes automatizados nem hashes autentificam a procedência
+da consulta externa ou autorizam publicação de nova release.
