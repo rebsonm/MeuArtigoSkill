@@ -4,7 +4,7 @@ Meu Artigo is distributed as a **Skill**. Check whether your account supports Sk
 
 ## Install
 
-Get the prepared [public beta.2 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.2/MeuArtigoSkill-v0.9.0-beta.2.zip). Do **not** use the GitHub **Code → Download ZIP** source tree as the user-installation archive. See [installation help](INSTALLATION.md).
+Get the prepared [official beta.1 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip). Do **not** use the GitHub **Code → Download ZIP** source tree as the user-installation archive. See [installation help](INSTALLATION.md).
 
 ## First connection diagnosis
 
