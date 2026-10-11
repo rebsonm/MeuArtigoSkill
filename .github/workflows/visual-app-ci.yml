@@ -3,7 +3,6 @@ on:
   push:
     branches: ["fix/post-beta2-plugin-migration-20261011"]
   pull_request:
-  workflow_dispatch:
     paths:
       - "visual-app/**"
       - "scripts/visual_dashboard.py"
@@ -16,6 +15,7 @@ on:
       - "tests/test_source_verification.py"
       - "docs/MEU-ARTIGO-VISUAL.md"
       - ".github/workflows/visual-app-ci.yml"
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
