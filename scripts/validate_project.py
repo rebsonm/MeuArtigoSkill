@@ -78,6 +78,14 @@ def main():
     from gate_snapshot_transaction import has_pending_gate_snapshot
     if has_pending_gate_snapshot(root):
         errors.append("Interrupted gate/snapshot transaction: reconcile pending journal before project validation")
+    # An interrupted C.A.D.A. transaction can expose a mix of old and
+    # new continuity, tasks and dashboard. Never validate that state.
+    from transaction_coordinator import active_journals
+    if "cada_continuity" in active_journals(root):
+        errors.append("Interrupted C.A.D.A. continuity transaction: reconcile pending journal before project validation")
+    from cada_continuity_integrity import audit as audit_cada_continuity
+    cada_integrity = audit_cada_continuity(root)
+    errors.extend("C.A.D.A. continuity integrity: " + issue for issue in cada_integrity["errors"])
     cfg_data={}
 
     for rel in REQUIRED:
