@@ -89,6 +89,19 @@ def validate_headers(headers: list[str]) -> None:
             full_present = [h for h in matching if norm_header(h) in full_names]
             if len(matching) == 2 and len(short_present) == 1 and len(full_present) == 1:
                 continue
+
+        if field == "year":
+            # WoS exports both Publication Year (year granularity) and
+            # Publication Date (more granular). Neither should overwrite the
+            # other. The year-level column is the canonical source when present.
+            year_fields = {"year", "publication year", "publication_year",
+                           "py", "published year"}
+            date_fields = {"publication date", "date"}
+            year_present = [h for h in matching if norm_header(h) in year_fields]
+            date_present = [h for h in matching if norm_header(h) in date_fields]
+            if len(matching) == 2 and len(year_present) == 1 and len(date_present) == 1:
+                continue
+
         # For genuine competing fields (e.g. Title and Article Title), never
         # guess which identity field should win without human correction.
         raise HeaderValidationError("AMBIGUOUS_BIBLIOGRAPHIC_HEADERS", matching)
