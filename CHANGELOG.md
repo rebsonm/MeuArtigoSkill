@@ -4,7 +4,20 @@
 <a id="unreleased"></a>
 ## Unreleased
 
-No additional changes have been recorded since `0.9.0-beta.2`.
+Corrective maintenance in progress on an **unreleased branch**, with no change to
+the published `0.9.0-beta.2` release or the installed ChatGPT plugin.
+
+- Validate bibliographic export schemas and identities, quarantine malformed records,
+  preserve merged `Record_ID`/`Search_ID` provenance, and keep fuzzy pairs unmerged.
+- Defer optional `artifact_tool` loading until XLSX generation; provide diagnostic
+  preflight and preserve canonical CSV fallback without claiming an XLSX exists.
+- Recognize historical `PARTIAL` AI-use decisions as non-final and split lists of
+  linked trace identifiers without inventing confirmations; distinguish
+  `NOT_EXECUTED` definitions from executed search rows.
+- Include verifiable clean Git source provenance when available and emit an
+  external build receipt with the package SHA-256.
+- Add isolated incident regressions and branch-scoped CI. Detailed behavior:
+  [Phase-2 engineering notes](docs/POST_BETA2_CORRECTIONS_PHASE2.md).
 
 ## 0.9.0-beta.2 — 2026-10-10
 
