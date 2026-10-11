@@ -18,6 +18,9 @@ abstract: >-
   AI-use transparency, high-rigor anonymization controls for generated
   external artifacts, and interoperable provenance export.
 
+# This file describes the unreleased main development source, not the
+# officially recommended public Skill v0.9.0-beta.1. Cite the published
+# v0.9.0-beta.1/CITATION.cff when referencing the official version.
 # Unpublished source candidate v0.9.0-beta.4, 2026-10-11 (no release date).
 # This source is distributed as experimental beta software;
 # citation does not constitute independent methodological validation.
