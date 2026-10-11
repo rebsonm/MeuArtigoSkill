@@ -1,6 +1,6 @@
 # Phase 5/5 — Corrective software candidate and review handoff
 
-**Decision status: REVIEW REQUIRED. Not a release. No merge or plugin scientific-code update authorized.**
+**Decision status: main source integration explicitly authorized by the owner on 2026-10-11. No release, hosted MCP deployment or installed-plugin scientific-code update authorized.**
 
 This report consolidates the post-homologation maintenance of Meu Artigo. It is based on the existing branch's engineering commits, GitHub Actions observations, earlier authorized sanitized Gate 4 audit, and the owner's 12 explicitly illustrative design references. It does not recreate or certify any scientific evidence or private Drive project. The real research Gate 4 remains pending human work.
 
@@ -10,7 +10,7 @@ This report consolidates the post-homologation maintenance of Meu Artigo. It is 
 |---|---|---|
 | Public GitHub Skill release | 0.9.0-beta.2 | Historical published tag and archives untouched |
 | Private ChatGPT plugin | 0.9.0-beta.3 | Prior icon-only metadata update, separately managed; no scientific-code update in this maintenance |
-| Maintained source candidate | 0.9.0-beta.4 | Unpublished GitHub branch; generates Skill ZIP and **skills-only** plugin ZIP for review |
+| Maintained source candidate | 0.9.0-beta.4 | Source prepared in the corrective branch for owner-authorized main integration; **no public release**, review-only Skill and plugin ZIPs |
 
 VERSION, README, CITATION.cff and CHANGELOG identify the source candidate without asserting a new release date. The source-candidate notes explicitly state NOT PUBLISHED, making the production release metadata check fail closed. Only a later owner-authorized release process should set the actual date and published download URL.
 
@@ -41,7 +41,7 @@ The twelve approved conceptual screens are now mapped to implementation states. 
 4. No fabricated database access, actual full-text availability, real Drive sync, journal compliance or external publication success.
 5. A canonical project remains Drive-first; local read-only mirrors are not canonical remote evidence unless authorized and reconciled.
 6. No protected full texts, unreleased research corpus, secrets, OAuth credentials, .env files or personal Drive exports in the public code or review packages.
-7. No user submission, disclosure waiver, Gate 4/7 approval, release, merge or change to existing project records has been performed.
+7. No user submission, disclosure waiver, Gate 4/7 approval, public release, plugin update or change to existing project records is established by these tests. Main integration was subsequently authorized expressly by the owner; it does not validate research.
 
 ## Review candidate artifacts and verification
 
@@ -63,7 +63,7 @@ Engineering CI includes Python unit tests, static public audit, documentation li
 - Decide how the private icon-only plugin beta.3 should receive the **full** beta.4 skill update. A standalone ZIP does not update it; any actual update requires explicit owner authorization, guarded current-release check and post-install verification.
 - Host and authorize an actual MCP server before connecting tools/UI to the plugin. Do **not** invent an endpoint or imply the skills-only ZIP delivers the hosted UI.
 - Reconcile original draft [PR #22](https://github.com/rebsonm/MeuArtigoSkill/pull/22) as a historical source of the visual prototype, without merging it separately on top of this consolidated branch.
-- Review and discuss code changes in a **draft** PR against main; require all relevant GitHub Actions jobs green. Do not merge automatically.
+- The owner expressly authorized merging consolidated PR #27 into main on 2026-10-11, conditioned on reviewing and correcting the README first. Check the current CI head and merge manually using the approved PR; this does not authorize any release or private plugin update.
 - Public GitHub beta.2 release and its checksums must be kept available without amendment.
 - If the owner later explicitly authorizes a public release, first revise candidate publication metadata and run the protected manual release process from an authorized main commit. Release metadata checks must block the current candidate.
 
