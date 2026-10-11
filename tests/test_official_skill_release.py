@@ -15,10 +15,10 @@ class OfficialRecommendationTests(unittest.TestCase):
         for filename in GUIDES:
             guide = (ROOT / filename).read_text(encoding="utf-8")
             self.assertIn(url, guide, filename)
-        # The file stores a previously published *experimental* beta, never
-        # proof that this version has independent academic endorsement.
-        if recommended == "0.9.0-beta.1":
-            self.assertIn("release assets appear", (ROOT / "README.md").read_text())
+        # A recommendation is version selection, not stable/scientific status.
+        # GitHub's actual tag and assets were checked outside the offline CI.
+        self.assertEqual(recommended, "0.9.0-beta.4")
+        self.assertIn("Recommended experimental Skill beta", (ROOT / "README.md").read_text())
 
     def test_current_source_is_not_equated_with_a_published_tag(self):
         dev_version = (ROOT / "VERSION").read_text().strip()
@@ -27,7 +27,8 @@ class OfficialRecommendationTests(unittest.TestCase):
         self.assertIn(f"**Current version:** `{dev_version}`", readme)
         self.assertIn("experimental", readme.lower())
         self.assertIn("publication workflow", readme)
-        self.assertIn("not evidence that the corresponding release tag", readme)
+        self.assertIn("Pre-release is published", readme)
+        self.assertIn("GitHub's", readme)
         self.assertIn("stable v1.0.0", readme)
 
     def test_historical_releases_not_discarded(self):

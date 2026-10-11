@@ -9,7 +9,7 @@ redistribute third-party research PDFs or claim that the Skill has
 been scientifically validated.
 
 **Installing the Skill?** Start with the [two-minute installation guide](INSTALLATION.md).
-Use the prepared ZIP from a **published tagged beta release**, rather than the repository source archive. The beta.4 download becomes available only after its separate publication workflow succeeds.
+Use the **published beta.4 Skill ZIP** from its tagged GitHub Pre-release, not the repository source archive.
 
 This guide is designed for researchers who have **never used GitHub**.
 You do not need programming skills, Git, a command line, or a pull request
@@ -34,8 +34,8 @@ authorization process and may require a different account.
 
 ## 3. Choose the installable release ZIP
 
-For the new testing round, use the **[beta.4 release page](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4)** after publication.
-The intended filename is `MeuArtigoSkill-v0.9.0-beta.4.zip`, accompanied by `SHA256SUMS.txt`. If the release is not visible yet, beta.1 and beta.2 remain the previously published experimental alternatives.
+For the new testing round, use the **[published beta.4 release page](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4)**.
+The installable filename is `MeuArtigoSkill-v0.9.0-beta.4.zip`, accompanied by `SHA256SUMS.txt`. The older beta.1 and beta.2 releases remain archived for reproducibility.
 This is for a supported **Skills** installer. Verify its SHA-256
 digest using `SHA256SUMS.txt` if appropriate.
 
@@ -164,8 +164,8 @@ upload occurred. Ask for the verifiable source when there is doubt.
 
 ## 10. Updating to a newer version
 
-For public installation, use the [official beta.1 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip).
-The Releases page also lists historical prereleases that are not the current recommendation. Review its release notes,
+For new tests, use the [published beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip).
+The [earlier beta.1 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip) and other archived prereleases remain available for reproducibility. Review its release notes,
 the [CHANGELOG](../CHANGELOG.md) and any migration requirements.
 Keep the research project's real source files and canonical
 records; installing a newer Skill must not silently rewrite

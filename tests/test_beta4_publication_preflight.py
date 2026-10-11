@@ -1,7 +1,8 @@
-"""Offline readiness checks for the v0.9.0-beta.4 public beta preparation.
+"""Offline regressions for published v0.9.0-beta.4 documentation.
 
-Neither metadata nor an expected URL proves a GitHub release exists.
-This suite never publishes a tag, installs a Skill or uses a real account.
+GitHub's real published release/assets were confirmed externally before
+this documentation update. Offline tests check consistent local claims only,
+not real-time availability, scientific quality or installed account state.
 """
 from __future__ import annotations
 
@@ -22,11 +23,11 @@ class Beta4PublicPreparationTests(unittest.TestCase):
         self.notes = (ROOT / "docs" / f"NOTAS-DA-VERSAO-{self.version}.md").read_text(encoding="utf-8")
         self.readme = (ROOT / "README.md").read_text(encoding="utf-8")
 
-    def test_versioned_publication_metadata_ready_but_not_claimed_published(self):
+    def test_publication_metadata_and_local_release_docs_agree(self):
         self.assertEqual(self.version, "0.9.0-beta.4")
         self.assertEqual(audit_release_metadata(ROOT, expected_date="2026-10-11"), [])
         self.assertIn("publication workflow", self.readme.lower())
-        self.assertIn("release assets appear", self.readme.lower())
+        self.assertIn("pre-release is published", self.readme.lower())
         self.assertIn("pre-release", self.notes.lower())
         self.assertRegex(self.notes.lower(), r"not a\s+stable")
 
@@ -46,11 +47,12 @@ class Beta4PublicPreparationTests(unittest.TestCase):
         self.assertIn("Actual observed result", issue)
         self.assertIn("v0.9.0-beta.4", guide)
 
-    def test_legacy_recommendation_is_not_advanced_before_publication(self):
+    def test_beta4_is_recommended_only_as_experimental_prerelease(self):
         self.assertEqual(
             (ROOT / "OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip(),
-            "0.9.0-beta.1")
+            "0.9.0-beta.4")
         self.assertIn("beta.1 and beta.2", self.readme)
+        self.assertIn("recommended experimental", self.readme.lower())
         self.assertIn("v0.9.0-beta.4", self.notes)
         self.assertNotIn("v1.0.0 has been published", self.readme)
 

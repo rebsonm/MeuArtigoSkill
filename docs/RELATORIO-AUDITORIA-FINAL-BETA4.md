@@ -1,5 +1,14 @@
 # Final development audit — Meu Artigo 0.9.0-beta.4 candidate
 
+> **Historical engineering report (as written before beta.4 publication).**
+> The statements below about beta.1 being recommended and beta.4 not yet
+> published describe the state **at the time of PR #55**. On 2026-10-11 UTC,
+> GitHub published beta.4 as a Pre-release from commit
+> `3ef2bfb1f73c42cb029a2862b2c7959c12fe718f`, with ZIP and SHA-256
+> attached. The current experimental recommendation is now beta.4.
+> None of the pending independent scientific/platform tests became complete.
+>
+
 **Scope:** engineering closure of the development branch at PR #55 (2026-10-11). This is a **candidate for later consolidated manual homologation**, not an officially published release, certified research method, verified institutionally licensed data source, or installation in a ChatGPT host.
 
 ## Scope and baseline

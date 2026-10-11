@@ -11,8 +11,9 @@ testimonial or endorse the quality of generated articles.
 
 1. Download the ZIP and `SHA256SUMS.txt` from the
    [tagged release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4).
-   If the page/assets are unavailable, the release has **not yet been
-   published**; do not substitute a source tree or claim to have installed it.
+   The beta.4 release was published on 2026-10-11 (UTC). If a download
+   is temporarily inaccessible, do not substitute a source tree or claim
+   to have installed it; check the actual published release status.
 2. Check the SHA-256 when you can. Import the ZIP using your platform's
    supported Skill mechanism. A ZIP alone does not grant external services
    or account permissions.

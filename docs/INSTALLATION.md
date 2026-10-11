@@ -2,17 +2,17 @@
 
 **Choose the prepared Skill archive rather than GitHub's source download.** No coding is necessary for a researcher.
 
-**Previously published experimental beta:** [beta.1 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip). This historical fallback remains downloadable while the beta.4 prerelease assets are not yet available; neither beta is stable.
+**Recommended experimental version:** [beta.4 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4). [Historical beta.1 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip) remains available; neither version is stable.
 
 ## Install the published Skill
 
-1. **[Download MeuArtigoSkill-v0.9.0-beta.4.zip](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip)** once its tagged **Pre-release** assets and `SHA256SUMS.txt` are visible. Until then, an earlier published beta remains available.
+1. **[Download the published MeuArtigoSkill-v0.9.0-beta.4.zip](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip)** with the matching [SHA256SUMS.txt](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/SHA256SUMS.txt) from the tagged **Pre-release**.
 2. Open your assistant's supported **Skills / Habilidades** import, if available for your account.
 3. Select this exact Skill ZIP and confirm installation.
 4. Ask: *"Quero começar um artigo com Meu Artigo; verifique primeiro minhas conexões e o armazenamento."*
 5. Confirm Google Drive read/write access (or explicit fallback authorization) before creating canonical research files.
 
-All released versions remain **experimental betas**. A prepared beta.4 source is not an installable published release until the tagged ZIP and checksum appear. The `main` source tree is never a substitute. Earlier published beta assets remain available for reproducibility.
+The **beta.4 tagged ZIP and checksum have been published**. All releases remain **experimental betas**; the `main` source tree is not the published installer. Earlier beta assets remain available for reproducibility.
 
 ## Avoid incorrect downloads
 
