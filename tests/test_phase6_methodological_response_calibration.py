@@ -206,8 +206,8 @@ class MethodologicalResponseCalibrationTests(unittest.TestCase):
         self.assertEqual(data["mode"], "methodological_response_calibration")
         self.assertFalse(data["scientific_validity_proven"])
         self.assertIn("NOT_PERFORMED", proc.stdout)
-        self.assertFalse(any("source" in p.lower() and "verified" in p.lower()
-                             for p in data.get("claims_scientifically_adjudicated", [])))
+        self.assertFalse(data["source_access_verified"])
+        self.assertFalse(data["reviewer_identity_authenticated"])
 
 
 if __name__ == "__main__":
