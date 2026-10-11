@@ -184,6 +184,86 @@ class PostBeta2ImportTests(unittest.TestCase):
         audit = records_in(self.out / "exact_duplicate_audit.csv")
         self.assertEqual(audit[0]["duplicate_Record_ID"], "R-2")
 
+    def test_identical_filenames_from_distinct_directories_keep_input_identity(self):
+        first = self.root / "scopus" / "records.csv"
+        second = self.root / "wos" / "records.csv"
+        first.parent.mkdir()
+        second.parent.mkdir()
+        headers = ["Title", "DOI", "Record_ID", "Search_ID"]
+        write_csv(first, headers,
+                  [{"Title": "Same work", "DOI": "10.1234/same",
+                    "Record_ID": "R-1", "Search_ID": "S-1"}])
+        write_csv(second, headers,
+                  [{"Title": "Same work", "DOI": "10.1234/same",
+                    "Record_ID": "R-2", "Search_ID": "S-2"}])
+        result = subprocess.run(
+            [sys.executable, str(SCRIPTS / "dedupe_records.py"),
+             str(first), str(second), "--out-dir", str(self.out)],
+            capture_output=True, text=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        saved = records_in(self.out / "consolidated_exact_dedup.csv")
+        self.assertEqual(len(saved), 1)
+        self.assertEqual(saved[0]["_merged_Record_IDs"], "R-1;R-2")
+        self.assertEqual(saved[0]["_merged_Search_IDs"], "S-1;S-2")
+        self.assertEqual(saved[0]["_source_input_id"], "INPUT-0001")
+        self.assertIn("INPUT-0001:records.csv:2", saved[0]["_source_locations"])
+        self.assertIn("INPUT-0002:records.csv:2", saved[0]["_source_locations"])
+        audit = records_in(self.out / "exact_duplicate_audit.csv")
+        self.assertEqual(audit[0]["canonical_source_file"], "records.csv")
+        self.assertEqual(audit[0]["duplicate_source_file"], "records.csv")
+        self.assertEqual(audit[0]["canonical_source_input_id"], "INPUT-0001")
+        self.assertEqual(audit[0]["duplicate_source_input_id"], "INPUT-0002")
+
+    def test_manifest_links_inputs_to_hashes_without_absolute_paths(self):
+        first = self.root / "alpha" / "records.csv"
+        second = self.root / "beta" / "records.csv"
+        first.parent.mkdir()
+        second.parent.mkdir()
+        write_csv(first, ["Title", "DOI", "Record_ID"],
+                  [{"Title": "One", "DOI": "10.1234/one", "Record_ID": "R-1"}])
+        write_csv(second, ["Title", "DOI", "Record_ID"],
+                  [{"Title": "Two", "DOI": "10.1234/two", "Record_ID": "R-2"}])
+        run = subprocess.run([sys.executable, str(SCRIPTS / "dedupe_records.py"),
+                              str(first), str(second), "--out-dir", str(self.out)],
+                             capture_output=True, text=True)
+        self.assertEqual(run.returncode, 0, run.stderr)
+        manifest = json.loads((self.out / "import_sources_manifest.json").read_text())
+        self.assertEqual(manifest["id_scope"], "SINGLE_IMPORT_INVOCATION")
+        self.assertEqual([x["source_input_id"] for x in manifest["inputs"]],
+                         ["INPUT-0001", "INPUT-0002"])
+        self.assertEqual([x["source_file"] for x in manifest["inputs"]],
+                         ["records.csv", "records.csv"])
+        self.assertEqual(manifest["inputs"][0]["content_sha256"],
+                         hashlib.sha256(first.read_bytes()).hexdigest())
+        self.assertEqual(manifest["inputs"][1]["content_sha256"],
+                         hashlib.sha256(second.read_bytes()).hexdigest())
+        self.assertNotIn(str(self.root), json.dumps(manifest))
+
+    def test_source_manifest_exists_when_all_rows_are_rejected(self):
+        write_csv(self.export, ["unexpected"], [{"unexpected": "row"}])
+        self.assertEqual(self.run_dedupe().returncode, 2)
+        manifest = json.loads((self.out / "import_sources_manifest.json").read_text())
+        self.assertEqual(manifest["inputs"][0]["source_input_id"], "INPUT-0001")
+        self.assertEqual(manifest["inputs"][0]["read_status"], "READABLE")
+        self.assertFalse((self.out / "consolidated_exact_dedup.csv").exists())
+
+    def test_input_manifest_is_preserved_by_pr33_guard(self):
+        write_csv(self.export, ["Title", "DOI"],
+                  [{"Title": "Study", "DOI": "10.1234/study"}])
+        self.assertEqual(self.run_dedupe().returncode, 0)
+        manifest = (self.out / "import_sources_manifest.json").read_bytes()
+        (self.out / "import_diagnostics.json").unlink()
+        (self.out / "rejected_records.csv").unlink()
+        (self.out / "consolidated_exact_dedup.csv").unlink()
+        (self.out / "exact_duplicate_audit.csv").unlink()
+        (self.out / "near_duplicate_review.csv").unlink()
+        next_run = self.run_dedupe()
+        self.assertEqual(next_run.returncode, 2)
+        self.assertIn("OUTPUT_DIRECTORY_ALREADY_HAS_RESULTS", next_run.stderr)
+        self.assertEqual((self.out / "import_sources_manifest.json").read_bytes(),
+                         manifest)
+
     def test_fuzzy_titles_are_candidates_only(self):
         write_csv(self.export, ["Title", "Authors", "Year"],
                   [{"Title": "Tool for classroom use", "Authors": "Scholar", "Year": "2025"},
