@@ -20,7 +20,7 @@ from pathlib import Path
 ALIASES = {
     "title": ["title", "article title", "document title", "ti", "paper title", "work title", "dc.title"],
     "doi": ["doi", "digital object identifier", "di", "doi url", "doi_url"],
-    "authors": ["authors", "author", "author full names", "au", "author names", "creators", "creator"],
+    "authors": ["authors", "author", "author full names", "au", "author names", "creators", "creator", "af"],
     "year": ["year", "publication year", "publication_year", "py", "published year", "publication date", "date"],
     "stable_id": ["openalex_id", "openalex id", "pmid", "pubmed id", "arxiv_id", "arxiv id"],
     "version": ["version", "version id", "version_id", "edition", "publication version"],
@@ -44,6 +44,67 @@ def sha256_stream(path: Path) -> str:
         for block in iter(lambda: source.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+class HeaderValidationError(ValueError):
+    """Ambiguous input headers, with untouched positional rows for quarantine."""
+
+    def __init__(self, reason: str, columns: list[str]):
+        super().__init__(reason)
+        self.reason = reason
+        self.columns = columns
+        self.rows: list[list] = []
+
+
+def validate_headers(headers: list[str]) -> None:
+    """Check all column headings before any dict can discard repeated keys."""
+    normalized = [norm_header(h) for h in headers]
+    if any(not h for h in normalized):
+        raise HeaderValidationError(
+            "EMPTY_HEADER", [f"column_{i + 1}" for i, h in enumerate(normalized) if not h]
+        )
+
+    by_name: dict[str, list[str]] = {}
+    for original, key in zip(headers, normalized):
+        by_name.setdefault(key, []).append(original)
+    repeated = [value for names in by_name.values() if len(names) > 1 for value in names]
+    if repeated:
+        raise HeaderValidationError("DUPLICATE_HEADER", repeated)
+
+    for field, aliases in ALIASES.items():
+        matching = [h for h, normalized_h in zip(headers, normalized)
+                    if normalized_h in aliases]
+        if len(matching) <= 1:
+            continue
+
+        if field == "authors":
+            # Scopus and WoS export two *complementary representations*:
+            # abbreviated names (Authors/AU) and full names (Author full names/AF).
+            # Keep both original columns. The existing pick() precedence selects
+            # the short form when available; the full form remains in the export.
+            short_names = {"authors", "author", "au", "author names",
+                           "creators", "creator"}
+            full_names = {"author full names", "af"}
+            short_present = [h for h in matching if norm_header(h) in short_names]
+            full_present = [h for h in matching if norm_header(h) in full_names]
+            if len(matching) == 2 and len(short_present) == 1 and len(full_present) == 1:
+                continue
+
+        if field == "year":
+            # WoS exports both Publication Year (year granularity) and
+            # Publication Date (more granular). Neither should overwrite the
+            # other. The year-level column is the canonical source when present.
+            year_fields = {"year", "publication year", "publication_year",
+                           "py", "published year"}
+            date_fields = {"publication date", "date"}
+            year_present = [h for h in matching if norm_header(h) in year_fields]
+            date_present = [h for h in matching if norm_header(h) in date_fields]
+            if len(matching) == 2 and len(year_present) == 1 and len(date_present) == 1:
+                continue
+
+        # For genuine competing fields (e.g. Title and Article Title), never
+        # guess which identity field should win without human correction.
+        raise HeaderValidationError("AMBIGUOUS_BIBLIOGRAPHIC_HEADERS", matching)
 
 
 def norm_header(s: str) -> str:
@@ -134,19 +195,48 @@ def read_tabular(path: Path) -> list[dict[str, str]]:
         except ImportError as e:
             raise SystemExit("XLSX input requires openpyxl; convert to CSV or install openpyxl.") from e
         wb = load_workbook(path, read_only=True, data_only=True)
-        ws = wb.active
-        rows = ws.iter_rows(values_only=True)
-        headers = [str(x or "") for x in next(rows)]
-        return [{headers[i]: "" if v is None else str(v) for i, v in enumerate(vals)} for vals in rows]
+        try:
+            ws = wb.active
+            rows = ws.iter_rows(values_only=True)
+            headers = [str(x) if x is not None else "" for x in next(rows)]
+            try:
+                validate_headers(headers)
+            except HeaderValidationError as exc:
+                exc.rows = [list(vals) for vals in rows]
+                raise
+            return [{headers[i]: "" if v is None else str(v)
+                     for i, v in enumerate(vals)} for vals in rows]
+        finally:
+            wb.close()
 
     delimiter = "\t" if suffix in {".tsv", ".txt"} else ","
     with path.open("r", encoding="utf-8-sig", newline="") as f:
         sample = f.read(4096); f.seek(0)
-        try:
-            delimiter = csv.Sniffer().sniff(sample, delimiters=",\t;").delimiter
-        except csv.Error:
-            pass
-        return list(csv.DictReader(f, delimiter=delimiter))
+        # WoS tab-delimited headers may contain commas inside *quoted* field
+        # names (e.g. "Times Cited, WoS Core"). Sniffer can incorrectly
+        # choose comma for a valid TSV. Prefer the explicit extension and
+        # visible header separator before applying heuristic detection.
+        first_line = sample.splitlines()[0] if sample else ""
+        if suffix == ".tsv" or (suffix == ".txt" and "\t" in first_line):
+            delimiter = "\t"
+        else:
+            try:
+                delimiter = csv.Sniffer().sniff(sample, delimiters=",\t;").delimiter
+            except csv.Error:
+                pass
+        reader = csv.DictReader(f, delimiter=delimiter)
+        if reader.fieldnames is not None:
+            try:
+                validate_headers(reader.fieldnames)
+            except HeaderValidationError as exc:
+                # DictReader silently overwrites repeated keys; re-read
+                # positional cells to retain every original column.
+                f.seek(0)
+                positional = csv.reader(f, delimiter=delimiter)
+                next(positional, None)
+                exc.rows = list(positional)
+                raise
+        return list(reader)
 
 
 def safe_spreadsheet_cell(value: str) -> str:
@@ -229,6 +319,28 @@ def run_import(out: Path, args: argparse.Namespace) -> int:
             file_entry["size_bytes"] = p.stat().st_size
             file_entry["rows_observed"] = len(source)
             file_entry["read_status"] = "READABLE"
+        except HeaderValidationError as exc:
+            # Entire export is untrusted because a dict can hide conflicting
+            # columns. The original remains untouched; quarantine by row.
+            file_entry["read_status"] = exc.reason
+            file_entry["rows_observed"] = len(exc.rows)
+            try:
+                file_entry["content_sha256"] = sha256_stream(p)
+                file_entry["size_bytes"] = p.stat().st_size
+            except OSError:
+                pass
+            diagnostics.append({
+                "source_file": p.name, "source_input_id": source_input_id,
+                "reason": exc.reason, "affected_records": len(exc.rows),
+                "conflicting_headers": exc.columns,
+            })
+            for row_idx, original_cells in enumerate(exc.rows, 2):
+                rejected.append({
+                    "_source_file": p.name, "_source_input_id": source_input_id,
+                    "_source_row": str(row_idx), "_reject_reason": exc.reason,
+                    "_raw_record": repr(original_cells)[:3000],
+                })
+            continue
         except (OSError, ValueError, StopIteration, csv.Error) as exc:
             diagnostics.append({"source_file": p.name, "source_input_id": source_input_id, "reason": "UNREADABLE_EXPORT",
                                 "affected_records": 0, "error_type": type(exc).__name__})
