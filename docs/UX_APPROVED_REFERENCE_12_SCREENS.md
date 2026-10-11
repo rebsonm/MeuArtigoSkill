@@ -1,6 +1,12 @@
 # Approved UX reference — 12 experiences (desktop and mobile)
 
-Status: **product UX acceptance baseline; parity NOT yet achieved**.
+Status: **product UX acceptance baseline; screenshot parity still NOT VERIFIED**.
+The table below is the *historical gap analysis of the PR #22 MVP*, before
+Phase-4 source implementation. For the current implementation and the
+twelve item-by-item acceptance statuses, see
+[Phase-4 engineering audit](PHASE4_UX_REGRESSION_AND_ACCEPTANCE.md).
+Do not interpret the historical NOT IMPLEMENTED cells below as current
+software status.
 Source: 12 conceptual, expressly illustrative screens supplied by the product owner on 2026-10-11 in the project conversation. This document is a textual acceptance map, not an archive of those privately supplied images. Screens show demonstration data only. No actual project metrics, gates or scientific results can be inferred from the mockups.
 
 ## Approved visual system
