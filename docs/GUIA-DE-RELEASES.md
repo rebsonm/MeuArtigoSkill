@@ -85,8 +85,11 @@ scientifically validated.
 
 **Merging source code does not automatically publish it.**
 The last published version is determined by an actual GitHub Release, not
-by `VERSION` or a merge commit. Current release documentation targets
-`v0.9.0-beta.2`; historical downloads and license rights remain intact.
+by `VERSION` or a merge commit. The **official public Skill recommendation** is `v0.9.0-beta.1` with its
+prepared release ZIP. Later `v0.9.0-beta.2` remains a historical prerelease;
+`main` is separate unreleased development source. A newer published tag does
+not change the official recommendation automatically. No tags or assets are
+deleted by this decision. Historical rights and downloads remain intact.
 
 ## Platform and language compatibility
 
