@@ -14,6 +14,7 @@ import subprocess
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 from version_info import read_version
+from bundle_dependency_audit import audit as audit_bundle
 
 ROOT = Path(__file__).resolve().parents[1]
 ROOT_FILES = ("SKILL.md", "VERSION", "CITATION.cff", "LICENSE", "NOTICE", "SECURITY.md")
@@ -32,6 +33,7 @@ EXCLUDED_SCRIPT_NAMES = frozenset({
     "check_release_metadata.py", "release_audit.py",
     "smoke_test_provenance.py", "sync_version.py",
     "build_skill_bundle.py", "quality_benchmark.py",
+    "bundle_dependency_audit.py",
 })
 EXCLUDED_DOC_NAMES = frozenset({
     "GUIA-DE-RELEASES.md", "IMPLANTACAO-BETA.md",
@@ -111,14 +113,23 @@ def package(root: Path, destination: Path) -> dict:
     expected = f"MeuArtigoSkill-v{version}.zip"
     if destination.name != expected:
         raise ValueError(f"Unexpected package filename; expected {expected}")
+    # The public archive must be runnable as a standalone Skill. Unlike a
+    # source checkout it must not reference a missing local helper or entry
+    # navigation document.
+    all_modules = {p.stem for p in (root / "scripts").glob("*.py") if p.is_file()}
+    payload = {p.relative_to(root).as_posix(): p.read_bytes() for p in files}
+    closure = audit_bundle(payload, local_source_modules=all_modules)
+    if closure["errors"]:
+        raise ValueError("BUNDLE_DEPENDENCY_CLOSURE_FAILED: " + "; ".join(closure["errors"][:8]))
     provenance = source_provenance(root)
     manifest = {"schema_version": 2, "version": version,
                 "entrypoint": "SKILL.md", "license": "Apache-2.0",
                 "scientific_quality_validated": False,
+                "installed_dependency_closure_checked": True,
                 "repository_origin_claim": REPOSITORY,
                 "build_source_commit": provenance["build_source_commit"],
                 "source_verification": provenance["source_verification"],
-                "files": {p.relative_to(root).as_posix(): sha256(p.read_bytes()) for p in files}}
+                "files": {name: sha256(data) for name, data in payload.items()}}
     if manifest["files"].get("LICENSE") != sha256((root / "LICENSE").read_bytes()):
         raise ValueError("License checksum is inconsistent")
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -154,9 +165,15 @@ def package(root: Path, destination: Path) -> dict:
 
 def verify_package(path: Path) -> dict:
     with ZipFile(path, "r") as z:
-        names = z.namelist()
+        info = z.infolist()
+        names = [item.filename for item in info]
         if len(names) != len(set(names)) or MANIFEST not in names:
             raise ValueError("Duplicate members or missing manifest")
+        if (len(info) > 3000 or sum(item.file_size for item in info) > 100 * 1024 * 1024
+                or any(item.is_dir() or item.file_size < 0
+                       or (item.external_attr >> 16) & 0o170000 == 0o120000
+                       or item.flag_bits & 1 for item in info)):
+            raise ValueError("Unsafe, encrypted or oversized ZIP contents")
         if any(Path(name).is_absolute() or ".." in Path(name).parts or
                name.startswith(".") or "\\" in name for name in names):
             raise ValueError("Unsafe ZIP member path")
@@ -166,9 +183,19 @@ def verify_package(path: Path) -> dict:
         items = manifest.get("files") or {}
         if set(items) != set(names) - {MANIFEST}:
             raise ValueError("Manifest and packaged contents diverge")
+        payload = {}
         for name, expected in items.items():
-            if sha256(z.read(name)) != expected:
+            if not isinstance(expected, str) or not re.fullmatch(r"[0-9a-f]{64}", expected):
+                raise ValueError("Malformed package member checksum")
+            data = z.read(name)
+            if sha256(data) != expected:
                 raise ValueError(f"Package member checksum mismatch: {name}")
+            payload[name] = data
+        # A ZIP manifest must not certify files that are absent, even if the
+        # hashes of all *present* objects match. Check installable references.
+        closure = audit_bundle(payload)
+        if closure["errors"]:
+            raise ValueError("Broken Skill bundle closure: " + "; ".join(closure["errors"][:8]))
         if not z.read("LICENSE").lstrip().startswith(b"Apache License"):
             raise ValueError("Published package missing Apache-2.0 license")
         if not z.read("NOTICE").startswith(b"Meu Artigo"):
