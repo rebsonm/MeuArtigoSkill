@@ -16,6 +16,7 @@ import os
 from pathlib import Path
 import shutil
 from uuid import uuid4
+from transaction_coordinator import require_no_conflict
 
 MGMT = "00_Gestao_e_Continuidade"
 JOURNAL_NAME = ".pending_bibliographic_import"
@@ -77,6 +78,7 @@ def _restore_prepared(root: Path, journal: Path, manifest: dict) -> None:
 def recover_pending_transaction(root: Path) -> dict:
     """Explicit recovery; never claim a partial transaction was committed."""
     root = Path(root).resolve()
+    require_no_conflict(root, allow=("bibliographic",))
     journal = journal_dir(root)
     if not journal.exists():
         return {"status": "NO_PENDING_TRANSACTION"}
@@ -114,6 +116,7 @@ def apply_register_transaction(root: Path, updates: dict, cell_filter) -> None:
     imports are allowed. A stale journal blocks further writes until recovered.
     """
     root = Path(root).resolve()
+    require_no_conflict(root, allow=("bibliographic",))
     if set(updates) != set(FILES):
         raise ValueError("EXPECTED_EXACT_THREE_CANONICAL_REGISTERS")
     journal = journal_dir(root)
