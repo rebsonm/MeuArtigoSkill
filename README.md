@@ -78,9 +78,12 @@ or import the unmerged source changes into the account plugin.
 
 For the source candidate, the plugin packaging utility generates a
 sanitized, deterministic **skills-only** plugin package and external SHA-256
-receipt. The MCP Apps dashboard's five-view server remains separate code
-until a verified authorized host, runtime and data adapter are connected.
-See the [Phase 3 migration plan](docs/PLUGIN_MIGRATION_PHASE3.md).
+receipt. The MCP Apps dashboard now has nine canonical research modules plus first-use
+navigation, a separate next-action flow and mobile dark-mode layout in **source code only**.
+It remains an unhosted companion until a verified authorized host, runtime and
+data adapter are connected. [Phase 3](docs/PLUGIN_MIGRATION_PHASE3.md) and
+[Phase 4 UX acceptance](docs/PHASE4_UX_REGRESSION_AND_ACCEPTANCE.md)
+distinguish engineering checks from pending screenshot fidelity.
 
 ## How it works
 
