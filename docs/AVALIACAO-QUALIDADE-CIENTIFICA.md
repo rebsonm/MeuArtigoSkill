@@ -120,9 +120,9 @@ This feature **extends the existing development-only** `quality_benchmark.py`; i
     {
       "case": "scientific_gate_never_autopasses",
       "fields": {
-        "gate_id": "GATE-0006",
-        "decision": "PENDING_HUMAN_DECISION",
-        "approved_by_automation": false,
+        "GATE_ID": "GATE-0006",
+        "Decision": "PENDING",
+        "scientific_gate_approved_by_this_command": false,
         "required_researcher_action": "Researcher must decide from the cited materials"
       }
     }
