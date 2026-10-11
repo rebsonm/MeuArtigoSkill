@@ -233,6 +233,10 @@ def assess(root: Path, *, require_complete: bool = True) -> dict:
     ):
         state["errors"].append("source report missing, extra, or duplicated Evidence_ID")
     exceptions = recorded_exceptions(root, report_sha)
+    local_hashes = {
+        item["path"]: item["sha256"]
+        for item in current["files"] if item.get("state") == "PRESENT"
+    }
     for entry in entries:
         if not isinstance(entry, dict):
             continue
@@ -247,6 +251,55 @@ def assess(root: Path, *, require_complete: bool = True) -> dict:
         locator = str(entry.get("locator_status") or "")
         outcome = str(entry.get("result") or "")
         meta = str(entry.get("metadata_status") or "")
+        notices = entry.get("editorial_notices") or []
+        flags = bool(entry.get("retraction_alert") or entry.get("correction_alert")
+                     or entry.get("update_alert"))
+        warnings = bool(entry.get("provider_warnings"))
+        checks = entry.get("metadata_checks")
+        check_states = [str(c.get("status") or "") for c in checks
+                        if isinstance(c, dict)] if isinstance(checks, list) else []
+        contradictions = []
+        # Never trust a user-editable summary status in isolation. The input
+        # manifest hash binds the source inputs but does not authenticate the
+        # report's independent assertions.
+        if meta == "VERIFIED":
+            if (report.get("offline") is True or "VERIFIED" not in check_states
+                    or any(st in {"DOI_MISMATCH", "TITLE_MISMATCH",
+                                  "YEAR_MISMATCH", "AUTHOR_MISMATCH"}
+                           for st in check_states)):
+                contradictions.append("metadata identity lacks consistent provider checks")
+        if locator == "MATCHED":
+            source_path = str(entry.get("source_path") or "")
+            source_sha = str(entry.get("source_sha256") or "")
+            if (not source_path or not re.fullmatch(r"[a-f0-9]{64}", source_sha)
+                    or local_hashes.get(source_path) != source_sha):
+                contradictions.append("matched locator lacks current local file provenance")
+        for notice in notices if isinstance(notices, list) else []:
+            if not isinstance(notice, dict):
+                contradictions.append("invalid editorial notice structure")
+                continue
+            if notice.get("direction") != "UPDATES_THIS_WORK":
+                continue
+            kind = str(notice.get("kind") or "").lower()
+            if "retract" in kind and not entry.get("retraction_alert"):
+                contradictions.append("incoming retraction notice omitted from alert")
+            if ("correct" in kind or "corrig" in kind) and not entry.get("correction_alert"):
+                contradictions.append("incoming correction notice omitted from alert")
+        objective_failure = (locator in BAD_LOCATORS or
+                             meta in {"INVALID_DOI", "MISMATCH", "NOT_FOUND"})
+        requires_review = (meta != "VERIFIED" or locator != "MATCHED"
+                           or flags or warnings)
+        expected = ("FAIL" if objective_failure else
+                    "REVIEW_REQUIRED" if requires_review else EXPECTED_SUCCESS)
+        if outcome != expected or meta not in {
+            "VERIFIED", "UNVERIFIED", "NO_DOI", "INVALID_DOI",
+            "MISMATCH", "NOT_FOUND"
+        }:
+            contradictions.append("source check outcome is inconsistent")
+        if contradictions:
+            state["errors"].append(
+                "source report has contradictory identity, editorial or locator attestations"
+            )
         if (outcome == "FAIL" or locator in BAD_LOCATORS
                 or meta in {"INVALID_DOI", "MISMATCH", "NOT_FOUND"}
                 or (not entry.get("Evidence_ID"))):
