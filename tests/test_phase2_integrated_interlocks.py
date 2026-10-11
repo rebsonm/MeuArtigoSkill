@@ -69,13 +69,13 @@ class Phase2InterlockTests(unittest.TestCase):
         folder.mkdir()
         return folder
 
-    def approve_gate(self):
+    def approve_gate(self, no_snapshot=True):
         return governance_events.record_gate(Namespace(
             project=self.root, gate_id="GATE-0001", decision="APPROVED",
             validated_by="Synthetic reviewer", method="Synthetic review",
             evidence="synthetic-review-reference", notes="Testing only",
             researcher_rationale="", researcher_limitation="",
-            no_snapshot=True))
+            no_snapshot=no_snapshot))
 
     def choose(self):
         return choose_method_route.choose(
@@ -183,8 +183,14 @@ class Phase2InterlockTests(unittest.TestCase):
     def test_gate_journal_still_allows_its_own_internal_snapshot(self):
         # The gate handler owns the journal; this test ensures the previous
         # six-stage gate-to-snapshot flow is not blocked by the new interlock.
-        self.assertEqual(self.approve_gate(), 0)
+        self.assertEqual(self.approve_gate(no_snapshot=False), 0)
         self.assertFalse(gate_tx.has_pending_gate_snapshot(self.root))
+        with (self.mgmt / "18_Human_Validation_Gates.csv").open(encoding="utf-8-sig", newline="") as f:
+            gate = next(csv.DictReader(f))
+        with (self.mgmt / "19_Snapshots.csv").open(encoding="utf-8-sig", newline="") as f:
+            snap = next(csv.DictReader(f))
+        self.assertEqual(gate["Snapshot_after"], snap["SNAP_ID"])
+        self.assertEqual(snap["Gate_ID"], "GATE-0001")
 
 
 if __name__ == "__main__":
