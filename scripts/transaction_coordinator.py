@@ -15,6 +15,7 @@ JOURNALS = {
     "bibliographic": ".pending_bibliographic_import",
     "method_route": ".pending_method_route_change",
     "gate_snapshot": ".pending_gate_snapshot",
+    "cada_continuity": ".pending_cada_continuity",
 }
 
 
