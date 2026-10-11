@@ -36,3 +36,9 @@ subject to inspection of the exact shared files and the journal's
 applicable legal and ethical conditions.
 
 The developer-only synthetic methodological response calibration in `benchmarks/methodological_response_reference_v1.json` checks only predeclared field-level software behavior. It has not supplied independent semantic judgments, live model runs or validation of a complete research project. All empirical evaluations above remain PENDING.
+
+The PR #55 engineering closure and consolidated manual homologation plan are
+maintainer-only source documents, not completed independent validation:
+[final engineering audit](RELATORIO-AUDITORIA-FINAL-BETA4.md) and
+[future manual homologation plan](ROTEIRO-HOMOLOGACAO-CONSOLIDADA.md).
+Their existence does not change any PENDING status.

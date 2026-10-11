@@ -38,6 +38,7 @@ EXCLUDED_SCRIPT_NAMES = frozenset({
 EXCLUDED_DOC_NAMES = frozenset({
     "GUIA-DE-RELEASES.md", "IMPLANTACAO-BETA.md",
     "PROTOCOLO-BETA-USUARIOS.md", "ENGLISH-SOURCE-MIGRATION.md",
+    "RELATORIO-AUDITORIA-FINAL-BETA4.md", "ROTEIRO-HOMOLOGACAO-CONSOLIDADA.md",
 })
 MANIFEST = "BUNDLE_MANIFEST.json"
 FIXED_DATE = (2026, 10, 9, 0, 0, 0)
@@ -78,8 +79,13 @@ def list_sources(root: Path) -> list[Path]:
 
 
 
-def source_provenance(root: Path) -> dict[str, str | None]:
-    """Attest a clean, exact git checkout when demonstrable; otherwise UNKNOWN."""
+def source_provenance(root: Path, packaged_files: list[Path] | None = None) -> dict[str, str | None]:
+    """Attest a tracked, unchanged Git origin for *every bundled source*.
+
+    A clean tracked tree alone cannot attest untracked files added to the
+    allowlisted ZIP. Ignore out-of-package build artifacts (such as dist/)
+    while refusing to associate a commit with an untracked included file.
+    """
     unknown = {"build_source_commit": None, "source_verification": "UNVERIFIED"}
     if not (root / ".git").exists():
         return unknown
@@ -90,17 +96,25 @@ def source_provenance(root: Path) -> dict[str, str | None]:
         return p.stdout.strip() if p.returncode == 0 else None
 
     try:
+        selected = packaged_files if packaged_files is not None else list_sources(root)
+        relative = [file.relative_to(root).as_posix() for file in selected]
+        if not relative:
+            return unknown
         head = read("rev-parse", "--verify", "HEAD")
-        dirty = read("status", "--porcelain", "--untracked-files=no")
+        # --error-unmatch fails if ANY included file has never been tracked.
+        # Test every exact filename rather than trusting git status on the
+        # entire source tree, which may ignore untracked allowed inputs.
+        tracked = read("ls-files", "--error-unmatch", "--", *relative)
+        dirty = read("status", "--porcelain", "--untracked-files=all", "--", *relative)
         remote = read("config", "--get", "remote.origin.url")
-    except (OSError, subprocess.TimeoutExpired):
+    except (OSError, ValueError, subprocess.TimeoutExpired):
         return unknown
     if not head or not re.fullmatch(r"[0-9a-f]{40}", head):
         return unknown
     # Whitelist the exact expected remote; do not leak credential-bearing URLs.
     permitted = {REPOSITORY, REPOSITORY + ".git",
                  "git@github.com:rebsonm/MeuArtigoSkill.git"}
-    if dirty is None or dirty != "" or remote not in permitted:
+    if tracked is None or dirty is None or dirty != "" or remote not in permitted:
         return unknown
     return {"build_source_commit": head, "source_verification": "CLEAN_GIT_CHECKOUT"}
 
@@ -121,7 +135,7 @@ def package(root: Path, destination: Path) -> dict:
     closure = audit_bundle(payload, local_source_modules=all_modules)
     if closure["errors"]:
         raise ValueError("BUNDLE_DEPENDENCY_CLOSURE_FAILED: " + "; ".join(closure["errors"][:8]))
-    provenance = source_provenance(root)
+    provenance = source_provenance(root, files)
     manifest = {"schema_version": 2, "version": version,
                 "entrypoint": "SKILL.md", "license": "Apache-2.0",
                 "scientific_quality_validated": False,
