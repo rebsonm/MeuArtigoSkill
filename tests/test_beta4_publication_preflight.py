@@ -28,7 +28,7 @@ class Beta4PublicPreparationTests(unittest.TestCase):
         self.assertIn("publication workflow", self.readme.lower())
         self.assertIn("release assets appear", self.readme.lower())
         self.assertIn("pre-release", self.notes.lower())
-        self.assertIn("not a stable", self.notes.lower())
+        self.assertRegex(self.notes.lower(), r"not a\s+stable")
 
     def test_stable_release_is_not_misrepresented(self):
         self.assertIn("Every 0.9.0-beta release is experimental", self.readme)
