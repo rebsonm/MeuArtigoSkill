@@ -121,6 +121,8 @@ REQUIRED=[
     "docs/CONTROLE-CLAIMS-E-ORIGINALIDADE.md",
     "scripts/quality_benchmark.py",
     "benchmarks/public_review_reference_v1.json",
+    "benchmarks/methodological_response_reference_v1.json",
+    "tests/test_phase6_methodological_response_calibration.py",
     "docs/AVALIACAO-QUALIDADE-CIENTIFICA.md",
     ".github/workflows/scientific-quality-calibration.yml",
     "docs/COMPROVACAO-EVENTOS.md",
