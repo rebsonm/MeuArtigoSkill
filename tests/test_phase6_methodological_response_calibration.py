@@ -50,10 +50,10 @@ class MethodologicalResponseCalibrationTests(unittest.TestCase):
         self.assertEqual(ref["source_kind"], "SYNTHETIC_SOFTWARE_REGRESSION_FIXTURE")
         self.assertFalse(ref["independent_scientific_gold"])
         self.assertEqual(
-            self.reference["scientific_gate_never_autopasses"]["expected"]["decision"],
-            "PENDING_HUMAN_DECISION")
+            self.reference["scientific_gate_never_autopasses"]["expected"]["Decision"],
+            "PENDING")
         self.assertFalse(
-            self.reference["scientific_gate_never_autopasses"]["expected"]["approved_by_automation"])
+            self.reference["scientific_gate_never_autopasses"]["expected"]["scientific_gate_approved_by_this_command"])
 
     def test_missing_all_candidates_is_zero_coverage_not_passing(self):
         out = q.evaluate_methodology(self.reference_path, self.write_candidate([]))
@@ -107,12 +107,12 @@ class MethodologicalResponseCalibrationTests(unittest.TestCase):
         cases = self.proper_cases()
         target = next(c for c in cases if c["case"] ==
                       "ai_screening_cannot_impersonate_reviewer")
-        target["fields"]["pass1_decision"] = "INCLUDE"
-        target["fields"]["human_reviewer_confirmed"] = True
+        target["fields"]["Pass1_decision"] = "INCLUDE"
+        target["fields"]["human_decision_recorded"] = True
         out = q.evaluate_methodology(self.reference_path, self.write_candidate(cases))
         item = next(x for x in out["cases"] if x["case"] == target["case"])
         self.assertEqual(set(item["mismatched_fields"]),
-                         {"pass1_decision", "human_reviewer_confirmed"})
+                         {"Pass1_decision", "human_decision_recorded"})
 
     def test_paywall_is_not_a_scientific_exclusion(self):
         cases = self.proper_cases()
@@ -126,12 +126,12 @@ class MethodologicalResponseCalibrationTests(unittest.TestCase):
     def test_gate_autoapproval_and_unbounded_novelty_are_detected(self):
         cases = self.proper_cases()
         gate = next(c for c in cases if c["case"] == "scientific_gate_never_autopasses")
-        gate["fields"]["approved_by_automation"] = True
+        gate["fields"]["scientific_gate_approved_by_this_command"] = True
         prop = next(c for c in cases if c["case"] == "proposition_novelty_is_bounded")
         prop["fields"]["absolute_novelty_proven"] = True
         out = q.evaluate_methodology(self.reference_path, self.write_candidate(cases))
         for cid, field in [
-            ("scientific_gate_never_autopasses", "approved_by_automation"),
+            ("scientific_gate_never_autopasses", "scientific_gate_approved_by_this_command"),
             ("proposition_novelty_is_bounded", "absolute_novelty_proven"),
         ]:
             item = next(c for c in out["cases"] if c["case"] == cid)
@@ -170,7 +170,7 @@ class MethodologicalResponseCalibrationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "bounded synthetic"):
             q.methodology_reference_cases(bad)
         bad["independent_scientific_gold"] = False
-        bad["cases"][6]["expected"]["approved_by_automation"] = True
+        bad["cases"][6]["expected"]["scientific_gate_approved_by_this_command"] = True
         with self.assertRaisesRegex(ValueError, "cannot claim AI approved"):
             q.methodology_reference_cases(bad)
 
