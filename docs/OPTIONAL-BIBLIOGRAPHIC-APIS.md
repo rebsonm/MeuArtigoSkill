@@ -161,6 +161,10 @@ optional XLSX (`openpyxl`) and, in the development branch, **legacy binary
 Excel .xls** (`xlrd>=2.0.2`). WoS `savedrecs.xls` workbooks are read-only;
 original bytes are not rewritten or converted in place. Install the optional
 reader in the authorized runtime or use a separately verified CSV/XLSX copy.
+If an opt-in XLS/XLSX reader is absent, that file receives a
+MISSING_OPTIONAL_EXCEL_PARSER diagnostic and a fingerprint (when readable);
+other input files in the batch continue to import. Absence of a parser must
+not erase valid CSV/TSV evidence or be described as scientific rejection.
 Legacy XLS date/numeric values are normalized for import without fabricating
 scientific identifiers. The first worksheet is read as a table; it must have
 unique or compatible headings, and ambiguous sheets are quarantined by input.
