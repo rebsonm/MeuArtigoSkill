@@ -101,7 +101,7 @@ def list_own_zotero_metadata(*, user_id: str, api_key: str,
     if (not isinstance(user_id, str)
             or not re.fullmatch(r"[0-9]{1,30}", user_id)
             or not isinstance(api_key, str) or not api_key.strip()
-            or "\\r" in api_key or "\\n" in api_key):
+            or "\r" in api_key or "\n" in api_key):
         base["status"] = "NOT_CONFIGURED"
         return base
     if not 1 <= limit <= 100:
@@ -173,6 +173,7 @@ def export_zotero_staging(out_dir: Path, result: dict) -> dict:
     temp = path / (".zotero-private-" + uuid4().hex + ".tmp")
     try:
         with temp.open("x", encoding="utf-8-sig", newline="") as stream:
+            os.chmod(temp, 0o600)  # private bibliography is never world-readable
             writer = csv.DictWriter(stream, fieldnames=FIELDS)
             writer.writeheader()
             for item in result["records"]:
