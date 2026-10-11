@@ -71,6 +71,22 @@ manifest, files, snapshot register and gate reference before retrying; do not
 claim an interrupted snapshot was validated. These local protections do not
 prove a Google Drive copy was completed.
 
+## Recoverable method-route changes
+
+The local `choose_method_route.py` command journals the scientific method
+route transition across PROJECT_CONFIG, METHOD_PROFILE, human gate table,
+DEC decision log and TRACE register. An ordinary failure rolls back these
+five local artifacts; a hard interruption leaves
+`00_Gestao_e_Continuidade/.pending_method_route_change` and project
+validation blocks further work. Inspect the canonical files and use
+`python scripts/choose_method_route.py /authorized/project --recover-pending`
+in a safe, authorized local environment to reconcile a PREPARED transaction.
+A COMMITTED journal is cleared only if its resulting file hashes still match.
+Do not remove the journal by hand or treat a route decision as a completed
+scientific gate. Recovery does not prove external Drive synchronization.
+The journal protects these five files only; changes made by unrelated writers
+or other processes outside this protocol are not transactionally protected.
+
 ## Recovery rules
 
 When resuming:
