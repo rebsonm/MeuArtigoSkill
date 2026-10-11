@@ -87,11 +87,12 @@ scientifically validated.
 The last published version is determined by an **actual GitHub Release and
 its uploaded ZIP and SHA-256**, never by `VERSION`, `date-released` or a
 merge commit. All public versions remain **experimental betas**, not stable
-or independently scientifically validated. The beta.4 source and metadata
-are publication-ready, but its actual release status must be checked on
-GitHub. Earlier beta.1/beta.2 tags and assets are retained, and the
-`OFFICIAL_SKILL_RELEASE` legacy file must not be advanced to beta.4
-unless the corresponding release assets are actually published and verified.
+or independently scientifically validated. The **beta.4 Pre-release was published** on 2026-10-11 (UTC) from commit
+`3ef2bfb1f73c42cb029a2862b2c7959c12fe718f`, with an uploaded
+versioned ZIP and `SHA256SUMS.txt`. Its public recommendation pointer
+`OFFICIAL_SKILL_RELEASE` now identifies **the experimental beta.4**, not a
+stable or independently validated release. Historical beta.1/beta.2 tags and
+assets are retained.
 
 ## Platform and language compatibility
 
@@ -149,9 +150,11 @@ python scripts/build_skill_bundle.py --verify "dist/MeuArtigoSkill-v$(cat VERSIO
 
 A CI-built ZIP on `main` is a **development artifact**. The preparation
 for beta.4 is not a claim that the tagged release has already appeared.
-After the separately authorized manual workflow completes and its assets
-are inspected, update the remaining legacy recommendation pointer and
-user-facing download pages. The experimental beta label must be retained;
-a stable v1.0.0 would require a separate decision. The redundant discovery of
+After an authorized manual workflow publishes a *new* tagged beta, verify
+its ZIP and checksum first, then update the legacy recommendation pointer
+and user-facing download pages. This follow-up was completed for beta.4
+in source documentation; it did **not** replace or modify the tag's ZIP.
+The experimental beta label must be retained; a stable v1.0.0 would
+require a separate decision. The redundant discovery of
 15 Phase-5 unit tests was corrected; software regression counts are
 not measures of scientific validity.
