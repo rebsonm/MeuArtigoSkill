@@ -38,7 +38,11 @@ jobs:
           python scripts/build_plugin_bundle.py
           python scripts/audit_candidate_bundles.py
           (cd dist && sha256sum -c CANDIDATE_SHA256SUMS.txt)
-          python scripts/check_release_metadata.py > dist/NOT_PUBLISHED_CHECK.txt && exit 1 || test $? -eq 1
+          if python scripts/check_release_metadata.py > dist/NOT_PUBLISHED_CHECK.txt; then
+            echo "Candidate was unexpectedly judged publishable"
+            exit 1
+          fi
+          grep -q "release_metadata=BLOCKED" dist/NOT_PUBLISHED_CHECK.txt
       - name: Upload engineering candidates for reviewer download (never publish)
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
