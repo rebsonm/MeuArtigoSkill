@@ -4,6 +4,8 @@
 **Status:** public experimental beta for voluntary use,
 not a scientifically validated research method.
 
+**Previously published experimental beta:** [beta.1 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip). Until the beta.4 prerelease assets appear, this older beta remains an option. Neither release is stable.
+
 ## Obtaining the package
 
 Once available, download the **[prepared beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip)** from its published tagged prerelease.
