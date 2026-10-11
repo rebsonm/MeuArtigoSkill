@@ -33,7 +33,7 @@ class NoExternalRedirect(HTTPRedirectHandler):
 
 def validate_url(url: str) -> None:
     if (not isinstance(url, str) or url.strip() != url
-            or any(control in url for control in ("\\r", "\\n", "\\t"))):
+            or any(ord(char) < 32 or ord(char) == 127 for char in url)):
         raise ProviderFailure("UNSUPPORTED_ENDPOINT")
     try:
         target = urlsplit(url)
