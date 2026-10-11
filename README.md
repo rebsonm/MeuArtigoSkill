@@ -1,13 +1,13 @@
 # Meu Artigo
 
-**A traceable scientific research workflow migrating from a standalone Skill to a private ChatGPT plugin, while retaining the Skill as its cross-platform methodological core.**
+**A traceable scientific research workflow with a cross-platform Skill as its methodological core and an experimental ChatGPT plugin distribution under development.**
 
-Meu Artigo supports the journey from an initial research idea to a submission-ready manuscript. Rather than treating a paper as disconnected AI prompts, it maintains a continuous workflow with verified sources, documented progress, pending decisions, journal requirements and resumable research state.
+Meu Artigo supports the journey from an initial research idea to a submission-ready manuscript. Rather than treating a paper as disconnected AI prompts, it organizes a continuous workflow with source-verification controls, documented progress, pending decisions, journal requirements and resumable research state. Source access and verification must be demonstrated, not assumed.
 
 The project is available in a **public GitHub repository** as an **experimental beta**.
 The [v0.9.0-beta.2 experimental release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.2) incorporates the optional bibliographic API pilot and stabilization fixes from PR #24, together with the documentation and publication safeguards from PR #25. A passing software audit does not constitute scientific validation.
 
-**Current version:** `0.9.0-beta.4` (unpublished source candidate; latest GitHub release remains `v0.9.0-beta.2`) · [Releases and downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). The source code is free; third-party academic databases, platforms and subscriptions may have separate access requirements.
+**Current version:** `0.9.0-beta.4` (**unpublished source candidate**, not an installable public release). **Latest published Skill:** `v0.9.0-beta.2`. **Private ChatGPT plugin:** `0.9.0-beta.3` (icon-only metadata update). [Releases and downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). The source code is free; third-party academic databases, platforms and subscriptions may have separate access requirements.
 
 **[Download beta v0.9.0-beta.2](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.2)** · [Installation guide](./docs/COMECE-AQUI.md) · [Release notes and limitations](./docs/NOTAS-DA-VERSAO-0.9.0-beta.2.md)
 
@@ -17,7 +17,7 @@ The [v0.9.0-beta.2 experimental release](https://github.com/rebsonm/MeuArtigoSki
 
 The **manuscript language is chosen separately** according to the researcher's instructions or the selected journal's author guidelines. You may communicate in Portuguese while preparing an English-language article. Machine-readable identifiers, source citations and original quotations are not silently translated. See the [interaction language policy](./references/language-policy.md).
 
-## Visual project progress without a plugin
+## Native in-chat project status (without a custom MCP server)
 
 The Skill can present **native visual status panels in the chat** when the
 active ChatGPT environment supports them, with a plain-text fallback
@@ -26,11 +26,13 @@ researcher decisions, evidence, and history/synchronization. This uses the
 existing authorized canonical records, not an independent database. It
 does not require a custom MCP server, hosting or a change of product type.
 
-The experimental MCP Apps implementation from [PR #22](https://github.com/rebsonm/MeuArtigoSkill/pull/22)
-has been selectively ported into the post-beta.2 maintenance branch; the original
-draft PR has **not** been merged. It requires a separately authorized, connected
-server. See the [visual plugin plan](docs/MEU-ARTIGO-VISUAL.md) and
-[Skill-native visual pilot guide](docs/NATIVE-CHAT-DASHBOARD.md).
+The experimental MCP Apps source originally developed in [PR #22](https://github.com/rebsonm/MeuArtigoSkill/pull/22)
+has been reconciled with beta.2 fixes in the [beta.4 candidate changes (PR #27)](https://github.com/rebsonm/MeuArtigoSkill/pull/27).
+PR #22 itself remains a separate, unmerged draft. This read-only interface
+still requires a separately authorized MCP server and verified access to the
+canonical project; source integration does **not** deploy it in ChatGPT or
+provide live Google Drive synchronization. See the [visual component guide](docs/MEU-ARTIGO-VISUAL.md)
+and [Skill-native visual pilot guide](docs/NATIVE-CHAT-DASHBOARD.md).
 
 ## What you can do
 
@@ -70,22 +72,22 @@ verified. A compact CLI/text view works without MCP Apps.
 
 ## Plugin migration and icon status
 
-The private account plugin has received an **icon-only metadata hotfix**:
-plugin release `0.9.0-beta.3` now references the existing Skill's
-`assets/icon.svg` through `logo` and `composerIcon`. This does not change
-the historical published source version `0.9.0-beta.2`, install an MCP server,
-or import the unmerged source changes into the account plugin.
+The separately installed private ChatGPT plugin has received an **icon-only
+metadata hotfix**: plugin version `0.9.0-beta.3` references the Skill's original
+`assets/icon.svg` through `logo` and `composerIcon`. The installed plugin
+does **not** automatically receive the beta.4 scientific-code changes,
+the MCP Apps server, or a live Google Drive connector.
 
-For the source candidate, the plugin packaging utility generates a
-sanitized, deterministic **skills-only** plugin package and external SHA-256
-receipt. The MCP Apps dashboard now has nine canonical research modules plus first-use
-navigation, a separate next-action flow and mobile dark-mode layout in **source code only**.
-It remains an unhosted companion until a verified authorized host, runtime and
-data adapter are connected. [Phase 3](docs/PLUGIN_MIGRATION_PHASE3.md) and
-[Phase 4 UX acceptance](docs/PHASE4_UX_REGRESSION_AND_ACCEPTANCE.md)
-distinguish engineering checks from pending screenshot fidelity. The
-[unpublished beta.4 review guide](docs/PHASE5_RELEASE_CANDIDATE_REVIEW.md)
-explains the separate candidate ZIPs, software checks and remaining deployment blockers.
+The beta.4 source can build a deterministic **skills-only** ChatGPT plugin
+candidate and separate Skill archive, each with an external SHA-256 receipt.
+These artifacts are for review, **not public installation or automatic plugin
+updates**. The MCP Apps dashboard has nine research modules, first-use
+guidance, a next-action flow and mobile dark-mode layout in **source code
+only**. Its hosting, live Drive data adapter, user isolation and comparison
+with the 12 approved interface examples remain pending.
+See [the plugin migration](docs/PLUGIN_MIGRATION_PHASE3.md),
+[UX acceptance status](docs/PHASE4_UX_REGRESSION_AND_ACCEPTANCE.md)
+and [unpublished beta.4 review guide](docs/PHASE5_RELEASE_CANDIDATE_REVIEW.md).
 
 ## How it works
 
@@ -96,6 +98,8 @@ explains the separate candidate ZIPs, software checks and remaining deployment b
 5. **Prepare and review the paper** according to the chosen journal's verified rules and the actual scientific evidence.
 
 ## Getting started
+
+**To install today, use the published beta.2 Skill ZIP.** The beta.4 code in this repository is not a published release; the privately installed beta.3 plugin is a separately managed product.
 
 1. Go to [Releases](https://github.com/rebsonm/MeuArtigoSkill/releases) and choose the latest published beta's **installable ZIP**, not the automatically generated repository source archive.
 2. Follow the [installation and first-use guide](./docs/COMECE-AQUI.md) for your AI platform.
@@ -125,7 +129,7 @@ permissions. See [scope and limitations](./docs/OPTIONAL-BIBLIOGRAPHIC-APIS.md).
 
 Full-text use must respect copyright and access conditions. Any AI disclosure must reflect actual assistance and the journal's instructions.
 
-**This is an experimental beta.** Engineering tests have been run, but independent empirical evidence of scientific article quality, effectiveness and productivity improvements is still pending. No manuscript publication or editorial acceptance is guaranteed.
+**The latest published software is an experimental beta, and the current beta.4 source is an unpublished candidate.** Engineering tests have been run, but independent empirical evidence of scientific article quality, effectiveness and productivity improvements is still pending. No manuscript publication or editorial acceptance is guaranteed.
 
 ## More information
 
