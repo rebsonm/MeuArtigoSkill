@@ -164,42 +164,44 @@ def main() -> int:
     records, rejected, diagnostics = [], [], []
     all_fields = set()
 
-    for filename in args.inputs:
+    for source_number, filename in enumerate(args.inputs, 1):
         p = Path(filename).resolve()
+        source_input_id = f"INPUT-{source_number:04d}"
         try:
             source = read_tabular(p)
         except (OSError, ValueError, StopIteration, csv.Error) as exc:
-            diagnostics.append({"source_file": p.name, "reason": "UNREADABLE_EXPORT",
+            diagnostics.append({"source_file": p.name, "source_input_id": source_input_id, "reason": "UNREADABLE_EXPORT",
                                 "affected_records": 0, "error_type": type(exc).__name__})
             continue
         if not source:
-            diagnostics.append({"source_file": p.name, "reason": "EMPTY_EXPORT",
+            diagnostics.append({"source_file": p.name, "source_input_id": source_input_id, "reason": "EMPTY_EXPORT",
                                 "affected_records": 0})
             continue
         header = list(source[0].keys())
         if not available_schema([str(h) for h in header if h is not None]):
-            diagnostics.append({"source_file": p.name, "reason": "MISSING_BIBLIOGRAPHIC_SCHEMA",
+            diagnostics.append({"source_file": p.name, "source_input_id": source_input_id, "reason": "MISSING_BIBLIOGRAPHIC_SCHEMA",
                                 "affected_records": len(source),
                                 "available_headers": [str(h) for h in header if h is not None]})
             for idx, raw in enumerate(source, 2):
-                rejected.append({"_source_file": p.name, "_source_row": str(idx),
+                rejected.append({"_source_file": p.name, "_source_input_id": source_input_id, "_source_row": str(idx),
                                  "_reject_reason": "MISSING_BIBLIOGRAPHIC_SCHEMA",
                                  "_raw_record": repr(raw)[:3000]})
             continue
 
         for idx, raw in enumerate(source, 2):
             if None in raw or any(isinstance(v, (list, dict, tuple)) for v in raw.values()):
-                rejected.append({"_source_file": p.name, "_source_row": str(idx),
+                rejected.append({"_source_file": p.name, "_source_input_id": source_input_id, "_source_row": str(idx),
                                  "_reject_reason": "MALFORMED_ROW",
                                  "_raw_record": repr(raw)[:3000]})
                 continue
             row = {str(k): "" if v is None else str(v) for k, v in raw.items()}
             reason = identity_reason(row)
             if reason:
-                rejected.append({"_source_file": p.name, "_source_row": str(idx),
+                rejected.append({"_source_file": p.name, "_source_input_id": source_input_id, "_source_row": str(idx),
                                  "_reject_reason": reason, "_raw_record": repr(row)[:3000]})
                 continue
             row["_source_file"] = p.name
+            row["_source_input_id"] = source_input_id
             row["_source_row"] = str(idx)
             row["_norm_doi"] = norm_doi(pick(row, "doi"))
             row["_norm_title"] = norm_title(pick(row, "title"))
@@ -209,7 +211,7 @@ def main() -> int:
             row["_version"] = pick(row, "version").strip().casefold()
             row["_merged_Record_IDs"] = identifier_list(row, "record_id")
             row["_merged_Search_IDs"] = identifier_list(row, "search_id")
-            row["_source_locations"] = f"{p.name}:{idx}"
+            row["_source_locations"] = f"{source_input_id}:{p.name}:{idx}"
             records.append(row)
             all_fields.update(row.keys())
 
@@ -256,8 +258,10 @@ def main() -> int:
                 prior[field] = append_distinct(prior[field], rec[field])
             exact_audit.append({
                 "duplicate_source_file": rec["_source_file"],
+                "duplicate_source_input_id": rec["_source_input_id"],
                 "duplicate_source_row": rec["_source_row"],
                 "canonical_source_file": prior["_source_file"],
+                "canonical_source_input_id": prior["_source_input_id"],
                 "canonical_source_row": prior["_source_row"],
                 "duplicate_Record_ID": identifier_list(rec, "record_id"),
                 "duplicate_Search_ID": identifier_list(rec, "search_id"),
@@ -283,9 +287,9 @@ def main() -> int:
             score = SequenceMatcher(None, ta, tb).ratio()
             if score >= args.fuzzy_threshold:
                 fuzzy.append({
-                    "source_file_a": a["_source_file"], "source_row_a": a["_source_row"],
+                    "source_file_a": a["_source_file"], "source_input_id_a": a["_source_input_id"], "source_row_a": a["_source_row"],
                     "title_a": pick(a, "title"), "doi_a": a["_norm_doi"],
-                    "source_file_b": b["_source_file"], "source_row_b": b["_source_row"],
+                    "source_file_b": b["_source_file"], "source_input_id_b": b["_source_input_id"], "source_row_b": b["_source_row"],
                     "title_b": pick(b, "title"), "doi_b": b["_norm_doi"],
                     "title_similarity": f"{score:.4f}",
                     "author_overlap_signal": "yes" if author_ok else "no",
@@ -310,7 +314,7 @@ def main() -> int:
         __import__("json").dumps(summary, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8")
     with (out / "rejected_records.csv").open("w", newline="", encoding="utf-8-sig") as f:
-        w = csv.DictWriter(f, fieldnames=["_source_file", "_source_row",
+        w = csv.DictWriter(f, fieldnames=["_source_file", "_source_input_id", "_source_row",
                                           "_reject_reason", "_raw_record"])
         w.writeheader()
         write_safe_rows(w, rejected)
@@ -324,14 +328,14 @@ def main() -> int:
         w.writeheader()
         write_safe_rows(w, canonical)
     with (out / "exact_duplicate_audit.csv").open("w", newline="", encoding="utf-8-sig") as f:
-        fields = ["duplicate_source_file", "duplicate_source_row", "canonical_source_file",
+        fields = ["duplicate_source_file", "duplicate_source_input_id", "duplicate_source_row", "canonical_source_file", "canonical_source_input_id",
                   "canonical_source_row", "duplicate_Record_ID", "duplicate_Search_ID",
                   "canonical_Record_ID", "canonical_Search_ID", "reason", "doi", "title"]
         w = csv.DictWriter(f, fieldnames=fields)
         w.writeheader()
         write_safe_rows(w, exact_audit)
     with (out / "near_duplicate_review.csv").open("w", newline="", encoding="utf-8-sig") as f:
-        fields = ["source_file_a", "source_row_a", "title_a", "doi_a", "source_file_b",
+        fields = ["source_file_a", "source_input_id_a", "source_row_a", "title_a", "doi_a", "source_file_b", "source_input_id_b",
                   "source_row_b", "title_b", "doi_b", "title_similarity",
                   "author_overlap_signal", "same_year_signal", "decision", "notes"]
         w = csv.DictWriter(f, fieldnames=fields)
