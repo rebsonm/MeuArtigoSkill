@@ -189,7 +189,8 @@ def main() -> int:
 
 
 def run_import(out: Path, args: argparse.Namespace) -> int:
-    if any((out / name).exists() for name in GENERATED_OUTPUT_FILES):
+    if any((out / name).exists() or (out / name).is_symlink()
+           for name in GENERATED_OUTPUT_FILES):
         print(
             "ERROR: OUTPUT_DIRECTORY_ALREADY_HAS_RESULTS; choose a new "
             "--out-dir to preserve the earlier attempt and avoid stale files.",
