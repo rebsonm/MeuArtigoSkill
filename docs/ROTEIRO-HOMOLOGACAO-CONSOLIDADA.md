@@ -32,6 +32,8 @@ Tests involving copyrighted third-party documents, irreversible actions, publica
 
 ## Exit criteria
 
-A release *proposal* can be considered only when real high-priority scenarios have inspectable evidence, blockers are documented, critical issues are fixed and rerun, scientific decisions are genuinely human, rights are reviewed, and the maintainer explicitly authorizes a separate publication step. The public recommendation remains `v0.9.0-beta.1` until an independently authorized update.
+A release *proposal* can be considered only when real high-priority scenarios have inspectable evidence, blockers are documented, critical issues are fixed and rerun, scientific decisions are genuinely human, rights are reviewed, and the maintainer explicitly authorizes a separate publication step. The **published experimental beta.4** is now the public recommendation for
+voluntary testing. No test has been marked PASS by this documentation update;
+its scientific, platform and field-use validation is still outstanding.
 
 **Engineering development complete ≠ scientific method validated ≠ Skill installed ≠ public release published.**
