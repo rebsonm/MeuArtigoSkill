@@ -5,7 +5,7 @@
 ## Preparation and safety
 
 1. Identify the exact candidate ZIP, manifest version, source commit, GitHub CI run, external `SHA256SUMS.txt` and any package origin limitations. A development CI artifact is not the recommended public Skill.
-2. Confirm a supported installation host and actual user authorization. Never silently switch the official plugin currently installed or assume that the user's session received the new development code.
+2. Confirm a supported installation host and actual user authorization. Never silently switch the official Skill integration currently installed or assume that the user's session received the new development code.
 3. Create a **new** authorized project with non-sensitive, lawfully usable materials; record the original research question verbatim. For private or licensed source files, obtain applicable access permission before ingestion. Do not reuse another project's data.
 4. If using Drive, verify **live authenticated access, write authorization, canonical folder, actual read-back and synchronization**; otherwise record a separately authorized local `WORK_FALLBACK`. Preserve the single management-folder `CONTINUIDADE.md`.
 
@@ -34,4 +34,4 @@ Tests involving copyrighted third-party documents, irreversible actions, publica
 
 A release *proposal* can be considered only when real high-priority scenarios have inspectable evidence, blockers are documented, critical issues are fixed and rerun, scientific decisions are genuinely human, rights are reviewed, and the maintainer explicitly authorizes a separate publication step. The public recommendation remains `v0.9.0-beta.1` until an independently authorized update.
 
-**Engineering development complete ≠ scientific method validated ≠ plugin installed ≠ public release published.**
+**Engineering development complete ≠ scientific method validated ≠ Skill installed ≠ public release published.**
