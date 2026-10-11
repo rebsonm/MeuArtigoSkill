@@ -31,6 +31,16 @@ were not updated by this source migration.
   GitHub source maintenance, the unhosted MCP Apps prototype and Drive access.
   [Phase 3 migration evidence](docs/PLUGIN_MIGRATION_PHASE3.md).
 
+- Expand the experimental visual interface to the owner's 12 approved
+  experience states (nine modules, first-use and next-action flows, plus mobile
+  dark mode). Add read-only canonical search, L/I/P and editorial summaries,
+  recorded snapshot states and no-project recovery. Canonical-file symlink
+  escape checks and safe missing-project labels also added.
+- Phase-4 offline engineering audit: 384 Python tests and MCP build/smoke
+  passed. **Rendered visual parity, real Drive access and real host
+  deployment remain pending.** See
+  [Phase-4 UX acceptance](docs/PHASE4_UX_REGRESSION_AND_ACCEPTANCE.md).
+
 ## 0.9.0-beta.2 — 2026-10-10
 
 **Experimental public software beta.** Engineering stabilization and
