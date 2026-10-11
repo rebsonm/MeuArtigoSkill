@@ -11,3 +11,5 @@ Meu Artigo is a **Skill**. Its scientific contract does not guarantee that any p
 The method's seven scientific gates require real researcher decisions regardless of platform. `GOOGLE_DRIVE_FIRST` never means that a third-party connection was automatically authorized.
 
 [ChatGPT](CHATGPT.md) · [Claude](CLAUDE.md) · [Gemini](GEMINI.md) · [Capability preflight](../references/platform-capability-preflight.md).
+
+**PENDING:** An integration not exercised within the user's account remains unverified, regardless of provider documentation.

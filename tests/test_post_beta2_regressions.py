@@ -167,7 +167,7 @@ class PostBeta2BuildProvenanceTests(unittest.TestCase):
             receipt = json.loads((dest.parent / "BUNDLE_BUILD_RECEIPT.json").read_text())
             self.assertEqual(receipt["package_sha256"], hashlib.sha256(dest.read_bytes()).hexdigest())
             self.assertEqual(manifest["build_source_commit"], receipt["build_source_commit"])
-            self.assertEqual(receipt["distribution_type"], "SKILL_ZIP_NOT_INSTALLED_PLUGIN")
+            self.assertEqual(receipt["distribution_type"], "SKILL_ZIP")
             self.assertFalse(receipt["scientific_quality_validated"])
 
 

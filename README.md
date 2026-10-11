@@ -28,7 +28,7 @@ The default storage policy is `GOOGLE_DRIVE_FIRST`: access **and write capabilit
 
 ## Scientific honesty and platform limits
 
-The Skill is **experimental research-support software**, not an independently validated scientific research method. It does not invent literature, searches, empirical results, source passages, third-party rights, human approvals or actual submission. Script execution, Google Drive access and publisher services must be demonstrated with receipts in the actual environment.
+The Skill is **experimental beta** research-support software, not an independently validated scientific research method. It does not invent literature, searches, empirical results, source passages, third-party rights, human approvals or actual submission. Script execution, Google Drive access and publisher services must be demonstrated with receipts in the actual environment.
 
 The source repository contains operational scripts, methodological references and **software tests for the Skill**. Prepared installation archives exclude development tests; they include `SKILL.md`, appropriate documentation and selected operational helpers.
 

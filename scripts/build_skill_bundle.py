@@ -16,7 +16,7 @@ from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 from version_info import read_version
 
 ROOT = Path(__file__).resolve().parents[1]
-ROOT_FILES = ("SKILL.md", "VERSION", "CITATION.cff", "LICENSE", "NOTICE")
+ROOT_FILES = ("SKILL.md", "VERSION", "CITATION.cff", "LICENSE", "NOTICE", "SECURITY.md")
 DIR_TYPES = {
     "agents": {".yaml", ".yml"},
     "assets": {".svg", ".png"},
@@ -146,7 +146,7 @@ def package(root: Path, destination: Path) -> dict:
                     "repository_origin_claim": REPOSITORY,
                     "build_source_commit": provenance["build_source_commit"],
                     "source_verification": provenance["source_verification"],
-                    "distribution_type": "SKILL_ZIP_NOT_INSTALLED_PLUGIN",
+                    "distribution_type": "SKILL_ZIP",
                     "scientific_quality_validated": False},
                    sort_keys=True, indent=2) + "\n", encoding="utf-8")
     return manifest
