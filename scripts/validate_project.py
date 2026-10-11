@@ -622,7 +622,7 @@ def main():
             "## 14. Next valid action",
             "## 15. Change log",
             "## 16. C.A.D.A. dashboard",
-            "## 3. Tool and plugin status",
+            "## 3. Tool and integration status",
         ]:
             if heading not in s:
                 warnings.append(f"CONTINUIDADE.md lacks {heading!r}")

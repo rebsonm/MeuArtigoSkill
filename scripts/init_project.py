@@ -485,7 +485,7 @@ Updated: {date.today().isoformat()}
 - Article/review design: {a.article_type}
 - Scope and exclusions: [TO DEFINE]
 
-## 3. Tool and plugin status
+## 3. Tool and integration status
 - Method route: {method_route} — planning only, not scientific validation
 - Storage policy: GOOGLE_DRIVE_FIRST
 - Storage mode: {storage_mode}
