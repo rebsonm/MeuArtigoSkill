@@ -129,7 +129,7 @@ def norm_doi(value: str) -> str:
     s = re.sub(r"^https?://(?:dx\.)?doi\.org/", "", s)
     s = re.sub(r"^doi:\s*", "", s)
     s = s.strip().rstrip(".,;)")
-    return s if DOI_RE.match(s) else ""
+    return s if DOI_RE.fullmatch(s) else ""
 
 
 def norm_title(value: str) -> str:
@@ -375,8 +375,14 @@ def run_import(out: Path, args: argparse.Namespace) -> int:
         }
         source_manifest.append(file_entry)
         try:
+            before_sha = sha256_stream(p)
             source = read_tabular(p)
-            file_entry["content_sha256"] = sha256_stream(p)
+            after_sha = sha256_stream(p)
+            if before_sha != after_sha:
+                print("ERROR: INPUT_CHANGED_DURING_IMPORT; discard this attempt and "
+                      "rerun in a new --out-dir.", file=__import__("sys").stderr)
+                return 2
+            file_entry["content_sha256"] = before_sha
             file_entry["size_bytes"] = p.stat().st_size
             file_entry["rows_observed"] = len(source)
             file_entry["read_status"] = "READABLE"
@@ -461,6 +467,21 @@ def run_import(out: Path, args: argparse.Namespace) -> int:
             row["_source_locations"] = f"{source_input_id}:{p.name}:{idx}"
             records.append(row)
             all_fields.update(row.keys())
+
+    # All metadata and identities must bind to the original bytes that were
+    # actually parsed, not merely whatever bytes exist after a long batch.
+    # A source edit (including one after its own page was read) cancels the
+    # entire result before the first derived output is written.
+    for entry, filename in zip(source_manifest, args.inputs):
+        fingerprint = entry.get("content_sha256")
+        if fingerprint:
+            try:
+                if sha256_stream(Path(filename).resolve()) != fingerprint:
+                    raise OSError("INPUT_CHANGED")
+            except OSError:
+                print("ERROR: INPUT_CHANGED_DURING_IMPORT; discard this attempt and "
+                      "rerun in a new --out-dir.", file=__import__("sys").stderr)
+                return 2
 
     canonical, exact_audit, doi_index, title_index = [], [], {}, {}
     for rec in records:
@@ -550,7 +571,14 @@ def run_import(out: Path, args: argparse.Namespace) -> int:
         diagnostics.append({"source_file": "MULTIPLE", "reason": reason,
                             "affected_records": count})
     out.mkdir(parents=True, exist_ok=True)
-    summary = {"input_records": len(records) + len(rejected),
+    # An import can preserve usable records while refusing some inputs.
+    # Keep the existing CLI success return for backward-compatible review,
+    # but NEVER label a mixed incomplete batch as entirely COMPLETE.
+    partial_input = any(item["read_status"] != "READABLE" for item in source_manifest)
+    partial_input = partial_input or bool(rejected)
+    summary = {"status": "PARTIAL_INPUTS" if partial_input else "COMPLETE",
+               "requires_researcher_review": partial_input,
+               "input_records": len(records) + len(rejected),
                "valid_records": len(records),
                "rejected_records": len(rejected),
                "canonical_after_exact_dedup": len(canonical),
@@ -601,6 +629,7 @@ def run_import(out: Path, args: argparse.Namespace) -> int:
         w.writeheader()
         write_safe_rows(w, fuzzy)
 
+    print(f"import_status={summary['status']}")
     print(f"input_records={summary['input_records']}")
     print(f"canonical_after_exact_dedup={len(canonical)}")
     print(f"exact_duplicates={len(exact_audit)}")
