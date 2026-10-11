@@ -3,17 +3,40 @@
 
 ## Unreleased
 
-The public codebase is now **Skill-only**. **v0.9.0-beta.1 is the officially recommended public installation**. Later `v0.9.0-beta.2` remains a historical prerelease; `v0.9.0-beta.4` is unreleased development code. Scientific gates, C.A.D.A. and research protections remain. This documentation change does not publish a new release or validate scientific outcomes.
+No additional functionality was added after preparation of the experimental
+beta.4 prerelease. Earlier beta.1 and beta.2 releases remain archived. A
+prerelease remains experimental regardless of its publication date.
 
 ## 0.9.0-beta.4 — 2026-10-11
 
-**Unpublished Skill source.** Latest published Skill archive: v0.9.0-beta.2.
+**Experimental public prerelease prepared for external testing** (publication
+requires the separately authorized GitHub Actions workflow; versioned source
+metadata alone does not create a published release).
 
-- Strengthen bibliographic identity validation, canonical traceability and import quarantine.
-- Improve optional XLSX dependency reporting, multiple trace IDs and honest human-review states.
-- Retain project snapshots, source verification and research privacy controls.
-- Provide Skill-native, read-only continuity summaries. No fake database access or researcher approval.
-- Add regression tests and deterministic Skill packaging. Engineering tests are not independent research assessment.
+- Consolidate the core research workflow and method-sensitive scientific
+  boundaries, with seven human-controlled review gates and [L]/[I]/[P]
+  evidence and inference distinctions.
+- Improve source identity, optional bibliographic adapters, offline/manual
+  export imports, failed/partial metadata diagnostics, rights and original
+  full-text access reporting.
+- Harmonize initialization, canonical project continuity, a single safe
+  next-step router and minimal/full C.A.D.A. views; a previous stage or
+  local task completion cannot approve scientific decisions automatically.
+- Add confirmed local task receipts, recoverable writes, consistency audit
+  and explicit handling for interrupted/conflicting project states.
+- Expand controlled synthetic regression coverage, field-level
+  methodological response checks and development package reproducibility.
+  Tests cannot independently grade scientific meaning or real researcher
+  consent.
+- Improve the deterministic ZIP, SHA-256 receipts, provenance of included
+  Git-tracked files and smoke tests of executable scripts after extraction.
+- Provide brief external beta-testing guidance and privacy-safe GitHub
+  feedback. Do not include licensed PDFs, account credentials, research
+  corpora or internal development fixtures in the published installer.
+- Maintain independent research, usability and real-platform validation
+  statuses as **PENDING**. No universal Scopus/Web of Science entitlement,
+  Google Drive sync, productivity gains, academic endorsements or
+  submission outcomes are implied.
 
 ## 0.9.0-beta.2 — 2026-10-10
 
