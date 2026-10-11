@@ -75,6 +75,9 @@ def main():
     from method_route_transaction import has_pending_method_route
     if has_pending_method_route(root):
         errors.append("Interrupted method-route transaction: explicitly recover the pending local journal before validating this project")
+    from gate_snapshot_transaction import has_pending_gate_snapshot
+    if has_pending_gate_snapshot(root):
+        errors.append("Interrupted gate/snapshot transaction: reconcile pending journal before project validation")
     cfg_data={}
 
     for rel in REQUIRED:
