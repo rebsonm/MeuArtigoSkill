@@ -10,8 +10,8 @@
       "scenario": "A synthetic literature quote matches a source passage but no researcher has checked the meaning.",
       "category": "evidence",
       "expected": {
-        "epistemic_label": "[L]",
-        "locator_state": "TEXT_MATCHED_ONLY",
+        "Claim_type": "[L]",
+        "locator_status": "MATCHED",
         "semantic_support": "NOT_ADJUDICATED"
       },
       "required_nonempty": [
@@ -37,7 +37,7 @@
       "scenario": "A conditional mechanism is proposed from fictional sources without a verified causal study.",
       "category": "inference",
       "expected": {
-        "epistemic_label": "[I]",
+        "Claim_type": "[I]",
         "semantic_support": "NOT_ADJUDICATED"
       },
       "required_nonempty": [
@@ -51,7 +51,7 @@
       "scenario": "A proposed synthesis has a nearby fictional prior contribution; a non-exhaustive search cannot prove absolute novelty.",
       "category": "proposition",
       "expected": {
-        "epistemic_label": "[P]",
+        "Claim_type": "[P]",
         "absolute_novelty_proven": false,
         "human_validation": "PENDING"
       },
@@ -66,9 +66,9 @@
       "scenario": "AI proposes inclusion for an abstract but the researcher has not screened it.",
       "category": "screening",
       "expected": {
-        "ai_proposal": "INCLUDE",
-        "pass1_decision": "PENDING_RESEARCHER",
-        "human_reviewer_confirmed": false
+        "Pass1_AI_proposal": "INCLUDE",
+        "Pass1_decision": "",
+        "human_decision_recorded": false
       },
       "required_nonempty": [
         "ai_reason"
@@ -91,9 +91,9 @@
       "scenario": "All technical checks are complete but the actual researcher has not made a Gate 6 decision.",
       "category": "governance",
       "expected": {
-        "gate_id": "GATE-0006",
-        "decision": "PENDING_HUMAN_DECISION",
-        "approved_by_automation": false
+        "GATE_ID": "GATE-0006",
+        "Decision": "PENDING",
+        "scientific_gate_approved_by_this_command": false
       },
       "required_nonempty": [
         "required_researcher_action"
@@ -105,7 +105,7 @@
       "category": "continuity",
       "expected": {
         "next_gate_id": "GATE-0001",
-        "action_status": "HUMAN_GATE_DECISION_REQUIRED",
+        "status": "HUMAN_GATE_DECISION_REQUIRED",
         "technical_preparation_possible": false
       },
       "required_nonempty": [
