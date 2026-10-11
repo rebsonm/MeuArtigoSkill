@@ -18,7 +18,7 @@ Confirmed local operations should be recorded with `scripts/trace_execution.py` 
 
 ## Source of truth
 
-The canonical continuity artifact is `CONTINUIDADE.md`. A resumed agent must read it before taking substantive action and must also verify that the recorded storage backend is still accessible. A missing Drive connection is not permission to switch to Work/local storage.
+The canonical continuity artifact is **`00_Gestao_e_Continuidade/CONTINUIDADE.md`**, inside the project workspace (both when the authorized workspace is on Drive and when WORK_FALLBACK is expressly approved). A resumed agent must read that exact file before substantive action and verify that the recorded storage backend is still accessible. Do not mistake a root-level `CONTINUIDADE.md` for the canonical document or silently migrate/overwrite it; if such a copy exists, pause and reconcile the conflict with the researcher. A missing Drive connection is not permission to switch to Work/local storage.
 
 The canonical tracking artifact is the master matrix, preferably a native structured spreadsheet/table in the connected workspace, with tabs/sections for project metadata, protocol, search log, screening, full text, evidence, synthesis, claims, submission, C.A.D.A. control, optional project-manager synchronization, traceability, AI use, and the C.A.D.A. dashboard.
 
@@ -131,7 +131,7 @@ authenticate the person who approved a previous gate, or write to any file.
 It returns only task/gate identifiers and generic codes, never private
 research notes, quoted text or the full `Next_action`.
 
-The local resolver also compares `CADA_ID` markers in the
+The local resolver reads only the management-folder continuity document that `init_project.py` actually creates. A second root-level file is not a fallback and blocks navigation until explicitly reconciled. The local resolver also compares `CADA_ID` markers in the
 `Next valid action` sections of `CONTINUIDADE.md` to the eligible C.A.D.A.
 task. Conflicting markers or a mismatch disable technical preparation and
 require reconciliation; private continuity prose is not returned. Such
