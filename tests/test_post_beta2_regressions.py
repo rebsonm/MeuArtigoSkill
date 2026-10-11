@@ -13,6 +13,10 @@ ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 from validate_project import split_reference_ids
+from build_skill_bundle import source_provenance, package
+from version_info import read_version
+import hashlib
+
 
 
 def write_csv(path, headers, records):
@@ -147,6 +151,24 @@ class PostBeta2XlsxAndTraceTests(unittest.TestCase):
                          ["TRACE-0009", "TRACE-0010"])
         self.assertEqual(split_reference_ids("TRACE-0011, TRACE-0012"),
                          ["TRACE-0011", "TRACE-0012"])
+
+
+class PostBeta2BuildProvenanceTests(unittest.TestCase):
+    def test_missing_git_does_not_invent_commit(self):
+        with tempfile.TemporaryDirectory() as d:
+            result = source_provenance(Path(d))
+            self.assertIsNone(result["build_source_commit"])
+            self.assertEqual(result["source_verification"], "UNVERIFIED")
+
+    def test_package_hash_receipt_is_external_to_zip(self):
+        with tempfile.TemporaryDirectory() as d:
+            dest = Path(d) / f"MeuArtigoSkill-v{read_version(ROOT)}.zip"
+            manifest = package(ROOT, dest)
+            receipt = json.loads((dest.parent / "BUNDLE_BUILD_RECEIPT.json").read_text())
+            self.assertEqual(receipt["package_sha256"], hashlib.sha256(dest.read_bytes()).hexdigest())
+            self.assertEqual(manifest["build_source_commit"], receipt["build_source_commit"])
+            self.assertEqual(receipt["distribution_type"], "SKILL_ZIP_NOT_INSTALLED_PLUGIN")
+            self.assertFalse(receipt["scientific_quality_validated"])
 
 
 if __name__ == "__main__":
