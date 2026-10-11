@@ -18,7 +18,7 @@ The [v0.9.0-beta.2 experimental release](https://github.com/rebsonm/MeuArtigoSki
 | **Update a plugin you own** | Open the existing plugin → **Enviar nova versão / Upload new version** with the correct plugin ZIP |
 | **Read the code** | GitHub's **Code → Download ZIP** downloads source, **not** an installer |
 
-**Avoid the common mistake:** a GitHub source ZIP is **not** accepted by ChatGPT's plugin importer. A Skill ZIP and a plugin ZIP are different packages. See [installation errors and fixes](./docs/INSTALLATION.md#d-common-error-messages-and-what-to-do).
+**Avoid the common mistake:** a GitHub source ZIP is **not** accepted by ChatGPT's plugin importer. A Skill ZIP and a plugin ZIP are different packages. See [installation errors and fixes](./docs/INSTALLATION.md).
 
 [Full installation guide](./docs/COMECE-AQUI.md) · [Release notes and limitations](./docs/NOTAS-DA-VERSAO-0.9.0-beta.2.md)
 
