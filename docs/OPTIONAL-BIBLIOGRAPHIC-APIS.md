@@ -221,111 +221,102 @@ original evidence and the rejected import report.
 - Verify that optional onboarding is offered only once per project with a
   real authorized persistent state write (without creating a science gate).
 
-## PR #45 — Proveniência verificável do estágio e falhas parciais
+## PR #45 — Verifiable staging provenance and partial failures
 
-O modo manual continua funcionando sem conectar qualquer API. A pesquisa
-automática somente é tentada com opt-in explícito; nenhum teste sintético
-comprova acesso real, cobertura de bases ou direitos de uso de APIs licenciadas.
+The manual mode remains available without connecting any API. Automated
+metadata retrieval is attempted only with explicit opt-in; synthetic tests
+cannot establish live access, provider coverage, or rights under licensed
+API agreements.
 
-O cliente de metadados OpenAlex, Crossref e Semantic Scholar agora trata
-páginas com formatos inválidos (inclusive itens estruturalmente inválidos)
-como `INVALID_RESPONSE`, sem descartar silenciosamente parte dos itens de
-uma página e declarar a busca `COMPLETE`. Páginas anteriores válidas
-permanecem separadas e são identificadas como `PARTIAL`, com o motivo de
-falha em `error_code`. Consultas Crossref cuja paginação deveria continuar
-mas não oferece cursor válido são `PARTIAL`/`PAGINATION_INCOMPLETE`.
-O retorno limitado não demonstra cobertura completa do provedor.
+OpenAlex, Crossref and Semantic Scholar metadata clients mark malformed
+pages, including invalid items, as `INVALID_RESPONSE` rather than silently
+dropping records and reporting `COMPLETE`. Earlier valid pages remain
+separate and are marked `PARTIAL`, with the failure cause in `error_code`.
+A Crossref query requiring further pages but lacking a valid cursor reports
+`PARTIAL`/`PAGINATION_INCOMPLETE`. Bounded results do not establish
+complete coverage of any external provider.
 
-O recibo do estágio `retrieval_receipt.json` identifica provedor, consulta
-literal, horário, quantidade recebida, total informado, páginas, status,
-motivo de interrupção e SHA-256 do CSV. Um mesmo estágio com CSV ou recibo
-já existente não pode ser sobrescrito automaticamente. A escrita do recibo
-utiliza um arquivo temporário e substituição atômica.
+The `retrieval_receipt.json` stage receipt records the provider, literal
+query, timestamp, records received, provider-reported total, pages, status,
+interruption reason and CSV SHA-256. Existing staged CSV or receipt files
+cannot be silently overwritten. Receipt writing uses a temporary file and
+atomic replacement.
 
-A opção `--commit-local` **somente** registra resultados em projeto
-`WORK_FALLBACK` autorizado e agora exige CSV e recibo íntegros no
-próprio diretório do projeto. Antes de modificar os registros científicos,
-verifica o hash do arquivo, as informações do recibo e a correspondência
-exata entre as linhas exportadas e os resultados em memória. Falha, arquivo
-alterado, registro forjado ou exportação fora da área autorizada impede
-o commit. Recibos de busca parcial deixam o código de erro e hash no
-`02_Search_Log.csv` e no `13_Traceability_Log.csv`; o status científico
-da operação permanece `UNVERIFIED`, sem inferir triagem humana.
+The `--commit-local` switch records results **only** in an explicitly
+authorized `WORK_FALLBACK` project, with intact CSV and receipt already
+inside that project's permitted staging area. Before any scientific
+register changes, it checks file hashes, receipt data and exact
+correspondence between exported rows and in-memory results. A failed
+check, forged receipt, changed file or unauthorized path blocks the commit.
+Partial-search receipts preserve error codes and the content hash in
+`02_Search_Log.csv` and `13_Traceability_Log.csv`; the scientific
+operation remains `UNVERIFIED`. Human screening is not inferred.
 
-Essas garantias são **locais**. O recibo não autentica independentemente
-a origem de rede; um SHA-256 não comprova que a pesquisa foi executada
-numa API real. O fluxo de Google Drive requer escrita e conferência
-separadas. Dados de testes são sintéticos; nenhuma consulta autenticada a
-Scopus ou Web of Science, e nenhuma liberação de nova versão, decorre
-desta PR.
+These guarantees are local. A receipt does not independently authenticate
+the remote server; SHA-256 cannot prove that a real API query took place.
+Google Drive requires separate verified writes and read-back. Fixtures
+are synthetic; no authenticated Scopus/Web of Science operation and no
+release approval is implied.
 
-## PR #46 — Segurança de transporte e exportação privada
+## PR #46 — Transport security and private export
 
-Os adaptadores opcionais de busca (OpenAlex, Crossref, Semantic Scholar)
-e enriquecimento (Unpaywall, OpenCitations, Zotero) usam somente destinos
-HTTPS de provedores explicitamente permitidos. A camada HTTP compartilhada
-recusa seguir redirecionamentos, inclusive 301, 302, 303, 307 e 308:
-tokens pessoais e credenciais Zotero não são reenviados automaticamente
-para URLs de resposta ou servidores externos. O estado
-`REDIRECT_BLOCKED` sinaliza a falha sem imprimir token, cabeçalhos
-ou destino do redirecionamento. Tamanho e formato da resposta também são
-limitados antes de aceitar os metadados; erros HTTP e de transporte são
-reportados por códigos seguros. Os testes são offline e usam servidores
-simulados, não contas pessoais ou buscas reais.
+Optional OpenAlex/Crossref/Semantic Scholar search and
+Unpaywall/OpenCitations/Zotero enrichment use only HTTPS destinations
+on a strict provider allowlist. The shared HTTP layer refuses automatic
+301, 302, 303, 307 and 308 redirects, preventing personal keys and
+Zotero credentials from being forwarded to unexpected hosts.
+`REDIRECT_BLOCKED` reports a safe error code without printing tokens,
+headers or redirect destinations. Response size and format are bounded
+before accepting metadata; HTTP/transport failures are reported safely.
+Tests use offline simulated responses, not real user accounts.
 
-A exportação opcional da própria biblioteca Zotero continua limitada aos
-campos bibliográficos permitidos, sem notas, tags, resumos privados,
-anexos ou chave de acesso. IDs devem ser decimais ASCII e credenciais com
-CR/LF são recusadas. Registros Zotero estruturalmente inválidos fazem a
-consulta falhar, sem serem contabilizados como sucesso completo. O arquivo
-de estágio privado recebe permissão local `0600`, é gravado primeiro em
-arquivo temporário, e somente então publicado com criação exclusiva,
-sem sobrescrever resultados já existentes. Em caso de erro, não se publica
-um CSV parcial.
+The optional user-owned Zotero library export remains limited to
+permitted bibliographic fields: no private notes, tags, attachments,
+abstracts or API keys. IDs must be ASCII decimal; credentials with CR/LF
+are rejected. Structurally invalid Zotero items fail the request rather
+than being counted as a complete success. Staged private files receive
+local `0600` permissions and are written first to temporary files,
+then published with exclusive creation, without overwriting previous
+results. An error must not expose a partial CSV.
 
-**Limitações:** testes sintéticos não demonstram funcionamento com
-licenças reais, autenticidade de respostas, conformidade universal
-com políticas dos provedores, segurança de todo o sistema operacional,
-sincronização efetiva com Drive nem validação científica. O uso das
-APIs permanece estritamente opcional; não conectar não bloqueia o
-trabalho manual. Não alterar ou publicar uma release por estes testes.
+Limitations: synthetic tests cannot verify actual licensed operation,
+response authenticity, universal vendor compliance, complete OS
+security, real Google Drive synchronization or scientific validity.
+API use remains strictly optional; declining access never blocks
+manual research. These tests do not authorize a release by themselves.
 
-## PR #47 — Verificação integrada das fontes manuais e APIs
+## PR #47 — Integrated manual-source and API checks
 
-A consolidação de Scopus e Web of Science a partir de exportações manuais
-(CSV, TSV, XLSX ou XLS com leitor opcional autorizado) pode ser combinada
-com metadados obtidos por OpenAlex/Crossref/Semantic Scholar, sem pedir
-credenciais de bases licenciadas nem simular acesso CAFe. O mesmo
-`scripts/dedupe_records.py` continua responsável pela deduplicação
-conservadora: identidade exata por DOI ou combinação de título, autor
-e ano quando apropriado; registros próximos são marcados
-`REVIEW_REQUIRED`, nunca eliminados automaticamente.
+Manual Scopus and Web of Science files (CSV, TSV, XLSX or XLS with an
+authorized optional reader) may be combined with OpenAlex/Crossref/
+Semantic Scholar metadata, without requesting licensed database
+credentials or simulating CAFe access. The existing
+`scripts/dedupe_records.py` remains the sole conservative deduplicator:
+exact identity by DOI or by title/author/year when appropriate; near
+matches remain `REVIEW_REQUIRED`, never silently removed.
 
-A identificação por DOI exige a correspondência integral ao formato
-normalizado (sufixos espúrios com espaços/texto adicional não podem
-gerar falsa identidade exata). Cada exportação original é vinculada a
-seu `INPUT-xxxx` e SHA-256; o deduplicador calcula a assinatura antes
-e depois da leitura e confere novamente todos os arquivos observados
-antes de publicar resultados derivados. Se qualquer arquivo for
-alterado durante o processamento, aborta o lote sem publicar como
-íntegra a consolidação. Essa salvaguarda não é um bloqueio de escrita
-para múltiplos processos independentes, nem certifica assinaturas digitais.
+DOI comparison requires a complete normalized DOI match; spurious
+suffixes containing spaces or additional text must not create an exact
+identity. Every preserved input is assigned a stable `INPUT-xxxx`
+identifier and SHA-256. The deduplicator fingerprints files before
+and after parsing and checks each input again before publishing output.
+Any source change during processing aborts the batch without declaring
+an intact merged output. This is not a multi-process writer lock or
+proof of a digital signature.
 
-Se algum arquivo manual não for legível ou contiver registros
-rejeitados, os resultados válidos continuam disponíveis para
-inspeção, mas `import_diagnostics.json` indica
-`status=PARTIAL_INPUTS` e `requires_researcher_review=true`;
-o terminal também apresenta `import_status=PARTIAL_INPUTS`.
-Por compatibilidade com fluxos antigos, o CLI pode retornar código
-0 quando há outros resultados válidos: **o código de saída isolado
-não comprova completude da importação**. O relatório de diagnóstico
-e a proveniência precisam ser inspecionados antes de novos gates.
-Lotes sem qualquer evidência bibliográfica válida continuam falhando.
+When a manual input cannot be read or has rejected records, valid rows
+from other inputs remain inspectable, while
+`import_diagnostics.json` records `status=PARTIAL_INPUTS` and
+`requires_researcher_review=true`; the terminal also displays
+`import_status=PARTIAL_INPUTS`. For compatibility the CLI may still
+return exit code 0 if valid data from other sources exist: **exit code
+alone does not establish import completeness**. Review diagnostics
+and provenance before subsequent scientific gates. An entirely invalid
+bibliographic batch remains a failure.
 
-A deduplicação gera um estágio de conferência, não aprova triagem,
-não congela o corpus, não altera decisões humanas e não sincroniza
-o Google Drive. Uma importação opcional separada e autorizada no
-`WORK_FALLBACK` pode registrar metadados API na planilha de
-screening, ainda com decisões e `Status` científicos pendentes.
-Nem testes automatizados nem hashes autentificam a procedência
-da consulta externa ou autorizam publicação de nova release.
+Deduplication creates a reviewable stage; it does not approve screening,
+freeze the corpus, change human decisions or synchronize Google Drive.
+An optional separate, authorized `WORK_FALLBACK` operation can register
+API metadata while retaining pending screening decisions and scientific
+statuses. Passing code tests or local hashes cannot authenticate a
+remote query, imply scientific rights or authorize software publication.
