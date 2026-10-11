@@ -1,6 +1,6 @@
 # Final development audit — Meu Artigo 0.9.0-beta.4 candidate
 
-**Scope:** engineering closure of the development branch at PR #55 (2026-10-11). This is a **candidate for later consolidated manual homologation**, not an officially published release, certified research method, verified institutionally licensed data source, or ChatGPT plugin installation.
+**Scope:** engineering closure of the development branch at PR #55 (2026-10-11). This is a **candidate for later consolidated manual homologation**, not an officially published release, certified research method, verified institutionally licensed data source, or installation in a ChatGPT host.
 
 ## Scope and baseline
 
@@ -22,13 +22,13 @@
 | Human decision authenticity | Structurally documented validation references do not independently authenticate a researcher or verify interpretation of the research. | Remains a deliberate limitation; requires real external human review. |
 | Manual Scopus / WoS | File-import controls cannot prove licensed database access or an actual live Scopus/WoS query. | Manual import remains supported; network APIs must not be claimed operational without checked entitlements. |
 | Source semantics | Hashes, DOIs and exact locator text cannot by themselves certify that a reference supports a claim. | Pending independent scientific adjudication under the existing methodology. |
-| Release permissions | CI audits use read-only permissions and only produce development artifacts; the separate manual publication workflow has a confirmation gate. | Preserve, do not dispatch publisher or change tags, official version, plugin deployment or endorsement. |
+| Release permissions | CI audits use read-only permissions and only produce development artifacts; the separate manual publication workflow has a confirmation gate. | Preserve, do not dispatch publisher or change tags, official version, Skill deployment or endorsement. |
 
 ## Candidate acceptance checks
 
 The existing `.github/workflows/release-audit.yml` still runs: static release audit; full synthetic/offline behavioral regressions; local Markdown link checks; public-document leakage audit; language signal audit; provenance smoke test; deterministic installer build and verification; SHA-256 check. PR #55 adds tests for clean/dirty/untracked Git-member provenance and extraction-time commands from the **real** development ZIP. The exact pass/fail counts and SHA-256 of the candidate are those shown by **the PR's completed GitHub Actions run**, not prefilled here.
 
-A `CI successful` conclusion is a criterion for source integration **only**. It is not an approval for research deployment, account changes, license compliance, human-facing usability, public release, or automatic update of an installed plugin.
+A `CI successful` conclusion is a criterion for source integration **only**. It is not an approval for research deployment, account changes, license compliance, human-facing usability, public release, or automatic update of an installed Skill integration.
 
 ## Open, deliberately unresolved gates
 
@@ -37,10 +37,10 @@ A `CI successful` conclusion is a criterion for source integration **only**. It 
 - Independent human review of exact quotations, claim provenance, screening reasons, review-method suitability, journal rules and anonymization: **PENDING**.
 - A real rights/access determination for user-supplied third-party book/PDF material: **PENDING**.
 - C.A.D.A. outcome benefits (time, rework, causal efficacy), multilingual reliability and minimal/full user experience: **PENDING**.
-- GitHub repository protections, release-gate settings and actual installed plugin version: **NOT VERIFIED by source-only CI**.
+- GitHub repository protections, release-gate settings and actual installed Skill version: **NOT VERIFIED by source-only CI**.
 
 See `docs/VALIDACOES-PENDENTES.md` and `docs/ROTEIRO-HOMOLOGACAO-CONSOLIDADA.md` for the distinct empirical and final human review prerequisites.
 
 ## Not performed
 
-No software release or tag, no plugin update or deployment, no source publication based solely on chat claims, no external research API login, no licensed Scopus/Web of Science search, no live Google Drive sync and no manual human testing. Do **not** turn a passing engineering check into an alleged scientific validation.
+No software release or tag, no installed Skill update or deployment, no source publication based solely on chat claims, no external research API login, no licensed Scopus/Web of Science search, no live Google Drive sync and no manual human testing. Do **not** turn a passing engineering check into an alleged scientific validation.
