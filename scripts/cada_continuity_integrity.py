@@ -55,6 +55,16 @@ def audit(root: Path) -> dict:
     tid = state.get("Last_trace_event", "")
     cid = state.get("Last_completed_CADA_ID", "")
     if not tid and not cid:
+        try:
+            from update_cada_continuity import parse_csv
+            _, old_rows = parse_csv(root / TASKS, "CADA_ID")
+            if any("receipt=" in clean(row.get("Completion_evidence"))
+                   and "TRACE-" in clean(row.get("Completion_evidence"))
+                   for row in old_rows):
+                issues.append("CADA_COMPLETION_PROOF_WITHOUT_DASHBOARD_MARKERS")
+                report["status"] = "BLOCKED"
+        except (ValueError, OSError, UnicodeError):
+            pass
         return report
 
     report["status"] = "CHECKED"
