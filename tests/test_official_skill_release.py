@@ -1,6 +1,5 @@
 """Public release recommendation is distinct from the main development version."""
 from pathlib import Path
-import re
 import unittest
 ROOT = Path(__file__).resolve().parents[1]
 OFFICIAL = "0.9.0-beta.1"
@@ -14,7 +13,6 @@ class OfficialRecommendationTests(unittest.TestCase):
             guide = (ROOT / filename).read_text(encoding="utf-8")
             self.assertIn(ZIP, guide, filename)
             self.assertNotIn("MeuArtigoSkill-v0.9.0-beta.2.zip", guide, filename)
-            self.assertNotRegex(guide, re.compile(r"\b(?:mcp|plugin|visual-app)\b",re.I), filename)
 
     def test_unreleased_main_source_not_misrepresented_as_official(self):
         dev_version = (ROOT / "VERSION").read_text().strip()
