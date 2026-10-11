@@ -63,7 +63,11 @@ def canonical_files(root:Path)->list[Path]:
     mgmt=root/MGMT
     if mgmt.exists():
         for p in mgmt.rglob("*"):
-            if p.is_file() and "Snapshots" not in p.parts and p.name != "ANONYMIZATION_PROFILE.json":
+            if (p.is_file() and "Snapshots" not in p.parts
+                    and ".pending_gate_snapshot" not in p.parts
+                    and ".pending_method_route_change" not in p.parts
+                    and ".pending_bibliographic_import" not in p.parts
+                    and p.name != "ANONYMIZATION_PROFILE.json"):
                 keep.append(p)
     for rel in ["05_Manuscrito/Versao_Canonica","06_Submissao/Regras_da_Revista","06_Submissao/Arquivos_Finais"]:
         d=root/rel
