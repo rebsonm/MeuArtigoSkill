@@ -4,13 +4,13 @@
 
 ## Install the published Skill
 
-1. **[Download MeuArtigoSkill-v0.9.0-beta.1.zip](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip)**.
+1. **[Download MeuArtigoSkill-v0.9.0-beta.4.zip](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip)** once its tagged **Pre-release** assets and `SHA256SUMS.txt` are visible. Until then, an earlier published beta remains available.
 2. Open your assistant's supported **Skills / Habilidades** import, if available for your account.
 3. Select this exact Skill ZIP and confirm installation.
 4. Ask: *"Quero começar um artigo com Meu Artigo; verifique primeiro minhas conexões e o armazenamento."*
 5. Confirm Google Drive read/write access (or explicit fallback authorization) before creating canonical research files.
 
-The `main` source version is `0.9.0-beta.4`, development-only and not officially recommended for public installation. The **officially recommended** public installation asset is beta.1. A newer historical beta.2 prerelease remains published but is **not** currently recommended.
+All released versions remain **experimental betas**. A prepared beta.4 source is not an installable published release until the tagged ZIP and checksum appear. The `main` source tree is never a substitute. Earlier published beta assets remain available for reproducibility.
 
 ## Avoid incorrect downloads
 
