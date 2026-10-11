@@ -129,6 +129,24 @@ signed vendor response. Exporting a CSV is not scientific screening, DOI
 verification, rights confirmation, fulltext reading, evidence evaluation,
 human validation, manuscript submission or journal compliance.
 
+## Header integrity of imported bibliographic exports (development only)
+
+The hybrid importer checks CSV, TSV and optional XLSX column headings **before**
+converting records into dictionaries. Repeated names (including spacing/case
+variants), empty headings, and competing names for the same recognized field
+(e.g. `Title` plus `Article Title`, or `Record_ID` plus `Record ID`)
+are **not automatically resolved**: all rows from the ambiguous file are
+quarantined with a specific diagnostic. Other unambiguous files in the same
+invocation may continue processing.
+
+The original input files remain unchanged. The import source manifest keeps
+the input fingerprint and the quarantine count; positional cell previews
+(up to 3,000 characters per row) are available for manual inspection.
+The tool does not guess which duplicate column is authoritative or make a
+scientific inclusion/exclusion decision. Repair headings in a copy of the
+source export and run again in a **new output directory**; preserve the
+original evidence and the rejected import report.
+
 ## Acceptance criteria before any production release
 
 1. No API connected -> no API onboarding gate, no HTTP call, normal legacy mode.
