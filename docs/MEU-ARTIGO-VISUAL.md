@@ -11,8 +11,15 @@ or independently evaluated UX. See the source in visual-app/.
 - A portable CLI renders a compact text or JSON progress view.
 - A standalone MCP Apps companion server exposes meu_artigo_dashboard as
   a read-only tool and associates it with a ui:// resource.
-- The UI has overview, C.A.D.A. tasks, researcher validation gates,
-  evidence/register counts, and registered event/sync summaries.
+- The original five-view MVP was expanded in the Phase-4 maintenance branch
+  to nine research navigation modules, first-use guidance and a next-action
+  detail state: overview, seven-gate map, C.A.D.A. kanban, searches, L/I/P
+  evidence, human gates, trace timeline, editorial readiness and
+  synchronization. The panel remains read-only and receives no real Drive
+  adapter simply because the UI has a sync screen.
+- UI compilation and local MCP stdio tests passed; visual screenshot
+  parity with the owner's 12 approved examples is **not yet verified**.
+  See [Phase-4 UX acceptance](PHASE4_UX_REGRESSION_AND_ACCEPTANCE.md).
 - MINIMAL and FULL control only what is presented; they do not alter the
   scientific checks. Small screens and light/dark host preferences are supported.
 - Tests verify missing data, task/approval separation, deadlines, storage
