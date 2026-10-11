@@ -88,34 +88,36 @@ user account, running a live ChatGPT host compatibility test, or verifying
 Drive sync or empirical usability. Separate setup and research review
 are still required for these claims.
 
-## Fase 5: navegação segura com o comando "próximo"
+## Phase 5: safe navigation with "next" / "próximo"
 
-A projeção local agora disponibiliza `continuation` com um código
-de estado, próximo CADA_ID, próximo GATE_ID, exigência de decisão
-humana, elegibilidade de preparação técnica e bloqueios. Ao contrário
-da indicação legada da *primeira tarefa ativa*, a recomendação leva
-em conta a continuidade canônica, dependências com evidência, sete
-gates e journals transacionais pendentes. O layout C.A.D.A. mantém
-**exatamente quatro colunas**. MINIMAL e FULL mostram a mesma
-classificação, apenas com quantidades diferentes de detalhes.
+The read-only local projection exposes a `continuation` object with
+a status code, next `CADA_ID`, next `GATE_ID`, pending human-decision
+requirement, eligibility for technical preparation and recorded blockers.
+Unlike the previous raw *first active task* projection, it considers the
+canonical continuity document, completion evidence for dependencies,
+all seven scientific gates and pending transaction journals.
 
-Exemplo em um projeto local explicitamente autorizado:
+The C.A.D.A. layout still contains **exactly four columns**.
+MINIMAL and FULL show the same safety classification and differ only
+in the amount of displayed detail.
+
+Example for an expressly authorized local project:
 
 ```bash
-python scripts/next_step_router.py /caminho/do/projeto --intent proximo
-python scripts/native_chat_dashboard.py /caminho/do/projeto --format json
+python scripts/next_step_router.py /authorized/project --intent proximo
+python scripts/native_chat_dashboard.py /authorized/project --format json
 ```
 
-Esse comando **não é um "autopilot" que modifica arquivos**:
-`technical_preparation_possible=true` apenas permite que o agente
-considere executar uma tarefa técnica registrada, com permissões
-reais e observação de seus resultados. Não concede autorização
-para aceitar um protocolo, escolher um método pelo pesquisador,
-aprovar um gate, registrar uma manifestação humana ou inventar
-uma sincronização com o Google Drive. Dependências, ações e status
-devem ser confirmados no armazenamento efetivamente canônico.
-Os testes utilizam projetos fictícios e não constituem
-homologação de interface ou avaliação científica.
+Neither command is an autonomous file-modifying agent.
+`technical_preparation_possible=true` only indicates that a recorded
+technical task may be considered after verifying real permissions and
+observed results. It does not grant authority to approve a research
+protocol, choose the scientific method, pass a human gate, record an
+invented researcher's judgment or claim Google Drive synchronization.
+
+Dependencies, permissions and task statuses must be checked against the
+actually canonical storage. Tests use disposable synthetic projects
+and do not constitute interface homologation or scientific validation.
 
 ## Phase 6: one next step, not competing dashboards
 
