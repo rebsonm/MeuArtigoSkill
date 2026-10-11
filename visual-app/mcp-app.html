@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark" />
+<title>Meu Artigo Visual</title>
+<style>
+:root{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--color-text-primary,#202c3b);background:var(--color-background-primary,#fff);font-synthesis:none}
+*{box-sizing:border-box}
+body{margin:0;padding:14px;font-size:14px;line-height:1.45}
+.shell{max-width:880px;margin:auto}
+.header{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.mark{background:#223f69;color:white;border-radius:14px;padding:12px;font-weight:800;letter-spacing:-.5px}
+.heading{flex:1;min-width:0}
+.heading h1{font-size:18px;letter-spacing:-.02em;line-height:1.15;margin:0 0 3px}
+.muted{color:var(--color-text-secondary,#64748b)}
+.small{font-size:12px}
+.eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-secondary,#64748b)}
+.toolbar{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+button{font:inherit;cursor:pointer;background:transparent;color:inherit;border:1px solid var(--color-border-primary,#d6dfeb);border-radius:11px;padding:8px 11px}
+button:hover{background:var(--color-background-secondary,#f3f6fb)}
+button:focus-visible{outline:3px solid #78a9fa;outline-offset:1px}
+button[aria-selected="true"]{background:var(--color-background-secondary,#eef3fc);border-color:#538bd8;font-weight:650}
+button:disabled{opacity:.5;cursor:not-allowed}
+#refresh{margin-left:auto}
+.panel{border:1px solid var(--color-border-primary,#dce2ea);border-radius:15px;padding:15px;margin:10px 0;background:var(--color-background-primary,#fff)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.kpi{padding:12px;border:1px solid var(--color-border-primary,#dce2ea);border-radius:13px;background:var(--color-background-secondary,#f7f9fc)}
+.kpi .number{font-size:24px;font-weight:750;letter-spacing:-.04em}
+.kpi .label{font-size:11px;color:var(--color-text-secondary,#64748b);margin-top:4px}
+h2{font-size:14px;margin:0 0 11px}
+.title{font-size:16px;font-weight:700;margin:6px 0}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:4px 7px;border-radius:7px;background:var(--color-background-secondary,#edf2f9)}
+.green{color:#08734a}.amber{color:#946200}.red{color:#bd3a42}
+.next{border-left:4px solid #4478bf;padding-left:12px}
+.progress{height:8px;background:var(--color-background-secondary,#e5ebf3);border-radius:99px;overflow:hidden;margin-top:10px}
+.progress div{height:100%;background:#4478bf;border-radius:99px;max-width:100%}
+.meta{display:flex;flex-wrap:wrap;gap:12px;color:var(--color-text-secondary,#64748b);font-size:12px;margin-top:8px}
+.item{padding:11px 0;border-bottom:1px solid var(--color-border-primary,#e5e8ed)}
+.item:last-child{border-bottom:none;padding-bottom:0}
+.item-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.item strong{font-size:13px}
+.empty{padding:18px 3px;color:var(--color-text-secondary,#64748b)}
+.note{border-left:3px solid #c79b40;padding-left:10px;font-size:12px;color:var(--color-text-secondary,#64748b);margin:12px 0}
+.error{color:#b52835}
+.hidden{display:none!important}
+.footer{font-size:11px;color:var(--color-text-secondary,#64748b);margin:12px 0}
+@media(max-width:530px){body{padding:9px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.header{align-items:flex-start}.toolbar button{padding:7px 8px}#refresh{margin-left:0}.item-head{flex-direction:column;gap:3px}}
+@media(prefers-color-scheme:dark){.mark{background:#365c94}.green{color:#62d3a4}.amber{color:#f4c66d}.red{color:#ff8c96}.progress div{background:#76a9ef}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="header">
+    <div class="mark" aria-hidden="true">MA</div>
+    <div class="heading"><div class="eyebrow">Meu Artigo Visual</div><h1 id="project-title">Painel científico</h1><div id="context" class="small muted">Dados do projeto autorizado</div></div>
+  </header>
+  <nav class="toolbar" aria-label="Seções do painel">
+    <button type="button" data-tab="overview" aria-selected="true">Visão geral</button>
+    <button type="button" data-tab="tasks" aria-selected="false">Tarefas</button>
+    <button type="button" data-tab="gates" aria-selected="false">Validações</button>
+    <button type="button" data-tab="sources" aria-selected="false">Evidências</button>
+    <button type="button" data-tab="history" aria-selected="false">Histórico</button>
+    <button type="button" id="refresh" aria-label="Recarregar informações">↻ Atualizar</button>
+  </nav>
+  <div id="notice" role="status" aria-live="polite" class="small muted">Aguardando dados da ferramenta…</div>
+  <main id="content" tabindex="-1"></main>
+  <footer class="footer">Fonte: registros canônicos · Interface somente leitura · Progresso de tarefas ≠ validação científica</footer>
+</div>
+<script type="module" src="/src/mcp-app.ts"></script>
+</body></html>
