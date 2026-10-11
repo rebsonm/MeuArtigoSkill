@@ -147,8 +147,21 @@ columns are preserved in the canonical export. The existing canonical-author
 selection favors the short form when populated; the full form remains available
 for human interpretation. A second alias *within the same representation*
 still triggers quarantine; other critical fields such as title and DOI have
-no exception. An `AF` field alone may supply author names for WoS tag exports.
-This is a field-format exception, not a scientific verification.
+no exception. An `AF` field alone may supply author names for WoS tabular exports.
+
+**Second compatibility exception:** WoS tabular exports may contain both
+`Publication Date` (a date-level value) and `Publication Year` (a year-level
+value). This pairing is accepted and retained in separate columns; the
+year-level field takes precedence for the normalized year. Two competing
+year-level aliases (`Year` plus `Publication Year`) or two date-level
+aliases remain ambiguous and are quarantined.
+
+**Supported-format boundary:** the importer handles tabular CSV, TSV and
+optional XLSX, including WoS tab-delimited files, but it is **not a parser
+for WoS tagged plain-text `FN/VR/AU/AF/TI/ER` records**. Use a licensed,
+authorized tabular export or make and verify a conversion; never treat a
+tagged .txt as a validated tabular import. These exceptions concern field
+formats and do not verify the scientific content.
 
 Tests use **synthetic examples matching documented Scopus/WoS headers**, not
 licensed live exports. True end-to-end homologation awaits authorized real
