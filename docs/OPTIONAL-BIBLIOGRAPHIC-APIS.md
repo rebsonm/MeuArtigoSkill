@@ -258,3 +258,34 @@ numa API real. O fluxo de Google Drive requer escrita e conferência
 separadas. Dados de testes são sintéticos; nenhuma consulta autenticada a
 Scopus ou Web of Science, e nenhuma liberação de nova versão, decorre
 desta PR.
+
+## PR #46 — Segurança de transporte e exportação privada
+
+Os adaptadores opcionais de busca (OpenAlex, Crossref, Semantic Scholar)
+e enriquecimento (Unpaywall, OpenCitations, Zotero) usam somente destinos
+HTTPS de provedores explicitamente permitidos. A camada HTTP compartilhada
+recusa seguir redirecionamentos, inclusive 301, 302, 303, 307 e 308:
+tokens pessoais e credenciais Zotero não são reenviados automaticamente
+para URLs de resposta ou servidores externos. O estado
+`REDIRECT_BLOCKED` sinaliza a falha sem imprimir token, cabeçalhos
+ou destino do redirecionamento. Tamanho e formato da resposta também são
+limitados antes de aceitar os metadados; erros HTTP e de transporte são
+reportados por códigos seguros. Os testes são offline e usam servidores
+simulados, não contas pessoais ou buscas reais.
+
+A exportação opcional da própria biblioteca Zotero continua limitada aos
+campos bibliográficos permitidos, sem notas, tags, resumos privados,
+anexos ou chave de acesso. IDs devem ser decimais ASCII e credenciais com
+CR/LF são recusadas. Registros Zotero estruturalmente inválidos fazem a
+consulta falhar, sem serem contabilizados como sucesso completo. O arquivo
+de estágio privado recebe permissão local `0600`, é gravado primeiro em
+arquivo temporário, e somente então publicado com criação exclusiva,
+sem sobrescrever resultados já existentes. Em caso de erro, não se publica
+um CSV parcial.
+
+**Limitações:** testes sintéticos não demonstram funcionamento com
+licenças reais, autenticidade de respostas, conformidade universal
+com políticas dos provedores, segurança de todo o sistema operacional,
+sincronização efetiva com Drive nem validação científica. O uso das
+APIs permanece estritamente opcional; não conectar não bloqueia o
+trabalho manual. Não alterar ou publicar uma release por estes testes.
