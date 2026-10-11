@@ -7,7 +7,7 @@ Meu Artigo supports the journey from an initial research idea to a submission-re
 The project is available in a **public GitHub repository** as an **experimental beta**.
 The [v0.9.0-beta.2 experimental release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.2) incorporates the optional bibliographic API pilot and stabilization fixes from PR #24, together with the documentation and publication safeguards from PR #25. A passing software audit does not constitute scientific validation.
 
-**Current version:** `0.9.0-beta.4` (**unpublished source candidate**, not an installable public release). **Latest published Skill:** `v0.9.0-beta.2`. **Private ChatGPT plugin:** `0.9.0-beta.3` (icon-only metadata update). [Releases and downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). The source code is free; third-party academic databases, platforms and subscriptions may have separate access requirements.
+**Current version:** `0.9.0-beta.4` (**merged to main, but not a published GitHub release**). **Latest published Skill ZIP:** `v0.9.0-beta.2`. **Private ChatGPT plugin:** `0.9.0-beta.4` (updated separately using a validated plugin package). [Releases and downloads](https://github.com/rebsonm/MeuArtigoSkill/releases). The source code is free; third-party academic databases, platforms and subscriptions may have separate access requirements.
 
 **[Download beta v0.9.0-beta.2](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.2)** · [Installation guide](./docs/COMECE-AQUI.md) · [Release notes and limitations](./docs/NOTAS-DA-VERSAO-0.9.0-beta.2.md)
 
@@ -72,16 +72,18 @@ verified. A compact CLI/text view works without MCP Apps.
 
 ## Plugin migration and icon status
 
-The separately installed private ChatGPT plugin has received an **icon-only
-metadata hotfix**: plugin version `0.9.0-beta.3` references the Skill's original
-`assets/icon.svg` through `logo` and `composerIcon`. The installed plugin
-does **not** automatically receive the beta.4 scientific-code changes,
-the MCP Apps server, or a live Google Drive connector.
+The separately installed private ChatGPT plugin was **updated to beta.4
+through its authenticated plugin-update workflow**. It includes the corrected
+scientific Skill and still references the original `assets/icon.svg` using
+`logo` and `composerIcon`. This update is **not a public GitHub release**,
+does **not** host the MCP Apps server and does **not** create a live Google Drive
+connector.
 
 The beta.4 source can build a deterministic **skills-only** ChatGPT plugin
-candidate and separate Skill archive, each with an external SHA-256 receipt.
-These artifacts are for review, **not public installation or automatic plugin
-updates**. The MCP Apps dashboard has nine research modules, first-use
+archive and a separate Skill archive, each with an external SHA-256 receipt.
+The private plugin was updated explicitly using this package format. This does
+not turn the archives into public releases or enable automatic synchronization
+from GitHub. The MCP Apps dashboard has nine research modules, first-use
 guidance, a next-action flow and mobile dark-mode layout in **source code
 only**. Its hosting, live Drive data adapter, user isolation and comparison
 with the 12 approved interface examples remain pending.
@@ -99,7 +101,19 @@ and [unpublished beta.4 review guide](docs/PHASE5_RELEASE_CANDIDATE_REVIEW.md).
 
 ## Getting started
 
-**To install today, use the published beta.2 Skill ZIP.** The beta.4 code in this repository is not a published release; the privately installed beta.3 plugin is a separately managed product.
+> **Important — the GitHub source ZIP is not a plugin installer.**
+> Do not use **Code → Download ZIP** or GitHub's automatic `Source code (zip)`
+> archive in **Plugins → Add plugin / Upload new version**. A plugin package
+> must have its plugin manifest (`plugin.json` or a supported compatibility
+> manifest) and `skills/meu-artigo/SKILL.md` at the expected package layout.
+> The Skill release ZIP and the ChatGPT plugin ZIP are different artifacts.
+> See the [ChatGPT installation guide](./docs/CHATGPT.md).
+
+**To install the cross-platform Skill today, use the published beta.2 Skill ZIP.**
+For the private ChatGPT plugin, use a plugin-formatted ZIP containing
+`plugin.json` and `skills/meu-artigo/SKILL.md`, or update the existing
+private plugin using its authorized owner workflow. The private plugin currently
+runs beta.4; that does **not** create a public beta.4 release.
 
 1. Go to [Releases](https://github.com/rebsonm/MeuArtigoSkill/releases) and choose the latest published beta's **installable ZIP**, not the automatically generated repository source archive.
 2. Follow the [installation and first-use guide](./docs/COMECE-AQUI.md) for your AI platform.
