@@ -72,6 +72,9 @@ def main():
     from register_transaction import has_pending_transaction
     if has_pending_transaction(root):
         errors.append("Interrupted bibliographic CSV import: explicitly recover the pending transaction before validating this project")
+    from method_route_transaction import has_pending_method_route
+    if has_pending_method_route(root):
+        errors.append("Interrupted method-route transaction: explicitly recover the pending local journal before validating this project")
     cfg_data={}
 
     for rel in REQUIRED:
