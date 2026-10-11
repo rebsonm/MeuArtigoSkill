@@ -4,7 +4,7 @@
 
 **[Download official beta.1 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip)** · [SHA-256 checksum](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/SHA256SUMS.txt) · [Installation guide](docs/INSTALLATION.md)
 
-This is an **experimental public beta**. Later prereleases remain in GitHub history, but **beta.1 is the only currently recommended public installation**. The `main` branch contains development source and is not the official installable package.
+The software is hosted in a **public GitHub repository**. This is an **experimental public beta**. Later prereleases remain in GitHub history, but **beta.1 is the only currently recommended public installation**. The `main` branch contains development source and is not the official installable package.
 **A research and writing Skill for scientific articles, with verifiable evidence, documented continuity, and human scientific decisions.**
 
 Meu Artigo helps a researcher move from a research problem to a reviewable article through method-appropriate steps. It distinguishes **[L]** consulted literature, **[I]** defensible inference, and **[P]** original propositions. C.A.D.A. tracks administrative tasks without confusing task completion with scientific validity. **Seven scientific gates** remain controlled by real researcher decisions.
