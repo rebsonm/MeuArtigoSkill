@@ -84,12 +84,21 @@ to a public demonstration server. Never log project payloads.
 
 ## Packaging and existing Skills-only installations
 
-Current OpenAI plugin packaging rules do not support adding a new MCP server
-directly to an **already published Skills-only plugin**. This visual companion
-must therefore be connected as a separate authorized custom MCP plugin during
-development or packaged into a new supported plugin configuration. Merely
-updating SKILL.md or merging this branch does not make a UI appear in a
-researcher's existing installed Skill.
+The private ChatGPT plugin is currently **skills-only**. Changing its
+manifest can link a logo, but it cannot deploy the MCP Apps service.
+`scripts/build_plugin_bundle.py` creates a deterministic skills-plugin
+candidate, preserving the original `assets/icon.svg` in both `logo` and
+`composerIcon` with the packaged scientific router. That candidate
+contains no registered server endpoint: it must not be advertised as a
+working hosted interactive dashboard. `visual-app/` contains the independent
+MCP server/UI source and its simulated smoke tests.
+
+An explicitly authorized, HTTPS-accessible, authenticated deployment and
+a validated plugin MCP binding (or separately connected MCP server) are needed
+before that dashboard becomes available within ChatGPT. Never invent an
+endpoint, copy a private local mirror into a public host or claim Drive
+synchronization merely because the UI connects. Publishing a plugin update
+is independent of pushing GitHub source; each needs its own test and decision.
 
 Official reference:
 https://developers.openai.com/plugins/deploy/submission
@@ -102,11 +111,16 @@ provider warnings and missing or stale source reports. The interface also
 warns when GATE-0006 has a documented human approval but the source controls
 no longer pass. This flag does not change or delete the approval record.
 
-These fields are derived on demand from the current authorized mirror using
-`source_report_integrity.assess()`. MCP receives only counts and short
-statuses, not source paths, original responses, DOI references, protected
-passages or researcher exception rationales. All five original views remain;
-MINIMAL/FULL and refresh are presentation-only.
+These fields are derived on demand from the configured authorized mirror using
+`source_report_integrity.assess()`. In addition to counts and statuses, the
+MCP tool currently returns a bounded project title, next-task description,
+owner, deadlines, gate names and (in FULL mode) limited task and event summaries.
+It does **not** intentionally return source file paths, raw provider responses,
+DOIs, full texts or exception rationales, but operator-entered task summaries
+can themselves contain sensitive information. A future hosted service must
+obtain appropriate user authorization, tenant isolation and redaction before
+exposing those summaries to the connected host. MINIMAL/FULL and refresh are
+presentation-only; neither supplies independent scientific verification.
 
 A limitation decision recorded in DEC_ID can support an attributable human
 assessment linked to the exact report SHA-256. It cannot turn an unverified
