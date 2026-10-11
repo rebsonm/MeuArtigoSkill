@@ -16,16 +16,27 @@ from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 from version_info import read_version
 
 ROOT = Path(__file__).resolve().parents[1]
-ROOT_FILES = ("SKILL.md", "README.md", "CHANGELOG.md", "VERSION",
-              "CITATION.cff", "LICENSE", "NOTICE", "CONTRIBUTING.md", "SECURITY.md")
+ROOT_FILES = ("SKILL.md", "VERSION", "CITATION.cff", "LICENSE", "NOTICE", "SECURITY.md")
 DIR_TYPES = {
     "agents": {".yaml", ".yml"},
     "assets": {".svg", ".png"},
     "references": {".md"},
     "scripts": {".py"},
     "docs": {".md"},
-    "benchmarks": {".json"},
 }
+# Researcher installation contains operational science files only.
+# Development, distribution and release checks remain in the source repository.
+EXCLUDED_SCRIPT_NAMES = frozenset({
+    "audit_public_docs.py", "audit_source_language.py",
+    "check_documentation_links.py", "check_install_package.py",
+    "check_release_metadata.py", "release_audit.py",
+    "smoke_test_provenance.py", "sync_version.py",
+    "build_skill_bundle.py", "quality_benchmark.py",
+})
+EXCLUDED_DOC_NAMES = frozenset({
+    "GUIA-DE-RELEASES.md", "IMPLANTACAO-BETA.md",
+    "PROTOCOLO-BETA-USUARIOS.md", "ENGLISH-SOURCE-MIGRATION.md",
+})
 MANIFEST = "BUNDLE_MANIFEST.json"
 FIXED_DATE = (2026, 10, 9, 0, 0, 0)
 REPOSITORY = "https://github.com/rebsonm/MeuArtigoSkill"
@@ -53,6 +64,11 @@ def list_sources(root: Path) -> list[Path]:
             if path.is_symlink():
                 raise ValueError(f"Symlink cannot enter public bundle: {path}")
             if path.is_file():
+                if dirname == "scripts" and path.name in EXCLUDED_SCRIPT_NAMES:
+                    continue
+                if dirname == "docs" and (path.name in EXCLUDED_DOC_NAMES or
+                                          path.name.startswith("NOTAS-DA-VERSAO-")):
+                    continue
                 if path.suffix.lower() not in suffixes:
                     raise ValueError(f"Unrecognized file could expose private material: {path}")
                 found.append(path)
@@ -130,7 +146,7 @@ def package(root: Path, destination: Path) -> dict:
                     "repository_origin_claim": REPOSITORY,
                     "build_source_commit": provenance["build_source_commit"],
                     "source_verification": provenance["source_verification"],
-                    "distribution_type": "SKILL_ZIP_NOT_INSTALLED_PLUGIN",
+                    "distribution_type": "SKILL_ZIP",
                     "scientific_quality_validated": False},
                    sort_keys=True, indent=2) + "\n", encoding="utf-8")
     return manifest

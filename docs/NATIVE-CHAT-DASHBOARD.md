@@ -2,7 +2,7 @@
 
 The researcher can use **Meu Artigo as a Skill** and ask the assistant to
 display a visual research dashboard inside the chat. This does **not**
-require adopting a custom MCP plugin or hosting any server.
+require adopting a custom external application or hosting any server.
 
 The host is responsible for deciding which native cards, grids, tables,
 indicators or interaction elements it can display. The Skill's canonical
@@ -57,7 +57,7 @@ the canonical register.
 5. Validate the clarity of the display with the researcher; do not label
    one conversation a UX study or an empirically validated product.
 
-For a strictly read-only local/Work projection, without deploying MCP:
+For a strictly read-only local/Work projection, without deploying an external service:
 
 ~~~sh
 python scripts/native_chat_dashboard.py /authorized/project --format json
@@ -72,10 +72,10 @@ A host may add real fresh audit results after separately checking them.
 
 ## Relationship to PR #22
 
-The optional **MCP Apps** implementation in
+The optional **external application Apps** implementation in
 [PR #22](https://github.com/rebsonm/MeuArtigoSkill/pull/22)
 remains untouched and unmerged. It is a more deeply customized interface
-that requires a connected compatible MCP service. This Skill-native
+that requires a connected compatible external application service. This Skill-native
 pilot is independent: users do not need that PR to see ordinary charts,
 tables, cards and research status messages in an environment that can
 render those natively. Neither option replaces the Skill.

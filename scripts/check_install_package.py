@@ -1,124 +1,62 @@
 #!/usr/bin/env python3
-"""Identify a Meu Artigo ZIP before a user attempts ChatGPT installation.
+"""Offline preflight for a prepared research Skill archive.
 
-Offline only: no account, external API, scientific-corpus or plugin writes.
-Exit 0 for a valid expected package; 2 for wrong type/structure; 1 for invalid ZIP.
+The check never installs software or accesses user projects.
 """
 from __future__ import annotations
-
 import argparse
 import json
-import sys
 from pathlib import Path, PurePosixPath
-from zipfile import BadZipFile, ZipFile
+from zipfile import ZipFile,BadZipFile
 
-MAX_FILES = 3000
-MAX_UNCOMPRESSED = 100 * 1024 * 1024
-SKILL_ENTRY = "skills/meu-artigo/SKILL.md"
+MAX_FILES=3000
+MAX_TOTAL=100*1024*1024
 
-
-def diagnose(path: Path, expect: str = "auto") -> dict[str, str | bool]:
-    base = {"valid": False, "kind": "INVALID", "reason": "",
-            "next_step": "", "expected": expect}
+def diagnose(path:Path)->dict:
+    base={"valid":False,"kind":"INVALID","reason":"","next_step":""}
     if not path.is_file():
-        return {**base, "reason": "FILE_NOT_FOUND",
-                "next_step": "Choose a ZIP that exists on your computer; no upload was performed."}
+        return {**base,"reason":"FILE_NOT_FOUND","next_step":"Select a ZIP that exists on your computer."}
     try:
         with ZipFile(path) as z:
-            members = z.infolist()
-            names = [m.filename for m in members if not m.is_dir()]
-            all_names = set(names)
-            if (len(members) > MAX_FILES or len(names) != len(all_names)
-                    or sum(m.file_size for m in members) > MAX_UNCOMPRESSED
-                    or any(m.filename.startswith("/") or "\\" in m.filename
-                           or ".." in PurePosixPath(m.filename).parts
-                           or (m.external_attr >> 16) & 0o170000 == 0o120000
-                           for m in members)):
-                raise ValueError("Unsafe, oversized or duplicate archive")
+            members=z.infolist()
+            names=[i.filename for i in members if not i.is_dir()]
+            if len(members)>MAX_FILES or sum(i.file_size for i in members)>MAX_TOTAL:
+                raise ValueError("Archive too large")
+            if len(names)!=len(set(names)) or any(
+                i.filename.startswith("/") or "\\" in i.filename
+                or ".." in PurePosixPath(i.filename).parts
+                or (i.external_attr >> 16)&0o170000 == 0o120000
+                for i in members
+            ):
+                raise ValueError("Unsafe archive")
             if z.testzip() is not None:
-                raise BadZipFile("CRC mismatch")
-
-            def result(kind: str, valid: bool, reason: str, next_step: str):
-                return {**base, "kind": kind, "valid": valid,
-                        "reason": reason, "next_step": next_step}
-
-            if "plugin.json" in all_names:
-                try:
-                    manifest = json.loads(z.read("plugin.json").decode("utf-8"))
-                except (ValueError, UnicodeError):
-                    return result("PLUGIN", False, "INVALID_PLUGIN_MANIFEST",
-                                  "Obtain an official plugin distribution ZIP; do not rename a GitHub source archive.")
-                identity = manifest.get("name") if isinstance(manifest, dict) else None
-                if identity != "meu-artigo" or not manifest.get("version"):
-                    return result("PLUGIN", False, "WRONG_PLUGIN_IDENTITY",
-                                  "The manifest must name the Meu Artigo plugin and state its version.")
-                if SKILL_ENTRY not in all_names:
-                    return result("PLUGIN", False, "MISSING_PACKAGED_SKILL",
-                                  "This ZIP needs skills/meu-artigo/SKILL.md. Download a prepared plugin ZIP.")
-                skill = z.read(SKILL_ENTRY)
-                if not skill.startswith(b"---\n"):
-                    return result("PLUGIN", False, "INVALID_SKILL_ENTRY",
-                                  "The plugin Skill entrypoint is invalid. Obtain the prepared distribution.")
-                ui = manifest.get("extensions", {}).get("com.openai", {}).get("interface", {})
-                for key in ("logo", "composerIcon"):
-                    path_value = ui.get(key)
-                    if path_value and path_value.removeprefix("./") not in all_names:
-                        return result("PLUGIN", False, "MISSING_ICON_ASSET",
-                                      "The plugin references an icon that was not included in this ZIP.")
-                if expect == "skill":
-                    return result("PLUGIN", False, "PLUGIN_NOT_SKILL",
-                                  "Use this ZIP under Plugins, not the Skills installer. For Skills download the published Skill ZIP.")
-                return result("PLUGIN", True, "PLUGIN_PACKAGE_OK",
-                              "Use Plugins → Add plugin or the existing plugin's Upload new version dialog. The plugin's capabilities still depend on real connected services.")
-
-            if "SKILL.md" in all_names:
+                raise BadZipFile("CRC")
+            if "SKILL.md" in names:
                 if not z.read("SKILL.md").startswith(b"---\n"):
-                    return result("SKILL", False, "INVALID_SKILL_ENTRY",
-                                  "Obtain the published Skill distribution ZIP.")
-                if expect == "plugin":
-                    return result("SKILL", False, "SKILL_NOT_PLUGIN",
-                                  "This is a Skill ZIP, not a plugin ZIP. Use the Skills upload menu; do not use Add plugin.")
-                return result("SKILL", True, "SKILL_PACKAGE_OK",
-                              "Use the platform's Skills upload, not Add plugin. Check access to any required external services after installation.")
+                    return {**base,"kind":"SKILL","reason":"INVALID_ENTRYPOINT",
+                            "next_step":"Download the published, prepared Skill archive."}
+                return {**base,"kind":"SKILL","valid":True,"reason":"SKILL_READY",
+                        "next_step":"Upload through a supported Skills import. Other services must be authorized separately."}
+            dirs={n.split("/",1)[0] for n in names if "/" in n}
+            if any(f"{n}/SKILL.md" in names for n in dirs):
+                return {**base,"kind":"SOURCE_CHECKOUT","reason":"SOURCE_NOT_INSTALLER",
+                        "next_step":"You used a source archive. Choose the prepared Skill ZIP on the GitHub Releases page."}
+            return {**base,"kind":"UNKNOWN","reason":"NO_SKILL_ENTRYPOINT",
+                    "next_step":"This archive does not contain SKILL.md at its root."}
+    except (BadZipFile,OSError,ValueError,RuntimeError):
+        return {**base,"reason":"INVALID_OR_UNSAFE_ZIP",
+                "next_step":"Check and download a complete ZIP under 100 MB."}
 
-            # GitHub's automatically generated source ZIP wraps the repository
-            # in a branch-named directory and normally contains a plain SKILL.md.
-            roots = {n.split("/", 1)[0] for n in names if "/" in n}
-            for root in roots:
-                if f"{root}/SKILL.md" in all_names and (
-                    f"{root}/VERSION" in all_names or
-                    f"{root}/plugin/plugin.json" in all_names
-                ):
-                    return result("GITHUB_SOURCE", False, "SOURCE_ARCHIVE_NOT_INSTALLER",
-                                  "You downloaded Code → Download ZIP / Source code (zip). Do not upload it. For a Skill use the published release asset; for a plugin obtain the separately prepared plugin ZIP.")
-
-            if "plugin/plugin.json" in all_names:
-                return result("GITHUB_SOURCE", False, "MANIFEST_NESTED_IN_REPOSITORY",
-                              "plugin/plugin.json belongs to the source tree, not the packaged plugin root. Obtain the prepared plugin ZIP.")
-            return result("UNKNOWN", False, "NO_SUPPORTED_ENTRYPOINT",
-                          "This ZIP has neither plugin.json plus skills/meu-artigo/SKILL.md nor a root SKILL.md. Download the correct distribution.")
-    except (OSError, BadZipFile, ValueError, RuntimeError) as exc:
-        return {**base, "reason": "INVALID_OR_UNSAFE_ZIP",
-                "next_step": f"Check that this is an intact .zip under 100 MB and download it again. ({type(exc).__name__})"}
-
-
-def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Check an installation ZIP offline before uploading to ChatGPT.")
-    parser.add_argument("archive", type=Path, help="ZIP downloaded to your computer")
-    parser.add_argument("--expect", choices=("auto", "skill", "plugin"), default="auto")
-    parser.add_argument("--json", action="store_true", help="Machine-readable diagnostic")
-    opts = parser.parse_args(argv)
-    info = diagnose(opts.archive, opts.expect)
-    if opts.json:
-        print(json.dumps(info, ensure_ascii=False, sort_keys=True))
+def main(argv=None)->int:
+    p=argparse.ArgumentParser(description="Check the structure of a Skill ZIP before import.")
+    p.add_argument("archive",type=Path)
+    p.add_argument("--json",action="store_true")
+    args=p.parse_args(argv)
+    info=diagnose(args.archive)
+    if args.json: print(json.dumps(info,ensure_ascii=False,sort_keys=True))
     else:
-        print(("PASS" if info["valid"] else "NOT READY") + " — " + info["kind"] +
-              " (" + info["reason"] + ")")
+        print(("READY" if info["valid"] else "NOT READY")+": "+info["kind"]+" ("+info["reason"]+")")
         print(info["next_step"])
-    if info["valid"]:
-        return 0
-    return 1 if info["kind"] == "INVALID" else 2
-
-
-if __name__ == "__main__":
+    return 0 if info["valid"] else 2
+if __name__=="__main__":
     raise SystemExit(main())

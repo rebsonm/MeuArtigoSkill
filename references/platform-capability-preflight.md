@@ -28,7 +28,7 @@ are preflight communication, not new spreadsheets or required IDs.
 <a id="observações-documentais-verificadas-em-outubro-de-2026"></a>
 ## Documentary observations verified in October 2026
 
-- **ChatGPT:** OpenAI documentation describes Plugins → Skills →
+- **ChatGPT:** OpenAI documentation describes Skills →
   Create → Upload from computer for eligible accounts. The same source
   informs availability of Skills for qualified accounts
   organizations and subjection to workspace configurations;
@@ -38,7 +38,7 @@ are preflight communication, not new spreadsheets or required IDs.
   in Claude Code. At claude.ai, ZIP and plan conditions matter;
   in Claude Code, Skills are local directories `~/.claude/skills`
   or `.claude/skills` of the project. Installing the Skill is not equivalent to
-  install each MCP server, tool, or connector.
+  install each external connection, tool, or connector.
   [Source](https://platform.claude.com/docs/pt-BR/agents-and-tools/agent-skills/overview)
 - **Gemini:** Google documents `SKILL.md` upload, folder and ZIP with
   root entry into eligible accounts/areas; warns that there is no

@@ -2,7 +2,7 @@
 """Read-only, presentation-neutral snapshot for ChatGPT-native research panels.
 
 The host (not this script) decides whether to render native UI cards, tables
-or a textual fallback. No MCP server, network, or project mutation is used.
+or a textual fallback. No external hosted service, network, or project mutation is used.
 """
 from __future__ import annotations
 

@@ -43,7 +43,7 @@ A confirmed local software event is not an independent scientific review.
 - Bibliographic adapters passed **offline simulated-response tests**;
   vendor production usage, rate limits, licensed subscriptions, secure
   private Zotero access and real end-to-end API operation remain unverified.
-- There is **no native hosted MCP server or live ChatGPT plugin** included
+- The Skill ZIP provides research instructions and optional scripts rather than an independent hosted interface.
   in this release. The API tools are opt-in local Python modules, not
   automatic ChatGPT tool connections.
 - Licensed Scopus / Web of Science authenticated integrations and publisher

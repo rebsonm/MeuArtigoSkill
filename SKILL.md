@@ -74,7 +74,7 @@ then the protocol, canonical tables and last genuinely frozen state.
 Never reconstruct searches or decisions from conversational memory.
 Determine the next action from recorded persistent state.
 
-**New project:** begin with [capability onboarding](references/plugin-onboarding.md),
+**New project:** begin with [capability onboarding](references/capability-onboarding.md),
 [persistent storage](references/drive-workspace.md) and
 [storage mapping](references/storage-mapping.md). Policy is
 `GOOGLE_DRIVE_FIRST`: verify that Drive is connected **and writable**
@@ -218,11 +218,6 @@ submission without external confirmation. See
 
 ## 5. Platforms and interaction presentation
 
-Optional **Meu Artigo Visual**: see [MCP Apps integration](docs/MEU-ARTIGO-VISUAL.md).
-Only use it with a connected server and authorized, current project state.
-Otherwise use textual progress. UI or cached cards are never canonical or
-proof of human approval. Mark unverified states honestly.
-
 Importing a Skill does not imply tool access, authenticated accounts,
 Python execution, browsing or cloud writing. Check the present platform's
 actual capabilities and permissions; when missing, give a truthful manual
@@ -236,7 +231,7 @@ authorized canonical project and follow the
 [native presentation contract](references/native-chat-dashboard.md).
 Show overview, C.A.D.A., human gates, evidence and history/sync with
 host-native visual elements where available, otherwise Markdown.
-MINIMAL/FULL alters only the display. Never require MCP hosting,
+MINIMAL/FULL alters only the display. Never require an additional hosted application,
 invent data or imply that navigation approves scientific work.
 An authorized local project can use the read-only
 `scripts/native_chat_dashboard.py`; Drive remains canonical when used.

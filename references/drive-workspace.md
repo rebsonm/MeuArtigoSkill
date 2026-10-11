@@ -80,7 +80,7 @@ Updated: <ISO date/time>
 - Article/review design
 - Scope and exclusions
 
-## 3. Tool and plugin status
+## 3. Tool and integration status
 - Google Drive
 - Consensus
 - Scite
@@ -312,7 +312,7 @@ First resolve storage. The normal path is Google Drive. If Drive remains unavail
 4. create `PROTOCOLO.md` or a native Doc mirror;
 5. create the master Sheet and all tabs;
 6. populate `00_Projeto` with the user's original problem and current project state;
-7. record plugin/tool status;
+7. record integration/tool status;
 8. initialize `11_CADA_Control` with the first actionable project items;
 9. initialize `13_Traceability_Log`, `14_AI_Use_Log`, `15_CADA_Dashboard`, and `RASTREABILIDADE.md`;
 10. set management mode to `MATRIX_ONLY` by default;

@@ -1,32 +1,19 @@
-"""Check user-facing diagnostics stay readable and the private icon hotfix is correctly described."""
+"""Skill connection status must remain readable and honest."""
 from pathlib import Path
 import unittest
-
-ROOT = Path(__file__).resolve().parents[1]
-
+ROOT=Path(__file__).resolve().parents[1]
 
 class PreflightPresentationTests(unittest.TestCase):
-    def test_no_blank_status_table_contract(self):
-        skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
-        self.assertIn("Use bullets, no empty tables", skill)
-        guide = (ROOT / "docs" / "CHATGPT.md").read_text(encoding="utf-8")
-        self.assertIn("avoid Markdown tables", guide)
-        self.assertIn("not verified", guide.lower())
+    def test_researcher_preflight_is_evidence_based(self):
+        doc=(ROOT/"docs/CHATGPT.md").read_text(encoding="utf-8")
+        self.assertIn("Avoid empty Markdown tables",doc)
+        self.assertIn("NOT_VERIFIED",doc)
+        self.assertIn("read-after-write",doc)
+    def test_entrypoint_keeps_scientific_safeguards(self):
+        s=(ROOT/"SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("DEC_ID",s)
+        self.assertIn("GATE_ID",s)
+        self.assertIn("GOOGLE_DRIVE_FIRST",s)
+        self.assertIn("Use bullets",s)
 
-    def test_distinct_read_write_receipts_required(self):
-        skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
-        guide = (ROOT / "docs" / "CHATGPT.md").read_text(encoding="utf-8")
-        self.assertIn("read does not establish", guide)
-        self.assertIn("provider credits", guide)
-        self.assertIn("scientific decisions", guide)
-
-    def test_private_plugin_visual_hotfix_not_claimed_as_public_release(self):
-        guide = (ROOT / "docs" / "CHATGPT.md").read_text(encoding="utf-8")
-        self.assertIn("0.9.0-beta.5", guide)
-        self.assertIn("scientific Skill remains **beta.4**", guide)
-        self.assertIn("host-side", guide)
-        self.assertIn("does **not** host an MCP Apps server", guide)
-
-
-if __name__ == "__main__":
-    unittest.main()
+if __name__=="__main__":unittest.main()

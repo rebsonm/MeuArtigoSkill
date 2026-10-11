@@ -1,7 +1,5 @@
 # Integration onboarding (platform-neutral)
 
-> Legacy filename retained for compatibility: `plugin-onboarding.md`.
-
 ## Goal
 
 A user should not need to know which research integrations are required. On the first run, inspect the capabilities available on the current AI platform and map them to the roles required by the methodology.
@@ -49,7 +47,7 @@ Storage is a blocking preflight. Resolve it before novelty scanning, protocol co
 7. do not infer fallback consent from silence, from the user continuing to discuss the article, or from consent to another tool;
 8. only an explicit affirmative answer authorizes fallback storage. Record `storage_policy=GOOGLE_DRIVE_FIRST`, the resulting storage state, the actor, timestamp, and fallback authorization in PROJECT_CONFIG.json and CONTINUIDADE.md;
 9. if fallback is not authorized, remain blocked at storage onboarding. Do not initialize a local canonical workspace and do not perform substantive research that would create unsynchronized project state;
-10. after storage is resolved, inspect the remaining tools, connectors, apps, MCP servers, browser capabilities, bibliographic sources, and script environments;
+10. after storage is resolved, inspect the remaining tools, connected services, browser capabilities, bibliographic sources, and script environments;
 11. map each available capability to the roles above and surface useful missing non-storage integrations without blocking independent scientific work unnecessarily;
 12. initialize spreadsheet/matrix management as `MATRIX_ONLY`;
 13. inspect whether a work-management provider is connected; if the user already works with one or explicitly wants external task management, mirror the C.A.D.A. layer and switch to `MATRIX_PLUS_EXTERNAL`;
@@ -73,7 +71,7 @@ A citation-context tool is valuable but non-blocking when absent. External work-
 
 ## Scopus and Web of Science
 
-Do not describe Scopus or Web of Science as installable platform plugins unless a real connector is available to that user.
+Do not describe Scopus or Web of Science as installable automatic account integrations unless a real connector is available to that user.
 
 When the protocol requires them and direct integration is unavailable:
 

@@ -22,7 +22,7 @@ for current conditions, permissions and interface wording.
 
 These installation paths are **not equivalent execution environments**.
 Neither upload nor directory placement proves Python execution,
-network access, connected MCPs, Drive writes or persistent recovery.
+network access, connected services, Drive writes or persistent recovery.
 
 ## Always respond in the researcher's language
 
@@ -50,13 +50,13 @@ Preserve the research question, propose method-appropriate
 paths, ask for real human scientific decisions and collect
 a target journal's actual instructions when available.
 
-## MCP connectors and scripts
+## External connections and scripts
 
-Inspect the MCP servers and native tools **actually installed**.
+Inspect the external services and native tools **actually installed**.
 Map them to persistent storage, academic discovery, citation context,
 publisher/document retrieval, indexed search, deterministic scripts
 and optional C.A.D.A. task mirroring. Do not copy OpenAI-specific
-connector names or pretend an MCP server exists.
+connector names or pretend an external service exists.
 
 Python scripts such as `scripts/init_project.py`,
 `scripts/validate_project.py` and

@@ -50,7 +50,7 @@ def local_entry(root: Path, raw: str) -> dict | None:
     raw = raw.strip()
     if not raw or is_remote(raw):
         return None
-    # Store paths only in the internal report, not in user-facing MCP results.
+    # Store paths only in the internal report, not in user-facing status reports.
     root = root.resolve()
     path = (root / raw).resolve()
     if not path.is_relative_to(root):
@@ -132,7 +132,7 @@ def manifest(root: Path) -> dict:
             entry = local_entry(root, raw)
             if entry:
                 local[entry["path"]] = entry
-    # File contents are never included. Do not leak raw paths via MCP.
+    # File contents are never included. Do not leak raw paths in user-facing summaries.
     return {
         "csv_sha256": csvs,
         "files": [local[k] for k in sorted(local)],

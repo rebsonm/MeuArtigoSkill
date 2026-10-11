@@ -28,7 +28,7 @@ from model guesses.
 
 | Situation / gate | First module | Additional material only if needed |
 | --- | --- | --- |
-| New project | `plugin-onboarding.md`, `drive-workspace.md`, `storage-mapping.md`, `fluxo-essencial.md` | Beginner: `beginner-mode.md`; target journal: `journal-aware.md` |
+| New project | `capability-onboarding.md`, `drive-workspace.md`, `storage-mapping.md`, `fluxo-essencial.md` | Beginner: `beginner-mode.md`; target journal: `journal-aware.md` |
 | Resume existing work | `project-state.md` and actual stored `CONTINUIDADE.md` / protocol | Actual saved state indicates specialized work |
 | Research question and novelty | `review-design.md`, `INDICE-METODOLOGICO.md` | The topic warrants specific source authors/approaches |
 | Method and GATE-0002 | `../docs/ROTAS-METODOLOGICAS.md`, `INDICE-METODOLOGICO.md` | Relevant qualitative/quantitative/mixed/review/design-science branch |
