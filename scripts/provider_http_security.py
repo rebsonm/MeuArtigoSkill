@@ -32,11 +32,16 @@ class NoExternalRedirect(HTTPRedirectHandler):
 
 
 def validate_url(url: str) -> None:
-    if not isinstance(url, str):
+    if (not isinstance(url, str) or url.strip() != url
+            or any(control in url for control in ("\\r", "\\n", "\\t"))):
         raise ProviderFailure("UNSUPPORTED_ENDPOINT")
-    target = urlsplit(url)
+    try:
+        target = urlsplit(url)
+        no_port = target.port is None
+    except ValueError:
+        raise ProviderFailure("UNSUPPORTED_ENDPOINT") from None
     if (target.scheme != "https" or target.username is not None
-            or target.password is not None or target.port is not None
+            or target.password is not None or not no_port
             or target.fragment or not target.hostname
             or not target.netloc.isascii()):
         raise ProviderFailure("UNSUPPORTED_ENDPOINT")
