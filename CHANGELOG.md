@@ -4,6 +4,13 @@
 <a id="unreleased"></a>
 ## Unreleased
 
+No additional changes have been recorded since the unpublished beta.4 candidate.
+
+## 0.9.0-beta.4 — 2026-10-11
+
+**UNRELEASED SOURCE CANDIDATE ONLY — NOT PUBLISHED.** Prepared for review; no release tag or installed-plugin update.
+
+
 Corrective maintenance in progress on an **unreleased branch**. The
 published GitHub `0.9.0-beta.2` release remains untouched. The separate
 private ChatGPT plugin received a narrowly scoped **icon-only**
