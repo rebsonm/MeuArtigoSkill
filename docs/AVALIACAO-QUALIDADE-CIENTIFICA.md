@@ -106,3 +106,41 @@ The optional notes file requires \`schema_version: 1\`, \`reviewer_reference\` w
 6. Publish coverage, denominators, errors, disagreements and limits; not convert a small pilot into "validated scientific quality".The tests in \`tests/test_quality_benchmark.py\` use controlled mutations and disposable files to verify the **software**; are not presented as research data. The pilot that uses real APIs has a separate execution and report with the responses actually observed.
 
 This starter set does not replace a full replication of a published integrative review. Such replication requires access to exported records, selection decisions, corpus and primary categorization, which should not be invented or extracted solely from the article abstract.
+## Structural calibration of methodological responses (Phase 6)
+
+This feature **extends the existing development-only** `quality_benchmark.py`; it does not add a new scientific gate, AI agent, database, project table, or researcher-facing automation. The separate frozen reference file is `benchmarks/methodological_response_reference_v1.json` (**eight synthetic developer-authored scenarios**). They cover [L]/[I]/[P] labeling, source/locator limitations, inference boundaries, bounded novelty, AI-assisted screening, paywall versus exclusion, a pending human Gate 6, and next-step routing before Gate 1. These are software-policy examples, **not** independently adjudicated scientific cases or results produced by a live language model.
+
+**Before invoking the evaluator:** the developer/evaluator must capture actual candidate behavior separately, without copying the answers from the reference to fabricate a successful test. Construct a JSON file with schema `1`, a `reference_sha256` equal to the exact file hash, and one `{ "case": "...", "fields": { ... } }` record per observed scenario. For example, a legitimate *synthetic testing fixture* (not a real response) could contain:
+
+```json
+{
+  "schema_version": 1,
+  "reference_sha256": "<sha256-of-frozen-reference>",
+  "cases": [
+    {
+      "case": "scientific_gate_never_autopasses",
+      "fields": {
+        "gate_id": "GATE-0006",
+        "decision": "PENDING_HUMAN_DECISION",
+        "approved_by_automation": false,
+        "required_researcher_action": "Researcher must decide from the cited materials"
+      }
+    }
+  ]
+}
+```
+
+Compute the reference hash with `sha256sum benchmarks/methodological_response_reference_v1.json`. The actual model's response must be recorded before inspecting or using the case's expected values. If no response was captured, omit the case: **absence is zero coverage, never success**. Run offline:
+
+```bash
+python scripts/quality_benchmark.py evaluate-methodology \\
+  --reference benchmarks/methodological_response_reference_v1.json \\
+  --candidate /path/to/actually-recorded-observations.json \\
+  --output /path/to/methodological-calibration.json
+```
+
+Optional comparison with a genuinely captured earlier run: `--baseline /path/to/earlier-recorded-observations.json`. Both runs must point to the identical frozen SHA-256 reference; the report compares rule adherence and coverage, **not** causal improvement or language-model intelligence. Invalid or mismatched reference hashes fail closed. Reports include only case IDs, rule names and mismatch/missing status, not source quotations or candidate responses.
+
+**What is measured:** whether observed structured fields exactly match the declared expected statuses and whether required explanatory fields are nonempty. The output distinguishes eligible, submitted, observed, missing and mismatched criteria. Structural matching is not semantic correctness: arbitrary or fabricated text can satisfy a nonempty explanation. The report explicitly states `scientific_validity_proven=false`, `human_semantic_review=NOT_PERFORMED`, `source_access_verified=false` and `reviewer_identity_authenticated=false`. For meaningful methodological quality claims, a real independent researcher must inspect original sources, the validity of reasons, the design-specific appraisal, scope and limitations under a separately documented protocol. A field saying “reviewed” or a perfect CI run is not evidence of that review.
+
+This calibration design draws on evaluation-driven development while retaining the project's prior human-agency and evidence-provenance rules. It does not extend software licenses to attached scientific PDFs or copy text from third-party books.
