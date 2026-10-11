@@ -13,6 +13,7 @@ import sys
 from pathlib import Path
 
 from presentation_mode import read_config, view as existing_presentation
+from next_step_router import resolve as resolve_next_step
 
 MGMT = "00_Gestao_e_Continuidade"
 FILES = {
@@ -108,6 +109,10 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
     task_items = [] if tasks is None else [compact_task(row) for row in tasks]
     active_task_items = [compact_task(row) for row in active]
     minimal_tasks = active_task_items[:3] if active_task_items else task_items[:3]
+    # Separate "first active row" (a projection) from the *safe next
+    # action* (which checks dependencies, scientific gates and recovery).
+    # Only return identifiers/statuses, never confidential Next_action text.
+    navigation = resolve_next_step(root)
     counts = {
         "registered_tasks": nrows(tasks),
         "tasks_reported_done": None if tasks is None else sum(
@@ -131,6 +136,17 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
             "next_gate_id": next((x["id"] for x in gate_items
                                   if x["status"] != "COMPLETED"), None),
             "scientific_progress_percentage": None,
+        },
+        "continuation": {
+            "status": navigation["status"],
+            "next_task_id": navigation["next_task_id"],
+            "next_gate_id": navigation["next_gate_id"],
+            "requires_human_decision": navigation["requires_human_decision"],
+            "technical_preparation_possible": navigation["technical_preparation_possible"],
+            "blockers": navigation["blockers"],
+            "continuity_document_read": navigation["continuity_document_read"],
+            "scientific_gate_approved_by_navigation": False,
+            "drive_sync_verified_in_this_session": False,
         },
         "tasks": {
             "items": (minimal_tasks if chosen == "MINIMAL" else task_items),
@@ -198,8 +214,11 @@ def fallback(data: dict) -> str:
         " / " + str(overview["active_tasks"]),
         task_table(data),
         "Human approvals documented: " + str(overview["documented_gate_approvals"]),
-        "Next task / gate: " + str(overview["next_task_id"]) + " / " +
+        "Next task / gate (raw register): " + str(overview["next_task_id"]) + " / " +
         str(overview["next_gate_id"]),
+        "Safe continuation: " + data["continuation"]["status"] + " / " +
+        str(data["continuation"]["next_task_id"]) + " / " +
+        str(data["continuation"]["next_gate_id"]),
         "Evidence / claims recorded: " + str(evidence["registered_evidence_rows"]) +
         " / " + str(evidence["registered_claims"]),
         "Source verification report: " + evidence["source_report_presence"],
