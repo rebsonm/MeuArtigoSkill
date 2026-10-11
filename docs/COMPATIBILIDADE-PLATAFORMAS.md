@@ -1,7 +1,11 @@
 # Cross-platform compatibility — Meu Artigo
 
-**Vendor support for the Skill format is not evidence that every Meu Artigo
-workflow works on that platform.** This document separates supplier
+**Vendor support for the Skill or plugin package format is not evidence that
+every Meu Artigo workflow works on that platform.** The priority distribution
+is migrating to a private ChatGPT plugin with an unchanged cross-platform
+research Skill core. The private icon-only version and the GitHub source
+version have distinct release histories; MCP Apps require a real connected
+server and do not activate through a manifest alone. This document separates supplier
 documentation from verified performance of this particular beta.
 
 | Platform | Documented installation mechanism | What was technically checked here | What still needs actual use |
