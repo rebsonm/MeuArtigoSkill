@@ -220,3 +220,41 @@ original evidence and the rejected import report.
   Add resumable pagination/checkpoints for large, long-running searches.
 - Verify that optional onboarding is offered only once per project with a
   real authorized persistent state write (without creating a science gate).
+
+## PR #45 — Proveniência verificável do estágio e falhas parciais
+
+O modo manual continua funcionando sem conectar qualquer API. A pesquisa
+automática somente é tentada com opt-in explícito; nenhum teste sintético
+comprova acesso real, cobertura de bases ou direitos de uso de APIs licenciadas.
+
+O cliente de metadados OpenAlex, Crossref e Semantic Scholar agora trata
+páginas com formatos inválidos (inclusive itens estruturalmente inválidos)
+como `INVALID_RESPONSE`, sem descartar silenciosamente parte dos itens de
+uma página e declarar a busca `COMPLETE`. Páginas anteriores válidas
+permanecem separadas e são identificadas como `PARTIAL`, com o motivo de
+falha em `error_code`. Consultas Crossref cuja paginação deveria continuar
+mas não oferece cursor válido são `PARTIAL`/`PAGINATION_INCOMPLETE`.
+O retorno limitado não demonstra cobertura completa do provedor.
+
+O recibo do estágio `retrieval_receipt.json` identifica provedor, consulta
+literal, horário, quantidade recebida, total informado, páginas, status,
+motivo de interrupção e SHA-256 do CSV. Um mesmo estágio com CSV ou recibo
+já existente não pode ser sobrescrito automaticamente. A escrita do recibo
+utiliza um arquivo temporário e substituição atômica.
+
+A opção `--commit-local` **somente** registra resultados em projeto
+`WORK_FALLBACK` autorizado e agora exige CSV e recibo íntegros no
+próprio diretório do projeto. Antes de modificar os registros científicos,
+verifica o hash do arquivo, as informações do recibo e a correspondência
+exata entre as linhas exportadas e os resultados em memória. Falha, arquivo
+alterado, registro forjado ou exportação fora da área autorizada impede
+o commit. Recibos de busca parcial deixam o código de erro e hash no
+`02_Search_Log.csv` e no `13_Traceability_Log.csv`; o status científico
+da operação permanece `UNVERIFIED`, sem inferir triagem humana.
+
+Essas garantias são **locais**. O recibo não autentica independentemente
+a origem de rede; um SHA-256 não comprova que a pesquisa foi executada
+numa API real. O fluxo de Google Drive requer escrita e conferência
+separadas. Dados de testes são sintéticos; nenhuma consulta autenticada a
+Scopus ou Web of Science, e nenhuma liberação de nova versão, decorre
+desta PR.
