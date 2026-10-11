@@ -321,7 +321,7 @@ def methodology_reference_cases(reference):
                 or key in expected for key in required)
                 or len(expected) + len(required) > 30):
             raise ValueError("Invalid or excessive required methodological fields")
-        if expected.get("approved_by_automation") is True or expected.get("human_reviewer_confirmed") is True:
+        if expected.get("scientific_gate_approved_by_this_command") is True or expected.get("human_decision_recorded") is True:
             raise ValueError("Synthetic checklist cannot claim AI approved a human decision")
         cases[case] = row
     return cases
