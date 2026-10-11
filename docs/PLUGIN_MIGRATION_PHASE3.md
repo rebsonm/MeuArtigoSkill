@@ -101,3 +101,31 @@ controlled recovery cases and a fresh-session continuity exercise with an
 authorized test fixture. Phase 5: bump a separate candidate version,
 generate complete source/plugin artifacts and hashes, and create a PR
 for review without merging or publishing the scientific release.
+
+## Executed regression — 2026-10-11
+
+Successful source code runs on the corrective branch after the PR #22 port:
+
+- [Post-beta2 corrective regressions, run 38111626207](https://github.com/rebsonm/MeuArtigoSkill/actions/runs/38111626207):
+  **372 Python unittest tests, 0 failed**, static release audit,
+  checked internal documentation links, public-data leak audit, English-source
+  audit, provenance smoke, and reproducible Skill ZIP SHA-256 check.
+- [Meu Artigo Visual checks, run 38111626202](https://github.com/rebsonm/MeuArtigoSkill/actions/runs/38111626202):
+  8 dashboard tests, 14 integrity tests, 13 verification tests,
+  `npm run build` and `npm run test:smoke` (real local MCP stdio
+  handshake, read-only tool and UI resource in a synthetic sandbox, no mutation).
+- Private plugin icon: current private release `0.9.0-beta.3` read back
+  from the plugin account. Both root/compat manifests have
+  `logo=composerIcon=./assets/icon.svg`. The asset's **entire SVG content**
+  was compared with GitHub `assets/icon.svg` and found identical. This
+  checks package identity, not client UI rendering.
+
+The release audit initially failed after the README mentioned a private
+internal script path; that documentation issue was fixed and the new CI run
+passed. A prior SKILL entrypoint length failure was likewise corrected
+without discarding substantive gate protections. All failed intermediate
+runs remain visible.
+
+Unexecuted: live ChatGPT MCP Apps connection, dedicated hosted server with
+per-user Drive data access, real cross-session Drive synchronization, public
+deployment and scientific evaluation. No human Gate 4 decision was generated.
