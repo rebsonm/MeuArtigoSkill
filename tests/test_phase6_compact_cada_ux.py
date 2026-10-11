@@ -102,7 +102,9 @@ class CompactCADAUXTests(unittest.TestCase):
         shadow = self.root / "CONTINUIDADE.md"
         shadow.write_text("Synthetic conflicting version", encoding="utf-8")
         result = ui.panel(self.root, mode="MINIMAL")
-        self.assertEqual(result["continuation"]["status"], "BLOCKED")
+        self.assertEqual(result["continuation"]["status"],
+                         "CADA_CONTINUITY_INTEGRITY_REVIEW")
+        self.assertFalse(result["continuation"]["technical_preparation_possible"])
         self.assertIsNone(result["overview"]["next_task_id"])
         self.assertIsNone(result["overview"]["next_gate_id"])
         self.assertEqual(result["continuation"]["next_task_id"],
