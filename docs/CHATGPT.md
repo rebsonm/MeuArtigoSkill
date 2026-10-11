@@ -12,10 +12,12 @@ academic method.
 ## Private plugin and MCP Apps distinction
 
 The private ChatGPT plugin is a separate installation identity from the
-public Skill release. The icon-only plugin hotfix `0.9.0-beta.3` references
-the original `assets/icon.svg` using `logo` and `composerIcon`.
-Its skill core remains at its pre-migration version. No visual MCP tool is
-installed by that icon update.
+public Skill release. It was **updated to `0.9.0-beta.4`** through the
+authorized account plugin-update workflow. Its manifest still references the
+original `assets/icon.svg` using `logo` and `composerIcon`, and its
+scientific Skill now includes the corrected beta.4 code. This update does
+**not** activate the separately developed visual MCP server or grant live
+Google Drive access.
 
 The beta.4 source candidate includes the read-only visual dashboard
 reconciled from PR #22 through consolidated PR #27, together with
@@ -26,6 +28,26 @@ an authorized remote MCP deployment/connection and actual read access to
 the user's canonical project must be verified. See
 [plugin migration](PLUGIN_MIGRATION_PHASE3.md) and
 [visual integration](MEU-ARTIGO-VISUAL.md).
+
+## ZIP selection — Skill versus plugin
+
+**GitHub's `Code → Download ZIP` is not a valid ChatGPT plugin package.**
+It contains the repository checkout, with development files and an extra
+top-level directory. Uploading it through **Plugins → Add plugin** or
+**Upload new version** can fail with a missing plugin manifest error.
+
+For **an existing personal plugin**, use its own **Upload new version** dialog
+with the prepared *plugin distribution ZIP* containing, at the plugin package
+root, `plugin.json`, `.codex-plugin/plugin.json`, `assets/icon.svg` and
+`skills/meu-artigo/SKILL.md`. Use the existing plugin instead of creating a
+duplicate. The plugin can also be updated through an authorized account
+integration. The beta.4 private update has already been completed, so no
+second manual upload is required.
+
+For **standalone Skills**, the public
+[beta.2 Skill release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.2)
+is still the published installable download; beta.4 is currently a GitHub
+source version, not a new public release.
 
 ## Installation and availability
 
