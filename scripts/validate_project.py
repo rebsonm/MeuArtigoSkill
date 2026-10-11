@@ -57,7 +57,7 @@ def rows(path):
 
 def split_reference_ids(value: str) -> list[str]:
     """Parse historic semicolon/comma-separated links without merging distinct IDs."""
-    return [ref for ref in re.split(r"[;,\\s]+", str(value or "").strip()) if ref]
+    return [ref for ref in re.split(r"[;,\s]+", str(value or "").strip()) if ref]
 
 
 def main():
