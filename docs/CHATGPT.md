@@ -14,12 +14,16 @@ academic method.
 ## Private plugin and MCP Apps distinction
 
 The private ChatGPT plugin is a separate installation identity from the
-public Skill release. It was **updated to `0.9.0-beta.4`** through the
-authorized account plugin-update workflow. Its manifest still references the
-original `assets/icon.svg` using `logo` and `composerIcon`, and its
-scientific Skill now includes the corrected beta.4 code. This update does
-**not** activate the separately developed visual MCP server or grant live
-Google Drive access.
+public Skill release. Its **presentation-only update `0.9.0-beta.5`**
+was applied through the authenticated account plugin-update workflow.
+The installed scientific Skill remains **beta.4** with the same seven
+researcher-controlled gates, plus a clearer connection-diagnosis format.
+The plugin's `logo` and `composerIcon` now reference PNG renderings
+(`assets/icon-512.png` and `assets/icon-256.png`) of the **original SVG
+artwork**, which remains preserved in the installed package. PNG is preferred
+for compatibility; **actual on-screen display still requires host-side
+confirmation**. This update does **not** host an MCP Apps server, grant live
+Google Drive access or publish a new GitHub release.
 
 The beta.4 source candidate includes the read-only visual dashboard
 reconciled from PR #22 through consolidated PR #27, together with
@@ -30,6 +34,31 @@ an authorized remote MCP deployment/connection and actual read access to
 the user's canonical project must be verified. See
 [plugin migration](PLUGIN_MIGRATION_PHASE3.md) and
 [visual integration](MEU-ARTIGO-VISUAL.md).
+
+## Initial connection diagnosis format
+
+For an initial preflight, avoid Markdown tables altogether. Show each source
+as a single status line with real execution evidence, in the researcher's
+language. `CONNECTED` does not mean `READ_VERIFIED`, and a successful
+read does not establish `WRITE_VERIFIED`. A write is confirmed only after
+an authorized create/write, read-back and (when cleanup is requested)
+a verified deletion. Distinguish authenticated external services from
+actual successful search execution, entitlements and provider credits.
+No tool receipt means **not verified**.
+
+Example layout (values below are placeholders, NOT a real test):
+
+```text
+Diagnóstico técnico — PARCIAL
+- Google Drive: escrita não verificada — aguarda teste autorizado.
+- Base bibliográfica: conexão não testada.
+- Ferramenta de pesquisa: disponível no ambiente, execução não testada.
+Próximo passo: validar gravação e leitura no destino autorizado.
+```
+
+The status is `PARTIAL` whenever any required capability remains untested.
+This presentation format never changes scientific decisions or fakes project
+initialization.
 
 ## ZIP selection — Skill versus plugin
 

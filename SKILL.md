@@ -28,6 +28,9 @@ quotations, participant material, search strings and technical identifiers.
 Translate source material only when requested/appropriate with original
 provenance retained. Do not translate enums, paths, IDs or commands.
 
+## 0A. Preflight
+Use bullets, no empty tables; cite real checks. See [guidance](docs/CHATGPT.md).
+
 ## 1. Invariant scientific contract
 
 Preserve the researcher's original problem verbatim. Never reuse another
