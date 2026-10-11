@@ -226,25 +226,7 @@ path, record the limitation and do not simulate an operation. Consult the
 [ChatGPT](docs/CHATGPT.md), [Claude](docs/CLAUDE.md) and
 [Gemini](docs/GEMINI.md). Adapters never relax scientific or ethical controls.
 
-**"Next", "próximo" and resume requests:** never treat navigation as a
-researcher's scientific approval or as permission to invent a search result.
-Read authorized `CONTINUIDADE.md` and the real project tables, check that
-canonical storage remains authorized and accessible, resolve any pending
-transaction journal, then inspect C.A.D.A. prerequisites and the seven real
-GATE_IDs. For an explicitly authorized local `WORK_FALLBACK`, run
-`python scripts/next_step_router.py PROJECT --intent next` to obtain the
-read-only, privacy-reduced next action classification. When Drive is
-canonical, use an authenticated connected Drive lookup and compare its real
-current state; a local folder never establishes Drive synchronization.
-Execute eligible *technical preparation* using only the host's actual
-permissions and record real receipts. A `HUMAN_TASK_DECISION_REQUIRED` or
-`HUMAN_GATE_DECISION_REQUIRED` status must prompt for the actual researcher's
-judgment: never supply or record an impersonated answer. A blocked/dependent
-task must not be marked DONE, and a DONE task never approves a gate. The
-resolver cannot itself finish a task, change an evidence register, pass a
-scientific gate or certify manuscript submission; it is a navigation aid.
-If continuity or canonical records are missing, say so rather than
-reconstructing a scientific state from chat history.
+**"Next"/"próximo":** Read authorized continuity, C.A.D.A., seven gates and pending journals. For approved local fallback use the read-only `scripts/next_step_router.py PROJECT`; Drive requires live canonical verification. Navigation never approves a human gate or executes a task. See [continuity](references/project-state.md).
 
 **Native in-chat visual dashboard:** For progress requests, read the
 authorized canonical project and follow the
