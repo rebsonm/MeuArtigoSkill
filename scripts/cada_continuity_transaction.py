@@ -13,12 +13,13 @@ import shutil
 from uuid import uuid4
 
 from transaction_coordinator import require_no_conflict
+from next_step_router import CONTINUITY
 
 MGMT = "00_Gestao_e_Continuidade"
 MARKER = ".pending_cada_continuity"
 FILES = (
     MGMT + "/11_CADA_Control.csv",
-    "CONTINUIDADE.md",
+    CONTINUITY,
     MGMT + "/15_CADA_Dashboard.csv",
 )
 
