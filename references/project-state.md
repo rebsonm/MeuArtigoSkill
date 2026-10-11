@@ -119,6 +119,38 @@ Drive synchronization are not covered. Do not run concurrent local writers;
 the final homologation must validate end-to-end Drive state separately.
 No synthetic test constitutes human scientific approval.
 
+## Deterministic, read-only "next" navigation
+
+When a researcher says "próximo", "next", "continue" or "resume", the
+current chat is not a scientific approval. On local authorized fallback
+projects, `scripts/next_step_router.py PROJECT --intent next` reads the
+persisted `CONTINUIDADE.md`, checks known transaction journals and the
+canonical C.A.D.A. and seven-gate tables, then classifies which documented
+action is eligible to be prepared. It does **not** execute that action,
+authenticate the person who approved a previous gate, or write to any file.
+It returns only task/gate identifiers and generic codes, never private
+research notes, quoted text or the full `Next_action`.
+
+The next candidate task must be READY/IN_PROGRESS, contain a recorded
+Next_action, have genuinely completed dependencies with operational evidence,
+and not skip a still-unapproved earlier human gate. The execution mode must
+explicitly allow agent preparation. Decisions assigned to the researcher,
+unrecognized execution modes, missing evidence, duplicate identifiers or
+an interrupted transaction block automatic advancement. The gate resolver
+does not skip a "COMPLETED" row without structurally documented human
+review; documentation alone still does not independently authenticate the
+reviewer. An incomplete seven-gate schema requires reconciliation.
+The C.A.D.A. dashboard is derived, not authoritative.
+
+For Google Drive-canonical projects, a local readout is never proof that
+remote state is synchronized or writable. Connect through the actual
+authorized Drive and check its current artifacts before action; do not
+convert the local router's `CANONICAL_STORAGE_RECHECK_REQUIRED` status
+into a fake approval. A user's earlier fallback authorization is not
+perpetual permission to use an unsynchronized mirror after Drive becomes
+available. If `CONTINUIDADE.md` and current matrices disagree, inspect
+the conflict before applying any writes.
+
 ## Recovery rules
 
 When resuming:
