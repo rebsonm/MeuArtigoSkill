@@ -19,7 +19,7 @@ from transaction_coordinator import active_journals
 MGMT = "00_Gestao_e_Continuidade"
 GATES = f"{MGMT}/18_Human_Validation_Gates.csv"
 TASKS = f"{MGMT}/11_CADA_Control.csv"
-CONTINUITY = "CONTINUIDADE.md"
+CONTINUITY = f"{MGMT}/CONTINUIDADE.md"
 EXPECTED_GATES = tuple(f"GATE-{i:04d}" for i in range(1, 8))
 APPROVALS = {"APPROVED", "APPROVED_WITH_CHANGES"}
 TERMINAL = {"DONE", "COMPLETED", "CANCELLED", "CANCELED", "SUPERSEDED"}
