@@ -1,6 +1,6 @@
 # Meu Artigo
 
-**A scientific writing Skill that helps researchers plan, organize and develop manuscripts with AI while preserving source traceability and human responsibility for scientific decisions.**
+**A traceable scientific research workflow migrating from a standalone Skill to a private ChatGPT plugin, while retaining the Skill as its cross-platform methodological core.**
 
 Meu Artigo supports the journey from an initial research idea to a submission-ready manuscript. Rather than treating a paper as disconnected AI prompts, it maintains a continuous workflow with verified sources, documented progress, pending decisions, journal requirements and resumable research state.
 
@@ -26,8 +26,10 @@ researcher decisions, evidence, and history/synchronization. This uses the
 existing authorized canonical records, not an independent database. It
 does not require a custom MCP server, hosting or a change of product type.
 
-The separately developed MCP Apps UI in [draft PR #22](https://github.com/rebsonm/MeuArtigoSkill/pull/22)
-is an optional, more customized companion and remains **unmerged**. See the
+The experimental MCP Apps implementation from [PR #22](https://github.com/rebsonm/MeuArtigoSkill/pull/22)
+has been selectively ported into the post-beta.2 maintenance branch; the original
+draft PR has **not** been merged. It requires a separately authorized, connected
+server. See the [visual plugin plan](docs/MEU-ARTIGO-VISUAL.md) and
 [Skill-native visual pilot guide](docs/NATIVE-CHAT-DASHBOARD.md).
 
 ## What you can do
@@ -65,6 +67,20 @@ interface when a compatible host and authorized MCP server are configured.
 It does **not** auto-install with the Skill, access Google Drive on its own,
 change research decisions, or claim that registered actions were externally
 verified. A compact CLI/text view works without MCP Apps.
+
+## Plugin migration and icon status
+
+The private account plugin has received an **icon-only metadata hotfix**:
+plugin release `0.9.0-beta.3` now references the existing Skill's
+`assets/icon.svg` through `logo` and `composerIcon`. This does not change
+the historical published source version `0.9.0-beta.2`, install an MCP server,
+or import the unmerged source changes into the account plugin.
+
+For the source candidate, `scripts/build_plugin_bundle.py` generates a
+sanitized, deterministic **skills-only** plugin package and external SHA-256
+receipt. The MCP Apps dashboard's five-view server remains separate code
+until a verified authorized host, runtime and data adapter are connected.
+See the [Phase 3 migration plan](docs/PLUGIN_MIGRATION_PHASE3.md).
 
 ## How it works
 
