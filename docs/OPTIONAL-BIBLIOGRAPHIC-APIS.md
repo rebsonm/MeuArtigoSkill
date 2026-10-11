@@ -164,6 +164,9 @@ reader in the authorized runtime or use a separately verified CSV/XLSX copy.
 Legacy XLS date/numeric values are normalized for import without fabricating
 scientific identifiers. The first worksheet is read as a table; it must have
 unique or compatible headings, and ambiguous sheets are quarantined by input.
+This reader is an **opt-in runtime dependency**, not a bundled or authenticated
+WoS connector. The original XLS and its recorded SHA-256 remain the provenance
+source. Do not interpret successful parsing as an institutional rights check.
 
 **WoS tagged plain-text `FN/VR/AU/AF/TI/ER` records are still NOT
 tabular CSV/TSV/XLS and remain unsupported**. Convert and verify separately
