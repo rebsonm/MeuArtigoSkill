@@ -76,7 +76,7 @@ plugin release `0.9.0-beta.3` now references the existing Skill's
 the historical published source version `0.9.0-beta.2`, install an MCP server,
 or import the unmerged source changes into the account plugin.
 
-For the source candidate, `scripts/build_plugin_bundle.py` generates a
+For the source candidate, the plugin packaging utility generates a
 sanitized, deterministic **skills-only** plugin package and external SHA-256
 receipt. The MCP Apps dashboard's five-view server remains separate code
 until a verified authorized host, runtime and data adapter are connected.
