@@ -8,6 +8,12 @@ account. Download and installation do not grant permission to
 redistribute third-party research PDFs or claim that the Skill has
 been scientifically validated.
 
+**First decide whether you need a Skill or a plugin.** The quickest route
+is the [two-minute installation and error-recovery guide](INSTALLATION.md).
+It links directly to the **published Skill ZIP** and explains why GitHub's
+own source archive is not accepted by the ChatGPT plugin importer.
+The beta.4 ChatGPT plugin is presently private, not a public installer.
+
 This guide is designed for researchers who have **never used GitHub**.
 You do not need programming skills, Git, a command line, or a pull request
 to use the published installer.
@@ -31,9 +37,10 @@ authorization process and may require a different account.
 
 ## 3. Choose the installable release ZIP
 
-Open the [published beta release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.2),
-then download the specifically prepared
-`MeuArtigoSkill-v0.9.0-beta.2.zip` attachment. Verify its SHA-256
+Use this direct link: **[download the published Skill beta.2 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.2/MeuArtigoSkill-v0.9.0-beta.2.zip)**.
+The expected filename is `MeuArtigoSkill-v0.9.0-beta.2.zip`.
+This is for a supported **Skills** installer, **not** the ChatGPT
+**Add plugin** dialog. Verify its SHA-256
 digest using `SHA256SUMS.txt` if appropriate.
 
 **Do not confuse** that installable ZIP with GitHub's automatically
