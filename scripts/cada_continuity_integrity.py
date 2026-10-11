@@ -8,14 +8,13 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from next_step_router import TERMINAL, clean, recorded_next_ids, resolve, upper
+from next_step_router import CONTINUITY, TERMINAL, clean, recorded_next_ids, resolve, upper
 from transaction_coordinator import active_journals
 
 
 MGMT = "00_Gestao_e_Continuidade"
 TASKS = MGMT + "/11_CADA_Control.csv"
 DASH = MGMT + "/15_CADA_Dashboard.csv"
-CONTINUITY = "CONTINUIDADE.md"
 
 
 def audit(root: Path) -> dict:
