@@ -142,6 +142,21 @@ class ApprovedUXDataContracts(unittest.TestCase):
         d = visual.view(self.root, mode="FULL")
         self.assertEqual(d["traceability"]["latest_events"][0]["status"], "UNVERIFIED")
 
+    def test_external_symlink_register_is_not_read(self):
+        with tempfile.TemporaryDirectory() as secret:
+            outside = Path(secret) / "outside.csv"
+            outside.write_text("CADA_ID,Status\nSECRET,READY\n", encoding="utf-8")
+            (self.mgmt / visual.FILES["tasks"]).symlink_to(outside)
+            with self.assertRaisesRegex(ValueError, "outside the authorized project"):
+                visual.view(self.root)
+
+    def test_unnamed_project_does_not_leak_filesystem_folder(self):
+        config = self.mgmt / "PROJECT_CONFIG.json"
+        config.write_text('{"storage_mode":"GOOGLE_DRIVE_STAGING"}', encoding="utf-8")
+        d = visual.view(self.root)
+        self.assertEqual(d["project"]["title"], "Projeto sem título")
+        self.assertNotIn(self.root.name, json.dumps(d))
+
     def test_bad_journal_profile_fails_closed(self):
         p = self.root / "06_Submissao/Regras_da_Revista/JOURNAL_PROFILE.json"
         p.parent.mkdir(parents=True)
