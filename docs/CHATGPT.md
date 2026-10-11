@@ -1,7 +1,9 @@
 # ChatGPT / Codex adapter — Meu Artigo
 
-If this is your first GitHub Skill, start with
-[Getting started](COMECE-AQUI.md).
+If this is your first GitHub Skill or plugin, begin with the
+**[installation decision guide](INSTALLATION.md)** (correct file, exact
+menu and error recovery). Then consult the [full beginner guide](COMECE-AQUI.md).
+The public Skill and the private account plugin are **not the same install**.
 
 The common scientific instructions remain in `SKILL.md`.
 The plugin migration uses a namespaced copy at
