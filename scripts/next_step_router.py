@@ -40,6 +40,34 @@ def ids(value: object) -> list[str]:
     return [part for part in SPLIT.split(clean(value)) if part]
 
 
+def recorded_next_ids(markdown: str) -> list[str]:
+    """Extract only explicit CADA_ID markers in Next valid action sections.
+
+    The free-form content is untrusted task metadata, never executable
+    instructions. Do not expose text or presume that absence means DONE.
+    """
+    stored = []
+    in_section = False
+    for line in markdown.splitlines():
+        if re.match(r"^#{2,3}\\s+", line):
+            in_section = bool(re.search(
+                r"(?:next valid action|pr[oó]xima a[cç][aã]o v[aá]lida)",
+                line, flags=re.IGNORECASE))
+        if in_section:
+            match = re.search(r"^\\s*-\\s*CADA_ID:\\s*(CADA-\\d{4,})\\s*$", line)
+            if match:
+                stored.append(match.group(1))
+    # Also support lightweight continuity notes with an unambiguous inline ID.
+    if not stored:
+        for line in markdown.splitlines():
+            match = re.search(
+                r"(?:next valid action|pr[oó]xima a[cç][aã]o v[aá]lida):\\s*(CADA-\\d{4,})",
+                line, flags=re.IGNORECASE)
+            if match:
+                stored.append(match.group(1))
+    return stored
+
+
 def read_csv(root: Path, relative: str, id_key: str) -> tuple[list[dict], list[str]]:
     file = root / relative
     if file.is_symlink() or not file.is_file():
@@ -123,13 +151,19 @@ def resolve(project: Path) -> dict:
         result["blockers"].append("CONTINUITY_MISSING_OR_UNSAFE")
         return result
     try:
-        if not continuity.read_text(encoding="utf-8").strip():
+        saved_text = continuity.read_text(encoding="utf-8")
+        if not saved_text.strip():
             result["blockers"].append("CONTINUITY_EMPTY")
             return result
     except (OSError, UnicodeError):
         result["blockers"].append("CONTINUITY_UNREADABLE")
         return result
     result["continuity_document_read"] = True
+    continuity_candidates = recorded_next_ids(saved_text)
+    if len(set(continuity_candidates)) > 1:
+        result["blockers"].append("CONTINUITY_CONFLICTING_NEXT_ACTIONS")
+        return result
+    recorded_next = continuity_candidates[0] if continuity_candidates else None
 
     pending = sorted(active_journals(root))
     if pending:
@@ -191,9 +225,7 @@ def resolve(project: Path) -> dict:
         execution = upper(candidate.get("Execution_mode"))
         owner = upper(candidate.get("Assigned_to"))
         if execution in DECISION_EXECUTION or (
-                "RESEARCHER" in owner and execution not in {
-                    "AUTONOMOUS", "AUTONOMOUS_WITH_USER_DECISIONS"
-                }):
+                "RESEARCHER" in owner and "AGENT" not in owner):
             result["status"] = "HUMAN_TASK_DECISION_REQUIRED"
             result["requires_human_decision"] = True
         elif execution in {"AUTONOMOUS", "AUTONOMOUS_WITH_USER_DECISIONS"}:
@@ -217,6 +249,19 @@ def resolve(project: Path) -> dict:
         result["status"] = "NO_RECORDED_NEXT_ACTION"
         # Seven recorded approvals do not prove that a manuscript was sent.
         result["requires_human_decision"] = True
+
+    # The continuity record and C.A.D.A. are both durable source records.
+    # A stale next-action ID cannot authorize an unrelated technical task.
+    if recorded_next:
+        if result["next_task_id"] and recorded_next != result["next_task_id"]:
+            result["status"] = "CONTINUITY_RECONCILIATION_REQUIRED"
+            result["technical_preparation_possible"] = False
+            result["requires_human_decision"] = True
+            result["blockers"].append("CONTINUITY_NEXT_ACTION_MISMATCH")
+        elif not result["next_task_id"] and next_gate is not None:
+            # A completed operational task commonly leaves a stale markdown
+            # note: retain the real pending human gate, but flag reconciliation.
+            result["blockers"].append("CONTINUITY_NEXT_ACTION_NOT_CURRENT")
 
     # A local copy is not evidence of a writable, synchronized Drive.
     # Only an explicitly authorized WORK_FALLBACK permits local navigation
