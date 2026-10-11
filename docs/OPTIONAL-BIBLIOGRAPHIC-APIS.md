@@ -139,6 +139,21 @@ are **not automatically resolved**: all rows from the ambiguous file are
 quarantined with a specific diagnostic. Other unambiguous files in the same
 invocation may continue processing.
 
+**Verified compatibility exception:** Scopus and Web of Science legitimately
+export both short/initialed authors (`Authors` or `AU`) and full author names
+(`Author full names` or `AF`) as complementary columns. One short-form plus
+one full-form column is accepted, **even when their text differs**, and both
+columns are preserved in the canonical export. The existing canonical-author
+selection favors the short form when populated; the full form remains available
+for human interpretation. A second alias *within the same representation*
+still triggers quarantine; other critical fields such as title and DOI have
+no exception. An `AF` field alone may supply author names for WoS tag exports.
+This is a field-format exception, not a scientific verification.
+
+Tests use **synthetic examples matching documented Scopus/WoS headers**, not
+licensed live exports. True end-to-end homologation awaits authorized real
+export files and rights confirmation; neither is inferred from passing CI.
+
 The original input files remain unchanged. The import source manifest keeps
 the input fingerprint and the quarantine count; positional cell previews
 (up to 3,000 characters per row) are available for manual inspection.
