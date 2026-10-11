@@ -226,7 +226,7 @@ path, record the limitation and do not simulate an operation. Consult the
 [ChatGPT](docs/CHATGPT.md), [Claude](docs/CLAUDE.md) and
 [Gemini](docs/GEMINI.md). Adapters never relax scientific or ethical controls.
 
-**"Next"/"próximo":** Read authorized continuity, C.A.D.A., seven gates and pending journals. For approved local fallback use the read-only `scripts/next_step_router.py PROJECT`; Drive requires live canonical verification. Navigation never approves a human gate or executes a task. See [continuity](references/project-state.md).
+**Next/próximo:** Use [authorized continuity and C.A.D.A.](references/project-state.md). For local approved fallback, run `scripts/next_step_router.py PROJECT`. Navigation never approves a gate or verifies Drive sync.
 
 **Native in-chat visual dashboard:** For progress requests, read the
 authorized canonical project and follow the
