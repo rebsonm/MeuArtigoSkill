@@ -27,6 +27,13 @@ ALIASES = {
     "search_id": ["search_id", "search id"],
 }
 DOI_RE = re.compile(r"^10\.\d{4,9}/\S+$", re.I)
+# Preserve results from earlier attempts: require a new output folder for each run.
+# Never overwrite or leave stale canonical files looking like the latest import.
+GENERATED_OUTPUT_FILES = (
+    "import_diagnostics.json", "rejected_records.csv",
+    "consolidated_exact_dedup.csv", "exact_duplicate_audit.csv",
+    "near_duplicate_review.csv",
+)
 
 
 def norm_header(s: str) -> str:
@@ -161,6 +168,35 @@ def main() -> int:
     if not (0 < args.fuzzy_threshold <= 1):
         ap.error("--fuzzy-threshold must be between 0 and 1")
     out = Path(args.out_dir).resolve()
+    out.mkdir(parents=True, exist_ok=True)
+    # Exclusive directory creation is atomic across competing processes.
+    # If the process is interrupted, the marker remains as a fail-closed signal.
+    lock = out / ".dedupe_import_in_progress"
+    try:
+        lock.mkdir()
+    except FileExistsError:
+        print(
+            "ERROR: OUTPUT_DIRECTORY_LOCKED; another import is running or "
+            "an earlier attempt was interrupted. Inspect its outputs and "
+            "choose a new --out-dir.",
+            file=__import__("sys").stderr,
+        )
+        return 2
+    try:
+        return run_import(out, args)
+    finally:
+        lock.rmdir()
+
+
+def run_import(out: Path, args: argparse.Namespace) -> int:
+    if any((out / name).exists() or (out / name).is_symlink()
+           for name in GENERATED_OUTPUT_FILES):
+        print(
+            "ERROR: OUTPUT_DIRECTORY_ALREADY_HAS_RESULTS; choose a new "
+            "--out-dir to preserve the earlier attempt and avoid stale files.",
+            file=__import__("sys").stderr,
+        )
+        return 2
     records, rejected, diagnostics = [], [], []
     all_fields = set()
 

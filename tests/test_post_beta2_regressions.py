@@ -44,6 +44,79 @@ class PostBeta2ImportTests(unittest.TestCase):
                                str(self.export), "--out-dir", str(self.out)],
                               capture_output=True, text=True)
 
+    def test_precreated_empty_directory_remains_usable_and_lock_is_released(self):
+        self.out.mkdir()
+        write_csv(self.export, ["Title", "DOI"],
+                  [{"Title": "Valid", "DOI": "10.1234/valid"}])
+        result = self.run_dedupe()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertFalse((self.out / ".dedupe_import_in_progress").exists())
+        self.assertTrue((self.out / "consolidated_exact_dedup.csv").is_file())
+
+    def test_locked_output_refuses_import_without_writing_anything(self):
+        self.out.mkdir()
+        lock = self.out / ".dedupe_import_in_progress"
+        lock.mkdir()
+        write_csv(self.export, ["Title", "DOI"],
+                  [{"Title": "Valid", "DOI": "10.1234/valid"}])
+        result = self.run_dedupe()
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("OUTPUT_DIRECTORY_LOCKED", result.stderr)
+        self.assertEqual([p.name for p in self.out.iterdir()],
+                         [".dedupe_import_in_progress"])
+        self.assertTrue(lock.is_dir())
+
+    def test_invalid_import_releases_lock_but_does_not_clear_diagnostics(self):
+        write_csv(self.export, ["unexpected"], [{"unexpected": "invalid"}])
+        result = self.run_dedupe()
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("no valid bibliographic records", result.stderr)
+        self.assertTrue((self.out / "import_diagnostics.json").is_file())
+        self.assertFalse((self.out / ".dedupe_import_in_progress").exists())
+        second = self.run_dedupe()
+        self.assertEqual(second.returncode, 2)
+        self.assertIn("OUTPUT_DIRECTORY_ALREADY_HAS_RESULTS", second.stderr)
+
+    def test_dangling_symlink_in_generated_output_is_not_followed(self):
+        self.out.mkdir()
+        outside = self.root / "must_not_be_created.csv"
+        try:
+            (self.out / "consolidated_exact_dedup.csv").symlink_to(outside)
+        except (OSError, NotImplementedError):
+            self.skipTest("Creating symlinks unavailable on this platform")
+        write_csv(self.export, ["Title", "DOI"],
+                  [{"Title": "Valid", "DOI": "10.1234/valid"}])
+        result = self.run_dedupe()
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("OUTPUT_DIRECTORY_ALREADY_HAS_RESULTS", result.stderr)
+        self.assertFalse(outside.exists())
+        self.assertTrue((self.out / "consolidated_exact_dedup.csv").is_symlink())
+
+    def test_second_run_does_not_overwrite_or_relabel_prior_outputs(self):
+        write_csv(self.export, ["Title", "DOI"],
+                  [{"Title": "First import", "DOI": "10.1234/first"}])
+        self.assertEqual(self.run_dedupe().returncode, 0)
+        outputs = {p.name: p.read_bytes() for p in self.out.iterdir() if p.is_file()}
+        write_csv(self.export, ["Unexpected"], [{"Unexpected": "invalid"}])
+        second = self.run_dedupe()
+        self.assertEqual(second.returncode, 2)
+        self.assertIn("OUTPUT_DIRECTORY_ALREADY_HAS_RESULTS", second.stderr)
+        self.assertEqual(
+            outputs,
+            {p.name: p.read_bytes() for p in self.out.iterdir() if p.is_file()},
+        )
+
+    def test_partial_prior_output_blocks_new_import(self):
+        self.out.mkdir()
+        (self.out / "exact_duplicate_audit.csv").write_text("prior run\n")
+        write_csv(self.export, ["Title", "DOI"],
+                  [{"Title": "New item", "DOI": "10.1234/new"}])
+        result = self.run_dedupe()
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("OUTPUT_DIRECTORY_ALREADY_HAS_RESULTS", result.stderr)
+        self.assertEqual((self.out / "exact_duplicate_audit.csv").read_text(),
+                         "prior run\n")
+
     def test_unknown_schema_rejected_with_structured_diagnostic(self):
         write_csv(self.export, ["unexpected_column"], [{"unexpected_column": "invalid"}])
         result = self.run_dedupe()
