@@ -46,6 +46,38 @@ def sha256_stream(path: Path) -> str:
     return digest.hexdigest()
 
 
+class HeaderValidationError(ValueError):
+    """Ambiguous input headers, with untouched positional rows for quarantine."""
+
+    def __init__(self, reason: str, columns: list[str]):
+        super().__init__(reason)
+        self.reason = reason
+        self.columns = columns
+        self.rows: list[list] = []
+
+
+def validate_headers(headers: list[str]) -> None:
+    """Check all column headings before any dict can discard repeated keys."""
+    normalized = [norm_header(h) for h in headers]
+    if any(not h for h in normalized):
+        raise HeaderValidationError(
+            "EMPTY_HEADER", [f"column_{i + 1}" for i, h in enumerate(normalized) if not h]
+        )
+
+    by_name: dict[str, list[str]] = {}
+    for original, key in zip(headers, normalized):
+        by_name.setdefault(key, []).append(original)
+    repeated = [value for names in by_name.values() if len(names) > 1 for value in names]
+    if repeated:
+        raise HeaderValidationError("DUPLICATE_HEADER", repeated)
+
+    for aliases in ALIASES.values():
+        matching = [h for h, normalized_h in zip(headers, normalized)
+                    if normalized_h in aliases]
+        if len(matching) > 1:
+            raise HeaderValidationError("AMBIGUOUS_BIBLIOGRAPHIC_HEADERS", matching)
+
+
 def norm_header(s: str) -> str:
     return re.sub(r"\s+", " ", str(s or "").strip().lower())
 
@@ -134,10 +166,19 @@ def read_tabular(path: Path) -> list[dict[str, str]]:
         except ImportError as e:
             raise SystemExit("XLSX input requires openpyxl; convert to CSV or install openpyxl.") from e
         wb = load_workbook(path, read_only=True, data_only=True)
-        ws = wb.active
-        rows = ws.iter_rows(values_only=True)
-        headers = [str(x or "") for x in next(rows)]
-        return [{headers[i]: "" if v is None else str(v) for i, v in enumerate(vals)} for vals in rows]
+        try:
+            ws = wb.active
+            rows = ws.iter_rows(values_only=True)
+            headers = [str(x) if x is not None else "" for x in next(rows)]
+            try:
+                validate_headers(headers)
+            except HeaderValidationError as exc:
+                exc.rows = [list(vals) for vals in rows]
+                raise
+            return [{headers[i]: "" if v is None else str(v)
+                     for i, v in enumerate(vals)} for vals in rows]
+        finally:
+            wb.close()
 
     delimiter = "\t" if suffix in {".tsv", ".txt"} else ","
     with path.open("r", encoding="utf-8-sig", newline="") as f:
@@ -146,7 +187,19 @@ def read_tabular(path: Path) -> list[dict[str, str]]:
             delimiter = csv.Sniffer().sniff(sample, delimiters=",\t;").delimiter
         except csv.Error:
             pass
-        return list(csv.DictReader(f, delimiter=delimiter))
+        reader = csv.DictReader(f, delimiter=delimiter)
+        if reader.fieldnames is not None:
+            try:
+                validate_headers(reader.fieldnames)
+            except HeaderValidationError as exc:
+                # DictReader silently overwrites repeated keys; re-read
+                # positional cells to retain every original column.
+                f.seek(0)
+                positional = csv.reader(f, delimiter=delimiter)
+                next(positional, None)
+                exc.rows = list(positional)
+                raise
+        return list(reader)
 
 
 def safe_spreadsheet_cell(value: str) -> str:
@@ -229,6 +282,28 @@ def run_import(out: Path, args: argparse.Namespace) -> int:
             file_entry["size_bytes"] = p.stat().st_size
             file_entry["rows_observed"] = len(source)
             file_entry["read_status"] = "READABLE"
+        except HeaderValidationError as exc:
+            # Entire export is untrusted because a dict can hide conflicting
+            # columns. The original remains untouched; quarantine by row.
+            file_entry["read_status"] = exc.reason
+            file_entry["rows_observed"] = len(exc.rows)
+            try:
+                file_entry["content_sha256"] = sha256_stream(p)
+                file_entry["size_bytes"] = p.stat().st_size
+            except OSError:
+                pass
+            diagnostics.append({
+                "source_file": p.name, "source_input_id": source_input_id,
+                "reason": exc.reason, "affected_records": len(exc.rows),
+                "conflicting_headers": exc.columns,
+            })
+            for row_idx, original_cells in enumerate(exc.rows, 2):
+                rejected.append({
+                    "_source_file": p.name, "_source_input_id": source_input_id,
+                    "_source_row": str(row_idx), "_reject_reason": exc.reason,
+                    "_raw_record": repr(original_cells)[:3000],
+                })
+            continue
         except (OSError, ValueError, StopIteration, csv.Error) as exc:
             diagnostics.append({"source_file": p.name, "source_input_id": source_input_id, "reason": "UNREADABLE_EXPORT",
                                 "affected_records": 0, "error_type": type(exc).__name__})
