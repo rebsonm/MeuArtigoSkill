@@ -227,6 +227,7 @@ def search(provider: str, query: str, *, limit: int = 50,
     page = 1
     cursor = "*"
     seen_cursors: set[str] = set()
+    pagination_incomplete = False
     try:
         while remaining:
             page_size = min(remaining, 100)
@@ -266,10 +267,20 @@ def search(provider: str, query: str, *, limit: int = 50,
                 normalizer = normalize_semantic_scholar
             if not isinstance(raw_items, list):
                 raise ProviderFailure("INVALID_RESPONSE")
-            if isinstance(n, int) and n >= 0:
+            if n is not None and (type(n) is not int or n < 0):
+                raise ProviderFailure("INVALID_RESPONSE")
+            if n is not None:
                 outcome.reported_total = n
-            usable = [item for item in raw_items if isinstance(item, dict)]
-            outcome.rows.extend(normalizer(item) for item in usable[:remaining])
+            # Validate the entire page before adding ANY of its rows. A
+            # corrupt provider payload cannot quietly drop individual works
+            # and convert an incomplete response into COMPLETE.
+            if any(not isinstance(item, dict) for item in raw_items):
+                raise ProviderFailure("INVALID_RESPONSE")
+            try:
+                normalized = [normalizer(item) for item in raw_items[:remaining]]
+            except (AttributeError, TypeError, ValueError, KeyError):
+                raise ProviderFailure("INVALID_RESPONSE") from None
+            outcome.rows.extend(normalized)
             remaining = limit - len(outcome.rows)
             outcome.pages_received += 1
             if len(raw_items) < page_size or not raw_items:
@@ -278,14 +289,26 @@ def search(provider: str, query: str, *, limit: int = 50,
                 page += 1
             else:
                 next_cursor = message.get("next-cursor") if isinstance(message, dict) else None
-                if not isinstance(next_cursor, str) or next_cursor in seen_cursors:
+                if not isinstance(next_cursor, str) or not next_cursor or next_cursor in seen_cursors:
+                    # A full page with an unverified continuation must never
+                    # silently certify complete pagination.
+                    if outcome.reported_total is None or outcome.reported_total > len(outcome.rows):
+                        pagination_incomplete = True
                     break
                 seen_cursors.add(next_cursor)
                 cursor = next_cursor
         # A bounded query is not evidence of complete database coverage.
         more = (outcome.reported_total is not None
                 and outcome.reported_total > len(outcome.rows))
-        outcome.status = "PARTIAL" if more else "COMPLETE"
+        unknown_full_page = (
+            outcome.reported_total is None and outcome.pages_received > 0
+            and remaining == 0
+        )
+        if pagination_incomplete:
+            outcome.error_code = "PAGINATION_INCOMPLETE"
+        elif unknown_full_page:
+            outcome.error_code = "UNKNOWN_PROVIDER_TOTAL"
+        outcome.status = "PARTIAL" if more or pagination_incomplete or unknown_full_page else "COMPLETE"
     except ProviderFailure as exc:
         outcome.error_code = exc.status
         outcome.status = "PARTIAL" if outcome.rows else exc.status
