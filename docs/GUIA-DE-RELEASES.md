@@ -115,3 +115,40 @@ correct real-world cross-platform language behavior.
 - Private full text, institutionally licensed PDFs and
   participant documents do **not** inherit the software's
   Apache-2.0 license.
+
+## Phase 6: offline bundle closure audit
+
+The unreleased development Skill source is packaged by
+`scripts/build_skill_bundle.py`, which calls the source-only
+`scripts/bundle_dependency_audit.py`. Before writing the archive, it
+checks that links directly navigated from `SKILL.md` are present and
+that installed operational scripts do not import excluded source-only
+Python modules. It parses all bundled Python files, checks the
+fixed allowlist, and fails on missing local references rather than
+producing an apparently usable ZIP with broken imports. Optional
+external packages (for example openpyxl and xlrd) do not become
+mandatory just because an offline metadata adapter exists.
+
+The standalone bundle verifier independently checks allowed ZIP
+entry structure, archive size/member limits, symlink/encrypted entries,
+manifest membership, SHA-256 digests, syntax of installed Python
+sources and accessible entrypoint links. These are *local source and
+file-consistency checks*, not package signing, publisher authentication,
+operational access to licensed databases, scientific validation or
+independent installation tests in ChatGPT/Claude/Gemini. Verify the
+separate published SHA256SUMS through the authenticated official release
+page when actually installing an authorized public version.
+
+```bash
+python scripts/build_skill_bundle.py
+python scripts/build_skill_bundle.py --verify "dist/MeuArtigoSkill-v$(cat VERSION).zip"
+(cd dist && sha256sum -c SHA256SUMS.txt)
+```
+
+A CI-built ZIP on `main` is a **development artifact**. The official
+recommended public Skill remains `v0.9.0-beta.1`. Running any command
+above must not create a GitHub release or alter the recommendation.
+Any final release decision requires explicit maintainer approval and
+the separate manual publication workflow. The redundant discovery of
+15 Phase-5 unit tests was corrected; software regression counts are
+not measures of scientific validity.
