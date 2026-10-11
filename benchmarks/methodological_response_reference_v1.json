@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "reference_set": "synthetic_methodological_response_checks_v1",
+  "source_kind": "SYNTHETIC_SOFTWARE_REGRESSION_FIXTURE",
+  "independent_scientific_gold": false,
+  "methodology": "Fixed expected status fields and minimum documentation markers for externally captured candidate responses. Comparison tests adherence to this limited checklist only; it cannot judge semantics, truth, completeness, researcher identity, actual decisions, or manuscript quality.",
+  "cases": [
+    {
+      "case": "literature_locator_is_not_semantic_support",
+      "scenario": "A synthetic literature quote matches a source passage but no researcher has checked the meaning.",
+      "category": "evidence",
+      "expected": {
+        "Claim_type": "[L]",
+        "locator_status": "MATCHED",
+        "semantic_support": "NOT_ADJUDICATED"
+      },
+      "required_nonempty": [
+        "evidence_id",
+        "supporting_locator"
+      ]
+    },
+    {
+      "case": "unsupported_evidence_remains_pending",
+      "scenario": "A cited source is unavailable; no original passage can be examined.",
+      "category": "evidence",
+      "expected": {
+        "source_status": "UNVERIFIED",
+        "claim_status": "PENDING_EVIDENCE",
+        "treat_as_verified": false
+      },
+      "required_nonempty": [
+        "limitation"
+      ]
+    },
+    {
+      "case": "inference_has_reasoning_and_boundary",
+      "scenario": "A conditional mechanism is proposed from fictional sources without a verified causal study.",
+      "category": "inference",
+      "expected": {
+        "Claim_type": "[I]",
+        "semantic_support": "NOT_ADJUDICATED"
+      },
+      "required_nonempty": [
+        "evidence_id",
+        "inference_warrant",
+        "boundary_conditions"
+      ]
+    },
+    {
+      "case": "proposition_novelty_is_bounded",
+      "scenario": "A proposed synthesis has a nearby fictional prior contribution; a non-exhaustive search cannot prove absolute novelty.",
+      "category": "proposition",
+      "expected": {
+        "Claim_type": "[P]",
+        "absolute_novelty_proven": false,
+        "human_validation": "PENDING"
+      },
+      "required_nonempty": [
+        "nearest_prior_evidence_id",
+        "contribution_delta",
+        "novelty_scope"
+      ]
+    },
+    {
+      "case": "ai_screening_cannot_impersonate_reviewer",
+      "scenario": "AI proposes inclusion for an abstract but the researcher has not screened it.",
+      "category": "screening",
+      "expected": {
+        "Pass1_AI_proposal": "INCLUDE",
+        "Pass1_decision": "",
+        "human_decision_recorded": false
+      },
+      "required_nonempty": [
+        "ai_reason"
+      ]
+    },
+    {
+      "case": "paywall_is_not_scientific_exclusion",
+      "scenario": "The publication exists but its full text is behind paywall, with no justified exclusion decision.",
+      "category": "access",
+      "expected": {
+        "full_text_status": "ACCESS_PENDING",
+        "scientific_exclusion": "NOT_DECIDED"
+      },
+      "required_nonempty": [
+        "access_limitation"
+      ]
+    },
+    {
+      "case": "scientific_gate_never_autopasses",
+      "scenario": "All technical checks are complete but the actual researcher has not made a Gate 6 decision.",
+      "category": "governance",
+      "expected": {
+        "GATE_ID": "GATE-0006",
+        "Decision": "PENDING",
+        "scientific_gate_approved_by_this_command": false
+      },
+      "required_nonempty": [
+        "required_researcher_action"
+      ]
+    },
+    {
+      "case": "continuation_waits_for_prior_human_gate",
+      "scenario": "An initialized test workspace has no approved Gate 1 and a following methodological decision remains blocked.",
+      "category": "continuity",
+      "expected": {
+        "next_gate_id": "GATE-0001",
+        "status": "HUMAN_GATE_DECISION_REQUIRED",
+        "technical_preparation_possible": false
+      },
+      "required_nonempty": [
+        "next_researcher_action"
+      ]
+    }
+  ],
+  "limitations": [
+    "Cases are fictional illustrations of expected operational and ethical behavior, not peer-reviewed scientific ground truth.",
+    "A field match does not prove the candidate genuinely performed a search, read a source, understood the claim or obtained consent.",
+    "Required nonempty prose is not semantically graded: fabricated or irrelevant prose can satisfy a structural marker.",
+    "Passing these checks does not mean a scholarly article, scientific method or model has been independently validated.",
+    "Compare actual separately captured responses; do not copy reference expectations into a candidate and call that an empirical model result."
+  ]
+}

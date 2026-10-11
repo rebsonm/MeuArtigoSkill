@@ -21,6 +21,7 @@ from pathlib import Path
 from verify_sources import check_locator, doi_of, match_metadata, norm, provider_query
 
 DEFAULT_REFERENCE = Path(__file__).resolve().parents[1] / "benchmarks/public_review_reference_v1.json"
+DEFAULT_METHOD_REFERENCE = Path(__file__).resolve().parents[1] / "benchmarks/methodological_response_reference_v1.json"
 COUNT_NAMES = {
     "database_records", "other_records", "identified", "duplicates_removed",
     "screened", "screened_excluded", "full_text_reviewed",
@@ -290,6 +291,166 @@ def evaluate(reference_path, candidate_path, *, workspace, adjudications=None, b
     return result
 
 
+
+def methodology_reference_cases(reference):
+    """Validate frozen *synthetic software* checks, never a scientific gold set."""
+    if (not isinstance(reference, dict)
+            or reference.get("schema_version") != 1
+            or reference.get("source_kind") != "SYNTHETIC_SOFTWARE_REGRESSION_FIXTURE"
+            or reference.get("independent_scientific_gold") is not False
+            or not isinstance(reference.get("cases"), list)
+            or not 1 <= len(reference["cases"]) <= 40):
+        raise ValueError("Not a bounded synthetic methodological reference")
+    cases = {}
+    for row in reference["cases"]:
+        if not isinstance(row, dict):
+            raise ValueError("Malformed methodological reference case")
+        case = row.get("case")
+        expected = row.get("expected")
+        required = row.get("required_nonempty")
+        if (not isinstance(case, str) or not re.fullmatch(r"[a-z][a-z0-9_]{3,79}", case)
+                or case in cases or not isinstance(expected, dict)
+                or not expected or not isinstance(required, list)
+                or len(required) != len(set(map(str, required)))):
+            raise ValueError("Malformed or repeated methodological case")
+        if any(not isinstance(key, str) or not key or
+               type(value) not in (str, int, bool)
+               for key, value in expected.items()):
+            raise ValueError("Methodological expectations must use primitive fields")
+        if (any(not isinstance(key, str) or not key
+                or key in expected for key in required)
+                or len(expected) + len(required) > 30):
+            raise ValueError("Invalid or excessive required methodological fields")
+        if expected.get("scientific_gate_approved_by_this_command") is True or expected.get("human_decision_recorded") is True:
+            raise ValueError("Synthetic checklist cannot claim AI approved a human decision")
+        cases[case] = row
+    return cases
+
+
+def methodology_candidate_cases(candidate, reference_sha):
+    """Only user-supplied recorded outputs; never infer missing candidates."""
+    if (not isinstance(candidate, dict) or candidate.get("schema_version") != 1
+            or candidate.get("reference_sha256") != reference_sha
+            or not isinstance(candidate.get("cases"), list)):
+        raise ValueError("Methodology candidate requires matching frozen reference SHA-256")
+    output = {}
+    for row in candidate["cases"]:
+        if not isinstance(row, dict) or not isinstance(row.get("case"), str):
+            raise ValueError("Malformed methodological candidate case")
+        key = row["case"]
+        fields = row.get("fields")
+        if key in output or not isinstance(fields, dict):
+            raise ValueError("Repeated case or missing candidate fields object")
+        if any(not isinstance(k, str) for k in fields):
+            raise ValueError("Candidate field names must be strings")
+        output[key] = fields
+    return output
+
+
+def evaluate_methodology(reference_path=DEFAULT_METHOD_REFERENCE, candidate_path=None,
+                         *, baseline=None):
+    """Score fixed structural expectations; never self-adjudicate meaning.
+
+    Reports contain case IDs, field names and mismatch reasons, never raw
+    candidate prose or source excerpts. Equal fields are not evidence that
+    a real literature review, screening or human approval took place.
+    """
+    reference_path = Path(reference_path)
+    if candidate_path is None:
+        raise ValueError("Recorded candidate file is required")
+    reference = methodology_reference_cases(read_json(reference_path))
+    reference_sha = digest(reference_path)
+    candidate_path = Path(candidate_path)
+    candidates = methodology_candidate_cases(read_json(candidate_path), reference_sha)
+    unknown = sorted(set(candidates) - set(reference))
+    if unknown:
+        raise ValueError("Candidate includes unknown methodological cases")
+    summary = {"eligible_cases": len(reference), "submitted_cases": len(candidates),
+               "criterion_count": 0, "observed_criteria": 0,
+               "matched_criteria": 0, "missing_criteria": 0,
+               "mismatched_criteria": 0, "structurally_matching_cases": 0}
+    details = []
+    for case_id, case in reference.items():
+        expected = case["expected"]
+        required = case["required_nonempty"]
+        count = len(expected) + len(required)
+        summary["criterion_count"] += count
+        if case_id not in candidates:
+            summary["missing_criteria"] += count
+            details.append({"case": case_id, "status": "NOT_SUBMITTED",
+                            "missing_fields": sorted([*expected, *required]),
+                            "mismatched_fields": [], "matched_criteria": 0})
+            continue
+        fields = candidates[case_id]
+        missing, mismatch, matched = [], [], 0
+        for field, value in expected.items():
+            if field not in fields:
+                missing.append(field)
+                continue
+            if type(fields[field]) is type(value) and fields[field] == value:
+                matched += 1
+            else:
+                mismatch.append(field)
+        for field in required:
+            if field not in fields:
+                missing.append(field)
+            elif isinstance(fields[field], str) and fields[field].strip():
+                matched += 1
+            else:
+                mismatch.append(field)
+        summary["matched_criteria"] += matched
+        summary["missing_criteria"] += len(missing)
+        summary["mismatched_criteria"] += len(mismatch)
+        summary["observed_criteria"] += count - len(missing)
+        ok = not missing and not mismatch
+        summary["structurally_matching_cases"] += int(ok)
+        details.append({"case": case_id,
+                        "status": "STRUCTURAL_MATCH" if ok else "STRUCTURAL_MISMATCH",
+                        "matched_criteria": matched,
+                        "missing_fields": sorted(missing),
+                        "mismatched_fields": sorted(mismatch)})
+    summary["case_coverage"] = ratio(summary["submitted_cases"], summary["eligible_cases"])
+    summary["criterion_coverage"] = ratio(summary["observed_criteria"], summary["criterion_count"])
+    summary["fixed_rule_conformance_all_criteria"] = ratio(
+        summary["matched_criteria"], summary["criterion_count"])
+    summary["fixed_rule_conformance_observed_only"] = ratio(
+        summary["matched_criteria"], summary["observed_criteria"])
+    result = {
+        "schema_version": 1, "mode": "methodological_response_calibration",
+        "reference_sha256": reference_sha,
+        "candidate_sha256": digest(candidate_path),
+        "observed_at": timestamp(),
+        "reference_kind": "SYNTHETIC_SOFTWARE_REGRESSION_FIXTURE",
+        "human_semantic_review": "NOT_PERFORMED",
+        "scientific_validity_proven": False,
+        "source_access_verified": False,
+        "reviewer_identity_authenticated": False,
+        "metrics": summary,
+        "cases": details,
+        "limitations": [
+            "Comparison is limited to frozen expected field values and nonempty documentation markers.",
+            "A matching text field does not mean that its evidence, interpretation or research justification is correct.",
+            "Reference cases are synthetic developer-authored policy examples, not independently adjudicated scientific gold.",
+            "No researcher identity, human gate approval, source access or real model behavior is authenticated by this report.",
+            "Do not interpret structural conformance as scientific quality, a successful research article or validated productivity.",
+        ],
+    }
+    if baseline is not None:
+        prior = evaluate_methodology(reference_path, baseline)
+        b = prior["metrics"]
+        result["baseline_comparison"] = {
+            "reference_sha256": reference_sha,
+            "comparable_rule_set": True,
+            "baseline_matched_criteria": b["matched_criteria"],
+            "candidate_matched_criteria": summary["matched_criteria"],
+            "change_matched_criteria": summary["matched_criteria"] - b["matched_criteria"],
+            "baseline_case_coverage": b["case_coverage"],
+            "candidate_case_coverage": summary["case_coverage"],
+            "interpretation": "Structural compliance only; distinct model tasks, sources, and human checks cannot be inferred equivalent.",
+        }
+    return result
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
     sub = ap.add_subparsers(dest="command", required=True)
@@ -304,18 +465,29 @@ def main(argv=None):
     e.add_argument("--adjudications", default="")
     e.add_argument("--baseline", default="")
     e.add_argument("--output", required=True)
+    m = sub.add_parser("evaluate-methodology",
+                       help="Compare recorded responses to frozen synthetic structural checks, not scientific truth")
+    m.add_argument("--reference", default=str(DEFAULT_METHOD_REFERENCE))
+    m.add_argument("--candidate", required=True)
+    m.add_argument("--baseline", default="")
+    m.add_argument("--output", required=True)
     a = ap.parse_args(argv)
     try:
         if a.command == "pilot":
             report = pilot(a.reference, offline=a.offline)
-        else:
+        elif a.command == "evaluate":
             report = evaluate(a.reference, a.candidate, workspace=a.workspace,
                               adjudications=a.adjudications or None, baseline=a.baseline or None)
+        else:
+            report = evaluate_methodology(a.reference, a.candidate,
+                                          baseline=a.baseline or None)
         write_json(a.output, report)
         print(json.dumps({"mode": report["mode"], "output": str(a.output),
                           "verified_metadata": report.get("verified_metadata"),
                           "submitted_cases": report.get("submitted_cases"),
-                          "semantic_status": (report.get("semantic_adjudication") or {}).get("status")}, ensure_ascii=False))
+                          "semantic_status": (report.get("semantic_adjudication") or {}).get("status"),
+                          "human_semantic_review": report.get("human_semantic_review"),
+                          "scientific_validity_proven": report.get("scientific_validity_proven")}, ensure_ascii=False))
         return 0
     except (ValueError, OSError, KeyError, TypeError) as ex:
         print("ERROR: " + str(ex), file=sys.stderr)
