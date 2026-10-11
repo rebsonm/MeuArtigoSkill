@@ -14,6 +14,7 @@ from pathlib import Path
 
 from presentation_mode import read_config, view as existing_presentation
 from next_step_router import resolve as resolve_next_step
+from cada_continuity_integrity import audit as audit_cada_continuity
 
 MGMT = "00_Gestao_e_Continuidade"
 FILES = {
@@ -113,6 +114,14 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
     # action* (which checks dependencies, scientific gates and recovery).
     # Only return identifiers/statuses, never confidential Next_action text.
     navigation = resolve_next_step(root)
+    integrity = audit_cada_continuity(root)
+    # Do not advertise a technical action when the last evidenced
+    # completion conflicts with the actual canonical registers.
+    if integrity["errors"]:
+        navigation["status"] = "CADA_CONTINUITY_INTEGRITY_REVIEW"
+        navigation["technical_preparation_possible"] = False
+        navigation["blockers"] = sorted(set(
+            navigation["blockers"] + ["CADA_CONTINUITY_INTEGRITY_REVIEW"]))
     counts = {
         "registered_tasks": nrows(tasks),
         "tasks_reported_done": None if tasks is None else sum(
@@ -145,6 +154,9 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
             "technical_preparation_possible": navigation["technical_preparation_possible"],
             "blockers": navigation["blockers"],
             "continuity_document_read": navigation["continuity_document_read"],
+            "integrity_status": integrity["status"],
+            "integrity_error_count": len(integrity["errors"]),
+            "last_operational_proof_checked": integrity["last_operational_proof_checked"],
             "scientific_gate_approved_by_navigation": False,
             "drive_sync_verified_in_this_session": False,
         },
