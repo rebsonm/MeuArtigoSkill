@@ -17,10 +17,11 @@ the original `assets/icon.svg` using `logo` and `composerIcon`.
 Its skill core remains at its pre-migration version. No visual MCP tool is
 installed by that icon update.
 
-The post-beta.2 source branch contains PR #22's read-only dashboard and
-`scripts/build_plugin_bundle.py` for future plugin candidates. It does
-not deploy `visual-app`, register an MCP connection, enable writable Drive,
-or update the installed private plugin. For a custom visual dashboard,
+The beta.4 source candidate includes the read-only visual dashboard
+reconciled from PR #22 through consolidated PR #27, together with
+`scripts/build_plugin_bundle.py` for review-only plugin packaging. Main
+source integration does **not** deploy `visual-app`, register a live MCP
+connection, enable writable Drive, or update the installed private plugin. For a custom visual dashboard,
 an authorized remote MCP deployment/connection and actual read access to
 the user's canonical project must be verified. See
 [plugin migration](PLUGIN_MIGRATION_PHASE3.md) and
