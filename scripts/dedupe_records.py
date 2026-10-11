@@ -20,7 +20,7 @@ from pathlib import Path
 ALIASES = {
     "title": ["title", "article title", "document title", "ti", "paper title", "work title", "dc.title"],
     "doi": ["doi", "digital object identifier", "di", "doi url", "doi_url"],
-    "authors": ["authors", "author", "author full names", "au", "author names", "creators", "creator"],
+    "authors": ["authors", "author", "author full names", "au", "author names", "creators", "creator", "af"],
     "year": ["year", "publication year", "publication_year", "py", "published year", "publication date", "date"],
     "stable_id": ["openalex_id", "openalex id", "pmid", "pubmed id", "arxiv_id", "arxiv id"],
     "version": ["version", "version id", "version_id", "edition", "publication version"],
@@ -71,11 +71,27 @@ def validate_headers(headers: list[str]) -> None:
     if repeated:
         raise HeaderValidationError("DUPLICATE_HEADER", repeated)
 
-    for aliases in ALIASES.values():
+    for field, aliases in ALIASES.items():
         matching = [h for h, normalized_h in zip(headers, normalized)
                     if normalized_h in aliases]
-        if len(matching) > 1:
-            raise HeaderValidationError("AMBIGUOUS_BIBLIOGRAPHIC_HEADERS", matching)
+        if len(matching) <= 1:
+            continue
+
+        if field == "authors":
+            # Scopus and WoS export two *complementary representations*:
+            # abbreviated names (Authors/AU) and full names (Author full names/AF).
+            # Keep both original columns. The existing pick() precedence selects
+            # the short form when available; the full form remains in the export.
+            short_names = {"authors", "author", "au", "author names",
+                           "creators", "creator"}
+            full_names = {"author full names", "af"}
+            short_present = [h for h in matching if norm_header(h) in short_names]
+            full_present = [h for h in matching if norm_header(h) in full_names]
+            if len(matching) == 2 and len(short_present) == 1 and len(full_present) == 1:
+                continue
+        # For genuine competing fields (e.g. Title and Article Title), never
+        # guess which identity field should win without human correction.
+        raise HeaderValidationError("AMBIGUOUS_BIBLIOGRAPHIC_HEADERS", matching)
 
 
 def norm_header(s: str) -> str:
