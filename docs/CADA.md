@@ -334,3 +334,12 @@ Gerenciador:
 ```
 
 This vision is the main function of C.A.D.A. in Meu Artigo.
+## Phase 5: evidenced C.A.D.A. operational completion
+
+The optional local maintenance command
+`scripts/update_cada_continuity.py` checks a verified local TRACE
+receipt and only then marks an eligible technical C.A.D.A. task DONE.
+It updates C.A.D.A., `CONTINUIDADE.md` and the derived dashboard in
+one journal-protected operation, preserving gate decisions. Interrupted
+writes are recoverable; remote Drive projects require independent
+authorized sync and cannot use this local writer.
