@@ -22,7 +22,7 @@ Use a project root named `ARTIGO_<short-title>_<YYYY>` unless the user supplies 
 ```text
 ARTIGO_<short-title>_<YYYY>/
 ├── 00_Gestao_e_Continuidade/
-│   ├── CONTINUIDADE.md
+│   ├── CONTINUIDADE.md  ← única continuidade canônica; não criar cópia na raiz
 │   ├── PROTOCOLO.md
 │   ├── PROJECT_CONFIG.json
 │   ├── RASTREABILIDADE.md
