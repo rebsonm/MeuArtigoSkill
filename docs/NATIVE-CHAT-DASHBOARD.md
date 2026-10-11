@@ -116,3 +116,30 @@ uma sincronização com o Google Drive. Dependências, ações e status
 devem ser confirmados no armazenamento efetivamente canônico.
 Os testes utilizam projetos fictícios e não constituem
 homologação de interface ou avaliação científica.
+
+## Phase 6: one next step, not competing dashboards
+
+The `overview.next_task_id`/`next_gate_id` keys remain available to
+existing native renderers, but are now read-only aliases of the
+`continuation` safe classification. They no longer represent the first
+active row or merely a gate with a non-COMPLETED status. Pending gate
+approval requires the existing full documented check, including validation
+reference; no new acceptance rule was introduced.
+
+MINIMAL displays at most three C.A.D.A. rows and puts the genuinely
+eligible task first if present, even when earlier rows are BLOCKED or
+CAPTURED. FULL retains the complete recorded order. Both render exactly
+`ID Tarefa | Tarefa | Responsável execução | Prazo`; neither renders
+private `Next_action` text or mistakes a recorded C.A.D.A. completion
+for independent science. The text fallback has one "Next step" line
+and a single generic first-blocker status, not a second/raw recommendation.
+
+The existing `next_step_router.py` now supplies the same
+`pending_human_gate` and `next_eligible_task` pure rules to the
+post-TRACE C.A.D.A. updater. This removes duplicated eligibility logic
+instead of adding another orchestration layer, metric, file or ID.
+Symlinked or malformed CSV projections are reported as unavailable,
+not as zero observations or verified project facts. Human decisions,
+permissions, Drive synchronization and scientific validation still
+require their existing independent checks. These are software tests,
+**not** measured improvements in UX or scientific outcomes.
