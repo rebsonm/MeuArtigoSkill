@@ -1,13 +1,15 @@
 # Experimental public beta installation — Meu Artigo
 
-**Officially recommended prepared Skill release:** `0.9.0-beta.1`.
+**Experimental beta for external testing:** `0.9.0-beta.4` (prepared for the separate prerelease publication workflow; availability must be checked on GitHub).
 **Status:** public experimental beta for voluntary use,
 not a scientifically validated research method.
 
 ## Obtaining the package
 
-Download the **[official prepared beta.1 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip)**.
-Use that version's `SHA256SUMS.txt` to check integrity.
+Once available, download the **[prepared beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip)** from its published tagged prerelease.
+Use that version's `SHA256SUMS.txt` to check integrity. The source file
+and prepared metadata alone do not mean this release has been published;
+if it is not yet visible, earlier beta releases remain available.
 The alternative **Code → Download ZIP** is a repository source snapshot
 rather than the specially prepared, versioned Skill installer. The source
 on `main` may be newer than the last published distribution.
@@ -63,9 +65,10 @@ The scientific manuscript language follows an independent
 journal or researcher decision:
 [language policy](../references/language-policy.md).
 
-The official beta.1 ZIP does **not** contain later optional bibliographic
-adapters or CSV stabilization. Other historical prereleases may remain
-published but are not the recommended public distribution.
+An earlier beta.1 ZIP does **not** contain the later workflow, optional
+bibliographic adapters or C.A.D.A. stabilization. For external testing of
+these changes, use the matching beta.4 ZIP **only after it has been
+published**, rather than substituting the source checkout.
 
 ## Compatibility still requiring evaluation
 
