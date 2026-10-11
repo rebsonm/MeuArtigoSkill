@@ -40,6 +40,12 @@ The manifest path, not merely the asset's existence, is the listing contract.
 - `visual-app/` supplies five views (overview, C.A.D.A., human gates,
   evidence controls, and history/synchronization), MCP Apps resource and
   `meu_artigo_dashboard` tool. The UI itself never approves a gate.
+- **UX parity is not yet complete:** the product owner provided 12 approved
+  conceptual screen experiences. The original five-section MCP implementation
+  is a technical MVP rather than visual acceptance. See
+  [approved UX and gap-by-gap acceptance](UX_APPROVED_REFERENCE_12_SCREENS.md)
+  before claiming a design match; no screenshots' illustrative metrics are
+  real research data.
 - Existing code in `verify_sources.py`, `quality_benchmark.py`,
   `scientific_evidence_tiers.py`, `governance_events.py` and
   `validate_project.py` was updated by applying PR #22 patches
