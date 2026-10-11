@@ -3,15 +3,17 @@
 
 ## Unreleased
 
-No additional functionality was added after preparation of the experimental
-beta.4 prerelease. Earlier beta.1 and beta.2 releases remain archived. A
-prerelease remains experimental regardless of its publication date.
+Since publication of the experimental beta.4, the public documentation was
+aligned with the existing tagged release, ZIP and checksum. No new Skill
+feature, scientific validation, or previously installed user package is
+implied. Earlier beta.1 and beta.2 releases remain archived.
 
 ## 0.9.0-beta.4 — 2026-10-11
 
-**Experimental public prerelease prepared for external testing** (publication
-requires the separately authorized GitHub Actions workflow; versioned source
-metadata alone does not create a published release).
+**Published experimental GitHub Pre-release** on 2026-10-11 (UTC), linked
+to source commit `3ef2bfb1f73c42cb029a2862b2c7959c12fe718f`. Its
+versioned ZIP and `SHA256SUMS.txt` are attached to the release. Publication
+does not constitute independent scientific review or empirical validation.
 
 - Consolidate the core research workflow and method-sensitive scientific
   boundaries, with seven human-controlled review gates and [L]/[I]/[P]
