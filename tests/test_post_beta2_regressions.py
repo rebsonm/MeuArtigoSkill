@@ -77,6 +77,21 @@ class PostBeta2ImportTests(unittest.TestCase):
         self.assertEqual(second.returncode, 2)
         self.assertIn("OUTPUT_DIRECTORY_ALREADY_HAS_RESULTS", second.stderr)
 
+    def test_dangling_symlink_in_generated_output_is_not_followed(self):
+        self.out.mkdir()
+        outside = self.root / "must_not_be_created.csv"
+        try:
+            (self.out / "consolidated_exact_dedup.csv").symlink_to(outside)
+        except (OSError, NotImplementedError):
+            self.skipTest("Creating symlinks unavailable on this platform")
+        write_csv(self.export, ["Title", "DOI"],
+                  [{"Title": "Valid", "DOI": "10.1234/valid"}])
+        result = self.run_dedupe()
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("OUTPUT_DIRECTORY_ALREADY_HAS_RESULTS", result.stderr)
+        self.assertFalse(outside.exists())
+        self.assertTrue((self.out / "consolidated_exact_dedup.csv").is_symlink())
+
     def test_second_run_does_not_overwrite_or_relabel_prior_outputs(self):
         write_csv(self.export, ["Title", "DOI"],
                   [{"Title": "First import", "DOI": "10.1234/first"}])
