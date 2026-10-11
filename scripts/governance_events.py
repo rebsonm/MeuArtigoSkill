@@ -329,6 +329,18 @@ def record_gate(args)->int:
             raise SystemExit("cannot approve source verification: "
                              + "; ".join(report_state["errors"][:5] or [report_state["status"]]))
 
+    # The two independent audits above do not compare the claim's own
+    # locator assertion against the literal source check for its Evidence_ID.
+    # Both must agree before a scientific gate can be frozen.
+    if (args.gate_id == "GATE-0006"
+            and decision in {"APPROVED", "APPROVED_WITH_CHANGES"}
+            and cfg.get("source_verification_required") is True):
+        from claim_source_integrity import audit as audit_claim_source
+        link_report = audit_claim_source(root, freeze=True)
+        if link_report["errors"]:
+            raise SystemExit("cannot approve claim-source consistency: "
+                             + "; ".join(link_report["errors"][:6]))
+
     # Distinguish bibliographic/locator checks from actual empirical findings.
     if (args.gate_id=="GATE-0006" and decision in {"APPROVED","APPROVED_WITH_CHANGES"}
             and cfg.get("method_route_governance_required") is True):
