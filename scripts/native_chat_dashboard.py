@@ -117,7 +117,7 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
         # next step, even if the router alone found a plausible candidate.
         navigation["next_task_id"] = None
         navigation["next_gate_id"] = None
-        navigation["blockers"] = sorted(set(
+        navigation["blockers"] = list(dict.fromkeys(
             navigation["blockers"] + ["CADA_CONTINUITY_INTEGRITY_REVIEW"]))
     # MINIMAL lists the actual eligible task first, if present, so a
     # BLOCKED/CAPTURED row cannot conceal it beyond the first three rows.
