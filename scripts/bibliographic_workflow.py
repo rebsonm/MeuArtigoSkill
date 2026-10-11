@@ -160,8 +160,13 @@ def _csv_safe(v: str) -> str:
 
 def export_staging(root: Path | None, out_dir: Path, outcome) -> dict:
     """Export only metadata, never tokens or licensed fulltext."""
+    if out_dir.is_symlink():
+        raise ValueError("STAGING_SYMLINK_NOT_ALLOWED")
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"{outcome.provider}_metadata.csv"
+    receipt_path = out_dir / "retrieval_receipt.json"
+    if path.exists() or path.is_symlink() or receipt_path.exists() or receipt_path.is_symlink():
+        raise ValueError("STAGING_EXPORT_ALREADY_EXISTS_DO_NOT_OVERWRITE")
     records = [{key: _csv_safe(row.get(key, "")) for key in FIELDS}
                for row in outcome.rows]
     _atomic_csv(path, list(FIELDS), records)
@@ -181,9 +186,65 @@ def export_staging(root: Path | None, out_dir: Path, outcome) -> dict:
         "scientific_validation": False,
         "note": "Metadata only; abstracts and full texts were not read or validated.",
     }
-    (out_dir / "retrieval_receipt.json").write_text(
-        json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    # A partial export without a receipt remains visibly incomplete; never
+    # overwrite its CSV when the caller retries in the same directory.
+    tmp = receipt_path.with_name("." + receipt_path.name + "." + uuid4().hex + ".tmp")
+    try:
+        with tmp.open("x", encoding="utf-8") as stream:
+            stream.write(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(tmp, receipt_path)
+    finally:
+        tmp.unlink(missing_ok=True)
     return receipt
+
+
+def _validate_staged_export(root: Path, outcome, export_path: Path) -> tuple[str, str]:
+    """Require a retained, unchanged metadata export and matching local receipt.
+
+    This is local provenance consistency, not vendor authentication. It
+    prevents recording a guessed, missing, replaced or foreign staging file.
+    """
+    root = Path(root).resolve()
+    original = Path(export_path)
+    if original.is_symlink() or not original.is_file():
+        raise ValueError("MISSING_OR_UNSAFE_STAGED_EXPORT")
+    export_path = original.resolve()
+    if not export_path.is_relative_to(root):
+        raise ValueError("STAGED_EXPORT_MUST_BE_IN_AUTHORIZED_WORKSPACE")
+    receipt_path = export_path.parent / "retrieval_receipt.json"
+    if receipt_path.is_symlink() or not receipt_path.is_file():
+        raise ValueError("MISSING_OR_UNSAFE_STAGED_RECEIPT")
+    try:
+        receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError, TypeError) as exc:
+        raise ValueError("INVALID_STAGED_RECEIPT") from exc
+    if not isinstance(receipt, dict):
+        raise ValueError("INVALID_STAGED_RECEIPT")
+    checksum = hashlib.sha256(export_path.read_bytes()).hexdigest()
+    fields = {
+        "provider": outcome.provider,
+        "literal_query": outcome.query,
+        "status": outcome.status,
+        "error_code": outcome.error_code,
+        "executed_at": outcome.executed_at,
+        "reported_total": outcome.reported_total,
+        "records_received": len(outcome.rows),
+        "pages_received": outcome.pages_received,
+        "export_file": export_path.name,
+        "export_sha256": checksum,
+    }
+    if outcome.export_sha256 != checksum or any(
+            receipt.get(name) != value for name, value in fields.items()):
+        raise ValueError("STAGED_RECEIPT_OR_EXPORT_CHANGED")
+    expected = [{field: _csv_safe(item.get(field, "")) for field in FIELDS}
+                for item in outcome.rows]
+    with export_path.open(encoding="utf-8-sig", newline="") as stream:
+        reader = csv.DictReader(stream)
+        if reader.fieldnames != list(FIELDS) or list(reader) != expected:
+            raise ValueError("STAGED_ROWS_DIFFER_FROM_RETRIEVAL")
+    return export_path.relative_to(root).as_posix(), checksum
 
 
 def commit_to_authorized_local_project(root: Path, outcome, export_path: Path) -> dict:
@@ -199,6 +260,9 @@ def commit_to_authorized_local_project(root: Path, outcome, export_path: Path) -
         raise PendingTransaction("RECOVER_PENDING_IMPORT_BEFORE_WRITING")
     if not outcome.executed_at or outcome.status not in {"COMPLETE", "PARTIAL"}:
         raise ValueError("No executed bibliographic result to register")
+    if not outcome.rows:
+        raise ValueError("Cannot register an empty retrieval as screened records")
+    export_rel, export_sha = _validate_staged_export(root, outcome, export_path)
     search_headers = TABLES[SEARCH]
     screening_headers = TABLES[SCREENING]
     trace_headers = TABLES[TRACE]
@@ -216,11 +280,13 @@ def commit_to_authorized_local_project(root: Path, outcome, export_path: Path) -
         "Filters": "provider-default; bounded retrieval, not cross-base equivalent",
         "Records_found": str(outcome.reported_total) if outcome.reported_total is not None else "",
         "Records_exported": str(len(outcome.rows)),
-        "Export_file_or_URL": str(export_path.resolve().relative_to(root.resolve()))
-        if export_path.resolve().is_relative_to(root.resolve()) else export_path.name,
+        "Export_file_or_URL": export_rel,
         "Status": outcome.status, "Iteration": "1",
         "Notes": "API metadata-only, researcher screening still pending. "
-                 "Local record; no remote Drive sync asserted.",
+                 "Local record; no remote Drive sync asserted. "
+                 f"Export_SHA256={export_sha}; provider_pages={outcome.pages_received}; "
+                 f"provider_status={outcome.status}; "
+                 f"provider_error={outcome.error_code or 'NONE'}.",
     })
     # Canonical records retain individual source IDs, with no invented abstract.
     for row in outcome.rows:
@@ -246,8 +312,10 @@ def commit_to_authorized_local_project(root: Path, outcome, export_path: Path) -
         "Source_or_artifact_IDs": search_id,
         "Input_or_source": outcome.provider,
         "Decision_or_output": outcome.status,
-        "Verification_method": "Local export SHA-256; remote validation not inferred",
+        "Verification_method": "Local export and receipt SHA-256 checked; remote validation not inferred",
         "Related_Search_IDs": search_id,
+        "Notes": f"LocalExport_SHA256={export_sha}; partial={outcome.status == 'PARTIAL'}; "
+                 f"provider_error={outcome.error_code or 'NONE'}; external verification not claimed.",
         "Status": "UNVERIFIED",
     })
     # Write staging files first and add a durable idempotency guard: a run's
@@ -367,6 +435,7 @@ def run(argv: list[str] | None = None) -> int:
         output = Path(args.out_dir).resolve() / (result.provider + "-" + uuid4().hex[:10])
         receipt = export_staging(root, output, result)
         payload = {"status": result.status, "provider": result.provider,
+                   "error_code": result.error_code,
                    "records_received": len(result.rows),
                    "reported_total": result.reported_total,
                    "receipt": str(output / "retrieval_receipt.json"),
