@@ -1,7 +1,8 @@
 # Pending independent scientific and operational evaluations
 
-Reference officially recommended public experimental Skill: `v0.9.0-beta.1`.
-Later historical and development versions need separate real-world validation.
+Recommended **published experimental** Skill: `v0.9.0-beta.4` (GitHub
+Pre-release, 2026-10-11 UTC). Earlier beta.1 and beta.2 releases remain
+archived. **Public availability does not change any evaluation status.**
 Publishing software does not complete the scientific or platform validations
 below. Update this register only after
 a genuine evaluation has taken place and has inspectable evidence. A change
