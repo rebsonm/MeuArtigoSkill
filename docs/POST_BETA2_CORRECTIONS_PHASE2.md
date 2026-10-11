@@ -49,3 +49,25 @@ Run these against a clean checkout and synthetic test fixtures, never against th
 ## Open boundaries for subsequent phases
 
 Provider availability and bibliographic disagreements remain unverified external conditions; claims of live connector operation require receipts. Corpus selection, Gate4, the 734 untouched records, 69 fuzzy pairs, text rights and missing researcher decisions remain **scientific or legal tasks**, not corrective scripts. Integration of the PR #22 MCP Apps visual component is reserved for Phase 3 and must be reconciled with later beta.2 changes. No merge, release or plugin update is authorized by this file.
+
+## Engineering regression evidence (2026-10-11)
+
+At commit `6183355cab1f6e5999d30ce45883aca4cd57b7ed`, GitHub Actions
+[run 38111070107](https://github.com/rebsonm/MeuArtigoSkill/actions/runs/38111070107)
+passed all active steps. It executed **346 Python tests (0 failures)**, compared with
+the **332 historical beta.2 tests**, and passed the static release audit,
+local documentation links, public-document sensitivity scan, source-language
+audit, provenance smoke test and deterministic ZIP build/verification. These
+are software checks on synthetic fixtures, not independent scientific review.
+
+An earlier run on commit `e92347f` failed before Python regression because
+the release auditor intentionally expected the literal protected
+`branches: [main]` workflow trigger. The original release trigger was
+restored unchanged and an independent, read-only, maintenance-branch
+workflow was added. The resolved failure is retained in CI history rather
+than erased. The correction of the CI harness did not involve bypassing
+the release safeguard.
+
+CI-generated ZIP and SHA-256 apply to this branch's engineering smoke tests;
+no public release, plugin replacement, or confirmation of an installed
+plugin commit occurred. Package candidate versioning is deferred to Phase 5.
