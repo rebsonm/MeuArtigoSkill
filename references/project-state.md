@@ -212,3 +212,45 @@ Do not treat a claim as validated merely because Evidence_IDs are present.
 ## Canonical backend and view mapping
 
 Read [storage mapping](storage-mapping.md) before exporting, synchronizing or resolving conflicts between CSV tables and workbook views. The template generator does not synchronize existing research data.
+
+## Evidenced C.A.D.A. completion and continuity transaction
+
+For **explicitly authorized local WORK_FALLBACK projects only**, an actual
+local execution recorded by `trace_execution.py run` with a `CADA_ID`,
+appropriate stage and a changed, verifiable output artifact may be followed by:
+
+```bash
+python scripts/update_cada_continuity.py PROJECT --cada-id CADA-0002 --trace-id TRACE-0001
+```
+
+This is **an operational task-state transition**, not an AI claim to have
+reviewed a research finding. The updater verifies the unique CONFIRMED
+TRACE row, SHA-256 receipt, actual changed local output, matching task
+stage and `Related_artifact`, authorized execution mode, dependencies
+and current continuity. Only an eligible READY/IN_PROGRESS task may be
+marked DONE. It then transactionally changes exactly the existing
+`11_CADA_Control.csv`, `CONTINUIDADE.md` and
+`15_CADA_Dashboard.csv` files; the existing TRACE and seven human-gate
+rows are not forged, deleted or approved. Current next-action markers in
+continuity and dashboard are derived from recorded tasks and pending
+gates, never reconstructed from the chat. Where a human gate is pending,
+the next item indicates researcher review, not approval. Other continuity
+paragraphs and management metrics not derived by this command are
+preserved. Neither spreadsheet nor files are synchronized with Drive by
+this local operation; on Drive-canonical projects, refuse this local write.
+
+The journal `.pending_cada_continuity` integrates with the existing
+scientific/bibliographic interlocks, and interrupts ordinary navigation and
+writes until recovered. On an interrupted PREPARED local write, inspect
+the files and run:
+
+```bash
+python scripts/update_cada_continuity.py PROJECT --recover-pending
+```
+
+Recovery compares pre- and post-operation SHA-256 with current files; if
+an independent edit is detected, it preserves the journal for explicit
+reconciliation rather than overwriting someone else's work. A COMMITTED
+journal is cleared only when all three outputs match. These protections
+do not create a cross-process database transaction, external authentication
+or independent scientific validation.
