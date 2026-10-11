@@ -14,7 +14,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from test_phase5_cada_continuity_transaction import Phase5RecordedCompletionTests
+import test_phase5_cada_continuity_transaction as phase5_fixture
 import cada_continuity_integrity as integrity
 import cada_continuity_transaction as journal
 import native_chat_dashboard as ui
@@ -26,7 +26,7 @@ class Phase5IntegratedAuditTests(unittest.TestCase):
     def setUp(self):
         # Reuse the PR-49 executable-fixture initializer without inheriting
         # its test methods or rerunning the same regression suite.
-        fixture = Phase5RecordedCompletionTests(
+        fixture = phase5_fixture.Phase5RecordedCompletionTests(
             "test_confirmed_local_execution_updates_three_files_and_preserves_gate")
         fixture.setUp()
         self.addCleanup(fixture.doCleanups)
