@@ -1,0 +1,1 @@
+Meu Artigo · Experimental beta, not a certified scientific method · [Repository](https://github.com/rebsonm/MeuArtigoSkill) · [Release downloads](https://github.com/rebsonm/MeuArtigoSkill/releases) · [Issues](https://github.com/rebsonm/MeuArtigoSkill/issues) · [Apache-2.0](https://github.com/rebsonm/MeuArtigoSkill/blob/main/LICENSE)
