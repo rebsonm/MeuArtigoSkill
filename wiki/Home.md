@@ -8,18 +8,18 @@
 
 | I want to… | Read |
 | --- | --- |
-| Start with no technical background | [[Start here|Start-Here]] |
-| Download and install the correct package | [[Installation|Installation]] |
-| Choose an appropriate research design | [[Methodological routes|Methodological-Routes]] |
-| Understand the article lifecycle | [[Research workflow|Research-Workflow]] |
-| Know which decisions must be mine | [[Seven scientific gates|Scientific-Gates]] |
-| Check sources, citations and originality claims | [[Evidence and provenance|Evidence-and-Provenance]] |
-| Manage tasks with C.A.D.A. | [[C.A.D.A.|CADA]] |
-| Resume an existing project safely | [[Storage and continuity|Storage-and-Continuity]] |
-| Use ChatGPT, Claude or Gemini | [[Platforms and dashboard|Platforms-and-Dashboard]] |
-| Understand what is and is not validated | [[Status and limitations|Status-and-Limitations]] |
-| Diagnose a problem | [[FAQ and troubleshooting|FAQ]] |
-| Contribute to the project | [[Contributing|Contributing]] |
+| Start with no technical background | [Start here](https://github.com/rebsonm/MeuArtigoSkill/wiki/Start-Here) |
+| Download and install the correct package | [Installation](https://github.com/rebsonm/MeuArtigoSkill/wiki/Installation) |
+| Choose an appropriate research design | [Methodological routes](https://github.com/rebsonm/MeuArtigoSkill/wiki/Methodological-Routes) |
+| Understand the article lifecycle | [Research workflow](https://github.com/rebsonm/MeuArtigoSkill/wiki/Research-Workflow) |
+| Know which decisions must be mine | [Seven scientific gates](https://github.com/rebsonm/MeuArtigoSkill/wiki/Scientific-Gates) |
+| Check sources, citations and originality claims | [Evidence and provenance](https://github.com/rebsonm/MeuArtigoSkill/wiki/Evidence-and-Provenance) |
+| Manage tasks with C.A.D.A. | [C.A.D.A.](https://github.com/rebsonm/MeuArtigoSkill/wiki/CADA) |
+| Resume an existing project safely | [Storage and continuity](https://github.com/rebsonm/MeuArtigoSkill/wiki/Storage-and-Continuity) |
+| Use ChatGPT, Claude or Gemini | [Platforms and dashboard](https://github.com/rebsonm/MeuArtigoSkill/wiki/Platforms-and-Dashboard) |
+| Understand what is and is not validated | [Status and limitations](https://github.com/rebsonm/MeuArtigoSkill/wiki/Status-and-Limitations) |
+| Diagnose a problem | [FAQ and troubleshooting](https://github.com/rebsonm/MeuArtigoSkill/wiki/FAQ) |
+| Contribute to the project | [Contributing](https://github.com/rebsonm/MeuArtigoSkill/wiki/Contributing) |
 
 ## The operating model
 

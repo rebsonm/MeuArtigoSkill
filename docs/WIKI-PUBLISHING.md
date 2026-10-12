@@ -21,8 +21,7 @@ The workflow:
 - Uses a short-lived GITHUB_TOKEN with job-scoped contents: write permission.
 - Uses an immutable SHA-pinned checkout action and does not persist checkout credentials.
 - Checks the existing Home and copies 15 reviewed Wiki Markdown pages into the Wiki Git root.
-- Refuses to replace independently edited pages. The sole exception is the
-  exact initialized placeholder Home with content "# Meu Artigo".
+- Refuses to replace independently edited pages. The initial placeholder Home and the exact PR #59 Home published during bootstrap are the only exceptional, explicitly reviewed contents eligible for replacement; all other independent changes fail closed.
 - Uses an ordinary fast-forward Git push (never force-push), does not remove unrelated files,
   modify Skill code, touch a beta release or alter canonical research records.
 - Does not automatically publish future changes to wiki/*.md.
@@ -57,3 +56,7 @@ Review source updates through a Pull Request first. Subsequent native Wiki
 publishing remains an explicit manual action; avoid unconditional auto-sync.
 The primary scientific contract remains SKILL.md; Wiki changes do not
 automatically update the installed Skill or the published release.
+
+## One-time navigation-table correction
+
+The initial Home used GitHub Wiki-style double-bracket links containing a pipe inside a Markdown table. The Wiki renderer interpreted the pipe as a table separator. The subsequent reviewed Home uses ordinary Markdown links, and the publisher only replaces Home when it matches the exact original PR #59 source. Independent editor changes remain protected.

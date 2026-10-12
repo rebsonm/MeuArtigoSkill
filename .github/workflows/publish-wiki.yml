@@ -28,6 +28,7 @@ jobs:
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           persist-credentials: false
+          fetch-depth: 0 # Review the exact previously published Home source before replacing it
 
       - name: Check required source pages
         shell: bash
@@ -60,10 +61,19 @@ jobs:
             filename="${source##*/}"
             destination="$target/$filename"
             if [[ -f "$destination" ]] && ! cmp -s "$source" "$destination"; then
-              if [[ "$filename" != "Home.md" ]] || [[ "$(tr -d '\r\n' < "$destination")" != '# Meu Artigo' ]]; then
-                echo "::error::Wiki page $filename differs from approved source; reconcile first."
-                exit 1
+              if [[ "$filename" == "Home.md" ]]; then
+                # Allow the original bootstrap placeholder or the exact
+                # Home source from the already-reviewed PR #59. Never
+                # replace an independently edited Home.
+                if [[ "$(tr -d '\r\n' < "$destination")" == '# Meu Artigo' ]]; then
+                  continue
+                fi
+                if git show 42b4a773be67456f220bb4946766a79efc63b919:wiki/Home.md | cmp -s - "$destination"; then
+                  continue
+                fi
               fi
+              echo "::error::Wiki page $filename differs from approved source; reconcile first."
+              exit 1
             fi
           done < <(find wiki -maxdepth 1 -type f -name '*.md' -print0)
           cp wiki/*.md "$target/"
