@@ -1,0 +1,81 @@
+name: Publish Wiki (bootstrap and manual)
+
+# The push adding this workflow to main bootstraps the initialized Wiki.
+# Later updates to wiki/ are manual, never synchronized silently.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-wiki.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: meu-artigo-wiki-publication
+  cancel-in-progress: false
+
+jobs:
+  publish-wiki:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout reviewed canonical Wiki source
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+
+      - name: Check required source pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s wiki/Home.md
+          test -s wiki/_Sidebar.md
+          test -s wiki/_Footer.md
+          test "$(find wiki -maxdepth 1 -type f -name '*.md' | wc -l)" -ge 15
+
+      - name: Safely publish reviewed Markdown to separate native Wiki
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          auth="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w 0)"
+          git_auth="http.https://github.com/.extraheader=AUTHORIZATION: basic $auth"
+          target="$RUNNER_TEMP/meu-artigo-native-wiki"
+          git -c "$git_auth" clone "https://github.com/${GITHUB_REPOSITORY}.wiki.git" "$target"
+          test -f "$target/Home.md" || {
+            echo "::error::Native Wiki must be initialized with a Home page."
+            exit 1
+          }
+          branch="$(git -C "$target" symbolic-ref --quiet --short HEAD)"
+          test -n "$branch"
+          # Avoid overwriting independent Wiki edits. The exact original
+          # initial placeholder is the only content allowed to be replaced.
+          while IFS= read -r -d '' source; do
+            filename="${source##*/}"
+            destination="$target/$filename"
+            if [[ -f "$destination" ]] && ! cmp -s "$source" "$destination"; then
+              if [[ "$filename" != "Home.md" ]] || [[ "$(tr -d '\r\n' < "$destination")" != '# Meu Artigo' ]]; then
+                echo "::error::Wiki page $filename differs from approved source; reconcile first."
+                exit 1
+              fi
+            fi
+          done < <(find wiki -maxdepth 1 -type f -name '*.md' -print0)
+          cp wiki/*.md "$target/"
+          git -C "$target" config user.name 'github-actions[bot]'
+          git -C "$target" config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C "$target" add -- '*.md'
+          git -C "$target" diff --cached --check
+          if git -C "$target" diff --cached --quiet; then
+            echo "All approved Wiki pages already match."
+            exit 0
+          fi
+          git -C "$target" commit -m "docs(wiki): publish reviewed Meu Artigo researcher guide"
+          # Fast-forward only; never force push or delete unrelated pages.
+          git -C "$target" -c "$git_auth" push origin "HEAD:refs/heads/$branch"
+          echo "Published: https://github.com/${GITHUB_REPOSITORY}/wiki"
