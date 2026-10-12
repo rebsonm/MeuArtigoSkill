@@ -1,52 +1,59 @@
-# GitHub Wiki publishing — maintainer runbook
+# Native GitHub Wiki publication — maintainer runbook
 
-## Purpose and status
+## Source and live Wiki
 
-The project keeps the proposed GitHub Wiki pages in `wiki/*.md` for code review, auditable authoring and synchronization with the versioned scientific contract.
+The reviewed 15 Markdown pages live under the main repository's wiki/ directory.
+The native Wiki tab is backed by a separate Git repository: MeuArtigoSkill.wiki.git.
+Merging files into main/wiki/ alone never publishes the native Wiki.
 
-**Important:** GitHub's native **Wiki** tab is backed by a **separate Git repository** (`MeuArtigoSkill.wiki.git`). Committing pages to this main repository or merging this documentation PR does **not** publish the live Wiki automatically. The connected GitHub REST integration does not provide a native Wiki-write endpoint.
+The maintainer created the first native Home page on October 12, 2026,
+with the short placeholder text "# Meu Artigo". This initializes the Wiki Git repository.
 
-## One-time initialization
+## Approved one-time bootstrap
 
-1. Visit [the native GitHub Wiki](https://github.com/rebsonm/MeuArtigoSkill/wiki) while signed into an account with edit rights.
-2. If the Wiki has no Home page, create an initial `Home` page using the web editor and save it. This initializes the separate Wiki repository.
-3. Before publishing, check for preexisting Wiki edits and reconcile them against the proposed source mirror.
+[Publish Wiki (bootstrap and manual)](../.github/workflows/publish-wiki.yml)
+performs an initial publication when the workflow file itself is first
+added to main. This particular bootstrap was requested by the maintainer
+after initializing the Home page. The workflow also provides a manual
+Run workflow option for future explicitly authorized publications.
 
-## Publishing without destructive history changes
+The workflow:
+- Uses a short-lived GITHUB_TOKEN with job-scoped contents: write permission.
+- Uses an immutable SHA-pinned checkout action and does not persist checkout credentials.
+- Checks the existing Home and copies 15 reviewed Wiki Markdown pages into the Wiki Git root.
+- Refuses to replace independently edited pages. The sole exception is the
+  exact initialized placeholder Home with content "# Meu Artigo".
+- Uses an ordinary fast-forward Git push (never force-push), does not remove unrelated files,
+  modify Skill code, touch a beta release or alter canonical research records.
+- Does not automatically publish future changes to wiki/*.md.
 
-On an authorized machine with Git and appropriate GitHub authentication:
+The workflow can fail if repository policy blocks GITHUB_TOKEN write,
+the Home page has diverged, a concurrent Wiki edit occurred, or Wiki Git
+authentication is unavailable. Its presence in main or a green Release audit
+is not proof of actual native Wiki publication.
 
-```bash
-git clone https://github.com/rebsonm/MeuArtigoSkill.wiki.git MeuArtigoSkill-wiki
-cd MeuArtigoSkill-wiki
-# Inspect existing pages and history; merge rather than overwrite user edits.
-```
+## Verify or rerun
 
-Copy the **reviewed** Markdown files from the project's `wiki/` folder into the root of the Wiki clone. Include `Home.md`, `_Sidebar.md`, `_Footer.md` and the topical pages. Do not copy `docs/WIKI-PUBLISHING.md` into the live Wiki.
+1. Check the dedicated Publish Wiki GitHub Actions workflow for a successful run.
+2. Open https://github.com/rebsonm/MeuArtigoSkill/wiki and confirm Home
+   contains the introduction and that sidebar and footer actually render.
+3. Navigate between all 15 Wiki pages. Verify the release links and
+   that the current version is described only as an experimental public beta.
+4. Confirm existing unrelated Wiki edits and the history were preserved.
+5. If needed, a maintainer can select Actions -> Publish Wiki -> Run workflow
+   on main. If a page mismatch is reported, reconcile edits manually first.
 
-```bash
-git status
-git diff --check
-git diff
-git add -- '*.md'
-git commit -m "docs(wiki): publish Meu Artigo researcher guide"
-git push origin HEAD
-```
+## Manual alternative
 
-Only the Wiki's default branch is published. Check the Wiki's actual default branch before pushing; avoid force-push and do not overwrite newly edited pages without reconciliation.
-
-## Verify the result
-
-1. Open `https://github.com/rebsonm/MeuArtigoSkill/wiki`; ensure the landing page and sidebar render.
-2. Follow every Wiki-to-Wiki link, check release ZIP links and official-document references.
-3. Verify the current release wording against the **actual tagged GitHub release**, not just `VERSION`.
-4. Review public pages for sensitive information, third-party copyrights and false validation claims.
-5. Record the Wiki commit and responsible publisher in the maintenance history.
+With appropriate GitHub Git authentication, clone
+https://github.com/rebsonm/MeuArtigoSkill.wiki.git, inspect the current
+pages and history, copy only the reviewed Markdown files from main/wiki/
+into that clone's root, review the diff, commit, and push normally.
+Never force-push or silently overwrite community edits.
 
 ## Maintenance policy
 
-- Prefer a main-repository PR for content changes and scientific accuracy review.
-- Publishing source-to-Wiki remains an **explicit separate maintainer action**.
-- The Skill package does not automatically include or deploy Wiki changes.
-- Never enable a silent auto-publish process or grant broad Wiki permissions merely to simplify documentation.
-- If the live Wiki diverges from `wiki/`, reconcile content and history before synchronizing.
+Review source updates through a Pull Request first. Subsequent native Wiki
+publishing remains an explicit manual action; avoid unconditional auto-sync.
+The primary scientific contract remains SKILL.md; Wiki changes do not
+automatically update the installed Skill or the published release.
