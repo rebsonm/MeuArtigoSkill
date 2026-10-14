@@ -1,6 +1,6 @@
 # Meu Artigo
 
-**Current source candidate: `0.9.0-beta.5`** (initializer-resilience hotfix; public release pending the required manual publication workflow). **Recommended published experimental beta:** [v0.9.0-beta.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4). No stable release has been issued.
+**Current source candidate: `0.9.0-beta.5`** (initializer-resilience hotfix; public release pending the required manual publication workflow). **Recommended published experimental beta:** [v0.9.0-beta.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4). No stable release has been issued. The [beta.5 release page](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is a publication target, **not evidence of uploaded assets**.
 
 **[Download published beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip)** · [SHA-256 checksum](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/SHA256SUMS.txt) · [Installation guide](docs/INSTALLATION.md) · [Participate in beta testing](docs/TESTE-BETA-PESQUISADORES.md)
 
