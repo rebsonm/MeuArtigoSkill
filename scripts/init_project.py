@@ -6,7 +6,7 @@ implementation. C.A.D.A. is the operational governance layer; an external work
 manager (ClickUp/Jira/Trello) is optional and remains a mirror.
 """
 from __future__ import annotations
-import argparse, csv, json, re, subprocess, sys
+import argparse, csv, json, os, re, subprocess, sys, tempfile, zipfile
 from datetime import date
 from pathlib import Path
 from method_routes import ROUTES, gate_rows, infer_route, new_profile
@@ -69,6 +69,143 @@ def write_csv(path:Path, headers:list[str]):
     with path.open("w",newline="",encoding="utf-8-sig") as f:
         csv.writer(f).writerow(headers)
 
+# Project-core validation is intentionally independent of visual workbook generation.
+# This helper checks durable local staging only; it never claims Google Drive sync.
+CORE_DOCUMENTS = [
+    "00_Gestao_e_Continuidade/PROJECT_CONFIG.json",
+    "00_Gestao_e_Continuidade/CONTINUIDADE.md",
+    "00_Gestao_e_Continuidade/PROTOCOLO.md",
+    "00_Gestao_e_Continuidade/RASTREABILIDADE.md",
+    "00_Gestao_e_Continuidade/METHOD_PROFILE.json",
+    "00_Gestao_e_Continuidade/ANONYMIZATION_PROFILE.json",
+    "06_Submissao/Regras_da_Revista/JOURNAL_PROFILE.json",
+]
+
+
+def atomic_write_text(path:Path, value:str):
+    """Replace generated metadata atomically, not researcher-controlled documents."""
+    fd, name = tempfile.mkstemp(prefix=".init-", suffix=".tmp", dir=path.parent)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as handle:
+            handle.write(value)
+        os.replace(name, path)
+    finally:
+        if os.path.exists(name):
+            os.unlink(name)
+
+
+def core_issues(root:Path)->list[str]:
+    errors=[]
+    for rel in CORE_DOCUMENTS:
+        path=root/rel
+        if not path.is_file() or path.is_symlink() or not path.stat().st_size:
+            errors.append(f"Missing, empty or unsafe essential file: {rel}")
+            continue
+        if path.suffix == ".json":
+            try:
+                json.loads(path.read_text(encoding="utf-8"))
+            except (ValueError, UnicodeError, OSError):
+                errors.append(f"Unreadable essential JSON: {rel}")
+    for rel,headers in TABLES.items():
+        path=root/rel
+        if not path.is_file() or path.is_symlink():
+            errors.append(f"Missing or unsafe essential table: {rel}")
+            continue
+        try:
+            with path.open("r", encoding="utf-8-sig", newline="") as f:
+                actual=next(csv.reader(f),[])
+            if actual != headers:
+                errors.append(f"Invalid table header: {rel}")
+        except (OSError, UnicodeError, csv.Error):
+            errors.append(f"Unreadable essential table: {rel}")
+    gates=root/"00_Gestao_e_Continuidade/18_Human_Validation_Gates.csv"
+    if gates.is_file():
+        try:
+            with gates.open("r", encoding="utf-8-sig", newline="") as f:
+                rows=list(csv.DictReader(f))
+            if len(rows) != 7 or len({r["GATE_ID"] for r in rows}) != 7:
+                errors.append("Initial seven-gate register incomplete")
+        except (OSError, UnicodeError, KeyError, csv.Error):
+            errors.append("Initial seven-gate register unreadable")
+    return errors
+
+
+def mark_core_ready(root:Path):
+    """Mark the seed operational milestone done only after core verification."""
+    cada=root/"00_Gestao_e_Continuidade/11_CADA_Control.csv"
+    with cada.open("r", encoding="utf-8-sig", newline="") as f:
+        reader=csv.DictReader(f)
+        headers=list(reader.fieldnames or [])
+        rows=list(reader)
+    if rows and rows[0].get("CADA_ID") == "CADA-0001" and rows[0].get("Status") == "CAPTURED" and rows[0].get("Source_or_trigger") == "project initialization":
+        rows[0]["Status"]="DONE"
+        rows[0]["Evidence_of_progress"]="Verified initial local core files and table headers."
+        rows[0]["Completion_evidence"]="Local core verified: CONTINUIDADE.md, PROTOCOLO.md, configurations and CSV tables (XLSX and Drive sync not asserted)."
+        fd,name=tempfile.mkstemp(prefix=".cada-seed-", suffix=".tmp", dir=cada.parent)
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8-sig", newline="") as f:
+                writer=csv.DictWriter(f, fieldnames=headers)
+                writer.writeheader()
+                writer.writerows(rows)
+            os.replace(name,cada)
+        finally:
+            if os.path.exists(name):
+                os.unlink(name)
+
+
+def valid_visual_workbook(path:Path)->bool:
+    """Reject incomplete, empty, or corrupt XLSX files; never silently overwrite."""
+    if not path.is_file() or path.is_symlink():
+        return False
+    try:
+        with zipfile.ZipFile(path) as z:
+            names=set(z.namelist())
+            return ("[Content_Types].xml" in names and "xl/workbook.xml" in names
+                    and z.testzip() is None)
+    except (OSError, zipfile.BadZipFile, zipfile.LargeZipFile):
+        return False
+
+
+def build_optional_visual_matrix(root:Path, a, *, target_journal:str, journal_mode:str, journal_profile_status:str, pm:str)->str:
+    matrix=root/f"00_Gestao_e_Continuidade/MATRIZ_MESTRA_{slug(a.name)}.xlsx"
+    if matrix.exists() or matrix.is_symlink():
+        return "EXISTS_VERIFIED" if valid_visual_workbook(matrix) else "INVALID_EXISTING_XLSX_REQUIRES_REVIEW"
+    builder=Path(__file__).with_name("build_matrix_template.py")
+    if not builder.is_file():
+        return "PENDING_BUILDER_MISSING"
+    fd,name=tempfile.mkstemp(prefix=".matrix-", suffix=".xlsx", dir=matrix.parent)
+    os.close(fd)
+    temporary=Path(name)
+    try:
+        command=[
+            sys.executable,str(builder),
+            "--output",str(temporary),
+            "--project-name",a.name,
+            "--problem",a.problem,
+            "--article-type",a.article_type,
+            "--target-journal",target_journal,
+            "--journal-mode",journal_mode,
+            "--journal-profile-status",journal_profile_status,
+            "--pm-provider",(pm or "NONE"),
+        ]
+        try:
+            subprocess.run(command, check=True, capture_output=True, text=True, timeout=90)
+        except subprocess.TimeoutExpired:
+            return "PENDING_TIMEOUT"
+        except subprocess.CalledProcessError:
+            return "PENDING_GENERATOR_FAILED"
+        except OSError:
+            return "PENDING_RUNTIME_ERROR"
+        if not valid_visual_workbook(temporary):
+            return "PENDING_INVALID_GENERATED_XLSX"
+        if matrix.exists() or matrix.is_symlink():
+            return "EXISTS_VERIFIED" if valid_visual_workbook(matrix) else "INVALID_EXISTING_XLSX_REQUIRES_REVIEW"
+        os.replace(temporary,matrix)
+        return "CREATED_VERIFIED"
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
 def seed_cada(path:Path, project_name:str, pm_provider:str):
     with path.open("r",encoding="utf-8-sig",newline="") as f:
         existing=list(csv.DictReader(f))
@@ -82,8 +219,8 @@ def seed_cada(path:Path, project_name:str, pm_provider:str):
             "Captured_at":today,"Source_or_trigger":"project initialization","Assigned_to":"AGENT",
             "Execution_mode":"AUTONOMOUS","Priority":"HIGH","Dependency_IDs":"",
             "Next_action":"Verify canonical artifacts and begin the novelty audit.","Deadline":"",
-            "Deadline_type":"TO_DEFINE","Status":"DONE","Evidence_of_progress":"Workspace scaffold created.",
-            "Completion_evidence":"CONTINUIDADE.md, PROTOCOLO.md and local matrix generated.",
+            "Deadline_type":"TO_DEFINE","Status":"CAPTURED","Evidence_of_progress":"Local core preparation started.",
+            "Completion_evidence":"",
             "Related_artifact":"00_Gestao_e_Continuidade/","Related_research_IDs":"","Blocker":"",
             "Last_updated":today,"External_manager":pm_provider or "NONE","External_item_ID":"",
             "Notes":f"Project: {project_name}",
@@ -194,7 +331,7 @@ def main()->int:
             "method_route_version":1,
             **locale_settings,
             "created":date.today().isoformat(),
-            "status":"INITIALIZED",
+            "status":"INITIALIZING",
             "cada_governance":True,
             "cada_science_boundary_required":True,
             "cada_role":"OPERATIONAL_MANAGEMENT_NOT_SCIENTIFIC_METHOD",
@@ -625,32 +762,6 @@ Updated: {date.today().isoformat()}
 - Gate policy: routine actions remain autonomous; approval is requested only when a required gate becomes READY
 """,encoding="utf-8")
 
-    # Generate the official visual workbook when the reference spreadsheet
-    # implementation is available. CSV mirrors remain as a compatibility layer.
-    matrix=root/f"00_Gestao_e_Continuidade/MATRIZ_MESTRA_{slug(a.name)}.xlsx"
-    matrix_status="EXISTS" if matrix.exists() else "NOT_CREATED"
-    if not matrix.exists():
-        builder=Path(__file__).with_name("build_matrix_template.py")
-        if builder.exists():
-            cmd=[
-                sys.executable,str(builder),
-                "--output",str(matrix),
-                "--project-name",a.name,
-                "--problem",a.problem,
-                "--article-type",a.article_type,
-                "--target-journal",target_journal,
-                "--journal-mode",journal_mode,
-                "--journal-profile-status",journal_profile_status,
-                "--pm-provider",(pm or "NONE"),
-            ]
-            try:
-                subprocess.run(cmd,check=True,capture_output=True,text=True)
-                matrix_status="CREATED"
-            except Exception as exc:
-                matrix_status=f"FALLBACK_CSV: {type(exc).__name__}"
-        else:
-            matrix_status="FALLBACK_CSV: builder_missing"
-
     prot=root/"00_Gestao_e_Continuidade/PROTOCOLO.md"
     if not prot.exists():
         prot.write_text(f"""# PROTOCOLO — {a.name}
@@ -710,6 +821,29 @@ Updated: {date.today().isoformat()}
 [TO DEFINE PER METHOD ROUTE: theoretical synthesis, empirical analysis, integration or artefact evaluation]
 """,encoding="utf-8")
 
+    # Visual XLSX generation is strictly after durable core verification.
+    # A failed optional display must not prevent the research protocol from existing.
+    issues=core_issues(root)
+    cfg_data=json.loads(cfg.read_text(encoding="utf-8"))
+    if issues:
+        cfg_data["status"]="INITIALIZATION_BLOCKED"
+        cfg_data["local_core_status"]="INVALID"
+        atomic_write_text(cfg, json.dumps(cfg_data,ensure_ascii=False,indent=2)+"\n")
+        for issue in issues:
+            print("CORE_INVALID: "+issue,file=sys.stderr)
+        return 2
+
+    mark_core_ready(root)
+    cfg_data["status"]="INITIALIZED"
+    cfg_data["local_core_status"]="VERIFIED"
+    atomic_write_text(cfg, json.dumps(cfg_data,ensure_ascii=False,indent=2)+"\n")
+
+    matrix_status=build_optional_visual_matrix(
+        root,a,target_journal=target_journal,journal_mode=journal_mode,
+        journal_profile_status=journal_profile_status,pm=pm)
+    cfg_data["visual_matrix_status"]=matrix_status
+    cfg_data["visual_matrix_last_attempt"]=date.today().isoformat()
+    atomic_write_text(cfg, json.dumps(cfg_data,ensure_ascii=False,indent=2)+"\n")
     print(root)
     print(f"matrix_status={matrix_status}")
     return 0
