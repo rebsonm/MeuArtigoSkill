@@ -1,5 +1,8 @@
 # Getting started with Meu Artigo on GitHub
 
+> **Release status (2026-10-14):** `0.9.0-beta.5` is the current source candidate and still requires manual tagged publication. Until its ZIP and checksum are confirmed, install the [published beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip). The beta.5 documentation describes the upcoming corrective release, not an installed upgrade.
+
+
 ## Public access and experimental status
 
 Meu Artigo is an **experimental public beta**. Its source and project
@@ -9,7 +12,7 @@ redistribute third-party research PDFs or claim that the Skill has
 been scientifically validated.
 
 **Installing the Skill?** Start with the [two-minute installation guide](INSTALLATION.md).
-Use the **published beta.5 Skill ZIP** from its tagged GitHub Pre-release, not the repository source archive.
+Use the **upcoming beta.5 Skill ZIP** from its tagged GitHub Pre-release, not the repository source archive.
 
 This guide is designed for researchers who have **never used GitHub**.
 You do not need programming skills, Git, a command line, or a pull request
@@ -34,7 +37,7 @@ authorization process and may require a different account.
 
 ## 3. Choose the installable release ZIP
 
-For the new testing round, use the **[published beta.5 release page](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5)**.
+For the new testing round, use the **[upcoming beta.5 release page](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5)**.
 The installable filename is `MeuArtigoSkill-v0.9.0-beta.5.zip`, accompanied by `SHA256SUMS.txt`. The older beta.1 and beta.2 releases remain archived for reproducibility.
 This is for a supported **Skills** installer. Verify its SHA-256
 digest using `SHA256SUMS.txt` if appropriate.
@@ -168,7 +171,7 @@ The scientific protocol and continuity records are checked **before** any option
 
 ## 11. Updating to a newer version
 
-For new tests, use the [published beta.5 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip).
+For new tests, use the [upcoming beta.5 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip).
 The [earlier beta.1 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip) and other archived prereleases remain available for reproducibility. Review its release notes,
 the [CHANGELOG](../CHANGELOG.md) and any migration requirements.
 Keep the research project's real source files and canonical
