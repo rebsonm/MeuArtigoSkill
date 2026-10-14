@@ -4,7 +4,7 @@
 
 ## What is available
 
-- An **experimental pre-release candidate** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5), including its prepared Skill installer and checksum.
+- A **published experimental beta.4 installer** with its checksum, plus the **beta.5 corrective source candidate** awaiting separate release.
 - A versioned scientific contract, route-specific references, C.A.D.A. workflow, continuity and provenance controls.
 - Deterministic software tests and developer-facing audits in the source repository.
 - Documentation for supported/possible platforms, manual source workflows, lawful rights handling and user feedback.
