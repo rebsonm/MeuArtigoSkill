@@ -45,4 +45,4 @@ New local metadata:
 
 ## Release discipline
 
-The branch is a corrective PR candidate. Automated CI and synthetic tests are necessary but cannot replace beta users' reports across actual runtimes and canonical Google Drive. Do not merge, tag, publish, or auto-update the installed plugin as a side effect of this fix. A next beta release is a separate, explicit maintainer decision.
+The branch is a corrective PR candidate. Automated CI and synthetic tests are necessary but cannot replace beta users' reports across actual runtimes and canonical Google Drive. Do not merge, tag, publish, or auto-update the installed integration as a side effect of this fix. A next beta release is a separate, explicit maintainer decision.
