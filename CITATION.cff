@@ -19,8 +19,7 @@ abstract: >-
   AI-use transparency, high-rigor anonymization controls for generated
   external artifacts, and interoperable provenance export.
 
-# The version and date refer to the planned v0.9.0-beta.5 release on 2026-10-14 UTC.
-# An actual GitHub Pre-release and verified attached ZIP/checksum, not this
-# metadata alone, establish public publication.
+# v0.9.0-beta.5 was published as an experimental GitHub Pre-release
+# on 2026-10-14 UTC, with its versioned installer ZIP and SHA-256 checksum.
 # https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5
 # Every beta remains experimental; citation is not scientific validation.
