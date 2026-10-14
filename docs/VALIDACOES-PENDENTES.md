@@ -1,5 +1,8 @@
 # Pending independent scientific and operational evaluations
 
+> **Release status (2026-10-14):** `0.9.0-beta.5` is the current source candidate and still requires manual tagged publication. Until its ZIP and checksum are confirmed, install the [published beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip). The beta.5 documentation describes the upcoming corrective release, not an installed upgrade.
+
+
 Recommended **published experimental** Skill: `v0.9.0-beta.5` (GitHub
 Pre-release, 2026-10-14 UTC). Earlier beta.1 and beta.2 releases remain
 archived. **Public availability does not change any evaluation status.**
