@@ -77,6 +77,7 @@ class InitializerResilienceTests(unittest.TestCase):
         def hangs(command, **kwargs):
             self.assertEqual(kwargs["timeout"], 90)
             self.assert_core_ready()
+            self.assertEqual(self.read_config()["visual_matrix_status"], "PENDING_GENERATION")
             raise subprocess.TimeoutExpired(command, timeout=kwargs["timeout"])
 
         status,out,err,called = self.run_initializer(hangs)
@@ -99,6 +100,24 @@ class InitializerResilienceTests(unittest.TestCase):
         self.assert_core_ready()
         self.assertFalse(list(self.mgmt.glob(".matrix-*.xlsx")))
         self.assertFalse(list(self.mgmt.glob("MATRIZ_MESTRA_*.xlsx")))
+
+    def test_dependency_unavailable_is_distinct_from_generator_failure(self):
+        def unavailable(command, **kwargs):
+            raise subprocess.CalledProcessError(
+                2, command, stderr="XLSX_UNAVAILABLE: optional artifact_tool is unavailable")
+        status,out,err,_=self.run_initializer(unavailable)
+        self.assertEqual(status,0,err)
+        self.assertIn("PENDING_XLSX_DEPENDENCY_UNAVAILABLE",out)
+        self.assert_core_ready()
+
+    def test_optional_filesystem_error_preserves_local_core(self):
+        with patch.object(init_project, "build_optional_visual_matrix", side_effect=OSError("synthetic disk error")):
+            status,out,err,called=self.run_initializer(
+                lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("no subprocess")))
+        self.assertEqual(status,0,err)
+        self.assertIn("PENDING_FILESYSTEM_ERROR",out)
+        called.assert_not_called()
+        self.assert_core_ready()
 
     def test_successful_generation_promotes_only_verified_workbook(self):
         def generated(command, **kwargs):
