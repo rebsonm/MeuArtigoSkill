@@ -4,7 +4,7 @@
 
 An external beta.4 reviewer reported that visual matrix generation stalled during project initialization, leaving a partial workspace with no `PROTOCOLO.md`. The report is an operational observation, **not** proof of the exact root cause. The prior initializer called the XLSX subprocess without a timeout and before creating the protocol, which made this failure scenario possible.
 
-This hotfix is limited to local workspace bootstrap and its optional XLSX output. It does not change methodological stages, the seven gates, research decisions, Drive synchronization, or the plugin release itself.
+This hotfix is limited to local workspace bootstrap and its optional XLSX output. It does not change methodological stages, the seven gates, research decisions, Drive synchronization, or any distribution release.
 
 ## Corrected behavior
 
