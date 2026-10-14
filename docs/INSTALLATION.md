@@ -5,17 +5,17 @@
 
 **Choose the prepared Skill archive rather than GitHub's source download.** No coding is necessary for a researcher.
 
-**Recommended experimental version:** [beta.5 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5). [Historical beta.1 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip) remains available; neither version is stable.
+**Published installer:** [beta.4 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4). **Next source version:** beta.5, pending manual release. [Historical beta.1 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip) remains available; neither version is stable.
 
 ## Install the published Skill
 
-1. **[Download the published MeuArtigoSkill-v0.9.0-beta.5.zip](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip)** with the matching [SHA256SUMS.txt](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt) from the tagged **Pre-release**.
+1. **[Download the published MeuArtigoSkill-v0.9.0-beta.4.zip](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip)** with the matching [SHA256SUMS.txt](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/SHA256SUMS.txt) from the tagged **Pre-release**.
 2. Open your assistant's supported **Skills / Habilidades** import, if available for your account.
 3. Select this exact Skill ZIP and confirm installation.
 4. Ask: *"Quero começar um artigo com Meu Artigo; verifique primeiro minhas conexões e o armazenamento."*
 5. Confirm Google Drive read/write access (or explicit fallback authorization) before creating canonical research files.
 
-The **The beta.5 release requires verification of its tagged ZIP and checksum before it becomes publicly installable**. All releases remain **experimental betas**; the `main` source tree is not the published installer. Earlier beta assets remain available for reproducibility.
+The **beta.5 source candidate is not yet a public installer**; check its separate tagged ZIP and checksum when released. All releases remain **experimental betas**; the `main` source tree is not the published installer. Earlier beta assets remain available for reproducibility.
 
 ## Avoid incorrect downloads
 
