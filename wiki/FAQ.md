@@ -8,7 +8,7 @@ No. For supported platforms, install the prepared **release Skill ZIP** rather t
 
 ### Which version should I download?
 
-The recommended **experimental** distribution is [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5). Its publication has not yet been verified. There is no stable release.
+The recommended **published experimental** distribution remains [v0.9.0-beta.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4). The v0.9.0-beta.5 source candidate is awaiting manual publication. There is no stable release.
 
 ### Why does the assistant ask to check Drive first?
 
