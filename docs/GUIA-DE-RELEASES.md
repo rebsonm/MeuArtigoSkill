@@ -87,12 +87,18 @@ scientifically validated.
 The last published version is determined by an **actual GitHub Release and
 its uploaded ZIP and SHA-256**, never by `VERSION`, `date-released` or a
 merge commit. All public versions remain **experimental betas**, not stable
-or independently scientifically validated. The **beta.4 Pre-release was published** on 2026-10-11 (UTC) from commit
+or independently scientifically validated. The historical **beta.4 Pre-release was published** on 2026-10-11 (UTC) from commit
 `3ef2bfb1f73c42cb029a2862b2c7959c12fe718f`, with an uploaded
 versioned ZIP and `SHA256SUMS.txt`. Its public recommendation pointer
-`OFFICIAL_SKILL_RELEASE` now identifies **the experimental beta.4**, not a
+`OFFICIAL_SKILL_RELEASE` is now prepared to identify **the experimental beta.5** once the verified tagged assets are published, not a
 stable or independently validated release. Historical beta.1/beta.2 tags and
 assets are retained.
+
+## Beta.5 maintenance release (2026-10-14)
+
+The beta.5 development line incorporates the initializer hotfix from [PR #62](https://github.com/rebsonm/MeuArtigoSkill/pull/62). It creates and validates essential local research documents before the optional XLSX, bounds the visual-generator execution, preserves prior researcher files and logs the matrix status independently. It does **not** establish that Google Drive data were synchronized or that the research method was scientifically validated.
+
+For beta.5, after source integration, run the **manual** publish workflow with its explicit confirmation. Do not consider the release publicly available merely because `VERSION`, release dates or links have been prepared; inspect the actual tagged GitHub Pre-release and its ZIP/checksum. Earlier beta.4 assets are immutable historical releases.
 
 ## Platform and language compatibility
 
@@ -149,10 +155,10 @@ python scripts/build_skill_bundle.py --verify "dist/MeuArtigoSkill-v$(cat VERSIO
 ```
 
 A CI-built ZIP on `main` is a **development artifact**. The preparation
-for beta.4 is not a claim that the tagged release has already appeared.
+for beta.5 is not a claim that the tagged release has already appeared.
 After an authorized manual workflow publishes a *new* tagged beta, verify
 its ZIP and checksum first, then update the legacy recommendation pointer
-and user-facing download pages. This follow-up was completed for beta.4
+and user-facing download pages. The beta.4 follow-up was completed
 in source documentation; it did **not** replace or modify the tag's ZIP.
 The experimental beta label must be retained; a stable v1.0.0 would
 require a separate decision. The redundant discovery of
