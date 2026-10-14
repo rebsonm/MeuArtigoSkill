@@ -17,8 +17,8 @@ class OfficialRecommendationTests(unittest.TestCase):
             self.assertIn(url, guide, filename)
         # A recommendation is version selection, not stable/scientific status.
         # GitHub's actual tag and assets were checked outside the offline CI.
-        self.assertEqual(recommended, "0.9.0-beta.5")
-        self.assertIn("Recommended experimental Skill beta", (ROOT / "README.md").read_text())
+        self.assertEqual(recommended, "0.9.0-beta.4")
+        self.assertIn("Recommended published experimental beta", (ROOT / "README.md").read_text())
 
     def test_current_source_is_not_equated_with_a_published_tag(self):
         dev_version = (ROOT / "VERSION").read_text().strip()
