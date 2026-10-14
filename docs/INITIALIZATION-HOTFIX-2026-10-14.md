@@ -20,7 +20,8 @@ New local metadata:
 - `status=INITIALIZATION_BLOCKED` and `local_core_status=INVALID`: essential files are missing or invalid, so initialization is not successful;
 - `status=INITIALIZED` and `local_core_status=VERIFIED`: **local core only**; this is not proof of canonical Google Drive synchronization;
 - `visual_matrix_status=CREATED_VERIFIED` or `EXISTS_VERIFIED`: a validated XLSX exists;
-- `visual_matrix_status=PENDING_TIMEOUT`, `PENDING_GENERATOR_FAILED`, `PENDING_RUNTIME_ERROR`, `PENDING_BUILDER_MISSING` or `PENDING_INVALID_GENERATED_XLSX`: XLSX not available, core intact;
+- `visual_matrix_status=PENDING_GENERATION`: optional XLSX creation is in progress (or was interrupted before a final result could be written);
+- `visual_matrix_status=PENDING_TIMEOUT`, `PENDING_GENERATOR_FAILED`, `PENDING_XLSX_DEPENDENCY_UNAVAILABLE`, `PENDING_RUNTIME_ERROR`, `PENDING_FILESYSTEM_ERROR`, `PENDING_BUILDER_MISSING` or `PENDING_INVALID_GENERATED_XLSX`: XLSX not available, core intact;
 - `visual_matrix_status=INVALID_EXISTING_XLSX_REQUIRES_REVIEW`: an existing file failed ZIP validation and **was not overwritten**.
 
 ## Recovery and reproducibility
