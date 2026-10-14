@@ -2,10 +2,14 @@
 
 ## What is available
 
-- A **published experimental pre-release** [v0.9.0-beta.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4), including its prepared Skill installer and checksum.
+- A **published experimental pre-release** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5), including its prepared Skill installer and checksum.
 - A versioned scientific contract, route-specific references, C.A.D.A. workflow, continuity and provenance controls.
 - Deterministic software tests and developer-facing audits in the source repository.
 - Documentation for supported/possible platforms, manual source workflows, lawful rights handling and user feedback.
+
+## Beta.5 initializer correction
+
+The scientific project core is checked before optional XLSX generation. If the visual spreadsheet stalls, the initializer records the problem without treating incomplete or invalid research documents as successful initialization. Users should report actual failures through GitHub Issues. This is an engineering correction, not a completed empirical usability evaluation.
 
 ## What is **not** established by the release
 
