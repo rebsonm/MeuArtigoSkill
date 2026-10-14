@@ -208,7 +208,9 @@ def build_optional_visual_matrix(root:Path, a, *, target_journal:str, journal_mo
             subprocess.run(command, check=True, capture_output=True, text=True, timeout=90)
         except subprocess.TimeoutExpired:
             return "PENDING_TIMEOUT"
-        except subprocess.CalledProcessError:
+        except subprocess.CalledProcessError as exc:
+            if "XLSX_UNAVAILABLE" in (exc.stderr or ""):
+                return "PENDING_XLSX_DEPENDENCY_UNAVAILABLE"
             return "PENDING_GENERATOR_FAILED"
         except OSError:
             return "PENDING_RUNTIME_ERROR"
@@ -852,11 +854,16 @@ Updated: {date.today().isoformat()}
     mark_core_ready(root)
     cfg_data["status"]="INITIALIZED"
     cfg_data["local_core_status"]="VERIFIED"
+    cfg_data["visual_matrix_status"]="PENDING_GENERATION"
+    cfg_data["visual_matrix_last_attempt"]=date.today().isoformat()
     atomic_write_text(cfg, json.dumps(cfg_data,ensure_ascii=False,indent=2)+"\n")
 
-    matrix_status=build_optional_visual_matrix(
-        root,a,target_journal=target_journal,journal_mode=journal_mode,
-        journal_profile_status=journal_profile_status,pm=pm)
+    try:
+        matrix_status=build_optional_visual_matrix(
+            root,a,target_journal=target_journal,journal_mode=journal_mode,
+            journal_profile_status=journal_profile_status,pm=pm)
+    except OSError:
+        matrix_status="PENDING_FILESYSTEM_ERROR"
     cfg_data["visual_matrix_status"]=matrix_status
     cfg_data["visual_matrix_last_attempt"]=date.today().isoformat()
     atomic_write_text(cfg, json.dumps(cfg_data,ensure_ascii=False,indent=2)+"\n")
