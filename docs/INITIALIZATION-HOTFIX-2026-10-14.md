@@ -1,10 +1,10 @@
-# Initialization hotfix — beta.4 follow-up (2026-10-14)
+# Initialization hotfix — beta.5 (2026-10-14)
 
 ## Scope and evidence
 
 An external beta.4 reviewer reported that visual matrix generation stalled during project initialization, leaving a partial workspace with no `PROTOCOLO.md`. The report is an operational observation, **not** proof of the exact root cause. The prior initializer called the XLSX subprocess without a timeout and before creating the protocol, which made this failure scenario possible.
 
-This hotfix is limited to local workspace bootstrap and its optional XLSX output. It does not change methodological stages, the seven gates, research decisions, Drive synchronization, or any distribution release.
+This fix was integrated through [PR #62](https://github.com/rebsonm/MeuArtigoSkill/pull/62) and prepared for the experimental beta.5 line. This hotfix is limited to local workspace bootstrap and its optional XLSX output. It does not change methodological stages, the seven gates, research decisions, Drive synchronization, or any distribution release.
 
 ## Corrected behavior
 
@@ -46,4 +46,4 @@ New local metadata:
 
 ## Release discipline
 
-The branch is a corrective PR candidate. Automated CI and synthetic tests are necessary but cannot replace beta users' reports across actual runtimes and canonical Google Drive. Do not merge, tag, publish, or auto-update the installed integration as a side effect of this fix. A next beta release is a separate, explicit maintainer decision.
+The corrective source was integrated into main through PR #62. Versioned publication and actual installed-package updates are separate actions. Automated CI and synthetic tests are necessary but cannot replace beta users' reports across actual runtimes and canonical Google Drive. Do not merge, tag, publish, or auto-update the installed integration as a side effect of this fix. A next beta release is a separate, explicit maintainer decision.
