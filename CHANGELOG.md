@@ -3,10 +3,18 @@
 
 ## Unreleased
 
-Since publication of the experimental beta.4, the public documentation was
-aligned with the existing tagged release, ZIP and checksum. No new Skill
-feature, scientific validation, or previously installed user package is
-implied. Earlier beta.1 and beta.2 releases remain archived.
+No additional changes have been recorded since `0.9.0-beta.5`.
+
+## 0.9.0-beta.5 — 2026-10-14
+
+**Experimental corrective beta for initializer resilience.** The code fix was merged in PR #62. This release does not claim independent scientific validation.
+
+- Create and verify the essential local research protocol, continuity and registers before generating the optional XLSX visual workbook.
+- Bound visual spreadsheet generation by a timeout, write to a temporary file, verify integrity, and preserve preexisting files.
+- Distinguish locally verified core initialization from the status of visual spreadsheet generation and from canonical Google Drive synchronization.
+- Resume incomplete local projects without silently overwriting existing researcher documents; block on invalid essential registers rather than reporting a false successful initialization.
+- Add synthetic regressions for hangs, failures, incomplete files, optional dependencies, recovery and unapproved scientific gates; PR #62 passed 610 tests before merge.
+- Maintain all seven researcher-controlled scientific gates, [L]/[I]/[P] distinctions, manuscript provenance, and original research data intact. Real-world beta installations remain under evaluation.
 
 ## 0.9.0-beta.4 — 2026-10-11
 

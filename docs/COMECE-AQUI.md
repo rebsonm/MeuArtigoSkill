@@ -1,5 +1,8 @@
 # Getting started with Meu Artigo on GitHub
 
+> **Release status (2026-10-14):** `0.9.0-beta.5` is the current source candidate and still requires manual tagged publication. Until its ZIP and checksum are confirmed, install the [published beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip). The beta.5 documentation describes the upcoming corrective release, not an installed upgrade.
+
+
 ## Public access and experimental status
 
 Meu Artigo is an **experimental public beta**. Its source and project
@@ -9,7 +12,7 @@ redistribute third-party research PDFs or claim that the Skill has
 been scientifically validated.
 
 **Installing the Skill?** Start with the [two-minute installation guide](INSTALLATION.md).
-Use the **published beta.4 Skill ZIP** from its tagged GitHub Pre-release, not the repository source archive.
+Until beta.5 is published, use the **published beta.4 Skill ZIP**, not the repository source archive.
 
 This guide is designed for researchers who have **never used GitHub**.
 You do not need programming skills, Git, a command line, or a pull request
@@ -34,8 +37,8 @@ authorization process and may require a different account.
 
 ## 3. Choose the installable release ZIP
 
-For the new testing round, use the **[published beta.4 release page](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4)**.
-The installable filename is `MeuArtigoSkill-v0.9.0-beta.4.zip`, accompanied by `SHA256SUMS.txt`. The older beta.1 and beta.2 releases remain archived for reproducibility.
+For currently available tests, use the **[published beta.4 release page](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4)**. The beta.5 source candidate awaits publication.
+The currently installable filename is `MeuArtigoSkill-v0.9.0-beta.4.zip`, accompanied by `SHA256SUMS.txt`. The older beta.1 and beta.2 releases remain archived for reproducibility.
 This is for a supported **Skills** installer. Verify its SHA-256
 digest using `SHA256SUMS.txt` if appropriate.
 
@@ -162,9 +165,13 @@ than recreating the project from a guessed conversation history.
 Successful local generation is **not** proof that a Google Drive
 upload occurred. Ask for the verifiable source when there is doubt.
 
-## 10. Updating to a newer version
+## 10. Initialization resilience in beta.5
 
-For new tests, use the [published beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip).
+The scientific protocol and continuity records are checked **before** any optional XLSX visualization is generated. A spreadsheet problem should not leave the initial project without its essential protocol, but an invalid core should prevent a false success report. Never treat local file creation as verified Google Drive persistence. See the [hotfix recovery guide](INITIALIZATION-HOTFIX-2026-10-14.md).
+
+## 11. Updating to a newer version
+
+For new tests before publication, use the [published beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip); switch to the beta.5 ZIP only once its tagged assets exist.
 The [earlier beta.1 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip) and other archived prereleases remain available for reproducibility. Review its release notes,
 the [CHANGELOG](../CHANGELOG.md) and any migration requirements.
 Keep the research project's real source files and canonical

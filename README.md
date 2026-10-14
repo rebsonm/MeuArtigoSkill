@@ -1,15 +1,15 @@
 # Meu Artigo
 
-**Recommended experimental Skill beta: [v0.9.0-beta.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4)** · Published October 11, 2026. No stable release has been issued.
+**Current source candidate: `0.9.0-beta.5`** (initializer-resilience hotfix; public release pending the required manual publication workflow). **Recommended published experimental beta:** [v0.9.0-beta.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4). No stable release has been issued. The [beta.5 release page](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is a publication target, **not evidence of uploaded assets**.
 
-**[Download beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip)** · [SHA-256 checksum](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/SHA256SUMS.txt) · [Installation guide](docs/INSTALLATION.md) · [Participate in beta testing](docs/TESTE-BETA-PESQUISADORES.md)
+**[Download published beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip)** · [SHA-256 checksum](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/SHA256SUMS.txt) · [Installation guide](docs/INSTALLATION.md) · [Participate in beta testing](docs/TESTE-BETA-PESQUISADORES.md)
 
-The software is hosted in a **public GitHub repository**. **Every 0.9.0-beta release is experimental; none is a stable v1.0.0.** The beta.4 **Pre-release is published**, with the installation ZIP and checksum attached to its tagged GitHub Release. Earlier beta.1 and beta.2 archives remain available for reproducibility. GitHub's generic `Code → Download ZIP` is not the prepared Skill installer.
+The software is hosted in a **public GitHub repository**. **Every 0.9.0-beta release is experimental; none is a stable v1.0.0.** The beta.4 **Pre-release is published**, with the installation ZIP and checksum attached to its tagged GitHub Release. The beta.5 source candidate is not a replacement until its separate tagged ZIP and checksum are actually published. Earlier beta.1 and beta.2 archives remain available for reproducibility. GitHub's generic `Code → Download ZIP` is not the prepared Skill installer.
 **A research and writing Skill for scientific articles, with verifiable evidence, documented continuity, and human scientific decisions.**
 
 Meu Artigo helps a researcher move from a research problem to a reviewable article through method-appropriate steps. It distinguishes **[L]** consulted literature, **[I]** defensible inference, and **[P]** original propositions. C.A.D.A. tracks administrative tasks without confusing task completion with scientific validity. **Seven scientific gates** remain controlled by real researcher decisions.
 
-**Previous experimental beta:** [beta.1 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip) remains available for reproducibility. **Beta.4 is the recommended experimental version for new testing**; neither is stable.
+**Previous experimental betas:** [beta.4 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4), as well as the [beta.1 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip), remain archived for reproducibility. **Beta.5 will be the next experimental version for testing after publication**; none is stable.
 
 ## Getting started
 
@@ -39,7 +39,7 @@ The source repository contains operational scripts, methodological references an
 
 ## Beta releases and reproducibility
 
-**Current version:** `0.9.0-beta.4` (**published experimental Pre-release, recommended for voluntary testing**). Install the tagged release ZIP rather than the `main` source snapshot; new changes on `main` do not retroactively change published assets. Earlier beta.1 and beta.2 releases remain archived. A stable v1.0.0 has **not** been announced, and future releases require a separate authorized publication workflow.
+**Current version:** `0.9.0-beta.5` (**source candidate; publication pending**). **Published public installer:** `0.9.0-beta.4`. After a verified beta.5 GitHub release exists, use its tagged ZIP rather than the `main` source snapshot; new changes on `main` do not retroactively change published assets. Earlier beta.1 and beta.2 releases remain archived. A stable v1.0.0 has **not** been announced, and future releases require a separate authorized publication workflow.
 
 [Skill scientific contract](SKILL.md) · [Methodological reference map](references/INDICE-METODOLOGICO.md) · [Method routes](docs/ROTAS-METODOLOGICAS.md) · [C.A.D.A.](docs/CADA.md) · [Claim verification](docs/CONTROLE-CLAIMS-E-ORIGINALIDADE.md) · [Release downloads](https://github.com/rebsonm/MeuArtigoSkill/releases).
 
