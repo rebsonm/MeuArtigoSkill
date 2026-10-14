@@ -28,7 +28,7 @@ class Beta5PublicationTests(unittest.TestCase):
         self.assertNotIn("v1.0.0 has been published",self.readme)
 
     def test_user_guides_and_recommendation(self):
-        self.assertEqual((ROOT/"OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip(),"0.9.0-beta.5")
+        self.assertEqual((ROOT/"OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip(),"0.9.0-beta.4")
         guide=(ROOT/"docs/TESTE-BETA-PESQUISADORES.md").read_text(encoding="utf-8")
         issue=(ROOT/".github/ISSUE_TEMPLATE/relato-beta.md").read_text(encoding="utf-8")
         self.assertIn("v0.9.0-beta.5",guide)
