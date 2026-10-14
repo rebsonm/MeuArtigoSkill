@@ -1,6 +1,6 @@
 # Meu Artigo — short external beta-testing guide
 
-**Release under evaluation:** `v0.9.0-beta.4` (public **Pre-release**, not
+**Release under evaluation:** `v0.9.0-beta.5` (public **Pre-release**, not
 stable or independently scientifically validated).
 
 Thank you for evaluating a research-support Skill. The goal is to find
@@ -10,8 +10,8 @@ testimonial or endorse the quality of generated articles.
 ## Getting started (about 10 minutes of setup)
 
 1. Download the ZIP and `SHA256SUMS.txt` from the
-   [tagged release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4).
-   The beta.4 release was published on 2026-10-11 (UTC). If a download
+   [tagged release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5).
+   The beta.5 release was published on 2026-10-14 (UTC). If a download
    is temporarily inaccessible, do not substitute a source tree or claim
    to have installed it; check the actual published release status.
 2. Check the SHA-256 when you can. Import the ZIP using your platform's
@@ -30,6 +30,14 @@ testimonial or endorse the quality of generated articles.
    recommendation as approval.
 5. When convenient, compare the simplified and full project views in
    your supported host. Record if tasks, dates or blockers appear incorrect.
+
+## Initializer resilience — focus of beta.5
+
+- Start with a public or synthetic research topic and confirm that the research protocol and continuity records are available before the visual matrix is ready.
+- If optional spreadsheet generation times out or fails, check whether the core project remains usable and that the failure is reported honestly.
+- Reopen a partially initialized test workspace and observe whether existing researcher notes are preserved.
+- Report whether the system distinguishes a locally generated workspace from a **verified canonical Google Drive** save.
+- Never attempt destructive recovery of an existing research workspace solely for beta testing; work in a disposable test project.
 
 ## Optional 20–30 minute research tasks
 
