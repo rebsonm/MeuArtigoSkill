@@ -1,7 +1,7 @@
 # Pending independent scientific and operational evaluations
 
-Recommended **published experimental** Skill: `v0.9.0-beta.4` (GitHub
-Pre-release, 2026-10-11 UTC). Earlier beta.1 and beta.2 releases remain
+Recommended **published experimental** Skill: `v0.9.0-beta.5` (GitHub
+Pre-release, 2026-10-14 UTC). Earlier beta.1 and beta.2 releases remain
 archived. **Public availability does not change any evaluation status.**
 Publishing software does not complete the scientific or platform validations
 below. Update this register only after
