@@ -89,9 +89,7 @@ its uploaded ZIP and SHA-256**, never by `VERSION`, `date-released` or a
 merge commit. All public versions remain **experimental betas**, not stable
 or independently scientifically validated. The historical **beta.4 Pre-release was published** on 2026-10-11 (UTC) from commit
 `3ef2bfb1f73c42cb029a2862b2c7959c12fe718f`, with an uploaded
-versioned ZIP and `SHA256SUMS.txt`. Its public recommendation pointer
-`OFFICIAL_SKILL_RELEASE` is now prepared to identify **the experimental beta.5** once the verified tagged assets are published, not a
-stable or independently validated release. Historical beta.1/beta.2 tags and
+versioned ZIP and `SHA256SUMS.txt`. Until actual beta.5 assets are published and verified, `OFFICIAL_SKILL_RELEASE` continues to identify **the published experimental beta.4**, not a stable or independently validated release. Change that recommendation to beta.5 only after successful tagged publication. Historical beta.1/beta.2 tags and
 assets are retained.
 
 ## Beta.5 maintenance release (2026-10-14)
