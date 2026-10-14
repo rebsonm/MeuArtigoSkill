@@ -1,5 +1,8 @@
 # Install Meu Artigo — Skill
 
+> **Release status (2026-10-14):** `0.9.0-beta.5` is the current source candidate and still requires manual tagged publication. Until its ZIP and checksum are confirmed, install the [published beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip). The beta.5 documentation describes the upcoming corrective release, not an installed upgrade.
+
+
 **Choose the prepared Skill archive rather than GitHub's source download.** No coding is necessary for a researcher.
 
 **Recommended experimental version:** [beta.5 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5). [Historical beta.1 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip) remains available; neither version is stable.
@@ -12,7 +15,7 @@
 4. Ask: *"Quero começar um artigo com Meu Artigo; verifique primeiro minhas conexões e o armazenamento."*
 5. Confirm Google Drive read/write access (or explicit fallback authorization) before creating canonical research files.
 
-The **beta.5 tagged ZIP and checksum have been published**. All releases remain **experimental betas**; the `main` source tree is not the published installer. Earlier beta assets remain available for reproducibility.
+The **The beta.5 release requires verification of its tagged ZIP and checksum before it becomes publicly installable**. All releases remain **experimental betas**; the `main` source tree is not the published installer. Earlier beta assets remain available for reproducibility.
 
 ## Avoid incorrect downloads
 
