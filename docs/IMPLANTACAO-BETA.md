@@ -1,5 +1,8 @@
 # Experimental public beta installation — Meu Artigo
 
+> **Release status (2026-10-14):** `0.9.0-beta.5` is the current source candidate and still requires manual tagged publication. Until its ZIP and checksum are confirmed, install the [published beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip). The beta.5 documentation describes the upcoming corrective release, not an installed upgrade.
+
+
 **Recommended experimental beta for external testing:** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5), published as a GitHub **Pre-release** on 2026-10-14 (UTC).
 **Status:** public experimental beta for voluntary use,
 not a scientifically validated research method.
@@ -8,8 +11,8 @@ not a scientifically validated research method.
 
 ## Obtaining the package
 
-Download the **[published beta.5 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip)** and matching [SHA256SUMS.txt](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt) from its tagged GitHub Pre-release.
-The GitHub release contains both verified upload entries. Older betas remain available in the Releases history.
+Download the **[upcoming beta.5 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip)** and matching [SHA256SUMS.txt](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt) from its tagged GitHub Pre-release.
+The beta.5 GitHub release must be checked for both the installer and its SHA-256 before public recommendation. Older betas remain available in the Releases history.
 The alternative **Code → Download ZIP** is a repository source snapshot
 rather than the specially prepared, versioned Skill installer. The source
 on `main` may be newer than the last published distribution.
