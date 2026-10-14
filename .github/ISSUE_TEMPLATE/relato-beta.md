@@ -12,7 +12,7 @@ assignees: []
 > vulnerability privately using SECURITY.md.
 
 **Actual installed Skill version:**
-(e.g., v0.9.0-beta.4 — verify from the installed package; do not assume the source branch is installed)
+(e.g., v0.9.0-beta.5 — verify from the installed package; do not assume the source branch is installed)
 
 **Platform / environment:**
 (ChatGPT, Claude, Gemini, supported local host, or other; note if any feature is unavailable)
