@@ -2,7 +2,7 @@
 
 **A research-assistance Skill for developing scientific articles with documented evidence, methodological fit, research continuity, and consequential human decisions.**
 
-> **Release status:** [v0.9.0-beta.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4) is the recommended **published experimental pre-release** (October 11, 2026). It is **not** stable software or an independently validated scientific method.
+> **Release status:** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the recommended **published experimental pre-release** (October 14, 2026). It is **not** stable software or an independently validated scientific method.
 
 ## Choose your path
 
