@@ -13,8 +13,8 @@ testimonial or endorse the quality of generated articles.
 ## Getting started (about 10 minutes of setup)
 
 1. Download the ZIP and `SHA256SUMS.txt` from the
-   [tagged release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5).
-   The beta.5 release requires verification of its tagged ZIP and checksum before it becomes publicly installable on 2026-10-14 (UTC). If a download
+   [currently published beta.4 tagged release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4) until the beta.5 release assets exist.
+   The beta.5 release candidate cannot be installed from a published beta.5 ZIP until the manual publication succeeds. If a download
    is temporarily inaccessible, do not substitute a source tree or claim
    to have installed it; check the actual published release status.
 2. Check the SHA-256 when you can. Import the ZIP using your platform's
