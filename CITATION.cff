@@ -5,8 +5,8 @@ type: software
 authors:
   - family-names: "Mendes"
     given-names: "Rebson de Morais"
-version: "0.9.0-beta.4"
-date-released: "2026-10-11"
+version: "0.9.0-beta.5"
+date-released: "2026-10-14"
 repository-code: "https://github.com/rebsonm/MeuArtigoSkill"
 url: "https://github.com/rebsonm/MeuArtigoSkill"
 license: "Apache-2.0"
@@ -19,7 +19,8 @@ abstract: >-
   AI-use transparency, high-rigor anonymization controls for generated
   external artifacts, and interoperable provenance export.
 
-# v0.9.0-beta.4 was published as an experimental GitHub Pre-release
-# on 2026-10-11 (UTC). Its versioned installer and checksum are available
-# at https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4 .
+# The version and date refer to the planned v0.9.0-beta.5 release on 2026-10-14 UTC.
+# An actual GitHub Pre-release and verified attached ZIP/checksum, not this
+# metadata alone, establish public publication.
+# https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5
 # Every beta remains experimental; citation is not scientific validation.
