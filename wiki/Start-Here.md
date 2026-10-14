@@ -1,5 +1,7 @@
 # Start here
 
+> **Publication status:** beta.5 is the current source candidate awaiting a separate manual release. The [published beta.4 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4) remains the verified installer until beta.5 assets are actually available. Existing installed Skills do not update automatically.
+
 Meu Artigo supports researchers who want an **auditable path from a research question to a manuscript**. You do not need to know Git or Python to use a published Skill package, but you do need a supported assistant and authorized storage.
 
 ## Five steps
