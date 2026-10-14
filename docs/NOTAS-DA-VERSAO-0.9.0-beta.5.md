@@ -25,6 +25,6 @@ The corrective Pull Request #62 passed a GitHub Actions run with **610 automated
 
 ## Installing and recovering
 
-Use the prepared, versioned Skill ZIP and SHA-256 checksum from the [v0.9.0-beta.5 GitHub release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) **once the tagged assets are published**; GitHub's generic source-code ZIP is not the installation package. An already installed Skill is **not automatically updated** by a repository merge. Preserve project and Drive data and follow the [installation guide](INSTALLATION.md). For technical diagnosis, see the [initialization hotfix guide](INITIALIZATION-HOTFIX-2026-10-14.md).
+Use the prepared, versioned Skill ZIP and SHA-256 checksum from the [v0.9.0-beta.5 GitHub release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) **with its tagged installation assets**; GitHub's generic source-code ZIP is not the installation package. An already installed Skill is **not automatically updated** by a repository merge. Preserve project and Drive data and follow the [installation guide](INSTALLATION.md). For technical diagnosis, see the [initialization hotfix guide](INITIALIZATION-HOTFIX-2026-10-14.md).
 
 Earlier experimental betas, including beta.4, remain archived and are not modified by this release. The package is software assistance, not a substitute for researcher judgment, source verification, research ethics or journal rules.

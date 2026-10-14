@@ -1,13 +1,13 @@
 # ChatGPT — Meu Artigo Skill
 
-> **Release status (2026-10-14):** `0.9.0-beta.5` is the current source candidate and still requires manual tagged publication. Until its ZIP and checksum are confirmed, install the [published beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip). The beta.5 documentation describes the upcoming corrective release, not an installed upgrade.
+> **Published release (2026-10-14):** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the **recommended experimental beta**. Its versioned [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip) and [SHA-256 checksum](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt) are available. Previous releases remain archived; installed Skills do not automatically update.
 
 
 Meu Artigo is distributed as a **Skill**. Check whether your account supports Skills import and what external tools and storage are actually authorized.
 
 ## Install
 
-Get the [published beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip) and [SHA-256](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/SHA256SUMS.txt) until beta.5 assets are published. This is an **experimental Pre-release**, not a stable or independently validated research tool. The [historical beta.1 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip) remains archived. Do **not** use GitHub's **Code → Download ZIP** source snapshot as the user-installation archive. See [installation help](INSTALLATION.md).
+Get the [published beta.5 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip) and [SHA-256](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt). This is an **experimental Pre-release**, not a stable or independently validated research tool. The [historical beta.1 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip) remains archived. Do **not** use GitHub's **Code → Download ZIP** source snapshot as the user-installation archive. See [installation help](INSTALLATION.md).
 
 ## First connection diagnosis
 

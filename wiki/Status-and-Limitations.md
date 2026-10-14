@@ -1,10 +1,10 @@
 # Status and limitations
 
-> **Publication status:** beta.5 is the current source candidate awaiting a separate manual release. The [published beta.4 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4) remains the verified installer until beta.5 assets are actually available. Existing installed Skills do not update automatically.
+> **Publication status:** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the **recommended published experimental beta** (October 14, 2026), with its installable ZIP and checksum available. It is not a stable or scientifically validated release. Installed Skills do not automatically update.
 
 ## What is available
 
-- A **published experimental beta.4 installer** with its checksum, plus the **beta.5 corrective source candidate** awaiting separate release.
+- A **published experimental [beta.5 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5)** with its prepared Skill installer and checksum.
 - A versioned scientific contract, route-specific references, C.A.D.A. workflow, continuity and provenance controls.
 - Deterministic software tests and developer-facing audits in the source repository.
 - Documentation for supported/possible platforms, manual source workflows, lawful rights handling and user feedback.

@@ -1,6 +1,6 @@
 # FAQ and troubleshooting
 
-> **Publication status:** beta.5 is the current source candidate awaiting a separate manual release. The [published beta.4 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4) remains the verified installer until beta.5 assets are actually available. Existing installed Skills do not update automatically.
+> **Publication status:** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the **recommended published experimental beta** (October 14, 2026), with its installable ZIP and checksum available. It is not a stable or scientifically validated release. Installed Skills do not automatically update.
 
 ### Do I need to know Git or programming?
 
@@ -8,7 +8,7 @@ No. For supported platforms, install the prepared **release Skill ZIP** rather t
 
 ### Which version should I download?
 
-The recommended **published experimental** distribution remains [v0.9.0-beta.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4). The v0.9.0-beta.5 source candidate is awaiting manual publication. There is no stable release.
+The recommended **published experimental** distribution is [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5). There is no stable release.
 
 ### Why does the assistant ask to check Drive first?
 
