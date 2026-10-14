@@ -6,7 +6,7 @@ No. For supported platforms, install the prepared **release Skill ZIP** rather t
 
 ### Which version should I download?
 
-The recommended **experimental** distribution is [v0.9.0-beta.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4). It was published on October 11, 2026. There is no stable release.
+The recommended **experimental** distribution is [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5). It was published on October 14, 2026. There is no stable release.
 
 ### Why does the assistant ask to check Drive first?
 
