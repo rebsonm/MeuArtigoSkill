@@ -1,6 +1,6 @@
 # Experimental public beta installation — Meu Artigo
 
-**Recommended experimental beta for external testing:** [v0.9.0-beta.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4), published as a GitHub **Pre-release** on 2026-10-11 (UTC).
+**Recommended experimental beta for external testing:** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5), published as a GitHub **Pre-release** on 2026-10-14 (UTC).
 **Status:** public experimental beta for voluntary use,
 not a scientifically validated research method.
 
@@ -8,7 +8,7 @@ not a scientifically validated research method.
 
 ## Obtaining the package
 
-Download the **[published beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip)** and matching [SHA256SUMS.txt](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/SHA256SUMS.txt) from its tagged GitHub Pre-release.
+Download the **[published beta.5 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip)** and matching [SHA256SUMS.txt](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt) from its tagged GitHub Pre-release.
 The GitHub release contains both verified upload entries. Older betas remain available in the Releases history.
 The alternative **Code → Download ZIP** is a repository source snapshot
 rather than the specially prepared, versioned Skill installer. The source
@@ -57,7 +57,7 @@ can guide this process without new worksheets or IDs.
 
 ## English source, automatically localized conversation
 
-The English-source migration was introduced in the historical `v0.9.0-beta.1` release and remains in beta.4. The AI assistant
+The English-source migration was introduced in the historical `v0.9.0-beta.1` release and remains in beta.5. The AI assistant
 nevertheless responds in the language of the researcher's
 substantive conversation messages unless they explicitly
 request otherwise. No translation pack is installed.
@@ -67,7 +67,7 @@ journal or researcher decision:
 
 An earlier beta.1 ZIP does **not** contain the newer workflow, optional
 bibliographic adapters or C.A.D.A. stabilization. For external testing of
-these changes, use the **now-published** beta.4 ZIP rather than the source checkout.
+these changes, use the **now-published** beta.5 ZIP rather than the source checkout.
 
 ## Compatibility still requiring evaluation
 
