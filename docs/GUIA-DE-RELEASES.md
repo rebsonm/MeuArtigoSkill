@@ -89,14 +89,14 @@ its uploaded ZIP and SHA-256**, never by `VERSION`, `date-released` or a
 merge commit. All public versions remain **experimental betas**, not stable
 or independently scientifically validated. The historical **beta.4 Pre-release was published** on 2026-10-11 (UTC) from commit
 `3ef2bfb1f73c42cb029a2862b2c7959c12fe718f`, with an uploaded
-versioned ZIP and `SHA256SUMS.txt`. Until actual beta.5 assets are published and verified, `OFFICIAL_SKILL_RELEASE` continues to identify **the published experimental beta.4**, not a stable or independently validated release. Change that recommendation to beta.5 only after successful tagged publication. Historical beta.1/beta.2 tags and
+versioned ZIP and `SHA256SUMS.txt`. The **beta.5 Pre-release was published** on 2026-10-14 (UTC) from source commit `267b4239a1aea1ec0d7a6fcf6ba1aa0607e90ccc`, with the versioned ZIP and `SHA256SUMS.txt` attached. `OFFICIAL_SKILL_RELEASE` now recommends **the published experimental beta.5**, not a stable or independently validated release. Historical beta.1/beta.2 tags and
 assets are retained.
 
 ## Beta.5 maintenance release (2026-10-14)
 
 The beta.5 development line incorporates the initializer hotfix from [PR #62](https://github.com/rebsonm/MeuArtigoSkill/pull/62). It creates and validates essential local research documents before the optional XLSX, bounds the visual-generator execution, preserves prior researcher files and logs the matrix status independently. It does **not** establish that Google Drive data were synchronized or that the research method was scientifically validated.
 
-For beta.5, after source integration, run the **manual** publish workflow with its explicit confirmation. Do not consider the release publicly available merely because `VERSION`, release dates or links have been prepared; inspect the actual tagged GitHub Pre-release and its ZIP/checksum. Earlier beta.4 assets are immutable historical releases.
+The beta.5 manual publication workflow completed and its tagged GitHub Pre-release, installation ZIP and checksum were confirmed on 2026-10-14. For future versions, retain the same explicit confirmation and independent asset verification. Earlier beta.4 assets are immutable historical releases.
 
 ## Platform and language compatibility
 
@@ -152,12 +152,11 @@ python scripts/build_skill_bundle.py --verify "dist/MeuArtigoSkill-v$(cat VERSIO
 (cd dist && sha256sum -c SHA256SUMS.txt)
 ```
 
-A CI-built ZIP on `main` is a **development artifact**. The preparation
-for beta.5 is not a claim that the tagged release has already appeared.
+A CI-built ZIP on `main` is a **development artifact**. Preparing a later candidate is not proof of its publication.
 After an authorized manual workflow publishes a *new* tagged beta, verify
-its ZIP and checksum first, then update the legacy recommendation pointer
-and user-facing download pages. The beta.4 follow-up was completed
-in source documentation; it did **not** replace or modify the tag's ZIP.
+its ZIP and checksum first, then update the official recommendation pointer
+and user-facing download pages. This follow-up was completed for beta.5;
+it did **not** replace or modify historical release assets.
 The experimental beta label must be retained; a stable v1.0.0 would
 require a separate decision. The redundant discovery of
 15 Phase-5 unit tests was corrected; software regression counts are
