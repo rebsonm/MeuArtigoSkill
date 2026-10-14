@@ -1,8 +1,10 @@
 # Installation
 
+> **Publication status:** beta.5 is the current source candidate awaiting a separate manual release. The [published beta.4 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4) remains the verified installer until beta.5 assets are actually available. Existing installed Skills do not update automatically.
+
 ## Recommended public beta
 
-**v0.9.0-beta.5** is a *published experimental GitHub pre-release*, not a stable release.
+**v0.9.0-beta.5** is a *candidate for an experimental GitHub pre-release*, not a stable release.
 
 - [Download the installable Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip)
 - [Download SHA256SUMS.txt](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt)
