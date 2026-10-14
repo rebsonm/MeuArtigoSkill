@@ -1,6 +1,6 @@
 # Security policy — Meu Artigo
 
-> **Release status (2026-10-14):** `0.9.0-beta.5` is the current source candidate and still requires manual tagged publication. Until its ZIP and checksum are confirmed, install the [published beta.4 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip). The beta.5 documentation describes the upcoming corrective release, not an installed upgrade.
+> **Published release (2026-10-14):** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the **recommended experimental beta**. Its versioned [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip) and [SHA-256 checksum](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt) are available. Previous releases remain archived; installed Skills do not automatically update.
 
 
 ## Scope
@@ -51,8 +51,8 @@ and [secure export](docs/EXPORTACAO-SEGURA.md).
 
 This policy covers historical `0.8.x-beta` and published `0.9.x-beta`
 releases as well as subsequent source candidates, unless superseded.
-Current experimental public recommendation: `v0.9.0-beta.4` (published as a
-GitHub Pre-release on 2026-10-11, with its tagged ZIP and SHA-256). Beta.5 remains a source candidate awaiting manual publication. Historical
+Current experimental public recommendation: `v0.9.0-beta.5` (published as a
+GitHub Pre-release on 2026-10-14, with its tagged ZIP and SHA-256). Historical
 beta.1 and beta.2 packages remain available.
 No support obligation or backport commitment is implied.
 Check [CHANGELOG.md](CHANGELOG.md).
