@@ -103,7 +103,9 @@ def core_issues(root:Path)->list[str]:
             continue
         if path.suffix == ".json":
             try:
-                json.loads(path.read_text(encoding="utf-8"))
+                parsed=json.loads(path.read_text(encoding="utf-8"))
+                if not isinstance(parsed, dict):
+                    errors.append(f"Essential JSON is not an object: {rel}")
             except (ValueError, UnicodeError, OSError):
                 errors.append(f"Unreadable essential JSON: {rel}")
     for rel,headers in TABLES.items():
@@ -118,6 +120,15 @@ def core_issues(root:Path)->list[str]:
                 errors.append(f"Invalid table header: {rel}")
         except (OSError, UnicodeError, csv.Error):
             errors.append(f"Unreadable essential table: {rel}")
+    cada=root/"00_Gestao_e_Continuidade/11_CADA_Control.csv"
+    if cada.is_file():
+        try:
+            with cada.open("r", encoding="utf-8-sig", newline="") as f:
+                ids={r["CADA_ID"] for r in csv.DictReader(f)}
+            if not {"CADA-0001","CADA-0002","CADA-0003"}.issubset(ids):
+                errors.append("Initial C.A.D.A. task register incomplete")
+        except (OSError, UnicodeError, KeyError, csv.Error):
+            errors.append("Initial C.A.D.A. task register unreadable")
     gates=root/"00_Gestao_e_Continuidade/18_Human_Validation_Gates.csv"
     if gates.is_file():
         try:
@@ -158,8 +169,13 @@ def valid_visual_workbook(path:Path)->bool:
     if not path.is_file() or path.is_symlink():
         return False
     try:
+        if path.stat().st_size > 100_000_000:
+            return False
         with zipfile.ZipFile(path) as z:
-            names=set(z.namelist())
+            members=z.infolist()
+            if len(members)>5000 or sum(i.file_size for i in members)>256_000_000:
+                return False
+            names={i.filename for i in members}
             return ("[Content_Types].xml" in names and "xl/workbook.xml" in names
                     and z.testzip() is None)
     except (OSError, zipfile.BadZipFile, zipfile.LargeZipFile):
