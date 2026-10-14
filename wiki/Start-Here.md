@@ -6,7 +6,7 @@ Meu Artigo supports researchers who want an **auditable path from a research que
 
 ## Five steps
 
-1. **Download the correct release.** The recommended experimental installer is [MeuArtigoSkill-v0.9.0-beta.5.zip](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip), not GitHub's generic source-code ZIP.
+1. **Download the correct release.** The currently published experimental installer is [MeuArtigoSkill-v0.9.0-beta.4.zip](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.4/MeuArtigoSkill-v0.9.0-beta.4.zip), not GitHub's generic source-code ZIP.
 2. **Install where supported.** Use the platform's real Skills import, or a supported local Skill directory. Not all accounts/platforms offer the same tools. See [[Installation]].
 3. **Describe your own research problem.** The Skill should preserve the original wording and may propose research questions for your review.
 4. **Check connectivity and storage.** The default `GOOGLE_DRIVE_FIRST` policy requires a confirmed Drive **write** (and an actual read-after-write where used); merely seeing a connected app is not sufficient. A fallback needs your explicit authorization.
