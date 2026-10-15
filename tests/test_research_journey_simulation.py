@@ -88,7 +88,7 @@ class ResearchJourneySimulationTests(unittest.TestCase):
         case=journeys.simulated_cases()[0]
         with self.assertRaisesRegex(ValueError,"rationale"):
             journeys.fictional_case({**case,"rationale":"Looks good"})
-        with self.assertRaisesRegex(ValueError,"Fictional"):
+        with self.assertRaisesRegex(ValueError,"fabricated questions"):
             journeys.fictional_case({**case,"question":"Actual confidential research proposal with real people."})
 
     def test_causality_and_sampling_claims_cannot_be_auto_certified(self):
