@@ -15,6 +15,10 @@ from pathlib import Path
 import sys
 
 from method_routes import MGMT, PROFILE, ROUTES, REQUIRED_DESIGN
+from method_decision_dimensions import (
+    DIMENSIONS, ROUTE_FIELDS, candidates as decision_candidates,
+    eligible as decision_eligible, existing_field as mapped_field,
+)
 
 FIELD_MENU = {
     ("INTEGRATIVE_REVIEW", "review_scope"): [
@@ -236,6 +240,14 @@ def _read_json(path: Path) -> dict:
 def _field_candidates(route: str, field: str) -> list[dict]:
     choices=FIELD_MENU.get((route,field))
     if not choices:
+        # Reuse the same decision catalogue for equivalent canonical fields;
+        # method families still take precedence where already curated.
+        for dimension, mapped in ROUTE_FIELDS.get(route,{}).items():
+            if mapped == field and decision_eligible(route,dimension):
+                choices=decision_candidates(route,dimension)
+                if choices:
+                    break
+    if not choices:
         # Honest unranked prompts rather than inventing domain-specific choices
         choices=[
             ("BOUNDED_DESIGN", "Make a bounded, justified design decision",
@@ -251,28 +263,54 @@ def _field_candidates(route: str, field: str) -> list[dict]:
         ]
     return [_card(row) for row in choices]+[OTHER]
 
-def preview(route: str="UNDECIDED", field: str|None=None) -> dict:
+def preview(route: str="UNDECIDED", field: str|None=None, *,
+            dimension: str|None=None) -> dict:
     """Source-neutral, illustrative map with no claims about any real project."""
     if route not in ROUTES:
         raise ValueError("Unrecognized existing route; use OTHER_NOT_LISTED instead")
+    if field is not None and dimension is not None:
+        raise ValueError("Use either a canonical field or a research decision dimension")
     requirements=REQUIRED_DESIGN.get(route,())
     if field is not None and field not in requirements:
         raise ValueError("Field does not belong to the declared methodology")
-    selected=field or (requirements[0] if requirements else None)
-    return _response(route, selected, {}, "ILLUSTRATIVE_PREVIEW", False,
-                     project_bound=False, route_confirmed=False)
+    if dimension is not None:
+        if dimension not in DIMENSIONS:
+            raise ValueError("Unknown research decision dimension")
+        if route=="UNDECIDED":
+            raise ValueError("Choose or explore a route before dimension-specific suggestions")
+        selected=mapped_field(route,dimension)
+        status=("ILLUSTRATIVE_PREVIEW" if decision_eligible(route,dimension)
+                else "NOT_UNIVERSALLY_APPLICABLE")
+    else:
+        selected=field or (requirements[0] if requirements else None)
+        status="ILLUSTRATIVE_PREVIEW"
+    return _response(route, selected, {}, status, False,
+                     project_bound=False, route_confirmed=False,
+                     dimension=dimension)
 
 def _response(route: str, field: str|None, completed: dict,
               status: str, can_explore: bool, *,
-              project_bound: bool, route_confirmed: bool) -> dict:
-    mode="DISCOVER_METHOD_FAMILY" if route=="UNDECIDED" else "EXPLORE_METHOD_FIELD"
-    options=[_card(row) for row in ROUTE_MENU]+[OTHER] if mode=="DISCOVER_METHOD_FAMILY" \
-            else _field_candidates(route,field)
+              project_bound: bool, route_confirmed: bool,
+              dimension: str|None=None) -> dict:
+    mode="DISCOVER_METHOD_FAMILY" if route=="UNDECIDED" else (
+        "EXPLORE_DECISION_DIMENSION" if dimension else "EXPLORE_METHOD_FIELD")
+    if mode=="DISCOVER_METHOD_FAMILY":
+        options=[_card(row) for row in ROUTE_MENU]+[OTHER]
+    elif dimension is not None:
+        options=[_card(row) for row in decision_candidates(route,dimension)]+[OTHER]
+    else:
+        options=_field_candidates(route,field)
     return {
         "schema":"MEU_ARTIGO_ADAPTIVE_METHOD_GUIDE_V1",
         "mode":mode,"status":status,"route_recorded":route if project_bound else None,
         "route_previously_human_confirmed":route_confirmed if project_bound else False,
         "target_field":field,"field_value_exported":False,
+        "decision_dimension":dimension,
+        "decision_dimension_applies":(
+            decision_eligible(route,dimension) if dimension else None),
+        "dimension_is_canonical_field":(
+            field is not None if dimension else None),
+        "methodological_option_recommendation_independently_validated":False,
         "researcher_goal_inferred_from_prose":False,
         "options":options,"option_count":len(options),
         "all_options_unranked":True,"provisional_only":True,
@@ -311,8 +349,13 @@ def _response(route: str, field: str|None, completed: dict,
         ],
     }
 
-def for_project(root: Path, *, field: str|None=None) -> dict:
+def for_project(root: Path, *, field: str|None=None,
+                dimension: str|None=None) -> dict:
     """Read the actual method route without leaking confidential project text."""
+    if field is not None and dimension is not None:
+        raise ValueError("Use either a canonical field or a research decision dimension")
+    if dimension is not None and dimension not in DIMENSIONS:
+        raise ValueError("Unsupported decision dimension")
     root=Path(root).resolve()
     config=_read_json(root/MGMT/"PROJECT_CONFIG.json")
     route=config.get("method_route")
@@ -339,13 +382,22 @@ def for_project(root: Path, *, field: str|None=None) -> dict:
     needed=REQUIRED_DESIGN.get(route,())
     if field is not None and field not in needed:
         raise ValueError("Requested field not in canonical method route")
+    if dimension is not None and route=="UNDECIDED":
+        raise ValueError("Choose or explore a route before dimension-specific suggestions")
+    mapped=mapped_field(route,dimension) if dimension is not None else None
+    if dimension is not None and mapped is not None and mapped not in needed:
+        raise ValueError("Dimension mapping mismatches existing canonical route")
     values=profile["route_details"]
     next_missing=next((name for name in needed
                        if not str(values.get(name) or "").strip()),None)
-    selected=field if field is not None else next_missing
+    selected=mapped if dimension is not None else (field if field is not None else next_missing)
     done=sum(bool(str(values.get(name) or "").strip()) for name in needed)
     status="OPTIONS_FOR_HUMAN_EXPLORATION"
-    if not needed:
+    if dimension is not None and not decision_eligible(route,dimension):
+        status="NOT_UNIVERSALLY_APPLICABLE"
+    elif dimension is not None and selected is None:
+        status="ADVISORY_DIMENSION_NOT_CANONICAL_FIELD"
+    elif not needed:
         status="METHOD_FAMILY_UNDECIDED"
     elif selected is None:
         status="ALL_DESIGN_FIELDS_RECORDED_NOT_SCIENTIFICALLY_APPROVED"
@@ -354,7 +406,8 @@ def for_project(root: Path, *, field: str|None=None) -> dict:
         status="FIELD_ALREADY_RECORDED_REVIEW_BEFORE_CHANGE"
     confirmed=profile.get("route_confirmation")=="HUMAN_CONFIRMED"
     result=_response(route,selected,{"filled":done,"total":len(needed)},status,
-                     True,project_bound=True,route_confirmed=confirmed)
+                     True,project_bound=True,route_confirmed=confirmed,
+                     dimension=dimension)
     result["target_field_already_recorded"]=bool(str(values.get(selected) or "").strip()) if selected else False
     return result
 
@@ -362,15 +415,19 @@ def main(argv=None) -> int:
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("project",nargs="?",type=Path)
     p.add_argument("--preview-route",choices=ROUTES)
-    p.add_argument("--field")
+    choice=p.add_mutually_exclusive_group()
+    choice.add_argument("--field")
+    choice.add_argument("--dimension",choices=DIMENSIONS)
     p.add_argument("--all-options",action="store_true",
                    help="Retain all route options (default already includes every supported route)")
     args=p.parse_args(argv)
     if args.project and args.preview_route:
         p.error("A project and an illustrative --preview-route are mutually exclusive")
     try:
-        doc=for_project(args.project,field=args.field) if args.project else \
-            preview(args.preview_route or "UNDECIDED",field=args.field)
+        doc=for_project(args.project,field=args.field,
+                        dimension=args.dimension) if args.project else \
+            preview(args.preview_route or "UNDECIDED",field=args.field,
+                    dimension=args.dimension)
     except (OSError,ValueError,UnicodeError,json.JSONDecodeError) as exc:
         print("METHOD_GUIDE_ERROR: "+type(exc).__name__,file=sys.stderr)
         return 2
