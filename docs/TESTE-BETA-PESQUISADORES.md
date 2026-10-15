@@ -2,7 +2,7 @@
 
 This **experimental beta** is open to voluntary use and feedback. The purpose of feedback is to identify confusing steps, accessibility barriers and scientific-governance risks, not to endorse the tool.
 
-**Installer currently confirmed:** [beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5). The beta.6 source is integrated, but do not claim to have tested its installed version until an actual beta.6 package is available and installed.
+**Installer currently confirmed:** [beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) with published ZIP and checksum. Tests of newer PR candidates must identify their actual commit; installing published beta.6 does not include those unmerged corrections.
 
 ## A simple way to try it
 

@@ -20,6 +20,6 @@
 
 An assistant can say that a step is planned, completed or unverified only when the available evidence supports that status. You remain responsible for research ethics, source rights and scientific decisions.
 
-**Availability:** [beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the last confirmed published installer; beta.6 improvements are in source preparation and not yet confirmed as a published installer.
+**Availability:** [beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) is the confirmed published experimental installer. Future PR changes are not automatically included.
 
 [[Start here|Start-Here]] · [[FAQ]] · [Researcher evaluation limits](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/VALIDACOES-PENDENTES.md).

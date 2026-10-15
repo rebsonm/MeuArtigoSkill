@@ -4,13 +4,13 @@ You do not need to be a programmer or use GitHub commands to install Meu Artigo.
 
 ## Which version should I use?
 
-The [beta.5 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the latest **confirmed published installer**. [Download its prepared ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip). The beta.6 improvements are already present in the repository's source, but its installable release has not been confirmed. Always check [Releases](https://github.com/rebsonm/MeuArtigoSkill/releases) for the newest complete package before downloading.
+The [beta.6 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) is the **confirmed published experimental installer**. [Download its prepared ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.6/MeuArtigoSkill-v0.9.0-beta.6.zip) and the matching SHA-256 from the official release. Unmerged corrections in PRs are not part of this package.
 
 All current releases are experimental; none is independently scientifically validated.
 
 ## Install in a supported assistant
 
-1. On the published release page, download the file named `MeuArtigoSkill-v0.9.0-beta.5.zip` and, if you wish to verify it, `SHA256SUMS.txt`.
+1. On the published release page, download the file named `MeuArtigoSkill-v0.9.0-beta.6.zip` and, if you wish to verify it, `SHA256SUMS.txt`.
 2. In your assistant, find its supported **Skills** import feature. The name and availability depend on the service and account.
 3. Import the downloaded Skill ZIP. If your environment instead uses Skill folders, unpack it so that `SKILL.md` is at the top level.
 4. Start a conversation in your usual language:

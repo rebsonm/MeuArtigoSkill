@@ -4,7 +4,7 @@ Meu Artigo is being tested as a **Skill for scientific research support**. You c
 
 ## Available download
 
-The last **confirmed published installer** is [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5). [Download the Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip). The source repository is prepared as `0.9.0-beta.6`, the last planned experimental beta, but the beta.6 release ZIP and checksum have not been confirmed as published.
+The **confirmed published experimental installer** is [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6), with the [prepared ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.6/MeuArtigoSkill-v0.9.0-beta.6.zip) and SHA-256 attachment. Unmerged PR changes remain development candidates, not part of the published package.
 
 For installation, always choose the prepared ZIP on the [Releases page](https://github.com/rebsonm/MeuArtigoSkill/releases), not **Code → Download ZIP**. Each installed Skill remains on its installed version until you update it.
 

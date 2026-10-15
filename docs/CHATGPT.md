@@ -4,7 +4,7 @@ Meu Artigo is a **Skill**, not a replacement for ChatGPT. Its research guidance 
 
 ## Start using the Skill
 
-1. Download the prepared [beta.5 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip) from the [currently published release](INSTALLATION.md).
+1. Download the prepared [beta.6 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.6/MeuArtigoSkill-v0.9.0-beta.6.zip) from the [currently published release](INSTALLATION.md).
 2. Import it using the **Skills** feature if it is available on your account.
 3. Begin in your preferred language:
    > I want to use Meu Artigo to prepare a scientific article. Please check my available connections and storage before proposing methodological options.
@@ -49,4 +49,4 @@ remote Drive persistence, which is a separate operation.
 
 You choose the method, decide which materials to include, examine evidence, approve interpretations and review the manuscript before any submission. See [Getting started](COMECE-AQUI.md) and [scientific governance](GOVERNANCA-CIENTIFICA.md).
 
-**Version note:** the source repository shows beta.6; the newest confirmed published installer remains beta.5 until beta.6 release assets appear on [GitHub Releases](https://github.com/rebsonm/MeuArtigoSkill/releases).
+**Version note:** the [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) installer is published. The corrections in open GitHub PRs must not be reported as installed or published until a separately authorized, verified build is actually loaded.

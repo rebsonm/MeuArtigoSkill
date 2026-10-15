@@ -6,7 +6,7 @@ No. A supported assistant can import the prepared Skill package; installing from
 
 ### Which version is available?
 
-The latest **confirmed published installer** is [beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5). Beta.6 is integrated into the source, but its installation package is not yet confirmed as published. See [[Installation]].
+The latest **confirmed published installer** is [beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6). Beta.6 is published as a Skill ZIP and checksum. See [[Installation]].
 
 ### Can Meu Artigo choose my methodology?
 
