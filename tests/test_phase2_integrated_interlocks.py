@@ -45,6 +45,8 @@ class Phase2InterlockTests(unittest.TestCase):
         self.mgmt.mkdir(parents=True)
         (self.mgmt / "PROJECT_CONFIG.json").write_text(json.dumps({
             "method_route_governance_required": True,
+            "storage_mode": "WORK_FALLBACK",
+            "fallback_authorized": True,
             "method_route": "UNDECIDED",
             "article_type": "integrative review",
         }), encoding="utf-8")
