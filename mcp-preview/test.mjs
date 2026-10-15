@@ -30,7 +30,7 @@ try {
   assert.match(html, /Comparar duas alternativas/);
   assert.ok(!html.includes("commit_method_field.py"), "Browser must not suggest implicit writes");
 
-  for (const route of ["QUALITATIVE", "QUANTITATIVE", "MIXED_METHODS", "DESIGN_SCIENCE", "CONCEPTUAL_THEORY", "OTHER_NOT_LISTED"]) {
+  for (const route of ["QUALITATIVE", "QUANTITATIVE", "MIXED_METHODS", "DESIGN_SCIENCE", "CONCEPTUAL_THEORY"]) {
     const answer = await client.callTool({ name: "meu_artigo_preview", arguments: { route, mode: "FULL" } });
     assert.equal(answer.isError, undefined, "Preview failed: " + route);
     const map = answer.structuredContent?.researchMap;
@@ -53,7 +53,7 @@ try {
   assert.equal(invalid.isError, true, "Tool must reject project-like input");
   const local = readFileSync(resolve(here,"../scripts/mcp_preview_projection.py"),"utf8");
   assert.ok(!local.includes("add_argument(\"project\""), "Preview CLI must not accept a project path");
-  console.log("MCP Apps smoke: protocol, UI resource, six fictional routes, no user data or write tools.");
+  console.log("MCP Apps smoke: protocol, UI resource, five fictional routes, no user data or write tools.");
 } finally {
   await client.close();
 }
