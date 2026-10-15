@@ -16,7 +16,7 @@ import re
 import sys
 import tempfile
 
-from evaluation_package import build as build_replay, validate as verify_replay
+from evaluation_package import build as replay_build, validate as replay_verify
 from evaluation_registry import digest, record, validate_catalog, read_ledger
 from semantic_claim_review import MGMT, CLAIMS, EVIDENCE, SOURCE_REPORT, review, sha, clean
 from source_report_integrity import manifest
