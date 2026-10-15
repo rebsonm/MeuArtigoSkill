@@ -17,6 +17,7 @@ from next_step_router import (TERMINAL, documented_gate, resolve as resolve_next
 from cada_continuity_integrity import audit as audit_cada_continuity
 from adaptive_method_guide import for_project as read_method_guidance
 from method_choice_dialogue import dialogue as project_method_dialogue
+from method_fill_preflight import inspect as project_method_fill_preflight
 
 MGMT = "00_Gestao_e_Continuidade"
 FILES = {
@@ -172,6 +173,9 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
     # Dialogue is a non-mutating projection. It neither writes a scientific
     # decision nor authorizes C.A.D.A., Drive sync or one of seven gates.
     method_conversation = project_method_dialogue(method_guidance, action="suggest")
+    # The field panel is an explanation only. It cannot propose actual
+    # source-grounded scientific text or permit a canonical write.
+    method_fill_guidance = project_method_fill_preflight(method_guidance)
     # Task titles and execution assignees come from the authorized project.
     # Never expose unrelated notes, source paths, protected text or review excerpts.
     return {
@@ -204,6 +208,7 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
         },
         "method_guidance": method_guidance,
         "method_conversation": method_conversation,
+        "method_fill_guidance": method_fill_guidance,
         "tasks": {
             "items": (minimal_tasks if chosen == "MINIMAL" else task_items),
             "registered_total": nrows(tasks),
@@ -270,6 +275,8 @@ def fallback(data: dict) -> str:
         " / " + str(overview["active_tasks"]),
         task_table(data),
         "Human approvals documented: " + str(overview["documented_gate_approvals"]),
+        "Method entry: " + data["method_fill_guidance"]["status"] +
+        " | automatic write allowed: NO",
         "Method dialogue: " + data["method_conversation"]["action"] +
         " | options: " + str(len(data["method_conversation"]["cards"])) +
         " | human choice required, no automatic gate approval",
