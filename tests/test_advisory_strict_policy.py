@@ -120,13 +120,22 @@ class AdvisoryVersusBlockingPolicyTests(unittest.TestCase):
         root,path,item=self.project(4,complete_protocol=True)
         (root/"synthetic_source.txt").write_text(
             item["source_passage"]+"\nCHANGED AFTER HASH",encoding="utf-8")
-        rc,report=self.run_claims(root,path)
-        self.assertEqual(rc,2)
-        self.assertEqual(report["review_items"][0]["status"],
-                         "SOURCE_REPORT_UNAVAILABLE_OR_STALE")
-        rc,diag=self.run_diagnostic(root,path)
-        self.assertEqual(rc,2)
-        self.assertGreater(diag["counts"]["strict_required_occurrences"],0)
+        # The linkage is absent from the canonical ledger. The supplied
+        # annotation therefore fails validation BEFORE any JSON is emitted.
+        # A fail-closed input error (1) is not an advisory or accepted review.
+        with contextlib.redirect_stdout(io.StringIO()) as stdout:
+            with contextlib.redirect_stderr(io.StringIO()) as stderr:
+                rc=claims.main([str(root),"--assessments",str(path),"--strict"])
+        self.assertEqual(rc,1)
+        self.assertEqual(stdout.getvalue(),"")
+        self.assertIn("absent from the canonical literature ledger",stderr.getvalue())
+        with contextlib.redirect_stdout(io.StringIO()) as stdout:
+            with contextlib.redirect_stderr(io.StringIO()) as stderr:
+                rc=diagnostic.main([str(root),"--assessments",str(path),
+                                    "--format","json","--strict"])
+        self.assertEqual(rc,1)
+        self.assertEqual(stdout.getvalue(),"")
+        self.assertIn("absent from the canonical literature ledger",stderr.getvalue())
 
     def test_wrong_reference_cannot_be_downgraded_to_advisory(self):
         root,path,item=self.project(4,complete_protocol=True)
