@@ -43,7 +43,7 @@ class OptionalMcpSkillTests(unittest.TestCase):
     def test_mcp_apps_ui_is_not_claimed_to_be_a_skill_only_feature(self):
         self.assertIn("separate host",self.rules)
         self.assertIn("does **not** activate MCP Apps UI",self.rules)
-        self.assertIn("Installing",self.chat.replace("installing", "Installing"))
+        self.assertIn("when its Skill ZIP is installed",self.chat)
 
     def test_fallback_is_explicit_and_does_not_simulate_connected_tool(self):
         self.assertIn("No exposed MCP tool means",self.rules)
