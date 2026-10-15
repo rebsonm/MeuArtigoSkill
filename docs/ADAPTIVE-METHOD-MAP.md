@@ -368,6 +368,23 @@ reconciliation, it must show that blocker instead of declaring any
 scientific task automatically executable. A pending scientific gate or
 unconfirmed method always requires a real researcher decision.
 
+### Fail-closed resumption when decision provenance is incomplete
+
+The Skill-only `decision_continuity.compose` refuses to advertise an
+authorized technical C.A.D.A. preparation if the decision ledger is missing,
+malformed or contains duplicate identifiers, or if a last recorded decision
+cannot be linked to an existing TRACE row. A separate method profile blocker
+also takes priority over otherwise eligible technical preparation. The
+read-only `native_chat_dashboard.panel` now reconciles its outward
+continuation status with these blockers so plain-text and native views do not
+contradict the method/provenance checks.
+
+A **readable but empty** DEC ledger remains a legitimate no-decision-yet
+state and cannot be confused with missing evidence. The response only
+reports technical identifiers and conservative blocker codes, not original
+human rationale, task instructions or source text. No register is rebuilt
+or written; seven gates remain governed by the existing human workflow.
+
 **Human involvement:**
 - Engineering and fixture checks: no user action.
 - Actual method choices, field approval, decisions at the seven gates:
