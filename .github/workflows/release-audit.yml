@@ -48,6 +48,21 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
 
+      - name: Homologate integrated Skill against eleven disposable scenarios
+        run: |
+          python scripts/homologate_integrated_skill.py \
+            --output "$RUNNER_TEMP/integrated-skill-acceptance-synthetic.json"
+          python -c 'import json,os,pathlib; p=pathlib.Path(os.environ["RUNNER_TEMP"])/"integrated-skill-acceptance-synthetic.json"; a=json.loads(p.read_text()); assert a["case_count"]==11 and a["all_scenarios_passed"] and a["all_cases_without_scientific_approval"] and a["all_cases_without_canonical_writes"] and not a["host_mcp_connection_exercised"] and not a["updated_skill_installed_in_chatgpt"]; print("integrated_cases=11; mcp_live=false; project_mutation=false")'
+
+      - name: Upload synthetic integrated acceptance evidence (not a release)
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: meu-artigo-integrated-skill-acceptance-synthetic
+          path: ${{ runner.temp }}/integrated-skill-acceptance-synthetic.json
+          if-no-files-found: warn
+          retention-days: 30
+
       - name: Generate synthetic interactive research workspace
         run: |
           python scripts/build_research_workspace.py \
