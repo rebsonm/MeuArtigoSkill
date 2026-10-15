@@ -37,7 +37,7 @@ jobs:
         run: |
           python scripts/simulate_research_journeys.py \
             --output "$RUNNER_TEMP/research-journeys-synthetic.json"
-          python -c 'import json,os,pathlib; p=pathlib.Path(os.environ["RUNNER_TEMP"])/"research-journeys-synthetic.json"; x=json.loads(p.read_text()); assert x["case_count"]==8 and x["all_cases_preserve_human_gate"] and not x["independent_academic_validation"] and not x["canonical_workspace_mutated"]; print("fictional_journeys=8; scientific_approval=false")'
+          python -c 'import json,os,pathlib; p=pathlib.Path(os.environ["RUNNER_TEMP"])/"research-journeys-synthetic.json"; x=json.loads(p.read_text()); assert x["case_count"]==8 and x["all_cases_preserve_human_gate"] and x["all_mock_drafts_preventively_blocked"] and not x["independent_academic_validation"] and not x["canonical_workspace_mutated"]; print("fictional_journeys=8; scientific_approval=false")'
 
       - name: Upload synthetic-only journey evidence
         if: always()
