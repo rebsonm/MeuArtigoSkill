@@ -303,6 +303,8 @@ def _response(route: str, field: str|None, completed: dict,
     return {
         "schema":"MEU_ARTIGO_ADAPTIVE_METHOD_GUIDE_V1",
         "mode":mode,"status":status,"route_recorded":route if project_bound else None,
+        "preview_route":None if project_bound else route,
+        "bound_to_canonical_project":project_bound,
         "route_previously_human_confirmed":route_confirmed if project_bound else False,
         "target_field":field,"field_value_exported":False,
         "decision_dimension":dimension,
