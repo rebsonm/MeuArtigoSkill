@@ -25,7 +25,7 @@ const resourceUri = "ui://meu-artigo/research-map.html";
 const routes = [
   "UNDECIDED", "INTEGRATIVE_REVIEW", "SYSTEMATIC_REVIEW",
   "PROBLEMATIZING_REVIEW", "CONCEPTUAL_THEORY", "QUALITATIVE",
-  "QUANTITATIVE", "MIXED_METHODS", "DESIGN_SCIENCE", "OTHER_NOT_LISTED",
+  "QUANTITATIVE", "MIXED_METHODS", "DESIGN_SCIENCE",
 ];
 const modes = ["MINIMAL", "FULL"];
 const routeSchema = z.enum(routes);
@@ -34,7 +34,7 @@ const modeSchema = z.enum(modes);
 export async function loadFictionalPreview(route = "QUALITATIVE", mode = "MINIMAL") {
   if (!routes.includes(route) || !modes.includes(mode)) throw new Error("Invalid preview");
   const { stdout } = await exec(process.env.MEU_ARTIGO_PYTHON || "python3",
-    ["-I", script, "--route", route, "--mode", mode],
+    ["-E", "-s", script, "--route", route, "--mode", mode],
     { cwd: root, timeout: 12000, maxBuffer: 2 * 1024 * 1024 });
   const result = JSON.parse(stdout);
   if (result.mcp_app?.fictional_only !== true ||
