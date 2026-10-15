@@ -72,7 +72,7 @@ class ResumeProjectionUnitTests(unittest.TestCase):
         self.assertEqual(data["recorded"]["next_missing_method_field"],"tradition")
         self.assertFalse(data["next_step"]["task_executed_by_this_brief"])
         self.assertFalse(data["next_step"]["gate_approved_by_this_brief"])
-        self.assertFalse(data["scientific_decision_requires_researcher"] is True)
+        self.assertTrue(data["scientific_decision_requires_researcher"])
         self.assertNotIn(PRIVATE,json.dumps(data,ensure_ascii=False))
         self.assertNotIn(PRIVATE,text(data))
         self.assertFalse(data["storage"]["google_drive_sync_verified_in_this_session"])
