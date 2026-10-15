@@ -35,6 +35,47 @@ class VersionContractTests(unittest.TestCase):
                 with self.subTest(bad=bad), self.assertRaises(ValueError):
                     version_info.read_version(root)
 
+    def test_source_only_diagnostic_is_not_installed_package_proof(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "VERSION").write_text("0.9.0-beta.6\n", encoding="utf-8")
+            status = version_info.diagnostic(root)
+            self.assertEqual(status["bundle_content_status"], "SOURCE_VERSION_ONLY")
+            self.assertFalse(status["host_installed_skill_verified"])
+            self.assertFalse(status["public_release_verified"])
+
+    def test_valid_bundle_files_report_local_integrity_only(self):
+        import hashlib
+        import json
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "VERSION").write_text("0.9.0-beta.6\n", encoding="utf-8")
+            (root / "SKILL.md").write_text("Synthetic Skill", encoding="utf-8")
+            digest = hashlib.sha256((root / "SKILL.md").read_bytes()).hexdigest()
+            (root / "BUNDLE_MANIFEST.json").write_text(json.dumps({
+                "version": "0.9.0-beta.6",
+                "files": {"SKILL.md": digest},
+                "build_source_commit": "1" * 40,
+            }), encoding="utf-8")
+            status = version_info.diagnostic(root)
+            self.assertEqual(status["bundle_content_status"],
+                             "LOCAL_BUNDLE_FILES_MATCH_MANIFEST")
+            self.assertFalse(status["host_installed_skill_verified"])
+            (root / "SKILL.md").write_text("Altered", encoding="utf-8")
+            self.assertEqual(version_info.diagnostic(root)["bundle_content_status"],
+                             "BUNDLE_MANIFEST_INVALID_OR_FILES_CHANGED")
+
+    def test_version_manifest_mismatch_does_not_claim_verified(self):
+        import json
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "VERSION").write_text("0.9.0-beta.6\n", encoding="utf-8")
+            (root / "BUNDLE_MANIFEST.json").write_text(json.dumps({
+                "version": "0.9.0-beta.5", "files": {"SKILL.md": "0"*64},
+            }), encoding="utf-8")
+            self.assertEqual(version_info.diagnostic(root)["bundle_content_status"],
+                             "BUNDLE_MANIFEST_INVALID_OR_FILES_CHANGED")
+
 
 if __name__ == "__main__":
     unittest.main()

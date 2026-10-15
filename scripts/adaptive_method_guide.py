@@ -414,7 +414,13 @@ def for_project(root: Path, *, field: str|None=None,
     return result
 
 def main(argv=None) -> int:
-    p=argparse.ArgumentParser(description=__doc__)
+    p=argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="Examples (run separately):\n"
+               "  python scripts/adaptive_method_guide.py --preview-route QUALITATIVE\n"
+               "  python scripts/adaptive_method_guide.py /path/to/existing/project "
+               "--dimension analysis\n"
+               "A project and --preview-route cannot be combined.")
     p.add_argument("project",nargs="?",type=Path)
     p.add_argument("--preview-route",choices=ROUTES)
     choice=p.add_mutually_exclusive_group()

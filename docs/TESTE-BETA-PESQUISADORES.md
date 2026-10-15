@@ -19,6 +19,10 @@ You do not have to complete an article, learn Git or understand programming to s
 - Whether methodological alternatives are appropriate to your field.
 - Whether the Skill explains its proposed next step and waits for consequential human decisions.
 - Whether cited passages really support the resulting statements.
+- Whether a cited **obligation** is mistakenly presented as evidence that a
+  rule was followed in real cases.
+- Whether the assistant distinguishes an inspected source VERSION from an
+  independently verified installed Skill package.
 - Whether storage and tool permissions are accurately described.
 - Whether a project saved to Drive appears as accessible subfolders and separate files, not only an archive.
 - Whether returning to a project feels understandable and safe.

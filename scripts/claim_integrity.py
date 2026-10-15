@@ -75,6 +75,44 @@ def contains_unbounded_novelty(value):
 def is_novelty_conclusion(value):
     return bool(NOVELTY_CONCLUSION_RX.search(normalized(value)))
 
+# Conservative risk signals only; this is NOT natural-language inference or
+# proof that the evidence supports the claim.
+NORMATIVE_SOURCE_TERMS = ("normative", "legal", "regulation", "policy", "standard",
+                          "statute", "legislation", "normativo", "norma", "regulamento")
+OBLIGATION_RX = re.compile(
+    r"\b(?:exige|exigem|determina|determinam|deve|devem|obrigatori[oa]s?"
+    r"|requires?|mandates?|must|shall)\b", re.I)
+OBSERVATION_RX = re.compile(
+    r"\b(?:cumpriu|cumpriram|cumpriram-se|cumpre|cumprido|cumprida"
+    r"|comprovou|comprovaram|foram\s+registrad[oa]s?"
+    r"|estao\s+(?:registrad[oa]s?|identificad[oa]s?|conformes?)"
+    r"|foram\s+(?:cumprid[oa]s?|identificad[oa]s?)"
+    r"|(?:was|were)\s+(?:implemented|observed|compliant)"
+    r"|(?:is|are)\s+compliant|(?:all|todos?|todas?)\s+"
+    r"(?:records?|demandas?|processos?)\s+(?:are|were|estao|foram))\b", re.I)
+
+
+def normative_observation_risk(claim_text, supporting_rows):
+    """Return narrow lexical review flags; never return SUPPORTED."""
+    s = normalized(claim_text)
+    mandatory = bool(OBLIGATION_RX.search(s))
+    observed = bool(OBSERVATION_RX.search(s))
+    typed = [
+        normalized(" ".join(str(r.get(k) or "") for k in
+                          ("Study_design_or_source_type", "Authority_type", "Document_type")))
+        for r in supporting_rows if r is not None
+    ]
+    normative_only = bool(typed) and all(
+        any(term in description for term in NORMATIVE_SOURCE_TERMS)
+        for description in typed
+    )
+    if mandatory and observed:
+        return "OBLIGATION_AND_OBSERVED_COMPLIANCE_MIXED"
+    if observed and normative_only:
+        return "OBSERVED_COMPLIANCE_FROM_NORMATIVE_ONLY_SOURCES"
+    return None
+
+
 def read_table(path):
     if not path.exists():
         return [],[]
@@ -140,6 +178,14 @@ def audit(claim_rows,evidence_rows,search_rows,*,strict=False,freeze=False,heade
         if not text:
             errors.append(f"{claim_id}: material claim text is absent")
             continue
+        risk=normative_observation_risk(
+            text,[all_evidence.get(reference) for reference in listed])
+        if risk:
+            note=(f"{claim_id}: NORMATIVE_OBSERVATION_REVIEW_REQUIRED "
+                  f"({risk}); distinguish source obligation from actual observed "
+                  "compliance and its population/time frame; a locator alone "
+                  "does not demonstrate observed occurrence")
+            (errors if mandatory else warnings).append(note)
         if contains_unbounded_novelty(text):
             counts["unsupported_novelty_phrases"]+=1
             msg=f"{claim_id}: categorical priority/novelty language needs narrower wording; search metadata cannot prove universal absence"

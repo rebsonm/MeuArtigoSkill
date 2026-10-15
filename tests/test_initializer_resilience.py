@@ -183,6 +183,20 @@ class InitializerResilienceTests(unittest.TestCase):
         self.assertEqual(target.read_text(encoding="utf-8"),"unexpected,headers\n")
         called.assert_not_called()
 
+    def test_initializer_provides_machine_readable_project_root_without_drive_claim(self):
+        status, out, err, _ = self.run_initializer(
+            lambda command, **kw: (_ for _ in ()).throw(subprocess.TimeoutExpired(command, 90)))
+        self.assertEqual(status, 0, err)
+        line = next(line for line in out.splitlines()
+                    if line.startswith("init_result_json="))
+        receipt = json.loads(line.partition("=")[2])
+        self.assertEqual(receipt["project_root"], str(self.project))
+        self.assertEqual(receipt["local_core_status"], "VERIFIED")
+        self.assertEqual(receipt["visual_matrix_status"], "PENDING_TIMEOUT")
+        self.assertEqual(receipt["canonical_storage_backend"], "WORK_FALLBACK")
+        self.assertFalse(receipt["drive_sync_verified_in_this_execution"])
+        self.assertFalse(receipt["human_scientific_gates_approved_by_initializer"])
+
 
 if __name__ == "__main__":
     unittest.main()

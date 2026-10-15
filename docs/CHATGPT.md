@@ -30,6 +30,21 @@ Google Drive is preferred for long-term project continuity after a real writable
 
 If no MCP connection is available, **continue as a normal Skill** using already authorized tools or verifiable manual research materials. A separate interactive interface does not appear **when its Skill ZIP is installed**. The experimental project-owned connection and its interactive interface have **not** been confirmed in a live beta.6 installation. If a connected service is not available, the Skill can still explain alternatives and work with files or tools already accessible, without claiming that an external action took place.
 
+## How do I know which Skill version is running?
+
+An assistant may inspect the local Skill's VERSION and, when actually
+accessible, verify the BUNDLE_MANIFEST.json file hashes. This identifies
+the **local files inspected**, not necessarily which Skill package the host
+activated. A repository release or path name must not be substituted for
+actual installed-package evidence. If the host does not expose the
+installed bundle, the correct answer is **installation not verified**,
+with the observed source and its limitations.
+
+When an optional XLSX visual dashboard is unavailable, the core protocol,
+CSV tables and continuity may still be usable. Ask for a readable status
+that distinguishes core readiness, optional visual status, and actual
+remote Drive persistence, which is a separate operation.
+
 ## What remains your responsibility?
 
 You choose the method, decide which materials to include, examine evidence, approve interpretations and review the manuscript before any submission. See [Getting started](COMECE-AQUI.md) and [scientific governance](GOVERNANCA-CIENTIFICA.md).

@@ -172,6 +172,36 @@ class ClaimIntegrityTests(unittest.TestCase):
             self.assertNotEqual(result.returncode,0)
             self.assertIn("nearest",result.stdout.lower())
 
+    def test_obligation_and_observation_must_be_unmixed_for_final_claim(self):
+        statement = ("The regulation requires identifiers and all records "
+                     "are compliant with the identifier requirement.")
+        risk = ci.normative_observation_risk(statement, [])
+        self.assertEqual(risk, "OBLIGATION_AND_OBSERVED_COMPLIANCE_MIXED")
+        report = self.check({"Claim_text": statement})
+        self.assertTrue(any("NORMATIVE_OBSERVATION_REVIEW_REQUIRED" in x
+                            for x in report["errors"]))
+        draft = self.check({"Claim_text": statement, "Draft_status": "DRAFT"},
+                           freeze=False)
+        self.assertTrue(any("NORMATIVE_OBSERVATION_REVIEW_REQUIRED" in x
+                            for x in draft["warnings"]))
+
+    def test_normative_source_cannot_alone_certify_observed_compliance(self):
+        source = dict(self.evidence[0])
+        source["Study_design_or_source_type"] = "NORMATIVE"
+        self.evidence[0] = source
+        report = self.check({"Claim_text":
+            "All records are compliant with this regulation."})
+        self.assertTrue(any("NORMATIVE_OBSERVATION_REVIEW_REQUIRED" in x
+                            for x in report["errors"]))
+
+    def test_pure_obligation_does_not_become_empirical_result(self):
+        self.assertIsNone(ci.normative_observation_risk(
+            "The rule requires each record to include an identifier.",
+            [{"Study_design_or_source_type": "NORMATIVE"}]))
+        self.assertFalse(ci.normative_observation_risk(
+            "Every respondent described frustration during interviews.",
+            [{"Study_design_or_source_type": "QUALITATIVE"}]))
+
 
 if __name__=="__main__":
     unittest.main()

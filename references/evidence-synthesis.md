@@ -16,6 +16,25 @@ Do not let the manuscript become a sequence of paper summaries. Convert each sou
 
 Choose source appraisal and research-design requirements using [methodological foundations](methodological-foundations.md). For integrative reviews, quality appraisal is an identifiable analytical stage, not a synonym for CORE/SUPPORT or DOI verification. Distinguish scientific relevance from methodological trustworthiness and from legal authority.
 
+## Obligations, observations and the meaning of a citation
+
+When a record contains a rule, standard, law or institutional policy, separate
+**what the document requires** from **what actually occurred**. Before marking
+a statement supported, inspect its modality (must/should versus did), unit
+of observation, population, quantifier, date range, and direct supporting
+passage. A normative source alone cannot establish implementation, behavior,
+frequency or universal compliance. A mixed sentence should be decomposed into
+a narrowly phrased normative statement and an independently evidenced
+observational statement.
+
+The deterministic claim-integrity auditor includes narrow lexical risk
+signals for some deontic/observational mixtures and normative-only source
+types. It **does not perform natural-language entailment**, infer a correct
+scientific verdict, or detect all misleading sentences. Flagged final claims
+require human-supported clarification; unflagged claims still require
+independent source examination. Keep original statement and revision history
+for critical review.
+
 ## Independent source and locator checks
 
 Read [source verification](source-verification.md). Use the deterministic script for DOI/metadata reconciliation and exact local passage matching when code execution is available. Record findings under the existing Evidence_IDs; do not create more ID families. A legitimate source lacking a DOI is not excluded automatically. Bibliographic identity and quotation presence are distinct from the claim's meaning, evidence quality and human scientific judgment. Never self-certify an [L] assertion using only a model-generated report.
