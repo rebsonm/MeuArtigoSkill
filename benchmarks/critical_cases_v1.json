@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "purpose": "SYNTHETIC_ADVERSARIAL_CASES",
-  "description": "Normative hypothetical scenarios; no actual evaluations have been run.",
+  "description": "Frozen normative synthetic cases. This file contains expectations only; observed executions and limitations are recorded separately.",
   "cases": [
     {
       "case_id": "DOI-001",

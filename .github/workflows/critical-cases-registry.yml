@@ -3,6 +3,9 @@ on:
   pull_request:
     paths:
       - "scripts/evaluation_registry.py"
+      - "scripts/run_critical_cases.py"
+      - "tests/test_executed_critical_cases.py"
+      - "docs/EXECUTED-CRITICAL-CASES.md"
       - "scripts/evaluation_package.py"
       - "tests/test_evaluation_package.py"
       - "docs/REPRODUCIBLE-EVALUATION-REG019.md"
@@ -25,6 +28,9 @@ on:
     branches: [main]
     paths:
       - "scripts/evaluation_registry.py"
+      - "scripts/run_critical_cases.py"
+      - "tests/test_executed_critical_cases.py"
+      - "docs/EXECUTED-CRITICAL-CASES.md"
       - "scripts/evaluation_package.py"
       - "tests/test_evaluation_package.py"
       - "docs/REPRODUCIBLE-EVALUATION-REG019.md"
@@ -58,7 +64,7 @@ jobs:
           python-version: "3.12"
       - name: Syntax and offline regression cases
         run: |
-          python -m py_compile scripts/evaluation_registry.py scripts/report_output_guard.py scripts/reference_audit.py scripts/semantic_claim_review.py scripts/scientific_diagnostic.py scripts/native_chat_dashboard.py scripts/evaluation_package.py
+          python -m py_compile scripts/evaluation_registry.py scripts/report_output_guard.py scripts/reference_audit.py scripts/semantic_claim_review.py scripts/scientific_diagnostic.py scripts/native_chat_dashboard.py scripts/evaluation_package.py scripts/run_critical_cases.py
           python -m unittest discover -s tests -p 'test_evaluation_registry.py' -v
           python -m unittest discover -s tests -p 'test_reference_audit.py' -v
           python -m unittest discover -s tests -p 'test_report_output_guard.py' -v
@@ -67,3 +73,15 @@ jobs:
           python -m unittest discover -s tests -p 'test_native_chat_dashboard.py' -v
           python -m unittest discover -s tests -p 'test_unified_researcher_panel.py' -v
           python -m unittest discover -s tests -p 'test_evaluation_package.py' -v
+          python -m unittest discover -s tests -p 'test_executed_critical_cases.py' -v
+      - name: Execute fixed synthetic controls with recorded evidence
+        run: |
+          python scripts/run_critical_cases.py \
+            --catalog benchmarks/critical_cases_v1.json \
+            --output-dir "$RUNNER_TEMP/executed-critical-cases" \
+            --skill-commit "$GITHUB_SHA" \
+            --strict
+          python scripts/evaluation_registry.py verify \
+            --ledger "$RUNNER_TEMP/executed-critical-cases/evaluation_runs.jsonl"
+          python scripts/evaluation_package.py verify \
+            "$RUNNER_TEMP/executed-critical-cases/evaluation-replay.zip"
