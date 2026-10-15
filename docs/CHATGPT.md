@@ -76,6 +76,22 @@ review the canonical Drive workspace directly; do not use the local
 summary to justify a change. The CLI text fallback is English-first; for researcher-facing responses
 use the structured JSON and the Skill's existing automatic language policy.
 
+## Explain blockers in the same conversation
+
+After reading a real authorized project, use
+`scripts/research_blocker_guide.py PROJECT --format json` when the
+resume view is blocked. The read-only guide maps recorded blocker codes
+to plain-language reasons, the original canonical files to review,
+responsible actor and one safe non-writing next step. The host translates
+the explanation into the researcher's active language.
+
+Do not manufacture a repair or imply that `next` is approval. If the
+project uses canonical Drive, no local snapshot is sufficient evidence
+of access or synchronization. The guide may help explain what should
+be checked, but actual authorized Drive reads and scientific decisions
+remain governed by the original process. No task, gate, method choice,
+storage consent or synchronization status is modified by this view.
+
 ## Resume safety: one answer from the canonical records
 
 When a researcher asks to continue an existing authorized project, use
