@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ROOT_FILES = ("SKILL.md", "VERSION", "CITATION.cff", "LICENSE", "NOTICE", "SECURITY.md")
 DIR_TYPES = {
     "agents": {".yaml", ".yml"},
-    "assets": {".svg", ".png"},
+    "assets": {".svg", ".png", ".html"},
     "references": {".md"},
     "scripts": {".py"},
     "docs": {".md"},
@@ -72,6 +72,8 @@ def list_sources(root: Path) -> list[Path]:
                 if dirname == "docs" and (path.name in EXCLUDED_DOC_NAMES or
                                           path.name.startswith("NOTAS-DA-VERSAO-")):
                     continue
+                if dirname=="assets" and path.suffix.lower()==".html" and path.name!="research_workspace.html":
+                    raise ValueError(f"Only the exact reviewed UI template is permitted: {path}")
                 if path.suffix.lower() not in suffixes:
                     raise ValueError(f"Unrecognized file could expose private material: {path}")
                 found.append(path)
