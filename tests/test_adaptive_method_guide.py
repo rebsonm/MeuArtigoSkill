@@ -99,7 +99,8 @@ class AdaptiveMethodGuideTests(unittest.TestCase):
         self.assertIn("DOCUMENTS",{x["id"] for x in result["options"]})
         self.assertIn("OBSERVATION",{x["id"] for x in result["options"]})
         result=guide.for_project(self.root,field="reflexivity_or_positioning")
-        self.assertIn("COMPARE_FRAMEWORKS",{x["id"] for x in result["options"]})
+        self.assertIn("INTERPRETIVE_WARRANT",{x["id"] for x in result["options"]})
+        self.assertIn("OTHER_NOT_LISTED",{x["id"] for x in result["options"]})
         self.assertFalse(result["researcher_selection_recorded"])
         with self.assertRaises(ValueError):
             guide.for_project(self.root,field="randomized_trial")
