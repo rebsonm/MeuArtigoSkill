@@ -257,5 +257,87 @@ class IntelligentContinuityTests(unittest.TestCase):
         self.assertEqual(progress["next_missing_field"],"tradition")
         self.assertFalse(progress["completion_is_scientific_validation"])
 
+    def test_missing_decision_ledger_never_resumes_technical_task(self):
+        (self.m/"17_Decision_Log.csv").unlink()
+        res=compose(self.root,navigation=REVIEW_ONLY_NAV)
+        self.assertEqual(res["status"],"RECONCILIATION_REQUIRED")
+        self.assertIn("DECISION_PROVENANCE_RECONCILIATION_REQUIRED",res["blockers"])
+        self.assertEqual(res["next_action"]["code"],
+                         "REVIEW_CONFLICTING_METHOD_DECISION_EVIDENCE")
+        self.assertFalse(res["next_action"]["technical_preparation_already_authorized_by_router"])
+        self.assertFalse(res["next_action"]["execution_authorized_by_this_view"])
+        view=native.panel(self.root)
+        self.assertFalse(view["continuation"]["technical_preparation_possible"])
+        self.assertEqual(view["continuation"]["status"],"RECONCILIATION_REQUIRED")
+        self.assertIn("DECISION_PROVENANCE_RECONCILIATION_REQUIRED",
+                      view["continuation"]["blockers"])
+
+    def test_missing_trace_ledger_with_decision_fails_closed(self):
+        self.add_decision()
+        (self.m/"13_Traceability_Log.csv").unlink()
+        res=compose(self.root,navigation=REVIEW_ONLY_NAV)
+        self.assertEqual(res["status"],"RECONCILIATION_REQUIRED")
+        self.assertFalse(res["last_recorded_decision"]["trace_link_recorded"])
+        self.assertIn("TRACE_REGISTER_MISSING_OR_UNSAFE_REGISTER",
+                      res["last_recorded_decision"]["warnings"])
+        self.assertEqual(res["next_action"]["code"],
+                         "REVIEW_CONFLICTING_METHOD_DECISION_EVIDENCE")
+        self.assertFalse(res["next_action"]["technical_preparation_already_authorized_by_router"])
+
+    def test_orphan_last_trace_id_fails_closed_without_private_text(self):
+        self.add_decision()
+        self.traces=[]
+        self.save_tables()
+        r=compose(self.root,navigation=REVIEW_ONLY_NAV)
+        self.assertIn("DECISION_TRACE_NOT_FOUND",
+                      r["last_recorded_decision"]["warnings"])
+        self.assertEqual(r["status"],"RECONCILIATION_REQUIRED")
+        self.assertFalse(r["next_action"]["technical_preparation_already_authorized_by_router"])
+        self.assertNotIn("PRIVATE_HUMAN_RATIONALE_4257",json.dumps(r))
+        self.assertNotIn("PRIVATE_ORIGINAL_RESPONSE_4257",json.dumps(r))
+
+    def test_malformed_decision_rows_cannot_masquerade_as_empty(self):
+        self.add_decision()
+        self.decisions.append(dict(self.decisions[-1]))
+        self.save_tables()
+        r=compose(self.root,navigation=REVIEW_ONLY_NAV)
+        self.assertEqual(r["status"],"RECONCILIATION_REQUIRED")
+        self.assertEqual(r["last_recorded_decision"]["status"],
+                         "DECISION_REGISTER_UNAVAILABLE")
+        self.assertFalse(r["next_action"]["technical_preparation_already_authorized_by_router"])
+
+    def test_missing_method_profile_is_not_a_ready_action(self):
+        self.profile.unlink()
+        r=compose(self.root,navigation=REVIEW_ONLY_NAV)
+        self.assertIn("METHOD_PROFILE_REQUIRES_RECONCILIATION",r["blockers"])
+        self.assertEqual(r["next_action"]["code"],"RECONCILE_PROJECT_RECORDS")
+        self.assertFalse(r["next_action"]["technical_preparation_already_authorized_by_router"])
+        ui=native.panel(self.root)
+        self.assertFalse(ui["continuation"]["technical_preparation_possible"])
+        self.assertIn("METHOD_PROFILE_REQUIRES_RECONCILIATION",ui["continuation"]["blockers"])
+
+    def test_legitimately_empty_register_still_allows_router_preparation(self):
+        # Some projects can have a documented operational preparation before
+        # their first substantive scientific decision. An existing empty
+        # header-only ledger is different from a missing/malformed ledger.
+        r=compose(self.root,navigation=REVIEW_ONLY_NAV)
+        self.assertEqual(r["last_recorded_decision"]["status"],"NO_RECORDED_DECISIONS")
+        self.assertEqual(r["status"],"READ_ONLY_GUIDANCE")
+        self.assertTrue(r["next_action"]["technical_preparation_already_authorized_by_router"])
+
+    def test_fallback_does_not_claim_technical_permission_after_conflict(self):
+        self.add_decision()
+        self.traces=[]
+        self.save_tables()
+        before={p.name:p.read_bytes() for p in self.m.iterdir() if p.is_file()}
+        ui=native.panel(self.root)
+        display=native.fallback(ui)
+        self.assertEqual(ui["continuation"]["status"],"RECONCILIATION_REQUIRED")
+        self.assertFalse(ui["continuation"]["technical_preparation_possible"])
+        self.assertIn("REVIEW_CONFLICTING_METHOD_DECISION_EVIDENCE",display)
+        self.assertNotIn("PRIVATE_NEXT_ACTION_TO_NOT_EXPORT",display)
+        self.assertNotIn("PRIVATE_HUMAN_RATIONALE_4257",display)
+        self.assertEqual(before,{p.name:p.read_bytes() for p in self.m.iterdir() if p.is_file()})
+
 if __name__=="__main__":
     unittest.main()
