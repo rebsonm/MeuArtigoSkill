@@ -14,6 +14,10 @@ on:
       - "scripts/report_output_guard.py"
       - "tests/test_report_output_guard.py"
       - "scripts/semantic_claim_review.py"
+      - "scripts/evaluate_semantic_challenge.py"
+      - "tests/test_semantic_challenge_eval.py"
+      - "benchmarks/claim_support_challenge_v1.json"
+      - "docs/SEMANTIC-SUPPORT-CHALLENGE.md"
       - "scripts/scientific_diagnostic.py"
       - "scripts/native_chat_dashboard.py"
       - "tests/test_unified_researcher_panel.py"
@@ -39,6 +43,10 @@ on:
       - "scripts/report_output_guard.py"
       - "tests/test_report_output_guard.py"
       - "scripts/semantic_claim_review.py"
+      - "scripts/evaluate_semantic_challenge.py"
+      - "tests/test_semantic_challenge_eval.py"
+      - "benchmarks/claim_support_challenge_v1.json"
+      - "docs/SEMANTIC-SUPPORT-CHALLENGE.md"
       - "scripts/scientific_diagnostic.py"
       - "scripts/native_chat_dashboard.py"
       - "tests/test_unified_researcher_panel.py"
@@ -64,7 +72,7 @@ jobs:
           python-version: "3.12"
       - name: Syntax and offline regression cases
         run: |
-          python -m py_compile scripts/evaluation_registry.py scripts/report_output_guard.py scripts/reference_audit.py scripts/semantic_claim_review.py scripts/scientific_diagnostic.py scripts/native_chat_dashboard.py scripts/evaluation_package.py scripts/run_critical_cases.py
+          python -m py_compile scripts/evaluation_registry.py scripts/report_output_guard.py scripts/reference_audit.py scripts/semantic_claim_review.py scripts/scientific_diagnostic.py scripts/native_chat_dashboard.py scripts/evaluation_package.py scripts/run_critical_cases.py scripts/evaluate_semantic_challenge.py
           python -m unittest discover -s tests -p 'test_evaluation_registry.py' -v
           python -m unittest discover -s tests -p 'test_reference_audit.py' -v
           python -m unittest discover -s tests -p 'test_report_output_guard.py' -v
@@ -74,6 +82,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_unified_researcher_panel.py' -v
           python -m unittest discover -s tests -p 'test_evaluation_package.py' -v
           python -m unittest discover -s tests -p 'test_executed_critical_cases.py' -v
+          python -m unittest discover -s tests -p 'test_semantic_challenge_eval.py' -v
       - name: Execute fixed synthetic controls with recorded evidence
         run: |
           python scripts/run_critical_cases.py \
@@ -91,5 +100,23 @@ jobs:
         with:
           name: synthetic-critical-case-evidence
           path: ${{ runner.temp }}/executed-critical-cases/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Evaluate author-labeled synthetic semantic support challenge
+        run: |
+          python scripts/evaluate_semantic_challenge.py \
+            --benchmark benchmarks/claim_support_challenge_v1.json \
+            --out-dir "$RUNNER_TEMP/semantic-support-challenge" \
+            --skill-commit "$GITHUB_SHA"
+          python scripts/evaluation_registry.py verify \
+            --ledger "$RUNNER_TEMP/semantic-support-challenge/evaluation_runs.jsonl"
+          python scripts/evaluation_package.py verify \
+            "$RUNNER_TEMP/semantic-support-challenge/evaluation-replay.zip"
+      - name: Retain synthetic semantic challenge evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: synthetic-semantic-challenge-evidence
+          path: ${{ runner.temp }}/semantic-support-challenge/
           if-no-files-found: warn
           retention-days: 30
