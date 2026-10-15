@@ -144,3 +144,23 @@ A native chat visualization shown in a conversation is a **pilot example**,
 not evidence that a new Skill package has already been imported into an
 account. Actual activation of the updated instructions requires loading
 the updated Skill artifact when that environment supports it.
+
+
+## REG-017: same Evidence view, shared diagnosis
+
+When authorized canonical records are accessible, the existing
+Evidence view may show evidence.diagnostic from native_chat_dashboard.py.
+It summarizes REG-013 using REG-018 reference checks and REG-011
+claim-review status, without duplicating the canonical record of truth.
+
+MINIMAL displays no more than two coded categories; FULL may show
+up to six. Both preserve identical audited totals and the same
+safe continuation classifier. NOT_READY means audit inputs are missing
+or incompatible; do not turn unknown values into zero or approval.
+ASSESSED_LIMITED_SCOPE describes structural checks, not scholarly
+endorsement or independently verified semantic support.
+
+A remote write can be called confirmed only after an authorized
+external write and real receipt have been verified in the present
+session. Neither the offline script nor an apparent local sync
+record can independently make this assertion.
