@@ -374,3 +374,69 @@ unconfirmed method always requires a real researcher decision.
   real researcher action and evidence.
 - Independent scientific/disciplinary validation: human experts later.
 - Integration with PR #65, merge, publication: separate maintainer approval.
+
+
+## Offline interactive research workspace — local UI prototype
+
+A **self-contained, responsive HTML interface** is available to exercise
+the adaptive map without deploying a server or changing the scientific
+workflow. This prototype is an optional read-only presentation based on
+the same \`native_chat_dashboard.panel\` / canonical method guides /
+\`decision_continuity\` records. The source UI template is allowlisted
+**by exact filename** in the Skill ZIP; arbitrary HTML documents remain
+rejected by the public bundle allowlist.
+
+To generate a **fictional example** (safe to share):
+
+    python scripts/build_research_workspace.py \
+      --preview-route QUALITATIVE \
+      --output /existing/local/directory/fictional-research-workspace.html
+
+To generate a **private read-only snapshot** of an authorized project:
+
+    python scripts/build_research_workspace.py /authorized/project \
+      --mode MINIMAL \
+      --output /secure/local/directory/my-research-workspace.html
+
+The output HTML is created **only under a new name**, with filesystem
+permission 0600, and never overwrites an existing file or symlink.
+Do not upload or publish private snapshots: the optional C.A.D.A. table
+contains legitimate **task titles** from the authorized local project,
+even though raw research questions, original DEC rationales and source
+passages are excluded.
+
+### What the researcher can do on screen
+
+- See recorded research-method route, unvalidated field counts,
+  latest declared DEC entry, the next responsible action and the
+  **exact four-column** C.A.D.A. table;
+- Switch among design/route, sampling, sources, analysis, inference
+  and reporting views, with no forced empirical requirements;
+- Explore a curated alternative, compare **two** selected paths side
+  by side and use \`OTHER_NOT_LISTED\` to retain noncatalogued traditions;
+- Type a draft and trigger **ephemeral local browser hints** for
+  placeholders, controlled-vocabulary values, existing-field status
+  and unconfirmed routes. The browser code is **not authoritative**:
+  the Python \`method_fill_preflight.py\` and human-authorization
+  procedures must be executed again before any canonical write;
+- See the specific responsible human or technical action but **not**
+  execute it from the browser or silently advance a scientific gate.
+
+The HTML has **no network requests, external dependencies, local
+persistent storage, background services, live host callbacks, or
+write/approve controls**. A restrictive CSP and text-only rendering
+are used; embedded JSON escapes \`<\` and other dangerous script-tag
+characters. The model is a **point-in-time offline snapshot**; the
+researcher must regenerate it after legitimate project changes.
+
+The experimental UI is **not** an installed ChatGPT application, a
+completed integration with a visual host, a Drive sync mechanism or
+a researcher-usability validation. Its narrative alternatives still
+come from the authored catalog: these are **not personalized semantic
+recommendations** or peer-reviewed methodological advice.
+
+**Human actions:** none to generate/run fictional previews or engineering
+tests. A real researcher must still decide and authorize a method and
+any canonical field; scientific coverage claims require independent
+experts. The maintainer separately authorizes merge, distribution and
+any later connected-host integration.
