@@ -10,7 +10,7 @@ No source code from third-party radar projects is copied here.
 |---|---|---|---|
 | 1 | CAS-003 | Curated difficult-case tests for claim, reference, storage and gate boundaries | Initial synthetic catalog created; live behavioral adapters not yet implemented |
 | 2 | REG-001 | Immutable-versioned comparison of controlled observations | Append-only JSONL hash chain and compare CLI implemented; observed real runs pending |
-| 3 | REG-018 | Audit of manuscript citations and bibliography | Pending; use existing source-checking tools instead of duplicating canonical records |
+| 3 | REG-018 | Audit of manuscript citations and bibliography | **Incremental read-only audit implemented** (scripts/reference_audit.py, 15 negative/positive tests). Whole-manuscript in-text citation parsing still pending |
 | 4 | REG-011 | Semantic claim-to-passage examination | Pending; preserve human decision and avoid treating text retrieval as proof |
 | 5 | REG-013 | One-page scientific diagnostic with uncertainties | Pending; must not call itself an independent peer review |
 | 6 | REG-017 | Unified researcher panel and real storage receipts | Pending; preserve current native chat dashboard pilot and Google Drive-first |

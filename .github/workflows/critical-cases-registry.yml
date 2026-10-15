@@ -4,6 +4,9 @@ on:
     paths:
       - "scripts/evaluation_registry.py"
       - "tests/test_evaluation_registry.py"
+      - "scripts/reference_audit.py"
+      - "tests/test_reference_audit.py"
+      - "docs/IMMEDIATE-RADAR-IMPROVEMENTS.md"
       - "benchmarks/critical_cases_v1.json"
       - ".github/workflows/critical-cases-registry.yml"
   push:
@@ -11,6 +14,9 @@ on:
     paths:
       - "scripts/evaluation_registry.py"
       - "tests/test_evaluation_registry.py"
+      - "scripts/reference_audit.py"
+      - "tests/test_reference_audit.py"
+      - "docs/IMMEDIATE-RADAR-IMPROVEMENTS.md"
       - "benchmarks/critical_cases_v1.json"
       - ".github/workflows/critical-cases-registry.yml"
 permissions:
@@ -28,5 +34,6 @@ jobs:
           python-version: "3.12"
       - name: Syntax and offline regression cases
         run: |
-          python -m py_compile scripts/evaluation_registry.py
+          python -m py_compile scripts/evaluation_registry.py scripts/reference_audit.py
           python -m unittest discover -s tests -p 'test_evaluation_registry.py' -v
+          python -m unittest discover -s tests -p 'test_reference_audit.py' -v
