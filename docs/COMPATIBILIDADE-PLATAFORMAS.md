@@ -22,6 +22,6 @@ You can describe a research problem, discuss methodological options, review sour
 - **External connections:** available connectors can differ even between accounts on the same platform.
 - **Visual presentation:** the Skill's conversational guidance is the primary path; any richer interface depends on actual host support.
 
-The software's automated tests do not certify full real-world compatibility on ChatGPT, Claude or Gemini. If a feature cannot be verified, the correct status is **not verified**, not completed.
+Compatibility testing remains **PENDING** for platforms and accounts not yet observed. For an explanation of how capabilities are checked, see [the platform access guide](../references/platform-capability-preflight.md). The software's automated tests do not certify full real-world compatibility on ChatGPT, Claude or Gemini. If a feature cannot be verified, the correct status is **not verified**, not completed.
 
 **Version:** beta.6 is the source candidate; beta.5 is the latest confirmed published package until a complete beta.6 release is visible.

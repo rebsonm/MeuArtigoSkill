@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]
 class PreflightPresentationTests(unittest.TestCase):
     def test_researcher_preflight_is_evidence_based(self):
         doc=(ROOT/"docs/CHATGPT.md").read_text(encoding="utf-8")
-        self.assertIn("Avoid empty Markdown tables",doc)
+        self.assertIn("short, readable explanation rather than empty tables",doc)
         self.assertIn("NOT_VERIFIED",doc)
         self.assertIn("read-after-write",doc)
     def test_entrypoint_keeps_scientific_safeguards(self):

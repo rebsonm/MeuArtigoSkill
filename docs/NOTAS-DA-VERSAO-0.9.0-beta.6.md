@@ -1,6 +1,6 @@
 # Meu Artigo v0.9.0-beta.6 — what's new
 
-**The last planned experimental beta.** The beta.6 changes have been integrated into the repository. Its public installation package is **not yet confirmed as published**. Until the complete beta.6 release is available, [beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the last confirmed installer.
+**The last planned experimental beta.** This is a **pre-release, not a stable release**. The beta.6 changes have been integrated into the repository. Its public installation package is **not yet confirmed as published**. Until the complete beta.6 release is available, [beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the last confirmed installer.
 
 ## More useful when continuing an article
 
@@ -23,13 +23,13 @@ It is designed to work as a standalone Skill in the conversation. Existing autho
 
 - Sources, passages, searches, approvals and cloud saves must be genuine and verifiable.
 - You remain responsible for scientific design, interpretation, ethics, writing and submission.
-- The distinction between consulted literature **[L]**, interpretation **[I]** and original proposals **[P]** remains in force.
+- The distinction between consulted literature **[L]**, interpretation **[I]** and original proposals **[P]** remains in force. The **seven researcher decision gates** are still controlled by a person.
 - Google Drive storage is not assumed successful merely because an account is connected.
 - Earlier installed Skill packages do not update automatically.
 
 ## Important limitations
 
-These improvements have undergone automated engineering checks using controlled scenarios, **not** independent scientific evaluation or comprehensive research-user testing. They do not establish universal compatibility, source quality, productivity gains or publication acceptance.
+**No independent scientific validation** has been established. These improvements have undergone automated engineering checks using controlled scenarios, **not** independent scientific evaluation or comprehensive research-user testing. They do not establish universal compatibility, source quality, productivity gains or publication acceptance.
 
 Once a complete versioned beta.6 package is actually published, it will appear on the [Meu Artigo Releases page](https://github.com/rebsonm/MeuArtigoSkill/releases). For now, use the confirmed published package and the [installation guide](INSTALLATION.md).
 

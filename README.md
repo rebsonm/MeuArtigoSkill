@@ -2,13 +2,13 @@
 
 **A research-support Skill for people preparing scientific articles.** Meu Artigo helps a researcher organize a question, consider appropriate methods, find and assess sources, document decisions, and prepare a manuscript. You remain responsible for the scientific work.
 
-The project is available in a **public GitHub repository** and distributed as an **experimental beta**, not as an independently validated research method.
+The project is available in a **public GitHub repository**. **Every 0.9.0-beta release is experimental**, not an independently validated research method; no stable v1.0.0 has been released.
 
 ## Getting started
 
-**Available installer:** [Meu Artigo v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5). Download the Skill ZIP from that release, not GitHub's automatically generated source archive.
+**Recommended published experimental beta:** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5). [Download the prepared Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip), not GitHub's automatically generated source archive. Earlier beta.1 and beta.2 and beta.4 remain archived for reproducibility.
 
-**Current version:** `0.9.0-beta.6` in the repository source. Its installer is **not yet confirmed as published**; use beta.5 until the [Releases page](https://github.com/rebsonm/MeuArtigoSkill/releases) lists the beta.6 ZIP and matching checksum. Previously installed versions do not update by themselves.
+**Current version:** `0.9.0-beta.6` in the repository source. Its installer is **not yet confirmed as published**; use beta.5 until the [Releases page](https://github.com/rebsonm/MeuArtigoSkill/releases) lists the beta.6 ZIP and matching checksum. The [beta.6 release page](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) is a planned destination, not proof that the package is available. Previously installed versions do not update by themselves.
 
 1. Follow the [installation guide](docs/INSTALLATION.md) for a compatible assistant.
 2. Start a conversation about a genuine research problem. For example: *"I want to develop an article with Meu Artigo. Help me define the question and possible methodological approaches. First, check which storage and research tools are actually available."*

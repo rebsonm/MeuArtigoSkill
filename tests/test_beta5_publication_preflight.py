@@ -17,7 +17,7 @@ class Beta5PublicationTests(unittest.TestCase):
     def test_consistent_release_metadata(self):
         self.assertEqual(self.version,"0.9.0-beta.6")
         self.assertEqual(audit_release_metadata(ROOT,expected_date="2026-10-15"),[])
-        self.assertIn("publication workflow",self.readme.lower())
+        self.assertIn("not yet confirmed as published",self.readme.lower())
         self.assertIn("pre-release",self.notes.lower())
         self.assertIn("not a stable",self.notes.lower())
 
@@ -32,7 +32,7 @@ class Beta5PublicationTests(unittest.TestCase):
         guide=(ROOT/"docs/TESTE-BETA-PESQUISADORES.md").read_text(encoding="utf-8")
         issue=(ROOT/".github/ISSUE_TEMPLATE/relato-beta.md").read_text(encoding="utf-8")
         self.assertIn("v0.9.0-beta.5",guide)
-        self.assertIn("Initializer resilience",guide)
+        self.assertIn("saved project",guide)
         self.assertIn("SECURITY.md",issue)
         self.assertIn("Expected result",issue)
         self.assertIn("Actual observed result",issue)

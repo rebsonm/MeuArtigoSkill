@@ -4,7 +4,7 @@ Meu Artigo is an **experimental public beta** designed to assist researchers in 
 
 ## The first conversation
 
-After [installing a published Skill package](INSTALLATION.md), describe your topic in your own words. For example:
+After [installing a published Skill package](INSTALLATION.md) (currently the [beta.5 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip)), describe your topic in your own words. For example:
 
 > I am studying [topic/problem]. I want to write a scientific article, but I have not chosen the method yet. Show me reasonable options, their advantages and limitations, and help me decide the next step. First check which storage and tools are available.
 

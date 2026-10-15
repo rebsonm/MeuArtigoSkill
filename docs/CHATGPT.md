@@ -4,7 +4,7 @@ Meu Artigo is a **Skill**, not a replacement for ChatGPT. Its research guidance 
 
 ## Start using the Skill
 
-1. Download the prepared ZIP from the [currently published release](INSTALLATION.md).
+1. Download the prepared [beta.5 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip) from the [currently published release](INSTALLATION.md).
 2. Import it using the **Skills** feature if it is available on your account.
 3. Begin in your preferred language:
    > I want to use Meu Artigo to prepare a scientific article. Please check my available connections and storage before proposing methodological options.
@@ -20,7 +20,7 @@ If a file is unavailable, the research decisions are inconsistent or storage acc
 
 ## What about my Google Drive and research services?
 
-Installing the Skill does **not** grant access to Drive or databases. ChatGPT can use only services actually connected and authorized for the current conversation. The assistant should distinguish accessible services from a successfully completed read, write or query.
+Installing the Skill does **not** grant access to Drive or databases. Connection status should be presented in a short, readable explanation rather than empty tables. A service is **NOT_VERIFIED** until actual access is checked; for saved files, an authorized write and, where possible, **read-after-write** confirmation are distinct from a successful read. ChatGPT can use only services actually connected and authorized for the current conversation. The assistant should distinguish accessible services from a successfully completed read, write or query.
 
 Google Drive is preferred for long-term project continuity after a real writable-access check. Switching to another workspace requires your express agreement.
 
@@ -28,7 +28,7 @@ Google Drive is preferred for long-term project continuity after a real writable
 
 **No additional connection is required just to use the standalone Skill's guidance.** If your ChatGPT session already exposes authorized MCP tools, the Skill may use them for specific tasks. Installing the Skill does not itself create an MCP connection, install a separate server or activate a visual MCP Apps interface.
 
-The experimental project-owned connection and its interactive interface have **not** been confirmed in a live beta.6 installation. If a connected service is not available, the Skill can still explain alternatives and work with files or tools already accessible, without claiming that an external action took place.
+If no MCP connection is available, **continue as a normal Skill** using already authorized tools or verifiable manual research materials. A separate interactive interface does not appear **when its Skill ZIP is installed**. The experimental project-owned connection and its interactive interface have **not** been confirmed in a live beta.6 installation. If a connected service is not available, the Skill can still explain alternatives and work with files or tools already accessible, without claiming that an external action took place.
 
 ## What remains your responsibility?
 

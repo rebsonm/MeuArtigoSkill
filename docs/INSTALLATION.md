@@ -4,7 +4,7 @@ You do not need to be a programmer or use GitHub commands to install Meu Artigo.
 
 ## Which version should I use?
 
-The [beta.5 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the latest **confirmed published installer**. The beta.6 improvements are already present in the repository's source, but its installable release has not been confirmed. Always check [Releases](https://github.com/rebsonm/MeuArtigoSkill/releases) for the newest complete package before downloading.
+The [beta.5 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the latest **confirmed published installer**. [Download its prepared ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip). The beta.6 improvements are already present in the repository's source, but its installable release has not been confirmed. Always check [Releases](https://github.com/rebsonm/MeuArtigoSkill/releases) for the newest complete package before downloading.
 
 All current releases are experimental; none is independently scientifically validated.
 
