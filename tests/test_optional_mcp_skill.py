@@ -45,6 +45,21 @@ class OptionalMcpSkillTests(unittest.TestCase):
         self.assertIn("does **not** activate MCP Apps UI",self.rules)
         self.assertIn("when its Skill ZIP is installed",self.chat)
 
+    def test_real_host_acceptance_keeps_evidence_levels_separate(self):
+        record=(ROOT/"docs/CHATGPT-MCP-HOST-ACCEPTANCE.md").read_text(encoding="utf-8")
+        for phrase in ("0.9.0-beta.4","HOST-2: Same-session workflow",
+                       "HOST-3: New Skill candidate",
+                       "HOST-4: Own MCP tool call",
+                       "HOST-5: MCP Apps visualization",
+                       "NOT_VERIFIED",
+                       "operator-observed smoke check",
+                       "tool origin cannot be independently attributed"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase.lower(),record.lower())
+        self.assertIn("real-host acceptance record",self.rules)
+        self.assertIn("does **not** certify",self.rules)
+        self.assertNotIn("MCP Apps visualization | OBSERVED",record)
+
     def test_fallback_is_explicit_and_does_not_simulate_connected_tool(self):
         self.assertIn("No exposed MCP tool means",self.rules)
         self.assertIn("authorized native tool",self.rules)
