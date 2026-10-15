@@ -12,7 +12,7 @@ No source code from third-party radar projects is copied here.
 | 2 | REG-001 | Immutable-versioned comparison of controlled observations | Append-only JSONL hash chain and compare CLI implemented; observed real runs pending |
 | 3 | REG-018 | Audit of manuscript citations and bibliography | **Incremental read-only audit implemented** (scripts/reference_audit.py, 15 negative/positive tests). Whole-manuscript in-text citation parsing still pending |
 | 4 | REG-011 | Semantic claim-to-passage examination | **First implementation added:** one [L] claim/evidence review item, source/quote/hash binding, explicit self-reported human judgment, alignment/contraevidence guards and tests. Not an automated entailment verifier or authenticated independent assessment. |
-| 5 | REG-013 | One-page scientific diagnostic with uncertainties | Pending; must not call itself an independent peer review |
+| 5 | REG-013 | One-page scientific diagnostic with uncertainties | **Initial implementation:** deterministic one-page-oriented Markdown/print A4 HTML/JSON, grouped prioritized reference/claim/protocol warnings, SHA-256 and privacy guards. Real researcher review/print validation pending. |
 | 6 | REG-017 | Unified researcher panel and real storage receipts | Pending; preserve current native chat dashboard pilot and Google Drive-first |
 | 7 | REG-019 | Reproducible evaluation package with privacy controls | Pending; initial ledger is a component, not the complete export |
 | 8 | ENG-022 | Adversarial engineering, regression tests and incremental review | Initial unit tests and read-only CI for first slice added; ongoing |
