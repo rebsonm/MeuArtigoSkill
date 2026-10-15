@@ -96,14 +96,18 @@ class LoopbackBridgeTests(unittest.TestCase):
             LocalResearchBridge(address=("::",0))
         self.assertEqual(self.server.server_address[0],"127.0.0.1")
 
-    def test_served_page_contains_only_current_session_and_local_csp(self):
+    def test_anonymous_page_is_fictional_shell_without_private_data_or_secret(self):
         status,headers,html=self.req()
         self.assertEqual(status,200)
         self.assertIn("connect-src 'self'",html)
         self.assertNotIn("connect-src 'none'",html)
-        self.assertIn(self.server.session_token,html)
+        self.assertNotIn(self.server.session_token,html)
+        self.assertNotIn("Fictional task",html)
+        self.assertIn('UNDECIDED',html)
         self.assertIn('"enabled":true',html)
         self.assertIn("Atualizar dados locais",html)
+        self.assertIn('new URLSearchParams(location.hash.slice(1))',html)
+        self.assertIn('history.replaceState(null,"",location.pathname)',html)
         self.assertEqual(headers["Cache-Control"],"no-store, no-cache, max-age=0")
         self.assertEqual(headers["X-Frame-Options"],"DENY")
         self.assertEqual(headers["Referrer-Policy"],"no-referrer")
@@ -146,6 +150,7 @@ class LoopbackBridgeTests(unittest.TestCase):
         self.assertEqual(s,200)
         data=json.loads(raw)
         self.assertEqual(data["local_bridge"]["schema"],BRIDGE_SCHEMA)
+        self.assertIsNone(data["local_bridge"]["session_token"])
         self.assertTrue(data["local_bridge"]["read_only"])
         self.assertFalse(data["local_bridge"]["canonical_write"])
         self.assertFalse(data["local_bridge"]["gate_approval"])
