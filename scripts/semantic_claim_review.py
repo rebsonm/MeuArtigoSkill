@@ -20,6 +20,7 @@ import tempfile
 
 from report_output_guard import write_report
 from claim_overreach_signals import signals as detect_possible_overreach
+from contextual_support_probe import examine as screen_contextual_support
 from claim_integrity import clean, refs, type_of
 from source_report_integrity import MGMT, SOURCE_REPORT, assess
 from verify_sources import check_locator
@@ -143,7 +144,9 @@ def review(root: Path, assessments: dict | None = None) -> dict:
                    "status": "PENDING_HUMAN_REVIEW", "declared_judgment": None,
                    "semantic_support_proven": False,
                    "semantic_probe_status":"NOT_EVALUATED",
-                   "semantic_risk_codes":[]}
+                   "semantic_risk_codes":[],
+                   "contextual_probe_status":"NOT_EVALUATED",
+                   "contextual_signal_codes":[]}
             if evidence_counts[eid] != 1:
                 row["status"] = "EVIDENCE_MISSING_OR_AMBIGUOUS"
             elif not trustworthy:
@@ -191,6 +194,19 @@ def review(root: Path, assessments: dict | None = None) -> dict:
                                 row["heuristic_severity"] = "ADVISORY"
                                 row["heuristic_blocks_workflow"] = False
                                 row["semantic_entailment_proven"] = False
+                                # Experimental sidecar: only previously verified
+                                # literal source quotations reach this screening.
+                                # Its signals are independent of the older lexical
+                                # hints and never decide strict status or any gate.
+                                context_probe = screen_contextual_support(
+                                    claim.get("Claim_text") or "", passage)
+                                row["contextual_probe_status"] = context_probe["status"]
+                                row["contextual_signal_codes"] = [
+                                    signal["code"] for signal in context_probe["signals"]]
+                                row["contextual_review_suggested"] = bool(
+                                    context_probe["signals"])
+                                row["contextual_advisory_findings"] = context_probe["signals"]
+                                row["contextual_signals_block_workflow"] = False
             result.append(row)
     unknown = set(claimed) - valid_pairs
     if unknown:
@@ -210,6 +226,8 @@ def review(root: Path, assessments: dict | None = None) -> dict:
             "one_or_more_partially_supported": "PARTIALLY_SUPPORTED" in claimed_outcomes,
             "one_or_more_inconclusive": "INCONCLUSIVE" in claimed_outcomes,
             "potential_overreach_review_required": any(bool(e.get("semantic_risk_codes")) for e in entries),
+            "potential_contextual_review_required": any(
+                bool(e.get("contextual_signal_codes")) for e in entries),
             "scientific_claim_approved": False,
         })
     return {"schema_version": 1, "audit": "REG-011_HUMAN_ASSISTED_CLAIM_REVIEW",
@@ -219,6 +237,10 @@ def review(root: Path, assessments: dict | None = None) -> dict:
             "heuristic_risk_occurrences": sum(len(x.get("semantic_risk_codes") or []) for x in result),
             "heuristic_signal_absence_proves_support": False,
             "heuristic_signals_can_block_workflow": False,
+            "contextual_signal_occurrences": sum(
+                len(x.get("contextual_signal_codes") or []) for x in result),
+            "contextual_signals_can_block_workflow": False,
+            "contextual_signal_absence_proves_support": False,
             "formal_review_requirements_pending": sum(
                 row.get("status") != "HUMAN_JUDGMENT_RECORDED_NOT_AUTHENTICATED"
                 or row.get("declared_judgment") != "SUPPORTED"

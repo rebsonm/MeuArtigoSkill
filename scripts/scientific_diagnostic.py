@@ -41,6 +41,7 @@ PRIORITY = {
     "CLAIM_UNQUALIFIED_SUPPORT_CONTRADICTS_REVIEW": 3,
     "CLAIM_PENDING_HUMAN_REVIEW": 4, "SOURCE_REPORT_MISSING": 4,
     "CLAIM_POSSIBLE_SEMANTIC_OVERREACH": 3,
+    "CLAIM_POSSIBLE_CONTEXTUAL_MISMATCH": 3,
     "METHODOLOGY_PROTOCOL_MISSING": 5,
 }
 HARD_CLAIM = {
@@ -55,6 +56,7 @@ HARD_DECLARED = {"NOT_SUPPORTED"}
 # This does not certify semantics, a reviewer, or any scientific gate.
 STRICT_ADVISORY_ONLY = {
     "CLAIM_POSSIBLE_SEMANTIC_OVERREACH",
+    "CLAIM_POSSIBLE_CONTEXTUAL_MISMATCH",
     "CLAIM_REVIEW_DECLARED_SUPPORTED",
 }
 PROTOCOL = "01_Protocolo.csv"
@@ -141,6 +143,9 @@ def compose(root: Path, *, assessments: dict | None = None) -> dict:
         if item.get("semantic_risk_codes"):
             _issue_bucket(issues,kind="CLAIM",code="CLAIM_POSSIBLE_SEMANTIC_OVERREACH",
                           severity="REVIEW",identifier=item.get("claim_id"))
+        if item.get("contextual_signal_codes"):
+            _issue_bucket(issues,kind="CLAIM",code="CLAIM_POSSIBLE_CONTEXTUAL_MISMATCH",
+                          severity="REVIEW",identifier=item.get("claim_id"))
     if protocol["status"] != "RECORDED_UNASSESSED":
         _issue_bucket(issues,kind="METHODOLOGY",
                       code="METHODOLOGY_PROTOCOL_MISSING" if protocol["status"] == "NOT_AVAILABLE"
@@ -171,6 +176,8 @@ def compose(root: Path, *, assessments: dict | None = None) -> dict:
         actions.append("Reassess claims with missing or conflicting source passages.")
     if ref["source_report_status"] in {"MISSING","STALE","BLOCKED","REVIEW_REQUIRED"}:
         actions.append("Recheck source verification results and documented limitations.")
+    if any(x["code"] == "CLAIM_POSSIBLE_CONTEXTUAL_MISMATCH" for x in full):
+        actions.append("Compare contextual mismatch hints to the original source; record a human interpretation.")
     if any(x["code"] == "CLAIM_POSSIBLE_SEMANTIC_OVERREACH" for x in full):
         actions.append("Review possible claim overreach against the source and document a human judgment.")
     if any(x["kind"] == "CLAIM" for x in full):
@@ -191,6 +198,9 @@ def compose(root: Path, *, assessments: dict | None = None) -> dict:
                    "heuristic_advisory_occurrences": sum(
                        x["count"] for x in full
                        if x["code"] == "CLAIM_POSSIBLE_SEMANTIC_OVERREACH"),
+                   "contextual_advisory_occurrences": sum(
+                       x["count"] for x in full
+                       if x["code"] == "CLAIM_POSSIBLE_CONTEXTUAL_MISMATCH"),
                    "findings_total": sum(x["count"] for x in full)},
         "source_verification": ref["source_report_status"],
         "protocol": protocol,
