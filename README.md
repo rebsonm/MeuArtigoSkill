@@ -41,7 +41,7 @@ The source repository contains operational scripts, methodological references an
 
 ## Beta releases and reproducibility
 
-**Current source version:** `0.9.0-beta.6` (**release candidate: last planned beta; not yet published**). The latest *published* experimental release remains `0.9.0-beta.5` until the beta.6 release assets are verified. Planned beta.6 page: https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6. Install the beta.5 tagged ZIP rather than the `main` source snapshot; new changes on `main` do not retroactively change published assets. Earlier beta.1 and beta.2 releases remain archived. A stable v1.0.0 has **not** been announced, and future releases require a separate authorized publication workflow.
+**Current version:** `0.9.0-beta.6` (**source candidate: last planned experimental beta; not yet a published release**). The latest *published* experimental release remains `0.9.0-beta.5` until the beta.6 release assets are verified. Planned beta.6 page: https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6. Install the beta.5 tagged ZIP rather than the `main` source snapshot; new changes on `main` do not retroactively change published assets. Earlier beta.1 and beta.2 releases remain archived. A stable v1.0.0 has **not** been announced, and future releases require a separate authorized publication workflow.
 
 [Skill scientific contract](SKILL.md) · [Methodological reference map](references/INDICE-METODOLOGICO.md) · [Method routes](docs/ROTAS-METODOLOGICAS.md) · [C.A.D.A.](docs/CADA.md) · [Claim verification](docs/CONTROLE-CLAIMS-E-ORIGINALIDADE.md) · [Release downloads](https://github.com/rebsonm/MeuArtigoSkill/releases).
 
