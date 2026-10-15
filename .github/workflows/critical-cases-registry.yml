@@ -15,6 +15,10 @@ on:
       - "tests/test_report_output_guard.py"
       - "scripts/semantic_claim_review.py"
       - "scripts/claim_overreach_signals.py"
+      - "scripts/contextual_support_probe.py"
+      - "scripts/compare_contextual_probes.py"
+      - "tests/test_contextual_support_probe.py"
+      - "docs/EXPERIMENTAL-CONTEXTUAL-SCREEN.md"
       - "tests/test_claim_overreach_signals.py"
       - "scripts/evaluate_semantic_challenge.py"
       - "scripts/evaluate_semantic_holdout.py"
@@ -51,6 +55,10 @@ on:
       - "tests/test_report_output_guard.py"
       - "scripts/semantic_claim_review.py"
       - "scripts/claim_overreach_signals.py"
+      - "scripts/contextual_support_probe.py"
+      - "scripts/compare_contextual_probes.py"
+      - "tests/test_contextual_support_probe.py"
+      - "docs/EXPERIMENTAL-CONTEXTUAL-SCREEN.md"
       - "tests/test_claim_overreach_signals.py"
       - "scripts/evaluate_semantic_challenge.py"
       - "scripts/evaluate_semantic_holdout.py"
@@ -86,13 +94,14 @@ jobs:
           python-version: "3.12"
       - name: Syntax and offline regression cases
         run: |
-          python -m py_compile scripts/evaluation_registry.py scripts/report_output_guard.py scripts/reference_audit.py scripts/semantic_claim_review.py scripts/scientific_diagnostic.py scripts/native_chat_dashboard.py scripts/claim_overreach_signals.py scripts/evaluation_package.py scripts/run_critical_cases.py scripts/evaluate_semantic_challenge.py scripts/evaluate_semantic_holdout.py
+          python -m py_compile scripts/evaluation_registry.py scripts/report_output_guard.py scripts/reference_audit.py scripts/semantic_claim_review.py scripts/scientific_diagnostic.py scripts/native_chat_dashboard.py scripts/claim_overreach_signals.py scripts/contextual_support_probe.py scripts/compare_contextual_probes.py scripts/evaluation_package.py scripts/run_critical_cases.py scripts/evaluate_semantic_challenge.py scripts/evaluate_semantic_holdout.py
           python -m unittest discover -s tests -p 'test_evaluation_registry.py' -v
           python -m unittest discover -s tests -p 'test_reference_audit.py' -v
           python -m unittest discover -s tests -p 'test_report_output_guard.py' -v
           python -m unittest discover -s tests -p 'test_semantic_claim_review.py' -v
           python -m unittest discover -s tests -p 'test_advisory_strict_policy.py' -v
           python -m unittest discover -s tests -p 'test_claim_overreach_signals.py' -v
+          python -m unittest discover -s tests -p 'test_contextual_support_probe.py' -v
           python -m unittest discover -s tests -p 'test_scientific_diagnostic.py' -v
           python -m unittest discover -s tests -p 'test_native_chat_dashboard.py' -v
           python -m unittest discover -s tests -p 'test_unified_researcher_panel.py' -v
@@ -153,5 +162,23 @@ jobs:
         with:
           name: synthetic-heldout-evidence
           path: ${{ runner.temp }}/semantic-holdout/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Compare experimental contextual and lexical screens
+        run: |
+          python scripts/compare_contextual_probes.py \
+            --benchmark benchmarks/claim_support_heldout_v1.json \
+            --output-dir "$RUNNER_TEMP/contextual-synthetic-comparison" \
+            --skill-commit "$GITHUB_SHA"
+          python scripts/evaluation_registry.py verify \
+            --ledger "$RUNNER_TEMP/contextual-synthetic-comparison/evaluation_runs.jsonl"
+          python scripts/evaluation_package.py verify \
+            "$RUNNER_TEMP/contextual-synthetic-comparison/comparison-replay.zip"
+      - name: Preserve synthetic contextual comparison evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: contextual-comparison-synthetic-evidence
+          path: ${{ runner.temp }}/contextual-synthetic-comparison/
           if-no-files-found: warn
           retention-days: 30
