@@ -85,14 +85,8 @@ path and recheck after the researcher's required authorization. Only after
 an **explicit affirmative** decision may an alternative Work/local
 `WORK_FALLBACK` be created. Record the real actor, date and limitations.
 If denied or unanswered, stop substantive work at the storage gate.
-For Drive-canonical projects, treat local/Work files as staging until actual
-synchronization is verified. **Do not treat one Drive probe or a single ZIP
-as publication of the project tree.** Follow [structured delivery and readback](references/drive-delivery.md):
-create missing project subfolders, upload individual permitted artifacts,
-re-inventory exact parents and content, and report missing/duplicate/conflicting
-files. Keep ZIP only as an additional archive. Without actual Drive tool access,
-mark remote delivery INCOMPLETE. For routine uploads within explicit storage
-authorization, do not ask for scientific approval; never invent human gates.
+Drive-local files remain staging until [individual Drive folders and files
+are verified](references/drive-delivery.md). ZIP-only upload is incomplete.
 
 Preserve the research question and intended contribution. Choose a
 **provisional route** via [method pathways](docs/ROTAS-METODOLOGICAS.md)
