@@ -17,6 +17,7 @@ import sys
 
 from adaptive_method_guide import preview
 from method_choice_dialogue import dialogue
+from method_fill_preflight import inspect as inspect_method_draft
 from method_decision_dimensions import DIMENSIONS, existing_field
 from method_routes import REQUIRED_DESIGN, ROUTES, new_profile, profile_issues
 
@@ -118,6 +119,25 @@ def fictional_case(case: dict) -> dict:
             raise ValueError("Unrecognized target field; refuse unsafe write")
         proposal["proposal_kind"]="EXISTING_METHOD_PROFILE_FIELD_ONLY"
     events.append(_event("prepare_fill","ILLUSTRATIVE_INPUT_ONLY_NOT_WRITTEN",
+                         next_actor="SOFTWARE"))
+    # Test the preflight in the *same* fictional scenario. An illustrative
+    # route is never an authorized canonical project or researcher decision.
+    # The proposed text is deliberately artificial and never exported raw.
+    mock_draft=(
+        "Fictional draft proposing the catalogue option " + a +
+        " with explicit design boundaries, unresolved assumptions and "
+        "no claim that any real empirical work or human approval occurred."
+    )
+    guard=inspect_method_draft(guide,proposal=mock_draft,option_id=a)
+    if (guard["status"]!="BLOCKED_BEFORE_WRITING" or
+        "PREVIEW_NOT_CANONICAL_AUTHORIZATION" not in
+            {f["code"] for f in guard["findings"]} or
+        guard["safe_to_write_automatically"] or
+        guard["draft_text_persisted"] or
+        guard["scientific_gate_approved"]):
+        raise ValueError("Preflight did not block unapproved fictional write")
+    events.append(_event("preventive_preflight",
+                         "PREVIEW_DRAFT_BLOCKED_FROM_CANONICAL_WRITING",
                          next_actor="HUMAN_RESEARCHER"))
     if not profile_issues(profile,route,gate="GATE-0002"):
         raise ValueError("A blank unconfirmed method profile cannot pass gate-2")
@@ -152,6 +172,15 @@ def fictional_case(case: dict) -> dict:
         "unlisted_route_available":any(x["id"]=="OTHER_NOT_LISTED" for x in all_cards["cards"]),
         "events":events,
         "proposal":proposal,"continuation":continuation,
+        "preventive_preflight":{
+            "status":guard["status"],
+            "blocking_finding_codes":[f["code"] for f in guard["findings"] if f["blocking"]],
+            "proposed_draft_sha256":guard["proposed_draft_sha256"],
+            "draft_text_exported":False,
+            "draft_text_persisted":False,
+            "canonical_project_modified":False,
+            "scientific_gate_approved":False,
+        },
         "original_canonical_profile_unchanged":profile["route_confirmation"]=="PENDING_HUMAN_DECISION",
         "researcher_decision_authenticated":False,
         "researcher_decision_saved":False,
@@ -183,7 +212,7 @@ def run() -> dict:
         "schema":"MEU_ARTIGO_SYNTHETIC_JOURNEY_EVALUATION_V1",
         "case_count":len(cases),
         "scenarios_performed":len(cases),
-        "virtual_trajectory_steps_each":6,
+        "virtual_trajectory_steps_each":9,
         "route_coverage":sorted(x["research_route"] for x in cases),
         "human_decision_is_only_a_simulated_fixture":True,
         "independent_academic_validation":False,
@@ -193,6 +222,9 @@ def run() -> dict:
         "google_drive_synced":False,
         "actual_next_step_router_executed":False,
         "all_cases_preserve_human_gate":all(not x["gate_approved"] for x in cases),
+        "all_mock_drafts_preventively_blocked":all(
+            x["preventive_preflight"]["status"]=="BLOCKED_BEFORE_WRITING"
+            for x in cases),
         "case_results":cases,
         "limitations":[
             "Scenario questions and decisions are fictional developer-authored inputs.",
