@@ -30,6 +30,20 @@ class PendingMethodRouteTransaction(RuntimeError):
     pass
 
 
+def require_authorized_local_canonical_storage(cfg: dict) -> None:
+    """Fail closed before writing a local method route/field transaction.
+
+    Drive-canonical projects cannot treat a potentially stale local mirror
+    as the writable source of truth. The authorization is a declared local
+    project flag, not independent proof of researcher identity or permission.
+    """
+    if (not isinstance(cfg, dict)
+            or cfg.get("storage_mode") != "WORK_FALLBACK"
+            or cfg.get("fallback_authorized") is not True):
+        raise ValueError("AUTHORIZED_LOCAL_CANONICAL_STORAGE_REQUIRED")
+
+
+
 def journal_dir(root: Path) -> Path:
     return Path(root) / MGMT / JOURNAL
 
