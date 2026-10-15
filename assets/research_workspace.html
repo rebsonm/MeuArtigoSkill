@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; font-src 'none'; object-src 'none'; form-action 'none'; base-uri 'none'">
+<title>Meu Artigo · Percurso de pesquisa</title>
+<style>
+:root{color-scheme:light;--bg:#f5f7f8;--paper:#fff;--ink:#1b303b;--muted:#5d717d;--line:#d7e0e5;--brand:#155e68;--pale:#e6f1f0;--warn:#784a11;--soft:#fff8e9;--good:#175e49;--radius:14px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.52 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.skip{position:absolute;left:-10000px}.skip:focus{left:16px;top:8px;background:#fff;padding:8px;z-index:50}
+header{background:#173a43;color:white;padding:26px max(20px,calc((100vw - 1160px)/2))}
+header h1{margin:3px 0 7px;font-size:1.7rem;letter-spacing:-.035em}header p{margin:0;opacity:.89;max-width:740px}
+.kicker{font-size:.72rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;opacity:.85}
+.wrap{max-width:1160px;margin:0 auto;padding:20px;display:grid;gap:18px}.grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(300px,1fr);gap:18px;align-items:start}
+section,.panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:0 3px 18px rgba(17,48,60,.035)}
+h2{font-size:1.14rem;margin:0 0 10px;letter-spacing:-.01em}h3{font-size:1rem;margin:0 0 6px}p{margin:6px 0 12px}.muted{color:var(--muted);font-size:.91rem}.micro{font-size:.81rem;color:var(--muted)}.smallcap{font-size:.71rem;letter-spacing:.075em;text-transform:uppercase;font-weight:750;color:var(--muted)}
+.notice{background:var(--soft);border:1px solid #e9d6af;border-radius:10px;color:var(--warn);padding:12px 14px;margin-top:12px}
+.notice.weak{background:#edf4f5;border-color:#c9dddf;color:#25434d}.bar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}.chip{border-radius:99px;background:var(--pale);color:var(--brand);padding:5px 10px;font-size:.77rem;font-weight:750}.chip.subtle{background:#e9eef1;color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{border-radius:10px;background:#f4f8f9;padding:12px}.stat strong{display:block;font-size:1.12rem;overflow-wrap:anywhere}.stat span{display:block;font-size:.78rem;color:var(--muted)}
+.sep{border:none;border-top:1px solid var(--line);margin:15px 0}.option{border:1px solid var(--line);background:#fff;border-radius:11px;padding:15px;margin:10px 0}.option.active{border-color:var(--brand);background:#f5fbfa}.option h3{margin:0}.option p{font-size:.91rem}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+button{font:inherit;cursor:pointer;min-height:36px;border-radius:9px;border:1px solid #a8c1c4;background:white;color:var(--brand);padding:7px 11px;font-weight:650}button:hover{background:#eaf3f2}button:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid #3c9aa4;outline-offset:2px}
+button.primary{background:var(--brand);color:#fff;border-color:var(--brand)}button.primary:hover{background:#104d54}button:disabled{opacity:.5;cursor:not-allowed}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.controls select{max-width:100%}select,textarea{font:inherit;border:1px solid #a4b6bf;border-radius:8px;padding:9px;background:#fff;color:var(--ink)}
+textarea{width:100%;min-height:120px;resize:vertical}label{font-weight:650;font-size:.89rem}.field{display:grid;gap:7px}
+ul{padding-left:22px;margin:7px 0 12px}li{margin:5px 0}.result{border-left:4px solid var(--brand);background:#f2f8f8;border-radius:8px;padding:12px;margin-top:11px}
+.result.warning{border-color:#be872c;background:var(--soft)}.result strong{display:block}
+.comparison{display:grid;grid-template-columns:1fr 1fr;gap:10px}.comparison article{border:1px solid var(--line);border-radius:9px;padding:12px}
+table{border-collapse:collapse;width:100%;font-size:.85rem}td,th{padding:9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}th{color:var(--muted)}
+.scroll{overflow-x:auto}.detail h3{margin-top:12px}.tag{font-size:.77rem;background:#eaf0f2;border-radius:4px;padding:2px 5px}
+footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
+@media(max-width:850px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}}@media(max-width:520px){header{padding:22px 16px}.wrap{padding:12px}.stats,.comparison,.mini-grid{grid-template-columns:1fr}section,.panel{padding:15px}}
+@media(prefers-reduced-motion:no-preference){button{transition:background .15s}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Ir para o conteúdo</a>
+<header>
+  <div class="kicker">MEU ARTIGO · MAPA ADAPTATIVO</div>
+  <h1>Seu percurso de pesquisa</h1>
+  <p>Explore caminhos metodológicos, compare alternativas e prepare decisões fundamentadas. O controle científico permanece com o pesquisador.</p>
+</header>
+<main id="main" class="wrap">
+ <div class="bar"><div id="snapshot-type" class="chip"></div><div class="micro">Interface local, sem conexão com servidor · dados congelados na geração</div></div>
+ <div class="grid">
+  <div style="display:grid;gap:18px;min-width:0">
+   <section aria-labelledby="study-title"><h2 id="study-title">Panorama do estudo</h2>
+     <div class="stats">
+       <div class="stat"><span>Rota registrada</span><strong id="route"></strong></div>
+       <div class="stat"><span>Campos registrados</span><strong id="fields"></strong></div>
+       <div class="stat"><span>Gates com aprovação documentada</span><strong id="gates"></strong></div>
+     </div>
+     <div class="notice weak">Campos preenchidos e aprovações documentadas não são comprovação de qualidade científica, nem autenticação independente.</div>
+   </section>
+   <section aria-labelledby="choices-title">
+     <div class="bar"><h2 id="choices-title">Explorar possibilidades metodológicas</h2><span class="chip subtle">Sem classificação automática</span></div>
+     <p class="muted">Escolha uma dimensão para ver alternativas. A ordem é do catálogo; nenhuma aparece como “melhor metodologia”.</p>
+     <div class="controls">
+       <label for="dimension">Dimensão</label>
+       <select id="dimension" aria-label="Dimensão metodológica">
+        <option value="overview">Desenho científico / rota</option>
+        <option value="sampling">Amostragem ou seleção</option>
+        <option value="sources">Fontes e materiais</option>
+        <option value="analysis">Análise</option>
+        <option value="inference">Inferência e limites</option>
+        <option value="reporting">Comunicação dos resultados</option>
+       </select>
+       <button id="show-all" type="button">Ver todas</button>
+     </div>
+     <p class="micro" id="field-info"></p>
+     <div id="options" aria-live="polite"></div>
+     <div class="bar">
+       <span id="selected-count" class="micro">Compare duas alternativas, sem ranqueamento.</span>
+       <button id="compare" type="button" disabled>Comparar selecionadas</button>
+     </div>
+     <div id="deep-dive" aria-live="polite"></div>
+   </section>
+   <section aria-labelledby="draft-title">
+    <div class="bar"><h2 id="draft-title">Preparar uma justificativa metodológica</h2><span class="chip subtle">Rascunho privado, sem gravação</span></div>
+    <p class="muted">Redija sua proposta. A checagem neste navegador apenas identifica alguns erros formais; não consulta fontes, não autentica o pesquisador e não substitui a validação obrigatória do Meu Artigo.</p>
+    <div class="field"><label for="draft">Texto proposto pelo pesquisador</label>
+       <textarea id="draft" maxlength="12000" placeholder="Descreva a escolha, seu fundamento, os materiais, alternativas e limites..."></textarea>
+    </div>
+    <div class="controls" style="margin-top:12px">
+       <button id="review-draft" class="primary" type="button">Conferir rascunho (prévia local)</button>
+       <button id="clear-draft" type="button">Limpar rascunho</button>
+    </div>
+    <div id="draft-feedback" aria-live="polite"></div>
+    <div class="notice">Nenhum botão nesta tela salva decisões, aprova gates ou envia o texto ao ChatGPT/Google Drive. A gravação real exige revisão humana e o comando controlado de validação e registro.</div>
+   </section>
+  </div>
+  <aside style="display:grid;gap:18px;min-width:0">
+   <section aria-labelledby="continuity-title">
+    <h2 id="continuity-title">Onde estou e o que vem depois?</h2>
+    <div class="smallcap">Última decisão registrada</div>
+    <p id="last-decision"></p>
+    <div class="smallcap">O que a rota implica</div>
+    <p id="route-implications"></p>
+    <div class="smallcap">Próxima ação verificável</div>
+    <p id="next-action"></p>
+    <p class="micro" id="next-owner"></p>
+    <div id="blockers"></div>
+   </section>
+   <section aria-labelledby="task-title">
+    <h2 id="task-title">C.A.D.A. — demandas registradas</h2>
+    <div class="scroll"><table aria-label="Quadro C.A.D.A. de quatro colunas">
+      <thead><tr><th>ID Tarefa</th><th>Tarefa</th><th>Responsável execução</th><th>Prazo</th></tr></thead>
+      <tbody id="cada-rows"></tbody>
+    </table></div><p class="micro">Dados locais no instante de geração; esta interface não executa tarefas.</p>
+   </section>
+   <section aria-labelledby="guard-title">
+    <h2 id="guard-title">Proteções e decisões humanas</h2>
+    <ul>
+      <li>Escolha científica e sua justificativa: pesquisador.</li>
+      <li>Conferência técnica preliminar: assistente, sem aprovação automática.</li>
+      <li>Validação independente entre disciplinas: especialistas, posteriormente.</li>
+      <li>Integração de PRs, merge e publicação: mantenedor, mediante autorização explícita.</li>
+    </ul>
+    <p class="micro" id="storage"></p>
+   </section>
+  </aside>
+ </div>
+ <footer>Protótipo interativo offline. Exemplos ilustrativos não demonstram adequação científica nem desempenho com usuários. Não publique instantâneos locais que contenham títulos de tarefas confidenciais.</footer>
+</main>
+<script type="application/json" id="research-model">__RESEARCH_WORKSPACE_MODEL_JSON__</script>
+<script>
+(function(){
+ "use strict";
+ const model=JSON.parse(document.getElementById("research-model").textContent);
+ const $=id=>document.getElementById(id);
+ const state={dimension:"overview",showAll:false,choice:null,selected:[]};
+ const uiText=(v,missing="Não informado")=>v===null||v===undefined||v===""?missing:String(v);
+ function add(parent,tag,text,cls){
+   const x=document.createElement(tag);
+   if(cls)x.className=cls;
+   if(text!==undefined&&text!==null)x.textContent=String(text);
+   parent.append(x);return x;
+ }
+ function clear(id){$(id).replaceChildren();}
+ function currentGuide(){return state.dimension==="overview"?model.method_guides.overview:model.method_guides.dimensions[state.dimension];}
+ function headings(item,container){
+   add(container,"h3",item.label);
+   for(const [label,key] of [["Quando considerar","when_to_consider"],["Potencial","potential"],["Limitação","limits"],["Consequências práticas","what_changes_next"]]){
+     if(item[key]){add(container,"div",label,"smallcap");add(container,"p",item[key]);}
+   }
+ }
+ function guidanceBlocked(g){return !g||g.mode==="UNAVAILABLE"||String(g.status).includes("RECONCILIATION")||g.status==="NOT_UNIVERSALLY_APPLICABLE";}
+ function updateDimensions(){
+   const has=!model.method_guides.dimensions||!Object.keys(model.method_guides.dimensions).length;
+   for(const op of $("dimension").options){if(op.value!=="overview")op.disabled=has;}
+ }
+ function renderStatic(){
+   $("snapshot-type").textContent=model.is_project_bound?"Projeto existente · cópia local (não sincronizada)":"Demonstração fictícia · nenhuma decisão real";
+   $("route").textContent=uiText(model.active_route);
+   const progress=model.decision_continuity.method_progress;
+   $("fields").textContent=(progress.required_field_count===0?"Não avaliado":
+       progress.completed_field_count+" de "+progress.required_field_count);
+   $("gates").textContent=uiText(model.overview.human_gate_approvals_recorded,"Não verificado");
+   const last=model.decision_continuity.last_recorded_decision;
+   $("last-decision").textContent=(last.decision_id?last.decision_id+" · ":"")+uiText(last.status);
+   $("route-implications").textContent=uiText(model.decision_continuity.route_implications.summary,"A rota ainda precisa ser fundamentada pelo pesquisador.");
+   const next=model.decision_continuity.next_action;
+   $("next-action").textContent=next.explanation||next.code;
+   $("next-owner").textContent="Responsável: "+uiText(next.responsible)+" · C.A.D.A.: "+uiText(next.existing_cada_task_id)+" · Gate: "+uiText(next.existing_scientific_gate_id);
+   const blockers=model.decision_continuity.blockers||[];
+   if(blockers.length){const div=add($("blockers"),"div",null,"notice");add(div,"strong","Pendências para reconciliar");for(const b of blockers)add(div,"p",b,"micro");}
+   const tbody=$("cada-rows"); const rows=model.tasks.items||[];
+   if(!rows.length){const td=add(add(tbody,"tr"),"td","Nenhuma tarefa exibida neste instantâneo");td.colSpan=4;}
+   for(const row of rows){const tr=add(tbody,"tr");for(const value of [row.id,row.task,row.execution_owner,row.deadline])add(tr,"td",uiText(value,"—"));}
+   $("storage").textContent=model.is_project_bound?"Sincronização Drive não verificada neste instantâneo.":"Demonstração fictícia: nenhum Drive ou arquivo de projeto acessado.";
+   updateDimensions();
+ }
+ function updateCount(){
+   $("selected-count").textContent=state.selected.length+" de 2 alternativas marcadas";
+   $("compare").disabled=state.selected.length!==2;
+ }
+ function renderOptions(){
+   clear("options");clear("deep-dive");state.choice=null;state.selected=[];
+   const g=currentGuide(); const box=$("options");updateCount();
+   if(!g){add(box,"p","Não existe rota confirmada para esta dimensão. Explore o desenho geral ou escolha uma rota com o pesquisador.","notice");return;}
+   const full=g.options||[];
+   const isNotApplicable=g.status==="NOT_UNIVERSALLY_APPLICABLE";
+   const other=full.find(x=>x.id==="OTHER_NOT_LISTED");
+   const base=full.filter(x=>x.id!=="OTHER_NOT_LISTED");
+   const limit=state.showAll?base:base.slice(0,3);
+   const shown=limit.concat(other?[other]:[]);
+   $("show-all").textContent=state.showAll?"Mostrar menos":"Ver todas ("+full.length+")";
+   $("show-all").disabled=base.length<=3;
+   $("field-info").textContent="Campo canônico: "+uiText(g.target_field,"orientação exploratória")+
+       " · "+uiText(g.status)+" · "+(isNotApplicable?"não é requisito universal":"escolha humana necessária");
+   if(guidanceBlocked(g)){
+      add(box,"p","Esta dimensão não pode ser tratada como exigência universal ou precisa de reconciliação. Não há autorização para registrar escolhas.","notice");
+   }
+   for(const item of shown){
+     const card=add(box,"article",null,"option");
+     add(card,"h3",item.label);
+     add(card,"p",item.when_to_consider,"muted");
+     add(card,"p","Limite: "+item.limits,"micro");
+     const controls=add(card,"div",null,"controls");
+     const explore=add(controls,"button","Explorar");
+     explore.type="button";explore.addEventListener("click",()=>detail(item.id));
+     const label=add(controls,"label",null);
+     const cb=add(label,"input");cb.type="checkbox";cb.checked=state.selected.includes(item.id);
+     const sp=add(label,"span"," Comparar");sp.className="micro";
+     cb.addEventListener("change",()=>{
+       if(cb.checked){if(state.selected.length===2){cb.checked=false;return;}state.selected.push(item.id);}
+       else state.selected=state.selected.filter(x=>x!==item.id);
+       updateCount();
+     });
+   }
+ }
+ function detail(id){
+   const g=currentGuide(),item=g.options.find(x=>x.id===id);
+   if(!item)return;
+   state.choice=id;clear("deep-dive");
+   const box=add($("deep-dive"),"section",null,"detail");
+   add(box,"div","EXPLORAR UMA ALTERNATIVA","smallcap");
+   headings(item,box);
+   add(box,"p","Pergunte-se: por que este caminho atende ao problema? Que outra abordagem seria defensável? Quais conclusões não posso sustentar?","muted");
+   const btn=add(box,"button","Preparar decisão humana (sem salvar)");
+   btn.type="button";btn.addEventListener("click",()=>{
+      $("draft").focus();
+      add(box,"p","A decisão deverá ser declarada e fundamentada pelo pesquisador. Nenhuma aprovação foi registrada.","notice weak");
+   });
+ }
+ function compare(){
+   const g=currentGuide();if(!g||state.selected.length!==2)return;
+   clear("deep-dive");
+   const wrap=add($("deep-dive"),"section");
+   add(wrap,"h3","Comparação de alternativas");
+   add(wrap,"p","Diferenças de pressupostos, oportunidades e limites. Não há vencedor automático.","muted");
+   const grid=add(wrap,"div",null,"comparison");
+   for(const id of state.selected){const item=g.options.find(x=>x.id===id);if(!item)continue;headings(item,add(grid,"article"));}
+   add(wrap,"p","Pesquisador: compare as consequências para o desenho e justifique sua escolha nos registros científicos.","micro");
+ }
+ function norm(s){return s.trim().toLocaleLowerCase("pt-BR").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g," ");}
+ function draftReview(){
+   clear("draft-feedback");
+   const g=currentGuide();
+   const raw=$("draft").value,content=raw.trim();
+   const issues=[],warnings=[];
+   const field=g&&g.target_field;
+   const key=model.active_route+"::"+field;
+   const enums=model.preflight_contract.controlled_enums[key];
+   if(!content||model.preflight_contract.placeholder_values.includes(norm(content))){
+     issues.push("O texto contém apenas um marcador de status, um preenchimento provisório ou está vazio.");
+   }
+   if(new TextEncoder().encode(raw).length>model.preflight_contract.max_utf8_bytes)issues.push("Texto acima do limite técnico.");
+   if(!g||!field)issues.push("Não há campo canônico gravável para esta dimensão.");
+   if(model.is_project_bound===false)issues.push("Demonstração: uma escolha exploratória não é autorização de gravação.");
+   if(g&&g.target_field_already_recorded===true)issues.push("Campo já registrado: uma revisão substitutiva depende de decisão formal.");
+   if(g&&g.route_previously_human_confirmed===false)issues.push("A rota ainda não possui confirmação humana registrada.");
+   if(state.choice==="OTHER_NOT_LISTED")issues.push("Outra tradição exige mapeamento e justificativa específica.");
+   if(enums&&content&&!enums.includes(content))issues.push("O campo usa valores controlados: "+enums.join(", ")+".");
+   if(content&&content.split(/\s+/).length<4&&!enums)warnings.push("Texto muito breve: explicite propósito, evidências, alternativas e limites.");
+   if(/\b(100% reliable|has been validated|comprovadamente eficaz|validado cientificamente)\b/i.test(content))warnings.push("Alegação de validação requer evidência verificável.");
+   const isBlock=issues.length>0,box=add($("draft-feedback"),"div",null,isBlock||warnings.length?"result warning":"result");
+   add(box,"strong",isBlock?"Prévia: inconsistência formal":warnings.length?"Prévia: atenção necessária":"Prévia local: nenhum alerta formal identificado");
+   for(const s of issues)add(box,"p","• "+s);
+   for(const s of warnings)add(box,"p","• "+s);
+   add(box,"p","Não houve gravação, verificação semântica, aprovação humana, auditoria de fontes ou sincronização. O comando Python de validação precisa conferir o texto novamente antes de qualquer registro.","micro");
+ }
+ $("dimension").addEventListener("change",()=>{state.dimension=$("dimension").value;state.showAll=false;renderOptions();clear("draft-feedback");});
+ $("show-all").addEventListener("click",()=>{state.showAll=!state.showAll;renderOptions();});
+ $("compare").addEventListener("click",compare);
+ $("review-draft").addEventListener("click",draftReview);
+ $("clear-draft").addEventListener("click",()=>{$("draft").value="";clear("draft-feedback");});
+ renderStatic();renderOptions();
+})();
+</script>
+</body>
+</html>
