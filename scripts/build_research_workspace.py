@@ -125,13 +125,23 @@ def model(*, project: Path|None=None, route: str="QUALITATIVE", mode: str="MINIM
         ],
     }
 
-def render(model_data: dict) -> str:
-    """Embed JSON with inert script-tag escaping, no external assets/scripts."""
+def render(model_data: dict, *, live: bool=False) -> str:
+    """Escape inert JSON. Permit loopback-only requests only in opt-in live mode."""
     if model_data.get("schema")!=SCHEMA:
         raise ValueError("Invalid research-workspace schema")
+    enabled=bool((model_data.get("local_bridge") or {}).get("enabled"))
+    if enabled != live:
+        raise ValueError("Live credentials must never be saved in offline HTML")
     if TEMPLATE.is_symlink() or not TEMPLATE.is_file():
         raise ValueError("Missing safe HTML template")
     template=TEMPLATE.read_text(encoding="utf-8")
+    # Only the local HTTP session can opt into same-origin requests. Saved
+    # offline HTML keeps a stricter 'connect-src none' CSP.
+    if live:
+        csp="connect-src 'none'"
+        if template.count(csp)!=1:
+            raise ValueError("Missing strict baseline CSP")
+        template=template.replace(csp,"connect-src 'self'")
     slot="__RESEARCH_WORKSPACE_MODEL_JSON__"
     if template.count(slot)!=1:
         raise ValueError("HTML template must have exactly one data slot")
