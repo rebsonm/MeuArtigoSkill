@@ -7,15 +7,15 @@
 - **Scientific continuity and safer provenance:** the Skill checks actual DEC/TRACE links and methodological conflicts before offering to resume research. A technical C.A.D.A. task cannot override missing or inconsistent canonical scientific records.
 - **Research continuation in conversation:** authorized local projects can produce a read-only summary of the latest recorded decision, existing responsible person, next task and blocking conditions. No scientific judgment or task is automatically approved or executed.
 - **Explain impediments:** a bounded, safe catalogue explains known blockers and which original records to inspect, while protecting private research text and unknown untrusted codes.
-- **Storage safeguards:** method writers require explicitly authorized local `WORK_FALLBACK`; Drive-canonical work cannot be silently treated as writable or synchronized through a local copy.
-- **Optional host-tool use:** a Skill may coordinate tools that the user's host already exposes and authorizes. The standalone ZIP does not include, install, connect or authenticate the project-owned MCP server or expose MCP Apps interactive UI.
+- **Storage safeguards:** method writers require explicitly authorized local an explicitly authorized local fallback; Drive-canonical work cannot be silently treated as writable or synchronized through a local copy.
+- **Optional host-tool use:** a Skill may coordinate tools that the user's host already exposes and authorizes. The standalone ZIP does not include, install, connect or authenticate the project-owned external-tool server or expose external-tool Apps interactive UI.
 - **Integrated engineering checks:** candidate PR #70 at commit `200e1d1e0b5bb0664daf0e4427959c58c7ba5114` passed 758 automated tests, 11 fictional integrated continuation scenarios and eight fictional research journeys. Publication requires a new passing audit on the final versioned commit.
 
 ## Required scientific and product limitations
 
-- **No independent scientific validation.** The seven human-controlled gates, original researcher decisions, evidence provenance and [L] consulted literature / [I] inference / [P] original proposition distinctions remain mandatory.
-- **MCP Apps remains unverified:** no authenticated end-to-end test of our custom MCP server, OAuth, visual app or scoped Google Drive operations in this integrated beta. Importing the Skill alone cannot activate these features. The Skill can still be used without MCP, subject to actual platform tool availability and permission checks.
-- **Real ChatGPT beta.6 installation not yet accepted:** the integrated code was tested in CI with synthetic fixtures, not in a live researcher installation. A host test should verify the installed version, no-MCP fallback and a truly authorized tool read before claiming real compatibility.
+- **No independent scientific validation.** The seven researcher decision gates, original researcher decisions, evidence provenance and [L] consulted literature / [I] inference / [P] original proposition distinctions remain mandatory.
+- **external-tool Apps remains unverified:** no authenticated end-to-end test of our custom external-tool server, OAuth, visual app or scoped Google Drive operations in this integrated beta. Importing the Skill alone cannot activate these features. The Skill can still be used without external-tool, subject to actual platform tool availability and permission checks.
+- **Real ChatGPT beta.6 installation not yet accepted:** the integrated code was tested in CI with synthetic fixtures, not in a live researcher installation. A host test should verify the installed version, no-external-tool fallback and a truly authorized tool read before claiming real compatibility.
 - **Cloud claims must be evidenced:** repository CI, a local receipt, or a copied project folder does not prove live Google Drive write or synchronization. No academic source access, authorship, human gate approval or journal submission is presumed.
 - **No automatic update:** an installed beta.4/beta.5 stays installed until the researcher intentionally updates in a supported host.
 
