@@ -41,7 +41,13 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
   <p>Explore caminhos metodológicos, compare alternativas e prepare decisões fundamentadas. O controle científico permanece com o pesquisador.</p>
 </header>
 <main id="main" class="wrap">
- <div class="bar"><div id="snapshot-type" class="chip"></div><div class="micro">Interface local, sem conexão com servidor · dados congelados na geração</div></div>
+ <div class="bar">
+  <div id="snapshot-type" class="chip"></div>
+  <div class="controls">
+    <span id="bridge-status" class="micro" role="status">Arquivo offline · sem conexão</span>
+    <button id="refresh-view" type="button" hidden>Atualizar dados locais</button>
+  </div>
+ </div>
  <div class="grid">
   <div style="display:grid;gap:18px;min-width:0">
    <section aria-labelledby="study-title"><h2 id="study-title">Panorama do estudo</h2>
@@ -126,7 +132,21 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
 <script>
 (function(){
  "use strict";
- const model=JSON.parse(document.getElementById("research-model").textContent);
+ let model=JSON.parse(document.getElementById("research-model").textContent);
+ // Only the opt-in loopback server injects a session token in a served page.
+ // Offline HTML has no transport and remains blocked by connect-src 'none'.
+ const bridge=model.local_bridge&&model.local_bridge.enabled?model.local_bridge:null;
+ const localBridgeReady=!!(bridge&&location.protocol==="http:"&&
+   location.origin===bridge.origin&&location.hostname==="127.0.0.1"&&
+   bridge.read_only===true);
+ const bridgeHeaders=()=>({"X-Meu-Artigo-Session":bridge.session_token});
+ async function bridgeRequest(path,options={}){
+   if(!localBridgeReady)throw new Error("Sessão local não habilitada");
+   const result=await fetch(path,{...options,credentials:"omit",cache:"no-store",
+     redirect:"error",headers:{...bridgeHeaders(),...(options.headers||{})}});
+   if(!result.ok)throw new Error("Consulta local recusada ("+result.status+")");
+   return result.json();
+ }
  const $=id=>document.getElementById(id);
  const state={dimension:"overview",showAll:false,choice:null,selected:[]};
  const uiText=(v,missing="Não informado")=>v===null||v===undefined||v===""?missing:String(v);
@@ -137,7 +157,8 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
    parent.append(x);return x;
  }
  function clear(id){$(id).replaceChildren();}
- function currentGuide(){return state.dimension==="overview"?model.method_guides.overview:model.method_guides.dimensions[state.dimension];}
+ function currentGuide(){return state.dimension==="overview"?
+  model.method_guides.overview:(model.method_guides.dimensions||{})[state.dimension];}
  function headings(item,container){
    add(container,"h3",item.label);
    for(const [label,key] of [["Quando considerar","when_to_consider"],["Potencial","potential"],["Limitação","limits"],["Consequências práticas","what_changes_next"]]){
@@ -150,7 +171,14 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
    for(const op of $("dimension").options){if(op.value!=="overview")op.disabled=has;}
  }
  function renderStatic(){
-   $("snapshot-type").textContent=model.is_project_bound?"Projeto existente · cópia local (não sincronizada)":"Demonstração fictícia · nenhuma decisão real";
+   clear("blockers");clear("cada-rows");
+   $("snapshot-type").textContent=model.is_project_bound?
+       (localBridgeReady?"Projeto local · consulta sob demanda":"Projeto existente · cópia local (não sincronizada)"):
+       "Demonstração fictícia · nenhuma decisão real";
+   $("bridge-status").textContent=localBridgeReady?
+       "Conexão local disponível · sem conexão ao ChatGPT ou Drive":
+       "Arquivo offline · dados congelados na geração";
+   $("refresh-view").hidden=!localBridgeReady;
    $("route-label").textContent=model.is_project_bound?"Rota registrada":"Rota ilustrativa";
    $("route").textContent=uiText(model.active_route);
    const progress=model.decision_continuity.method_progress;
@@ -184,7 +212,9 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
    const tbody=$("cada-rows"); const rows=model.tasks.items||[];
    if(!rows.length){const td=add(add(tbody,"tr"),"td","Nenhuma tarefa exibida neste instantâneo");td.colSpan=4;}
    for(const row of rows){const tr=add(tbody,"tr");for(const value of [row.id,row.task,row.execution_owner,row.deadline])add(tr,"td",uiText(value,"—"));}
-   $("storage").textContent=model.is_project_bound?"Sincronização Drive não verificada neste instantâneo.":"Demonstração fictícia: nenhum Drive ou arquivo de projeto acessado.";
+   $("storage").textContent=model.is_project_bound?
+       "Sincronização Drive não verificada; dados consultados apenas na origem local autorizada.":
+       "Demonstração fictícia: nenhum Drive ou arquivo de projeto acessado.";
    updateDimensions();
  }
  function updateCount(){
@@ -251,6 +281,62 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
    add(wrap,"p","Pesquisador: compare as consequências para o desenho e justifique sua escolha nos registros científicos.","micro");
  }
  function norm(s){return s.trim().toLocaleLowerCase("pt-BR").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g," ");}
+ function applyServerPreflight(report){
+   clear("draft-feedback");
+   const blocking=report.blocking_finding_count>0;
+   const warn=report.warnings_count>0;
+   const box=add($("draft-feedback"),"div",null,blocking||warn?"result warning":"result");
+   add(box,"strong",blocking?"Rejeitado pelo pré-validador local":
+       warn?"Avisos para revisão humana":"Pré-validação estrutural concluída");
+   for(const f of (report.findings||[])){
+     add(box,"p",(f.blocking?"Bloqueio: ":"Atenção: ")+f.reason);
+   }
+   add(box,"p","O conteúdo não foi gravado nem validado cientificamente. Uma decisão real e sua evidência são exigidas em procedimento separado.","micro");
+ }
+ async function authoritativeDraftReview(){
+   const g=currentGuide();
+   if(!g){draftReview();return;}
+   const raw=$("draft").value;
+   if(new TextEncoder().encode(raw).length>model.preflight_contract.max_utf8_bytes){
+     draftReview();return;
+   }
+   $("review-draft").disabled=true;
+   $("bridge-status").textContent="Conferindo rascunho somente no computador local…";
+   try{
+     const body={proposal:raw,option_id:state.choice};
+     if(state.dimension==="overview")body.field=g.target_field;
+     else body.dimension=state.dimension;
+     const report=await bridgeRequest("/api/preflight",{
+       method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)
+     });
+     applyServerPreflight(report);
+     $("bridge-status").textContent="Conferência local concluída · nenhuma gravação";
+   }catch(err){
+     clear("draft-feedback");
+     add($("draft-feedback"),"p","Pré-validação local indisponível; nenhum registro foi gravado. Verifique a sessão e tente novamente.","notice");
+     $("bridge-status").textContent="Conferência local indisponível";
+   }finally{$("review-draft").disabled=false;}
+ }
+ async function refreshSnapshot(){
+   if(!localBridgeReady)return;
+   $("refresh-view").disabled=true;
+   $("bridge-status").textContent="Atualizando registros locais…";
+   try{
+     const fresh=await bridgeRequest("/api/snapshot");
+     if(fresh.schema!==model.schema||fresh.local_bridge?.origin!==bridge.origin)
+       throw new Error("Contrato de dados inesperado");
+     model=fresh;
+     // Reject an old draft/selection after the canonical data changes.
+     $("draft").value="";
+     clear("draft-feedback");clear("deep-dive");
+     state.dimension="overview";state.showAll=false;
+     $("dimension").value="overview";
+     renderStatic();renderOptions();
+     $("bridge-status").textContent="Dados locais atualizados · não sincronizados ao Drive";
+   }catch(err){
+     $("bridge-status").textContent="Falha na atualização local; último retrato mantido";
+   }finally{$("refresh-view").disabled=false;}
+ }
  function draftReview(){
    clear("draft-feedback");
    const g=currentGuide();
@@ -280,7 +366,10 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
  $("dimension").addEventListener("change",()=>{state.dimension=$("dimension").value;state.showAll=false;renderOptions();clear("draft-feedback");});
  $("show-all").addEventListener("click",()=>{state.showAll=!state.showAll;renderOptions();});
  $("compare").addEventListener("click",compare);
- $("review-draft").addEventListener("click",draftReview);
+ $("review-draft").addEventListener("click",()=>{
+   if(localBridgeReady)authoritativeDraftReview();else draftReview();
+ });
+ $("refresh-view").addEventListener("click",refreshSnapshot);
  $("clear-draft").addEventListener("click",()=>{$("draft").value="";clear("draft-feedback");});
  renderStatic();renderOptions();
 })();
