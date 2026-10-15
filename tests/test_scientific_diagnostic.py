@@ -125,8 +125,15 @@ class DiagnosticTests(unittest.TestCase):
         self.assertIn("Triagem técnica",html)
 
     def test_overflow_of_many_findings_is_fully_counted_and_truncated(self):
+        self.evidence[0]["Citation"]=""
+        self.evidence[0]["DOI_or_persistent_ID"]="doi: malformed"
         self.evidence.extend({"Evidence_ID":f"EVID-{n:04d}","Citation":f"Fictional {n}",
-                              "DOI_or_persistent_ID":"invalid"} for n in range(2,30))
+                              "DOI_or_persistent_ID":""} for n in range(2,30))
+        self.evidence.append(dict(self.evidence[0]))
+        self.claims[0]["Evidence_IDs"]="EVID-9999"
+        self.claims.append({"Claim_ID":"CLAIM-0002","Claim_type":"[L]",
+                            "Claim_text":"Additional synthetic claim", "Evidence_IDs":""})
+        self.protocol[0]["Status"]="PLANNED"
         self.write_inputs()
         report=d.compose(self.root)
         self.assertLessEqual(len(report["priority_findings"]),6)
