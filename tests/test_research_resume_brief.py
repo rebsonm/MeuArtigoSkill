@@ -33,6 +33,7 @@ def projection(*,storage="WORK_FALLBACK",local_allowed=True):
             "last_recorded_decision":{
                 "status":"LATEST_RECORD_PRESENT_NOT_HUMAN_AUTHENTICATED",
                 "decision_id":"DEC-0001",
+                "trace_link_recorded":True,
                 "Rationale":PRIVATE,
             },
             "method_progress":{
@@ -134,6 +135,29 @@ class ResumeProjectionUnitTests(unittest.TestCase):
         self.assertIn("NEXT_ACTION_IDENTIFIER_REQUIRES_RECONCILIATION",
                       x["blockers"])
         self.assertNotIn(PRIVATE,json.dumps(x))
+
+    def test_nav_blocked_must_not_create_a_technical_candidate(self):
+        p=projection()
+        p["continuation"]["status"]="BLOCKED"
+        x=from_panel(p)
+        self.assertEqual(x["status"],"RECONCILIATION_REQUIRED")
+        self.assertIn("CANONICAL_NAVIGATION_STATUS_CONFLICT",x["blockers"])
+        self.assertFalse(x["next_step"]["technical_preparation_candidate"])
+
+    def test_unlinked_trace_blocks_even_if_upstream_view_was_optimistic(self):
+        p=projection()
+        p["decision_continuity"]["last_recorded_decision"]["trace_link_recorded"]=False
+        x=from_panel(p)
+        self.assertIn("RECORDED_DECISION_PROVENANCE_NOT_VERIFIED",x["blockers"])
+        self.assertFalse(x["next_step"]["technical_preparation_candidate"])
+
+    def test_unrecognized_router_status_stays_blocked(self):
+        p=projection()
+        p["continuation"]["status"]="NEW_UNREVIEWED_ROUTER_STATUS"
+        p["continuation"]["technical_preparation_possible"]=False
+        x=from_panel(p)
+        self.assertIn("CANONICAL_NAVIGATION_STATUS_NOT_RECOGNIZED",x["blockers"])
+        self.assertFalse(x["next_step"]["technical_preparation_candidate"])
 
     def test_unrecognized_action_cannot_trigger_execution(self):
         p=projection()
