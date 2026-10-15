@@ -70,10 +70,34 @@ def from_panel(snapshot: dict) -> dict:
         blockers.append("CANONICAL_DRIVE_ACCESS_NOT_VERIFIED_BY_LOCAL_PANEL")
     else:
         blockers.append("CANONICAL_STORAGE_MODE_UNKNOWN")
-    if continuity.get("status")=="RECONCILIATION_REQUIRED" and not blockers:
+    if continuity.get("status") == "RECONCILIATION_REQUIRED":
         blockers.append("CANONICAL_CONTINUITY_RECONCILIATION_REQUIRED")
+    elif continuity.get("status") != "READ_ONLY_GUIDANCE":
+        blockers.append("CANONICAL_DECISION_STATE_UNRECOGNIZED")
+    if nav.get("status") != "TECHNICAL_PREPARATION_AVAILABLE" and (
+            nav.get("technical_preparation_possible") is True):
+        blockers.append("CANONICAL_NAVIGATION_STATUS_CONFLICT")
+    if (not isinstance(nav.get("status"),str)
+            or nav.get("status") not in {
+                "TECHNICAL_PREPARATION_AVAILABLE","HUMAN_TASK_DECISION_REQUIRED",
+                "HUMAN_GATE_DECISION_REQUIRED","BLOCKED","BLOCKED_TASK",
+                "CANONICAL_STORAGE_RECHECK_REQUIRED",
+                "CADA_CONTINUITY_INTEGRITY_REVIEW","RECONCILIATION_REQUIRED",
+                "NO_NEXT_ACTION","HUMAN_DECISION_REQUIRED",
+                "PENDING_RESEARCH_TRANSACTION_RECOVERY",
+            }):
+        # A new router status must be inspected before being interpreted.
+        blockers.append("CANONICAL_NAVIGATION_STATUS_NOT_RECOGNIZED")
 
     decision_id=_id(last.get("decision_id"),"decision")
+    if last.get("decision_id") is not None and (
+            decision_id is None or last.get("trace_link_recorded") is not True):
+        blockers.append("RECORDED_DECISION_PROVENANCE_NOT_VERIFIED")
+    if last.get("status") in {
+            "DECISION_REGISTER_UNAVAILABLE","METHOD_FIELD_DECISION_INCONSISTENT",
+            "METHOD_ROUTE_DECISION_INCONSISTENT","UNRECOGNIZED_DECISION_STATUS",
+            "INCOMPLETE_HUMAN_DECLARATION"}:
+        blockers.append("RECORDED_DECISION_STATE_REQUIRES_REVIEW")
     task_id=_id(next_action.get("existing_cada_task_id"),"task")
     gate_id=_id(next_action.get("existing_scientific_gate_id"),"gate")
     action_code=next_action.get("code")
@@ -102,6 +126,7 @@ def from_panel(snapshot: dict) -> dict:
         and action_code==PREPARATION_ACTION
         and actor=="TECHNICAL_AGENT"
         and task_id is not None
+        and nav.get("status") == "TECHNICAL_PREPARATION_AVAILABLE"
         and nav.get("technical_preparation_possible") is True
         and next_action.get("technical_preparation_already_authorized_by_router") is True
     )
