@@ -160,7 +160,7 @@ def from_panel(snapshot: dict) -> dict:
         "new_task_created":False,
         "canonical_files_modified":False,
         "source_text_or_private_task_included":False,
-        "host_mcp_dependency_required":False,
+        "separate_service_connection_required":False,
     }
 
 LABELS={
