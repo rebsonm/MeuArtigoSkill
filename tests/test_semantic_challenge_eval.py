@@ -105,6 +105,60 @@ class SemanticChallengeEvaluationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"duplicate"):
             exercise.load_frozen(bad)
 
+    def test_compact_diagnostic_surfaces_review_risk_without_scientific_approval(self):
+        from scientific_diagnostic import compose
+        case=exercise.load_frozen(BENCH)["cases"][4]
+        root=self.root/"synthetic_diagnostic"
+        exercise.prepare(root,case)
+        assessment=exercise.assessment(root,case,label_aware=False)
+        report=compose(root,assessments=assessment)
+        self.assertFalse(report["scientific_quality_validated"])
+        self.assertFalse(report["independent_peer_review_performed"])
+        self.assertFalse(report["drive_sync_verified"])
+        findings=report["priority_findings"]
+        self.assertIn("CLAIM_POSSIBLE_SEMANTIC_OVERREACH",
+                      {r["code"] for r in findings})
+        self.assertTrue(any("possible claim overreach" in action.lower()
+                            for action in report["actions"]))
+        self.assertNotIn(case["source_passage"],json.dumps(report))
+        self.assertNotIn(case["claim_text"],json.dumps(report))
+
+    def test_strict_cli_returns_pending_review_for_heuristic_risk(self):
+        import contextlib
+        import io
+        from semantic_claim_review import main as review_main
+        case=exercise.load_frozen(BENCH)["cases"][4]
+        root=self.root/"strict_review"
+        exercise.prepare(root,case)
+        assessments=root/"synthetic_declaration.json"
+        assessments.write_text(json.dumps(exercise.assessment(root,case,label_aware=False)),
+                               encoding="utf-8")
+        with contextlib.redirect_stdout(io.StringIO()) as output:
+            exit_code=review_main([str(root),"--assessments",str(assessments),"--strict"])
+        self.assertEqual(exit_code,2)
+        report=json.loads(output.getvalue())
+        self.assertGreater(report["heuristic_risk_occurrences"],0)
+        self.assertFalse(report["gate_approval_performed"])
+        self.assertFalse(report["semantic_support_proven"])
+
+    def test_strict_cli_no_heuristic_flag_does_not_prove_validity(self):
+        import contextlib
+        import io
+        from semantic_claim_review import main as review_main
+        case=exercise.load_frozen(BENCH)["cases"][0]
+        root=self.root/"narrow_supported"
+        exercise.prepare(root,case)
+        a=root/"synthetic_declaration.json"
+        a.write_text(json.dumps(exercise.assessment(root,case,label_aware=False)),
+                     encoding="utf-8")
+        with contextlib.redirect_stdout(io.StringIO()) as output:
+            exit_code=review_main([str(root),"--assessments",str(a),"--strict"])
+        self.assertEqual(exit_code,0)
+        record=json.loads(output.getvalue())
+        self.assertEqual(record["heuristic_risk_occurrences"],0)
+        self.assertFalse(record["semantic_support_proven"])
+        self.assertFalse(record["researcher_authenticated"])
+
     def test_existing_output_is_not_replaced(self):
         self.out.mkdir()
         before=self.out/"original.csv"
