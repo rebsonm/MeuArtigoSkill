@@ -26,8 +26,8 @@ class OfficialRecommendationTests(unittest.TestCase):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn(f"**Current version:** `{dev_version}`", readme)
         self.assertIn("experimental", readme.lower())
-        self.assertIn("publication workflow", readme)
-        self.assertIn("Pre-release is published", readme)
+        self.assertIn("not yet confirmed as published", readme)
+        self.assertIn("confirmed published", readme)
         self.assertIn("GitHub's", readme)
         self.assertIn("stable v1.0.0", readme)
 

@@ -1,26 +1,36 @@
-# Meu Artigo — v0.9.0-beta.6
+# Meu Artigo v0.9.0-beta.6 — what's new
 
-**Last planned experimental beta for researchers, prepared 2026-10-15.** This is a **pre-release**, not a stable version, and does not establish independent scientific validation or proven improvements in article quality. The publishing workflow is manual; successful engineering tests do not by themselves make a GitHub release.
+**The last planned experimental beta.** This is a **pre-release, not a stable release**. The beta.6 changes have been integrated into the repository. Its public installation package is **not yet confirmed as published**. Until the complete beta.6 release is available, [beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the last confirmed installer.
 
-## Changes from beta.5
+## More useful when continuing an article
 
-- **Scientific continuity and safer provenance:** the Skill checks actual DEC/TRACE links and methodological conflicts before offering to resume research. A technical C.A.D.A. task cannot override missing or inconsistent canonical scientific records.
-- **Research continuation in conversation:** authorized local projects can produce a read-only summary of the latest recorded decision, existing responsible person, next task and blocking conditions. No scientific judgment or task is automatically approved or executed.
-- **Explain impediments:** a bounded, safe catalogue explains known blockers and which original records to inspect, while protecting private research text and unknown untrusted codes.
-- **Storage safeguards:** method writers require explicitly authorized local an explicitly authorized local fallback; Drive-canonical work cannot be silently treated as writable or synchronized through a local copy.
-- **Optional host-tool use:** a Skill may coordinate tools that the user's host already exposes and authorizes. The standalone ZIP does not include, install, connect or authenticate the project-owned external-tool server or expose external-tool Apps interactive UI.
-- **Integrated engineering checks:** candidate PR #70 at commit `200e1d1e0b5bb0664daf0e4427959c58c7ba5114` passed 758 automated tests, 11 fictional integrated continuation scenarios and eight fictional research journeys. Publication requires a new passing audit on the final versioned commit.
+When you return to an existing research project, Meu Artigo is better prepared to explain:
 
-## Required scientific and product limitations
+- What was last recorded in the saved research project.
+- Which decision or task is next.
+- Whether a missing or inconsistent record prevents safe continuation.
+- Which original file or permission needs attention before proceeding.
 
-- **No independent scientific validation.** The seven researcher decision gates, original researcher decisions, evidence provenance and [L] consulted literature / [I] inference / [P] original proposition distinctions remain mandatory.
-- **external-tool Apps remains unverified:** no authenticated end-to-end test of our custom external-tool server, OAuth, visual app or scoped Google Drive operations in this integrated beta. Importing the Skill alone cannot activate these features. The Skill can still be used without external-tool, subject to actual platform tool availability and permission checks.
-- **Real ChatGPT beta.6 installation not yet accepted:** the integrated code was tested in CI with synthetic fixtures, not in a live researcher installation. A host test should verify the installed version, no-external-tool fallback and a truly authorized tool read before claiming real compatibility.
-- **Cloud claims must be evidenced:** repository CI, a local receipt, or a copied project folder does not prove live Google Drive write or synchronization. No academic source access, authorship, human gate approval or journal submission is presumed.
-- **No automatic update:** an installed beta.4/beta.5 stays installed until the researcher intentionally updates in a supported host.
+This summary is based on accessible project records, not a guessed reconstruction of old conversations. Asking *"continue"* does not automatically approve a research decision.
 
-## Install and report defects
+## More guidance, less technical friction
 
-After the manual tagged release is available, use the versioned `MeuArtigoSkill-v0.9.0-beta.6.zip` plus its release-specific `SHA256SUMS.txt` from [the beta.6 release page](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6), rather than GitHub's generic source-code ZIP. Until then, the [published beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) remains available. Report sanitized steps, actual installed version and environment through [GitHub Issues](https://github.com/rebsonm/MeuArtigoSkill/issues), without sharing confidential manuscripts, restricted PDFs, private Drive links or credentials.
+The Skill can explain common interruptions in clearer language, help you compare possible research methods and show the trade-offs before you make a choice. It keeps scientific decisions under researcher control, including seven significant review checkpoints.
 
-**Scope of 'last beta':** a *release plan*, not a guarantee that urgent security fixes will never be needed or that stable v1.0.0 has been approved. A stable release requires a separately authorized and evidenced decision.
+It is designed to work as a standalone Skill in the conversation. Existing authorized connections may be useful, but installing the Skill does not activate additional accounts or services.
+
+## What has not changed
+
+- Sources, passages, searches, approvals and cloud saves must be genuine and verifiable.
+- You remain responsible for scientific design, interpretation, ethics, writing and submission.
+- The distinction between consulted literature **[L]**, interpretation **[I]** and original proposals **[P]** remains in force. The **seven researcher decision gates** are still controlled by a person.
+- Google Drive storage is not assumed successful merely because an account is connected.
+- Earlier installed Skill packages do not update automatically.
+
+## Important limitations
+
+**No independent scientific validation** has been established. These improvements have undergone automated engineering checks using controlled scenarios, **not** independent scientific evaluation or comprehensive research-user testing. They do not establish universal compatibility, source quality, productivity gains or publication acceptance.
+
+Once a complete versioned beta.6 package is actually published, it will appear on the [Meu Artigo Releases page](https://github.com/rebsonm/MeuArtigoSkill/releases). For now, use the confirmed published package and the [installation guide](INSTALLATION.md).
+
+Feedback can be reported without sensitive research materials through [GitHub Issues](https://github.com/rebsonm/MeuArtigoSkill/issues/new/choose).

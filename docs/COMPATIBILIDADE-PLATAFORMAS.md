@@ -1,18 +1,27 @@
-# Skill support across research platforms
+# Where can I use Meu Artigo?
 
+Meu Artigo is distributed as a **Skill**, but installing Skills and accessing external research services depend on your assistant and account.
 
-> **Last planned experimental beta: `v0.9.0-beta.6` (release preparation, 2026-10-15).** The cumulative continuity, conversational resume and safe blocker guidance update is documented in [beta.6 release notes](NOTAS-DA-VERSAO-0.9.0-beta.6.md). **Beta.5 remains the latest published installer until GitHub actually publishes beta.6 and its checksum.** This last-beta designation is a plan, not stable certification; the project-owned MCP service and MCP Apps UI are not live-validated. Existing installations do not auto-update.
-
-Meu Artigo is a **Skill**. Its scientific contract does not guarantee that any platform provides Python, cloud writing, bibliographic databases or other external services. Verify capabilities in the actual account.
-
-| Environment | Skill use | Limit |
+| Platform | How you may use Meu Artigo | What to check |
 | --- | --- | --- |
-| ChatGPT | Eligible Skills import | Account and workspace configuration control availability |
-| Claude / Claude Code | Supported custom Skill upload or local `SKILL.md` directory | Scripts, connectivity and persistence depend on environment |
-| Gemini | Supported Skill import where available | Execution and binary-resource limits may apply |
+| ChatGPT | Import the prepared Skill ZIP if Skills import is offered | Installed version; access to saved files and connected services |
+| Claude / Claude Code | Import a custom Skill or use a supported local Skill directory | Whether the product can run scripts and preserve project files |
+| Gemini | Import the Skill where the product supports it | Supported files, available tools and reliable storage |
 
-The method's seven scientific gates require real researcher decisions regardless of platform. `GOOGLE_DRIVE_FIRST` never means that a third-party connection was automatically authorized.
+[ChatGPT guide](CHATGPT.md) · [Claude guide](CLAUDE.md) · [Gemini guide](GEMINI.md) · [Installation](INSTALLATION.md)
 
-[ChatGPT](CHATGPT.md) · [Claude](CLAUDE.md) · [Gemini](GEMINI.md) · [Capability preflight](../references/platform-capability-preflight.md).
+## What is independent of the platform?
 
-**PENDING:** An integration not exercised within the user's account remains unverified, regardless of provider documentation.
+You can describe a research problem, discuss methodological options, review source evidence and control your own scientific decisions. Seven significant scientific checkpoints remain under researcher responsibility.
+
+## What varies?
+
+- **Storage:** a displayed Drive connection is not proof of a successful file write.
+- **Academic research access:** paid databases and licensed articles require your own authorized access and a real query.
+- **Scripts and files:** some assistant environments cannot run Python or handle all file types directly.
+- **External connections:** available connectors can differ even between accounts on the same platform.
+- **Visual presentation:** the Skill's conversational guidance is the primary path; any richer interface depends on actual host support.
+
+Compatibility testing remains **PENDING** for platforms and accounts not yet observed. For an explanation of how capabilities are checked, see [the platform access guide](../references/platform-capability-preflight.md). The software's automated tests do not certify full real-world compatibility on ChatGPT, Claude or Gemini. If a feature cannot be verified, the correct status is **not verified**, not completed.
+
+**Version:** beta.6 is the source candidate; beta.5 is the latest confirmed published package until a complete beta.6 release is visible.

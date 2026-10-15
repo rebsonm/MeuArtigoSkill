@@ -1,205 +1,36 @@
-# Getting started with Meu Artigo on GitHub
+# Start here: conduct research with Meu Artigo
 
+Meu Artigo is an **experimental public beta** designed to assist researchers in different fields, research traditions and methodological approaches. It offers guidance and organizational tools; it does not make scientific judgments on your behalf.
 
-> **Last planned experimental beta: `v0.9.0-beta.6` (release preparation, 2026-10-15).** The cumulative continuity, conversational resume and safe blocker guidance update is documented in [beta.6 release notes](NOTAS-DA-VERSAO-0.9.0-beta.6.md). **Beta.5 remains the latest published installer until GitHub actually publishes beta.6 and its checksum.** This last-beta designation is a plan, not stable certification; the project-owned external-tool service and external-tool Apps UI are not live-validated. Existing installations do not auto-update.
+## The first conversation
 
-> **Published release (2026-10-14):** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the **recommended experimental beta**. Its versioned [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip) and [SHA-256 checksum](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt) are available. Previous releases remain archived; installed Skills do not automatically update.
+After [installing a published Skill package](INSTALLATION.md) (currently the [beta.5 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip)), describe your topic in your own words. For example:
 
+> I am studying [topic/problem]. I want to write a scientific article, but I have not chosen the method yet. Show me reasonable options, their advantages and limitations, and help me decide the next step. First check which storage and tools are available.
 
-## Public access and experimental status
+It is fine if you only have a preliminary idea. You can also bring an established protocol, journal instructions, your own sources or work already in progress.
 
-Meu Artigo is an **experimental public beta**. Its source and project
-documentation can be consulted without an invitation or a GitHub
-account. Download and installation do not grant permission to
-redistribute third-party research PDFs or claim that the Skill has
-been scientifically validated.
+## How the process works
 
-**Installing the Skill?** Start with the [two-minute installation guide](INSTALLATION.md).
-Use the **published beta.5 Skill ZIP**, not the repository source archive.
+1. **Understand the problem.** The assistant helps delimit the question without changing your original intent silently.
+2. **Explore suitable methodological choices.** It should explain possible approaches and their trade-offs. You can compare alternatives, reject a suggestion or propose another method.
+3. **Confirm storage and access.** A connected service is not automatically writable. Google Drive is preferred when you authorize it and a real write can be verified; alternatives require your agreement.
+4. **Gather and examine actual evidence.** A proposed search is not an executed search. References and passages must be checked before supporting an assertion.
+5. **Document scientific decisions.** Important choices, interpretations and approvals are yours. C.A.D.A. keeps track of tasks and deadlines, not scientific authority.
+6. **Prepare and review the manuscript.** The article should reflect the selected design, actual evidence, limitations, verified journal requirements and applicable rights.
 
-This guide is designed for researchers who have **never used GitHub**.
-You do not need programming skills, Git, a command line, or a pull request
-to use the published installer.
+There are seven consequential human scientific checkpoints in the Skill. They are meant to preserve decisions rather than make you fill out unnecessary forms.
 
-## 1. What this repository contains
+## Can I continue the same article later?
 
-A GitHub repository is a project folder with a public change history.
-Here it includes the main `SKILL.md` instructions, methodological
-references, helper scripts, platform guides, public-beta installation
-notes, the C.A.D.A. management layer and license/attribution records.
+Yes, when the original project records are accessible. Tell the Skill which article to continue and ask for a progress summary. It should report what is recorded, what is pending and one useful next step. If a record or permission is missing, it should explain the limitation instead of pretending that progress has been saved.
 
-The automatically displayed `README.md` introduces the project
-rather than reproducing all technical documentation.
+## Can I talk in Portuguese?
 
-## 2. Do I need a GitHub account?
+Yes. The conversation can follow your preferred language even though the source documentation is maintained in English. You may separately choose the language of the manuscript or follow the target journal's requirements.
 
-Not to read, inspect or download a public release. You may need
-a GitHub account to contribute, create issues or collaborate.
-Connection to third-party apps or academic sources is a **separate**
-authorization process and may require a different account.
+## What should I be careful about?
 
-## 3. Choose the installable release ZIP
+A suggested article, citation or AI-generated explanation is not evidence of scientific validity. Do not treat missing full text as an automatic reason to exclude a study, invent human reviewers, or share confidential research and copyrighted PDFs without permission.
 
-For the new testing round, use the **[published beta.5 release page](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5)**.
-The currently installable filename is `MeuArtigoSkill-v0.9.0-beta.5.zip`, accompanied by `SHA256SUMS.txt`. The older beta.1 and beta.2 releases remain archived for reproducibility.
-This is for a supported **Skills** installer. Verify its SHA-256
-digest using `SHA256SUMS.txt` if appropriate.
-
-**Do not confuse** that installable ZIP with GitHub's automatically
-generated `Source code (zip)` archive. The published Skill ZIP
-has the expected installation layout and a validated manifest.
-
-The downloaded package contains a tree similar to:
-
-```text
-MeuArtigoSkill/
-├── SKILL.md
-├── agents/
-├── references/
-├── scripts/
-├── docs/
-├── LICENSE and NOTICE
-└── VERSION
-```
-
-When the platform permits ZIP import, retain the entire package
-so reference documents remain available. Only unpack if you want
-to inspect contents or your platform requires a directory.
-
-## 4. Which file matters?
-
-`SKILL.md` is the Skill entrypoint. The `references/` folder
-contains detailed method and process guidance; `scripts/` contains
-deterministic helper programs; `agents/` contains optional adapters
-for particular products. The `docs/` folder includes installation,
-limits, provenance, scientific safeguards and source-licensing policy.
-
-You **do not** need to read or understand every file to begin.
-The Skill follows a progressive approach, opening relevant
-instructions only when that research stage actually requires them.
-
-## 5. Choose your AI platform
-
-The Skill's scientific contract is shared, but specific installation
-and execution capabilities vary by account and product:
-
-- [ChatGPT / Codex](./CHATGPT.md)
-- [Claude / Claude Code](./CLAUDE.md)
-- [Gemini](./GEMINI.md)
-
-Consult the [compatibility matrix](COMPATIBILIDADE-PLATAFORMAS.md)
-to distinguish vendor features from Meu Artigo actions
-that have actually been evaluated.
-
-## 6. Start in your own language — automatically
-
-**The repository is written in English; you do not have to be.**
-
-If your account supports installing Skills, import the full ZIP
-following the platform guide. Open a new conversation and describe
-the research problem **in your usual language**.
-
-Examples of what a researcher might say, without any language pack:
-
-- A Portuguese-speaking researcher may directly describe the study
-  in Portuguese, and the assistant should respond in Portuguese.
-- A Spanish-speaking researcher may begin in Spanish and receive
-  Spanish explanations.
-- An English-speaking researcher may begin in English and receive
-  English responses.
-
-If you prefer a specific language, state it directly in the
-conversation. The **manuscript language is independent**: you can
-discuss the project in Portuguese while preparing the paper in
-English for an international journal. See the
-[language policy](../references/language-policy.md).
-
-The Skill may ask for the *research problem* and whether you have
-a *target journal* with official author rules and a template.
-You are not expected to prepare your own Boolean search strings,
-spreadsheets, evidence matrix, deduplication logic or complete
-research protocol before the first interaction.
-
-## 7. Storage is an explicit prerequisite
-
-Before substantive literature searching or drafting, the Skill
-checks whether Google Drive is connected and **actually writable**.
-Drive is the standard canonical location for the project's
-continuity, research documents, protocols, matrix and manuscript.
-
-If Drive is unavailable, the Skill should explain how to connect it
-and check again. If access still fails, the assistant must ask
-whether you **explicitly authorize** an alternative local/Work
-workspace. Without your affirmative decision, it must not pretend
-that files were saved to Drive or begin substantive research in
-a default local workspace.
-
-## 8. Research workflow and decisions
-
-Once authorized storage is available, the Skill should preserve
-the original question, propose method-appropriate options and
-organize source searches, analysis and writing according to the
-actual research design. A bibliographic literature review has
-different controls from a qualitative interview study, a
-quantitative analysis or design science evaluation.
-
-The management method C.A.D.A. tracks responsibilities, the next
-task and deadlines without replacing scientific decisions.
-
-When producing material for journals, reviewers or external
-collaborators, follow the journal's verified instructions and
-the [anonymization policy](./ANONIMIZACAO.md), including visible
-and hidden document metadata, source rights and truthful AI-use
-disclosure.
-
-An external management app such as ClickUp, Jira or Trello is
-optional. The default canonical matrix can manage the project
-without these services.
-
-## 9. Check continuity of your research project
-
-The assistant should preserve a real, updated `CONTINUIDADE.md`,
-original research input, material decisions, pending scientific
-gates, progress and the next valid action in the authorized
-workspace. To resume in another session, ask to continue the
-existing article and inspect the actual persistent state rather
-than recreating the project from a guessed conversation history.
-
-Successful local generation is **not** proof that a Google Drive
-upload occurred. Ask for the verifiable source when there is doubt.
-
-## 10. Initialization resilience in beta.5
-
-The scientific protocol and continuity records are checked **before** any optional XLSX visualization is generated. A spreadsheet problem should not leave the initial project without its essential protocol, but an invalid core should prevent a false success report. Never treat local file creation as verified Google Drive persistence. See the [hotfix recovery guide](INITIALIZATION-HOTFIX-2026-10-14.md).
-
-## 11. Updating to a newer version
-
-For new tests, use the [published beta.5 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip).
-The [earlier beta.1 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip) and other archived prereleases remain available for reproducibility. Review its release notes,
-the [CHANGELOG](../CHANGELOG.md) and any migration requirements.
-Keep the research project's real source files and canonical
-records; installing a newer Skill must not silently rewrite
-earlier scientific decisions.
-
-## 11. If you want to explore GitHub
-
-- **Repository:** project and development history.
-- **README.md:** plain-language project overview.
-- **Release:** an immutable named distribution with notes.
-- **Source code archive:** a repository copy that may differ from
-  the tested Skill installer.
-- **Issue:** a report or discussion about a problem.
-- **Pull request:** a proposed change requiring review/checks.
-- **Commit:** a recorded source revision.
-
-## 12. Feedback, support and further reading
-
-You can inspect the files, use a supported beta installer,
-or report confusing behavior and evidence problems through the
-repository's issue and contribution mechanisms.
-
-See [contributing](../CONTRIBUTING.md), [security](../SECURITY.md),
-[release details](IMPLANTACAO-BETA.md), and the
-[method-specific guides](ROTAS-METODOLOGICAS.md).
-Neither a successful installation nor a completed software
-audit guarantees academic publication or scientific quality.
+For practical questions, see [Installation](INSTALLATION.md), [methodological routes](ROTAS-METODOLOGICAS.md), [ChatGPT](CHATGPT.md), [Claude](CLAUDE.md), [Gemini](GEMINI.md) and [feedback](TESTE-BETA-PESQUISADORES.md).

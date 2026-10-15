@@ -1,125 +1,37 @@
-# ChatGPT — Meu Artigo Skill
+# Using Meu Artigo with ChatGPT
 
+Meu Artigo is a **Skill**, not a replacement for ChatGPT. Its research guidance works through the normal conversation, provided your ChatGPT account supports importing and running the Skill.
 
-> **Last planned experimental beta: `v0.9.0-beta.6` (release preparation, 2026-10-15).** The cumulative continuity, conversational resume and safe blocker guidance update is documented in [beta.6 release notes](NOTAS-DA-VERSAO-0.9.0-beta.6.md). **Beta.5 remains the latest published installer until GitHub actually publishes beta.6 and its checksum.** This last-beta designation is a plan, not stable certification; the project-owned MCP service and MCP Apps UI are not live-validated. Existing installations do not auto-update.
+## Start using the Skill
 
-The beta.6 standalone Skill is designed to use only external MCP tools that are **already connected and authorized** by the host. Installing the Skill ZIP alone cannot install, host, authorize or render the project-owned MCP Apps server; real beta.6 host acceptance is pending.
+1. Download the prepared [beta.5 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip) from the [currently published release](INSTALLATION.md).
+2. Import it using the **Skills** feature if it is available on your account.
+3. Begin in your preferred language:
+   > I want to use Meu Artigo to prepare a scientific article. Please check my available connections and storage before proposing methodological options.
+4. Review the recommendations and decide what you want to adopt.
 
-> **Published release (2026-10-14):** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the **recommended experimental beta**. Its versioned [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip) and [SHA-256 checksum](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt) are available. Previous releases remain archived; installed Skills do not automatically update.
+You do not need to open a technical dashboard to begin. The Skill is designed to offer a useful summary and next-step guidance in the conversation itself.
 
+## When returning to an article
 
-Meu Artigo is distributed as a **Skill**. Check whether your account supports Skills import and what external tools and storage are actually authorized.
+Say *"Meu Artigo, let's continue my article on [topic]"*. When an authorized saved project is accessible, the assistant should tell you where the recorded work stopped, what decision is pending and which step can safely follow. It should not assume that *"next"* means approval of a scientific choice.
 
-## Install
+If a file is unavailable, the research decisions are inconsistent or storage access has not been confirmed, the Skill should explain the blockage and suggest a safe check. It must not invent an approval, a restored file or a completed synchronization.
 
-Get the [published beta.5 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip) and [SHA-256](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt). This is an **experimental Pre-release**, not a stable or independently validated research tool. The [historical beta.1 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.1/MeuArtigoSkill-v0.9.0-beta.1.zip) remains archived. Do **not** use GitHub's **Code → Download ZIP** source snapshot as the user-installation archive. See [installation help](INSTALLATION.md).
+## What about my Google Drive and research services?
 
-## First connection diagnosis
+Installing the Skill does **not** grant access to Drive or databases. Connection status should be presented in a short, readable explanation rather than empty tables. A service is **NOT_VERIFIED** until actual access is checked; for saved files, an authorized write and, where possible, **read-after-write** confirmation are distinct from a successful read. ChatGPT can use only services actually connected and authorized for the current conversation. The assistant should distinguish accessible services from a successfully completed read, write or query.
 
-Use one concise status line per service in the researcher's language. Avoid empty Markdown tables and do not promote installed tools to successful checks. Distinguish **authenticated access**, a confirmed read, a confirmed write, **read-after-write**, an actually executed academic query, and observed provider quota/entitlement.
+Google Drive is preferred for long-term project continuity after a real writable-access check. Switching to another workspace requires your express agreement.
 
-Without an authenticated receipt report `NOT_VERIFIED`. A successful Drive read is not a verified write. Display final verified state, and the next valid storage decision. Such capability reporting is not a scientific gate approval.
+## Do I need an additional app or MCP connection?
 
-Illustrative statuses — **not actual test results**:
+**No additional connection is required just to use the standalone Skill's guidance.** If your ChatGPT session already exposes authorized MCP tools, the Skill may use them for specific tasks. Installing the Skill does not itself create an MCP connection, install a separate server or activate a visual MCP Apps interface.
 
-- Google Drive — **not verified**: authorized write still needs a test.
-- Literature discovery — **not tested**: no real query was confirmed.
-- Python — **not tested**: script execution in this session unconfirmed.
+If no MCP connection is available, **continue as a normal Skill** using already authorized tools or verifiable manual research materials. A separate interactive interface does not appear **when its Skill ZIP is installed**. The experimental project-owned connection and its interactive interface have **not** been confirmed in a live beta.6 installation. If a connected service is not available, the Skill can still explain alternatives and work with files or tools already accessible, without claiming that an external action took place.
 
-## Scientific contract
+## What remains your responsibility?
 
-Read [SKILL.md](../SKILL.md). The Skill preserves the researcher's question and requires a real human decision at each consequential scientific gate. `GOOGLE_DRIVE_FIRST` storage must be authorized and tested before storing a project. If it is unavailable, obtain explicit user approval before `WORK_FALLBACK`.
+You choose the method, decide which materials to include, examine evidence, approve interpretations and review the manuscript before any submission. See [Getting started](COMECE-AQUI.md) and [scientific governance](GOVERNANCA-CIENTIFICA.md).
 
-For a project already in progress, read its actual `CONTINUIDADE.md`, logs and gates from the authorized workspace. If no project is selected, ask which article to continue rather than generate made-up progress counters.
-
-See the [observed host acceptance record](CHATGPT-MCP-HOST-ACCEPTANCE.md)
-for the separately verified installed beta.4 + connected GitHub tool test,
-and the still-unverified project-owned MCP Apps integration.
-
-## Optional MCP tools within the Skill
-
-The Meu Artigo Skill **can call MCP tools already exposed and authorized in
-the user's ChatGPT session**. It does **not** create or activate an MCP
-connection when its Skill ZIP is installed. An external MCP server/application
-must be connected separately where the account/workspace supports it.
-Interactive MCP Apps UI is not the same as native conversational presentation
-and is never promised by installing a Skill.
-
-Follow the [optional tool-use protocol](../references/mcp-tool-use.md):
-verify real tools and permissions, identify the selected project, read actual
-canonical source records, reconcile DEC/TRACE, the seven human gates and
-C.A.D.A., then present the next valid action without inventing tool access.
-If no MCP connection is available, **continue as a normal Skill** with already
-authorized native tools or a permitted manual path. Do not claim the
-GitHub-based experimental adapter was installed or tested in this account.
-
-## Local method-writer authorization
-
-The Skill's local method-route and method-detail writers reject writes
-unless `PROJECT_CONFIG.json` explicitly records an authorized
-`WORK_FALLBACK`. Files copied from a Drive-canonical project remain
-read-only staging until their authorized canonical store and actual
-synchronization have been verified. A human decision is required for the
-method and separately for any storage fallback; one does not imply the
-other. These software checks are not independent identity authentication.
-
-## Conversational continuation
-
-For `next`, `vamos continuar` or similar messages **inside an actual
-selected research project**, use the authorized canonical records first.
-For an authorized local `WORK_FALLBACK` with Python access, optionally
-run `python scripts/research_resume_brief.py PROJECT --format json`.
-This uses the existing native panel and presents only a read-only
-continuation summary; it creates no second task board, DEC record,
-scientific approval or cloud synchronization receipt.
-
-Present the last recorded DEC_ID (or say unavailable), the next existing
-CADA_ID/GATE_ID and responsible actor, and one specific blocker or next
-method field. Never execute a task simply because `next` was typed.
-If the project is Drive-canonical or storage permissions are unverified,
-review the canonical Drive workspace directly; do not use the local
-summary to justify a change. The CLI text fallback is English-first; for researcher-facing responses
-use the structured JSON and the Skill's existing automatic language policy.
-
-## Explain blockers in the same conversation
-
-After reading a real authorized project, use
-`scripts/research_blocker_guide.py PROJECT --format json` when the
-resume view is blocked. The read-only guide maps recorded blocker codes
-to plain-language reasons, the original canonical files to review,
-responsible actor and one safe non-writing next step. The host translates
-the explanation into the researcher's active language.
-
-Do not manufacture a repair or imply that `next` is approval. If the
-project uses canonical Drive, no local snapshot is sufficient evidence
-of access or synchronization. The guide may help explain what should
-be checked, but actual authorized Drive reads and scientific decisions
-remain governed by the original process. No task, gate, method choice,
-storage consent or synchronization status is modified by this view.
-
-## Resume safety: one answer from the canonical records
-
-When a researcher asks to continue an existing authorized project, use
-`CONTINUIDADE.md`, the canonical C.A.D.A. register, seven human gates,
-`17_Decision_Log.csv`, `13_Traceability_Log.csv`, and
-`METHOD_PROFILE.json`. The Skill's `native_chat_dashboard.py` projects
-these existing records, with `next_step_router.py` selecting the operational
-step and `decision_continuity.py` checking recorded method/provenance.
-Do **not** start a second project dashboard or infer progress from the chat.
-
-If the DEC register is missing/malformed or the latest recorded decision
-lacks an existing TRACE link, report a **reconciliation blocker**. A
-structurally eligible C.A.D.A. action is not safely resumable while those
-records disagree. In the plain-text view the same blocker must disable
-`technical_preparation_possible`. A correctly initialized, readable,
-header-only DEC register is different: it means no recorded decision, not
-automatically a corrupted file.
-
-Show briefly what is actually known (last decision ID and status, next
-existing CADA/GATE ID, actor, first blocker, verification needed), without
-exposing private decision prose. A human must decide scientific choices;
-the local view neither authenticates people nor verifies Drive sync.
-No user action is required for synthetic engineering tests; a real
-researcher/operator must reconcile damaged project evidence before work.
-
-A Skill's operation and generated artifacts depend on the real tools available. It cannot assert external article submission, publisher content access or data synchronization without evidence.
+**Version note:** the source repository shows beta.6; the newest confirmed published installer remains beta.5 until beta.6 release assets appear on [GitHub Releases](https://github.com/rebsonm/MeuArtigoSkill/releases).
