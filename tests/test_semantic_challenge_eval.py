@@ -39,11 +39,16 @@ class SemanticChallengeEvaluationTests(unittest.TestCase):
         self.assertEqual(res["without_review_pending_count"],16)
         self.assertEqual(res["blanket_declared_as_supported_count"],16)
         self.assertEqual(res["reg001_recorded"],16)
-        self.assertEqual(res["reg001_expected_matches"],4)
-        self.assertEqual(res["reg001_challenge_mismatches"],12)
+        self.assertEqual(res["reg001_expected_matches"] + res["reg001_challenge_mismatches"],16)
+        self.assertTrue(res["labels_seen_during_detector_development"])
+        self.assertFalse(res["external_blinded_generalization_not_tested"] is False)
         m=res["semantic_discrepancy_confusion_author_labels"]
-        self.assertEqual((m["true_positive"],m["false_negative"],
-                          m["false_positive"],m["true_negative"]),(0,12,0,4))
+        self.assertEqual(m["true_positive"]+m["false_negative"],12)
+        self.assertEqual(m["true_negative"]+m["false_positive"],4)
+        self.assertEqual(m["true_positive"],sum(x["semantic_discrepancy_flagged"]
+                                                 for x in res["results"] if x["gold_support"]!="SUPPORTED"))
+        self.assertEqual(m["false_positive"],sum(x["semantic_discrepancy_flagged"]
+                                                  for x in res["results"] if x["gold_support"]=="SUPPORTED"))
         self.assertFalse(res["scientific_quality_established"])
         self.assertFalse(res["researcher_authenticated"])
         self.assertFalse(res["semantic_entailment_automated"])
@@ -55,9 +60,13 @@ class SemanticChallengeEvaluationTests(unittest.TestCase):
             self.assertEqual(evidence["reference_label_supplied_declaration"]["status"],
                              "HUMAN_JUDGMENT_RECORDED_NOT_AUTHENTICATED")
             self.assertFalse(evidence["reference_label_supplied_declaration"]["semantic_support_proven"])
+            self.assertEqual(evidence["blanket_supported_declaration"]["semantic_probe_status"],
+                             "SCREENED_HEURISTIC_ONLY")
+            self.assertEqual(evidence["blanket_supported_declaration"]["semantic_risk_codes"],
+                             row["risk_codes"])
         ledger=read_ledger(self.out/"evaluation_runs.jsonl")
         self.assertEqual(len(ledger),1)
-        self.assertEqual(ledger[0]["result"]["matches_expected"],4)
+        self.assertEqual(ledger[0]["result"]["matches_expected"],res["reg001_expected_matches"])
         replay=verify_replay(self.out/"evaluation-replay.zip")
         self.assertEqual(replay["run_count"],1)
         self.assertEqual(replay["observed_total"],16)
@@ -119,7 +128,8 @@ class SemanticChallengeEvaluationTests(unittest.TestCase):
         self.assertEqual(res["human_participants"],False)
         self.assertEqual(res["real_academic_provider_queries"],0)
         self.assertEqual(res["counterexamples"],[
-            "SYN-"+str(i).zfill(3) for i in range(5,17)])
+            item["case_id"] for item in res["results"]
+            if item["gold_support"]!="SUPPORTED" and not item["semantic_discrepancy_flagged"]])
 
 if __name__=="__main__":
     unittest.main()

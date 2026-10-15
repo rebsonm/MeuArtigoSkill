@@ -80,6 +80,34 @@ class SemanticClaimReviewTests(unittest.TestCase):
     def item(self, assessments=None):
         return scr.review(self.root,assessments)["review_items"][0]
 
+    def test_heuristic_risk_does_not_authenticate_human_or_approve_science(self):
+        self.claim["Claim_text"]="The checklist caused improvements in all teams."
+        self.quote=("The fictional observational comparison was not randomized "
+                    "and included only two departments with different staffing.")
+        self.source.write_text(self.quote+"\n",encoding="utf-8")
+        self.evidence["Supporting_locator"]=self.quote
+        self.write_inputs()
+        self.write_report()
+        result=scr.review(self.root,self.annotation())
+        row=result["review_items"][0]
+        self.assertEqual(row["status"],"HUMAN_JUDGMENT_RECORDED_NOT_AUTHENTICATED")
+        self.assertIn("CAUSALITY_FROM_NONCAUSAL_EVIDENCE",row["semantic_risk_codes"])
+        self.assertTrue(row["heuristic_review_needed"])
+        self.assertEqual(row["semantic_probe_status"],"SCREENED_HEURISTIC_ONLY")
+        self.assertFalse(result["semantic_support_proven"])
+        self.assertFalse(result["gate_approval_performed"])
+        self.assertFalse(result["researcher_authenticated"])
+        self.assertGreater(result["heuristic_risk_occurrences"],0)
+        self.assertTrue(result["claim_summaries"][0]["potential_overreach_review_required"])
+        self.assertNotIn(self.quote,json.dumps(result))
+        self.assertNotIn(self.claim["Claim_text"],json.dumps(result))
+
+    def test_without_assessment_semantic_probe_is_not_run(self):
+        result=scr.review(self.root)
+        self.assertEqual(result["review_items"][0]["semantic_probe_status"],"NOT_EVALUATED")
+        self.assertEqual(result["review_items"][0]["semantic_risk_codes"],[])
+        self.assertFalse(result["semantic_support_proven"])
+
     def test_unannotated_claim_remains_pending_and_not_semantically_proven(self):
         result=scr.review(self.root)
         self.assertEqual(self.item()["status"],"PENDING_HUMAN_REVIEW")

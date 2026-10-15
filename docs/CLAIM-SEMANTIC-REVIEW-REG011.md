@@ -80,6 +80,25 @@ replace any canonical register, gate record, continuity document or other
 existing file. Symlink and traversal attempts are denied. These files are
 local and do not confirm Google Drive synchronization.
 
+## Additional lexical risk signals (exploratory)
+
+After a literal quotation has been verified against a currently linked source,
+the checker emits only coded possible-overreach indicators for narrow English
+and Portuguese patterns (causality, universality, missing outcomes, statistical
+polarity, direction, method, dates, missing subgroups and unsupported quantities).
+These are **review requests**, not semantic entailment decisions. Even an empty
+set of indicators **does not** mean the claim is supported. A missing, stale or
+unmatched excerpt is NOT_EVALUATED for this additional screening.
+
+The strict command returns a pending-review status when such risk codes appear;
+it does not change a human declaration into authenticated approval, write any
+scientific gate or alter canonical data. A compact REG-013 report now shows
+possible-overreach risk counts without revealing source text or personal data.
+
+This deterministic rule set was developed with the original 16 fictional
+challenge cases visible. Results on those cases are **in-sample exploratory**,
+not generalization evidence or performance validation.
+
 ## Essential limitations
 
 - Even with all checks completed, status is

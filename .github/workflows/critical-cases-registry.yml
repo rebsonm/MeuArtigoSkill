@@ -14,6 +14,8 @@ on:
       - "scripts/report_output_guard.py"
       - "tests/test_report_output_guard.py"
       - "scripts/semantic_claim_review.py"
+      - "scripts/claim_overreach_signals.py"
+      - "tests/test_claim_overreach_signals.py"
       - "scripts/evaluate_semantic_challenge.py"
       - "tests/test_semantic_challenge_eval.py"
       - "benchmarks/claim_support_challenge_v1.json"
@@ -43,6 +45,8 @@ on:
       - "scripts/report_output_guard.py"
       - "tests/test_report_output_guard.py"
       - "scripts/semantic_claim_review.py"
+      - "scripts/claim_overreach_signals.py"
+      - "tests/test_claim_overreach_signals.py"
       - "scripts/evaluate_semantic_challenge.py"
       - "tests/test_semantic_challenge_eval.py"
       - "benchmarks/claim_support_challenge_v1.json"
@@ -72,11 +76,12 @@ jobs:
           python-version: "3.12"
       - name: Syntax and offline regression cases
         run: |
-          python -m py_compile scripts/evaluation_registry.py scripts/report_output_guard.py scripts/reference_audit.py scripts/semantic_claim_review.py scripts/scientific_diagnostic.py scripts/native_chat_dashboard.py scripts/evaluation_package.py scripts/run_critical_cases.py scripts/evaluate_semantic_challenge.py
+          python -m py_compile scripts/evaluation_registry.py scripts/report_output_guard.py scripts/reference_audit.py scripts/semantic_claim_review.py scripts/scientific_diagnostic.py scripts/native_chat_dashboard.py scripts/claim_overreach_signals.py scripts/evaluation_package.py scripts/run_critical_cases.py scripts/evaluate_semantic_challenge.py
           python -m unittest discover -s tests -p 'test_evaluation_registry.py' -v
           python -m unittest discover -s tests -p 'test_reference_audit.py' -v
           python -m unittest discover -s tests -p 'test_report_output_guard.py' -v
           python -m unittest discover -s tests -p 'test_semantic_claim_review.py' -v
+          python -m unittest discover -s tests -p 'test_claim_overreach_signals.py' -v
           python -m unittest discover -s tests -p 'test_scientific_diagnostic.py' -v
           python -m unittest discover -s tests -p 'test_native_chat_dashboard.py' -v
           python -m unittest discover -s tests -p 'test_unified_researcher_panel.py' -v

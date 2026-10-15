@@ -49,6 +49,11 @@ replace any canonical register, gate record, continuity document or other
 existing file. Symlink and traversal attempts are denied. These files are
 local and do not confirm Google Drive synchronization.
 
+The compact report includes a coded REVIEW finding when a confirmed source
+passage and its linked claim trigger an exploratory possible-overreach signal.
+The signal requires review; it cannot independently decide semantic correctness,
+evidence strength, causality or submission readiness.
+
 ## Limitations and acceptance still pending
 
 - In-text citations in the canonical manuscript are not yet parsed. REG-018

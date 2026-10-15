@@ -61,6 +61,15 @@ The existing REG-001 registry now accepts expected PASS for *synthetic
 negative-control cases* as well as expected BLOCK/FLAG. PASS never certifies
 scientific correctness or an authenticated human review.
 
+## Follow-up exploratory lexical screening
+
+The frozen 16-case challenge is also executed against optional conservative
+lexical risk indicators when a source quotation matches exactly. The baseline
+formal review status remains a non-authenticated *declared* judgment. New
+signals are separately reported by code, and are only reasons to request
+human examination. Results from this development-visible case collection
+must be labeled **in-sample**, with no independent assessor or blinding.
+
 ## Interpretation and limits
 
 If adversarial blanket SUPPORTED declarations receive a status saying only
