@@ -81,6 +81,13 @@ decisions are shared conceptually across those experiences. Do not invent
 a separate method, task board or "plugin state"; do not claim that two
 different storage systems have been reconciled without a verified read.
 
+For a reproducible distinction between a loaded Skill, an already-connected
+host tool and a *new* project-owned MCP Apps server, use the
+[real-host acceptance record](../docs/CHATGPT-MCP-HOST-ACCEPTANCE.md).
+It documents a read-only observation from an installed beta.4 Skill but
+explicitly does **not** certify uninstalled changes or the project's
+unconnected MCP server.
+
 ## Human responsibilities and testing limits
 
 Software engineers can test this instruction contract and mocked tool
