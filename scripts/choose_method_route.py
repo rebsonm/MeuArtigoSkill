@@ -18,7 +18,8 @@ import tempfile
 from method_routes import GATE_VARIANTS, MGMT, ROUTES, new_profile
 from transaction_coordinator import require_no_conflict
 from method_route_transaction import (has_pending_method_route, protect_method_route,
-                                      recover_method_route, PendingMethodRouteTransaction)
+                                      recover_method_route, PendingMethodRouteTransaction,
+                                      require_authorized_local_canonical_storage)
 
 
 def _load_csv(path: Path) -> tuple[list[str], list[dict]]:
@@ -41,6 +42,7 @@ def choose(root: Path, route: str, reviewer: str, evidence: str, rationale: str)
     method_path = root / MGMT / "METHOD_PROFILE.json"
     gate_path = root / MGMT / "18_Human_Validation_Gates.csv"
     cfg = json.loads(config_path.read_text(encoding="utf-8"))
+    require_authorized_local_canonical_storage(cfg)
     if cfg.get("method_route_governance_required") is not True:
         raise ValueError("Legacy project: do not silently migrate historical scientific decisions")
     previous = cfg.get("method_route")
@@ -77,6 +79,10 @@ def choose(root: Path, route: str, reviewer: str, evidence: str, rationale: str)
 
     # A single local journal protects the DEC/TRACE event and all route files.
     with protect_method_route(root):
+        # Recheck canonical-storage consent inside the recoverable journal,
+        # before recording any new DEC/TRACE or rewriting route/gate files.
+        require_authorized_local_canonical_storage(
+            json.loads(config_path.read_text(encoding="utf-8")))
         # Preserve real human-decision provenance in existing tables first.
         script = Path(__file__).with_name("governance_events.py")
         result = subprocess.run([
