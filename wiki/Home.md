@@ -1,5 +1,8 @@
 # Meu Artigo — Project Wiki
 
+
+> **Last planned experimental beta: `v0.9.0-beta.6` (release preparation, 2026-10-15).** The cumulative continuity, conversational resume and safe blocker guidance update is documented in [beta.6 release notes](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/NOTAS-DA-VERSAO-0.9.0-beta.6.md). **Beta.5 remains the latest published installer until GitHub actually publishes beta.6 and its checksum.** This last-beta designation is a plan, not stable certification; the project-owned MCP service and MCP Apps UI are not live-validated. Existing installations do not auto-update.
+
 > **Publication status:** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the **recommended published experimental beta** (October 14, 2026), with its installable ZIP and checksum available. It is not a stable or scientifically validated release. Installed Skills do not automatically update.
 
 **A research-assistance Skill for developing scientific articles with documented evidence, methodological fit, research continuity, and consequential human decisions.**
