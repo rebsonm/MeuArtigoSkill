@@ -18,6 +18,7 @@ from cada_continuity_integrity import audit as audit_cada_continuity
 from adaptive_method_guide import for_project as read_method_guidance
 from method_choice_dialogue import dialogue as project_method_dialogue
 from method_fill_preflight import inspect as project_method_fill_preflight
+from decision_continuity import compose as research_decision_continuity
 
 MGMT = "00_Gestao_e_Continuidade"
 FILES = {
@@ -176,6 +177,9 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
     # The field panel is an explanation only. It cannot propose actual
     # source-grounded scientific text or permit a canonical write.
     method_fill_guidance = project_method_fill_preflight(method_guidance)
+    # Project state is read once by the existing router. Decision continuity
+    # projects that state and DEC/TRACE/PROFILE; no new C.A.D.A. task register.
+    decision_continuity = research_decision_continuity(root, navigation=navigation)
     # Task titles and execution assignees come from the authorized project.
     # Never expose unrelated notes, source paths, protected text or review excerpts.
     return {
@@ -209,6 +213,7 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
         "method_guidance": method_guidance,
         "method_conversation": method_conversation,
         "method_fill_guidance": method_fill_guidance,
+        "decision_continuity": decision_continuity,
         "tasks": {
             "items": (minimal_tasks if chosen == "MINIMAL" else task_items),
             "registered_total": nrows(tasks),
@@ -275,6 +280,17 @@ def fallback(data: dict) -> str:
         " / " + str(overview["active_tasks"]),
         task_table(data),
         "Human approvals documented: " + str(overview["documented_gate_approvals"]),
+        "Last recorded decision: " +
+        str(data["decision_continuity"]["last_recorded_decision"]["decision_id"]) +
+        " | status: " +
+        data["decision_continuity"]["last_recorded_decision"]["status"] +
+        " | independent human authentication: NO",
+        "Next responsible action: " +
+        data["decision_continuity"]["next_action"]["code"] +
+        " | responsible: " +
+        data["decision_continuity"]["next_action"]["responsible"] +
+        " | method field: " +
+        str(data["decision_continuity"]["next_action"]["method_field_for_next_researcher_decision"]),
         "Method entry: " + data["method_fill_guidance"]["status"] +
         " | automatic write allowed: NO",
         "Method dialogue: " + data["method_conversation"]["action"] +
