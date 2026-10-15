@@ -48,6 +48,22 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
 
+      - name: Generate synthetic interactive research workspace
+        run: |
+          python scripts/build_research_workspace.py \
+            --preview-route QUALITATIVE \
+            --output "$RUNNER_TEMP/MeuArtigo-Research-Map-Demo.html"
+          python -c 'import os,pathlib; p=pathlib.Path(os.environ["RUNNER_TEMP"])/"MeuArtigo-Research-Map-Demo.html"; s=p.read_text(encoding="utf-8"); assert "FICTIONAL_PREVIEW_NOT_A_REAL_PROJECT" in s and "connect-src" in s and "review-draft" in s; print("synthetic_local_ui=generated; live_actions=false")'
+
+      - name: Preserve public fictional UI preview (not a release)
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: meu-artigo-interactive-research-map-fictional
+          path: ${{ runner.temp }}/MeuArtigo-Research-Map-Demo.html
+          if-no-files-found: warn
+          retention-days: 30
+
       - name: Check local documentation links
         run: python scripts/check_documentation_links.py
 
