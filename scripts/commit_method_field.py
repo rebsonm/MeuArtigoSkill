@@ -23,7 +23,7 @@ from method_fill_preflight import (_read_draft, for_existing_project,
                                   normalize, PLACEHOLDER_NORMALIZED)
 from method_route_transaction import (
     has_pending_method_route, protect_method_route, PendingMethodRouteTransaction,
-    recover_method_route,
+    recover_method_route, require_authorized_local_canonical_storage,
 )
 from method_routes import MGMT, REQUIRED_DESIGN, ROUTES
 from transaction_coordinator import require_no_conflict
@@ -52,6 +52,7 @@ def _read_state(root: Path, field: str) -> tuple[dict, dict]:
     profile=json.loads(_safe_file(root,"METHOD_PROFILE.json").read_text(encoding="utf-8"))
     if not isinstance(cfg,dict) or not isinstance(profile,dict):
         raise ValueError("Canonical method configuration/profile must be JSON objects")
+    require_authorized_local_canonical_storage(cfg)
     route=cfg.get("method_route")
     if cfg.get("method_route_governance_required") is not True:
         raise ValueError("Legacy projects require deliberate migration, not silent edits")
