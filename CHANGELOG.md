@@ -3,7 +3,16 @@
 
 ## Unreleased
 
-No additional changes have been recorded since `0.9.0-beta.5`.
+No later software release is planned at this time; further changes require a new maintainer decision. The beta.6 item below is a release candidate until an actual tagged GitHub release is published.
+
+## 0.9.0-beta.6 — 2026-10-15
+
+**Last planned experimental beta (pending manual publication).** Consolidates PR #67 (DEC/TRACE continuity, storage-writer authorization, and optional host-tool protocol), PR #68 (read-only conversational research resume), PR #69 (safe blocker guidance), and integrated acceptance in PR #70. The engineering candidate passed 758 regression tests, 11 synthetic end-to-end continuation scenarios, and eight fictional research journeys at commit `200e1d1e`; fresh release-commit audit is required.
+
+- Protect canonical provenance and scientific decisions across all seven researcher-controlled gates.
+- Report the next recorded research step and blockers without inventing decisions, authorizations, cloud sync, tool access or task execution.
+- Maintain standalone Skill use without MCP; the project-owned MCP server, OAuth and MCP Apps UI have **not** been connected or authenticated in a real ChatGPT test.
+- Keep historical experimental beta tags and files unchanged; this is not a scientifically validated stable release.
 
 ## 0.9.0-beta.5 — 2026-10-14
 

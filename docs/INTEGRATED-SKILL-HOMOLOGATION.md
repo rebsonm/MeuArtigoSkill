@@ -1,5 +1,7 @@
 # Integrated Skill acceptance — single candidate line
 
+**Release-plan status (2026-10-15):** The authorized target `v0.9.0-beta.6` is the *last planned experimental beta*, not a stable `v1.0.0`. Engineering acceptance is not evidence of live project-owned MCP Apps connectivity or independent scientific validity. A GitHub release is only published when the manual workflow creates a tag, installable ZIP, and SHA-256 attachment. Host acceptance remains pending and must be disclosed in beta.6 notes.
+
 **Candidate basis:** PR #67 (science-safe continuation), PR #68 (conversation
 resume) and PR #69 (guided blocker review), in precisely that ancestry.
 This integration branch is based on PR #69's reviewed head. The three

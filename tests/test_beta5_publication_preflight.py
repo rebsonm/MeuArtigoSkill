@@ -1,4 +1,4 @@
-"""Current public beta.5 release documentation and manual publishing safeguards."""
+"""Preserve historical beta.5 notes; verify beta.6 release-preparation safeguards."""
 from pathlib import Path
 import sys
 import unittest
@@ -11,12 +11,12 @@ from version_info import read_version
 class Beta5PublicationTests(unittest.TestCase):
     def setUp(self):
         self.version=read_version(ROOT)
-        self.notes=(ROOT/"docs"/f"NOTAS-DA-VERSAO-{self.version}.md").read_text(encoding="utf-8")
+        self.notes=(ROOT/"docs"/"NOTAS-DA-VERSAO-0.9.0-beta.6.md").read_text(encoding="utf-8")
         self.readme=(ROOT/"README.md").read_text(encoding="utf-8")
 
     def test_consistent_release_metadata(self):
-        self.assertEqual(self.version,"0.9.0-beta.5")
-        self.assertEqual(audit_release_metadata(ROOT,expected_date="2026-10-14"),[])
+        self.assertEqual(self.version,"0.9.0-beta.6")
+        self.assertEqual(audit_release_metadata(ROOT,expected_date="2026-10-15"),[])
         self.assertIn("publication workflow",self.readme.lower())
         self.assertIn("pre-release",self.notes.lower())
         self.assertIn("not a stable",self.notes.lower())
