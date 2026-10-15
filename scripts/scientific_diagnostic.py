@@ -40,6 +40,7 @@ PRIORITY = {
     "SOURCE_RETRACTION_ALERT": 3, "CLAIM_REVIEW_DECLARED_NOT_SUPPORTED": 3,
     "CLAIM_UNQUALIFIED_SUPPORT_CONTRADICTS_REVIEW": 3,
     "CLAIM_PENDING_HUMAN_REVIEW": 4, "SOURCE_REPORT_MISSING": 4,
+    "CLAIM_POSSIBLE_SEMANTIC_OVERREACH": 3,
     "METHODOLOGY_PROTOCOL_MISSING": 5,
 }
 HARD_CLAIM = {
@@ -130,6 +131,9 @@ def compose(root: Path, *, assessments: dict | None = None) -> dict:
             severity = "BLOCK" if status in HARD_CLAIM else "REVIEW"
         _issue_bucket(issues, kind="CLAIM", code=code, severity=severity,
                       identifier=item.get("claim_id"))
+        if item.get("semantic_risk_codes"):
+            _issue_bucket(issues,kind="CLAIM",code="CLAIM_POSSIBLE_SEMANTIC_OVERREACH",
+                          severity="REVIEW",identifier=item.get("claim_id"))
     if protocol["status"] != "RECORDED_UNASSESSED":
         _issue_bucket(issues,kind="METHODOLOGY",
                       code="METHODOLOGY_PROTOCOL_MISSING" if protocol["status"] == "NOT_AVAILABLE"
@@ -156,6 +160,8 @@ def compose(root: Path, *, assessments: dict | None = None) -> dict:
         actions.append("Reassess claims with missing or conflicting source passages.")
     if ref["source_report_status"] in {"MISSING","STALE","BLOCKED","REVIEW_REQUIRED"}:
         actions.append("Recheck source verification results and documented limitations.")
+    if any(x["code"] == "CLAIM_POSSIBLE_SEMANTIC_OVERREACH" for x in full):
+        actions.append("Review possible claim overreach against the source and document a human judgment.")
     if any(x["kind"] == "CLAIM" for x in full):
         actions.append("Obtain documented human review, including counterevidence.")
     if protocol["status"] != "RECORDED_UNASSESSED" or protocol["pending"]:

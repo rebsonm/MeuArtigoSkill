@@ -19,6 +19,7 @@ import sys
 import tempfile
 
 from report_output_guard import write_report
+from claim_overreach_signals import signals as detect_possible_overreach
 from claim_integrity import clean, refs, type_of
 from source_report_integrity import MGMT, SOURCE_REPORT, assess
 from verify_sources import check_locator
@@ -140,7 +141,9 @@ def review(root: Path, assessments: dict | None = None) -> dict:
             row = {"claim_id": cid, "evidence_id": eid,
                    "claim_sha256": claim_hash,
                    "status": "PENDING_HUMAN_REVIEW", "declared_judgment": None,
-                   "semantic_support_proven": False}
+                   "semantic_support_proven": False,
+                   "semantic_probe_status":"NOT_EVALUATED",
+                   "semantic_risk_codes":[]}
             if evidence_counts[eid] != 1:
                 row["status"] = "EVIDENCE_MISSING_OR_AMBIGUOUS"
             elif not trustworthy:
@@ -178,6 +181,11 @@ def review(root: Path, assessments: dict | None = None) -> dict:
                                 row["review_rationale_sha256"] = sha(clean(annotation["rationale"]).encode("utf-8"))
                                 row["review_response_sha256"] = sha(clean(annotation["response_reference"]).encode("utf-8"))
                                 row["reviewer_authentication"] = "NOT_VERIFIED"
+                                probe = detect_possible_overreach(claim.get("Claim_text") or "", passage)
+                                row["semantic_probe_status"] = probe["status"]
+                                row["semantic_risk_codes"] = probe["codes"]
+                                row["heuristic_review_needed"] = bool(probe["codes"])
+                                row["semantic_entailment_proven"] = False
             result.append(row)
     unknown = set(claimed) - valid_pairs
     if unknown:
@@ -196,12 +204,15 @@ def review(root: Path, assessments: dict | None = None) -> dict:
             "one_or_more_not_supported": "NOT_SUPPORTED" in claimed_outcomes,
             "one_or_more_partially_supported": "PARTIALLY_SUPPORTED" in claimed_outcomes,
             "one_or_more_inconclusive": "INCONCLUSIVE" in claimed_outcomes,
+            "potential_overreach_review_required": any(bool(e.get("semantic_risk_codes")) for e in entries),
             "scientific_claim_approved": False,
         })
     return {"schema_version": 1, "audit": "REG-011_HUMAN_ASSISTED_CLAIM_REVIEW",
             "canonical_snapshot_sha256": initial,
             "source_report_status": state["status"], "source_report_sha256": report_hash,
             "counts": dict(counts), "review_items": result, "claim_summaries": claims_summary,
+            "heuristic_risk_occurrences": sum(len(x.get("semantic_risk_codes") or []) for x in result),
+            "heuristic_signal_absence_proves_support": False,
             "semantic_support_proven": False, "researcher_authenticated": False,
             "gate_approval_performed": False, "independent_scientific_validation": False,
             "google_drive_sync_verified": False,
@@ -227,7 +238,7 @@ def main(argv=None):
             save_local(root,args.output,report,
                        (root/args.assessments) if args.assessments else None)
         print(json.dumps(report, ensure_ascii=False, indent=2))
-        if args.strict and any(row["status"] != "HUMAN_JUDGMENT_RECORDED_NOT_AUTHENTICATED"
+        if args.strict and any(row["status"] != "HUMAN_JUDGMENT_RECORDED_NOT_AUTHENTICATED" or row.get("semantic_risk_codes")
                                for row in report["review_items"]):
             return 2
         return 0

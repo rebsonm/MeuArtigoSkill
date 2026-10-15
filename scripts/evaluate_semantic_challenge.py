@@ -147,7 +147,10 @@ def take(root: Path, reviews=None) -> dict:
     return {"status":item["status"],
             "declared_judgment":item["declared_judgment"],
             "semantic_support_proven":False,
-            "researcher_authenticated":False}
+            "researcher_authenticated":False,
+            "semantic_probe_status":item.get("semantic_probe_status", "NOT_EVALUATED"),
+            "semantic_risk_codes":item.get("semantic_risk_codes", []),
+            "heuristic_review_needed":bool(item.get("semantic_risk_codes", []))}
 
 def evaluate(benchmark_path: Path, out: Path, *, source_commit: str) -> dict:
     if out.exists() or out.is_symlink():
@@ -175,7 +178,7 @@ def evaluate(benchmark_path: Path, out: Path, *, source_commit: str) -> dict:
             raise ValueError("Unexpected declaration path; inspect the REG-011 output")
         # A reported formal-consistency PASS never signifies scientific
         # support. The author's gold labels are an EXTERNAL challenge oracle.
-        observed_action="PASS" if blanket["status"]==UNAUTHENTICATED else "FLAG"
+        observed_action="FLAG" if blanket["heuristic_review_needed"] else "PASS"
         expected_action="PASS" if item["gold_support"]==SUPPORTING else "FLAG"
         target_cases.append({
             "case_id":cid,"category":"declared_semantic_support_challenge",
@@ -193,6 +196,7 @@ def evaluate(benchmark_path: Path, out: Path, *, source_commit: str) -> dict:
             "observed_action":observed_action,
             "expected_semantic_challenge_action":expected_action,
             "mocked_source_verification":True,
+            "heuristic_source_comparison":True,
             "not_an_independent_scientific_review":True,
         }
         path=proof_dir/(cid+".json")
@@ -203,6 +207,7 @@ def evaluate(benchmark_path: Path, out: Path, *, source_commit: str) -> dict:
             "case_id":cid,"gold_support":item["gold_support"],
             "expected_action":expected_action,"observed_action":observed_action,
             "semantic_discrepancy_flagged":observed_action=="FLAG",
+            "risk_codes":blanket["semantic_risk_codes"],
             "recorded_without_authentication":blanket["status"]==UNAUTHENTICATED,
             "pending_without_review":without["status"]=="PENDING_HUMAN_REVIEW",
             "source_evidence_sha256":sha(path.read_bytes()),
@@ -250,9 +255,12 @@ def evaluate(benchmark_path: Path, out: Path, *, source_commit: str) -> dict:
         "benchmark_labels_not_independently_adjudicated":True,
         "human_participants":False,"real_academic_provider_queries":0,
         "semantic_entailment_automated":False,
+        "lexical_signal_screening_only":True,
+        "labels_seen_during_detector_development":True,
+        "external_blinded_generalization_not_tested":True,
         "researcher_authenticated":False,
         "scientific_quality_established":False,"drive_sync_verified":False,
-        "interpretation":"Stress-test of REG-011 declared-review consistency, NOT an LLM semantic accuracy estimate; no scientific gate approved.",
+        "interpretation":"In-sample exploratory lexical risk screening against developer-labeled fictional examples; not blind validation, semantic entailment or scientific approval.",
     }
     (out/"preliminary_assessment.json").write_text(json.dumps(outcome,sort_keys=True,indent=2)+"\n",encoding="utf-8")
     return outcome
