@@ -180,6 +180,17 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
     # Project state is read once by the existing router. Decision continuity
     # projects that state and DEC/TRACE/PROFILE; no new C.A.D.A. task register.
     decision_continuity = research_decision_continuity(root, navigation=navigation)
+    # The method/DEC/TRACE continuity audit can reveal a blocker that the
+    # C.A.D.A.-only router cannot see. Present one consistent next-step status
+    # in both the Skill's narrative fallback and native panel projection.
+    # This is a read-only denial of execution, not an edit to canonical C.A.D.A.
+    if decision_continuity["status"] == "RECONCILIATION_REQUIRED":
+        navigation["technical_preparation_possible"] = False
+        navigation["requires_human_decision"] = True
+        navigation["blockers"] = list(dict.fromkeys(
+            navigation["blockers"] + decision_continuity["blockers"]))
+        if navigation["status"] == "TECHNICAL_PREPARATION_AVAILABLE":
+            navigation["status"] = "RECONCILIATION_REQUIRED"
     # Task titles and execution assignees come from the authorized project.
     # Never expose unrelated notes, source paths, protected text or review excerpts.
     return {
