@@ -440,3 +440,72 @@ tests. A real researcher must still decide and authorize a method and
 any canonical field; scientific coverage claims require independent
 experts. The maintainer separately authorizes merge, distribution and
 any later connected-host integration.
+
+
+## Opt-in local read bridge (experimental)
+
+The offline visual research workspace can now run as an **explicitly
+started local web interface**. It is a step toward a versioned host
+contract; it is **not a remotely connected ChatGPT application**, a
+deployed service or an installed account feature.
+
+Start a **fictional example**, without a real research project:
+
+    python scripts/local_research_bridge.py --preview-route QUALITATIVE
+
+Start an authorized existing local project only when its owner has
+approved local processing of the canonical files:
+
+    python scripts/local_research_bridge.py /authorized/project --mode MINIMAL
+
+The command binds **only** to \`127.0.0.1\`, on an OS-chosen port by
+default. It prints a \`http://127.0.0.1:<port>/\` URL, without printing
+the per-session secret. Open that URL on the **same computer**. Stop
+the process to end the session. Do **not** make the port public via a
+reverse proxy, tunnel, shared network or cloud hosting.
+
+### Actions and restrictions
+
+| Route | Purpose | Permission |
+| --- | --- | --- |
+| \`GET /\` | Local screen with a new, in-memory session token | Local interface only |
+| \`GET /api/snapshot\` | Re-read current local canonical projections | Read-only; session required |
+| \`POST /api/preflight\` | Run the existing Python method-field draft checks | Read-only; session required |
+| All other methods/paths | No support for writes, gates, decisions or Drive changes | Rejected |
+
+The visual screen exposes **Atualizar dados locais**. This action fetches
+fresh read-only C.A.D.A., DEC/TRACE, method, gate and continuity
+projections; it clears drafts and selections to prevent stale bindings.
+\`Conferir rascunho\` sends only the researcher's current field/dimension,
+catalogue option and draft to the Python checker **on loopback**.
+Response data include only structural finding codes, a fingerprint and
+safe generic explanations, not the private text.
+
+Security boundaries of the local prototype:
+
+- Read API requests require an unpredictable, process-scoped token and
+  the exact loopback origin; other origins, hosts and browser cross-site
+  requests are rejected, with **no CORS access**.
+- Browser responses require \`Cache-Control: no-store\`; requests are
+  not logged by the service and transport runs on the local computer.
+- The served HTML allows **same-origin-only** API calls. Saved offline
+  HTML retains \`connect-src 'none'\` and has no session token.
+- No write/update/delete API exists. The existing controlled Python
+  \`commit_method_field.py\` remains a separate tool, never callable
+  from these endpoints. Human decisions and original evidence cannot be
+  synthesized by an API call.
+- Neither researcher authentication nor independent scientific validity
+  is supplied by the session token. The user's OS account and local
+  computer security remain relevant.
+
+The bridge cannot read a connected cloud Drive directly, prove cloud
+synchronization, install itself into the ChatGPT interface or safely
+offer remote collaboration. A future ChatGPT-host adapter would require
+an explicit trust model, external access policy, permission review
+and separate authorization before any service is exposed.
+
+**Human actions:** None to run the fictional engineering tests. A user
+must deliberately start/stop the local process to view a live project;
+all actual scientific choices and their authorized recording remain
+human responsibilities. Independent evaluation, integrating PR #65,
+merging PR #66 and publishing remain separately authorized tasks.
