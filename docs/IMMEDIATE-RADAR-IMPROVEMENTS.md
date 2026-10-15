@@ -14,7 +14,7 @@ No source code from third-party radar projects is copied here.
 | 4 | REG-011 | Semantic claim-to-passage examination | **First implementation added:** one [L] claim/evidence review item, source/quote/hash binding, explicit self-reported human judgment, alignment/contraevidence guards and tests. Not an automated entailment verifier or authenticated independent assessment. |
 | 5 | REG-013 | One-page scientific diagnostic with uncertainties | **Initial implementation:** deterministic one-page-oriented Markdown/print A4 HTML/JSON, grouped prioritized reference/claim/protocol warnings, SHA-256 and privacy guards. Real researcher review/print validation pending. |
 | 6 | REG-017 | Unified researcher panel and real storage receipts | **First integration added:** the existing five-view panel embeds REG-013/018/011 findings in the Evidence view with shared counts for MINIMAL/FULL. True Drive-write receipts and host usability remain pending. |
-| 7 | REG-019 | Reproducible evaluation package with privacy controls | Pending; initial ledger is a component, not the complete export |
+| 7 | REG-019 | Reproducible evaluation package with privacy controls | **First privacy-reduced replay package:** frozen synthetic cases, hash-only optional project-protocol fingerprint, supplied REG-001 observations redacted, checksummed ZIP and independently recalculated scores; original source-level reproducibility remains pending. |
 | 8 | ENG-022 | Adversarial engineering, regression tests and incremental review | Initial unit tests and read-only CI for first slice added; ongoing |
 
 ## First usable slice
