@@ -104,3 +104,42 @@ the actual scientific method, sampling, analysis, inferential claims and
 presentation is a **researcher decision**. Cross-disciplinary scientific
 validation requires independent experts later; a maintainer must
 separately authorize integration, merge and release.
+
+## Conversational guidance (experimental, read-only)
+
+The guide also exposes an ephemeral dialogue projection, integrated as
+`method_conversation` in the existing native research dashboard.
+The default `suggest` action displays up to **three unranked contextual
+catalogue choices** plus `OTHER_NOT_LISTED`. This is a selection by
+documented method route and requested decision dimension, **not** an
+AI-generated semantic ranking of the private research question.
+
+Researchers may request:
+- `suggest`: short initial route-specific possibilities and their limitations;
+- `explore`: details of one option, practical consequences and reflective questions;
+- `compare`: side-by-side explanation of two explicitly selected alternatives;
+- `all`: the complete route-specific catalogue, including unlisted traditions;
+- `decision`: a request for the researcher's own attributable, justified choice,
+  **without writing or approving** the chosen approach.
+
+Examples, without changing any project:
+
+    python scripts/method_choice_dialogue.py --preview-route QUALITATIVE --dimension sampling
+    python scripts/method_choice_dialogue.py --preview-route QUALITATIVE --dimension sampling --action explore --option-id PURPOSIVE
+    python scripts/method_choice_dialogue.py --preview-route QUANTITATIVE --dimension sampling --action compare --compare PROBABILITY NONPROBABILITY
+    python scripts/method_choice_dialogue.py --preview-route CONCEPTUAL_THEORY --dimension sampling
+    python scripts/method_choice_dialogue.py /authorized/project --action decision
+
+Unknown option identifiers and incompatible fields fail closed. Neither the
+dialogue nor the read-only dashboard export private research-question text
+or original scientific reasons. A missing/contradictory method profile
+produces reconciliation status rather than an invented decision. No
+scientific gate, canonical register or Google Drive state is mutated.
+
+**Human involvement:** suggestions, comparisons and technical tests need
+no manual intervention. **A real researcher must decide** the actual
+method and justify it; independent disciplinary experts are needed later
+to claim scientifically validated guidance. **Merge and release** still
+require explicit maintainer authorization. The current prototype is not
+an interactive deployment to an end-user host; it is a tested dialogue
+data contract and CLI plus native-panel projection.
