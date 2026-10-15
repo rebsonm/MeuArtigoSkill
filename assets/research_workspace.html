@@ -134,7 +134,7 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
  "use strict";
  let model=JSON.parse(document.getElementById("research-model").textContent);
  // Only the opt-in loopback server injects a session token in a served page.
- // Offline HTML has no transport and remains blocked by connect-src 'none'.
+ // Offline HTML has no transport and its strict content policy blocks connections.
  const bridge=model.local_bridge&&model.local_bridge.enabled?model.local_bridge:null;
  const localBridgeReady=!!(bridge&&location.protocol==="http:"&&
    location.origin===bridge.origin&&location.hostname==="127.0.0.1"&&
