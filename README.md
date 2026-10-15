@@ -6,7 +6,7 @@ The project is available in a **public GitHub repository**. **Every 0.9.0-beta r
 
 ## Getting started
 
-**Recommended published experimental beta:** [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6), confirmed published with its [prepared Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.6/MeuArtigoSkill-v0.9.0-beta.6.zip) and SHA-256. Earlier beta.1, beta.2, beta.4 and beta.5 remain archived for reproducibility.
+**Recommended published experimental beta:** [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6), confirmed published with its [prepared Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.6/MeuArtigoSkill-v0.9.0-beta.6.zip) and SHA-256. Earlier beta.1 and beta.2, along with beta.4 and beta.5, remain archived for reproducibility.
 
 **Current version:** `0.9.0-beta.6`, a published **experimental GitHub Pre-release** (not stable or independently scientifically validated). New source candidates and unmerged PRs do not update that published package or installed Skills. GitHub's source archive is not the prepared Skill installer.
 
