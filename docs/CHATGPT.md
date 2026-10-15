@@ -27,6 +27,23 @@ Read [SKILL.md](../SKILL.md). The Skill preserves the researcher's question and 
 
 For a project already in progress, read its actual `CONTINUIDADE.md`, logs and gates from the authorized workspace. If no project is selected, ask which article to continue rather than generate made-up progress counters.
 
+## Optional MCP tools within the Skill
+
+The Meu Artigo Skill **can call MCP tools already exposed and authorized in
+the user's ChatGPT session**. It does **not** create or activate an MCP
+connection when its Skill ZIP is installed. An external MCP server/application
+must be connected separately where the account/workspace supports it.
+Interactive MCP Apps UI is not the same as native conversational presentation
+and is never promised by installing a Skill.
+
+Follow the [optional tool-use protocol](../references/mcp-tool-use.md):
+verify real tools and permissions, identify the selected project, read actual
+canonical source records, reconcile DEC/TRACE, the seven human gates and
+C.A.D.A., then present the next valid action without inventing tool access.
+If no MCP connection is available, **continue as a normal Skill** with already
+authorized native tools or a permitted manual path. Do not claim the
+GitHub-based experimental adapter was installed or tested in this account.
+
 ## Resume safety: one answer from the canonical records
 
 When a researcher asks to continue an existing authorized project, use
