@@ -120,9 +120,22 @@ class AdvisoryVersusBlockingPolicyTests(unittest.TestCase):
         root,path,item=self.project(4,complete_protocol=True)
         (root/"synthetic_source.txt").write_text(
             item["source_passage"]+"\nCHANGED AFTER HASH",encoding="utf-8")
-        # The linkage is absent from the canonical ledger. The supplied
-        # annotation therefore fails validation BEFORE any JSON is emitted.
-        # A fail-closed input error (1) is not an advisory or accepted review.
+        rc,report=self.run_claims(root,path)
+        self.assertEqual(rc,2)
+        self.assertEqual(report["review_items"][0]["status"],
+                         "SOURCE_REPORT_UNAVAILABLE_OR_STALE")
+        rc,diag=self.run_diagnostic(root,path)
+        self.assertEqual(rc,2)
+        self.assertGreater(diag["counts"]["strict_required_occurrences"],0)
+
+    def test_wrong_reference_cannot_be_downgraded_to_advisory(self):
+        root,path,item=self.project(4,complete_protocol=True)
+        ledger=root/claims.MGMT/"09_Claims_Ledger.csv"
+        original=ledger.read_text(encoding="utf-8-sig")
+        ledger.write_text(original.replace("EVID-0001","EVID-9999"),
+                          encoding="utf-8-sig")
+        # The annotation references a pair now absent from the ledger;
+        # fail closed on malformed input rather than emit a fabricated report.
         with contextlib.redirect_stdout(io.StringIO()) as stdout:
             with contextlib.redirect_stderr(io.StringIO()) as stderr:
                 rc=claims.main([str(root),"--assessments",str(path),"--strict"])
@@ -136,20 +149,6 @@ class AdvisoryVersusBlockingPolicyTests(unittest.TestCase):
         self.assertEqual(rc,1)
         self.assertEqual(stdout.getvalue(),"")
         self.assertIn("absent from the canonical literature ledger",stderr.getvalue())
-
-    def test_wrong_reference_cannot_be_downgraded_to_advisory(self):
-        root,path,item=self.project(4,complete_protocol=True)
-        ledger=root/claims.MGMT/"09_Claims_Ledger.csv"
-        original=ledger.read_text(encoding="utf-8-sig")
-        ledger.write_text(original.replace("EVID-0001","EVID-9999"),
-                          encoding="utf-8-sig")
-        rc,report=self.run_claims(root,path)
-        self.assertEqual(rc,2)
-        self.assertEqual(report["review_items"][0]["status"],
-                         "SOURCE_REPORT_UNAVAILABLE_OR_STALE")
-        rc,diag=self.run_diagnostic(root,path)
-        self.assertEqual(rc,2)
-        self.assertGreater(diag["counts"]["strict_required_occurrences"],0)
 
     def test_formal_support_cannot_autoapprove_without_heuristics(self):
         root,path,item=self.project(0,complete_protocol=True)
