@@ -91,19 +91,7 @@ synchronization is verified.
 Preserve the research question and intended contribution. Choose a
 **provisional route** via [method pathways](docs/ROTAS-METODOLOGICAS.md)
 and [review design](references/review-design.md). `UNDECIDED` is not
-a confirmed scientific choice. Before a consequential method choice, optionally present **unranked,
-explainable alternatives** using `scripts/adaptive_method_guide.py`
-(see [adaptive methodological guidance](docs/ADAPTIVE-METHOD-MAP.md)).
-For a known route, explain possible approaches to the next unfilled
-`METHOD_PROFILE.json` field: when each may fit, its potential, limits,
-practical consequences, and which decision belongs to the researcher.
-This advice is not a fixed methodological questionnaire or a claim of
-cross-disciplinary validity. Allow `OTHER_NOT_LISTED`, a combination or
-a researcher's own tradition; an unlisted tradition must not be silently
-mapped onto an inappropriate predefined route. The researcher may bypass
-the guide and state a preferred approach directly. A preview selection
-**never** writes canonical records, authenticates an approval, or
-advances a gate.
+a confirmed scientific choice. Optional method choices: [adaptive guide](docs/ADAPTIVE-METHOD-MAP.md). Never autoselect or approve; allow other methods.
 
 Obtain the researcher's original,
 attributable methodological decision; use `scripts/choose_method_route.py`
