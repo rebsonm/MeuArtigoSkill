@@ -113,7 +113,7 @@ def normative_observation_risk(claim_text, supporting_rows):
     # Explicit attribution to the rule remains a different, bounded claim.
     compliance_descriptive = bool(re.search(
         r"\b(?:registra|registram|possui|possuem|recebe|recebem|"
-        r"registers?|holds?|records?)\b", s))
+        r"registers?|holds?)\b", s))
     bounded_rule_statement = bool(re.search(
         r"\b(?:segundo\s+a\s+norma|conforme\s+(?:a\s+)?norma|"
         r"according\s+to\s+the\s+(?:rule|regulation)|"
