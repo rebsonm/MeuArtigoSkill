@@ -19,6 +19,7 @@ import sys
 import tempfile
 
 from claim_integrity import clean, refs, type_of
+from report_output_guard import write_report
 from source_report_integrity import MGMT, SOURCE_REPORT, assess
 from verify_sources import doi_of
 
@@ -180,29 +181,9 @@ def audit(root: Path) -> dict:
     }
 
 def _write_output(root: Path, raw: Path, result: dict):
-    root = root.resolve()
-    out = (raw if raw.is_absolute() else root / raw).absolute()
-    # Check parent before creating anything to prevent writes outside root.
-    if not out.resolve().is_relative_to(root):
-        raise ValueError("Report output must remain within authorized project root")
-    if out.is_symlink():
-        raise ValueError("Symlink output is prohibited")
-    canonical = {root / MGMT / name for name in (EVIDENCE, CLAIMS, SOURCE_REPORT)}
-    if out in canonical:
-        raise ValueError("Cannot overwrite a canonical scientific register/report")
-    out.parent.mkdir(parents=True, exist_ok=True)
-    staged = None
-    try:
-        with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=out.parent,
-                                         prefix=".reference-audit-", suffix=".tmp", delete=False) as f:
-            staged = Path(f.name)
-            f.write(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
-            f.flush()
-            os.fsync(f.fileno())
-        os.replace(staged, out)
-    finally:
-        if staged:
-            staged.unlink(missing_ok=True)
+    write_report(root, raw, json.dumps(result, ensure_ascii=False, indent=2) + "\n",
+                 allowed_extensions=frozenset({".json"}))
+
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)

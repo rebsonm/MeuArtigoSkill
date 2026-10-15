@@ -18,6 +18,7 @@ import re
 import sys
 import tempfile
 
+from report_output_guard import write_report
 from claim_integrity import clean, refs, type_of
 from source_report_integrity import MGMT, SOURCE_REPORT, assess
 from verify_sources import check_locator
@@ -207,29 +208,9 @@ def review(root: Path, assessments: dict | None = None) -> dict:
             "disclaimer": "Literal passage existence and declared human interpretation are not automated semantic proof or authenticated independent review."}
 
 def save_local(root: Path, output: Path, data: dict, assessments_file: Path | None):
-    root = root.resolve()
-    target = (output if output.is_absolute() else root / output).resolve()
-    if not target.is_relative_to(root):
-        raise ValueError("Output must be within the authorized project")
-    if target in {root / MGMT / x for x in (CLAIMS,EVIDENCE,SOURCE_REPORT)}:
-        raise ValueError("Cannot overwrite canonical scientific records")
-    if assessments_file is not None and target == assessments_file.resolve():
-        raise ValueError("Cannot overwrite source annotations")
-    if target.is_symlink():
-        raise ValueError("Symlink report outputs are prohibited")
-    target.parent.mkdir(parents=True, exist_ok=True)
-    tmp = None
-    try:
-        with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=target.parent,
-                                         prefix=".semantic-review-",suffix=".tmp",delete=False) as stream:
-            tmp = Path(stream.name)
-            stream.write(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
-            stream.flush()
-            os.fsync(stream.fileno())
-        os.replace(tmp, target)
-    finally:
-        if tmp:
-            tmp.unlink(missing_ok=True)
+    write_report(root, output, json.dumps(data, ensure_ascii=False, indent=2) + "\n",
+                 allowed_extensions=frozenset({".json"}))
+
 
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__)

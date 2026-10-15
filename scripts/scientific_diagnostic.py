@@ -19,6 +19,7 @@ import re
 import sys
 import tempfile
 
+from report_output_guard import write_report
 from reference_audit import audit as audit_references
 from semantic_claim_review import review as review_claims, local_json
 from source_report_integrity import MGMT
@@ -284,23 +285,8 @@ def html_page(data: dict) -> str:
 
 
 def output_file(root: Path, target: Path, result: str, assessment_path: Path | None):
-    root=root.resolve()
-    dest=(target if target.is_absolute() else root/target)
-    if dest.is_symlink() or not dest.resolve().is_relative_to(root):
-        raise ValueError("Report output must be inside authorized project without symlinks")
-    canonical={root/MGMT/x for x in SOURCE_INPUTS}
-    if dest.resolve() in canonical or (assessment_path and dest.resolve()==assessment_path.resolve()):
-        raise ValueError("Cannot overwrite canonical inputs or reviewer annotations")
-    dest.parent.mkdir(parents=True,exist_ok=True)
-    staged=None
-    try:
-        with tempfile.NamedTemporaryFile("w",encoding="utf-8",dir=dest.parent,
-                                         prefix=".diagnostic-",suffix=".tmp",delete=False) as f:
-            staged=Path(f.name);f.write(result);f.flush();os.fsync(f.fileno())
-        os.replace(staged,dest)
-    finally:
-        if staged:
-            staged.unlink(missing_ok=True)
+    write_report(root, target, result,
+                 allowed_extensions=frozenset({".json", ".md", ".html"}))
 
 
 def main(argv=None) -> int:

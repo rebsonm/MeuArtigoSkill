@@ -102,8 +102,9 @@ def score_one(cases: dict, observed: list[dict]) -> dict:
         if action!="NOT_EVALUATED":
             if not isinstance(checksum,str) or not SHA64.fullmatch(checksum):
                 raise ValueError("Observed action missing evidence reference digest")
-        elif checksum is not None:
-            raise ValueError("Unobserved action contains unexpected evidence digest")
+        elif checksum is not None and (
+                not isinstance(checksum, str) or not SHA64.fullmatch(checksum)):
+            raise ValueError("Unobserved action has invalid optional evidence digest")
         actions[cid]=action
     if set(actions)!=set(cases):
         raise ValueError("Each frozen case must have an explicit observation state")
