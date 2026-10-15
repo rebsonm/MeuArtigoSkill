@@ -143,3 +143,46 @@ to claim scientifically validated guidance. **Merge and release** still
 require explicit maintainer authorization. The current prototype is not
 an interactive deployment to an end-user host; it is a tested dialogue
 data contract and CLI plus native-panel projection.
+
+## Synthetic end-to-end researcher journeys
+
+The optional journey evaluator rehearses eight different **fictional**
+routes from a synthetic research question through method-family discovery,
+route-specific alternatives, explanation, comparison, an explicitly
+**simulated researcher-like fixture choice**, a field-entry suggestion, and
+the conservative human handoff.
+
+    python scripts/simulate_research_journeys.py
+    python scripts/simulate_research_journeys.py --output /fresh/temp/synthetic-journeys.json
+
+The example cases are software fixtures, not a participant sample,
+authoritative domain labels, external research papers, or a study of user
+experience. All examples are marked `SYNTHETIC_FIXTURE_NOT_A_REAL_RESEARCHER`.
+A fixture choice is **not passed** to
+`scripts/choose_method_route.py`, so no researcher declaration, DEC/TRACE
+entry, method-route confirmation or scientific-gate approval can be
+forged. The output includes only route identifiers, scripted steps, labels,
+hashed fictional questions, generic field suggestions and explicit
+nonapproval flags. No raw questions or researcher rationale are exported.
+
+A simulated field suggestion points only to an existing
+`METHOD_PROFILE.json` route_detail if such a canonical field exists;
+otherwise it is exploratory only. **No field is written.**
+`next_step_router.py` is not claimed to have run, because its actual
+decisions require a valid canonical project, continuity records and
+authorized storage. The journey reports the *researcher action* still
+required before a real method can be confirmed.
+
+The evaluator can emit a report to an **existing directory under a new
+filename**, refusing to overwrite an existing file. CI runs the script
+without real providers and keeps the synthetic observation report as an
+artifact. The route cases are **not** a scientific benchmark of method
+appropriateness; results report engineering flow coverage, not scientific
+success rates or real researcher productivity.
+
+**Manual responsibilities:** No user action is needed to run this
+synthetic rehearsal. A real researcher must select and justify the method,
+approve substantive design decisions and comply with ethical requirements
+where applicable. External disciplinary experts must independently assess
+the guidance before claims of universal scientific adequacy. The maintainer
+must explicitly authorize integrating PR #65, merging PR #66 or releasing.
