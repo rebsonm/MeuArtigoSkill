@@ -185,6 +185,11 @@ def review(root: Path, assessments: dict | None = None) -> dict:
                                 row["semantic_probe_status"] = probe["status"]
                                 row["semantic_risk_codes"] = probe["codes"]
                                 row["heuristic_review_needed"] = bool(probe["codes"])
+                                # Lexical hints are advisory even in --strict. They
+                                # never change source verification, review validity
+                                # or any scientific gate's approval criteria.
+                                row["heuristic_severity"] = "ADVISORY"
+                                row["heuristic_blocks_workflow"] = False
                                 row["semantic_entailment_proven"] = False
             result.append(row)
     unknown = set(claimed) - valid_pairs
@@ -213,6 +218,12 @@ def review(root: Path, assessments: dict | None = None) -> dict:
             "counts": dict(counts), "review_items": result, "claim_summaries": claims_summary,
             "heuristic_risk_occurrences": sum(len(x.get("semantic_risk_codes") or []) for x in result),
             "heuristic_signal_absence_proves_support": False,
+            "heuristic_signals_can_block_workflow": False,
+            "formal_review_requirements_pending": sum(
+                row.get("status") != "HUMAN_JUDGMENT_RECORDED_NOT_AUTHENTICATED"
+                for row in result),
+            # Formal completion is NOT authentication or peer validation.
+            "review_declared_is_authenticated": False,
             "semantic_support_proven": False, "researcher_authenticated": False,
             "gate_approval_performed": False, "independent_scientific_validation": False,
             "google_drive_sync_verified": False,
@@ -228,7 +239,7 @@ def main(argv=None):
     p.add_argument("project_path")
     p.add_argument("--assessments", type=Path, help="User-prepared review JSON inside project")
     p.add_argument("--output", type=Path, help="Optional local report (no implied Drive sync)")
-    p.add_argument("--strict", action="store_true", help="2 when any judgment is missing/invalid")
+    p.add_argument("--strict", action="store_true", help="2 for missing/invalid formal reviews; lexical advisories alone do not fail")
     args = p.parse_args(argv)
     try:
         root = Path(args.project_path).resolve()
@@ -238,8 +249,7 @@ def main(argv=None):
             save_local(root,args.output,report,
                        (root/args.assessments) if args.assessments else None)
         print(json.dumps(report, ensure_ascii=False, indent=2))
-        if args.strict and any(row["status"] != "HUMAN_JUDGMENT_RECORDED_NOT_AUTHENTICATED" or row.get("semantic_risk_codes")
-                               for row in report["review_items"]):
+        if args.strict and report["formal_review_requirements_pending"]:
             return 2
         return 0
     except (ValueError, OSError, json.JSONDecodeError, csv.Error) as exc:

@@ -50,6 +50,13 @@ HARD_CLAIM = {
     "UNQUALIFIED_SUPPORT_CONTRADICTS_REVIEW",
 }
 HARD_DECLARED = {"NOT_SUPPORTED"}
+# A lexical hint and a recorded but unauthenticated full-support
+# declaration are non-blocking for *technical CLI execution* only.
+# This does not certify semantics, a reviewer, or any scientific gate.
+STRICT_ADVISORY_ONLY = {
+    "CLAIM_POSSIBLE_SEMANTIC_OVERREACH",
+    "CLAIM_REVIEW_DECLARED_SUPPORTED",
+}
 PROTOCOL = "01_Protocolo.csv"
 SOURCE_INPUTS = ("05_Evidence_Matrix.csv", "09_Claims_Ledger.csv", "SOURCE_VERIFICATION.json", PROTOCOL)
 
@@ -149,6 +156,10 @@ def compose(root: Path, *, assessments: dict | None = None) -> dict:
     totals = Counter()
     for item in full:
         totals[item["severity"]] += item["count"]
+    strict_required = sum(
+        item["count"] for item in full
+        if item["severity"] == "BLOCK" or item["code"] not in STRICT_ADVISORY_ONLY
+    )
     # Provide actions grounded in actual recorded deficiencies, not findings
     # invented from research prose. The prose is constant, no AI generation.
     actions = []
@@ -176,6 +187,10 @@ def compose(root: Path, *, assessments: dict | None = None) -> dict:
                    "claim_evidence_pairs": len(claim["review_items"]),
                    "blocking_occurrences": totals["BLOCK"],
                    "review_occurrences": totals["REVIEW"],
+                   "strict_required_occurrences": strict_required,
+                   "heuristic_advisory_occurrences": sum(
+                       x["count"] for x in full
+                       if x["code"] == "CLAIM_POSSIBLE_SEMANTIC_OVERREACH"),
                    "findings_total": sum(x["count"] for x in full)},
         "source_verification": ref["source_report_status"],
         "protocol": protocol,
@@ -301,7 +316,7 @@ def main(argv=None) -> int:
     parser.add_argument("--assessments",type=Path,help="Optional explicitly declared human review JSON")
     parser.add_argument("--format",choices=("markdown","html","json"),default="markdown")
     parser.add_argument("--output",type=Path,help="Local optional output; never an implied Drive write")
-    parser.add_argument("--strict",action="store_true",help="2 if blockers or human review remains pending")
+    parser.add_argument("--strict",action="store_true",help="2 if required technical checks/reviews remain unresolved; advisory-only findings do not fail")
     args=parser.parse_args(argv)
     try:
         root=Path(args.project_path).resolve()
@@ -312,7 +327,7 @@ def main(argv=None) -> int:
             output_file(root,args.output,content,(root/args.assessments) if args.assessments else None)
         else:
             print(content,end="")
-        if args.strict and result["counts"]["findings_total"]:
+        if args.strict and result["counts"]["strict_required_occurrences"]:
             return 2
         # Lack of flagged issues still cannot establish scientific quality.
         return 0
