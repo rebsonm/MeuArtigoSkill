@@ -207,7 +207,7 @@ def markdown(data: dict) -> str:
     proto = ("indisponível" if p["status"] == "NOT_AVAILABLE" else
              str(p["items"])+" registros, "+str(p["pending"])+" pendentes")
     lines=[
-        "# Meu Artigo — diagnóstico científico (triagem técnica)",
+        "# Meu Artigo — Diagnóstico científico (triagem técnica)",
         summary,
         "**Relatório de fontes:** "+data["source_verification"]+
         " | **Protocolo:** "+proto,
