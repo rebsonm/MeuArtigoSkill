@@ -459,8 +459,12 @@ approved local processing of the canonical files:
     python scripts/local_research_bridge.py /authorized/project --mode MINIMAL
 
 The command binds **only** to \`127.0.0.1\`, on an OS-chosen port by
-default. It prints a \`http://127.0.0.1:<port>/\` URL, without printing
-the per-session secret. Open that URL on the **same computer**. Stop
+default. It prints a **session-specific URL** in the form
+\`http://127.0.0.1:<port>/#session=<secret>\`. **Treat the full URL as a
+credential**: do not share it, screenshot it, include it in reports or
+publish terminal output. The fragment is not sent in the HTTP request,
+and the browser removes it from the address bar after bootstrapping.
+Open this URL on the **same computer**. Stop
 the process to end the session. Do **not** make the port public via a
 reverse proxy, tunnel, shared network or cloud hosting.
 
@@ -468,7 +472,7 @@ reverse proxy, tunnel, shared network or cloud hosting.
 
 | Route | Purpose | Permission |
 | --- | --- | --- |
-| \`GET /\` | Local screen with a new, in-memory session token | Local interface only |
+| \`GET /\` | Public fictional shell, **no project contents or token** | Loopback only |
 | \`GET /api/snapshot\` | Re-read current local canonical projections | Read-only; session required |
 | \`POST /api/preflight\` | Run the existing Python method-field draft checks | Read-only; session required |
 | All other methods/paths | No support for writes, gates, decisions or Drive changes | Rejected |
@@ -488,8 +492,12 @@ Security boundaries of the local prototype:
   requests are rejected, with **no CORS access**.
 - Browser responses require \`Cache-Control: no-store\`; requests are
   not logged by the service and transport runs on the local computer.
-- The served HTML allows **same-origin-only** API calls. Saved offline
-  HTML retains \`connect-src 'none'\` and has no session token.
+- The served HTML starts as a **fictional shell** with no project data or
+  token. The browser reads the session fragment, clears the URL, then
+  requests the private model via the authenticated API. A token-less
+  browser cannot read actual project details. Same-origin API requests
+  are permitted only in the served session; saved offline HTML retains
+  \`connect-src 'none'\` and has no session token.
 - No write/update/delete API exists. The existing controlled Python
   \`commit_method_field.py\` remains a separate tool, never callable
   from these endpoints. Human decisions and original evidence cannot be
