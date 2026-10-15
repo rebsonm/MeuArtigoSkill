@@ -27,7 +27,7 @@ class ResearchJourneySimulationTests(unittest.TestCase):
         self.assertEqual(len(set(report["route_coverage"])),8)
         for row in report["case_results"]:
             with self.subTest(route=row["research_route"]):
-                self.assertEqual(len(row["events"]),7)
+                self.assertEqual(len(row["events"]),8)
                 self.assertTrue(row["exploration_verified"])
                 self.assertEqual(len(row["compared_ids"]),2)
                 self.assertTrue(row["unlisted_route_available"])
