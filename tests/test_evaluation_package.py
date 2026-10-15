@@ -176,5 +176,46 @@ class ReplayPackageTests(unittest.TestCase):
             self.assertNotIn(absent,blob)
         self.assertEqual(set(self.payload()),ep.ALL)
 
+
+    def test_unexecuted_case_with_optional_reference_replays_as_unobserved(self):
+        # REG-001 accepts a note/reference even when evaluation did not run.
+        case_id=next(iter(self.cases))
+        observation=self.dir/"unexecuted.json"
+        observation.write_text(json.dumps({
+            "schema_version":1,
+            "cases":[{"case_id":case_id,"observed_action":"NOT_EVALUATED",
+                      "evidence_reference":"PRIVATE_NOTE_NOT_A_TEST_EXECUTION"}],
+        }),encoding="utf-8")
+        er.record(CATALOG,observation,self.ledger,"fixture-unexecuted","a"*40)
+        ep.build(self.archive,CATALOG,ledger=self.ledger)
+        report=ep.validate(self.archive)
+        self.assertEqual(report["observed_total"],0)
+        run=json.loads(self.payload()["OBSERVATIONS.json"])["runs"][0]
+        self.assertEqual(run["score"]["observed"],0)
+        self.assertEqual(run["score"]["not_evaluated"],12)
+        self.assertIsNone(run["score"]["match_rate_on_observed"])
+        entry=next(x for x in run["cases"] if x["case_id"]==case_id)
+        self.assertEqual(entry["observed_action"],"NOT_EVALUATED")
+        self.assertEqual(entry["evidence_reference_sha256"],
+                         ep.hashed(b"PRIVATE_NOTE_NOT_A_TEST_EXECUTION"))
+        all_payload="".join(v.decode("utf-8") for v in self.payload().values())
+        self.assertNotIn("PRIVATE_NOTE_NOT_A_TEST_EXECUTION",all_payload)
+
+    def test_invalid_optional_digest_for_unexecuted_case_rejected(self):
+        self.observed()
+        ep.build(self.archive,CATALOG,ledger=self.ledger)
+        payload=self.payload()
+        observations=json.loads(payload["OBSERVATIONS.json"])
+        unevaluated=next(x for x in observations["runs"][0]["cases"]
+                         if x["observed_action"]=="NOT_EVALUATED")
+        unevaluated["evidence_reference_sha256"]="not-a-cryptographic-digest"
+        payload["OBSERVATIONS.json"]=ep.json_bytes(observations)
+        manifest=json.loads(payload["MANIFEST.json"])
+        manifest["files"]["OBSERVATIONS.json"]=ep.hashed(payload["OBSERVATIONS.json"])
+        payload["MANIFEST.json"]=ep.json_bytes(manifest)
+        self.repack(payload)
+        with self.assertRaisesRegex(ValueError,"invalid optional evidence digest"):
+            ep.validate(self.archive)
+
 if __name__=="__main__":
     unittest.main()

@@ -156,11 +156,11 @@ class DiagnosticTests(unittest.TestCase):
 
     def test_optional_output_never_mutates_canonical_csv(self):
         before=(self.mgmt/"09_Claims_Ledger.csv").read_bytes()
-        output=self.root/"reports"/"diagnostic.md"
+        output=self.root/"98_Technical_Reports"/"diagnostic.md"
         d.output_file(self.root,output,d.markdown(d.compose(self.root)),None)
         self.assertEqual((self.mgmt/"09_Claims_Ledger.csv").read_bytes(),before)
         self.assertTrue(output.is_file())
-        with self.assertRaisesRegex(ValueError,"canonical"):
+        with self.assertRaisesRegex(ValueError,"98_Technical_Reports"):
             d.output_file(self.root,self.mgmt/"09_Claims_Ledger.csv","x",None)
         with self.assertRaisesRegex(ValueError,"inside"):
             d.output_file(self.root,self.root.parent/"outside.md","x",None)

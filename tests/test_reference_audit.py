@@ -178,11 +178,11 @@ class ReferenceAuditTests(unittest.TestCase):
     def test_explicit_local_report_never_overwrites_canonical_data(self):
         before = (self.mgmt / audit.EVIDENCE).read_bytes()
         result = audit.audit(self.root)
-        target = self.root / "07_Reports" / "reference_audit.json"
+        target = self.root / "98_Technical_Reports" / "reference_audit.json"
         audit._write_output(self.root, target, result)
         self.assertTrue(target.is_file())
         self.assertEqual((self.mgmt / audit.EVIDENCE).read_bytes(), before)
-        with self.assertRaisesRegex(ValueError, "canonical"):
+        with self.assertRaisesRegex(ValueError, "98_Technical_Reports"):
             audit._write_output(self.root, self.mgmt/audit.EVIDENCE, result)
 
     def test_output_must_stay_in_project(self):

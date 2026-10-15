@@ -162,10 +162,10 @@ class SemanticClaimReviewTests(unittest.TestCase):
             scr.review(self.root,a)
 
     def test_output_stays_local_never_overwrites_source_or_annotations(self):
-        output=self.root/"tmp"/"review.json"
+        output=self.root/"98_Technical_Reports"/"review.json"
         scr.save_local(self.root,output,scr.review(self.root),None)
         self.assertTrue(output.is_file())
-        with self.assertRaisesRegex(ValueError,"canonical"):
+        with self.assertRaisesRegex(ValueError,"98_Technical_Reports"):
             scr.save_local(self.root,self.m/scr.CLAIMS,{},None)
         with self.assertRaisesRegex(ValueError,"within"):
             scr.save_local(self.root,self.root.parent/"outside.json",{},None)
