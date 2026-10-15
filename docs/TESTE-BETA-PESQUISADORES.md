@@ -1,93 +1,32 @@
-# Meu Artigo — short external beta-testing guide
+# Trying Meu Artigo: a short guide for researchers
 
+This **experimental beta** is open to voluntary use and feedback. The purpose of feedback is to identify confusing steps, accessibility barriers and scientific-governance risks, not to endorse the tool.
 
-> **Last planned experimental beta: `v0.9.0-beta.6` (release preparation, 2026-10-15).** The cumulative continuity, conversational resume and safe blocker guidance update is documented in [beta.6 release notes](NOTAS-DA-VERSAO-0.9.0-beta.6.md). **Beta.5 remains the latest published installer until GitHub actually publishes beta.6 and its checksum.** This last-beta designation is a plan, not stable certification; the project-owned external-tool service and external-tool Apps UI are not live-validated. Existing installations do not auto-update.
+**Installer currently confirmed:** [beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5). The beta.6 source is integrated, but do not claim to have tested its installed version until an actual beta.6 package is available and installed.
 
-**Additional beta.6 acceptance tests once the tagged installer is actually available:** check that `vamos continuar` uses real authorized records; a missing DEC/TRACE link blocks continuation rather than approving a task; known blockers are explained without exposing private text; a Drive-canonical local mirror is not silently promoted to writable storage; absence of external-tool does not disable the standalone Skill. Record the actual installed version. These tests do not presume that the private external-tool server is connected.
+## A simple way to try it
 
-> **Published release (2026-10-14):** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the **recommended experimental beta**. Its versioned [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip) and [SHA-256 checksum](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt) are available. Previous releases remain archived; installed Skills do not automatically update.
+1. Follow the [installation instructions](INSTALLATION.md).
+2. Start with a public topic or material you are authorized to use.
+3. Ask Meu Artigo to compare possible research methods and explain their differences.
+4. Examine whether it makes clear which sources were actually accessed and which steps are only proposals.
+5. If you have a saved project, ask to continue it and see whether the assistant uses real project records rather than inventing previous decisions.
 
+You do not have to complete an article, learn Git or understand programming to share useful feedback.
 
-**Release under evaluation:** `v0.9.0-beta.5` (public **Pre-release**, not
-stable or independently scientifically validated).
+## What deserves special attention?
 
-Thank you for evaluating a research-support Skill. The goal is to find
-practical usability and scientific-governance problems, **not** to provide a
-testimonial or endorse the quality of generated articles.
+- Whether methodological alternatives are appropriate to your field.
+- Whether the Skill explains its proposed next step and waits for consequential human decisions.
+- Whether cited passages really support the resulting statements.
+- Whether storage and tool permissions are accurately described.
+- Whether returning to a project feels understandable and safe.
+- Whether an error is explained in clear language, without discarding existing work.
 
-## Getting started (about 10 minutes of setup)
+## Tell us what happened
 
-1. Download the ZIP and `SHA256SUMS.txt` from the
-   [beta.5 tagged release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5).
-   The beta.5 release was published on 2026-10-14 (UTC). If a download
-   is temporarily inaccessible, do not substitute a source tree or claim
-   to have installed it; check the actual published release status.
-2. Check the SHA-256 when you can. Import the ZIP using your platform's
-   supported Skill mechanism. A ZIP alone does not grant external services
-   or account permissions.
-3. Start a **new** conversation and use a public or synthetic research
-   problem. Suggested first message:
+You can use [GitHub Issues](https://github.com/rebsonm/MeuArtigoSkill/issues/new/choose) to describe the installed version, platform, what you tried, what you expected and what happened. A short, sanitized example is helpful.
 
-   > Quero iniciar um artigo científico usando Meu Artigo. Antes de avançar,
-   > verifique quais conexões e formas de armazenamento estão realmente
-   > disponíveis. Não simule buscas, decisões humanas nem arquivos salvos.
+**Do not include** passwords, private Drive links, unpublished confidential manuscripts, restricted PDFs or identifiable participant information. For sensitive vulnerabilities, follow [the security policy](../SECURITY.md) instead of a public report.
 
-4. Follow the flow naturally. Say `próximo` when appropriate, and
-   observe whether the next step is clear. If a human methodological
-   decision is required, make it deliberately; do not treat an AI
-   recommendation as approval.
-5. When convenient, compare the simplified and full project views in
-   your supported host. Record if tasks, dates or blockers appear incorrect.
-
-## Initializer resilience — focus of beta.5
-
-- Start with a public or synthetic research topic and confirm that the research protocol and continuity records are available before the visual matrix is ready.
-- If optional spreadsheet generation times out or fails, check whether the core project remains usable and that the failure is reported honestly.
-- Reopen a partially initialized test workspace and observe whether existing researcher notes are preserved.
-- Report whether the system distinguishes a locally generated workspace from a **verified canonical Google Drive** save.
-- Never attempt destructive recovery of an existing research workspace solely for beta testing; work in a disposable test project.
-
-## Optional 20–30 minute research tasks
-
-- **Getting started:** from a real problem to a clearly bounded question.
-- **Source honesty:** plan a search without claiming it was executed;
-  when authorized, import a real small public bibliographic export.
-- **Methodology:** check whether the proposed article/review route fits the
-  research question; note unsupported claims or invented criteria.
-- **Continuity:** close and reopen the conversation, then request
-  `próximo`; check that it reads actual project state and respects pending
-  human review.
-- **Transparency:** inspect whether [L] literature, [I] inference and [P]
-  original proposal are clearly separated.
-- **Usability:** note any step where you do not understand what happens next.
-
-These are invitations to observe behavior, not a requirement to complete an
-article. **Do not fabricate sources, interviews, scientific approval or
-participants in order to finish a test.**
-
-## What to report
-
-Use the repository's
-[beta feedback form](https://github.com/rebsonm/MeuArtigoSkill/issues/new/choose).
-A helpful report includes:
-
-- Actual Skill version, environment/platform and installation method.
-- What you tried, what you expected and what actually happened.
-- Whether this blocked progress, risked an incorrect claim, exposed data or
-  merely caused confusion.
-- Sanitized reproduction steps and a non-sensitive example, if possible.
-
-**Please do not post access tokens, personal/participant information,
-unpublished manuscripts, institutionally restricted PDFs, or private Drive
-links.** For a security or privacy vulnerability use
-[SECURITY.md](../SECURITY.md) instead of public Issues.
-
-## What happens to feedback
-
-Reports are grouped by impact and recurrence, triaged, and corrected only
-when justified. Suggested features do not become automatic development
-commitments. Public issue visibility does not waive copyright, privacy or
-intellectual-property rights.
-
-**Beta feedback does not constitute independent academic validation**.
-Publication of a `v1.0.0` stable release would require a separate decision.
+Your feedback is a development observation. It is not an independent scientific evaluation of the Skill or your article.

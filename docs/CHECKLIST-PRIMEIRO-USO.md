@@ -1,25 +1,19 @@
-# First-use checklist — experimental public beta
+# Before you start: a short research checklist
 
-Use this checklist as a guide for the researcher's first
-interaction. It does **not** replace actual human scientific
-gates, constitute a research questionnaire or prove
-methodological understanding.
+You do not need to complete every item at once. Use this list to understand what Meu Artigo will help you check throughout a project.
 
-- [ ] I obtained the identified release ZIP and, where appropriate, verified its manifest and SHA-256.
-- [ ] My platform supports importing the Skill and recognizes root `SKILL.md`.
-- [ ] I stated my real research problem, without importing another project's confidential records.
-- [ ] I connected a **writable** Google Drive workspace, or explicitly authorized a documented local/Work fallback.
-- [ ] I supplied the target journal's official author instructions and template if I already had them; otherwise I used a journal-neutral start.
-- [ ] I chose the research design with appropriate methodological reasoning, without assuming every review is systematic.
-- [ ] I authorized only source access and academic searches I am permitted to conduct.
-- [ ] I documented actual searches, screening decisions, evidence and open problems without invented counts.
-- [ ] I used C.A.D.A. for operational management, never as a substitute for scientific approval.
-- [ ] I checked full-text rights and required anonymization before external document sharing.
-- [ ] I recorded actual AI use and checked the journal's disclosure policy before submission.
-- [ ] I recognized external dependencies, scientific limitations and actions that remain unverified.
-- [ ] The assistant's onboarding and answers followed my conversational language; I separately selected any required manuscript language.
+- [ ] I know what question or practical problem I want to investigate, even if it is still preliminary.
+- [ ] I have installed a published Meu Artigo Skill package in a supported assistant.
+- [ ] I have checked which storage location is actually available and authorized.
+- [ ] I have looked at reasonable methodological options before deciding which fits my question.
+- [ ] I know which sources were actually accessed and which were only suggested.
+- [ ] I understand that screening, interpretations and consequential research decisions require my review.
+- [ ] I can locate the saved project or know how to ask the assistant for a continuity summary.
+- [ ] Before sharing work, I will review confidentiality, third-party content rights and any required anonymization.
+- [ ] Before submission, I will check the actual journal requirements and describe relevant AI assistance truthfully.
 
-If an action fails, report the Skill version, platform, specific
-stage and observable result — **without** exposing private
-documents or personally identifying information. This checklist
-is not an empirical validation or endorsement of article quality.
+**Don't have a target journal yet?** You can begin without one. **Can't connect Drive?** Ask what was verified and whether an alternative storage location is needed. **Not sure of the method?** Ask the Skill to compare alternatives rather than committing immediately.
+
+This checklist helps you conduct your own research; it does not certify its scientific quality.
+
+[Getting started](COMECE-AQUI.md) · [Installation](INSTALLATION.md) · [Research methods](ROTAS-METODOLOGICAS.md).

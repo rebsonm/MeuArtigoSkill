@@ -1,70 +1,29 @@
-# Meu Artigo — Project Wiki
+# Meu Artigo — research support for scientific articles
 
+Meu Artigo is an **experimental Skill** that helps researchers organize a question, consider suitable methods, review real sources, document scientific choices and develop an article. The researcher retains authority over decisions and conclusions.
 
-> **Last planned experimental beta: `v0.9.0-beta.6` (release preparation, 2026-10-15).** The cumulative continuity, conversational resume and safe blocker guidance update is documented in [beta.6 release notes](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/NOTAS-DA-VERSAO-0.9.0-beta.6.md). **Beta.5 remains the latest published installer until GitHub actually publishes beta.6 and its checksum.** This last-beta designation is a plan, not stable certification; the project-owned external-tool service and external-tool Apps UI are not live-validated. Existing installations do not auto-update.
+## Start here
 
-> **Publication status:** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the **recommended published experimental beta** (October 14, 2026), with its installable ZIP and checksum available. It is not a stable or scientifically validated release. Installed Skills do not automatically update.
+- **New to Meu Artigo?** Read [[Start here|Start-Here]].
+- **Want to install it?** See [[Installation]] for the published Skill package.
+- **Unsure which method fits your article?** Explore [[Methodological routes|Methodological-Routes]].
+- **Returning to an existing study?** Read [[Storage and continuity|Storage-and-Continuity]].
+- **Need help?** See [[FAQ]].
 
-**A research-assistance Skill for developing scientific articles with documented evidence, methodological fit, research continuity, and consequential human decisions.**
+## What can I ask?
 
-> **Release status:** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the **published experimental pre-release** (October 14, 2026). It is **not** stable software or an independently validated scientific method.
+> I have a research problem but I'm not sure which method to use. Can you compare reasonable options and explain why they might fit?
 
-## Choose your path
+> Meu Artigo, let's continue my article. Tell me what is recorded, what is pending and the next safe step.
 
-| I want to… | Read |
-| --- | --- |
-| Start with no technical background | [Start here](https://github.com/rebsonm/MeuArtigoSkill/wiki/Start-Here) |
-| Download and install the correct package | [Installation](https://github.com/rebsonm/MeuArtigoSkill/wiki/Installation) |
-| Choose an appropriate research design | [Methodological routes](https://github.com/rebsonm/MeuArtigoSkill/wiki/Methodological-Routes) |
-| Understand the article lifecycle | [Research workflow](https://github.com/rebsonm/MeuArtigoSkill/wiki/Research-Workflow) |
-| Know which decisions must be mine | [Seven scientific gates](https://github.com/rebsonm/MeuArtigoSkill/wiki/Scientific-Gates) |
-| Check sources, citations and originality claims | [Evidence and provenance](https://github.com/rebsonm/MeuArtigoSkill/wiki/Evidence-and-Provenance) |
-| Manage tasks with C.A.D.A. | [C.A.D.A.](https://github.com/rebsonm/MeuArtigoSkill/wiki/CADA) |
-| Resume an existing project safely | [Storage and continuity](https://github.com/rebsonm/MeuArtigoSkill/wiki/Storage-and-Continuity) |
-| Use ChatGPT, Claude or Gemini | [Platforms and dashboard](https://github.com/rebsonm/MeuArtigoSkill/wiki/Platforms-and-Dashboard) |
-| Understand what is and is not validated | [Status and limitations](https://github.com/rebsonm/MeuArtigoSkill/wiki/Status-and-Limitations) |
-| Diagnose a problem | [FAQ and troubleshooting](https://github.com/rebsonm/MeuArtigoSkill/wiki/FAQ) |
-| Contribute to the project | [Contributing](https://github.com/rebsonm/MeuArtigoSkill/wiki/Contributing) |
+> Please check whether this paragraph really follows from the source it cites.
 
-## The operating model
+You can ask in your own language. The language of your final paper may be determined separately.
 
-```text
-Researcher's original question
-          |
-          v
-Storage and capability preflight
-          |
-          v
-Researcher confirms a suitable method
-          |
-          v
-Method-specific research and evidence workflow
-          |
-          +--> Source and event provenance --> [L] [I] [P] claims
-          |
-          +--> C.A.D.A. tasks --> responsibilities, deadlines, next action
-          |
-          v
-Seven consequential HUMAN scientific gates
-          |
-          v
-Manuscript and verified journal requirements
-```
+## Published version
 
-**Three different layers, never interchangeable:**
+The last **confirmed published** experimental package is [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5). Beta.6 has been integrated into the source code but its public ZIP has not been confirmed as available. Check [Releases](https://github.com/rebsonm/MeuArtigoSkill/releases) before installing.
 
-1. **Scientific method:** explains why evidence and analysis can answer the question.
-2. **Traceability:** documents actual sources, events, decisions, changes, and claim support.
-3. **C.A.D.A.:** organizes operational work; completing a task does **not** approve a scientific gate.
+Meu Artigo does not automatically connect Drive, academic databases or other accounts. Its research support has not been independently scientifically validated.
 
-The Skill adapts its workflow to the research design; an empirical study must not be forced through the entire sequence of a bibliographic review. It preserves **[L]** literature consulted, **[I]** defensible inference and **[P]** the researcher's original proposition as distinct claim types.
-
-## First message to the Skill
-
-> I want to start a scientific article with Meu Artigo. First check my actual connections and writable research storage, then help me define my question and method.
-
-You can say this in **Portuguese, Spanish, English, or your usual language**. Repository documentation is maintained in English; the researcher's conversation language and the manuscript language are separate decisions.
-
-**Source of truth:** [SKILL.md](https://github.com/rebsonm/MeuArtigoSkill/blob/main/SKILL.md) defines the scientific contract. The Wiki is a readable guide, not a replacement for the versioned Skill or its canonical project records.
-
-[Latest releases](https://github.com/rebsonm/MeuArtigoSkill/releases) · [Source repository](https://github.com/rebsonm/MeuArtigoSkill) · [Report an issue](https://github.com/rebsonm/MeuArtigoSkill/issues) · [License](https://github.com/rebsonm/MeuArtigoSkill/blob/main/LICENSE)
+[Source repository](https://github.com/rebsonm/MeuArtigoSkill) · [[Status and limitations|Status-and-Limitations]].

@@ -1,89 +1,26 @@
-# Claude / Claude Code adapter — Meu Artigo
+# Using Meu Artigo with Claude or Claude Code
 
-
-> **Last planned experimental beta: `v0.9.0-beta.6` (release preparation, 2026-10-15).** The cumulative continuity, conversational resume and safe blocker guidance update is documented in [beta.6 release notes](NOTAS-DA-VERSAO-0.9.0-beta.6.md). **Beta.5 remains the latest published installer until GitHub actually publishes beta.6 and its checksum.** This last-beta designation is a plan, not stable certification; the project-owned external-tool service and external-tool Apps UI are not live-validated. Existing installations do not auto-update.
-
-First-time users should read [Getting started](COMECE-AQUI.md).
-This adapter is about runtime capabilities, not a distinct
-scientific method. The shared contract is `SKILL.md`.
+Meu Artigo offers the same research guidance regardless of assistant, but each platform has different installation and file-access capabilities.
 
 ## Installation
 
-Anthropic documents personal Skills in eligible Claude applications
-and local Skills in Claude Code. Check
-[official documentation](https://platform.claude.com/docs/pt-BR/agents-and-tools/agent-skills/overview)
-for current conditions, permissions and interface wording.
+Download the prepared ZIP from the [currently published Meu Artigo release](INSTALLATION.md). Do not use the generic GitHub source-code archive.
 
-1. Download the prepared ZIP from [the published beta](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.2);
-   prefer `MeuArtigoSkill-v0.9.0-beta.2.zip` over GitHub's source archive.
-2. If your claude.ai account exposes custom Skills, use its Skill upload
-   feature and select the complete bundle.
-3. In a supported Claude Code environment, unpack the prepared Skill
-   as a directory with `SKILL.md` in its root, normally under
-   `~/.claude/skills/` for the user or `.claude/skills/` for a
-   particular project.
+- **Claude:** if your account offers custom Skills, import the complete published package through the feature shown in the application.
+- **Claude Code:** in a supported environment, use a Skill directory with `SKILL.md` at its root, following Claude Code's current Skill instructions.
 
-These installation paths are **not equivalent execution environments**.
-Neither upload nor directory placement proves Python execution,
-network access, connected services, Drive writes or persistent recovery.
+Importing a package does not demonstrate that it can execute scripts, access a database or save to Drive. See [Anthropic's Skill documentation](https://platform.claude.com/docs/pt-BR/agents-and-tools/agent-skills/overview) for your product.
 
-## Always respond in the researcher's language
+## Your first research conversation
 
-**Source files and default prompts are in English**, but the
-researcher can speak Portuguese, Spanish or another supported
-language and receive ordinary answers in that language automatically.
-Use the latest substantive direct message, unless the researcher
-explicitly requests a fixed output language. See
-[automatic language policy](../references/language-policy.md).
+Describe the research problem in your usual language. Ask for alternative methods and their limitations. If you already have journal rules, a protocol or source files, you can share those you are allowed to use.
 
-The manuscript language is an independent decision based on
-journal instructions or the researcher's preference.
+The assistant should first confirm its actual storage capabilities. Google Drive is preferred only when authorized writing can be verified. Otherwise, it should ask permission before using another workspace.
 
-## First research session
+## Returning to an existing study
 
-The researcher only needs to describe the real research problem
-in their own language. Before any substantive research, check
-that Google Drive is truly authenticated **and writable**. If
-it is unavailable, show the connection path and verify again;
-request explicit affirmative permission before creating
-a local alternative workspace. Never silently replace Drive
-with a local file while claiming remote persistence.
+Identify the saved project and request a summary based on the files that are genuinely accessible. A proposed action or technical task is not a scientific approval. If the service cannot read previous decisions, it should say so rather than reconstruct them from guesswork.
 
-Preserve the research question, propose method-appropriate
-paths, ask for real human scientific decisions and collect
-a target journal's actual instructions when available.
+The source documentation is in English, but conversations can follow your language. The manuscript's language is an independent scientific/editorial choice.
 
-## External connections and scripts
-
-Inspect the external services and native tools **actually installed**.
-Map them to persistent storage, academic discovery, citation context,
-publisher/document retrieval, indexed search, deterministic scripts
-and optional C.A.D.A. task mirroring. Do not copy OpenAI-specific
-connector names or pretend an external service exists.
-
-Python scripts such as `scripts/init_project.py`,
-`scripts/validate_project.py` and
-`scripts/dedupe_records.py` can only be executed where the
-current Claude product genuinely permits local execution. Otherwise
-describe a verifiable alternative without claiming completion.
-
-Scopus/Web of Science are external indexed resources unless
-there is authorized real access. The Skill can prepare queries,
-filters, exports and validation without inventing search events.
-
-C.A.D.A. remains functional as internal management even without
-an external ClickUp/Jira/Trello integration. If one is enabled,
-use it only as a task mirror while retaining the canonical
-research project records.
-
-## Continuity and evidence
-
-Update `CONTINUIDADE.md` in the authorized canonical workspace
-after substantive work. Externally performed actions require
-independent receipts; an AI-generated log alone is insufficient.
-If the user returns in another session, read their **real**
-stored state instead of inventing prior scientific decisions.
-
-The existence of a Skill importer and ZIP-format compatibility
-is not scientific validation. Actual cross-platform operation
-remains an independent [pending evaluation](VALIDACOES-PENDENTES.md).
+[Getting started](COMECE-AQUI.md) · [Platforms and limitations](COMPATIBILIDADE-PLATAFORMAS.md).

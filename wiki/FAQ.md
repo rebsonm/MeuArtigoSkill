@@ -1,52 +1,43 @@
-# FAQ and troubleshooting
+# Questions and troubleshooting
 
+### Do I need to know how to code?
 
-> **Last planned experimental beta: `v0.9.0-beta.6` (release preparation, 2026-10-15).** The cumulative continuity, conversational resume and safe blocker guidance update is documented in [beta.6 release notes](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/NOTAS-DA-VERSAO-0.9.0-beta.6.md). **Beta.5 remains the latest published installer until GitHub actually publishes beta.6 and its checksum.** This last-beta designation is a plan, not stable certification; the project-owned external-tool service and external-tool Apps UI are not live-validated. Existing installations do not auto-update.
+No. A supported assistant can import the prepared Skill package; installing from its source repository is a different process.
 
-> **Publication status:** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the **recommended published experimental beta** (October 14, 2026), with its installable ZIP and checksum available. It is not a stable or scientifically validated release. Installed Skills do not automatically update.
+### Which version is available?
 
-### Do I need to know Git or programming?
+The latest **confirmed published installer** is [beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5). Beta.6 is integrated into the source, but its installation package is not yet confirmed as published. See [[Installation]].
 
-No. For supported platforms, install the prepared **release Skill ZIP** rather than the repository source archive. Development and local scripts require more technical setup.
+### Can Meu Artigo choose my methodology?
 
-### Which version should I download?
+It can suggest and explain alternatives. You decide which approach fits your question and constraints. A proposal from the assistant is not your approval.
 
-The recommended **published experimental** distribution is [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5). There is no stable release.
+### Can it find and read all scientific articles?
 
-### Why does the assistant ask to check Drive first?
+No. Access depends on actual services, permissions, subscriptions and available full text. A search plan or reference suggestion is not proof that a source was retrieved or read.
 
-Research continuity needs a real, writable source of truth. Seeing a connected app is not proof that files can be saved. A local fallback requires explicit authorization.
+### Why does it ask about Google Drive?
 
-### I have access to Scopus or Web of Science. Does the Skill search them automatically?
+The project needs reliable records to preserve research continuity. A Drive connection alone is not proof of write permission or a completed save. Other storage requires your agreement.
 
-Only when tools, permission and actual execution are available. Otherwise it can prepare search strategies, guide manual retrieval and process real exported metadata. A proposed string is **not an executed search**.
+### What if I return in a new conversation?
 
-### Are AI-generated screening proposals considered human reviews?
+Identify your project and ask to continue it. The Skill should consult the actual saved records. If they cannot be accessed, it should explain that instead of inventing progress.
 
-No. The researcher must make consequential inclusion/exclusion decisions. An AI cannot count as an independent second human reviewer.
+### Does saying “next” approve a decision?
 
-### Why does a gate remain pending after I say "next"?
+No. Important scientific decisions require a real researcher review. Meu Artigo may explain the next step without silently approving it.
 
-"Next" can ask for a workflow step; it does not prove informed approval of consequential scientific content. The corresponding real decision and rationale must be recorded.
+### Can I converse in Portuguese?
 
-### Can it make my article original or guarantee acceptance?
+Yes. Conversation language and manuscript language are separate choices.
 
-No. The system helps **document bounded novelty searches, provenance, methods and journal rules**. It cannot establish universal originality, acceptance, causality or complete scientific validity.
+### Does it guarantee a good or original article?
 
-### Does the assistant answer in Portuguese?
+No. Every claim, source, method and journal requirement still needs scholarly review. Software testing is not independent scientific validation.
 
-The Skill instructs the assistant to follow the researcher's actual conversation language. The source repository is in English; journal/manuscript language is independent. Real multilingual compatibility still needs field testing.
+### Where do I report a problem?
 
-### Can I share research PDFs from the project's package?
+Use [GitHub Issues](https://github.com/rebsonm/MeuArtigoSkill/issues/new/choose) for non-sensitive feedback. Do not upload credentials or confidential research materials.
 
-The Apache-2.0 license applies to the Skill code and original content, **not** third-party journal PDFs or confidential research data. Verify rights and anonymization first.
-
-### Why does the dashboard not show my exact current progress?
-
-A dashboard must read authentic, authorized records. If the workspace is unavailable, the correct response is **not verified**, not simulated project data.
-
-### How do I report a problem?
-
-Use [GitHub Issues](https://github.com/rebsonm/MeuArtigoSkill/issues) and describe version, platform, reproduction steps, expected/observed behavior and sanitized evidence. **Do not upload credentials, protected full text or private participant information.**
-
-See also [installation troubleshooting](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/INSTALLATION.md) and [[Status and limitations|Status-and-Limitations]].
+[[Start here|Start-Here]] · [[Status and limitations|Status-and-Limitations]].

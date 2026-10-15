@@ -1,30 +1,25 @@
-# Storage and continuity
+# Saving and continuing your research
 
-Meu Artigo's default canonical storage policy is **`GOOGLE_DRIVE_FIRST`**.
+Meu Artigo is designed to keep an article's **actual research records**, so you can return to it later without starting from zero.
 
-## Before substantive work
+## Where are my files saved?
 
-A connected Drive badge or a successful read alone does not prove a writable research workspace. Verify authentication, read access, a permitted actual write, and a relevant read-after-write confirmation. Document unavailable capabilities instead of inventing receipts.
+Google Drive is the preferred storage location when it is connected, authorized and actually writable. A visible account connection alone does not prove that a document was saved.
 
-If authorized Drive storage cannot be established, explain the limitation. An alternative `WORK_FALLBACK` may be used **only after an explicit, affirmative researcher decision**. Local staging material must not be portrayed as synchronized with Drive.
+If Drive cannot be used, the assistant should explain that limitation and ask whether you agree to another storage location. A local copy should not be presented as synchronized with Drive.
 
-## What is preserved
+## What is useful to preserve?
 
-- The researcher's original question and project scope.
-- Protocol and method profile, including substantive decisions.
-- The canonical evidence/search and analysis material appropriate to the method.
-- C.A.D.A. register and events, with deadlines and accountability.
-- `CONTINUIDADE.md` with authentic project state, pending gates, blockers and the next legitimate action.
-- Snapshots and export provenance where applicable.
+The research question, selected approach, sources actually examined, key decisions, analysis, tasks and a description of what should happen next.
 
-## Safely resuming a study
+## How do I resume an article?
 
-1. Identify the exact authorized workspace and project.
-2. Read the **actual** `CONTINUIDADE.md`, protocol, canonical records and the last frozen snapshot where one exists.
-3. Distinguish **verified external events** from notes, AI proposals or pending tasks.
-4. Ask only for a missing consequential scientific decision; otherwise continue technical preparation as permitted.
-5. Keep prior evidence and authorship intact; never silently recreate counts, approvals or sources based on old chat content.
+Ask something like:
 
-A new Skill release does not retroactively validate or migrate an old study. Preserve backups, inspect version-specific changes and obtain permission before modifying canonical files.
+> Meu Artigo, let's continue the article about [topic]. Use the original saved project and tell me what is still pending.
 
-**References:** [Drive workspace contract](https://github.com/rebsonm/MeuArtigoSkill/blob/main/references/drive-workspace.md) · [Project state](https://github.com/rebsonm/MeuArtigoSkill/blob/main/references/project-state.md) · [Storage mapping](https://github.com/rebsonm/MeuArtigoSkill/blob/main/references/storage-mapping.md) · [Scientific governance](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/GOVERNANCA-CIENTIFICA.md).
+The Skill should identify the saved project, read what it can actually access and give you a clear summary and a safe next step. If important records are missing or inconsistent, it should explain what needs checking. It must not guess that a scientific decision was already approved.
+
+Installing a newer Skill does not automatically update your saved research or change previous decisions.
+
+[[Start here|Start-Here]] · [[FAQ]].

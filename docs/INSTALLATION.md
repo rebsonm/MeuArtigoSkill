@@ -1,36 +1,40 @@
-# Install Meu Artigo — Skill
+# Install Meu Artigo
 
+You do not need to be a programmer or use GitHub commands to install Meu Artigo. You do need an assistant that supports Skills.
 
-> **Last planned experimental beta: `v0.9.0-beta.6` (release preparation, 2026-10-15).** The cumulative continuity, conversational resume and safe blocker guidance update is documented in [beta.6 release notes](NOTAS-DA-VERSAO-0.9.0-beta.6.md). **Beta.5 remains the latest published installer until GitHub actually publishes beta.6 and its checksum.** This last-beta designation is a plan, not stable certification; the project-owned external-tool service and external-tool Apps UI are not live-validated. Existing installations do not auto-update.
+## Which version should I use?
 
-> **Published release (2026-10-14):** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the **recommended experimental beta**. Its versioned [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip) and [SHA-256 checksum](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt) are available. Previous releases remain archived; installed Skills do not automatically update.
+The [beta.5 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the latest **confirmed published installer**. The beta.6 improvements are already present in the repository's source, but its installable release has not been confirmed. Always check [Releases](https://github.com/rebsonm/MeuArtigoSkill/releases) for the newest complete package before downloading.
 
+All current releases are experimental; none is independently scientifically validated.
 
-**Choose the prepared Skill archive rather than GitHub's source download.** No coding is necessary for a researcher.
+## Install in a supported assistant
 
-**Recommended experimental version:** [beta.5 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5). [Historical beta.4 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.4) remains available for reproducibility; neither is stable.
+1. On the published release page, download the file named `MeuArtigoSkill-v0.9.0-beta.5.zip` and, if you wish to verify it, `SHA256SUMS.txt`.
+2. In your assistant, find its supported **Skills** import feature. The name and availability depend on the service and account.
+3. Import the downloaded Skill ZIP. If your environment instead uses Skill folders, unpack it so that `SKILL.md` is at the top level.
+4. Start a conversation in your usual language:
+   > I want to start a scientific article with Meu Artigo. Please check which tools and authorized storage are available, then help me formulate a research question.
+5. Review the suggested approaches and decide how you want to proceed.
 
-## Install the published Skill
+**Important:** GitHub's **Code → Download ZIP** and automatic **Source code** archives are copies of the development repository, not the prepared Skill installer.
 
-1. **[Download the published MeuArtigoSkill-v0.9.0-beta.5.zip](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip)** with the matching [SHA256SUMS.txt](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt) from the tagged **Pre-release**.
-2. Open your assistant's supported **Skills / Habilidades** import, if available for your account.
-3. Select this exact Skill ZIP and confirm installation.
-4. Ask: *"Quero começar um artigo com Meu Artigo; verifique primeiro minhas conexões e o armazenamento."*
-5. Confirm Google Drive read/write access (or explicit fallback authorization) before creating canonical research files.
+## What happens at first use?
 
-The **beta.5 tagged ZIP and checksum have been published**; use the versioned installer rather than the source checkout. All releases remain **experimental betas**; the `main` source tree is not the published installer. Earlier beta assets remain available for reproducibility.
+Meu Artigo checks which services it can actually reach. Google Drive is its preferred project storage when you have authorized and verified write access. Simply seeing a connected account is not confirmation that your files were saved there. If Drive cannot be used, the assistant must ask before switching to another workspace.
 
-## Avoid incorrect downloads
+You can start without a journal in mind. If you already have one, share its official author guidelines. You do not need to build search strings, matrices or a complete methodology before your first conversation.
 
-GitHub's **Code → Download ZIP** and automatic **Source code** archives are development checkouts with a wrapper folder. They are not the prepared Skill archive. An installable Skill has `SKILL.md` at its package root, together with the necessary references and optional scripts.
+## Updating an installed Skill
 
-## Common problems
+A new GitHub version does **not** update the copy installed in your assistant. Install a new package deliberately and preserve your existing research files. Ask Meu Artigo to read the actual saved project before continuing; it should not reconstruct decisions from memory alone.
 
-- **ZIP rejected:** use the direct release link above; inspect that the root contains `SKILL.md`.
-- **No Skills import option:** availability depends on your plan and workspace; do not assume undocumented controls exist.
-- **No Google Drive permission:** the Skill must verify access and writing, not assume installation granted authorization.
-- **Visual matrix unavailable or timed out:** in beta.5 the essential protocol and continuity files should remain available. Review the reported matrix status and retry only in an authorized workspace; do not delete prior researcher files.
-- **No academic database connection:** queries can be planned but never labeled executed without actual results.
-- **Unclear progress:** select the real existing project before requesting a read-only summary; no fictitious project status is valid.
+## If something does not work
 
-Maintainers can inspect ZIP structure offline using `python scripts/check_install_package.py file.zip` without uploading private data. Contact maintainers through [GitHub Issues](https://github.com/rebsonm/MeuArtigoSkill/issues), but do not share credentials or unpublished confidential materials.
+- **No Skills import:** check whether your assistant/account offers the feature; see [platform guidance](COMPATIBILIDADE-PLATAFORMAS.md).
+- **ZIP rejected:** use the prepared file from the release page, not the source-code ZIP.
+- **Drive unavailable:** ask the assistant to explain what access is missing. No upload should be reported as completed without evidence.
+- **No literature database connection:** Meu Artigo can help design a search and work with an authentic export you provide; it must not invent retrieved studies.
+- **Cannot continue an earlier article:** identify the correct saved project and authorized storage. If those records are inaccessible, progress remains unverified.
+
+See [Getting started](COMECE-AQUI.md) and [Support / feedback](TESTE-BETA-PESQUISADORES.md).
