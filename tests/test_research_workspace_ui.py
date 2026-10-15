@@ -142,7 +142,12 @@ class WorkspaceUiTests(unittest.TestCase):
         self.assertIn("textContent",page)
         self.assertNotIn("innerHTML",page)
         self.assertNotIn("localStorage",page)
-        self.assertNotIn("fetch(",page)
+        # Network functions exist only for an opt-in loopback-served session.
+        # The generated static file has no session and blocks connections
+        # through its connect-src 'none' CSP.
+        self.assertNotIn('"local_bridge":{"enabled":true',page)
+        self.assertIn("connect-src 'none'",page)
+        self.assertIn('if(!localBridgeReady)throw new Error',page)
         self.assertIn('"methodological_option_recommendation_independently_validated":false',page)
 
     def test_markup_embedding_escapes_script_termination_and_surrogates(self):
