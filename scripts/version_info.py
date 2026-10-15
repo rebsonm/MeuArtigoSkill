@@ -75,6 +75,8 @@ def diagnostic(root: Path = ROOT) -> dict:
             if not isinstance(expected, str) or not re.fullmatch(r"[a-f0-9]{64}", expected):
                 raise ValueError("Invalid digest")
             target = root / p
+            if not target.resolve().is_relative_to(root.resolve()):
+                raise ValueError("Bundle member escapes inspected root")
             if not target.is_file() or target.is_symlink():
                 raise ValueError("Missing or linked bundle file")
             if hashlib.sha256(target.read_bytes()).hexdigest() != expected:

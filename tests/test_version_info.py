@@ -65,6 +65,30 @@ class VersionContractTests(unittest.TestCase):
             self.assertEqual(version_info.diagnostic(root)["bundle_content_status"],
                              "BUNDLE_MANIFEST_INVALID_OR_FILES_CHANGED")
 
+    def test_manifest_member_via_symlinked_directory_is_rejected(self):
+        import hashlib
+        import json
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            root = base / "skill"
+            root.mkdir()
+            outside = base / "unrelated"
+            outside.mkdir()
+            (root / "VERSION").write_text("0.9.0-beta.6\\n", encoding="utf-8")
+            secret = outside / "secret.txt"
+            secret.write_text("Only synthetic secret", encoding="utf-8")
+            try:
+                (root / "linked").symlink_to(outside, target_is_directory=True)
+            except OSError:
+                self.skipTest("Symlinks not supported")
+            digest = hashlib.sha256(secret.read_bytes()).hexdigest()
+            (root / "BUNDLE_MANIFEST.json").write_text(json.dumps({
+                "version": "0.9.0-beta.6",
+                "files": {"linked/secret.txt": digest},
+            }), encoding="utf-8")
+            self.assertEqual(version_info.diagnostic(root)["bundle_content_status"],
+                             "BUNDLE_MANIFEST_INVALID_OR_FILES_CHANGED")
+
     def test_version_manifest_mismatch_does_not_claim_verified(self):
         import json
         with tempfile.TemporaryDirectory() as tmp:

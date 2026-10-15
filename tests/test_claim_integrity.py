@@ -194,6 +194,16 @@ class ClaimIntegrityTests(unittest.TestCase):
         self.assertTrue(any("NORMATIVE_OBSERVATION_REVIEW_REQUIRED" in x
                             for x in report["errors"]))
 
+    def test_original_clm01_observational_prose_needs_non_normative_evidence(self):
+        claim_text = ("O processo Aurora registra um identificador unico "
+                      "quando a demanda e recebida.")
+        risk = ci.normative_observation_risk(
+            claim_text, [{"Study_design_or_source_type": "NORMATIVE"}])
+        self.assertEqual(risk, "OBSERVED_COMPLIANCE_FROM_NORMATIVE_ONLY_SOURCES")
+        self.assertIsNone(ci.normative_observation_risk(
+            "Segundo a norma, cada demanda recebe um identificador.",
+            [{"Study_design_or_source_type": "NORMATIVE"}]))
+
     def test_pure_obligation_does_not_become_empirical_result(self):
         self.assertIsNone(ci.normative_observation_risk(
             "The rule requires each record to include an identifier.",
