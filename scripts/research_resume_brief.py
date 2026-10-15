@@ -214,7 +214,7 @@ def text(brief: dict) -> str:
         "Technical action performed: NO; scientific gate approved: NO",
         "Drive access/sync in this session: NOT VERIFIED",
     ]
-    return "\\n".join(rows)
+    return "\n".join(rows)
 
 def main(argv: list[str] | None=None) -> int:
     parser=argparse.ArgumentParser(description=__doc__)
