@@ -517,3 +517,26 @@ must deliberately start/stop the local process to view a live project;
 all actual scientific choices and their authorized recording remain
 human responsibilities. Independent evaluation, integrating PR #65,
 merging PR #66 and publishing remain separately authorized tasks.
+
+## MCP Apps / in-chat research-map prototype (fictional only)
+
+The experimental `mcp-preview/` adapter in PR #66 exposes the existing
+Python research-map projection through an official MCP tool and an MCP Apps
+UI resource, with a DOM-rendered, conversation-adjacent comparison interface.
+It is **not** the loopback bridge, a deployed ChatGPT plugin, an authenticated
+real-project connector or a source of scientific approvals. The route menu
+reuses the nine canonical `ROUTES` values; `OTHER_NOT_LISTED` remains an
+alternative within the catalogue rather than a forged canonical route.
+Only fictional profiles can be returned. No private project identifier or
+research text is accepted.
+
+The MCP tool and UI resource have a separate stdio handshake smoke test and
+GitHub Actions workflow. No new scientific gates, method decisions or
+canonical records are introduced. The widget's ephemeral rationale hint is
+not an authoritative preflight. Engineering development needs no researcher
+approval; using real projects would require OAuth 2.1, verified storage,
+per-project access, explicit researcher decisions, and separate maintainer
+authorization for deployment. Independent disciplinary validation remains
+outstanding.
+
+See [ChatGPT MCP Apps fictional adapter](CHATGPT-MCP-APP-PREVIEW.md).
