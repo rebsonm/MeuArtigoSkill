@@ -58,6 +58,24 @@ synchronization have been verified. A human decision is required for the
 method and separately for any storage fallback; one does not imply the
 other. These software checks are not independent identity authentication.
 
+## Conversational continuation
+
+For `next`, `vamos continuar` or similar messages **inside an actual
+selected research project**, use the authorized canonical records first.
+For an authorized local `WORK_FALLBACK` with Python access, optionally
+run `python scripts/research_resume_brief.py PROJECT --format json`.
+This uses the existing native panel and presents only a read-only
+continuation summary; it creates no second task board, DEC record,
+scientific approval or cloud synchronization receipt.
+
+Present the last recorded DEC_ID (or say unavailable), the next existing
+CADA_ID/GATE_ID and responsible actor, and one specific blocker or next
+method field. Never execute a task simply because `next` was typed.
+If the project is Drive-canonical or storage permissions are unverified,
+review the canonical Drive workspace directly; do not use the local
+summary to justify a change. The CLI text fallback is English-first; for researcher-facing responses
+use the structured JSON and the Skill's existing automatic language policy.
+
 ## Resume safety: one answer from the canonical records
 
 When a researcher asks to continue an existing authorized project, use

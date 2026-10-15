@@ -197,6 +197,9 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
         "schema": "MEU_ARTIGO_NATIVE_PANEL_V1",
         "mode": chosen,
         "project_storage_recorded": text(config.get("storage_mode"), 40) or "UNKNOWN",
+        "local_work_fallback_authorized_in_config": (
+            config.get("storage_mode") == "WORK_FALLBACK"
+            and config.get("fallback_authorized") is True),
         "drive_sync_verified_in_this_session": False,
         "scientific_quality_independently_validated": False,
         "overview": {
