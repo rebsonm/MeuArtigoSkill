@@ -145,3 +145,29 @@ not as zero observations or verified project facts. Human decisions,
 permissions, Drive synchronization and scientific validation still
 require their existing independent checks. These are software tests,
 **not** measured improvements in UX or scientific outcomes.
+
+
+## REG-017: integrated evidence diagnosis (incremental)
+
+The five-view presentation is unchanged: Evidence now includes the
+read-only diagnostic produced by the REG-013 / REG-018 / REG-011 checks.
+It is not another scientific state engine, separate dashboard or
+additional canonical register. Human gates, safe next-step selection
+and the C.A.D.A. four-column task table remain unchanged.
+
+A diagnostic status of ASSESSED_LIMITED_SCOPE reports only bounded
+structural observations; NOT_READY means the authorized input is
+unavailable or incompatible. Missing counts remain null, never zero
+or independently verified. Source passages, reviewer identities,
+research text and internal paths are excluded.
+
+MINIMAL displays at most two finding categories and one proposed
+next action; FULL displays up to six categories and four actions.
+The totals and underlying scientific state are identical in both
+views. Plain text reports the same short diagnosis without an
+additional interface.
+
+A local read-only projection cannot establish a successful
+Google Drive write or a verified remote receipt. No host action,
+cloud write or scientific gate approval is simulated by this change.
+User-interface and real researcher validation remain pending.
