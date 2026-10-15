@@ -1,0 +1,43 @@
+name: MCP Apps fictional preview audit
+
+on:
+  pull_request:
+    paths:
+      - "mcp-preview/**"
+      - "scripts/mcp_preview_projection.py"
+      - "tests/test_mcp_preview_projection.py"
+      - "docs/CHATGPT-MCP-APP-PREVIEW.md"
+      - ".github/workflows/mcp-preview-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mcp-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Set up Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+      - name: Python boundary tests
+        run: python -m unittest discover -s tests -p 'test_mcp_preview_projection.py' -v
+      - name: Install preview-only SDK dependencies
+        working-directory: mcp-preview
+        run: npm install --no-audit --no-fund
+      - name: Parse server
+        working-directory: mcp-preview
+        run: node --check server.mjs
+      - name: MCP Apps handshake and UI resource smoke
+        working-directory: mcp-preview
+        run: npm test

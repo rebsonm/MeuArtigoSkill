@@ -1,0 +1,19 @@
+{
+  "name": "meu-artigo-mcp-fictional-preview",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Experimental read-only MCP Apps adapter for fictitious Meu Artigo research trajectories.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node test.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.2",
+    "@modelcontextprotocol/ext-apps": "^1.0.1",
+    "zod": "^3.25.76"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

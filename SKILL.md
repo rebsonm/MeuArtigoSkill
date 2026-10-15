@@ -91,7 +91,9 @@ synchronization is verified.
 Preserve the research question and intended contribution. Choose a
 **provisional route** via [method pathways](docs/ROTAS-METODOLOGICAS.md)
 and [review design](references/review-design.md). `UNDECIDED` is not
-a confirmed scientific choice. Obtain the researcher's original,
+a confirmed scientific choice. Optional method choices: [adaptive guide](docs/ADAPTIVE-METHOD-MAP.md). Never autoselect or approve; allow other methods.
+
+Obtain the researcher's original,
 attributable methodological decision; use `scripts/choose_method_route.py`
 for newer route-aware projects. Before constructing a journal-specific
 manuscript, ask whether the researcher has selected a target journal,

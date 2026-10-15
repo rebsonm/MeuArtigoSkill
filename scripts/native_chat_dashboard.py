@@ -15,6 +15,10 @@ from pathlib import Path
 from presentation_mode import read_config
 from next_step_router import (TERMINAL, documented_gate, resolve as resolve_next_step)
 from cada_continuity_integrity import audit as audit_cada_continuity
+from adaptive_method_guide import for_project as read_method_guidance
+from method_choice_dialogue import dialogue as project_method_dialogue
+from method_fill_preflight import inspect as project_method_fill_preflight
+from decision_continuity import compose as research_decision_continuity
 
 MGMT = "00_Gestao_e_Continuidade"
 FILES = {
@@ -137,6 +141,45 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
         "documented_gate_approvals": None if gates is None else sum(
             x["approval_documented"] for x in gate_items),
     }
+    # Method guidance is a READ-ONLY layer on the already recorded route.
+    # A missing legacy method profile never implies consent to any method.
+    if "method_route" not in config:
+        method_guidance = {
+            "schema": "MEU_ARTIGO_ADAPTIVE_METHOD_GUIDE_V1",
+            "status": "NO_RECORDED_METHOD_ROUTE",
+            "mode": "UNAVAILABLE",
+            "options": [],
+            "option_count": 0,
+            "human_scientific_gate_approved": False,
+            "selection_persists_to_project": False,
+            "technical_preparation_possible": False,
+        }
+    else:
+        method_guidance = read_method_guidance(root)
+        options = method_guidance.get("options") or []
+        if chosen == "MINIMAL" and len(options) > 4:
+            # Never discard the researcher-defined alternative.
+            other = next((item for item in options if item["id"] == "OTHER_NOT_LISTED"), None)
+            shown = options[:3]
+            if other is not None and other not in shown:
+                shown.append(other)
+            method_guidance = {
+                **method_guidance,
+                "options": shown,
+                "options_partial": True,
+                "option_count": len(options),
+            }
+        else:
+            method_guidance = {**method_guidance, "options_partial": False}
+    # Dialogue is a non-mutating projection. It neither writes a scientific
+    # decision nor authorizes C.A.D.A., Drive sync or one of seven gates.
+    method_conversation = project_method_dialogue(method_guidance, action="suggest")
+    # The field panel is an explanation only. It cannot propose actual
+    # source-grounded scientific text or permit a canonical write.
+    method_fill_guidance = project_method_fill_preflight(method_guidance)
+    # Project state is read once by the existing router. Decision continuity
+    # projects that state and DEC/TRACE/PROFILE; no new C.A.D.A. task register.
+    decision_continuity = research_decision_continuity(root, navigation=navigation)
     # Task titles and execution assignees come from the authorized project.
     # Never expose unrelated notes, source paths, protected text or review excerpts.
     return {
@@ -167,6 +210,10 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
             "scientific_gate_approved_by_navigation": False,
             "drive_sync_verified_in_this_session": False,
         },
+        "method_guidance": method_guidance,
+        "method_conversation": method_conversation,
+        "method_fill_guidance": method_fill_guidance,
+        "decision_continuity": decision_continuity,
         "tasks": {
             "items": (minimal_tasks if chosen == "MINIMAL" else task_items),
             "registered_total": nrows(tasks),
@@ -233,6 +280,30 @@ def fallback(data: dict) -> str:
         " / " + str(overview["active_tasks"]),
         task_table(data),
         "Human approvals documented: " + str(overview["documented_gate_approvals"]),
+        "Last recorded decision: " +
+        str(data["decision_continuity"]["last_recorded_decision"]["decision_id"]) +
+        " | status: " +
+        data["decision_continuity"]["last_recorded_decision"]["status"] +
+        " | independent human authentication: NO",
+        "Next responsible action: " +
+        data["decision_continuity"]["next_action"]["code"] +
+        " | responsible: " +
+        data["decision_continuity"]["next_action"]["responsible"] +
+        " | method field: " +
+        str(data["decision_continuity"]["next_action"]["method_field_for_next_researcher_decision"]),
+        "Next action explanation: " +
+        data["decision_continuity"]["next_action"]["explanation"],
+        "Recorded method implies (not certified): " +
+        str(data["decision_continuity"]["route_implications"]["summary"]),
+        "Method entry: " + data["method_fill_guidance"]["status"] +
+        " | automatic write allowed: NO",
+        "Method dialogue: " + data["method_conversation"]["action"] +
+        " | options: " + str(len(data["method_conversation"]["cards"])) +
+        " | human choice required, no automatic gate approval",
+        "Method choices: " + data["method_guidance"]["status"] +
+        " | field: " + str(data["method_guidance"].get("target_field")) +
+        " | options shown: " + str(len(data["method_guidance"]["options"])) +
+        " | researcher scientific decision required",
         "Next step: " + data["continuation"]["status"] +
         " | C.A.D.A.: " + str(data["continuation"]["next_task_id"]) +
         " | human gate: " + str(data["continuation"]["next_gate_id"]),
