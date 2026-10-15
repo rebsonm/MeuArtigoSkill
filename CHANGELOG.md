@@ -11,7 +11,7 @@ No later software release is planned at this time; further changes require a new
 
 - Protect canonical provenance and scientific decisions across all seven researcher-controlled gates.
 - Report the next recorded research step and blockers without inventing decisions, authorizations, cloud sync, tool access or task execution.
-- Maintain standalone Skill use without MCP; the project-owned MCP server, OAuth and MCP Apps UI have **not** been connected or authenticated in a real ChatGPT test.
+- Maintain standalone Skill use without external-tool; the project-owned external-tool server, OAuth and external-tool Apps UI have **not** been connected or authenticated in a real ChatGPT test.
 - Keep historical experimental beta tags and files unchanged; this is not a scientifically validated stable release.
 
 ## 0.9.0-beta.5 — 2026-10-14

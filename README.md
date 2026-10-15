@@ -1,6 +1,6 @@
 # Meu Artigo
 
-**Release preparation (2026-10-15):** `v0.9.0-beta.6` is the **last planned experimental beta**. The integrated Skill source from [PR #70](https://github.com/rebsonm/MeuArtigoSkill/pull/70) is being prepared for manual publication. **Until its GitHub Release with ZIP and checksum actually exists, beta.5 remains the latest published and recommended download.** See [beta.6 release notes](docs/NOTAS-DA-VERSAO-0.9.0-beta.6.md). The standalone Skill does not activate the project-owned MCP server or its visual UI; live end-to-end host acceptance is outstanding.
+**Release preparation (2026-10-15):** `v0.9.0-beta.6` is the **last planned experimental beta**. The integrated Skill source from [PR #70](https://github.com/rebsonm/MeuArtigoSkill/pull/70) is being prepared for manual publication. **Until its GitHub Release with ZIP and checksum actually exists, beta.5 remains the latest published and recommended download.** See [beta.6 release notes](docs/NOTAS-DA-VERSAO-0.9.0-beta.6.md). The standalone Skill does not activate the project-owned external-tool server or its visual UI; live end-to-end host acceptance is outstanding.
 
 **Recommended published experimental beta: [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5)** · Published October 14, 2026. No stable release has been issued.
 
