@@ -34,6 +34,11 @@ def safe_relative(value: str) -> str:
     return p.as_posix()
 
 
+def parent_of(value: str) -> str:
+    parent = PurePosixPath(value).parent
+    return "" if parent == PurePosixPath(".") else parent.as_posix()
+
+
 def require_drive_id(value: str) -> str:
     if not isinstance(value, str) or not DRIVE_ID.fullmatch(value):
         raise ValueError("INVALID_DRIVE_ID")
@@ -90,7 +95,7 @@ def build_plan(root: Path, drive_root_id: str, *, allow_restricted: bool = False
         for name in dirs:
             rel = safe_relative((parent_path / name).relative_to(root).as_posix())
             entries.append({"type": "folder", "path": rel,
-                            "parent": str(PurePosixPath(rel).parent).replace(".", "")})
+                            "parent": parent_of(rel)})
         for name in sorted(files):
             if name in SKIP_FILES:
                 continue
@@ -125,7 +130,7 @@ def check_plan(plan: dict) -> None:
             raise ValueError("DUPLICATE_PLAN_PATH")
         seen.add(path)
         typ = e.get("type")
-        parent = str(PurePosixPath(path).parent).replace(".", "")
+        parent = parent_of(path)
         if e.get("parent") != parent or typ not in ("file", "folder"):
             raise ValueError("INVALID_PLAN_ENTRY")
         if typ == "folder":
