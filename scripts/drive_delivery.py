@@ -109,7 +109,7 @@ def build_plan(root: Path, drive_root_id: str, *, allow_restricted: bool = False
                     (p.suffix.lower() == ".pdf" or "FullText_Corpus" in p.parts)):
                 raise ValueError("RESTRICTED_MATERIAL_REQUIRES_RIGHTS_REVIEW")
             entries.append({"type": "file", "path": rel,
-                            "parent": str(PurePosixPath(rel).parent).replace(".", ""),
+                            "parent": parent_of(rel),
                             "sha256": sha256(p), "size": p.stat().st_size})
     entries.sort(key=lambda x: (x["path"].count("/"), x["path"], x["type"]))
     return {"schema": SCHEMA, "kind": "MEU_ARTIGO_DRIVE_DELIVERY_PLAN",
