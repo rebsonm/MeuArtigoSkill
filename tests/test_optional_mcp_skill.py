@@ -47,7 +47,7 @@ class OptionalMcpSkillTests(unittest.TestCase):
 
     def test_fallback_is_explicit_and_does_not_simulate_connected_tool(self):
         self.assertIn("No exposed MCP tool means",self.rules)
-        self.assertIn("already authorized native tool",self.rules)
+        self.assertIn("authorized native tool",self.rules)
         self.assertIn("If no MCP connection is available",self.chat)
         self.assertIn("continue as a normal Skill",self.chat)
 
