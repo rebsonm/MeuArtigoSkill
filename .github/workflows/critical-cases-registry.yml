@@ -85,3 +85,11 @@ jobs:
             --ledger "$RUNNER_TEMP/executed-critical-cases/evaluation_runs.jsonl"
           python scripts/evaluation_package.py verify \
             "$RUNNER_TEMP/executed-critical-cases/evaluation-replay.zip"
+      - name: Preserve synthetic-only evidence from executed controls
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: synthetic-critical-case-evidence
+          path: ${{ runner.temp }}/executed-critical-cases/
+          if-no-files-found: warn
+          retention-days: 30
