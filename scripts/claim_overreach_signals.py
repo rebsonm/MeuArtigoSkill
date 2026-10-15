@@ -61,7 +61,7 @@ def signals(claim: str, passage: str) -> dict:
         r"apenas|somente|duas unidades|uma regiao|amostra de conveniencia)\b")
 
     add("SIGNIFICANCE_POLARITY_CONFLICT",
-        r"\b(?:significantly (?:improv|reduc|increas)|statistically significant|"
+        r"\b(?:significantly (?:improv\w*|reduc\w*|increas\w*)|statistically significant|"
         r"melhora estatisticamente significativa|reduziu significativamente)\b",
         r"\b(?:no statistically significant|not statistically significant|"
         r"no significant difference|nao houve diferenca estatisticamente significativa|"
