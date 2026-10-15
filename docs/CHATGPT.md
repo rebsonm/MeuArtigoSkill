@@ -27,6 +27,10 @@ Read [SKILL.md](../SKILL.md). The Skill preserves the researcher's question and 
 
 For a project already in progress, read its actual `CONTINUIDADE.md`, logs and gates from the authorized workspace. If no project is selected, ask which article to continue rather than generate made-up progress counters.
 
+See the [observed host acceptance record](CHATGPT-MCP-HOST-ACCEPTANCE.md)
+for the separately verified installed beta.4 + connected GitHub tool test,
+and the still-unverified project-owned MCP Apps integration.
+
 ## Optional MCP tools within the Skill
 
 The Meu Artigo Skill **can call MCP tools already exposed and authorized in
