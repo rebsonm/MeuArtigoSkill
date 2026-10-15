@@ -44,6 +44,11 @@ Independently validate file hashes and recalculate every recorded outcome:
     python scripts/evaluation_package.py verify \
       /authorized/output/controlled-evaluation.zip
 
+REG-001 can store an optional evidence reference on a NOT_EVALUATED case.
+REG-019 preserves an optional *hash* of that reference without treating
+it as execution. Both a null and a valid SHA-256 are accepted in this
+unevaluated state, with observed count remaining zero.
+
 The strict verifier rejects archive tampering, duplicate or unexpected
 members, changed case IDs, inconsistent expected outcomes, missing source
 revision IDs, altered result counts and invalid original ledger pointers.

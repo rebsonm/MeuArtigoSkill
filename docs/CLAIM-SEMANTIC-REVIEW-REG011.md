@@ -67,12 +67,18 @@ Run:
 
     python scripts/semantic_claim_review.py /authorized/project \
       --assessments 04_Evidencias_e_Sintese/assessment.json \
-      --strict --output 04_Evidencias_e_Sintese/claim_review_report.json
+      --strict --output 98_Technical_Reports/claim_review_report.json
 
 A missing review remains PENDING_HUMAN_REVIEW. The tool never supplies a
 reviewer name or judgment itself. A bad source, missing DOI verification,
 unmatched quotation, retraction notice, missing human response, stale
 checksum or unsupported status causes a coded hold.
+
+Technical report exports are restricted to **new files directly inside**
+`98_Technical_Reports/` in the authorized local project. They cannot
+replace any canonical register, gate record, continuity document or other
+existing file. Symlink and traversal attempts are denied. These files are
+local and do not confirm Google Drive synchronization.
 
 ## Essential limitations
 

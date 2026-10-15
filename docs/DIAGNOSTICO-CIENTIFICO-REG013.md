@@ -29,7 +29,7 @@ review, independent study evaluation or certified scientific quality.
     python scripts/scientific_diagnostic.py /authorized/project
     python scripts/scientific_diagnostic.py /authorized/project --format json
     python scripts/scientific_diagnostic.py /authorized/project \
-      --format html --output 06_Submissao/Arquivos_Finais/diagnostic.html
+      --format html --output 98_Technical_Reports/diagnostic.html
 
 The optional separately declared human assessment input follows
 docs/CLAIM-SEMANTIC-REVIEW-REG011.md:
@@ -42,6 +42,12 @@ review is never silently replaced with fabricated results. Strict mode
 returns exit code 2 when coded findings remain; an invalid input or execution
 error returns 1. Zero coded findings does **not** mean the scientific article
 was validated, reviewed independently or approved for submission.
+
+Technical report exports are restricted to **new files directly inside**
+`98_Technical_Reports/` in the authorized local project. They cannot
+replace any canonical register, gate record, continuity document or other
+existing file. Symlink and traversal attempts are denied. These files are
+local and do not confirm Google Drive synchronization.
 
 ## Limitations and acceptance still pending
 

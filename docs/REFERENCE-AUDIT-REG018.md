@@ -17,11 +17,17 @@ existing real checks when access is authorized. A local report file is
 **optional** and is written only on explicit request:
 
     python scripts/reference_audit.py /authorized/project \
-      --output 06_Submissao/Arquivos_Finais/reference_audit.json
+      --output 98_Technical_Reports/reference_audit.json
 
 The report does not synchronize Google Drive or pretend a local copy is the
 canonical cloud state. Use actual authorized Drive integration and its receipt
 before making a sync claim.
+
+Technical report exports are restricted to **new files directly inside**
+`98_Technical_Reports/` in the authorized local project. They cannot
+replace any canonical register, gate record, continuity document or other
+existing file. Symlink and traversal attempts are denied. These files are
+local and do not confirm Google Drive synchronization.
 
 ## Findings, not editorial verdicts
 
