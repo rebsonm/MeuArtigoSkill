@@ -230,19 +230,6 @@ path, record the limitation and do not simulate an operation. Consult the
 
 **Next/próximo:** Use [authorized continuity and C.A.D.A.](references/project-state.md). For local approved fallback, run `scripts/next_step_router.py PROJECT`. Navigation never approves a gate or verifies Drive sync.
 
-**Resume safety check:** Treat `next_step_router.py` as the operational
-C.A.D.A. selector, but reconcile its output with the read-only
-`decision_continuity.compose` / `native_chat_dashboard.panel` projection
-before announcing that preparation may proceed. A missing or malformed
-`17_Decision_Log.csv`, an orphan/missing TRACE link for a recorded decision,
-or an unsafe method profile means `RECONCILIATION_REQUIRED`, even if the
-C.A.D.A. row itself is marked READY. A genuinely empty and readable
-decision ledger does not invent a past choice and does not by itself
-block technical preparation already permitted by the router.
-Never reconstruct the missing ledger from chat history, silently create a
-replacement record, reveal private decision text, or treat this check
-as approval of a scientific gate.
-
 **Native in-chat visual dashboard:** For progress requests, read the
 authorized canonical project and follow the
 [native presentation contract](references/native-chat-dashboard.md).
