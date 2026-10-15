@@ -176,7 +176,7 @@ class AdaptiveMethodGuideTests(unittest.TestCase):
 
     def test_competing_area_custom_traditions_remain_allowed(self):
         for term in ("historical","mathematical","normative","philosophical"):
-            self.assertIn(term," ".join(guide.preview()["options"][-1].values()).lower())
+            self.assertIn(term," ".join(str(v) for v in guide.preview()["options"][-1].values()).lower())
         p=guide.preview("CONCEPTUAL_THEORY")
         self.assertIn("OTHER_NOT_LISTED",{x["id"] for x in p["options"]})
 
