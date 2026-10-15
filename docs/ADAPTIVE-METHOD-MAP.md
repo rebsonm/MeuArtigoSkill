@@ -186,3 +186,69 @@ approve substantive design decisions and comply with ethical requirements
 where applicable. External disciplinary experts must independently assess
 the guidance before claims of universal scientific adequacy. The maintainer
 must explicitly authorize integrating PR #65, merging PR #66 or releasing.
+
+## Preventive methodological field preflight (experimental)
+
+The adaptive guide now includes `method_fill_preflight.py`, a **read-only
+inspection step** before any existing methodological field is updated.
+It is intentionally **not an automatic form-filler** or a new pathway
+around real scientific decisions.
+
+For an authorized existing project:
+
+    python scripts/method_fill_preflight.py /authorized/project
+    python scripts/method_fill_preflight.py /authorized/project --field sampling_logic
+    python scripts/method_fill_preflight.py /authorized/project --dimension analysis
+    python scripts/method_fill_preflight.py /authorized/project --field analysis_logic --option-id REFLEXIVE_THEMATIC --draft-file /authorized/local/draft.txt
+
+The user supplies or revises the actual proposal. The guide identifies the
+**existing** canonical method field when one exists, lists suggested content
+elements and relevant option limitations, and checks the draft's technical
+compatibility with the chosen route and field. The script never claims that
+it wrote a decision, inferred scientific adequacy, validated evidence or
+authenticated the person supplying the draft.
+
+### Preventive checks
+
+- Exact placeholder/workflow-status values such as `PENDING`,
+  `NOT_EXECUTED`, `APPROVED` or `N/A` are blocked as field content;
+  an ordinary discussion of an unfinished study is not automatically
+  treated as a placeholder.
+- An invalid field or an alternative from a different route is refused.
+- Existing canonical choices are not overwritten merely because an
+  assistant proposes new text; revision requires a separately documented
+  researcher decision.
+- Existing controlled vocabulary fields use the **current canonical
+  enums**, such as quantitative inference aim or mixed-methods design.
+- Unlisted methods and optional, noncanonical orientations (such as
+  results reporting) require deliberate researcher mapping rather than
+  inventing a new required field.
+- Very short descriptions and unsupported declarations of "validated
+  effectiveness" produce **cautions**, not fabricated semantic judgments.
+- When input is a **preview**, the output always blocks canonical writing
+  with `PREVIEW_NOT_CANONICAL_AUTHORIZATION`, even if the synthetic text
+  looks structurally reasonable.
+
+The confidential UTF-8 input is read locally with a size limit; reports
+contain **only its hash, bounded status codes and generic explanations**,
+not the raw proposal or any source text. The native chat panel includes
+`method_fill_guidance`, a guidance-only projection with no write action.
+
+`DRAFT_REQUIRES_HUMAN_REVIEW` means *only* that a supplied proposal did not
+trigger the implemented structural blockers. It must **never** be translated
+into "scientifically valid", "approved by the researcher" or "safe to
+write automatically". The validated method, human authorization,
+canonical-source reconciliation and any transaction/Drive synchronization
+remain separate requirements. No direct field-writing method is introduced
+here.
+
+Eight fictional end-to-end routes now exercise this preflight and verify
+that no preview document can be saved or counted as human approval.
+Software regressions do not establish the scientific suitability or
+cross-disciplinary validity of the written suggestions.
+
+**Human responsibility:** None for producing explanations or running these
+checks. **Real researcher approval is always necessary** before accepting
+a particular field value; an independent expert review remains necessary
+to claim validated methodological instruction across disciplines. The
+maintainer must explicitly approve merging or releasing this experiment.
