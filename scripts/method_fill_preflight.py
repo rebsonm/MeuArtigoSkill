@@ -62,10 +62,9 @@ def inspect(guide: dict, *, proposal: str|None=None,
     """Explain field and evaluate a candidate, never write or approve it."""
     if not isinstance(guide,dict):
         raise ValueError("Invalid guide payload")
-    route=guide.get("route_recorded")
-    if route is None and guide.get("status")=="ILLUSTRATIVE_PREVIEW":
-        # Preview can describe a form, but it cannot authorize a write.
-        route="PREVIEW_ONLY"
+    route=guide.get("route_recorded") or guide.get("preview_route")
+    preview_only=guide.get("bound_to_canonical_project") is False
+    # A preview knows the *illustrative* route but cannot authorize writes.
     field=guide.get("target_field")
     cards=guide.get("options") or []
     if not isinstance(cards,list) or not all(isinstance(c,dict) for c in cards):
@@ -89,6 +88,9 @@ def inspect(guide: dict, *, proposal: str|None=None,
     if blocked:
         findings.append(_finding("GUIDANCE_NOT_READY",
             "Canonical method profile is unavailable, inconsistent or this requirement is not applicable.",blocking=True))
+    if preview_only:
+        findings.append(_finding("PREVIEW_NOT_CANONICAL_AUTHORIZATION",
+            "An illustrative preview is not an authorized research project's decision.",blocking=True))
     if field is None or not canonical_field:
         findings.append(_finding("NO_CANONICAL_FIELD",
             "This orientation dimension cannot be written into the current method profile.",blocking=True))
@@ -133,6 +135,8 @@ def inspect(guide: dict, *, proposal: str|None=None,
         "schema":SCHEMA,
         "status":status,
         "route_recorded":guide.get("route_recorded"),
+        "preview_route":guide.get("preview_route"),
+        "bound_to_canonical_project":not preview_only and bool(guide.get("bound_to_canonical_project")),
         "target_field":field,
         "decision_dimension":guide.get("decision_dimension"),
         "route_previously_human_confirmed":guide.get("route_previously_human_confirmed") is True,
