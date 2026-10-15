@@ -39,9 +39,14 @@ docs/CLAIM-SEMANTIC-REVIEW-REG011.md:
 
 A missing or structurally invalid source, protocol, evidence register or
 review is never silently replaced with fabricated results. Strict mode
-returns exit code 2 when coded findings remain; an invalid input or execution
-error returns 1. Zero coded findings does **not** mean the scientific article
-was validated, reviewed independently or approved for submission.
+returns exit code 2 when blocking findings or **required non-advisory**
+technical/review conditions remain; an invalid input or execution error
+returns 1. A lexical overreach hint alone (and an otherwise formally
+recorded full-support declaration) does not make `--strict` fail.
+Counts distinguish `blocking_occurrences`, `review_occurrences`,
+`heuristic_advisory_occurrences` and `strict_required_occurrences`.
+Exit code 0 is **not** a scientific correctness certificate, authenticated
+human approval, or permission to submit.
 
 Technical report exports are restricted to **new files directly inside**
 `98_Technical_Reports/` in the authorized local project. They cannot

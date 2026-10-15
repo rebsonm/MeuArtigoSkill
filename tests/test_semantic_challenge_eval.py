@@ -123,7 +123,7 @@ class SemanticChallengeEvaluationTests(unittest.TestCase):
         self.assertNotIn(case["source_passage"],json.dumps(report))
         self.assertNotIn(case["claim_text"],json.dumps(report))
 
-    def test_strict_cli_returns_pending_review_for_heuristic_risk(self):
+    def test_strict_cli_keeps_advisory_visible_but_nonblocking(self):
         import contextlib
         import io
         from semantic_claim_review import main as review_main
@@ -135,9 +135,11 @@ class SemanticChallengeEvaluationTests(unittest.TestCase):
                                encoding="utf-8")
         with contextlib.redirect_stdout(io.StringIO()) as output:
             exit_code=review_main([str(root),"--assessments",str(assessments),"--strict"])
-        self.assertEqual(exit_code,2)
+        self.assertEqual(exit_code,0)
         report=json.loads(output.getvalue())
         self.assertGreater(report["heuristic_risk_occurrences"],0)
+        self.assertEqual(report["formal_review_requirements_pending"],0)
+        self.assertFalse(report["heuristic_signals_can_block_workflow"])
         self.assertFalse(report["gate_approval_performed"])
         self.assertFalse(report["semantic_support_proven"])
 

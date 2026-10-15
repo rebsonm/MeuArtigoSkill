@@ -90,9 +90,16 @@ These are **review requests**, not semantic entailment decisions. Even an empty
 set of indicators **does not** mean the claim is supported. A missing, stale or
 unmatched excerpt is NOT_EVALUATED for this additional screening.
 
-The strict command returns a pending-review status when such risk codes appear;
-it does not change a human declaration into authenticated approval, write any
-scientific gate or alter canonical data. A compact REG-013 report now shows
+**Review-only correction:** heuristic risk codes are explicitly ADVISORY.
+They do not change the formal review status or independently make the
+`--strict` exit code fail. A valid, declared review with lexical warnings
+remains `HUMAN_JUDGMENT_RECORDED_NOT_AUTHENTICATED`; the report preserves
+`semantic_risk_codes` and `heuristic_review_needed` for researcher attention.
+`--strict` returns 2 when required formal inputs/reviews are missing or
+invalid, including stale source reports, invented passages and mismatched
+evidence hashes. Exit code 0 means only that those *formal requirements*
+were met; it **never means** a human was authenticated, semantic support
+was established or a scientific gate approved. A compact REG-013 report now shows
 possible-overreach risk counts without revealing source text or personal data.
 
 This deterministic rule set was developed with the original 16 fictional
