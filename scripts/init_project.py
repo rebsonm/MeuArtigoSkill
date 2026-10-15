@@ -869,6 +869,16 @@ Updated: {date.today().isoformat()}
     atomic_write_text(cfg, json.dumps(cfg_data,ensure_ascii=False,indent=2)+"\n")
     print(root)
     print(f"matrix_status={matrix_status}")
+    print("init_result_json=" + json.dumps({
+        "schema": "MEU_ARTIGO_INIT_RESULT_V1",
+        "project_root": str(root),
+        "local_core_status": cfg_data["local_core_status"],
+        "visual_matrix_status": matrix_status,
+        "storage_mode": storage_mode,
+        "canonical_storage_backend": cfg_data["canonical_storage_backend"],
+        "drive_sync_verified_in_this_execution": False,
+        "human_scientific_gates_approved_by_initializer": False
+    }, ensure_ascii=False, sort_keys=True))
     return 0
 
 if __name__=="__main__":

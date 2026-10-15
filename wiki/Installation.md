@@ -4,14 +4,14 @@ The package is a **Skill ZIP** for compatible assistants. You do not need Git or
 
 ## Download
 
-**Last confirmed published experimental version:** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5).
+**Latest confirmed published experimental version:** [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6).
 
-The beta.6 changes are integrated into the repository, but the beta.6 installation ZIP is not yet confirmed as published. Check [all releases](https://github.com/rebsonm/MeuArtigoSkill/releases) for updates.
+The beta.6 Skill ZIP and checksum are now available on the published GitHub release. Check [all releases](https://github.com/rebsonm/MeuArtigoSkill/releases) for updates.
 
 ## Set up
 
 1. Open the published release page.
-2. Download its prepared `MeuArtigoSkill-v0.9.0-beta.5.zip`.
+2. Download its prepared `MeuArtigoSkill-v0.9.0-beta.6.zip`.
 3. Import that package using the Skills feature available in your assistant. Some accounts may not offer this feature.
 4. Ask: *"I want to write a scientific article with Meu Artigo. First check my available storage and tools."*
 

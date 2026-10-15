@@ -3,6 +3,16 @@
 
 ## Unreleased
 
+- Add source- versus package-aware local version diagnostics without claiming
+  host installation or publication authentication; expose machine-readable
+  initializer project root and optional spreadsheet status.
+- Add conservative lexical review of normative rules used as apparent
+  proof of observed compliance. This is not semantic entailment and cannot
+  substitute for independent human adjudication.
+- Clarify adaptive-method CLI examples and researcher-facing explanations.
+  The original scientific gates, evidence boundaries and storage authority
+  remain unchanged.
+
 - Prepare resumable host-assisted Google Drive project-tree delivery: local manifest, safe next-step recommendation, remote readback reconciliation and incomplete/conflict reporting. Offline synthetic tests are included, but no direct Drive adapter or authenticated end-to-end host test is claimed; published beta.6 assets remain untouched.
 
 No later software release is planned at this time; further changes require a new maintainer decision. The beta.6 item below is a release candidate until an actual tagged GitHub release is published.

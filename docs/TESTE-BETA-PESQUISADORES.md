@@ -2,7 +2,7 @@
 
 This **experimental beta** is open to voluntary use and feedback. The purpose of feedback is to identify confusing steps, accessibility barriers and scientific-governance risks, not to endorse the tool.
 
-**Installer currently confirmed:** [beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5). The beta.6 source is integrated, but do not claim to have tested its installed version until an actual beta.6 package is available and installed.
+**Installer currently confirmed:** [beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) with published ZIP and checksum. Tests of newer PR candidates must identify their actual commit; installing published beta.6 does not include those unmerged corrections.
 
 ## A simple way to try it
 
@@ -19,6 +19,10 @@ You do not have to complete an article, learn Git or understand programming to s
 - Whether methodological alternatives are appropriate to your field.
 - Whether the Skill explains its proposed next step and waits for consequential human decisions.
 - Whether cited passages really support the resulting statements.
+- Whether a cited **obligation** is mistakenly presented as evidence that a
+  rule was followed in real cases.
+- Whether the assistant distinguishes an inspected source VERSION from an
+  independently verified installed Skill package.
 - Whether storage and tool permissions are accurately described.
 - Whether a project saved to Drive appears as accessible subfolders and separate files, not only an archive.
 - Whether returning to a project feels understandable and safe.

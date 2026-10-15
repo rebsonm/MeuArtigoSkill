@@ -1,6 +1,6 @@
 # Meu Artigo v0.9.0-beta.6 — what's new
 
-**The last planned experimental beta.** This is a **pre-release, not a stable release**. The beta.6 changes have been integrated into the repository. Its public installation package is **not yet confirmed as published**. Until the complete beta.6 release is available, [beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the last confirmed installer.
+**The last planned experimental beta.** This is a **published GitHub Pre-release, not a stable release**, with an installable ZIP and checksum. The release was published on 2026-10-15; subsequently developed corrections are not silently included in the tagged archive.
 
 ## More useful when continuing an article
 
