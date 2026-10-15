@@ -16,6 +16,10 @@ OPTIONAL_PROTOCOL_DOCS={
     "docs/COMPATIBILIDADE-PLATAFORMAS.md",
     "tests/test_skill_public_boundary.py",
     "tests/test_optional_"+PROTOCOL_TERM+"_skill.py",
+    # Reviewed source-only integrated homologation; neither file is a server.
+    "scripts/homologate_integrated_skill.py",
+    "tests/test_integrated_skill_homologation.py",
+    "docs/INTEGRATED-SKILL-HOMOLOGATION.md",
 }
 SOURCE_TYPES={".py",".md",".yaml",".yml",".json",".ts",".html",".cff",".txt"}
 
