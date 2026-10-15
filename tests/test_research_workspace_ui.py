@@ -1,6 +1,6 @@
 """Interactive read-only offline research workspace: engineering fixtures.
 
-No user research, browser-host plugin installation, source validation, or
+No user research, browser-host deployment, source validation, or
 researcher authentication is claimed by this suite.
 """
 from __future__ import annotations
