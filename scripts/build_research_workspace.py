@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -144,8 +145,8 @@ def save(path: Path, html: str) -> None:
     """Create only, 0600. Never overwrite an existing private snapshot."""
     if not path.parent.is_dir() or path.is_symlink() or path.exists():
         raise ValueError("HTML output requires new name in an existing directory")
-    with path.open("x",encoding="utf-8",opener=lambda name,flags:
-                   __import__("os").open(name,flags,0o600)) as stream:
+    with open(path,"x",encoding="utf-8",opener=lambda name,flags:
+              os.open(name,flags,0o600)) as stream:
         stream.write(html)
 
 def main(argv=None) -> int:
