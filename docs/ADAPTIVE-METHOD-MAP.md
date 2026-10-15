@@ -252,3 +252,78 @@ checks. **Real researcher approval is always necessary** before accepting
 a particular field value; an independent expert review remains necessary
 to claim validated methodological instruction across disciplines. The
 maintainer must explicitly approve merging or releasing this experiment.
+
+
+## Supported canonical method-field write path (human-authorized)
+
+The opt-in \`scripts/commit_method_field.py\` command is the **supported**
+methodological-detail write path for new route-aware projects. It integrates
+the structural field preflight **before** a local canonical write, and
+repeats the validation **inside** an existing recoverable method journal.
+It does not silently migrate legacy or undecided projects, does not use
+test-generated decisions as real consent and cannot authenticate the
+researcher behind the evidence reference.
+
+Usage **only after the real researcher has independently made and
+documented the actual methodological decision**:
+
+    python scripts/commit_method_field.py /authorized/project \
+      --field material_sources \
+      --draft-file /authorized/local/researcher-reviewed-proposal.txt \
+      --decided-by "Actual researcher name" \
+      --evidence "Real original decision message/reference" \
+      --rationale "Researcher's genuine substantive justification with limitations" \
+      --option-id DOCUMENTS \
+      --researcher-reviewed
+
+The command requires an already confirmed method route whose original
+DEC record matches the canonical profile; a field from that route; a
+genuine researcher-declared decision, reference and rationale; safe
+unmodified canonical files; and no already closed/approved scientific
+gate 2–7. Controlled enums and exact placeholders are blocked. A
+previously populated field cannot be overwritten by an assistant
+suggestion. Advisory warnings require explicit
+\`--acknowledge-warnings\` **from the authorized researcher**, and this
+acknowledgment never means semantic validation.
+
+After accepted human declarations, the command writes only the approved
+method \`route_details\` field and appends a new METHOD DEC record and TRACE
+event under the existing five-file recoverable transaction. The project
+method route, seven scientific gate records and project configuration
+are not modified. A handled failure rolls back the five correlated
+files; abrupt interruptions require explicit recovery via:
+
+    python scripts/commit_method_field.py /authorized/project --recover-pending
+
+The command does not echo confidential draft text, and its result is
+\`DECLARED_RESEARCHER_METHOD_FIELD_RECORDED_NOT_AUTHENTICATED\`. This is
+a **declared recorded decision**, not independent authentication or
+scientific approval. It does not make Google Drive writes, and local
+transaction success does not prove Drive synchronization.
+
+### Independent defensive check at gate 2
+
+The method gate validator now independently rejects exact placeholder
+tokens within the required method-profile fields, even if someone edited
+the JSON directly without using the authorized writer. Existing
+controlled-vocabulary, method-coherence and declared prior-gate checks
+remain enforced.
+
+This is a **defense in depth, not a universal filesystem interceptor**:
+direct editing of files or unsupported external write tools can bypass
+the supported writer. Such edits are not guaranteed to be blocked at
+write time, and the gate validator's structural checks do **not**
+establish scientific validity. Real research may require other review
+procedures before any actual method decision is recorded.
+
+### Human responsibilities
+
+- **Now, during engineering tests:** no action from the maintainer or
+  research participants. Synthetic fixture actors are never real people.
+- **For a real method-field commit:** an actual researcher must decide,
+  review the exact field text and affirm the evidence reference and
+  rationale. A CLI flag alone does not authenticate the person.
+- **For disciplinary coverage/accuracy claims:** independent human
+  methodologists and an appropriate evaluation protocol are required.
+- **For integration, merge or release:** explicit maintainer authorization
+  is still required. PR #65 remains separate.
