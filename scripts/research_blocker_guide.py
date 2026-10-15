@@ -194,11 +194,6 @@ CATALOG={
         "The reported decision-continuity state is not supported by this guide.",
         "AUTHORIZED_OPERATOR",("DEC","TRACE"),
         "Re-read the existing decision records before choosing an action."),
-    "CANONICAL_NAVIGATION_STATUS_NOT_RECOGNIZED":(3,
-        "Navigation status is not recognized",
-        "The routing state has not been reviewed for this guidance layer.",
-        "AUTHORIZED_OPERATOR",("CADA","GATES"),
-        "Inspect the router input and update the software mapping separately."),
 }
 # Some unknown reasons originate in canonical validation and must *not*
 # be displayed as trusted or harmless instructions.
