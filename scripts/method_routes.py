@@ -204,9 +204,23 @@ def profile_issues(doc: dict, route: str, *, gate: str | None = None) -> list[st
         details = doc.get("route_details") or {}
         if not isinstance(details, dict):
             return problems + ["route_details must be a record"]
+        # Defensive validation at the SCIENTIFIC APPROVAL boundary.
+        # Even manually edited files must not turn workflow-status tokens
+        # into substantive method decisions. This does not block ordinary
+        # prose merely because it mentions pending research activities.
+        from method_fill_preflight import normalize, PLACEHOLDER_NORMALIZED
         for field in REQUIRED_DESIGN[route]:
-            if not str(details.get(field) or "").strip():
+            value = str(details.get(field) or "").strip()
+            if not value:
                 problems.append(f"method profile lacks {field} for {route}")
+            elif normalize(value) in PLACEHOLDER_NORMALIZED:
+                problems.append(f"method profile has placeholder value in {field} for {route}")
+        for field in ("research_question", "intended_inference", "study_limits",
+                      "human_route_reviewer", "human_route_decision_evidence",
+                      "human_route_rationale"):
+            value = str(doc.get(field) or "").strip()
+            if value and normalize(value) in PLACEHOLDER_NORMALIZED:
+                problems.append(f"method profile has placeholder value in {field}")
         onion = doc.get("onion") or {}
         if route in EMPIRICAL_ROUTES:
             if not isinstance(onion, dict):
