@@ -91,7 +91,9 @@ synchronization is verified.
 Preserve the research question and intended contribution. Choose a
 **provisional route** via [method pathways](docs/ROTAS-METODOLOGICAS.md)
 and [review design](references/review-design.md). `UNDECIDED` is not
-a confirmed scientific choice. Obtain the researcher's original,
+a confirmed scientific choice. Optional method choices: [adaptive guide](docs/ADAPTIVE-METHOD-MAP.md). Never autoselect or approve; allow other methods.
+
+Obtain the researcher's original,
 attributable methodological decision; use `scripts/choose_method_route.py`
 for newer route-aware projects. Before constructing a journal-specific
 manuscript, ask whether the researcher has selected a target journal,
@@ -218,10 +220,10 @@ submission without external confirmation. See
 
 ## 5. Platforms and interaction presentation
 
-Importing a Skill does not imply tool access, authenticated accounts,
-Python execution, browsing or cloud writing. Check the present platform's
-actual capabilities and permissions; when missing, give a truthful manual
-path, record the limitation and do not simulate an operation. Consult the
+Importing a Skill does not grant tools or authentication.
+For connected MCP tools, follow the [optional usage contract](references/mcp-tool-use.md);
+otherwise use the authorized native/manual path. Never simulate access.
+Consult the
 [platform matrix](docs/COMPATIBILIDADE-PLATAFORMAS.md) and guides for
 [ChatGPT](docs/CHATGPT.md), [Claude](docs/CLAUDE.md) and
 [Gemini](docs/GEMINI.md). Adapters never relax scientific or ethical controls.

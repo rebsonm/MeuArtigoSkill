@@ -15,6 +15,15 @@ scientific gates and limitations to the **researcher in the language
 of their actual conversation**. Journal/manuscript language is a
 separate choice: [language policy](../references/language-policy.md).
 
+## Optional adaptive methodological orientation
+
+The experimental [adaptive research map](ADAPTIVE-METHOD-MAP.md) offers
+non-ranking explanations of possible methodological paths based on the
+already recorded route and its **next unfilled field**. It is a
+read-only learning aid, **not** a scientific classification, an
+additional human gate, a substitute for the real researcher decision,
+or a constraint on unlisted disciplines. It may be bypassed.
+
 ## 1. Researcher decision and safe continuation
 
 - During project initialization, preserve the researcher's original

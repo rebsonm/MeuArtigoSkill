@@ -41,6 +41,8 @@ class MethodRouteTransactionTests(unittest.TestCase):
         self.mgmt.mkdir(parents=True)
         (self.mgmt / "PROJECT_CONFIG.json").write_text(json.dumps({
             "method_route_governance_required": True,
+            "storage_mode": "WORK_FALLBACK",
+            "fallback_authorized": True,
             "method_route": "UNDECIDED",
             "article_type": "review",
         }), encoding="utf-8")
@@ -70,6 +72,28 @@ class MethodRouteTransactionTests(unittest.TestCase):
             return original(path, *args, **kwargs)
 
         return mock.patch.object(Path, "write_text", fail_profile)
+
+    def test_rejects_unverified_drive_or_revoked_local_storage_before_writing(self):
+        config=self.mgmt/"PROJECT_CONFIG.json"
+        initial=json.loads(config.read_text())
+        for mode,allow in (("GOOGLE_DRIVE",True),
+                           ("GOOGLE_DRIVE",False),
+                           ("WORK_FALLBACK",False),
+                           ("UNKNOWN",True),
+                           (None,None)):
+            with self.subTest(mode=mode,allow=allow):
+                altered={**initial,"storage_mode":mode,
+                         "fallback_authorized":allow}
+                config.write_text(json.dumps(altered))
+                before={name:(self.mgmt/name).read_bytes() for name in tx.FILES}
+                with self.assertRaisesRegex(ValueError,
+                        "AUTHORIZED_LOCAL_CANONICAL_STORAGE_REQUIRED"):
+                    self.choose()
+                self.assertEqual(before,{name:(self.mgmt/name).read_bytes()
+                                         for name in tx.FILES})
+                self.assertFalse(tx.has_pending_method_route(self.root))
+        config.write_text(json.dumps(initial))
+        self.assertEqual(self.choose(),"DEC-0001")
 
     def test_success_writes_five_correlated_artifacts_and_cleans_journal(self):
         did = self.choose()

@@ -1,5 +1,10 @@
 # ChatGPT — Meu Artigo Skill
 
+
+> **Last planned experimental beta: `v0.9.0-beta.6` (release preparation, 2026-10-15).** The cumulative continuity, conversational resume and safe blocker guidance update is documented in [beta.6 release notes](NOTAS-DA-VERSAO-0.9.0-beta.6.md). **Beta.5 remains the latest published installer until GitHub actually publishes beta.6 and its checksum.** This last-beta designation is a plan, not stable certification; the project-owned MCP service and MCP Apps UI are not live-validated. Existing installations do not auto-update.
+
+The beta.6 standalone Skill is designed to use only external MCP tools that are **already connected and authorized** by the host. Installing the Skill ZIP alone cannot install, host, authorize or render the project-owned MCP Apps server; real beta.6 host acceptance is pending.
+
 > **Published release (2026-10-14):** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the **recommended experimental beta**. Its versioned [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip) and [SHA-256 checksum](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt) are available. Previous releases remain archived; installed Skills do not automatically update.
 
 
@@ -26,5 +31,95 @@ Illustrative statuses — **not actual test results**:
 Read [SKILL.md](../SKILL.md). The Skill preserves the researcher's question and requires a real human decision at each consequential scientific gate. `GOOGLE_DRIVE_FIRST` storage must be authorized and tested before storing a project. If it is unavailable, obtain explicit user approval before `WORK_FALLBACK`.
 
 For a project already in progress, read its actual `CONTINUIDADE.md`, logs and gates from the authorized workspace. If no project is selected, ask which article to continue rather than generate made-up progress counters.
+
+See the [observed host acceptance record](CHATGPT-MCP-HOST-ACCEPTANCE.md)
+for the separately verified installed beta.4 + connected GitHub tool test,
+and the still-unverified project-owned MCP Apps integration.
+
+## Optional MCP tools within the Skill
+
+The Meu Artigo Skill **can call MCP tools already exposed and authorized in
+the user's ChatGPT session**. It does **not** create or activate an MCP
+connection when its Skill ZIP is installed. An external MCP server/application
+must be connected separately where the account/workspace supports it.
+Interactive MCP Apps UI is not the same as native conversational presentation
+and is never promised by installing a Skill.
+
+Follow the [optional tool-use protocol](../references/mcp-tool-use.md):
+verify real tools and permissions, identify the selected project, read actual
+canonical source records, reconcile DEC/TRACE, the seven human gates and
+C.A.D.A., then present the next valid action without inventing tool access.
+If no MCP connection is available, **continue as a normal Skill** with already
+authorized native tools or a permitted manual path. Do not claim the
+GitHub-based experimental adapter was installed or tested in this account.
+
+## Local method-writer authorization
+
+The Skill's local method-route and method-detail writers reject writes
+unless `PROJECT_CONFIG.json` explicitly records an authorized
+`WORK_FALLBACK`. Files copied from a Drive-canonical project remain
+read-only staging until their authorized canonical store and actual
+synchronization have been verified. A human decision is required for the
+method and separately for any storage fallback; one does not imply the
+other. These software checks are not independent identity authentication.
+
+## Conversational continuation
+
+For `next`, `vamos continuar` or similar messages **inside an actual
+selected research project**, use the authorized canonical records first.
+For an authorized local `WORK_FALLBACK` with Python access, optionally
+run `python scripts/research_resume_brief.py PROJECT --format json`.
+This uses the existing native panel and presents only a read-only
+continuation summary; it creates no second task board, DEC record,
+scientific approval or cloud synchronization receipt.
+
+Present the last recorded DEC_ID (or say unavailable), the next existing
+CADA_ID/GATE_ID and responsible actor, and one specific blocker or next
+method field. Never execute a task simply because `next` was typed.
+If the project is Drive-canonical or storage permissions are unverified,
+review the canonical Drive workspace directly; do not use the local
+summary to justify a change. The CLI text fallback is English-first; for researcher-facing responses
+use the structured JSON and the Skill's existing automatic language policy.
+
+## Explain blockers in the same conversation
+
+After reading a real authorized project, use
+`scripts/research_blocker_guide.py PROJECT --format json` when the
+resume view is blocked. The read-only guide maps recorded blocker codes
+to plain-language reasons, the original canonical files to review,
+responsible actor and one safe non-writing next step. The host translates
+the explanation into the researcher's active language.
+
+Do not manufacture a repair or imply that `next` is approval. If the
+project uses canonical Drive, no local snapshot is sufficient evidence
+of access or synchronization. The guide may help explain what should
+be checked, but actual authorized Drive reads and scientific decisions
+remain governed by the original process. No task, gate, method choice,
+storage consent or synchronization status is modified by this view.
+
+## Resume safety: one answer from the canonical records
+
+When a researcher asks to continue an existing authorized project, use
+`CONTINUIDADE.md`, the canonical C.A.D.A. register, seven human gates,
+`17_Decision_Log.csv`, `13_Traceability_Log.csv`, and
+`METHOD_PROFILE.json`. The Skill's `native_chat_dashboard.py` projects
+these existing records, with `next_step_router.py` selecting the operational
+step and `decision_continuity.py` checking recorded method/provenance.
+Do **not** start a second project dashboard or infer progress from the chat.
+
+If the DEC register is missing/malformed or the latest recorded decision
+lacks an existing TRACE link, report a **reconciliation blocker**. A
+structurally eligible C.A.D.A. action is not safely resumable while those
+records disagree. In the plain-text view the same blocker must disable
+`technical_preparation_possible`. A correctly initialized, readable,
+header-only DEC register is different: it means no recorded decision, not
+automatically a corrupted file.
+
+Show briefly what is actually known (last decision ID and status, next
+existing CADA/GATE ID, actor, first blocker, verification needed), without
+exposing private decision prose. A human must decide scientific choices;
+the local view neither authenticates people nor verifies Drive sync.
+No user action is required for synthetic engineering tests; a real
+researcher/operator must reconcile damaged project evidence before work.
 
 A Skill's operation and generated artifacts depend on the real tools available. It cannot assert external article submission, publisher content access or data synchronization without evidence.

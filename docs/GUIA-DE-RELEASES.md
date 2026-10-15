@@ -161,3 +161,7 @@ The experimental beta label must be retained; a stable v1.0.0 would
 require a separate decision. The redundant discovery of
 15 Phase-5 unit tests was corrected; software regression counts are
 not measures of scientific validity.
+
+## Last planned beta: 0.9.0-beta.6 (2026-10-15 preparation)
+
+The maintainer authorized consolidating PR #70 into the final *planned* experimental beta.6 and documenting that status across the repository. This does **not** assert that beta.6 is stable or that the custom external-tool server and external-tool Apps UI have passed authenticated real-host acceptance. The existing manual workflow remains the only publishing route: merge the reviewed PR to `main`, dispatch **Publish beta (manual)** with `publish-beta` on the same UTC day recorded in `CITATION.cff`, then verify the tag, ZIP and SHA-256. Only after successful release verification may `OFFICIAL_SKILL_RELEASE` and download recommendations switch from beta.5 to beta.6. Do not silently update installed Skills or replace archived release assets.

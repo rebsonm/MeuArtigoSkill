@@ -1,5 +1,10 @@
 # Meu Artigo — short external beta-testing guide
 
+
+> **Last planned experimental beta: `v0.9.0-beta.6` (release preparation, 2026-10-15).** The cumulative continuity, conversational resume and safe blocker guidance update is documented in [beta.6 release notes](NOTAS-DA-VERSAO-0.9.0-beta.6.md). **Beta.5 remains the latest published installer until GitHub actually publishes beta.6 and its checksum.** This last-beta designation is a plan, not stable certification; the project-owned external-tool service and external-tool Apps UI are not live-validated. Existing installations do not auto-update.
+
+**Additional beta.6 acceptance tests once the tagged installer is actually available:** check that `vamos continuar` uses real authorized records; a missing DEC/TRACE link blocks continuation rather than approving a task; known blockers are explained without exposing private text; a Drive-canonical local mirror is not silently promoted to writable storage; absence of external-tool does not disable the standalone Skill. Record the actual installed version. These tests do not presume that the private external-tool server is connected.
+
 > **Published release (2026-10-14):** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the **recommended experimental beta**. Its versioned [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip) and [SHA-256 checksum](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt) are available. Previous releases remain archived; installed Skills do not automatically update.
 
 

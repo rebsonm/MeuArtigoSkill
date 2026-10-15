@@ -101,6 +101,82 @@ approval of GATE-0001–GATE-0007. A documented approval is not proof of the
 researcher's identity. If continuity, dependencies, storage or transactions
 are unverified, surface the blocker rather than moving to a later stage.
 
+## Conversational resume — `continue` / `próximo` / `next`
+
+For a selected, **authorized** local/Work project, the Skill may use
+`scripts/research_resume_brief.py PROJECT --format json`. It reads the
+same `native_chat_dashboard.panel`, which already reconciles C.A.D.A.,
+the seven human gates, DEC/TRACE, method profile and known continuation
+conflicts. This is an **optional read-only view**, not a new scientific
+control, persistent progress ledger, external service or method choice.
+
+Respond in the researcher's conversational language and include only:
+the last **recorded** decision ID (if reliably present, never a claim
+of human authentication); the recorded methodological route and next
+missing required field (not an evaluation of completeness); the existing
+next CADA_ID/GATE_ID and responsible actor; the first blocker and what
+original records must be reviewed; and an invitation to explore the
+next valid step without treating a chat navigation request as approval.
+The brief refuses to disclose private researcher rationale, task title,
+`Next_action` prose, sources, documents or storage credentials.
+
+The result is always guidance. A `TECHNICAL_PREPARATION_CANDIDATE` is a
+router-derived *candidate*, **not execution authorization**. Before
+actually running a task, independently re-check the current canonical
+state, real operator permission, and the existing C.A.D.A. rules.
+A `RECONCILIATION_REQUIRED` state permits an explanation and original
+record review, not technical task execution or a gate transition.
+
+A local bridge/snapshot cannot verify canonical Google Drive sync.
+The resume brief therefore blocks local technical preparation on
+Drive-canonical mirrors and on local projects without an explicitly
+recorded `WORK_FALLBACK` authorization. For Drive projects, read and
+reconcile the canonical records using the **authorized Drive tools
+themselves**; do not promote a local snapshot to the source of truth.
+A missing actual project must trigger selection of an authorized project,
+not a fictional resume. When local scripts are unavailable, apply these
+same rules to the verified records through the host's native interface.
+The JSON status codes are locale-neutral; host language adaptation
+does not change the decisions or read/write permissions.
+
+## Conversational blocker resolution (safe explanation only)
+
+When the resume summary reports `RECONCILIATION_REQUIRED` or the
+researcher asks why the work cannot continue, the Skill can run
+`python scripts/research_blocker_guide.py PROJECT --format json`
+for an **already selected, authorized local project**. This tool composes
+the previous read-only `research_resume_brief` and never edits records.
+For Drive-canonical research, it **cannot** establish current Drive
+access/synchronization; inspect the canonical files via authorized
+Drive tools and apply the same conservative principles in chat.
+
+Speak the researcher's language. Prefer four concise elements:
+**what is blocking progress** (an explanation, not just an internal
+status code), **why it matters**, **which original records need review**,
+and **who is responsible for the decision or verification**. Present
+the most consequential issue first. When multiple issues exist,
+progressively disclose details, never claim that a code is evidence of
+file corruption or of real-world scientific invalidity.
+
+A safe interaction offers only real read-only alternatives: show the
+known recorded reference IDs, compare canonical DEC/TRACE, inspect
+C.A.D.A./continuity evidence, or discuss method options without
+recording a researcher choice. A journal recovery, storage fallback,
+methodological choice, gate approval, sync or task-state change requires
+the existing governed workflow and **independent rechecking of current
+authorization**; no click, `next`, `repair` or merely viewing this
+guidance authorizes a write. Do not ask for credentials in chat.
+Unknown blocker codes are deliberately summarized as
+`UNCLASSIFIED_RECONCILIATION_CAUSE` instead of being echoed as
+trusted instructions.
+
+Only fixed public relative canonical filenames and technical status
+labels are emitted. The guide never exports the original decision
+rationale, research content, source excerpts, private C.A.D.A.
+`Next_action` or filesystem paths. It cannot verify researcher identity,
+user experience or real cloud synchronization. No extra installation
+is required beyond the normal Skill execution environment.
+
 ## Renderer choice and graceful fallback
 
 - If host-provided native visual elements are available, use their
