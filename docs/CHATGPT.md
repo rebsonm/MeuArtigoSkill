@@ -73,9 +73,8 @@ CADA_ID/GATE_ID and responsible actor, and one specific blocker or next
 method field. Never execute a task simply because `next` was typed.
 If the project is Drive-canonical or storage permissions are unverified,
 review the canonical Drive workspace directly; do not use the local
-summary to justify a change. The plain-text CLI fallback is in Portuguese;
-for other user languages use the structured JSON and the existing
-language policy.
+summary to justify a change. The CLI text fallback is English-first; for researcher-facing responses
+use the structured JSON and the Skill's existing automatic language policy.
 
 ## Resume safety: one answer from the canonical records
 
