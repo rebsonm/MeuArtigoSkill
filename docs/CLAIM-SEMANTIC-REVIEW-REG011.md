@@ -88,5 +88,5 @@ checksum or unsupported status causes a coded hold.
   project; the output redacts content and stores hashes/statuses only.
 - The data can still be sensitive; share only after legitimate privacy review.
 - The next increment should support researcher-facing comparison in the
-  native chat/plugin UI and an independent-blinded review protocol if real
+  native chat interface and an independent-blinded review protocol if real
   scientific validation is pursued.
