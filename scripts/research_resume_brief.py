@@ -83,8 +83,8 @@ def from_panel(snapshot: dict) -> dict:
                 "HUMAN_GATE_DECISION_REQUIRED","BLOCKED","BLOCKED_TASK",
                 "CANONICAL_STORAGE_RECHECK_REQUIRED",
                 "CADA_CONTINUITY_INTEGRITY_REVIEW","RECONCILIATION_REQUIRED",
-                "NO_NEXT_ACTION","HUMAN_DECISION_REQUIRED",
-                "PENDING_RESEARCH_TRANSACTION_RECOVERY",
+                "TASK_EXECUTION_PERMISSION_REVIEW","NO_RECORDED_NEXT_ACTION",
+                "CONTINUITY_RECONCILIATION_REQUIRED",
             }):
         # A new router status must be inspected before being interpreted.
         blockers.append("CANONICAL_NAVIGATION_STATUS_NOT_RECOGNIZED")
