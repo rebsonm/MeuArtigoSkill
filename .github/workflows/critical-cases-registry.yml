@@ -17,7 +17,6 @@ on:
       - "tests/test_semantic_claim_review.py"
       - "docs/CLAIM-SEMANTIC-REVIEW-REG011.md"
       - "tests/test_reference_audit.py"
-      - "docs/IMMEDIATE-RADAR-IMPROVEMENTS.md"
       - "benchmarks/critical_cases_v1.json"
       - ".github/workflows/critical-cases-registry.yml"
   push:
@@ -38,7 +37,6 @@ on:
       - "tests/test_semantic_claim_review.py"
       - "docs/CLAIM-SEMANTIC-REVIEW-REG011.md"
       - "tests/test_reference_audit.py"
-      - "docs/IMMEDIATE-RADAR-IMPROVEMENTS.md"
       - "benchmarks/critical_cases_v1.json"
       - ".github/workflows/critical-cases-registry.yml"
 permissions:
