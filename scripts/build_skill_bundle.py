@@ -33,6 +33,7 @@ EXCLUDED_SCRIPT_NAMES = frozenset({
     "check_release_metadata.py", "release_audit.py",
     "smoke_test_provenance.py", "sync_version.py",
     "build_skill_bundle.py", "quality_benchmark.py",
+    "mcp_preview_projection.py",
     "bundle_dependency_audit.py",
 })
 EXCLUDED_DOC_NAMES = frozenset({
