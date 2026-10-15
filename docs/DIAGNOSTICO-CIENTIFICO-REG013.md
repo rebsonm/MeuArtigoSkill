@@ -1,62 +1,63 @@
-# REG-013 — Diagnóstico científico compacto de uma página
+# REG-013 — One-page scientific diagnostic
 
-A REG-013 é uma **triagem técnica de apoio ao pesquisador**, não um parecer
-editorial, análise por pares, avaliação independente da pesquisa nem certificado
-de qualidade científica. O relatório resume apenas informações realmente
-registradas e documenta suas incertezas.
+REG-013 is a **technical research-support diagnostic**, not editorial peer
+review, independent study evaluation or certified scientific quality.
 
-## O que foi implementado
+## Implemented behavior
 
-- Consolidação, em modo somente leitura, da auditoria de referências REG-018,
-  da revisão documentada de afirmações REG-011 e do inventário estrutural
-  de decisões do protocolo de pesquisa.
-- Separação entre **bloqueios objetivos** e **assuntos para revisão humana**,
-  incluindo fonte desatualizada ou indisponível, referência incompatível,
-  passagens conflitantes, avaliação humana não documentada e pendências no
-  protocolo. Um protocolo preenchido não prova método adequado.
-- Ranking determinístico de até seis categorias de alertas e quatro ações,
-  com contagem total e indicador de categorias ocultas. Achados repetidos
-  ficam agrupados por tipo; os totais continuam explícitos.
-- Identificadores técnicos normalizados e hashes SHA-256 dos insumos.
-  Sem cópias de títulos privados, textos integrais, trechos, justificativas
-  ou nomes de revisores no relatório.
-- Saída Markdown compacta (limite de 28 linhas/3.300 caracteres), JSON
-  para revisão técnica e HTML otimizado para impressão em página A4.
-  A paginação final pode variar por navegador, fonte e impressora.
-- Nenhuma modificação nos sete gates, arquivos canônicos, decisões humanas
-  ou registros remotos.
+- Read-only consolidation of the REG-018 bibliography and canonical citation
+  audit, the REG-011 documented claim-to-passage review, and a limited
+  structural inventory of decisions in the research protocol.
+- Separate **objective blockers** from **items requiring human judgment**:
+  outdated source verification, inconsistent references, unsupported links,
+  uncertain source access, undeclared human reviews, and incomplete protocol
+  records. A populated protocol cannot establish methodological adequacy.
+- Deterministic sorting of up to six finding categories and four practical
+  next actions, with complete category counts and an explicit omitted count.
+  Repeated findings are grouped by category instead of creating long lists.
+- Stable technical IDs and source-input SHA-256 hashes. The published report
+  omits bibliographic titles, copyrighted passages, reviewer names,
+  free-text rationales and internal source-file paths.
+- Three outputs: compact Markdown (no more than 28 lines/3,300 characters),
+  detailed structured JSON and print-friendly A4 HTML. Actual physical
+  pagination depends on available fonts, browser and print settings.
+- No changes to existing seven gates, canonical scientific files, recorded
+  human decisions, or remote account data.
 
-## Executar após acesso autorizado ao projeto
+## Use after authorized access to a research project
 
-    python scripts/scientific_diagnostic.py /caminho/projeto
-    python scripts/scientific_diagnostic.py /caminho/projeto --format json
-    python scripts/scientific_diagnostic.py /caminho/projeto \
-      --format html --output 06_Submissao/Arquivos_Finais/diagnostico.html
+    python scripts/scientific_diagnostic.py /authorized/project
+    python scripts/scientific_diagnostic.py /authorized/project --format json
+    python scripts/scientific_diagnostic.py /authorized/project \
+      --format html --output 06_Submissao/Arquivos_Finais/diagnostic.html
 
-Pode receber um arquivo de avaliação humana preparado separadamente, conforme
+The optional separately declared human assessment input follows
 docs/CLAIM-SEMANTIC-REVIEW-REG011.md:
 
-    python scripts/scientific_diagnostic.py /caminho/projeto \
-      --assessments 04_Evidencias_e_Sintese/assessment.json \
-      --strict
+    python scripts/scientific_diagnostic.py /authorized/project \
+      --assessments 04_Evidencias_e_Sintese/assessment.json --strict
 
-O modo estrito retorna código 2 quando existem alertas; erros estruturais
-retornam 1. A ausência de alertas **não** é aprovação científica e nunca
-gera conclusão automática de avaliação por pares.
+A missing or structurally invalid source, protocol, evidence register or
+review is never silently replaced with fabricated results. Strict mode
+returns exit code 2 when coded findings remain; an invalid input or execution
+error returns 1. Zero coded findings does **not** mean the scientific article
+was validated, reviewed independently or approved for submission.
 
-## Limites a preservar
+## Limitations and acceptance still pending
 
-- Citações inseridas no corpo do manuscrito final não são analisadas nesta
-  etapa; REG-018 ainda requer um parser específico do formato autorizado.
-- O script não analisa substancialmente desenho de pesquisa, métodos,
-  interpretação, originalidade ou rigor científico; só registra se o
-  protocolo contém decisões e quais campos parecem pendentes.
-- REG-011 também não é um verificador automático de sustentação semântica:
-  registra julgamentos humanos declarados, sem autenticá-los.
-- Um relatório local não equivale a sincronização confirmada no Drive.
-- Os testes são sintéticos e verificam o software, não a qualidade de
-  trabalhos científicos reais.
+- In-text citations in the canonical manuscript are not yet parsed. REG-018
+  requires format-specific, authorized manuscript reconciliation.
+- The protocol inventory records presence and unresolved states only. It does
+  not evaluate the scientific fit, completeness or rigor of the method.
+- REG-011 has no automatic semantic-entailment judgment. It records declared
+  reviewer decisions without independent authentication.
+- A local report is not proof of synchronized Google Drive storage.
+- All automated tests use synthetic material. Passing them does not prove
+  the quality of actual scientific manuscripts.
 
-**Critério de aceite futuro:** demonstrar a legibilidade em uma página A4
-nos ambientes suportados, revisar uma amostra autorizada com pesquisador real,
-registrar erros e limitações, sem extrapolar para validação científica geral.
+Before considering this improvement complete, conduct real authorized
+researcher usability checks, confirm one-page print layout in supported
+environments and document both diagnostic false positives and omissions.
+Source comments and repository documents are English-first; the assistant
+can communicate these findings in the researcher's language as specified
+by references/language-policy.md.
