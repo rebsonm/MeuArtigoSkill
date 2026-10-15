@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Meu Artigo — Mapa metodológico no ChatGPT</title>
+<style>
+:root{font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--color-text-primary,#233745);background:var(--color-background-primary,#fff)}
+*{box-sizing:border-box}body{margin:0;padding:16px}.shell{max-width:800px;margin:auto}
+h1{font-size:1.28rem;margin:0 0 5px}h2{font-size:1.05rem;margin:0 0 10px}h3{font-size:.96rem;margin:0 0 5px}
+p{margin:5px 0 10px}.muted{color:var(--color-text-secondary,#536675)}.tiny{font-size:12px}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.card{border:1px solid var(--color-border-primary,#d5dfe5);border-radius:12px;padding:14px;margin:10px 0}
+.option{border-left:3px solid var(--color-border-primary,#90a6b5)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+select,button,textarea{font:inherit;color:inherit;background:var(--color-background-primary,#fff);border:1px solid var(--color-border-primary,#c9d5dd);border-radius:9px;padding:8px}
+button{cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}button:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #4382b7}
+textarea{width:100%;min-height:78px;resize:vertical}label{font-weight:600}.warn{border-left:3px solid #ab792e;padding-left:10px}
+.smallcap{font-size:11px;text-transform:uppercase;letter-spacing:.045em;font-weight:700;margin-top:7px}
+footer{font-size:12px;color:var(--color-text-secondary,#536675);margin-top:14px}
+@media(max-width:540px){body{padding:10px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header>
+<h1>Meu Artigo · Mapa metodológico</h1>
+<p class="muted">Explore, compare e fundamente caminhos científicos. O catálogo não escolhe por você.</p>
+<p class="tiny warn"><strong>Prévia fictícia.</strong> Esta integração não acessa seu projeto, Drive ou decisões reais; nenhuma aprovação é registrada.</p>
+</header>
+<section class="card" aria-label="Escolha de rota ilustrativa">
+<div class="row">
+<label for="route">Rota ilustrativa</label>
+<select id="route">
+<option value="UNDECIDED">Ainda não decidida</option>
+<option value="QUALITATIVE" selected>Qualitativa</option>
+<option value="QUANTITATIVE">Quantitativa</option>
+<option value="MIXED_METHODS">Métodos mistos</option>
+<option value="INTEGRATIVE_REVIEW">Revisão integrativa</option>
+<option value="SYSTEMATIC_REVIEW">Revisão sistemática</option>
+<option value="PROBLEMATIZING_REVIEW">Revisão problematizadora</option>
+<option value="CONCEPTUAL_THEORY">Teoria conceitual</option>
+<option value="DESIGN_SCIENCE">Design Science</option>
+<option value="OTHER_NOT_LISTED">Outra tradição não listada</option>
+</select>
+<button id="load" type="button">Explorar</button>
+</div>
+<div id="status" class="muted tiny" role="status" aria-live="polite">Conectando à interface MCP Apps…</div>
+</section>
+<div id="research" hidden>
+<section class="card">
+<div class="row"><h2>Alternativas possíveis</h2><span class="tiny muted">Não ranqueadas</span></div>
+<div class="row"><label for="dimension">Decisão</label>
+<select id="dimension">
+<option value="overview">Percurso metodológico</option>
+<option value="sampling">Amostragem ou seleção</option>
+<option value="sources">Fontes e materiais</option>
+<option value="analysis">Análise</option>
+<option value="inference">Inferência e limites</option>
+<option value="reporting">Comunicação de resultados</option>
+</select>
+<button type="button" id="all">Ver todas</button>
+</div>
+<p id="field" class="tiny muted"></p>
+<div id="options" aria-live="polite"></div>
+<div class="row"><button type="button" id="compare" disabled>Comparar duas alternativas</button><span class="tiny muted" id="count"></span></div>
+<div id="details" aria-live="polite"></div>
+</section>
+<section class="card">
+<h2>Preparar justificativa (não salvar)</h2>
+<label for="draft" class="tiny">Texto privado, apenas nesta tela</label>
+<textarea id="draft" maxlength="12000" placeholder="Por que esta alternativa pode responder à sua questão? Quais evidências e limites?"></textarea>
+<div class="row"><button type="button" id="review">Conferir apenas completude básica</button><button id="clear" type="button">Limpar</button></div>
+<p id="review-result" class="tiny" role="status"></p>
+<p class="tiny muted">Não há avaliação científica, envio do rascunho, gravação de DEC/TRACE ou aprovação de gate nesta prévia.</p>
+</section>
+<section class="card">
+<h2>Continuidade ilustrativa</h2>
+<p id="next-action"></p><p class="tiny muted">O C.A.D.A. de um projeto real requer leitura autorizada e autenticação; aqui não existem tarefas reais.</p>
+</section>
+</div>
+<footer>Meu Artigo experimental · dados de catálogo gerados pelo núcleo Python da Skill · decisão científica humana obrigatória.</footer>
+</div>
+<script>
+(() => {
+"use strict";
+const $ = id => document.getElementById(id);
+const dims = ["sampling","sources","analysis","inference","reporting"];
+let rpcId = 0, pending = new Map(), snapshot = null, selected = [], showAll = false, initialized = false;
+function txt(x, fallback="Não informado"){return x === undefined || x === null || x === "" ? fallback : String(x);}
+function node(tag,text,parent,cls){const el=document.createElement(tag);if(cls)el.className=cls;if(text!==null&&text!==undefined)el.textContent=String(text);parent.append(el);return el;}
+function rpc(method,params){return new Promise((resolve,reject)=>{const id=++rpcId;pending.set(id,{resolve,reject});window.parent.postMessage({jsonrpc:"2.0",id,method,params},"*");});}
+function notify(method,params={}){window.parent.postMessage({jsonrpc:"2.0",method,params},"*");}
+function applyResult(result){
+ const map = result?.structuredContent?.researchMap;
+ if(!map)return;
+ if(map.mcp_app?.fictional_only !== true || map.is_project_bound !== false ||
+    map.mcp_app?.write_tools_available !== false || map.mcp_app?.real_project_access !== false){
+   $("status").textContent="Contrato não confiável: prévia rejeitada"; return;
+ }
+ snapshot=map;selected=[];showAll=false;$("research").hidden=false;
+ $("dimension").value="overview";$("route").value=map.active_route;
+ const next=map.decision_continuity?.next_action;
+ $("next-action").textContent=txt(next?.explanation,"Explore opções. A decisão deve ser tomada pelo pesquisador.");
+ $("status").textContent="Catálogo fictício carregado · sem acesso a projetos privados";
+ dims.forEach(d=>{$("dimension").querySelector('[value="'+d+'"]').disabled=!map.method_guides?.dimensions?.[d];});
+ render();
+}
+window.addEventListener("message",ev=>{
+ if(ev.source !== window.parent || ev.data?.jsonrpc !== "2.0")return;
+ const msg=ev.data;
+ if(typeof msg.id==="number"){
+  const entry=pending.get(msg.id);if(!entry)return;pending.delete(msg.id);
+  if(msg.error)entry.reject(new Error("Host MCP error"));else entry.resolve(msg.result);
+ }else if(msg.method==="ui/notifications/tool-result"){
+  applyResult(msg.params);
+ }
+});
+const ready=(async()=>{try{
+ await rpc("ui/initialize",{appInfo:{name:"meu-artigo-research-map",version:"0.1.0"},appCapabilities:{},protocolVersion:"2026-01-26"});
+ notify("ui/notifications/initialized");initialized=true;
+ $("status").textContent="Conectado · escolha uma rota fictícia para explorar";
+}catch{$("status").textContent="A interface MCP Apps não está disponível neste host";throw new Error("MCP Apps unavailable");}})();
+async function load(){
+ $("load").disabled=true;$("status").textContent="Consultando catálogo científico da Skill…";
+ try{
+  await ready;
+  const r=await rpc("tools/call",{name:"meu_artigo_preview",arguments:{route:$("route").value,mode:"FULL"}});
+  if(r?.isError)throw new Error("Preview tool failed");
+  applyResult(r);
+ }catch{
+  $("status").textContent="Não foi possível consultar a prévia. Nenhum dado foi alterado.";
+ }finally{$("load").disabled=false;}
+}
+function guide(){if(!snapshot)return null;const d=$("dimension").value;return d==="overview"?snapshot.method_guides?.overview:snapshot.method_guides?.dimensions?.[d];}
+function fields(item,target){
+ for(const [label,key] of [["Quando considerar","when_to_consider"],["Potencial","potential"],["Limitação","limits"],["Consequência","what_changes_next"]]){
+  if(item[key]){node("div",label,target,"smallcap");node("p",item[key],target);}
+ }
+}
+function details(items,title){
+ const root=$("details");root.replaceChildren();const panel=node("div",null,root,"card");
+ node("h3",title,panel);
+ const grid=node("div",null,panel,items.length===2?"grid":"");
+ for(const item of items){const box=node("article",null,grid);node("h3",item.label,box);fields(item,box);}
+ node("p","A escolha e sua justificativa precisam ser declaradas pelo pesquisador. Nada foi registrado.",panel,"tiny muted");
+}
+function render(){
+ $("options").replaceChildren();$("details").replaceChildren();selected=[];$("compare").disabled=true;
+ const g=guide();if(!g){node("p","Esta dimensão não está disponível para a rota ilustrativa.",$("options"));return;}
+ $("field").textContent="Campo canônico: "+txt(g.target_field,"apenas orientação")+" · "+txt(g.status)+" · decisão humana necessária";
+ const options=g.options||[], other=options.find(x=>x.id==="OTHER_NOT_LISTED");
+ const main=options.filter(x=>x.id!=="OTHER_NOT_LISTED");
+ const showing=(showAll?main:main.slice(0,3)).concat(other?[other]:[]);
+ $("all").textContent=showAll?"Mostrar menos":"Ver todas ("+options.length+")";
+ $("all").disabled=main.length<=3;
+ for(const item of showing){
+  const card=node("article",null,$("options"),"card option");
+  node("h3",item.label,card);node("p",item.when_to_consider,card,"muted");
+  node("p","Limitação: "+txt(item.limits),card,"tiny muted");
+  const row=node("div",null,card,"row");
+  const b=node("button","Explorar",row);b.type="button";
+  b.addEventListener("click",()=>details([item],"Aprofundamento"));
+  const label=node("label",null,row,"tiny");
+  const check=node("input",null,label);check.type="checkbox";
+  node("span"," Comparar",label);
+  check.addEventListener("change",()=>{
+   if(check.checked){if(selected.length>=2){check.checked=false;return;}selected.push(item.id);}
+   else selected=selected.filter(id=>id!==item.id);
+   $("compare").disabled=selected.length!==2;
+   $("count").textContent=selected.length+" de 2 selecionadas";
+  });
+ }
+}
+$("load").addEventListener("click",load);
+$("dimension").addEventListener("change",()=>{showAll=false;render();});
+$("all").addEventListener("click",()=>{showAll=!showAll;render();});
+$("compare").addEventListener("click",()=>{
+ const options=guide()?.options||[];const cards=selected.map(id=>options.find(x=>x.id===id));
+ if(cards.length===2&&cards.every(Boolean))details(cards,"Comparação sem vencedor automático");
+});
+$("review").addEventListener("click",()=>{
+ const d=$("draft").value.trim();
+ const g=guide();
+ const blocked=!d||["PENDING","APPROVED","N/A","NOT_EXECUTED"].includes(d.toUpperCase());
+ $("review-result").textContent=blocked?"Preenchimento vazio ou marcador de status: revise antes de decidir.":
+ !g?.target_field?"Rascunho exploratório: não há campo canônico nesta dimensão.":
+ "Texto presente. Esta prévia NÃO verifica adequação metodológica, referências ou evidências. Revisão humana obrigatória.";
+});
+$("clear").addEventListener("click",()=>{$("draft").value="";$("review-result").textContent="";});
+})();
+</script>
+</body>
+</html>
