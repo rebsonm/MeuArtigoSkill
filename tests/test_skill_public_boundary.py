@@ -12,6 +12,7 @@ OPTIONAL_PROTOCOL_DOCS={
     "SKILL.md",
     "references/"+PROTOCOL_TERM+"-tool-use.md",
     "docs/CHATGPT.md",
+    "docs/CHATGPT-"+PROTOCOL_TERM.upper()+"-HOST-ACCEPTANCE.md",
     "docs/COMPATIBILIDADE-PLATAFORMAS.md",
     "tests/test_skill_public_boundary.py",
     "tests/test_optional_"+PROTOCOL_TERM+"_skill.py",
