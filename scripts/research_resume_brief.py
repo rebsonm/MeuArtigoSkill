@@ -189,32 +189,32 @@ def from_panel(snapshot: dict) -> dict:
     }
 
 LABELS={
-    "RECONCILIATION_REQUIRED":"Há registros ou permissões que precisam ser conferidos",
-    "TECHNICAL_PREPARATION_CANDIDATE":"Existe uma preparação técnica elegível, ainda não executada",
-    "HUMAN_DECISION_REQUIRED":"A próxima decisão pertence ao pesquisador",
-    "READ_ONLY_GUIDANCE":"A continuação requer conferência antes de executar",
+    "RECONCILIATION_REQUIRED":"Records or access permissions require reconciliation",
+    "TECHNICAL_PREPARATION_CANDIDATE":"A technical preparation candidate exists; nothing has run",
+    "HUMAN_DECISION_REQUIRED":"The next scientific decision belongs to the researcher",
+    "READ_ONLY_GUIDANCE":"Project continuity needs review before execution",
 }
 def text(brief: dict) -> str:
-    """Short user-facing Portuguese fallback; host may localize from JSON."""
+    """English-first plain-text fallback; the Skill localizes JSON in chat."""
     if brief.get("schema")!=SCHEMA:
         raise ValueError("Unknown research-resume schema")
     recorded=brief["recorded"]
     step=brief["next_step"]
     rows=[
-        "Meu Artigo — continuidade registrada (não é validação científica)",
-        LABELS.get(brief["status"],"Estado indisponível"),
-        "Última decisão registrada: "+str(recorded["last_decision_id"] or "não identificada")+
-        " ("+recorded["last_decision_state"]+"; autoria não autenticada)",
-        "Rota metodológica: "+str(recorded["method_route"] or "não verificada"),
-        "Próxima ação: "+step["code"]+"; responsável: "+step["responsible"],
-        "Referências existentes: "+str(step["existing_cada_id"] or "nenhuma")+
-        " / "+str(step["existing_gate_id"] or "nenhuma"),
-        "Próximo campo metodológico: "+str(recorded["next_missing_method_field"] or "não identificado"),
-        "Primeiro impedimento: "+(brief["blockers"][0] if brief["blockers"] else "nenhum identificado nesta projeção"),
-        "Preparação técnica executada: NÃO; gate aprovado: NÃO",
-        "Drive acessado/sincronizado nesta sessão: NÃO verificado",
+        "Meu Artigo - recorded continuation (not scientific validation)",
+        LABELS.get(brief["status"],"State unavailable"),
+        "Last recorded decision: "+str(recorded["last_decision_id"] or "not available")+
+        " ("+recorded["last_decision_state"]+"; human identity not authenticated)",
+        "Recorded method route: "+str(recorded["method_route"] or "unverified"),
+        "Next recorded action: "+step["code"]+"; actor: "+step["responsible"],
+        "Existing references: "+str(step["existing_cada_id"] or "none")+
+        " / "+str(step["existing_gate_id"] or "none"),
+        "Next missing method field: "+str(recorded["next_missing_method_field"] or "not identified"),
+        "First blocker: "+(brief["blockers"][0] if brief["blockers"] else "none in this projection"),
+        "Technical action performed: NO; scientific gate approved: NO",
+        "Drive access/sync in this session: NOT VERIFIED",
     ]
-    return "\n".join(rows)
+    return "\\n".join(rows)
 
 def main(argv: list[str] | None=None) -> int:
     parser=argparse.ArgumentParser(description=__doc__)
