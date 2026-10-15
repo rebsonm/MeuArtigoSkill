@@ -107,6 +107,8 @@ def commit(root: Path, *, field: str, proposed_text: str,
         raise ValueError("Explicit canonical field required")
     if not isinstance(proposed_text,str):
         raise ValueError("Field text must be provided by the researcher")
+    # Hash, DEC/TRACE checksum and committed bytes refer to the same text.
+    proposed_text=proposed_text.strip()
     require_no_conflict(root)
     if has_pending_method_route(root):
         raise PendingMethodRouteTransaction("METHOD_ROUTE_TRANSACTION_PENDING_RECOVERY_REQUIRED")
