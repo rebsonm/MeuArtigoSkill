@@ -46,7 +46,7 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
   <div style="display:grid;gap:18px;min-width:0">
    <section aria-labelledby="study-title"><h2 id="study-title">Panorama do estudo</h2>
      <div class="stats">
-       <div class="stat"><span>Rota registrada</span><strong id="route"></strong></div>
+       <div class="stat"><span id="route-label">Rota registrada</span><strong id="route"></strong></div>
        <div class="stat"><span>Campos registrados</span><strong id="fields"></strong></div>
        <div class="stat"><span>Gates com aprovação documentada</span><strong id="gates"></strong></div>
      </div>
@@ -151,6 +151,7 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
  }
  function renderStatic(){
    $("snapshot-type").textContent=model.is_project_bound?"Projeto existente · cópia local (não sincronizada)":"Demonstração fictícia · nenhuma decisão real";
+   $("route-label").textContent=model.is_project_bound?"Rota registrada":"Rota ilustrativa";
    $("route").textContent=uiText(model.active_route);
    const progress=model.decision_continuity.method_progress;
    $("fields").textContent=(progress.required_field_count===0?"Não avaliado":
@@ -160,8 +161,24 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
    $("last-decision").textContent=(last.decision_id?last.decision_id+" · ":"")+uiText(last.status);
    $("route-implications").textContent=uiText(model.decision_continuity.route_implications.summary,"A rota ainda precisa ser fundamentada pelo pesquisador.");
    const next=model.decision_continuity.next_action;
-   $("next-action").textContent=next.explanation||next.code;
-   $("next-owner").textContent="Responsável: "+uiText(next.responsible)+" · C.A.D.A.: "+uiText(next.existing_cada_task_id)+" · Gate: "+uiText(next.existing_scientific_gate_id);
+   const nextDescriptions={
+     "RESEARCHER_EXPLORE_METHOD_OPTIONS":"Explore as alternativas e solicite ao pesquisador uma escolha justificada; nenhuma decisão foi registrada.",
+     "RECONCILE_PENDING_TRANSACTION":"Recupere ou concilie a transação anterior antes de qualquer nova alteração científica.",
+     "RECONCILE_CADA_AND_CONTINUITY":"Confira as tarefas C.A.D.A., seus comprovantes e a continuidade canônica antes de avançar.",
+     "REVIEW_CONFLICTING_METHOD_DECISION_EVIDENCE":"O pesquisador deve revisar a decisão registrada, o perfil e a rastreabilidade para resolver a divergência.",
+     "VERIFY_AUTHORIZED_CANONICAL_STORAGE":"Verifique o armazenamento autorizado e a sincronização antes de confiar neste instantâneo.",
+     "RECONCILE_PROJECT_RECORDS":"Reconcilie os registros canônicos ausentes ou conflitantes antes de executar novas ações.",
+     "EXECUTE_RECORDED_CADA_TASK":"Consulte e execute somente a tarefa C.A.D.A. já autorizada; a interface não a executa.",
+     "RESEARCHER_DECIDE_RECORDED_CADA_TASK":"Pesquisador: examine a tarefa C.A.D.A. registrada e tome a decisão científica necessária.",
+     "RESEARCHER_CHOOSE_AND_JUSTIFY_METHOD_ROUTE":"Pesquisador: escolha a rota metodológica, justifique-a e registre a decisão original.",
+     "RESEARCHER_REVIEW_PENDING_SCIENTIFIC_GATE":"Pesquisador: avalie as evidências do gate científico; a interface não o aprova.",
+     "RESEARCHER_REVIEW_NEXT_METHOD_FIELD":"Pesquisador: revise o próximo campo metodológico e as alternativas disponíveis.",
+     "REQUEST_RESEARCHER_REVIEW_OF_CONTINUATION":"Pesquisador: revise o estado registrado e indique a próxima providência documentada."
+   };
+   $("next-action").textContent=nextDescriptions[next.code]||next.explanation||next.code;
+   const ownership={"HUMAN_RESEARCHER":"Pesquisador","TECHNICAL_AGENT":"Assistente técnico",
+                    "HUMAN_OR_AUTHORIZED_OPERATOR":"Pesquisador ou operador autorizado"};
+   $("next-owner").textContent="Responsável: "+(ownership[next.responsible]||uiText(next.responsible))+" · C.A.D.A.: "+uiText(next.existing_cada_task_id)+" · Gate: "+uiText(next.existing_scientific_gate_id);
    const blockers=model.decision_continuity.blockers||[];
    if(blockers.length){const div=add($("blockers"),"div",null,"notice");add(div,"strong","Pendências para reconciliar");for(const b of blockers)add(div,"p",b,"micro");}
    const tbody=$("cada-rows"); const rows=model.tasks.items||[];
