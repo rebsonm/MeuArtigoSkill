@@ -150,6 +150,26 @@ class AdvisoryVersusBlockingPolicyTests(unittest.TestCase):
         self.assertEqual(stdout.getvalue(),"")
         self.assertIn("absent from the canonical literature ledger",stderr.getvalue())
 
+    def test_adverse_declared_outcomes_hold_strict_even_without_lexical_flags(self):
+        for index,expected in ((4,"PARTIALLY_SUPPORTED"),
+                               (8,"NOT_SUPPORTED"),(12,"INCONCLUSIVE")):
+            with self.subTest(verdict=expected):
+                root,path,item=self.project(index,complete_protocol=True)
+                path.write_text(json.dumps(fixture.assessment(
+                    root,item,label_aware=True)),encoding="utf-8")
+                rc,record=self.run_claims(root,path)
+                self.assertEqual(rc,2)
+                self.assertEqual(record["review_items"][0]["status"],
+                                 "HUMAN_JUDGMENT_RECORDED_NOT_AUTHENTICATED")
+                self.assertEqual(record["review_items"][0]["declared_judgment"],
+                                 expected)
+                self.assertEqual(record["formal_review_requirements_pending"],1)
+                self.assertFalse(record["semantic_support_proven"])
+                rc,diag=self.run_diagnostic(root,path)
+                self.assertEqual(rc,2)
+                self.assertGreater(diag["counts"]["strict_required_occurrences"],0)
+                self.assertFalse(diag["scientific_quality_validated"])
+
     def test_formal_support_cannot_autoapprove_without_heuristics(self):
         root,path,item=self.project(0,complete_protocol=True)
         rc,report=self.run_claims(root,path)
