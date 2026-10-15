@@ -10,7 +10,7 @@ If Drive is not connected, request the connection and re-check it. If it is stil
 
 Within the resolved storage backend, choose and record the canonical table representation: native spreadsheet or filesystem CSV tables. Never maintain two independent authorities.
 
-When Drive is canonical, local CSV/JSON files are staging/processing copies unless explicitly synchronized back. A material change that exists only in Work/local output is not yet canonical. In an explicitly authorized `WORK_FALLBACK`, the local CSV/JSON files may be authoritative until migration. In native spreadsheet mode the mapped sheets hold canonical table data; export them to the exact CSV headers in scripts/init_project.py before running local scripts. Import script results back only after reconciling the export baseline.
+When Drive is canonical, local CSV/JSON files are staging/processing copies unless explicitly synchronized back. A full-tree delivery uses the [Drive delivery protocol](drive-delivery.md) to verify hierarchy and contents; an uploaded ZIP alone is not a navigable canonical project. A material change that exists only in Work/local output is not yet canonical. In an explicitly authorized `WORK_FALLBACK`, the local CSV/JSON files may be authoritative until migration. In native spreadsheet mode the mapped sheets hold canonical table data; export them to the exact CSV headers in scripts/init_project.py before running local scripts. Import script results back only after reconciling the export baseline.
 
 The workbook generator creates a template; it does not implement bidirectional synchronization. The agent or an explicit adapter must map fields by name, preserve stable IDs and retain fields that have no visible counterpart. Never map columns by position.
 

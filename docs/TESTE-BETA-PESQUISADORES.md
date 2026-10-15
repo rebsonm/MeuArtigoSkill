@@ -20,6 +20,7 @@ You do not have to complete an article, learn Git or understand programming to s
 - Whether the Skill explains its proposed next step and waits for consequential human decisions.
 - Whether cited passages really support the resulting statements.
 - Whether storage and tool permissions are accurately described.
+- Whether a project saved to Drive appears as accessible subfolders and separate files, not only an archive.
 - Whether returning to a project feels understandable and safe.
 - Whether an error is explained in clear language, without discarding existing work.
 

@@ -11,6 +11,7 @@ Meu Artigo is an **experimental public beta**. Passing software checks does not 
 | Practical usefulness | Measured performance and user experience with researchers from different fields and methodological approaches |
 | Platform operation | Fully observed installation, continuation and authorized storage across ChatGPT, Claude and Gemini |
 | Google Drive and databases | Successful operations depend on each researcher's real permissions and connections |
+| Full structured Drive project delivery | A real host must create and read back all expected folders/files, recover partial operations and avoid duplicate or silent overwrite |
 | C.A.D.A. outcomes | Evidence that task tracking causes better research outcomes or measurable productivity gains |
 | Language support | Observed quality of conversations in different languages and of manuscript-specific output |
 

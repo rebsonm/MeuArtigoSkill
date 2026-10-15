@@ -15,6 +15,15 @@ Storage resolution is a blocking first-run gate:
 
 When Drive is connected, create or resume the canonical logical structure in Drive before substantive searches. Do not create a parallel authority in Work/local storage. Local files may exist as temporary staging artifacts, but must be synchronized to Drive before they become canonical project state.
 
+## Verifiable publication of the complete Drive tree
+
+A Drive connection, one test file or a ZIP archive is not evidence that the
+entire project is accessible. For an explicitly authorized Drive project,
+follow [the host-assisted delivery procedure](drive-delivery.md). Check the
+expected folder and file counts, correct parents and remote readback. Report
+INCOMPLETE until verified; never overwrite files or infer scientific-gate
+approval from delivery status.
+
 ## Folder tree
 
 Use a project root named `ARTIGO_<short-title>_<YYYY>` unless the user supplies another title.

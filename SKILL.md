@@ -85,8 +85,8 @@ path and recheck after the researcher's required authorization. Only after
 an **explicit affirmative** decision may an alternative Work/local
 `WORK_FALLBACK` be created. Record the real actor, date and limitations.
 If denied or unanswered, stop substantive work at the storage gate.
-For Drive-canonical projects, treat local/Work files as staging until actual
-synchronization is verified.
+Drive-local files remain staging until [individual Drive folders and files
+are verified](references/drive-delivery.md). ZIP-only upload is incomplete.
 
 Preserve the research question and intended contribution. Choose a
 **provisional route** via [method pathways](docs/ROTAS-METODOLOGICAS.md)
