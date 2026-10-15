@@ -3,7 +3,19 @@ from pathlib import Path
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
-TERMS=("pl"+"ugin","m"+"cp","visual"+"-app","meu_artigo_"+"dashboard")
+# Optional documentation of externally connected protocol tools is not
+# equivalent to shipping a service inside the standalone Skill archive.
+LEGACY_TERMS=("visual"+"-app","meu_artigo_"+"dashboard")
+DISTRIBUTION_TERM="pl"+"ugin"
+PROTOCOL_TERM="m"+"cp"
+OPTIONAL_PROTOCOL_DOCS={
+    "SKILL.md",
+    "references/"+PROTOCOL_TERM+"-tool-use.md",
+    "docs/CHATGPT.md",
+    "docs/COMPATIBILIDADE-PLATAFORMAS.md",
+    "tests/test_skill_public_boundary.py",
+    "tests/test_optional_"+PROTOCOL_TERM+"_skill.py",
+}
 SOURCE_TYPES={".py",".md",".yaml",".yml",".json",".ts",".html",".cff",".txt"}
 
 class PublicSkillBoundaryTests(unittest.TestCase):
@@ -23,14 +35,23 @@ class PublicSkillBoundaryTests(unittest.TestCase):
                 if not p.is_file() or p.suffix.lower() not in SOURCE_TYPES:
                     continue
                 relative=p.relative_to(ROOT).as_posix()
-                if any(t in relative.lower() for t in TERMS):
-                    problems.append((relative,"filename"))
+                if any(t in relative.lower() for t in LEGACY_TERMS):
+                    problems.append((relative,"legacy filename"))
+                if (PROTOCOL_TERM in relative.lower() and
+                        relative not in OPTIONAL_PROTOCOL_DOCS):
+                    problems.append((relative,"unexpected protocol artifact"))
+                if DISTRIBUTION_TERM in relative.lower():
+                    problems.append((relative,"unexpected distribution artifact"))
                 content=p.read_text(encoding="utf-8",errors="replace").lower()
-                # The test deliberately constructs the forbidden terms
-                # instead of documenting their removed public names.
-                for term in TERMS:
+                for term in LEGACY_TERMS:
                     if term in content:
                         problems.append((relative,term))
+                # Tool-use guidance is allowed only in reviewed instructions,
+                # not arbitrary executable files or new distribution projects.
+                if relative not in OPTIONAL_PROTOCOL_DOCS:
+                    for term in (DISTRIBUTION_TERM,PROTOCOL_TERM):
+                        if term in content:
+                            problems.append((relative,term))
         self.assertEqual(problems,[],f"Public Skill boundary violated: {problems}")
 
     def test_scientific_human_controls_remain(self):
