@@ -3,7 +3,7 @@ from pathlib import Path
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
-TERMS=("pl"+"ugin","m"+"cp","visual"+"-app","meu_artigo_"+"dashboard")
+TERMS=("visual"+"-app","meu_artigo_"+"dashboard","build_"+"pl"+"ugin_bundle.py")
 SOURCE_TYPES={".py",".md",".yaml",".yml",".json",".ts",".html",".cff",".txt"}
 
 class PublicSkillBoundaryTests(unittest.TestCase):
@@ -32,6 +32,17 @@ class PublicSkillBoundaryTests(unittest.TestCase):
                     if term in content:
                         problems.append((relative,term))
         self.assertEqual(problems,[],f"Public Skill boundary violated: {problems}")
+
+    def test_experimental_app_is_not_in_the_skill_zip(self):
+        # The separately tested MCP Apps adapter must not silently enter the
+        # public beta Skill ZIP or weaken scientific gate governance.
+        import sys
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from build_skill_bundle import list_sources
+        packaged={p.relative_to(ROOT).as_posix() for p in list_sources(ROOT)}
+        self.assertNotIn("scripts/mcp_preview_projection.py", packaged)
+        self.assertFalse(any(p.startswith("mcp-preview/") for p in packaged))
+        self.assertTrue((ROOT / "mcp-preview" / "server.mjs").is_file())
 
     def test_scientific_human_controls_remain(self):
         source=(ROOT/"SKILL.md").read_text(encoding="utf-8")
