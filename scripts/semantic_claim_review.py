@@ -221,6 +221,7 @@ def review(root: Path, assessments: dict | None = None) -> dict:
             "heuristic_signals_can_block_workflow": False,
             "formal_review_requirements_pending": sum(
                 row.get("status") != "HUMAN_JUDGMENT_RECORDED_NOT_AUTHENTICATED"
+                or row.get("declared_judgment") != "SUPPORTED"
                 for row in result),
             # Formal completion is NOT authentication or peer validation.
             "review_declared_is_authenticated": False,
@@ -239,7 +240,7 @@ def main(argv=None):
     p.add_argument("project_path")
     p.add_argument("--assessments", type=Path, help="User-prepared review JSON inside project")
     p.add_argument("--output", type=Path, help="Optional local report (no implied Drive sync)")
-    p.add_argument("--strict", action="store_true", help="2 for missing/invalid formal reviews; lexical advisories alone do not fail")
+    p.add_argument("--strict", action="store_true", help="2 for missing/invalid or adverse formal outcomes; lexical advisories alone do not fail")
     args = p.parse_args(argv)
     try:
         root = Path(args.project_path).resolve()
