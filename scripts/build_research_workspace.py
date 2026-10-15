@@ -7,7 +7,7 @@ screen; an actual decision MUST be made by the researcher, rechecked by
 method_fill_preflight and written separately by commit_method_field after
 human authorization and current source/Drive verification.
 
-No network, persistence, live plugin bridge, real researcher approval,
+No network, persistence, live host bridge, real researcher approval,
 source-content disclosure, or hidden implicit scientific gate.
 """
 from __future__ import annotations
@@ -115,7 +115,7 @@ def model(*, project: Path|None=None, route: str="QUALITATIVE", mode: str="MINIM
                        "draft_review":"LOCAL_EPHEMERAL_CLIENT_HINTS",
                        "canonical_write":"NOT_AVAILABLE_IN_THIS_UI",
                        "human_scientific_approval":"NOT_AVAILABLE_IN_THIS_UI",
-                       "plugin_host_action":"NOT_CONNECTED"},
+                       "chat_host_action":"NOT_CONNECTED"},
         "limitations":[
             "Static catalogue options are not personalized semantic recommendations.",
             "The displayed local project snapshot is not independently authenticated.",
@@ -168,7 +168,7 @@ def main(argv=None) -> int:
             "snapshot_kind":data["snapshot_kind"],
             "output_name":args.output.name,
             "canonical_writes":False,"scientific_approvals":False,
-            "drive_sync_verified":False,"installed_chatgpt_plugin":False,
+            "drive_sync_verified":False,"installed_chatgpt_extension":False,
         },sort_keys=True))
         return 0
     except (OSError,ValueError,UnicodeError,TypeError,json.JSONDecodeError) as exc:
