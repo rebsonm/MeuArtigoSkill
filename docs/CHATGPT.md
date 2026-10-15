@@ -48,6 +48,16 @@ If no MCP connection is available, **continue as a normal Skill** with already
 authorized native tools or a permitted manual path. Do not claim the
 GitHub-based experimental adapter was installed or tested in this account.
 
+## Local method-writer authorization
+
+The Skill's local method-route and method-detail writers reject writes
+unless `PROJECT_CONFIG.json` explicitly records an authorized
+`WORK_FALLBACK`. Files copied from a Drive-canonical project remain
+read-only staging until their authorized canonical store and actual
+synchronization have been verified. A human decision is required for the
+method and separately for any storage fallback; one does not imply the
+other. These software checks are not independent identity authentication.
+
 ## Resume safety: one answer from the canonical records
 
 When a researcher asks to continue an existing authorized project, use
