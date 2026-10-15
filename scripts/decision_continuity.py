@@ -205,13 +205,17 @@ def compose(root: Path, *, navigation: dict | None=None) -> dict:
         blockers.append("PROJECT_CONFIG_NOT_READABLE")
     if progress["status"]=="UNAVAILABLE" and route in ROUTES:
         blockers.append("METHOD_PROFILE_REQUIRES_RECONCILIATION")
-    # A ledger anomaly must never authorize a newly suggested field write.
+    # A malformed/missing decision register or an unlinked TRACE is not a
+    # trustworthy "no decisions" state. Fail closed before resuming a task.
+    # A legitimately empty, readable decision register remains supported.
     if last["status"] in {
+        "DECISION_REGISTER_UNAVAILABLE",
         "METHOD_FIELD_DECISION_INCONSISTENT",
         "METHOD_ROUTE_DECISION_INCONSISTENT",
         "UNRECOGNIZED_DECISION_STATUS",
         "INCOMPLETE_HUMAN_DECLARATION",
-    }:
+    } or (last["decision_id"] is not None and
+          not last["trace_link_recorded"]):
         blockers.append("DECISION_PROVENANCE_RECONCILIATION_REQUIRED")
     blockers=list(dict.fromkeys(blockers))
     next_task_id=nav.get("next_task_id")
@@ -232,7 +236,9 @@ def compose(root: Path, *, navigation: dict | None=None) -> dict:
     elif storage_block:
         action="VERIFY_AUTHORIZED_CANONICAL_STORAGE"
         owner="HUMAN_OR_AUTHORIZED_OPERATOR"
-    elif blockers and nav.get("status") in {"BLOCKED","BLOCKED_TASK"}:
+    elif blockers:
+        # Even when the C.A.D.A. router would permit a technical task,
+        # a separate method/profile provenance conflict must be resolved.
         action="RECONCILE_PROJECT_RECORDS"
         owner="HUMAN_OR_AUTHORIZED_OPERATOR"
     elif nav.get("status")=="TECHNICAL_PREPARATION_AVAILABLE" and next_task_id:
