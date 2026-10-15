@@ -27,4 +27,29 @@ Read [SKILL.md](../SKILL.md). The Skill preserves the researcher's question and 
 
 For a project already in progress, read its actual `CONTINUIDADE.md`, logs and gates from the authorized workspace. If no project is selected, ask which article to continue rather than generate made-up progress counters.
 
+## Resume safety: one answer from the canonical records
+
+When a researcher asks to continue an existing authorized project, use
+`CONTINUIDADE.md`, the canonical C.A.D.A. register, seven human gates,
+`17_Decision_Log.csv`, `13_Traceability_Log.csv`, and
+`METHOD_PROFILE.json`. The Skill's `native_chat_dashboard.py` projects
+these existing records, with `next_step_router.py` selecting the operational
+step and `decision_continuity.py` checking recorded method/provenance.
+Do **not** start a second project dashboard or infer progress from the chat.
+
+If the DEC register is missing/malformed or the latest recorded decision
+lacks an existing TRACE link, report a **reconciliation blocker**. A
+structurally eligible C.A.D.A. action is not safely resumable while those
+records disagree. In the plain-text view the same blocker must disable
+`technical_preparation_possible`. A correctly initialized, readable,
+header-only DEC register is different: it means no recorded decision, not
+automatically a corrupted file.
+
+Show briefly what is actually known (last decision ID and status, next
+existing CADA/GATE ID, actor, first blocker, verification needed), without
+exposing private decision prose. A human must decide scientific choices;
+the local view neither authenticates people nor verifies Drive sync.
+No user action is required for synthetic engineering tests; a real
+researcher/operator must reconcile damaged project evidence before work.
+
 A Skill's operation and generated artifacts depend on the real tools available. It cannot assert external article submission, publisher content access or data synchronization without evidence.
