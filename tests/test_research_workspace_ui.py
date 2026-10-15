@@ -143,7 +143,7 @@ class WorkspaceUiTests(unittest.TestCase):
         self.assertNotIn("innerHTML",page)
         self.assertNotIn("localStorage",page)
         self.assertNotIn("fetch(",page)
-        self.assertNotIn("methodological_option_recommendation_independently_validated",page) # only backend contracts, no false badge
+        self.assertIn('"methodological_option_recommendation_independently_validated":false',page)
 
     def test_markup_embedding_escapes_script_termination_and_surrogates(self):
         m=app.model()
@@ -183,7 +183,7 @@ class WorkspaceUiTests(unittest.TestCase):
             r=json.loads(run.stdout)
             self.assertFalse(r["scientific_approvals"])
             self.assertFalse(r["canonical_writes"])
-            self.assertFalse(r["installed_chatgpt_plugin"])
+            self.assertFalse(r["installed_chatgpt_extension"])
             self.assertEqual(r["snapshot_kind"],"FICTIONAL_PREVIEW_NOT_A_REAL_PROJECT")
             duplicate=subprocess.run(cmd,text=True,capture_output=True)
             self.assertEqual(duplicate.returncode,2)
