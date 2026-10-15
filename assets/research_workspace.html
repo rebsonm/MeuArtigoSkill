@@ -136,9 +136,16 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
  // Only the opt-in loopback server injects a session token in a served page.
  // Offline HTML has no transport and its strict content policy blocks connections.
  const bridge=model.local_bridge&&model.local_bridge.enabled?model.local_bridge:null;
- const localBridgeReady=!!(bridge&&location.protocol==="http:"&&
-   location.origin===bridge.origin&&location.hostname==="127.0.0.1"&&
-   bridge.read_only===true);
+ // The initial HTML shell contains no project data or credential. The
+ // locally started process prints a one-time URL fragment. Fragments are
+ // never sent in HTTP requests; remove it from the visible address bar.
+ const fragment=new URLSearchParams(location.hash.slice(1));
+ const sessionSecret=fragment.get("session");
+ if(bridge&&location.hash){history.replaceState(null,"",location.pathname);}
+ if(bridge)bridge.session_token=sessionSecret;
+ const localBridgeReady=!!(bridge&&sessionSecret&&sessionSecret.length>=32&&
+   location.protocol==="http:"&&location.origin===bridge.origin&&
+   location.hostname==="127.0.0.1"&&bridge.read_only===true);
  const bridgeHeaders=()=>({"X-Meu-Artigo-Session":bridge.session_token});
  async function bridgeRequest(path,options={}){
    if(!localBridgeReady)throw new Error("Sessão local não habilitada");
@@ -372,6 +379,12 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
  $("refresh-view").addEventListener("click",refreshSnapshot);
  $("clear-draft").addEventListener("click",()=>{$("draft").value="";clear("draft-feedback");});
  renderStatic();renderOptions();
+ if(localBridgeReady){
+   // Explicitly started session; initial shell is fictional until verified.
+   refreshSnapshot();
+ }else if(bridge){
+   $("bridge-status").textContent="Sessão não autorizada · abra o link local completo";
+ }
 })();
 </script>
 </body>
