@@ -291,6 +291,10 @@ def fallback(data: dict) -> str:
         data["decision_continuity"]["next_action"]["responsible"] +
         " | method field: " +
         str(data["decision_continuity"]["next_action"]["method_field_for_next_researcher_decision"]),
+        "Next action explanation: " +
+        data["decision_continuity"]["next_action"]["explanation"],
+        "Recorded method implies (not certified): " +
+        str(data["decision_continuity"]["route_implications"]["summary"]),
         "Method entry: " + data["method_fill_guidance"]["status"] +
         " | automatic write allowed: NO",
         "Method dialogue: " + data["method_conversation"]["action"] +
