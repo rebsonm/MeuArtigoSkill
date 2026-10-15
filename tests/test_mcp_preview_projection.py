@@ -41,7 +41,7 @@ class McpPreviewProjectionTests(unittest.TestCase):
                 fictional_projection(route, mode)
 
     def test_cli_output_is_strictly_fictional(self):
-        cmd = [sys.executable, "-I", str(ROOT / "scripts" / "mcp_preview_projection.py"),
+        cmd = [sys.executable, "-E", "-s", str(ROOT / "scripts" / "mcp_preview_projection.py"),
                "--route", "QUALITATIVE", "--mode", "FULL"]
         run = subprocess.run(cmd, capture_output=True, text=True, check=True)
         projection = json.loads(run.stdout)
