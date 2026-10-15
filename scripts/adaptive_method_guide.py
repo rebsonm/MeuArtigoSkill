@@ -221,7 +221,7 @@ def _card(row: tuple[str, str, str, str, str, str]) -> dict:
 OTHER = _card((
     "OTHER_NOT_LISTED", "Another approach / discipline-specific tradition",
     "When no offered path adequately describes the scientific problem or epistemology.",
-    "Preserves researcher-defined, hybrid, normative, historical, mathematical or other designs.",
+    "Preserves researcher-defined, hybrid, normative, historical, philosophical, mathematical or other designs.",
     "The existing route taxonomy may need deliberate extension; do not silently force a category.",
     "Ask the researcher to name the tradition and justify fit; map it explicitly before applying route-specific gates."))
 
