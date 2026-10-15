@@ -1,0 +1,32 @@
+name: Controlled case registry (offline)
+on:
+  pull_request:
+    paths:
+      - "scripts/evaluation_registry.py"
+      - "tests/test_evaluation_registry.py"
+      - "benchmarks/critical_cases_v1.json"
+      - ".github/workflows/critical-cases-registry.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/evaluation_registry.py"
+      - "tests/test_evaluation_registry.py"
+      - "benchmarks/critical_cases_v1.json"
+      - ".github/workflows/critical-cases-registry.yml"
+permissions:
+  contents: read
+jobs:
+  case-registry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Syntax and offline regression cases
+        run: |
+          python -m py_compile scripts/evaluation_registry.py
+          python -m unittest discover -s tests -p 'test_evaluation_registry.py' -v
