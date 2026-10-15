@@ -220,10 +220,10 @@ submission without external confirmation. See
 
 ## 5. Platforms and interaction presentation
 
-Importing a Skill does not imply tool access, authenticated accounts,
-Python execution, browsing or cloud writing. Check the present platform's
-actual capabilities and permissions; when missing, give a truthful manual
-path, record the limitation and do not simulate an operation. Consult the
+Importing a Skill does not grant tools or authentication.
+For connected MCP tools, follow the [optional usage contract](references/mcp-tool-use.md);
+otherwise use the authorized native/manual path. Never simulate access.
+Consult the
 [platform matrix](docs/COMPATIBILIDADE-PLATAFORMAS.md) and guides for
 [ChatGPT](docs/CHATGPT.md), [Claude](docs/CLAUDE.md) and
 [Gemini](docs/GEMINI.md). Adapters never relax scientific or ethical controls.
