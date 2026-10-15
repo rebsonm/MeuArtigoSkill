@@ -74,7 +74,7 @@ class VersionContractTests(unittest.TestCase):
             root.mkdir()
             outside = base / "unrelated"
             outside.mkdir()
-            (root / "VERSION").write_text("0.9.0-beta.6\\n", encoding="utf-8")
+            (root / "VERSION").write_text("0.9.0-beta.6\n", encoding="utf-8")
             secret = outside / "secret.txt"
             secret.write_text("Only synthetic secret", encoding="utf-8")
             try:
