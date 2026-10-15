@@ -70,3 +70,14 @@ inputs under explicit rights, a blind ground-truth review, confidence
 intervals/uncertainty, false alarms, missed errors, and actual provider
 responses collected with source provenance. These are NOT delivered by
 this synthetic execution harness.
+ 
+## Preservation of executed synthetic evidence in CI
+
+The controlled-case workflow stores the generated synthetic-only results
+directory as a 30-day GitHub Actions artifact named
+synthetic-critical-case-evidence. Its contents are the per-case runtime
+codes, checksummed fixture results, REG-001 ledger, and REG-019 scoring
+package. This is an execution record from the checked-out software,
+NOT externally authenticated evidence of scientific reliability.
+These artifacts are separate from public Skill releases and project
+manuscripts, and contain no connected Drive storage data.
