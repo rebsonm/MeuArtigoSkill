@@ -12,7 +12,7 @@ import re
 import sys
 
 ACTIONS = {"BLOCK", "FLAG", "PASS", "NOT_EVALUATED"}
-EXPECTED = {"BLOCK", "FLAG"}
+EXPECTED = {"BLOCK", "FLAG", "PASS"}
 
 def canonical(obj):
     return json.dumps(obj, sort_keys=True, ensure_ascii=False, separators=(",", ":"), allow_nan=False).encode("utf-8")
@@ -39,7 +39,7 @@ def validate_catalog(c):
         if not isinstance(cid, str) or not re.fullmatch(r"[A-Z]+-[0-9]{3}", cid) or cid in seen:
             raise ValueError("Invalid/duplicate case_id")
         if x.get("synthetic") is not True or x.get("expected_action") not in EXPECTED:
-            raise ValueError("Only declared synthetic BLOCK/FLAG cases permitted")
+            raise ValueError("Only declared synthetic BLOCK/FLAG/PASS cases permitted")
         if any(not isinstance(x.get(k), str) or not x[k].strip()
                for k in ("scenario", "control", "category")):
             raise ValueError("Missing case documentation")
