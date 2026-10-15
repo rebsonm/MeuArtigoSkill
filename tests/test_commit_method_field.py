@@ -44,6 +44,7 @@ class MethodControlledWriterTests(unittest.TestCase):
         self.m.mkdir(parents=True)
         (self.m/"PROJECT_CONFIG.json").write_text(json.dumps({
             "method_route_governance_required":True,"method_route":"UNDECIDED",
+            "storage_mode":"WORK_FALLBACK","fallback_authorized":True,
             "article_type":"fictional research"}))
         (self.m/"METHOD_PROFILE.json").write_text(json.dumps(method_routes.new_profile("UNDECIDED")))
         csv_file(self.m/"18_Human_Validation_Gates.csv",gov.GATE_HEADERS,
@@ -67,6 +68,32 @@ class MethodControlledWriterTests(unittest.TestCase):
               "acknowledge_warnings":False}
         opts.update(changes)
         return field_writer.commit(self.root,**opts)
+
+    def test_unverified_or_drive_canonical_storage_rejects_method_field_write(self):
+        self.choose()
+        path=self.m/"PROJECT_CONFIG.json"
+        for storage,permission in (("GOOGLE_DRIVE",False),
+                                   ("GOOGLE_DRIVE",True),
+                                   ("WORK_FALLBACK",False),
+                                   ("UNKNOWN",True),
+                                   (None,None)):
+            with self.subTest(storage=storage,permission=permission):
+                cfg=json.loads(path.read_text())
+                cfg["storage_mode"]=storage
+                cfg["fallback_authorized"]=permission
+                path.write_text(json.dumps(cfg))
+                before=self.state()
+                with self.assertRaisesRegex(ValueError,
+                        "AUTHORIZED_LOCAL_CANONICAL_STORAGE_REQUIRED"):
+                    self.commit()
+                self.assertEqual(self.state(),before)
+                self.assertFalse(tx.has_pending_method_route(self.root))
+        cfg=json.loads(path.read_text())
+        cfg["storage_mode"]="WORK_FALLBACK"
+        cfg["fallback_authorized"]=True
+        path.write_text(json.dumps(cfg))
+        self.assertEqual(self.commit()["status"],
+                         "DECLARED_RESEARCHER_METHOD_FIELD_RECORDED_NOT_AUTHENTICATED")
 
     def test_success_writes_only_one_field_plus_dec_trace_and_no_gate(self):
         self.choose()
