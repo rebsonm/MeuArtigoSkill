@@ -150,17 +150,17 @@ def compose(root: Path, *, assessments: dict | None = None) -> dict:
     ref_block = any(x["severity"] == "BLOCK" and x["kind"] == "REFERENCE" for x in full)
     claim_block = any(x["severity"] == "BLOCK" and x["kind"] == "CLAIM" for x in full)
     if ref_block:
-        actions.append("Corrigir identificadores, DOI, conflitos e vínculos das fontes.")
+        actions.append("Resolve inconsistent identifiers, DOIs and source links.")
     if claim_block:
-        actions.append("Reexaminar afirmações com fonte ou passagem incompatível.")
+        actions.append("Reassess claims with missing or conflicting source passages.")
     if ref["source_report_status"] in {"MISSING","STALE","BLOCKED","REVIEW_REQUIRED"}:
-        actions.append("Reexecutar/conferir a verificação das fontes e seus limites.")
+        actions.append("Recheck source verification results and documented limitations.")
     if any(x["kind"] == "CLAIM" for x in full):
-        actions.append("Solicitar análise humana documentada, inclusive contraevidências.")
+        actions.append("Obtain documented human review, including counterevidence.")
     if protocol["status"] != "RECORDED_UNASSESSED" or protocol["pending"]:
-        actions.append("Completar o protocolo e revisar sua adequação metodológica.")
+        actions.append("Complete the protocol record and review methodological fit.")
     if not actions:
-        actions.append("Realizar revisão científica humana; ausência de alertas não é validação.")
+        actions.append("Seek substantive human scientific review; no alerts does not prove validity.")
     actions = actions[:LIMIT_ACTIONS]
     return {
         "schema_version": 1, "kind": "REG-013_TECHNICAL_SCIENTIFIC_DIAGNOSTIC",
@@ -193,41 +193,41 @@ def _cells(data: dict) -> tuple[list[str],list[tuple[str,str,str]]]:
         code = str(x["code"])[:48]
         lines.append((x["severity"], code+" ("+str(x["count"])+")",x["sample_id"]))
     if data["omitted_finding_categories"]:
-        lines.append(("INFO","+"+str(data["omitted_finding_categories"])+" categorias não exibidas","-"))
+        lines.append(("INFO","+"+str(data["omitted_finding_categories"])+" categories not shown","-"))
     return [],lines
 
 
 def markdown(data: dict) -> str:
     c=data["counts"]; p=data["protocol"]
     _,rows = _cells(data)
-    summary = ("**Diagnóstico:** "+data["verdict"]+" | **Fontes:** "+
-               str(c["references"])+" | **Afirmações:** "+str(c["claims"])+
-               " | **Ocorrências críticas:** "+str(c["blocking_occurrences"])+
-               " | **Para revisão:** "+str(c["review_occurrences"]))
-    proto = ("indisponível" if p["status"] == "NOT_AVAILABLE" else
-             str(p["items"])+" registros, "+str(p["pending"])+" pendentes")
+    summary = ("**Status:** "+data["verdict"]+" | **Evidence:** "+
+               str(c["references"])+" | **Claims:** "+str(c["claims"])+
+               " | **Blocking occurrences:** "+str(c["blocking_occurrences"])+
+               " | **Review items:** "+str(c["review_occurrences"]))
+    proto = ("unavailable" if p["status"] == "NOT_AVAILABLE" else
+             str(p["items"])+" items, "+str(p["pending"])+" pending")
     lines=[
-        "# Meu Artigo — Diagnóstico científico (triagem técnica)",
+        "# Meu Artigo — Scientific diagnostic (technical triage)",
         summary,
-        "**Relatório de fontes:** "+data["source_verification"]+
-        " | **Protocolo:** "+proto,
+        "**Source report:** "+data["source_verification"]+
+        " | **Protocol:** "+proto,
         "",
-        "## Achados prioritários",
-        "| Grau | Ocorrência (quantidade) | Registro |",
+        "## Priority findings",
+        "| Level | Finding (count) | Record |",
         "|---|---|---|",
     ]
     lines.extend("| "+str(a)+" | "+str(b)+" | "+str(v)+" |" for a,b,v in rows)
     if not rows:
-        lines.append("| INFO | Nenhum alerta estrutural registrado | - |")
-    lines.extend(["", "## Próximas ações"])
+        lines.append("| INFO | No structural findings recorded | - |")
+    lines.extend(["", "## Next actions"])
     lines.extend(str(i+1)+". "+v for i,v in enumerate(data["actions"]))
-    lines += ["","**Limites:** triagem de registros canônicos; não inspeciona todas as citações do manuscrito,",
-              "não verifica automaticamente a sustentação semântica nem valida método ou julgamentos humanos.",
-              "**Rastreabilidade:** matriz "+str(data["input_sha256"]["05_Evidence_Matrix.csv"] or "-")[:12]+
+    lines += ["","**Limits:** canonical-register triage only; full manuscript citations are not inspected,",
+              "semantic support is not automated; method adequacy and human review are not authenticated.",
+              "**Input hashes:** evidence "+str(data["input_sha256"]["05_Evidence_Matrix.csv"] or "-")[:12]+
               " | claims "+str(data["input_sha256"]["09_Claims_Ledger.csv"] or "-")[:12]+
-              " | fontes "+str(data["source_report_sha256"] or "-")[:12]+
-              " | protocolo "+str(data["input_sha256"][PROTOCOL] or "-")[:12]+".",
-              "**Uso:** diagnóstico de apoio ao pesquisador; nunca parecer editorial, aprovação de gate ou validação científica."]
+              " | source "+str(data["source_report_sha256"] or "-")[:12]+
+              " | protocol "+str(data["input_sha256"][PROTOCOL] or "-")[:12]+".",
+              "**Purpose:** research-support diagnostic; not peer review, a gate approval, or scientific validation."]
     result="\n".join(lines)+"\n"
     # Hard cap both lines and characters: the compact representation is
     # designed to fit a typical single A4 page, but printing depends on fonts.
@@ -241,13 +241,13 @@ def html_page(data: dict) -> str:
     safe=lambda s: escape(str(s),quote=True)
     body="".join("<tr><td>"+safe(a)+"</td><td>"+safe(b)+"</td><td>"+safe(v)+"</td></tr>" for a,b,v in rows)
     if not body:
-        body="<tr><td>INFO</td><td>Nenhum alerta estrutural registrado</td><td>-</td></tr>"
+        body="<tr><td>INFO</td><td>No structural findings recorded</td><td>-</td></tr>"
     actions="".join("<li>"+safe(x)+"</li>" for x in data["actions"])
-    protocol=("indisponível" if p["status"] == "NOT_AVAILABLE" else
-              str(p["items"])+" registros; "+str(p["pending"])+" pendentes")
+    protocol=("unavailable" if p["status"] == "NOT_AVAILABLE" else
+              str(p["items"])+" items; "+str(p["pending"])+" pending")
     return (
-        '<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">'
-        '<title>Meu Artigo - Diagnóstico técnico</title><style>'
+        '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+        '<title>Meu Artigo - Technical diagnostic</title><style>'
         '@page{size:A4;margin:13mm}*{box-sizing:border-box}'
         'body{font-family:Arial,Helvetica,sans-serif;font-size:10pt;line-height:1.3;'
         'color:#1a2733;max-width:184mm;margin:auto}h1{font-size:16pt;margin:0 0 7mm}'
@@ -258,27 +258,27 @@ def html_page(data: dict) -> str:
         'th:last-child,td:last-child{width:19%}li{margin:1mm 0}'
         '.small{font-size:8pt;color:#354957}.meta{background:#f3f6f7;padding:3mm}'
         'section{break-inside:avoid}</style></head><body>'
-        '<h1>Meu Artigo — Diagnóstico científico</h1>'
-        '<p class="small">Triagem técnica de registros; não é parecer editorial ou avaliação científica independente.</p>'
-        '<section class="meta"><b>Situação:</b> '+safe(data["verdict"])+
-        '<br><b>Evidências:</b> '+str(c["references"])+
-        ' &nbsp; <b>Afirmações:</b> '+str(c["claims"])+
-        ' &nbsp; <b>Bloqueios:</b> '+str(c["blocking_occurrences"])+
-        ' &nbsp; <b>Revisões:</b> '+str(c["review_occurrences"])+
-        '<br><b>Fontes:</b> '+safe(data["source_verification"])+
-        ' &nbsp; <b>Protocolo:</b> '+safe(protocol)+'</section>'
-        '<section><h2>Achados prioritários</h2><table><thead><tr>'
-        '<th>Grau</th><th>Ocorrência (quantidade)</th><th>Registro</th></tr></thead><tbody>'
-        +body+'</tbody></table></section><section><h2>Próximas ações</h2><ol>'+
+        '<h1>Meu Artigo — Scientific diagnostic</h1>'
+        '<p class="small">Technical register triage, not independent scientific or editorial review.</p>'
+        '<section class="meta"><b>Status:</b> '+safe(data["verdict"])+
+        '<br><b>Evidence:</b> '+str(c["references"])+
+        ' &nbsp; <b>Claims:</b> '+str(c["claims"])+
+        ' &nbsp; <b>Blockers:</b> '+str(c["blocking_occurrences"])+
+        ' &nbsp; <b>Review items:</b> '+str(c["review_occurrences"])+
+        '<br><b>Sources:</b> '+safe(data["source_verification"])+
+        ' &nbsp; <b>Protocol:</b> '+safe(protocol)+'</section>'
+        '<section><h2>Priority findings</h2><table><thead><tr>'
+        '<th>Level</th><th>Finding (count)</th><th>Record</th></tr></thead><tbody>'
+        +body+'</tbody></table></section><section><h2>Next actions</h2><ol>'+
         actions+'</ol></section><section class="small"><p>'
-        '<b>Limites:</b> sem auditoria de citações no manuscrito completo, '
-        'verificação automática de sustentação semântica ou validação metodológica.'
-        '</p><p><b>SHA fonte:</b> '+safe(str(data["source_report_sha256"] or "-")[:12])+
-        ' &nbsp; <b>SHA evidências:</b> '+
+        '<b>Limits:</b> no complete-manuscript citation audit, '
+        'automated semantic support checking, or methodological validation.'
+        '</p><p><b>Source SHA:</b> '+safe(str(data["source_report_sha256"] or "-")[:12])+
+        ' &nbsp; <b>Evidence SHA:</b> '+
         safe(str(data["input_sha256"]["05_Evidence_Matrix.csv"] or "-")[:12])+
-        ' &nbsp; <b>SHA claims:</b> '+
+        ' &nbsp; <b>Claim SHA:</b> '+
         safe(str(data["input_sha256"]["09_Claims_Ledger.csv"] or "-")[:12])+
-        '</p><p>Decisões científicas e gates permanecem sob responsabilidade humana.</p>'
+        '</p><p>Scientific decisions and gates remain under human control.</p>'
         '</section></body></html>\n'
     )
 
