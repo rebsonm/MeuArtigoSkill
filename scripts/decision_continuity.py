@@ -27,6 +27,32 @@ METHOD_FIELD_VALUE_RE=re.compile(
 )
 MAX_FILE_BYTES=2_000_000
 
+# These are consequences of the declared *route family*, not claims that
+# any particular method choice or empirical procedure is scientifically sound.
+ROUTE_IMPLICATIONS={
+    "INTEGRATIVE_REVIEW":("Bound literature selection, appraise varied evidence, and justify integrative synthesis."),
+    "SYSTEMATIC_REVIEW":("Define auditable eligibility, execute planned retrieval, appraise evidence and synthesize with limits."),
+    "PROBLEMATIZING_REVIEW":("Identify assumptions, original intellectual positions, counterarguments and bounded reframing."),
+    "CONCEPTUAL_THEORY":("Specify conceptual premises, source lineage, rival explanations and theoretical boundaries."),
+    "QUALITATIVE":("Justify tradition, context, material selection, interpretive analysis and researcher reflexivity."),
+    "QUANTITATIVE":("Define units, measures, sampling, analytic assumptions and permitted statistical inferences."),
+    "MIXED_METHODS":("Justify both research strands, integration points, discordance and bounded meta-inference."),
+    "DESIGN_SCIENCE":("Trace problem requirements to artifact construction, evaluation criteria, results and limits."),
+}
+ACTION_EXPLANATIONS={
+    "RECONCILE_PENDING_TRANSACTION":"Reconcile the unfinished local transaction using the authorized recovery procedure before any new scientific write.",
+    "RECONCILE_CADA_AND_CONTINUITY":"Compare canonical continuity against C.A.D.A. task completion and original receipts; do not execute an inconsistent task.",
+    "REVIEW_CONFLICTING_METHOD_DECISION_EVIDENCE":"Researcher reviews the original recorded method decision and its profile/TRACE evidence before proceeding.",
+    "VERIFY_AUTHORIZED_CANONICAL_STORAGE":"Confirm current authorized canonical storage and synchronization before treating local records as authoritative.",
+    "RECONCILE_PROJECT_RECORDS":"Reconcile missing or conflicting canonical registers before declaring a new action executable.",
+    "EXECUTE_RECORDED_CADA_TASK":"Proceed only with the task identified by the existing CADA_ID and its approved Next_action field; this panel does not run it.",
+    "RESEARCHER_DECIDE_RECORDED_CADA_TASK":"Researcher must decide the item recorded at the existing CADA_ID; the assistant may prepare neutral alternatives.",
+    "RESEARCHER_CHOOSE_AND_JUSTIFY_METHOD_ROUTE":"Researcher chooses and justifies a methodological family and documents the actual decision reference.",
+    "RESEARCHER_REVIEW_PENDING_SCIENTIFIC_GATE":"Researcher evaluates the indicated gate against original evidence; this view cannot approve it.",
+    "RESEARCHER_REVIEW_NEXT_METHOD_FIELD":"Researcher reviews the indicated canonical method field and its methodological alternatives.",
+    "REQUEST_RESEARCHER_REVIEW_OF_CONTINUATION":"Review the project state and choose the next documented course without assuming it is complete.",
+}
+
 def _json(path: Path) -> dict | None:
     if path.is_symlink() or not path.is_file() or path.stat().st_size>MAX_FILE_BYTES:
         return None
@@ -239,8 +265,15 @@ def compose(root: Path, *, navigation: dict | None=None) -> dict:
         "status":"RECONCILIATION_REQUIRED" if trust_block else "READ_ONLY_GUIDANCE",
         "last_recorded_decision":last,
         "method_progress":progress,
+        "route_implications":{
+            "summary":ROUTE_IMPLICATIONS.get(route),
+            "describes_recorded_route_family_only":True,
+            "does_not_prove_real_world_design_fit":True,
+            "scientific_adequacy_review_required":True,
+        },
         "next_action":{
             "code":action,
+            "explanation":ACTION_EXPLANATIONS[action],
             "responsible":owner,
             "existing_cada_task_id":next_task_id,
             "existing_scientific_gate_id":next_gate_id,
