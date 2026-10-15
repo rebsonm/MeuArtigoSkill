@@ -95,11 +95,14 @@ They do not change the formal review status or independently make the
 `--strict` exit code fail. A valid, declared review with lexical warnings
 remains `HUMAN_JUDGMENT_RECORDED_NOT_AUTHENTICATED`; the report preserves
 `semantic_risk_codes` and `heuristic_review_needed` for researcher attention.
-`--strict` returns 2 when required formal inputs/reviews are missing or
-invalid, including stale source reports, invented passages and mismatched
-evidence hashes. Exit code 0 means only that those *formal requirements*
-were met; it **never means** a human was authenticated, semantic support
-was established or a scientific gate approved. A compact REG-013 report now shows
+`--strict` returns 2 when required formal inputs/reviews are missing,
+invalid, or explicitly adverse (PARTIALLY_SUPPORTED, NOT_SUPPORTED or
+INCONCLUSIVE), including stale source reports, invented passages and
+mismatched evidence hashes. It returns 1 for invalid input/failed execution.
+A valid full-support declaration with a heuristic warning remains advisory,
+so it alone does not change the exit status. Exit code 0 means only that
+the *formal technical conditions* were met; it **never means** a human
+was authenticated, semantic support was established or a gate approved. A compact REG-013 report now shows
 possible-overreach risk counts without revealing source text or personal data.
 
 This deterministic rule set was developed with the original 16 fictional
