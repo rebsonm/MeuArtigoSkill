@@ -65,3 +65,42 @@ Human work is not required to browse examples or run the engineering
 tests. Human researcher choice is mandatory to **confirm** a real method.
 Future independent method validation requires external specialists.
 Merge/public release require the maintainer's explicit authorization.
+
+## Expanded route-aware decision choices
+
+Researchers can now explore **five optional decision dimensions** without
+being required to complete a generic methodological questionnaire:
+
+    python scripts/adaptive_method_guide.py --preview-route QUALITATIVE --dimension sampling
+    python scripts/adaptive_method_guide.py --preview-route SYSTEMATIC_REVIEW --dimension sources
+    python scripts/adaptive_method_guide.py --preview-route QUANTITATIVE --dimension analysis
+    python scripts/adaptive_method_guide.py --preview-route MIXED_METHODS --dimension inference
+    python scripts/adaptive_method_guide.py --preview-route DESIGN_SCIENCE --dimension reporting
+    python scripts/adaptive_method_guide.py /authorized/project --dimension sources
+
+The available dimensions are `sampling`, `sources`, `analysis`,
+`inference`, and `reporting`. Meaning depends on the declared research
+route. For systematic reviews, source eligibility is **not participant
+sampling**; in qualitative studies selection can be purposeful or
+iterative; mixed-method strands may require different sampling plans.
+Pure conceptual theory is **not forced into empirical participant sampling**.
+
+Each option explains when it can be considered, what it may enable, its
+limitations and implications for the next step, including appropriate
+researcher judgment. Alternatives are **not ranked** or recommended on
+the basis of a private question or a claim of computational expertise.
+There is always a researcher-defined `OTHER_NOT_LISTED` route.
+
+Where a dimension corresponds to an **existing** method-profile field,
+it returns the canonical field name and whether a value is recorded,
+without exposing the value itself or overwriting it. Dimensions without
+a canonical field (especially results `reporting`) explicitly return
+`ADVISORY_DIMENSION_NOT_CANONICAL_FIELD`. An inappropriate empirical
+requirement reports `NOT_UNIVERSALLY_APPLICABLE`. Neither is silently
+written into a canonical project.
+
+Exploration and technical checks need **no human action now**. Confirming
+the actual scientific method, sampling, analysis, inferential claims and
+presentation is a **researcher decision**. Cross-disciplinary scientific
+validation requires independent experts later; a maintainer must
+separately authorize integration, merge and release.
