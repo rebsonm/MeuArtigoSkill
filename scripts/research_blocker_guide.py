@@ -34,7 +34,7 @@ RECORDS={
 # (priority, heading, explanation, owner, check, next read-only step).
 # Advice does not certify that the named record is itself corrupt.
 CATALOG={
-    "CANONICAL_DRIVE_ACCESS_NOT_VERIFIED_BY_LOCAL_PANEL":(0,
+    "CANONICAL_DRIVE_ACCESS_NOT_VERIFIED_BY_LOCAL_PANEL":(-1,
         "Canonical Drive access not verified",
         "This local view cannot show that the actual authorized Drive records were read or synchronized.",
         "AUTHORIZED_OPERATOR",("CONFIG","CONTINUITY"),
