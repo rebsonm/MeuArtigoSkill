@@ -22,17 +22,25 @@ class ResearchJourneySimulationTests(unittest.TestCase):
         self.assertEqual(report["real_human_judgments_collected"],0)
         self.assertFalse(report["independent_academic_validation"])
         self.assertFalse(report["seven_scientific_gates_modified"])
+        self.assertTrue(report["all_mock_drafts_preventively_blocked"])
         self.assertFalse(report["actual_next_step_router_executed"])
         self.assertFalse(report["google_drive_synced"])
         self.assertEqual(len(set(report["route_coverage"])),8)
         for row in report["case_results"]:
             with self.subTest(route=row["research_route"]):
-                self.assertEqual(len(row["events"]),8)
+                self.assertEqual(len(row["events"]),9)
                 self.assertTrue(row["exploration_verified"])
                 self.assertEqual(len(row["compared_ids"]),2)
                 self.assertTrue(row["unlisted_route_available"])
                 self.assertFalse(row["gate_approved"])
                 self.assertFalse(row["researcher_decision_saved"])
+                self.assertEqual(row["preventive_preflight"]["status"],
+                                 "BLOCKED_BEFORE_WRITING")
+                self.assertIn("PREVIEW_NOT_CANONICAL_AUTHORIZATION",
+                    row["preventive_preflight"]["blocking_finding_codes"])
+                self.assertFalse(row["preventive_preflight"]["draft_text_exported"])
+                self.assertFalse(row["preventive_preflight"]["draft_text_persisted"])
+                self.assertFalse(row["preventive_preflight"]["scientific_gate_approved"])
                 self.assertFalse(row["researcher_decision_authenticated"])
                 self.assertFalse(row["project_created_or_modified"])
                 self.assertFalse(row["semantic_method_suitability_validated"])
