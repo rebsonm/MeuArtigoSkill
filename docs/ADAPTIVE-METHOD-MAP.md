@@ -327,3 +327,50 @@ procedures before any actual method decision is recorded.
   methodologists and an appropriate evaluation protocol are required.
 - **For integration, merge or release:** explicit maintainer authorization
   is still required. PR #65 remains separate.
+
+
+## Intelligent continuity from the last declared scientific decision
+
+The native research panel now includes a read-only
+\`decision_continuity\` view, built from the **existing**
+\`17_Decision_Log.csv\`, \`13_Traceability_Log.csv\`,
+\`METHOD_PROFILE.json\`, \`11_CADA_Control.csv\`, canonical
+\`CONTINUIDADE.md\` and the established \`next_step_router.py\`.
+No additional tracking register or second C.A.D.A. task board exists.
+
+It shows:
+- the last **append-recorded** decision ID, type and recorded status,
+  without reproducing a private research question, original decision
+  text, reasoning, personal name, source material or task instructions;
+- whether the latest recorded methodological-field change matches the
+  currently stored text's original SHA-256 fingerprint, and whether a
+  referenced TRACE identifier appears in the trace register;
+- structural method progress: route, confirmed-in-record status, number
+  of fields filled and **next missing required canonical field**;
+- the next step decided by the existing C.A.D.A./gate router, identified
+  by CADA_ID and/or GATE_ID, with technical versus researcher ownership;
+- conservative blockers, including unverified canonical Drive storage,
+  interrupted journals, conflicting method decisions and inconsistent
+  C.A.D.A. continuity.
+
+The view never marks a filled field as scientifically adequate. Logged
+human-approval fields remain declarations requiring independent
+verification where appropriate. The most recent decision means the
+**last CSV append row**, not independently established chronological
+ordering. A missing, malformed or conflicting log must be reconciled:
+the assistant must not reconstruct a fictional human decision.
+
+**Action responsibility and blocking rule:** where the authorized router
+explicitly permits technical preparation, the panel points to the
+existing CADA_ID without duplicating private Next_action text. If
+authoritative storage, integrity, methods or decision records require
+reconciliation, it must show that blocker instead of declaring any
+scientific task automatically executable. A pending scientific gate or
+unconfirmed method always requires a real researcher decision.
+
+**Human involvement:**
+- Engineering and fixture checks: no user action.
+- Actual method choices, field approval, decisions at the seven gates:
+  real researcher action and evidence.
+- Independent scientific/disciplinary validation: human experts later.
+- Integration with PR #65, merge, publication: separate maintainer approval.
