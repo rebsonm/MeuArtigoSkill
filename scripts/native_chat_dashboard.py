@@ -15,6 +15,7 @@ from pathlib import Path
 from presentation_mode import read_config
 from next_step_router import (TERMINAL, documented_gate, resolve as resolve_next_step)
 from cada_continuity_integrity import audit as audit_cada_continuity
+from scientific_diagnostic import compose as compose_scientific_diagnostic
 
 MGMT = "00_Gestao_e_Continuidade"
 FILES = {
@@ -64,6 +65,61 @@ def report_indicator(root: Path) -> str:
     if not isinstance(data, dict) or not isinstance(data.get("checks"), list):
         return "UNREADABLE"
     return "PRESENT_NOT_AUDITED"
+
+
+def diagnostic_view(root: Path, mode: str) -> dict:
+    """Reuse REG-013 in the existing evidence view; no second state engine.
+
+    When inputs are unavailable, report unknown rather than fabricate a
+    successful audit or turn a missing result into zero scientific concerns.
+    """
+    base = {
+        "status": "NOT_READY",
+        "reason": "CANONICAL_INPUTS_UNAVAILABLE_OR_INVALID",
+        "scope": "CANONICAL_REGISTERS_ONLY",
+        "verdict": None,
+        "blocking_occurrences": None,
+        "review_occurrences": None,
+        "source_report_status": None,
+        "protocol_status": None,
+        "findings": [],
+        "findings_hidden": None,
+        "next_actions": [],
+        "scientific_quality_validated": False,
+        "human_scientific_decision_recorded_by_panel": False,
+        "drive_sync_verified_in_this_session": False,
+    }
+    try:
+        result = compose_scientific_diagnostic(root)
+    except (OSError, ValueError, csv.Error, UnicodeError, json.JSONDecodeError):
+        return base
+    # Only presentation is truncated. The underlying counts, findings and
+    # guarded continuation rules remain the same in MINIMAL and FULL.
+    detail_cap = 2 if mode == "MINIMAL" else 6
+    actions_cap = 1 if mode == "MINIMAL" else 4
+    shown = result["priority_findings"][:detail_cap]
+    counts = result["counts"]
+    return {
+        **base,
+        "status": "ASSESSED_LIMITED_SCOPE",
+        "reason": None,
+        "verdict": result["verdict"],
+        "blocking_occurrences": counts["blocking_occurrences"],
+        "review_occurrences": counts["review_occurrences"],
+        "source_report_status": result["source_verification"],
+        "protocol_status": result["protocol"]["status"],
+        "protocol_pending": result["protocol"]["pending"],
+        "findings": [{
+            "code": item["code"],
+            "severity": item["severity"],
+            "occurrences": item["count"],
+            **({"sample_id": item["sample_id"]} if mode == "FULL" else {}),
+        } for item in shown],
+        "findings_hidden": max(result["all_finding_categories"] - len(shown), 0),
+        "next_actions": result["actions"][:actions_cap],
+        "technical_diagnostic_sha256": result["input_sha256"],
+        "source_report_sha256": result["source_report_sha256"],
+    }
 
 
 def panel(root: Path, *, mode: str | None = None) -> dict:
@@ -137,6 +193,7 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
         "documented_gate_approvals": None if gates is None else sum(
             x["approval_documented"] for x in gate_items),
     }
+    diagnostic = diagnostic_view(root, chosen)
     # Task titles and execution assignees come from the authorized project.
     # Never expose unrelated notes, source paths, protected text or review excerpts.
     return {
@@ -184,6 +241,7 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
             "verified_sources": None,
             "blocking_conflicts": None,
             "pending_human_reviews": None,
+            "diagnostic": diagnostic,
         },
         "history_sync": {
             "registered_trace_events": nrows(tables["trace"]),
@@ -241,6 +299,14 @@ def fallback(data: dict) -> str:
         "Evidence / claims recorded: " + str(evidence["registered_evidence_rows"]) +
         " / " + str(evidence["registered_claims"]),
         "Source verification report: " + evidence["source_report_presence"],
+        "Research diagnostic: " + evidence["diagnostic"]["status"] +
+        " | blockers: " + str(evidence["diagnostic"]["blocking_occurrences"]) +
+        " | review: " + str(evidence["diagnostic"]["review_occurrences"]),
+        "First diagnostic finding: " + (
+            evidence["diagnostic"]["findings"][0]["code"]
+            if evidence["diagnostic"]["findings"] else
+            "Unavailable or none recorded (not independent validation)"
+        ),
         "Trace/sync entries: " + str(history["registered_trace_events"]) +
         " / " + str(history["registered_sync_records"]),
         "Google Drive sync verified: NO (this session)",
