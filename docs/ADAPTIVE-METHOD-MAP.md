@@ -276,6 +276,11 @@ documented the actual methodological decision**:
       --option-id DOCUMENTS \
       --researcher-reviewed
 
+The command is allowed only in an **explicitly authorized WORK_FALLBACK**
+local project (both `storage_mode=WORK_FALLBACK` and
+`fallback_authorized=true`). A Drive-canonical local mirror is not a
+writable authority for this CLI; it must use a separately verified
+canonical Drive workflow. No automatic conversion to fallback occurs.
 The command requires an already confirmed method route whose original
 DEC record matches the canonical profile; a field from that route; a
 genuine researcher-declared decision, reference and rationale; safe
