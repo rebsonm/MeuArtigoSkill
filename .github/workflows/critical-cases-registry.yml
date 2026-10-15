@@ -17,6 +17,10 @@ on:
       - "scripts/claim_overreach_signals.py"
       - "tests/test_claim_overreach_signals.py"
       - "scripts/evaluate_semantic_challenge.py"
+      - "scripts/evaluate_semantic_holdout.py"
+      - "tests/test_semantic_holdout.py"
+      - "benchmarks/claim_support_heldout_v1.json"
+      - "docs/HELDOUT-SEMANTIC-TEST.md"
       - "tests/test_semantic_challenge_eval.py"
       - "benchmarks/claim_support_challenge_v1.json"
       - "docs/SEMANTIC-SUPPORT-CHALLENGE.md"
@@ -48,6 +52,10 @@ on:
       - "scripts/claim_overreach_signals.py"
       - "tests/test_claim_overreach_signals.py"
       - "scripts/evaluate_semantic_challenge.py"
+      - "scripts/evaluate_semantic_holdout.py"
+      - "tests/test_semantic_holdout.py"
+      - "benchmarks/claim_support_heldout_v1.json"
+      - "docs/HELDOUT-SEMANTIC-TEST.md"
       - "tests/test_semantic_challenge_eval.py"
       - "benchmarks/claim_support_challenge_v1.json"
       - "docs/SEMANTIC-SUPPORT-CHALLENGE.md"
@@ -76,7 +84,7 @@ jobs:
           python-version: "3.12"
       - name: Syntax and offline regression cases
         run: |
-          python -m py_compile scripts/evaluation_registry.py scripts/report_output_guard.py scripts/reference_audit.py scripts/semantic_claim_review.py scripts/scientific_diagnostic.py scripts/native_chat_dashboard.py scripts/claim_overreach_signals.py scripts/evaluation_package.py scripts/run_critical_cases.py scripts/evaluate_semantic_challenge.py
+          python -m py_compile scripts/evaluation_registry.py scripts/report_output_guard.py scripts/reference_audit.py scripts/semantic_claim_review.py scripts/scientific_diagnostic.py scripts/native_chat_dashboard.py scripts/claim_overreach_signals.py scripts/evaluation_package.py scripts/run_critical_cases.py scripts/evaluate_semantic_challenge.py scripts/evaluate_semantic_holdout.py
           python -m unittest discover -s tests -p 'test_evaluation_registry.py' -v
           python -m unittest discover -s tests -p 'test_reference_audit.py' -v
           python -m unittest discover -s tests -p 'test_report_output_guard.py' -v
@@ -88,6 +96,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_evaluation_package.py' -v
           python -m unittest discover -s tests -p 'test_executed_critical_cases.py' -v
           python -m unittest discover -s tests -p 'test_semantic_challenge_eval.py' -v
+          python -m unittest discover -s tests -p 'test_semantic_holdout.py' -v
       - name: Execute fixed synthetic controls with recorded evidence
         run: |
           python scripts/run_critical_cases.py \
@@ -123,5 +132,23 @@ jobs:
         with:
           name: synthetic-semantic-challenge-evidence
           path: ${{ runner.temp }}/semantic-support-challenge/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Execute untuned synthetic heldout cases
+        run: |
+          python scripts/evaluate_semantic_holdout.py \
+            --benchmark benchmarks/claim_support_heldout_v1.json \
+            --out-dir "$RUNNER_TEMP/semantic-holdout" \
+            --skill-commit "$GITHUB_SHA"
+          python scripts/evaluation_registry.py verify \
+            --ledger "$RUNNER_TEMP/semantic-holdout/evaluation_runs.jsonl"
+          python scripts/evaluation_package.py verify \
+            "$RUNNER_TEMP/semantic-holdout/evaluation-replay.zip"
+      - name: Retain synthetic heldout observations
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: synthetic-heldout-evidence
+          path: ${{ runner.temp }}/semantic-holdout/
           if-no-files-found: warn
           retention-days: 30
