@@ -58,7 +58,7 @@ class LocalResearchBridge(ThreadingHTTPServer):
         result["local_bridge"]={
             "schema":BRIDGE_SCHEMA,
             "enabled":True,
-            "session_token":self.session_token,
+            "session_token":None,
             "origin":self.trusted_origin,
             "read_only":True,
             "available_actions":list(READ_PERMISSIONS),
@@ -120,10 +120,23 @@ class ResearchHandler(BaseHTTPRequestHandler):
             return self._denied()
         # No path parameters, query leaks or reflection of user data.
         if self.path=="/":
+            # Never serve private task titles, registered routes, or a session
+            # secret to an unauthenticated GET. The browser receives only a
+            # fictional shell and must bootstrap its session via the URL
+            # fragment and explicit authenticated /api/snapshot fetch.
+            shell=model(route="UNDECIDED")
+            shell["local_bridge"]={
+                "schema":BRIDGE_SCHEMA,"enabled":True,
+                "origin":self.server.trusted_origin,
+                "session_token":None,"read_only":True,
+                "available_actions":list(READ_PERMISSIONS),
+                "canonical_write":False,"gate_approval":False,
+                "chat_host_connected":False,
+            }
             try:
-                html=render(self.server.snapshot(),live=True)
+                html=render(shell,live=True)
             except (OSError,ValueError,TypeError,KeyError):
-                return self._denied(409,"PROJECT_SNAPSHOT_REQUIRES_RECONCILIATION")
+                return self._denied(409,"LOCAL_SHELL_UNAVAILABLE")
             return self._output(200,html.encode("utf-8"),"text/html; charset=utf-8")
         if self.path=="/api/snapshot":
             if not self._authorized_api():return self._denied()
@@ -194,10 +207,13 @@ def main(argv=None):
         with LocalResearchBridge(project=a.project,
                   route=a.preview_route or "QUALITATIVE",
                   mode=a.mode,address=("127.0.0.1",a.port)) as server:
-            # No token in the URL or printed output.
+            # Explicit opt-in session URL has a SECRET fragment. Browser
+            # removes it from the address bar after bootstrap; never share.
             print(json.dumps({
                 "status":"LOCAL_READ_ONLY_BRIDGE_READY",
-                "url":server.trusted_origin+"/",
+                # Fragment stays in the browser rather than HTTP request
+                # paths. Treat this URL as sensitive and never share it.
+                "url":server.trusted_origin+"/#session="+server.session_token,
                 "bind_host":"127.0.0.1",
                 "project_bound":server.project is not None,
                 "external_network_available":False,
