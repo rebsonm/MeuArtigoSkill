@@ -109,7 +109,7 @@ class DiagnosticTests(unittest.TestCase):
 
     def test_markdown_is_compact_and_contains_no_private_text(self):
         text=d.markdown(d.compose(self.root))
-        self.assertIn("Diagnóstico científico",text)
+        self.assertIn("Scientific diagnostic",text)
         self.assertLessEqual(len(text.splitlines()),28)
         self.assertLessEqual(len(text),3300)
         self.assertNotIn("Fictional Doe",text)
@@ -122,7 +122,7 @@ class DiagnosticTests(unittest.TestCase):
         self.assertIn("@page{size:A4",html)
         self.assertNotIn("Fictional Doe",html)
         self.assertNotIn("The two organizational",html)
-        self.assertIn("Triagem técnica",html)
+        self.assertIn("Technical register triage",html)
 
     def test_overflow_of_many_findings_is_fully_counted_and_truncated(self):
         self.evidence[0]["Citation"]=""
@@ -140,7 +140,7 @@ class DiagnosticTests(unittest.TestCase):
         self.assertGreater(report["omitted_finding_categories"],0)
         md=d.markdown(report)
         self.assertLessEqual(len(md),3300)
-        self.assertIn("não exibidas",md)
+        self.assertIn("categories not shown",md)
 
     def test_invalid_review_cannot_escalate_to_science(self):
         a={"schema_version":1,"reviews":[{
