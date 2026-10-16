@@ -108,6 +108,60 @@ class DurableJournalCheckpointTests(unittest.TestCase):
             self.push()
         self.assertEqual(self.drive.posts, 1)
 
+    def test_rollback_to_empty_intent_log_is_refused(self):
+        self.drive.raw = encode(self.after)
+        self.journal_path.write_bytes(encode(self.before))
+        with self.assertRaisesRegex(checkpoint.JournalSyncError,
+                                    "JOURNAL_TRANSITION_DROPPED_INTENT"):
+            checkpoint.push_once(
+                REMOTE_ID, AUDIT, "dummy-token-long", self.plan,
+                self.journal_path, hashlib.sha256(encode(self.after)).hexdigest(),
+                sender=self.drive.sender)
+        self.assertEqual(self.drive.posts, 0)
+
+    def test_changes_to_pending_attempt_identity_are_refused(self):
+        self.drive.raw = encode(self.after)
+        changed = copy.deepcopy(self.after)
+        changed["operations"]["01_Dados"]["attempt_id"] = "forged-attempt"
+        self.journal_path.write_bytes(encode(changed))
+        with self.assertRaisesRegex(checkpoint.JournalSyncError,
+                                    "JOURNAL_TRANSITION_CHANGED_INTENT"):
+            checkpoint.push_once(
+                REMOTE_ID, AUDIT, "dummy-token-long", self.plan,
+                self.journal_path, hashlib.sha256(encode(self.after)).hexdigest(),
+                sender=self.drive.sender)
+        self.assertEqual(self.drive.posts, 0)
+
+    def test_resolved_operation_cannot_return_to_unknown(self):
+        resolved = copy.deepcopy(self.after)
+        resolved["operations"]["01_Dados"].update(
+            state="RESOLVED", observed_remote_id="synthetic-folder-0001",
+            after_scan_token="scan-after-0002")
+        self.drive.raw = encode(resolved)
+        self.journal_path.write_bytes(encode(self.after))
+        with self.assertRaisesRegex(checkpoint.JournalSyncError,
+                                    "JOURNAL_TRANSITION_ROLLBACK"):
+            checkpoint.push_once(
+                REMOTE_ID, AUDIT, "dummy-token-long", self.plan,
+                self.journal_path, hashlib.sha256(encode(resolved)).hexdigest(),
+                sender=self.drive.sender)
+        self.assertEqual(self.drive.posts, 0)
+
+    def test_cannot_add_parallel_create_while_previous_is_uncertain(self):
+        self.drive.raw = encode(self.after)
+        next_state = copy.deepcopy(self.after)
+        next_state["operations"]["other/child"] = {
+            "state": "OUTCOME_UNKNOWN", "attempt_id": "another",
+            "parent_id": ROOT, "before_scan_token": "scan-x"}
+        self.journal_path.write_bytes(encode(next_state))
+        with self.assertRaisesRegex(checkpoint.JournalSyncError,
+                                    "JOURNAL_TRANSITION_UNRESOLVED_PREVIOUS_INTENT"):
+            checkpoint.push_once(
+                REMOTE_ID, AUDIT, "dummy-token-long", self.plan,
+                self.journal_path, hashlib.sha256(encode(self.after)).hexdigest(),
+                sender=self.drive.sender)
+        self.assertEqual(self.drive.posts, 0)
+
     def test_remote_changed_precondition_blocks_no_patch(self):
         self.drive.raw = encode(self.after)
         with self.assertRaisesRegex(checkpoint.JournalSyncError,
