@@ -67,7 +67,41 @@ the model cannot select arbitrary projects or request writes. The
 host's tool arguments may specify a UI locale and MINIMAL/FULL display
 depth, which never authorize actions or gate decisions.
 
-### No project / unavailable or unsupported UI
+### Optional authenticated HTTP transport for ChatGPT integration work
+
+The MCP app also has a Streamable HTTP adapter:
+
+    MEU_ARTIGO_PROJECT_ROOT=/authorized/project \
+    MEU_ARTIGO_MCP_BEARER=<privately generated long bearer token> \
+    node server.mjs --http
+
+By default it binds **127.0.0.1:8085** and is NOT accessible to hosted
+ChatGPT. All HTTP MCP requests require a bearer secret of at least 32
+characters, checked in constant time, and any \`Origin\` header must
+match the explicitly configured \`MEU_ARTIGO_ALLOWED_ORIGIN\` or is
+rejected. The server provides no CORS wildcard and never accepts
+filesystem paths in tool arguments.
+
+A non-loopback binding is refused unless the operator explicitly sets
+\`MEU_ARTIGO_PROXY_TLS_CONFIRMED=YES\` and
+\`MEU_ARTIGO_SINGLE_USER_ISOLATED=YES\`. Those flags are operator
+assertions, **not verified security evidence**. Do not enable such a
+binding merely to demonstrate the UI. A real ChatGPT remote connection
+needs an independently managed TLS/authenticated reverse proxy,
+suitable OAuth/user isolation, a stable HTTPS URL and authorized storage
+review; no public endpoint is provisioned by this code.
+
+For a single-tenant local network adapter smoke run:
+
+    cd integrations/mcp-apps
+    npm run test:http
+
+The bearer token must stay in a trusted secrets store, never in the
+archive, client JavaScript, screenshots, shared project files or chat.
+Any multi-tenant hosting design requires additional authorization and
+is outside this experimental server's accepted scope.
+
+## No project / unavailable or unsupported UI
 
 The tool returns \`isError:true\` with a concise localized recovery
 message **without any fictional research data** when no project has
