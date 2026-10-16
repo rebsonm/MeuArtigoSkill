@@ -1,8 +1,10 @@
 """Offline adversarial tests of public-doc checks; software fixtures only."""
 from __future__ import annotations
 
+import io
 import sys
 import tempfile
+from contextlib import redirect_stdout
 import unittest
 from pathlib import Path
 
@@ -16,6 +18,20 @@ class PublicDocumentationAuditTests(unittest.TestCase):
         result = audit.inspect(ROOT)
         self.assertGreater(result["documents"], 20)
         self.assertEqual(result["issues"], [], "\n".join(result["issues"]))
+
+    def test_public_audit_cli_never_prints_source_derived_details(self):
+        with tempfile.TemporaryDirectory() as name:
+            root=Path(name)
+            (root/"PRIVATE_FILENAME_EXAMPLE.md").write_text(
+                "PPGA private-library sentinel",encoding="utf-8")
+            output=io.StringIO()
+            with redirect_stdout(output):
+                result=audit.main(["--repo",str(root)])
+            self.assertEqual(result,1)
+            report=output.getvalue()
+            self.assertIn("public_document_findings=1",report)
+            self.assertNotIn("PRIVATE_FILENAME_EXAMPLE",report)
+            self.assertNotIn("PPGA",report)
 
     def test_detects_old_private_roadmap_reference(self):
         with tempfile.TemporaryDirectory() as name:
