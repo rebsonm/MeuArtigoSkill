@@ -25,9 +25,9 @@ def plan_hash(plan: dict) -> str:
                                     separators=(",", ":")).encode("utf-8")).hexdigest()
 
 
-def direct_scan(plan: dict, inventory: dict, parent_id: str) -> dict:
+def direct_scan(plan: dict, inventory: dict, parent_id: str, *, allow_fixture: bool = False) -> dict:
     """Require complete direct-child listing reconciled to inventory rows."""
-    delivery.check_inventory(plan, inventory)
+    delivery.check_inventory(plan, inventory, allow_fixture=allow_fixture)
     delivery.require_drive_id(parent_id)
     scans = inventory.get("parent_scans")
     if not isinstance(scans, list):
@@ -63,8 +63,8 @@ def direct_scan(plan: dict, inventory: dict, parent_id: str) -> dict:
     return scan
 
 
-def inspect_target(plan: dict, inventory: dict, path: str, parent_id: str) -> dict:
-    scan = direct_scan(plan, inventory, parent_id)
+def inspect_target(plan: dict, inventory: dict, path: str, parent_id: str, *, allow_fixture: bool = False) -> dict:
+    scan = direct_scan(plan, inventory, parent_id, allow_fixture=allow_fixture)
     name = path.split("/")[-1]
     matches = [c for c in scan["children"] if c["name"] == name]
     if len(matches) > 1:
@@ -96,7 +96,7 @@ def read_journal(plan: dict, journal_path: Path) -> dict:
     return data
 
 
-def create_preflight(plan: dict, inventory: dict, journal: dict, path: str) -> tuple[dict, dict]:
+def create_preflight(plan: dict, inventory: dict, journal: dict, path: str, *, allow_fixture: bool = False) -> tuple[dict, dict]:
     """Reserve a single create intent before the external call. No blind retries."""
     if journal.get("schema") != SCHEMA or journal.get("plan_sha256") != plan_hash(plan):
         raise ValueError("INVALID_CREATE_JOURNAL")
@@ -105,11 +105,11 @@ def create_preflight(plan: dict, inventory: dict, journal: dict, path: str) -> t
     if entry is None or entry["type"] != "folder":
         raise ValueError("FOLDER_NOT_IN_PLAN")
     # A guarded operation must be the exact next action from reconciliation.
-    action = delivery.next_action(plan, inventory)
+    action = delivery.next_action(plan, inventory, allow_fixture=allow_fixture)
     if action.get("path") != path or action.get("action") != "CHECK_PARENT_FOR_CREATE":
         return {"action": "BLOCKED_NOT_NEXT_MISSING_FOLDER", "path": path}, journal
     parent_id = action["parent_id"]
-    observed = inspect_target(plan, inventory, path, parent_id)
+    observed = inspect_target(plan, inventory, path, parent_id, allow_fixture=allow_fixture)
     if observed["action"] != "NOT_FOUND_AFTER_COMPLETE_SCAN":
         return observed, journal
     previous = journal["operations"].get(path)
@@ -129,7 +129,7 @@ def create_preflight(plan: dict, inventory: dict, journal: dict, path: str) -> t
             "warning": "Persisted intent; NEVER retry create directly after timeout/error."}, journal
 
 
-def resolve_create(plan: dict, inventory: dict, journal: dict, path: str) -> tuple[dict, dict]:
+def resolve_create(plan: dict, inventory: dict, journal: dict, path: str, *, allow_fixture: bool = False) -> tuple[dict, dict]:
     """Reconcile after an uncertain return. No new create action is emitted."""
     if journal.get("schema") != SCHEMA or journal.get("plan_sha256") != plan_hash(plan):
         raise ValueError("INVALID_CREATE_JOURNAL")
@@ -142,11 +142,11 @@ def resolve_create(plan: dict, inventory: dict, journal: dict, path: str) -> tup
                 "remote_id": op["observed_remote_id"]}, journal
     if op["state"] != "OUTCOME_UNKNOWN":
         raise ValueError("INVALID_CREATE_STATE")
-    scan = direct_scan(plan, inventory, op["parent_id"])
+    scan = direct_scan(plan, inventory, op["parent_id"], allow_fixture=allow_fixture)
     if scan["scan_token"] == op["before_scan_token"]:
         return {"action": "REINSPECT_PARENT", "path": path,
                 "reason": "STALE_PRE_OPERATION_SCAN"}, journal
-    result = inspect_target(plan, inventory, path, op["parent_id"])
+    result = inspect_target(plan, inventory, path, op["parent_id"], allow_fixture=allow_fixture)
     if result["action"] == "REUSE_EXISTING":
         op["state"] = "RESOLVED"
         op["observed_remote_id"] = result["id"]
@@ -166,31 +166,25 @@ def locked_update(plan: dict, inventory: dict, journal_path: Path, path: str, co
         raise ValueError("UNSAFE_JOURNAL_LINK")
     journal_path.parent.mkdir(parents=True, exist_ok=True)
     lock_path = journal_path.with_name(journal_path.name + ".lock")
-    fd = None
+    # An existing lock is a blocker, not permission to race or remove its owner.
+    owned = False
     try:
         fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
+        owned = True
         os.close(fd)
-        fd = None
         data = read_journal(plan, journal_path)
         if command == "prepare":
             result, data = create_preflight(plan, inventory, data, path)
-        else:
+        elif command == "resolve":
             result, data = resolve_create(plan, inventory, data, path)
+        else:
+            raise ValueError("UNKNOWN_CREATE_GUARD_COMMAND")
         if result["action"] in ("CREATE_FOLDER_ONCE", "RESOLVED_EXISTING_REMOTE_FOLDER"):
             delivery.write_json(journal_path, data)
         return result
     finally:
-        if fd is not None:
-            os.close(fd)
-        # A failed create of the lock must not remove someone else's lock.
-        if lock_path.exists():
-            try:
-                if fd is None and 'result' in locals():
-                    lock_path.unlink()
-                elif fd is None and 'data' in locals():
-                    lock_path.unlink()
-            except OSError:
-                pass
+        if owned:
+            lock_path.unlink()
 
 
 def main() -> int:
