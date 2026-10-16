@@ -8,6 +8,33 @@ One test file, a created Drive folder, and a ZIP upload do **not** prove that th
 
 The standard-library helper at scripts/drive_delivery.py prepares and checks a manifest. **It cannot connect to Google Drive, upload files, invoke platform tools, or independently authenticate JSON receipts.** The host must call real Drive tools, inspect their responses and collect fresh inventory and downloaded file bytes. Never manufacture tool outcomes.
 
+## My Drive root is fixed before planning or creation
+
+For new and resumed Drive-canonical article projects, the path is
+`My Drive / Meu Artigo / ARTIGO_<title>_<year> / existing subfolders`.
+Resolve My Drive using the provider's `files.get(fileId=root)` metadata,
+not a previously visited folder ID. The exact `Meu Artigo` must be
+a direct root child; the article must be its direct child. Verify metadata
+for every reused folder. Do not reuse a same-name folder under any other
+parent; never move or rename a legacy project silently.
+
+First use `scripts/drive_root_live_preflight.py` (read-only authenticated
+executor) or the equivalent connected authorized provider metadata. The
+source-only `scripts/drive_root_anchor.py` validates the returned actual
+metadata, **complete all-types** direct-parent scans and root scope. Every
+new real Drive creation plan must carry a checked `root_scope`. The external
+`drive_create_guard.py` CLI now blocks unscoped plans rather than
+issuing a create intent for a random existing parent.
+
+If a container or article folder is missing, the resolver returns
+`CHECK_PARENT_FOR_GUARDED_CREATE`, **never** direct permission to POST.
+A non-idempotent create still requires the separately trusted F7-F8
+durable signed intent, independent latest-head confirmation and a fresh
+post-create scan. The current CLI does not bypass those missing host
+integrations. Existing misplaced/legacy projects require a human-led
+migration decision; do not duplicate, delete or move them automatically.
+See [the canonical root policy](drive-root-anchor.md).
+
 ## Authorization and security
 
 1. Only operate on a designated private project root when the researcher has authorized Google Drive storage and the host has observed real writable access.
