@@ -10,6 +10,23 @@ Meu Artigo is distributed as a **Skill**, but installing Skills and accessing ex
 
 [ChatGPT guide](CHATGPT.md) · [Claude guide](CLAUDE.md) · [Gemini guide](GEMINI.md) · [Installation](INSTALLATION.md)
 
+## Optional portable visual integration
+
+The optional `integrations/mcp-apps/` companion follows the standard
+MCP Apps tool-to-UI resource protocol, with a full textual result for
+clients without graphical widgets. ChatGPT is the primary target and
+requires a separate authenticated HTTPS server connection before the
+component can appear in the conversation. Other assistants may render
+the same component only if their host actually supports MCP Apps. The
+Skill itself stays useful as a text-only research assistant if an MCP App
+cannot load. This portability is architectural, not proof of live tests
+in every provider.
+
+The UI follows the user's preferred interaction language where supported
+(PT/EN/ES/FR static translations and an English website fallback);
+it does not change manuscript language, source evidence or the scientific
+approval rules. See [integration documentation](../integrations/mcp-apps/README.md).
+
 ## What is independent of the platform?
 
 You can describe a research problem, discuss methodological options, review source evidence and control your own scientific decisions. Seven significant scientific checkpoints remain under researcher responsibility.
