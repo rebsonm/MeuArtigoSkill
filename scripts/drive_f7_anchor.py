@@ -131,7 +131,8 @@ def read_verified_chain(directory: Path, plan: dict, audit_parent_id: str,
 def seal_remote_checkpoint(directory: Path, project_root: Path, plan: dict,
                            audit_parent_id: str, audit_file_id: str, token: str,
                            journal_sha256: str, key: bytes, expected_head: str | None,
-                           *, sender=checkpoint.request) -> dict:
+                           *, authorized_initial_bootstrap: bool = False,
+                           sender=checkpoint.request) -> dict:
     """Seal a remotely verified SHA once, writing a new non-overwriting receipt.
 
     expected_head is the trusted value held separately by the executor.
@@ -139,6 +140,10 @@ def seal_remote_checkpoint(directory: Path, project_root: Path, plan: dict,
     """
     if not isinstance(key, bytes) or len(key) < 32:
         raise AnchorError("ANCHOR_KEY_UNAVAILABLE")
+    if expected_head is None and not authorized_initial_bootstrap:
+        raise AnchorError("ANCHOR_NEW_HISTORY_ATTESTATION_REQUIRED")
+    if expected_head is not None and authorized_initial_bootstrap:
+        raise AnchorError("ANCHOR_BOOTSTRAP_ONLY_FOR_NEW_HISTORY")
     chain = read_verified_chain(directory, plan, audit_parent_id, audit_file_id,
                                 key, project_root, expected_head)
     if (not isinstance(journal_sha256, str) or
@@ -212,6 +217,8 @@ def main() -> int:
     p.add_argument("--audit-file-id", required=True)
     p.add_argument("--journal-sha256")
     p.add_argument("--expected-head")
+    p.add_argument("--attest-initial-anchor", action="store_true",
+                   help="Only first checkpoint of an explicitly new archive; never for recovery.")
     args = p.parse_args()
     try:
         plan = delivery.load_json(args.plan)
@@ -228,7 +235,8 @@ def main() -> int:
                 raise AnchorError("ANCHOR_JOURNAL_SHA_REQUIRED")
             result = seal_remote_checkpoint(args.archive, args.project_root,
                      plan, args.audit_parent_id, args.audit_file_id,
-                     token, args.journal_sha256, key, args.expected_head)
+                     token, args.journal_sha256, key, args.expected_head,
+                     authorized_initial_bootstrap=args.attest_initial_anchor)
         print(json.dumps(result, sort_keys=True))
         return 0
     except (OSError, ValueError, KeyError, TypeError):
