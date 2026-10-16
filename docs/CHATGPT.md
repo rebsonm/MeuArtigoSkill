@@ -12,6 +12,23 @@ Meu Artigo is a **Skill**, not a replacement for ChatGPT. Its research guidance 
 
 You do not need to open a technical dashboard to begin. The Skill is designed to offer a useful summary and next-step guidance in the conversation itself.
 
+## Optional approved website UI
+
+A browser-based, accessible blue Meu Artigo website is available from the
+source tree for **fictional preview** or **read-only authorized local
+project** snapshots. Run `python scripts/build_research_site.py
+--preview-route QUALITATIVE --output /safe/new-demo.html` to generate a new
+HTML file, or use `--project /authorized/project` to render a permitted local
+projection. The full navigation contains ten areas and has an accessible
+selected-method treatment with stronger contrast. The official logo is
+embedded from the repository. For limitations and source attribution,
+consult [website instructions](../references/research-site-ux.md).
+
+This is not a live connected Drive dashboard, does not approve scientific
+gates and cannot be assumed to appear automatically inside an existing
+ChatGPT installation. The current private hosted app and this new website
+are separately testable delivery surfaces.
+
 ## Guided visual interaction
 
 When the active host supports native interaction controls, a researcher can ask
