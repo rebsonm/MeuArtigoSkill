@@ -98,6 +98,10 @@ No authenticated F5 POST has been executed here.
 | Multi-host concurrent writers / global exactly-once | Outside proof | Not guaranteed |
 | Scientific review by researcher | Not a technical test | Requires human decisions |
 
+## F7 hardening boundary
+
+The experimental `scripts/drive_f7_anchor.py` can seal and later validate signed immutable checkpoint receipts against independently retained trusted head digests. It is **not automatically invoked** by this F5 operator. Accordingly **do not enable live folder creation** in a real environment on the strength of F5 alone: until the executor persists and independently verifies the current F7 trusted head before every create and after every resolution, the resume assurance is incomplete. See `references/drive-f7-anchor-runbook.md`.
+
 ## Exit criteria
 
 Until a separate authorized environment executes and records the real API
