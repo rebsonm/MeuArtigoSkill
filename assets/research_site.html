@@ -60,30 +60,207 @@ button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus
 .option.selected .pill.green{color:#fff;background:#0B57D0}
 .option:focus-visible{outline:3px solid #93baff;outline-offset:2px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+#site-language{background:#fff;color:#102047;border:1px solid #dbe6f5;border-radius:9px;padding:8px;max-width:134px;font-size:12px}.site-language-label{font-size:12px;color:#667a96}@media(max-width:650px){.site-language-label{display:none}#site-language{max-width:100px;font-size:11px}}
 </style>
 </head>
 <body>
 <div class="shell">
-<header class="header"><div class="wordmark"><img class="brand-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1ldSBBcnRpZ28iPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjcwIiB5MT0iNjAiIHgyPSI0NDAiIHkyPSI0NTUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iIzBCNTdEMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNTIiIHN0b3AtY29sb3I9IiMyNTYzRUIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNEY0NkU1Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJwYXBlciIgeDE9IjE4MCIgeTE9Ijk1IiB4Mj0iMzEwIiB5Mj0iMzMwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNGRkZGRkYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRTlGMkZGIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJib29rIiB4MT0iMTE2IiB5MT0iMjkwIiB4Mj0iMzQ1IiB5Mj0iNDA2IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNGOEZCRkYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRERFQkZGIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGZpbHRlciBpZD0ic2hhZG93IiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNTAlIj4KICAgICAgPGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjE0IiBzdGREZXZpYXRpb249IjE2IiBmbG9vZC1jb2xvcj0iIzA2MUI0RiIgZmxvb2Qtb3BhY2l0eT0iLjI4Ii8+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CgogIDxyZWN0IHg9IjI4IiB5PSIyOCIgd2lkdGg9IjQ1NiIgaGVpZ2h0PSI0NTYiIHJ4PSIxMTIiIGZpbGw9InVybCgjYmcpIi8+CiAgPGNpcmNsZSBjeD0iNDEwIiBjeT0iMTI2IiByPSI1MiIgZmlsbD0iIzA5M0Y5RCIgb3BhY2l0eT0iLjMyIi8+CiAgPGNpcmNsZSBjeD0iNDIyIiBjeT0iMzgwIiByPSI2NiIgZmlsbD0iIzVCMjFCNiIgb3BhY2l0eT0iLjIyIi8+CgogIDwhLS0gZG9jdW1lbnQgLS0+CiAgPGcgZmlsdGVyPSJ1cmwoI3NoYWRvdykiPgogICAgPHBhdGggZD0iTTE1NyAxMDNjMC0yMCAxNi0zNiAzNi0zNmgxMzNsNjUgNjZ2MTk0YzAgMjAtMTYgMzYtMzYgMzZIMTkzYy0yMCAwLTM2LTE2LTM2LTM2VjEwM3oiIGZpbGw9IiMwQjNFOTQiIG9wYWNpdHk9Ii41NSIvPgogICAgPHBhdGggZD0iTTE0NSA5MWMwLTIwIDE2LTM2IDM2LTM2aDEzNWw2NiA2NnYxOTRjMCAyMC0xNiAzNi0zNiAzNkgxODFjLTIwIDAtMzYtMTYtMzYtMzZWOTF6IiBmaWxsPSJ1cmwoI3BhcGVyKSIvPgogICAgPHBhdGggZD0iTTMxNiA1NXY0MmMwIDE3IDE0IDMxIDMxIDMxaDM1IiBmaWxsPSIjRDZFNkZGIi8+CiAgICA8cGF0aCBkPSJNMzE2IDU1bDY2IDY2aC0zNWMtMTcgMC0zMS0xNC0zMS0zMVY1NXoiIGZpbGw9IiNDOURCRjYiLz4KICAgIDxnIGZpbGw9IiM2RTk1QzkiPgogICAgICA8cmVjdCB4PSIxOTAiIHk9IjEzMiIgd2lkdGg9IjExOSIgaGVpZ2h0PSIxMyIgcng9IjYuNSIvPgogICAgICA8cmVjdCB4PSIxOTAiIHk9IjE2NiIgd2lkdGg9IjEzOSIgaGVpZ2h0PSIxMyIgcng9IjYuNSIvPgogICAgICA8cmVjdCB4PSIxOTAiIHk9IjIwMCIgd2lkdGg9IjEwNyIgaGVpZ2h0PSIxMyIgcng9IjYuNSIvPgogICAgICA8cmVjdCB4PSIxOTAiIHk9IjIzNCIgd2lkdGg9Ijg0IiBoZWlnaHQ9IjEzIiByeD0iNi41Ii8+CiAgICAgIDxyZWN0IHg9IjI5NSIgeT0iMjI5IiB3aWR0aD0iMTciIGhlaWdodD0iNTYiIHJ4PSI2Ii8+CiAgICAgIDxyZWN0IHg9IjMyMiIgeT0iMjExIiB3aWR0aD0iMTciIGhlaWdodD0iNzQiIHJ4PSI2Ii8+CiAgICAgIDxyZWN0IHg9IjM0OSIgeT0iMTkwIiB3aWR0aD0iMTciIGhlaWdodD0iOTUiIHJ4PSI2Ii8+CiAgICA8L2c+CiAgPC9nPgoKICA8IS0tIG9wZW4gYm9vayAtLT4KICA8ZyBmaWx0ZXI9InVybCgjc2hhZG93KSI+CiAgICA8cGF0aCBkPSJNOTYgMzAxYzQzLTQgODMgOCAxMjAgNDAgMTggMTYgMzIgMzMgNDAgNTAgOC0xNyAyMi0zNCA0MC01MCAzNy0zMiA3Ny00NCAxMjAtNDB2MTEyYy00Ni0zLTg5IDEwLTEyOCAzOS0xNCAxMC0yNSAyMS0zMiAzMS03LTEwLTE4LTIxLTMyLTMxLTM5LTI5LTgyLTQyLTEyOC0zOVYzMDF6IiBmaWxsPSIjMEEzQThCIiBvcGFjaXR5PSIuNTUiLz4KICAgIDxwYXRoIGQ9Ik04NiAyODZjNDUtNCA4NyA5IDEyNiA0MSAyMCAxNyAzNSAzNCA0NCA1MiA5LTE4IDI0LTM1IDQ0LTUyIDM5LTMyIDgxLTQ1IDEyNi00MXYxMTJjLTQ3LTMtOTEgMTAtMTMyIDQwLTE3IDEzLTMwIDI1LTM4IDM3LTgtMTItMjEtMjQtMzgtMzctNDEtMzAtODUtNDMtMTMyLTQwVjI4NnoiIGZpbGw9InVybCgjYm9vaykiLz4KICAgIDxwYXRoIGQ9Ik0yNTYgMzc5djU2IiBzdHJva2U9IiNBOEMzRTgiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMTExIDMxNmMzNyAxIDcwIDEzIDk5IDM2TTExMSAzNDNjMzMgMSA2MiAxMSA4OCAzMU00MDEgMzE2Yy0zNyAxLTcwIDEzLTk5IDM2TTQwMSAzNDNjLTMzIDEtNjIgMTEtODggMzEiIHN0cm9rZT0iI0I4Q0NFOCIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz4KICA8L2c+CgogIDwhLS0gd29ya2Zsb3cgbm9kZXMgLS0+CiAgPHBhdGggZD0iTTM5OSAxMDJjMzMgMjcgNDYgNTcgMzggOTFNNDM3IDIxM2M4IDMxIDMgNjAtMTYgODVNNDIxIDMyMGMtOCAyNy0yNiA0OS01MyA2NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjdDN0ZGIiBzdHJva2Utd2lkdGg9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9Ii45NSIvPgoKICA8ZyBmaWx0ZXI9InVybCgjc2hhZG93KSI+CiAgICA8Y2lyY2xlIGN4PSI0MDgiIGN5PSIxMDAiIHI9IjM4IiBmaWxsPSIjMEE1M0M2Ii8+CiAgICA8Y2lyY2xlIGN4PSI0NDIiIGN5PSIyMTUiIHI9IjM4IiBmaWxsPSIjMEVBNUE4Ii8+CiAgICA8Y2lyY2xlIGN4PSI0MTUiIGN5PSIzMjMiIHI9IjM4IiBmaWxsPSIjRjU5RTBCIi8+CiAgICA8Y2lyY2xlIGN4PSIzNjUiIGN5PSI0MDkiIHI9IjM4IiBmaWxsPSIjNUIyMUI2Ii8+CiAgPC9nPgoKICA8IS0tIHNlYXJjaCAtLT4KICA8Y2lyY2xlIGN4PSI0MDEiIGN5PSI5MyIgcj0iMTMiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPHBhdGggZD0iTTQxMSAxMDNsMTMgMTMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8IS0tIGRvY3VtZW50IG5vZGUgLS0+CiAgPHBhdGggZD0iTTQzMSAxOTRoMThsMTAgMTB2MjhoLTI4eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cGF0aCBkPSJNNDQ5IDE5NHYxMGgxME00MzcgMjE0aDE2TTQzNyAyMjNoMTMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8IS0tIGdlYXIgc2ltcGxpZmllZCAtLT4KICA8Y2lyY2xlIGN4PSI0MTUiIGN5PSIzMjMiIHI9IjEyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNyIvPgogIDxwYXRoIGQ9Ik00MTUgMzAxdjhNNDE1IDMzN3Y4TTM5MyAzMjNoOE00MjkgMzIzaDhNNDAwIDMwOGw2IDZNNDI0IDMzMmw2IDZNNDMwIDMwOGwtNiA2TTQwNiAzMzJsLTYgNiIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwhLS0gY2hlY2sgLS0+CiAgPHBhdGggZD0iTTM0NiA0MDlsMTMgMTQgMjYtMzEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+" alt="" aria-hidden="true" width="42" height="42"><span class="brand-name">Meu <strong>Artigo</strong></span></div><div class="header-right"><span class="mock-badge">● DEMONSTRAÇÃO</span><button class="outline-btn" type="button" id="reset">↻ Reiniciar exemplo</button></div></header>
+<header class="header"><div class="wordmark"><img class="brand-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1ldSBBcnRpZ28iPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjcwIiB5MT0iNjAiIHgyPSI0NDAiIHkyPSI0NTUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iIzBCNTdEMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNTIiIHN0b3AtY29sb3I9IiMyNTYzRUIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNEY0NkU1Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJwYXBlciIgeDE9IjE4MCIgeTE9Ijk1IiB4Mj0iMzEwIiB5Mj0iMzMwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNGRkZGRkYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRTlGMkZGIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJib29rIiB4MT0iMTE2IiB5MT0iMjkwIiB4Mj0iMzQ1IiB5Mj0iNDA2IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNGOEZCRkYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRERFQkZGIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGZpbHRlciBpZD0ic2hhZG93IiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNTAlIj4KICAgICAgPGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjE0IiBzdGREZXZpYXRpb249IjE2IiBmbG9vZC1jb2xvcj0iIzA2MUI0RiIgZmxvb2Qtb3BhY2l0eT0iLjI4Ii8+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CgogIDxyZWN0IHg9IjI4IiB5PSIyOCIgd2lkdGg9IjQ1NiIgaGVpZ2h0PSI0NTYiIHJ4PSIxMTIiIGZpbGw9InVybCgjYmcpIi8+CiAgPGNpcmNsZSBjeD0iNDEwIiBjeT0iMTI2IiByPSI1MiIgZmlsbD0iIzA5M0Y5RCIgb3BhY2l0eT0iLjMyIi8+CiAgPGNpcmNsZSBjeD0iNDIyIiBjeT0iMzgwIiByPSI2NiIgZmlsbD0iIzVCMjFCNiIgb3BhY2l0eT0iLjIyIi8+CgogIDwhLS0gZG9jdW1lbnQgLS0+CiAgPGcgZmlsdGVyPSJ1cmwoI3NoYWRvdykiPgogICAgPHBhdGggZD0iTTE1NyAxMDNjMC0yMCAxNi0zNiAzNi0zNmgxMzNsNjUgNjZ2MTk0YzAgMjAtMTYgMzYtMzYgMzZIMTkzYy0yMCAwLTM2LTE2LTM2LTM2VjEwM3oiIGZpbGw9IiMwQjNFOTQiIG9wYWNpdHk9Ii41NSIvPgogICAgPHBhdGggZD0iTTE0NSA5MWMwLTIwIDE2LTM2IDM2LTM2aDEzNWw2NiA2NnYxOTRjMCAyMC0xNiAzNi0zNiAzNkgxODFjLTIwIDAtMzYtMTYtMzYtMzZWOTF6IiBmaWxsPSJ1cmwoI3BhcGVyKSIvPgogICAgPHBhdGggZD0iTTMxNiA1NXY0MmMwIDE3IDE0IDMxIDMxIDMxaDM1IiBmaWxsPSIjRDZFNkZGIi8+CiAgICA8cGF0aCBkPSJNMzE2IDU1bDY2IDY2aC0zNWMtMTcgMC0zMS0xNC0zMS0zMVY1NXoiIGZpbGw9IiNDOURCRjYiLz4KICAgIDxnIGZpbGw9IiM2RTk1QzkiPgogICAgICA8cmVjdCB4PSIxOTAiIHk9IjEzMiIgd2lkdGg9IjExOSIgaGVpZ2h0PSIxMyIgcng9IjYuNSIvPgogICAgICA8cmVjdCB4PSIxOTAiIHk9IjE2NiIgd2lkdGg9IjEzOSIgaGVpZ2h0PSIxMyIgcng9IjYuNSIvPgogICAgICA8cmVjdCB4PSIxOTAiIHk9IjIwMCIgd2lkdGg9IjEwNyIgaGVpZ2h0PSIxMyIgcng9IjYuNSIvPgogICAgICA8cmVjdCB4PSIxOTAiIHk9IjIzNCIgd2lkdGg9Ijg0IiBoZWlnaHQ9IjEzIiByeD0iNi41Ii8+CiAgICAgIDxyZWN0IHg9IjI5NSIgeT0iMjI5IiB3aWR0aD0iMTciIGhlaWdodD0iNTYiIHJ4PSI2Ii8+CiAgICAgIDxyZWN0IHg9IjMyMiIgeT0iMjExIiB3aWR0aD0iMTciIGhlaWdodD0iNzQiIHJ4PSI2Ii8+CiAgICAgIDxyZWN0IHg9IjM0OSIgeT0iMTkwIiB3aWR0aD0iMTciIGhlaWdodD0iOTUiIHJ4PSI2Ii8+CiAgICA8L2c+CiAgPC9nPgoKICA8IS0tIG9wZW4gYm9vayAtLT4KICA8ZyBmaWx0ZXI9InVybCgjc2hhZG93KSI+CiAgICA8cGF0aCBkPSJNOTYgMzAxYzQzLTQgODMgOCAxMjAgNDAgMTggMTYgMzIgMzMgNDAgNTAgOC0xNyAyMi0zNCA0MC01MCAzNy0zMiA3Ny00NCAxMjAtNDB2MTEyYy00Ni0zLTg5IDEwLTEyOCAzOS0xNCAxMC0yNSAyMS0zMiAzMS03LTEwLTE4LTIxLTMyLTMxLTM5LTI5LTgyLTQyLTEyOC0zOVYzMDF6IiBmaWxsPSIjMEEzQThCIiBvcGFjaXR5PSIuNTUiLz4KICAgIDxwYXRoIGQ9Ik04NiAyODZjNDUtNCA4NyA5IDEyNiA0MSAyMCAxNyAzNSAzNCA0NCA1MiA5LTE4IDI0LTM1IDQ0LTUyIDM5LTMyIDgxLTQ1IDEyNi00MXYxMTJjLTQ3LTMtOTEgMTAtMTMyIDQwLTE3IDEzLTMwIDI1LTM4IDM3LTgtMTItMjEtMjQtMzgtMzctNDEtMzAtODUtNDMtMTMyLTQwVjI4NnoiIGZpbGw9InVybCgjYm9vaykiLz4KICAgIDxwYXRoIGQ9Ik0yNTYgMzc5djU2IiBzdHJva2U9IiNBOEMzRTgiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMTExIDMxNmMzNyAxIDcwIDEzIDk5IDM2TTExMSAzNDNjMzMgMSA2MiAxMSA4OCAzMU00MDEgMzE2Yy0zNyAxLTcwIDEzLTk5IDM2TTQwMSAzNDNjLTMzIDEtNjIgMTEtODggMzEiIHN0cm9rZT0iI0I4Q0NFOCIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz4KICA8L2c+CgogIDwhLS0gd29ya2Zsb3cgbm9kZXMgLS0+CiAgPHBhdGggZD0iTTM5OSAxMDJjMzMgMjcgNDYgNTcgMzggOTFNNDM3IDIxM2M4IDMxIDMgNjAtMTYgODVNNDIxIDMyMGMtOCAyNy0yNiA0OS01MyA2NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjdDN0ZGIiBzdHJva2Utd2lkdGg9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9Ii45NSIvPgoKICA8ZyBmaWx0ZXI9InVybCgjc2hhZG93KSI+CiAgICA8Y2lyY2xlIGN4PSI0MDgiIGN5PSIxMDAiIHI9IjM4IiBmaWxsPSIjMEE1M0M2Ii8+CiAgICA8Y2lyY2xlIGN4PSI0NDIiIGN5PSIyMTUiIHI9IjM4IiBmaWxsPSIjMEVBNUE4Ii8+CiAgICA8Y2lyY2xlIGN4PSI0MTUiIGN5PSIzMjMiIHI9IjM4IiBmaWxsPSIjRjU5RTBCIi8+CiAgICA8Y2lyY2xlIGN4PSIzNjUiIGN5PSI0MDkiIHI9IjM4IiBmaWxsPSIjNUIyMUI2Ii8+CiAgPC9nPgoKICA8IS0tIHNlYXJjaCAtLT4KICA8Y2lyY2xlIGN4PSI0MDEiIGN5PSI5MyIgcj0iMTMiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPHBhdGggZD0iTTQxMSAxMDNsMTMgMTMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8IS0tIGRvY3VtZW50IG5vZGUgLS0+CiAgPHBhdGggZD0iTTQzMSAxOTRoMThsMTAgMTB2MjhoLTI4eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cGF0aCBkPSJNNDQ5IDE5NHYxMGgxME00MzcgMjE0aDE2TTQzNyAyMjNoMTMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8IS0tIGdlYXIgc2ltcGxpZmllZCAtLT4KICA8Y2lyY2xlIGN4PSI0MTUiIGN5PSIzMjMiIHI9IjEyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNyIvPgogIDxwYXRoIGQ9Ik00MTUgMzAxdjhNNDE1IDMzN3Y4TTM5MyAzMjNoOE00MjkgMzIzaDhNNDAwIDMwOGw2IDZNNDI0IDMzMmw2IDZNNDMwIDMwOGwtNiA2TTQwNiAzMzJsLTYgNiIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwhLS0gY2hlY2sgLS0+CiAgPHBhdGggZD0iTTM0NiA0MDlsMTMgMTQgMjYtMzEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+" alt="" aria-hidden="true" width="42" height="42"><span class="brand-name">Meu <strong>Artigo</strong></span></div><div class="header-right"><label class="site-language-label" for="site-language" id="language-label">Idioma</label><select id="site-language" aria-label="Interface language"><option value="pt-BR">Português</option><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option></select><span class="mock-badge">● DEMONSTRAÇÃO</span><button class="outline-btn" type="button" id="reset">↻ Reiniciar exemplo</button></div></header>
 <div class="layout"><nav class="nav" id="nav" aria-label="Navegação do Meu Artigo"><div class="nav-label">Área de pesquisa</div></nav><main class="main" id="content" tabindex="-1" aria-live="polite"></main></div>
 </div>
 <script type="application/json" id="site-data">__MEU_ARTIGO_SITE_MODEL_JSON__</script>
 <script>
 (()=>{
 'use strict';
-const siteData=JSON.parse(document.getElementById('site-data').textContent);
-const isCanonical=siteData.kind==='CANONICAL_LOCAL_SNAPSHOT';
+let siteData=JSON.parse(document.getElementById('site-data').textContent);
+let isCanonical=siteData.kind==='CANONICAL_LOCAL_SNAPSHOT';
 if(isCanonical){
   const indicator=document.querySelector('.mock-badge');
   if(indicator)indicator.textContent='SNAPSHOT LOCAL · SEM SINCRONIZAÇÃO';
 }
 
 const e=(value)=>String(value===null||value===undefined||value===''?'Não informado':value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* User-facing UI locale: independent of manuscript and research evidence.
+   The host may set document.lang; choose browser locale when a generic
+   pt-BR template is opened standalone. Unsupported languages fall back to EN,
+   while the conversational assistant retains the user's requested language. */
+const TRANSLATIONS={
+ en:{
+ "Idioma":"Language","Visão geral":"Overview","Etapas":"Stages",
+ "Tarefas C.A.D.A.":"C.A.D.A. tasks","Fontes e buscas":"Sources and searches",
+ "Evidências":"Evidence","Validações":"Human validations","Métodos":"Methods",
+ "Rastreabilidade":"Traceability","Submissão":"Submission","Sincronização":"Sync",
+ "Área de pesquisa":"Research workspace","DEMONSTRAÇÃO":"DEMONSTRATION",
+ "Reiniciar exemplo":"Reset example","Panorama da pesquisa":"Research overview",
+ "Explorar caminhos metodológicos":"Explore research methods",
+ "Compare possibilidades antes de registrar a decisão do pesquisador.":"Compare options before recording a researcher decision.",
+ "Estudo documental qualitativo":"Qualitative documentary study",
+ "Design Science Research":"Design Science Research",
+ "Métodos mistos":"Mixed methods","Outro caminho":"Another approach",
+ "Compreender práticas e registros, mas não concluir sobre todas as rotinas informais.":"Examine practices and records without claiming to cover every informal routine.",
+ "Construir e avaliar um artefato, sem confundir sua construção com eficácia validada.":"Design and evaluate an artifact without mistaking construction for proven effectiveness.",
+ "Articular evidências qualitativas e quantitativas com integração explícita.":"Integrate qualitative and quantitative evidence explicitly.",
+ "Usar uma tradição adequada à pergunta, sem forçar catálogo fechado.":"Choose a tradition that fits the question without restricting the options.",
+ "Em exploração":"Exploring","Explorar":"Explore",
+ "Alternativa selecionada para leitura":"Selected option for review",
+ "A decisão final deve ser tomada e justificada pelo pesquisador e registrada no projeto autorizado.":"The researcher must justify and record the final decision in the authorized project.",
+ "Ver gates relacionados":"View related gates",
+ "Fonte: demonstração fictícia da arquitetura Meu Artigo":"Source: fictional Meu Artigo interface demonstration",
+ "Nenhum dado real · Sem gravação · Sem aprovação de gates":"No real data · No writes · No gate approvals",
+ "Visão derivada dos registros canônicos. Não substitui a matriz nem valida decisões científicas.":"A view of canonical records, not a replacement for scientific decisions.",
+ "Gates aprovados":"Documented gates","Tarefas concluídas":"Tasks completed",
+ "Pendências":"Pending","Fontes verificadas":"Sources verified",
+ "Próxima ação recomendada":"Recommended next action","Estado científico":"Scientific status",
+ "Ver próximo passo":"View next step","Tarefas registradas":"Recorded tasks",
+ "Gates documentados":"Documented gates","Não avaliado":"Not assessed",
+ "Não informado":"Not provided","Snapshot local · não sincronizado":"Local snapshot · not synced",
+ "Próxima ação registrada":"Recorded next action",
+ "Conferir tarefas":"Review tasks",
+ "Google Drive: não verificado nesta sessão.":"Google Drive: not verified in this session.",
+ "Submissão não verificada.":"Submission not verified.",
+ "Etapas e gates científicos":"Stages and scientific gates",
+ "Validações humanas":"Human validations",
+ "Armazenamento e sincronização":"Storage and synchronization",
+ "Fontes e buscas":"Sources and searches",
+ "Evidências e sustentação":"Evidence and support",
+ "Rastreabilidade":"Traceability",
+ "Preparação para submissão":"Submission preparation",
+ "Tarefas C.A.D.A.":"C.A.D.A. tasks",
+ "Filtrar tarefas":"Filter tasks",
+ "ID Tarefa":"Task ID","Tarefa":"Task","Responsável execução":"Responsible","Prazo":"Deadline",
+ "Revisar a estratégia de busca e seus critérios":"Review the search strategy and criteria",
+ "Dados locais":"Local data","Sem sincronização":"Not synchronized",
+ "Responsável":"Responsible","Sem gravação":"No writes",
+ },
+ es:{
+ "Idioma":"Idioma","Visão geral":"Vista general","Etapas":"Etapas",
+ "Tarefas C.A.D.A.":"Tareas C.A.D.A.","Fontes e buscas":"Fuentes y búsquedas",
+ "Evidências":"Evidencias","Validações":"Validaciones","Métodos":"Métodos",
+ "Rastreabilidade":"Trazabilidad","Submissão":"Envío","Sincronização":"Sincronización",
+ "Área de pesquisa":"Área de investigación","DEMONSTRAÇÃO":"DEMOSTRACIÓN",
+ "Reiniciar exemplo":"Reiniciar ejemplo","Panorama da pesquisa":"Panorama de la investigación",
+ "Explorar caminhos metodológicos":"Explorar enfoques metodológicos",
+ "Compare possibilidades antes de registrar a decisão do pesquisador.":"Compare alternativas antes de registrar la decisión del investigador.",
+ "Estudo documental qualitativo":"Estudio documental cualitativo",
+ "Métodos mistos":"Métodos mixtos","Outro caminho":"Otro enfoque",
+ "Compreender práticas e registros, mas não concluir sobre todas as rotinas informais.":"Comprender prácticas y registros sin generalizar a todas las rutinas informales.",
+ "Construir e avaliar um artefato, sem confundir sua construção com eficácia validada.":"Diseñar y evaluar un artefacto sin confundir su construcción con eficacia demostrada.",
+ "Articular evidências qualitativas e quantitativas com integração explícita.":"Integrar explícitamente evidencias cualitativas y cuantitativas.",
+ "Usar uma tradição adequada à pergunta, sem forçar catálogo fechado.":"Elegir una tradición adecuada a la pregunta sin restringir las opciones.",
+ "Em exploração":"En exploración","Explorar":"Explorar",
+ "Alternativa selecionada para leitura":"Opción seleccionada para revisar",
+ "A decisão final deve ser tomada e justificada pelo pesquisador e registrada no projeto autorizado.":"El investigador debe justificar y registrar la decisión final en el proyecto autorizado.",
+ "Ver gates relacionados":"Ver validaciones relacionadas",
+ "Fonte: demonstração fictícia da arquitetura Meu Artigo":"Fuente: demostración ficticia de Meu Artigo",
+ "Nenhum dado real · Sem gravação · Sem aprovação de gates":"Sin datos reales · Sin escritura · Sin aprobación de etapas",
+ "Visão derivada dos registros canônicos. Não substitui a matriz nem valida decisões científicas.":"Vista de registros canónicos, sin sustituir las decisiones científicas.",
+ "Gates aprovados":"Validaciones registradas","Tarefas concluídas":"Tareas completadas",
+ "Pendências":"Pendientes","Fontes verificadas":"Fuentes verificadas",
+ "Próxima ação recomendada":"Próxima acción recomendada","Estado científico":"Estado científico",
+ "Ver próximo passo":"Ver siguiente paso","Tarefas registradas":"Tareas registradas",
+ "Gates documentados":"Validaciones documentadas","Não avaliado":"No evaluado",
+ "Não informado":"No informado","Snapshot local · não sincronizado":"Copia local · no sincronizada",
+ "Próxima ação registrada":"Próxima acción registrada","Conferir tarefas":"Revisar tareas",
+ "Google Drive: não verificado nesta sessão.":"Google Drive: no verificado en esta sesión.",
+ "Submissão não verificada.":"Envío no verificado.",
+ "Etapas e gates científicos":"Etapas y validaciones científicas",
+ "Validações humanas":"Validaciones humanas",
+ "Armazenamento e sincronização":"Almacenamiento y sincronización",
+ "Evidências e sustentação":"Evidencias y sustento",
+ "Preparação para submissão":"Preparación para el envío",
+ "Filtrar tarefas":"Filtrar tareas","ID Tarefa":"ID de tarea","Tarefa":"Tarea",
+ "Responsável execução":"Responsable","Prazo":"Plazo",
+ "Revisar a estratégia de busca e seus critérios":"Revisar la estrategia y criterios de búsqueda",
+ },
+ fr:{
+ "Idioma":"Langue","Visão geral":"Vue d'ensemble","Etapas":"Étapes",
+ "Tarefas C.A.D.A.":"Tâches C.A.D.A.","Fontes e buscas":"Sources et recherches",
+ "Evidências":"Preuves","Validações":"Validations","Métodos":"Méthodes",
+ "Rastreabilidade":"Traçabilité","Submissão":"Soumission","Sincronização":"Synchronisation",
+ "Área de pesquisa":"Espace de recherche","DEMONSTRAÇÃO":"DÉMONSTRATION",
+ "Reiniciar exemplo":"Réinitialiser l'exemple","Panorama da pesquisa":"Vue d'ensemble de la recherche",
+ "Explorar caminhos metodológicos":"Explorer les méthodes de recherche",
+ "Compare possibilidades antes de registrar a decisão do pesquisador.":"Comparez les options avant de consigner votre décision.",
+ "Estudo documental qualitativo":"Étude documentaire qualitative",
+ "Métodos mistos":"Méthodes mixtes","Outro caminho":"Autre approche",
+ "Compreender práticas e registros, mas não concluir sobre todas as rotinas informais.":"Examiner les pratiques et les documents sans généraliser aux routines informelles.",
+ "Construir e avaliar um artefato, sem confundir sua construção com eficácia validada.":"Concevoir et évaluer un artefact sans confondre création et efficacité démontrée.",
+ "Articular evidências qualitativas e quantitativas com integração explícita.":"Intégrer explicitement des données qualitatives et quantitatives.",
+ "Usar uma tradição adequada à pergunta, sem forçar catálogo fechado.":"Choisir une approche adaptée sans limiter les options.",
+ "Em exploração":"En exploration","Explorar":"Explorer",
+ "Alternativa selecionada para leitura":"Option sélectionnée à examiner",
+ "A decisão final deve ser tomada e justificada pelo pesquisador e registrada no projeto autorizado.":"Le chercheur doit justifier et consigner la décision finale dans son projet.",
+ "Ver gates relacionados":"Voir les validations liées",
+ "Fonte: demonstração fictícia da arquitetura Meu Artigo":"Source : démonstration fictive de Meu Artigo",
+ "Nenhum dado real · Sem gravação · Sem aprovação de gates":"Aucune donnée réelle · Aucune écriture · Aucune validation",
+ "Gates aprovados":"Validations consignées","Tarefas concluídas":"Tâches terminées",
+ "Pendências":"En attente","Fontes verificadas":"Sources vérifiées",
+ "Próxima ação recomendada":"Prochaine action recommandée","Estado científico":"État scientifique",
+ "Ver próximo passo":"Étape suivante","Não avaliado":"Non évalué",
+ "Não informado":"Non renseigné","Tarefas registradas":"Tâches enregistrées",
+ "Gates documentados":"Validations documentées",
+ "Conferir tarefas":"Vérifier les tâches",
+ "Etapas e gates científicos":"Étapes et validations scientifiques",
+ "Validações humanas":"Validations humaines",
+ "Armazenamento e sincronização":"Stockage et synchronisation",
+ "Evidências e sustentação":"Preuves et justification",
+ "Preparação para submissão":"Préparation de la soumission",
+ "Filtrar tarefas":"Filtrer les tâches","ID Tarefa":"ID de tâche","Tarefa":"Tâche",
+ "Responsável execução":"Responsable","Prazo":"Échéance",
+ }
+};
+const sourceText=new WeakMap();
+const bcp=(raw)=>String(raw||"").replace(/_/g,"-").split("-")[0].toLowerCase();
+const chosen=(siteData.locale&&siteData.locale!=="auto"?siteData.locale:
+  ((document.documentElement.lang&&document.documentElement.lang!=="pt-BR")?
+    document.documentElement.lang:(navigator.languages&&navigator.languages[0])||navigator.language||"en"));
+let activeLocale=["pt","en","es","fr"].includes(bcp(chosen))?bcp(chosen):"en";
+function localized(raw){
+  const lex=TRANSLATIONS[activeLocale]||{};
+  let result=String(raw);
+  if(activeLocale==="pt")return result;
+  const sorted=Object.keys(lex).sort((a,b)=>b.length-a.length);
+  for(const word of sorted){if(result.includes(word))result=result.split(word).join(lex[word]);}
+  return result;
+}
+function translateContainer(root){
+ if(!root)return;
+ const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
+ const candidates=[];
+ while(walker.nextNode()){
+   const node=walker.currentNode,element=node.parentElement;
+   if(!element||element.closest("script,style,svg,textarea,input,[data-research-original]"))continue;
+   if(isCanonical&&element.closest("td,.page-title,.pane h2,.pane .quiet"))continue;
+   candidates.push(node);
+ }
+ for(const node of candidates){
+   if(!sourceText.has(node))sourceText.set(node,node.nodeValue);
+   node.nodeValue=localized(sourceText.get(node));
+ }
+ if(root.querySelectorAll){for(const element of root.querySelectorAll("input[placeholder]")){
+   if(!element.dataset.originalPlaceholder)element.dataset.originalPlaceholder=element.placeholder;
+   element.placeholder=localized(element.dataset.originalPlaceholder);
+ }}
+}
+function applyLanguage(raw){
+ const requested=bcp(raw);
+ activeLocale=["pt","en","es","fr"].includes(requested)?requested:"en";
+ document.documentElement.lang=activeLocale==="pt"?"pt-BR":activeLocale;
+ const select=document.getElementById("site-language");
+ if(select)select.value=activeLocale==="pt"?"pt-BR":activeLocale;
+ translateContainer(document.querySelector(".header"));
+ translateContainer(document.querySelector(".nav"));
+ translateContainer(document.getElementById("content"));
+ const label=document.getElementById("language-label");
+ if(label)label.textContent=({pt:"Idioma",en:"Language",es:"Idioma",fr:"Langue"})[activeLocale];
+}
+
 const pages=[['overview','◇','Visão geral'],['steps','▤','Etapas'],['tasks','☷','Tarefas C.A.D.A.'],['sources','⌕','Fontes e buscas'],['evidence','◇','Evidências'],['validations','◎','Validações'],['methods','⚑','Métodos'],['trace','↗','Rastreabilidade'],['submission','▣','Submissão'],['sync','⇄','Sincronização']];
 let current='overview',taskQuery='',methodChoice='doc';
 const $=id=>document.getElementById(id);
 const footer='<div class="source-line"><span>Fonte: demonstração fictícia da arquitetura Meu Artigo</span><span>Nenhum dado real · Sem gravação · Sem aprovação de gates</span></div>';
-function nav(){const n=$('nav');n.innerHTML='<div class="nav-label">Área de pesquisa</div>'+pages.map(([id,icon,label])=>`<button data-page="${id}" type="button" aria-current="${id===current?'page':'false'}" class="${id===current?'active':''}"><span class="sym" aria-hidden="true">${icon}</span>${label}</button>`).join('')+'<p class="nav-help">Visão derivada dos registros canônicos. Não substitui a matriz nem valida decisões científicas.</p>';n.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)))}
+function nav(){const n=$('nav');n.innerHTML='<div class="nav-label">Área de pesquisa</div>'+pages.map(([id,icon,label])=>`<button data-page="${id}" type="button" aria-current="${id===current?'page':'false'}" class="${id===current?'active':''}"><span class="sym" aria-hidden="true">${icon}</span>${label}</button>`).join('')+'<p class="nav-help">Visão derivada dos registros canônicos. Não substitui a matriz nem valida decisões científicas.</p>';n.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));translateContainer(n)}
 function go(page){if(!pages.some(x=>x[0]===page))return;current=page;nav();render();$('content').focus({preventScroll:true})}
 function heading(name,desc,action=''){return `<div class="section-heading"><div><h2>${name}</h2><p>${desc}</p></div>${action}</div>`}
 const kpi=(label,num,ex,icon="◻")=>`<div class="kpi"><div class="kpi-heading"><span class="kpi-icon" aria-hidden="true">${icon}</span><div class="label">${label}</div></div><strong>${num}</strong><small>${ex}</small></div>`;
@@ -91,7 +268,7 @@ const iconLine=(icon,title,desc,right='')=>`<div class="line-item"><div class="b
 function overview(){return `<div class="page-top"><div><div class="eyebrow">Panorama da pesquisa</div><h1 class="page-title" style="max-width:640px">Governança de bases de conhecimento e IA</h1><p class="subtitle">Revisão integrativa · Revista ainda não definida</p></div><div class="stage">Etapa 3 · posicionamento teórico</div></div><div class="kpis">${kpi('Tarefas concluídas','12/20','60% · controle operacional','▤')}${kpi('Gates aprovados','2/7','Aprovações documentadas no exemplo','✓')}${kpi('Pendências','5','3 prontas · 2 bloqueadas','◷')}${kpi('Fontes verificadas','8','Número ilustrativo','▱')}</div><div class="cols"><section class="pane tinted"><div class="mini-label">Próxima ação recomendada</div><h2>Revisar a estratégia de busca e seus critérios</h2><p>Necessário antes da busca estruturada nas bases. Esta recomendação é ilustrativa.</p><button class="primary" data-go="steps">Ver próximo passo →</button></section><section class="pane"><h3>Estado científico</h3><p>Gates 1–2 documentados; gate 3 ainda pendente, no exemplo.</p><div class="gates"><span class="gate-dot done">✓</span><span class="g-line"></span><span class="gate-dot done">✓</span><span class="g-line"></span><span class="gate-dot now">3</span><span class="g-line"></span><span class="gate-dot">4</span><span class="g-line"></span><span class="gate-dot">5</span><span class="g-line"></span><span class="gate-dot">6</span><span class="g-line"></span><span class="gate-dot">7</span></div><div class="footnote">Validações científicas não são calculadas a partir de tarefas concluídas.</div></section></div>${footer}`}
 function steps(){let list=[['Pergunta de pesquisa','Aprovação documentada no cenário fictício'],['Desenho metodológico','Aprovação documentada no cenário fictício'],['Fundamentação e buscas','Decisão humana pendente no cenário'],['Corpus e materiais','Não avaliado'],['Análise e síntese','Não avaliado'],['Integridade das afirmações','Não avaliado'],['Preparação para submissão','Não avaliado']];return heading('Etapas e gates científicos','Sete pontos de decisão que exigem avaliação e justificativa humanas.')+`<div class="list">${list.map(([name,desc],i)=>iconLine(String(i+1),`GATE-000${i+1} · ${name}`,desc,`<span class="pill ${i<2?'green':i===2?'yellow':''}">${i<2?'Documentado':i===2?'Pendente':'Não avaliado'}</span>`)).join('')}</div><p class="danger-note">As aprovações acima são inventadas para mostrar a interface; não representam decisões do seu artigo.</p>`+footer}
 const demoTaskRows=[['CADA-001','Delimitar problema de pesquisa','Pesquisador','10/10/2026'],['CADA-002','Revisar descritores de busca','Pesquisador','A definir'],['CADA-003','Preparar termos por base','Assistente técnico','A definir'],['CADA-004','Conferir literatura elegível','Pesquisador','A definir'],['CADA-005','Revisar critérios de exclusão','Pesquisador','A definir']];
-const taskRows=isCanonical?(Array.isArray(siteData.tasks)?siteData.tasks:[]).map(t=>[e(t.id),e(t.task),e(t.execution_owner),e(t.deadline)]):demoTaskRows;
+let taskRows=isCanonical?(Array.isArray(siteData.tasks)?siteData.tasks:[]).map(t=>[e(t.id),e(t.task),e(t.execution_owner),e(t.deadline)]):demoTaskRows;
 function tasks(){const rows=taskRows.filter(x=>x.join(' ').toLocaleLowerCase('pt-BR').includes(taskQuery.toLocaleLowerCase('pt-BR')));return heading('Tarefas C.A.D.A.','Demandas administrativas com responsabilidade e prazo explícitos.',`<input class="search" id="task-filter" aria-label="Filtrar tarefas" placeholder="Filtrar tarefas" value="">`)+`<div class="pane table-scroll" style="padding:0"><table><thead><tr><th>ID Tarefa</th><th>Tarefa</th><th>Responsável execução</th><th>Prazo</th></tr></thead><tbody>${rows.map(row=>`<tr>${row.map(x=>`<td>${x}</td>`).join('')}</tr>`).join('')||'<tr><td colspan="4">Nenhuma tarefa encontrada</td></tr>'}</tbody></table></div><p class="footnote">C.A.D.A. exibe apenas estas quatro colunas. Os estados de execução são controlados separadamente.</p>`+footer}
 function sources(){return heading('Fontes e buscas','Organize a recuperação bibliográfica e diferencie planejamento de execução.')+`<div class="list">${iconLine('⌕','Estratégia de busca','Termos, bases, datas, filtros e versões devem ser documentados.','<span class="pill yellow">Revisão pendente</span>')}${iconLine('01','Scopus','Consulta ilustrativa; não houve acesso real à base.','<span class="pill">Não executada</span>')}${iconLine('02','Web of Science','Plano de consulta ilustrativo; sem resultados reais.','<span class="pill">Não executada</span>')}${iconLine('03','Outras fontes','Repositórios e periódicos relevantes a confirmar por projeto.','<span class="pill">A definir</span>')}</div>`+footer}
 function evidence(){return heading('Evidências e sustentação','Conecte cada afirmação a uma fonte ou a uma inferência delimitada.')+`<div class="two"><div class="pane"><div class="mini-label">[L] Literatura consultada</div><div class="count" style="margin:10px 0">Não avaliado</div><p>Uma referência só sustenta a afirmação após consulta e conferência reais.</p></div><div class="pane"><div class="mini-label">[I] Inferência analítica</div><div class="count" style="margin:10px 0">Não avaliado</div><p>Explicitar base de evidência, justificativa e limites da interpretação.</p></div><div class="pane"><div class="mini-label">[P] Proposição original</div><div class="count" style="margin:10px 0">Não avaliado</div><p>Distinguir contribuição proposta de literatura existente.</p></div><div class="pane"><div class="mini-label">Integridade científica</div><div class="count" style="margin:10px 0">Pendente</div><p>Auditoria semântica e validação humana não foram realizadas na demonstração.</p></div></div>`+footer}
@@ -149,8 +326,10 @@ if(isCanonical){
     '<div class="info amber"><strong>Google Drive: não verificado nesta sessão.</strong> Este painel é somente uma projeção local de leitura.</div>'+safeNotice+realFooter;
 }
 
-function render(){ $('content').innerHTML=screens[current]();$('content').querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));$('content').querySelectorAll('[data-method]').forEach(b=>b.addEventListener('click',()=>{methodChoice=b.dataset.method;render()}));const filter=$('task-filter');if(filter){filter.value=taskQuery;filter.addEventListener('input',()=>{taskQuery=filter.value;const cursor=filter.selectionStart;render();const fresh=$('task-filter');fresh.focus();fresh.setSelectionRange(cursor,cursor)})}}
-$('reset').addEventListener('click',()=>{taskQuery='';methodChoice='doc';go('overview')});nav();render();
+function render(){ $('content').innerHTML=screens[current]();$('content').querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));$('content').querySelectorAll('[data-method]').forEach(b=>b.addEventListener('click',()=>{methodChoice=b.dataset.method;render()}));const filter=$('task-filter');if(filter){filter.value=taskQuery;filter.addEventListener('input',()=>{taskQuery=filter.value;const cursor=filter.selectionStart;render();const fresh=$('task-filter');fresh.focus();fresh.setSelectionRange(cursor,cursor)})}translateContainer($('content'))}
+$('reset').addEventListener('click',()=>{taskQuery='';methodChoice='doc';go('overview')});
+document.getElementById('site-language').addEventListener('change',e=>applyLanguage(e.target.value));
+nav();render();applyLanguage(activeLocale);
 })();
 </script>
 </body></html>
