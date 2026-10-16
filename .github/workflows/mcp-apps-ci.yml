@@ -39,6 +39,9 @@ jobs:
       - name: Verify Auth0 JWT validation and OAuth protected resource discovery
         working-directory: integrations/mcp-apps
         run: npm run test:oauth
+      - name: Verify OAuth HTTP metadata and 401 challenge
+        working-directory: integrations/mcp-apps
+        run: npm run test:oauth-http
       - name: Local authenticated Streamable HTTP endpoint acceptance
         working-directory: integrations/mcp-apps
         run: npm run test:http
