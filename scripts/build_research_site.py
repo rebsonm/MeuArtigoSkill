@@ -39,12 +39,31 @@ def project_site_model(snapshot: dict) -> dict:
             not isinstance(gates, list) or len(gates) > MAX_GATES or
             not isinstance(next_action, dict)):
         raise ValueError("SITE_CANONICAL_PROJECTION_INCOMPLETE")
-    # Only data already admitted to the authenticated read-only projection.
+    # Enforce display-only, bounded scalar fields rather than coercing
+    # objects into strings. No private source passages or executable markup.
+    def scalar(value, maximum=2000):
+        return value is None or (isinstance(value, str) and len(value) <= maximum)
+    fields = ("id", "task", "execution_owner", "deadline")
+    if any(not isinstance(row, dict) or any(
+            not scalar(row.get(key), 120 if key in ("id", "deadline") else 2000)
+            for key in fields) for row in tasks):
+        raise ValueError("SITE_CANONICAL_TASKS_INVALID")
+    if any(not isinstance(row, dict) or
+            not scalar(row.get("id"), 120) or
+            not isinstance(row.get("approval_documented"), bool)
+            for row in gates):
+        raise ValueError("SITE_CANONICAL_GATES_INVALID")
+    if any(not scalar(next_action.get(k)) for k in
+           ("code", "explanation", "responsible")):
+        raise ValueError("SITE_CANONICAL_ACTION_INVALID")
+    recorded = sum(row.get("approval_documented") is True for row in gates)
+    # Count the displayed records, not a potentially stale summary counter.
+    # This number describes documented states, NOT verified approvals.
+    # Only data already admitted to the local read-only projection.
     return {
         "schema": SCHEMA, "kind": "CANONICAL_LOCAL_SNAPSHOT",
         "active_route": snapshot.get("active_route"),
-        "documented_gate_count": snapshot.get("overview", {}).get(
-            "human_gate_approvals_recorded"),
+        "documented_gate_count": recorded,
         "tasks": [
             {"id": row.get("id"), "task": row.get("task"),
              "execution_owner": row.get("execution_owner"),

@@ -45,7 +45,9 @@ async function start(model,lang="en-US"){
  locale:"fr",active_route:"QUALITATIVE",documented_gate_count:0,
  tasks:[{id:"CADA-0001",task:"Do not translate source content",
  execution_owner:"Researcher",deadline:null}],
- gates:[],next_action:{code:"HUMAN_REVIEW_REQUIRED",
+ gates:[],canonical_drive_sync_verified:false,
+ automatic_scientific_approval:false,canonical_writes_allowed:false,
+ next_action:{code:"HUMAN_REVIEW_REQUIRED",
  explanation:"Revisar a estratégia de busca e seus critérios",responsible:"HUMAN_RESEARCHER"}};
  assert.equal(dom.window.MeuArtigoHost.receive(actual),true);
  assert.match(d.getElementById("content").textContent,/HUMAN_REVIEW_REQUIRED/);
