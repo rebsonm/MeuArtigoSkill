@@ -14,6 +14,12 @@ OPTIONAL_PROTOCOL_DOCS={
     "docs/CHATGPT.md",
     "docs/CHATGPT-"+PROTOCOL_TERM.upper()+"-HOST-ACCEPTANCE.md",
     "docs/COMPATIBILIDADE-PLATAFORMAS.md",
+    # User-requested optional read-only MCP Apps code remains OUTSIDE
+    # the self-contained public Skill archive and has its own CI.
+    "CHANGELOG.md",
+    "references/native-chat-dashboard.md",
+    "scripts/build_research_site.py",
+    ".github/workflows/mcp-apps-ci.yml",
     "tests/test_skill_public_boundary.py",
     "tests/test_optional_"+PROTOCOL_TERM+"_skill.py",
     # Reviewed source-only integrated homologation; neither file is a server.
@@ -58,6 +64,15 @@ class PublicSkillBoundaryTests(unittest.TestCase):
                         if term in content:
                             problems.append((relative,term))
         self.assertEqual(problems,[],f"Public Skill boundary violated: {problems}")
+
+    def test_optional_chat_ui_is_not_packaged_in_public_skill(self):
+        import sys
+        sys.path.insert(0, str(ROOT/"scripts"))
+        from build_skill_bundle import list_sources
+        shipped=[p.relative_to(ROOT).as_posix() for p in list_sources(ROOT)]
+        self.assertIn("assets/research_site.html",shipped)
+        self.assertFalse(any(p.startswith("integrations/") for p in shipped))
+        self.assertFalse(any("node_modules" in p or p.endswith("server.mjs") for p in shipped))
 
     def test_scientific_human_controls_remain(self):
         source=(ROOT/"SKILL.md").read_text(encoding="utf-8")

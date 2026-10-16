@@ -34,6 +34,17 @@ Para não presumir capacidades de ChatGPT, Claude ou Gemini, consulte
 Uma interface que importa `SKILL.md` não garante Python, acesso a
 Scopus, escrita no Drive ou recibo verificável.
 
+## Default Drive location
+
+Before project initialization or any folder-create action, resolve
+`My Drive / Meu Artigo / ARTIGO_<title>_<year>` through the
+[canonical root guard](drive-root-anchor.md). Reuse only an exact
+metadata-confirmed direct child. If `Meu Artigo` is absent at My Drive
+root, request the existing durable guarded-create procedure with the
+**actual root ID as parent**. A copied folder name, search result in
+another directory or last visited folder is not a safe parent.
+Any nested legacy project must be reconciled without silent migration.
+
 ## First-run preflight
 
 Storage is a blocking preflight. Resolve it before novelty scanning, protocol construction, screening, synthesis, drafting, or creating a local canonical project.
