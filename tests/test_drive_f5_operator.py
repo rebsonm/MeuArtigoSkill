@@ -87,6 +87,7 @@ class FakeTrustedHead:
         self.stale_readback = False
         self.cas_calls = 0
         self.candidate = None
+        self.reject_on_call = None
 
     def read_head(self):
         if self.stale_readback and self.candidate:
@@ -95,8 +96,11 @@ class FakeTrustedHead:
 
     def compare_and_set(self, previous_head, new_head):
         self.cas_calls += 1
-        if self.reject_cas or self.current != previous_head:
+        if (self.reject_cas or self.reject_on_call == self.cas_calls
+                or self.current != previous_head):
             return False
+        if self.stale_readback:
+            self.candidate = previous_head
         self.current = new_head
         return True
 
@@ -253,6 +257,27 @@ class F5HostTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "ANCHOR_TRUSTED_HEAD_MISMATCH"):
             self.run_flow(execute=True)
         self.assertEqual(self.drive.posts, 0)
+
+    def test_independent_head_readback_failure_blocks_before_create(self):
+        self.trusted_head.stale_readback = True
+        with self.assertRaisesRegex(ValueError, "F8_TRUSTED_HEAD_READBACK_MISMATCH"):
+            self.run_flow(execute=True)
+        self.assertEqual(self.drive.posts, 0)
+        self.assertEqual(self.drive.patch_count, 1)
+
+    def test_resolved_state_head_cas_failure_never_claims_success(self):
+        self.trusted_head.reject_on_call = 2
+        with self.assertRaisesRegex(ValueError, "F8_TRUSTED_HEAD_CAS_REJECTED"):
+            self.run_flow(execute=True)
+        # Exactly one external create, but completion cannot be attested
+        # because the high-watermark rejected the final signed receipt.
+        self.assertEqual(self.drive.posts, 1)
+        self.assertEqual(self.drive.patch_count, 2)
+        self.assertEqual(self.trusted_head.cas_calls, 2)
+        self.assertEqual(len(list(self.anchor_archive.iterdir())), 3)
+        with self.assertRaisesRegex(ValueError, "ANCHOR_TRUSTED_HEAD_MISMATCH"):
+            self.run_flow(execute=True)
+        self.assertEqual(self.drive.posts, 1)
 
     def test_missing_archive_blocks_live_create(self):
         from shutil import rmtree
