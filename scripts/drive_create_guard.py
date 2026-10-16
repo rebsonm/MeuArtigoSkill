@@ -63,6 +63,9 @@ def direct_scan(plan: dict, inventory: dict, parent_id: str, *, allow_fixture: b
             raise ValueError("PARENT_PAGE_EVIDENCE_REQUIRED")
         expected_cursor = None
         covered = set()
+        visited_cursors = set()
+        if len(pages) > 1000:
+            raise ValueError("PARENT_PAGINATION_PAGE_LIMIT")
         for i, page in enumerate(pages):
             if (not isinstance(page, dict) or
                     page.get("source") != "GOOGLE_DRIVE_FILES_LIST" or
@@ -71,6 +74,8 @@ def direct_scan(plan: dict, inventory: dict, parent_id: str, *, allow_fixture: b
                     not isinstance(page.get("item_ids"), list)):
                 raise ValueError("PARENT_PAGINATION_CHAIN_INVALID")
             next_cursor = page["next_page_token"]
+            if next_cursor is not None and next_cursor in visited_cursors:
+                raise ValueError("PARENT_PAGINATION_CURSOR_REPLAY")
             if next_cursor is not None and (not isinstance(next_cursor, str) or not next_cursor):
                 raise ValueError("PARENT_PAGINATION_CHAIN_INVALID")
             for item_id in page["item_ids"]:
@@ -80,6 +85,8 @@ def direct_scan(plan: dict, inventory: dict, parent_id: str, *, allow_fixture: b
                 covered.add(item_id)
             if next_cursor is None and i != len(pages) - 1:
                 raise ValueError("PARENT_PAGINATION_CHAIN_INVALID")
+            if next_cursor is not None:
+                visited_cursors.add(next_cursor)
             expected_cursor = next_cursor
         if expected_cursor is not None:
             raise ValueError("PARENT_PAGINATION_INCOMPLETE")
@@ -251,8 +258,10 @@ def locked_update(plan: dict, inventory: dict, journal_path: Path, path: str, co
             direct_scan(plan, inventory, next_step["parent_id"])
             data = initial_journal(plan)
             delivery.write_json(journal_path, data, root=project_root)
+            digest = hashlib.sha256(journal_path.read_bytes()).hexdigest()
             return {"action": "JOURNAL_INITIALIZED_NEW_PROJECT",
-                    "path": path, "warning": "Back up the journal in durable shared storage before creating Drive folders."}
+                    "path": path, "journal_sha256": digest,
+                    "warning": "Back up the journal in durable shared storage before creating Drive folders."}
         data = read_journal(plan, journal_path)
         if command == "prepare":
             result, data = create_preflight(plan, inventory, data, path)
@@ -262,6 +271,8 @@ def locked_update(plan: dict, inventory: dict, journal_path: Path, path: str, co
             raise ValueError("UNKNOWN_CREATE_GUARD_COMMAND")
         if result["action"] in ("CREATE_FOLDER_ONCE", "RESOLVED_EXISTING_REMOTE_FOLDER"):
             delivery.write_json(journal_path, data, root=project_root)
+            result["journal_sha256"] = hashlib.sha256(journal_path.read_bytes()).hexdigest()
+            result["durable_readback_required"] = True
         return result
     finally:
         if owned:
