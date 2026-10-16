@@ -14,6 +14,7 @@ import { readFile, stat, realpath } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { z } from "zod";
+import { auth0Configuration, protectedResourceMetadata, bearerChallenge, createAuth0Verifier } from "./auth0.mjs";
 
 const execute=promisify(execFile);
 const dirname=path.dirname(fileURLToPath(import.meta.url));
@@ -111,6 +112,7 @@ export function createServer(){
   description:"Read-only authorized local C.A.D.A. and scientific-gate overview. It always supplies text if the host cannot render MCP Apps. Never creates projects, approves gates or claims Drive sync.",
   inputSchema:{locale:z.string().max(35).optional(),mode:z.enum(["MINIMAL","FULL"]).optional()},
   annotations:{readOnlyHint:true,idempotentHint:true,openWorldHint:false},
+  ...(process.env.MEU_ARTIGO_AUTH_MODE==="auth0"?{securitySchemes:[{type:"oauth2",scopes:["mcp:read"]}]}:{}),
   _meta:{ui:{resourceUri:URI},"openai/outputTemplate":URI}
  },async(args)=>{
   const response=await readSite(args);
@@ -132,28 +134,56 @@ function fixedTokenEqual(expected, actual){
 async function startHttp(){
  const bind=process.env.MEU_ARTIGO_BIND_HOST||"127.0.0.1";
  const port=Number(process.env.MEU_ARTIGO_MCP_PORT||"8085");
+ const mode=process.env.MEU_ARTIGO_AUTH_MODE||"bearer";
+ if(!["bearer","auth0"].includes(mode))throw Error("UNSUPPORTED_AUTH_MODE");
  const token=process.env.MEU_ARTIGO_MCP_BEARER||"";
  if(!Number.isInteger(port)||port<1024||port>65535)throw Error("Invalid explicit MCP port");
- if(token.length<32)throw Error("A secret bearer of at least 32 characters is required");
- // Stage 10 must never expose a bearer-only endpoint to a public
- // interface; OAuth with resource-specific authorization belongs to Stage 11.
+ if(mode==="bearer"&&token.length<32)throw Error("A secret bearer of at least 32 characters is required");
+ const authConfig=mode==="auth0"?auth0Configuration():null;
+ const verifyAuth0=authConfig?createAuth0Verifier(authConfig):null;
+ // Stage 11 OAuth source is prepared; public binding still denied until
+ // actual provider / callback / user-delegated scope validation and approval.
  if(!["127.0.0.1","::1"].includes(bind))
    throw Error("PUBLIC_HTTP_BIND_BLOCKED_UNTIL_AUTH0_OAUTH");
  const allowedOrigin=process.env.MEU_ARTIGO_ALLOWED_ORIGIN||"";
  const app=createHttpServer(async(req,res)=>{
-  const path=req.url?.split("?")[0];
-  if(path!=="/mcp"){res.writeHead(404).end();return;}
+  const pathname=req.url?.split("?")[0];
+  if(authConfig&&req.method==="GET"&&
+    (pathname==="/.well-known/oauth-protected-resource"||
+     pathname==="/.well-known/oauth-protected-resource/mcp")){
+    res.writeHead(200,{"content-type":"application/json; charset=utf-8",
+      "cache-control":"public, max-age=300",
+      "x-content-type-options":"nosniff"});
+    res.end(JSON.stringify(protectedResourceMetadata(authConfig)));return;
+  }
+  if(pathname!=="/mcp"){res.writeHead(404).end();return;}
   const methods=new Set(["POST","GET","DELETE"]);
   if(!methods.has(req.method)){res.writeHead(405).end();return;}
   if(req.headers.origin&&(!allowedOrigin||req.headers.origin!==allowedOrigin)){
    res.writeHead(403).end();return;
   }
-  const header=req.headers.authorization;
-  const auth=typeof header==="string"&&header.length<=512&&
-    /^Bearer [^\s]+$/i.test(header);
-  const sent=auth?header.slice(7):"";
-  if(!auth||!fixedTokenEqual(token,sent)){
-   res.writeHead(401,{"content-type":"application/json"}).end('{"error":"Unauthorized"}');return;
+  if(authConfig){
+    const verdict=await verifyAuth0(req.headers.authorization);
+    if(!verdict.ok){
+      const headers={"content-type":"application/json; charset=utf-8",
+        "cache-control":"no-store","x-content-type-options":"nosniff"};
+      if(verdict.status===401||verdict.error==="insufficient_scope")
+        headers["www-authenticate"]=bearerChallenge(authConfig,
+          verdict.error==="invalid_token"?"invalid_token":
+          verdict.error==="insufficient_scope"?"insufficient_scope":null);
+      res.writeHead(verdict.status,headers)
+        .end(JSON.stringify({error:verdict.status===401?"Unauthorized":"Forbidden"}));
+      return;
+    }
+  }else{
+    const header=req.headers.authorization;
+    const valid=typeof header==="string"&&header.length<=512&&
+      /^Bearer [^\s]+$/i.test(header);
+    const sent=valid?header.slice(7):"";
+    if(!valid||!fixedTokenEqual(token,sent)){
+      res.writeHead(401,{"content-type":"application/json",
+        "cache-control":"no-store"}).end('{"error":"Unauthorized"}');return;
+    }
   }
   // Prevent unbounded JSON-RPC POST buffering inside transport handlers.
   // The SDK accepts an already parsed body as handleRequest's third arg.
