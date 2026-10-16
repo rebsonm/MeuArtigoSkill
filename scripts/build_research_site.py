@@ -95,6 +95,8 @@ def main(argv=None) -> int:
                        default=None, help="Illustrative route; no real data")
     p.add_argument("--output", type=Path,
                    help="Create new private HTML; cannot overwrite an existing file")
+    p.add_argument("--mode", choices=("MINIMAL", "FULL"), default="MINIMAL",
+                   help="Read-only presentation depth; does not authorize writes")
     p.add_argument("--json-only", action="store_true",
                    help="Emit only whitelisted read-only snapshot JSON for MCP Apps")
     p.add_argument("--language", default="auto",
