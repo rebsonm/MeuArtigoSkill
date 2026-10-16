@@ -86,7 +86,11 @@ host-assisted guard protocol first:
    name and parent ID returned. The guard journals `OUTCOME_UNKNOWN`
    before emitting that action. Store its audit file outside the research
    tree, **persist it in the designated durable shared location and verify the
-   remote copy BEFORE issuing the external create call**. An unverified or
+   remote copy BEFORE issuing the external create call**. `prepare` returns
+   `journal_sha256` as the digest of the actual serialized journal bytes;
+   compare that value with SHA-256 computed from bytes retrieved from the
+   durable copy, not from upload metadata. The digest is a comparison aid,
+   **not** independent authentication of the provider. An unverified or
    unreachable durable copy blocks external creation. A concurrent or repeated
    attempt is blocked, not retried.
 4. **Call the real Drive create tool at most once.** Regardless of whether
