@@ -256,7 +256,7 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
    if(!rows.length){const td=add(add(tbody,"tr"),"td","Nenhuma tarefa exibida neste instantâneo");td.colSpan=4;}
    for(const row of rows){const tr=add(tbody,"tr");for(const value of [row.id,row.task,row.execution_owner,row.deadline])add(tr,"td",uiText(value,"—"));}
    $("storage").textContent=model.is_project_bound?
-       "Destino previsto se Drive for canônico: Meu Drive / Meu Artigo / pasta individual do artigo. Localização real e sincronização não verificadas; dados consultados apenas na origem local autorizada.":
+       "Sincronização Drive não verificada; destino previsto se Drive for canônico: Meu Drive / Meu Artigo / pasta individual do artigo. Localização real não verificada; dados consultados apenas na origem local autorizada.":
        "Demonstração fictícia: nenhum Drive ou arquivo de projeto acessado.";
    updateDimensions();
  }
