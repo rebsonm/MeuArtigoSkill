@@ -11,6 +11,7 @@ import unittest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import drive_create_guard as guard
 import drive_f5_operator as operator
+import drive_f7_anchor as anchor
 import drive_journal_checkpoint as checkpoint
 
 ROOT = "synthetic-root-00001"
@@ -18,6 +19,7 @@ AUDIT_PARENT = "synthetic-audit-0001"
 AUDIT_FILE = "synthetic-file-00001"
 NEW_ID = "synthetic-created-0001"
 TOKEN = "fake-credential-is-not-real"
+KEY = bytes(range(32))
 
 
 def wire(obj):
@@ -77,6 +79,28 @@ class FakeDrive:
         return {"id": NEW_ID, "name": name, "parents": [parent]}
 
 
+class FakeTrustedHead:
+    """A test double ONLY; not an independent durable CAS authority."""
+    def __init__(self, head):
+        self.current = head
+        self.reject_cas = False
+        self.stale_readback = False
+        self.cas_calls = 0
+        self.candidate = None
+
+    def read_head(self):
+        if self.stale_readback and self.candidate:
+            return self.candidate
+        return self.current
+
+    def compare_and_set(self, previous_head, new_head):
+        self.cas_calls += 1
+        if self.reject_cas or self.current != previous_head:
+            return False
+        self.current = new_head
+        return True
+
+
 class F5HostTests(unittest.TestCase):
     def setUp(self):
         temp = tempfile.TemporaryDirectory()
@@ -93,6 +117,15 @@ class F5HostTests(unittest.TestCase):
         }
         self.drive = FakeDrive(self.plan)
         self.journal_path.write_bytes(self.drive.journal)
+        self.anchor_archive = self.root / "trusted-executor-receipts"
+        self.anchor_archive.mkdir(mode=0o700)
+        first = anchor.seal_remote_checkpoint(
+            self.anchor_archive, self.project, self.plan,
+            AUDIT_PARENT, AUDIT_FILE, TOKEN,
+            hashlib.sha256(self.drive.journal).hexdigest(),
+            KEY, None, authorized_initial_bootstrap=True,
+            sender=self.drive.sender)
+        self.trusted_head = FakeTrustedHead(first["head_sha256"])
 
     def run_flow(self, *, execute=False, previous=None):
         previous = previous or hashlib.sha256(self.drive.journal).hexdigest()
@@ -100,7 +133,9 @@ class F5HostTests(unittest.TestCase):
             self.plan, self.journal_path, self.project, "01_Dados",
             AUDIT_PARENT, AUDIT_FILE, TOKEN, previous, execute=execute,
             fetch_page=self.drive.fetch_page, sender=self.drive.sender,
-            creator=self.drive.creator)
+            creator=self.drive.creator,
+            trusted_head=self.trusted_head,
+            anchor_archive=self.anchor_archive, anchor_key=KEY)
 
     def test_default_read_only_no_intent_or_external_create(self):
         result = self.run_flow()
@@ -115,6 +150,8 @@ class F5HostTests(unittest.TestCase):
         self.assertEqual(result["remote_id"], NEW_ID)
         self.assertEqual(self.drive.posts, 1)
         self.assertEqual(self.drive.patch_count, 2)
+        self.assertEqual(self.trusted_head.cas_calls, 2)
+        self.assertEqual(len(list(self.anchor_archive.iterdir())), 3)
         self.assertEqual(hashlib.sha256(self.drive.journal).hexdigest(),
                          result["journal_sha256"])
         self.assertEqual(guard.read_journal(self.plan, self.journal_path)
@@ -167,6 +204,13 @@ class F5HostTests(unittest.TestCase):
         }
         self.drive.journal = wire(pending)
         self.journal_path.write_bytes(self.drive.journal)
+        next_receipt = anchor.seal_remote_checkpoint(
+            self.anchor_archive, self.project, self.plan,
+            AUDIT_PARENT, AUDIT_FILE, TOKEN,
+            hashlib.sha256(self.drive.journal).hexdigest(),
+            KEY, self.trusted_head.current, sender=self.drive.sender)
+        self.assertTrue(self.trusted_head.compare_and_set(
+            self.trusted_head.current, next_receipt["head_sha256"]))
         summary = self.run_flow(execute=False)
         self.assertEqual(
             summary["action"],
@@ -178,6 +222,57 @@ class F5HostTests(unittest.TestCase):
             "BLOCKED_PREVIOUS_CREATE_INTENT_REQUIRES_RECONCILIATION")
         self.assertEqual(self.drive.posts, 0)
         self.assertEqual(self.drive.patch_count, 0)
+
+    def test_missing_trusted_head_backend_blocks_live_create(self):
+        with self.assertRaisesRegex(ValueError, "F8_TRUSTED_HEAD_BACKEND_REQUIRED"):
+            operator.guarded_synthetic_create(
+                self.plan, self.journal_path, self.project, "01_Dados",
+                AUDIT_PARENT, AUDIT_FILE, TOKEN,
+                hashlib.sha256(self.drive.journal).hexdigest(),
+                execute=True, fetch_page=self.drive.fetch_page,
+                sender=self.drive.sender, creator=self.drive.creator)
+        self.assertEqual(self.drive.posts, 0)
+        self.assertEqual(self.drive.patch_count, 0)
+
+    def test_stale_trusted_head_blocks_before_intent(self):
+        self.trusted_head.current = "0" * 64
+        with self.assertRaisesRegex(ValueError, "ANCHOR_TRUSTED_HEAD_MISMATCH"):
+            self.run_flow(execute=True)
+        self.assertEqual(self.drive.posts, 0)
+        self.assertEqual(self.drive.patch_count, 0)
+
+    def test_failed_independent_cas_blocks_create_after_remote_intent(self):
+        self.trusted_head.reject_cas = True
+        with self.assertRaisesRegex(ValueError, "F8_TRUSTED_HEAD_CAS_REJECTED"):
+            self.run_flow(execute=True)
+        self.assertEqual(self.drive.posts, 0)
+        self.assertEqual(self.drive.patch_count, 1)
+        self.assertEqual(len(list(self.anchor_archive.iterdir())), 2)
+        self.assertEqual(guard.read_journal(self.plan, self.journal_path)
+                         ["operations"]["01_Dados"]["state"], "OUTCOME_UNKNOWN")
+        with self.assertRaisesRegex(ValueError, "ANCHOR_TRUSTED_HEAD_MISMATCH"):
+            self.run_flow(execute=True)
+        self.assertEqual(self.drive.posts, 0)
+
+    def test_missing_archive_blocks_live_create(self):
+        from shutil import rmtree
+        rmtree(self.anchor_archive)
+        with self.assertRaisesRegex(ValueError, "ANCHOR_PRIVATE_DIRECTORY_REQUIRED"):
+            self.run_flow(execute=True)
+        self.assertEqual(self.drive.posts, 0)
+        self.assertEqual(self.drive.patch_count, 0)
+
+    def test_invalid_hmac_key_blocks_before_create(self):
+        with self.assertRaisesRegex(ValueError, "F8_HMAC_KEY_REQUIRED"):
+            operator.guarded_synthetic_create(
+                self.plan, self.journal_path, self.project, "01_Dados",
+                AUDIT_PARENT, AUDIT_FILE, TOKEN,
+                hashlib.sha256(self.drive.journal).hexdigest(),
+                execute=True, fetch_page=self.drive.fetch_page,
+                sender=self.drive.sender, creator=self.drive.creator,
+                trusted_head=self.trusted_head,
+                anchor_archive=self.anchor_archive, anchor_key=b"short")
+        self.assertEqual(self.drive.posts, 0)
 
     def test_existing_remote_folder_is_never_created_again(self):
         self.drive.folders.append(NEW_ID)
