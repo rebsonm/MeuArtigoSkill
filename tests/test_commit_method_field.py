@@ -263,9 +263,9 @@ class MethodControlledWriterTests(unittest.TestCase):
 
     def test_cli_requires_researcher_review_and_saves_no_private_content_to_output(self):
         self.choose()
-        secret="Confidential fictional narrative explaining the methodological boundary of archival data and legitimate limitations."
+        draft_fixture="Fully fictional methodology explanation for an automated test of archival source boundaries and legitimate research limitations."
         draft=self.root/"draft.txt"
-        draft.write_text(secret)
+        draft.write_text(draft_fixture)
         cmd=[sys.executable,str(ROOT/"scripts/commit_method_field.py"),str(self.root),
              "--field","material_sources","--draft-file",str(draft),
              "--decided-by",REVIEWER,"--evidence",EVIDENCE,"--rationale",RATIONALE]
@@ -275,7 +275,7 @@ class MethodControlledWriterTests(unittest.TestCase):
         self.assertEqual(before,self.state())
         committed=subprocess.run(cmd+["--researcher-reviewed"],capture_output=True,text=True)
         self.assertEqual(committed.returncode,0,committed.stderr)
-        self.assertNotIn(secret,committed.stdout)
+        self.assertNotIn(draft_fixture,committed.stdout)
         obj=json.loads(committed.stdout)
         self.assertEqual(obj["status"],"DECLARED_RESEARCHER_METHOD_FIELD_RECORDED_NOT_AUTHENTICATED")
         self.assertTrue(obj["local_transaction_committed"])
