@@ -5,7 +5,7 @@ connected to ChatGPT. Do not enable the public proxy until all checks pass.
 
 ## Exact registered values
 
-- Auth0 issuer: `https://dev-w6estudk22tzwdil.us.auth0.com/`
+- Auth0 issuer: `https://YOUR_AUTH0_TENANT.us.auth0.com/`
 - API v2 identifier / MCP canonical resource: `https://mcp.allflux.com.br/mcp`
 - Read-only API scope: `mcp:read`
 - Protected resource metadata: `https://mcp.allflux.com.br/.well-known/oauth-protected-resource`
@@ -55,7 +55,7 @@ connectivity.
 
 ## Contabo source-only staging — do not activate HTTP OAuth yet
 
-On VPS `84.247.134.242`, after reviewing the PR and CI results, the operator
+On VPS `YOUR_VPS_IPV4`, after reviewing the PR and CI results, the operator
 may fetch the candidate branch using the existing non-root `meuartigo`
 account. Avoid updating the VPS by `git pull` from the old feature branch
 without naming the new branch.
@@ -83,7 +83,7 @@ subject, token or client secret into public GitHub issues, CI output or chat.
 
 ```dotenv
 MEU_ARTIGO_AUTH_MODE=auth0
-MEU_ARTIGO_AUTH_ISSUER=https://dev-w6estudk22tzwdil.us.auth0.com/
+MEU_ARTIGO_AUTH_ISSUER=https://YOUR_AUTH0_TENANT.us.auth0.com/
 MEU_ARTIGO_AUTH_RESOURCE=https://mcp.allflux.com.br/mcp
 MEU_ARTIGO_PILOT_SUB=google-oauth2|REPLACE_WITH_PRIVATE_AUTH0_SUB
 ```
