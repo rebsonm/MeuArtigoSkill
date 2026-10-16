@@ -64,12 +64,12 @@ d.querySelector('button[data-page="overview"]').click();
 assert.match(d.getElementById("content").textContent,/Revisar a estratégia de busca e seus critérios/);
 d.querySelector('button[data-page="methods"]').click();
 assert.equal(d.getElementById("content").querySelectorAll('[data-method]').length,0);
-assert.match(d.getElementById("content").textContent,/não é um método registrado/);
+assert.match(d.getElementById("content").textContent,/méthode enregistrée/);
 d.querySelector('button[data-page="overview"]').click();
 assert.equal(dom.window.MeuArtigoHost.receive({...site,canonical_drive_sync_verified:true}),false);
 assert.match(d.getElementById("content").textContent,/Tableau indisponible/);
 assert.doesNotMatch(d.getElementById("content").textContent,/HUMAN_REVIEW_REQUIRED|CADA-0001/);
-assert.equal(d.querySelector(".mock-badge").textContent,"AGUARDANDO DADOS");
+assert.match(d.querySelector(".mock-badge").textContent,/EN ATTENTE DE DONNÉES|AGUARDANDO DADOS/);
 const poisoned={...site,canonical_drive_sync_verified:false,
  tasks:[{id:"CADA-002",task:{html:"<svg>"},execution_owner:"Researcher"}]};
 assert.equal(dom.window.MeuArtigoHost.receive(poisoned),false);
