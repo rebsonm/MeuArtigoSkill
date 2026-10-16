@@ -12,6 +12,27 @@ Meu Artigo is a **Skill**, not a replacement for ChatGPT. Its research guidance 
 
 You do not need to open a technical dashboard to begin. The Skill is designed to offer a useful summary and next-step guidance in the conversation itself.
 
+## Navegação visual e interativa
+
+Quando o ambiente permitir componentes nativos, peça **"Mostre meu painel"**
+para ver um resumo fundamentado no projeto autorizado. Depois use
+**"Explorar métodos"**, **"Ver C.A.D.A."**, **"Preparar justificativa"**,
+**"Mostrar pendências"** ou **"Próximo passo"**. Essas solicitações devem
+reutilizar o mesmo estado canônico e apresentar uma ação segura por vez,
+sem exigir comandos técnicos ou repetir escolhas já realizadas.
+
+A navegação e a comparação são **operações de leitura e rascunho**, não
+aprovação de um gate científico. Sem componentes interativos disponíveis,
+a experiência deve funcionar em texto comum. O painel HTML local tem agora
+atalhos com foco por seção e uma mensagem de continuação que o pesquisador
+pode copiar manualmente; não transmite nem salva a justificativa sozinho.
+Consulte [o contrato de experiência](../references/researcher-ux.md).
+
+A habilidade e o pacote privado do ChatGPT compartilham esse núcleo de
+orientação quando suas versões correspondentes estão carregadas. Alterar
+somente arquivos no repositório não atualiza automaticamente uma instalação
+já existente nem transforma um HTML local em uma interface nativa hospedada.
+
 ## When returning to an article
 
 Say *"Meu Artigo, let's continue my article on [topic]"*. When an authorized saved project is accessible, the assistant should tell you where the recorded work stopped, what decision is pending and which step can safely follow. It should not assume that *"next"* means approval of a scientific choice.
