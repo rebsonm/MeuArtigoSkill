@@ -82,10 +82,13 @@ receipt hash. The file contains **no OAuth or HMAC secrets**.
 5. Independently retain and verify the newly returned head **before** the
    host might perform a non-idempotent folder creation. If the head write,
    remote journal update or readback fails, do not create anything.
-   Currently the F5 operator **does not invoke this F7 anchor automatically**:
-   DO NOT treat it as cleared for live create even if it previously passed
-   its synthetic-only tests. Host-side integration and atomicity review
-   remain to be implemented and approved.
+   F8 now **calls this F7 anchor mandatorily** from the F5 host code before
+   a simulated synthetic create and after a resolved operation, but only when
+   a host provides a durable independent CAS trusted-head backend. The
+   repository CLI **does not implement a real external CAS adapter**, so
+   `--execute-synthetic-create` remains blocked there. Do not treat passing
+   synthetic tests as live acceptance; backend atomicity, actual independent
+   persistence and OAuth integration remain to be implemented and approved.
 6. After restarting the external executor, obtain the latest head from the
    trusted store and verify all numbered receipt files plus the exact remote
    journal content:
