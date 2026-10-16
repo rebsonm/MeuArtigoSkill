@@ -152,6 +152,57 @@ host**, but cannot prove global exactly-once behavior or independently
 authenticate its user-provided observations. A concurrent actor or a
 fabricated host inventory remains outside its assurance.
 
+## Optional authenticated Drive v3 integration (external executor)
+
+Two additional tools are available:
+
+- scripts/drive_api_proof.py uses Drive v3 files.list with real
+  nextPageToken pagination to produce parent_scans[].page_evidence.
+  Parent IDs, child IDs, duplicate names, file types, incompleteSearch,
+  returned cursors and page limits are validated. No writes occur.
+- scripts/drive_journal_checkpoint.py verifies and restores a journal from
+  an independently provisioned private JSON file in a separate audit folder.
+  It may PATCH that EXISTING file once, followed by downloaded-byte SHA-256
+  verification. It never creates files or folders, deletes objects or
+  retries an uncertain PATCH. It does not implement multi-writer atomic CAS.
+
+These tools require an authorized secure external Python executor with an
+OAuth access token supplied in its environment variable
+MEU_ARTIGO_DRIVE_ACCESS_TOKEN. The ChatGPT connected Drive service does NOT
+expose its access token for use by these scripts. Never paste credentials
+into a chat, source code, a repository or any scientific record.
+
+Run a complete API scan with:
+
+    python scripts/drive_api_proof.py --parent-id REAL_PARENT_ID --drive-root-id REAL_PROJECT_ID --output PRIVATE_AUDIT_PATH/inventory.json
+
+For child parents supply --parent-path and --base-inventory from a previously
+verified inventory. The returned page chain is an API observation, not an
+independent signed attestation. The currently connected ChatGPT list_folder
+tool does not expose the needed pagination tokens; do not forge evidence.
+
+The journal checkpoint helper requires a fixed pre-provisioned private file
+ID, audit folder ID, a verified plan and the previously observed SHA-256.
+A new local journal intent MUST be synchronized and read back in full
+BEFORE any external folder creation. Example:
+
+    python scripts/drive_journal_checkpoint.py push --plan PRIVATE_AUDIT_PATH/delivery-plan.json --remote-file-id REAL_AUDIT_FILE_ID --audit-parent-id REAL_AUDIT_FOLDER_ID --journal PRIVATE_AUDIT_PATH/create-journal.json --expected-remote-sha256 PREVIOUS_SHA256
+
+Use the new digest returned after successful readback as the expected
+previous digest for the next checkpoint. Stop if the remote copy has changed
+unexpectedly, its parent does not match, or the write outcome is uncertain.
+The guard does not supply global atomic compare-and-swap between independent
+writers. Host-level serialization is required.
+
+On a later session with the same private file ID and plan, restore into a
+NEW local path (never overwrite or write inside the research project):
+
+    python scripts/drive_journal_checkpoint.py restore --plan PRIVATE_AUDIT_PATH/delivery-plan.json --remote-file-id REAL_AUDIT_FILE_ID --audit-parent-id REAL_AUDIT_FOLDER_ID --journal PRIVATE_AUDIT_PATH/restored-journal.json --project-root PROJECT_PATH
+
+The installed Skill is NOT using this adapter unless an authorized host
+explicitly installs and invokes it. The offline simulated tests do not prove
+live OAuth access or a real cross-session durable restore.
+
 ## Execute each safe next step
 
 With up-to-date observations recorded outside the source project, run:
