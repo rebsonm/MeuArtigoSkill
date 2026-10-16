@@ -21,6 +21,11 @@ OPTIONAL_PROTOCOL_DOCS={
     "tests/test_integrated_skill_homologation.py",
     "docs/INTEGRATED-SKILL-HOMOLOGATION.md",
     # Stage 04: exact reviewed source-only CI checks (never packaged).
+    # Reviewed optional source-only UI and MCP workflows from PR #74.
+    "CHANGELOG.md",
+    "references/native-chat-dashboard.md",
+    "scripts/build_research_site.py",
+    ".github/workflows/mcp-apps-ci.yml",
     "docs/ETAPA04-CI-SECURITY.md",
     "scripts/audit_optional_mcp_supply_chain.py",
     "tests/test_optional_mcp_supply_chain.py",
@@ -78,6 +83,15 @@ class PublicSkillBoundaryTests(unittest.TestCase):
             ".github/workflows/codeql-javascript.yml",
         ):
             self.assertNotIn(forbidden, packaged)
+
+    def test_optional_chat_ui_is_not_packaged_as_server(self):
+        import sys
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from build_skill_bundle import list_sources
+        shipped={p.relative_to(ROOT).as_posix() for p in list_sources(ROOT)}
+        self.assertIn("assets/research_site.html",shipped)
+        self.assertFalse(any(p.startswith("integrations/") for p in shipped))
+        self.assertFalse(any("node_modules" in p or p.endswith("server.mjs") for p in shipped))
 
     def test_scientific_human_controls_remain(self):
         source=(ROOT/"SKILL.md").read_text(encoding="utf-8")
