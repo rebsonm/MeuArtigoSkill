@@ -200,7 +200,8 @@ class DurableJournalCheckpointTests(unittest.TestCase):
     def test_restore_remote_checkpoint_to_new_local_audit_path(self):
         dst = self.root / "restored" / "journal.json"
         result = checkpoint.restore(REMOTE_ID, AUDIT, "dummy-token-long",
-                                    self.plan, dst, project_root=self.project_root,
+                                    self.plan, dst, hashlib.sha256(encode(self.before)).hexdigest(),
+                                    project_root=self.project_root,
                                     sender=self.drive.sender)
         self.assertEqual(result["action"], "JOURNAL_RESTORED")
         self.assertEqual(dst.read_bytes(), encode(self.before))
@@ -211,7 +212,8 @@ class DurableJournalCheckpointTests(unittest.TestCase):
         with self.assertRaisesRegex(checkpoint.JournalSyncError,
                                     "LOCAL_JOURNAL_EXISTS_NO_OVERWRITE"):
             checkpoint.restore(REMOTE_ID, AUDIT, "dummy-token-long",
-                               self.plan, dst, project_root=self.project_root,
+                               self.plan, dst, hashlib.sha256(encode(self.before)).hexdigest(),
+                                    project_root=self.project_root,
                                sender=self.drive.sender)
         self.assertEqual(dst.read_text(), "keep")
 
@@ -220,8 +222,33 @@ class DurableJournalCheckpointTests(unittest.TestCase):
         with self.assertRaisesRegex(checkpoint.JournalSyncError,
                                     "JOURNAL_MUST_BE_OUTSIDE_PROJECT"):
             checkpoint.restore(REMOTE_ID, AUDIT, "dummy-token-long",
-                               self.plan, dst, project_root=self.project_root,
+                               self.plan, dst, hashlib.sha256(encode(self.before)).hexdigest(),
+                                    project_root=self.project_root,
                                sender=self.drive.sender)
+
+    def test_restore_requires_pinned_digest_against_old_valid_journal(self):
+        # An old empty journal matches the plan but would lose the pending
+        # operation: the independently retained digest must reject it.
+        self.drive.raw = encode(self.before)
+        expected_current = hashlib.sha256(encode(self.after)).hexdigest()
+        dst = self.root / "stale-journal.json"
+        with self.assertRaisesRegex(checkpoint.JournalSyncError,
+                                    "JOURNAL_RESTORE_SHA_MISMATCH"):
+            checkpoint.restore(REMOTE_ID, AUDIT, "dummy-token-long",
+                               self.plan, dst, expected_current,
+                               project_root=self.project_root,
+                               sender=self.drive.sender)
+        self.assertFalse(dst.exists())
+
+    def test_restore_rejects_invalid_unpinned_digest(self):
+        dst = self.root / "without-anchor.json"
+        with self.assertRaisesRegex(checkpoint.JournalSyncError,
+                                    "EXPECTED_JOURNAL_SHA_INVALID"):
+            checkpoint.restore(REMOTE_ID, AUDIT, "dummy-token-long",
+                               self.plan, dst, "not-an-authenticated-sha",
+                               project_root=self.project_root,
+                               sender=self.drive.sender)
+        self.assertFalse(dst.exists())
 
     def test_downloaded_remote_sha_verified_without_write(self):
         result = checkpoint.remote_matches(REMOTE_ID, AUDIT, "dummy-token-long",
@@ -240,7 +267,8 @@ class DurableJournalCheckpointTests(unittest.TestCase):
         self.drive.raw = encode(self.after)
         restored = self.root / "after-session-crash.json"
         checkpoint.restore(REMOTE_ID, AUDIT, "dummy-token-long",
-                           self.plan, restored, project_root=self.project_root,
+                           self.plan, restored, hashlib.sha256(encode(self.after)).hexdigest(),
+                           project_root=self.project_root,
                            sender=self.drive.sender)
         loaded = guard.read_journal(self.plan, restored)
         self.assertEqual(loaded["operations"]["01_Dados"]["state"], "OUTCOME_UNKNOWN")
