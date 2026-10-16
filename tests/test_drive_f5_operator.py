@@ -227,6 +227,32 @@ class F5HostTests(unittest.TestCase):
         self.assertEqual(self.drive.posts, 0)
         self.assertEqual(self.drive.patch_count, 0)
 
+    def test_cli_execute_flag_has_no_external_cas_backend_and_blocks(self):
+        # Source-level CLI smoke: no OAuth token is passed to the subprocess,
+        # and the host guard must stop before any Google Drive I/O.
+        import subprocess
+        cmd = [
+            sys.executable,
+            str(Path(__file__).resolve().parents[1] / "scripts" / "drive_f5_operator.py"),
+            "--plan", str(self.root / "plan.json"),
+            "--journal", str(self.journal_path),
+            "--project-root", str(self.project),
+            "--path", "01_Dados",
+            "--audit-parent-id", AUDIT_PARENT,
+            "--audit-file-id", AUDIT_FILE,
+            "--expected-remote-sha256", hashlib.sha256(self.drive.journal).hexdigest(),
+            "--execute-synthetic-create",
+        ]
+        (self.root / "plan.json").write_text(json.dumps(self.plan), encoding="utf-8")
+        completed = subprocess.run(
+            cmd, capture_output=True, text=True, timeout=10,
+            env={"PATH": "", "PYTHONPATH": "", "MEU_ARTIGO_DRIVE_ACCESS_TOKEN": ""},
+            check=False)
+        self.assertEqual(completed.returncode, 2)
+        self.assertEqual(json.loads(completed.stdout)["action"], "BLOCKED")
+        self.assertEqual(self.drive.posts, 0)
+        self.assertEqual(self.drive.patch_count, 0)
+
     def test_missing_trusted_head_backend_blocks_live_create(self):
         with self.assertRaisesRegex(ValueError, "F8_TRUSTED_HEAD_BACKEND_REQUIRED"):
             operator.guarded_synthetic_create(
