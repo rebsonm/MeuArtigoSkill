@@ -10,7 +10,8 @@
     "test:synthetic": "node scripts/synthetic.mjs",
     "test:i18n": "node scripts/i18n.mjs",
     "test:http": "node scripts/http.mjs",
-    "test:stage09": "node scripts/stage09-accessibility.mjs"
+    "test:stage09": "node scripts/stage09-accessibility.mjs",
+    "test:stage10": "node scripts/stage10-contracts.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.20.0",
