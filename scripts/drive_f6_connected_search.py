@@ -46,6 +46,12 @@ def verify_folder_pages(data: dict, path: str) -> dict:
         q = request.get("special_filter_query_str")
         if q != f"'{parent}' in parents and trashed = false":
             raise ValueError("CONNECTED_FOLDER_PARENT_QUERY_MISMATCH")
+        # A keyword query or viewed-only switch could hide other folders.
+        # A folder-only page is incomplete if any additional filtering is set.
+        if request.get("query") not in (None, "") or request.get("require_viewed_by_user") is True:
+            raise ValueError("CONNECTED_FOLDER_HIDDEN_FILTERS_FORBIDDEN")
+        if request.get("best_effort_fetch") is True:
+            raise ValueError("CONNECTED_FOLDER_CONTENT_FETCH_UNNECESSARY")
         result = response.get("results")
         if not isinstance(result, list) or "next_page_token" not in response:
             raise ValueError("CONNECTED_FOLDER_RESPONSE_INCOMPLETE")
