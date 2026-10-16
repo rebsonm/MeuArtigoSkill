@@ -158,6 +158,27 @@ class F5HostTests(unittest.TestCase):
         self.assertEqual(self.drive.posts, 0)
         self.assertEqual(self.drive.patch_count, 0)
 
+    def test_prior_uncertain_create_is_blocked_even_in_read_only_mode(self):
+        pending = guard.initial_journal(self.plan)
+        pending["operations"]["01_Dados"] = {
+            "state": "OUTCOME_UNKNOWN", "attempt_id": "pending-001",
+            "parent_id": ROOT, "before_scan_token": "scan-before-0001",
+            "observed_remote_id": None,
+        }
+        self.drive.journal = wire(pending)
+        self.journal_path.write_bytes(self.drive.journal)
+        summary = self.run_flow(execute=False)
+        self.assertEqual(
+            summary["action"],
+            "BLOCKED_PREVIOUS_CREATE_INTENT_REQUIRES_RECONCILIATION")
+        self.assertFalse(summary["create_permitted"])
+        attempt = self.run_flow(execute=True)
+        self.assertEqual(
+            attempt["action"],
+            "BLOCKED_PREVIOUS_CREATE_INTENT_REQUIRES_RECONCILIATION")
+        self.assertEqual(self.drive.posts, 0)
+        self.assertEqual(self.drive.patch_count, 0)
+
     def test_existing_remote_folder_is_never_created_again(self):
         self.drive.folders.append(NEW_ID)
         result = self.run_flow(execute=True)
