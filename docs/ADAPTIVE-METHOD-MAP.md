@@ -480,15 +480,21 @@ approved local processing of the canonical files:
 
     python scripts/local_research_bridge.py /authorized/project --mode MINIMAL
 
-The command binds **only** to \`127.0.0.1\`, on an OS-chosen port by
-default. It prints a **session-specific URL** in the form
-\`http://127.0.0.1:<port>/#session=<secret>\`. **Treat the full URL as a
-credential**: do not share it, screenshot it, include it in reports or
-publish terminal output. The fragment is not sent in the HTTP request,
-and the browser removes it from the address bar after bootstrapping.
-Open this URL on the **same computer**. Stop
-the process to end the session. Do **not** make the port public via a
-reverse proxy, tunnel, shared network or cloud hosting.
+The command binds only to \`127.0.0.1\`, on an OS-chosen port by
+default. To avoid leaking a session bearer credential into terminal logs
+and CI output, stdout now contains only nonsecret status and
+\`session_url_file\`. Open that temporary file locally to retrieve the
+session-specific browser URL. The directory is owner-only (0700) and the
+file is owner-only (0600); the launcher removes them when it exits normally
+(including a handled SIGTERM). Treat the file and its full URL as
+credentials: do not screenshot, share, archive or upload either one.
+
+Open the URL on the same computer, while the server is running; the browser
+will remove the session fragment from the address bar after bootstrap.
+Stop the process to end the session. A forced kill or machine crash may
+leave local temporary artifacts: remove stale \`meu-artigo-session-*\`
+directories after confirming the process has stopped. Never expose the
+port through a public proxy, tunnel, shared network or cloud host.
 
 ### Actions and restrictions
 
