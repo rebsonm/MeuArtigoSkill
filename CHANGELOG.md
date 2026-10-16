@@ -3,6 +3,8 @@
 
 ## Unreleased
 
+- F7 experimental remote-journal checkpoint anchors: add immutable, HMAC-SHA256 receipt-chain helper with independent trusted-head requirement, remote downloaded-byte verification before sealing, private directory checks, and synthetic rollback, forgery, secret and scope-drift tests. Not integrated into the F5 live create path, which remains unsuitable for release without an independently durable head authority and authorized OAuth executor. See `references/drive-f7-anchor-runbook.md`.
+
 - F6 connected read-only Drive improvement: documented actual isolated folder-only search plus independent metadata verification; added a strict folder-page receipt validator that never authorizes creation, and conservative synthetic tests. This does not replace complete all-types API pagination or durable journal acceptance; refer to `references/drive-f6-connected-acceptance.md`.
 
 - F5 optional isolated host integration: add a read-only-by-default Google Drive OAuth test harness (`drive_f5_operator.py`) that checks the exact synthetic root identity, obtains a complete pagination proof, validates an independently pinned durable journal, and allows exactly one synthetic folder-create attempt only after explicit operator opt-in and downloaded-byte intent readback. Fail closed on ambiguity; tests cover side effects, no effects, unsafe roots, stale checkpoints and pre-create failures. See `references/drive-f5-operator.md`. No authenticated live run or production installation is claimed.
