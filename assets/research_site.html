@@ -61,6 +61,10 @@ button,input,select{font:inherit}.skip-link{position:absolute;top:-90px;left:12p
 .option:focus-visible{outline:3px solid #93baff;outline-offset:2px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
 #site-language{background:#fff;color:#102047;border:1px solid #dbe6f5;border-radius:9px;padding:8px;max-width:134px;font-size:12px}.site-language-label{font-size:12px;color:#667a96}@media(max-width:650px){.site-language-label{display:none}#site-language{max-width:100px;font-size:11px}}
+/* Accessible supporting text and visible keyboard navigation at small sizes. */
+.pane p,.line-item p{color:#425873}.footnote,.source-line,.kpi small{color:#526780}
+.subtitle,.section-heading p{color:#4c6079}
+@media(max-width:650px){.skip-link{font-size:14px}.option{min-height:88px}}
 </style>
 </head>
 <body>
@@ -89,6 +93,9 @@ const e=(value)=>String(value===null||value===undefined||value===''?'Não inform
    while the conversational assistant retains the user's requested language. */
 const TRANSLATIONS={
  en:{
+ "Alternativa selecionada apenas para leitura":"Option selected for review only",
+ "Nenhuma alternativa selecionada para leitura":"No option selected for review",
+
  "Pular para o conteúdo":"Skip to content",
  "Registros locais; execução e prazos não foram verificados por este painel.":"Local records; task completion and deadlines were not verified in this view.",
  "Catálogo de possibilidades; não é um método registrado do projeto.":"Method options for exploration, not a recorded project decision.",
@@ -151,6 +158,9 @@ const TRANSLATIONS={
  "Responsável":"Responsible","Sem gravação":"No writes",
  },
  es:{
+ "Alternativa selecionada apenas para leitura":"Opción seleccionada solo para lectura",
+ "Nenhuma alternativa selecionada para leitura":"Ninguna opción seleccionada para lectura",
+
  "Pular para o conteúdo":"Saltar al contenido",
  "Registros locais; execução e prazos não foram verificados por este painel.":"Registros locales; esta vista no ha verificado ejecuciones ni plazos.",
  "Catálogo de possibilidades; não é um método registrado do projeto.":"Opciones para explorar, no un método registrado del proyecto.",
@@ -206,6 +216,9 @@ const TRANSLATIONS={
  "Revisar a estratégia de busca e seus critérios":"Revisar la estrategia y criterios de búsqueda",
  },
  fr:{
+ "Alternativa selecionada apenas para leitura":"Option sélectionnée uniquement pour examen",
+ "Nenhuma alternativa selecionada para leitura":"Aucune option sélectionnée pour examen",
+
  "Pular para o conteúdo":"Aller au contenu",
  "Registros locais; execução e prazos não foram verificados por este painel.":"Enregistrements locaux : cette vue ne vérifie ni l'exécution ni les délais.",
  "Catálogo de possibilidades; não é um método registrado do projeto.":"Options à explorer, sans méthode enregistrée pour ce projet.",
@@ -360,10 +373,25 @@ if(isCanonical){
     '<p class="footnote" role="status" aria-live="polite">'+matches.length+' tarefa(s) apresentada(s)</p>'+
     '<div class="pane table-scroll" style="padding:0"><table><caption class="sr-only">Tarefas registradas no projeto local</caption><thead><tr><th scope="col">ID Tarefa</th><th scope="col">Tarefa</th><th scope="col">Responsável execução</th><th scope="col">Prazo</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+safeNotice+realFooter;
   };
-  screens.methods=()=>heading('Explorar caminhos metodológicos','Catálogo de possibilidades; não é um método registrado do projeto.')+
-    '<div class="info">Estas alternativas não registram métodos nem aprovam gates. A decisão deve ser tomada, justificada e registrada pelo pesquisador.</div>'+
-    '<div class="pane" style="margin-top:16px"><p>Estudo documental qualitativo · Design Science Research · Métodos mistos · Outro caminho</p>'+
-    '<p>Consulte os registros autorizados para verificar o desenho escolhido.</p></div>'+safeNotice+realFooter;
+  screens.methods=()=>{
+    const options=[['doc','Estudo documental qualitativo',
+      'Compreender práticas e registros sem generalizar a rotinas não observadas.'],
+      ['dsr','Design Science Research','Construir e avaliar um artefato não prova eficácia no uso cotidiano.'],
+      ['mix','Métodos mistos','Integrar resultados qualitativos e quantitativos com justificativa explícita.'],
+      ['other','Outro caminho','Permitir tradições não previstas no catálogo.']];
+    const chosen=options.find(x=>x[0]===methodChoice);
+    const cards=options.map(([id,name,desc])=>
+      '<button type="button" data-method="'+id+'" class="option '+(methodChoice===id?'selected':'')+
+      '" aria-pressed="'+(methodChoice===id?'true':'false')+'" style="text-align:left"><h3>'+name+
+      '</h3><p>'+desc+'</p></button>').join('');
+    return heading('Explorar caminhos metodológicos',
+      'Catálogo de possibilidades; não é um método registrado do projeto.')+
+      '<div class="info">Estas alternativas não registram métodos nem aprovam gates. A decisão deve ser tomada, justificada e registrada pelo pesquisador.</div>'+
+      '<div class="two" style="margin-top:16px">'+cards+'</div>'+
+      '<div class="pane" style="margin-top:16px"><div class="mini-label">Alternativa selecionada apenas para leitura</div>'+
+      '<p>'+(chosen?chosen[1]+' — '+chosen[2]:'Nenhuma alternativa selecionada para leitura')+
+      '</p><p>Consulte os registros autorizados para verificar o desenho escolhido.</p></div>'+safeNotice+realFooter;
+  };
   screens.overview=()=>'<div class="page-top"><div><div class="eyebrow">Panorama da pesquisa</div>'+
     '<h1 class="page-title">Projeto autorizado · visão local</h1><p class="subtitle">'+e(siteData.active_route||'Rota não informada')+
     ' · estado científico a conferir</p></div><div class="stage">Snapshot local · não sincronizado</div></div>'+
@@ -421,7 +449,7 @@ function disconnectHost(){
 }
 function receiveHostData(nextData){
  if(!validCanonical(nextData)){disconnectHost();return false;}
- siteData=nextData;isCanonical=true;
+ siteData=nextData;isCanonical=true;methodChoice='';
  taskRows=nextData.tasks.map(t=>[e(t.id),e(t.task),e(t.execution_owner),e(t.deadline)]);
  applyCanonical();
  const badge=document.querySelector('.mock-badge');

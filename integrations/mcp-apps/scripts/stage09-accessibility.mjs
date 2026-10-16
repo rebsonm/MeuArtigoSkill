@@ -63,7 +63,11 @@ assert.doesNotMatch(d.getElementById("content").textContent,/Fonte: demonstraç�
 d.querySelector('button[data-page="overview"]').click();
 assert.match(d.getElementById("content").textContent,/Revisar a estratégia de busca e seus critérios/);
 d.querySelector('button[data-page="methods"]').click();
-assert.equal(d.getElementById("content").querySelectorAll('[data-method]').length,0);
+assert.equal(d.getElementById("content").querySelectorAll('[data-method]').length,4);
+const stageMethod=d.querySelector('button[data-method="dsr"]');
+stageMethod.click();
+assert.equal(d.querySelector('button[data-method="dsr"]').getAttribute("aria-pressed"),"true");
+assert.doesNotMatch(d.getElementById("content").textContent,/GATE-0001 · Pergunta/);
 assert.match(d.getElementById("content").textContent,/méthode enregistrée/);
 d.querySelector('button[data-page="overview"]').click();
 assert.equal(dom.window.MeuArtigoHost.receive({...site,canonical_drive_sync_verified:true}),false);

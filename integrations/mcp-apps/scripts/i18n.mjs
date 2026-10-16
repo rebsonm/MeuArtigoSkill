@@ -56,7 +56,7 @@ async function start(model,lang="en-US"){
  d.querySelector('button[data-page="tasks"]').click();
  assert.match(d.getElementById("content").textContent,/CADA-0001/);
  d.querySelector('button[data-page="methods"]').click();
- assert.equal(d.querySelectorAll('button[data-method]').length,0);
+ assert.equal(d.querySelectorAll('button[data-method]').length,4);
  assert.match(d.getElementById('content').textContent,/méthode enregistrée/);
  d.querySelector('button[data-page="overview"]').click();
  dom.window.MeuArtigoHost.locale("en");
