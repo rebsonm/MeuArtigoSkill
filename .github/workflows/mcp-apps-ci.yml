@@ -1,26 +1,53 @@
-name: Optional MCP Apps npm lock bootstrap (temporary)
+name: Optional MCP Apps interface acceptance
 on:
   pull_request:
     paths:
-      - 'integrations/mcp-apps/**'
-      - '.github/workflows/mcp-apps-ci.yml'
+      - "integrations/mcp-apps/**"
+      - "assets/research_site.html"
+      - "scripts/build_research_site.py"
+      - ".github/workflows/mcp-apps-ci.yml"
+  workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: mcp-apps-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  generate-lock:
+  mcp-apps:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: '22'
-      - name: Resolve exact public npm dependencies without install scripts
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: integrations/mcp-apps/package-lock.json
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Require exact npm lock and private-only module
+        run: python scripts/audit_optional_mcp_supply_chain.py
+      - name: Reproducible npm install without install scripts
         working-directory: integrations/mcp-apps
-        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
-      - name: Emit public dependency lock payload (compressed; contains no credentials)
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Audit production dependency advisories
         working-directory: integrations/mcp-apps
-        run: |
-          node -e 'const fs=require("node:fs");const z=require("node:zlib");const x=fs.readFileSync("package-lock.json");console.log("STAGE05_LOCK_BEGIN");console.log(x.toString("base64"));console.log("STAGE05_LOCK_END");'
+        run: npm audit --omit=dev --audit-level=high
+      - name: Bundle portable MCP Apps browser bridge
+        working-directory: integrations/mcp-apps
+        run: npm run build
+      - name: Verify actual MCP stdio tool and UI resource (synthetic)
+        working-directory: integrations/mcp-apps
+        run: npm run test:smoke
+      - name: Verify synthetic project and localized text response
+        working-directory: integrations/mcp-apps
+        run: npm run test:synthetic
+      - name: Verify browser locale switches and fallback
+        working-directory: integrations/mcp-apps
+        run: npm run test:i18n
+      - name: Verify local authenticated Streamable HTTP transport
+        working-directory: integrations/mcp-apps
+        run: npm run test:http
