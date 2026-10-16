@@ -480,21 +480,27 @@ approved local processing of the canonical files:
 
     python scripts/local_research_bridge.py /authorized/project --mode MINIMAL
 
-The command binds only to \`127.0.0.1\`, on an OS-chosen port by
-default. To avoid leaking a session bearer credential into terminal logs
-and CI output, stdout now contains only nonsecret status and
-\`session_url_file\`. Open that temporary file locally to retrieve the
-session-specific browser URL. The directory is owner-only (0700) and the
-file is owner-only (0600); the launcher removes them when it exits normally
-(including a handled SIGTERM). Treat the file and its full URL as
-credentials: do not screenshot, share, archive or upload either one.
+The command binds only to `127.0.0.1`, on an OS-chosen port
+by default. It prints only the constant status
+`LOCAL_READ_ONLY_BRIDGE_READY` — no bearer credential, URL, project
+metadata, port or filesystem path appears in stdout.
 
-Open the URL on the same computer, while the server is running; the browser
-will remove the session fragment from the address bar after bootstrap.
-Stop the process to end the session. A forced kill or machine crash may
-leave local temporary artifacts: remove stale \`meu-artigo-session-*\`
-directories after confirming the process has stopped. Never expose the
-port through a public proxy, tunnel, shared network or cloud host.
+A session-specific URL is written temporarily to
+`~/.meu-artigo-session-*/launch-url.txt` in the local user's home
+directory. Locate the active file privately with your shell
+(for example `ls -t ~/.meu-artigo-session-*/launch-url.txt`)
+and open its contents only on the same computer. The temporary directory
+has mode 0700 and its file mode 0600; they are deleted on normal exit
+or handled SIGTERM. The URL is itself a credential: never share,
+screenshot, archive or upload the file, its contents or related terminal
+output.
+
+The browser removes the session fragment from the address bar after
+bootstrap. Stop the process to end the session. A forced kill or
+machine crash may leave local artifacts: delete any stale
+`~/.meu-artigo-session-*` directories only after verifying the
+process has stopped. Never expose the port through a public proxy,
+tunnel, shared network or cloud host.
 
 ### Actions and restrictions
 
