@@ -89,6 +89,16 @@ host-assisted guard protocol first:
      recovery procedure must resolve this ambiguity.
    - `BLOCKED_DUPLICATE_NAME` or `BLOCKED_TYPE_CONFLICT`: stop; never
      delete, rename or move existing objects without authorized reconciliation.
+   - `BLOCKED_PARENT_DRIFT`: the recorded parent is no longer the verified
+     parent of the target path. Stop; never resolve an old attempt beneath a
+     replaced or moved parent.
+   - `BLOCKED_INCONSISTENT_TARGET_PATH`: a scanned child is not reconciled to
+     the exact canonical path and remote ID expected for this project.
+   - `BLOCKED_PREVIOUS_RESOLUTION_DRIFT`: a prior resolution is no longer
+     observed at the same parent and ID. Never accept an earlier resolution as
+     proof of current presence.
+   - `REINSPECT_PARENT`: the remote observation is reused or stale. Re-list
+     the actual parent and submit a new, evidence-grounded scan token.
 
 There is no Google Drive atomic compare-and-create primitive supplied by
 this Skill. The guard reduces duplicate risk for a **cooperating serial
