@@ -13,6 +13,17 @@ This presentation belongs to the Skill itself. It does not require an
 external hosted interface or a separate subscription.
 Never claim native widgets are supported on every host.
 
+## Guided use in an interactive host
+
+Apply the [shared researcher UX contract](researcher-ux.md) before choosing
+a native visual layout. Start in the Overview, allow lightweight navigation
+among Methods, My Justification, C.A.D.A. and All Details, and preserve a
+single safe next-action summary. A view switch or draft selection is never a
+canonical write. The portable local HTML view provides keyboard-accessible
+focus buttons and prepares a privacy-safe continuation message without
+network submission. Host-native controls must offer real actions or be
+omitted; never promise unsupported tabs.
+
 ## Source-of-truth gate: do this before rendering
 
 1. When resuming, identify the actual authorized project and read its
