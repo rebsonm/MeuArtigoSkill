@@ -480,15 +480,27 @@ approved local processing of the canonical files:
 
     python scripts/local_research_bridge.py /authorized/project --mode MINIMAL
 
-The command binds **only** to \`127.0.0.1\`, on an OS-chosen port by
-default. It prints a **session-specific URL** in the form
-\`http://127.0.0.1:<port>/#session=<secret>\`. **Treat the full URL as a
-credential**: do not share it, screenshot it, include it in reports or
-publish terminal output. The fragment is not sent in the HTTP request,
-and the browser removes it from the address bar after bootstrapping.
-Open this URL on the **same computer**. Stop
-the process to end the session. Do **not** make the port public via a
-reverse proxy, tunnel, shared network or cloud hosting.
+The command binds only to `127.0.0.1`, on an OS-chosen port
+by default. It prints only the constant status
+`LOCAL_READ_ONLY_BRIDGE_READY` — no bearer credential, URL, project
+metadata, port or filesystem path appears in stdout.
+
+A session-specific URL is written temporarily to
+`~/.meu-artigo-session-*/launch-url.txt` in the local user's home
+directory. Locate the active file privately with your shell
+(for example `ls -t ~/.meu-artigo-session-*/launch-url.txt`)
+and open its contents only on the same computer. The temporary directory
+has mode 0700 and its file mode 0600; they are deleted on normal exit
+or handled SIGTERM. The URL is itself a credential: never share,
+screenshot, archive or upload the file, its contents or related terminal
+output.
+
+The browser removes the session fragment from the address bar after
+bootstrap. Stop the process to end the session. A forced kill or
+machine crash may leave local artifacts: delete any stale
+`~/.meu-artigo-session-*` directories only after verifying the
+process has stopped. Never expose the port through a public proxy,
+tunnel, shared network or cloud host.
 
 ### Actions and restrictions
 

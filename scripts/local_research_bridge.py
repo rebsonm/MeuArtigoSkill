@@ -12,9 +12,12 @@ import argparse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import hmac
 import json
+import os
 from pathlib import Path
 import secrets
+import signal
 import sys
+import tempfile
 from urllib.parse import urlsplit
 
 from adaptive_method_guide import for_project, preview
@@ -207,22 +210,31 @@ def main(argv=None):
         with LocalResearchBridge(project=a.project,
                   route=a.preview_route or "QUALITATIVE",
                   mode=a.mode,address=("127.0.0.1",a.port)) as server:
-            # Explicit opt-in session URL has a SECRET fragment. Browser
-            # removes it from the address bar after bootstrap; never share.
-            print(json.dumps({
-                "status":"LOCAL_READ_ONLY_BRIDGE_READY",
-                # Fragment stays in the browser rather than HTTP request
-                # paths. Treat this URL as sensitive and never share it.
-                "url":server.trusted_origin+"/#session="+server.session_token,
-                "bind_host":"127.0.0.1",
-                "project_bound":server.project is not None,
-                "external_network_available":False,
-                "chat_host_connected":False,
-                "canonical_writes":False,
-                "gate_approvals":False,
-                "human_authenticated":False,
-            },sort_keys=True),flush=True)
-            server.serve_forever(poll_interval=.2)
+            # The URL fragment is a bearer credential. Never emit the
+            # credential to stdout/stderr or an application log, because
+            # orchestrators commonly retain the process output.
+            # Create an owner-only directory and an exclusive 0600 file;
+            # both are deleted after the local server stops normally.
+            with tempfile.TemporaryDirectory(prefix=".meu-artigo-session-", dir=Path.home()) as temp:
+                session_path=Path(temp)/"launch-url.txt"
+                fd=os.open(session_path,os.O_CREAT|os.O_EXCL|os.O_WRONLY,0o600)
+                with os.fdopen(fd,"w",encoding="utf-8") as handle:
+                    handle.write(server.trusted_origin+"/#session="+server.session_token+"\n")
+                # Intentionally constant stdout: not even a derived local
+                # file path, project state or bound port is logged. The
+                # operator locates the private file in their HOME directory.
+                print("LOCAL_READ_ONLY_BRIDGE_READY",flush=True)
+                # On POSIX, systemd/subprocess termination sends SIGTERM.
+                # Arrange ordinary cleanup instead of leaving the private
+                # session file behind. SIGKILL cannot be intercepted.
+                old_handler=signal.getsignal(signal.SIGTERM)
+                def _terminate(_signum,_frame):
+                    raise SystemExit(0)
+                try:
+                    signal.signal(signal.SIGTERM,_terminate)
+                    server.serve_forever(poll_interval=.2)
+                finally:
+                    signal.signal(signal.SIGTERM,old_handler)
         return 0
     except (OSError,ValueError) as exc:
         print("LOCAL_BRIDGE_ERROR: "+type(exc).__name__,file=sys.stderr)

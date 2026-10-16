@@ -73,8 +73,10 @@ def main(argv=None) -> int:
     result = inspect(Path(args.repo))
     print(f"public_documents_checked={result['documents']}")
     print(f"public_document_findings={len(result['issues'])}")
-    for msg in result["issues"]:
-        print("ERROR:", msg)
+    if result["issues"]:
+        # Avoid printing potentially sensitive filenames or source-derived
+        # excerpts in CI logs. inspect() retains labels for local tests.
+        print("ERROR: public documentation policy failed; details suppressed")
     return 1 if result["issues"] else 0
 
 
