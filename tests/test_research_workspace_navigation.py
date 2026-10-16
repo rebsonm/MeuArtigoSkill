@@ -80,7 +80,8 @@ class ResearchUXNavigationTests(unittest.TestCase):
         self.assertIn("Nenhum botão nesta tela salva decisões", self.html)
         self.assertIn("Sincronização Drive não verificada", self.html)
         self.assertNotIn('data-ux-button="approve"', self.html)
-        self.assertFalse(self.model["permissions"]["canonical_write"])
+        self.assertEqual(self.model["permissions"]["canonical_write"],
+                         "NOT_AVAILABLE_IN_THIS_UI")
         self.assertEqual(self.model["permissions"]["human_scientific_approval"],
                          "NOT_AVAILABLE_IN_THIS_UI")
 
