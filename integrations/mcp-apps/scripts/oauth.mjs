@@ -21,7 +21,7 @@ assert.deepEqual(protectedResourceMetadata(config),{
   authorization_servers:[issuer],
   scopes_supported:["mcp:read"]
 });
-assert.match(bearerChallenge(config),"resource_metadata=");
+assert.match(bearerChallenge(config),/resource_metadata=/);
 assert.throws(()=>auth0Configuration({
   MEU_ARTIGO_AUTH_ISSUER:issuer,
   MEU_ARTIGO_AUTH_RESOURCE:resource,
