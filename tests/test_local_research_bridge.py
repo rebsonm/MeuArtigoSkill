@@ -102,7 +102,7 @@ class LoopbackBridgeTests(unittest.TestCase):
             self.assertEqual(output.getvalue().splitlines(),["LOCAL_READ_ONLY_BRIDGE_READY"])
             # HOME has a deterministic pattern, but names are random and
             # contents never appear in process output.
-            candidates=list(self.root.glob(".meu-artigo-session-*/launch-url.txt"))
+            candidates=list(Path(self.t.name).glob(".meu-artigo-session-*/launch-url.txt"))
             self.assertEqual(len(candidates),1)
             file=candidates[0]
             private_paths.append(file)
@@ -112,7 +112,7 @@ class LoopbackBridgeTests(unittest.TestCase):
                              server.trusted_origin+"/#session="+server.session_token)
             self.assertNotIn(server.session_token,output.getvalue())
             self.assertNotIn(str(file),output.getvalue())
-        with (patch("local_research_bridge.Path.home",return_value=self.root),
+        with (patch("local_research_bridge.Path.home",return_value=Path(self.t.name)),
               patch.object(LocalResearchBridge,"serve_forever",autospec=True,
                            side_effect=inspect_session),
               redirect_stdout(output)):
