@@ -225,8 +225,9 @@ def next_action(plan: dict, inventory: dict, *, allow_fixture: bool = False) -> 
         if row["status"] == "MISSING":
             entry = by_path[row["path"]]
             if typ == "folder":
-                return {"action": "CREATE_FOLDER", "path": row["path"],
-                        "parent_id": row["parent_id"]}
+                return {"action": "CHECK_PARENT_FOR_CREATE", "path": row["path"],
+                        "parent_id": row["parent_id"],
+                        "required_guard": "scripts/drive_create_guard.py prepare"}
             return {"action": "UPLOAD_FILE", "path": row["path"],
                     "parent_id": row["parent_id"],
                     "sha256": entry["sha256"], "size": entry["size"],
