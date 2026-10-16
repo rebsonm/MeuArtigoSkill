@@ -10,7 +10,8 @@
     "test:synthetic": "node scripts/synthetic.mjs",
     "test:i18n": "node scripts/i18n.mjs",
     "test:http": "node scripts/http.mjs",
-    "test:oauth": "node scripts/oauth.mjs"
+    "test:oauth": "node scripts/oauth.mjs",
+    "test:oauth-http": "node scripts/oauth-http.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.20.0",
