@@ -119,8 +119,71 @@ class FolderGuardTests(unittest.TestCase):
         self.assertEqual(status["action"], "RESOLVED_EXISTING_REMOTE_FOLDER")
         self.assertEqual(status["remote_id"], CHILD)
         self.assertEqual(new_journal["operations"]["01_Dados"]["state"], "RESOLVED")
-        again, _ = self.resolve(self.fresh(), new_journal)
+        later = self.fresh()
+        later["parent_scans"][0]["scan_token"] = "scan-verified-again-0003"
+        again, _ = self.resolve(later, new_journal)
         self.assertEqual(again["action"], "ALREADY_RESOLVED")
+
+    def test_resolved_intent_requires_new_remote_observation(self):
+        _, journal = self.begin()
+        _, journal = self.resolve(self.fresh(), journal)
+        status, _ = self.resolve(self.fresh(), journal)
+        self.assertEqual(status["action"], "REINSPECT_PARENT")
+
+    def test_resolved_folder_disappearance_is_not_already_resolved(self):
+        _, journal = self.begin()
+        _, journal = self.resolve(self.fresh(), journal)
+        later = self.fresh(count=0)
+        later["parent_scans"][0]["scan_token"] = "scan-recheck-after-removal"
+        status, _ = self.resolve(later, journal)
+        self.assertEqual(status["action"], "BLOCKED_PREVIOUS_RESOLUTION_DRIFT")
+
+    def test_parent_replacement_blocks_reconciliation_under_old_parent(self):
+        plan = copy.deepcopy(self.plan)
+        plan["entries"] = [
+            {"type": "folder", "path": "01_Dados", "parent": ""},
+            {"type": "folder", "path": "01_Dados/subfolder", "parent": "01_Dados"},
+        ]
+        old_parent = "synthetic-parent-old-1"
+        new_parent = "synthetic-parent-new-1"
+        initial = copy.deepcopy(self.inventory)
+        initial["entries"] = [
+            {"type": "folder", "path": "01_Dados", "id": old_parent, "parent_id": ROOT}
+        ]
+        initial["parent_scans"] = [
+            {"parent_id": old_parent, "complete": True,
+             "scan_token": "scan-before-parent-change", "children": []}
+        ]
+        journal = guard.initial_journal(plan)
+        step, journal = guard.create_preflight(
+            plan, initial, journal, "01_Dados/subfolder", allow_fixture=True)
+        self.assertEqual(step["action"], "CREATE_FOLDER_ONCE")
+        after = copy.deepcopy(initial)
+        after["entries"] = [
+            {"type": "folder", "path": "01_Dados", "id": new_parent, "parent_id": ROOT},
+            {"type": "folder", "path": "01_Dados/subfolder", "id": CHILD,
+             "parent_id": old_parent}
+        ]
+        after["parent_scans"][0].update(
+            scan_token="scan-after-parent-change",
+            children=[{"id": CHILD, "name": "subfolder", "type": "folder"}]
+        )
+        outcome, _ = guard.resolve_create(
+            plan, after, journal, "01_Dados/subfolder", allow_fixture=True)
+        self.assertEqual(outcome["action"], "BLOCKED_PARENT_DRIFT")
+
+    def test_inconsistent_target_path_cannot_be_accepted(self):
+        _, journal = self.begin()
+        after = self.fresh()
+        after["entries"][0]["path"] = "outside/01_Dados"
+        outcome, _ = self.resolve(after, journal)
+        self.assertEqual(outcome["action"], "BLOCKED_INCONSISTENT_TARGET_PATH")
+
+    def test_duplicate_inventory_ids_cannot_pass_parent_scan(self):
+        scan = self.fresh(count=2)
+        scan["entries"][1]["id"] = scan["entries"][0]["id"]
+        with self.assertRaisesRegex(ValueError, "PARENT_SCAN_INVENTORY_MISMATCH"):
+            guard.direct_scan(self.plan, scan, ROOT, allow_fixture=True)
 
     def test_timeout_after_unobserved_effect_never_retries_blindly(self):
         _, journal = self.begin()
