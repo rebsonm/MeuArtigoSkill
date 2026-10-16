@@ -70,3 +70,31 @@ try{
 }finally{
  child.kill("SIGTERM");
 }
+// The staged OAuth resource must not be externally bound, even if legacy
+// reverse-proxy approval flags are set. These are fictional local processes.
+async function expectStartupDenied(overrides,expected){
+ const probe=spawn(process.execPath,["server.mjs","--http"],{
+  env:{...env,MEU_ARTIGO_MCP_PORT:"18961",...overrides},
+  stdio:["ignore","ignore","pipe"]
+ });
+ let stderr="";
+ probe.stderr.on("data",part=>stderr+=part.toString("utf8"));
+ const code=await Promise.race([
+  new Promise(resolve=>probe.once("exit",resolve)),
+  new Promise(resolve=>setTimeout(()=>resolve("TIMEOUT"),3000))
+ ]);
+ if(code==="TIMEOUT")probe.kill("SIGTERM");
+ assert.notEqual(code,"TIMEOUT","Auth0 invalid configuration must reject before binding");
+ assert.notEqual(code,0);
+ assert.match(stderr,expected);
+}
+await expectStartupDenied(
+ {MEU_ARTIGO_BIND_HOST:"0.0.0.0",
+  MEU_ARTIGO_PROXY_TLS_CONFIRMED:"YES",
+  MEU_ARTIGO_SINGLE_USER_ISOLATED:"YES"},
+ /PUBLIC_HTTP_BIND_BLOCKED_UNTIL_AUTH0_OAUTH/);
+await expectStartupDenied({MEU_ARTIGO_PILOT_SUB:""},/allowlisted/);
+await expectStartupDenied({MEU_ARTIGO_AUTH_RESOURCE:"http:\/\/invalid.example\/mcp"},
+ /Invalid resource/);
+console.log("OAuth pilot startup: public binding, absent user allowlist and HTTP audience rejected.");
+
