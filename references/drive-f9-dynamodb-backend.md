@@ -25,6 +25,14 @@ authorized project must have **exactly one pre-existing item** containing
 \`HeadSha256\` (lowercase 64-digit SHA-256 of the latest confirmed F7 receipt).
 Do not silently create a missing item or replace an unknown existing head.
 
+For every project, construct the exact partition-key string using
+`drive_f9_dynamo_head.scoped_key(plan, audit_parent_id, audit_file_id)`.
+This hashes the canonical delivery plan and separately provisioned audit
+parent/file IDs into a deterministic `ma-f9-` scope. A changed plan, remote
+file ID or audit parent produces a different key and cannot silently reuse
+the old trusted head. Provision the exact new record independently and do
+not bootstrap it from unverified remote data.
+
 The adapter implements:
 
 - \`GetItem(ConsistentRead=True)\` with an exact scoped project key, and
