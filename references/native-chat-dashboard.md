@@ -1,5 +1,23 @@
 # Native chat dashboard — optional presentation for the Skill
 
+## Optional MCP Apps component and immediate fallback
+
+The separately maintained `integrations/mcp-apps/` companion registers
+`meu_artigo_painel` with a standard `ui://meu-artigo/site-v1.html`
+resource and a useful localized **text** result. The HTML begins without
+fabricated project data, accepts only valid authorized read-only snapshots
+and offers a manual interface-language selector. It is **not** loaded by
+a Skill-only installation automatically.
+
+If the MCP tool, UI resource or host rendering fails: use the existing
+source-grounded native dashboard/text workflow in the user's language,
+include actual blockers and a single safe next action, and never claim
+the missing tool was executed. Treat the conversation as an equal fallback
+for hosts without MCP Apps, including other AI services.
+
+For secure setup, translation coverage, authorized host requirements and
+tests see [the MCP Apps integration guide](../integrations/mcp-apps/README.md).
+
 ## Purpose and scope
 
 When a researcher asks "show the dashboard", "where is my paper?",
