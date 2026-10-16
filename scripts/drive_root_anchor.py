@@ -207,6 +207,9 @@ def main() -> int:
     p.add_argument("--project-metadata", type=Path)
     p.add_argument("--project-name")
     p.add_argument("--plan", type=Path)
+    p.add_argument("--scoped-plan-output", type=Path,
+                   help="Create a new scoped plan outside the scientific project")
+    p.add_argument("--project-root", type=Path)
     args = p.parse_args()
     try:
         result = resolve_hierarchy(
@@ -219,12 +222,23 @@ def main() -> int:
             project_metadata=(delivery.load_json(args.project_metadata)
                               if args.project_metadata else None),
             project_name=args.project_name)
+        if args.scoped_plan_output and not args.plan:
+            raise RootAnchorError("SCOPED_PLAN_INPUT_REQUIRED")
         if args.plan:
             if result["action"] != "CANONICAL_PROJECT_VERIFIED":
                 raise RootAnchorError("CANONICAL_PROJECT_NOT_VERIFIED")
             planned = attach_scope(delivery.load_json(args.plan), result)
+            if args.scoped_plan_output:
+                if args.project_root is None:
+                    raise RootAnchorError("PROJECT_ROOT_REQUIRED_FOR_SCOPED_PLAN")
+                output = args.scoped_plan_output.absolute()
+                if (output.is_symlink() or output.exists() or
+                        not output.parent.is_dir()):
+                    raise RootAnchorError("SCOPED_PLAN_OUTPUT_MUST_BE_NEW")
+                delivery.write_json(output, planned, root=args.project_root)
             result = {"action": "CANONICAL_PLAN_SCOPE_VERIFIED",
                       "root_scope": planned["root_scope"],
+                      "scoped_plan_written": bool(args.scoped_plan_output),
                       "create_permitted": False}
         print(json.dumps(result, ensure_ascii=False, sort_keys=True))
         return 0 if result["action"] in ("CANONICAL_PROJECT_VERIFIED",
