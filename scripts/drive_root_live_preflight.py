@@ -36,6 +36,57 @@ def read_metadata(file_id: str, token: str, *,
     return data
 
 
+def globally_observed_project_matches(name: str, token: str, *,
+                                     fetch_page=scanner.authenticated_get) -> list[dict]:
+    """Discover mislocated same-name folders, with full pagination or STOP.
+
+    This is a read-only additional warning signal, not absolute assurance that
+    every inaccessible or concurrently created folder in Drive was observed.
+    """
+    if delivery.safe_relative(name) != name or "/" in name:
+        raise anchor.RootAnchorError("CANONICAL_PROJECT_NAME_INVALID")
+    # Escape backslash and apostrophe within Drive's single-quoted q literal.
+    literal = name.replace("\\", "\\\\").replace("'", "\\'")
+    q = "name = '" + literal + "' and mimeType = '" + scanner.FOLDER_MIME + "' and trashed = false"
+    token_page, observed, cursors, seen = None, [], set(), set()
+    for _ in range(scanner.MAX_PAGES):
+        params = {
+            "q": q, "corpora": "user", "spaces": "drive",
+            "supportsAllDrives": "true", "includeItemsFromAllDrives": "true",
+            "pageSize": "1000",
+            "fields": "kind,nextPageToken,incompleteSearch,files(id,name,mimeType,parents,trashed)",
+        }
+        if token_page is not None:
+            params["pageToken"] = token_page
+        data = fetch_page(token, params)
+        if (not isinstance(data, dict) or data.get("kind") != "drive#fileList"
+                or data.get("incompleteSearch") is True or
+                not isinstance(data.get("files"), list)):
+            raise anchor.RootAnchorError("PROJECT_GLOBAL_SEARCH_INCOMPLETE")
+        for item in data["files"]:
+            if not isinstance(item, dict):
+                raise anchor.RootAnchorError("PROJECT_GLOBAL_SEARCH_INVALID_ITEM")
+            fid = delivery.require_drive_id(item.get("id"))
+            if (fid in seen or item.get("mimeType") != scanner.FOLDER_MIME or
+                    item.get("name") != name or item.get("trashed") is True or
+                    not isinstance(item.get("parents"), list) or
+                    len(item["parents"]) != 1):
+                raise anchor.RootAnchorError("PROJECT_GLOBAL_SEARCH_INVALID_ITEM")
+            parent = delivery.require_drive_id(item["parents"][0])
+            seen.add(fid)
+            observed.append({"id": fid, "parent_id": parent})
+            if len(seen) > scanner.MAX_ITEMS:
+                raise anchor.RootAnchorError("PROJECT_GLOBAL_SEARCH_LIMIT")
+        next_page = data.get("nextPageToken")
+        if next_page is None:
+            return observed
+        if not isinstance(next_page, str) or not next_page or next_page in cursors:
+            raise anchor.RootAnchorError("PROJECT_GLOBAL_SEARCH_CURSOR_INVALID")
+        cursors.add(next_page)
+        token_page = next_page
+    raise anchor.RootAnchorError("PROJECT_GLOBAL_SEARCH_PAGE_LIMIT")
+
+
 def current_structure(token: str, *, project_name: str | None = None,
                       sender=checkpoint.request,
                       fetch_page=scanner.authenticated_get) -> dict:
@@ -61,6 +112,21 @@ def current_structure(token: str, *, project_name: str | None = None,
     result = anchor.resolve_hierarchy(root, root_scan,
                container_metadata=container_metadata,
                container_scan=container_scan, project_name=project_name)
+    if result["action"] == "CHECK_PARENT_FOR_GUARDED_CREATE":
+        # A past, incorrectly nested article of the same name must be
+        # reconciled, not silently duplicated under the correct container.
+        candidates = globally_observed_project_matches(
+            project_name, token, fetch_page=fetch_page)
+        if candidates:
+            if any(c["parent_id"] != container_id for c in candidates):
+                return {"action": "BLOCKED_EXISTING_PROJECT_OUTSIDE_CONTAINER",
+                        "expected_parent_id": container_id,
+                        "observed_matching_folders": len(candidates),
+                        "create_permitted": False}
+            return {"action": "BLOCKED_PARENT_SCAN_GLOBAL_CONFLICT",
+                    "expected_parent_id": container_id,
+                    "create_permitted": False}
+        return result
     if result["action"] != "CHECK_EXACT_CHILD_METADATA":
         return result
     project_metadata = read_metadata(result["remote_id"], token, sender=sender)
