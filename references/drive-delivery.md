@@ -46,6 +46,56 @@ All identifiers above are illustrative. **Never label fixtures as live observati
 
 For existing remote files, a SHA-256 value in the inventory must be computed from content **retrieved back from Drive**, not copied from the local manifest or upload result. If remote bytes cannot be read, leave SHA-256 absent. Do not claim content integrity from metadata or a file name.
 
+## Safe folder creation: pre-inspect, persist intent, then reconcile
+
+The host MUST NOT directly repeat a Drive `create_folder` call after an
+error, timeout, tool block, interrupted workflow, or unobserved outcome.
+Such a call may have succeeded remotely even when the tool response failed.
+**A generic "retry" is not a recovery procedure.**
+
+For EVERY missing folder, the ordinary `drive_delivery.py next` now returns
+`CHECK_PARENT_FOR_CREATE` (not permission to call Drive). Complete the following
+host-assisted guard protocol first:
+
+1. **List the exact parent folder** using the authorized Drive connector.
+   Collect all direct children through every pagination page, preserving IDs,
+   names and types. Record `parent_scans` in the existing inventory:
+   `[{"parent_id":"REAL_ID","complete":true,"scan_token":"FRESH_UNIQUE_SCAN_ID","children":[{"id":"CHILD_ID","name":"FOLDER_NAME","type":"folder"}]}]`.
+   The `scan_token` is an identifier for a completed, actual observation,
+   **not** an AI-invented nonce proving an API response. Its children must
+   match the corresponding entries in `inventory.entries`. An incomplete
+   listing must have `complete:false` and cannot authorize creation.
+2. **Persist one create intent before calling Drive** using:
+
+       python scripts/drive_create_guard.py prepare --plan PRIVATE_AUDIT_PATH/delivery-plan.json --inventory PRIVATE_AUDIT_PATH/observed-drive.json --journal PRIVATE_AUDIT_PATH/create-journal.json --path RELATIVE_FOLDER_PATH --project-root PROJECT_PATH
+
+   Only `CREATE_FOLDER_ONCE` authorizes **one** attempt with the exact
+   name and parent ID returned. The guard journals `OUTCOME_UNKNOWN`
+   before emitting that action. Store its audit file outside the research
+   tree. A concurrent or repeated attempt is blocked, not retried.
+3. **Call the real Drive create tool at most once.** Regardless of whether
+   it returns success, failure or an ambiguous tool error, re-list the
+   parent completely and regenerate the inventory with a **new scan token**
+   grounded in that actual observation.
+4. **Reconcile the pending intent**:
+
+       python scripts/drive_create_guard.py resolve --plan PRIVATE_AUDIT_PATH/delivery-plan.json --inventory PRIVATE_AUDIT_PATH/observed-drive.json --journal PRIVATE_AUDIT_PATH/create-journal.json --path RELATIVE_FOLDER_PATH --project-root PROJECT_PATH
+
+   - `RESOLVED_EXISTING_REMOTE_FOLDER`: exactly one folder of that
+     name and correct parent was observed; reuse its actual ID.
+   - `REINSPECT_PARENT`: the evidence is stale; list again.
+   - `BLOCKED_AMBIGUOUS_OUTCOME`: no folder observed after an uncertain
+     call. **Do not blindly retry**. A human or explicit authorized
+     recovery procedure must resolve this ambiguity.
+   - `BLOCKED_DUPLICATE_NAME` or `BLOCKED_TYPE_CONFLICT`: stop; never
+     delete, rename or move existing objects without authorized reconciliation.
+
+There is no Google Drive atomic compare-and-create primitive supplied by
+this Skill. The guard reduces duplicate risk for a **cooperating serial
+host**, but cannot prove global exactly-once behavior or independently
+authenticate its user-provided observations. A concurrent actor or a
+fabricated host inventory remains outside its assurance.
+
 ## Execute each safe next step
 
 With up-to-date observations recorded outside the source project, run:
@@ -54,13 +104,13 @@ With up-to-date observations recorded outside the source project, run:
 
 Interpret the next action:
 
-- CREATE_FOLDER: use the connected host Drive tool and its exact parent ID; retrieve the created ID.
+- CHECK_PARENT_FOR_CREATE: follow the guarded pre-inspection and journal protocol above before the host may issue CREATE_FOLDER_ONCE. A bare create or blind retry is forbidden.
 - UPLOAD_FILE: send that single local file into the verified parent folder only if its exact relative path is not already present.
 - READ_BACK_FILE: fetch the remote file using its ID; compute SHA-256 from actual bytes and update the observed inventory.
 - BLOCKED_CONFLICT: stop, preserve existing remote files, and explain duplicate names, wrong parents, size/content disagreement or type mismatch. Never silently overwrite or delete.
 - DONE: all expected folders and files have been reported in the requested hierarchy, and all expected file bytes have been read back and compared.
 
-**Re-list relevant folders after each external action**, refresh the inventory and call next again. If the action fails or times out, perform fresh inspection before retrying. A retried run must skip already verified files, not upload them again. Use real tool receipts where possible; the locally written inventory is not independently authenticated.
+**Re-list relevant folders after each external action**, refresh the inventory and call next again. If an external action fails or times out, inspect the actual parent and consult the persisted guard intent; never repeat folder creation automatically. A retried run must skip already verified files, not upload them again. Use real tool receipts where possible; the locally written inventory is not independently authenticated.
 
 ## Final verification and reporting
 
@@ -78,4 +128,4 @@ Never report the Drive tree as complete solely because the project's ZIP was upl
 
 ## Acceptance and real-world evidence
 
-Offline regression tests in tests/test_drive_delivery.py cover nested folders, partial delivery/resume, duplicate names, conflicts, missing content readback, wrong root, restricted PDF, unsafe paths and non-modification of scientific gates. A **real end-to-end test through an authorized connected Drive host**, using disposable synthetic data, is still necessary. A local fixture cannot establish live Drive integration, content access or independent user acceptance.
+Offline regression tests in tests/test_drive_delivery.py and tests/test_drive_create_guard.py cover nested folders, partial delivery/resume, duplicate names, conflicts, missing content readback, wrong root, restricted PDF, unsafe paths and non-modification of scientific gates. A **real end-to-end test through an authorized connected Drive host**, using disposable synthetic data, is still necessary. A local fixture cannot establish live Drive integration, content access or independent user acceptance.
