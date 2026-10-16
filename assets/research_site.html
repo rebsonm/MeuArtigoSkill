@@ -278,7 +278,14 @@ function trace(){return heading('Rastreabilidade','Histórico de decisões e eve
 function submission(){return heading('Preparação para submissão','Conformidade editorial, direitos e integridade antes do envio.')+`<div class="cols"><section class="pane"><div class="mini-label">Periódico-alvo</div><h2>Ainda não definido</h2><p>Na aplicação real, os requisitos editoriais só serão usados depois da consulta às diretrizes oficiais.</p><button class="secondary" data-go="evidence">Revisar evidências →</button></section><section class="pane"><h3>Checklist de preparação</h3><div class="list">${['Conferir diretrizes reais da revista','Revisar anonimização e direitos','Documentar uso de IA conforme política editorial','Verificar manuscrito e anexos finais'].map(t=>`<p style="margin:3px 0">○ ${t}</p>`).join('')}</div></section></div>`+footer}
 function sync(){return heading('Armazenamento e sincronização','Acesso observado e gravação confirmada são estados diferentes.')+`<div class="info amber"><strong>Nesta demonstração: sincronização NÃO verificada.</strong> Nenhuma pasta foi acessada, criada, duplicada ou atualizada.</div><div class="pane" style="margin-top:16px"><div class="mini-label">Estrutura pretendida</div><h2>Meu Drive / Meu Artigo / ARTIGO_Exemplo_2026</h2><p>Esse é somente um caminho de referência. O uso real exige conferir pasta-pai, ID, permissões e os registros do journal antes de qualquer criação.</p><div class="two"><div class="info"><strong>Leitura</strong><br>Não executada no protótipo</div><div class="info"><strong>Escrita</strong><br>Não autorizada no protótipo</div></div></div>`+footer}
 const screens={overview,steps,tasks,sources,evidence,validations,methods,trace,submission,sync};
-
+function applyCanonical(){
+if(siteData.kind==='HOST_NOT_CONNECTED'){
+ const unavailable=()=>heading('No authorized project data',
+ 'The research panel has not received a verified local snapshot. Continue in chat or connect the authorized research source.')+
+ '<div class="info">No fictional progress, citations or approvals are presented by this connected view.</div>';
+ for(const name of Object.keys(screens))screens[name]=unavailable;
+ return;
+}
 if(isCanonical){
   const gates=Array.isArray(siteData.gates)?siteData.gates:[];
   const action=siteData.next_action||{};
@@ -325,6 +332,24 @@ if(isCanonical){
   screens.sync=()=>heading('Armazenamento e sincronização','Um arquivo local não comprova gravação remota.')+
     '<div class="info amber"><strong>Google Drive: não verificado nesta sessão.</strong> Este painel é somente uma projeção local de leitura.</div>'+safeNotice+realFooter;
 }
+}
+applyCanonical();
+
+function receiveHostData(nextData){
+ if(!nextData||nextData.schema!=='MEU_ARTIGO_SITE_V1'||
+    nextData.kind!=='CANONICAL_LOCAL_SNAPSHOT'||
+    !Array.isArray(nextData.tasks)||!Array.isArray(nextData.gates)||
+    nextData.tasks.length>10000||nextData.gates.length>7)return false;
+ siteData=nextData;isCanonical=true;
+ taskRows=nextData.tasks.map(t=>[e(t.id),e(t.task),e(t.execution_owner),e(t.deadline)]);
+ applyCanonical();
+ const badge=document.querySelector('.mock-badge');
+ if(badge)badge.textContent='SNAPSHOT LOCAL · SEM SINCRONIZAÇÃO';
+ current='overview';nav();render();
+ applyLanguage(nextData.locale&&nextData.locale!=='auto'?nextData.locale:activeLocale);
+ return true;
+}
+window.MeuArtigoHost=Object.freeze({receive:receiveHostData,locale:applyLanguage});
 
 function render(){ $('content').innerHTML=screens[current]();$('content').querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));$('content').querySelectorAll('[data-method]').forEach(b=>b.addEventListener('click',()=>{methodChoice=b.dataset.method;render()}));const filter=$('task-filter');if(filter){filter.value=taskQuery;filter.addEventListener('input',()=>{taskQuery=filter.value;const cursor=filter.selectionStart;render();const fresh=$('task-filter');fresh.focus();fresh.setSelectionRange(cursor,cursor)})}translateContainer($('content'))}
 $('reset').addEventListener('click',()=>{taskQuery='';methodChoice='doc';go('overview')});
