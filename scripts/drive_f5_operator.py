@@ -119,6 +119,12 @@ def guarded_synthetic_create(plan: dict, journal: Path, project_root: Path,
     observed = guard.inspect_target(plan, inventory, path, root_id)
     if observed["action"] != "NOT_FOUND_AFTER_COMPLETE_SCAN":
         return observed
+    # A prior uncertain creation must not be misreported as a clean precheck
+    # merely because a new scan still shows no target folder.
+    existing_intent = guard.read_journal(plan, journal).get("operations", {}).get(path)
+    if existing_intent:
+        return {"action": "BLOCKED_PREVIOUS_CREATE_INTENT_REQUIRES_RECONCILIATION",
+                "path": path, "create_permitted": False}
     # Read-only default does not reserve an intent or call the provider.
     if not execute:
         return {"action": "PRECHECK_ONLY_NO_CREATE", "path": path,
