@@ -22,7 +22,9 @@ class FakeProvider:
     def __init__(self):
         self.root_folders = [{"id": CONTAINER, "name": "Meu Artigo",
                               "mimeType": MIME, "parents": [ROOT]}]
-        self.globally_matching_projects = []
+        self.globally_matching_projects = [{
+            "id": PROJECT, "name": NAME, "mimeType": MIME,
+            "parents": [CONTAINER], "trashed": False}]
         self.children = [{"id": PROJECT, "name": NAME,
                           "mimeType": MIME, "parents": [CONTAINER]}]
         self.folders = {
@@ -89,6 +91,7 @@ class LiveReadOnlyPreflightTests(unittest.TestCase):
 
     def test_absent_article_requested_only_under_verified_container(self):
         self.provider.children = []
+        self.provider.globally_matching_projects = []
         result = self.provider.run()
         self.assertEqual(result["action"], "CHECK_PARENT_FOR_GUARDED_CREATE")
         self.assertEqual(result["parent_id"], CONTAINER)
@@ -116,6 +119,7 @@ class LiveReadOnlyPreflightTests(unittest.TestCase):
 
     def test_global_search_incomplete_blocks_instead_of_authorizing_create(self):
         self.provider.children = []
+        self.provider.globally_matching_projects = []
         initial_fetch = self.provider.fetch_page
         def fetch(token, params):
             result = initial_fetch(token, params)
@@ -127,6 +131,53 @@ class LiveReadOnlyPreflightTests(unittest.TestCase):
             live.current_structure(
                 "mock-provider-token-synthetic", project_name=NAME,
                 sender=self.provider.sender, fetch_page=fetch)
+
+    def test_existing_canonical_and_mislocated_duplicate_blocks_reuse(self):
+        self.provider.globally_matching_projects.append({
+            "id": "other-copy-id-000001", "name": NAME, "mimeType": MIME,
+            "parents": ["incorrect-parent-00001"], "trashed": False})
+        result = self.provider.run()
+        self.assertEqual(result["action"], "BLOCKED_EXISTING_PROJECT_OUTSIDE_CONTAINER")
+        self.assertFalse(result["create_permitted"])
+
+    def test_existing_direct_project_absent_in_global_read_blocks(self):
+        self.provider.globally_matching_projects = []
+        result = self.provider.run()
+        self.assertEqual(result["action"], "BLOCKED_PARENT_SCAN_GLOBAL_CONFLICT")
+        self.assertFalse(result["create_permitted"])
+
+    def test_existing_global_same_name_different_id_blocks(self):
+        self.provider.globally_matching_projects = [{
+            "id": "unrelated-canonical-id-0001", "name": NAME,
+            "mimeType": MIME, "parents": [CONTAINER], "trashed": False}]
+        result = self.provider.run()
+        self.assertEqual(result["action"], "BLOCKED_PARENT_SCAN_GLOBAL_CONFLICT")
+
+    def test_existing_global_incomplete_search_blocks(self):
+        original = self.provider.fetch_page
+        def fetch(token, params):
+            result = original(token, params)
+            if params["q"].startswith("name = "):
+                result["incompleteSearch"] = True
+            return result
+        with self.assertRaisesRegex(anchor.RootAnchorError,
+                                    "PROJECT_GLOBAL_SEARCH_INCOMPLETE"):
+            live.current_structure("mock-provider-token-synthetic",
+                project_name=NAME, sender=self.provider.sender,
+                fetch_page=fetch)
+
+    def test_existing_global_cursor_replay_blocks(self):
+        original = self.provider.fetch_page
+        def fetch(token, params):
+            if params["q"].startswith("name = "):
+                return {"kind":"drive#fileList", "files":[],
+                        "incompleteSearch":False, "nextPageToken":"same-cursor"}
+            return original(token,params)
+        with self.assertRaisesRegex(anchor.RootAnchorError,
+                                    "PROJECT_GLOBAL_SEARCH_CURSOR_INVALID"):
+            live.current_structure("mock-provider-token-synthetic",
+                project_name=NAME, sender=self.provider.sender,
+                fetch_page=fetch)
 
     def test_duplicate_my_drive_container_is_blocking(self):
         self.provider.root_folders.append({

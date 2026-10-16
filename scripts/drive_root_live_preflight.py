@@ -130,10 +130,24 @@ def current_structure(token: str, *, project_name: str | None = None,
     if result["action"] != "CHECK_EXACT_CHILD_METADATA":
         return result
     project_metadata = read_metadata(result["remote_id"], token, sender=sender)
-    return anchor.resolve_hierarchy(root, root_scan,
+    verified = anchor.resolve_hierarchy(root, root_scan,
                container_metadata=container_metadata,
                container_scan=container_scan, project_name=project_name,
                project_metadata=project_metadata)
+    # Even if canonical folder exists, detect duplicates in other parents.
+    # Global search must be exhaustive or the identity remains uncertain.
+    matches = globally_observed_project_matches(
+        project_name, token, fetch_page=fetch_page)
+    if any(m["parent_id"] != container_id for m in matches):
+        return {"action": "BLOCKED_EXISTING_PROJECT_OUTSIDE_CONTAINER",
+                "expected_parent_id": container_id,
+                "observed_matching_folders": len(matches),
+                "create_permitted": False}
+    if (len(matches) != 1 or matches[0]["id"] != verified["project_id"]
+            or matches[0]["parent_id"] != container_id):
+        return {"action": "BLOCKED_PARENT_SCAN_GLOBAL_CONFLICT",
+                "expected_parent_id": container_id, "create_permitted": False}
+    return verified
 
 
 def main() -> int:
