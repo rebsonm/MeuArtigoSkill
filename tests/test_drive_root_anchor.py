@@ -191,6 +191,27 @@ class RootFolderGuardTests(unittest.TestCase):
                 container_metadata=self.meta,
                 project_name="other_project/ARTIGO_Exemplo_2026")
 
+    def test_live_guard_cli_scope_requirement_blocks_old_arbitrary_root(self):
+        import tempfile
+        import drive_create_guard as create_guard
+        with tempfile.TemporaryDirectory() as temp:
+            journal = Path(temp) / "private" / "journal.json"
+            # Must fail BEFORE any durable journal initialization.
+            with self.assertRaisesRegex(anchor.RootAnchorError,
+                                        "CANONICAL_ROOT_SCOPE_REQUIRED"):
+                create_guard.locked_update(
+                    self.plan, {"schema": 1}, journal, "00_Gestao_e_Continuidade",
+                    "initialize", initialize_authorized=True,
+                    enforce_root_scope=True)
+            self.assertFalse(journal.exists())
+
+    def test_scoped_delivery_plan_rejects_tampered_parent_identity(self):
+        import drive_delivery as delivery
+        plan = anchor.attach_scope(self.plan, self.resolved())
+        plan["root_scope"]["project_id"] = ROOT
+        with self.assertRaisesRegex(ValueError, "CANONICAL_ROOT_SCOPE_MISMATCH"):
+            delivery.check_plan(plan)
+
     def test_created_folder_never_moves_existing_projects(self):
         result = anchor.resolve_hierarchy(root(), self.root_scan,
             container_metadata=self.meta, project_name="ARTIGO_Novo_2026",
