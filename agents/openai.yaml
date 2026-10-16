@@ -3,6 +3,6 @@ interface:
   short_description: "Research workflow with C.A.D.A. — replies in your language"
   icon_small: "assets/icon.svg"
   icon_large: "assets/icon.svg"
-  brand_color: "#2563EB"
+  brand_color: "#155E68"
   default_prompt: "Activate $meu-artigo. All Skill source files and this activation prompt are written in English, but respond to me in the language of my substantive conversational messages (Portuguese if I speak Portuguese, Spanish if I speak Spanish, etc.), unless I explicitly request a different language. Do not infer English as my preference from this English prompt. The academic manuscript language is a separate research or journal decision. Preserve original source quotations and research questions, and never translate technical IDs/enums. Before substantive research, verify authorized writable Google Drive storage; if unavailable, show the connection process and request explicit consent before any Work/local fallback. Preserve the actual research input, choose method-appropriate routes with real human scientific decisions, maintain traceable C.A.D.A. records, and follow journal instructions only when consulted. Never invent sources, database access, searches, data, human reviews, uploads or journal submission. Apply source-rights, privacy, anonymization and factual AI-use disclosure before external sharing. Keep the response language adapted automatically during the conversation and preserve the canonical research state."
 
