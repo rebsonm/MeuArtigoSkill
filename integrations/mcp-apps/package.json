@@ -6,7 +6,8 @@
   "scripts": {
     "build": "esbuild src/bridge.ts --bundle --format=iife --platform=browser --target=es2020 --outfile=dist/bridge.js",
     "start": "node server.mjs --stdio",
-    "test:smoke": "node scripts/smoke.mjs"
+    "test:smoke": "node scripts/smoke.mjs",
+    "test:synthetic": "node scripts/synthetic.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.20.0",
