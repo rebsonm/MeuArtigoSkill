@@ -135,11 +135,10 @@ async function startHttp(){
  const token=process.env.MEU_ARTIGO_MCP_BEARER||"";
  if(!Number.isInteger(port)||port<1024||port>65535)throw Error("Invalid explicit MCP port");
  if(token.length<32)throw Error("A secret bearer of at least 32 characters is required");
- if(!["127.0.0.1","::1"].includes(bind)){
-   if(process.env.MEU_ARTIGO_PROXY_TLS_CONFIRMED!=="YES"||
-      process.env.MEU_ARTIGO_SINGLE_USER_ISOLATED!=="YES")
-     throw Error("Public bindings require approved HTTPS reverse proxy and isolated user access");
- }
+ // Stage 10 must never expose a bearer-only endpoint to a public
+ // interface; OAuth with resource-specific authorization belongs to Stage 11.
+ if(!["127.0.0.1","::1"].includes(bind))
+   throw Error("PUBLIC_HTTP_BIND_BLOCKED_UNTIL_AUTH0_OAUTH");
  const allowedOrigin=process.env.MEU_ARTIGO_ALLOWED_ORIGIN||"";
  const app=createHttpServer(async(req,res)=>{
   const path=req.url?.split("?")[0];

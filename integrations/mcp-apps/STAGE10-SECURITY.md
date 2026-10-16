@@ -25,8 +25,9 @@ and a text `content` fallback whenever the UI is not rendered.
 - HTTP uses a strict Bearer authorization header and rejects foreign
   Origins. Requests with non-JSON media, malformed objects, or over
   256 KiB are denied before reaching the MCP transport handler.
-- HTTP remains single-user / opt-in behind an operator-controlled boundary.
-  This is NOT OAuth and MUST NOT be deployed to public clients before Stage 11.
+- HTTP is strictly loopback-only in Stage 10, even if legacy proxy
+  environment flags are set. Public bindings require Stage 11 OAuth and
+  resource-specific authorization; operational flags alone are insufficient.
 - The Skill ZIP must exclude MCP Apps server code and executable Node
   dependencies. The retired `mcp-preview` implementation does not become
   another production endpoint.

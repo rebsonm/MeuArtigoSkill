@@ -15,6 +15,24 @@ const URI="ui://meu-artigo/site-v1.html";
 const env={...process.env,MEU_ARTIGO_MCP_PORT:String(PORT),
  MEU_ARTIGO_BIND_HOST:"127.0.0.1",MEU_ARTIGO_MCP_BEARER:TOKEN,
  MEU_ARTIGO_PROJECT_ROOT:""};
+const expectPublicReject=async()=>{
+ const exposed=spawn(process.execPath,["server.mjs","--http"],{
+  env:{...env,MEU_ARTIGO_BIND_HOST:"0.0.0.0",
+   MEU_ARTIGO_MCP_PORT:"18859",MEU_ARTIGO_PROXY_TLS_CONFIRMED:"YES",
+   MEU_ARTIGO_SINGLE_USER_ISOLATED:"YES"},
+  stdio:["ignore","ignore","pipe"]});
+ let stderr="";
+ exposed.stderr.on("data",chunk=>stderr+=chunk.toString("utf8"));
+ const code=await Promise.race([
+  new Promise(resolve=>exposed.once("exit",resolve)),
+  new Promise(resolve=>setTimeout(()=>resolve("TIMEOUT"),2500))
+ ]);
+ if(code==="TIMEOUT")exposed.kill("SIGTERM");
+ assert.notEqual(code,"TIMEOUT","Public HTTP must never bind before OAuth");
+ assert.notEqual(code,0);
+ assert.match(stderr,/PUBLIC_HTTP_BIND_BLOCKED_UNTIL_AUTH0_OAUTH/);
+};
+await expectPublicReject();
 const child=spawn(process.execPath,["server.mjs","--http"],{
  env,stdio:["ignore","ignore","pipe"]});
 let client;
