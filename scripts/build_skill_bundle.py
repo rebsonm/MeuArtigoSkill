@@ -35,10 +35,11 @@ EXCLUDED_SCRIPT_NAMES = frozenset({
     "build_skill_bundle.py", "quality_benchmark.py",
     "bundle_dependency_audit.py",
     "homologate_integrated_skill.py",
+    "audit_repository_secrets.py", "audit_optional_mcp_supply_chain.py",
 })
 EXCLUDED_DOC_NAMES = frozenset({
     "GUIA-DE-RELEASES.md", "IMPLANTACAO-BETA.md",
-    "PROTOCOLO-BETA-USUARIOS.md", "ENGLISH-SOURCE-MIGRATION.md",
+    "PROTOCOLO-BETA-USUARIOS.md", "ETAPA04-CI-SECURITY.md", "ENGLISH-SOURCE-MIGRATION.md",
     "RELATORIO-AUDITORIA-FINAL-BETA4.md", "ROTEIRO-HOMOLOGACAO-CONSOLIDADA.md",
 })
 MANIFEST = "BUNDLE_MANIFEST.json"
