@@ -34,7 +34,7 @@ try{
   command:process.execPath,args:[path.resolve("server.mjs"),"--stdio"],
   env:{...env,MEU_ARTIGO_PROJECT_ROOT:root}
  }));
- const outcome=await client.callTool({name:"meu_artigo_painel",arguments:{locale:"en"}});
+ const outcome=await client.callTool({name:"meu_artigo_painel",arguments:{locale:"en",mode:"FULL"}});
  assert.notEqual(outcome.isError,true,"Synthetic canonical project must be readable");
  assert.ok(outcome.content?.[0]?.text);
  assert.match(outcome.content[0].text,/Drive not verified/);
