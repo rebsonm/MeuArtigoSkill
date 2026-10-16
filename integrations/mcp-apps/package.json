@@ -8,7 +8,8 @@
     "start": "node server.mjs --stdio",
     "test:smoke": "node scripts/smoke.mjs",
     "test:synthetic": "node scripts/synthetic.mjs",
-    "test:i18n": "node scripts/i18n.mjs"
+    "test:i18n": "node scripts/i18n.mjs",
+    "test:http": "node scripts/http.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.20.0",
