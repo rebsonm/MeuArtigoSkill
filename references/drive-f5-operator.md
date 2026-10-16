@@ -45,7 +45,10 @@ already existing, isolated synthetic project root.
 7. Whether the POST succeeds or fails ambiguously, it scans again, reconciles
    the exact remote folder ID and checkpoints a RESOLVED journal. On absent,
    duplicate or inconsistent evidence it blocks; it does not repeat POST.
-8. If interrupted, a persisted intent blocks retries. A local `.f5-host.lock`
+8. If interrupted, a persisted intent blocks retries. A new read-only
+   precheck also returns `BLOCKED_PREVIOUS_CREATE_INTENT_REQUIRES_RECONCILIATION`
+   rather than suggesting a clean create when the journal records an earlier
+   uncertain attempt. A local `.f5-host.lock`
    left after a crash is not automatically broken. An external writer on another
    machine can still bypass this local lock; distributed concurrency is not
    solved by Google Drive.
