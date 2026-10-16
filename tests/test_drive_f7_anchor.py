@@ -73,12 +73,35 @@ class ReceiptChainTests(unittest.TestCase):
     def seal(self, head=None, *, key=KEY):
         return anchor.seal_remote_checkpoint(
             self.archive, self.project, self.plan, AUDIT, FILE,
-            TOKEN, self.digest(), key, head, sender=self.remote.sender)
+            TOKEN, self.digest(), key, head,
+            authorized_initial_bootstrap=(head is None),
+            sender=self.remote.sender)
 
     def verified(self, head, *, key=KEY):
         return anchor.verify_remote_against_anchor(
             self.archive, self.project, self.plan, AUDIT, FILE,
             TOKEN, head, key, sender=self.remote.sender)
+
+    def test_missing_initial_attestation_blocks_before_network_or_files(self):
+        with self.assertRaisesRegex(anchor.AnchorError,
+                                    "ANCHOR_NEW_HISTORY_ATTESTATION_REQUIRED"):
+            anchor.seal_remote_checkpoint(
+                self.archive, self.project, self.plan, AUDIT, FILE,
+                TOKEN, self.digest(), KEY, None,
+                sender=self.remote.sender)
+        self.assertEqual(self.remote.reads, 0)
+        self.assertEqual(list(self.archive.iterdir()), [])
+
+    def test_initial_attestation_rejected_if_previous_head_supplied(self):
+        original = self.seal()
+        self.remote.raw = wire(self.pending)
+        with self.assertRaisesRegex(anchor.AnchorError,
+                                    "ANCHOR_BOOTSTRAP_ONLY_FOR_NEW_HISTORY"):
+            anchor.seal_remote_checkpoint(
+                self.archive, self.project, self.plan, AUDIT, FILE,
+                TOKEN, self.digest(), KEY, original["head_sha256"],
+                authorized_initial_bootstrap=True,
+                sender=self.remote.sender)
 
     def test_initial_receipt_requires_remote_readback(self):
         result = self.seal()
