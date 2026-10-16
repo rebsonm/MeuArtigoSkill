@@ -5,6 +5,9 @@
 import { registerAppResource, registerAppTool, RESOURCE_MIME_TYPE } from "@modelcontextprotocol/ext-apps/server";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
+import { createServer as createHttpServer } from "node:http";
+import { timingSafeEqual } from "node:crypto";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { readFile, stat } from "node:fs/promises";
@@ -92,10 +95,56 @@ export function createServer(){
  }));
  return server;
 }
+function fixedTokenEqual(expected, actual){
+ const a=Buffer.from(expected),b=Buffer.from(actual);
+ return a.length===b.length&&timingSafeEqual(a,b);
+}
+async function startHttp(){
+ const bind=process.env.MEU_ARTIGO_BIND_HOST||"127.0.0.1";
+ const port=Number(process.env.MEU_ARTIGO_MCP_PORT||"8085");
+ const token=process.env.MEU_ARTIGO_MCP_BEARER||"";
+ if(!Number.isInteger(port)||port<1024||port>65535)throw Error("Invalid explicit MCP port");
+ if(token.length<32)throw Error("A secret bearer of at least 32 characters is required");
+ if(!["127.0.0.1","::1"].includes(bind)){
+   if(process.env.MEU_ARTIGO_PROXY_TLS_CONFIRMED!=="YES"||
+      process.env.MEU_ARTIGO_SINGLE_USER_ISOLATED!=="YES")
+     throw Error("Public bindings require approved HTTPS reverse proxy and isolated user access");
+ }
+ const allowedOrigin=process.env.MEU_ARTIGO_ALLOWED_ORIGIN||"";
+ const app=createHttpServer(async(req,res)=>{
+  const path=req.url?.split("?")[0];
+  if(path!=="/mcp"){res.writeHead(404).end();return;}
+  const methods=new Set(["POST","GET","DELETE"]);
+  if(!methods.has(req.method)){res.writeHead(405).end();return;}
+  if(req.headers.origin&&(!allowedOrigin||req.headers.origin!==allowedOrigin)){
+   res.writeHead(403).end();return;
+  }
+  const sent=(req.headers.authorization||"").replace(/^Bearer\s+/i,"");
+  if(!fixedTokenEqual(token,sent)){
+   res.writeHead(401,{"content-type":"application/json"}).end('{"error":"Unauthorized"}');return;
+  }
+  const mcp=createServer();
+  const transport=new StreamableHTTPServerTransport({
+    sessionIdGenerator:undefined,enableJsonResponse:true,
+  });
+  res.on("close",()=>{
+   transport.close().catch(()=>{});
+   mcp.close().catch(()=>{});
+  });
+  try{
+   await mcp.connect(transport);
+   await transport.handleRequest(req,res);
+  }catch{
+   if(!res.headersSent)res.writeHead(500).end('{"error":"MCP transport unavailable"}');
+  }
+ });
+ app.listen(port,bind,()=>console.error("Meu Artigo MCP Apps listening on loopback or operator-authorized proxy boundary"));
+}
 if(process.argv.includes("--stdio")){
- const server=createServer();
- await server.connect(new StdioServerTransport());
+ await createServer().connect(new StdioServerTransport());
+}else if(process.argv.includes("--http")){
+ await startHttp();
 }else{
- console.error("No authorized HTTP deployment configured. Start via --stdio in an MCP Apps-compatible client; hosted ChatGPT requires separately approved HTTPS deployment and authentication.");
+ console.error("Choose --stdio or --http (authenticated, isolated, explicitly configured).");
  process.exitCode=2;
 }
