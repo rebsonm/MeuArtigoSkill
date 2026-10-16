@@ -74,9 +74,10 @@ button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus
 'use strict';
 let siteData=JSON.parse(document.getElementById('site-data').textContent);
 let isCanonical=siteData.kind==='CANONICAL_LOCAL_SNAPSHOT';
-if(isCanonical){
+if(isCanonical||siteData.kind==='HOST_NOT_CONNECTED'){
   const indicator=document.querySelector('.mock-badge');
-  if(indicator)indicator.textContent='SNAPSHOT LOCAL · SEM SINCRONIZAÇÃO';
+  if(indicator)indicator.textContent=isCanonical?
+    'SNAPSHOT LOCAL · SEM SINCRONIZAÇÃO':'AGUARDANDO DADOS';
 }
 
 const e=(value)=>String(value===null||value===undefined||value===''?'Não informado':value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -87,6 +88,10 @@ const e=(value)=>String(value===null||value===undefined||value===''?'Não inform
    while the conversational assistant retains the user's requested language. */
 const TRANSLATIONS={
  en:{
+ "AGUARDANDO DADOS":"WAITING FOR DATA",
+ "Painel indisponível: projeto não autorizado":"No authorized project data",
+ "Nenhum snapshot autorizado foi recebido. Continue no chat ou conecte a ferramenta de pesquisa.":"No authorized research snapshot was received. Continue in chat or connect your authorized research tool.",
+ "Nenhum progresso fictício, fonte ou aprovação é apresentado nesta interface conectada.":"This connected view shows no fictional progress, source checks or approvals.",
  "Idioma":"Language","Visão geral":"Overview","Etapas":"Stages",
  "Tarefas C.A.D.A.":"C.A.D.A. tasks","Fontes e buscas":"Sources and searches",
  "Evidências":"Evidence","Validações":"Human validations","Métodos":"Methods",
@@ -134,6 +139,10 @@ const TRANSLATIONS={
  "Responsável":"Responsible","Sem gravação":"No writes",
  },
  es:{
+ "AGUARDANDO DADOS":"ESPERANDO DATOS",
+ "Painel indisponível: projeto não autorizado":"Panel no disponible: proyecto no autorizado",
+ "Nenhum snapshot autorizado foi recebido. Continue no chat ou conecte a ferramenta de pesquisa.":"No se recibió un registro autorizado. Continúe en el chat o conecte la herramienta de investigación.",
+ "Nenhum progresso fictício, fonte ou aprovação é apresentado nesta interface conectada.":"Esta vista no muestra progreso, fuentes ni aprobaciones ficticias.",
  "Idioma":"Idioma","Visão geral":"Vista general","Etapas":"Etapas",
  "Tarefas C.A.D.A.":"Tareas C.A.D.A.","Fontes e buscas":"Fuentes y búsquedas",
  "Evidências":"Evidencias","Validações":"Validaciones","Métodos":"Métodos",
@@ -174,6 +183,10 @@ const TRANSLATIONS={
  "Revisar a estratégia de busca e seus critérios":"Revisar la estrategia y criterios de búsqueda",
  },
  fr:{
+ "AGUARDANDO DADOS":"EN ATTENTE DE DONNÉES",
+ "Painel indisponível: projeto não autorizado":"Tableau indisponible : aucun projet autorisé",
+ "Nenhum snapshot autorizado foi recebido. Continue no chat ou conecte a ferramenta de pesquisa.":"Aucune donnée autorisée reçue. Continuez dans la conversation ou connectez l'outil de recherche.",
+ "Nenhum progresso fictício, fonte ou aprovação é apresentado nesta interface conectada.":"Cette vue n'affiche aucun progrès, aucune source ni validation fictive.",
  "Idioma":"Langue","Visão geral":"Vue d'ensemble","Etapas":"Étapes",
  "Tarefas C.A.D.A.":"Tâches C.A.D.A.","Fontes e buscas":"Sources et recherches",
  "Evidências":"Preuves","Validações":"Validations","Métodos":"Méthodes",
@@ -280,9 +293,9 @@ function sync(){return heading('Armazenamento e sincronização','Acesso observa
 const screens={overview,steps,tasks,sources,evidence,validations,methods,trace,submission,sync};
 function applyCanonical(){
 if(siteData.kind==='HOST_NOT_CONNECTED'){
- const unavailable=()=>heading('No authorized project data',
- 'The research panel has not received a verified local snapshot. Continue in chat or connect the authorized research source.')+
- '<div class="info">No fictional progress, citations or approvals are presented by this connected view.</div>';
+ const unavailable=()=>heading('Painel indisponível: projeto não autorizado',
+ 'Nenhum snapshot autorizado foi recebido. Continue no chat ou conecte a ferramenta de pesquisa.')+
+ '<div class="info">Nenhum progresso fictício, fonte ou aprovação é apresentado nesta interface conectada.</div>';
  for(const name of Object.keys(screens))screens[name]=unavailable;
  return;
 }
