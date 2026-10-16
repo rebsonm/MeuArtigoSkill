@@ -54,6 +54,37 @@ def direct_scan(plan: dict, inventory: dict, parent_id: str, *, allow_fixture: b
             raise ValueError("INVALID_PARENT_SCAN_CHILD")
         seen_ids.add(cid)
         children_by_id[cid] = (name, kind)
+    # A boolean 'complete' flag alone is not evidence of pagination. For live
+    # operations require a cursor chain that terminates explicitly and covers
+    # every listed child ID. Fixtures bypass this provider-evidence contract.
+    if not allow_fixture:
+        pages = scan.get("page_evidence")
+        if not isinstance(pages, list) or not pages:
+            raise ValueError("PARENT_PAGE_EVIDENCE_REQUIRED")
+        expected_cursor = None
+        covered = set()
+        for i, page in enumerate(pages):
+            if (not isinstance(page, dict) or
+                    page.get("source") != "GOOGLE_DRIVE_FILES_LIST" or
+                    "request_page_token" not in page or "next_page_token" not in page or
+                    page["request_page_token"] != expected_cursor or
+                    not isinstance(page.get("item_ids"), list)):
+                raise ValueError("PARENT_PAGINATION_CHAIN_INVALID")
+            next_cursor = page["next_page_token"]
+            if next_cursor is not None and (not isinstance(next_cursor, str) or not next_cursor):
+                raise ValueError("PARENT_PAGINATION_CHAIN_INVALID")
+            for item_id in page["item_ids"]:
+                delivery.require_drive_id(item_id)
+                if item_id in covered:
+                    raise ValueError("PARENT_PAGINATION_DUPLICATE_ID")
+                covered.add(item_id)
+            if next_cursor is None and i != len(pages) - 1:
+                raise ValueError("PARENT_PAGINATION_CHAIN_INVALID")
+            expected_cursor = next_cursor
+        if expected_cursor is not None:
+            raise ValueError("PARENT_PAGINATION_INCOMPLETE")
+        if covered != seen_ids:
+            raise ValueError("PARENT_PAGINATION_CONTENT_MISMATCH")
     actual = [e for e in inventory["entries"] if e["parent_id"] == parent_id]
     if len(actual) != len(children_by_id) or len({e["id"] for e in actual}) != len(actual):
         raise ValueError("PARENT_SCAN_INVENTORY_MISMATCH")
@@ -87,7 +118,9 @@ def read_journal(plan: dict, journal_path: Path) -> dict:
     if journal_path.is_symlink():
         raise ValueError("UNSAFE_JOURNAL_LINK")
     if not journal_path.exists():
-        return initial_journal(plan)
+        # A missing journal may be a lost session or an interrupted Drive call.
+        # Never reinterpret absence as a new-project authorization.
+        raise ValueError("JOURNAL_MISSING_RECOVERY_REQUIRED")
     data = delivery.load_json(journal_path)
     if (data.get("schema") != SCHEMA or data.get("drive_root_id") != plan["drive_root_id"]
             or data.get("plan_sha256") != plan_hash(plan)
@@ -186,7 +219,8 @@ def resolve_create(plan: dict, inventory: dict, journal: dict, path: str, *, all
 
 
 def locked_update(plan: dict, inventory: dict, journal_path: Path, path: str, command: str,
-                  *, project_root: Path | None = None) -> dict:
+                  *, project_root: Path | None = None,
+                  initialize_authorized: bool = False) -> dict:
     """Exclusive journal lock prevents simultaneous local agents issuing same create."""
     journal_path = Path(journal_path).absolute()
     if project_root is not None:
@@ -203,6 +237,22 @@ def locked_update(plan: dict, inventory: dict, journal_path: Path, path: str, co
         fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
         owned = True
         os.close(fd)
+        if command == "initialize":
+            # Bootstrap only after an explicit new-project attestation. The
+            # journal cannot be silently regenerated after loss or restart.
+            if not initialize_authorized:
+                raise ValueError("NEW_PROJECT_ATTESTATION_REQUIRED")
+            if journal_path.exists():
+                raise ValueError("JOURNAL_ALREADY_EXISTS")
+            next_step = delivery.next_action(plan, inventory)
+            if (next_step.get("action") != "CHECK_PARENT_FOR_CREATE" or
+                    next_step.get("path") != delivery.safe_relative(path)):
+                raise ValueError("INITIALIZATION_REQUIRES_NEXT_MISSING_FOLDER")
+            direct_scan(plan, inventory, next_step["parent_id"])
+            data = initial_journal(plan)
+            delivery.write_json(journal_path, data, root=project_root)
+            return {"action": "JOURNAL_INITIALIZED_NEW_PROJECT",
+                    "path": path, "warning": "Back up the journal in durable shared storage before creating Drive folders."}
         data = read_journal(plan, journal_path)
         if command == "prepare":
             result, data = create_preflight(plan, inventory, data, path)
@@ -220,7 +270,9 @@ def locked_update(plan: dict, inventory: dict, journal_path: Path, path: str, co
 
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("command", choices=["prepare", "resolve"])
+    p.add_argument("command", choices=["initialize", "prepare", "resolve"])
+    p.add_argument("--attest-new-project", action="store_true",
+                   help="Explicit authorization only; never use to recover an interrupted operation.")
     p.add_argument("--plan", type=Path, required=True)
     p.add_argument("--inventory", type=Path, required=True)
     p.add_argument("--journal", type=Path, required=True)
@@ -232,10 +284,12 @@ def main() -> int:
         inventory = delivery.load_json(args.inventory)
         # No fixture bypass on the CLI.
         result = locked_update(plan, inventory, args.journal, args.path, args.command,
-                               project_root=args.project_root)
+                               project_root=args.project_root,
+                               initialize_authorized=args.attest_new_project)
         print(json.dumps(result, ensure_ascii=False, sort_keys=True))
         return 0 if result["action"] in (
-            "CREATE_FOLDER_ONCE", "RESOLVED_EXISTING_REMOTE_FOLDER", "ALREADY_RESOLVED") else 2
+            "JOURNAL_INITIALIZED_NEW_PROJECT", "CREATE_FOLDER_ONCE",
+            "RESOLVED_EXISTING_REMOTE_FOLDER", "ALREADY_RESOLVED") else 2
     except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
         print(json.dumps({"action": "BLOCKED", "reason": str(exc)}))
         return 2
