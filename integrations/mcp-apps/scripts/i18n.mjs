@@ -46,11 +46,13 @@ async function start(model,lang="en-US"){
  tasks:[{id:"CADA-0001",task:"Do not translate source content",
  execution_owner:"Researcher",deadline:null}],
  gates:[],next_action:{code:"HUMAN_REVIEW_REQUIRED",
- explanation:"Original research excerpt stays intact",responsible:"HUMAN_RESEARCHER"}};
+ explanation:"Revisar a estratégia de busca e seus critérios",responsible:"HUMAN_RESEARCHER"}};
  assert.equal(dom.window.MeuArtigoHost.receive(actual),true);
  assert.match(d.getElementById("content").textContent,/HUMAN_REVIEW_REQUIRED/);
  assert.doesNotMatch(d.getElementById("content").textContent,/12\/20|2\/7/);
  assert.equal(d.documentElement.lang,"fr");
+ dom.window.MeuArtigoHost.locale("en");
+ assert.match(d.getElementById("content").textContent,/Revisar a estratégia de busca e seus critérios/);
  const falseData={schema:"MEU_ARTIGO_SITE_V1",kind:"ILLUSTRATIVE_PREVIEW",tasks:[],gates:[]};
  assert.equal(dom.window.MeuArtigoHost.receive(falseData),false);
  dom.window.close();
