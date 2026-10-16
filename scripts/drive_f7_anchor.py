@@ -137,6 +137,8 @@ def seal_remote_checkpoint(directory: Path, project_root: Path, plan: dict,
     expected_head is the trusted value held separately by the executor.
     On first receipt only, expected_head is null and the directory MUST be empty.
     """
+    if not isinstance(key, bytes) or len(key) < 32:
+        raise AnchorError("ANCHOR_KEY_UNAVAILABLE")
     chain = read_verified_chain(directory, plan, audit_parent_id, audit_file_id,
                                 key, project_root, expected_head)
     if (not isinstance(journal_sha256, str) or
@@ -188,6 +190,8 @@ def verify_remote_against_anchor(directory: Path, project_root: Path,
                                  audit_file_id: str, token: str,
                                  expected_head: str, key: bytes, *,
                                  sender=checkpoint.request) -> dict:
+    if not isinstance(key, bytes) or len(key) < 32:
+        raise AnchorError("ANCHOR_KEY_UNAVAILABLE")
     chain = read_verified_chain(directory, plan, audit_parent_id,
                                 audit_file_id, key, project_root, expected_head)
     if chain["count"] == 0:
