@@ -55,7 +55,7 @@ def direct_scan(plan: dict, inventory: dict, parent_id: str, *, allow_fixture: b
         seen_ids.add(cid)
         children_by_id[cid] = (name, kind)
     actual = [e for e in inventory["entries"] if e["parent_id"] == parent_id]
-    if len(actual) != len(children_by_id):
+    if len(actual) != len(children_by_id) or len({e["id"] for e in actual}) != len(actual):
         raise ValueError("PARENT_SCAN_INVENTORY_MISMATCH")
     for e in actual:
         if children_by_id.get(e["id"]) != (e["path"].split("/")[-1], e["type"]):
@@ -129,6 +129,18 @@ def create_preflight(plan: dict, inventory: dict, journal: dict, path: str, *, a
             "warning": "Persisted intent; NEVER retry create directly after timeout/error."}, journal
 
 
+def verified_parent_id(plan: dict, inventory: dict, path: str, *, allow_fixture: bool = False) -> str | None:
+    """Resolve the expected current parent through the canonical plan, not an old intent."""
+    parent_path = delivery.parent_of(path)
+    if not parent_path:
+        return plan["drive_root_id"]
+    report = delivery.reconcile(plan, inventory, allow_fixture=allow_fixture)
+    row = next((e for e in report["entries"] if e["path"] == parent_path), None)
+    if not row or row["status"] != "VERIFIED":
+        return None
+    return row["remote_id"]
+
+
 def resolve_create(plan: dict, inventory: dict, journal: dict, path: str, *, allow_fixture: bool = False) -> tuple[dict, dict]:
     """Reconcile after an uncertain return. No new create action is emitted."""
     if journal.get("schema") != SCHEMA or journal.get("plan_sha256") != plan_hash(plan):
@@ -137,17 +149,31 @@ def resolve_create(plan: dict, inventory: dict, journal: dict, path: str, *, all
     op = journal["operations"].get(path)
     if not isinstance(op, dict):
         raise ValueError("UNKNOWN_CREATE_INTENT")
-    if op["state"] == "RESOLVED":
-        return {"action": "ALREADY_RESOLVED", "path": path,
-                "remote_id": op["observed_remote_id"]}, journal
-    if op["state"] != "OUTCOME_UNKNOWN":
+    if op["state"] not in ("RESOLVED", "OUTCOME_UNKNOWN"):
         raise ValueError("INVALID_CREATE_STATE")
+    current_parent = verified_parent_id(plan, inventory, path, allow_fixture=allow_fixture)
+    if current_parent != op["parent_id"]:
+        return {"action": "BLOCKED_PARENT_DRIFT", "path": path,
+                "reason": "EXPECTED_PARENT_NO_LONGER_MATCHES_CREATE_INTENT"}, journal
     scan = direct_scan(plan, inventory, op["parent_id"], allow_fixture=allow_fixture)
-    if scan["scan_token"] == op["before_scan_token"]:
+    if scan["scan_token"] == op["before_scan_token"] or (op["state"] == "RESOLVED" and
+            scan["scan_token"] == op.get("after_scan_token")):
         return {"action": "REINSPECT_PARENT", "path": path,
-                "reason": "STALE_PRE_OPERATION_SCAN"}, journal
+                "reason": "STALE_OR_REUSED_SCAN"}, journal
     result = inspect_target(plan, inventory, path, op["parent_id"], allow_fixture=allow_fixture)
+    report = delivery.reconcile(plan, inventory, allow_fixture=allow_fixture)
+    target = next((e for e in report["entries"] if e["path"] == path), None)
+    if op["state"] == "RESOLVED":
+        if (result["action"] == "REUSE_EXISTING" and target and
+                target["status"] == "VERIFIED" and
+                result["id"] == op["observed_remote_id"] == target["remote_id"]):
+            return {"action": "ALREADY_RESOLVED", "path": path,
+                    "remote_id": result["id"]}, journal
+        return {"action": "BLOCKED_PREVIOUS_RESOLUTION_DRIFT", "path": path,
+                "reason": "PREVIOUSLY_RESOLVED_FOLDER_NOT_CURRENTLY_VERIFIED"}, journal
     if result["action"] == "REUSE_EXISTING":
+        if not target or target["status"] != "VERIFIED" or target["remote_id"] != result["id"]:
+            return {"action": "BLOCKED_INCONSISTENT_TARGET_PATH", "path": path}, journal
         op["state"] = "RESOLVED"
         op["observed_remote_id"] = result["id"]
         op["after_scan_token"] = scan["scan_token"]
