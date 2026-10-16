@@ -106,7 +106,7 @@ def main(argv=None) -> int:
         projection = workspace.model(
             project=args.project,
             route=args.preview_route or "QUALITATIVE",
-            mode="MINIMAL")
+            mode=args.mode)
         if args.json_only:
             if args.project is None:
                 raise ValueError("SITE_MCP_DATA_REQUIRES_AUTHORIZED_PROJECT")
