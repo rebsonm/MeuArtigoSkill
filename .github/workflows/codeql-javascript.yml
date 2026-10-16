@@ -23,7 +23,7 @@ jobs:
       - name: Determine whether optional JavaScript is present
         id: find
         run: |
-          if find integrations/mcp-apps mcp-preview -type f \\( -name '*.mjs' -o -name '*.js' -o -name '*.ts' \\) -print -quit 2>/dev/null | grep -q .; then
+          if find integrations/mcp-apps mcp-preview -type f \( -name '*.mjs' -o -name '*.js' -o -name '*.ts' \) -print -quit 2>/dev/null | grep -q .; then
             echo 'source_exists=true' >> "$GITHUB_OUTPUT"
           else
             echo 'source_exists=false' >> "$GITHUB_OUTPUT"
