@@ -3,6 +3,8 @@
 
 ## Unreleased
 
+- F4 verification hardening: require an independently retained SHA-256 before any cross-session journal restore; reject replay of valid-but-old checkpoint content; add simulated end-to-end recovery scenarios that exercise the real folder guard, Drive pagination helper and remote checkpoint module together. Document researcher ownership, assistant-implemented patches, GitHub CI evidence, and separate live acceptance gates in `references/drive-f4-acceptance.md`. No live OAuth end-to-end acceptance, scientific validation, merge or publication is claimed.
+
 - Add optional authenticated read-only Drive v3 pagination observation helper and externally provisioned durable audit-file journal checkpoint/readback helper. Both require a separate secure OAuth executor and remain unverified as integrated ChatGPT host workflows; never claim that connected ChatGPT OAuth is accessible to local scripts or that Drive supports global atomic compare-and-swap. Add synthetic tests for pagination and journal restoration after ambiguous writes.
 
 - Phase F (draft only): fail closed if the Drive create journal is missing; require an explicit new-project-only journal initialization (never an interruption recovery shortcut); return a SHA-256 digest for durable remote readback; require a terminal provider pagination evidence chain and exact page-to-child ID reconciliation for non-fixture parent scans, including replayed cursor detection. Tests remain synthetic for these guarantees; no authenticated, exhaustive Drive adapter is shipped.
