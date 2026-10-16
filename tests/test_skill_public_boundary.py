@@ -31,6 +31,7 @@ OPTIONAL_PROTOCOL_DOCS={
     "tests/test_optional_mcp_supply_chain.py",
     ".github/workflows/security-contracts.yml",
     ".github/workflows/codeql-javascript.yml",
+    "scripts/audit_codeql_sarif.py",
 }
 SOURCE_TYPES={".py",".md",".yaml",".yml",".json",".ts",".html",".cff",".txt"}
 

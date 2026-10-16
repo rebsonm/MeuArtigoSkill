@@ -24,6 +24,7 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_repository_secrets.py' -v
           python -m unittest discover -s tests -p 'test_optional_mcp_supply_chain.py' -v
+          python -m unittest discover -s tests -p 'test_codeql_sarif.py' -v
           python scripts/audit_optional_mcp_supply_chain.py
       - name: Preserve #76 confidential loopback bridge regressions
         run: python -m unittest discover -s tests -p 'test_local_research_bridge.py' -v
