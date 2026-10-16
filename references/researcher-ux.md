@@ -26,6 +26,16 @@ the research question, target journal, method, or desired step. User messages
 update named choices only; do not repeatedly request answered information.
 New projects still respect the Drive-first authorization gate.
 
+## Storage-location disclosure
+
+On new projects, first explain that the intended location is
+**My Drive / Meu Artigo / [each article's own folder]**. Show whether the
+container was reused, requires a guarded first creation, has duplicates,
+or is not yet verified. Do not ask researchers to choose arbitrary
+Drive parent folders. If a project exists in an old nested location,
+explain the discrepancy and offer a documented migration decision;
+viewing a control never moves folders or overrides scientific work.
+
 ## Overview: one first-screen briefing
 
 - **Which paper/project?** Actual name and source, or "no authorized project selected".
