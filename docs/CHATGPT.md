@@ -2,6 +2,27 @@
 
 Meu Artigo is a **Skill**, not a replacement for ChatGPT. Its research guidance works through the normal conversation, provided your ChatGPT account supports importing and running the Skill.
 
+## Optional in-chat visual site
+
+The source tree includes an optional standard MCP Apps companion under
+`integrations/mcp-apps/`. With an **independently deployed and authorized**
+MCP server, ChatGPT can render the user-approved blue Meu Artigo site as an
+interactive resource. The server always returns a useful text fallback
+when the UI cannot load, and never treats an unavailable project as a
+fictional successful synchronization.
+
+The user-facing interaction language is independent from the manuscript.
+The current site includes a browser/host locale preference and a manual
+PT/EN/ES/FR selector; other locales fall back to English on the static site,
+while the conversational Skill should continue in the researcher's
+requested language. Do not translate original project texts silently.
+
+This is **not installed automatically** with the private beta.8 plugin
+or public beta.6 Skill package. A real hosted HTTPS deployment, secure
+account-specific access and ChatGPT connection require separate acceptance.
+See [deployment guide](../integrations/mcp-apps/README.md) and
+[interface-language policy](../references/language-policy.md).
+
 ## Start using the Skill
 
 1. Download the prepared [beta.6 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.6/MeuArtigoSkill-v0.9.0-beta.6.zip) from the [currently published release](INSTALLATION.md).
