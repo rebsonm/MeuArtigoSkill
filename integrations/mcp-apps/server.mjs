@@ -14,6 +14,7 @@ import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { z } from "zod";
+import { auth0Configuration, protectedResourceMetadata, bearerChallenge, createAuth0Verifier } from "./auth0.mjs";
 
 const execute=promisify(execFile);
 const dirname=path.dirname(fileURLToPath(import.meta.url));
@@ -81,6 +82,8 @@ export function createServer(){
   description:"Read-only authorized local C.A.D.A. and scientific-gate overview. It always supplies text if the host cannot render MCP Apps. Never creates projects, approves gates or claims Drive sync.",
   inputSchema:{locale:z.string().max(35).optional(),mode:z.enum(["MINIMAL","FULL"]).optional()},
   annotations:{readOnlyHint:true,idempotentHint:true,openWorldHint:false},
+  ...(process.env.MEU_ARTIGO_AUTH_MODE==="auth0" ?
+    {securitySchemes:[{type:"oauth2",scopes:["mcp:read"]}]} : {}),
   _meta:{ui:{resourceUri:URI},"openai/outputTemplate":URI}
  },async(args)=>{
   const response=await readSite(args);
@@ -102,9 +105,14 @@ function fixedTokenEqual(expected, actual){
 async function startHttp(){
  const bind=process.env.MEU_ARTIGO_BIND_HOST||"127.0.0.1";
  const port=Number(process.env.MEU_ARTIGO_MCP_PORT||"8085");
+ const mode=process.env.MEU_ARTIGO_AUTH_MODE||"bearer";
+ if(!["bearer","auth0"].includes(mode))throw Error("Unsupported MCP authentication mode");
  const token=process.env.MEU_ARTIGO_MCP_BEARER||"";
  if(!Number.isInteger(port)||port<1024||port>65535)throw Error("Invalid explicit MCP port");
- if(token.length<32)throw Error("A secret bearer of at least 32 characters is required");
+ if(mode==="bearer" && token.length<32)
+   throw Error("A secret bearer of at least 32 characters is required");
+ const authConfig=mode==="auth0" ? auth0Configuration() : null;
+ const verifyAuth0=authConfig ? createAuth0Verifier(authConfig) : null;
  if(!["127.0.0.1","::1"].includes(bind)){
    if(process.env.MEU_ARTIGO_PROXY_TLS_CONFIRMED!=="YES"||
       process.env.MEU_ARTIGO_SINGLE_USER_ISOLATED!=="YES")
@@ -113,15 +121,40 @@ async function startHttp(){
  const allowedOrigin=process.env.MEU_ARTIGO_ALLOWED_ORIGIN||"";
  const app=createHttpServer(async(req,res)=>{
   const path=req.url?.split("?")[0];
+  if(authConfig && req.method==="GET" &&
+    (path==="/.well-known/oauth-protected-resource" ||
+     path==="/.well-known/oauth-protected-resource/mcp")){
+    res.writeHead(200,{"content-type":"application/json; charset=utf-8",
+      "cache-control":"public, max-age=300",
+      "x-content-type-options":"nosniff"});
+    res.end(JSON.stringify(protectedResourceMetadata(authConfig)));
+    return;
+  }
   if(path!=="/mcp"){res.writeHead(404).end();return;}
   const methods=new Set(["POST","GET","DELETE"]);
   if(!methods.has(req.method)){res.writeHead(405).end();return;}
   if(req.headers.origin&&(!allowedOrigin||req.headers.origin!==allowedOrigin)){
    res.writeHead(403).end();return;
   }
-  const sent=(req.headers.authorization||"").replace(/^Bearer\s+/i,"");
-  if(!fixedTokenEqual(token,sent)){
-   res.writeHead(401,{"content-type":"application/json"}).end('{"error":"Unauthorized"}');return;
+  if(authConfig){
+    const verdict=await verifyAuth0(req.headers.authorization);
+    if(!verdict.ok){
+      const headers={"content-type":"application/json; charset=utf-8",
+        "cache-control":"no-store"};
+      if(verdict.status===401 || verdict.error==="insufficient_scope")
+        headers["www-authenticate"]=bearerChallenge(authConfig,
+          verdict.error==="invalid_token"?"invalid_token":
+          verdict.error==="insufficient_scope"?"insufficient_scope":null);
+      res.writeHead(verdict.status,headers)
+        .end(JSON.stringify({error:verdict.status===401?"Unauthorized":"Forbidden"}));
+      return;
+    }
+  }else{
+    const sent=(req.headers.authorization||"").replace(/^Bearer\\s+/i,"");
+    if(!fixedTokenEqual(token,sent)){
+      res.writeHead(401,{"content-type":"application/json"})
+        .end('{"error":"Unauthorized"}');return;
+    }
   }
   const mcp=createServer();
   const transport=new StreamableHTTPServerTransport({
