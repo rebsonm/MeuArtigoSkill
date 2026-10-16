@@ -200,7 +200,13 @@ writers. Host-level serialization is required.
 On a later session with the same private file ID and plan, restore into a
 NEW local path (never overwrite or write inside the research project):
 
-    python scripts/drive_journal_checkpoint.py restore --plan PRIVATE_AUDIT_PATH/delivery-plan.json --remote-file-id REAL_AUDIT_FILE_ID --audit-parent-id REAL_AUDIT_FOLDER_ID --journal PRIVATE_AUDIT_PATH/restored-journal.json --project-root PROJECT_PATH
+    python scripts/drive_journal_checkpoint.py restore --plan PRIVATE_AUDIT_PATH/delivery-plan.json --remote-file-id REAL_AUDIT_FILE_ID --audit-parent-id REAL_AUDIT_FOLDER_ID --journal PRIVATE_AUDIT_PATH/restored-journal.json --project-root PROJECT_PATH --expected-remote-sha256 LAST_INDEPENDENTLY_RETAINED_SHA256
+
+Do not obtain the expected restoration digest from the remote journal being
+restored: it must be retained independently in a trusted checkpoint. A valid
+but older journal with the same plan hash can erase evidence of an attempted
+folder creation. If no independent digest is available, fail closed and
+recover evidence manually without starting a new create operation.
 
 The installed Skill is NOT using this adapter unless an authorized host
 explicitly installs and invokes it. The offline simulated tests do not prove
