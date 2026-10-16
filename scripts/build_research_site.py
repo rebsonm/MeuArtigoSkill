@@ -68,6 +68,7 @@ def project_site_model(snapshot: dict) -> dict:
 
 def render_site(snapshot: dict) -> str:
     data = project_site_model(snapshot)
+    data["locale"] = snapshot.get("site_locale", "auto")
     if TEMPLATE.is_symlink() or not TEMPLATE.is_file():
         raise ValueError("SITE_TEMPLATE_NOT_SAFE")
     source = TEMPLATE.read_text(encoding="utf-8")
@@ -92,14 +93,30 @@ def main(argv=None) -> int:
                        help="Authorized existing local project, never Drive proof")
     group.add_argument("--preview-route", choices=workspace.ROUTES,
                        default=None, help="Illustrative route; no real data")
-    p.add_argument("--output", required=True, type=Path,
+    p.add_argument("--output", type=Path,
                    help="Create new private HTML; cannot overwrite an existing file")
+    p.add_argument("--json-only", action="store_true",
+                   help="Emit only whitelisted read-only snapshot JSON for MCP Apps")
+    p.add_argument("--language", default="auto",
+                   help="BCP-47 user interface locale; unrelated to manuscript")
     args = p.parse_args(argv)
     try:
         projection = workspace.model(
             project=args.project,
             route=args.preview_route or "QUALITATIVE",
             mode="MINIMAL")
+        if args.json_only:
+            if args.project is None:
+                raise ValueError("SITE_MCP_DATA_REQUIRES_AUTHORIZED_PROJECT")
+            result = project_site_model(projection)
+            if result["kind"] != "CANONICAL_LOCAL_SNAPSHOT":
+                raise ValueError("SITE_MCP_NO_CANONICAL_PROJECT")
+            result["locale"] = args.language
+            print(json.dumps(result, ensure_ascii=False, sort_keys=True))
+            return 0
+        if args.output is None:
+            raise ValueError("SITE_OUTPUT_REQUIRED")
+        projection["site_locale"] = args.language
         html = render_site(projection)
         workspace.save(args.output, html)
     except (OSError, ValueError, TypeError, KeyError, UnicodeError) as exc:
