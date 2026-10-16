@@ -3,7 +3,7 @@
 
 ## Unreleased
 
-- Add a create-once Drive folder operation guard with complete parent-list preflight, journaled intent before external calls and read-only post-error reconciliation; no blind retries, silent cleanup or scientific-gate changes. Offline synthetic acceptance only; real ChatGPT host integration still requires a separate session.
+- Add a create-once Drive folder operation guard with complete parent-list preflight, journaled intent before external calls and read-only post-error reconciliation; no blind retries, silent cleanup or scientific-gate changes. Reject parent replacement, reused post-resolution scans, previously resolved folder drift, duplicate inventory IDs and inconsistent canonical paths. Offline synthetic acceptance only; real ChatGPT host integration still requires a separate session.
 
 - Add source- versus package-aware local version diagnostics without claiming
   host installation or publication authentication; expose machine-readable
