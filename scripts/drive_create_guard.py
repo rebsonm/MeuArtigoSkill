@@ -121,6 +121,60 @@ def initial_journal(plan: dict) -> dict:
             "plan_sha256": plan_hash(plan), "operations": {}}
 
 
+def validate_journal(plan: dict, data: dict) -> None:
+    """Reject malformed Drive create intents before recovery or checkpointing.
+
+    Structural validation is not a substitute for an independently authenticated
+    provider read, durable signed anchor or external F8/F9 CAS.
+    """
+    delivery.check_plan(plan)
+    if (not isinstance(data, dict) or data.get("schema") != SCHEMA or
+            data.get("drive_root_id") != plan["drive_root_id"] or
+            data.get("plan_sha256") != plan_hash(plan) or
+            not isinstance(data.get("operations"), dict)):
+        raise ValueError("JOURNAL_PLAN_OR_ROOT_MISMATCH")
+    ops = data["operations"]
+    folders = {entry["path"] for entry in plan["entries"] if entry["type"] == "folder"}
+    if len(ops) > len(folders):
+        raise ValueError("JOURNAL_TOO_MANY_INTENTS")
+    pending = 0
+    for path, op in ops.items():
+        if path not in folders or not isinstance(op, dict):
+            raise ValueError("JOURNAL_UNKNOWN_OR_INVALID_INTENT")
+        if not set(op).issubset({"attempt_id", "parent_id", "state",
+                                  "before_scan_token", "observed_remote_id",
+                                  "after_scan_token"}):
+            raise ValueError("JOURNAL_UNKNOWN_INTENT_FIELD")
+        attempt, before = op.get("attempt_id"), op.get("before_scan_token")
+        if (not isinstance(attempt, str) or not (1 <= len(attempt) <= 128) or
+                not isinstance(before, str) or not (8 <= len(before) <= 256)):
+            raise ValueError("JOURNAL_INTENT_IDENTITY_INVALID")
+        try:
+            parent = delivery.require_drive_id(op.get("parent_id"))
+        except ValueError:
+            raise ValueError("JOURNAL_INTENT_PARENT_INVALID") from None
+        if "/" not in path and parent != plan["drive_root_id"]:
+            raise ValueError("JOURNAL_ROOT_INTENT_PARENT_DRIFT")
+        if op.get("state") == "OUTCOME_UNKNOWN":
+            pending += 1
+            if op.get("observed_remote_id") is not None or "after_scan_token" in op:
+                raise ValueError("JOURNAL_PENDING_WITH_RESOLUTION")
+        elif op.get("state") == "RESOLVED":
+            try:
+                delivery.require_drive_id(op.get("observed_remote_id"))
+            except ValueError:
+                raise ValueError("JOURNAL_RESOLVED_REMOTE_ID_INVALID") from None
+            after = op.get("after_scan_token")
+            if not isinstance(after, str) or not (8 <= len(after) <= 256):
+                raise ValueError("JOURNAL_RESOLVED_SCAN_INVALID")
+            if after == before:
+                raise ValueError("JOURNAL_STALE_RESOLUTION_SCAN")
+        else:
+            raise ValueError("JOURNAL_INVALID_INTENT_STATE")
+    if pending > 1:
+        raise ValueError("JOURNAL_MULTIPLE_UNRESOLVED_INTENTS")
+
+
 def read_journal(plan: dict, journal_path: Path) -> dict:
     if journal_path.is_symlink():
         raise ValueError("UNSAFE_JOURNAL_LINK")
@@ -129,17 +183,16 @@ def read_journal(plan: dict, journal_path: Path) -> dict:
         # Never reinterpret absence as a new-project authorization.
         raise ValueError("JOURNAL_MISSING_RECOVERY_REQUIRED")
     data = delivery.load_json(journal_path)
-    if (data.get("schema") != SCHEMA or data.get("drive_root_id") != plan["drive_root_id"]
-            or data.get("plan_sha256") != plan_hash(plan)
-            or not isinstance(data.get("operations"), dict)):
-        raise ValueError("JOURNAL_PLAN_OR_ROOT_MISMATCH")
+    validate_journal(plan, data)
     return data
 
 
 def create_preflight(plan: dict, inventory: dict, journal: dict, path: str, *, allow_fixture: bool = False) -> tuple[dict, dict]:
     """Reserve a single create intent before the external call. No blind retries."""
-    if journal.get("schema") != SCHEMA or journal.get("plan_sha256") != plan_hash(plan):
-        raise ValueError("INVALID_CREATE_JOURNAL")
+    try:
+        validate_journal(plan, journal)
+    except (ValueError, TypeError, KeyError):
+        raise ValueError("INVALID_CREATE_JOURNAL") from None
     path = delivery.safe_relative(path)
     entry = next((e for e in plan["entries"] if e["path"] == path), None)
     if entry is None or entry["type"] != "folder":
@@ -183,8 +236,10 @@ def verified_parent_id(plan: dict, inventory: dict, path: str, *, allow_fixture:
 
 def resolve_create(plan: dict, inventory: dict, journal: dict, path: str, *, allow_fixture: bool = False) -> tuple[dict, dict]:
     """Reconcile after an uncertain return. No new create action is emitted."""
-    if journal.get("schema") != SCHEMA or journal.get("plan_sha256") != plan_hash(plan):
-        raise ValueError("INVALID_CREATE_JOURNAL")
+    try:
+        validate_journal(plan, journal)
+    except (ValueError, TypeError, KeyError):
+        raise ValueError("INVALID_CREATE_JOURNAL") from None
     path = delivery.safe_relative(path)
     op = journal["operations"].get(path)
     if not isinstance(op, dict):

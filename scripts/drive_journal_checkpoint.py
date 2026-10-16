@@ -90,6 +90,10 @@ def fetch_journal(file_id: str, parent_id: str, token: str, plan: dict,
             journal.get("plan_sha256") != guard.plan_hash(plan) or
             not isinstance(journal.get("operations"), dict)):
         raise JournalSyncError("JOURNAL_REMOTE_PLAN_MISMATCH")
+    try:
+        guard.validate_journal(plan, journal)
+    except (ValueError, TypeError, KeyError):
+        raise JournalSyncError("JOURNAL_REMOTE_INTENT_INVALID") from None
     return raw
 
 
@@ -151,7 +155,8 @@ def push_once(file_id: str, parent_id: str, token: str,
     It never retries PATCH; a stale remote or ambiguous result blocks.
     The expected previous hash is a sanity check, not global CAS.
     """
-    if not delivery.HASH.fullmatch(expected_remote_sha256):
+    if (not isinstance(expected_remote_sha256, str) or
+            not delivery.HASH.fullmatch(expected_remote_sha256)):
         raise JournalSyncError("EXPECTED_JOURNAL_SHA_INVALID")
     local_path = Path(local_path)
     if local_path.is_symlink() or not local_path.is_file():
@@ -171,6 +176,10 @@ def push_once(file_id: str, parent_id: str, token: str,
     if digest(prior) != expected_remote_sha256:
         raise JournalSyncError("JOURNAL_REMOTE_CHANGED_NO_WRITE")
     validate_forward_transition(json.loads(prior), obj)
+    try:
+        guard.validate_journal(plan, obj)
+    except (ValueError, TypeError, KeyError):
+        raise JournalSyncError("JOURNAL_LOCAL_INTENT_INVALID") from None
     target_sha = digest(local)
     if target_sha == expected_remote_sha256:
         return {"action": "JOURNAL_ALREADY_VERIFIED", "sha256": target_sha,
