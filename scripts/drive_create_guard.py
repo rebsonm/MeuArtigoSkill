@@ -227,8 +227,14 @@ def resolve_create(plan: dict, inventory: dict, journal: dict, path: str, *, all
 
 def locked_update(plan: dict, inventory: dict, journal_path: Path, path: str, command: str,
                   *, project_root: Path | None = None,
-                  initialize_authorized: bool = False) -> dict:
+                  initialize_authorized: bool = False,
+                  enforce_root_scope: bool = False) -> dict:
     """Exclusive journal lock prevents simultaneous local agents issuing same create."""
+    if enforce_root_scope:
+        # Public command-line operations require a My Drive root-bound
+        # project. Older synthetic in-process tests never perform Drive I/O.
+        import drive_root_anchor
+        drive_root_anchor.require_scope(plan)
     journal_path = Path(journal_path).absolute()
     if project_root is not None:
         root = Path(project_root).resolve()
@@ -296,7 +302,8 @@ def main() -> int:
         # No fixture bypass on the CLI.
         result = locked_update(plan, inventory, args.journal, args.path, args.command,
                                project_root=args.project_root,
-                               initialize_authorized=args.attest_new_project)
+                               initialize_authorized=args.attest_new_project,
+                               enforce_root_scope=True)
         print(json.dumps(result, ensure_ascii=False, sort_keys=True))
         return 0 if result["action"] in (
             "JOURNAL_INITIALIZED_NEW_PROJECT", "CREATE_FOLDER_ONCE",
