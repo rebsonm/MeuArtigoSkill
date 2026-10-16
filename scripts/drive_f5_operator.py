@@ -13,6 +13,7 @@ import argparse
 import hashlib
 import json
 import os
+import stat
 from pathlib import Path
 from urllib.parse import urlencode
 
@@ -147,6 +148,7 @@ def guarded_synthetic_create(plan: dict, journal: Path, project_root: Path,
     fd = None
     try:
         fd = os.open(host_lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
+        lock_identity = os.fstat(fd)
         own_lock = True
         os.close(fd)
         fd = None
@@ -180,13 +182,27 @@ def guarded_synthetic_create(plan: dict, journal: Path, project_root: Path,
         call_error = False
         try:
             creator(token, prepare["parent_id"], prepare["name"], sender=sender)
-        except (OSError, ValueError, TypeError):
+        except Exception:
+            # An unexpected sender failure can occur AFTER Drive performed
+            # the POST. Never issue another POST; reconcile by fresh GET.
             call_error = True
+        # A foreign process must not replace our local lock while the remote
+        # intent is unresolved. Local lock is secondary to external F8 CAS.
+        try:
+            current_lock = os.stat(host_lock, follow_symlinks=False)
+        except OSError:
+            raise HostBlock("F5_HOST_LOCK_OWNERSHIP_LOST") from None
+        if (not stat.S_ISREG(current_lock.st_mode) or
+                current_lock.st_dev != lock_identity.st_dev or
+                current_lock.st_ino != lock_identity.st_ino):
+            raise HostBlock("F5_HOST_LOCK_OWNERSHIP_LOST")
         try:
             after_inv = live_root_inventory(root_id, token, fetch_page=fetch_page)
             resolution = guard.locked_update(
                 plan, after_inv, journal, path, "resolve", project_root=project_root)
-        except (OSError, ValueError, TypeError):
+        except Exception:
+            # A failed post-create read is ambiguous, even for unexpected
+            # transport/library exceptions. Durable intent remains pending.
             raise HostBlock("POST_CREATE_RECONCILIATION_BLOCKED") from None
         if resolution["action"] != "RESOLVED_EXISTING_REMOTE_FOLDER":
             return {"action": resolution["action"], "path": path,
@@ -214,11 +230,17 @@ def guarded_synthetic_create(plan: dict, journal: Path, project_root: Path,
             os.close(fd)
         # A crash leaves a lock behind; an ordinary return may remove only
         # this invocation's lock. Never remove an existing owner lock.
-        if host_lock.exists() and fd is None:
-            # Caller did not observe another owner's lock in this branch:
-            # the lock must be owned by this invocation. See tests.
-            if "own_lock" in locals() and own_lock:
-                host_lock.unlink()
+        if "own_lock" in locals() and own_lock:
+            # Never delete a lock path that has been replaced by another
+            # actor. The independent CAS remains authoritative cross-host.
+            try:
+                current = os.stat(host_lock, follow_symlinks=False)
+                if (stat.S_ISREG(current.st_mode) and
+                        current.st_dev == lock_identity.st_dev and
+                        current.st_ino == lock_identity.st_ino):
+                    host_lock.unlink()
+            except FileNotFoundError:
+                pass
 
 
 def main() -> int:

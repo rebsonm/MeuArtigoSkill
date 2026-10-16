@@ -83,7 +83,8 @@ class DynamoHeadStore:
         except Exception:
             raise DynamoTrustError("F9_TRUST_READ_UNVERIFIED") from None
         item = res.get("Item") if isinstance(res, dict) else None
-        head = item.get("HeadSha256", {}).get("S") if isinstance(item, dict) else None
+        entry = item.get("HeadSha256") if isinstance(item, dict) else None
+        head = entry.get("S") if isinstance(entry, dict) else None
         return validate_sha(head)
 
     def compare_and_set(self, previous_head: str, new_head: str) -> bool:
@@ -107,11 +108,12 @@ class DynamoHeadStore:
             # timeouts and transport failures are ambiguous and MUST stop.
             response = getattr(e, "response", None)
             err = response.get("Error", {}) if isinstance(response, dict) else {}
-            if err.get("Code") == "ConditionalCheckFailedException":
+            if isinstance(err, dict) and err.get("Code") == "ConditionalCheckFailedException":
                 return False
             raise DynamoTrustError("F9_TRUST_WRITE_UNVERIFIED") from None
         attrs = result.get("Attributes") if isinstance(result, dict) else None
-        reported = attrs.get("HeadSha256", {}).get("S") if isinstance(attrs, dict) else None
+        entry = attrs.get("HeadSha256") if isinstance(attrs, dict) else None
+        reported = entry.get("S") if isinstance(entry, dict) else None
         if reported != new_head:
             raise DynamoTrustError("F9_TRUST_WRITE_RESPONSE_MISMATCH")
         # Do not infer global success from UpdateItem's response alone.
