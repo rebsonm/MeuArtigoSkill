@@ -29,6 +29,21 @@ ul{padding-left:22px;margin:7px 0 12px}li{margin:5px 0}.result{border-left:4px s
 table{border-collapse:collapse;width:100%;font-size:.85rem}td,th{padding:9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}th{color:var(--muted)}
 .scroll{overflow-x:auto}.detail h3{margin-top:12px}.tag{font-size:.77rem;background:#eaf0f2;border-radius:4px;padding:2px 5px}
 footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
+.ux-nav{display:flex;gap:8px;overflow-x:auto;align-items:center;padding:6px 0 3px;scrollbar-width:thin}
+.ux-nav button{flex:0 0 auto;white-space:nowrap;background:var(--paper)}
+.ux-nav button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+.ux-help{margin:0;font-size:.82rem;color:var(--muted)}
+.grid[data-focus]:not([data-focus="all"]){display:block}
+.grid[data-focus]:not([data-focus="all"])>div,.grid[data-focus]:not([data-focus="all"])>aside{display:contents!important}
+.grid[data-focus]:not([data-focus="all"]) section[data-ux-view]{display:none}
+.grid[data-focus="overview"] section[data-ux-view="overview"],
+.grid[data-focus="methods"] section[data-ux-view="methods"],
+.grid[data-focus="draft"] section[data-ux-view="draft"],
+.grid[data-focus="tasks"] section[data-ux-view="tasks"]{display:block;margin-bottom:16px}
+.ux-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+#continuation-prompt{display:none;min-height:90px;font-size:.9rem}
+#continuation-prompt.is-visible{display:block}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 @media(max-width:850px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}}@media(max-width:520px){header{padding:22px 16px}.wrap{padding:12px}.stats,.comparison,.mini-grid{grid-template-columns:1fr}section,.panel{padding:15px}}
 @media(prefers-reduced-motion:no-preference){button{transition:background .15s}}
 </style>
@@ -48,9 +63,17 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
     <button id="refresh-view" type="button" hidden>Atualizar dados locais</button>
   </div>
  </div>
- <div class="grid">
+ <nav class="ux-nav" aria-label="Navegar no percurso da pesquisa">
+   <button type="button" data-ux-button="overview" aria-pressed="true">Panorama</button>
+   <button type="button" data-ux-button="methods" aria-pressed="false">Métodos</button>
+   <button type="button" data-ux-button="draft" aria-pressed="false">Minha justificativa</button>
+   <button type="button" data-ux-button="tasks" aria-pressed="false">C.A.D.A.</button>
+   <button type="button" data-ux-button="all" aria-pressed="false">Ver tudo</button>
+ </nav>
+ <p class="ux-help">A navegação altera somente a apresentação. Nenhum botão aprova gates, executa ações ou grava dados.</p>
+ <div class="grid" id="research-grid" data-focus="overview">
   <div style="display:grid;gap:18px;min-width:0">
-   <section aria-labelledby="study-title"><h2 id="study-title">Panorama do estudo</h2>
+   <section data-ux-view="overview" aria-labelledby="study-title"><h2 id="study-title">Panorama do estudo</h2>
      <div class="stats">
        <div class="stat"><span id="route-label">Rota registrada</span><strong id="route"></strong></div>
        <div class="stat"><span>Campos registrados</span><strong id="fields"></strong></div>
@@ -58,7 +81,7 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
      </div>
      <div class="notice weak">Campos preenchidos e aprovações documentadas não são comprovação de qualidade científica, nem autenticação independente.</div>
    </section>
-   <section aria-labelledby="choices-title">
+   <section data-ux-view="methods" aria-labelledby="choices-title">
      <div class="bar"><h2 id="choices-title">Explorar possibilidades metodológicas</h2><span class="chip subtle">Sem classificação automática</span></div>
      <p class="muted">Escolha uma dimensão para ver alternativas. A ordem é do catálogo; nenhuma aparece como “melhor metodologia”.</p>
      <div class="controls">
@@ -81,7 +104,7 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
      </div>
      <div id="deep-dive" aria-live="polite"></div>
    </section>
-   <section aria-labelledby="draft-title">
+   <section data-ux-view="draft" aria-labelledby="draft-title">
     <div class="bar"><h2 id="draft-title">Preparar uma justificativa metodológica</h2><span class="chip subtle">Rascunho privado, sem gravação</span></div>
     <p class="muted">Redija sua proposta. A checagem neste navegador apenas identifica alguns erros formais; não consulta fontes, não autentica o pesquisador e não substitui a validação obrigatória do Meu Artigo.</p>
     <div class="field"><label for="draft">Texto proposto pelo pesquisador</label>
@@ -96,7 +119,7 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
    </section>
   </div>
   <aside style="display:grid;gap:18px;min-width:0">
-   <section aria-labelledby="continuity-title">
+   <section data-ux-view="overview" aria-labelledby="continuity-title">
     <h2 id="continuity-title">Onde estou e o que vem depois?</h2>
     <div class="smallcap">Última decisão registrada</div>
     <p id="last-decision"></p>
@@ -106,15 +129,18 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
     <p id="next-action"></p>
     <p class="micro" id="next-owner"></p>
     <div id="blockers"></div>
+    <div class="ux-actions"><button type="button" id="prepare-continuation">Preparar mensagem para continuar no chat</button></div>
+    <label for="continuation-prompt" class="micro">Mensagem preparada, ainda não enviada</label>
+    <textarea id="continuation-prompt" readonly rows="3" aria-label="Mensagem para continuar no Meu Artigo"></textarea>
    </section>
-   <section aria-labelledby="task-title">
+   <section data-ux-view="tasks" aria-labelledby="task-title">
     <h2 id="task-title">C.A.D.A. — demandas registradas</h2>
     <div class="scroll"><table aria-label="Quadro C.A.D.A. de quatro colunas">
       <thead><tr><th>ID Tarefa</th><th>Tarefa</th><th>Responsável execução</th><th>Prazo</th></tr></thead>
       <tbody id="cada-rows"></tbody>
     </table></div><p class="micro">Dados locais no instante de geração; esta interface não executa tarefas.</p>
    </section>
-   <section aria-labelledby="guard-title">
+   <section data-ux-view="overview" aria-labelledby="guard-title">
     <h2 id="guard-title">Proteções e decisões humanas</h2>
     <ul>
       <li>Escolha científica e sua justificativa: pesquisador.</li>
@@ -155,7 +181,17 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
    return result.json();
  }
  const $=id=>document.getElementById(id);
- const state={dimension:"overview",showAll:false,choice:null,selected:[]};
+ const state={dimension:"overview",showAll:false,choice:null,selected:[],view:"overview"};
+ const allowedViews=new Set(["overview","methods","draft","tasks","all"]);
+ function chooseView(next){
+   if(!allowedViews.has(next))return;
+   state.view=next;
+   $("research-grid").dataset.focus=next;
+   for(const b of document.querySelectorAll("[data-ux-button]"))
+     b.setAttribute("aria-pressed",String(b.dataset.uxButton===next));
+   const title=document.querySelector(next==="all"?'[data-ux-view="overview"] h2':'[data-ux-view="'+next+'"] h2');
+   if(title){title.setAttribute("tabindex","-1");title.focus({preventScroll:true});}
+ }
  const uiText=(v,missing="Não informado")=>v===null||v===undefined||v===""?missing:String(v);
  function add(parent,tag,text,cls){
    const x=document.createElement(tag);
@@ -378,6 +414,20 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
  });
  $("refresh-view").addEventListener("click",refreshSnapshot);
  $("clear-draft").addEventListener("click",()=>{$("draft").value="";clear("draft-feedback");});
+ for(const b of document.querySelectorAll("[data-ux-button]"))
+   b.addEventListener("click",()=>chooseView(b.dataset.uxButton));
+ $("prepare-continuation").addEventListener("click",()=>{
+   const action=model.decision_continuity.next_action;
+   // Use a safe machine action code, not private task titles or source text.
+   const code=action&&action.code?String(action.code):"UNVERIFIED_NEXT_ACTION";
+   const prefix=model.is_project_bound?
+      "Continue o projeto somente depois de consultar CONTINUIDADE.md e os registros canônicos autorizados.":
+      "Estou explorando uma demonstração fictícia; não presuma um projeto salvo.";
+   const text=prefix+" Verifique a próxima ação "+code+
+     " e apresente possibilidades, pendências e decisão humana necessária, sem aprovação ou gravação automática.";
+   const area=$("continuation-prompt");
+   area.value=text;area.classList.add("is-visible");area.focus();area.select();
+ });
  renderStatic();renderOptions();
  if(localBridgeReady){
    // Explicitly started session; initial shell is fictional until verified.
