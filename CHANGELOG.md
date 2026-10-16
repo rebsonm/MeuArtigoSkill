@@ -3,6 +3,8 @@
 
 ## Unreleased
 
+- Phase F (draft only): fail closed if the Drive create journal is missing; require an explicit new-project-only journal initialization (never an interruption recovery shortcut); return a SHA-256 digest for durable remote readback; require a terminal provider pagination evidence chain and exact page-to-child ID reconciliation for non-fixture parent scans, including replayed cursor detection. Tests remain synthetic for these guarantees; no authenticated, exhaustive Drive adapter is shipped.
+
 - Add a create-once Drive folder operation guard with complete parent-list preflight, journaled intent before external calls and read-only post-error reconciliation; no blind retries, silent cleanup or scientific-gate changes. Reject parent replacement, reused post-resolution scans, previously resolved folder drift, duplicate inventory IDs and inconsistent canonical paths. Offline synthetic acceptance only; real ChatGPT host integration still requires a separate session.
 
 - Add source- versus package-aware local version diagnostics without claiming
