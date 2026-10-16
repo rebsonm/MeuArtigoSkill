@@ -198,6 +198,62 @@ class ReceiptChainTests(unittest.TestCase):
             anchor.read_verified_chain(self.archive, self.plan, AUDIT, FILE,
                                        KEY, self.project, None)
 
+    def test_receipt_file_must_not_be_world_readable(self):
+        record = self.seal()
+        os.chmod(self.archive / "00000001.json", 0o644)
+        with self.assertRaisesRegex(anchor.AnchorError,
+                                    "ANCHOR_RECEIPT_PERMISSIONS_TOO_BROAD"):
+            self.verified(record["head_sha256"])
+
+    def test_symlinked_archive_is_rejected(self):
+        link = self.temp / "other-archive-link"
+        link.symlink_to(self.archive, target_is_directory=True)
+        with self.assertRaisesRegex(anchor.AnchorError, "ANCHOR_PRIVATE_DIRECTORY_REQUIRED"):
+            anchor.seal_remote_checkpoint(
+                link, self.project, self.plan, AUDIT, FILE,
+                TOKEN, self.digest(), KEY, None, sender=self.remote.sender)
+
+    def test_plan_change_makes_previous_receipt_unusable(self):
+        first = self.seal()
+        changed_plan = copy.deepcopy(self.plan)
+        changed_plan["entries"].append(
+            {"type": "folder", "path": "02_Extra", "parent": ""})
+        with self.assertRaisesRegex(anchor.AnchorError, "ANCHOR_CHAIN_OR_SCOPE_INVALID"):
+            anchor.read_verified_chain(
+                self.archive, changed_plan, AUDIT, FILE,
+                KEY, self.project, first["head_sha256"])
+
+    def test_audit_file_swap_cannot_validate_chain(self):
+        first = self.seal()
+        with self.assertRaisesRegex(anchor.AnchorError, "ANCHOR_CHAIN_OR_SCOPE_INVALID"):
+            anchor.read_verified_chain(
+                self.archive, self.plan, AUDIT, "synthetic-other-file-001",
+                KEY, self.project, first["head_sha256"])
+
+    def test_moved_audit_parent_cannot_validate_chain(self):
+        first = self.seal()
+        with self.assertRaisesRegex(anchor.AnchorError, "ANCHOR_CHAIN_OR_SCOPE_INVALID"):
+            anchor.read_verified_chain(
+                self.archive, self.plan, "synthetic-other-parent-01", FILE,
+                KEY, self.project, first["head_sha256"])
+
+    def test_secret_key_too_short_refused_before_sealing(self):
+        with self.assertRaisesRegex(anchor.AnchorError, "ANCHOR_KEY_UNAVAILABLE"):
+            self.seal(key=b"short")
+        self.assertEqual(self.remote.reads, 0)
+        self.assertEqual(list(self.archive.iterdir()), [])
+
+    def test_untrusted_remote_readback_is_not_a_ledger_signature(self):
+        self.seal()
+        self.remote.raw = wire(self.pending)
+        # Retain the old signed receipt but change remote journal. A correct
+        # signed chain cannot by itself ratify changed remote content.
+        old = (self.archive / "00000001.json").read_bytes()
+        pinned = hashlib.sha256(old).hexdigest()
+        with self.assertRaisesRegex(checkpoint.JournalSyncError,
+                                    "JOURNAL_REMOTE_SHA_MISMATCH"):
+            self.verified(pinned)
+
     def test_anchor_receipts_never_write_scientific_gates(self):
         gates = self.project / "18_Human_Validation_Gates.csv"
         gates.write_text("GATE-0001,PENDING")
