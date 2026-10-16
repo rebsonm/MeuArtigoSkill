@@ -31,6 +31,20 @@ provenance retained. Do not translate enums, paths, IDs or commands.
 ## 0A. Preflight
 Use bullets, no empty tables; cite real checks. See [guidance](docs/CHATGPT.md).
 
+## 0B. Researcher UX — shared conversational entry point
+
+For users who ask to start, continue, view or compare article research,
+apply the [researcher interaction contract](references/researcher-ux.md).
+Start with a concise source-grounded overview, one actionable next step and
+the most important actual blocker; disclose detail only on request. Offer
+method alternatives with applicability and limitations, including another
+option, without preselecting a scientific decision. If the host supports
+interactive UI, its controls may navigate and prepare drafts, never approve
+gates, complete C.A.D.A. tasks or claim synchronization without independent
+checks. Fall back gracefully to ordinary prose when widgets are unavailable.
+The same experience contract applies regardless of whether the Skill was
+invoked directly or through a host application entry point.
+
 ## 1. Invariant scientific contract
 
 Preserve the researcher's original problem verbatim. Never reuse another
