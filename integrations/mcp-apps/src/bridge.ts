@@ -9,11 +9,15 @@ declare global {
     MeuArtigoHost?: {
       receive: (data: SiteData) => boolean;
       locale: (locale: string) => void;
+      disconnect: () => void;
     };
   }
 }
 const app = new App({ name: "Meu Artigo", version: "0.1.0" });
 const fail = () => {
+  // Revoke the previous project snapshot before marking a host failure;
+  // leaving an earlier project's content visible is a stale-data leak.
+  window.MeuArtigoHost?.disconnect();
   const notice = document.querySelector(".mock-badge");
   if (notice) notice.textContent = "NOT CONNECTED · CONTINUE IN CHAT";
 };
