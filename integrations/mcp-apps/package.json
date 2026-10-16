@@ -1,0 +1,19 @@
+{
+  "name": "meu-artigo-mcp-apps",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/bridge.ts --bundle --format=iife --platform=browser --target=es2020 --outfile=dist/bridge.js",
+    "start": "node server.mjs --stdio",
+    "test:smoke": "node scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.0",
+    "@modelcontextprotocol/ext-apps": "^1.0.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}
