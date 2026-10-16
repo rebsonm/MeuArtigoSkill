@@ -57,7 +57,8 @@ export function createAuth0Verifier(config, { jwksUrl } = {}) {
   });
   return async function verifyAuthorization(header) {
     const match = /^Bearer ([A-Za-z0-9_.-]{20,12000})$/i.exec(header || "");
-    if (!match) return { ok: false, status: 401, error: "invalid_token" };
+    if (!match || match[0] !== header)
+      return { ok: false, status: 401, error: "invalid_token" };
     try {
       const { payload } = await jwtVerify(match[1], jwks, {
         issuer: config.issuer,
