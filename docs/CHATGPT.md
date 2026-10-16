@@ -12,26 +12,26 @@ Meu Artigo is a **Skill**, not a replacement for ChatGPT. Its research guidance 
 
 You do not need to open a technical dashboard to begin. The Skill is designed to offer a useful summary and next-step guidance in the conversation itself.
 
-## Navegação visual e interativa
+## Guided visual interaction
 
-Quando o ambiente permitir componentes nativos, peça **"Mostre meu painel"**
-para ver um resumo fundamentado no projeto autorizado. Depois use
-**"Explorar métodos"**, **"Ver C.A.D.A."**, **"Preparar justificativa"**,
-**"Mostrar pendências"** ou **"Próximo passo"**. Essas solicitações devem
-reutilizar o mesmo estado canônico e apresentar uma ação segura por vez,
-sem exigir comandos técnicos ou repetir escolhas já realizadas.
+When the active host supports native interaction controls, a researcher can ask
+"Show my project panel" for a grounded status overview. Useful follow-ups
+include "Explore methods", "Show C.A.D.A.", "Prepare my justification",
+"Show blockers" and "Next step". The assistant should reuse the same
+authorized canonical records, display one safe next action at a time and
+avoid technical commands or repeated questions when information is known.
 
-A navegação e a comparação são **operações de leitura e rascunho**, não
-aprovação de um gate científico. Sem componentes interativos disponíveis,
-a experiência deve funcionar em texto comum. O painel HTML local tem agora
-atalhos com foco por seção e uma mensagem de continuação que o pesquisador
-pode copiar manualmente; não transmite nem salva a justificativa sozinho.
-Consulte [o contrato de experiência](../references/researcher-ux.md).
+Viewing, navigating and comparing are read-only or draft-only actions, not
+scientific gate approvals. Without native widgets, provide the same usable
+experience in plain text. The optional local HTML workspace now includes
+focus navigation and a manually copyable continuation message; it never
+submits or saves the justification without a separate governed action.
+See the [shared interaction rules](../references/researcher-ux.md).
 
-A habilidade e o pacote privado do ChatGPT compartilham esse núcleo de
-orientação quando suas versões correspondentes estão carregadas. Alterar
-somente arquivos no repositório não atualiza automaticamente uma instalação
-já existente nem transforma um HTML local em uma interface nativa hospedada.
+The Skill and its private hosted distribution can share this experience
+when their respective updated source files are installed. Repository edits
+alone do not update an existing user installation or turn local HTML into
+a persistent in-chat service.
 
 ## When returning to an article
 
