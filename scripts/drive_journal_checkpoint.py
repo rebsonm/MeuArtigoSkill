@@ -105,6 +105,43 @@ def remote_matches(file_id: str, parent_id: str, token: str,
             "sha256": remote_sha, "bytes": len(observed)}
 
 
+def validate_forward_transition(previous: dict, current: dict) -> None:
+    """Forbid remote checkpoint rollbacks that could permit a second create."""
+    before_ops = previous.get("operations")
+    after_ops = current.get("operations")
+    if not isinstance(before_ops, dict) or not isinstance(after_ops, dict):
+        raise JournalSyncError("JOURNAL_TRANSITION_INVALID")
+    if set(before_ops) - set(after_ops):
+        raise JournalSyncError("JOURNAL_TRANSITION_DROPPED_INTENT")
+    if any(not isinstance(op, dict) for op in list(before_ops.values()) + list(after_ops.values())):
+        raise JournalSyncError("JOURNAL_TRANSITION_INVALID")
+    for path, before in before_ops.items():
+        after = after_ops[path]
+        for field in ("attempt_id", "parent_id", "before_scan_token"):
+            if field not in before or before.get(field) != after.get(field):
+                raise JournalSyncError("JOURNAL_TRANSITION_CHANGED_INTENT")
+        old_state, new_state = before.get("state"), after.get("state")
+        if old_state not in ("OUTCOME_UNKNOWN", "RESOLVED") or new_state not in (
+                "OUTCOME_UNKNOWN", "RESOLVED"):
+            raise JournalSyncError("JOURNAL_TRANSITION_INVALID")
+        if old_state == "RESOLVED" and (
+                new_state != "RESOLVED" or
+                before.get("observed_remote_id") != after.get("observed_remote_id") or
+                before.get("after_scan_token") != after.get("after_scan_token")):
+            raise JournalSyncError("JOURNAL_TRANSITION_ROLLBACK")
+        if old_state == "OUTCOME_UNKNOWN":
+            if (new_state == "OUTCOME_UNKNOWN" and
+                    before.get("observed_remote_id") != after.get("observed_remote_id")):
+                raise JournalSyncError("JOURNAL_TRANSITION_CHANGED_INTENT")
+            if new_state == "RESOLVED" and (
+                    not isinstance(after.get("observed_remote_id"), str) or
+                    not after.get("after_scan_token")):
+                raise JournalSyncError("JOURNAL_TRANSITION_INVALID")
+    if any(op.get("state") == "OUTCOME_UNKNOWN" for op in before_ops.values()) and (
+            set(after_ops) - set(before_ops)):
+        raise JournalSyncError("JOURNAL_TRANSITION_UNRESOLVED_PREVIOUS_INTENT")
+
+
 def push_once(file_id: str, parent_id: str, token: str,
               plan: dict, local_path: Path, expected_remote_sha256: str,
               *, sender=request) -> dict:
@@ -133,6 +170,7 @@ def push_once(file_id: str, parent_id: str, token: str,
     prior = fetch_journal(file_id, parent_id, token, plan, sender=sender)
     if digest(prior) != expected_remote_sha256:
         raise JournalSyncError("JOURNAL_REMOTE_CHANGED_NO_WRITE")
+    validate_forward_transition(json.loads(prior), obj)
     target_sha = digest(local)
     if target_sha == expected_remote_sha256:
         return {"action": "JOURNAL_ALREADY_VERIFIED", "sha256": target_sha,
