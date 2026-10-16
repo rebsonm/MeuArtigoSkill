@@ -60,24 +60,40 @@ host-assisted guard protocol first:
 1. **List the exact parent folder** using the authorized Drive connector.
    Collect all direct children through every pagination page, preserving IDs,
    names and types. Record `parent_scans` in the existing inventory:
-   `[{"parent_id":"REAL_ID","complete":true,"scan_token":"FRESH_UNIQUE_SCAN_ID","children":[{"id":"CHILD_ID","name":"FOLDER_NAME","type":"folder"}]}]`.
-   The `scan_token` is an identifier for a completed, actual observation,
-   **not** an AI-invented nonce proving an API response. Its children must
-   match the corresponding entries in `inventory.entries`. An incomplete
-   listing must have `complete:false` and cannot authorize creation.
-2. **Persist one create intent before calling Drive** using:
+   `[{"parent_id":"REAL_ID","complete":true,"scan_token":"FRESH_UNIQUE_SCAN_ID","children":[{"id":"CHILD_ID","name":"FOLDER_NAME","type":"folder"}],"page_evidence":[{"source":"GOOGLE_DRIVE_FILES_LIST","request_page_token":null,"next_page_token":null,"item_ids":["CHILD_ID"]}]}]`.
+   Every actual Drive API listing page must be recorded in `page_evidence`:
+   the first `request_page_token` is null; each subsequent request token
+   matches the previous `next_page_token`; the final page explicitly returns
+   null, and the union of `item_ids` matches the complete children list.
+   The `scan_token` identifies a completed, actual observation, **not** an
+   AI-invented nonce proving an API response. A boolean `complete:true` on
+   its own is insufficient. Incomplete, unpaged or unsupported tool responses
+   MUST block creation (`PARENT_PAGE_EVIDENCE_REQUIRED`,
+   `PARENT_PAGINATION_INCOMPLETE` or a related validation error).
+2. **Initialize the journal for an expressly confirmed new project** (once):
+
+       python scripts/drive_create_guard.py initialize --attest-new-project --plan PRIVATE_AUDIT_PATH/delivery-plan.json --inventory PRIVATE_AUDIT_PATH/observed-drive.json --journal PRIVATE_AUDIT_PATH/create-journal.json --path RELATIVE_FOLDER_PATH --project-root PROJECT_PATH
+
+   This attestation MUST NOT be used as a recovery path after a crash, loss of
+   temporary files or an uncertain Drive create. Restore the original journal
+   from durable shared storage instead. A missing journal blocks ordinary
+   `prepare` and `resolve` with `JOURNAL_MISSING_RECOVERY_REQUIRED`.
+3. **Persist one create intent before calling Drive** using:
 
        python scripts/drive_create_guard.py prepare --plan PRIVATE_AUDIT_PATH/delivery-plan.json --inventory PRIVATE_AUDIT_PATH/observed-drive.json --journal PRIVATE_AUDIT_PATH/create-journal.json --path RELATIVE_FOLDER_PATH --project-root PROJECT_PATH
 
    Only `CREATE_FOLDER_ONCE` authorizes **one** attempt with the exact
    name and parent ID returned. The guard journals `OUTCOME_UNKNOWN`
    before emitting that action. Store its audit file outside the research
-   tree. A concurrent or repeated attempt is blocked, not retried.
-3. **Call the real Drive create tool at most once.** Regardless of whether
+   tree, **persist it in the designated durable shared location and verify the
+   remote copy BEFORE issuing the external create call**. An unverified or
+   unreachable durable copy blocks external creation. A concurrent or repeated
+   attempt is blocked, not retried.
+4. **Call the real Drive create tool at most once.** Regardless of whether
    it returns success, failure or an ambiguous tool error, re-list the
    parent completely and regenerate the inventory with a **new scan token**
    grounded in that actual observation.
-4. **Reconcile the pending intent**:
+5. **Reconcile the pending intent**:
 
        python scripts/drive_create_guard.py resolve --plan PRIVATE_AUDIT_PATH/delivery-plan.json --inventory PRIVATE_AUDIT_PATH/observed-drive.json --journal PRIVATE_AUDIT_PATH/create-journal.json --path RELATIVE_FOLDER_PATH --project-root PROJECT_PATH
 
@@ -105,6 +121,11 @@ host-assisted guard protocol first:
 Keep the create journal and its lock in an access-controlled, **durable shared
 location** across retries and sessions. A temporary Python/container directory
 that disappears at session end cannot reliably enforce create-once semantics.
+The local helper verifies its local journal only; it cannot perform or certify
+remote journal synchronization itself. The host is responsible for write and
+read-back of the durable copy, and must **withhold CREATE_FOLDER_ONCE** until
+its integrity and identity have been independently checked. On session restart,
+restore the existing journal with the same plan hash before any further writes.
 Never silently initialize a new journal to retry a previously uncertain
 operation. If a leftover `.lock` exists after a crash, do not delete it
 automatically: confirm that no process still owns it, preserve the journal
@@ -113,9 +134,11 @@ must still be reconciled, not recreated.
 
 The connected Drive interface may expose bounded `list_folder(top_k)`
 without an explicit `nextPageToken` or completeness receipt. **Do not
-invent `complete:true`** based only on the returned array length or on an
+invent `complete:true` or `page_evidence`** based only on the returned array
+length or on an
 AI-generated scan token. When exhaustive listing cannot be established,
-return `PARENT_COMPLETE_SCAN_REQUIRED` and report live acceptance as blocked.
+return `PARENT_PAGE_EVIDENCE_REQUIRED` (or another page-validation failure)
+and report live acceptance as blocked.
 A successful manual folder-creation smoke test is not evidence that this
 guard was executed end-to-end by the installed Skill.
 
