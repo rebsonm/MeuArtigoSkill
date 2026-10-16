@@ -63,8 +63,12 @@ receipt hash. The file contains **no OAuth or HMAC secrets**.
    preprovisioned initial journal remotely and issue exactly one first
    receipt (without \`--expected-head\`):
 
-       python scripts/drive_f7_anchor.py seal --plan PRIVATE/plan.json --project-root SYNTHETIC_PROJECT --archive PRIVATE/receipt-archive --audit-file-id REAL_AUDIT_FILE_ID --audit-parent-id REAL_AUDIT_PARENT_ID --journal-sha256 VERIFIED_INITIAL_SHA256
+       python scripts/drive_f7_anchor.py seal --attest-initial-anchor --plan PRIVATE/plan.json --project-root SYNTHETIC_PROJECT --archive PRIVATE/receipt-archive --audit-file-id REAL_AUDIT_FILE_ID --audit-parent-id REAL_AUDIT_PARENT_ID --journal-sha256 VERIFIED_INITIAL_SHA256
 
+   The explicit `--attest-initial-anchor` flag is mandatory for this first
+   creation. It must never be used after an interruption or loss of an
+   existing archive. The script cannot independently establish that the
+   caller has not previously created receipts on a different host.
 3. Before any further operation, persist the output \`head_sha256\` in the
    **independent trusted high-watermark authority**, and verify its readback.
    This script emits \`external_head_persistence_required:true\`, not a claim
