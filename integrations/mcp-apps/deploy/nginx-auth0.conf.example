@@ -1,0 +1,49 @@
+# Example only. Do not replace the currently blocked production vhost until
+# Auth0, explicit pilot subject, JWT verification and real OAuth login pass.
+# This file must not be included directly by Nginx from the checkout tree.
+server {
+    listen 80;
+    server_name mcp.allflux.com.br;
+
+    location ^~ /.well-known/acme-challenge/ {
+        root /var/www/letsencrypt;
+        default_type text/plain;
+        try_files $uri =404;
+    }
+    location / { return 404; }
+}
+
+server {
+    listen 443 ssl;
+    server_name mcp.allflux.com.br;
+
+    ssl_certificate /etc/letsencrypt/live/mcp.allflux.com.br/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/mcp.allflux.com.br/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    # Public OAuth discovery without exposing projects.
+    location = /.well-known/oauth-protected-resource {
+        proxy_pass http://127.0.0.1:8085;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto https;
+    }
+    location = /.well-known/oauth-protected-resource/mcp {
+        proxy_pass http://127.0.0.1:8085;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto https;
+    }
+
+    # Enable ONLY after real issuer/audience/scope/account checks pass.
+    location = /mcp {
+        proxy_pass http://127.0.0.1:8085;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_set_header Authorization $http_authorization;
+        proxy_buffering off;
+        proxy_read_timeout 300s;
+        client_max_body_size 2m;
+    }
+
+    location / { return 404; }
+}
