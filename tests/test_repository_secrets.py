@@ -19,7 +19,7 @@ class SecretAuditTests(unittest.TestCase):
         self.assertIn("Google OAuth client secret", scan_entry("config.py", fixture.encode()))
 
     def test_repo_blocks_local_env_and_private_key_names(self):
-        for path in ["integrations/mcp-apps/.env", ".env.production", "x/id_rsa", "x/private.pem"]:
+        for path in ["integrations/optional-server/.env", ".env.production", "x/id_rsa", "x/private.pem"]:
             self.assertIn("credential-like filename", scan_entry(path, b"secret"))
 
     def test_safe_examples_and_public_identifiers_are_not_secrets(self):
