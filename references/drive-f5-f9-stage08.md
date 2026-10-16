@@ -1,36 +1,43 @@
-# Etapa 08 — Revisão de segurança F5–F9
+# Stage 08 — Drive F5–F9 security review
 
-Escopo exclusivo: testes e correções sintéticas na branch candidata da PR #78;
-sem alteração no Google Drive, na VPS, na distribuição instalada ou na branch principal.
+Scope: synthetic tests and guarded changes only in the PR #78 candidate
+branch. No changes to Google Drive, the VPS, the installed distribution, or
+the protected main branch.
 
-## Invariantes
-- F5: um POST de criação é uma operação não idempotente. Qualquer exceção
-  do executor, inclusive erro desconhecido depois de um efeito remoto,
-  é ambígua e requer leitura nova; nunca repetir o POST cegamente.
-- F5: o lock local deve conservar identidade do mesmo inode. Se outro
-  ator substituir o arquivo, não reivindicar sucesso nem remover o lock alheio.
-- F6: busca conectada e pastas existentes são evidências auxiliares somente
-  leitura, nunca prova de ausência de conflitos entre tipos MIME.
-- F7: recibos HMAC não são uma autoridade sem o head externo de confiança.
-  Não reinicializar cadeia após perda do arquivo ou do estado.
-- F8: CAS rejeitado, timeout ou readback inconsistente bloqueiam a criação.
-  Não supor que a resposta do backend descreve o resultado de uma operação
-  que possa ter sido aplicada.
-- F9: o adaptador DynamoDB é opcional; exige tabela, item e permissões
-  previamente provisionados pelo operador. Leitura consistente e
-  ConditionExpression = comparação atômica de um head já existente.
-  Respostas malformadas nunca são traduzidas em sucesso.
+## Safety invariants
 
-## Testes e limitações
-Os testes em tests/test_drive_f5_f9_stage08.py usam fakes sem credenciais.
-Eles cobrem concorrência simulada entre writers, perda de resposta após CAS
-com efeito, retomada com journal pendente, replays de recibos assinados,
-substituição de lock local, erros de I/O pós-criação e formatos inválidos AWS.
-A implementação não prova linearizabilidade do serviço remoto em produção
-nem elimina TOCTOU do filesystem entre lstat e unlink; a defesa cross-host
-continua sendo F8/F9, mais segregação operacional e autorização humana.
+- F5: folder creation is non-idempotent. Any creator exception, including
+  an unexpected exception after a remote side effect, is an ambiguous
+  outcome. Inspect the provider state again; never issue a blind second POST.
+- F5: the local host lock must retain its original device and inode. If
+  another actor replaces it, do not claim success or delete the foreign lock.
+  This local identity check does not eliminate filesystem TOCTOU races.
+- F6: connected search is read-only supporting evidence, not a proof of
+  absent file/folder naming collisions across all MIME types.
+- F7: an HMAC receipt chain is not authoritative without an independently
+  retained latest head. Never silently reinitialize after lost state.
+- F8: an external atomic CAS is mandatory before any non-idempotent POST.
+  CAS failure, timeout, rejected compare, or inconsistent readback must block
+  external creation. A lost response does not prove the write was absent.
+- F9: DynamoDB is an optional, independently provisioned trusted-head backend.
+  Require an existing table/item, least-privilege credentials, strongly
+  consistent reads, an atomic conditional update, and strict response shapes.
+  Unexpected response types must fail closed without exposing provider errors.
 
-A interface CLI F5 não disponibiliza backend CAS de produção e portanto
-não pode habilitar writes. Uma configuração AWS real, uma leitura Drive com
-credenciais delegadas e uma criação num ambiente de teste exigem decisão
-explícita posterior e homologação em contexto isolado.
+## Negative tests and limits
+
+The additional tests in `tests/test_drive_f5_f9_stage08.py` use only fake
+clients and fictional identifiers. They cover two writers racing on an old
+head, a CAS timeout after a committed update, stale signed receipt replay,
+lock replacement, an ambiguous post-create exception, failed fresh scans,
+and malformed DynamoDB AttributeValue and Error response structures.
+
+No credentials, AWS table, IAM policy, real Google Drive access, or external
+create operations are involved. These tests do not establish real service
+linearizability, cross-host durability, or end-to-end operator authorization.
+The F5 command-line interface deliberately provides no live independent
+CAS adapter and cannot enable external writes.
+
+Release integration must keep the scientific human gates intact. The
+resulting code must not mark scientific decisions as approved or treat
+local fixtures as authenticated provider evidence.
