@@ -71,7 +71,7 @@ try {
  const view=await client.readResource({uri:URI});
  assert.equal(view.contents.length,1);
  assert.equal(view.contents[0].mimeType,"text/html;profile=mcp-app");
- assert.ok(Buffer.byteLength(view.contents[0].text,"utf8")<1024*1024);
+ assert.ok(Buffer.byteLength(view.contents[0].text,"utf8")<2*1024*1024);
  assert.match(view.contents[0].text,/HOST_NOT_CONNECTED/);
  assert.match(view.contents[0].text,/connect-src 'none'/);
  assert.doesNotMatch(view.contents[0].text,/__MEU_ARTIGO_SITE_MODEL_JSON__/);

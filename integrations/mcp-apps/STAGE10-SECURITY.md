@@ -21,7 +21,7 @@ and a text `content` fallback whenever the UI is not rendered.
 - Returned text summarizes a bounded code and counts, not private task
   content. Neither the server nor UI authorizes scientific gates or Drive sync.
 - MCP Apps HTML includes a neutral HOST_NOT_CONNECTED state and an
-  embedded bridge. The UI resource is bounded to 1 MiB.
+  embedded bridge. The UI resource is bounded to 2 MiB.
 - HTTP uses a strict Bearer authorization header and rejects foreign
   Origins. Requests with non-JSON media, malformed objects, or over
   256 KiB are denied before reaching the MCP transport handler.

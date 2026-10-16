@@ -22,7 +22,7 @@ const URI="ui://meu-artigo/site-v1.html";
 const LOCALES=new Set(["pt","en","es","fr"]);
 const MAX_REQUEST_BYTES=256*1024;
 const MAX_SITE_BYTES=256*1024;
-const MAX_RESOURCE_BYTES=1024*1024;
+const MAX_RESOURCE_BYTES=2*1024*1024;
 const SAFE_CODE=/^[A-Z][A-Z0-9_:-]{0,127}$/;
 const projectRoot=process.env.MEU_ARTIGO_PROJECT_ROOT||"";
 
