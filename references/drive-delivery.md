@@ -184,7 +184,10 @@ tool does not expose the needed pagination tokens; do not forge evidence.
 The journal checkpoint helper requires a fixed pre-provisioned private file
 ID, audit folder ID, a verified plan and the previously observed SHA-256.
 A new local journal intent MUST be synchronized and read back in full
-BEFORE any external folder creation. Example:
+BEFORE any external folder creation. Synchronization is forward-only: prior
+create intentions cannot be removed, have their identity changed, or revert
+from RESOLVED to OUTCOME_UNKNOWN. This is a local semantic check, NOT an
+atomic remote multi-writer compare-and-swap. Example:
 
     python scripts/drive_journal_checkpoint.py push --plan PRIVATE_AUDIT_PATH/delivery-plan.json --remote-file-id REAL_AUDIT_FILE_ID --audit-parent-id REAL_AUDIT_FOLDER_ID --journal PRIVATE_AUDIT_PATH/create-journal.json --expected-remote-sha256 PREVIOUS_SHA256
 
