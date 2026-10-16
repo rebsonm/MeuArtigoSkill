@@ -159,7 +159,7 @@ def resolve_create(plan: dict, inventory: dict, journal: dict, path: str, *, all
     return result, journal
 
 
-def locked_update(plan: dict, inventory: dict, journal_path: Path, path: str, command: str) -> dict:
+def locked_update(plan: dict, inventory: dict, journal_path: Path, path: str, command: str,\n                  *, project_root: Path | None = None) -> dict:
     """Exclusive journal lock prevents simultaneous local agents issuing same create."""
     journal_path = Path(journal_path).absolute()
     if journal_path.is_symlink():
@@ -199,7 +199,7 @@ def main() -> int:
         plan = delivery.load_json(args.plan)
         inventory = delivery.load_json(args.inventory)
         # No fixture bypass on the CLI.
-        result = locked_update(plan, inventory, args.journal, args.path, args.command)
+        result = locked_update(plan, inventory, args.journal, args.path, args.command,\n                               project_root=args.project_root)
         print(json.dumps(result, ensure_ascii=False, sort_keys=True))
         return 0 if result["action"] in (
             "CREATE_FOLDER_ONCE", "RESOLVED_EXISTING_REMOTE_FOLDER", "ALREADY_RESOLVED") else 2
