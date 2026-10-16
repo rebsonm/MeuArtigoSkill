@@ -125,8 +125,8 @@ host-assisted guard protocol first:
 Keep the create journal and its lock in an access-controlled, **durable shared
 location** across retries and sessions. A temporary Python/container directory
 that disappears at session end cannot reliably enforce create-once semantics.
-The local helper verifies its local journal only; it cannot perform or certify
-remote journal synchronization itself. The host is responsible for write and
+The local helper verifies its local journal and emits a local SHA-256 receipt;
+it cannot perform or certify remote journal synchronization itself. The host is responsible for write and
 read-back of the durable copy, and must **withhold CREATE_FOLDER_ONCE** until
 its integrity and identity have been independently checked. On session restart,
 restore the existing journal with the same plan hash before any further writes.
