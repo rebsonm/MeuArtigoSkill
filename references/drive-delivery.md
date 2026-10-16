@@ -100,6 +100,25 @@ host-assisted guard protocol first:
    - `REINSPECT_PARENT`: the remote observation is reused or stale. Re-list
      the actual parent and submit a new, evidence-grounded scan token.
 
+### Interrupted sessions, journals and connector limits
+
+Keep the create journal and its lock in an access-controlled, **durable shared
+location** across retries and sessions. A temporary Python/container directory
+that disappears at session end cannot reliably enforce create-once semantics.
+Never silently initialize a new journal to retry a previously uncertain
+operation. If a leftover `.lock` exists after a crash, do not delete it
+automatically: confirm that no process still owns it, preserve the journal
+and audit trail, then authorize manual lock recovery. The unresolved intent
+must still be reconciled, not recreated.
+
+The connected Drive interface may expose bounded `list_folder(top_k)`
+without an explicit `nextPageToken` or completeness receipt. **Do not
+invent `complete:true`** based only on the returned array length or on an
+AI-generated scan token. When exhaustive listing cannot be established,
+return `PARENT_COMPLETE_SCAN_REQUIRED` and report live acceptance as blocked.
+A successful manual folder-creation smoke test is not evidence that this
+guard was executed end-to-end by the installed Skill.
+
 There is no Google Drive atomic compare-and-create primitive supplied by
 this Skill. The guard reduces duplicate risk for a **cooperating serial
 host**, but cannot prove global exactly-once behavior or independently
