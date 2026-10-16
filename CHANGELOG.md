@@ -3,6 +3,8 @@
 
 ## Unreleased
 
+- F6 connected read-only Drive improvement: documented actual isolated folder-only search plus independent metadata verification; added a strict folder-page receipt validator that never authorizes creation, and conservative synthetic tests. This does not replace complete all-types API pagination or durable journal acceptance; refer to `references/drive-f6-connected-acceptance.md`.
+
 - F5 optional isolated host integration: add a read-only-by-default Google Drive OAuth test harness (`drive_f5_operator.py`) that checks the exact synthetic root identity, obtains a complete pagination proof, validates an independently pinned durable journal, and allows exactly one synthetic folder-create attempt only after explicit operator opt-in and downloaded-byte intent readback. Fail closed on ambiguity; tests cover side effects, no effects, unsafe roots, stale checkpoints and pre-create failures. See `references/drive-f5-operator.md`. No authenticated live run or production installation is claimed.
 
 - F4 verification hardening: require an independently retained SHA-256 before any cross-session journal restore; reject replay of valid-but-old checkpoint content; add simulated end-to-end recovery scenarios that exercise the real folder guard, Drive pagination helper and remote checkpoint module together. Document researcher ownership, assistant-implemented patches, GitHub CI evidence, and separate live acceptance gates in `references/drive-f4-acceptance.md`. No live OAuth end-to-end acceptance, scientific validation, merge or publication is claimed.
