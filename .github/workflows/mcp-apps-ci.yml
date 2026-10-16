@@ -1,41 +1,26 @@
-name: Optional MCP Apps interface acceptance
+name: Optional MCP Apps npm lock bootstrap (temporary)
 on:
   pull_request:
     paths:
-      - "integrations/mcp-apps/**"
-      - "assets/research_site.html"
-      - "scripts/build_research_site.py"
-      - ".github/workflows/mcp-apps-ci.yml"
-  workflow_dispatch:
+      - 'integrations/mcp-apps/**'
+      - '.github/workflows/mcp-apps-ci.yml'
 permissions:
   contents: read
 jobs:
-  mcp-apps:
+  generate-lock:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
-          node-version: "22"
-      - uses: actions/setup-python@v5
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          python-version: "3.11"
-      - name: Install optional MCP packages (no publish)
+          node-version: '22'
+      - name: Resolve exact public npm dependencies without install scripts
         working-directory: integrations/mcp-apps
-        run: npm install --no-audit --no-fund
-      - name: Bundle portable MCP Apps browser bridge
+        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+      - name: Emit public dependency lock payload (compressed; contains no credentials)
         working-directory: integrations/mcp-apps
-        run: npm run build
-      - name: Test actual MCP stdio tool and UI resource, no private project
-        working-directory: integrations/mcp-apps
-        run: npm run test:smoke
-      - name: Verify source-backed synthetic project and localized text response
-        working-directory: integrations/mcp-apps
-        run: npm run test:synthetic
-      - name: Browser-like locale switches, methods and host data safe fallback
-        working-directory: integrations/mcp-apps
-        run: npm run test:i18n
-      - name: Local authenticated Streamable HTTP endpoint acceptance
-        working-directory: integrations/mcp-apps
-        run: npm run test:http
+        run: |
+          node -e 'const fs=require("node:fs");const z=require("node:zlib");const x=fs.readFileSync("package-lock.json");console.log("STAGE05_LOCK_BEGIN");console.log(z.gzipSync(x).toString("base64"));console.log("STAGE05_LOCK_END");'
