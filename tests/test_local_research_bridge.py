@@ -94,23 +94,26 @@ class LoopbackBridgeTests(unittest.TestCase):
                          self.before)
 
     def test_cli_session_credential_stays_out_of_process_output(self):
-        """The opt-in URL is private and ephemeral, never printed as a log."""
+        """Status is constant; token lives briefly in a private local file."""
         output=io.StringIO()
         private_paths=[]
         def inspect_session(server, poll_interval):
             self.assertEqual(poll_interval,.2)
-            exposed=json.loads(output.getvalue())
-            self.assertEqual(exposed["status"],"LOCAL_READ_ONLY_BRIDGE_READY")
-            self.assertNotIn(server.session_token,output.getvalue())
-            self.assertEqual(exposed["public_shell_url"],server.trusted_origin+"/")
-            file=Path(exposed["session_url_file"])
+            self.assertEqual(output.getvalue(),"LOCAL_READ_ONLY_BRIDGE_READY\\n")
+            # HOME has a deterministic pattern, but names are random and
+            # contents never appear in process output.
+            candidates=list(self.root.glob(".meu-artigo-session-*/launch-url.txt"))
+            self.assertEqual(len(candidates),1)
+            file=candidates[0]
             private_paths.append(file)
             self.assertEqual(stat.S_IMODE(file.stat().st_mode),0o600)
             self.assertEqual(stat.S_IMODE(file.parent.stat().st_mode),0o700)
             self.assertEqual(file.read_text(encoding="utf-8").strip(),
                              server.trusted_origin+"/#session="+server.session_token)
-            self.assertNotIn("#session=",output.getvalue())
-        with patch.object(LocalResearchBridge,"serve_forever",autospec=True,
+            self.assertNotIn(server.session_token,output.getvalue())
+            self.assertNotIn(str(file),output.getvalue())
+        with patch("local_research_bridge.Path.home",return_value=self.root), \\
+             patch.object(LocalResearchBridge,"serve_forever",autospec=True,
                           side_effect=inspect_session), redirect_stdout(output):
             self.assertEqual(main(["--preview-route","QUALITATIVE"]),0)
         self.assertEqual(len(private_paths),1)
