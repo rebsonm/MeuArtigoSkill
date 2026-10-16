@@ -51,6 +51,21 @@ try{
  assert.equal(disallowedOrigin.status,403);
  const unknown=await fetch(endpoint+"/other");
  assert.equal(unknown.status,404);
+ const incorrectScheme=await fetch(endpoint+"/mcp",{method:"POST",
+  headers:{"content-type":"application/json","authorization":"Basic "+("a".repeat(40))},
+  body:"{}"});
+ assert.equal(incorrectScheme.status,401);
+ const missingTokenHeader=await fetch(endpoint+"/mcp",{method:"POST",
+  headers:{"content-type":"application/json","authorization":"Bearer "+("b".repeat(90))},body:"{}"});
+ assert.equal(missingTokenHeader.status,401);
+ assert.equal(missingTokenHeader.headers.get("cache-control"),"no-store");
+ const wrongMime=await fetch(endpoint+"/mcp",{method:"POST",
+  headers:{"content-type":"text/plain","authorization":"Bearer "+("c".repeat(90))},body:"{}"});
+ assert.equal(wrongMime.status,401);
+ const noPrivateMetadata=await fetch(endpoint+"/.well-known/oauth-protected-resource",
+   {method:"POST",headers:{"content-type":"application/json"},body:"{}"});
+ assert.equal(noPrivateMetadata.status,404);
+
  console.log("OAuth HTTP: RFC 9728 discovery, 401 Bearer challenge, origin and invalid-token denials pass.");
 }finally{
  child.kill("SIGTERM");
