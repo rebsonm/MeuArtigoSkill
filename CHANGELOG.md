@@ -3,6 +3,8 @@
 
 ## Unreleased
 
+- Mandatory canonical My Drive layout for new projects: `My Drive/Meu Artigo/ARTIGO_<title>_<year>/existing scientific folders`. Add strict read-only root/container/project identity and metadata checks, complete all-types pagination, external guard CLI scope enforcement, and safe detection of same-name projects in misplaced folders. Reuse verified existing folders, block ambiguous duplicates and legacy moves; never issue a direct create without F7-F8 trusted journal authorization. See `references/drive-root-anchor.md`.
+
 - F9 candidate: optional DynamoDB trusted-head backend using strongly consistent reads and conditional compare-and-set. No AWS table, IAM role or credential is provisioned; live F5 CLI remains disabled until a real secure executor is reviewed. See `references/drive-f9-dynamodb-backend.md`.
 - Researcher UX refresh: accessible focus navigation (Panorama, Métodos, Minha justificativa, C.A.D.A., Ver tudo), privacy-safe manual continuation message in the local interactive workspace, and a shared progressive conversational experience contract for Skill and hosted environments. No scientific approvals, canonical writes or live synchronization are triggered by view controls. See `references/researcher-ux.md`.
 
