@@ -33,3 +33,6 @@ jobs:
       - name: Verify source-backed synthetic project and localized text response
         working-directory: integrations/mcp-apps
         run: npm run test:synthetic
+      - name: Browser-like locale switches, methods and host data safe fallback
+        working-directory: integrations/mcp-apps
+        run: npm run test:i18n
