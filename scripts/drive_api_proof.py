@@ -11,6 +11,7 @@ import argparse
 import hashlib
 import json
 import os
+import secrets
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
@@ -120,7 +121,7 @@ def complete_parent_scan(parent_id: str, token: str, *, fetch_page=authenticated
             # This fingerprint is an observation identifier, not an attestation.
             fingerprint = hashlib.sha256(json.dumps(pages, sort_keys=True).encode()).hexdigest()
             return {"parent_id": parent_id, "complete": True,
-                    "scan_token": "drive-v3-" + fingerprint[:24],
+                    "scan_token": "drive-v3-" + fingerprint[:16] + "-" + secrets.token_hex(8),
                     "children": children, "page_evidence": pages}
         cursors.add(next_cursor)
         cursor = next_cursor
