@@ -11,7 +11,10 @@ No AWS credentials, endpoint URLs or account identifiers are stored in code.
 """
 from __future__ import annotations
 
+import hashlib
+import json
 import re
+import drive_delivery as delivery
 from drive_delivery import HASH
 
 TABLE = re.compile(r"[A-Za-z0-9_.-]{3,255}\Z")
@@ -26,6 +29,27 @@ def validate_sha(value: str) -> str:
     if not isinstance(value, str) or not HASH.fullmatch(value):
         raise DynamoTrustError("F9_TRUSTED_HEAD_INVALID")
     return value
+
+
+def scoped_key(plan: dict, audit_parent_id: str, audit_file_id: str) -> str:
+    """Stable identity for one exact plan and one provisioned journal file.
+
+    A pre-provisioned trusted head must be created separately using the same
+    digest. This helper itself never creates or modifies any AWS item.
+    """
+    delivery.check_plan(plan)
+    parent = delivery.require_drive_id(audit_parent_id)
+    file_id = delivery.require_drive_id(audit_file_id)
+    payload = {
+        "purpose": "MEU_ARTIGO_TRUSTED_HEAD_F9_V1",
+        "drive_root_id": plan["drive_root_id"],
+        "plan": hashlib.sha256(json.dumps(
+            plan, sort_keys=True, separators=(",", ":")).encode()).hexdigest(),
+        "audit_parent_id": parent, "audit_file_id": file_id,
+    }
+    return "ma-f9-" + hashlib.sha256(
+        json.dumps(payload, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
 
 
 class DynamoHeadStore:
