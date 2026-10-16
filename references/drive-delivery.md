@@ -143,8 +143,17 @@ length or on an
 AI-generated scan token. When exhaustive listing cannot be established,
 return `PARENT_PAGE_EVIDENCE_REQUIRED` (or another page-validation failure)
 and report live acceptance as blocked.
-A successful manual folder-creation smoke test is not evidence that this
-guard was executed end-to-end by the installed Skill.
+The separate connected `search` tool can page `item_type="folder"`
+results with provider-owned `next_page_token` and an exact parent query, but
+this is **folder-only** visibility. It may assist safe detection and independent
+metadata checking of existing folders; it cannot establish absence of files
+or other MIME types that could conflict with a planned folder. Use the
+read-only `scripts/drive_f6_connected_search.py` protocol described in
+`references/drive-f6-connected-acceptance.md` only for candidate detection.
+Never convert folder-only search results into an all-types complete parent scan
+or use them to authorize create_folder. A successful manual folder-creation
+smoke test is not evidence that this guard was executed end-to-end by the
+installed Skill.
 
 There is no Google Drive atomic compare-and-create primitive supplied by
 this Skill. The guard reduces duplicate risk for a **cooperating serial
