@@ -27,7 +27,7 @@ already existing, isolated synthetic project root.
 ### Safety invariants
 
 1. Uses OAuth supplied by a separately authorized external executor. It cannot
-   access ChatGPT connected-plugin OAuth. Never paste tokens into chat or GitHub.
+   access autorização OAuth das conexões do ChatGPT. Never paste tokens into chat or GitHub.
 2. Checks the remote project root ID and requires its actual provider-observed
    name to begin with `MEU_ARTIGO_PR74_TESTE_SINTETICO_`. The requested folder
    must be an immediate child in the canonical delivery plan.
