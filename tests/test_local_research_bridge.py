@@ -6,7 +6,11 @@ mechanism. It must not save/approve/change a canonical project.
 from __future__ import annotations
 
 import csv
+import io
 import json
+import stat
+from contextlib import redirect_stdout
+from unittest.mock import patch
 from pathlib import Path
 import sys
 import tempfile
@@ -18,7 +22,7 @@ from urllib.error import HTTPError
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"scripts"))
 from build_research_workspace import model,render
-from local_research_bridge import LocalResearchBridge,BRIDGE_SCHEMA
+from local_research_bridge import LocalResearchBridge,BRIDGE_SCHEMA,main
 from method_routes import MGMT,new_profile
 from init_project import TABLES
 
@@ -88,6 +92,30 @@ class LoopbackBridgeTests(unittest.TestCase):
     def assert_unchanged(self):
         self.assertEqual({p.name:p.read_bytes() for p in self.m.iterdir() if p.is_file()},
                          self.before)
+
+    def test_cli_session_credential_stays_out_of_process_output(self):
+        """The opt-in URL is private and ephemeral, never printed as a log."""
+        output=io.StringIO()
+        private_paths=[]
+        def inspect_session(server, poll_interval):
+            self.assertEqual(poll_interval,.2)
+            exposed=json.loads(output.getvalue())
+            self.assertEqual(exposed["status"],"LOCAL_READ_ONLY_BRIDGE_READY")
+            self.assertNotIn(server.session_token,output.getvalue())
+            self.assertEqual(exposed["public_shell_url"],server.trusted_origin+"/")
+            file=Path(exposed["session_url_file"])
+            private_paths.append(file)
+            self.assertEqual(stat.S_IMODE(file.stat().st_mode),0o600)
+            self.assertEqual(stat.S_IMODE(file.parent.stat().st_mode),0o700)
+            self.assertEqual(file.read_text(encoding="utf-8").strip(),
+                             server.trusted_origin+"/#session="+server.session_token)
+            self.assertNotIn("#session=",output.getvalue())
+        with patch.object(LocalResearchBridge,"serve_forever",autospec=True,
+                          side_effect=inspect_session), redirect_stdout(output):
+            self.assertEqual(main(["--preview-route","QUALITATIVE"]),0)
+        self.assertEqual(len(private_paths),1)
+        self.assertFalse(private_paths[0].exists())
+        self.assertFalse(private_paths[0].parent.exists())
 
     def test_only_loopback_binding_is_allowed(self):
         with self.assertRaisesRegex(ValueError,"loopback"):
