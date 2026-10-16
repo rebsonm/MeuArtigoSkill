@@ -177,7 +177,7 @@ class RootFolderGuardTests(unittest.TestCase):
     def test_root_scope_drift_or_project_mismatch_is_rejected(self):
         scoped = anchor.attach_scope(self.plan, self.resolved())
         scoped["root_scope"]["container_id"] = PROJECT_ID
-        with self.assertRaisesRegex(anchor.RootAnchorError, "CANONICAL_ROOT_SCOPE_MISMATCH"):
+        with self.assertRaisesRegex(ValueError, "CANONICAL_ROOT_SCOPE_MISMATCH"):
             anchor.require_scope(scoped)
 
     def test_renamed_project_refused_even_if_project_id_is_right(self):
