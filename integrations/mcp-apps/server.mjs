@@ -39,7 +39,7 @@ async function readSite({locale="auto",mode="MINIMAL"}={}){
   if(!info.isDirectory())return {error:"noProject",locale};
   const {stdout}=await execute(process.env.MEU_ARTIGO_PYTHON||"python3",
    [path.join(ROOT,"scripts/build_research_site.py"),
-    "--project",selected,"--json-only","--language",language(locale)],{
+    "--project",selected,"--json-only","--mode",mode,"--language",language(locale)],{
       timeout:15000,maxBuffer:2*1024*1024,env:process.env,
     });
   const site=JSON.parse(stdout);
