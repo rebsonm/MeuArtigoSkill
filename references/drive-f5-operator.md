@@ -100,7 +100,7 @@ No authenticated F5 POST has been executed here.
 
 ## F7 hardening boundary
 
-The experimental `scripts/drive_f7_anchor.py` can seal and later validate signed immutable checkpoint receipts against independently retained trusted head digests. It is **not automatically invoked** by this F5 operator. Accordingly **do not enable live folder creation** in a real environment on the strength of F5 alone: until the executor persists and independently verifies the current F7 trusted head before every create and after every resolution, the resume assurance is incomplete. See `references/drive-f7-anchor-runbook.md`.
+The F8 source-level integration now **mandatorily invokes** the signed F7 receipt verifier and `scripts/drive_f8_trust_gate.py` before the only allowed synthetic POST. The trust gate requires an externally supplied durable atomic compare-and-set backend and independent readback; it also pins the final RESOLVED state before reporting completion. The CLI does **not** provide this external backend and therefore **always blocks** `--execute-synthetic-create` rather than bypassing the trust gate. Live acceptance, trustworthy external backend and audited OAuth executor remain unavailable. See `references/drive-f8-trust-gate.md` and `references/drive-f7-anchor-runbook.md`.
 
 ## Exit criteria
 
