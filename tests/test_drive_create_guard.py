@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 from pathlib import Path
 import sys
 import tempfile
@@ -248,6 +249,9 @@ class FolderGuardTests(unittest.TestCase):
         self.assertEqual(init["action"], "JOURNAL_INITIALIZED_NEW_PROJECT")
         step = guard.locked_update(self.plan, inv, self.journal_path, "01_Dados", "prepare")
         self.assertEqual(step["action"], "CREATE_FOLDER_ONCE")
+        self.assertTrue(step["durable_readback_required"])
+        self.assertEqual(step["journal_sha256"],
+                         hashlib.sha256(self.journal_path.read_bytes()).hexdigest())
         data = guard.read_journal(self.plan, self.journal_path)
         self.assertEqual(data["operations"]["01_Dados"]["state"], "OUTCOME_UNKNOWN")
         self.assertFalse(self.journal_path.with_name("attempts.json.lock").exists())
@@ -288,6 +292,36 @@ class FolderGuardTests(unittest.TestCase):
         inv = self.live()
         inv["parent_scans"][0]["page_evidence"][0]["next_page_token"] = "more-pages"
         with self.assertRaisesRegex(ValueError, "PARENT_PAGINATION_INCOMPLETE"):
+            guard.direct_scan(self.plan, inv, ROOT)
+
+
+    def test_lost_journal_restored_from_durable_copy_blocks_retry(self):
+        inv = self.live()
+        guard.locked_update(self.plan, inv, self.journal_path, "01_Dados",
+                            "initialize", initialize_authorized=True)
+        first = guard.locked_update(self.plan, inv, self.journal_path, "01_Dados", "prepare")
+        durable_copy = self.journal_path.read_bytes()
+        self.journal_path.unlink()
+        with self.assertRaisesRegex(ValueError, "JOURNAL_MISSING_RECOVERY_REQUIRED"):
+            guard.locked_update(self.plan, inv, self.journal_path, "01_Dados", "prepare")
+        self.journal_path.write_bytes(durable_copy)
+        resumed = guard.locked_update(self.plan, inv, self.journal_path, "01_Dados", "prepare")
+        self.assertEqual(first["action"], "CREATE_FOLDER_ONCE")
+        self.assertEqual(resumed["action"], "REINSPECT_NO_RETRY")
+        self.assertEqual(guard.read_journal(self.plan, self.journal_path)["operations"]
+                         ["01_Dados"]["state"], "OUTCOME_UNKNOWN")
+
+    def test_live_scan_rejects_replayed_pagination_cursor(self):
+        inv = self.live(self.fresh())
+        inv["parent_scans"][0]["page_evidence"] = [
+            {"source": "GOOGLE_DRIVE_FILES_LIST", "request_page_token": None,
+             "next_page_token": "repeat-token", "item_ids": []},
+            {"source": "GOOGLE_DRIVE_FILES_LIST", "request_page_token": "repeat-token",
+             "next_page_token": "repeat-token", "item_ids": [CHILD]},
+            {"source": "GOOGLE_DRIVE_FILES_LIST", "request_page_token": "repeat-token",
+             "next_page_token": None, "item_ids": []},
+        ]
+        with self.assertRaisesRegex(ValueError, "PARENT_PAGINATION_CURSOR_REPLAY"):
             guard.direct_scan(self.plan, inv, ROOT)
 
     def test_live_scan_rejects_inconsistent_cursor(self):
