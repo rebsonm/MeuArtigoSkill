@@ -195,7 +195,9 @@ class ReceiptChainTests(unittest.TestCase):
         with self.assertRaisesRegex(anchor.AnchorError, "ANCHOR_PRIVATE_DIRECTORY_REQUIRED"):
             anchor.seal_remote_checkpoint(
                 inside, self.project, self.plan, AUDIT, FILE,
-                TOKEN, self.digest(), KEY, None, sender=self.remote.sender)
+                TOKEN, self.digest(), KEY, None,
+                authorized_initial_bootstrap=True,
+                sender=self.remote.sender)
 
     def test_directory_group_access_is_rejected(self):
         os.chmod(self.archive, 0o750)
@@ -234,7 +236,9 @@ class ReceiptChainTests(unittest.TestCase):
         with self.assertRaisesRegex(anchor.AnchorError, "ANCHOR_PRIVATE_DIRECTORY_REQUIRED"):
             anchor.seal_remote_checkpoint(
                 link, self.project, self.plan, AUDIT, FILE,
-                TOKEN, self.digest(), KEY, None, sender=self.remote.sender)
+                TOKEN, self.digest(), KEY, None,
+                authorized_initial_bootstrap=True,
+                sender=self.remote.sender)
 
     def test_plan_change_makes_previous_receipt_unusable(self):
         first = self.seal()
