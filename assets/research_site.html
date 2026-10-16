@@ -7,7 +7,7 @@
 <style>
 :root{--ink:#102047;--muted:#667a96;--line:#dde7f5;--green:#0B57D0;--green-light:#eaf2ff;--soft:#f7faff;--amber:#8b5d14;--amber-light:#fff5e3;--panel:#fff;--bg:#f2f6fb;--blue:#2563EB;--blue-dark:#093d9b}
 *{box-sizing:border-box}html{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink)}body{margin:0;background:var(--bg);font-size:14px}
-button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #4f8bea;outline-offset:3px}button:disabled{opacity:.55;cursor:not-allowed}
+button,input,select{font:inherit}.skip-link{position:absolute;top:-90px;left:12px;z-index:1000;background:#fff;color:#073b91;padding:12px;border:3px solid #0B57D0;border-radius:8px}.skip-link:focus{top:12px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #4f8bea;outline-offset:3px}button:disabled{opacity:.55;cursor:not-allowed}
 .shell{max-width:1460px;margin:18px auto;box-shadow:0 14px 50px #122e5c12;border:1px solid var(--line);border-radius:17px;background:#fff;overflow:hidden;min-height:710px}
 .header{min-height:67px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 26px;background:#fff}
 .wordmark{font-size:15px;font-weight:750;letter-spacing:-.025em}.wordmark .mark{display:inline-grid;place-items:center;background:var(--green-light);color:var(--green);width:35px;height:35px;border-radius:10px;margin-right:10px;font-size:13px;letter-spacing:0}.wordmark em{font-style:normal;color:#91a0b7;font-weight:450}
@@ -64,9 +64,10 @@ button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus
 </style>
 </head>
 <body>
+<a href="#content" class="skip-link">Pular para o conteúdo</a>
 <div class="shell">
 <header class="header"><div class="wordmark"><img class="brand-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1ldSBBcnRpZ28iPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjcwIiB5MT0iNjAiIHgyPSI0NDAiIHkyPSI0NTUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iIzBCNTdEMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNTIiIHN0b3AtY29sb3I9IiMyNTYzRUIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNEY0NkU1Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJwYXBlciIgeDE9IjE4MCIgeTE9Ijk1IiB4Mj0iMzEwIiB5Mj0iMzMwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNGRkZGRkYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRTlGMkZGIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJib29rIiB4MT0iMTE2IiB5MT0iMjkwIiB4Mj0iMzQ1IiB5Mj0iNDA2IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNGOEZCRkYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRERFQkZGIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGZpbHRlciBpZD0ic2hhZG93IiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNTAlIj4KICAgICAgPGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjE0IiBzdGREZXZpYXRpb249IjE2IiBmbG9vZC1jb2xvcj0iIzA2MUI0RiIgZmxvb2Qtb3BhY2l0eT0iLjI4Ii8+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CgogIDxyZWN0IHg9IjI4IiB5PSIyOCIgd2lkdGg9IjQ1NiIgaGVpZ2h0PSI0NTYiIHJ4PSIxMTIiIGZpbGw9InVybCgjYmcpIi8+CiAgPGNpcmNsZSBjeD0iNDEwIiBjeT0iMTI2IiByPSI1MiIgZmlsbD0iIzA5M0Y5RCIgb3BhY2l0eT0iLjMyIi8+CiAgPGNpcmNsZSBjeD0iNDIyIiBjeT0iMzgwIiByPSI2NiIgZmlsbD0iIzVCMjFCNiIgb3BhY2l0eT0iLjIyIi8+CgogIDwhLS0gZG9jdW1lbnQgLS0+CiAgPGcgZmlsdGVyPSJ1cmwoI3NoYWRvdykiPgogICAgPHBhdGggZD0iTTE1NyAxMDNjMC0yMCAxNi0zNiAzNi0zNmgxMzNsNjUgNjZ2MTk0YzAgMjAtMTYgMzYtMzYgMzZIMTkzYy0yMCAwLTM2LTE2LTM2LTM2VjEwM3oiIGZpbGw9IiMwQjNFOTQiIG9wYWNpdHk9Ii41NSIvPgogICAgPHBhdGggZD0iTTE0NSA5MWMwLTIwIDE2LTM2IDM2LTM2aDEzNWw2NiA2NnYxOTRjMCAyMC0xNiAzNi0zNiAzNkgxODFjLTIwIDAtMzYtMTYtMzYtMzZWOTF6IiBmaWxsPSJ1cmwoI3BhcGVyKSIvPgogICAgPHBhdGggZD0iTTMxNiA1NXY0MmMwIDE3IDE0IDMxIDMxIDMxaDM1IiBmaWxsPSIjRDZFNkZGIi8+CiAgICA8cGF0aCBkPSJNMzE2IDU1bDY2IDY2aC0zNWMtMTcgMC0zMS0xNC0zMS0zMVY1NXoiIGZpbGw9IiNDOURCRjYiLz4KICAgIDxnIGZpbGw9IiM2RTk1QzkiPgogICAgICA8cmVjdCB4PSIxOTAiIHk9IjEzMiIgd2lkdGg9IjExOSIgaGVpZ2h0PSIxMyIgcng9IjYuNSIvPgogICAgICA8cmVjdCB4PSIxOTAiIHk9IjE2NiIgd2lkdGg9IjEzOSIgaGVpZ2h0PSIxMyIgcng9IjYuNSIvPgogICAgICA8cmVjdCB4PSIxOTAiIHk9IjIwMCIgd2lkdGg9IjEwNyIgaGVpZ2h0PSIxMyIgcng9IjYuNSIvPgogICAgICA8cmVjdCB4PSIxOTAiIHk9IjIzNCIgd2lkdGg9Ijg0IiBoZWlnaHQ9IjEzIiByeD0iNi41Ii8+CiAgICAgIDxyZWN0IHg9IjI5NSIgeT0iMjI5IiB3aWR0aD0iMTciIGhlaWdodD0iNTYiIHJ4PSI2Ii8+CiAgICAgIDxyZWN0IHg9IjMyMiIgeT0iMjExIiB3aWR0aD0iMTciIGhlaWdodD0iNzQiIHJ4PSI2Ii8+CiAgICAgIDxyZWN0IHg9IjM0OSIgeT0iMTkwIiB3aWR0aD0iMTciIGhlaWdodD0iOTUiIHJ4PSI2Ii8+CiAgICA8L2c+CiAgPC9nPgoKICA8IS0tIG9wZW4gYm9vayAtLT4KICA8ZyBmaWx0ZXI9InVybCgjc2hhZG93KSI+CiAgICA8cGF0aCBkPSJNOTYgMzAxYzQzLTQgODMgOCAxMjAgNDAgMTggMTYgMzIgMzMgNDAgNTAgOC0xNyAyMi0zNCA0MC01MCAzNy0zMiA3Ny00NCAxMjAtNDB2MTEyYy00Ni0zLTg5IDEwLTEyOCAzOS0xNCAxMC0yNSAyMS0zMiAzMS03LTEwLTE4LTIxLTMyLTMxLTM5LTI5LTgyLTQyLTEyOC0zOVYzMDF6IiBmaWxsPSIjMEEzQThCIiBvcGFjaXR5PSIuNTUiLz4KICAgIDxwYXRoIGQ9Ik04NiAyODZjNDUtNCA4NyA5IDEyNiA0MSAyMCAxNyAzNSAzNCA0NCA1MiA5LTE4IDI0LTM1IDQ0LTUyIDM5LTMyIDgxLTQ1IDEyNi00MXYxMTJjLTQ3LTMtOTEgMTAtMTMyIDQwLTE3IDEzLTMwIDI1LTM4IDM3LTgtMTItMjEtMjQtMzgtMzctNDEtMzAtODUtNDMtMTMyLTQwVjI4NnoiIGZpbGw9InVybCgjYm9vaykiLz4KICAgIDxwYXRoIGQ9Ik0yNTYgMzc5djU2IiBzdHJva2U9IiNBOEMzRTgiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMTExIDMxNmMzNyAxIDcwIDEzIDk5IDM2TTExMSAzNDNjMzMgMSA2MiAxMSA4OCAzMU00MDEgMzE2Yy0zNyAxLTcwIDEzLTk5IDM2TTQwMSAzNDNjLTMzIDEtNjIgMTEtODggMzEiIHN0cm9rZT0iI0I4Q0NFOCIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz4KICA8L2c+CgogIDwhLS0gd29ya2Zsb3cgbm9kZXMgLS0+CiAgPHBhdGggZD0iTTM5OSAxMDJjMzMgMjcgNDYgNTcgMzggOTFNNDM3IDIxM2M4IDMxIDMgNjAtMTYgODVNNDIxIDMyMGMtOCAyNy0yNiA0OS01MyA2NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjdDN0ZGIiBzdHJva2Utd2lkdGg9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9Ii45NSIvPgoKICA8ZyBmaWx0ZXI9InVybCgjc2hhZG93KSI+CiAgICA8Y2lyY2xlIGN4PSI0MDgiIGN5PSIxMDAiIHI9IjM4IiBmaWxsPSIjMEE1M0M2Ii8+CiAgICA8Y2lyY2xlIGN4PSI0NDIiIGN5PSIyMTUiIHI9IjM4IiBmaWxsPSIjMEVBNUE4Ii8+CiAgICA8Y2lyY2xlIGN4PSI0MTUiIGN5PSIzMjMiIHI9IjM4IiBmaWxsPSIjRjU5RTBCIi8+CiAgICA8Y2lyY2xlIGN4PSIzNjUiIGN5PSI0MDkiIHI9IjM4IiBmaWxsPSIjNUIyMUI2Ii8+CiAgPC9nPgoKICA8IS0tIHNlYXJjaCAtLT4KICA8Y2lyY2xlIGN4PSI0MDEiIGN5PSI5MyIgcj0iMTMiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPHBhdGggZD0iTTQxMSAxMDNsMTMgMTMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8IS0tIGRvY3VtZW50IG5vZGUgLS0+CiAgPHBhdGggZD0iTTQzMSAxOTRoMThsMTAgMTB2MjhoLTI4eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cGF0aCBkPSJNNDQ5IDE5NHYxMGgxME00MzcgMjE0aDE2TTQzNyAyMjNoMTMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8IS0tIGdlYXIgc2ltcGxpZmllZCAtLT4KICA8Y2lyY2xlIGN4PSI0MTUiIGN5PSIzMjMiIHI9IjEyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNyIvPgogIDxwYXRoIGQ9Ik00MTUgMzAxdjhNNDE1IDMzN3Y4TTM5MyAzMjNoOE00MjkgMzIzaDhNNDAwIDMwOGw2IDZNNDI0IDMzMmw2IDZNNDMwIDMwOGwtNiA2TTQwNiAzMzJsLTYgNiIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwhLS0gY2hlY2sgLS0+CiAgPHBhdGggZD0iTTM0NiA0MDlsMTMgMTQgMjYtMzEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+" alt="" aria-hidden="true" width="42" height="42"><span class="brand-name">Meu <strong>Artigo</strong></span></div><div class="header-right"><label class="site-language-label" for="site-language" id="language-label">Idioma</label><select id="site-language" aria-label="Interface language"><option value="pt-BR">Português</option><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option></select><span class="mock-badge">● DEMONSTRAÇÃO</span><button class="outline-btn" type="button" id="reset">↻ Reiniciar exemplo</button></div></header>
-<div class="layout"><nav class="nav" id="nav" aria-label="Navegação do Meu Artigo"><div class="nav-label">Área de pesquisa</div></nav><main class="main" id="content" tabindex="-1" aria-live="polite"></main></div>
+<div class="layout"><nav class="nav" id="nav" aria-label="Navegação do Meu Artigo"><div class="nav-label">Área de pesquisa</div></nav><main class="main" id="content" tabindex="-1"></main><span id="screen-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></span></div>
 </div>
 <script type="application/json" id="site-data">__MEU_ARTIGO_SITE_MODEL_JSON__</script>
 <script>
@@ -262,6 +263,7 @@ function applyLanguage(raw){
  document.documentElement.lang=activeLocale==="pt"?"pt-BR":activeLocale;
  const select=document.getElementById("site-language");
  if(select)select.value=activeLocale==="pt"?"pt-BR":activeLocale;
+ translateContainer(document.querySelector(".skip-link"));
  translateContainer(document.querySelector(".header"));
  translateContainer(document.querySelector(".nav"));
  translateContainer(document.getElementById("content"));
@@ -273,8 +275,9 @@ const pages=[['overview','◇','Visão geral'],['steps','▤','Etapas'],['tasks'
 let current='overview',taskQuery='',methodChoice='doc';
 const $=id=>document.getElementById(id);
 const footer='<div class="source-line"><span>Fonte: demonstração fictícia da arquitetura Meu Artigo</span><span>Nenhum dado real · Sem gravação · Sem aprovação de gates</span></div>';
+const realFooter='<div class="source-line"><span>Origem: projeção de registros locais autorizados</span><span>Drive não verificado · Sem gravação · Sem aprovação automática</span></div>';
 function nav(){const n=$('nav');n.innerHTML='<div class="nav-label">Área de pesquisa</div>'+pages.map(([id,icon,label])=>`<button data-page="${id}" type="button" aria-current="${id===current?'page':'false'}" class="${id===current?'active':''}"><span class="sym" aria-hidden="true">${icon}</span>${label}</button>`).join('')+'<p class="nav-help">Visão derivada dos registros canônicos. Não substitui a matriz nem valida decisões científicas.</p>';n.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));translateContainer(n)}
-function go(page){if(!pages.some(x=>x[0]===page))return;current=page;nav();render();$('content').focus({preventScroll:true})}
+function go(page){if(!pages.some(x=>x[0]===page))return;current=page;nav();render();$('content').focus({preventScroll:true});const status=$('screen-status');if(status)status.textContent=pages.find(p=>p[0]===page)[2]}
 function heading(name,desc,action=''){return `<div class="section-heading"><div><h2>${name}</h2><p>${desc}</p></div>${action}</div>`}
 const kpi=(label,num,ex,icon="◻")=>`<div class="kpi"><div class="kpi-heading"><span class="kpi-icon" aria-hidden="true">${icon}</span><div class="label">${label}</div></div><strong>${num}</strong><small>${ex}</small></div>`;
 const iconLine=(icon,title,desc,right='')=>`<div class="line-item"><div class="bubble">${icon}</div><div><h3>${title}</h3><p>${desc}</p></div>${right?`<div class="right">${right}</div>`:''}</div>`;
@@ -305,10 +308,10 @@ if(isCanonical){
   const gates=Array.isArray(siteData.gates)?siteData.gates:[];
   const action=siteData.next_action||{};
   const observedGates=gates.filter(g=>g.approval_documented===true).length;
-  const documentedCount=siteData.documented_gate_count===null?"Não informado":e(siteData.documented_gate_count);
+  const documentedCount=String(observedGates);
   const noVerifiedAudit='<div class="info">Não avaliado. Esta visualização não executou auditoria científica ou consulta bibliográfica.</div>';
   const safeNotice='<p class="footnote">Snapshot local autorizado, gerado a partir de registros existentes. Sincronização com Drive e validação científica independente não foram verificadas.</p>';
-  const gateList=gates.map((g,i)=>iconLine(String(i+1),e(g.id||'Gate sem ID'),
+  const gateList=gates.map((g,i)=>iconLine(String(i+1),'<span data-research-original="true">'+e(g.id||'Gate sem ID')+'</span>',
       g.approval_documented===true?'Aprovação registrada; autenticidade não comprovada':'Sem aprovação verificada',
       '<span class="pill '+(g.approval_documented===true?'green':'yellow')+'">'+
       (g.approval_documented===true?'Documentado':'Requer revisão')+'</span>')).join('');
@@ -316,7 +319,18 @@ if(isCanonical){
   const nextText=e(action.explanation||'Consulte CONTINUIDADE.md e os registros autorizados.');
   const nextOwner=e(action.responsible||'A definir');
   const logged=taskRows.length;
-  const realFooter='<div class="source-line"><span>Origem: projeção de registros locais autorizados</span><span>Drive não verificado · Sem gravação · Sem aprovação automática</span></div>';
+  screens.tasks=()=>{
+   const matches=taskRows.filter(row=>row.join(' ').toLocaleLowerCase(activeLocale).includes(taskQuery.toLocaleLowerCase(activeLocale)));
+   const input='<label class="sr-only" for="task-filter">Filtrar tarefas</label><input class="search" id="task-filter" aria-label="Filtrar tarefas" placeholder="Filtrar tarefas" type="search" autocomplete="off">';
+   const rows=matches.map(row=>'<tr>'+row.map(cell=>'<td data-research-original="true">'+cell+'</td>').join('')+'</tr>').join('')||'<tr><td colspan="4">Nenhuma tarefa encontrada</td></tr>';
+   return heading('Tarefas C.A.D.A.','Registros locais; execução e prazos não foram verificados por este painel.',input)+
+    '<p class="footnote" role="status" aria-live="polite">'+matches.length+' tarefa(s) apresentada(s)</p>'+
+    '<div class="pane table-scroll" style="padding:0"><table><caption class="sr-only">Tarefas registradas no projeto local</caption><thead><tr><th scope="col">ID Tarefa</th><th scope="col">Tarefa</th><th scope="col">Responsável execução</th><th scope="col">Prazo</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+safeNotice+realFooter;
+  };
+  screens.methods=()=>heading('Explorar caminhos metodológicos','Catálogo de possibilidades; não é um método registrado do projeto.')+
+    '<div class="info">Estas alternativas não registram métodos nem aprovam gates. A decisão deve ser tomada, justificada e registrada pelo pesquisador.</div>'+
+    '<div class="pane" style="margin-top:16px"><p>Estudo documental qualitativo · Design Science Research · Métodos mistos · Outro caminho</p>'+
+    '<p>Consulte os registros autorizados para verificar o desenho escolhido.</p></div>'+safeNotice+realFooter;
   screens.overview=()=>'<div class="page-top"><div><div class="eyebrow">Panorama da pesquisa</div>'+
     '<h1 class="page-title">Projeto autorizado · visão local</h1><p class="subtitle">'+e(siteData.active_route||'Rota não informada')+
     ' · estado científico a conferir</p></div><div class="stage">Snapshot local · não sincronizado</div></div>'+
@@ -350,11 +364,30 @@ if(isCanonical){
 }
 applyCanonical();
 
+function validCanonical(data){
+ if(!data||data.schema!=='MEU_ARTIGO_SITE_V1'||data.kind!=='CANONICAL_LOCAL_SNAPSHOT'||
+   data.canonical_drive_sync_verified!==false||data.automatic_scientific_approval!==false||
+   data.canonical_writes_allowed!==false||!Array.isArray(data.tasks)||data.tasks.length>10000||
+   !Array.isArray(data.gates)||data.gates.length>7||
+   !data.next_action||typeof data.next_action!=='object'||Array.isArray(data.next_action))return false;
+ const scalar=(value,max=2000)=>value===null||value===undefined||(typeof value==='string'&&value.length<=max);
+ if(!scalar(data.active_route,120)||!(data.documented_gate_count===null||
+    (Number.isInteger(data.documented_gate_count)&&data.documented_gate_count>=0&&data.documented_gate_count<=7)))return false;
+ if(!data.tasks.every(t=>t&&typeof t==='object'&&!Array.isArray(t)&&scalar(t.id,120)&&
+   scalar(t.task)&&scalar(t.execution_owner,300)&&scalar(t.deadline,120)))return false;
+ if(!data.gates.every(g=>g&&typeof g==='object'&&!Array.isArray(g)&&scalar(g.id,120)&&
+   typeof g.approval_documented==='boolean'))return false;
+ return ['code','explanation','responsible'].every(k=>scalar(data.next_action[k]));
+}
+function disconnectHost(){
+ siteData={schema:'MEU_ARTIGO_SITE_V1',kind:'HOST_NOT_CONNECTED',locale:activeLocale};
+ isCanonical=false;taskRows=[];taskQuery='';methodChoice='doc';
+ const badge=document.querySelector('.mock-badge');
+ if(badge)badge.textContent='AGUARDANDO DADOS';
+ applyCanonical();current='overview';nav();render();applyLanguage(activeLocale);
+}
 function receiveHostData(nextData){
- if(!nextData||nextData.schema!=='MEU_ARTIGO_SITE_V1'||
-    nextData.kind!=='CANONICAL_LOCAL_SNAPSHOT'||
-    !Array.isArray(nextData.tasks)||!Array.isArray(nextData.gates)||
-    nextData.tasks.length>10000||nextData.gates.length>7)return false;
+ if(!validCanonical(nextData)){disconnectHost();return false;}
  siteData=nextData;isCanonical=true;
  taskRows=nextData.tasks.map(t=>[e(t.id),e(t.task),e(t.execution_owner),e(t.deadline)]);
  applyCanonical();
@@ -364,7 +397,7 @@ function receiveHostData(nextData){
  applyLanguage(nextData.locale&&nextData.locale!=='auto'?nextData.locale:activeLocale);
  return true;
 }
-window.MeuArtigoHost=Object.freeze({receive:receiveHostData,locale:applyLanguage});
+window.MeuArtigoHost=Object.freeze({receive:receiveHostData,locale:applyLanguage,disconnect:disconnectHost});
 
 function render(){ $('content').innerHTML=screens[current]();$('content').querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));$('content').querySelectorAll('[data-method]').forEach(b=>b.addEventListener('click',()=>{methodChoice=b.dataset.method;render()}));const filter=$('task-filter');if(filter){filter.value=taskQuery;filter.addEventListener('input',()=>{taskQuery=filter.value;const cursor=filter.selectionStart;render();const fresh=$('task-filter');fresh.focus();fresh.setSelectionRange(cursor,cursor)})}translateContainer($('content'))}
 $('reset').addEventListener('click',()=>{taskQuery='';methodChoice='doc';go('overview')});
