@@ -14,7 +14,7 @@ import drive_f5_operator as operator
 import drive_f7_anchor as anchor
 import drive_f8_trust_gate as gate
 import drive_f9_dynamo_head as dynamo
-from test_drive_f5_operator import F5HostTests
+import test_drive_f5_operator as f5test_support
 from test_drive_f9_dynamo_head import (
     FakeDynamoClient, FakeAwsError, INITIAL, NEXT, TABLE, PROJECT_KEY
 )
@@ -22,7 +22,7 @@ from test_drive_f9_dynamo_head import (
 
 class Stage08AdversarialTests(unittest.TestCase):
     def harness(self):
-        case = F5HostTests("test_default_read_only_no_intent_or_external_create")
+        case = f5test_support.F5HostTests("test_default_read_only_no_intent_or_external_create")
         case.setUp()
         self.addCleanup(case.doCleanups)
         return case
