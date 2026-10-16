@@ -3,6 +3,8 @@
 
 ## Unreleased
 
+- F8 integration: wire signed F7 checkpoints into the F5 synthetic create host through mandatory external trusted-head compare-and-set and downloaded readback. Require and independently verify a signed pending-intent receipt before one POST and another signed resolution receipt before claiming success. Keep CLI live creates blocked when no real independently durable CAS backend is configured. Add simulated CAS and readback failure tests; see `references/drive-f8-trust-gate.md`.
+
 - F7 experimental remote-journal checkpoint anchors: add immutable, HMAC-SHA256 receipt-chain helper with independent trusted-head requirement, remote downloaded-byte verification before sealing, private directory checks, and synthetic rollback, forgery, secret and scope-drift tests. Not integrated into the F5 live create path, which remains unsuitable for release without an independently durable head authority and authorized OAuth executor. See `references/drive-f7-anchor-runbook.md`.
 
 - F6 connected read-only Drive improvement: documented actual isolated folder-only search plus independent metadata verification; added a strict folder-page receipt validator that never authorizes creation, and conservative synthetic tests. This does not replace complete all-types API pagination or durable journal acceptance; refer to `references/drive-f6-connected-acceptance.md`.
