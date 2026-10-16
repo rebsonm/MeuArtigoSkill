@@ -3,6 +3,9 @@
 
 ## Unreleased
 
+- F9 candidate: optional DynamoDB trusted-head backend using strongly consistent reads and conditional compare-and-set. No AWS table, IAM role or credential is provisioned; live F5 CLI remains disabled until a real secure executor is reviewed. See `references/drive-f9-dynamodb-backend.md`.
+- Researcher UX refresh: accessible focus navigation (Panorama, Métodos, Minha justificativa, C.A.D.A., Ver tudo), privacy-safe manual continuation message in the local interactive workspace, and a shared progressive conversational experience contract for Skill and hosted environments. No scientific approvals, canonical writes or live synchronization are triggered by view controls. See `references/researcher-ux.md`.
+
 - F8 integration: wire signed F7 checkpoints into the F5 synthetic create host through mandatory external trusted-head compare-and-set and downloaded readback. Require and independently verify a signed pending-intent receipt before one POST and another signed resolution receipt before claiming success. Keep CLI live creates blocked when no real independently durable CAS backend is configured. Add simulated CAS and readback failure tests; see `references/drive-f8-trust-gate.md`.
 
 - F7 experimental remote-journal checkpoint anchors: add immutable, HMAC-SHA256 receipt-chain helper with independent trusted-head requirement, remote downloaded-byte verification before sealing, private directory checks, and synthetic rollback, forgery, secret and scope-drift tests. Not integrated into the F5 live create path, which remains unsuitable for release without an independently durable head authority and authorized OAuth executor. See `references/drive-f7-anchor-runbook.md`.
