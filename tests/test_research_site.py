@@ -103,6 +103,29 @@ class ResearchSiteTests(unittest.TestCase):
         self.assertIn(r"\u0026",html)
         self.assertIn("const e=(value)=>",html)
 
+    def test_gate_count_is_derived_from_displayed_local_records(self):
+        m=self.canonical()
+        m["overview"]["human_gate_approvals_recorded"]=7
+        projected=site.project_site_model(m)
+        self.assertEqual(projected["documented_gate_count"],1)
+        self.assertFalse(projected["automatic_scientific_approval"])
+
+    def test_malformed_canonical_task_or_gate_rejected(self):
+        m=self.canonical()
+        m["tasks"]["items"][0]["task"]={"html":"<script>bad</script>"}
+        with self.assertRaisesRegex(ValueError,"SITE_CANONICAL_TASKS_INVALID"):
+            site.project_site_model(m)
+        m=self.canonical()
+        m["human_gates"]["items"][0]["approval_documented"]="yes"
+        with self.assertRaisesRegex(ValueError,"SITE_CANONICAL_GATES_INVALID"):
+            site.project_site_model(m)
+
+    def test_long_canonical_text_is_rejected(self):
+        m=self.canonical()
+        m["decision_continuity"]["next_action"]["explanation"]="X"*2001
+        with self.assertRaisesRegex(ValueError,"SITE_CANONICAL_ACTION_INVALID"):
+            site.project_site_model(m)
+
     def test_missing_canonical_rows_are_blocked(self):
         m=self.canonical()
         m["tasks"]["items"]=None

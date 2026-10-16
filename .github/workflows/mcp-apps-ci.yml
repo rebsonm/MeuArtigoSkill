@@ -48,6 +48,9 @@ jobs:
       - name: Verify browser locale switches and fallback
         working-directory: integrations/mcp-apps
         run: npm run test:i18n
+      - name: Verify ten screens in four languages and host safety contracts
+        working-directory: integrations/mcp-apps
+        run: npm run test:stage09
       - name: Verify local authenticated Streamable HTTP transport
         working-directory: integrations/mcp-apps
         run: npm run test:http
