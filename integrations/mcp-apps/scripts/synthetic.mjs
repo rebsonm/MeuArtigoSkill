@@ -12,7 +12,7 @@ try{
  await mkdir(folder,{recursive:true});
  const config={
   project_name:"SYNTHETIC_MCP_UI_TEST_ONLY",
-  presentation_mode:"MINIMAL",storage_mode:"WORK_FALLBACK",
+  presentation_mode:"MINIMAL",method_route:"UNDECIDED",storage_mode:"WORK_FALLBACK",
   storage_state:"WORK_FALLBACK_AUTHORIZED",
  };
  const configPath=path.join(folder,"PROJECT_CONFIG.json");
