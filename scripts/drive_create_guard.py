@@ -159,9 +159,14 @@ def resolve_create(plan: dict, inventory: dict, journal: dict, path: str, *, all
     return result, journal
 
 
-def locked_update(plan: dict, inventory: dict, journal_path: Path, path: str, command: str,\n                  *, project_root: Path | None = None) -> dict:
+def locked_update(plan: dict, inventory: dict, journal_path: Path, path: str, command: str,
+                  *, project_root: Path | None = None) -> dict:
     """Exclusive journal lock prevents simultaneous local agents issuing same create."""
     journal_path = Path(journal_path).absolute()
+    if project_root is not None:
+        root = Path(project_root).resolve()
+        if journal_path.resolve() == root or root in journal_path.resolve().parents:
+            raise ValueError("JOURNAL_MUST_BE_OUTSIDE_PROJECT")
     if journal_path.is_symlink():
         raise ValueError("UNSAFE_JOURNAL_LINK")
     journal_path.parent.mkdir(parents=True, exist_ok=True)
@@ -180,7 +185,7 @@ def locked_update(plan: dict, inventory: dict, journal_path: Path, path: str, co
         else:
             raise ValueError("UNKNOWN_CREATE_GUARD_COMMAND")
         if result["action"] in ("CREATE_FOLDER_ONCE", "RESOLVED_EXISTING_REMOTE_FOLDER"):
-            delivery.write_json(journal_path, data)
+            delivery.write_json(journal_path, data, root=project_root)
         return result
     finally:
         if owned:
@@ -194,12 +199,14 @@ def main() -> int:
     p.add_argument("--inventory", type=Path, required=True)
     p.add_argument("--journal", type=Path, required=True)
     p.add_argument("--path", required=True)
+    p.add_argument("--project-root", type=Path, required=True)
     args = p.parse_args()
     try:
         plan = delivery.load_json(args.plan)
         inventory = delivery.load_json(args.inventory)
         # No fixture bypass on the CLI.
-        result = locked_update(plan, inventory, args.journal, args.path, args.command,\n                               project_root=args.project_root)
+        result = locked_update(plan, inventory, args.journal, args.path, args.command,
+                               project_root=args.project_root)
         print(json.dumps(result, ensure_ascii=False, sort_keys=True))
         return 0 if result["action"] in (
             "CREATE_FOLDER_ONCE", "RESOLVED_EXISTING_REMOTE_FOLDER", "ALREADY_RESOLVED") else 2
