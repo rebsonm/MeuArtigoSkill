@@ -118,6 +118,31 @@ class DynamoBackendTests(unittest.TestCase):
         with self.assertRaisesRegex(dynamo.DynamoTrustError, "F9_CLIENT_REQUIRED"):
             dynamo.DynamoHeadStore(TABLE, PROJECT_KEY, None)
 
+    def test_scope_key_is_bound_to_plan_and_exact_audit_file(self):
+        plan = {
+            "schema": 1, "kind": "MEU_ARTIGO_DRIVE_DELIVERY_PLAN",
+            "drive_root_id": "synthetic-root-00001", "project_folder": "research",
+            "entries": [{"type": "folder", "path": "01_Dados", "parent": ""}],
+        }
+        first = dynamo.scoped_key(plan, "synthetic-audit-0001", "synthetic-file-00001")
+        same = dynamo.scoped_key(plan, "synthetic-audit-0001", "synthetic-file-00001")
+        moved = dynamo.scoped_key(plan, "synthetic-audit-0002", "synthetic-file-00001")
+        newfile = dynamo.scoped_key(plan, "synthetic-audit-0001", "synthetic-file-00002")
+        changed_plan = dict(plan, project_folder="different")
+        change = dynamo.scoped_key(changed_plan, "synthetic-audit-0001", "synthetic-file-00001")
+        self.assertEqual(first, same)
+        self.assertEqual(len({first, moved, newfile, change}), 4)
+        self.assertTrue(first.startswith("ma-f9-"))
+
+    def test_invalid_scope_ids_do_not_produce_trusted_key(self):
+        plan = {
+            "schema": 1, "kind": "MEU_ARTIGO_DRIVE_DELIVERY_PLAN",
+            "drive_root_id": "synthetic-root-00001", "project_folder": "research",
+            "entries": [],
+        }
+        with self.assertRaisesRegex(ValueError, "INVALID_DRIVE_ID"):
+            dynamo.scoped_key(plan, "not-id", "synthetic-file-00001")
+
     def test_region_syntax_does_not_infer_credentials(self):
         with self.assertRaisesRegex(dynamo.DynamoTrustError, "F9_REGION_REQUIRED"):
             dynamo.authorized_client(region_name="invalid region!")
