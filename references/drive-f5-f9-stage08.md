@@ -1,7 +1,7 @@
 # Etapa 08 — Revisão de segurança F5–F9
 
 Escopo exclusivo: testes e correções sintéticas na branch candidata da PR #78;
-sem alteração no Google Drive, na VPS, no Plugin ou na main.
+sem alteração no Google Drive, na VPS, na distribuição instalada ou na branch principal.
 
 ## Invariantes
 - F5: um POST de criação é uma operação não idempotente. Qualquer exceção
