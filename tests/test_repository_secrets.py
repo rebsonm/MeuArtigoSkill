@@ -25,7 +25,7 @@ class SecretAuditTests(unittest.TestCase):
     def test_safe_examples_and_public_identifiers_are_not_secrets(self):
         example = b"MEU_ARTIGO_AUTH_ISSUER=https://sample.us.auth0.com/\n"
         self.assertEqual(scan_entry(".env.example", example), [])
-        self.assertEqual(scan_entry("auth0.mjs", b"https://mcp.allflux.com.br/mcp"), [])
+        self.assertEqual(scan_entry("auth0.mjs", b"https://api.example.test/resource"), [])
 
     def test_no_secret_material_is_returned(self):
         fixture = "sk-" + "F" * 40
