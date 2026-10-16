@@ -74,19 +74,21 @@ then the protocol, canonical tables and last genuinely frozen state.
 Never reconstruct searches or decisions from conversational memory.
 Determine the next action from recorded persistent state.
 
-**New project:** begin with [capability onboarding](references/capability-onboarding.md),
-[persistent storage](references/drive-workspace.md) and
-[storage mapping](references/storage-mapping.md). Policy is
-`GOOGLE_DRIVE_FIRST`: verify that Drive is connected **and writable**
-before substantive literature searches, synthesis, drafting or local
-canonical workspace creation. A displayed app is not proof of authentication,
-successful writes or synchronization. If unavailable, present the connection
-path and recheck after the researcher's required authorization. Only after
-an **explicit affirmative** decision may an alternative Work/local
-`WORK_FALLBACK` be created. Record the real actor, date and limitations.
-If denied or unanswered, stop substantive work at the storage gate.
-Drive-local files remain staging until [individual Drive folders and files
-are verified](references/drive-delivery.md). ZIP-only upload is incomplete.
+**New project:** follow [capability onboarding](references/capability-onboarding.md),
+[Drive storage](references/drive-workspace.md) and
+[storage mapping](references/storage-mapping.md). `GOOGLE_DRIVE_FIRST`
+requires observed writable Drive access before substantive research.
+An app icon or unverified operation is not proof of sync.
+If disconnected, offer authorization and recheck; only an explicit
+affirmative answer permits `WORK_FALLBACK`. Otherwise stop.
+Record the actual actor, date and constraints.
+
+**Mandatory Drive location:** `My Drive/Meu Artigo/each article folder/`.
+Reuse exactly one verified root-level `Meu Artigo` and each verified
+article folder; never use a previously visited folder as a parent.
+Follow the [root identity guard](references/drive-root-anchor.md).
+Local files remain staging until [folder/file readback](references/drive-delivery.md);
+a ZIP alone is insufficient.
 
 Preserve the research question and intended contribution. Choose a
 **provisional route** via [method pathways](docs/ROTAS-METODOLOGICAS.md)
