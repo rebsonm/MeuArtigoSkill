@@ -102,6 +102,27 @@ class ConnectedFolderSearchTests(unittest.TestCase):
                                     "CONNECTED_FOLDER_PARENT_QUERY_MISMATCH"):
             bridge.verify_folder_pages(doc, "01_Dados")
 
+    def test_keyword_filter_cannot_hide_other_direct_children(self):
+        doc = document([entry([child()])])
+        doc["pages"][0]["request"]["query"] = "01_Dados"
+        with self.assertRaisesRegex(ValueError,
+                                    "CONNECTED_FOLDER_HIDDEN_FILTERS_FORBIDDEN"):
+            bridge.verify_folder_pages(doc, "01_Dados")
+
+    def test_viewed_only_filter_cannot_hide_unseen_folders(self):
+        doc = document([entry([child()])])
+        doc["pages"][0]["request"]["require_viewed_by_user"] = True
+        with self.assertRaisesRegex(ValueError,
+                                    "CONNECTED_FOLDER_HIDDEN_FILTERS_FORBIDDEN"):
+            bridge.verify_folder_pages(doc, "01_Dados")
+
+    def test_content_fetch_option_rejected_in_metadata_only_scan(self):
+        doc = document([entry([child()])])
+        doc["pages"][0]["request"]["best_effort_fetch"] = True
+        with self.assertRaisesRegex(ValueError,
+                                    "CONNECTED_FOLDER_CONTENT_FETCH_UNNECESSARY"):
+            bridge.verify_folder_pages(doc, "01_Dados")
+
     def test_unscoped_folder_search_is_rejected(self):
         doc = document([entry([child()])])
         doc["pages"][0]["request"]["parent_id"] = "untrusted-parent-0001"
