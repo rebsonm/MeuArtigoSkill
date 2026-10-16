@@ -151,12 +151,13 @@ class ReceiptChainTests(unittest.TestCase):
 
     def test_remote_state_mismatch_refuses_seal_without_new_file(self):
         first = self.seal()
-        self.remote.raw = wire(self.pending)
+        # Local desired digest is the new pending state, but the remote
+        # still exposes the old initial checkpoint (no successful PATCH).
         with self.assertRaisesRegex(checkpoint.JournalSyncError, "JOURNAL_REMOTE_SHA_MISMATCH"):
             anchor.seal_remote_checkpoint(
                 self.archive, self.project, self.plan, AUDIT, FILE,
-                TOKEN, hashlib.sha256(wire(self.initial)).hexdigest(),
-                KEY, first["head_sha256"], sender=self.remote.sender)  # unchanged prev digest
+                TOKEN, hashlib.sha256(wire(self.pending)).hexdigest(),
+                KEY, first["head_sha256"], sender=self.remote.sender)
         self.assertFalse((self.archive / "00000002.json").exists())
 
     def test_remote_modified_after_seal_is_detected_on_verify(self):
