@@ -1,5 +1,17 @@
 # Researcher experience — progressive interface contract
 
+## Approved full website (optional interface)
+
+The user-approved blue site is implemented in `assets/research_site.html`
+with a read-only generator `scripts/build_research_site.py`; see
+[site operation and safety](research-site-ux.md). It is a **separate
+web/browser presentation**, not a claim that a hosted ChatGPT app surface is
+already deployed. It reuses the authorized local read-only data projection
+and displays unverified cloud status honestly. The original official blue
+icon replaces the earlier monogram, and selected methodological alternatives
+remain legible with explicit selection styling. Every page preserves the
+researcher's decision authority.
+
 ## Goal
 
 Meu Artigo must function as a conversational research assistant whether loaded
