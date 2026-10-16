@@ -212,6 +212,84 @@ class RootFolderGuardTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "CANONICAL_ROOT_SCOPE_MISMATCH"):
             delivery.check_plan(plan)
 
+    def test_scoped_plan_cli_writes_only_to_new_external_file(self):
+        import json
+        import subprocess
+        import tempfile
+        with tempfile.TemporaryDirectory() as temp:
+            base = Path(temp)
+            project = base / "project"
+            project.mkdir()
+            audit = base / "audit"
+            audit.mkdir()
+            def dump(name, value):
+                p = audit / name
+                p.write_text(json.dumps(value), encoding="utf-8")
+                return p
+            root_meta = dump("my-drive.json", root())
+            root_scan = dump("root-scan.json", self.root_scan)
+            container_meta = dump("container-meta.json", self.meta)
+            container_scan = dump("container-scan.json", self.child_scan)
+            project_meta = dump("project-meta.json", self.project_meta)
+            original = dump("plan.json", self.plan)
+            dest = audit / "scoped-plan.json"
+            cmd = [
+                sys.executable,
+                str(Path(__file__).resolve().parents[1] /
+                    "scripts" / "drive_root_anchor.py"),
+                "--root-metadata", str(root_meta), "--root-scan", str(root_scan),
+                "--container-metadata", str(container_meta),
+                "--container-scan", str(container_scan),
+                "--project-metadata", str(project_meta),
+                "--project-name", P_NAME,
+                "--plan", str(original),
+                "--project-root", str(project),
+                "--scoped-plan-output", str(dest),
+            ]
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=10)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertTrue(dest.is_file())
+            self.assertEqual(json.loads(dest.read_text())["root_scope"]["container_id"],
+                             CONTAINER_ID)
+            self.assertEqual(json.loads(original.read_text()), self.plan)
+            # Never silently overwrite an existing pinned scoped plan.
+            again = subprocess.run(cmd, capture_output=True, text=True, timeout=10)
+            self.assertEqual(again.returncode, 2)
+            self.assertEqual(json.loads(again.stdout)["action"], "BLOCKED")
+
+    def test_scoped_plan_cli_refuses_destination_inside_project(self):
+        import json
+        import subprocess
+        import tempfile
+        with tempfile.TemporaryDirectory() as temp:
+            base = Path(temp)
+            project = base / "project"
+            project.mkdir()
+            private = base / "private"
+            private.mkdir()
+            data = {
+                "root.json": root(), "root-scan.json": self.root_scan,
+                "container.json": self.meta,
+                "container-scan.json": self.child_scan,
+                "project.json": self.project_meta, "plan.json": self.plan,
+            }
+            for n, obj in data.items():
+                (private / n).write_text(json.dumps(obj), encoding="utf-8")
+            target = project / "not-allowed-plan.json"
+            cmd = [sys.executable,
+                str(Path(__file__).resolve().parents[1] /
+                    "scripts" / "drive_root_anchor.py"),
+                "--root-metadata", str(private / "root.json"),
+                "--root-scan", str(private / "root-scan.json"),
+                "--container-metadata", str(private / "container.json"),
+                "--container-scan", str(private / "container-scan.json"),
+                "--project-metadata", str(private / "project.json"),
+                "--project-name", P_NAME, "--plan", str(private / "plan.json"),
+                "--project-root", str(project), "--scoped-plan-output", str(target)]
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=10)
+            self.assertEqual(result.returncode, 2)
+            self.assertFalse(target.exists())
+
     def test_created_folder_never_moves_existing_projects(self):
         result = anchor.resolve_hierarchy(root(), self.root_scan,
             container_metadata=self.meta, project_name="ARTIGO_Novo_2026",
