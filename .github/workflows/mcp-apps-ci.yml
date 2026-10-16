@@ -23,4 +23,4 @@ jobs:
       - name: Emit public dependency lock payload (compressed; contains no credentials)
         working-directory: integrations/mcp-apps
         run: |
-          node -e 'const fs=require("node:fs");const z=require("node:zlib");const x=fs.readFileSync("package-lock.json");console.log("STAGE05_LOCK_BEGIN");console.log(z.gzipSync(x).toString("base64"));console.log("STAGE05_LOCK_END");'
+          node -e 'const fs=require("node:fs");const z=require("node:zlib");const x=fs.readFileSync("package-lock.json");console.log("STAGE05_LOCK_BEGIN");console.log(x.toString("base64"));console.log("STAGE05_LOCK_END");'
