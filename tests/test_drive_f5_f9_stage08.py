@@ -62,8 +62,11 @@ class Stage08AdversarialTests(unittest.TestCase):
         lock = case.journal_path.with_name(case.journal_path.name + ".f5-host.lock")
         def replaced(*args, **kwargs):
             result = original(*args, **kwargs)
-            lock.unlink()
-            lock.write_text("foreign-worker-ownership", encoding="utf-8")
+            # A separately allocated inode is renamed over the current lock.
+            # unlink()+create could reuse the same inode and invalidate the test.
+            replacement = lock.with_name(lock.name + ".foreign")
+            replacement.write_text("foreign-worker-ownership", encoding="utf-8")
+            replacement.replace(lock)
             return result
         case.drive.creator = replaced
         with self.assertRaisesRegex(operator.HostBlock, "HOST_LOCK_OWNERSHIP_LOST"):
