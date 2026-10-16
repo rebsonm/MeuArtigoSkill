@@ -215,23 +215,15 @@ def main(argv=None):
             # orchestrators commonly retain the process output.
             # Create an owner-only directory and an exclusive 0600 file;
             # both are deleted after the local server stops normally.
-            with tempfile.TemporaryDirectory(prefix="meu-artigo-session-") as temp:
+            with tempfile.TemporaryDirectory(prefix=".meu-artigo-session-", dir=Path.home()) as temp:
                 session_path=Path(temp)/"launch-url.txt"
                 fd=os.open(session_path,os.O_CREAT|os.O_EXCL|os.O_WRONLY,0o600)
                 with os.fdopen(fd,"w",encoding="utf-8") as handle:
                     handle.write(server.trusted_origin+"/#session="+server.session_token+"\n")
-                print(json.dumps({
-                    "status":"LOCAL_READ_ONLY_BRIDGE_READY",
-                    "public_shell_url":server.trusted_origin+"/",
-                    "session_url_file":str(session_path),
-                    "bind_host":"127.0.0.1",
-                    "project_bound":server.project is not None,
-                    "external_network_available":False,
-                    "chat_host_connected":False,
-                    "canonical_writes":False,
-                    "gate_approvals":False,
-                    "human_authenticated":False,
-                },sort_keys=True),flush=True)
+                # Intentionally constant stdout: not even a derived local
+                # file path, project state or bound port is logged. The
+                # operator locates the private file in their HOME directory.
+                print("LOCAL_READ_ONLY_BRIDGE_READY",flush=True)
                 # On POSIX, systemd/subprocess termination sends SIGTERM.
                 # Arrange ordinary cleanup instead of leaving the private
                 # session file behind. SIGKILL cannot be intercepted.
