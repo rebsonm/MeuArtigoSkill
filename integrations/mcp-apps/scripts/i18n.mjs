@@ -40,7 +40,7 @@ async function start(model,lang="en-US"){
  const dom=await start(neutral,"fr-FR");
  const d=dom.window.document;
  assert.doesNotMatch(d.getElementById("content").textContent,/12\/20|2\/7/);
- assert.match(d.getElementById("content").textContent,/No authorized project data/);
+ assert.match(d.getElementById("content").textContent,/Tableau indisponible/);
  const actual={schema:"MEU_ARTIGO_SITE_V1",kind:"CANONICAL_LOCAL_SNAPSHOT",
  locale:"fr",active_route:"QUALITATIVE",documented_gate_count:0,
  tasks:[{id:"CADA-0001",task:"Do not translate source content",
@@ -51,6 +51,11 @@ async function start(model,lang="en-US"){
  assert.match(d.getElementById("content").textContent,/HUMAN_REVIEW_REQUIRED/);
  assert.doesNotMatch(d.getElementById("content").textContent,/12\/20|2\/7/);
  assert.equal(d.documentElement.lang,"fr");
+ d.querySelector('button[data-page="tasks"]').click();
+ assert.match(d.getElementById("content").textContent,/CADA-0001/);
+ d.querySelector('button[data-page="methods"]').click();
+ assert.equal(d.querySelectorAll('button[data-method]').length,4);
+ d.querySelector('button[data-page="overview"]').click();
  dom.window.MeuArtigoHost.locale("en");
  assert.match(d.getElementById("content").textContent,/Revisar a estratégia de busca e seus critérios/);
  const falseData={schema:"MEU_ARTIGO_SITE_V1",kind:"ILLUSTRATIVE_PREVIEW",tasks:[],gates:[]};
