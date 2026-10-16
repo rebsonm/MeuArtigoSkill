@@ -26,10 +26,10 @@ def fixture():
        "root_metadata":{"id":ROOT,"title":"Meu Drive","mime_type":FOLDER_MIME,"parent_ids":None},
        "container_pages":{"schema":"MEU_ARTIGO_DRIVE_CONNECTED_FOLDER_SEARCH_V1",
                           "parent_id":ROOT,"pages":[page(ROOT,[c])]},
-       "container_metadata":c,"project_name":NAME,
+       "container_metadata":copy.deepcopy(c),"project_name":NAME,
        "project_pages":{"schema":"MEU_ARTIGO_DRIVE_CONNECTED_FOLDER_SEARCH_V1",
                         "parent_id":CONTAINER,"pages":[page(CONTAINER,[p])]},
-       "project_metadata":p}
+       "project_metadata":copy.deepcopy(p)}
 
 class DriveHierarchyReceiptTests(unittest.TestCase):
     def setUp(self):self.data=fixture()
@@ -97,7 +97,7 @@ class DriveHierarchyReceiptTests(unittest.TestCase):
         self.assertIs(inspect(self.data)["all_mime_parent_scan_verified"],False)
     def test_project_parent_page_wrong_denied(self):
         self.data["project_pages"]["parent_id"]=ROOT
-        with self.assertRaisesRegex(ValueError,"PARENT"):inspect(self.data)
+        with self.assertRaisesRegex(ValueError,"SCOPE_OR_CURSOR_MISMATCH"):inspect(self.data)
 
 if __name__ == "__main__":
     unittest.main()
