@@ -29,7 +29,7 @@ const fallback=(locale,msg)=>{
  };
  return text[msg][base==="auto"?"en":base]??text[msg].en;
 };
-async function readSite({locale="auto"}={}){
+async function readSite({locale="auto",mode="MINIMAL"}={}){
  const selected=process.env.MEU_ARTIGO_PROJECT_ROOT;
  if(!selected||!path.isAbsolute(selected))return {error:"noProject",locale};
  // Model-provided args cannot select filesystem paths. The trusted operator
