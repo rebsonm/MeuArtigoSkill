@@ -150,7 +150,7 @@ async function startHttp(){
       return;
     }
   }else{
-    const sent=(req.headers.authorization||"").replace(/^Bearer\\s+/i,"");
+    const sent=(req.headers.authorization||"").replace(/^Bearer\s+/i,"");
     if(!fixedTokenEqual(token,sent)){
       res.writeHead(401,{"content-type":"application/json"})
         .end('{"error":"Unauthorized"}');return;
