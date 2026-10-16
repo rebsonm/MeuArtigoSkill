@@ -92,6 +92,40 @@ https://developers.google.com/workspace/drive/api/guides/folder
   credential. Real creation is still blocked until the previously
   specified F7-F8 trusted-journal acceptance is live.
 
+## Operator commands — read only by default
+
+A separately authorized secure environment may query the real My Drive root
+using the official Drive v3 API with a short-lived OAuth bearer held only in
+the executor. No credentials belong in the research corpus, chat or GitHub:
+
+    python scripts/drive_root_live_preflight.py --project-name ARTIGO_Exemplo_2026
+
+The output is a **read-only** verdict:
+\`CANONICAL_PROJECT_VERIFIED\` for a verified existing project,
+\`CANONICAL_CONTAINER_VERIFIED\` when only the common container was queried,
+\`CHECK_PARENT_FOR_GUARDED_CREATE\` when a permitted location is currently
+absent, or a blocking status for duplicates, misplaced projects and drift.
+No verdict is permission for \`files.create\` without the independent,
+durable F7/F8 journal procedure.
+
+For an existing article, an operator can persist **actual provider-derived**
+root and child observations into private audit JSON files (not in the article
+tree), then bind an existing *unscoped staging plan* to the verified IDs:
+
+    python scripts/drive_root_anchor.py --root-metadata PRIVATE/root-meta.json --root-scan PRIVATE/root-scan.json --container-metadata PRIVATE/container-meta.json --container-scan PRIVATE/container-scan.json --project-metadata PRIVATE/project-meta.json --project-name ARTIGO_Exemplo_2026 --plan PRIVATE/old-plan.json --project-root LOCAL_STAGING_PROJECT --scoped-plan-output PRIVATE/new-scoped-plan.json
+
+The new path must not exist; the previous plan is not overwritten. The
+output is a proposal/metadata guard, not independently authenticated proof
+unless the operator genuinely fetched the source JSON from authorized Drive
+calls. The actual external folder-guard CLI requires this scoped plan and
+still needs the existing durable journal and signed checkpoint readback.
+If no project exists yet, the scoped plan cannot be produced until a
+separate authorized folder creation has been reconciled and verified.
+
+The current ChatGPT connected folder search can help identify **existing**
+root-level items, but its folder-only pagination must not be passed off as
+complete all-MIME listing when deciding to create.
+
 ## Legacy/mislocated projects
 
 Existing projects stored elsewhere must **not be moved automatically**.
