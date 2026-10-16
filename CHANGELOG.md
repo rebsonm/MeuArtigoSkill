@@ -3,6 +3,18 @@
 
 ## Unreleased
 
+- Optional multilingual MCP Apps companion: new isolated standards-based
+  read-only tool `meu_artigo_painel`, matching approved blue site resource
+  `ui://meu-artigo/site-v1.html`, structured canonical snapshot and
+  language-aware textual result for clients without HTML support.
+  The site has host/browser locale selection with manual PT/EN/ES/FR override
+  and English fallback for unsupported locale tags; user-authored research
+  text remains unmodified. MCP stdio and synthetic tests, DOM navigation,
+  source attribution and deployment limits are documented at
+  `integrations/mcp-apps/README.md`. No real remote ChatGPT installation
+  or Google Drive sync is claimed.
+
+
 - Approved Meu Artigo blue website UX: new standalone `assets/research_site.html` with official exact SVG identity, ten accessible navigation sections and readable selected-method cards, accompanied by `scripts/build_research_site.py` for a fictional demo or an authorized read-only LOCAL canonical snapshot. Canonical data never inherit fictional KPIs; Drive sync and scientific validation remain unverified. Add 12 safety/source projection tests, strict external-network-blocking CSP, and a narrow second-template package allowlist. Guide: `references/research-site-ux.md`.
 
 - Mandatory canonical My Drive layout for new projects: `My Drive/Meu Artigo/ARTIGO_<title>_<year>/existing scientific folders`. Add strict read-only root/container/project identity and metadata checks, complete all-types pagination, external guard CLI scope enforcement, and safe detection of same-name projects in misplaced folders. Reuse verified existing folders, block ambiguous duplicates and legacy moves; never issue a direct create without F7-F8 trusted journal authorization. See `references/drive-root-anchor.md`.
