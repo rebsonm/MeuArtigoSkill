@@ -20,6 +20,7 @@ import drive_api_proof as scanner
 import drive_create_guard as guard
 import drive_delivery as delivery
 import drive_journal_checkpoint as checkpoint
+import drive_f8_trust_gate as trust_gate
 
 FOLDER_MIME = "application/vnd.google-apps.folder"
 SYNTHETIC_PREFIX = "MEU_ARTIGO_PR74_TESTE_SINTETICO_"
@@ -83,6 +84,8 @@ def guarded_synthetic_create(plan: dict, journal: Path, project_root: Path,
                              path: str, audit_parent_id: str, audit_file_id: str,
                              token: str, expected_remote_sha: str, *,
                              execute: bool = False,
+                             trusted_head=None, anchor_archive: Path | None = None,
+                             anchor_key: bytes | None = None,
                              fetch_page=scanner.authenticated_get,
                              sender=checkpoint.request,
                              creator=api_create_folder_once) -> dict:
@@ -92,6 +95,10 @@ def guarded_synthetic_create(plan: dict, journal: Path, project_root: Path,
     Remote journal is independently read back BEFORE invoking folder create.
     On any ambiguous outcome, there is no second folder POST.
     """
+    # Before F8 secure host configuration there must be no live writes.
+    # Real CLI intentionally has no trusted CAS adapter and thus cannot POST.
+    if execute:
+        trust_gate.require_configuration(trusted_head, anchor_archive, anchor_key)
     delivery.check_plan(plan)
     path = delivery.safe_relative(path)
     if "/" in path:
@@ -107,6 +114,12 @@ def guarded_synthetic_create(plan: dict, journal: Path, project_root: Path,
     # Verify the known remote checkpoint before relying on a local copy.
     anchored = checkpoint.remote_matches(audit_file_id, audit_parent_id, token,
                                          plan, expected_remote_sha, sender=sender)
+    if execute:
+        # Refuse a stale signed chain before reserving any create intent.
+        trust_gate.verify_current(
+            trusted_head, anchor_archive, anchor_key, project_root,
+            plan, audit_parent_id, audit_file_id, token,
+            expected_remote_sha, sender=sender)
     local_sha = checkpoint.digest(journal.read_bytes())
     if local_sha != anchored["sha256"]:
         raise HostBlock("LOCAL_AND_REMOTE_JOURNAL_DIFFER")
@@ -141,6 +154,10 @@ def guarded_synthetic_create(plan: dict, journal: Path, project_root: Path,
         verify_synthetic_root(root_id, token, sender=sender)
         checkpoint.remote_matches(audit_file_id, audit_parent_id, token,
                                   plan, expected_remote_sha, sender=sender)
+        previous_head = trust_gate.verify_current(
+            trusted_head, anchor_archive, anchor_key, project_root,
+            plan, audit_parent_id, audit_file_id, token,
+            expected_remote_sha, sender=sender)
         inventory = live_root_inventory(root_id, token, fetch_page=fetch_page)
         prepare = guard.locked_update(
             plan, inventory, journal, path, "prepare", project_root=project_root)
@@ -152,6 +169,12 @@ def guarded_synthetic_create(plan: dict, journal: Path, project_root: Path,
             expected_remote_sha, sender=sender)
         if persisted.get("sha256") != prepare["journal_sha256"]:
             raise HostBlock("REMOTE_INTENT_NOT_VERIFIED")
+        # Mandatory F7-F8 gate: pin signed proof in an independent CAS-backed
+        # high-watermark and read it back BEFORE the non-idempotent POST.
+        committed_head = trust_gate.pin_checkpoint(
+            trusted_head, anchor_archive, anchor_key, project_root,
+            plan, audit_parent_id, audit_file_id, token,
+            previous_head, persisted["sha256"], sender=sender)
         # Host supports exactly one attempt; a timeout with side effect is
         # handled identically to success: re-scan, never blindly repeat POST.
         call_error = False
@@ -175,9 +198,16 @@ def guarded_synthetic_create(plan: dict, journal: Path, project_root: Path,
             persisted["sha256"], sender=sender)
         if final.get("sha256") != resolution["journal_sha256"]:
             raise HostBlock("RESOLVED_JOURNAL_NOT_DURABLE")
+        # No claim of resolution until the final signed receipt and external
+        # CAS reference are both durably verified as the latest state.
+        last_head = trust_gate.pin_checkpoint(
+            trusted_head, anchor_archive, anchor_key, project_root,
+            plan, audit_parent_id, audit_file_id, token,
+            committed_head, final["sha256"], sender=sender)
         return {"action": "VERIFIED_SINGLE_SYNTHETIC_CREATE",
                 "path": path, "remote_id": resolution["remote_id"],
                 "journal_sha256": final["sha256"],
+                "receipt_head_sha256": last_head,
                 "create_return_was_ambiguous": call_error}
     finally:
         if fd is not None:
@@ -205,6 +235,9 @@ def main() -> int:
     try:
         plan = delivery.load_json(args.plan)
         token = os.environ.get("MEU_ARTIGO_DRIVE_ACCESS_TOKEN", "")
+        # There is intentionally NO CLI adapter for independent durable CAS.
+        # Even --execute-synthetic-create MUST block instead of running on
+        # a convenient same-process/local-file mock of trusted state.
         result = guarded_synthetic_create(
             plan, args.journal, args.project_root, args.path,
             args.audit_parent_id, args.audit_file_id, token,
