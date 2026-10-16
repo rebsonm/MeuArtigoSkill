@@ -22,6 +22,7 @@ class FakeProvider:
     def __init__(self):
         self.root_folders = [{"id": CONTAINER, "name": "Meu Artigo",
                               "mimeType": MIME, "parents": [ROOT]}]
+        self.globally_matching_projects = []
         self.children = [{"id": PROJECT, "name": NAME,
                           "mimeType": MIME, "parents": [CONTAINER]}]
         self.folders = {
@@ -47,7 +48,9 @@ class FakeProvider:
         parent = params["q"].split("'", 2)[1]
         if params.get("pageToken"):
             raise AssertionError("unexpected pagination")
-        if parent == ROOT:
+        if params["q"].startswith("name = "):
+            children = list(self.globally_matching_projects)
+        elif parent == ROOT:
             children = self.root_folders
         elif parent == CONTAINER:
             children = self.children
@@ -90,6 +93,40 @@ class LiveReadOnlyPreflightTests(unittest.TestCase):
         self.assertEqual(result["action"], "CHECK_PARENT_FOR_GUARDED_CREATE")
         self.assertEqual(result["parent_id"], CONTAINER)
         self.assertEqual(result["folder_name"], NAME)
+
+    def test_existing_mislocated_project_prevents_duplicate_creation(self):
+        self.provider.children = []
+        self.provider.globally_matching_projects = [{
+            "id": "other-location-project-0001", "name": NAME,
+            "mimeType": MIME, "parents": ["some-other-parent-0001"],
+            "trashed": False}]
+        result = self.provider.run()
+        self.assertEqual(result["action"], "BLOCKED_EXISTING_PROJECT_OUTSIDE_CONTAINER")
+        self.assertEqual(result["observed_matching_folders"], 1)
+        self.assertFalse(result["create_permitted"])
+
+    def test_inconsistent_global_and_direct_parent_scans_block(self):
+        self.provider.children = []
+        self.provider.globally_matching_projects = [{
+            "id": PROJECT, "name": NAME, "mimeType": MIME,
+            "parents": [CONTAINER], "trashed": False}]
+        result = self.provider.run()
+        self.assertEqual(result["action"], "BLOCKED_PARENT_SCAN_GLOBAL_CONFLICT")
+        self.assertFalse(result["create_permitted"])
+
+    def test_global_search_incomplete_blocks_instead_of_authorizing_create(self):
+        self.provider.children = []
+        initial_fetch = self.provider.fetch_page
+        def fetch(token, params):
+            result = initial_fetch(token, params)
+            if params["q"].startswith("name = "):
+                result["incompleteSearch"] = True
+            return result
+        with self.assertRaisesRegex(anchor.RootAnchorError,
+                                    "PROJECT_GLOBAL_SEARCH_INCOMPLETE"):
+            live.current_structure(
+                "mock-provider-token-synthetic", project_name=NAME,
+                sender=self.provider.sender, fetch_page=fetch)
 
     def test_duplicate_my_drive_container_is_blocking(self):
         self.provider.root_folders.append({
