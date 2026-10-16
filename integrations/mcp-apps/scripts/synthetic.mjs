@@ -19,14 +19,14 @@ try{
  const rawConfig=JSON.stringify(config);
  await writeFile(configPath,rawConfig,"utf8");
  await writeFile(path.join(folder,"CONTINUIDADE.md"),
-  "Only synthetic test events; no research conclusions.\\n","utf8");
+  "Only synthetic test events; no research conclusions.\n","utf8");
  await writeFile(path.join(folder,"11_CADA_Control.csv"),
-  "CADA_ID,Title,Assigned_to,Status,Deadline,Completion_evidence\\n"+
-  "CADA-0010,Review fictional search criteria,Researcher,READY,,\\n"+
-  "CADA-0009,Prepare fictional paper outline,Researcher,DONE,,synthetic proof\\n","utf8");
- let gates="GATE_ID,Name,Status,Decision,Validated_by,Validation_evidence\\n";
+  "CADA_ID,Title,Assigned_to,Status,Deadline,Completion_evidence\n"+
+  "CADA-0010,Review fictional search criteria,Researcher,READY,,\n"+
+  "CADA-0009,Prepare fictional paper outline,Researcher,DONE,,synthetic proof\n","utf8");
+ let gates="GATE_ID,Name,Status,Decision,Validated_by,Validation_evidence\n";
  for(let i=1;i<=7;i++)gates+="GATE-"+String(i).padStart(4,"0")+
- ",Synthetic checkpoint "+i+",READY,PENDING,,\\n";
+ ",Synthetic checkpoint "+i+",READY,PENDING,,\n";
  await writeFile(path.join(folder,"18_Human_Validation_Gates.csv"),gates,"utf8");
  const env=Object.fromEntries(Object.entries(process.env).filter(([,v])=>typeof v==="string"));
  client=new Client({name:"meu-artigo-synthetic-test",version:"0.1.0"});
