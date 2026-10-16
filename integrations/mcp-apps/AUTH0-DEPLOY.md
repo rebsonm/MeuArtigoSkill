@@ -17,6 +17,12 @@ The server has one read-only tool and one HTML resource.
   this API. A subject allowlist does not prove that the connected OAuth
   client is approved or that a Google account owns an arbitrary project.
 
+The repository's source-control `.gitignore` excludes local secret
+files, private-key material, cache directories and compiled browser
+artifacts. Ignore rules are only a preventive convenience: they do not
+delete any secrets already committed to history. Retain scanner checks,
+review repository history privately, and rotate any exposed credentials.
+
 The service validates JWT RS256 signatures using the issuer's trusted JWKS,
 checks exact issuer and audience, required iat/exp with maximum one-hour
 lifetime, user subject and scope. No real account, access token, client
