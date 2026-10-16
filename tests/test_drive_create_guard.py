@@ -39,6 +39,18 @@ class FolderGuardTests(unittest.TestCase):
         }
         self.journal = guard.initial_journal(self.plan)
 
+    def live(self, inventory=None):
+        # Fictional provider-shaped evidence: tests validation, NOT actual Drive.
+        inv = copy.deepcopy(self.inventory if inventory is None else inventory)
+        inv["observed_via"] = "LIVE_DRIVE"
+        for scan in inv["parent_scans"]:
+            scan["page_evidence"] = [{
+                "source": "GOOGLE_DRIVE_FILES_LIST",
+                "request_page_token": None, "next_page_token": None,
+                "item_ids": [c["id"] for c in scan["children"]]
+            }]
+        return inv
+
     def begin(self, inventory=None, journal=None):
         return guard.create_preflight(
             self.plan, self.inventory if inventory is None else inventory,
@@ -230,8 +242,10 @@ class FolderGuardTests(unittest.TestCase):
     def test_locked_begin_persists_journal_before_host_call(self):
         # For the on-disk interface the fixture must be explicitly identified as
         # a fictional live-shaped host result; this tests storage, not Drive.
-        inv = copy.deepcopy(self.inventory)
-        inv["observed_via"] = "LIVE_DRIVE"
+        inv = self.live()
+        init = guard.locked_update(self.plan, inv, self.journal_path, "01_Dados",
+                                   "initialize", initialize_authorized=True)
+        self.assertEqual(init["action"], "JOURNAL_INITIALIZED_NEW_PROJECT")
         step = guard.locked_update(self.plan, inv, self.journal_path, "01_Dados", "prepare")
         self.assertEqual(step["action"], "CREATE_FOLDER_ONCE")
         data = guard.read_journal(self.plan, self.journal_path)
@@ -240,12 +254,82 @@ class FolderGuardTests(unittest.TestCase):
         retry = guard.locked_update(self.plan, inv, self.journal_path, "01_Dados", "prepare")
         self.assertEqual(retry["action"], "REINSPECT_NO_RETRY")
 
+
+    def test_missing_journal_is_not_silently_recreated_after_interruption(self):
+        inv = self.live()
+        with self.assertRaisesRegex(ValueError, "JOURNAL_MISSING_RECOVERY_REQUIRED"):
+            guard.locked_update(self.plan, inv, self.journal_path, "01_Dados", "prepare")
+        self.assertFalse(self.journal_path.exists())
+
+    def test_initialize_requires_explicit_attestation(self):
+        inv = self.live()
+        with self.assertRaisesRegex(ValueError, "NEW_PROJECT_ATTESTATION_REQUIRED"):
+            guard.locked_update(self.plan, inv, self.journal_path, "01_Dados", "initialize")
+        self.assertFalse(self.journal_path.exists())
+
+    def test_initialize_twice_does_not_erase_prior_operations(self):
+        inv = self.live()
+        guard.locked_update(self.plan, inv, self.journal_path, "01_Dados",
+                            "initialize", initialize_authorized=True)
+        guard.locked_update(self.plan, inv, self.journal_path, "01_Dados", "prepare")
+        before = self.journal_path.read_bytes()
+        with self.assertRaisesRegex(ValueError, "JOURNAL_ALREADY_EXISTS"):
+            guard.locked_update(self.plan, inv, self.journal_path, "01_Dados",
+                                "initialize", initialize_authorized=True)
+        self.assertEqual(before, self.journal_path.read_bytes())
+
+    def test_live_scan_requires_real_page_evidence_contract(self):
+        inv = copy.deepcopy(self.inventory)
+        inv["observed_via"] = "LIVE_DRIVE"
+        with self.assertRaisesRegex(ValueError, "PARENT_PAGE_EVIDENCE_REQUIRED"):
+            guard.direct_scan(self.plan, inv, ROOT)
+
+    def test_live_scan_rejects_nonterminating_page_chain(self):
+        inv = self.live()
+        inv["parent_scans"][0]["page_evidence"][0]["next_page_token"] = "more-pages"
+        with self.assertRaisesRegex(ValueError, "PARENT_PAGINATION_INCOMPLETE"):
+            guard.direct_scan(self.plan, inv, ROOT)
+
+    def test_live_scan_rejects_inconsistent_cursor(self):
+        inv = self.live()
+        inv["parent_scans"][0]["page_evidence"][0]["request_page_token"] = "injected"
+        with self.assertRaisesRegex(ValueError, "PARENT_PAGINATION_CHAIN_INVALID"):
+            guard.direct_scan(self.plan, inv, ROOT)
+
+    def test_live_scan_rejects_missing_child_from_page_receipts(self):
+        inv = self.live(self.fresh())
+        inv["parent_scans"][0]["page_evidence"][0]["item_ids"] = []
+        with self.assertRaisesRegex(ValueError, "PARENT_PAGINATION_CONTENT_MISMATCH"):
+            guard.direct_scan(self.plan, inv, ROOT)
+
+    def test_live_scan_rejects_duplicate_ids_across_pages(self):
+        inv = self.live(self.fresh())
+        inv["parent_scans"][0]["page_evidence"] = [
+            {"source": "GOOGLE_DRIVE_FILES_LIST", "request_page_token": None,
+             "next_page_token": "continuation", "item_ids": [CHILD]},
+            {"source": "GOOGLE_DRIVE_FILES_LIST", "request_page_token": "continuation",
+             "next_page_token": None, "item_ids": [CHILD]}
+        ]
+        with self.assertRaisesRegex(ValueError, "PARENT_PAGINATION_DUPLICATE_ID"):
+            guard.direct_scan(self.plan, inv, ROOT)
+
+    def test_live_scan_accepts_consistent_paginated_fixture(self):
+        inv = self.live(self.fresh(count=2))
+        ids = [c["id"] for c in inv["parent_scans"][0]["children"]]
+        inv["parent_scans"][0]["page_evidence"] = [
+            {"source": "GOOGLE_DRIVE_FILES_LIST", "request_page_token": None,
+             "next_page_token": "page-2", "item_ids": [ids[0]]},
+            {"source": "GOOGLE_DRIVE_FILES_LIST", "request_page_token": "page-2",
+             "next_page_token": None, "item_ids": [ids[1]]}
+        ]
+        scan = guard.direct_scan(self.plan, inv, ROOT)
+        self.assertEqual(len(scan["children"]), 2)
+
     def test_lock_owned_by_another_agent_is_not_removed(self):
         self.journal_path.parent.mkdir(parents=True)
         lock = self.journal_path.with_name("attempts.json.lock")
         lock.write_text("Other synthetic worker")
-        inv = copy.deepcopy(self.inventory)
-        inv["observed_via"] = "LIVE_DRIVE"
+        inv = self.live()
         with self.assertRaises(FileExistsError):
             guard.locked_update(self.plan, inv, self.journal_path, "01_Dados", "prepare")
         self.assertEqual(lock.read_text(), "Other synthetic worker")
