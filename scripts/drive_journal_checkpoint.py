@@ -196,9 +196,16 @@ def push_once(file_id: str, parent_id: str, token: str,
 
 
 def restore(file_id: str, parent_id: str, token: str,
-            plan: dict, destination: Path, *, project_root: Path,
-            sender=request) -> dict:
-    """Restore matching plan journal into a new local file; no overwrite."""
+            plan: dict, destination: Path, expected_remote_sha256: str,
+            *, project_root: Path, sender=request) -> dict:
+    """Restore only a pinned journal digest into a new local file; no overwrite.
+
+    The SHA-256 MUST come from an independently retained, trusted checkpoint.
+    Verifying only the plan permits replay of a valid but older empty journal.
+    """
+    if (not isinstance(expected_remote_sha256, str) or
+            not delivery.HASH.fullmatch(expected_remote_sha256)):
+        raise JournalSyncError("EXPECTED_JOURNAL_SHA_INVALID")
     destination = Path(destination).absolute()
     root = Path(project_root).resolve()
     if destination.resolve() == root or root in destination.resolve().parents:
@@ -206,6 +213,8 @@ def restore(file_id: str, parent_id: str, token: str,
     if destination.exists() or destination.is_symlink():
         raise JournalSyncError("LOCAL_JOURNAL_EXISTS_NO_OVERWRITE")
     raw = fetch_journal(file_id, parent_id, token, plan, sender=sender)
+    if digest(raw) != expected_remote_sha256:
+        raise JournalSyncError("JOURNAL_RESTORE_SHA_MISMATCH")
     destination.parent.mkdir(parents=True, exist_ok=True)
     temp = None
     try:
@@ -241,7 +250,7 @@ def main() -> int:
         plan = delivery.load_json(args.plan)
         guard.plan_hash(plan)
         token = os.environ.get("MEU_ARTIGO_DRIVE_ACCESS_TOKEN", "")
-        if args.command in ("verify", "push") and not args.expected_remote_sha256:
+        if args.command in ("verify", "push", "restore") and not args.expected_remote_sha256:
             raise JournalSyncError("EXPECTED_JOURNAL_SHA_REQUIRED")
         if args.command == "verify":
             result = remote_matches(args.remote_file_id, args.audit_parent_id, token,
@@ -253,7 +262,8 @@ def main() -> int:
             if args.project_root is None:
                 raise JournalSyncError("PROJECT_ROOT_REQUIRED")
             result = restore(args.remote_file_id, args.audit_parent_id, token,
-                             plan, args.journal, project_root=args.project_root)
+                             plan, args.journal, args.expected_remote_sha256,
+                             project_root=args.project_root)
         print(json.dumps(result, sort_keys=True))
         return 0
     except (OSError, ValueError, KeyError, TypeError):
