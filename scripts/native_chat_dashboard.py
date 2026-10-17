@@ -334,6 +334,25 @@ def fallback(data: dict) -> str:
     ])
 
 
+def public_console_snapshot(data: dict) -> dict:
+    """Zero document text/IDs on stdout: only operational counters and flags."""
+    overview = data.get("overview") or {}
+    evidence = data.get("evidence") or {}
+    return {
+        "schema": "MEU_ARTIGO_NATIVE_SAFE_CONSOLE_V1",
+        "status": "READ_ONLY_REVIEW_REQUIRED",
+        "tasks_visible": len((data.get("tasks") or {}).get("items") or []),
+        "gates_visible": len((data.get("human_gates") or {}).get("items") or []),
+        "registered_evidence_rows": evidence.get("registered_evidence_rows"),
+        "registered_claims": evidence.get("registered_claims"),
+        "human_approvals_recorded": overview.get("documented_gate_approvals"),
+        "full_project_details_disclosed": False,
+        "scientific_gate_approved": False,
+        "canonical_write_authorized": False,
+        "google_drive_sync_verified": False,
+    }
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("project", help="Existing authorized local project")
@@ -345,8 +364,13 @@ def main(argv: list[str] | None = None) -> int:
     except (OSError, ValueError, csv.Error, UnicodeError, json.JSONDecodeError) as exc:
         print("ERROR: cannot read native panel: " + type(exc).__name__, file=sys.stderr)
         return 1
-    print(json.dumps(output, ensure_ascii=False, indent=2) if args.format == "json"
-          else fallback(output))
+    clean = public_console_snapshot(output)
+    if args.format == "json":
+        print(json.dumps(clean, sort_keys=True))
+    else:
+        print("Native research panel: human review required; "
+              "full research details are not printed to terminal. "
+              "Use the authorized in-process read-only UI.")
     return 0
 
 
