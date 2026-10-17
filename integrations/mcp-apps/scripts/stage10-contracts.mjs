@@ -81,7 +81,7 @@ try {
  const noProject=await client.callTool({name:"meu_artigo_painel",
    arguments:{locale:"fr"}});
  assert.equal(noProject.isError,true);
- assert.match(noProject.content[0].text,/Tableau indisponible/);
+ assert.match(noProject.content[0].text,/ce MCP fournit uniquement/);
  assert.equal(noProject.structuredContent,undefined);
  const wrongArgs=await client.callTool({name:"meu_artigo_painel",
    arguments:{mode:"NOT_AN_ALLOWED_MODE"}});
@@ -98,29 +98,25 @@ try {
  await client?.close();
  child.kill("SIGTERM");
 }
-// Stdio never accepts an arbitrary path in tool arguments. A symlink-selected
-// project cannot be read, even if the linked target is a real directory.
-const root=await mkdtemp(path.join(os.tmpdir(),"meu-artigo-stage10-private-"));
-let client2;
+// Any attempt to enable project access via an environment variable must
+// cause startup refusal, not a silent fallback to someone else's Drive.
+const root=await mkdtemp(path.join(os.tmpdir(),"meu-artigo-host-only-private-"));
 try{
- const actual=path.join(root,"authorized");
- const alias=path.join(root,"redirected");
- await mkdir(actual);
- await symlink(actual,alias);
- client2=new Client({name:"stage10-stdio",version:"0.1.0"});
- const inherited=Object.fromEntries(Object.entries(process.env).filter(([,v])=>typeof v==="string"));
- await client2.connect(new StdioClientTransport({
-  command:process.execPath,args:[path.resolve("server.mjs"),"--stdio"],
-  env:{...inherited,MEU_ARTIGO_PROJECT_ROOT:alias}
- }));
- const res=await client2.callTool({name:"meu_artigo_painel",arguments:{locale:"pt"}});
- assert.equal(res.isError,true);
- assert.equal(res.structuredContent,undefined);
- assert.match(res.content[0].text,/Não foi possível consultar/);
- const list=await client2.listTools();
- assert.equal(list.tools.length,1);
- console.log("Stage10 stdio passed: configured symlink denied; no arbitrary project-path tool argument.");
+ const proc=spawn(process.execPath,["server.mjs","--stdio"],{
+  env:{...process.env,MEU_ARTIGO_PROJECT_ROOT:root},
+  stdio:["ignore","ignore","pipe"]
+ });
+ let stderr="";
+ proc.stderr.on("data",part=>stderr+=part.toString("utf8"));
+ const code=await Promise.race([
+  new Promise(resolve=>proc.once("exit",resolve)),
+  new Promise(resolve=>setTimeout(()=>resolve("TIMEOUT"),2500))
+ ]);
+ if(code==="TIMEOUT")proc.kill("SIGTERM");
+ assert.notEqual(code,"TIMEOUT");
+ assert.notEqual(code,0);
+ assert.match(stderr,/MCP_RESEARCH_ACCESS_FORBIDDEN/);
+ console.log("Stage10 stdio passed: project root forbidden, no storage or Drive access.");
 }finally{
- await client2?.close();
  await rm(root,{recursive:true,force:true});
 }

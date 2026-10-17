@@ -20,8 +20,13 @@ export function auth0Configuration(env = process.env) {
   const resource = exactHttpsUrl(env.MEU_ARTIGO_AUTH_RESOURCE || "", "resource");
   if (resource.pathname !== "/mcp")
     throw Error("Protected resource URL must be the HTTPS /mcp endpoint");
+  const multiUser = env.MEU_ARTIGO_MCP_MULTIUSER === "YES";
+  if(env.MEU_ARTIGO_MCP_MULTIUSER && env.MEU_ARTIGO_MCP_MULTIUSER!=="YES")
+    throw Error("MCP multiuser flag must be YES");
   const permittedSub = String(env.MEU_ARTIGO_PILOT_SUB || "");
-  if (!/^google-oauth2\|[A-Za-z0-9_-]{5,128}$/.test(permittedSub))
+  if (multiUser && permittedSub)
+    throw Error("Pilot subject allowlist must not be used with generic multiuser MCP");
+  if (!multiUser && !/^google-oauth2\|[A-Za-z0-9_-]{5,128}$/.test(permittedSub))
     throw Error("Exactly one Google Auth0 subject must be allowlisted for pilot isolation");
   return Object.freeze({
     issuer: issuer.href,
@@ -29,6 +34,7 @@ export function auth0Configuration(env = process.env) {
     metadataUrl: new URL("/.well-known/oauth-protected-resource", resource).href,
     jwksUrl: new URL(".well-known/jwks.json", issuer).href,
     permittedSub,
+    multiUser,
     scopes: oauthScopes
   });
 }
@@ -72,14 +78,20 @@ export function createAuth0Verifier(config, { jwksUrl } = {}) {
          payload.iat>now+5||payload.exp<=payload.iat||
          payload.exp-payload.iat>3600)
         return {ok:false,status:401,error:"invalid_token"};
-      // An Auth0 client-credentials token must never acquire user rights.
-      if (payload.sub !== config.permittedSub)
+      // The MCP exposes generic methods only, never Google or research files.
+      // Accept validated human login subjects without project lookup.
+      if (config.multiUser) {
+        if (typeof payload.sub !== "string" ||
+            !/^[A-Za-z0-9_-]{2,48}\|[A-Za-z0-9_.-]{5,128}$/.test(payload.sub))
+          return { ok: false, status: 403, error: "access_denied" };
+      } else if (payload.sub !== config.permittedSub) {
         return { ok: false, status: 403, error: "access_denied" };
+      }
       const granted = typeof payload.scope === "string"
         ? payload.scope.split(/\s+/).filter(Boolean) : [];
       if (!config.scopes.every(scope => granted.includes(scope)))
         return { ok: false, status: 403, error: "insufficient_scope" };
-      return { ok: true, principal: { sub: config.permittedSub } };
+      return { ok: true, principal: { sub: payload.sub } };
     } catch {
       return { ok: false, status: 401, error: "invalid_token" };
     }

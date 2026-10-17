@@ -17,7 +17,7 @@ try{
  assert.equal(tool._meta["openai/outputTemplate"],"ui://meu-artigo/site-v1.html");
  const result=await client.callTool({name:"meu_artigo_painel",arguments:{locale:"es"}});
  assert.equal(result.isError,true);
- assert.match(result.content[0].text,/Panel no disponible|No se pudieron/);
+ assert.match(result.content[0].text,/interfaz y orientación metodológica genérica/);
  assert.equal(result.structuredContent,undefined);
  const resource=await client.readResource({uri:"ui://meu-artigo/site-v1.html"});
  const content=resource.contents[0];

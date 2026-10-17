@@ -1,71 +1,60 @@
-# Stage 11 — Auth0 OAuth source-only integration
+# MCP OAuth transport: ChatGPT-host Drive architecture
 
-This release candidate is NOT deployed, connected to ChatGPT, or exposed
-outside loopback. Exactly one MCP Apps server remains: `server.mjs`.
-The server has one read-only tool and one HTML resource.
+This candidate is **not deployed** or connected to a real ChatGPT account.
+The MCP service is stateless for research: it never accesses Google Drive,
+projects, manuscripts, tokens or research metadata. Each researcher connects
+their own Google Drive directly in their own ChatGPT session. The Skill's
+methodological guidance and document operations happen host-side.
 
-## Protected resource configuration (no actual credentials in this repository)
+## Purpose of Auth0
 
-- `MEU_ARTIGO_AUTH_MODE=auth0` explicitly enables OAuth validation on loopback.
-- `MEU_ARTIGO_AUTH_ISSUER=https://YOUR_TENANT.us.auth0.com/` is exact,
-  HTTPS-only, tenant-bound, and ends with a slash.
-- `MEU_ARTIGO_AUTH_RESOURCE=https://YOUR_MCP_HOST.example/mcp` is the
-  exact audience and public resource identifier; no query or fragment.
-- `MEU_ARTIGO_PILOT_SUB` must be the EXACT privately configured
-  `google-oauth2|...` subject of the one authorized pilot account.
-- `mcp:read` must be granted to the approved user-delegated client for
-  this API. A subject allowlist does not prove that the connected OAuth
-  client is approved or that a Google account owns an arbitrary project.
+Auth0, when used, controls access to this **generic MCP UI and method
+information only**. It is not Google OAuth, provides no Drive permissions,
+and does not authorize access to any user's research files.
 
-The repository's source-control `.gitignore` excludes local secret
-files, private-key material, cache directories and compiled browser
-artifacts. Ignore rules are only a preventive convenience: they do not
-delete any secrets already committed to history. Retain scanner checks,
-review repository history privately, and rotate any exposed credentials.
+`MEU_ARTIGO_AUTH_MODE=auth0` enables JWT verification. Configure:
 
-The service validates JWT RS256 signatures using the issuer's trusted JWKS,
-checks exact issuer and audience, required iat/exp with maximum one-hour
-lifetime, user subject and scope. No real account, access token, client
-secret or authorized folder ID is committed here.
+- `MEU_ARTIGO_AUTH_ISSUER`: exact HTTPS Auth0 issuer, trailing slash.
+- `MEU_ARTIGO_AUTH_RESOURCE=https://mcp.allflux.com.br/mcp`: exact audience.
+- `MEU_ARTIGO_MCP_MULTIUSER=YES` for separately authenticated people
+  using the **same content-free MCP**. No `MEU_ARTIGO_PILOT_SUB` in this mode.
+- For a legacy one-user test only, omit multiuser and set an exact
+  allowlisted `MEU_ARTIGO_PILOT_SUB`.
+- Scope `mcp:read`, RS256 via trusted JWKS, bounded expiration and
+  required issued-at checks. Anonymous or invalid tokens are denied.
 
-## RFC 9728 and MCP
+The service makes no user-specific data request. It deliberately does not
+interpret a ChatGPT Drive connector identity, email or token.
 
-The resource document is available on loopback (when auth0 mode is explicitly
-enabled) at:
-- `/.well-known/oauth-protected-resource`
-- `/.well-known/oauth-protected-resource/mcp`
+## Transport boundaries
 
-Uncredentialed `/mcp` returns a 401 Bearer resource_metadata challenge.
-Wrong subject or missing scope returns 403. Invalid signature, expiry,
-issuer, audience or missing JWT returns 401. Disclosure is limited to
-generic Unauthorized/Forbidden errors; the metadata itself does not
-enumerate projects or users.
+- Only `127.0.0.1` / `::1` listener is allowed.
+- RFC 9728 protected-resource metadata endpoints:
+  `/.well-known/oauth-protected-resource` and
+  `/.well-known/oauth-protected-resource/mcp`.
+- Unauthenticated `/mcp` returns a Bearer challenge.
+- Wrong issuer/audience/signature/expiry gives HTTP 401.
+- Missing scope or blocked user subject gives HTTP 403.
+- Origin, JSON body-size, content-type and token-header guards apply.
+- OAuth Authorization Code + PKCE and real callback registration are handled
+  by the identity provider and approved ChatGPT OAuth client, not by this
+  MCP resource server.
 
-Authorization Code + PKCE S256 is performed by an external OAuth
-authorization server and approved MCP client, NOT by this resource server.
-The unit test computes and contrasts PKCE S256 challenge values; this
-does not test Auth0's authorization endpoint, client registration,
-redirect_uri, user consent, token exchange or real ChatGPT integration.
+The server has **no `/google/oauth/callback`**, never asks Google for a
+Drive token and never persists refresh grants. Any mention of this legacy
+path in older review notes describes a withdrawn design, not the candidate.
 
-## Protection against premature exposure
+## Public deployment restrictions
 
-- `--http` is restricted to 127.0.0.1 or ::1 even when auth0 mode is on.
-- The Nginx example is intentionally disabled by default.
-- The registered OAuth client, actual callback, S256 requirement, API grant,
-  audience, user identity, real JWKS, proxy TLS, and single-project ownership
-  all require independent acceptance before any public enablement.
-- Do not copy the #75 draft's unprotected public-binding branch, general
-  `npm install` deployment recipe, or rollback SHA into production.
-- Preserve `npm ci --ignore-scripts`, the verified lock, the #76 bridge
-  security fixes, Stage 10 request limits and read-only gates.
+The example Nginx configuration intentionally returns 404 and includes no
+active `proxy_pass`. Do not open the MCP or deploy a proxy to production
+without reviewing actual Auth0 application registration, PKCE, redirect,
+client permissions, TLS, request limits, safe logs and ChatGPT host access.
 
-Do not enable public listeners, create accounts, change Auth0 settings,
-register callbacks, change Nginx, publish releases, install plugins, or
-write to Google Drive as part of this stage.
+There is no need for a Google Cloud OAuth client or Drive API credential in
+the MCP. Each researcher's Google Drive connection is established privately
+by them **inside ChatGPT** according to connector availability.
 
-## External references
-
-- RFC 9728: https://www.rfc-editor.org/rfc/rfc9728.html
-- MCP authorization: https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization
-- Auth0 client/application registration and JWT validation require
-  tenant-specific operator review before any real integration.
+Passing offline tests does not prove live ChatGPT OAuth, installed Plugin
+version, MCP Apps UI rendering, individual Drive permissions, or scientific
+validity. All remain independent acceptance gates.

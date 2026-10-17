@@ -1,38 +1,61 @@
-/* The UI uses the official MCP Apps client bridge (standards-first).
- * No OpenAI-specific global is required; ChatGPT may add optional features.
+/* ChatGPT reads the researcher's own Drive and calls the MCP with a
+ * bounded UI projection. This bridge only displays that per-call projection.
+ * No persistent cache or cross-user memory.
  */
-import { App } from "@modelcontextprotocol/ext-apps";
-
-type SiteData = { schema?: string; kind?: string; locale?: string };
-declare global {
-  interface Window {
-    MeuArtigoHost?: {
-      receive: (data: SiteData) => boolean;
-      locale: (locale: string) => void;
-      disconnect: () => void;
-    };
-  }
+import {App} from "@modelcontextprotocol/ext-apps";
+type SiteData={schema?:string;kind?:string;locale?:string};
+declare global {interface Window {MeuArtigoHost?:{
+ receive:(data:SiteData)=>boolean;disconnect:()=>void;locale:(code:string)=>void;
+}}}
+const app=new App({name:"Meu Artigo",version:"0.3.0"});
+let showingSnapshot=false;
+const clear=()=>{
+ showingSnapshot=false;
+ window.MeuArtigoHost?.disconnect();
+ const n=document.querySelector(".mock-badge");
+ if(n)n.textContent="AGUARDANDO DADOS DO CHATGPT";
+};
+function provenance(){
+ const badge=document.querySelector(".mock-badge");
+ if(badge&&badge.textContent!=="DADOS DO CHATGPT · SEM GRAVAÇÃO")badge.textContent="DADOS DO CHATGPT · SEM GRAVAÇÃO";
+ const footer=document.querySelector(".source-line");
+ if(footer){
+  const spans=footer.querySelectorAll("span");
+  if(spans[0]&&spans[0].textContent!=="Fonte: visualização recebida do ChatGPT nesta sessão")spans[0].textContent="Fonte: visualização recebida do ChatGPT nesta sessão";
+  if(spans[1]&&spans[1].textContent!=="MCP não consultou o Drive · Sem aprovação científica")spans[1].textContent="MCP não consultou o Drive · Sem aprovação científica";
+ }
+ const header=document.querySelector(".page-top .stage");
+ if(header&&header.textContent!=="Snapshot do ChatGPT · não persistido")header.textContent="Snapshot do ChatGPT · não persistido";
+ const title=document.querySelector(".page-top .page-title");
+ if(title&&title.textContent==="Projeto autorizado · visão local")
+  title.textContent="Painel de pesquisa · dados enviados pelo ChatGPT";
+ document.querySelectorAll(".footnote").forEach((element)=>{
+  if(element.textContent?.startsWith("Snapshot local autorizado"))
+   element.textContent="Visualização dos registros encaminhados pelo ChatGPT; confirme os documentos originais em seu Drive.";
+ });
 }
-const app = new App({ name: "Meu Artigo", version: "0.1.0" });
-const fail = () => {
-  // Revoke the previous project snapshot before marking a host failure;
-  // leaving an earlier project's content visible is a stale-data leak.
-  window.MeuArtigoHost?.disconnect();
-  const notice = document.querySelector(".mock-badge");
-  if (notice) notice.textContent = "NOT CONNECTED · CONTINUE IN CHAT";
+// The shared HTML redraws on navigation. Keep the host-provenance notice
+// correct without changing or storing any research data.
+const labelObserver=new MutationObserver(()=>{if(showingSnapshot)provenance();});
+labelObserver.observe(document.documentElement,{childList:true,subtree:true});
+app.ontoolresult=(event:any)=>{
+ const site=event?.structuredContent?.site;
+ if(!site||site.schema!=="MEU_ARTIGO_SITE_V1"||
+    site.kind!=="HOST_AUTHORIZED_SNAPSHOT"||
+    !window.MeuArtigoHost?.receive({...site,kind:"CANONICAL_LOCAL_SNAPSHOT"})){
+  clear();return;
+ }
+ showingSnapshot=true;
+ provenance();
 };
-app.ontoolresult = (event: any) => {
-  const snapshot = event?.structuredContent?.site;
-  if (!snapshot || snapshot.schema !== "MEU_ARTIGO_SITE_V1" ||
-      snapshot.kind !== "CANONICAL_LOCAL_SNAPSHOT" ||
-      !window.MeuArtigoHost?.receive(snapshot)) {
-    fail();
-  }
+app.onhostcontextchanged=(ctx:any)=>{
+ // A host-context change may accompany an account/project transition.
+ // Do not keep a previous researcher's dashboard on-screen while the
+ // next host context is being resolved, even if the new locale is equal.
+ clear();
+ if(ctx?.locale)window.MeuArtigoHost?.locale(ctx.locale);
 };
-app.onhostcontextchanged = (context: any) => {
-  if (context?.locale) window.MeuArtigoHost?.locale(context.locale);
-};
-app.connect().then(() => {
-  const context: any = app.getHostContext?.();
-  if (context?.locale) window.MeuArtigoHost?.locale(context.locale);
-}).catch(() => fail());
+app.connect().then(()=>{
+ const ctx:any=app.getHostContext?.();
+ if(ctx?.locale)window.MeuArtigoHost?.locale(ctx.locale);
+}).catch(()=>clear());
