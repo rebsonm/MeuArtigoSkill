@@ -40,6 +40,33 @@ def fictional_projection(route: str, mode: str = "MINIMAL", *,
     }
     return snapshot
 
+def public_cli_contract() -> dict:
+    """Constant nonapproval envelope; never logs option text or dynamic cards."""
+    return {
+        "snapshot_kind": "FICTIONAL_PREVIEW_NOT_A_REAL_PROJECT",
+        "is_project_bound": False,
+        "tasks": {"items": []},
+        "human_gates": {"items": []},
+        "overview": {"independent_scientific_validation": False},
+        "permissions": {"canonical_write": "NOT_AVAILABLE_IN_THIS_UI"},
+        "preview_contract": {
+            "fictional_only": True, "real_project_access": False,
+            "researcher_authenticated": False, "write_tools_available": False,
+            "scientific_gate_approval_available": False,
+            "canonical_drive_sync_verified": False,
+            "server_tool_registered": False, "standalone_server_created": False,
+        },
+        "fictional_method_dialogue": {
+            "selection_written": False, "gate_approved": False,
+            "canonical_state_modified": False,
+            "method_recommended_or_selected": False,
+            "drive_sync_verified": False, "human_reviewer_authenticated": False,
+            "human_action": {"required_to_commit_scientific_choice": True},
+        },
+        "full_catalogue_available_only_via_read_only_python_api": True,
+    }
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--route", choices=ROUTES, default="QUALITATIVE")
@@ -53,7 +80,8 @@ def main(argv=None) -> int:
         x=fictional_projection(args.route,args.mode,action=args.action,
                               dimension=args.dimension,option_id=args.option_id,
                               compare_ids=tuple(args.compare) if args.compare else None)
-        print(json.dumps(x,ensure_ascii=False,sort_keys=True,
+        # Dynamic cards and arbitrary option identifiers are not terminal-safe.
+        print(json.dumps(public_cli_contract(),sort_keys=True,
                          separators=(",",":"),allow_nan=False))
         return 0
     except (ValueError,OSError,TypeError,KeyError):
