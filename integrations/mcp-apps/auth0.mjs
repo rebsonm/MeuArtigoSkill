@@ -20,10 +20,12 @@ export function auth0Configuration(env = process.env) {
   const resource = exactHttpsUrl(env.MEU_ARTIGO_AUTH_RESOURCE || "", "resource");
   if (resource.pathname !== "/mcp")
     throw Error("Protected resource URL must be the HTTPS /mcp endpoint");
-  const multiUser = Boolean(env.MEU_ARTIGO_MULTIUSER_REGISTRY || env.MEU_ARTIGO_GOOGLE_DRIVE_MODE === "per_user");
+  const multiUser = env.MEU_ARTIGO_MCP_MULTIUSER === "YES";
+  if(env.MEU_ARTIGO_MCP_MULTIUSER && env.MEU_ARTIGO_MCP_MULTIUSER!=="YES")
+    throw Error("MCP multiuser flag must be YES");
   const permittedSub = String(env.MEU_ARTIGO_PILOT_SUB || "");
   if (multiUser && permittedSub)
-    throw Error("Pilot allowlist and multiuser registry must not coexist");
+    throw Error("Pilot subject allowlist must not be used with generic multiuser MCP");
   if (!multiUser && !/^google-oauth2\|[A-Za-z0-9_-]{5,128}$/.test(permittedSub))
     throw Error("Exactly one Google Auth0 subject must be allowlisted for pilot isolation");
   return Object.freeze({
@@ -76,9 +78,8 @@ export function createAuth0Verifier(config, { jwksUrl } = {}) {
          payload.iat>now+5||payload.exp<=payload.iat||
          payload.exp-payload.iat>3600)
         return {ok:false,status:401,error:"invalid_token"};
-      // An Auth0 client-credentials token must never acquire user rights.
-      // Valid JWT identity is not sufficient: the MCP request must ALSO be
-      // mapped through the private project registry before connecting tools.
+      // The MCP exposes generic methods only, never Google or research files.
+      // Accept validated human login subjects without project lookup.
       if (config.multiUser) {
         if (typeof payload.sub !== "string" ||
             !/^[A-Za-z0-9_-]{2,48}\|[A-Za-z0-9_.-]{5,128}$/.test(payload.sub))
