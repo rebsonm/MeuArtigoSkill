@@ -26,6 +26,8 @@ OPTIONAL_PROTOCOL_DOCS={
     "references/native-chat-dashboard.md",
     "scripts/build_research_site.py",
     ".github/workflows/mcp-apps-ci.yml",
+    # Stage 17 E04 browser CI remains source-only and explicitly reviewed.
+    ".github/workflows/mcp-apps-stage17-browser.yml",
     "docs/ETAPA04-CI-SECURITY.md",
     "scripts/audit_optional_mcp_supply_chain.py",
     "tests/test_optional_mcp_supply_chain.py",
@@ -82,6 +84,7 @@ class PublicSkillBoundaryTests(unittest.TestCase):
             "docs/ETAPA04-CI-SECURITY.md",
             ".github/workflows/security-contracts.yml",
             ".github/workflows/codeql-javascript.yml",
+            ".github/workflows/mcp-apps-stage17-browser.yml",
         ):
             self.assertNotIn(forbidden, packaged)
 
