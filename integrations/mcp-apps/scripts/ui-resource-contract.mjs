@@ -44,8 +44,8 @@ try{
  if(scripts.length!==3){
   console.log("RESOURCE_SCRIPT_FORENSICS",JSON.stringify({
    dom_scripts:scripts.length,
-   raw_script_open:(html.match(/<script\\b/gi)||[]).length,
-   raw_script_close:(html.match(/<\\/script\\s*>/gi)||[]).length,
+   raw_script_open:html.split("<script").length-1,
+   raw_script_close:html.split("</script").length-1,
    sampled_elements:scripts.slice(0,12).map((s,i)=>({
     index:i,type:s.type,src:Boolean(s.src),length:s.textContent.length,
     prefix:s.textContent.slice(0,50)
