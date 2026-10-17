@@ -1,7 +1,7 @@
 /** Meu Artigo MCP Apps: host-owned Drive boundary.
- * Deliberately NO Google API, researcher project paths, files, tokens,
- * manuscript data, study telemetry or cross-user mutable state.
- * Research document access belongs solely to each user's ChatGPT connector.
+ * No direct Google API, tokens, file reads or cross-user mutable state.
+ * Only the display fields explicitly supplied for THIS call by the host are
+ * validated, returned to its UI and discarded. Original files stay in Drive.
  */
 import {registerAppResource,registerAppTool,RESOURCE_MIME_TYPE} from "@modelcontextprotocol/ext-apps/server";
 import {McpServer} from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -14,6 +14,7 @@ import path from "node:path";
 import {fileURLToPath} from "node:url";
 import {z} from "zod";
 import {auth0Configuration,protectedResourceMetadata,bearerChallenge,createAuth0Verifier} from "./auth0.mjs";
+import {normalizeHostSnapshot} from "./host_projection.mjs";
 
 const HERE=path.dirname(fileURLToPath(import.meta.url));
 const REPO=path.resolve(HERE,"../..");
@@ -61,16 +62,28 @@ export function createServer(){
  noResearchAccess();
  const server=new McpServer({name:"Meu Artigo — Host-Side Research",version:"0.2.0"});
  registerAppTool(server,"meu_artigo_painel",{
-  title:"Meu Artigo — generic scientific UI only",
-  description:"Shows a content-free methodological shell. Read the researcher's Drive exclusively through their own ChatGPT connector. Never send documents, summaries, tokens, project IDs or research metadata to this MCP.",
-  inputSchema:{locale:z.string().max(35).optional(),mode:z.enum(["MINIMAL","FULL"]).optional()},
+  title:"Meu Artigo — current research dashboard (transient)",
+  description:"Display ONLY a strictly bounded projection prepared by ChatGPT from the currently connected researcher's own Drive. Do not send PDFs, complete documents, original claims, full research manuscripts, file IDs, URLs or tokens. This MCP never accesses Drive and never persists the supplied projection.",
+  inputSchema:{locale:z.string().max(35).optional(),mode:z.enum(["MINIMAL","FULL"]).optional(),
+   snapshot:z.unknown().optional()},
   annotations:{readOnlyHint:true,idempotentHint:true,openWorldHint:false},
   ...(process.env.MEU_ARTIGO_AUTH_MODE==="auth0"?{securitySchemes:[{type:"oauth2",scopes:["mcp:read"]}]}:{}),
   _meta:{ui:{resourceUri:URI},"openai/outputTemplate":URI}
- },async args=>({
-  isError:true,
-  content:[{type:"text",text:guidance(args.locale)}]
- }));
+ },async args=>{
+  if(args.snapshot===undefined)return {
+   isError:true,content:[{type:"text",text:guidance(args.locale)}]
+  };
+  try{
+   // Response exists only in the scope of this request; no cache, DB,
+   // per-user registry, telemetry or persistence is permitted.
+   const site=normalizeHostSnapshot(args.snapshot);
+   return {content:[{type:"text",text:"Display-only snapshot received for this call. Original records remain in the user's ChatGPT-connected Drive. Scientific validation and Drive synchronization have NOT been verified by this MCP."}],
+    structuredContent:{site}};
+  }catch{
+   // Never echo rejected private payload, source text or path into errors.
+   return {isError:true,content:[{type:"text",text:"Dashboard projection rejected: invalid fields, unverified state or size. Return to ChatGPT and regenerate a minimal approved projection."}]};
+  }
+ });
  registerAppResource(server,"Meu Artigo neutral interface",URI,{},async()=>({
   contents:[{uri:URI,mimeType:RESOURCE_MIME_TYPE,text:await uiResource(),
    _meta:{ui:{prefersBorder:true,csp:{connectDomains:[],resourceDomains:[]}},
