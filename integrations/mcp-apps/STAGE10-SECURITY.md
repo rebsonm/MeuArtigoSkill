@@ -1,45 +1,33 @@
-# MCP Apps security: host-only research data boundary
+# MCP dashboard security boundary
 
-This candidate deliberately exposes a single generic tool
-`meu_artigo_painel` and a neutral HTML resource
-`ui://meu-artigo/site-v1.html`.
+The researcher's ChatGPT Google Drive connector reads the existing
+Meu Artigo files, tables and canonical decisions. No source files,
+Google access tokens, refresh grants or Drive folder mapping enter
+the MCP. The assistant supplies **only a validated per-request
+display projection** to `meu_artigo_painel`; the MCP returns it to
+its view. This is a transient data-processing activity, not a
+zero-knowledge service.
 
-## Security guarantees intended by this implementation
+Controls: request-specific Auth0 verification; no cross-user storage;
+no DB or source file access; no server-side snapshot cache; strict
+projection field allowlist and UTF-8 size cap; no document bodies or
+tokens; bounded gates/tasks; rejection on unexpected fields; no
+automatic scientific approval; incomplete evidence never treated as
+zero defects; UI HTML-escaped rendering; stale view cleared on
+failed or missing tool result. Source provenance and human decisions
+remain with the researcher's original Drive records.
 
-- **No research data**: No project file reader, child process to inspect
-  research files, Google APIs, Google refresh tokens, Drive metadata,
-  subject-to-project registry or automatic scientific approvals.
-- **Host-side Drive only**: Individual researchers use their personal
-  ChatGPT Google Drive connector. The MCP cannot and should not obtain
-  their Google account grants, documents, IDs, summaries or private
-  project progress.
-- **Strict arguments**: tool accepts optional locale and MINIMAL/FULL.
-  Unknown project paths do not influence the response. It returns neutral
-  guidance and no research `structuredContent`.
-- **Neutral HTML**: `HOST_NOT_CONNECTED`, no fictional research progress.
-  The MCP Apps bridge discards unexpected host tool results to prevent
-  researchers' private data from entering the app UI via this server.
-- **Startup refusal**: any configured project root, tenant registry,
-  Google OAuth secret or token-storage variable blocks startup.
-- **Local-only transport**: HTTP binds to 127.0.0.1/::1. Public Nginx
-  exposure remains prohibited until independent OAuth acceptance.
-- **Standard HTTP guards**: strict Bearer or Auth0 OAuth validation,
-  Origin check, JSON/media/body size limit, single stateless MCP request.
-- **Authentication is not data authorization**: Auth0 verifies access to
-  the generic service; it does not grant access to any Google Drive.
-- **No privilege equivalence claims**: the host's Google Drive connector
-  handles per-user access according to each user's own consent and
-  permissions; the MCP cannot verify or override that boundary.
+Supported request: `meu_artigo_painel(locale?,mode?,snapshot?)`.
+The `snapshot` is a summary of what the host has already read, not
+a Google Drive path, a Google token or a request for the MCP to
+access storage. See `README.md` for the strict schema.
 
-## Synthetic evidence
+`test:host-boundary` ensures direct Drive access remains disabled.
+`test:host-projection` checks alternating user snapshots, rejection
+of private/bulk content, and absence of cached prior projects.
+These tests do not certify private transport logs, real-user Google
+connection isolation or future server modifications.
 
-`npm run test:host-boundary` uses fictional files, Auth0-signed fake
-subjects and a mock JWKS server to verify no project information leaves
-the MCP and forbidden storage configurations fail closed. It does not
-connect to any real research Drive or user account. Legacy Python/HTML
-projection tests run independently of MCP and must not be interpreted
-as MCP project read permissions.
-
-A green CI result establishes test coverage at its commit SHA, not live
-OAuth/ChatGPT/Drive integration, Nginx safety, installed Plugin freshness
-or independent scientific research validity.
+Actual OAuth to ChatGPT, Nginx/TLS proxying, two-account Drive use,
+data minimization consent, incident response and privacy review
+must be accepted separately before public deployment.
