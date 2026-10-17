@@ -1,32 +1,43 @@
-/* MCP Apps displays a request-local, bounded projection supplied by
- * the current ChatGPT session. Google Drive files remain in that user's
- * connected Drive; never persist or fetch them here.
+/* ChatGPT reads the researcher's own Drive and calls the MCP with a
+ * bounded UI projection. This bridge only displays that per-call projection.
+ * No persistent cache or cross-user memory.
  */
 import {App} from "@modelcontextprotocol/ext-apps";
 type SiteData={schema?:string;kind?:string;locale?:string};
 declare global {interface Window {MeuArtigoHost?:{
- receive:(data:SiteData)=>boolean;
- disconnect:()=>void;
- locale:(value:string)=>void;
+ receive:(data:SiteData)=>boolean;disconnect:()=>void;locale:(code:string)=>void;
 }}}
-const app=new App({name:"Meu Artigo",version:"0.2.0"});
-const fail=()=>{
- // Always revoke the previous request's rendering, including between users
- // or when the model fails to prepare the next snapshot.
+const app=new App({name:"Meu Artigo",version:"0.3.0"});
+const clear=()=>{
  window.MeuArtigoHost?.disconnect();
- const notice=document.querySelector(".mock-badge");
- if(notice)notice.textContent="AGUARDANDO DADOS DO CHATGPT";
+ const n=document.querySelector(".mock-badge");
+ if(n)n.textContent="AGUARDANDO DADOS DO CHATGPT";
 };
+function provenance(){
+ const badge=document.querySelector(".mock-badge");
+ if(badge)badge.textContent="DADOS DO CHATGPT · SEM GRAVAÇÃO";
+ const footer=document.querySelector(".source-line");
+ if(footer){
+  const spans=footer.querySelectorAll("span");
+  if(spans[0])spans[0].textContent="Fonte: visualização recebida do ChatGPT nesta sessão";
+  if(spans[1])spans[1].textContent="MCP não consultou o Drive · Sem aprovação científica";
+ }
+ const header=document.querySelector(".page-top .stage");
+ if(header)header.textContent="Snapshot do ChatGPT · não persistido";
+}
 app.ontoolresult=(event:any)=>{
- const data=event?.structuredContent?.site;
- if(!data||data.schema!=="MEU_ARTIGO_SITE_V1"||
-    data.kind!=="HOST_AUTHORIZED_SNAPSHOT"||
-    !window.MeuArtigoHost?.receive(data))fail();
+ const site=event?.structuredContent?.site;
+ if(!site||site.schema!=="MEU_ARTIGO_SITE_V1"||
+    site.kind!=="HOST_AUTHORIZED_SNAPSHOT"||
+    !window.MeuArtigoHost?.receive({...site,kind:"CANONICAL_LOCAL_SNAPSHOT"})){
+  clear();return;
+ }
+ provenance();
 };
-app.onhostcontextchanged=(context:any)=>{
- if(context?.locale)window.MeuArtigoHost?.locale(context.locale);
+app.onhostcontextchanged=(ctx:any)=>{
+ if(ctx?.locale)window.MeuArtigoHost?.locale(ctx.locale);
 };
 app.connect().then(()=>{
- const context:any=app.getHostContext?.();
- if(context?.locale)window.MeuArtigoHost?.locale(context.locale);
-}).catch(()=>fail());
+ const ctx:any=app.getHostContext?.();
+ if(ctx?.locale)window.MeuArtigoHost?.locale(ctx.locale);
+}).catch(()=>clear());
