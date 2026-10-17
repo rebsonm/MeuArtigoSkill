@@ -35,8 +35,12 @@ class PrePilotPrivacyTests(unittest.TestCase):
             with redirect_stdout(out):
                 self.assertEqual(refs.main([str(self.root)]), 0)
         data = json.loads(out.getvalue())
-        self.assertEqual(data["finding_counts"]["BLOCK"], 1)
-        self.assertEqual(data["finding_counts"]["REVIEW"], 2)
+        self.assertEqual(data["status"], "HUMAN_REVIEW_REQUIRED")
+        self.assertNotIn("finding_counts", data)
+        # A private in-process summary remains available without stdout.
+        aggregate = refs.public_console_summary(full)
+        self.assertEqual(aggregate["finding_counts"]["BLOCK"], 1)
+        self.assertEqual(aggregate["finding_counts"]["REVIEW"], 2)
         self.assertNotIn(self.marker, out.getvalue())
         self.assertFalse(data["semantic_support_proven"])
 
