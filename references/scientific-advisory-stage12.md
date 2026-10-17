@@ -26,7 +26,7 @@ workflow, seven scientific gates, and Drive F1–F9 remain unchanged.
   is ADVISORY; no positive-result certification is possible.
 - `report_output_guard.write_report`: local report helper, create-only,
   confined to `98_Technical_Reports`. It is imported only to support
-  existing explicit CLI output, not called by a dashboard or MCP transport.
+  existing explicit CLI output, not called by a dashboard or external interface transport.
 
 ## Required decision boundary
 
