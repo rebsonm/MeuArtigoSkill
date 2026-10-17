@@ -20,7 +20,7 @@ export function auth0Configuration(env = process.env) {
   const resource = exactHttpsUrl(env.MEU_ARTIGO_AUTH_RESOURCE || "", "resource");
   if (resource.pathname !== "/mcp")
     throw Error("Protected resource URL must be the HTTPS /mcp endpoint");
-  const multiUser = Boolean(env.MEU_ARTIGO_MULTIUSER_REGISTRY);
+  const multiUser = Boolean(env.MEU_ARTIGO_MULTIUSER_REGISTRY || env.MEU_ARTIGO_GOOGLE_DRIVE_MODE === "per_user");
   const permittedSub = String(env.MEU_ARTIGO_PILOT_SUB || "");
   if (multiUser && permittedSub)
     throw Error("Pilot allowlist and multiuser registry must not coexist");
