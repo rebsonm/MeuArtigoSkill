@@ -124,7 +124,7 @@ export function createServer({resolveProject=null,listProjects=null}={}){
    structuredContent:{site:response.site}};
  });
  if(listProjects){
-  registerAppTool(server,"meu_artigo_projetos",{
+  server.registerTool("meu_artigo_projetos",{
    title:"Meu Artigo — authorized project IDs (read only)",
    description:"List only this researcher's authorized project IDs; no paths or writes.",
    inputSchema:{},annotations:{readOnlyHint:true,idempotentHint:true,openWorldHint:false}
