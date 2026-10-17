@@ -1,0 +1,81 @@
+name: Stage 04 - security and dependency contracts
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: security-contracts-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  repository-security:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Reject committed credential patterns (no secrets printed)
+        run: python scripts/audit_repository_secrets.py
+      - name: Verify offline security and dependency contracts
+        run: |
+          python -m unittest discover -s tests -p 'test_repository_secrets.py' -v
+          python -m unittest discover -s tests -p 'test_optional_mcp_supply_chain.py' -v
+          python -m unittest discover -s tests -p 'test_codeql_sarif.py' -v
+          python scripts/audit_optional_mcp_supply_chain.py
+      - name: Preserve #76 confidential loopback bridge regressions
+        run: python -m unittest discover -s tests -p 'test_local_research_bridge.py' -v
+      - name: Preserve the public Skill distribution boundary
+        run: python -m unittest discover -s tests -p 'test_skill_public_boundary.py' -v
+  optional-node-mcp:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Require npm lock if MCP Apps are present
+        id: check
+        run: |
+          python scripts/audit_optional_mcp_supply_chain.py
+          if test -f integrations/mcp-apps/package.json; then
+            echo 'present=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'present=false' >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        if: steps.check.outputs.present == 'true'
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: integrations/mcp-apps/package-lock.json
+      - name: Reproducible install without lifecycle scripts
+        if: steps.check.outputs.present == 'true'
+        working-directory: integrations/mcp-apps
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Audit production npm dependencies
+        if: steps.check.outputs.present == 'true'
+        working-directory: integrations/mcp-apps
+        run: npm audit --omit=dev --audit-level=high
+      - name: Build browser bridge explicitly
+        if: steps.check.outputs.present == 'true'
+        working-directory: integrations/mcp-apps
+        run: npm run build
+      - name: Run MCP Apps synthetic protocol tests
+        if: steps.check.outputs.present == 'true'
+        working-directory: integrations/mcp-apps
+        run: |
+          npm run test:smoke
+          npm run test:synthetic
+          npm run test:i18n
+          npm run test:http
+          if node -e "const p=require('./package.json'); process.exit(p.scripts['test:oauth'] && p.scripts['test:oauth-http'] ? 0:1)"; then
+            npm run test:oauth
+            npm run test:oauth-http
+          fi
