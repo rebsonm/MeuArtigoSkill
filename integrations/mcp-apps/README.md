@@ -1,167 +1,105 @@
-# Meu Artigo — optional ChatGPT-first MCP Apps UI (experimental)
+# Meu Artigo — host-owned Google Drive, generic MCP Apps companion
 
-> **Per-researcher Google Drive:** The single-user/local-project and local-tenant
-> examples below **must not** be presented as authorization for other users'
-> Google Drives. For multiuser research, use a separate individual Google OAuth
-> consent per authenticated researcher, never the maintainer's Drive token,
-> API key or a shared service account. Implementation and deployment
-> restrictions: [GOOGLE-USER-DELEGATION.md](GOOGLE-USER-DELEGATION.md).
-> In `MEU_ARTIGO_GOOGLE_DRIVE_MODE=per_user`, only that user's canonical
-> folder **metadata** can be listed; complete Drive-backed manuscript
-> operations and the interactive research panel are not yet available.
+## Ownership boundary (mandatory)
 
+**Each researcher connects their own Google Drive through their own ChatGPT
+account and ChatGPT's Google Drive connector.** ChatGPT executes permitted
+document reads under that account. The Meu Artigo Skill applies methodology
+and seven human scientific gates **in ChatGPT**.
 
-## What was built
+This MCP service is limited to a **generic methodological interface**, a
+text-only tool `meu_artigo_painel` and a neutral resource
+`ui://meu-artigo/site-v1.html`. It MUST NOT read files, articles,
+references, project metadata, Google Drive folders, tokens or private
+research records, or store any of them on the VPS. A model must NOT
+send a research document or Drive ID in tool arguments.
 
-An **optional separate** MCP Apps companion now exposes:
-- \`meu_artigo_painel\` as a standard read-only MCP tool;
-- \`ui://meu-artigo/site-v1.html\` as an MCP Apps HTML resource;
-- the user-approved blue website, with the byte-accurate repository logo,
-  ten navigable sections, accessible method selection, and fictional data
-  disabled by default when running in a connected host;
-- the same tool's **meaningful text response**, independent of rendering;
-- a single authorized local-project reader that never accepts a filesystem
-  path from tool arguments.
+The MCP does **not** manage Google Cloud OAuth, Drive refresh tokens,
+Google API calls, identity-to-project registries, journal CAS, shared
+folders, or scientific approvals.
 
-When a client supports MCP Apps, the host can render the UI resource in
-its chat interface. When it does not, the tool's text remains useful. If
-the tool itself is unavailable, the Skill's ordinary conversation plus
-existing native/text dashboard guidance must continue to work and must
-not imply that a project was opened.
+A/B/C/operator data separation is enforced at the **host connector**
+boundary, not by a shared Google token on this server. The assistant must
+only access the Google Drive connector that the current researcher has
+authorized in their own ChatGPT session.
 
-This is **implemented code**, not proof of a live ChatGPT installation:
-a remote, authenticated HTTPS MCP endpoint, user isolation, permitted
-project-source access and actual ChatGPT connection are still required.
+## Current interface
 
-## Supported UI languages and deliberate fallback
+- `meu_artigo_painel(locale?,mode?)` accepts only a UI language and
+  MINIMAL/FULL display preference. Its response is generic guidance,
+  **never** researcher-specific status, task counts or evidence.
+- The MCP Apps HTML resource initializes as `HOST_NOT_CONNECTED`.
+  The bridge explicitly discards ALL tool results instead of accepting
+  `structuredContent.site` from private sources.
+- ChatGPT, not this MCP, is responsible for presenting actual research
+  information in the conversation and enforcing human scientific gates.
+- A complete research dashboard populated from private Drive files cannot
+  be offered by this MCP without violating its current privacy boundary.
+  If desired, it must be implemented using ChatGPT-native surfaces that
+  do not transmit the underlying research content to this server.
 
-The site selects interaction language from the host's mirrored
-\`document.documentElement.lang\` (when provided), the browser language,
-or the explicitly supplied tool locale, and also offers a visible manual
-picker. The current offline UI has authored localization for Portuguese,
-English, Spanish and French, with **English as an explicit fallback** for
-other language tags. It does not use IP, nationality or manuscript language
-to guess language preferences.
+## Reproducible local acceptance
 
-Not every long contextual paragraph has independent professional
-translations in all four languages yet; the UI is an experimental
-multilingual candidate, not a universal translated/validated localization
-catalog. The assistant's conversational response should follow the
-researcher's language through \`references/language-policy.md\`, including
-languages not yet covered by the static UI.
+Node 20+, Python 3.10+; in `integrations/mcp-apps`:
 
-**Never translate source passages, participant statements or a researcher's
-original task titles to match a UI setting.** The manuscript's language
-remains separately governed by journal requirements or a deliberate choice.
-Translation does not validate a method, reference, gate or scientific claim.
+```bash
+npm ci --ignore-scripts --no-audit --no-fund
+npm run build
+npm run test:smoke
+npm run test:synthetic
+npm run test:host-boundary
+npm run test:http
+npm run test:stage10
+npm run test:oauth
+npm run test:oauth-http
+npm run test:stage15
+```
 
-## Local use and verification
+Research and Google environment variables are **forbidden** in this
+server. Supplying any of the following refuses startup instead of
+allowing a data-reading fallback:
 
-Requires Node 20+ and Python 3.10+ on an authorized workstation. Do not
-put protected full texts or passwords in application packages.
+`MEU_ARTIGO_PROJECT_ROOT`,
+`MEU_ARTIGO_MULTIUSER_REGISTRY`,
+`MEU_ARTIGO_TENANT_DATA_ROOT`,
+`MEU_ARTIGO_GOOGLE_DRIVE_MODE`,
+`MEU_ARTIGO_GOOGLE_TOKEN_DIR`,
+`MEU_ARTIGO_GOOGLE_TOKEN_KEY`,
+`MEU_ARTIGO_GOOGLE_CLIENT_ID`,
+`MEU_ARTIGO_GOOGLE_CLIENT_SECRET`,
+`MEU_ARTIGO_GOOGLE_REDIRECT_URI`.
 
-    cd integrations/mcp-apps
-    npm install
-    npm run build
-    npm run test:smoke
-    npm run test:synthetic
-    npm run test:i18n
+The repository also retains isolated synthetic tests of scientific
+projections in Python and browser HTML. Those test artifacts do NOT
+represent MCP retrieval of a user's real project.
 
-Then configure \`MEU_ARTIGO_PROJECT_ROOT\` as **one absolute existing
-authorized project** in the local environment and register the standard
-stdio MCP server (entrypoint \`node server.mjs --stdio\`) with an
-MCP Apps-compatible local host.
+## Auth0 is MCP access control, never Drive authorization
 
-The optional Node server delegates to the already-reviewed read-only
-\`scripts/build_research_site.py --project … --json-only\` projection;
-the model cannot select arbitrary projects or request writes. The
-host's tool arguments may specify a UI locale and MINIMAL/FULL display
-depth, which never authorize actions or gate decisions.
+For a single-identity pilot, `MEU_ARTIGO_AUTH_MODE=auth0` with
+`MEU_ARTIGO_PILOT_SUB` enforces one validated pilot subject.
 
-### Optional authenticated HTTP transport for ChatGPT integration work
+For a generic multi-researcher service, the separate option
+`MEU_ARTIGO_MCP_MULTIUSER=YES` permits validated individual human
+Auth0 subjects and rejects a simultaneous global pilot allowlist.
+Tokens must have a valid RS256 signature, trusted issuer, exact
+`https://mcp.allflux.com.br/mcp` audience, bounded lifetime, and
+`mcp:read`. **Neither Auth0 setup grants Google Drive access.**
 
-The MCP app also has a Streamable HTTP adapter:
+The HTTP service is still bound to `127.0.0.1:8085` by default.
+A public HTTPS reverse proxy is NOT provided or enabled here. The
+included Nginx template is deliberately disabled (404). Do not deploy
+it before actual ChatGPT OAuth, TLS, least-privilege and operational review.
 
-    MEU_ARTIGO_PROJECT_ROOT=/authorized/project \
-    MEU_ARTIGO_MCP_BEARER=<privately generated long bearer token> \
-    node server.mjs --http
+## Scope of evidence
 
-By default it binds **127.0.0.1:8085** and is NOT accessible to hosted
-ChatGPT. All HTTP MCP requests require a bearer secret of at least 32
-characters, checked in constant time, and any \`Origin\` header must
-match the explicitly configured \`MEU_ARTIGO_ALLOWED_ORIGIN\` or is
-rejected. The server provides no CORS wildcard and never accepts
-filesystem paths in tool arguments.
+Successful tests prove that the server cannot read project data through
+its registered tools, can refuse forbidden storage configuration, and
+can serve a neutral UI to MCP clients. They do not prove that a
+researcher has connected Google Drive inside their own ChatGPT account,
+that the host provides MCP Apps rendering, that real identities have
+passed OAuth E2E, or that the research methodology has been independently
+validated.
 
-A non-loopback binding is refused unless the operator explicitly sets
-\`MEU_ARTIGO_PROXY_TLS_CONFIRMED=YES\` and
-\`MEU_ARTIGO_SINGLE_USER_ISOLATED=YES\`. Those flags are operator
-assertions, **not verified security evidence**. Do not enable such a
-binding merely to demonstrate the UI. A real ChatGPT remote connection
-needs an independently managed TLS/authenticated reverse proxy,
-suitable OAuth/user isolation, a stable HTTPS URL and authorized storage
-review; no public endpoint is provisioned by this code.
-
-For a single-tenant local network adapter smoke run:
-
-    cd integrations/mcp-apps
-    npm run test:http
-
-The bearer token must stay in a trusted secrets store, never in the
-archive, client JavaScript, screenshots, shared project files or chat.
-Any multi-tenant hosting design requires additional authorization and
-is outside this experimental server's accepted scope.
-
-## No project / unavailable or unsupported UI
-
-The tool returns \`isError:true\` with a concise localized recovery
-message **without any fictional research data** when no project has
-been authorized or an authorized snapshot cannot be read.
-
-The registered HTML resource also initializes in
-\`HOST_NOT_CONNECTED\` state, not a demo with fabricated progress.
-Only a valid \`CANONICAL_LOCAL_SNAPSHOT\` tool result populates it.
-The UI cannot approve gates, update tasks, execute Drive writes, access
-browsing/search APIs or store user decisions.
-
-A client that cannot load MCP Apps still receives the ordinary
-\`content\` text summary alongside optional \`structuredContent\`.
-This is deliberate cross-client backward compatibility, not a request
-to fake a tool response inside the conversation.
-
-## ChatGPT deployment still requires an authorized external service
-
-The stdio transport is for local host development/testing only; a
-ChatGPT-connected remote MCP service needs an accessible HTTPS transport,
-authentication appropriate for each user, verified tenant/project
-isolation, secure data adapter, UI resource inspection and acceptance
-in the actual ChatGPT client. The currently installed private Meu Artigo
-Skills-based package **does not magically register this separate MCP
-server**. Merely merging, updating a Skill ZIP or editing a plugin's
-first-run metadata will not enable the MCP Apps iframe.
-
-A withdrawn experimental PR #22 provided historical design input only.
-Its server was not merged or silently activated; this new
-\`integrations/mcp-apps/\` implementation is isolated from the public
-Skill ZIP. Cross-provider support is contingent on each host accepting
-MCP tools, the MCP Apps UI extension and the specific credentials.
-
-Do **not** expose a localhost server publicly, invent a hosted URL, or
-send protected project content to a shared test instance.
-A managed deployment and account-specific authentication decision
-must precede any ChatGPT live activation.
-
-## Ownership and evidence
-
-- **Researcher:** original Meu Artigo software/research concept, approved
-  blue layout, methodology, data ownership and seven human gates.
-- **Assistant:** proposed language adaptation, optional MCP Apps companion,
-  tool/text fallback, tests, packaging docs and non-scientific UI code.
-- **Provider/CI:** source tests and local MCP handshake are software
-  checks; they do not establish a user-facing ChatGPT host rendering,
-  Google Drive authorization, a release, or scientific efficacy.
-
-References:
-- https://developers.openai.com/plugins/build/app-quickstart
-- https://developers.openai.com/plugins/build/chatgpt-ui
-- https://apps.extensions.modelcontextprotocol.io/
+Do not merge, publish, update the Plugin, configure Auth0/Google Cloud,
+deploy to VPS, proxy public traffic or access anyone's Drive without
+a separate explicit authorization.
