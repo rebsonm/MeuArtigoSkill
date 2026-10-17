@@ -336,13 +336,25 @@ def main(argv=None) -> int:
         if args.output:
             output_file(root,args.output,content,(root/args.assessments) if args.assessments else None)
         else:
-            print(content,end="")
+            # stdout is often retained by shells and CI, so never emit the
+            # detailed report, identifiers, citations, hashes or source text.
+            counts = result.get("counts", {})
+            print(json.dumps({
+                "status": "SCIENTIFIC_DIAGNOSTIC_REVIEW_REQUIRED",
+                "technical_blockers": int(counts.get("blocking_occurrences", 0)),
+                "review_occurrences": int(counts.get("review_occurrences", 0)),
+                "heuristic_advisory_occurrences": int(counts.get("heuristic_advisory_occurrences", 0)),
+                "contextual_advisory_occurrences": int(counts.get("contextual_advisory_occurrences", 0)),
+                "human_review_required": True,
+                "scientific_quality_validated": False,
+                "source_details_disclosed": False,
+            }, sort_keys=True))
         if args.strict and result["counts"]["strict_required_occurrences"]:
             return 2
         # Lack of flagged issues still cannot establish scientific quality.
         return 0
     except (ValueError,OSError,csv.Error,json.JSONDecodeError) as exc:
-        print("DIAGNOSTIC_ERROR: "+str(exc),file=sys.stderr)
+        print("DIAGNOSTIC_ERROR: INPUT_OR_OUTPUT_BLOCKED",file=sys.stderr)
         return 1
 
 
