@@ -68,7 +68,9 @@ jobs:
         run: npm run test:oauth-http
       - name: Verify ChatGPT-owned Drive boundary and privacy fail-closed
         working-directory: integrations/mcp-apps
-        run: npm run test:host-boundary
+        run: |
+          npm run test:host-boundary
+          npm run test:host-projection
       - name: Verify local authenticated Streamable HTTP transport
         working-directory: integrations/mcp-apps
         run: npm run test:http
