@@ -24,7 +24,7 @@ export function auth0Configuration(env = process.env) {
   const permittedSub = String(env.MEU_ARTIGO_PILOT_SUB || "");
   if (multiUser && permittedSub)
     throw Error("Pilot allowlist and multiuser registry must not coexist");
-  if (!multiUser && !/^google-oauth2\\|[A-Za-z0-9_-]{5,128}$/.test(permittedSub))
+  if (!multiUser && !/^google-oauth2\|[A-Za-z0-9_-]{5,128}$/.test(permittedSub))
     throw Error("Exactly one Google Auth0 subject must be allowlisted for pilot isolation");
   return Object.freeze({
     issuer: issuer.href,
@@ -81,7 +81,7 @@ export function createAuth0Verifier(config, { jwksUrl } = {}) {
       // mapped through the private project registry before connecting tools.
       if (config.multiUser) {
         if (typeof payload.sub !== "string" ||
-            !/^[A-Za-z0-9_-]{2,48}\\|[A-Za-z0-9_.-]{5,128}$/.test(payload.sub))
+            !/^[A-Za-z0-9_-]{2,48}\|[A-Za-z0-9_.-]{5,128}$/.test(payload.sub))
           return { ok: false, status: 403, error: "access_denied" };
       } else if (payload.sub !== config.permittedSub) {
         return { ok: false, status: 403, error: "access_denied" };
