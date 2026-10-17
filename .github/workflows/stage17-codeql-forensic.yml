@@ -1,4 +1,4 @@
-name: Stage17 pinned-baseline CodeQL forensic audit
+name: Stage17 candidate CodeQL post-fix audit
 on:
   pull_request:
     paths:
@@ -14,8 +14,8 @@ jobs:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           persist-credentials: false
-          ref: c24d7eb029c8238e9a43d0434b70f2eadb6c7f60
-      - name: Initialize CodeQL Python against pinned pre-fix candidate
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Initialize CodeQL Python against candidate HEAD
         uses: github/codeql-action/init@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4
         with:
           languages: python
@@ -26,7 +26,7 @@ jobs:
         with:
           upload: never
           output: ${{ runner.temp }}/stage17-python-sarif
-          category: stage17/pinned-baseline
+          category: stage17/candidate-postfix
       - name: Print only rule ID, severity and location; never snippet or payload
         run: |
           python - <<'PY'
@@ -53,7 +53,7 @@ jobs:
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:
-          name: stage17-pinned-python-codeql-local-sarif
+          name: stage17-candidate-python-codeql-local-sarif
           path: ${{ runner.temp }}/stage17-python-sarif
           if-no-files-found: warn
           retention-days: 7
