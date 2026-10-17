@@ -38,6 +38,36 @@ function locale(raw="auto"){
  const code=String(raw).split("-")[0].toLowerCase();
  return LOCALES.has(code)?code:"pt";
 }
+// E05's tunnel must accept ONLY two fixed, non-personal test fixtures.
+// This is defensive staging-only enforcement, never enabled in the live pilot.
+function e05SyntheticFixture(raw){
+ if(!raw||typeof raw!=="object"||Array.isArray(raw))return false;
+ if(Object.keys(raw).some(k=>!["schema","active_route","registered_gate_total",
+    "gate_view_partial","tasks","gates","next_action"].includes(k)))return false;
+ if(raw.schema!=="MEU_ARTIGO_SITE_V1"||raw.active_route!=="documentary"||
+    raw.registered_gate_total!==7||raw.gate_view_partial!==false)return false;
+ if(!Array.isArray(raw.tasks)||raw.tasks.length!==1)return false;
+ const task=raw.tasks[0];
+ if(!task||typeof task!=="object"||Array.isArray(task)||
+    Object.keys(task).some(k=>!["id","task","execution_owner","deadline"].includes(k)))return false;
+ const permitted=new Map([
+  ["SYN-E05-A-01","SYNTHETIC E05 ALPHA"],
+  ["SYN-E05-B-01","SYNTHETIC E05 BRAVO"]
+ ]);
+ if(permitted.get(task.id)!==task.task||
+    task.execution_owner!=="Synthetic Researcher"||task.deadline!==null)return false;
+ if(!Array.isArray(raw.gates)||raw.gates.length!==7)return false;
+ for(let i=0;i<7;i++){
+  const g=raw.gates[i];
+  if(!g||typeof g!=="object"||Array.isArray(g)||Object.keys(g).length!==2||
+     g.id!=="GATE-000"+(i+1)||g.approval_documented!==false)return false;
+ }
+ const action=raw.next_action;
+ return action&&typeof action==="object"&&!Array.isArray(action)&&
+  Object.keys(action).length===3&&action.code==="REVIEW"&&
+  action.explanation==="SYNTHETIC E05 REVIEW"&&
+  action.responsible==="Synthetic Researcher";
+}
 function guidance(raw){
  const message={
   pt:"Meu Artigo: o MCP fornece somente interface e orientações metodológicas genéricas. Use a conexão Google Drive individual do ChatGPT para consultar seus próprios arquivos. Nenhum projeto ou decisão científica foi carregado ou aprovado pelo MCP.",
@@ -63,8 +93,10 @@ export function createServer(){
  noResearchAccess();
  const server=new McpServer({name:"Meu Artigo — Host-Side Research",version:"0.2.0"});
  registerAppTool(server,"meu_artigo_painel",{
-  title:"Meu Artigo — current research dashboard (transient)",
-  description:"Display ONLY a strictly bounded projection prepared by ChatGPT from the currently connected researcher's own Drive. Do not send PDFs, complete documents, original claims, full research manuscripts, file IDs, URLs or tokens. This MCP never accesses Drive and never persists the supplied projection.",
+  title:process.env.MEU_ARTIGO_E05_SYNTHETIC_ONLY==="YES"?"Meu Artigo E05 — synthetic visual acceptance":"Meu Artigo — current research dashboard (transient)",
+  description:process.env.MEU_ARTIGO_E05_SYNTHETIC_ONLY==="YES"?
+   "E05 synthetic-only visual acceptance. Use only the fixed ALPHA/BRAVO fixtures. No Drive, names, documents or real research records. No scientific approvals.":
+   "Display ONLY a strictly bounded projection prepared by ChatGPT from the currently connected researcher's own Drive. Do not send PDFs, complete documents, original claims, full research manuscripts, file IDs, URLs or tokens. This MCP never accesses Drive and never persists the supplied projection.",
   inputSchema:{locale:z.string().max(35).optional(),mode:z.enum(["MINIMAL","FULL"]).optional(),
    snapshot:z.unknown().optional()},
   outputSchema:uiOutputSchema,
@@ -75,6 +107,8 @@ export function createServer(){
   if(args.snapshot===undefined)return {
    isError:true,content:[{type:"text",text:guidance(args.locale)}]
   };
+  if(process.env.MEU_ARTIGO_E05_SYNTHETIC_ONLY==="YES"&&!e05SyntheticFixture(args.snapshot))
+   return {isError:true,content:[{type:"text",text:"E05_SYNTHETIC_ONLY: projection rejected. Use only approved fake ALPHA/BRAVO fixtures."}]};
   try{
    // Response exists only in the scope of this request; no cache, DB,
    // per-user registry, telemetry or persistence is permitted.
