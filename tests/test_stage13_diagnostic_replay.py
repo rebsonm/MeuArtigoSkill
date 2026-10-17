@@ -139,8 +139,8 @@ class Stage13DiagnosticAndReplayTests(unittest.TestCase):
     def test_evaluation_zip_rejects_unreviewed_private_fields(self):
         catalog=json.loads((ROOT/"benchmarks/critical_cases_v1.json")
                            .read_text(encoding="utf-8"))
-        secret="PRIVATE_RESEARCH_EXCERPT_NEVERSHIP_123"
-        catalog["cases"][0]["source_passage"]=secret
+        synthetic_marker="SYNTHETIC_DISALLOWED_FIELD_123"
+        catalog["cases"][0]["source_passage"]=synthetic_marker
         raw=self.root/"private-catalog.json"
         raw.write_text(json.dumps(catalog),encoding="utf-8")
         output=self.root/"sensitive.zip"
