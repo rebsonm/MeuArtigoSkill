@@ -16,8 +16,7 @@
     "test:oauth-http": "node scripts/oauth-http.mjs",
     "test:stage13": "node scripts/stage13-projection.mjs",
     "test:stage15": "node scripts/stage15-horizontal.mjs",
-    "test:multiuser": "node scripts/multiuser-isolation.mjs",
-    "test:google-delegation": "node scripts/google-delegation.mjs"
+    "test:host-boundary": "node scripts/host-connector-boundary.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.20.0",
