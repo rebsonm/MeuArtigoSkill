@@ -19,12 +19,14 @@ const evidence={
  host:"official-ext-apps-basic-host-pinned",
  mcp_read:"UNKNOWN",iframe_created:false,app_connect:"UNKNOWN",
  visual_dashboard:false,ten_screens:false,synthetic_task:false,
- script_console_errors:[],host_events:[],success:false
+ script_console_errors:[],host_events:[],app_events:[],success:false
 };
 const browser=await chromium.launch({headless:true,args:["--no-sandbox"]});
 const page=await browser.newPage({viewport:{width:1440,height:900}});
 page.on("console",msg=>{
  const msgText=msg.text();
+ if(msgText.startsWith("[MEU_ARTIGO_UI]")&&evidence.app_events.length<25)
+  evidence.app_events.push(msgText.slice(16,90));
  if(msgText.startsWith("[HOST]")){
   for(const keyword of ["Connected via","Reading UI resource","Sandbox proxy loaded","MCP App initialized","Sending tool call result"]){
    if(msgText.includes(keyword)&&!evidence.host_events.includes(keyword)){
@@ -104,6 +106,6 @@ try{
   iframe_created:evidence.iframe_created,mcp_read:evidence.mcp_read,
   app_connect:evidence.app_connect,visual_dashboard:evidence.visual_dashboard,
   ten_screens:evidence.ten_screens,synthetic_task:evidence.synthetic_task,
-  host_events:evidence.host_events,error_code:evidence.error_code||null
+  host_events:evidence.host_events,app_events:evidence.app_events,error_code:evidence.error_code||null
  }));
 }
