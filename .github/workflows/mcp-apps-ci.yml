@@ -69,6 +69,9 @@ jobs:
       - name: Verify per-user JWT identities, strict registry and cross-researcher isolation
         working-directory: integrations/mcp-apps
         run: npm run test:multiuser
+      - name: Verify isolated Google OAuth consents and per-user Drive metadata
+        working-directory: integrations/mcp-apps
+        run: npm run test:google-delegation
       - name: Verify local authenticated Streamable HTTP transport
         working-directory: integrations/mcp-apps
         run: npm run test:http
