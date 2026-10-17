@@ -38,6 +38,18 @@ def catalog_from(path: Path):
         raise ValueError("Authorized frozen case catalog unavailable or oversized")
     catalog=json.loads(path.read_text(encoding="utf-8"))
     cases=validate_catalog(catalog)
+    # A caller can set synthetic=true on real content. The export must
+    # enforce an explicit metadata-only schema, not trust that assertion.
+    top={"schema_version","purpose","description","cases"}
+    fields={"case_id","category","scenario","control","expected_action","synthetic"}
+    if set(catalog)-top or any(set(row)-fields for row in cases.values()):
+        raise ValueError("Evaluation ZIP catalog has undeclared content fields")
+    # Prevent a hostile free-text scenario from containing a literal source
+    # passage: this bounded exporter is exclusively for case descriptions,
+    # not unreviewed research text or manuscript excerpts.
+    if any(len(row["scenario"])>280 or len(row["category"])>80 or
+           len(row["control"])>80 for row in cases.values()):
+        raise ValueError("Evaluation ZIP requires brief synthetic metadata")
     return catalog,cases
 
 def redact_ledger(ledger: Path | None, catalog: dict, cases: dict):

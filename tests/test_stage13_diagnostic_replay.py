@@ -136,6 +136,27 @@ class Stage13DiagnosticAndReplayTests(unittest.TestCase):
         self.assertEqual(target.read_text(),"FOREIGN_WRITER")
         self.assertEqual(list(self.root.glob(".reg019-*.zip")),[])
 
+    def test_evaluation_zip_rejects_unreviewed_private_fields(self):
+        catalog=json.loads((ROOT/"benchmarks/critical_cases_v1.json")
+                           .read_text(encoding="utf-8"))
+        secret="PRIVATE_RESEARCH_EXCERPT_NEVERSHIP_123"
+        catalog["cases"][0]["source_passage"]=secret
+        raw=self.root/"private-catalog.json"
+        raw.write_text(json.dumps(catalog),encoding="utf-8")
+        output=self.root/"sensitive.zip"
+        with self.assertRaisesRegex(ValueError,"undeclared content fields"):
+            package.build(output,raw)
+        self.assertFalse(output.exists())
+
+    def test_evaluation_zip_rejects_oversized_scenario(self):
+        catalog=json.loads((ROOT/"benchmarks/critical_cases_v1.json")
+                           .read_text(encoding="utf-8"))
+        catalog["cases"][0]["scenario"]="S"*400
+        raw=self.root/"oversized.json"
+        raw.write_text(json.dumps(catalog),encoding="utf-8")
+        with self.assertRaisesRegex(ValueError,"brief synthetic metadata"):
+            package.build(self.root/"large.zip",raw)
+
     def test_self_reported_score_cannot_be_certified(self):
         catalog=json.loads((ROOT/"benchmarks/critical_cases_v1.json")
                            .read_text(encoding="utf-8"))
