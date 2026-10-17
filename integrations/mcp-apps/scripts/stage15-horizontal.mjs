@@ -141,9 +141,7 @@ try{
       const picker=d.getElementById("site-language");
       picker.value=code;
       picker.dispatchEvent(new dom.window.Event("change",{bubbles:true}));
-      assert.match(d.getElementById("content").textContent,
-        new RegExp(phrase.replace(/[.*+?^$\{\}()|[\]\\]/g,"\\  if(expected)assert.match(prose,/Visão parcial: 3 de 7 gates registrados/);
-  else assert.doesNotMatch(prose,/Visão parcial/);")));
+      assert.ok(d.getElementById("content").textContent.includes(phrase),phrase);
     }
   }else assert.doesNotMatch(prose,/Visão parcial/);
   d.querySelector('nav button[data-page="steps"]').click();
