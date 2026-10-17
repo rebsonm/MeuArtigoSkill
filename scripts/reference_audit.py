@@ -180,6 +180,23 @@ def audit(root: Path) -> dict:
         "disclaimer": "Identity, DOI, source-report and Evidence_ID checks are not semantic corroboration.",
     }
 
+def public_console_summary(result: dict) -> dict:
+    """Bounded counters only: no document identifiers, paths or source text."""
+    counts = result["finding_counts"]
+    return {
+        "audit": "REG-018_CANONICAL_CITATION_RECONCILIATION",
+        "source_report_status": result["source_report_status"],
+        "finding_counts": {
+            "BLOCK": int(counts.get("BLOCK", 0)),
+            "REVIEW": int(counts.get("REVIEW", 0)),
+        },
+        "human_review_required": True,
+        "semantic_support_proven": False,
+        "identifiers_or_passages_disclosed": False,
+        "details_available_only_as_private_explicit_report": True,
+    }
+
+
 def _write_output(root: Path, raw: Path, result: dict):
     write_report(root, raw, json.dumps(result, ensure_ascii=False, indent=2) + "\n",
                  allowed_extensions=frozenset({".json"}))
@@ -196,12 +213,12 @@ def main(argv=None):
         result = audit(root)
         if args.output is not None:
             _write_output(root, args.output, result)
-        print(json.dumps(result, ensure_ascii=False, indent=2))
+        print(json.dumps(public_console_summary(result), sort_keys=True))
         if args.strict and any(result["finding_counts"].values()):
             return 2
         return 0
     except (ValueError, OSError, json.JSONDecodeError, csv.Error) as exc:
-        print("REFERENCE_AUDIT_ERROR: " + str(exc), file=sys.stderr)
+        print("REFERENCE_AUDIT_ERROR: INPUT_OR_OUTPUT_BLOCKED", file=sys.stderr)
         return 1
 
 if __name__ == "__main__":
