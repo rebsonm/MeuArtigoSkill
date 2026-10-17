@@ -132,8 +132,20 @@ try{
   assert.equal(d.querySelectorAll("nav button[data-page]").length,10);
   d.querySelector('nav button[data-page="overview"]').click();
   const prose=d.getElementById("content").textContent;
-  if(expected)assert.match(prose,/Visão parcial: 3 de 7 gates registrados/);
-  else assert.doesNotMatch(prose,/Visão parcial/);
+  if(expected){
+    assert.match(prose,/Visão parcial: 3 de 7 gates registrados/);
+    for(const [code,phrase] of [["en","Partial view: 3 of 7 registered gates"],
+                                ["es","Vista parcial: 3 de 7 etapas registradas"],
+                                ["fr","Vue partielle : 3 sur 7 étapes enregistrées"],
+                                ["pt-BR","Visão parcial: 3 de 7 gates registrados"]]){
+      const picker=d.getElementById("site-language");
+      picker.value=code;
+      picker.dispatchEvent(new dom.window.Event("change",{bubbles:true}));
+      assert.match(d.getElementById("content").textContent,
+        new RegExp(phrase.replace(/[.*+?^$\{\}()|[\]\\]/g,"\\  if(expected)assert.match(prose,/Visão parcial: 3 de 7 gates registrados/);
+  else assert.doesNotMatch(prose,/Visão parcial/);")));
+    }
+  }else assert.doesNotMatch(prose,/Visão parcial/);
   d.querySelector('nav button[data-page="steps"]').click();
   if(expected)assert.match(d.getElementById("content").textContent,/Visão parcial/);
   d.querySelector('nav button[data-page="validations"]').click();

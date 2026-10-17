@@ -503,6 +503,12 @@ function disconnectHost(){
 function receiveHostData(nextData){
  if(!validCanonical(nextData)){disconnectHost();return false;}
  siteData=nextData;isCanonical=true;methodChoice='';
+ // Set the next active language BEFORE building any dynamic locale content.
+ // Translating static text after rendering alone cannot localize counts.
+ if(nextData.locale&&nextData.locale!=='auto'){
+   const requested=bcp(nextData.locale);
+   activeLocale=['pt','en','es','fr'].includes(requested)?requested:'en';
+ }
  taskRows=nextData.tasks.map(t=>[e(t.id),e(t.task),e(t.execution_owner),e(t.deadline)]);
  applyCanonical();
  const badge=document.querySelector('.mock-badge');
@@ -515,7 +521,10 @@ window.MeuArtigoHost=Object.freeze({receive:receiveHostData,locale:applyLanguage
 
 function render(){ $('content').innerHTML=screens[current]();$('content').querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));$('content').querySelectorAll('[data-method]').forEach(b=>b.addEventListener('click',()=>{methodChoice=b.dataset.method;render()}));const filter=$('task-filter');if(filter){filter.value=taskQuery;filter.addEventListener('input',()=>{taskQuery=filter.value;const cursor=filter.selectionStart;render();const fresh=$('task-filter');fresh.focus();fresh.setSelectionRange(cursor,cursor)})}translateContainer($('content'))}
 $('reset').addEventListener('click',()=>{taskQuery='';methodChoice='doc';go('overview')});
-document.getElementById('site-language').addEventListener('change',e=>applyLanguage(e.target.value));
+document.getElementById('site-language').addEventListener('change',e=>{
+ applyLanguage(e.target.value);
+ render();
+});
 nav();render();applyLanguage(activeLocale);
 })();
 </script>
