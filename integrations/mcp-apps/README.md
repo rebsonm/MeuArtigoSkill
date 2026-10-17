@@ -1,105 +1,97 @@
-# Meu Artigo — host-owned Google Drive, generic MCP Apps companion
+# Meu Artigo — transient dashboard, researcher-owned Google Drive
 
-## Ownership boundary (mandatory)
+## Data ownership and flow
 
-**Each researcher connects their own Google Drive through their own ChatGPT
-account and ChatGPT's Google Drive connector.** ChatGPT executes permitted
-document reads under that account. The Meu Artigo Skill applies methodology
-and seven human scientific gates **in ChatGPT**.
+Every researcher connects **their own** Google Drive to ChatGPT. The existing
+Meu Artigo Skill creates and maintains its spreadsheets, gates, C.A.D.A.
+registers, journal and research files in that authorized Drive. **Those
+files stay there**; the MCP has no Google API client, refresh tokens,
+folder search, filesystem project reader or Drive write capability.
 
-This MCP service is limited to a **generic methodological interface**, a
-text-only tool `meu_artigo_painel` and a neutral resource
-`ui://meu-artigo/site-v1.html`. It MUST NOT read files, articles,
-references, project metadata, Google Drive folders, tokens or private
-research records, or store any of them on the VPS. A model must NOT
-send a research document or Drive ID in tool arguments.
+The assistant uses the current user's ChatGPT Drive connector to read the
+**existing canonical registers**, and prepares a small `MEU_ARTIGO_SITE_V1`
+summary for the `meu_artigo_painel` MCP tool. The MCP **does receive and
+process those explicitly selected display fields** temporarily to render
+its UI, but it does not fetch source files or persist the payload.
+A new request replaces the previous display; a missing or invalid
+payload resets the UI. This is **not** zero knowledge: the MCP operator
+could in principle observe request contents in process memory or network
+infrastructure, so only approved minimum display fields should be sent.
 
-The MCP does **not** manage Google Cloud OAuth, Drive refresh tokens,
-Google API calls, identity-to-project registries, journal CAS, shared
-folders, or scientific approvals.
-
-A/B/C/operator data separation is enforced at the **host connector**
-boundary, not by a shared Google token on this server. The assistant must
-only access the Google Drive connector that the current researcher has
-authorized in their own ChatGPT session.
-
-## Current interface
-
-- `meu_artigo_painel(locale?,mode?)` accepts only a UI language and
-  MINIMAL/FULL display preference. Its response is generic guidance,
-  **never** researcher-specific status, task counts or evidence.
-- The MCP Apps HTML resource initializes as `HOST_NOT_CONNECTED`.
-  The bridge explicitly discards ALL tool results instead of accepting
-  `structuredContent.site` from private sources.
-- ChatGPT, not this MCP, is responsible for presenting actual research
-  information in the conversation and enforcing human scientific gates.
-- A complete research dashboard populated from private Drive files cannot
-  be offered by this MCP without violating its current privacy boundary.
-  If desired, it must be implemented using ChatGPT-native surfaces that
-  do not transmit the underlying research content to this server.
-
-## Reproducible local acceptance
-
-Node 20+, Python 3.10+; in `integrations/mcp-apps`:
-
-```bash
-npm ci --ignore-scripts --no-audit --no-fund
-npm run build
-npm run test:smoke
-npm run test:synthetic
-npm run test:host-boundary
-npm run test:http
-npm run test:stage10
-npm run test:oauth
-npm run test:oauth-http
-npm run test:stage15
+```text
+Researcher A -> ChatGPT(A) -> A's Drive connector -> A's original registers
+                         -> bounded, per-call UI projection -> shared MCP
+Researcher B -> ChatGPT(B) -> B's Drive connector -> B's original registers
+                         -> bounded, per-call UI projection -> shared MCP
 ```
 
-Research and Google environment variables are **forbidden** in this
-server. Supplying any of the following refuses startup instead of
-allowing a data-reading fallback:
+The MCP **never uses A's Google credential for B**, nor anyone else's,
+and keeps no server-side tenant project mapping or remembered snapshot.
 
-`MEU_ARTIGO_PROJECT_ROOT`,
-`MEU_ARTIGO_MULTIUSER_REGISTRY`,
-`MEU_ARTIGO_TENANT_DATA_ROOT`,
-`MEU_ARTIGO_GOOGLE_DRIVE_MODE`,
-`MEU_ARTIGO_GOOGLE_TOKEN_DIR`,
-`MEU_ARTIGO_GOOGLE_TOKEN_KEY`,
-`MEU_ARTIGO_GOOGLE_CLIENT_ID`,
-`MEU_ARTIGO_GOOGLE_CLIENT_SECRET`,
-`MEU_ARTIGO_GOOGLE_REDIRECT_URI`.
+## Tool and renderer contract
 
-The repository also retains isolated synthetic tests of scientific
-projections in Python and browser HTML. Those test artifacts do NOT
-represent MCP retrieval of a user's real project.
+`meu_artigo_painel(locale?,mode?,snapshot?)` accepts a projection created
+in the current ChatGPT conversation. It must use **only** values actually
+read from the currently connected Drive; the assistant must not invent
+gate approvals, task completion or provenance. Omission leaves the
+display neutral `HOST_NOT_CONNECTED`.
 
-## Auth0 is MCP access control, never Drive authorization
+`snapshot` has this exact bounded shape (no extra keys):
 
-For a single-identity pilot, `MEU_ARTIGO_AUTH_MODE=auth0` with
-`MEU_ARTIGO_PILOT_SUB` enforces one validated pilot subject.
+```json
+{
+  "schema":"MEU_ARTIGO_SITE_V1",
+  "active_route":"qualitative documentary",
+  "registered_gate_total":7,
+  "gate_view_partial":false,
+  "tasks":[{"id":"TASK-01","task":"Review literature","execution_owner":"Researcher","deadline":null}],
+  "gates":[{"id":"GATE-0001","approval_documented":false}],
+  "next_action":{"code":"REVIEW","explanation":"Review search criteria","responsible":"Researcher"}
+}
+```
 
-For a generic multi-researcher service, the separate option
-`MEU_ARTIGO_MCP_MULTIUSER=YES` permits validated individual human
-Auth0 subjects and rejects a simultaneous global pilot allowlist.
-Tokens must have a valid RS256 signature, trusted issuer, exact
-`https://mcp.allflux.com.br/mcp` audience, bounded lifetime, and
-`mcp:read`. **Neither Auth0 setup grants Google Drive access.**
+The example is fictional. It does not approve a scientific gate or claim
+Drive sync. Tasks are capped at 200; gates at seven. The tool performs
+strict field/type/size validation, recomputes documented gate counts,
+preserves partial-state warnings and only accepts the restrictive
+status/code-only diagnostic sidecar when supplied. It rejects document
+bodies, references, quotes, file IDs, URLs, tokens, extra attributes,
+bulk collections and invalid scientific approval claims. No cross-user
+cache, database or log of project contents is part of the implementation.
 
-The HTTP service is still bound to `127.0.0.1:8085` by default.
-A public HTTPS reverse proxy is NOT provided or enabled here. The
-included Nginx template is deliberately disabled (404). Do not deploy
-it before actual ChatGPT OAuth, TLS, least-privilege and operational review.
+The server returns `structuredContent.site` with
+`kind=HOST_AUTHORIZED_SNAPSHOT` only for valid input. The MCP Apps
+bridge forwards this view **in memory** to the existing ten-screen HTML
+dashboard; it does not push raw PDFs, CSV files or entire articles to
+the app. Host data origin and scientific validity are not independently
+verified by the MCP. Status labels must distinguish display data from
+verified source evidence.
 
-## Scope of evidence
+## Safety tests
 
-Successful tests prove that the server cannot read project data through
-its registered tools, can refuse forbidden storage configuration, and
-can serve a neutral UI to MCP clients. They do not prove that a
-researcher has connected Google Drive inside their own ChatGPT account,
-that the host provides MCP Apps rendering, that real identities have
-passed OAuth E2E, or that the research methodology has been independently
-validated.
+Run from `integrations/mcp-apps`:
 
-Do not merge, publish, update the Plugin, configure Auth0/Google Cloud,
-deploy to VPS, proxy public traffic or access anyone's Drive without
-a separate explicit authorization.
+```sh
+npm ci --ignore-scripts --no-audit --no-fund
+npm run build
+npm run test:host-boundary
+npm run test:host-projection
+npm run test:stage15
+npm run test:oauth
+npm run test:oauth-http
+```
+
+`test:host-projection` covers alternating fictional A/B snapshots,
+a subsequent empty call, no memory reuse, strict whitelist denials,
+seven-gate preservation and fail-closed metadata. This suite uses no
+external Google accounts or Drive API calls. It does not prove that
+ChatGPT selected the correct user's connected account. The product
+still requires real host-side two-account acceptance and human review.
+
+For HTTP deployment, Node remains bound to 127.0.0.1:8085 behind a
+separately reviewed HTTPS reverse proxy. Multi-user Auth0 can
+authenticate access to this generic display service, but it is **not**
+permission to read Google Drive; the ChatGPT connector handles that.
+
+**No deployment, external OAuth changes, Google writes, Plugin update,
+merge or release has been authorized by these code changes.**
