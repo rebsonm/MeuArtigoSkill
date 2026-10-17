@@ -17,7 +17,8 @@
     "test:stage13": "node scripts/stage13-projection.mjs",
     "test:stage15": "node scripts/stage15-horizontal.mjs",
     "test:host-boundary": "node scripts/host-connector-boundary.mjs",
-    "test:host-projection": "node scripts/host-projection.mjs"
+    "test:host-projection": "node scripts/host-projection.mjs",
+    "test:host-projection-ui": "node scripts/host-projection-ui.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.20.0",
