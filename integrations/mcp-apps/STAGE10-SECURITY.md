@@ -1,45 +1,45 @@
-# Stage 10 — Single MCP Apps Server and Transport Boundaries
+# MCP Apps security: host-only research data boundary
 
-The only optional production MCP Apps server in this candidate is
-`integrations/mcp-apps/server.mjs`. There is one read-only tool
-`meu_artigo_painel`, one HTML resource `ui://meu-artigo/site-v1.html`,
-and a text `content` fallback whenever the UI is not rendered.
+This candidate deliberately exposes a single generic tool
+`meu_artigo_painel` and a neutral HTML resource
+`ui://meu-artigo/site-v1.html`.
 
-## Isolation and privacy
+## Security guarantees intended by this implementation
 
-- The operator alone configures the absolute project root through
-  `MEU_ARTIGO_PROJECT_ROOT`. Model-supplied `project`, `root`, or
-  `path` arguments never select an alternate workspace.
-- Symlinks in the authorized project path are denied using `realpath`.
-  This check is not a sandbox against a compromised host or concurrent
-  filesystem replacement after the check; OS isolation is still required.
-- The Python child receives a minimal environment, not the MCP bearer,
-  AWS credentials, Drive tokens, or unrelated host secrets.
-- Structured content is sourced from the read-only local projector.
-  Untrusted types, missing non-write flags, unsafe next-action codes,
-  excessive projection size and malformed records fail closed.
-- Returned text summarizes a bounded code and counts, not private task
-  content. Neither the server nor UI authorizes scientific gates or Drive sync.
-- MCP Apps HTML includes a neutral HOST_NOT_CONNECTED state and an
-  embedded bridge. The UI resource is bounded to 2 MiB.
-- HTTP uses a strict Bearer authorization header and rejects foreign
-  Origins. Requests with non-JSON media, malformed objects, or over
-  256 KiB are denied before reaching the MCP transport handler.
-- HTTP is strictly loopback-only in Stage 10, even if legacy proxy
-  environment flags are set. Public bindings require Stage 11 OAuth and
-  resource-specific authorization; operational flags alone are insufficient.
-- The Skill ZIP must exclude MCP Apps server code and executable Node
-  dependencies. The retired `mcp-preview` implementation does not become
-  another production endpoint.
+- **No research data**: No project file reader, child process to inspect
+  research files, Google APIs, Google refresh tokens, Drive metadata,
+  subject-to-project registry or automatic scientific approvals.
+- **Host-side Drive only**: Individual researchers use their personal
+  ChatGPT Google Drive connector. The MCP cannot and should not obtain
+  their Google account grants, documents, IDs, summaries or private
+  project progress.
+- **Strict arguments**: tool accepts optional locale and MINIMAL/FULL.
+  Unknown project paths do not influence the response. It returns neutral
+  guidance and no research `structuredContent`.
+- **Neutral HTML**: `HOST_NOT_CONNECTED`, no fictional research progress.
+  The MCP Apps bridge discards unexpected host tool results to prevent
+  researchers' private data from entering the app UI via this server.
+- **Startup refusal**: any configured project root, tenant registry,
+  Google OAuth secret or token-storage variable blocks startup.
+- **Local-only transport**: HTTP binds to 127.0.0.1/::1. Public Nginx
+  exposure remains prohibited until independent OAuth acceptance.
+- **Standard HTTP guards**: strict Bearer or Auth0 OAuth validation,
+  Origin check, JSON/media/body size limit, single stateless MCP request.
+- **Authentication is not data authorization**: Auth0 verifies access to
+  the generic service; it does not grant access to any Google Drive.
+- **No privilege equivalence claims**: the host's Google Drive connector
+  handles per-user access according to each user's own consent and
+  permissions; the MCP cannot verify or override that boundary.
 
-## Synthetic acceptance
+## Synthetic evidence
 
-The `stage10-contracts.mjs` suite launches real stdio and loopback
-Streamable HTTP transports with fictional credentials and paths. It checks
-one tool/resource, metadata, JSON limits, strict header syntax, fallback,
-error handling and rejection of symlink-backed project aliases.
-Previous smoke, synthetic project, HTTP and browser/i18n tests also run.
+`npm run test:host-boundary` uses fictional files, Auth0-signed fake
+subjects and a mock JWKS server to verify no project information leaves
+the MCP and forbidden storage configurations fail closed. It does not
+connect to any real research Drive or user account. Legacy Python/HTML
+projection tests run independently of MCP and must not be interpreted
+as MCP project read permissions.
 
-It does not validate a real ChatGPT host, authenticated human authorization,
-Auth0 OAuth, reverse proxy/WAF, browser CORS enforcement, resource upload,
-external Drive storage, multi-user isolation, or remote operations.
+A green CI result establishes test coverage at its commit SHA, not live
+OAuth/ChatGPT/Drive integration, Nginx safety, installed Plugin freshness
+or independent scientific research validity.
