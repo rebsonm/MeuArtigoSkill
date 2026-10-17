@@ -93,6 +93,7 @@ const e=(value)=>String(value===null||value===undefined||value===''?'Não inform
    while the conversational assistant retains the user's requested language. */
 const TRANSLATIONS={
  en:{
+ "Gates visíveis documentados":"Visible documented gates",
  "Alternativa selecionada apenas para leitura":"Option selected for review only",
  "Nenhuma alternativa selecionada para leitura":"No option selected for review",
 
@@ -158,6 +159,7 @@ const TRANSLATIONS={
  "Responsável":"Responsible","Sem gravação":"No writes",
  },
  es:{
+ "Gates visíveis documentados":"Validaciones visibles documentadas",
  "Alternativa selecionada apenas para leitura":"Opción seleccionada solo para lectura",
  "Nenhuma alternativa selecionada para leitura":"Ninguna opción seleccionada para lectura",
 
@@ -216,6 +218,7 @@ const TRANSLATIONS={
  "Revisar a estratégia de busca e seus critérios":"Revisar la estrategia y criterios de búsqueda",
  },
  fr:{
+ "Gates visíveis documentados":"Validations visibles documentées",
  "Alternativa selecionada apenas para leitura":"Option sélectionnée uniquement pour examen",
  "Nenhuma alternativa selecionada para leitura":"Aucune option sélectionnée pour examen",
 
@@ -357,10 +360,17 @@ if(isCanonical){
   const gatePartial=siteData.gate_view_partial===true||
     (Number.isInteger(siteData.registered_gate_total)&&
      siteData.registered_gate_total>gates.length);
+  const partialText={
+    pt:['Visão parcial: ',' de ',' gates registrados estão visíveis. O total de aprovações não pode ser inferido desta tela.','não informado'],
+    en:['Partial view: ',' of ',' registered gates are visible. Total approvals cannot be inferred from this view.','unknown'],
+    es:['Vista parcial: ',' de ',' etapas registradas son visibles. No se puede inferir el total de aprobaciones de esta vista.','desconocido'],
+    fr:['Vue partielle : ',' sur ',' étapes enregistrées sont visibles. Impossible de déduire le nombre total de validations de cette vue.','inconnu']
+  }[activeLocale]||['Partial view: ',' of ',' registered gates are visible. Total approvals cannot be inferred from this view.','unknown'];
+  const totalText=Number.isInteger(siteData.registered_gate_total)?
+    String(siteData.registered_gate_total):partialText[3];
   const gateScope=gatePartial?
-    '<p class="info" role="status">Visão parcial: '+gates.length+
-    ' de '+siteData.registered_gate_total+
-    ' gates registrados estão visíveis. O total de aprovações não pode ser inferido desta tela.</p>':'';
+    '<p class="info" role="status">'+partialText[0]+gates.length+
+    partialText[1]+totalText+partialText[2]+'</p>':'';
   const documentedCount=String(observedGates);
   const d=siteData.scientific_diagnostic;
   const countText=(x)=>Number.isSafeInteger(x)?String(x):"Não informado";
