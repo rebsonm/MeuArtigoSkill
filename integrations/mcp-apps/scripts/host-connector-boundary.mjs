@@ -38,7 +38,9 @@ try{
  assert.equal(resource.contents.length,1);
  const all=JSON.stringify(output)+JSON.stringify(resource);
  assert.ok(all.includes("HOST_NOT_CONNECTED"));
- assert.ok(!all.includes(secret)&&!all.includes(root)&&!all.includes("CANONICAL_LOCAL_SNAPSHOT"));
+ assert.ok(!all.includes(secret)&&!all.includes(root));
+ assert.ok(!JSON.stringify(output).includes("CANONICAL_LOCAL_SNAPSHOT"));
+ // Static UI JavaScript knows this schema name but receives neutral initial data only.
  assert.equal(await readFile(filename,"utf8"),secret);
  // Production and stdio cannot silently enable a research folder, Google
  // credential, tenant registry or user data adapter through env variables.
