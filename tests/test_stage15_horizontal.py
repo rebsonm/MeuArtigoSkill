@@ -24,6 +24,13 @@ class Stage15HorizontalTests(unittest.TestCase):
         case=fixture.NativeChatDashboardTests(
             "test_minimal_has_five_views_and_no_scientific_percentage")
         case.setUp()
+        # Native-only fixtures predate the mandatory methodology route.
+        # A real cross-projection fixture must explicitly be UNDECIDED,
+        # never infer or commit an unrecorded research methodology.
+        config_file=case.mgmt/"PROJECT_CONFIG.json"
+        config=json.loads(config_file.read_text(encoding="utf-8"))
+        config["method_route"]="UNDECIDED"
+        config_file.write_text(json.dumps(config),encoding="utf-8")
         self.addCleanup(case.doCleanups)
         return case
 
