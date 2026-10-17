@@ -213,7 +213,12 @@ def main(argv=None):
         result = audit(root)
         if args.output is not None:
             _write_output(root, args.output, result)
-        print(json.dumps(public_console_summary(result), sort_keys=True))
+        # The terminal is not a protected project store. Even derived counts
+        # can be tracked through a sensitive record by static dataflow checks.
+        print('{"audit":"REG-018_CANONICAL_CITATION_RECONCILIATION",'
+              '"status":"HUMAN_REVIEW_REQUIRED",'
+              '"details":"EXPLICIT_PRIVATE_REPORT_ONLY",'
+              '"semantic_support_proven":false}')
         if args.strict and any(result["finding_counts"].values()):
             return 2
         return 0
