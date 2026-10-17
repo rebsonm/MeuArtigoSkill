@@ -66,12 +66,9 @@ jobs:
       - name: Test Stage 11 RFC 9728 HTTP discovery and denial
         working-directory: integrations/mcp-apps
         run: npm run test:oauth-http
-      - name: Verify per-user JWT identities, strict registry and cross-researcher isolation
+      - name: Verify ChatGPT-owned Drive boundary and privacy fail-closed
         working-directory: integrations/mcp-apps
-        run: npm run test:multiuser
-      - name: Verify isolated Google OAuth consents and per-user Drive metadata
-        working-directory: integrations/mcp-apps
-        run: npm run test:google-delegation
+        run: npm run test:host-boundary
       - name: Verify local authenticated Streamable HTTP transport
         working-directory: integrations/mcp-apps
         run: npm run test:http
