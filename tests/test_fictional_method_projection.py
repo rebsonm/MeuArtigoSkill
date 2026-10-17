@@ -105,6 +105,32 @@ class FictionalMethodProjectionTests(unittest.TestCase):
         self.assertIn("researcher decision",d["navigation_question"])
         self.assert_read_only(p)
 
+    def test_conceptual_theory_does_not_require_empirical_sampling(self):
+        p=fictional_projection("CONCEPTUAL_THEORY",dimension="sampling")
+        d=p["fictional_method_dialogue"]
+        self.assertEqual(d["status"],"NOT_UNIVERSALLY_APPLICABLE")
+        self.assertEqual([x["id"] for x in d["cards"]],["OTHER_NOT_LISTED"])
+        self.assertIsNone(d["target_field"])
+        self.assert_read_only(p)
+
+    def test_mixed_methods_keeps_alternatives_and_human_decision(self):
+        p=fictional_projection("MIXED_METHODS",dimension="inference",action="all")
+        d=p["fictional_method_dialogue"]
+        self.assertIn("OTHER_NOT_LISTED",[x["id"] for x in d["cards"]])
+        self.assertEqual(d["option_count"],len(d["cards"]))
+        self.assertFalse(d["method_recommended_or_selected"])
+        self.assert_read_only(p)
+
+    def test_preflight_is_not_method_commit_authorization(self):
+        p=fictional_projection("DESIGN_SCIENCE",action="decision")
+        contract=p["preflight_contract"]
+        self.assertIs(contract["automatic_write_possible"],False)
+        self.assertIs(contract["server_validation_required_before_human_authorized_write"],True)
+        self.assertEqual(p["permissions"]["canonical_write"],"NOT_AVAILABLE_IN_THIS_UI")
+        self.assertEqual(p["fictional_method_dialogue"]["decision_status"],
+                         "HUMAN_DECISION_NOT_YET_OBTAINED")
+        self.assert_read_only(p)
+
     def test_invalid_actions_options_compare_and_route_fail_closed(self):
         bad=[
             dict(route="../../private"),dict(route="",mode="MINIMAL"),
