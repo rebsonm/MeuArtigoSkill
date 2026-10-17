@@ -34,7 +34,7 @@ try{
  assert.equal(output.isError,true);
  assert.equal(output.structuredContent,undefined);
  assert.match(output.content[0].text,/Google Drive individual do ChatGPT/);
- const resource=await client.readResource({uri:"ui://meu-artigo/site-v1.html"});
+ const resource=await client.readResource({uri:"ui://meu-artigo/site-v2.html"});
  assert.equal(resource.contents.length,1);
  const all=JSON.stringify(output)+JSON.stringify(resource);
  assert.ok(all.includes("HOST_NOT_CONNECTED"));
