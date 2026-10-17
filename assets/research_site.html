@@ -360,6 +360,7 @@ if(isCanonical){
   const gatePartial=siteData.gate_view_partial===true||
     (Number.isInteger(siteData.registered_gate_total)&&
      siteData.registered_gate_total>gates.length);
+  const gateScope=()=>{
   const partialText={
     pt:['Visão parcial: ',' de ',' gates registrados estão visíveis. O total de aprovações não pode ser inferido desta tela.','não informado'],
     en:['Partial view: ',' of ',' registered gates are visible. Total approvals cannot be inferred from this view.','unknown'],
@@ -368,9 +369,10 @@ if(isCanonical){
   }[activeLocale]||['Partial view: ',' of ',' registered gates are visible. Total approvals cannot be inferred from this view.','unknown'];
   const totalText=Number.isInteger(siteData.registered_gate_total)?
     String(siteData.registered_gate_total):partialText[3];
-  const gateScope=gatePartial?
+  return gatePartial?
     '<p class="info" role="status">'+partialText[0]+gates.length+
     partialText[1]+totalText+partialText[2]+'</p>':'';
+  };
   const documentedCount=String(observedGates);
   const d=siteData.scientific_diagnostic;
   const countText=(x)=>Number.isSafeInteger(x)?String(x):"Não informado";
@@ -431,7 +433,7 @@ if(isCanonical){
       kpi('Gates visíveis documentados',documentedCount,'Contagem somente dos registros exibidos; não equivale à validação independente','✓')+
       kpi('Pendências','Não avaliado','Depende de conferência do CONTINUIDADE.md','◷')+
       kpi('Fontes verificadas','Não avaliado','Nenhuma auditoria de fontes executada nesta tela','▱')+
-    '</div>'+gateScope+'<div class="cols"><section class="pane tinted"><div class="mini-label">Próxima ação registrada</div>'+
+    '</div>'+gateScope()+'<div class="cols"><section class="pane tinted"><div class="mini-label">Próxima ação registrada</div>'+
     '<h2 data-research-original="true">'+nextCode+'</h2><p data-research-original="true">'+nextText+'</p><p class="quiet">Responsável: <span data-research-original="true">'+nextOwner+'</span></p>'+
     '<button class="primary" data-go="tasks">Conferir tarefas →</button></section>'+
     '<section class="pane"><h3>Estado científico</h3><p>'+observedGates+' registro(s) de aprovação identificados em '+gates.length+
@@ -441,9 +443,9 @@ if(isCanonical){
     '</div><div class="footnote">Validações científicas não são calculadas a partir de tarefas.</div></section></div>'+
     safeNotice+realFooter;
   screens.steps=()=>heading('Etapas e gates científicos','Estados registrados, não autenticação de avaliadores ou aprovação científica.')+
-    gateScope+(gateList?'<div class="list">'+gateList+'</div>':'<div class="info">Nenhum registro de gate disponível neste snapshot.</div>')+safeNotice+realFooter;
+    gateScope()+(gateList?'<div class="list">'+gateList+'</div>':'<div class="info">Nenhum registro de gate disponível neste snapshot.</div>')+safeNotice+realFooter;
   screens.validations=()=>heading('Validações humanas','Os estados abaixo são declarativos; a decisão deve ser conferida nos registros originais.')+
-    gateScope+(gateList?'<div class="list">'+gateList+'</div>':'<div class="info">Sem estados de validação disponíveis.</div>')+technicalEvidence()+safeNotice+realFooter;
+    gateScope()+(gateList?'<div class="list">'+gateList+'</div>':'<div class="info">Sem estados de validação disponíveis.</div>')+technicalEvidence()+safeNotice+realFooter;
   screens.sources=()=>heading('Fontes e buscas','Somente informações auditadas podem justificar conclusões bibliográficas.')+noVerifiedAudit+safeNotice+realFooter;
   screens.evidence=()=>heading('Evidências e sustentação','Verificações documentais e indícios consultivos não autentificam a sustentação semântica.')+technicalEvidence()+safeNotice+realFooter;
   screens.trace=()=>heading('Rastreabilidade','DEC, TRACE e SNAP exigem conferência nos registros originais.')+
