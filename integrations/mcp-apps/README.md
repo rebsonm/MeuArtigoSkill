@@ -1,5 +1,16 @@
 # Meu Artigo — optional ChatGPT-first MCP Apps UI (experimental)
 
+> **Per-researcher Google Drive:** The single-user/local-project and local-tenant
+> examples below **must not** be presented as authorization for other users'
+> Google Drives. For multiuser research, use a separate individual Google OAuth
+> consent per authenticated researcher, never the maintainer's Drive token,
+> API key or a shared service account. Implementation and deployment
+> restrictions: [GOOGLE-USER-DELEGATION.md](GOOGLE-USER-DELEGATION.md).
+> In `MEU_ARTIGO_GOOGLE_DRIVE_MODE=per_user`, only that user's canonical
+> folder **metadata** can be listed; complete Drive-backed manuscript
+> operations and the interactive research panel are not yet available.
+
+
 ## What was built
 
 An **optional separate** MCP Apps companion now exposes:
