@@ -19,7 +19,7 @@ import {uiOutputSchema} from "./ui_output_schema.mjs";
 
 const HERE=path.dirname(fileURLToPath(import.meta.url));
 const REPO=path.resolve(HERE,"../..");
-const URI="ui://meu-artigo/site-v1.html";
+const URI="ui://meu-artigo/site-v2.html";
 const MAX_REQUEST_BYTES=256*1024;
 const MAX_RESOURCE_BYTES=2*1024*1024;
 const LOCALES=new Set(["pt","en","es","fr"]);
