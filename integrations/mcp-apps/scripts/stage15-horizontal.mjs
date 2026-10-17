@@ -21,8 +21,13 @@ const py=(script,args)=>JSON.parse(execFileSync("python3",
  }));
 const site=(mode,locale)=>py("build_research_site.py",[
  "--project",root,"--json-only","--mode",mode,"--language",locale]);
-const native=(mode)=>py("native_chat_dashboard.py",[
- root,"--mode",mode,"--format","json"]);
+// Horizontal integration validates the authorized in-process panel projection;
+// the operator CLI is intentionally reduced to a private-data-free summary.
+const native=(mode)=>JSON.parse(execFileSync("python3",["-c",
+ "import json,sys;from pathlib import Path;sys.path.insert(0,sys.argv[1]);from native_chat_dashboard import panel;print(json.dumps(panel(Path(sys.argv[2]),mode=sys.argv[3]),sort_keys=True))",
+ scripts,root,mode],{
+ encoding:"utf8",timeout:20000,env:{...process.env,PYTHONDONTWRITEBYTECODE:"1"}
+ }));
 const skill=(mode)=>JSON.parse(execFileSync("python3",["-c",
  "import json,sys;from pathlib import Path;sys.path.insert(0,sys.argv[1]);from build_research_workspace import model;print(json.dumps(model(project=Path(sys.argv[2]),mode=sys.argv[3]),sort_keys=True))",
  scripts,root,mode],{
