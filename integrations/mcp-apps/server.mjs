@@ -15,6 +15,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { z } from "zod";
 import { auth0Configuration, protectedResourceMetadata, bearerChallenge, createAuth0Verifier } from "./auth0.mjs";
+import { loadTenantRegistry } from "./tenant_registry.mjs";
 
 const execute=promisify(execFile);
 const dirname=path.dirname(fileURLToPath(import.meta.url));
@@ -39,8 +40,10 @@ const fallback=(locale,msg)=>{
  };
  return text[msg][base==="auto"?"en":base]??text[msg].en;
 };
-async function readSite({locale="auto",mode="MINIMAL"}={}){
- const selected=projectRoot;
+async function readSite({locale="auto",mode="MINIMAL",project_id}={},resolveProject=null){
+ // The project ID is NOT a filesystem path; resolution is per authenticated
+ // principal and happens against the immutable trusted operator registry.
+ const selected=resolveProject?resolveProject(project_id):projectRoot;
  if(!selected||!path.isAbsolute(selected))return {error:"noProject",locale};
  // Model-provided args cannot select filesystem paths. The trusted operator
  // chooses a SINGLE authorized root outside model/tool input.
@@ -105,21 +108,32 @@ async function htmlResource(){
    throw Error("MCP Apps resource exceeds bounded size");
  return result;
 }
-export function createServer(){
+export function createServer({resolveProject=null,listProjects=null}={}){
  const server=new McpServer({name:"Meu Artigo Research Panel",version:"0.1.0"});
  registerAppTool(server,"meu_artigo_painel",{
   title:"Meu Artigo — research dashboard (read only)",
   description:"Read-only authorized local C.A.D.A. and scientific-gate overview. It always supplies text if the host cannot render MCP Apps. Never creates projects, approves gates or claims Drive sync.",
-  inputSchema:{locale:z.string().max(35).optional(),mode:z.enum(["MINIMAL","FULL"]).optional()},
+  inputSchema:{locale:z.string().max(35).optional(),mode:z.enum(["MINIMAL","FULL"]).optional(),project_id:z.string().max(64).optional()},
   annotations:{readOnlyHint:true,idempotentHint:true,openWorldHint:false},
   ...(process.env.MEU_ARTIGO_AUTH_MODE==="auth0"?{securitySchemes:[{type:"oauth2",scopes:["mcp:read"]}]}:{}),
   _meta:{ui:{resourceUri:URI},"openai/outputTemplate":URI}
  },async(args)=>{
-  const response=await readSite(args);
+  const response=await readSite(args,resolveProject);
   if(response.error)return {isError:true,content:[{type:"text",text:fallback(response.locale,response.error)}]};
   return {content:[{type:"text",text:summary(response.site,response.locale)}],
    structuredContent:{site:response.site}};
  });
+ if(listProjects){
+  registerAppTool(server,"meu_artigo_projetos",{
+   title:"Meu Artigo — authorized project IDs (read only)",
+   description:"List only this researcher's authorized project IDs; no paths or writes.",
+   inputSchema:{},annotations:{readOnlyHint:true,idempotentHint:true,openWorldHint:false}
+  },async()=>{
+   const projects=listProjects();
+   return {content:[{type:"text",text:"Authorized projects: "+projects.join(", ")}],
+    structuredContent:{projects}};
+  });
+ }
  registerAppResource(server,"Meu Artigo approved blue dashboard",URI,{},async()=>({
   contents:[{uri:URI,mimeType:RESOURCE_MIME_TYPE,text:await htmlResource(),
    _meta:{ui:{prefersBorder:true,csp:{connectDomains:[],resourceDomains:[]}},
@@ -136,10 +150,15 @@ async function startHttp(){
  const port=Number(process.env.MEU_ARTIGO_MCP_PORT||"8085");
  const mode=process.env.MEU_ARTIGO_AUTH_MODE||"bearer";
  if(!["bearer","auth0"].includes(mode))throw Error("UNSUPPORTED_AUTH_MODE");
+ const tenantRegistry=await loadTenantRegistry();
+ if(tenantRegistry&&(mode!=="auth0"||projectRoot))
+  throw Error("MULTIUSER_REQUIRES_AUTH0_AND_NO_GLOBAL_PROJECT_ROOT");
  const token=process.env.MEU_ARTIGO_MCP_BEARER||"";
  if(!Number.isInteger(port)||port<1024||port>65535)throw Error("Invalid explicit MCP port");
  if(mode==="bearer"&&token.length<32)throw Error("A secret bearer of at least 32 characters is required");
  const authConfig=mode==="auth0"?auth0Configuration():null;
+ if(authConfig?.multiUser!==Boolean(tenantRegistry))
+  throw Error("TENANT_REGISTRY_AUTH0_CONFIGURATION_MISMATCH");
  const verifyAuth0=authConfig?createAuth0Verifier(authConfig):null;
  // Stage 11 OAuth source is prepared; public binding still denied until
  // actual provider / callback / user-delegated scope validation and approval.
@@ -162,6 +181,7 @@ async function startHttp(){
   if(req.headers.origin&&(!allowedOrigin||req.headers.origin!==allowedOrigin)){
    res.writeHead(403).end();return;
   }
+  let authorizedSub=null;
   if(authConfig){
     const verdict=await verifyAuth0(req.headers.authorization);
     if(!verdict.ok){
@@ -175,6 +195,11 @@ async function startHttp(){
         .end(JSON.stringify({error:verdict.status===401?"Unauthorized":"Forbidden"}));
       return;
     }
+    if(tenantRegistry&&!tenantRegistry.hasSubject(verdict.principal.sub)){
+      res.writeHead(403,{"content-type":"application/json; charset=utf-8",
+        "cache-control":"no-store"}).end('{"error":"Forbidden"}');return;
+    }
+    authorizedSub=verdict.principal.sub;
   }else{
     const header=req.headers.authorization;
     const valid=typeof header==="string"&&header.length<=512&&
@@ -215,7 +240,10 @@ async function startHttp(){
       return;
     }
   }
-  const mcp=createServer();
+  const mcp=createServer(tenantRegistry?{
+    resolveProject:id=>tenantRegistry.projectFor(authorizedSub,id),
+    listProjects:()=>tenantRegistry.listProjects(authorizedSub)
+  }:{});
   const transport=new StreamableHTTPServerTransport({
     sessionIdGenerator:undefined,enableJsonResponse:true,
   });
