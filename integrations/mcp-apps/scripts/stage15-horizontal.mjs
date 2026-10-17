@@ -97,7 +97,7 @@ try{
  const env=Object.fromEntries(Object.entries(process.env).filter(([,v])=>typeof v==="string"));
  await client.connect(new StdioClientTransport({
   command:process.execPath,args:[path.resolve("server.mjs"),"--stdio"],
-  env:{...env,MEU_ARTIGO_PROJECT_ROOT:root,MEU_ARTIGO_AUTH_MODE:"bearer"}
+  env:{...env,MEU_ARTIGO_PROJECT_ROOT:"",MEU_ARTIGO_AUTH_MODE:"bearer"}
  }));
  const tools=(await client.listTools()).tools;
  assert.deepEqual(tools.map(x=>x.name),["meu_artigo_painel"]);
@@ -108,14 +108,12 @@ try{
   for(const locale of localeCodes){
    const response=await client.callTool({name:"meu_artigo_painel",
     arguments:{mode,locale}});
-   assert.notEqual(response.isError,true);
+   assert.equal(response.isError,true);
    assert.ok(response.content?.[0]?.text);
-   const projected=response.structuredContent?.site;
-   assert.deepEqual(projected,site(mode,locale));
-   assert.equal(projected.gate_view_partial,mode==="MINIMAL");
-   assert.equal(projected.registered_gate_total,7);
-   assert.equal(projected.documented_gate_count,mode==="FULL"?1:0);
-   assert.equal(projected.canonical_writes_allowed,false);
+   assert.equal(response.structuredContent,undefined);
+   assert.match(response.content[0].text,/Meu Artigo/);
+   assert.ok(!JSON.stringify(response).includes("SYNTHETIC_HORIZONTAL_FIFTEEN"));
+   assert.ok(!JSON.stringify(response).includes("CADA-0015"));
    for(const marker of banned){
     assert.ok(!JSON.stringify(response).includes(marker));
    }
@@ -161,7 +159,7 @@ try{
  assert.equal(errs.length,0,errs.join("; "));
  assert.deepEqual(await observe(),before,
   "Cross-projection tool, UI, methods and case reading must not mutate files");
- console.log("Stage15 horizontal pass: Skill/native/blue/MCP identical authorized projections, 8 MCP modes x locales, partial gates, read-only privacy.");
+ console.log("Stage15 horizontal pass: Skill/native projections agree, MCP receives no research data in 8 modes x locales, neutral UI only.");
 }finally{
  await client?.close();
  await rm(root,{recursive:true,force:true});
