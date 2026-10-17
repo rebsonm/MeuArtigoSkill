@@ -72,6 +72,9 @@ jobs:
           npm run test:host-boundary
           npm run test:host-projection
           npm run test:host-projection-ui
+      - name: Verify assembled resources/read HTML and output schema (synthetic)
+        working-directory: integrations/mcp-apps
+        run: npm run test:ui-resource-contract
       - name: Verify local authenticated Streamable HTTP transport
         working-directory: integrations/mcp-apps
         run: npm run test:http
