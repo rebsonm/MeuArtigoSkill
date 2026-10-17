@@ -9,9 +9,9 @@ not final line-by-line approval, not a merge authorization.
 - Main: `5c7bf4ff599d73a660bb709616a689140b2edbe7`.
 - PR #78: `cd1f1d3f92132676544f4183eef6988dec5f74e5`,
   Draft/open, 122 changed files, based on main.
-- PR #79: stacked on #78, Draft/open, 21 changed files at the
-  beginning of this review, with 15 overlapping paths and six
-  new paths. **128 distinct touched paths across the two PRs**.
+- PR #79: stacked on #78, Draft/open, **22 changed files**, with
+  **15 overlapping paths** and seven additional paths not in #78.
+  **129 distinct touched paths across the two PRs**.
   The PR #79 branch is the candidate containing both change sets.
 - PR #76: security repair already merged into main.
 - PR #77: separate Draft. Its security/lockfile contracts were absorbed
@@ -77,14 +77,14 @@ truth, user identity, or Google sync by itself.
 | Auth0/PKCE | Signed tokens with offline JWKS | NO-GO for production deployment | Authorize and complete real OAuth flow |
 | Security privacy of dashboard | Allowlist, no server cache, text filter | GO for bounded synthetic usage only | Privacy review, logging/redaction, penetration tests |
 | Scientific outcomes | Human gates and sidecars preserved | NO-GO for claims of real validity | Expert/human validation |
-| PR merge | 128 distinct touched paths across stack | **NO-GO pending human diff review and explicit permission** | Choose one integration strategy |
+| PR merge | 129 distinct touched paths across stack | **NO-GO pending human diff review and explicit permission** | Choose one integration strategy |
 | Controlled release | Not deployed or installed | **NO-GO** | Finish deliveries 16 and 17 |
 
 ## Recommended integration order — ONE candidate, not parallel merges
 
 A. Review **both** the cumulative PR #78 diff against main and
 the delta PR #79 diff against PR #78. Do not review only PR #79's
-21-file view and assume the full stack is covered.
+22-file view and assume the full stack is covered.
 B. Reconcile security-sensitive changes: Google Drive identity,
 F1-F9 journal/CAS, safe report output, Auth0 validation, per-call
 MCP projection, HTML escaping, UI lifecycle and package boundary.
