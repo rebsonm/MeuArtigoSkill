@@ -1,142 +1,150 @@
-# Google Drive de cada pesquisador — autorização individual e isolamento
+# Per-researcher Google Drive delegation: identity and isolation
 
-## Contrato inegociável
+## Mandatory invariant
 
-**O Google Drive do mantenedor nunca é a credencial-padrão de usuários externos.**
-Pesquisadores A, B, C e o mantenedor precisam autorizar **suas próprias
-contas Google**, separadamente, pelo consentimento Google OAuth 2.0.
-O acesso Auth0 ao MCP autentica a pessoa, mas **não concede automaticamente
-acesso ao Google Drive**. Não reaproveitar o conector pessoal ChatGPT/Drive
-do administrador como credencial do serviço.
+**The maintainer's Google Drive credentials must never be used as a default
+for other researchers.** Every researcher (owner, A, B or C) must authorize
+their **own** Google account independently. The ChatGPT/Auth0 access token
+authenticates the researcher to the MCP service but does **not** authorize
+Google Drive access. Do not reuse the operator's ChatGPT Google connector
+as the server's Drive credentials.
 
-**Fluxo de identidade:** ChatGPT -> JWT Auth0 individual -> `sub` Auth0
-`google-oauth2|<google-sub>` -> consentimento OAuth individual no Google ->
-Google UserInfo `sub` deve corresponder exatamente ao `sub` Google do Auth0
--> concessão de refresh criptografada para **essa identidade** -> chamada
-Google Drive usando token delegado **dessa mesma identidade**. Cada
-consulta revalida UserInfo; qualquer divergência bloqueia a consulta.
+Identity flow: ChatGPT -> signed individual Auth0 JWT -> Auth0 subject
+`google-oauth2|<google-sub>` -> separate researcher-initiated Google OAuth
+consent -> Google UserInfo subject must match the original Auth0 Google
+subject -> independently encrypted grant under that user's subject ->
+Google Drive request with the **same user's** delegated OAuth token.
 
-Identidade sem vínculo, consentimento recusado, conta Google diferente,
-credencial revogada, sessão OAuth expirada, configuração insegura ou
-autorizações cruzadas **não habilitam acesso nem fallback para outro Drive**.
+An unlinked subject, wrong Google account, rejected consent, expired/replayed
+state, revoked grant, provider mismatch or invalid folder structure
+must **never** fall back to the maintainer's Drive, another user's grant
+or a local registry project.
 
-### Duas modalidades, separadas
+### Explicitly separate the two implementations
 
-1. **Modo experimental anterior:** `MEU_ARTIGO_MULTIUSER_REGISTRY` e
-   `MEU_ARTIGO_TENANT_DATA_ROOT` mapeiam projetos locais; isso **não**
-   prova que cada usuário está acessando seu próprio Google Drive.
-2. **Modo correto para o produto futuro:** `MEU_ARTIGO_GOOGLE_DRIVE_MODE=per_user`.
-   Requer Auth0, identidade individual e consentimento Google, **proíbe**
-   `MEU_ARTIGO_PROJECT_ROOT`, `MEU_ARTIGO_PILOT_SUB` e registro local.
-   Não existe identidade compartilhada com fallback automático.
-   `meu_artigo_google_projetos` consulta apenas a árvore canônica do
-   próprio usuário, sem acessar conteúdo de documentos e sem criar pastas.
+- **Legacy engineering pilot:** `MEU_ARTIGO_MULTIUSER_REGISTRY` and
+  `MEU_ARTIGO_TENANT_DATA_ROOT` authorize independent *local*
+  projects. This does **not** establish independent Google Drive access.
+- **Per-user Google Drive engineering candidate:** set
+  `MEU_ARTIGO_GOOGLE_DRIVE_MODE=per_user`. Requires a valid Auth0 identity
+  and separate Google OAuth consent. Explicitly excludes global
+  `MEU_ARTIGO_PROJECT_ROOT`, `MEU_ARTIGO_PILOT_SUB` and the old local
+  tenant registry. Those settings must not be mixed.
 
-Esta PR implementa **somente leitura dos metadados** da estrutura
-`My Drive/Meu Artigo/<pasta do artigo>`. O painel científico completo,
-sincronização, leitura de PDF/Docs, criação de pastas e escrita documental
-Google **não** estão implementados nesta integração. A ferramenta de painel
-fail-closed no modo `per_user`, para impedir afirmações falsas de que um
-projeto local é o projeto Google conectado.
+The current Google mode implements **read-only folder metadata** for
+`My Drive/Meu Artigo/<individual research project folder>`. It does
+not read paper contents, download documents, create folders, manage
+sharing, synchronize journals or write to Drive. The rich scientific
+panel is deliberately unavailable in this mode until a canonical
+Drive-specific read adapter is verified. No silent local fallback.
 
-### Ferramentas de um usuário já autenticado
+### Tools bound to a verified individual Auth0 subject
 
-- `meu_artigo_google_conectar`: gera URL individual de consentimento
-  Google (com `state` anti-CSRF, PKCE S256, tempo de vida de 10 minutos).
-- `meu_artigo_google_status`: mostra somente se a autorização Google
-  **dessa identidade** está cadastrada.
-- `meu_artigo_google_projetos`: atualiza token **daquela identidade**,
-  confere o Google `sub`, localiza a pasta exata `Meu Artigo` filha
-  direta de My Drive e enumera somente pastas-filhas, com paginação,
-  limites e checagem de pais; sem conteúdo de documentos.
-- `meu_artigo_google_desconectar`: elimina a autorização local
-  **daquela identidade**, sem modificar arquivos do Drive.
-  O usuário pode também revogar o aplicativo nas configurações do Google.
+- `meu_artigo_google_conectar`: issue a one-time Google consent URL with
+  PKCE S256, unguessable OAuth state and a 10-minute expiration.
+- `meu_artigo_google_status`: report only that researcher's connection.
+- `meu_artigo_google_projetos`: refresh only that researcher's encrypted
+  Google grant, recheck the Google UserInfo subject, resolve the exact
+  `Meu Artigo` folder as a direct child of the current Google user's
+  My Drive root and list only its direct child project folders.
+  Validate parent IDs, page bounds and duplicate roots. Do not claim
+  article content has been synchronized or screened.
+- `meu_artigo_google_desconectar`: discard only this researcher's locally
+  stored Google grant. Does not delete or update Google files. Users
+  can also revoke the app directly from their Google Account settings.
 
-## Arquitetura de credenciais
+## Credential protection
 
-- Não utilizar API key, service account genérica, Domain-Wide Delegation,
-  conta do mantenedor ou token global para consultar usuários externos.
-- O código troca o código OAuth Google por um token de atualização
-  **do próprio pesquisador**; armazena somente esse token, com AES-256-GCM
-  e chave fornecida externamente por um gerenciador de segredos.
-- Um arquivo criptografado por `SHA-256(Auth0 sub)`, AAD associada ao
-  `sub`; pasta privada preexistente `0700`, arquivos `0600`,
-  sem symlinks, limite de tamanho, escrita temporária-atômica.
-- Tokens de acesso são temporários, validados pela API Google UserInfo
-  e **não são enviados para o modelo nem incluídos no resultado MCP**.
-- HTTP continua local: `127.0.0.1:8085`. Nginx externo somente após
-  revisão, HTTPS e aceites específicos.
-- A solicitação Google inicial usa `openid` +
-  `https://www.googleapis.com/auth/drive.metadata.readonly`.
-  Este último é um **escopo restrito** e pode exigir verificação e
-  avaliação de segurança antes de distribuição pública.
-- O endpoint `/google/oauth/callback` é HTTP GET sem JWT Auth0 porque
-  recebe o redirecionamento do navegador Google; somente um `state`
-  previamente emitido e não consumido pode completar o vínculo. O
-  `sub` Google é validado antes de persistir o refresh token.
-  É indispensável desabilitar/redigir logs de query string nesse
-  caminho no proxy — o callback contém um código de autorização.
-- Não imprimir tokens, subject ou query string de callback em logs;
-  não enviar credenciais ao ChatGPT ou a arquivos versionados.
+- Never use a global Google API key, shared OAuth refresh token, general
+  service account, administrator Drive connector, or domain-wide delegation.
+- Each user obtains their own refresh grant. Store **only** this encrypted
+  refresh token at rest with AES-256-GCM, a per-subject AAD binding, and a
+  filename derived from SHA-256(Auth0 subject). Do not echo access or
+  refresh tokens to the model, UI, repository, logs or MCP output.
+- The private credential directory must already exist, be canonical,
+  be owned by the dedicated service user and have POSIX mode 0700.
+  Credential files use mode 0600, no-follow reads and atomic writes.
+  Keep the 32-byte encryption key outside repository files.
+- Refresh access tokens only for the authenticated subject and validate
+  Google UserInfo subject for **each** Drive read.
+- Reject accounts whose stable Auth0 Google subject differs from the
+  Google OAuth subject, even if an email address looks identical.
+- The separate OAuth callback endpoint
+  `https://mcp.allflux.com.br/google/oauth/callback` is a GET
+  redirect from Google's browser flow, without an Auth0 bearer header.
+  It is authorized by single-use state + PKCE + exact Google subject
+  matching before any grant is persisted.
+- Protect the callback behind TLS when authorized for deployment.
+  Disable or redact query strings in Nginx access logs at this path,
+  because the callback contains a short-lived authorization code.
+- The Node service remains loopback-only (127.0.0.1:8085). No public
+  Nginx proxy is enabled by this change.
 
-### Configuração de homologação privada (NÃO EXECUTAR na produção)
+### Google scope and platform requirements
 
-Usar conta de serviço Linux dedicada, diretório privado, variáveis via
-secret manager, Google OAuth web application específica de teste e
-redirect autorizado exatamente `https://mcp.allflux.com.br/google/oauth/callback`.
+The initial delegated scope is `openid` plus
+`https://www.googleapis.com/auth/drive.metadata.readonly`.
+According to Google's documentation, the Drive metadata scope
+is **restricted**, cannot download document contents, and may require
+OAuth app verification and an independent security assessment before
+public distribution. New functionality should request an additional
+least-privilege scope only after explicit user consent and review.
+
+**Google Cloud configuration to be authorized separately:** create a
+test Web OAuth client, enable Google Drive API, configure the consent
+screen and test users, approve the exact redirect URI, and store
+client credentials in an approved secrets manager.
+
+**Auth0 configuration to be authorized separately:** validate each
+Google-backed Auth0 subject, audience `https://mcp.allflux.com.br/mcp`,
+RS256 trusted JWKS signature, permitted client, callback, PKCE and
+`mcp:read`. Equality of emails is **not** sufficient.
+
+Example environment **only for a controlled, separately authorized pilot**:
 
 ```sh
 MEU_ARTIGO_AUTH_MODE=auth0
-MEU_ARTIGO_AUTH_ISSUER=https://SEU_TENANT.us.auth0.com/
+MEU_ARTIGO_AUTH_ISSUER=https://YOUR_TENANT.us.auth0.com/
 MEU_ARTIGO_AUTH_RESOURCE=https://mcp.allflux.com.br/mcp
 MEU_ARTIGO_GOOGLE_DRIVE_MODE=per_user
-MEU_ARTIGO_GOOGLE_CLIENT_ID=<do Google Cloud, privado>
-MEU_ARTIGO_GOOGLE_CLIENT_SECRET=<do secret manager, privado>
+MEU_ARTIGO_GOOGLE_CLIENT_ID=<Google Cloud web OAuth client ID>
+MEU_ARTIGO_GOOGLE_CLIENT_SECRET=<from secrets manager>
 MEU_ARTIGO_GOOGLE_REDIRECT_URI=https://mcp.allflux.com.br/google/oauth/callback
 MEU_ARTIGO_GOOGLE_TOKEN_DIR=/var/lib/meu-artigo/private-google-grants
-MEU_ARTIGO_GOOGLE_TOKEN_KEY=<chave forte 32 bytes, base64url, secreta>
+MEU_ARTIGO_GOOGLE_TOKEN_KEY=<32-byte AES key, base64url>
 MEU_ARTIGO_BIND_HOST=127.0.0.1
 MEU_ARTIGO_MCP_PORT=8085
 ```
 
-No modo Google individual, **não definir** `MEU_ARTIGO_PILOT_SUB`,
-`MEU_ARTIGO_PROJECT_ROOT`, `MEU_ARTIGO_MULTIUSER_REGISTRY` nem
-`MEU_ARTIGO_TENANT_DATA_ROOT`. Se definidos, o programa recusa iniciar.
+Do **not** define `MEU_ARTIGO_PILOT_SUB`,
+`MEU_ARTIGO_PROJECT_ROOT`, `MEU_ARTIGO_MULTIUSER_REGISTRY` or
+`MEU_ARTIGO_TENANT_DATA_ROOT` in this mode.
 
-**Google Cloud:** criar o OAuth client do tipo aplicação web para
-homologação, habilitar Drive API, informar tela de consentimento,
-escopos e o redirect autorizado. Configurar apenas test users
-autorizados, sujeitos à política de escopos e verificação do Google.
-**Auth0:** cada conta efetivamente usa identidade `google-oauth2|`
-cujo sufixo deve igualar o Google `sub` retornado pelo consentimento;
-concluir autorização de cliente, PKCE, audience e `mcp:read`.
-Não presumir que ter o mesmo endereço de email comprova a igualdade
-do usuário — são IDs estáveis comparados, não nomes nem emails.
+### Operator privilege and privacy limits
 
-### Atenção sobre isolamento administrativo
+The MCP application's users are isolated by per-principal authorization.
+However, a privileged VPS operator with access to the encryption key,
+secret store, process memory or operating-system administration may still
+technically compromise grants. This is **not end-to-end zero-knowledge
+encryption against the server administrator**. Preventing even a hosting
+administrator from accessing grants requires an additional key-custody
+architecture and independent audits. Do not claim absolute isolation
+against every privileged operator.
 
-Os usuários A/B/C ficam isolados pelo fluxo de autorização do
-**aplicativo**. Um operador de VPS com root, acesso à memória do processo,
-ao gerenciador de segredos ou ao cofre criptografado + sua chave pode
-tecnicamente comprometer credenciais. Isso não é isolamento
-criptográfico ponta a ponta contra o próprio administrador.
-Para políticas que proíbam acesso até por administradores, é
-necessária outra arquitetura de custódia de chaves e auditoria
-independente. Nunca prometer ausência absoluta desse risco.
+## Evidence and acceptance
 
-## Aceite para esta PR
+The synthetic `npm run test:google-delegation` uses a fake Google OAuth
+provider and fake Drive API, not real accounts. It verifies independent
+A/B consent, PKCE, one-time state, subject mismatch rejection, separate
+encrypted refresh grants, individual refresh and Google UserInfo
+verification, canonical folder parent scoping, independent A/B results,
+scoped disconnect, and refusal of unsafe token directories and global
+project fallback. Existing MCP CI tests, supply-chain checks and the
+release audit run alongside the new suite.
 
-`npm run test:google-delegation` usa provedores OAuth/Drive
-completamente simulados. Testa dois consentimentos independentes,
-estado único e não reutilizável, PKCE, conta Google errada,
-credenciais isoladas e criptografadas, refresh+UserInfo por usuário,
-lista canônica sem mistura, desvinculação de A sem afetar B, dados de
-B ausentes do retorno de A e nenhuma queda silenciosa para painel local.
-
-Testes sintéticos não provam configuração do Google Cloud, conta real
-Auth0, verificação do escopo restrito, segurança de administração
-da VPS, acesso público, integração ChatGPT ou que a versão instalada
-do Plugin tenha recebido essas mudanças. **Não ativar o endpoint
-público, configurar callbacks ou fazer merge/release/deploy sem
-autorização específica.**
+Passing these checks does not prove a live Auth0 tenant, Google OAuth
+verification, ChatGPT connection, user-owned Drive content operations,
+revocation timing, load isolation, VPS hardening, user-facing usability,
+or an installed Plugin update. **No merge, release, public deployment,
+Auth0/Google Cloud modification, plugin update or real Drive write
+is authorized by this document.**
