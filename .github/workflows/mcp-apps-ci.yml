@@ -66,6 +66,9 @@ jobs:
       - name: Test Stage 11 RFC 9728 HTTP discovery and denial
         working-directory: integrations/mcp-apps
         run: npm run test:oauth-http
+      - name: Verify per-user JWT identities, strict registry and cross-researcher isolation
+        working-directory: integrations/mcp-apps
+        run: npm run test:multiuser
       - name: Verify local authenticated Streamable HTTP transport
         working-directory: integrations/mcp-apps
         run: npm run test:http
