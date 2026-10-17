@@ -157,7 +157,7 @@ async function startHttp(){
  if(!Number.isInteger(port)||port<1024||port>65535)throw Error("Invalid explicit MCP port");
  if(mode==="bearer"&&token.length<32)throw Error("A secret bearer of at least 32 characters is required");
  const authConfig=mode==="auth0"?auth0Configuration():null;
- if(authConfig?.multiUser!==Boolean(tenantRegistry))
+ if(authConfig && authConfig.multiUser!==Boolean(tenantRegistry))
   throw Error("TENANT_REGISTRY_AUTH0_CONFIGURATION_MISMATCH");
  const verifyAuth0=authConfig?createAuth0Verifier(authConfig):null;
  // Stage 11 OAuth source is prepared; public binding still denied until
