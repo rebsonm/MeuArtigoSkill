@@ -1,0 +1,59 @@
+name: Stage17 pinned-baseline CodeQL forensic audit
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/stage17-codeql-forensic.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  forensic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+          ref: c24d7eb029c8238e9a43d0434b70f2eadb6c7f60
+      - name: Initialize CodeQL Python against pinned pre-fix candidate
+        uses: github/codeql-action/init@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4
+        with:
+          languages: python
+          build-mode: none
+          queries: security-extended
+      - name: Analyze WITHOUT uploading to Code Scanning
+        uses: github/codeql-action/analyze@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4
+        with:
+          upload: never
+          output: ${{ runner.temp }}/stage17-python-sarif
+          category: stage17/pinned-baseline
+      - name: Print only rule ID, severity and location; never snippet or payload
+        run: |
+          python - <<'PY'
+          import json, pathlib, os
+          folder=pathlib.Path(os.environ["RUNNER_TEMP"])/"stage17-python-sarif"
+          total=0
+          for path in folder.rglob("*.sarif"):
+              data=json.loads(path.read_text(encoding="utf-8"))
+              for run in data.get("runs",[]):
+                  rules={r.get("id"):r for r in run.get("tool",{}).get("driver",{}).get("rules",[])}
+                  for item in run.get("results",[]):
+                      rid=item.get("ruleId","UNKNOWN")
+                      rule=rules.get(rid,{})
+                      level=str(item.get("level","warning"))
+                      sec=rule.get("properties",{}).get("security-severity","")
+                      loc=item.get("locations",[{}])[0].get("physicalLocation",{})
+                      uri=loc.get("artifactLocation",{}).get("uri","")
+                      line=loc.get("region",{}).get("startLine","")
+                      if "clear-text" in rid or "sensitive" in rid.lower() or (str(sec) and float(sec)>=7):
+                          print("STAGE17_CODEQL_RULE",rid,"severity",sec or level,"path",uri,"line",line)
+                          total+=1
+          print("STAGE17_LOCAL_FINDINGS",total)
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: stage17-pinned-python-codeql-local-sarif
+          path: ${{ runner.temp }}/stage17-python-sarif
+          if-no-files-found: warn
+          retention-days: 7
