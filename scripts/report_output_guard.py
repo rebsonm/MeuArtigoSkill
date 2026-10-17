@@ -15,7 +15,7 @@ MAX_REPORT_BYTES = 512_000
 # Reject likely credentials and explicit restricted-corpus markers BEFORE
 # any filesystem operation. This is a preventive check, not encryption.
 SENSITIVE = re.compile(
-    r"(?i)(?:Bearer\\s+[A-Za-z0-9_.-]{12,}|"
+    r"(?i)(?:Bearer\s+[A-Za-z0-9_.-]{12,}|"
     r"(?:sk-|ghp_|github_pat_|AIza)[A-Za-z0-9_-]{12,}|"
     r"-----BEGIN [A-Z ]*PRIVATE KEY-----|"
     r"PRIVATE_RESEARCH_EXCERPT|SECRET_PRIVATE_SOURCE)"
