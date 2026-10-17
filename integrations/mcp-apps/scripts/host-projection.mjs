@@ -64,7 +64,16 @@ try{
   {...a,scientific_diagnostic:{schema:"MEU_ARTIGO_SCIENTIFIC_ADVISORY_PANEL_V1",
     status:"INPUTS_UNAVAILABLE",verdict:null,objective_blockers:0}},
   {...a,next_action:{...a.next_action,source_quote:"Sensitive research quote"}},
-  {...a,google_token:"secret"}
+  {...a,google_token:"secret"},
+  {...a,tasks:[{...a.tasks[0],task:"Inspect https://drive.google.com/drive/folders/private"}]},
+  {...a,tasks:[{...a.tasks[0],execution_owner:"researcher@example.org"}]},
+  {...a,tasks:[{...a.tasks[0],task:"Authorization: Bearer abcdef0123456789"}]},
+  {...a,tasks:[{...a.tasks[0],task:"Google token ya29.example_secret_token"}]},
+  {...a,tasks:[{...a.tasks[0],task:"password: confidential"}]},
+  {...a,tasks:[{...a.tasks[0],task:"Read /home/researcher/private/files"}]},
+  {...a,tasks:[a.tasks[0],a.tasks[0]]},
+  {...a,gates:[a.gates[0],a.gates[0]]},
+  {...a,gates:[{...a.gates[0],id:"GATE-0008"}]}
  ];
  for(const input of badCases){
   const result=await client.callTool({name:"meu_artigo_painel",
@@ -80,6 +89,8 @@ try{
  });
  assert.equal(empty.documented_gate_count,0);
  assert.equal(empty.registered_gate_total,null);
+ assert.equal(empty.gate_view_partial,true,
+  "Missing canonical gate totals must remain partial/unknown");
  const html=await client.readResource({uri:"ui://meu-artigo/site-v1.html"});
  assert.match(html.contents[0].text,/HOST_NOT_CONNECTED/);
  assert.equal(JSON.stringify(html).includes("alpha"),false);
