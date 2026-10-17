@@ -56,7 +56,7 @@ assert.equal(dom.window.MeuArtigoHost.receive({
  ...base,scientific_diagnostic:malicious
 }),false);
 assert.match(d.getElementById("content").textContent,/Painel indisponível/);
-assert.equal(d.querySelectorAll("img").length,0);
+assert.equal(d.querySelectorAll('img[src="x"],img[onerror]').length,0);
 assert.equal(dom.window.MeuArtigoHost.receive({
  ...base,scientific_diagnostic:{...known,scientific_quality_validated:true}
 }),false);

@@ -38,5 +38,5 @@ external validity, sensitivity, specificity, fairness or research impact.
 The "held-out" frozen synthetic benchmark is NOT a fresh prospective blinded
 study; authorship, detector rules and case selection may bias observed metrics.
 
-No merge, release, plugin update, VPS access or Google Drive write is
+No merge, release, installed app distribution update, VPS access or Google Drive write is
 allowed at this stage.
