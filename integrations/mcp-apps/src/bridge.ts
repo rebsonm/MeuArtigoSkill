@@ -8,23 +8,36 @@ declare global {interface Window {MeuArtigoHost?:{
  receive:(data:SiteData)=>boolean;disconnect:()=>void;locale:(code:string)=>void;
 }}}
 const app=new App({name:"Meu Artigo",version:"0.3.0"});
+let showingSnapshot=false;
 const clear=()=>{
+ showingSnapshot=false;
  window.MeuArtigoHost?.disconnect();
  const n=document.querySelector(".mock-badge");
  if(n)n.textContent="AGUARDANDO DADOS DO CHATGPT";
 };
 function provenance(){
  const badge=document.querySelector(".mock-badge");
- if(badge)badge.textContent="DADOS DO CHATGPT · SEM GRAVAÇÃO";
+ if(badge&&badge.textContent!=="DADOS DO CHATGPT · SEM GRAVAÇÃO")badge.textContent="DADOS DO CHATGPT · SEM GRAVAÇÃO";
  const footer=document.querySelector(".source-line");
  if(footer){
   const spans=footer.querySelectorAll("span");
-  if(spans[0])spans[0].textContent="Fonte: visualização recebida do ChatGPT nesta sessão";
-  if(spans[1])spans[1].textContent="MCP não consultou o Drive · Sem aprovação científica";
+  if(spans[0]&&spans[0].textContent!=="Fonte: visualização recebida do ChatGPT nesta sessão")spans[0].textContent="Fonte: visualização recebida do ChatGPT nesta sessão";
+  if(spans[1]&&spans[1].textContent!=="MCP não consultou o Drive · Sem aprovação científica")spans[1].textContent="MCP não consultou o Drive · Sem aprovação científica";
  }
  const header=document.querySelector(".page-top .stage");
- if(header)header.textContent="Snapshot do ChatGPT · não persistido";
+ if(header&&header.textContent!=="Snapshot do ChatGPT · não persistido")header.textContent="Snapshot do ChatGPT · não persistido";
+ const title=document.querySelector(".page-top .page-title");
+ if(title&&title.textContent==="Projeto autorizado · visão local")
+  title.textContent="Painel de pesquisa · dados enviados pelo ChatGPT";
+ document.querySelectorAll(".footnote").forEach((element)=>{
+  if(element.textContent?.startsWith("Snapshot local autorizado"))
+   element.textContent="Visualização dos registros encaminhados pelo ChatGPT; confirme os documentos originais em seu Drive.";
+ });
 }
+// The shared HTML redraws on navigation. Keep the host-provenance notice
+// correct without changing or storing any research data.
+const labelObserver=new MutationObserver(()=>{if(showingSnapshot)provenance();});
+labelObserver.observe(document.documentElement,{childList:true,subtree:true});
 app.ontoolresult=(event:any)=>{
  const site=event?.structuredContent?.site;
  if(!site||site.schema!=="MEU_ARTIGO_SITE_V1"||
@@ -32,6 +45,7 @@ app.ontoolresult=(event:any)=>{
     !window.MeuArtigoHost?.receive({...site,kind:"CANONICAL_LOCAL_SNAPSHOT"})){
   clear();return;
  }
+ showingSnapshot=true;
  provenance();
 };
 app.onhostcontextchanged=(ctx:any)=>{
