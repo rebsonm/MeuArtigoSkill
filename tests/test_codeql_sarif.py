@@ -38,6 +38,43 @@ class SARIFContractTests(unittest.TestCase):
         self.assertEqual(p["high"],0)
         self.assertEqual(p["other_requires_manual_review"],1)
 
+    def test_extension_rule_high_is_not_silently_discarded(self):
+        """Actual CodeQL action SARIF has driver.rules=[] and extension rules."""
+        alert = {"ruleId": "py/overly-permissive-file", "level": "warning",
+                 "rule": {"id": "py/overly-permissive-file", "index": 0,
+                          "toolComponent": {"index": 1}},
+                 "locations": [{"physicalLocation": {
+                     "artifactLocation": {"uri": "tests/test_drive_f7_anchor.py"},
+                     "region": {"startLine": 203}}}]}
+        obj = {"version": "2.1.0", "runs": [{"tool": {
+            "driver": {"name": "CodeQL", "rules": []},
+            "extensions": [
+                {"name": "codeql-action/pr-diff-range", "rules": []},
+                {"name": "codeql/python-queries", "rules": [
+                    {"id": "py/overly-permissive-file",
+                     "properties": {"security-severity": "7.8"}}]}]},
+            "results": [alert]}]}
+        (self.root / "python.sarif").write_text(json.dumps(obj), encoding="utf-8")
+        actual = inspect(self.root)
+        self.assertEqual(actual["high"], 1)
+        self.assertEqual(actual["blocking_high"], 1)
+        acknowledged = inspect(
+            self.root, acknowledge_synthetic_drive_f7_fixtures=True)
+        self.assertEqual(acknowledged["high"], 1)
+        self.assertEqual(acknowledged["acknowledged_synthetic_test_high"], 1)
+        self.assertEqual(acknowledged["blocking_high"], 0)
+
+        alert["locations"][0]["physicalLocation"]["region"]["startLine"] = 204
+        (self.root / "python.sarif").write_text(json.dumps(obj), encoding="utf-8")
+        moved = inspect(self.root, acknowledge_synthetic_drive_f7_fixtures=True)
+        self.assertEqual(moved["blocking_high"], 1)
+        self.assertEqual(moved["acknowledged_synthetic_test_high"], 0)
+
+    def test_missing_rule_metadata_fails_closed(self):
+        self.store([{"ruleId": "js/new-unknown-rule", "level": "warning"}])
+        with self.assertRaisesRegex(ValueError, "METADATA_MISSING"):
+            inspect(self.root)
+
     def test_other_sarif_tool_rejected(self):
         self.store([])
         p=self.root/"javascript.sarif"

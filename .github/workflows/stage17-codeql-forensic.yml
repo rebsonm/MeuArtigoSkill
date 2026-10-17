@@ -25,30 +25,11 @@ jobs:
           upload: never
           output: ${{ runner.temp }}/stage17-python-sarif
           category: stage17/python-sensitive-output
-      - name: Print only rule ID, severity and location; never snippet or payload
+      - name: Audit SARIF extension rule severities without exposing source content
         run: |
-          python - <<'PY'
-          import json, pathlib, os
-          folder=pathlib.Path(os.environ["RUNNER_TEMP"])/"stage17-python-sarif"
-          total=0
-          for path in folder.rglob("*.sarif"):
-              data=json.loads(path.read_text(encoding="utf-8"))
-              for run in data.get("runs",[]):
-                  rules={r.get("id"):r for r in run.get("tool",{}).get("driver",{}).get("rules",[])}
-                  for item in run.get("results",[]):
-                      rid=item.get("ruleId","UNKNOWN")
-                      rule=rules.get(rid,{})
-                      level=str(item.get("level","warning"))
-                      sec=rule.get("properties",{}).get("security-severity","")
-                      loc=item.get("locations",[{}])[0].get("physicalLocation",{})
-                      uri=loc.get("artifactLocation",{}).get("uri","")
-                      line=loc.get("region",{}).get("startLine","")
-                      if "clear-text" in rid or "sensitive" in rid.lower() or (str(sec) and float(sec)>=7):
-                          print("STAGE17_CODEQL_RULE",rid,"severity",sec or level,"path",uri,"line",line)
-                          total+=1
-          print("STAGE17_LOCAL_FINDINGS",total)
-          if total: raise SystemExit(1)
-          PY
+          python scripts/audit_codeql_sarif.py \
+            --directory "${RUNNER_TEMP}/stage17-python-sarif" \
+            --acknowledge-synthetic-drive-f7-fixtures
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:
