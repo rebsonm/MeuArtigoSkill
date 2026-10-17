@@ -75,6 +75,7 @@ jobs:
           npm run test:synthetic
           npm run test:i18n
           npm run test:http
+          npm run test:multiuser
           if node -e "const p=require('./package.json'); process.exit(p.scripts['test:oauth'] && p.scripts['test:oauth-http'] ? 0:1)"; then
             npm run test:oauth
             npm run test:oauth-http
