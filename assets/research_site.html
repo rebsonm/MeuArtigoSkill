@@ -354,6 +354,13 @@ if(isCanonical){
   const gates=Array.isArray(siteData.gates)?siteData.gates:[];
   const action=siteData.next_action||{};
   const observedGates=gates.filter(g=>g.approval_documented===true).length;
+  const gatePartial=siteData.gate_view_partial===true||
+    (Number.isInteger(siteData.registered_gate_total)&&
+     siteData.registered_gate_total>gates.length);
+  const gateScope=gatePartial?
+    '<p class="info" role="status">Visão parcial: '+gates.length+
+    ' de '+siteData.registered_gate_total+
+    ' gates registrados estão visíveis. O total de aprovações não pode ser inferido desta tela.</p>':'';
   const documentedCount=String(observedGates);
   const d=siteData.scientific_diagnostic;
   const countText=(x)=>Number.isSafeInteger(x)?String(x):"Não informado";
@@ -411,10 +418,10 @@ if(isCanonical){
     ' · estado científico a conferir</p></div><div class="stage">Snapshot local · não sincronizado</div></div>'+
     '<div class="kpis">'+
       kpi('Tarefas registradas',String(logged),'Quantidade registrada; execução não comprovada','▤')+
-      kpi('Gates documentados',documentedCount,'Registro não equivale a validação independente','✓')+
+      kpi('Gates visíveis documentados',documentedCount,'Contagem somente dos registros exibidos; não equivale à validação independente','✓')+
       kpi('Pendências','Não avaliado','Depende de conferência do CONTINUIDADE.md','◷')+
       kpi('Fontes verificadas','Não avaliado','Nenhuma auditoria de fontes executada nesta tela','▱')+
-    '</div><div class="cols"><section class="pane tinted"><div class="mini-label">Próxima ação registrada</div>'+
+    '</div>'+gateScope+'<div class="cols"><section class="pane tinted"><div class="mini-label">Próxima ação registrada</div>'+
     '<h2 data-research-original="true">'+nextCode+'</h2><p data-research-original="true">'+nextText+'</p><p class="quiet">Responsável: <span data-research-original="true">'+nextOwner+'</span></p>'+
     '<button class="primary" data-go="tasks">Conferir tarefas →</button></section>'+
     '<section class="pane"><h3>Estado científico</h3><p>'+observedGates+' registro(s) de aprovação identificados em '+gates.length+
@@ -424,9 +431,9 @@ if(isCanonical){
     '</div><div class="footnote">Validações científicas não são calculadas a partir de tarefas.</div></section></div>'+
     safeNotice+realFooter;
   screens.steps=()=>heading('Etapas e gates científicos','Estados registrados, não autenticação de avaliadores ou aprovação científica.')+
-    (gateList?'<div class="list">'+gateList+'</div>':'<div class="info">Nenhum registro de gate disponível neste snapshot.</div>')+safeNotice+realFooter;
+    gateScope+(gateList?'<div class="list">'+gateList+'</div>':'<div class="info">Nenhum registro de gate disponível neste snapshot.</div>')+safeNotice+realFooter;
   screens.validations=()=>heading('Validações humanas','Os estados abaixo são declarativos; a decisão deve ser conferida nos registros originais.')+
-    (gateList?'<div class="list">'+gateList+'</div>':'<div class="info">Sem estados de validação disponíveis.</div>')+technicalEvidence()+safeNotice+realFooter;
+    gateScope+(gateList?'<div class="list">'+gateList+'</div>':'<div class="info">Sem estados de validação disponíveis.</div>')+technicalEvidence()+safeNotice+realFooter;
   screens.sources=()=>heading('Fontes e buscas','Somente informações auditadas podem justificar conclusões bibliográficas.')+noVerifiedAudit+safeNotice+realFooter;
   screens.evidence=()=>heading('Evidências e sustentação','Verificações documentais e indícios consultivos não autentificam a sustentação semântica.')+technicalEvidence()+safeNotice+realFooter;
   screens.trace=()=>heading('Rastreabilidade','DEC, TRACE e SNAP exigem conferência nos registros originais.')+
@@ -446,6 +453,12 @@ function validCanonical(data){
    !Array.isArray(data.gates)||data.gates.length>7||
    !data.next_action||typeof data.next_action!=='object'||Array.isArray(data.next_action))return false;
  const scalar=(value,max=2000)=>value===null||value===undefined||(typeof value==='string'&&value.length<=max);
+ if(data.gate_view_partial!==undefined&&typeof data.gate_view_partial!=='boolean')return false;
+ if(data.registered_gate_total!==undefined&&data.registered_gate_total!==null&&
+   (!Number.isInteger(data.registered_gate_total)||data.registered_gate_total<0||
+    data.registered_gate_total>7||data.registered_gate_total<data.gates.length))return false;
+ if(data.gate_view_partial===false&&Number.isInteger(data.registered_gate_total)&&
+    data.registered_gate_total>data.gates.length)return false;
  if(!scalar(data.active_route,120)||!(data.documented_gate_count===null||
     (Number.isInteger(data.documented_gate_count)&&data.documented_gate_count>=0&&data.documented_gate_count<=7)))return false;
  if(!data.tasks.every(t=>t&&typeof t==='object'&&!Array.isArray(t)&&scalar(t.id,120)&&

@@ -106,6 +106,17 @@ def project_site_model(snapshot: dict) -> dict:
         }
     else:
         safe_diagnostic = None
+    gate_view = snapshot.get("human_gates", {})
+    total = gate_view.get("total")
+    marked_partial = gate_view.get("items_partial", False)
+    if marked_partial is not False and marked_partial is not True:
+        raise ValueError("SITE_GATE_PARTIAL_FLAG_INVALID")
+    if total is not None and (type(total) is not int or not 0 <= total <= 7):
+        raise ValueError("SITE_GATE_TOTAL_INVALID")
+    if total is not None and total < len(gates):
+        raise ValueError("SITE_GATE_TOTAL_BELOW_VISIBLE")
+    gate_partial = (marked_partial is True or
+                    (total is not None and total > len(gates)))
     recorded = sum(row.get("approval_documented") is True for row in gates)
     # Count the displayed records, not a potentially stale summary counter.
     # This number describes documented states, NOT verified approvals.
@@ -114,6 +125,8 @@ def project_site_model(snapshot: dict) -> dict:
         "schema": SCHEMA, "kind": "CANONICAL_LOCAL_SNAPSHOT",
         "active_route": snapshot.get("active_route"),
         "documented_gate_count": recorded,
+        "gate_view_partial": gate_partial,
+        "registered_gate_total": total,
         "tasks": [
             {"id": row.get("id"), "task": row.get("task"),
              "execution_owner": row.get("execution_owner"),

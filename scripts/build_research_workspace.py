@@ -104,6 +104,7 @@ def model(*, project: Path|None=None, route: str="QUALITATIVE", mode: str="MINIM
                            "execution_owner":row.get("execution_owner"),
                            "deadline":row.get("deadline")} for row in task_rows]},
         "human_gates":{"total":gates["registered_total"],
+                       "items_partial":gates.get("items_partial",False),
                        "items":[{"id":g.get("id"),"status":g.get("status"),
                                  "approval_documented":g.get("approval_documented",False)}
                                 for g in gates["items"]]},
