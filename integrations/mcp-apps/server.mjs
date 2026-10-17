@@ -1,341 +1,187 @@
-/** Optional, isolated, read-only MCP Apps server for the user-approved
- * Meu Artigo blue website. Requires a separately deployed authorized MCP
- * service to appear in ChatGPT. This is not an automatically installed Skill.
+/** Meu Artigo MCP Apps: host-owned Drive boundary.
+ * Deliberately NO Google API, researcher project paths, files, tokens,
+ * manuscript data, study telemetry or cross-user mutable state.
+ * Research document access belongs solely to each user's ChatGPT connector.
  */
-import { registerAppResource, registerAppTool, RESOURCE_MIME_TYPE } from "@modelcontextprotocol/ext-apps/server";
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
-import { createServer as createHttpServer } from "node:http";
-import { timingSafeEqual } from "node:crypto";
-import { execFile } from "node:child_process";
-import { promisify } from "node:util";
-import { readFile, stat, realpath } from "node:fs/promises";
+import {registerAppResource,registerAppTool,RESOURCE_MIME_TYPE} from "@modelcontextprotocol/ext-apps/server";
+import {McpServer} from "@modelcontextprotocol/sdk/server/mcp.js";
+import {StdioServerTransport} from "@modelcontextprotocol/sdk/server/stdio.js";
+import {StreamableHTTPServerTransport} from "@modelcontextprotocol/sdk/server/streamableHttp.js";
+import {createServer as createHttpServer} from "node:http";
+import {timingSafeEqual} from "node:crypto";
+import {readFile} from "node:fs/promises";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
-import { z } from "zod";
-import { auth0Configuration, protectedResourceMetadata, bearerChallenge, createAuth0Verifier } from "./auth0.mjs";
-import { loadTenantRegistry } from "./tenant_registry.mjs";
-import { openUserGoogleDrive } from "./google_user_drive.mjs";
+import {fileURLToPath} from "node:url";
+import {z} from "zod";
+import {auth0Configuration,protectedResourceMetadata,bearerChallenge,createAuth0Verifier} from "./auth0.mjs";
 
-const execute=promisify(execFile);
-const dirname=path.dirname(fileURLToPath(import.meta.url));
-const ROOT=path.resolve(dirname,"../..");
+const HERE=path.dirname(fileURLToPath(import.meta.url));
+const REPO=path.resolve(HERE,"../..");
 const URI="ui://meu-artigo/site-v1.html";
-const LOCALES=new Set(["pt","en","es","fr"]);
 const MAX_REQUEST_BYTES=256*1024;
-const MAX_SITE_BYTES=256*1024;
 const MAX_RESOURCE_BYTES=2*1024*1024;
-const SAFE_CODE=/^[A-Z][A-Z0-9_:-]{0,127}$/;
-const projectRoot=process.env.MEU_ARTIGO_PROJECT_ROOT||"";
-
-const language=(tag="auto")=>{
- const base=String(tag).split("-")[0].toLowerCase();
- return tag==="auto"?"auto":LOCALES.has(base)?base:"en";
-};
-const fallback=(locale,msg)=>{
- const base=language(locale);
- const text={
-  noProject:{pt:"Painel não carregado: não há projeto local autorizado configurado. Continue a pesquisa no chat.",en:"Dashboard unavailable: no authorized local project is configured. Continue in chat.",es:"Panel no disponible: falta un proyecto local autorizado. Continúe en el chat.",fr:"Tableau indisponible : aucun projet local autorisé. Continuez dans la conversation."},
-  failed:{pt:"Não foi possível consultar os registros autorizados. Nenhuma alteração foi realizada; continue no chat.",en:"Authorized records could not be loaded. Nothing was changed; continue in chat.",es:"No se pudieron cargar los registros autorizados. No se modificó nada; continúe en el chat.",fr:"Impossible de charger les dossiers autorisés. Rien n'a changé ; continuez dans la conversation."}
+const LOCALES=new Set(["pt","en","es","fr"]);
+const forbiddenConfig=[
+ "MEU_ARTIGO_PROJECT_ROOT","MEU_ARTIGO_MULTIUSER_REGISTRY",
+ "MEU_ARTIGO_TENANT_DATA_ROOT","MEU_ARTIGO_GOOGLE_DRIVE_MODE",
+ "MEU_ARTIGO_GOOGLE_TOKEN_DIR","MEU_ARTIGO_GOOGLE_TOKEN_KEY",
+ "MEU_ARTIGO_GOOGLE_CLIENT_ID","MEU_ARTIGO_GOOGLE_CLIENT_SECRET",
+ "MEU_ARTIGO_GOOGLE_REDIRECT_URI"
+];
+function noResearchAccess(env=process.env){
+ if(forbiddenConfig.some(key=>String(env[key]??"").trim()))
+  throw Error("MCP_RESEARCH_ACCESS_FORBIDDEN_USE_CHATGPT_DRIVE_CONNECTOR");
+}
+function locale(raw="auto"){
+ const code=String(raw).split("-")[0].toLowerCase();
+ return LOCALES.has(code)?code:"pt";
+}
+function guidance(raw){
+ const message={
+  pt:"Meu Artigo: o MCP fornece somente interface e orientações metodológicas genéricas. Use a conexão Google Drive individual do ChatGPT para consultar seus próprios arquivos. Nenhum projeto ou decisão científica foi carregado ou aprovado pelo MCP.",
+  en:"Meu Artigo: this MCP serves only a generic interface and methodological guidance. Read your own files through your personal ChatGPT Google Drive connection. The MCP has not loaded any project or approved scientific decisions.",
+  es:"Meu Artigo: este MCP solo ofrece interfaz y orientación metodológica genérica. Consulte sus archivos mediante su propia conexión Google Drive de ChatGPT. El MCP no ha cargado proyectos ni aprobado decisiones científicas.",
+  fr:"Meu Artigo : ce MCP fournit uniquement une interface et des conseils méthodologiques génériques. Consultez vos propres fichiers via votre connexion Google Drive dans ChatGPT. Le MCP n'a chargé aucun projet ni validé de décision scientifique."
  };
- return text[msg][base==="auto"?"en":base]??text[msg].en;
-};
-async function readSite({locale="auto",mode="MINIMAL",project_id}={},resolveProject=null){
- // The project ID is NOT a filesystem path; resolution is per authenticated
- // principal and happens against the immutable trusted operator registry.
- const selected=resolveProject?resolveProject(project_id):projectRoot;
- if(!selected||!path.isAbsolute(selected))return {error:"noProject",locale};
- // Model-provided args cannot select filesystem paths. The trusted operator
- // chooses a SINGLE authorized root outside model/tool input.
- try{
-  // A symlink anywhere in the configured path can switch the project
-  // between operators. Deny such roots instead of following them.
-  const resolved=await realpath(selected);
-  if(resolved!==path.resolve(selected))return {error:"failed",locale};
-  const info=await stat(resolved);
-  if(!info.isDirectory())return {error:"noProject",locale};
-  const {stdout}=await execute(process.env.MEU_ARTIGO_PYTHON||"python3",
-   [path.join(ROOT,"scripts/build_research_site.py"),
-    "--project",selected,"--json-only","--mode",mode,"--language",language(locale)],{
-      timeout:15000,maxBuffer:MAX_SITE_BYTES,env:{
-        PATH:process.env.PATH||"/usr/bin:/bin",
-        LANG:"C.UTF-8",LC_ALL:"C.UTF-8",
-        PYTHONIOENCODING:"utf-8",PYTHONDONTWRITEBYTECODE:"1",
-      },
-    });
-  if(Buffer.byteLength(stdout,"utf8")>MAX_SITE_BYTES)
-    throw Error("Oversized projection");
-  const site=JSON.parse(stdout);
-  if(site.schema!=="MEU_ARTIGO_SITE_V1"||
-     site.kind!=="CANONICAL_LOCAL_SNAPSHOT"||
-     site.canonical_writes_allowed!==false||
-     site.automatic_scientific_approval!==false||
-     site.canonical_drive_sync_verified!==false||
-     !Array.isArray(site.tasks)||!Array.isArray(site.gates)||
-     site.tasks.length>10000||site.gates.length>7||
-     !site.next_action||typeof site.next_action!=="object"||
-     !SAFE_CODE.test(String(site.next_action.code||""))||
-     !site.tasks.every(t=>t&&typeof t==="object"&&
-       ["id","task","execution_owner","deadline"].every(k=>
-         t[k]==null||(typeof t[k]==="string"&&t[k].length<=2000)))||
-     !site.gates.every(g=>g&&typeof g==="object"&&
-       typeof g.approval_documented==="boolean"))
-    throw Error("Untrusted snapshot");
-  return {site,locale};
- }catch{return {error:"failed",locale};}
+ return message[locale(raw)];
 }
-function summary(site,locale){
- const count=site.tasks.length;
- const approvals=site.gates.filter(g=>g.approval_documented===true).length;
- const code=SAFE_CODE.test(String(site.next_action?.code||""))?site.next_action.code:"UNVERIFIED";
- const base=language(locale);
- if(base==="pt")return "Meu Artigo — leitura local: "+count+" tarefas registradas; "+approvals+" gates com aprovação documentada. Próxima ação registrada: "+code+". Drive não verificado; nenhum gate aprovado pelo painel.";
- if(base==="es")return "Meu Artigo — lectura local: "+count+" tareas registradas; "+approvals+" validaciones documentadas. Próxima acción: "+code+". Drive no verificado; sin aprobaciones automáticas.";
- if(base==="fr")return "Meu Artigo — vue locale : "+count+" tâches enregistrées ; "+approvals+" validations documentées. Prochaine action : "+code+". Drive non vérifié ; aucune approbation automatique.";
- return "Meu Artigo — authorized local read: "+count+" recorded tasks; "+approvals+" documented gate approvals. Recorded next action: "+code+". Drive not verified; no automatic scientific approvals.";
-}
-async function htmlResource(){
- const template=await readFile(path.join(ROOT,"assets/research_site.html"),"utf8");
+async function uiResource(){
+ const html=await readFile(path.join(REPO,"assets/research_site.html"),"utf8");
+ const script=await readFile(path.join(HERE,"dist/bridge.js"),"utf8");
  const marker="__MEU_ARTIGO_SITE_MODEL_JSON__";
- if(template.split(marker).length!==2)throw Error("Unreviewed UI template");
- const neutral=JSON.stringify({schema:"MEU_ARTIGO_SITE_V1",kind:"HOST_NOT_CONNECTED",locale:"auto"});
- const compiled=await readFile(path.join(dirname,"dist/bridge.js"),"utf8");
- if(compiled.includes("</script>"))throw Error("Unsafe bundle");
- if(!template.endsWith("</body></html>"))throw Error("Unreviewed HTML footer");
- const result=template.replace(marker,neutral).replace(
-  "</body></html>","<script>"+compiled+"</script></body></html>");
- if(Buffer.byteLength(result,"utf8")>MAX_RESOURCE_BYTES)
-   throw Error("MCP Apps resource exceeds bounded size");
+ if(html.split(marker).length!==2||!html.endsWith("</body></html>")||
+    script.includes("</script>"))throw Error("UNREVIEWED_STATIC_MCP_UI");
+ const state={schema:"MEU_ARTIGO_SITE_V1",kind:"HOST_NOT_CONNECTED",locale:"auto"};
+ const result=html.replace(marker,JSON.stringify(state)).replace(
+  "</body></html>","<script>"+script+"</script></body></html>");
+ if(Buffer.byteLength(result,"utf8")>MAX_RESOURCE_BYTES)throw Error("UI_RESOURCE_TOO_LARGE");
  return result;
 }
-export function createServer({resolveProject=null,listProjects=null,googleDrive=null}={}){
- const server=new McpServer({name:"Meu Artigo Research Panel",version:"0.1.0"});
+export function createServer(){
+ noResearchAccess();
+ const server=new McpServer({name:"Meu Artigo — Host-Side Research",version:"0.2.0"});
  registerAppTool(server,"meu_artigo_painel",{
-  title:"Meu Artigo — research dashboard (read only)",
-  description:"Read-only authorized local C.A.D.A. and scientific-gate overview. It always supplies text if the host cannot render MCP Apps. Never creates projects, approves gates or claims Drive sync.",
-  inputSchema:{locale:z.string().max(35).optional(),mode:z.enum(["MINIMAL","FULL"]).optional(),project_id:z.string().max(64).optional()},
+  title:"Meu Artigo — generic scientific UI only",
+  description:"Shows a content-free methodological shell. Read the researcher's Drive exclusively through their own ChatGPT connector. Never send documents, summaries, tokens, project IDs or research metadata to this MCP.",
+  inputSchema:{locale:z.string().max(35).optional(),mode:z.enum(["MINIMAL","FULL"]).optional()},
   annotations:{readOnlyHint:true,idempotentHint:true,openWorldHint:false},
   ...(process.env.MEU_ARTIGO_AUTH_MODE==="auth0"?{securitySchemes:[{type:"oauth2",scopes:["mcp:read"]}]}:{}),
   _meta:{ui:{resourceUri:URI},"openai/outputTemplate":URI}
- },async(args)=>{
-  if(googleDrive)return {isError:true,content:[{type:"text",text:"Painel completo do Google Drive individual ainda não habilitado. Use meu_artigo_google_projetos. Não há fallback para projetos de outro usuário."}]};
-  const response=await readSite(args,resolveProject);
-  if(response.error)return {isError:true,content:[{type:"text",text:fallback(response.locale,response.error)}]};
-  return {content:[{type:"text",text:summary(response.site,response.locale)}],
-   structuredContent:{site:response.site}};
- });
- if(listProjects){
-  server.registerTool("meu_artigo_projetos",{
-   title:"Meu Artigo — authorized project IDs (read only)",
-   description:"List only this researcher's authorized project IDs; no paths or writes.",
-   inputSchema:{},annotations:{readOnlyHint:true,idempotentHint:true,openWorldHint:false}
-  },async()=>{
-   const projects=listProjects();
-   return {content:[{type:"text",text:"Authorized projects: "+projects.join(", ")}],
-    structuredContent:{projects}};
-  });
- }
-
- if(googleDrive){
-  server.registerTool("meu_artigo_google_conectar",{
-   title:"Conectar meu próprio Google Drive",
-   description:"Consentimento individual com Google; não utiliza a conta do operador.",
-   inputSchema:{},annotations:{readOnlyHint:false,idempotentHint:false,openWorldHint:true}
-  },async()=>{
-   try{const x=googleDrive.begin();return {content:[{type:"text",text:"Autorize sua conta Google neste link: "+x.authorization_url}],structuredContent:x};}
-   catch{return {isError:true,content:[{type:"text",text:"Conexão Google não iniciada."}]};}
-  });
-  server.registerTool("meu_artigo_google_status",{
-   title:"Status do meu próprio Google Drive",
-   description:"Indica apenas se a conta Google deste pesquisador está vinculada.",
-   inputSchema:{},annotations:{readOnlyHint:true,idempotentHint:true,openWorldHint:false}
-  },async()=>{
-   try{const x=await googleDrive.status();return {content:[{type:"text",text:x.connected?"Sua conta Google está vinculada.":"Sua conta Google não está vinculada."}],structuredContent:x};}
-   catch{return {isError:true,content:[{type:"text",text:"Não foi possível verificar sua conta Google."}]};}
-  });
-  server.registerTool("meu_artigo_google_projetos",{
-   title:"Projetos exclusivamente do meu Google Drive",
-   description:"Somente metadados de pastas Meu Artigo autorizados pela conta Google vinculada.",
-   inputSchema:{},annotations:{readOnlyHint:true,idempotentHint:true,openWorldHint:true}
-  },async()=>{
-   try{const x=await googleDrive.projects();return {content:[{type:"text",text:"Projetos encontrados na sua conta Google: "+x.projects.length}],structuredContent:x};}
-   catch{return {isError:true,content:[{type:"text",text:"Seu Drive não está vinculado ou a verificação falhou. Nenhuma outra conta foi consultada."}]};}
-  });
-  server.registerTool("meu_artigo_google_desconectar",{
-   title:"Desvincular minha própria conta Google",
-   description:"Exclui somente o vínculo deste usuário, sem alterar arquivos do Drive.",
-   inputSchema:{},annotations:{readOnlyHint:false,destructiveHint:true,idempotentHint:true,openWorldHint:false}
-  },async()=>{
-   try{const x=await googleDrive.disconnect();return {content:[{type:"text",text:"Sua autorização Google foi desvinculada."}],structuredContent:x};}
-   catch{return {isError:true,content:[{type:"text",text:"Não foi possível desvincular sua conta."}]};}
-  });
- }
- registerAppResource(server,"Meu Artigo approved blue dashboard",URI,{},async()=>({
-  contents:[{uri:URI,mimeType:RESOURCE_MIME_TYPE,text:await htmlResource(),
+ },async args=>({
+  isError:true,
+  content:[{type:"text",text:guidance(args.locale)}]
+ }));
+ registerAppResource(server,"Meu Artigo neutral interface",URI,{},async()=>({
+  contents:[{uri:URI,mimeType:RESOURCE_MIME_TYPE,text:await uiResource(),
    _meta:{ui:{prefersBorder:true,csp:{connectDomains:[],resourceDomains:[]}},
-      "openai/ui":{availableDisplayModes:["inline","fullscreen"]}}}]
+    "openai/ui":{availableDisplayModes:["inline","fullscreen"]}}}]
  }));
  return server;
 }
-function fixedTokenEqual(expected, actual){
+function equalToken(expected,actual){
  const a=Buffer.from(expected),b=Buffer.from(actual);
  return a.length===b.length&&timingSafeEqual(a,b);
 }
-async function startHttp(){
+async function serveHttp(){
+ noResearchAccess();
  const bind=process.env.MEU_ARTIGO_BIND_HOST||"127.0.0.1";
  const port=Number(process.env.MEU_ARTIGO_MCP_PORT||"8085");
  const mode=process.env.MEU_ARTIGO_AUTH_MODE||"bearer";
  if(!["bearer","auth0"].includes(mode))throw Error("UNSUPPORTED_AUTH_MODE");
- const tenantRegistry=await loadTenantRegistry();
- const googleOnly=process.env.MEU_ARTIGO_GOOGLE_DRIVE_MODE==="per_user";
- if(googleOnly&&(tenantRegistry||projectRoot||process.env.MEU_ARTIGO_PILOT_SUB||mode!=="auth0"))
-  throw Error("GOOGLE_USER_DRIVE_MUST_NOT_FALLBACK_TO_LOCAL_OR_OWNER");
- const googleAccess=googleOnly?await openUserGoogleDrive():null;
- if(tenantRegistry&&(mode!=="auth0"||projectRoot))
-  throw Error("MULTIUSER_REQUIRES_AUTH0_AND_NO_GLOBAL_PROJECT_ROOT");
+ if(!Number.isInteger(port)||port<1024||port>65535)throw Error("INVALID_MCP_PORT");
  const token=process.env.MEU_ARTIGO_MCP_BEARER||"";
- if(!Number.isInteger(port)||port<1024||port>65535)throw Error("Invalid explicit MCP port");
- if(mode==="bearer"&&token.length<32)throw Error("A secret bearer of at least 32 characters is required");
- const authConfig=mode==="auth0"?auth0Configuration():null;
- if(authConfig && authConfig.multiUser!==Boolean(tenantRegistry||googleAccess))
-  throw Error("TENANT_REGISTRY_AUTH0_CONFIGURATION_MISMATCH");
- const verifyAuth0=authConfig?createAuth0Verifier(authConfig):null;
- // Stage 11 OAuth source is prepared; public binding still denied until
- // actual provider / callback / user-delegated scope validation and approval.
+ if(mode==="bearer"&&token.length<32)throw Error("BEARER_TOO_SHORT");
+ const config=mode==="auth0"?auth0Configuration():null;
+ const verify=config?createAuth0Verifier(config):null;
  if(!["127.0.0.1","::1"].includes(bind))
-   throw Error("PUBLIC_HTTP_BIND_BLOCKED_UNTIL_AUTH0_OAUTH");
+  throw Error("PUBLIC_HTTP_BIND_BLOCKED_UNTIL_AUTH0_OAUTH");
  const allowedOrigin=process.env.MEU_ARTIGO_ALLOWED_ORIGIN||"";
  const app=createHttpServer(async(req,res)=>{
   const pathname=req.url?.split("?")[0];
-  if(authConfig&&req.method==="GET"&&
-    (pathname==="/.well-known/oauth-protected-resource"||
-     pathname==="/.well-known/oauth-protected-resource/mcp")){
-    res.writeHead(200,{"content-type":"application/json; charset=utf-8",
-      "cache-control":"public, max-age=300",
-      "x-content-type-options":"nosniff"});
-    res.end(JSON.stringify(protectedResourceMetadata(authConfig)));return;
-  }
-  if(googleAccess&&pathname==="/google/oauth/callback"){
-   if(req.method!=="GET"){res.writeHead(405).end();return;}
-   try{await googleAccess.complete(req.url);
-    res.writeHead(200,{"content-type":"text/plain; charset=utf-8",
-     "cache-control":"no-store","referrer-policy":"no-referrer",
-     "x-content-type-options":"nosniff",
-     "content-security-policy":"default-src 'none'; base-uri 'none'; form-action 'none'"})
-     .end("Sua conta Google foi vinculada. Volte ao Meu Artigo no ChatGPT.");
-   }catch{
-    res.writeHead(400,{"content-type":"text/plain; charset=utf-8",
-     "cache-control":"no-store","referrer-policy":"no-referrer",
-     "x-content-type-options":"nosniff"})
-     .end("Autorização Google não concluída. Tente novamente.");
-   }
-   return;
+  if(config&&req.method==="GET"&&[
+   "/.well-known/oauth-protected-resource",
+   "/.well-known/oauth-protected-resource/mcp"
+  ].includes(pathname)){
+   res.writeHead(200,{"content-type":"application/json; charset=utf-8",
+    "cache-control":"public, max-age=300","x-content-type-options":"nosniff"});
+   res.end(JSON.stringify(protectedResourceMetadata(config)));return;
   }
   if(pathname!=="/mcp"){res.writeHead(404).end();return;}
-  const methods=new Set(["POST","GET","DELETE"]);
-  if(!methods.has(req.method)){res.writeHead(405).end();return;}
+  if(!["GET","POST","DELETE"].includes(req.method)){res.writeHead(405).end();return;}
   if(req.headers.origin&&(!allowedOrigin||req.headers.origin!==allowedOrigin)){
    res.writeHead(403).end();return;
   }
-  let authorizedSub=null;
-  if(authConfig){
-    const verdict=await verifyAuth0(req.headers.authorization);
-    if(!verdict.ok){
-      const headers={"content-type":"application/json; charset=utf-8",
-        "cache-control":"no-store","x-content-type-options":"nosniff"};
-      if(verdict.status===401||verdict.error==="insufficient_scope")
-        headers["www-authenticate"]=bearerChallenge(authConfig,
-          verdict.error==="invalid_token"?"invalid_token":
-          verdict.error==="insufficient_scope"?"insufficient_scope":null);
-      res.writeHead(verdict.status,headers)
-        .end(JSON.stringify({error:verdict.status===401?"Unauthorized":"Forbidden"}));
-      return;
-    }
-    if(tenantRegistry&&!tenantRegistry.hasSubject(verdict.principal.sub)){
-      res.writeHead(403,{"content-type":"application/json; charset=utf-8",
-        "cache-control":"no-store"}).end('{"error":"Forbidden"}');return;
-    }
-    authorizedSub=verdict.principal.sub;
+  if(config){
+   const verdict=await verify(req.headers.authorization);
+   if(!verdict.ok){
+    const headers={"content-type":"application/json; charset=utf-8",
+     "cache-control":"no-store","x-content-type-options":"nosniff"};
+    if(verdict.status===401||verdict.error==="insufficient_scope")
+     headers["www-authenticate"]=bearerChallenge(config,
+      verdict.error==="invalid_token"?"invalid_token":
+      verdict.error==="insufficient_scope"?"insufficient_scope":null);
+    res.writeHead(verdict.status,headers).end(JSON.stringify({
+     error:verdict.status===401?"Unauthorized":"Forbidden"
+    }));return;
+   }
   }else{
-    const header=req.headers.authorization;
-    const valid=typeof header==="string"&&header.length<=512&&
-      /^Bearer [^\s]+$/i.test(header);
-    const sent=valid?header.slice(7):"";
-    if(!valid||!fixedTokenEqual(token,sent)){
-      res.writeHead(401,{"content-type":"application/json",
-        "cache-control":"no-store"}).end('{"error":"Unauthorized"}');return;
-    }
+   const header=req.headers.authorization;
+   const valid=typeof header==="string"&&header.length<=512&&
+    /^Bearer [^\s]+$/i.test(header);
+   if(!valid||!equalToken(token,header.slice(7))){
+    res.writeHead(401,{"content-type":"application/json",
+     "cache-control":"no-store"}).end('{"error":"Unauthorized"}');return;
+   }
   }
-  // Prevent unbounded JSON-RPC POST buffering inside transport handlers.
-  // The SDK accepts an already parsed body as handleRequest's third arg.
   let parsed;
   if(req.method==="POST"){
-    if(!/^application\/json(?:\s*;[^\r\n]*)?$/i.test(
-       String(req.headers["content-type"]||""))){
-      res.writeHead(415,{"content-type":"application/json"}).end('{"error":"Unsupported media type"}');return;
+   if(!/^application\/json(?:\s*;[^\r\n]*)?$/i.test(String(req.headers["content-type"]||""))){
+    res.writeHead(415).end();return;
+   }
+   const size=Number(req.headers["content-length"]||"0");
+   if(!Number.isSafeInteger(size)||size<0||size>MAX_REQUEST_BYTES){
+    res.writeHead(413).end();return;
+   }
+   try{
+    const chunks=[];let total=0;
+    for await(const chunk of req){
+     total+=chunk.length;
+     if(total>MAX_REQUEST_BYTES){res.writeHead(413).end();return;}
+     chunks.push(chunk);
     }
-    const length=Number(req.headers["content-length"]||"0");
-    if(!Number.isSafeInteger(length)||length<0||length>MAX_REQUEST_BYTES){
-      res.writeHead(413,{"content-type":"application/json"}).end('{"error":"Payload too large"}');return;
+    parsed=JSON.parse(Buffer.concat(chunks).toString("utf8"));
+    if(!parsed||typeof parsed!=="object"||Array.isArray(parsed)){
+     res.writeHead(400).end();return;
     }
-    try{
-      const chunks=[];let used=0;
-      for await(const chunk of req){
-        used+=chunk.length;
-        if(used>MAX_REQUEST_BYTES){
-          res.writeHead(413,{"content-type":"application/json"}).end('{"error":"Payload too large"}');return;
-        }
-        chunks.push(chunk);
-      }
-      parsed=JSON.parse(Buffer.concat(chunks).toString("utf8"));
-      if(!parsed||typeof parsed!=="object"||Array.isArray(parsed)){
-        res.writeHead(400,{"content-type":"application/json"}).end('{"error":"Invalid JSON-RPC payload"}');return;
-      }
-    }catch{
-      if(!res.headersSent)res.writeHead(400,{"content-type":"application/json"}).end('{"error":"Invalid JSON payload"}');
-      return;
-    }
+   }catch{
+    if(!res.headersSent)res.writeHead(400).end();return;
+   }
   }
-  const mcp=createServer(googleAccess?{
-    googleDrive:{
-      begin:()=>googleAccess.begin(authorizedSub),
-      status:()=>googleAccess.status(authorizedSub),
-      projects:()=>googleAccess.projects(authorizedSub),
-      disconnect:()=>googleAccess.disconnect(authorizedSub)
-    }
-  }:tenantRegistry?{
-    resolveProject:id=>tenantRegistry.projectFor(authorizedSub,id),
-    listProjects:()=>tenantRegistry.listProjects(authorizedSub)
-  }:{});
+  const server=createServer();
   const transport=new StreamableHTTPServerTransport({
-    sessionIdGenerator:undefined,enableJsonResponse:true,
+   sessionIdGenerator:undefined,enableJsonResponse:true
   });
   res.on("close",()=>{
    transport.close().catch(()=>{});
-   mcp.close().catch(()=>{});
+   server.close().catch(()=>{});
   });
   try{
-   await mcp.connect(transport);
+   await server.connect(transport);
    await transport.handleRequest(req,res,parsed);
   }catch{
-   if(!res.headersSent)res.writeHead(500).end('{"error":"MCP transport unavailable"}');
+   if(!res.headersSent)res.writeHead(500).end('{"error":"MCP unavailable"}');
   }
  });
- app.listen(port,bind,()=>console.error("Meu Artigo MCP Apps listening on loopback or operator-authorized proxy boundary"));
+ app.listen(port,bind,()=>console.error("Meu Artigo generic MCP ready on loopback"));
 }
-// Importing the factory in isolated tests must not implicitly start a listener.
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  if(process.argv.includes("--stdio")){
-  // A stdio client has no independently validated per-request OAuth principal.
-  // Never silently degrade a configured multiuser service to a global reader.
-  if(process.env.MEU_ARTIGO_MULTIUSER_REGISTRY||process.env.MEU_ARTIGO_TENANT_DATA_ROOT||process.env.MEU_ARTIGO_GOOGLE_DRIVE_MODE==="per_user")
-   throw Error("MULTIUSER_STDIO_REQUIRES_REQUEST_IDENTITY");
+  noResearchAccess();
   await createServer().connect(new StdioServerTransport());
  }else if(process.argv.includes("--http")){
-  await startHttp();
+  await serveHttp();
  }else{
-  console.error("Choose --stdio or --http (authenticated, isolated, explicitly configured).");
+  console.error("Specify --stdio or --http");
   process.exitCode=2;
  }
 }
