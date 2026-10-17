@@ -355,6 +355,20 @@ if(isCanonical){
   const action=siteData.next_action||{};
   const observedGates=gates.filter(g=>g.approval_documented===true).length;
   const documentedCount=String(observedGates);
+  const d=siteData.scientific_diagnostic;
+  const countText=(x)=>Number.isSafeInteger(x)?String(x):"Não informado";
+  const technicalEvidence=()=>{
+    if(!d||d.status!=="RECORDED_UNASSESSED")
+      return '<div class="info">Diagnóstico técnico indisponível. Ausência de avaliação não representa zero problemas.</div>';
+    const codes=d.priority_codes.map(code=>'<code>'+e(code)+'</code>').join(', ');
+    return '<section class="pane" aria-label="Diagnóstico técnico consultivo">'+
+      '<h3>Diagnóstico técnico · REG-013</h3>'+
+      '<p>Conflitos objetivos: '+countText(d.objective_blockers)+
+      ' · Revisões pendentes: '+countText(d.review_occurrences)+
+      ' · Indícios semânticos ADVISORY: '+countText(d.advisory_occurrences)+'</p>'+
+      (codes?'<p>Códigos de revisão: '+codes+'</p>':'')+
+      '<p class="footnote">Triagem local de registros. Não autentica pareceristas, prova semântica ou gates.</p></section>';
+  };
   const noVerifiedAudit='<div class="info">Não avaliado. Esta visualização não executou auditoria científica ou consulta bibliográfica.</div>';
   const safeNotice='<p class="footnote">Snapshot local autorizado, gerado a partir de registros existentes. Sincronização com Drive e validação científica independente não foram verificadas.</p>';
   const gateList=gates.map((g,i)=>iconLine(String(i+1),'<span data-research-original="true">'+e(g.id||'Gate sem ID')+'</span>',
@@ -412,9 +426,9 @@ if(isCanonical){
   screens.steps=()=>heading('Etapas e gates científicos','Estados registrados, não autenticação de avaliadores ou aprovação científica.')+
     (gateList?'<div class="list">'+gateList+'</div>':'<div class="info">Nenhum registro de gate disponível neste snapshot.</div>')+safeNotice+realFooter;
   screens.validations=()=>heading('Validações humanas','Os estados abaixo são declarativos; a decisão deve ser conferida nos registros originais.')+
-    (gateList?'<div class="list">'+gateList+'</div>':'<div class="info">Sem estados de validação disponíveis.</div>')+safeNotice+realFooter;
+    (gateList?'<div class="list">'+gateList+'</div>':'<div class="info">Sem estados de validação disponíveis.</div>')+technicalEvidence()+safeNotice+realFooter;
   screens.sources=()=>heading('Fontes e buscas','Somente informações auditadas podem justificar conclusões bibliográficas.')+noVerifiedAudit+safeNotice+realFooter;
-  screens.evidence=()=>heading('Evidências e sustentação','Nenhuma verificação semântica foi executada ao gerar este painel.')+noVerifiedAudit+safeNotice+realFooter;
+  screens.evidence=()=>heading('Evidências e sustentação','Verificações documentais e indícios consultivos não autentificam a sustentação semântica.')+technicalEvidence()+safeNotice+realFooter;
   screens.trace=()=>heading('Rastreabilidade','DEC, TRACE e SNAP exigem conferência nos registros originais.')+
     '<div class="info">Histórico não inspecionado por esta visualização. Não são apresentados eventos ou aprovações presumidos.</div>'+safeNotice+realFooter;
   screens.submission=()=>heading('Preparação para submissão','Verifique perfil editorial, anonimização e aprovação dos gates.')+
@@ -438,6 +452,22 @@ function validCanonical(data){
    scalar(t.task)&&scalar(t.execution_owner,300)&&scalar(t.deadline,120)))return false;
  if(!data.gates.every(g=>g&&typeof g==='object'&&!Array.isArray(g)&&scalar(g.id,120)&&
    typeof g.approval_documented==='boolean'))return false;
+ if(data.scientific_diagnostic!=null){
+   const d=data.scientific_diagnostic;
+   if(!d||typeof d!=='object'||Array.isArray(d)||d.schema!=='MEU_ARTIGO_SCIENTIFIC_ADVISORY_PANEL_V1'||
+      !['RECORDED_UNASSESSED','INPUTS_UNAVAILABLE'].includes(d.status)||
+      d.human_review_required!==true||d.semantic_support_proven!==false||
+      d.scientific_quality_validated!==false||d.scientific_gate_approved!==false||
+      d.reports_written!==false||d.drive_sync_verified!==false||
+      !Array.isArray(d.priority_codes)||d.priority_codes.length>6||
+      !d.priority_codes.every(c=>typeof c==='string'&&/^[A-Z][A-Z0-9_]{0,63}$/.test(c)))return false;
+   for(const key of ['objective_blockers','review_occurrences','advisory_occurrences','strict_required_occurrences']){
+     const n=d[key];
+     if(n!==null&&(!Number.isSafeInteger(n)||n<0||n>1000000))return false;
+     if(d.status==='INPUTS_UNAVAILABLE'&&n!==null)return false;
+   }
+   if(d.verdict!==null&&!['CORRECAO_REQUERIDA','REVISAO_CIENTIFICA_PENDENTE'].includes(d.verdict))return false;
+ }
  return ['code','explanation','responsible'].every(k=>scalar(data.next_action[k]));
 }
 function disconnectHost(){
