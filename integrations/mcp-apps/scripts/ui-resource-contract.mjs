@@ -10,7 +10,7 @@ import {JSDOM,VirtualConsole} from "jsdom";
 import {createServer} from "../server.mjs";
 import {normalizeHostSnapshot} from "../host_projection.mjs";
 import {uiOutputSchema} from "../ui_output_schema.mjs";
-const uri="ui://meu-artigo/site-v1.html";
+const uri="ui://meu-artigo/site-v2.html";
 const client=new Client({name:"meu-artigo-ui-resource-contract",version:"0.1.0"});
 const server=createServer();
 const [serverTransport,clientTransport]=InMemoryTransport.createLinkedPair();
