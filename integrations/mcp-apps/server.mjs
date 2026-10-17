@@ -260,11 +260,18 @@ async function startHttp(){
  });
  app.listen(port,bind,()=>console.error("Meu Artigo MCP Apps listening on loopback or operator-authorized proxy boundary"));
 }
-if(process.argv.includes("--stdio")){
- await createServer().connect(new StdioServerTransport());
-}else if(process.argv.includes("--http")){
- await startHttp();
-}else{
- console.error("Choose --stdio or --http (authenticated, isolated, explicitly configured).");
- process.exitCode=2;
+// Importing the factory in isolated tests must not implicitly start a listener.
+if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
+ if(process.argv.includes("--stdio")){
+  // A stdio client has no independently validated per-request OAuth principal.
+  // Never silently degrade a configured multiuser service to a global reader.
+  if(process.env.MEU_ARTIGO_MULTIUSER_REGISTRY||process.env.MEU_ARTIGO_TENANT_DATA_ROOT)
+   throw Error("MULTIUSER_STDIO_REQUIRES_REQUEST_IDENTITY");
+  await createServer().connect(new StdioServerTransport());
+ }else if(process.argv.includes("--http")){
+  await startHttp();
+ }else{
+  console.error("Choose --stdio or --http (authenticated, isolated, explicitly configured).");
+  process.exitCode=2;
+ }
 }
