@@ -45,7 +45,17 @@ try{
  await page.goto("http://localhost:8080",{waitUntil:"domcontentloaded",timeout:30000});
  const input=page.locator("textarea").first();
  await input.waitFor({state:"visible",timeout:30000});
- await input.fill(JSON.stringify({locale:"pt",mode:"FULL",snapshot:fixture}));
+ // Wait for React's async ServerSelect effect; otherwise it may reset input to "{}".
+ await page.waitForFunction(()=>{
+  const selects=document.querySelectorAll("select");
+  return selects.length>=2 && selects[1].value==="meu_artigo_painel";
+ },{timeout:30000});
+ await page.waitForTimeout(400);
+ const json=JSON.stringify({locale:"pt",mode:"FULL",snapshot:fixture});
+ await input.fill(json);
+ await page.waitForTimeout(300);
+ if(await input.inputValue()!==json)throw Error("E04_INPUT_RESET_BEFORE_CALL");
+ evidence.input_bytes=json.length;
  const submit=page.getByRole("button",{name:"Call Tool",exact:true});
  await submit.waitFor({state:"visible",timeout:15000});
  await submit.click();
@@ -68,6 +78,13 @@ try{
  evidence.visual_dashboard=Boolean(target);
  if(!target)throw Error("E04_DASHBOARD_NOT_RENDERED");
  evidence.ten_screens=(await target.locator('nav button[data-page]').count())===10;
+ // Wait for tool result to reach the iframe; plain nav rendering occurs first.
+ const toolDeadline=Date.now()+25000;
+ while(Date.now()<toolDeadline){
+  if((await target.locator(".mock-badge").innerText()).includes("DADOS DO CHATGPT"))break;
+  await page.waitForTimeout(300);
+ }
+ evidence.badge=(await target.locator(".mock-badge").innerText()).slice(0,80);
  await target.locator('nav button[data-page="tasks"]').click();
  evidence.synthetic_task=(await target.locator("#content").innerText()).includes("SYNTHETIC E04 ALPHA");
  if(!evidence.ten_screens||!evidence.synthetic_task)
