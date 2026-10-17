@@ -41,6 +41,7 @@ jobs:
         working-directory: vendor-ext-apps
         run: |
           npm ci --ignore-scripts --no-audit --no-fund
+          npm rebuild bun --foreground-scripts
           npm run build
           npm run build --workspace @modelcontextprotocol/ext-apps-basic-host
           npx playwright install --with-deps chromium
@@ -52,7 +53,9 @@ jobs:
         run: |
           set -Eeuo pipefail
           cleanup() {
-            kill "${HOST_PID:-0}" "${MCP_PID:-0}" 2>/dev/null || true
+            for pid in "${HOST_PID:-}" "${MCP_PID:-}"; do
+              if [[ -n "$pid" ]]; then kill "$pid" 2>/dev/null || true; fi
+            done
           }
           trap cleanup EXIT
           node integrations/mcp-apps/scripts/e04-test-host-server.mjs >/tmp/e04-mcp.log 2>&1 &
