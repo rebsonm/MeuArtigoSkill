@@ -1,8 +1,6 @@
-name: Stage17 candidate CodeQL post-fix audit
+name: Stage17 CodeQL Python sensitive-output gate
 on:
-  pull_request:
-    paths:
-      - '.github/workflows/stage17-codeql-forensic.yml'
+  pull_request: {}
   workflow_dispatch:
 permissions:
   contents: read
@@ -26,7 +24,7 @@ jobs:
         with:
           upload: never
           output: ${{ runner.temp }}/stage17-python-sarif
-          category: stage17/candidate-postfix
+          category: stage17/python-sensitive-output
       - name: Print only rule ID, severity and location; never snippet or payload
         run: |
           python - <<'PY'
@@ -49,11 +47,12 @@ jobs:
                           print("STAGE17_CODEQL_RULE",rid,"severity",sec or level,"path",uri,"line",line)
                           total+=1
           print("STAGE17_LOCAL_FINDINGS",total)
+          if total: raise SystemExit(1)
           PY
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:
-          name: stage17-candidate-python-codeql-local-sarif
+          name: stage17-python-sensitive-output-sarif
           path: ${{ runner.temp }}/stage17-python-sarif
           if-no-files-found: warn
           retention-days: 7
