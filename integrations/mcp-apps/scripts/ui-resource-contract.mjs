@@ -41,6 +41,17 @@ try{
  assert.deepEqual(resource._meta?.ui?.csp?.resourceDomains,[]);
  const parsed=new JSDOM(html,{runScripts:"outside-only",url:"https://synthetic.invalid/"});
  const scripts=[...parsed.window.document.querySelectorAll("script")];
+ if(scripts.length!==3){
+  console.log("RESOURCE_SCRIPT_FORENSICS",JSON.stringify({
+   dom_scripts:scripts.length,
+   raw_script_open:(html.match(/<script\\b/gi)||[]).length,
+   raw_script_close:(html.match(/<\\/script\\s*>/gi)||[]).length,
+   sampled_elements:scripts.slice(0,12).map((s,i)=>({
+    index:i,type:s.type,src:Boolean(s.src),length:s.textContent.length,
+    prefix:s.textContent.slice(0,50)
+   }))
+  }));
+ }
  assert.equal(scripts.length,3,"Expect JSON, dashboard code and bundled MCP bridge");
  assert.equal(scripts[0].type,"application/json");
  for(let i=1;i<scripts.length;i++)new Script(scripts[i].textContent,{filename:"resource-script-"+i});
