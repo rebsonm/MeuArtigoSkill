@@ -28,7 +28,7 @@ try{
  dispose.push(async()=>{await client.close();await mcp.close();});
  const tools=await client.listTools();
  assert.deepEqual(tools.tools.map(t=>t.name),["meu_artigo_painel"]);
- assert.deepEqual(Object.keys(tools.tools[0].inputSchema.properties).sort(),["locale","mode"]);
+ assert.deepEqual(Object.keys(tools.tools[0].inputSchema.properties).sort(),["locale","mode","snapshot"]);
  const output=await client.callTool({name:"meu_artigo_painel",
   arguments:{locale:"pt",mode:"FULL",project_id:root,document:secret}});
  assert.equal(output.isError,true);
@@ -110,7 +110,7 @@ try{
   "execFile(","googleapis.com/drive","google_oauth",
   "CANONICAL_LOCAL_SNAPSHOT"
  ])assert.ok(!source.includes(forbidden),"MCP must not include "+forbidden);
- console.log("HOST_SIDE_DRIVE_BOUNDARY_PASS: no research files, no Google tokens, no stored projects, two independent Auth0 users, generic UI only.");
+ console.log("HOST_SIDE_DRIVE_BOUNDARY_PASS: no direct Drive/file access, no Google tokens or stored projects, two independent Auth0 users; host-provided bounded snapshots tested separately.");
 }finally{
  for(const close of dispose.reverse())await close().catch(()=>{});
  await rm(root,{recursive:true,force:true});
