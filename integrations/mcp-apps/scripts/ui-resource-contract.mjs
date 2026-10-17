@@ -39,11 +39,13 @@ try{
  assert.ok(html.includes("HOST_NOT_CONNECTED"));
  assert.deepEqual(resource._meta?.ui?.csp?.connectDomains,[]);
  assert.deepEqual(resource._meta?.ui?.csp?.resourceDomains,[]);
- const scripts=[...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)];
+ const parsed=new JSDOM(html,{runScripts:"outside-only",url:"https://synthetic.invalid/"});
+ const scripts=[...parsed.window.document.querySelectorAll("script")];
  assert.equal(scripts.length,3,"Expect JSON, dashboard code and bundled MCP bridge");
- assert.match(scripts[0][1],/type="application\/json"/);
- for(let i=1;i<scripts.length;i++)new Script(scripts[i][2],{filename:"resource-script-"+i});
- assert.ok(scripts[2][2].length>1000);
+ assert.equal(scripts[0].type,"application/json");
+ for(let i=1;i<scripts.length;i++)new Script(scripts[i].textContent,{filename:"resource-script-"+i});
+ assert.ok(scripts[2].textContent.length>1000);
+ parsed.window.close();
  const errors=[],vc=new VirtualConsole();
  vc.on("jsdomError",e=>errors.push(e.message));
  const dom=new JSDOM(html,{runScripts:"dangerously",
