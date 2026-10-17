@@ -9,6 +9,8 @@ declare global {interface Window {MeuArtigoHost?:{
 }}}
 const app=new App({name:"Meu Artigo",version:"0.3.0"});
 let showingSnapshot=false;
+// Codes only, never research content, tokens or personal identifiers.
+const trace=(code:string)=>console.info("[MEU_ARTIGO_UI] "+code);
 const clear=()=>{
  showingSnapshot=false;
  window.MeuArtigoHost?.disconnect();
@@ -39,16 +41,20 @@ function provenance(){
 const labelObserver=new MutationObserver(()=>{if(showingSnapshot)provenance();});
 labelObserver.observe(document.documentElement,{childList:true,subtree:true});
 app.ontoolresult=(event:any)=>{
+ trace("TOOL_RESULT_RECEIVED");
  const site=event?.structuredContent?.site;
- if(!site||site.schema!=="MEU_ARTIGO_SITE_V1"||
-    site.kind!=="HOST_AUTHORIZED_SNAPSHOT"||
-    !window.MeuArtigoHost?.receive({...site,kind:"CANONICAL_LOCAL_SNAPSHOT"})){
-  clear();return;
+ if(!site){trace("SITE_MISSING");clear();return;}
+ if(site.schema!=="MEU_ARTIGO_SITE_V1"){trace("SCHEMA_MISMATCH");clear();return;}
+ if(site.kind!=="HOST_AUTHORIZED_SNAPSHOT"){trace("KIND_MISMATCH");clear();return;}
+ if(!window.MeuArtigoHost?.receive({...site,kind:"CANONICAL_LOCAL_SNAPSHOT"})){
+  trace("SNAPSHOT_REJECTED");clear();return;
  }
  showingSnapshot=true;
  provenance();
+ trace("SNAPSHOT_SHOWN");
 };
 app.onhostcontextchanged=(ctx:any)=>{
+ trace("HOST_CONTEXT_CHANGED");
  // A host-context change may accompany an account/project transition.
  // Do not keep a previous researcher's dashboard on-screen while the
  // next host context is being resolved, even if the new locale is equal.
@@ -56,6 +62,7 @@ app.onhostcontextchanged=(ctx:any)=>{
  if(ctx?.locale)window.MeuArtigoHost?.locale(ctx.locale);
 };
 app.connect().then(()=>{
+ trace("CONNECTED");
  const ctx:any=app.getHostContext?.();
  if(ctx?.locale)window.MeuArtigoHost?.locale(ctx.locale);
-}).catch(()=>clear());
+}).catch(()=>{trace("CONNECT_FAILED");clear();});
