@@ -40,6 +40,11 @@ function provenance(){
 // correct without changing or storing any research data.
 const labelObserver=new MutationObserver(()=>{if(showingSnapshot)provenance();});
 labelObserver.observe(document.documentElement,{childList:true,subtree:true});
+// The next invocation must never display a previous tool result while loading.
+app.ontoolinput=()=>{
+ trace("TOOL_INPUT_RECEIVED");
+ clear();
+};
 app.ontoolresult=(event:any)=>{
  trace("TOOL_RESULT_RECEIVED");
  const site=event?.structuredContent?.site;
@@ -54,12 +59,16 @@ app.ontoolresult=(event:any)=>{
  trace("SNAPSHOT_SHOWN");
 };
 app.onhostcontextchanged=(ctx:any)=>{
+ // Host context changes include resizing, theme, safe-area and locale.
+ // They do not authenticate a new researcher or define a new tool invocation.
+ // Clearing here erased valid results repeatedly during iframe auto-resizing.
  trace("HOST_CONTEXT_CHANGED");
- // A host-context change may accompany an account/project transition.
- // Do not keep a previous researcher's dashboard on-screen while the
- // next host context is being resolved, even if the new locale is equal.
- clear();
  if(ctx?.locale)window.MeuArtigoHost?.locale(ctx.locale);
+};
+app.onteardown=async()=>{
+ trace("TEARDOWN");
+ clear();
+ return {};
 };
 app.connect().then(()=>{
  trace("CONNECTED");
