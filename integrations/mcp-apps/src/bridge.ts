@@ -49,6 +49,10 @@ app.ontoolresult=(event:any)=>{
  provenance();
 };
 app.onhostcontextchanged=(ctx:any)=>{
+ // A host-context change may accompany an account/project transition.
+ // Do not keep a previous researcher's dashboard on-screen while the
+ // next host context is being resolved, even if the new locale is equal.
+ clear();
  if(ctx?.locale)window.MeuArtigoHost?.locale(ctx.locale);
 };
 app.connect().then(()=>{
