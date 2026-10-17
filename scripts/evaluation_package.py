@@ -40,8 +40,12 @@ def catalog_from(path: Path):
     cases=validate_catalog(catalog)
     # A caller can set synthetic=true on real content. The export must
     # enforce an explicit metadata-only schema, not trust that assertion.
-    top={"schema_version","purpose","description","cases"}
+    top={"schema_version","purpose","description","note","notes","cases"}
     fields={"case_id","category","scenario","control","expected_action","synthetic"}
+    if any(not isinstance(catalog.get(k),str) or
+           len(catalog[k])>280 for k in ("description","note","notes")
+           if k in catalog):
+        raise ValueError("Evaluation ZIP metadata must be short synthetic text")
     if set(catalog)-top or any(set(row)-fields for row in cases.values()):
         raise ValueError("Evaluation ZIP catalog has undeclared content fields")
     # Prevent a hostile free-text scenario from containing a literal source
