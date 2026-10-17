@@ -16,6 +16,7 @@ import { fileURLToPath } from "node:url";
 import { z } from "zod";
 import { auth0Configuration, protectedResourceMetadata, bearerChallenge, createAuth0Verifier } from "./auth0.mjs";
 import { loadTenantRegistry } from "./tenant_registry.mjs";
+import { openUserGoogleDrive } from "./google_user_drive.mjs";
 
 const execute=promisify(execFile);
 const dirname=path.dirname(fileURLToPath(import.meta.url));
@@ -108,7 +109,7 @@ async function htmlResource(){
    throw Error("MCP Apps resource exceeds bounded size");
  return result;
 }
-export function createServer({resolveProject=null,listProjects=null}={}){
+export function createServer({resolveProject=null,listProjects=null,googleDrive=null}={}){
  const server=new McpServer({name:"Meu Artigo Research Panel",version:"0.1.0"});
  registerAppTool(server,"meu_artigo_painel",{
   title:"Meu Artigo — research dashboard (read only)",
@@ -118,6 +119,7 @@ export function createServer({resolveProject=null,listProjects=null}={}){
   ...(process.env.MEU_ARTIGO_AUTH_MODE==="auth0"?{securitySchemes:[{type:"oauth2",scopes:["mcp:read"]}]}:{}),
   _meta:{ui:{resourceUri:URI},"openai/outputTemplate":URI}
  },async(args)=>{
+  if(googleDrive)return {isError:true,content:[{type:"text",text:"Painel completo do Google Drive individual ainda não habilitado. Use meu_artigo_google_projetos. Não há fallback para projetos de outro usuário."}]};
   const response=await readSite(args,resolveProject);
   if(response.error)return {isError:true,content:[{type:"text",text:fallback(response.locale,response.error)}]};
   return {content:[{type:"text",text:summary(response.site,response.locale)}],
@@ -132,6 +134,41 @@ export function createServer({resolveProject=null,listProjects=null}={}){
    const projects=listProjects();
    return {content:[{type:"text",text:"Authorized projects: "+projects.join(", ")}],
     structuredContent:{projects}};
+  });
+ }
+
+ if(googleDrive){
+  server.registerTool("meu_artigo_google_conectar",{
+   title:"Conectar meu próprio Google Drive",
+   description:"Consentimento individual com Google; não utiliza a conta do operador.",
+   inputSchema:{},annotations:{readOnlyHint:false,idempotentHint:false,openWorldHint:true}
+  },async()=>{
+   try{const x=googleDrive.begin();return {content:[{type:"text",text:"Autorize sua conta Google neste link: "+x.authorization_url}],structuredContent:x};}
+   catch{return {isError:true,content:[{type:"text",text:"Conexão Google não iniciada."}]};}
+  });
+  server.registerTool("meu_artigo_google_status",{
+   title:"Status do meu próprio Google Drive",
+   description:"Indica apenas se a conta Google deste pesquisador está vinculada.",
+   inputSchema:{},annotations:{readOnlyHint:true,idempotentHint:true,openWorldHint:false}
+  },async()=>{
+   try{const x=await googleDrive.status();return {content:[{type:"text",text:x.connected?"Sua conta Google está vinculada.":"Sua conta Google não está vinculada."}],structuredContent:x};}
+   catch{return {isError:true,content:[{type:"text",text:"Não foi possível verificar sua conta Google."}]};}
+  });
+  server.registerTool("meu_artigo_google_projetos",{
+   title:"Projetos exclusivamente do meu Google Drive",
+   description:"Somente metadados de pastas Meu Artigo autorizados pela conta Google vinculada.",
+   inputSchema:{},annotations:{readOnlyHint:true,idempotentHint:true,openWorldHint:true}
+  },async()=>{
+   try{const x=await googleDrive.projects();return {content:[{type:"text",text:"Projetos encontrados na sua conta Google: "+x.projects.length}],structuredContent:x};}
+   catch{return {isError:true,content:[{type:"text",text:"Seu Drive não está vinculado ou a verificação falhou. Nenhuma outra conta foi consultada."}]};}
+  });
+  server.registerTool("meu_artigo_google_desconectar",{
+   title:"Desvincular minha própria conta Google",
+   description:"Exclui somente o vínculo deste usuário, sem alterar arquivos do Drive.",
+   inputSchema:{},annotations:{readOnlyHint:false,destructiveHint:true,idempotentHint:true,openWorldHint:false}
+  },async()=>{
+   try{const x=await googleDrive.disconnect();return {content:[{type:"text",text:"Sua autorização Google foi desvinculada."}],structuredContent:x};}
+   catch{return {isError:true,content:[{type:"text",text:"Não foi possível desvincular sua conta."}]};}
   });
  }
  registerAppResource(server,"Meu Artigo approved blue dashboard",URI,{},async()=>({
@@ -151,13 +188,17 @@ async function startHttp(){
  const mode=process.env.MEU_ARTIGO_AUTH_MODE||"bearer";
  if(!["bearer","auth0"].includes(mode))throw Error("UNSUPPORTED_AUTH_MODE");
  const tenantRegistry=await loadTenantRegistry();
+ const googleOnly=process.env.MEU_ARTIGO_GOOGLE_DRIVE_MODE==="per_user";
+ if(googleOnly&&(tenantRegistry||projectRoot||process.env.MEU_ARTIGO_PILOT_SUB||mode!=="auth0"))
+  throw Error("GOOGLE_USER_DRIVE_MUST_NOT_FALLBACK_TO_LOCAL_OR_OWNER");
+ const googleAccess=googleOnly?await openUserGoogleDrive():null;
  if(tenantRegistry&&(mode!=="auth0"||projectRoot))
   throw Error("MULTIUSER_REQUIRES_AUTH0_AND_NO_GLOBAL_PROJECT_ROOT");
  const token=process.env.MEU_ARTIGO_MCP_BEARER||"";
  if(!Number.isInteger(port)||port<1024||port>65535)throw Error("Invalid explicit MCP port");
  if(mode==="bearer"&&token.length<32)throw Error("A secret bearer of at least 32 characters is required");
  const authConfig=mode==="auth0"?auth0Configuration():null;
- if(authConfig && authConfig.multiUser!==Boolean(tenantRegistry))
+ if(authConfig && authConfig.multiUser!==Boolean(tenantRegistry||googleAccess))
   throw Error("TENANT_REGISTRY_AUTH0_CONFIGURATION_MISMATCH");
  const verifyAuth0=authConfig?createAuth0Verifier(authConfig):null;
  // Stage 11 OAuth source is prepared; public binding still denied until
@@ -174,6 +215,22 @@ async function startHttp(){
       "cache-control":"public, max-age=300",
       "x-content-type-options":"nosniff"});
     res.end(JSON.stringify(protectedResourceMetadata(authConfig)));return;
+  }
+  if(googleAccess&&pathname==="/google/oauth/callback"){
+   if(req.method!=="GET"){res.writeHead(405).end();return;}
+   try{await googleAccess.complete(req.url);
+    res.writeHead(200,{"content-type":"text/plain; charset=utf-8",
+     "cache-control":"no-store","referrer-policy":"no-referrer",
+     "x-content-type-options":"nosniff",
+     "content-security-policy":"default-src 'none'; base-uri 'none'; form-action 'none'"})
+     .end("Sua conta Google foi vinculada. Volte ao Meu Artigo no ChatGPT.");
+   }catch{
+    res.writeHead(400,{"content-type":"text/plain; charset=utf-8",
+     "cache-control":"no-store","referrer-policy":"no-referrer",
+     "x-content-type-options":"nosniff"})
+     .end("Autorização Google não concluída. Tente novamente.");
+   }
+   return;
   }
   if(pathname!=="/mcp"){res.writeHead(404).end();return;}
   const methods=new Set(["POST","GET","DELETE"]);
@@ -240,7 +297,14 @@ async function startHttp(){
       return;
     }
   }
-  const mcp=createServer(tenantRegistry?{
+  const mcp=createServer(googleAccess?{
+    googleDrive:{
+      begin:()=>googleAccess.begin(authorizedSub),
+      status:()=>googleAccess.status(authorizedSub),
+      projects:()=>googleAccess.projects(authorizedSub),
+      disconnect:()=>googleAccess.disconnect(authorizedSub)
+    }
+  }:tenantRegistry?{
     resolveProject:id=>tenantRegistry.projectFor(authorizedSub,id),
     listProjects:()=>tenantRegistry.listProjects(authorizedSub)
   }:{});
@@ -265,7 +329,7 @@ if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.ur
  if(process.argv.includes("--stdio")){
   // A stdio client has no independently validated per-request OAuth principal.
   // Never silently degrade a configured multiuser service to a global reader.
-  if(process.env.MEU_ARTIGO_MULTIUSER_REGISTRY||process.env.MEU_ARTIGO_TENANT_DATA_ROOT)
+  if(process.env.MEU_ARTIGO_MULTIUSER_REGISTRY||process.env.MEU_ARTIGO_TENANT_DATA_ROOT||process.env.MEU_ARTIGO_GOOGLE_DRIVE_MODE==="per_user")
    throw Error("MULTIUSER_STDIO_REQUIRES_REQUEST_IDENTITY");
   await createServer().connect(new StdioServerTransport());
  }else if(process.argv.includes("--http")){
