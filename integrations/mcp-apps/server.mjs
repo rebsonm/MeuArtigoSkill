@@ -55,7 +55,7 @@ async function uiResource(){
     script.includes("</script>"))throw Error("UNREVIEWED_STATIC_MCP_UI");
  const state={schema:"MEU_ARTIGO_SITE_V1",kind:"HOST_NOT_CONNECTED",locale:"auto"};
  const result=html.replace(marker,JSON.stringify(state)).replace(
-  "</body></html>","<script>"+script+"</script></body></html>");
+  "</body></html>",()=>"<script>"+script+"</script></body></html>");
  if(Buffer.byteLength(result,"utf8")>MAX_RESOURCE_BYTES)throw Error("UI_RESOURCE_TOO_LARGE");
  return result;
 }
