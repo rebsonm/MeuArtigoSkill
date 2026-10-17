@@ -1,38 +1,30 @@
-/* The UI uses the official MCP Apps client bridge (standards-first).
- * No OpenAI-specific global is required; ChatGPT may add optional features.
+/* Meu Artigo MCP Apps shell: never ingest researcher content or a
+ * ChatGPT Google Drive connector result. Document reads stay in ChatGPT.
+ * The UI resource is neutral and any unexpected data is discarded.
  */
 import { App } from "@modelcontextprotocol/ext-apps";
 
-type SiteData = { schema?: string; kind?: string; locale?: string };
 declare global {
-  interface Window {
-    MeuArtigoHost?: {
-      receive: (data: SiteData) => boolean;
-      locale: (locale: string) => void;
-      disconnect: () => void;
-    };
-  }
+ interface Window {
+  MeuArtigoHost?: {
+   disconnect: () => void;
+   locale: (value: string) => void;
+  };
+ }
 }
-const app = new App({ name: "Meu Artigo", version: "0.1.0" });
-const fail = () => {
-  // Revoke the previous project snapshot before marking a host failure;
-  // leaving an earlier project's content visible is a stale-data leak.
-  window.MeuArtigoHost?.disconnect();
-  const notice = document.querySelector(".mock-badge");
-  if (notice) notice.textContent = "NOT CONNECTED · CONTINUE IN CHAT";
+const app=new App({name:"Meu Artigo",version:"0.2.0"});
+const neutral=()=>{
+ window.MeuArtigoHost?.disconnect();
+ const notice=document.querySelector(".mock-badge");
+ if(notice)notice.textContent="DRIVE ACCESS BELONGS TO CHATGPT";
 };
-app.ontoolresult = (event: any) => {
-  const snapshot = event?.structuredContent?.site;
-  if (!snapshot || snapshot.schema !== "MEU_ARTIGO_SITE_V1" ||
-      snapshot.kind !== "CANONICAL_LOCAL_SNAPSHOT" ||
-      !window.MeuArtigoHost?.receive(snapshot)) {
-    fail();
-  }
+// Deliberately discard ALL tool results, even if a host inadvertently
+// passes structuredContent from a user's personal Drive connection.
+app.ontoolresult=()=>neutral();
+app.onhostcontextchanged=(context:any)=>{
+ if(context?.locale)window.MeuArtigoHost?.locale(context.locale);
 };
-app.onhostcontextchanged = (context: any) => {
-  if (context?.locale) window.MeuArtigoHost?.locale(context.locale);
-};
-app.connect().then(() => {
-  const context: any = app.getHostContext?.();
-  if (context?.locale) window.MeuArtigoHost?.locale(context.locale);
-}).catch(() => fail());
+app.connect().then(()=>{
+ const context:any=app.getHostContext?.();
+ if(context?.locale)window.MeuArtigoHost?.locale(context.locale);
+}).catch(()=>neutral());
