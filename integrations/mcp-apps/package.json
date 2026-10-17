@@ -13,7 +13,8 @@
     "test:stage09": "node scripts/stage09-accessibility.mjs",
     "test:stage10": "node scripts/stage10-contracts.mjs",
     "test:oauth": "node scripts/oauth.mjs",
-    "test:oauth-http": "node scripts/oauth-http.mjs"
+    "test:oauth-http": "node scripts/oauth-http.mjs",
+    "test:stage13": "node scripts/stage13-projection.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.20.0",
