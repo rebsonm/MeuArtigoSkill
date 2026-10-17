@@ -13,13 +13,13 @@ try{
  const listed=await client.listTools();
  const tool=listed.tools.find(t=>t.name==="meu_artigo_painel");
  assert.ok(tool);
- assert.equal(tool._meta.ui.resourceUri,"ui://meu-artigo/site-v1.html");
- assert.equal(tool._meta["openai/outputTemplate"],"ui://meu-artigo/site-v1.html");
+ assert.equal(tool._meta.ui.resourceUri,"ui://meu-artigo/site-v2.html");
+ assert.equal(tool._meta["openai/outputTemplate"],"ui://meu-artigo/site-v2.html");
  const result=await client.callTool({name:"meu_artigo_painel",arguments:{locale:"es"}});
  assert.equal(result.isError,true);
  assert.match(result.content[0].text,/interfaz y orientación metodológica genérica/);
  assert.equal(result.structuredContent,undefined);
- const resource=await client.readResource({uri:"ui://meu-artigo/site-v1.html"});
+ const resource=await client.readResource({uri:"ui://meu-artigo/site-v2.html"});
  const content=resource.contents[0];
  assert.equal(content.mimeType,"text/html;profile=mcp-app");
  assert.match(content.text,/Meu Artigo/);
