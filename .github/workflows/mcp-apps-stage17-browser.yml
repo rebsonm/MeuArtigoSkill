@@ -41,7 +41,9 @@ jobs:
         working-directory: vendor-ext-apps
         run: |
           npm ci --ignore-scripts --no-audit --no-fund
-          npm rebuild bun --foreground-scripts
+          # Rebuild only Bun's binary without triggering the upstream root prepare hook.
+          node node_modules/bun/install.js
+          ./node_modules/.bin/bun --version
           npm run build
           npm run build --workspace @modelcontextprotocol/ext-apps-basic-host
           npx playwright install --with-deps chromium
