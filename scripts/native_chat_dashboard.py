@@ -19,6 +19,7 @@ from adaptive_method_guide import for_project as read_method_guidance
 from method_choice_dialogue import dialogue as project_method_dialogue
 from method_fill_preflight import inspect as project_method_fill_preflight
 from decision_continuity import compose as research_decision_continuity
+from scientific_panel_projection import project as project_scientific_diagnostic
 
 MGMT = "00_Gestao_e_Continuidade"
 FILES = {
@@ -228,6 +229,7 @@ def panel(root: Path, *, mode: str | None = None) -> dict:
         "method_conversation": method_conversation,
         "method_fill_guidance": method_fill_guidance,
         "decision_continuity": decision_continuity,
+        "scientific_diagnostic": project_scientific_diagnostic(root),
         "tasks": {
             "items": (minimal_tasks if chosen == "MINIMAL" else task_items),
             "registered_total": nrows(tasks),

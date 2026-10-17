@@ -53,6 +53,7 @@ def model(*, project: Path|None=None, route: str="QUALITATIVE", mode: str="MINIM
         summary=data["overview"]
         continuation=data["continuation"]
         source=data["evidence"]
+        scientific_diagnostic=data["scientific_diagnostic"]
     else:
         if route not in ROUTES:
             raise ValueError("Unknown illustrative method route")
@@ -82,6 +83,7 @@ def model(*, project: Path|None=None, route: str="QUALITATIVE", mode: str="MINIM
         summary={"documented_gate_approvals":None}
         continuation={"status":"FICTIONAL_PREVIEW","blockers":[]}
         source={"verified_sources":None}
+        scientific_diagnostic=None
     # The source objects are *projections*, not raw canonical files.
     # Research content, names, evidence excerpts and rationale never enter.
     enums={r+"::"+f:sorted(values) for (r,f),values in ENUM_FIELDS.items()}
@@ -94,6 +96,7 @@ def model(*, project: Path|None=None, route: str="QUALITATIVE", mode: str="MINIM
                     "canonical_drive_sync_verified":False},
         "method_guides":guides,
         "decision_continuity":decision,
+        "scientific_diagnostic":scientific_diagnostic,
         "continuation":{"status":continuation["status"],
                         "blockers":continuation["blockers"]},
         "tasks":{"columns":["ID Tarefa","Tarefa","Responsável execução","Prazo"],

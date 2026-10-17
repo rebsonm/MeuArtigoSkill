@@ -56,6 +56,56 @@ def project_site_model(snapshot: dict) -> dict:
     if any(not scalar(next_action.get(k)) for k in
            ("code", "explanation", "responsible")):
         raise ValueError("SITE_CANONICAL_ACTION_INVALID")
+    # Validate a strict status/counters/code-only research diagnostic.
+    # Older snapshots without the sidecar remain compatible, but never
+    # become a false "zero defects" assessment.
+    diagnostic = snapshot.get("scientific_diagnostic")
+    if diagnostic is not None:
+        if not isinstance(diagnostic, dict) or diagnostic.get("schema") != (
+                "MEU_ARTIGO_SCIENTIFIC_ADVISORY_PANEL_V1"):
+            raise ValueError("SITE_DIAGNOSTIC_SCHEMA_INVALID")
+        if diagnostic.get("status") not in (
+                "RECORDED_UNASSESSED", "INPUTS_UNAVAILABLE"):
+            raise ValueError("SITE_DIAGNOSTIC_STATUS_INVALID")
+        for flag in ("human_review_required",):
+            if diagnostic.get(flag) is not True:
+                raise ValueError("SITE_DIAGNOSTIC_HUMAN_REVIEW_REQUIRED")
+        for flag in ("semantic_support_proven", "scientific_quality_validated",
+                     "scientific_gate_approved", "reports_written",
+                     "drive_sync_verified"):
+            if diagnostic.get(flag) is not False:
+                raise ValueError("SITE_DIAGNOSTIC_APPROVAL_FORBIDDEN")
+        for key in ("objective_blockers", "review_occurrences",
+                    "advisory_occurrences", "strict_required_occurrences"):
+            val = diagnostic.get(key)
+            if val is not None and (
+                    type(val) is not int or val < 0 or val > 1_000_000):
+                raise ValueError("SITE_DIAGNOSTIC_COUNT_INVALID")
+        if diagnostic["status"] == "INPUTS_UNAVAILABLE" and any(
+                diagnostic.get(key) is not None for key in
+                ("objective_blockers", "review_occurrences",
+                 "advisory_occurrences", "strict_required_occurrences")):
+            raise ValueError("SITE_DIAGNOSTIC_UNKNOWN_NOT_ZERO")
+        codes = diagnostic.get("priority_codes")
+        if not isinstance(codes, list) or len(codes) > 6 or any(
+                not isinstance(code, str) or
+                not __import__("re").fullmatch("[A-Z][A-Z0-9_]{0,63}", code)
+                for code in codes):
+            raise ValueError("SITE_DIAGNOSTIC_CODES_INVALID")
+        if diagnostic.get("verdict") not in (
+                None, "CORRECAO_REQUERIDA", "REVISAO_CIENTIFICA_PENDENTE"):
+            raise ValueError("SITE_DIAGNOSTIC_VERDICT_INVALID")
+        safe_diagnostic = {
+            k: diagnostic[k] for k in
+            ("schema", "status", "verdict", "objective_blockers",
+             "review_occurrences", "advisory_occurrences",
+             "strict_required_occurrences", "priority_codes",
+             "human_review_required", "semantic_support_proven",
+             "scientific_quality_validated", "scientific_gate_approved",
+             "reports_written", "drive_sync_verified")
+        }
+    else:
+        safe_diagnostic = None
     recorded = sum(row.get("approval_documented") is True for row in gates)
     # Count the displayed records, not a potentially stale summary counter.
     # This number describes documented states, NOT verified approvals.
@@ -79,6 +129,7 @@ def project_site_model(snapshot: dict) -> dict:
             "explanation": next_action.get("explanation"),
             "responsible": next_action.get("responsible"),
         },
+        "scientific_diagnostic": safe_diagnostic,
         "canonical_drive_sync_verified": False,
         "automatic_scientific_approval": False,
         "canonical_writes_allowed": False,
