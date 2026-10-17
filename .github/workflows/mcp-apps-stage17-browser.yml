@@ -31,6 +31,10 @@ jobs:
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: "22"
+      - name: Install pinned Bun runtime for official host
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: "1.2.23"
       - name: Build candidate MCP bridge
         working-directory: integrations/mcp-apps
         run: |
@@ -41,9 +45,10 @@ jobs:
         working-directory: vendor-ext-apps
         run: |
           npm ci --ignore-scripts --no-audit --no-fund
-          # Rebuild only Bun's binary without triggering the upstream root prepare hook.
-          node node_modules/bun/install.js
-          ./node_modules/.bin/bun --version
+          # The upstream package includes an npm Bun stub that is inert under
+          # --ignore-scripts. Prefer independently pinned global Bun.
+          rm -f node_modules/.bin/bun
+          bun --version
           npm run build
           npm run build --workspace @modelcontextprotocol/ext-apps-basic-host
           npx playwright install --with-deps chromium
