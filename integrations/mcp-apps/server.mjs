@@ -15,6 +15,7 @@ import {fileURLToPath} from "node:url";
 import {z} from "zod";
 import {auth0Configuration,protectedResourceMetadata,bearerChallenge,createAuth0Verifier} from "./auth0.mjs";
 import {normalizeHostSnapshot} from "./host_projection.mjs";
+import {uiOutputSchema} from "./ui_output_schema.mjs";
 
 const HERE=path.dirname(fileURLToPath(import.meta.url));
 const REPO=path.resolve(HERE,"../..");
@@ -66,6 +67,7 @@ export function createServer(){
   description:"Display ONLY a strictly bounded projection prepared by ChatGPT from the currently connected researcher's own Drive. Do not send PDFs, complete documents, original claims, full research manuscripts, file IDs, URLs or tokens. This MCP never accesses Drive and never persists the supplied projection.",
   inputSchema:{locale:z.string().max(35).optional(),mode:z.enum(["MINIMAL","FULL"]).optional(),
    snapshot:z.unknown().optional()},
+  outputSchema:uiOutputSchema,
   annotations:{readOnlyHint:true,idempotentHint:true,openWorldHint:false},
   ...(process.env.MEU_ARTIGO_AUTH_MODE==="auth0"?{securitySchemes:[{type:"oauth2",scopes:["mcp:read"]}]}:{}),
   _meta:{ui:{resourceUri:URI},"openai/outputTemplate":URI}
