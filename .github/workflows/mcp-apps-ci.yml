@@ -44,6 +44,7 @@ jobs:
         working-directory: integrations/mcp-apps
         run: |
           bash -n scripts/e05-vps-runtime-launch.sh
+          bash -n scripts/e05-vps-activate-only.sh
           for file in scripts/e05-vps-autonomous-{bootstrap,status,rollback}.sh; do
             bash -n "$file"
           done
