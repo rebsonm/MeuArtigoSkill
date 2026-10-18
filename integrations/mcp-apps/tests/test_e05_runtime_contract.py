@@ -14,6 +14,13 @@ FAKE_TUNNEL = '''#!/usr/bin/env python3
 import json, os, sys
 mode = sys.argv[1]
 if mode == 'doctor':
+    if os.getenv('FAKE_REQUIRE_LEGACY_PROFILE_ENV') == 'yes':
+        if not os.getenv('CONTROL_PLANE_API_KEY', '').startswith('sk-SYNTHETIC'):
+            print(json.dumps({'result':'fail','failed_checks':['control_plane_api_key'],
+                'checks':[{'id':'config_source','status':'PASS'},
+                          {'id':'profile_load','status':'PASS'},
+                          {'id':'control_plane_api_key','status':'FAIL'}]}))
+            sys.exit(2)
     if os.getenv('FAKE_DOCTOR') == 'fail':
         print(json.dumps({'result':'fail','failed_checks':['control_plane_api_key'],
                           'checks':[{'id':'config_source','status':'PASS'},
@@ -26,6 +33,8 @@ if mode == 'doctor':
                                 {'id':'control_plane_api_key','status':'PASS'}]}))
     sys.exit(0)
 if mode == 'run':
+    if os.getenv('FAKE_REQUIRE_LEGACY_PROFILE_ENV') == 'yes':
+        assert os.getenv('CONTROL_PLANE_API_KEY', '').startswith('sk-SYNTHETIC')
     assert '--profile-file' in sys.argv
     assert any(a.startswith('--control-plane.api-key=file:') for a in sys.argv)
     print('FAKE_TUNNEL_RUN=OK')
@@ -69,6 +78,21 @@ class E05RuntimeContract(unittest.TestCase):
         self.assertIn('FAKE_TUNNEL_RUN=OK',p.stdout)
         self.assertNotIn('sk-SYNTHETIC',p.stdout+p.stderr)
 
+    def test_legacy_profile_env_reference_resolves_from_protected_file(self):
+        # The original E05 profile resolves env:CONTROL_PLANE_API_KEY
+        # before the explicit file: flag is applied. The caller environment
+        # may have no key or a stale value; LoadCredential stays authoritative.
+        case = {'FAKE_REQUIRE_LEGACY_PROFILE_ENV': 'yes',
+                'CONTROL_PLANE_API_KEY': 'stale-synthetic-not-secret'}
+        probe = self.run_launcher(case, args=('--doctor-only',))
+        self.assertEqual(probe.returncode, 0, probe.stderr)
+        self.assertIn('E05_RUNTIME_DOCTOR_ONLY=PASS', probe.stdout)
+        self.assertNotIn('SYNTHETIC', probe.stdout + probe.stderr)
+        run = self.run_launcher(case)
+        self.assertEqual(run.returncode, 0, run.stderr)
+        self.assertIn('FAKE_TUNNEL_RUN=OK', run.stdout)
+        self.assertNotIn('SYNTHETIC', run.stdout + run.stderr)
+
     def test_real_doctor_only_mode_does_not_start_tunnel(self):
         p = self.run_launcher(args=('--doctor-only',))
         self.assertEqual(p.returncode, 0, p.stderr)
@@ -83,7 +107,7 @@ class E05RuntimeContract(unittest.TestCase):
         self.assertIn('LoadCredential=control_plane_api_key:$KEY', script)
         self.assertIn('RestartPreventExitStatus=78', script)
         self.assertIn('E05_ACTIVATE_ROLLBACK=ORIGINAL_WRAPPER_RESTORED_SERVICE_STOPPED', script)
-        self.assertIn('LAUNCHER_BLOB=a66f8eee7b6e8bdd9e24b608e1c3353f7582a3ff', script)
+        self.assertIn('LAUNCHER_BLOB=4fd0918974c03265df920d300ee3e69357ca6ea3', script)
         self.assertNotIn('npm ci', script)
         self.assertNotIn('git switch', script)
         self.assertNotIn('git reset --hard', script)

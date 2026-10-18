@@ -31,8 +31,14 @@ try:
         sys.exit(78)
     cmd = [client, "doctor", "--profile-file", profile,
            "--control-plane.api-key=file:" + credential, "--json"]
+    # Some original E05 profiles have control_plane.api_key: env:CONTROL_PLANE_API_KEY.
+    # The upstream profile loader resolves that YAML reference before applying
+    # the explicit --control-plane.api-key=file override. Populate only this
+    # child process's environment from the already protected systemd credential.
+    process_env = dict(__import__("os").environ)
+    process_env["CONTROL_PLANE_API_KEY"] = raw.decode("ascii")
     result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
-                            check=False, timeout=40)
+                            env=process_env, check=False, timeout=40)
     document = json.loads(result.stdout.decode("utf-8"))
     checks = {x.get("id"): x.get("status") for x in document.get("checks", [])
               if isinstance(x, dict)}
@@ -61,5 +67,9 @@ if [[ "${1:-}" == "--doctor-only" ]]; then
   exit 0
 fi
 
+# Keep the old env:-based profile contract, while the explicit file: flag
+# continues to read from LoadCredential. No environment key is added to the
+# systemd unit file or command-line arguments; it stays in this E05 process.
+export CONTROL_PLANE_API_KEY="$(cat "$CREDENTIALS/control_plane_api_key")"
 exec "$CLIENT" run --profile-file "$PROFILE" \
   --control-plane.api-key="file:$CREDENTIALS/control_plane_api_key"

@@ -13,7 +13,7 @@ readonly PROFILE=/opt/meu-artigo-e05/tunnel-profiles/meu-artigo-e05.yaml
 readonly E05_SRC=/opt/meu-artigo-e05/src
 readonly PILOT=/opt/meu-artigo-stage17/src
 readonly PILOT_SHA=fab60a8a2a254461d1fcd1fc66e67d7e109ed760
-readonly LAUNCHER_BLOB=a66f8eee7b6e8bdd9e24b608e1c3353f7582a3ff
+readonly LAUNCHER_BLOB=4fd0918974c03265df920d300ee3e69357ca6ea3
 die(){ echo "E05_ACTIVATE_STOP=$1" >&2; exit 2; }
 [[ "$(id -u)" == 0 && $# -eq 2 ]] || die EXPLICIT_APPLY_AND_PIN_REQUIRED
 [[ "$1" == --apply && "$2" =~ ^[0-9a-f]{40}$ ]] || die EXPLICIT_APPLY_AND_PIN_REQUIRED
