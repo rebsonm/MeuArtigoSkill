@@ -17,7 +17,7 @@ class Beta5PublicationTests(unittest.TestCase):
     def test_consistent_release_metadata(self):
         self.assertEqual((ROOT/"OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip(),
                          "0.9.0-beta.6")
-        self.assertRegex(self.version,r"^0\\.9\\.0-beta\\.\\d+$")
+        self.assertRegex(self.version,r"^0\.9\.0-beta\.\d+$")
         # Historical release has an official pointer; beta.9 source is not
         # published and must fail manual publication-date preflight.
         if self.version == "0.9.0-beta.6":

@@ -22,7 +22,7 @@ class OfficialRecommendationTests(unittest.TestCase):
 
     def test_current_source_is_not_equated_with_a_published_tag(self):
         dev_version = (ROOT / "VERSION").read_text().strip()
-        self.assertRegex(dev_version, r"^0\\.9\\.0-beta\\.\\d+$")
+        self.assertRegex(dev_version, r"^0\.9\.0-beta\.\d+$")
         official = (ROOT / "OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip()
         self.assertNotEqual(dev_version, official,
                             "Unpublished source beta must not pretend to be the released beta")
