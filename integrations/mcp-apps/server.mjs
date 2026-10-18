@@ -161,8 +161,22 @@ async function serveHttp(){
  if(!["127.0.0.1","::1"].includes(bind))
   throw Error("PUBLIC_HTTP_BIND_BLOCKED_UNTIL_AUTH0_OAUTH");
  const allowedOrigin=configuredAllowedOrigin();
+ // Startup must fail closed if the reviewed, built UI cannot be assembled.
+ // This state is application-static; it never holds research data or identity.
+ await uiResource();
  const app=createHttpServer(async(req,res)=>{
   const pathname=req.url?.split("?")[0];
+  // Loopback-only operational probes. No authorization material, user
+  // identifiers, version, configuration, environment or research payload.
+  // A 200 response attests only process startup and static UI preflight.
+  if(pathname==="/healthz"||pathname==="/readyz"){
+   if(req.method!=="GET"){
+    res.writeHead(405,{"allow":"GET","cache-control":"no-store"}).end();return;
+   }
+   res.writeHead(200,{"content-type":"application/json; charset=utf-8",
+    "cache-control":"no-store","x-content-type-options":"nosniff"});
+   res.end('{"status":"ok"}');return;
+  }
   if(config&&req.method==="GET"&&[
    "/.well-known/oauth-protected-resource",
    "/.well-known/oauth-protected-resource/mcp"

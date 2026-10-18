@@ -27,7 +27,10 @@ from version_info import ROOT, read_version
 
 APP_ID_PATTERN = re.compile(r"asdk_app_[A-Za-z0-9][A-Za-z0-9_-]*\Z")
 # Never accidentally promote the known synthetic E05 acceptance plugin.
-FORBIDDEN_TEST_APP_IDS = frozenset({"asdk_app_6ad412c004808191a27b70a8aceb8ac7"})
+FORBIDDEN_TEST_APP_IDS = frozenset({
+    "asdk_app_6ad412c004808191a27b70a8aceb8ac7",  # synthetic E05
+    "asdk_app_6ad3cf00e45c81918892e94fdcbf4a2e",  # private MCP pilot
+})
 ALLOWED_CHANNELS = {"private", "public"}
 
 
@@ -141,6 +144,8 @@ def inspect_candidate(path: Path, root: Path, channel: str) -> dict:
             "scientific_validation": "NOT_ASSERTED",
             "mcp_live_acceptance": "NOT_ASSERTED",
             "public_directory_approval": "NOT_ASSERTED",
+            "registered_app_live_verified": False,
+            "installation_authorized": False,
             "status": "SOURCE_PACKAGE_CHECK_PASS",
         }
 

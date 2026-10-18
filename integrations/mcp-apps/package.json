@@ -22,7 +22,8 @@
     "test:ui-resource-contract": "node scripts/ui-resource-contract.mjs",
     "test:e05-synthetic": "node scripts/e05-synthetic-test.mjs",
     "test:e05-csp": "node scripts/e05-csp-release-contract.mjs",
-    "test:auth-origin": "node scripts/auth-origin-contract.mjs"
+    "test:auth-origin": "node scripts/auth-origin-contract.mjs",
+    "test:operational": "node scripts/operational-readiness.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.20.0",

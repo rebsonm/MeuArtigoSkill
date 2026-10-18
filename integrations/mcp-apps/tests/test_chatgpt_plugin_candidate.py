@@ -30,6 +30,8 @@ class ChatGPTPluginCandidateTests(unittest.TestCase):
         result = build_candidate(ROOT, output, "public")
         self.assertEqual(result["status"], "SOURCE_PACKAGE_CHECK_PASS")
         self.assertEqual(result["public_directory_approval"], "NOT_ASSERTED")
+        self.assertIs(result["registered_app_live_verified"], False)
+        self.assertIs(result["installation_authorized"], False)
         with ZipFile(output) as z:
             names = z.namelist()
             self.assertIn("plugin.json", names)
@@ -53,6 +55,12 @@ class ChatGPTPluginCandidateTests(unittest.TestCase):
             build_candidate(ROOT, self.path("private"), "private",
                             "asdk_app_6ad412c004808191a27b70a8aceb8ac7")
 
+    def test_mcp_pilot_is_never_a_production_app(self):
+        with self.assertRaisesRegex(ValueError, "PRIVATE_REQUIRES"):
+            build_candidate(ROOT, self.path("private"), "private",
+                            "asdk_app_6ad3cf00e45c81918892e94fdcbf4a2e")
+        self.assertFalse(self.path("private").exists())
+
     def test_no_public_app_reference_even_when_supplied(self):
         with self.assertRaisesRegex(ValueError, "PUBLIC_APP_REFERENCE_FORBIDDEN"):
             build_candidate(ROOT, self.path("public"), "public",
@@ -65,6 +73,8 @@ class ChatGPTPluginCandidateTests(unittest.TestCase):
                                  "asdk_app_FICTIONAL_STRUCTURAL_TEST")
         self.assertEqual(result["mcp_live_acceptance"], "NOT_ASSERTED")
         self.assertEqual(result["scientific_validation"], "NOT_ASSERTED")
+        self.assertIs(result["registered_app_live_verified"], False)
+        self.assertIs(result["installation_authorized"], False)
         with ZipFile(self.path("private")) as z:
             manifest = json.loads(z.read("plugin.json"))
             self.assertEqual(manifest["extensions"]["com.openai"]["apps"],

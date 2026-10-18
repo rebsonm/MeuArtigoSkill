@@ -58,3 +58,16 @@ by them **inside ChatGPT** according to connector availability.
 Passing offline tests does not prove live ChatGPT OAuth, installed Plugin
 version, MCP Apps UI rendering, individual Drive permissions, or scientific
 validity. All remain independent acceptance gates.
+
+## Local health and static-UI readiness
+
+The review candidate exposes `GET /healthz` and `GET /readyz` only on the
+loopback listener, after verifying that the reviewed UI can be assembled at
+startup. The responses reveal only `{"status":"ok"}`, not identity, tokens,
+configuration, user files, payloads or telemetry. All other non-MCP operational
+URLs return 404; methods other than GET are rejected for probes.
+
+An external reverse proxy must NOT forward these paths by default. Use
+loopback service supervision instead. In particular, HTTP readiness is not a
+proof of real issuer availability, ChatGPT OAuth/PKCE, Drive authorization,
+complete end-to-end operation or effective iframe CSP. No deployment performed.

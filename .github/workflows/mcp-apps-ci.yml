@@ -86,6 +86,9 @@ jobs:
       - name: E05 synthetic-only tunnel input guard
         working-directory: integrations/mcp-apps
         run: npm run test:e05-synthetic
+      - name: Validate preflight-gated loopback health/readiness endpoints in bearer and Auth0 modes
+        working-directory: integrations/mcp-apps
+        run: npm run test:operational
       - name: Verify local authenticated Streamable HTTP transport
         working-directory: integrations/mcp-apps
         run: npm run test:http

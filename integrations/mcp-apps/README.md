@@ -95,3 +95,19 @@ permission to read Google Drive; the ChatGPT connector handles that.
 
 **No deployment, external OAuth changes, Google writes, Plugin update,
 merge or release has been authorized by these code changes.**
+
+## Operational liveness and readiness (source-only)
+
+When started in `--http` mode, the process validates the reviewed local
+HTML/bridge UI **before** binding the loopback socket. A missing or malformed
+UI aborts startup, instead of reporting readiness while serving an unusable
+interface. `GET /healthz` and `GET /readyz` both return only
+`{"status":"ok"}` with `Cache-Control: no-store` and `nosniff`, once this
+preflight passes. There are no user IDs, account details, software version,
+tokens, metrics, debug routes, cross-origin permissions or research metadata.
+
+The responses do **not** prove that Auth0, Google Drive, HTTPS, ChatGPT CSP,
+the user account or a remote reverse proxy is functioning. They are for
+loopback/local process supervision only. Reverse-proxy exposure requires a
+separate review; the example external Nginx host still denies all requests.
+`npm run test:operational` exercises bearer and synthetic Auth0 modes.
