@@ -26,7 +26,7 @@ try{
  assert.equal(result.isError,true,"MCP must not read a project");
  assert.equal(result.structuredContent,undefined);
  assert.match(result.content[0].text,/personal ChatGPT Google Drive connection/);
- const view=await client.readResource({uri:"ui://meu-artigo/site-v1.html"});
+ const view=await client.readResource({uri:"ui://meu-artigo/site-v3.html"});
  assert.match(view.contents[0].text,/HOST_NOT_CONNECTED/);
  assert.ok(!JSON.stringify(result).includes(privateMark));
  assert.ok(!JSON.stringify(view).includes(privateMark));

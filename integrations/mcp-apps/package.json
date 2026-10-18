@@ -19,7 +19,8 @@
     "test:host-boundary": "node scripts/host-connector-boundary.mjs",
     "test:host-projection": "node scripts/host-projection.mjs",
     "test:host-projection-ui": "node scripts/host-projection-ui.mjs",
-    "test:ui-resource-contract": "node scripts/ui-resource-contract.mjs"
+    "test:ui-resource-contract": "node scripts/ui-resource-contract.mjs",
+    "test:e05-synthetic": "node scripts/e05-synthetic-test.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.20.0",

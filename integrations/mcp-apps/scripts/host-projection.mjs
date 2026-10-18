@@ -91,7 +91,7 @@ try{
  assert.equal(empty.registered_gate_total,null);
  assert.equal(empty.gate_view_partial,true,
   "Missing canonical gate totals must remain partial/unknown");
- const html=await client.readResource({uri:"ui://meu-artigo/site-v1.html"});
+ const html=await client.readResource({uri:"ui://meu-artigo/site-v3.html"});
  assert.match(html.contents[0].text,/HOST_NOT_CONNECTED/);
  assert.equal(JSON.stringify(html).includes("alpha"),false);
  console.log("HOST_PROJECTION_PASS: host-supplied A/B snapshots rendered per call; no cross-user cache, Drive calls, full files, automatic gates or writes.");

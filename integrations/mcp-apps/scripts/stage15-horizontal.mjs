@@ -103,7 +103,7 @@ try{
  assert.deepEqual(tools.map(x=>x.name),["meu_artigo_painel"]);
  assert.equal(tools[0].annotations.readOnlyHint,true);
  const resources=(await client.listResources()).resources;
- assert.deepEqual(resources.map(x=>x.uri),["ui://meu-artigo/site-v1.html"]);
+ assert.deepEqual(resources.map(x=>x.uri),["ui://meu-artigo/site-v3.html"]);
  for(const mode of ["MINIMAL","FULL"]){
   for(const locale of localeCodes){
    const response=await client.callTool({name:"meu_artigo_painel",
@@ -119,7 +119,7 @@ try{
    }
   }
  }
- const resource=await client.readResource({uri:"ui://meu-artigo/site-v1.html"});
+ const resource=await client.readResource({uri:"ui://meu-artigo/site-v3.html"});
  assert.equal(resource.contents.length,1);
  assert.ok(resource.contents[0].text.includes("HOST_NOT_CONNECTED"));
  const html=await readFile(path.resolve("../../assets/research_site.html"),"utf8");

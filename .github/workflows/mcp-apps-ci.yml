@@ -75,6 +75,9 @@ jobs:
           npm run test:host-boundary
           npm run test:host-projection
           npm run test:host-projection-ui
+      - name: E05 synthetic-only tunnel input guard
+        working-directory: integrations/mcp-apps
+        run: npm run test:e05-synthetic
       - name: Verify local authenticated Streamable HTTP transport
         working-directory: integrations/mcp-apps
         run: npm run test:http
