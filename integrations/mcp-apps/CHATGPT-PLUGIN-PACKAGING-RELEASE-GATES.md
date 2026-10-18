@@ -7,9 +7,9 @@ Status: source-only Draft PR. This document authorizes no installation, merge, r
 | Channel | ZIP artifact | MCP association |
 | --- | --- | --- |
 | Maintainer's private pilot | Skill bundle plus OpenAI manifest with a registered app reference | .app.json only after the production app is independently verified |
-| Public ChatGPT directory | Skill bundle plus manifest, without existing registered app references | Submit With MCP through the OpenAI portal, using an independently validated stable HTTPS endpoint |
+| Public ChatGPT directory | Skill bundle, manifest AND portable `mcp.json` (no `.app.json`) | Submit With MCP through the OpenAI portal, using an independently validated stable HTTPS endpoint |
 
-The public submission portal does not accept ZIPs with .app.json or apps references to existing integrations. Provide the production MCP server through the With MCP submission workflow. The E05 private tunnel is synthetic-only and does not meet public-hosting requirements.
+The public submission portal rejects ZIPs containing .app.json or apps references to registered private integrations. Include portable root `mcp.json` for the remote HTTPS server and complete the OAuth connection and domain verification through the With MCP submission workflow. Never embed secrets or OAuth client secrets. The E05 private tunnel is synthetic-only and does not meet public-hosting requirements.
 
 Official documentation:
 - https://developers.openai.com/plugins/build/plugins
@@ -20,9 +20,9 @@ Official documentation:
 
 ## Prepare a source-only candidate, without publishing
 
-Public candidate, containing the Skill only (the MCP endpoint is entered separately during With MCP submission):
+Public candidate, bundling the Skill and remote OAuth MCP declaration. The URL below is the INTENDED endpoint only; DO NOT submit until it has passed real HTTPS, OAuth, CSP and two-account acceptance:
 
-    python integrations/mcp-apps/scripts/build_chatgpt_plugin_candidate.py --channel public
+    python integrations/mcp-apps/scripts/build_chatgpt_plugin_candidate.py --channel public --mcp-url https://mcp.allflux.com.br/mcp
 
 Private candidate, ONLY with a separately verified production registered app:
 
@@ -60,3 +60,13 @@ The builder reuses the original Skill ZIP allowlist and BUNDLE_MANIFEST checks, 
 - GO_PUBLIC: Public review and directory publication independently confirmed.
 
 User analytics, academic-profile telemetry, centralized article metadata, and ML remain outside the initial release scope. No real gate may be approved based only on synthetic CI.
+
+## Public v1.0.0 packaging release evidence (source-only)
+
+- Source `--channel public` MUST include `--mcp-url` naming an independently reviewed `https://HOST/mcp`; synthetic E05, loopback, HTTP, malformed paths, credentials, ports and URL query/fragment are rejected before any ZIP is written.
+- Root `mcp.json` MUST use Agent Plugins schema, `type=streamable-http`, the exact reviewed endpoint and `extensions.com.openai.auth={type:oauth,baseScopes:[mcp:read]}`. The ZIP MUST NOT include `.app.json` or an existing private integration identifier. The manifest is a configuration, NOT live authentication proof.
+- Public listing metadata checks include display name <=30 chars, short description <=30, long description <=4000, at most 3 unique starter prompts <=128 chars. Before submission, add real verified `websiteURL`, `supportURL`, `privacyPolicyURL`, `termsOfServiceURL`, screenshots of the actual UI, demo recording, release notes and publisher identity; do not invent these URLs.
+- One tool `meu_artigo_painel`: `readOnlyHint=true` (does not alter Drive or files), `openWorldHint=false` (no web/open-ended searches), `destructiveHint=false` (does not erase persistent data), `idempotentHint=true` (repeat same input has no persistent side effect). These are code-declared values; provide these explanations in the review portal for each annotation.
+- Draft five POSITIVE human-confirmable review cases: (1) start a project in researcher's own authorized Drive; (2) compare methodological routes without automatic scientific approval; (3) resume that same project's verified canonical state; (4) display a bounded seven-gate panel without declaring false Drive sync; (5) track a C.A.D.A. task and documented next action, requiring explicit permission before any canonical writes. The MCP UI by itself does not perform Drive operations; the Skill/host integration must be included in end-to-end tests.
+- Draft three NEGATIVE human-confirmable review cases: (1) A cannot access B's individual Drive project; (2) secret, source document and invalid projection are rejected from panel input; (3) unauthenticated/expired and insufficient-scope OAuth access are denied without leaking account details. These require real approved two-user staging and should remain NOT_TESTED until executed.
+- Do not submit an incomplete hybrid ZIP as a published release, change `VERSION` to v1.0.0, open /mcp publicly, or update an installed Plugin until the independent readiness checks and user authorization are recorded.
