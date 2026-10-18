@@ -1,6 +1,6 @@
 /** Auth0 resource-server checks for the optional Meu Artigo MCP transport.
- * Identity is NOT research telemetry. One explicitly allowlisted Google identity
- * is the only supported pilot; do not treat this as multi-tenant authorization.
+ * Identity is NOT research telemetry. Private multi-user pilot must have a
+ * deny-all default or explicitly approved Auth0 subject list.
  */
 import { createRemoteJWKSet, jwtVerify } from "jose";
 
@@ -26,6 +26,24 @@ export function auth0Configuration(env = process.env) {
   const permittedSub = String(env.MEU_ARTIGO_PILOT_SUB || "");
   if (multiUser && permittedSub)
     throw Error("Pilot subject allowlist must not be used with generic multiuser MCP");
+  const privatePilot = env.MEU_ARTIGO_MCP_PRIVATE_PILOT === "YES";
+  if (env.MEU_ARTIGO_MCP_PRIVATE_PILOT && !privatePilot)
+    throw Error("Private pilot mode must be YES");
+  if (privatePilot && !multiUser)
+    throw Error("Private pilot requires multiuser mode");
+  const pilotRaw = env.MEU_ARTIGO_MCP_PILOT_SUBS || "";
+  if (!privatePilot && pilotRaw)
+    throw Error("Pilot subject list requires private pilot mode");
+  // A production cutover defaults to DENY_ALL until two researchers
+  // explicitly consent to a private acceptance test.
+  const pilotSubjects = pilotRaw === "DENY_ALL" ? [] :
+    pilotRaw.split(",").filter(Boolean);
+  if (privatePilot && (pilotRaw !== "DENY_ALL" &&
+      (pilotSubjects.length < 1 || pilotSubjects.length > 2 ||
+       new Set(pilotSubjects).size !== pilotSubjects.length ||
+       !pilotSubjects.every(s =>
+         /^[A-Za-z0-9_-]{2,48}\\|[A-Za-z0-9_.-]{5,128}$/.test(s)))))
+    throw Error("Private pilot needs DENY_ALL or up to two exact Auth0 subjects");
   if (!multiUser && !/^google-oauth2\|[A-Za-z0-9_-]{5,128}$/.test(permittedSub))
     throw Error("Exactly one Google Auth0 subject must be allowlisted for pilot isolation");
   return Object.freeze({
@@ -35,6 +53,8 @@ export function auth0Configuration(env = process.env) {
     jwksUrl: new URL(".well-known/jwks.json", issuer).href,
     permittedSub,
     multiUser,
+    privatePilot,
+    pilotSubjects: Object.freeze(privatePilot ? pilotSubjects : []),
     scopes: oauthScopes
   });
 }
@@ -83,6 +103,10 @@ export function createAuth0Verifier(config, { jwksUrl } = {}) {
       if (config.multiUser) {
         if (typeof payload.sub !== "string" ||
             !/^[A-Za-z0-9_-]{2,48}\|[A-Za-z0-9_.-]{5,128}$/.test(payload.sub))
+          return { ok: false, status: 403, error: "access_denied" };
+        // Real tokens can never enter the controlled pilot unless the
+        // operator has enabled this exact, consented Auth0 subject.
+        if (config.privatePilot && !config.pilotSubjects.includes(payload.sub))
           return { ok: false, status: 403, error: "access_denied" };
       } else if (payload.sub !== config.permittedSub) {
         return { ok: false, status: 403, error: "access_denied" };
