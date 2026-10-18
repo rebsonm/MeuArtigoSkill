@@ -39,7 +39,7 @@ class OfficialRecommendationTests(unittest.TestCase):
         else:
             self.assertIn("published **experimental GitHub Pre-release**",readme)
         self.assertIn("confirmed published", readme)
-        self.assertIn("GitHub's", readme)
+        self.assertIn("GitHub source archive is not the prepared Skill installer",readme)
         self.assertIn("stable v1.0.0", readme)
 
     def test_historical_releases_not_discarded(self):
