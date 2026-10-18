@@ -19,7 +19,7 @@ import {uiOutputSchema} from "./ui_output_schema.mjs";
 
 const HERE=path.dirname(fileURLToPath(import.meta.url));
 const REPO=path.resolve(HERE,"../..");
-const URI="ui://meu-artigo/site-v2.html";
+const URI="ui://meu-artigo/site-v3.html";
 const MAX_REQUEST_BYTES=256*1024;
 const MAX_RESOURCE_BYTES=2*1024*1024;
 const LOCALES=new Set(["pt","en","es","fr"]);
@@ -123,7 +123,8 @@ export function createServer(){
  registerAppResource(server,"Meu Artigo neutral interface",URI,{},async()=>({
   contents:[{uri:URI,mimeType:RESOURCE_MIME_TYPE,text:await uiResource(),
    _meta:{ui:{prefersBorder:true,csp:{connectDomains:[],resourceDomains:[]}},
-    "openai/ui":{availableDisplayModes:["inline","fullscreen"]}}}]
+    // Inline first for model-initiated dashboard views. Host retains the final choice.
+    "openai/ui":{preferredDisplayMode:"inline",availableDisplayModes:["inline","fullscreen"]}}}]
  }));
  return server;
 }
