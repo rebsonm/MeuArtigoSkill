@@ -4,6 +4,14 @@ Updated: 2026-10-18. Scope: [Draft PR #89](https://github.com/rebsonm/MeuArtigoS
 This document is the **single source of truth for progress reporting**, and intentionally distinguishes source development from deployment and real-world acceptance.
 It does not grant merge, deployment, OAuth, Drive access or publication approval.
 
+## Cross-conversation authoritative handoff
+
+**Durable plan:** [CONTINUITY-HANDOFF.md](CONTINUITY-HANDOFF.md) is the complete next-conversation playbook: original D01–D18 deliverables, acceptance gates R01–R10, seven execution batches, C.A.D.A. responsibility/evidence rules, prior technical failures not to revisit, and a paste-ready resumption prompt. This file remains the detailed historical status/evidence matrix. At each restart fetch the **current PR head and its own CI**; do not treat historical green SHA as current.
+
+**Latest actual VPS operator evidence:** the PINNED one-pass E05 execution passed preconditions, source-integrity and non-root launcher access, and the official doctor reported config_source=PASS, profile_load=PASS, control_plane_api_key=FAIL. The preflight stopped before changing the permanent service. An active E05, remote tunnel authorization, and ChatGPT acceptance are **NOT** proven. The next action is the read-only secret-grammar audit from [scripts/e05-runtime-key-audit.py](scripts/e05-runtime-key-audit.py); no secret may be printed. The earlier repaired /root traversal bug and Git/npm/binary installation are not open blockers.
+
+**Original and final counts remain fixed:** D01–D15 candidate source implemented; D16–D18 open; **0/10 final R-gates closed**.
+
 ## C.A.D.A. single-pass E05 operational delivery — 2026-10-18
 
 **Acceptance boundary:** green CI in Draft PR #89 does not prove the remote VPS works. The operator has authorized narrowly-scoped tests on the VPS, but this conversation currently has no authenticated SSH executor. Do not claim VPS changes without direct operator evidence.
