@@ -6,6 +6,7 @@ root = Path(__file__).resolve().parent
 boot = (root / "e05-vps-autonomous-bootstrap.sh").read_text()
 status = (root / "e05-vps-autonomous-status.sh").read_text()
 rollback = (root / "e05-vps-autonomous-rollback.sh").read_text()
+launcher = (root / "e05-vps-runtime-launch.sh").read_text()
 
 required = (
     "OLD=f7bdf1b92d62163b1530549361416fc0789cf98b",
@@ -19,7 +20,8 @@ required = (
     "Restart=always",
     "ProtectSystem=strict",
     "ProtectHome=yes",
-    "--control-plane.api-key=",
+    'SOURCE_LAUNCHER="$STAGE/integrations/mcp-apps/scripts/e05-vps-runtime-launch.sh"',
+    "RestartPreventExitStatus=78",
     "systemctl enable --now",
     "E05_BOOTSTRAP_COMPLETE=YES",
 )
@@ -39,5 +41,8 @@ for name, content in (("bootstrap", boot), ("status", status), ("rollback", roll
 assert "systemctl disable --now" in rollback
 assert "git switch --detach" in rollback
 assert "E05_RUNTIME_TUNNEL_READY=NOT_PROVEN_BY_SYSTEMD" in status
+assert "--profile-file" in launcher
+assert '--control-plane.api-key="file:$CREDENTIALS/control_plane_api_key"' in launcher
+assert "CREDENTIALS_DIRECTORY" in launcher
 assert "MEU_ARTIGO_MCP_MULTIUSER" not in boot
 print("E05_VPS_AUTONOMOUS_STATIC_CONTRACT_PASS: shell syntax, pinned E05 SHA, pilot integrity, least-privilege credential, restart, rollback.")

@@ -113,17 +113,16 @@ BIN="$(realpath -e "$BIN")"
 [[ "$BIN" =~ ^/[A-Za-z0-9_./-]+$ ]] || fail TUNNEL_BINARY_PATH_UNSAFE
 [[ "$(stat -c %U "$BIN")" == root ]] || fail TUNNEL_BINARY_MUST_BE_ROOT_OWNED
 
+[[ -f "$STAGE/integrations/mcp-apps/scripts/e05-vps-runtime-launch.sh" ]] || fail CANONICAL_LAUNCHER_NOT_IN_CHECKOUT
+[[ -f /opt/meu-artigo-e05/tunnel-profiles/meu-artigo-e05.yaml ]] || fail E05_EXPLICIT_PROFILE_NOT_FOUND
+runuser -u "$OWNER" -- test -r /opt/meu-artigo-e05/tunnel-profiles/meu-artigo-e05.yaml || fail E05_PROFILE_NOT_READABLE
 step INSTALL_PERSISTENT_UNIT
 install -d -m 0755 -o root -g root /usr/local/libexec/meu-artigo-e05
-cat > "$WRAPPER" <<'WRAPPER_FILE'
-#!/usr/bin/env bash
-set -Eeuo pipefail
-[[ -r "${CREDENTIALS_DIRECTORY:?}/control_plane_api_key" ]] || exit 78
-exec "__TUNNEL_CLIENT_BIN__" run --profile meu-artigo-e05 --control-plane.api-key="file:${CREDENTIALS_DIRECTORY}/control_plane_api_key"
-WRAPPER_FILE
-sed -i "s|__TUNNEL_CLIENT_BIN__|$BIN|g" "$WRAPPER"
-chmod 0755 "$WRAPPER"
-chown root:root "$WRAPPER"
+# Install the exact source-reviewed launcher. Never synthesize an untested inline wrapper.
+SOURCE_LAUNCHER="$STAGE/integrations/mcp-apps/scripts/e05-vps-runtime-launch.sh"
+[[ -f "$SOURCE_LAUNCHER" && ! -L "$SOURCE_LAUNCHER" ]] || fail REVIEWED_LAUNCHER_MISSING
+install -m 0755 -o root -g root -- "$SOURCE_LAUNCHER" "$WRAPPER"
+bash -n "$WRAPPER" || fail INSTALLED_LAUNCHER_INVALID
 cat > "$UNIT" <<'UNIT_FILE'
 [Unit]
 Description=Meu Artigo E05 private synthetic-only tunnel (VPS autonomous)
@@ -138,10 +137,11 @@ User=meuartigo-e05
 Group=meuartigo-e05
 WorkingDirectory=/opt/meu-artigo-e05
 Environment=HOME=/opt/meu-artigo-e05
-Environment=PATH=/usr/local/bin:/usr/bin:/bin
+Environment=PATH=/opt/meu-artigo-e05/bin:/usr/local/bin:/usr/bin:/bin
 LoadCredential=control_plane_api_key:/etc/meu-artigo-e05/runtime-key
 ExecStart=/usr/local/libexec/meu-artigo-e05/start-tunnel.sh
 Restart=always
+RestartPreventExitStatus=78
 RestartSec=12s
 TimeoutStartSec=30s
 TimeoutStopSec=20s

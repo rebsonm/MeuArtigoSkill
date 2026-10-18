@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+# Canonical E05 runtime: exact same profile and credential for doctor and run.
+set -Eeuo pipefail
+umask 077
+export LC_ALL=C
+
+CLIENT=/opt/meu-artigo-e05/bin/tunnel-client
+PROFILE=/opt/meu-artigo-e05/tunnel-profiles/meu-artigo-e05.yaml
+CREDENTIALS="${CREDENTIALS_DIRECTORY:-}"
+
+stop() { printf 'E05_RUNTIME_STOP=%s\n' "$1" >&2; exit 78; }
+[[ "$(id -un)" == meuartigo-e05 ]] || stop WRONG_UNIX_PRINCIPAL
+[[ -n "$CREDENTIALS" && "$CREDENTIALS" == /* ]] || stop CREDENTIAL_DIRECTORY_MISSING
+[[ -f "$CREDENTIALS/control_plane_api_key" && -r "$CREDENTIALS/control_plane_api_key" ]] || stop CREDENTIAL_NOT_AVAILABLE
+[[ -f "$PROFILE" && ! -L "$PROFILE" && -r "$PROFILE" ]] || stop ORIGINAL_PROFILE_UNAVAILABLE
+[[ -f "$CLIENT" && ! -L "$CLIENT" && -x "$CLIENT" ]] || stop ORIGINAL_CLIENT_UNAVAILABLE
+
+# Local doctor proves configuration only, not OpenAI remote authorization.
+# Capture machine report in memory; never print the CLI's raw diagnostic text.
+if ! python3 - "$CLIENT" "$PROFILE" "$CREDENTIALS/control_plane_api_key" <<'PY_DOCTOR'
+import json, pathlib, subprocess, sys
+client, profile, credential = sys.argv[1:]
+try:
+    raw = pathlib.Path(credential).read_bytes()
+    if not (20 <= len(raw) <= 2048 and raw.startswith(b"sk-") and
+            b"\x00" not in raw and b"\n" not in raw and b"\r" not in raw):
+        print("E05_RUNTIME_STOP=CREDENTIAL_FORMAT_OR_READ_FAILED", file=sys.stderr)
+        sys.exit(78)
+    cmd = [client, "doctor", "--profile-file", profile,
+           "--control-plane.api-key=file:" + credential, "--json"]
+    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
+                            check=False, timeout=40)
+    document = json.loads(result.stdout.decode("utf-8"))
+    checks = {x.get("id"): x.get("status") for x in document.get("checks", [])
+              if isinstance(x, dict)}
+    required = ("config_source", "profile_load", "control_plane_api_key")
+    if (result.returncode != 0 or document.get("result") != "ok" or
+        document.get("failed_checks") or
+        any(checks.get(k) != "PASS" for k in required)):
+        print("E05_RUNTIME_STOP=DOCTOR_LOCAL_CONTRACT_FAILED", file=sys.stderr)
+        sys.exit(78)
+except (OSError, ValueError, UnicodeError, subprocess.TimeoutExpired, TypeError, AttributeError, KeyError):
+    print("E05_RUNTIME_STOP=DOCTOR_UNAVAILABLE", file=sys.stderr)
+    sys.exit(78)
+print("E05_RUNTIME_LOCAL_CONTRACT=PASS")
+PY_DOCTOR
+then
+  exit 78
+fi
+
+exec "$CLIENT" run --profile-file "$PROFILE" \
+  --control-plane.api-key="file:$CREDENTIALS/control_plane_api_key"

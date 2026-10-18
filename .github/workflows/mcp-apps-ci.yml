@@ -43,6 +43,7 @@ jobs:
       - name: Verify autonomous VPS E05 shell safety contracts offline
         working-directory: integrations/mcp-apps
         run: |
+          bash -n scripts/e05-vps-runtime-launch.sh
           for file in scripts/e05-vps-autonomous-{bootstrap,status,rollback}.sh; do
             bash -n "$file"
           done
