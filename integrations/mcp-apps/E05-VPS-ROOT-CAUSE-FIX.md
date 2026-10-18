@@ -1,27 +1,35 @@
-# E05 — correção de origem para autonomia na VPS (18/10/2026)
+# E05 VPS — source-level runtime fix (2026-10-18)
 
-**Estado:** implementada e testada no repositório candidato, NÃO instalada no serviço real.
+**Scope:** draft PR #89, E05 synthetic staging only. This change has **NOT** been installed on the real VPS; production pilot, main, Auth0, Google Drive, and installed Plugin are unchanged.
 
-## Evidência e causa
-- Na VPS o E05 foi atualizado para `3ed581f9...` e passou a pré-homologação; a unidade systemd ficou enabled/failed, status 1.
-- O bootstrap original inicia com `--profile meu-artigo-e05`, mas o procedimento que funcionou anteriormente utilizou o caminho **explícito** `--profile-file /opt/meu-artigo-e05/tunnel-profiles/meu-artigo-e05.yaml`. Isso é divergência de contrato confirmada no fonte; não prova isoladamente toda a causa do status 1.
-- Diagnósticos transitórios anteriores usaram origem errada de credenciais e/ou detecção textual; `control_plane_api_key=FAIL` naquele teste não demonstra chave revogada.
+## Observed operator evidence and known integration defect
 
-## Solução única no fonte
-`e05-vps-runtime-launch.sh` é instalado pelo bootstrap como único launcher. Roda sob `meuartigo-e05`, lê somente a cópia protegida pela diretiva `LoadCredential` em `$CREDENTIALS_DIRECTORY`, executa `doctor --json` e `run` com **os mesmos argumentos** de perfil e de arquivo de chave. Não registra conteúdo bruto nem a chave; recusa configuração ausente com código 78. `RestartPreventExitStatus=78` impede ciclos de reinício com configuração inválida; outros erros mantêm reinício conforme política. Testes com credenciais e cliente fictícios cobrem PASS/FAIL e isolamento.
+- E05 was moved to source `3ed581f941767e2b15b0b4a2f782b24151985540` with `E05_SOURCE_AND_PREFLIGHT=PASS`.
+- Its systemd service was created and enabled but exited with status 1. This is not host acceptance.
+- The old bootstrap started the client with `--profile meu-artigo-e05` even though the previously working E05 setup selected the explicit file `/opt/meu-artigo-e05/tunnel-profiles/meu-artigo-e05.yaml` using `--profile-file`. The source-level mismatch is proven; its causal contribution to the VPS process exit has **not** been established.
+- An earlier transient diagnostic referenced the wrong credential source; its `control_plane_api_key=FAIL` does not prove the protected runtime credential was invalid. An additional wrapper repair rejected the systemd credential declaration even though the original bootstrap contained `LoadCredential=control_plane_api_key:/etc/meu-artigo-e05/runtime-key`.
 
-**Este é um reparo de código. Não substitui ativação e teste remoto.** Não pedir novamente ao usuário a execução de scripts sucessivos sem um canal operacional apropriado; a aplicação na unidade existente requer acesso remoto autorizado, inexistente nesta execução.
+## Integrated source change
 
-## Matriz C.A.D.A.
-| Objeto | Responsável | Dependência | Estado |
+1. `scripts/e05-vps-runtime-launch.sh` becomes the **single reviewed launcher** copied by the staging bootstrap, replacing the generated inline shell.
+2. It runs only under `meuartigo-e05`, requires the original **explicit** `--profile-file` path, and reads the per-service credential copy from `$CREDENTIALS_DIRECTORY/control_plane_api_key` supplied by systemd `LoadCredential`.
+3. It invokes `doctor --json` and `run` with **identical** profile and key-file arguments, never a guessed transient unit credential path. The doctor report is parsed in memory and only generic status codes are emitted, without raw key, YAML or diagnostic text.
+4. A persistent local configuration failure exits with status **78**; `RestartPreventExitStatus=78` prevents an endless restart loop due to a missing local credential, profile or invalid doctor configuration. Transient runtime failures retain `Restart=always`.
+5. Offline executable regressions with synthetic credentials cover success, missing or malformed key, doctor failure, missing profile and credential directory, installer-template consistency, and prohibited destructive operations.
+
+## C.A.D.A. execution register
+
+| Task | Owner | Dependency | Status and closing evidence |
 | --- | --- | --- | --- |
-| OPS-01 Git / OPS-02 código E05 | Operador | Histórico | **Concluídos na VPS** |
-| OPS-03 chave e cliente | Operador | Histórico | Arquivos presentes, autenticação remota não provada |
-| OPS-04 contrato launcher/systemd | Engenharia | CI SHA específico | **Corrigido no fonte; CI em validação** |
-| OPS-05 processo E05 estável | Operador VPS autorizado | Aplicar atualização verificada | **Pendente na VPS** |
-| R02 ChatGPT ALPHA/BRAVO e CSP | Testador | OPS-05 + host real | **Pendente** |
-| R01 / R03–R10 | Revisor e mantenedor | Critérios específicos | **Pendentes** |
+| OPS-01 stage Git permission | VPS operator | Previously required | **DONE on VPS**; Git update resumed |
+| OPS-02 E05 source/preflight | VPS operator | OPS-01 | **DONE on VPS** at prior source pin |
+| OPS-03 executable/secret storage | VPS operator | OPS-02 | Files present; actual remote authorization not verified |
+| OPS-04 canonical launcher and unit contract | Engineering/CI | Source SHA | **SOURCE FIXED**, exact-SHA CI and independent review required |
+| OPS-05 stable E05 on VPS | Authorized remote operator | Reviewed source deployment | **OPEN**: active/enabled process, no config restart loops and actual tunnel connectivity still need remote evidence |
+| R02 ChatGPT host acceptance | Host tester | OPS-05 | **OPEN**: ALPHA/BRAVO, 10 screens, stale-state clearing and effective CSP |
+| R01 independent cumulative review | Independent reviewer | Final SHA | **OPEN** |
+| R03–R10 | Maintainer and consenting testers | Prior gates | **OPEN**: merge, OAuth, Drive, workflow, private/public distribution |
 
-Plano original: D01–D15 com implementação técnica candidata; D16–D18 abertos; dez gates finais R01–R10 ainda **0/10** concluídos.
+Original plan: D01–D15 source-engineered in candidate, D16–D18 unaccepted, **0/10 final go-live gates closed**. Do not request repetitive user-run repair scripts; completing an existing VPS systemd deployment requires a securely authorized remote execution channel, which this conversation does not have.
 
-Referências: https://github.com/openai/tunnel-client/blob/master/docs/configuration.md ; https://github.com/openai/tunnel-client/blob/master/cmd/client/doctor_command.go ; https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html
+Upstream contracts: [OpenAI tunnel-client configuration](https://github.com/openai/tunnel-client/blob/master/docs/configuration.md), [doctor JSON semantics](https://github.com/openai/tunnel-client/blob/master/cmd/client/doctor_command.go), and [systemd credentials](https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html).
