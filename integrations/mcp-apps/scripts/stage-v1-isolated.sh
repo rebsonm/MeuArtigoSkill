@@ -47,7 +47,7 @@ fi
 # GitHub must permit anonymous HTTPS read. Abort if private, without PATs.
 [[ ! -e "$STAGE" ]] || fail "STAGE_RACE"
 if id "$USER_NAME" >/dev/null 2>&1; then fail "USER_ALREADY_EXISTS"; fi
-useradd --system --home-dir "$STAGE" --no-create-home \
+useradd --system --user-group --home-dir "$STAGE" --no-create-home \
   --shell /usr/sbin/nologin "$USER_NAME" || fail "USER_CREATION_FAILED"
 install -d -m 0700 -o "$USER_NAME" -g "$USER_NAME" "$STAGE" ||
   fail "STAGE_DIRECTORY_FAILED"
