@@ -17,7 +17,7 @@ releases, external deployment, tenant changes, or real project data access.
 ## PR #65: disposition by invariant, not by filename
 
 PR #65 adds or modifies scientific sidecar scenarios and documentation.
-On the original #85 tree, 15 files from its HEAD were absent; other
+On the original #85 tree, 15 files from its HEAD were absent; after #86 and this branch, the remaining absent paths are **12/40** (seven historical experiment docs, one older CI workflow, the old 12-case runner and test, and the original unified-panel test, plus one other source report). other
 shared implementation files were not byte-identical. This does **not**
 mean that all fifteen scientific controls are missing, and likewise
 overlapping current tests do not certify semantic equivalence.
@@ -26,7 +26,7 @@ overlapping current tests do not certify semantic equivalence.
 | --- | --- | --- |
 | `tests/test_report_output_guard.py` | Report writers remain behind `write_report` with stricter content checks; previous broad cross-writer symlink/canonical overwrite matrix absent | **Port original eight tests verbatim** and execute in current release-audit Python suite |
 | `tests/test_semantic_holdout.py` | Frozen 24-case dataset and its evaluator are already present, but old three-test integrity harness absent | **Port original three tests verbatim** and execute against unchanged frozen evaluator and current ledger/export |
-| `tests/test_advisory_strict_policy.py` | Existing tests cover advisory-only heuristics, rejected fabricated passages, nonauthenticated reviewers, failed human gates, and source freshness; old eight-case integrated CLI policy matrix absent | **PARTIAL overlap only.** Review the current privacy-safe CLI output before adapting old tests; do not copy unreviewed stdout assumptions |
+| `tests/test_advisory_strict_policy.py` | Existing tests cover advisory-only heuristics, rejected fabricated passages, nonauthenticated reviewers, failed human gates, and source freshness; old eight-case integrated CLI policy matrix absent | **RESTORED WITH PRIVACY ADAPTATION** in the final-candidate branch: eight original strict policy scenarios plus one stdout privacy test; detailed claims are inspected only in-process while the CLI remains sanitized. CI must pass at frozen HEAD |
 | `scripts/run_critical_cases.py`, `tests/test_executed_critical_cases.py`, `docs/EXECUTED-CRITICAL-CASES.md` | Existing synthetic tests exercise individual security and scientific boundaries, but do not execute the exact PR #65 12-case catalog | **DEFERRED / NOT INCORPORATED** pending explicit audit of adapter compatibility. Not claimed as a validated scientific benchmark |
 | Other PR #65 REG sidecar documents | Current repo retains REG-011/013/018 source and tests, but old experiment-specific narrative/evidence is not in the candidate | Archive historical evidence on PR #65; list any required user-facing guarantees separately before closure |
 | `tests/test_unified_researcher_panel.py` | The native research panel now exposes `scientific_diagnostic` through a separate bounded `MEU_ARTIGO_SCIENTIFIC_ADVISORY_PANEL_V1` projection. Old `evidence.diagnostic` nested interface is no longer the current API | **INTENTIONAL CONTRACT CHANGE, NOT BYTE-EQUIVALENT.** Keep new projection and existing `test_stage13_diagnostic_replay` / `test_scientific_diagnostic` tests; independent UI parity still needed |
@@ -86,7 +86,7 @@ synthetic staging, and ten-screen visual acceptance in ChatGPT.
 | --- | --- |
 | Original broad report-writer adversarial suite | RESTORED — verify CI at final SHA |
 | Frozen 24-case synthetic holdout integrity suite | RESTORED — verify CI at final SHA |
-| Old strict-policy eight-case CLI integration | OPEN — review equivalence/privacy safe adaptation |
+| Old strict-policy eight-case CLI integration | RESTORED WITH PRIVACY ADAPTATION; independent CI PASS required |
 | Old 12-case synthetic catalog | NOT INCORPORATED; separate optional analysis |
 | Legacy unauthenticated preview transport | RETIREMENT PROPOSED; no merge |
 | Exact legacy interactive methodological selector parity | UNVERIFIED |
@@ -99,3 +99,26 @@ This is a **targeted reconciliation** of PR #65 and #66, not a
 line-by-line attestation for the entire cumulative integration diff.
 Never close those original PRs solely from this memo without explicit
 maintainer review and an independently frozen CI result.
+
+## Final-candidate follow-up (2026-10-18)
+
+- Restored `tests/test_advisory_strict_policy.py` preserving the original eight
+  scientific decision scenarios, with one additional safe-output regression.
+  The current diagnostic CLI deliberately redacts detailed results from
+  terminal output; strict verdicts are checked using `compose(...)` in process.
+  The expected error for a rejected cross-reference remains generic in the
+  diagnostic CLI rather than printing the canonical ledger details.
+- PR #65 files absent from the current branch (12/40 changed-file paths):
+  `.github/workflows/critical-cases-registry.yml`, seven historical documents
+  covering REG and experiments, `scripts/run_critical_cases.py`,
+  `tests/test_executed_critical_cases.py`, and
+  `tests/test_unified_researcher_panel.py`.
+  Historical documents remain available in the original Draft PR. The old
+  executed critical-case runner remains a distinct, unmerged optional suite;
+  the current native panel contract differs from the old nested diagnostic.
+- PR #66 still has eight absent preview-only paths; this retirement is
+  intentional but requires a review decision before the old PR can be closed.
+- For PRs #74 and #75, **all** changed-file paths survive in the final
+  candidate, but 20 and 11 files respectively were modified afterward.
+  Presence is not byte-level or security equivalence; independently review
+  those follow-up changes against the older branch.
