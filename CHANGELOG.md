@@ -3,6 +3,18 @@
 
 ## Unreleased
 
+No changes after the beta.9 source candidate have been recorded.
+
+## 0.9.0-beta.9 — 2026-10-18
+
+**Source-only integration candidate (not a published version).** Merges, production deployment, Plugin installation, OAuth/Drive A/B testing, effective host CSP verification, independent scientific evaluation and public directory review remain pending.
+
+- Integrate the proposed Draft chain #78–#89 into one reviewed candidate, subject to independent cumulative code review and SHA-specific approval.
+- Harden the optional MCP Apps display-only interface and host-boundary contracts; E05 synthetic panel accepted by the user, but the private/production plugin remains unmodified.
+- Restore scientific regression matrices and add safeguards for Drive F5 creation paths and Auth0 HTTP Origin handling.
+- Generate deterministic private/public plugin ZIP candidates with seven human decision gates, unchanged canonical project boundaries and no release claims.
+
+
 - Optional multilingual MCP Apps companion: new isolated standards-based
   read-only tool `meu_artigo_painel`, matching approved blue site resource
   `ui://meu-artigo/site-v1.html`, structured canonical snapshot and
@@ -51,6 +63,7 @@
 - Prepare resumable host-assisted Google Drive project-tree delivery: local manifest, safe next-step recommendation, remote readback reconciliation and incomplete/conflict reporting. Offline synthetic tests are included, but no direct Drive adapter or authenticated end-to-end host test is claimed; published beta.6 assets remain untouched.
 
 No later software release is planned at this time; further changes require a new maintainer decision. The beta.6 item below is a release candidate until an actual tagged GitHub release is published.
+
 
 ## 0.9.0-beta.6 — 2026-10-15
 
