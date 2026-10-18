@@ -136,8 +136,8 @@ function equalToken(expected,actual){
 // Never allow opaque "null", insecure origins, credentials or a synthetic
 // host policy to weaken the authenticated MCP interface.
 export function configuredAllowedOrigin(env=process.env){
- const value=env.MEU_ARTIGO_ALLOWED_ORIGIN??"";
- if(value==="")return "";
+ const value=env.MEU_ARTIGO_ALLOWED_ORIGIN;
+ if(value===undefined||value==="")return "";
  if(typeof value!=="string")throw Error("INVALID_ALLOWED_ORIGIN");
  let origin;
  try{origin=new URL(value);}catch{throw Error("INVALID_ALLOWED_ORIGIN");}
