@@ -37,7 +37,7 @@ export function auth0Configuration(env = process.env) {
   // A production cutover defaults to DENY_ALL until two researchers
   // explicitly consent to a private acceptance test.
   const pilotSubjects = pilotRaw === "DENY_ALL" ? [] :
-    pilotRaw.split(",").filter(Boolean);
+    pilotRaw.split(",");
   if (privatePilot && (pilotRaw !== "DENY_ALL" &&
       (pilotSubjects.length < 1 || pilotSubjects.length > 2 ||
        new Set(pilotSubjects).size !== pilotSubjects.length ||
