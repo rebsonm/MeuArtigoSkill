@@ -111,25 +111,26 @@ Record the reviewed SHA, ChatGPT browser version, new test plugin name, rendered
 
 **Status: operator execution required; NOT executed by the source review.**
 The currently connected synthetic E05 tool returned
-\`McpServerError: Session terminated\` during an authorized fixed ALPHA
+`McpServerError: Session terminated` during an authorized fixed ALPHA
 invocation. This is a **connection failure**, not evidence of a visual defect,
 a successful deployment, or a verified installed revision.
 
-The SHA below is the exact reviewed PR #84 source candidate and has
-6/6 successful GitHub workflows. Changing PR HEAD or any subsequent code
-invalidates the pin and requires a fresh CI review.
+The deployment pin below identifies the **code candidate SHA that already passed
+6/6 GitHub workflows**, before this documentary runbook amendment. New
+commits on PR #84 must run their own CI, and the operator must independently
+confirm that the pinned SHA remains the intended source for the E05 test.
 
-- Frozen PR #84 HEAD: \`bc06fd3503ed35b93291ee96fe720cf6bec69733\`
-- E05 staging only: \`/opt/meu-artigo-e05/src\`
-- Original pilot path (read-only): \`/opt/meu-artigo-stage17/src\`
-- Staging UNIX principal: \`meuartigo-e05\`
+- Previously CI-green code SHA (pinned E05 target): `bc06fd3503ed35b93291ee96fe720cf6bec69733`
+- E05 staging only: `/opt/meu-artigo-e05/src`
+- Original pilot path (read-only): `/opt/meu-artigo-stage17/src`
+- Staging UNIX principal: `meuartigo-e05`
 - No Nginx, systemd, Auth0, Drive, firewall, release, main, or installed main Plugin changes.
 
 ### U1 — Stop existing E05 tunnel foreground session
 
-In the VPS shell that is running \`tunnel-client run --profile meu-artigo-e05\`,
+In the VPS shell that is running `tunnel-client run --profile meu-artigo-e05`,
 press **Ctrl+C**. Do not kill a production service or restart any
-\`meu-artigo-stage17*\` systemd unit. Keep runtime keys out of shell history.
+`meu-artigo-stage17*` systemd unit. Keep runtime keys out of shell history.
 
 ### U2 — Execute pinned isolated update in the existing VPS root SSH session
 
@@ -139,7 +140,7 @@ an inactive E05 tunnel, the remote origin, exact branch tip and an ancestry
 relationship before switching ONLY the E05 checkout. It refuses unexpected
 state. It neither creates a staging clone nor modifies the original pilot.
 
-\`\`\`bash
+```bash
 set -Eeuo pipefail
 TARGET=bc06fd3503ed35b93291ee96fe720cf6bec69733
 BRANCH=feat/go-live-plugin-packaging-preflight-20261017
@@ -181,22 +182,22 @@ bash integrations/mcp-apps/scripts/e05-stage-preflight.sh "$E05_TARGET"
 E05_SCRIPT
 
 echo E05_PINNED_SOURCE_AND_PREFLIGHT_COMPLETE
-\`\`\`
+```
 
-**Required evidence:** \`E05_CANDIDATE_SHA=bc06fd...\`, followed by
-\`E05_STAGING_PREFLIGHT_PASS\` and
-\`E05_PINNED_SOURCE_AND_PREFLIGHT_COMPLETE\`.
-A \`git fetch\` or SHA-check failure is a hard STOP; do not use
-\`git reset --hard\`, force checkout, re-clone, chmod production trees or
+**Required evidence:** `E05_CANDIDATE_SHA=bc06fd...`, followed by
+`E05_STAGING_PREFLIGHT_PASS` and
+`E05_PINNED_SOURCE_AND_PREFLIGHT_COMPLETE`.
+A `git fetch` or SHA-check failure is a hard STOP; do not use
+`git reset --hard`, force checkout, re-clone, chmod production trees or
 remove the staging directory as a workaround.
 
 ### U3 — Restart the existing private E05 tunnel
 
-Use the already installed verified \`tunnel-client\`, existing E05-only
+Use the already installed verified `tunnel-client`, existing E05-only
 tunnel ID/profile, and a restricted runtime key entered invisibly.
-Do **not** rerun \`tunnel-client init\` or overwrite the production pilot.
+Do **not** rerun `tunnel-client init` or overwrite the production pilot.
 
-\`\`\`bash
+```bash
 runuser -u meuartigo-e05 -- /bin/bash
 cd /opt/meu-artigo-e05
 read -r -s -p 'E05-only runtime API key (hidden): ' CONTROL_PLANE_API_KEY
@@ -204,7 +205,7 @@ echo
 export CONTROL_PLANE_API_KEY
 tunnel-client doctor --profile meu-artigo-e05 --explain
 tunnel-client run --profile meu-artigo-e05
-\`\`\`
+```
 
 The last command is a foreground session. Do not paste the key,
 token, profile contents, auth headers, or project data into ChatGPT.
@@ -213,15 +214,15 @@ An operator must observe the tunnel connected; if doctor fails, STOP.
 ### U4 — Real ChatGPT E05 acceptance
 
 Refresh **only** the separate test plugin's metadata in ChatGPT, start
-a **new conversation**, and select \`Meu Artigo — E05 (Teste Sintético)\`.
+a **new conversation**, and select `Meu Artigo — E05 (Teste Sintético)`.
 Invoke exactly the documented ALPHA then BRAVO fictional fixtures, with
-all seven human scientific gates \`approval_documented=false\`.
-Verify 10 menu pages, hover stability on \`Fontes e buscas\`, keyboard
+all seven human scientific gates `approval_documented=false`.
+Verify 10 menu pages, hover stability on `Fontes e buscas`, keyboard
 focus, locale changes, resize, sidebar/inline host display, A-to-B
 replacement, invalid input rejection, stale state clearance, CSP
 behavior and absence of Drive/approval claims.
 
 Record the source SHA, server-side preflight status, ChatGPT E05
 connection result, and screenshots sanitized of user identifiers.
-Do not state \`E05_ACCEPTED\` until the updated source is provably
+Do not state `E05_ACCEPTED` until the updated source is provably
 active and the real ChatGPT checks have actually been observed.
