@@ -57,12 +57,15 @@ class IngressSourceGateTests(unittest.TestCase):
         base = self.template
         broken = (
             (base.replace("location / { return 404; }",
-                          "location / { proxy_pass http://127.0.0.1:8085; }"),
+                          "location / { proxy_pass http://127.0.0.1:18087; }"),
              "PROXY_UNEXPECTED_UPSTREAM"),
             (base.replace("location = /mcp", "location /mcp"),
              "PROXY_LOCATION_MATCH_NOT_EXACT"),
-            (base.replace("proxy_pass http://127.0.0.1:8085;",
-                          "proxy_pass http://0.0.0.0:8085;", 1),
+            (base.replace("proxy_pass http://127.0.0.1:18087;",
+                          "proxy_pass http://127.0.0.1:8085;", 1),
+             "PROXY_TARGET_INVALID"),
+            (base.replace("proxy_pass http://127.0.0.1:18087;",
+                          "proxy_pass http://0.0.0.0:18087;", 1),
              "PROXY_TARGET_INVALID"),
             (base.replace("location = /.well-known/oauth-protected-resource/mcp",
                           "location = /healthz"),
