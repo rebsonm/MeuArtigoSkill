@@ -1,7 +1,11 @@
 # SOURCE-ONLY REVIEW TEMPLATE. NOT AN ACTIVE VHOST, NO DEPLOY AUTHORIZATION.
 # Replace YOUR_MCP_HOST.example and both /REPLACE_WITH_* paths on the VPS,
 # verify certificate, Auth0 RFC9728/OAuth discovery + PKCE S256, and nginx -t.
-# Node MCP remains bound to 127.0.0.1:8085. This proxy NEVER serves Drive data.
+# This reviewed v1 candidate forwards ONLY to the separate Auth0 v1 loopback
+# on 127.0.0.1:18087. The legacy bearer MCP on port 8085 is forbidden.
+# The existing Nginx vhost must be replaced atomically with backup/rollback;
+# do NOT add a duplicate server_name or reload before authorization.
+# This proxy NEVER serves Drive data.
 # No user credentials, authorization codes or JWTs belong in this file.
 server {
     listen 443 ssl;
@@ -35,7 +39,7 @@ server {
         proxy_set_header Origin $http_origin;
         proxy_set_header Connection "";
         proxy_buffering off;
-        proxy_pass http://127.0.0.1:8085;
+        proxy_pass http://127.0.0.1:18087;
     }
 
     # OAuth RFC 9728 protected-resource metadata: public GET only in server.mjs.
@@ -43,13 +47,13 @@ server {
         proxy_http_version 1.1;
         proxy_set_header Host $host;
         proxy_set_header X-Forwarded-Proto https;
-        proxy_pass http://127.0.0.1:8085;
+        proxy_pass http://127.0.0.1:18087;
     }
     location = /.well-known/oauth-protected-resource/mcp {
         proxy_http_version 1.1;
         proxy_set_header Host $host;
         proxy_set_header X-Forwarded-Proto https;
-        proxy_pass http://127.0.0.1:8085;
+        proxy_pass http://127.0.0.1:18087;
     }
 
     # Portal-owned domain challenge. Without a file, this path returns 404.
