@@ -325,8 +325,38 @@ let current='overview',taskQuery='',methodChoice='doc';
 const $=id=>document.getElementById(id);
 const footer='<div class="source-line"><span>Fonte: demonstração fictícia da arquitetura Meu Artigo</span><span>Nenhum dado real · Sem gravação · Sem aprovação de gates</span></div>';
 const realFooter='<div class="source-line"><span>Origem: projeção de registros locais autorizados</span><span>Drive não verificado · Sem gravação · Sem aprovação automática</span></div>';
-function nav(){const n=$('nav');n.innerHTML='<div class="nav-label">Área de pesquisa</div>'+pages.map(([id,icon,label])=>`<button data-page="${id}" type="button" aria-current="${id===current?'page':'false'}" class="${id===current?'active':''}"><span class="sym" aria-hidden="true">${icon}</span>${label}</button>`).join('')+'<p class="nav-help">Visão derivada dos registros canônicos. Não substitui a matriz nem valida decisões científicas.</p>';n.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));translateContainer(n)}
-function go(page){if(!pages.some(x=>x[0]===page))return;current=page;nav();render();$('content').focus({preventScroll:true});const status=$('screen-status');if(status)status.textContent=pages.find(p=>p[0]===page)[2]}
+function nav(){
+ const n=$('nav');
+ // Keep the same buttons mounted across page changes. Replacing hovered buttons
+ // on every click can retrigger hover/layout and host iframe resize feedback.
+ if(n.dataset.navInitialized!=='true'){
+  n.innerHTML='<div class="nav-label">Área de pesquisa</div>'+
+   pages.map(([id,icon,label])=>`<button data-page="${id}" type="button" aria-current="false"><span class="sym" aria-hidden="true">${icon}</span>${label}</button>`).join('')+
+   '<p class="nav-help">Visão derivada dos registros canônicos. Não substitui a matriz nem valida decisões científicas.</p>';
+  n.addEventListener('click',event=>{
+   const button=event.target instanceof Element?event.target.closest('button[data-page]'):null;
+   if(button&&n.contains(button))go(button.dataset.page,event.detail===0);
+  });
+  n.dataset.navInitialized='true';
+  translateContainer(n);
+ }
+ n.querySelectorAll('button[data-page]').forEach(button=>{
+  const selected=button.dataset.page===current;
+  button.classList.toggle('active',selected);
+  button.setAttribute('aria-current',selected?'page':'false');
+ });
+}
+function go(page,moveFocus=true){
+ if(!pages.some(x=>x[0]===page)||current===page)return;
+ current=page;
+ nav();
+ render();
+ // Preserve the clicked menu button and its pointer state on mouse navigation.
+ // Keyboard and main-content navigation still move focus to the new main screen.
+ if(moveFocus)$('content').focus({preventScroll:true});
+ const status=$('screen-status');
+ if(status)status.textContent=pages.find(p=>p[0]===page)[2];
+}
 function heading(name,desc,action=''){return `<div class="section-heading"><div><h2>${name}</h2><p>${desc}</p></div>${action}</div>`}
 const kpi=(label,num,ex,icon="◻")=>`<div class="kpi"><div class="kpi-heading"><span class="kpi-icon" aria-hidden="true">${icon}</span><div class="label">${label}</div></div><strong>${num}</strong><small>${ex}</small></div>`;
 const iconLine=(icon,title,desc,right='')=>`<div class="line-item"><div class="bubble">${icon}</div><div><h3>${title}</h3><p>${desc}</p></div>${right?`<div class="right">${right}</div>`:''}</div>`;
