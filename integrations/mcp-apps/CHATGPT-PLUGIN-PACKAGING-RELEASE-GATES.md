@@ -1,61 +1,62 @@
-# Meu Artigo — ChatGPT: empacotamento e gates de publicação
+# Meu Artigo — ChatGPT packaging and publication gates
 
-Estado: PR técnica em Draft. Nenhuma instalação, merge, release ou implantação autorizada por este documento.
+Status: source-only Draft PR. This document authorizes no installation, merge, release, deployment, or researcher-data access.
 
-## Dois canais, dois contratos diferentes
+## Two distribution channels with different contracts
 
-| Destino | ZIP | Associação MCP |
+| Channel | ZIP artifact | MCP association |
 | --- | --- | --- |
-| Privado do mantenedor | Skill e manifesto OpenAI com referência a app registrada | Arquivo .app.json apontando SOMENTE à app de produção verificada |
-| Diretório público | Skill e manifesto sem referência à app registrada | Submissão With MCP pela OpenAI, com servidor HTTPS estável e avaliação independente |
+| Maintainer's private pilot | Skill bundle plus OpenAI manifest with a registered app reference | .app.json only after the production app is independently verified |
+| Public ChatGPT directory | Skill bundle plus manifest, without existing registered app references | Submit With MCP through the OpenAI portal, using an independently validated stable HTTPS endpoint |
 
-O portal público NÃO aceita submissão de ZIP contendo .app.json ou referências apps para integrações existentes. A conexão com o servidor de produção é submetida diretamente no portal (With MCP). O túnel E05 é teste sintético e não satisfaz os requisitos de hospedagem pública.
+The public submission portal does not accept ZIPs with .app.json or apps references to existing integrations. Provide the production MCP server through the With MCP submission workflow. The E05 private tunnel is synthetic-only and does not meet public-hosting requirements.
 
-Fontes oficiais:
+Official documentation:
 - https://developers.openai.com/plugins/build/plugins
 - https://developers.openai.com/plugins/deploy/submission
 - https://developers.openai.com/plugins/deploy/submission-errors
 - https://developers.openai.com/plugins/deploy/app-review
 - https://developers.openai.com/plugins/build/mcp-server
 
-## Gerar candidatos, sem publicar
+## Prepare a source-only candidate, without publishing
 
-Para ZIP pública (somente Skill, submissão With MCP em etapa separada):
+Public candidate, containing the Skill only (the MCP endpoint is entered separately during With MCP submission):
 
     python integrations/mcp-apps/scripts/build_chatgpt_plugin_candidate.py --channel public
 
-Para ZIP privada, APENAS com app de produção previamente verificada:
+Private candidate, ONLY with a separately verified production registered app:
 
     python integrations/mcp-apps/scripts/build_chatgpt_plugin_candidate.py --channel private --app-id asdk_app_PRODUCTION_VERIFIED_ID
 
-O ID acima é exemplo; o script apenas valida seu formato e veta o ID conhecido do E05, não comprova autorização/registro no workspace. Não instale a ZIP de exemplo em conta de usuário.
+The example app ID is not real. Syntax validation alone cannot prove that a registered app exists or that the destination workspace authorizes it. Never install the structural-test placeholder candidate in a user's account.
 
-A construção usa o empacotador allowlist original da Skill e inclui o BUNDLE_MANIFEST auditado, a versão canônica, e os ícones públicos em SVG. A inspeção rejeita ZIP com paths inseguros, versões divergentes, arquivos adulterados, app sintética E05 no canal privado, associação de app no canal público e conteúdo de testes/hooks.
+The builder reuses the original Skill ZIP allowlist and BUNDLE_MANIFEST checks, preserves the canonical source version, and includes a reviewed SVG icon. Package inspection rejects version drift, tampered bundle members, unsafe ZIP paths, synthetic E05 app reuse, public/private manifest cross-contamination, hooks, and unexpected development files. The tests use only repository content and fictional mappings.
 
-## Bloqueador de versionamento observado
+## Version blocker confirmed during review
 
-- Código-fonte candidato na PR #82: VERSION 0.9.0-beta.6.
-- Plugin pessoal instalado do mantenedor: metadata 0.9.0-beta.8; núcleo da Skill 0.9.0-beta.6.
-- Nunca instalar pacote beta.6 sobre o beta.8. Após a revisão cumulativa, escolher nova versão candidata e sincronizar manifestos, BUNDLE_MANIFEST, CHANGELOG, release notes e build pelo procedimento próprio. O empacotador não altera VERSION nem afirma publicação.
+- Candidate Git source at PR #82: VERSION 0.9.0-beta.6.
+- Installed maintainer Plugin metadata: 0.9.0-beta.8; internal Skill VERSION 0.9.0-beta.6.
+- Do NOT downgrade the installed beta.8 Plugin with a beta.6 source candidate. Choose the next version after the cumulative integration review, and reconcile all version manifests, BUNDLE_MANIFEST, CHANGELOG, release notes, and build receipts.
+- The OFFICIAL_SKILL_RELEASE pointer and release evidence must never be advanced before a real verified publication.
 
-## Caminho crítico até o lançamento
+## Critical path to initial release
 
-1. E05: autorizar atualização isolada e retestar dez menus, ALPHA/BRAVO, foco, hover, locale, CSP, resize e teardown em ChatGPT real.
-2. Revisar diffs cumulativos da cadeia PR #78 a #82 e duplicidades de PRs antigas; obter decisão independente da integração.
-3. Congelar SHA final, executar CI, CodeQL, release audit e testes do pacote no mesmo SHA.
-4. Obter aprovação separada de merge, incorporar apenas a candidata consolidada em main e retestar o SHA integrado.
-5. Implantar servidor MCP HTTPS de produção, separado do E05, com Auth0/PKCE e rollback após autorização específica.
-6. Homologar contas A/B com Drives individuais, leitura e escrita guardadas, F1–F9, isolamento real e falhas fechadas.
-7. Montar versão única da Skill + MCP para Plugin privado; revisar release ID atual antes de atualizar a instalação do mantenedor.
-8. Realizar piloto com usuários voluntários e identidades distintas; documentar uso, limitações e política de privacidade sem coleta adicional.
-9. Preparar submissão pública With MCP, verificar identidade do desenvolvedor, concluir revisão da OpenAI e publicar somente após aprovação.
+1. After separate approval, update only the isolated E05 stage and retest ALPHA/BRAVO, ten hovered menu interactions, keyboard focus, resize, locale, CSP and teardown in real ChatGPT.
+2. Independently review the cumulative PR #78–#82 diff and the absorption of overlapping older PRs. Avoid redundant merges.
+3. Freeze the reviewed HEAD and require release audit, MCP Apps tests, Chromium, security contracts, and CodeQL at the SAME SHA.
+4. Obtain explicit merge authorization, incorporate the single reviewed integration candidate into main, and validate the resulting main SHA.
+5. Deploy the production MCP HTTPS server (not E05) with reviewed Auth0/PKCE, authorizations, secret handling, health checks and rollback.
+6. Test two independently authorized ChatGPT/Drive accounts, guarded F1–F9 storage operations, journals, readback, permission denial and user isolation.
+7. Package the reconciled version for the maintainer's own plugin, inspect the existing release ID, and explicitly authorize update only after the full real-host workflow succeeds.
+8. Conduct a controlled volunteer pilot and document security, privacy, first-run behavior, and rollback without enabling additional usage analytics.
+9. Verify publisher identity, submit With MCP to the public directory, address the OpenAI review, then confirm actual approval and installation by a separate researcher.
 
-## Gates
+## Go/no-go decisions
 
-- GO_PACKAGE: ZIP validada e versões consistentes; não equivale a implantação.
-- GO_MCP: HTTPS e OAuth reais homologados.
-- GO_DRIVE: isolamento e readback independentes verificados.
-- GO_PLUGIN_PRIVATE: novo Plugin funcionando na conta do mantenedor.
-- GO_PUBLIC: publicação pública aprovada e observada externamente.
+- GO_PACKAGE: Valid ZIP and consistent versions. This is not deployment acceptance.
+- GO_MCP: Real HTTPS transport and OAuth reviewed in the actual ChatGPT host.
+- GO_DRIVE: Independent A/B identities and remote readback verified.
+- GO_PLUGIN_PRIVATE: The new plugin actually works in the maintainer's account.
+- GO_PUBLIC: Public review and directory publication independently confirmed.
 
-Observatório de usuários, frequência, metadados acadêmicos e ML ficam fora do escopo da versão inicial. Nenhum gate pode ser aprovado por teste sintético isoladamente.
+User analytics, academic-profile telemetry, centralized article metadata, and ML remain outside the initial release scope. No real gate may be approved based only on synthetic CI.
