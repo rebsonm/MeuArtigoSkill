@@ -57,8 +57,11 @@ async function check(mode,port){
    assert.equal(bad.status,403);
   }
  }finally{
-  child.kill("SIGTERM");
-  await new Promise(done=>child.once("exit",done)).catch(()=>{});
+  if(child.exitCode===null && child.signalCode===null){
+   const stopped=new Promise(done=>child.once("exit",done));
+   child.kill("SIGTERM");
+   await stopped;
+  }
  }
 }
 await check("bearer",18862);

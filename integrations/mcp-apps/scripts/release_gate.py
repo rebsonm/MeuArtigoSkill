@@ -11,8 +11,8 @@ import json
 import re
 from pathlib import Path
 
-SHA = re.compile(r"[a-f0-9]{40}\\Z")
-REF = re.compile(r"EVID-[A-Za-z0-9_-]{6,64}\\Z")
+SHA = re.compile(r"[a-f0-9]{40}\Z")
+REF = re.compile(r"EVID-[A-Za-z0-9_-]{6,64}\Z")
 ROLES = {
     "R01": "INDEPENDENT_REVIEWER",
     "R02": "TEST_OPERATOR",
