@@ -11,7 +11,9 @@ const keys=(x,allow,required=allow)=>{
 // Display text is still research-derived: decline obvious external paths,
 // Drive links, person identifiers and credentials, even in allowed fields.
 // This cannot prove the absence of all personal or confidential material.
-const sensitive=/(?:https?:\/\/|\b(?:drive|docs)\.google\.com\b|\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b|\bBearer\s+\S+|\bAIza[A-Za-z0-9_-]{20,}|\bya29\.[A-Za-z0-9_-]+|-----BEGIN\s+(?:RSA\s+|EC\s+|OPENSSH\s+)?PRIVATE KEY-----|\b(?:refresh[_ -]?token|access[_ -]?token|api[_ -]?key|client[_ -]?secret|password)\s*[:=]|\b[A-Za-z]:\\\\(?:Users|Documents|Desktop|Downloads)\\\\|\/(?:home|root|mnt|Users)\/)/i;
+// Reject all absolute Windows drive paths and UNC shares, not just a small
+// set of predefined folder names. Host projections remain display-only.
+const sensitive=/(?:https?:\/\/|\b(?:drive|docs)\.google\.com\b|\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b|\bBearer\s+\S+|\bAIza[A-Za-z0-9_-]{20,}|\bya29\.[A-Za-z0-9_-]+|-----BEGIN\s+(?:RSA\s+|EC\s+|OPENSSH\s+)?PRIVATE KEY-----|\b(?:refresh[_ -]?token|access[_ -]?token|api[_ -]?key|client[_ -]?secret|password)\s*[:=]|\b[A-Za-z]:\\|\\\\[A-Za-z0-9._-]+\\[A-Za-z0-9.$_-]+|\/(?:home|root|mnt|Users)\/)/i;
 const str=(v,max=120)=>v===null||(typeof v==="string"&&v.length<=max&&
  !/[\u0000-\u0008\u000b\u000e-\u001f]/.test(v)&&!sensitive.test(v));
 const flag=(v)=>typeof v==="boolean";

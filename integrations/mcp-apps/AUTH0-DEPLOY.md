@@ -71,3 +71,13 @@ An external reverse proxy must NOT forward these paths by default. Use
 loopback service supervision instead. In particular, HTTP readiness is not a
 proof of real issuer availability, ChatGPT OAuth/PKCE, Drive authorization,
 complete end-to-end operation or effective iframe CSP. No deployment performed.
+
+## Defense-in-depth before approved TLS ingress
+
+The loopback MCP HTTP service imposes per-header, request-lifetime,
+keepalive and connection-count limits in process; see
+`configureHttpLimits` in `server.mjs`. The proxy must separately enforce
+TLS, rate limits, header/body ceilings, redacted logs and access
+controls, including avoiding exposure of unauthenticated loopback health
+routes. Passing local tests is not evidence of effective production
+DoS protection or actual ChatGPT OAuth/PKCE.

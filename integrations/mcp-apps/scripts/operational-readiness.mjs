@@ -5,6 +5,19 @@
  */
 import assert from "node:assert/strict";
 import {spawn} from "node:child_process";
+import {createServer as createHttpServer} from "node:http";
+import {configureHttpLimits} from "../server.mjs";
+
+// Assert concrete operational limits without waiting real timeout periods.
+const configured=configureHttpLimits(createHttpServer());
+assert.equal(configured.headersTimeout,10000);
+assert.equal(configured.requestTimeout,15000);
+assert.equal(configured.timeout,15000);
+assert.equal(configured.keepAliveTimeout,5000);
+assert.equal(configured.maxConnections,64);
+assert.equal(configured.maxRequestsPerSocket,64);
+assert.equal(configured.maxHeadersCount,64);
+configured.closeAllConnections();
 
 const TOKEN="SYNTHETIC_READINESS_TEST_BEARER_NEVER_PRODUCTION_123456";
 const baseEnv={...process.env,MEU_ARTIGO_PROJECT_ROOT:"",
@@ -44,6 +57,13 @@ async function check(mode,port){
    const r=await fetch(endpoint+pathname);
    assert.equal(r.status,404,"No extra operational surface: "+pathname);
   }
+  // Node's fixed per-request header limit must reject oversized headers
+  // before JWT verification, JSON parsing, or MCP tool dispatch.
+  const enormous=await fetch(endpoint+"/mcp",{
+   method:"POST",headers:{"content-type":"application/json",
+     "x-synthetic-large-header":"X".repeat(20*1024)},
+   body:"{}"});
+  assert.equal(enormous.status,431);
   const denied=await fetch(endpoint+"/mcp",{method:"POST",
    headers:{"content-type":"application/json"},body:"{}"});
   assert.equal(denied.status,401,"Operational probe must not remove auth");

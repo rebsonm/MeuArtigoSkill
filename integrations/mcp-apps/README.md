@@ -111,3 +111,19 @@ the user account or a remote reverse proxy is functioning. They are for
 loopback/local process supervision only. Reverse-proxy exposure requires a
 separate review; the example external Nginx host still denies all requests.
 `npm run test:operational` exercises bearer and synthetic Auth0 modes.
+
+## Network resource limits and local-path projection guard
+
+The HTTP listener is loopback only, with 16 KiB maximum request headers,
+10-second header timeout, 15-second request and idle timeouts, 5-second
+keepalive timeout, 64 concurrent sockets, a 64-request-per-socket ceiling
+and a maximum of 64 header fields. Reverse proxy quotas and TLS controls
+remain independently required; these application limits do not demonstrate
+DoS resilience, OAuth correctness or real ChatGPT connectivity.
+
+Host-supplied dashboard text rejects absolute Windows drive paths (any
+folder after a drive letter), UNC shares, Unix home/root paths, URLs and
+obvious credentials before returning structured results. Synthetic
+projection tests cover ordinary Windows paths, arbitrary drive folders,
+UNC shares and fields outside task descriptions. The filter is heuristic,
+not a guarantee that user-supplied display text is free of personal data.

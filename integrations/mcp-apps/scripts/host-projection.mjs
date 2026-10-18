@@ -71,6 +71,11 @@ try{
   {...a,tasks:[{...a.tasks[0],task:"Google token ya29.example_secret_token"}]},
   {...a,tasks:[{...a.tasks[0],task:"password: confidential"}]},
   {...a,tasks:[{...a.tasks[0],task:"Read /home/researcher/private/files"}]},
+  {...a,tasks:[{...a.tasks[0],task:String.raw`Review C:\\Users\\Alice\\Private\\article.docx`}]},
+  {...a,tasks:[{...a.tasks[0],task:String.raw`Review D:\\Research\\private-paper.docx`}]},
+  {...a,tasks:[{...a.tasks[0],task:String.raw`Open \\\\research-server\\share\\notes.docx`}]},
+  {...a,next_action:{...a.next_action,
+   explanation:String.raw`Look up E:\\Archive\\records\\source.pdf`}},
   {...a,tasks:[a.tasks[0],a.tasks[0]]},
   {...a,gates:[a.gates[0],a.gates[0]]},
   {...a,gates:[{...a.gates[0],id:"GATE-0008"}]}

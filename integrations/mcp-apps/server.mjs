@@ -147,6 +147,19 @@ export function configuredAllowedOrigin(env=process.env){
   throw Error("INVALID_ALLOWED_ORIGIN");
  return value;
 }
+// All HTTP clients are untrusted, including clients entering through an
+// approved reverse proxy. Bound headers, request lifetimes and concurrent
+// sockets without relying on an external ingress. The server is still local.
+export function configureHttpLimits(app){
+ app.headersTimeout=10_000;
+ app.requestTimeout=15_000;
+ app.timeout=15_000;
+ app.keepAliveTimeout=5_000;
+ app.maxConnections=64;
+ app.maxRequestsPerSocket=64;
+ app.maxHeadersCount=64;
+ return app;
+}
 async function serveHttp(){
  noResearchAccess();
  const bind=process.env.MEU_ARTIGO_BIND_HOST||"127.0.0.1";
@@ -164,7 +177,7 @@ async function serveHttp(){
  // Startup must fail closed if the reviewed, built UI cannot be assembled.
  // This state is application-static; it never holds research data or identity.
  await uiResource();
- const app=createHttpServer(async(req,res)=>{
+ const app=createHttpServer({maxHeaderSize:16*1024},async(req,res)=>{
   const pathname=req.url?.split("?")[0];
   // Loopback-only operational probes. No authorization material, user
   // identifiers, version, configuration, environment or research payload.
@@ -251,6 +264,7 @@ async function serveHttp(){
    if(!res.headersSent)res.writeHead(500).end('{"error":"MCP unavailable"}');
   }
  });
+ configureHttpLimits(app);
  app.listen(port,bind,()=>console.error("Meu Artigo generic MCP ready on loopback"));
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
