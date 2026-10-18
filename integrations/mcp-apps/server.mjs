@@ -100,7 +100,9 @@ export function createServer(){
   inputSchema:{locale:z.string().max(35).optional(),mode:z.enum(["MINIMAL","FULL"]).optional(),
    snapshot:z.unknown().optional()},
   outputSchema:uiOutputSchema,
-  annotations:{readOnlyHint:true,idempotentHint:true,openWorldHint:false},
+  // No persistent state, external searches, file changes or destructive effects.
+  // Public review requires explicit accurate labels for every tool.
+  annotations:{readOnlyHint:true,idempotentHint:true,openWorldHint:false,destructiveHint:false},
   ...(process.env.MEU_ARTIGO_AUTH_MODE==="auth0"?{securitySchemes:[{type:"oauth2",scopes:["mcp:read"]}]}:{}),
   _meta:{ui:{resourceUri:URI},"openai/outputTemplate":URI}
  },async args=>{
