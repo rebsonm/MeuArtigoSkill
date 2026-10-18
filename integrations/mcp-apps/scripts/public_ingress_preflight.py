@@ -19,7 +19,7 @@ REQUIRED_PATHS = frozenset({
     "/.well-known/openai-apps-challenge",
     "/",
 })
-UPSTREAM = "http://127.0.0.1:8085"
+UPSTREAM = "http://127.0.0.1:18087"
 TEMPLATE_HOST = "YOUR_MCP_HOST.example"
 TEMPLATE_CERT = "/REPLACE_WITH_CERTIFICATE_CHAIN.pem"
 TEMPLATE_KEY = "/REPLACE_WITH_PRIVATE_KEY.pem"
