@@ -186,8 +186,10 @@ overwrite them. Prepare a rollback snapshot before doing anything.
 
 **MCP loopback.** Use an isolated reviewed runtime checkout and a dedicated
 restricted service user. Start the reviewed HTTP MCP server only on
-`127.0.0.1` with the separately agreed local port (the proxy template
-expects 8085). Set protected environment configuration:
+`127.0.0.1:18087` with a dedicated restricted v1 service identity. The
+proxy template now explicitly rejects relying on legacy port `8085` and
+forwards only to `18087`. Do not reuse the synthetic E05 tunnel or legacy
+`meu-artigo-mcp.service`. Set protected environment configuration:
 `MEU_ARTIGO_AUTH_MODE=auth0`,
 `MEU_ARTIGO_AUTH_ISSUER=<exact production HTTPS issuer>`,
 `MEU_ARTIGO_AUTH_RESOURCE=https://<approved-host>/mcp`,
@@ -197,6 +199,16 @@ HTTPS Origin when needed; never use `*`, `null` or insecure HTTP.
 Only store runtime configuration in access-controlled local settings.
 Do not supply Google tokens, file IDs or research data to the MCP.
 Require a local `/readyz` pass before examining public ingress.
+
+**Current Nginx is ALREADY serving this hostname:** the operator proved
+`/etc/nginx/sites-enabled/meu-artigo-mcp.conf` exists and proxies to the dead
+`127.0.0.1:18086` upstream. Do not add a second `server_name` for the same
+hostname: render the reviewed replacement offline, preserve the exact old
+file with owner and mode for rollback, and replace that one vhost only in the
+approved change window. Never change DNS or its existing certificate just
+to solve this local upstream mismatch. Keep E05 and the legacy 8085 process
+running. Refuse cutover unless the NEW 18087 Auth0 backend is persistently
+`readyz=200`, both metadata routes=200, and unauthenticated `/mcp`=401.
 
 **Nginx candidate.** Copy the reviewed
 `nginx-auth0-production.conf.template` to a temporary configuration
