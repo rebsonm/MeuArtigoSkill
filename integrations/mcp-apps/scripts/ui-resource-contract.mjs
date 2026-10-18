@@ -70,7 +70,27 @@ try{
   for(const key of ["ALPHA","BRAVO"]){
    assert.equal(dom.window.MeuArtigoHost.receive({
     ...normalizeHostSnapshot(fake(key)),kind:"CANONICAL_LOCAL_SNAPSHOT"}),true);
-   dom.window.document.querySelector('nav button[data-page="tasks"]').click();
+   // Navigation must preserve button identity and selected state even while
+   // the pointer would still be hovering over the button in a real browser.
+   const nav=dom.window.document.querySelector('nav');
+   const buttons=[...nav.querySelectorAll('button[data-page]')];
+   assert.equal(buttons.length,10);
+   let navRebuilds=0;
+   const observer=new dom.window.MutationObserver(records=>{
+    navRebuilds+=records.filter(record=>record.type==="childList").length;
+   });
+   observer.observe(nav,{childList:true,subtree:false});
+   for(const button of buttons){
+    button.click();
+    assert.strictEqual(nav.querySelector('button[data-page="'+button.dataset.page+'"]'),button,
+     "A navigation click must not replace the hovered button");
+    assert.equal(button.getAttribute("aria-current"),"page");
+    assert.ok(button.classList.contains("active"));
+   }
+   nav.querySelector('button[data-page="tasks"]').click();
+   await Promise.resolve();
+   observer.disconnect();
+   assert.equal(navRebuilds,0,"Navigation must not rebuild sidebar children on clicks");
    assert.match(dom.window.document.getElementById("content").textContent,
     new RegExp("Synthetic task "+key));
    if(key==="BRAVO")assert.doesNotMatch(
