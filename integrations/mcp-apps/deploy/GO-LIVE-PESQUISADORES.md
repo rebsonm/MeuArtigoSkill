@@ -69,6 +69,43 @@ the previous service.
 These observations are about the **existing installation**, not proof
 that PR #91 was deployed or that the publication requirements passed.
 
+## Isolated acceptance bootstrap (one non-public operator action)
+
+The baseline VPS inspection on 2026-10-18 confirmed port `18087` FREE,
+Node `v22.22.3`, npm `10.9.8`, and Git `2.43.0`.
+The original service is on `8085`; Nginx still points to unused `18086`
+and returns `502`. This staging action does **not** repair the public 502.
+
+A separate candidate-only source script at
+`integrations/mcp-apps/scripts/stage-v1-isolated.sh` has two modes:
+`--check` reports read-only gate status; `--apply <PR91_40_CHAR_SHA>`
+is an explicit operator action. Pin the exact CI-green HEAD and revalidate
+it before execution. The script checks the original checkout SHA
+`cdd3affb902028753b9c66b83c2ef5e37f9e1700`, old/E05 services,
+missing stage destination and free port; refuses drift. On explicit apply,
+it creates a dedicated locked service user and a separate stage directory
+`/opt/meu-artigo-v1-acceptance`, clones the public repository via
+anonymous HTTPS under the non-root user, checks the **exact branch head
+SHA**, installs locked npm dependencies, audits production dependencies,
+builds the UI, runs selected synthetic contracts and starts a temporary
+**loopback-only** bearer test on port `18087`. That test process is
+terminated before success is reported; no persistent systemd service,
+external proxy, Auth0, Drive or installed plugin is modified.
+
+Operator should retrieve the script using a fixed commit SHA from the
+public GitHub repository over HTTPS, check its content and `bash -n`,
+run `--check`, and only use `--apply` after the resulting SHA is CI-green
+and the stage-only side effects are understood. Never pipe curl directly
+to a shell. The stage script fails closed if GitHub requires a private PAT;
+no PAT must be pasted into command lines. A failed setup intentionally
+retains the isolated files for inspection (no automatic recursive deletion).
+Rollback of the old service is unnecessary because nothing in that service
+has been changed. Release approval is unaffected.
+
+Staging PASS is local smoke only: **real OAuth/PKCE, host CSP, A/B Drive
+isolation and real public availability remain NOT TESTED**. Domain endpoint
+remains `https://mcp.allflux.com.br/mcp`.
+
 ## Offline source-only preflight
 
 Run from the reviewed repository checkout:
