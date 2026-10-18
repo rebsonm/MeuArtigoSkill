@@ -335,7 +335,7 @@ function nav(){
    '<p class="nav-help">Visão derivada dos registros canônicos. Não substitui a matriz nem valida decisões científicas.</p>';
   n.addEventListener('click',event=>{
    const button=event.target instanceof Element?event.target.closest('button[data-page]'):null;
-   if(button&&n.contains(button))go(button.dataset.page,event.detail===0);
+   if(button&&n.contains(button))navigateTo(button.dataset.page,event.detail===0);
   });
   n.dataset.navInitialized='true';
   translateContainer(n);
@@ -346,13 +346,19 @@ function nav(){
   button.setAttribute('aria-current',selected?'page':'false');
  });
 }
-function go(page,moveFocus=true){
- if(!pages.some(x=>x[0]===page)||current===page)return;
+function go(page){navigateTo(page,true)}
+function navigateTo(page,moveFocus){
+ if(!pages.some(x=>x[0]===page))return;
+ // Keep the focus contract for keyboard activation of an already active tab.
+ if(current===page){
+  if(moveFocus)$('content').focus({preventScroll:true});
+  return;
+ }
  current=page;
  nav();
  render();
- // Preserve the clicked menu button and its pointer state on mouse navigation.
- // Keyboard and main-content navigation still move focus to the new main screen.
+ // Preserve the clicked menu button on mouse navigation, while keyboard
+ // and main-content navigation keep focus on the new screen.
  if(moveFocus)$('content').focus({preventScroll:true});
  const status=$('screen-status');
  if(status)status.textContent=pages.find(p=>p[0]===page)[2];
