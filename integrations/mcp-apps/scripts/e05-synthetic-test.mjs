@@ -27,9 +27,11 @@ try{
  await server.connect(st);await client.connect(ct);
  const tool=(await client.listTools()).tools.find(x=>x.name==="meu_artigo_painel");
  assert.match(tool.title,/synthetic visual acceptance/);
- assert.equal(tool._meta.ui.resourceUri,"ui://meu-artigo/site-v2.html");
- const res=await client.readResource({uri:"ui://meu-artigo/site-v2.html"});
+ assert.equal(tool._meta.ui.resourceUri,"ui://meu-artigo/site-v3.html");
+ const res=await client.readResource({uri:"ui://meu-artigo/site-v3.html"});
  assert.equal(res.contents[0].mimeType,"text/html;profile=mcp-app");
+ assert.equal(res.contents[0]._meta?.["openai/ui"]?.preferredDisplayMode,"inline");
+ assert.deepEqual(res.contents[0]._meta?.["openai/ui"]?.availableDisplayModes,["inline","fullscreen"]);
  for(const value of ["ALPHA","BRAVO"]){
   const result=await call(fixture(value));
   assert.notEqual(result.isError,true);
