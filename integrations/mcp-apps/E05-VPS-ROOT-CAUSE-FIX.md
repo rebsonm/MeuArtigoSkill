@@ -33,3 +33,11 @@
 Original plan: D01–D15 source-engineered in candidate, D16–D18 unaccepted, **0/10 final go-live gates closed**. Do not request repetitive user-run repair scripts; completing an existing VPS systemd deployment requires a securely authorized remote execution channel, which this conversation does not have.
 
 Upstream contracts: [OpenAI tunnel-client configuration](https://github.com/openai/tunnel-client/blob/master/docs/configuration.md), [doctor JSON semantics](https://github.com/openai/tunnel-client/blob/master/cmd/client/doctor_command.go), and [systemd credentials](https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html).
+
+## Existing-service reconciliation (reviewed source only)
+
+The original E05 host already has a failed, enabled systemd unit. The canonical bootstrap now supports a **guarded** `--repair-service` operation in addition to first-time `--apply`, so the remediation no longer depends on inventing additional one-off repair scripts. Before updating anything, it verifies the exact original pilot SHA, the E05 UNIX principal and unit fragment, checks for unexpected overrides, and moves **only** the isolated E05 source from the observed earlier pinned SHA to the CI-approved runtime source `6996a9b1a723dd3d211e243018e900d371d8ae17`. It performs the full stage preflight.
+
+It then makes root-only backups of the existing E05 unit and wrapper, installs the exact source-owned launcher, activates only E05, verifies that the restart counter stays stable for an initial 21-second interval, and rolls back both unit and wrapper if any later check fails. An initial 21-second active period is **not** proof of remote OpenAI connectivity, ChatGPT rendering, CSP enforcement, or end-to-end researcher isolation.
+
+This change has **not** been executed on the VPS. The user has explicitly declined further local PowerShell repair commands. Do not ask them to run this as part of the source-development step. A separate securely authorized remote executor is necessary to activate it.

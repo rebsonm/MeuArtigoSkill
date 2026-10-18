@@ -10,7 +10,10 @@ launcher = (root / "e05-vps-runtime-launch.sh").read_text()
 
 required = (
     "OLD=f7bdf1b92d62163b1530549361416fc0789cf98b",
-    "TARGET=3ed581f941767e2b15b0b4a2f782b24151985540",
+    "BASELINE=3ed581f941767e2b15b0b4a2f782b24151985540",
+    "TARGET=6996a9b1a723dd3d211e243018e900d371d8ae17",
+    "--repair-service",
+    "E05_REPAIR_ROLLBACK=ORIGINAL_E05_UNIT_AND_WRAPPER_RESTORED",
     "PILOT_SHA=fab60a8a2a254461d1fcd1fc66e67d7e109ed760",
     '[[ "$(stat -c %h "$INDEX")" == 1 ]]',
     'chown -- "$OWNER:$OWNER" "$INDEX"',
