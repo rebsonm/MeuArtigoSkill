@@ -1,0 +1,64 @@
+# SOURCE-ONLY REVIEW TEMPLATE. NOT AN ACTIVE VHOST, NO DEPLOY AUTHORIZATION.
+# Replace YOUR_MCP_HOST.example and both /REPLACE_WITH_* paths on the VPS,
+# verify certificate, Auth0 RFC9728/OAuth discovery + PKCE S256, and nginx -t.
+# Node MCP remains bound to 127.0.0.1:8085. This proxy NEVER serves Drive data.
+# No user credentials, authorization codes or JWTs belong in this file.
+server {
+    listen 443 ssl;
+    server_name YOUR_MCP_HOST.example;
+
+    ssl_certificate /REPLACE_WITH_CERTIFICATE_CHAIN.pem;
+    ssl_certificate_key /REPLACE_WITH_PRIVATE_KEY.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_session_tickets off;
+    server_tokens off;
+
+    client_max_body_size 256k;
+    client_body_timeout 15s;
+    proxy_connect_timeout 3s;
+    proxy_send_timeout 20s;
+    proxy_read_timeout 60s;
+
+    # No tokens, paths or research request details in ordinary Nginx access logs.
+    access_log off;
+    add_header X-Content-Type-Options nosniff always;
+    add_header Referrer-Policy no-referrer always;
+    add_header Cache-Control no-store always;
+
+    # Authenticated MCP transport; Authorization and Origin go unchanged
+    # to the loopback resource server for per-request verification.
+    location = /mcp {
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_set_header Authorization $http_authorization;
+        proxy_set_header Origin $http_origin;
+        proxy_set_header Connection "";
+        proxy_buffering off;
+        proxy_pass http://127.0.0.1:8085;
+    }
+
+    # OAuth RFC 9728 protected-resource metadata: public GET only in server.mjs.
+    location = /.well-known/oauth-protected-resource {
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_pass http://127.0.0.1:8085;
+    }
+    location = /.well-known/oauth-protected-resource/mcp {
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_pass http://127.0.0.1:8085;
+    }
+
+    # Portal-owned domain challenge. Without a file, this path returns 404.
+    # Write only the challenge token from the authorized submission portal.
+    location = /.well-known/openai-apps-challenge {
+        default_type text/plain;
+        alias /var/lib/meu-artigo-verification/openai-apps-challenge;
+    }
+
+    # Includes /healthz and /readyz: must remain inaccessible from internet.
+    location / { return 404; }
+}
