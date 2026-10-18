@@ -83,7 +83,7 @@ class E05RuntimeContract(unittest.TestCase):
         self.assertIn('LoadCredential=control_plane_api_key:$KEY', script)
         self.assertIn('RestartPreventExitStatus=78', script)
         self.assertIn('E05_ACTIVATE_ROLLBACK=ORIGINAL_WRAPPER_RESTORED_SERVICE_STOPPED', script)
-        self.assertIn('LAUNCHER_BLOB=466965378c8bad8a57c5816435439d18901f962e', script)
+        self.assertIn('LAUNCHER_BLOB=a66f8eee7b6e8bdd9e24b608e1c3353f7582a3ff', script)
         self.assertNotIn('npm ci', script)
         self.assertNotIn('git switch', script)
         self.assertNotIn('git reset --hard', script)

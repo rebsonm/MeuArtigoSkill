@@ -4,23 +4,23 @@ Updated: 2026-10-18. Scope: [Draft PR #89](https://github.com/rebsonm/MeuArtigoS
 This document is the **single source of truth for progress reporting**, and intentionally distinguishes source development from deployment and real-world acceptance.
 It does not grant merge, deployment, OAuth, Drive access or publication approval.
 
-## C.A.D.A. lote operacional unificado — E05 18/10/2026
+## C.A.D.A. single-pass E05 operational delivery — 2026-10-18
 
-**Separação de aceites:** a PR #89 estar verde no CI NÃO demonstra que o serviço remoto foi reparado. O operador autorizou testes pontuais na VPS, mas esta sessão não contém executor SSH autenticado; não registrar mudanças em VPS que não tenham resultado remoto observado.
+**Acceptance boundary:** green CI in Draft PR #89 does not prove the remote VPS works. The operator has authorized narrowly-scoped tests on the VPS, but this conversation currently has no authenticated SSH executor. Do not claim VPS changes without direct operator evidence.
 
-| Código | Capturar — objeto e produto | Atribuir | Definir prazo — condição | Acompanhar — estado e evidência |
+| ID | Capture: verifiable deliverable | Assign: owner | Define deadline: prerequisite | Accompany: evidence and state |
 | --- | --- | --- | --- | --- |
-| OPS-01 | Permissões Git da etapa antiga | Operador VPS | Fechado antes do estágio | **CONCLUÍDO em VPS**: índice recuperado |
-| OPS-02 | Instalar/validar fonte E05 antiga | Operador VPS | OPS-01 | **CONCLUÍDO em VPS**: SHA `3ed581f...` e preflight PASS |
-| OPS-03 | Binário OpenAI, perfil e secret file | Operador VPS | OPS-02 | **ARQUIVOS PRESENTES**: licença/configuração remota não comprovada |
-| OPS-04 | Serviço supervisionado do E05 | Engenheiro + operador | OPS-03 | **AINDA BLOQUEADO na VPS**: unit habilitada mas processo saiu com 1 |
-| OPS-05 | Doctor com mesmo UID/LoadCredential de systemd | Executor VPS restrito | Imediato antes de mutar | **FONTE IMPLEMENTADA**, real pendente: `--doctor-only`, transient unit, credencial e perfil explícitos. Sem alterar serviço se falhar |
-| OPS-06 | Reconciliar somente wrapper do E05, verificar 25 s e recuperar automaticamente | Executor VPS restrito | Só se OPS-05 PASS | **FONTE IMPLEMENTADA**, real pendente. Script guarda original, não executa npm/git checkout, não altera secret, original pilot, production, Auth0, Drive; rollback se a aceitação local falhar |
-| OPS-07 | Demonstrar E05 `readyz` e ChatGPT ALPHA/BRAVO | Revisor conectado | Depois do processo estável | **PENDENTE**: `readyz` exige porta atribuída ao PID do próprio E05; ChatGPT 10 telas/CSP/teardown são testes separados |
+| OPS-01 | Repair previous stage Git index permissions | VPS operator | Before staging | **DONE ON VPS**: existing checkout recovered |
+| OPS-02 | Install and preflight the previously pinned E05 stage | VPS operator | OPS-01 | **DONE ON VPS**: source `3ed581f...`, preflight PASS |
+| OPS-03 | Pin official client, original YAML profile and protected secret file | VPS operator | OPS-02 | **FILES PRESENT**: remote runtime authorization not established |
+| OPS-04 | Make the existing systemd unit active and able to restart | Engineering and operator | OPS-03 | **BLOCKED ON VPS**: unit enabled but previously exited with code 1 |
+| OPS-05 | Verify exact dedicated UID, `LoadCredential` and explicit profile under systemd | Isolated VPS operator | Before unit mutation | **IMPLEMENTED IN SOURCE, VPS PROOF OPEN**: transient systemd preflight calls `--doctor-only` without launching a second polling tunnel; displays only enumerated check IDs |
+| OPS-06 | Reconcile only the E05 wrapper, validate 25-second stability and roll back on failure | Isolated VPS operator | Only after OPS-05 PASS | **IMPLEMENTED IN SOURCE, VPS PROOF OPEN**: `scripts/e05-vps-activate-only.sh`, versioned launcher immutable Git blob `a66f8eee7b6e8bdd9e24b608e1c3353f7582a3ff`. No npm, source checkout, key replacement or other-service restart |
+| OPS-07 | Validate E05 health and real ChatGPT ALPHA to BRAVO | Connected host reviewer | After OPS-06 succeeds | **OPEN**: a local `/readyz` response counts only if port 8080 is owned by the actual E05 MainPID; ten screens, teardown and effective CSP require separate host checks |
 
-**Correção de processo:** o modo antigo de reparo recompilava o projeto, baixava pacotes e fazia preflight técnico de modo repetitivo. `scripts/e05-vps-activate-only.sh` é a via estreita e idempotente de reparo operacional: usa o **launcher versionado como Git blob imutável** `466965378c8bad8a57c5816435439d18901f962e`, realiza `doctor` pelo próprio systemd, altera só o wrapper e uma configuração de restart dedicada a E05, e devolve códigos de falha sanitizados. O blob é verificado localmente antes de qualquer mudança. Um erro de chave bloqueia sem editar a unidade. Nenhum teste de fonte/CI dispensa execução e aceite do operador.
+**Engineering correction:** previous repair operations reinstalled dependencies and rebuilt source during runtime recovery. The one-pass E05 activation workflow uses a source-pinned, content-verified launcher and executes the same systemd identity and credential preflight before editing any service file. A key validation failure stops without unit changes; a process failure restores the original E05 wrapper and stops only the isolated E05 service. No credentials, raw journal, research records or profile body are emitted.
 
-**Estado dos marcos do Plano Mestre continua inalterado:** D01–D15 implementadas em fonte; D16–D18 não aceitas; R01–R10 **0/10 completas**. Para fechar R02, requer serviço VPS pronto e ChatGPT real aceito.
+**Stable master progress:** D01–D15 candidate source implemented, D16–D18 not accepted, 0/10 final R01–R10 acceptance gates closed. Neither source tests nor an active Linux process establish remote tunnel readiness.
 ## Current deliverables
 
 | Deliverable | State | Evidence / decision |

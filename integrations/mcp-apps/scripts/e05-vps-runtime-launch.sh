@@ -8,10 +8,10 @@ CLIENT=/opt/meu-artigo-e05/bin/tunnel-client
 PROFILE=/opt/meu-artigo-e05/tunnel-profiles/meu-artigo-e05.yaml
 CREDENTIALS="${CREDENTIALS_DIRECTORY:-}"
 
+stop() { printf 'E05_RUNTIME_STOP=%s\n' "$1" >&2; exit 78; }
+
 case "${1:-}" in ""|--doctor-only) : ;; *) stop UNSUPPORTED_ARGUMENT ;; esac
 [[ $# -le 1 ]] || stop TOO_MANY_ARGUMENTS
-
-stop() { printf 'E05_RUNTIME_STOP=%s\n' "$1" >&2; exit 78; }
 [[ "$(id -un)" == meuartigo-e05 ]] || stop WRONG_UNIX_PRINCIPAL
 [[ -n "$CREDENTIALS" && "$CREDENTIALS" == /* ]] || stop CREDENTIAL_DIRECTORY_MISSING
 [[ -f "$CREDENTIALS/control_plane_api_key" && -r "$CREDENTIALS/control_plane_api_key" ]] || stop CREDENTIAL_NOT_AVAILABLE
