@@ -48,6 +48,7 @@ class StageV1IsolatedContractTests(unittest.TestCase):
         self.assertNotRegex(self.code, r"\b(curl|wget)\b[^\n]*\|\s*(bash|sh)")
         self.assertIn("runuser -u", self.code)
         self.assertIn('runuser -u "$USER_NAME" -- env -i', self.code)
+        self.assertIn("useradd --system --user-group", self.code)
         self.assertIn("GIT_TERMINAL_PROMPT=0", self.code)
         self.assertIn("npm ci --ignore-scripts", self.code)
         self.assertIn("npm audit --omit=dev --audit-level=high", self.code)
