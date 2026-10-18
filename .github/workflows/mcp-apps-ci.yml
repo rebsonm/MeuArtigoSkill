@@ -3,6 +3,11 @@ on:
   pull_request:
     paths:
       - "integrations/mcp-apps/**"
+      - "VERSION"
+      - "CITATION.cff"
+      - "CHANGELOG.md"
+      - "README.md"
+      - "docs/NOTAS-DA-VERSAO-*.md"
       - "assets/research_site.html"
       - "scripts/build_research_site.py"
       - ".github/workflows/mcp-apps-ci.yml"
