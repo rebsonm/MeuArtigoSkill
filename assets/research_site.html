@@ -59,6 +59,16 @@ button,input,select{font:inherit}.skip-link{position:absolute;top:-90px;left:12p
 .option.selected p{color:#334f78;font-weight:450}
 .option.selected .pill.green{color:#fff;background:#0B57D0}
 .option:focus-visible{outline:3px solid #93baff;outline-offset:2px}
+/* E05: stable iframe dimensions while switching screens. Scrolling stays in
+   the main panel instead of resizing the ChatGPT host around hovered menus. */
+.layout{height:740px;min-height:740px}
+.nav{min-height:0;overflow-y:auto;overscroll-behavior:contain}
+.main{height:100%;min-height:0;overflow-y:auto;overscroll-behavior:contain}
+@media(max-width:650px){
+ .layout{display:flex;flex-direction:column}
+ .nav{flex:0 0 auto;overflow-x:auto;overflow-y:hidden}
+ .main{flex:1 1 auto;min-height:0;overflow-y:auto}
+}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
 #site-language{background:#fff;color:#102047;border:1px solid #dbe6f5;border-radius:9px;padding:8px;max-width:134px;font-size:12px}.site-language-label{font-size:12px;color:#667a96}@media(max-width:650px){.site-language-label{display:none}#site-language{max-width:100px;font-size:11px}}
 /* Accessible supporting text and visible keyboard navigation at small sizes. */
