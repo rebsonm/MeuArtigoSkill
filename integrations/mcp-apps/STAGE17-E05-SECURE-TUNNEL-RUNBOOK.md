@@ -106,3 +106,122 @@ Record the reviewed SHA, ChatGPT browser version, new test plugin name, rendered
 - The original E05 VPS checkout remains pinned to the former SHA until an operator performs a deliberate isolated-only update with the tunnel daemon stopped. **Do not update files while the old client is still serving them.** Existing profile, keys, and tunnel ID remain; never rerun T1 initial-clone instructions.
 - The user must review the new PR #81 HEAD, pass all checks, stop the E05 foreground daemon with Ctrl+C, check the original stage17 SHA, fast-forward only `/opt/meu-artigo-e05/src` to the exact reviewed new SHA, rerun preflight, then restart E05 tunnel with the existing scoped Runtime key. No production restart. Refresh the *test* ChatGPT connection metadata and start a new chat before testing v3.
 - Accept inline only with visual evidence; if the host still chooses side panel, record `HOST_INLINE_HINT_NOT_HONORED` without trying to bypass platform UI. No automatic requestDisplayMode without user action. No full E05 acceptance until BRAVO and all gates are tested.
+
+## E05 Rerun — pinned go-live candidate #84 (2026-10-17)
+
+**Status: operator execution required; NOT executed by the source review.**
+The currently connected synthetic E05 tool returned
+\`McpServerError: Session terminated\` during an authorized fixed ALPHA
+invocation. This is a **connection failure**, not evidence of a visual defect,
+a successful deployment, or a verified installed revision.
+
+The SHA below is the exact reviewed PR #84 source candidate and has
+6/6 successful GitHub workflows. Changing PR HEAD or any subsequent code
+invalidates the pin and requires a fresh CI review.
+
+- Frozen PR #84 HEAD: \`bc06fd3503ed35b93291ee96fe720cf6bec69733\`
+- E05 staging only: \`/opt/meu-artigo-e05/src\`
+- Original pilot path (read-only): \`/opt/meu-artigo-stage17/src\`
+- Staging UNIX principal: \`meuartigo-e05\`
+- No Nginx, systemd, Auth0, Drive, firewall, release, main, or installed main Plugin changes.
+
+### U1 — Stop existing E05 tunnel foreground session
+
+In the VPS shell that is running \`tunnel-client run --profile meu-artigo-e05\`,
+press **Ctrl+C**. Do not kill a production service or restart any
+\`meu-artigo-stage17*\` systemd unit. Keep runtime keys out of shell history.
+
+### U2 — Execute pinned isolated update in the existing VPS root SSH session
+
+The block below checks a read-only fingerprint of the unchanged pilot,
+the isolated stage path and dedicated UNIX owner, a clean Git worktree,
+an inactive E05 tunnel, the remote origin, exact branch tip and an ancestry
+relationship before switching ONLY the E05 checkout. It refuses unexpected
+state. It neither creates a staging clone nor modifies the original pilot.
+
+\`\`\`bash
+set -Eeuo pipefail
+TARGET=bc06fd3503ed35b93291ee96fe720cf6bec69733
+BRANCH=feat/go-live-plugin-packaging-preflight-20261017
+ORIGINAL=/opt/meu-artigo-stage17/src
+E05=/opt/meu-artigo-e05/src
+EXPECTED_ORIGINAL=fab60a8a2a254461d1fcd1fc66e67d7e109ed760
+
+test "$(id -u)" -eq 0
+test "$(git -c safe.directory="$ORIGINAL" -C "$ORIGINAL" rev-parse HEAD)" = "$EXPECTED_ORIGINAL" || {
+  echo ORIGINAL_DRIFT_STOP >&2; exit 1;
+}
+test "$(realpath -e "$E05")" = "$E05"
+test "$(stat -c '%U' "$E05")" = meuartigo-e05
+test -z "$(git -c safe.directory="$E05" -C "$E05" status --porcelain)" || {
+  echo E05_DIRTY_WORKTREE_STOP >&2; exit 1;
+}
+if pgrep -u meuartigo-e05 -f 'tunnel-client run' >/dev/null; then
+  echo E05_TUNNEL_STILL_RUNNING_STOP >&2; exit 1
+fi
+
+runuser -u meuartigo-e05 -- env E05_TARGET="$TARGET" E05_BRANCH="$BRANCH" bash -s <<'E05_SCRIPT'
+set -Eeuo pipefail
+cd /opt/meu-artigo-e05/src
+origin="$(git remote get-url origin)"
+case "$origin" in
+  https://github.com/rebsonm/MeuArtigoSkill|https://github.com/rebsonm/MeuArtigoSkill.git) ;;
+  *) echo E05_UNEXPECTED_REMOTE_STOP >&2; exit 1 ;;
+esac
+git fetch --no-tags --depth=300 origin "refs/heads/$E05_BRANCH"
+test "$(git rev-parse FETCH_HEAD)" = "$E05_TARGET" || {
+  echo E05_BRANCH_SHA_CHANGED_STOP >&2; exit 1;
+}
+git merge-base --is-ancestor HEAD "$E05_TARGET" || {
+  echo E05_NOT_FAST_FORWARD_STOP >&2; exit 1;
+}
+git switch --detach "$E05_TARGET"
+test "$(git rev-parse HEAD)" = "$E05_TARGET"
+bash integrations/mcp-apps/scripts/e05-stage-preflight.sh "$E05_TARGET"
+E05_SCRIPT
+
+echo E05_PINNED_SOURCE_AND_PREFLIGHT_COMPLETE
+\`\`\`
+
+**Required evidence:** \`E05_CANDIDATE_SHA=bc06fd...\`, followed by
+\`E05_STAGING_PREFLIGHT_PASS\` and
+\`E05_PINNED_SOURCE_AND_PREFLIGHT_COMPLETE\`.
+A \`git fetch\` or SHA-check failure is a hard STOP; do not use
+\`git reset --hard\`, force checkout, re-clone, chmod production trees or
+remove the staging directory as a workaround.
+
+### U3 — Restart the existing private E05 tunnel
+
+Use the already installed verified \`tunnel-client\`, existing E05-only
+tunnel ID/profile, and a restricted runtime key entered invisibly.
+Do **not** rerun \`tunnel-client init\` or overwrite the production pilot.
+
+\`\`\`bash
+runuser -u meuartigo-e05 -- /bin/bash
+cd /opt/meu-artigo-e05
+read -r -s -p 'E05-only runtime API key (hidden): ' CONTROL_PLANE_API_KEY
+echo
+export CONTROL_PLANE_API_KEY
+tunnel-client doctor --profile meu-artigo-e05 --explain
+tunnel-client run --profile meu-artigo-e05
+\`\`\`
+
+The last command is a foreground session. Do not paste the key,
+token, profile contents, auth headers, or project data into ChatGPT.
+An operator must observe the tunnel connected; if doctor fails, STOP.
+
+### U4 — Real ChatGPT E05 acceptance
+
+Refresh **only** the separate test plugin's metadata in ChatGPT, start
+a **new conversation**, and select \`Meu Artigo — E05 (Teste Sintético)\`.
+Invoke exactly the documented ALPHA then BRAVO fictional fixtures, with
+all seven human scientific gates \`approval_documented=false\`.
+Verify 10 menu pages, hover stability on \`Fontes e buscas\`, keyboard
+focus, locale changes, resize, sidebar/inline host display, A-to-B
+replacement, invalid input rejection, stale state clearance, CSP
+behavior and absence of Drive/approval claims.
+
+Record the source SHA, server-side preflight status, ChatGPT E05
+connection result, and screenshots sanitized of user identifiers.
+Do not state \`E05_ACCEPTED\` until the updated source is provably
+active and the real ChatGPT checks have actually been observed.
