@@ -26,6 +26,49 @@ mistaking synthetic E05 fixtures for a multi-researcher production service.
    before real A/B tests. Only use researcher-owned fictional Drive records.
    The shared MCP is a transient display service, not a Drive client.
 
+## Running VPS baseline — 2026-10-18 (read-only operator evidence)
+
+Operator observed on the existing VPS, with no production changes:
+
+- Nginx `active`, `meu-artigo-mcp.service` `active`, and E05
+  `meu-artigo-e05-tunnel.service` `active` as a separate service.
+- Existing MCP Node listener on `127.0.0.1:8085`; `/mcp` returned
+  `401` without credentials, while `/readyz` and `/healthz` returned
+  `404`. Do **not** treat the `401` as proof of real OAuth acceptance.
+- Existing working tree: `/opt/meu-artigo/repo`; the active service uses
+  `/opt/meu-artigo/repo/integrations/mcp-apps`. The confirmed Git SHA
+  with explicit safe-directory handling is
+  `cdd3affb902028753b9c66b83c2ef5e37f9e1700`.
+- Candidate source is PR #89 SHA
+  `27659d6092a6e2aa68919df6758c20cb8f50022d` plus stacked
+  PR #91 SHA `32625a9c74495256bca76515827c9f56fa9a5d74`.
+  GitHub comparison from existing VPS SHA to PR #91 returned
+  `status=diverged`, `ahead_by=292`, `behind_by=180`, and merge
+  base `441b452bacfc602ef09aeac1575aa6d8e390c561`.
+  These are repository ancestry metrics and **NOT** an acceptable
+  in-place migration or a completed source reconciliation.
+- On this VPS `getent ahostsv4 mcp.allflux.com.br` failed, and
+  external MCP curl failed name resolution. Confirm authoritative DNS
+  ownership and records separately; do not assume the hostname works.
+
+**Non-destructive migration strategy:** Do not pull, force checkout,
+hard reset, overlay, delete or restart the active
+`/opt/meu-artigo/repo`, and never touch the E05 tunnel. Review
+the clean/dirty state and ownership of the active checkout, then stage
+a separate immutable reviewed source snapshot under a distinct
+least-privilege service account and separate working directory.
+Install dependencies in that *staging* tree with lockfile integrity,
+run source security tests, and choose a fresh loopback port only after
+port inspection. Validate TLS, Auth0, endpoints, and rollback without
+pointing the existing public route at staging. Switch ingress only
+after maintainer-approved deployment, real two-user consent and
+documented gates; retain the old service for immediate fallback.
+No credential, API secret or researcher document should move from
+the previous service.
+
+These observations are about the **existing installation**, not proof
+that PR #91 was deployed or that the publication requirements passed.
+
 ## Offline source-only preflight
 
 Run from the reviewed repository checkout:
