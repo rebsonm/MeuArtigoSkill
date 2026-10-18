@@ -1,86 +1,56 @@
-# Meu Artigo — remaining go-live milestone matrix (2026-10-18)
+# Meu Artigo — executable project progress and acceptance matrix
 
-This file separates **engineering work** from **human or external
-authorizations**. The original master plan has 18 deliveries. Deliveries
-16, 17 and 18 remain open. The ten items below are final acceptance
-milestones, not ten new software modules.
+Updated: 2026-10-18. Scope: [Draft PR #89](https://github.com/rebsonm/MeuArtigoSkill/pull/89) versus unchanged main.
+This document is the **single source of truth for progress reporting**, and intentionally distinguishes source development from deployment and real-world acceptance.
+It does not grant merge, deployment, OAuth, Drive access or publication approval.
 
-## Verified baseline and limitations
+## Current deliverables
 
-- The sole integration decision is Draft PR #89 against `main`.
-  Historical PR #87 and #88 must not be merged separately.
-- Source Skill beta.9 is an unpublished candidate. The installed private
-  ChatGPT package remains beta.8, embedding Skill beta.6. The last
-  confirmed published Skill release is beta.6.
-- Seven CI workflows passed at the earlier source SHA
-  `ad340fc3a07b82c728e7152f8527ea8d95a6a0f4`.
-  Any new commit must obtain its own checks and an independently reviewed
-  final SHA. Do not reuse the earlier CI status.
-- The current candidate added pre-bind reviewed-UI validation, loopback-only
-  /healthz and /readyz, and explicit rejection of known E05 and private
-  pilot app identifiers in production candidate packages. These features
-  do not demonstrate real TLS/OAuth or Drive isolation.
+| Deliverable | State | Evidence / decision |
+| --- | --- | --- |
+| D01–D15: baseline implementation and source engineering | IMPLEMENTED IN CANDIDATE (not released) | Changes exist in stacked PR #89; independent aggregate acceptance still required |
+| D16: integration into main | OPEN | Draft PR #89 not merged; explicit SHA-specific maintainer decision and R01–R02 gate needed |
+| D17: real ChatGPT, Auth0, Drive and research workflow | OPEN | No full real-user end-to-end acceptance |
+| D18: private Plugin pilot and public directory | OPEN | Separate distribution and publication authorizations needed |
 
-## Ten remaining acceptance milestones
+**Source-only acceptance**: GitHub Actions 7/7 SUCCESS on source SHA `92a742dda8ca78bbdaa1259884d8049e5013e782` (seven workflow artifacts available in PR). This is NOT user-facing proof of working E05/production deployment. Last published Skill beta.6; candidate source beta.9; installed private Plugin metadata beta.8 with embedded beta.6. These are distinct artifacts, do not silently update or conflate them.
 
-| ID | Original delivery | Required work | Evidence required to close | Blocker |
-|---|---|---|---|---|
-| R01 | 16 | Independent cumulative review of security, scientific boundaries, Auth0, F1–F9 and all relevant source changes | Independent reviewer sign-off for exact final SHA, HIGH findings resolved | Human independent reviewer |
-| R02 | 17, pre-merge | Real ChatGPT E05 acceptance: ALPHA/BRAVO, ten screens, layout, focus, locale, teardown and effective CSP | Host-side reproducible report at pinned SHA and investigation of the CSP-disabled label | E05 approval and real host |
-| R03 | 16 | Explicit SHA-specific authorization to merge only PR #89 into main | Maintainer decision and merge commit | Owner authorization |
-| R04 | 16 to 17 | Post-merge CI, packaging and SHA-256 reproduction from main | Passed checks and archived checksum at resulting main SHA | R03 |
-| R05 | 17 | Reviewed HTTPS production endpoint, Auth0 configuration, local health/ready, safe logs, secrets and rollback | Approved operational ingress and verified operation; /readyz 200 alone is insufficient | Production VPS authorization |
-| R06 | 17 | Real OAuth/PKCE A/B with two independent accounts, 401/403 and revocation | Sanitized ChatGPT login and denial evidence | R05 and consent |
-| R07 | 17 | Individual Drive A/B, F1–F9, journal/CAS, readback and cross-account denials | Separately authorized canonical workspace verification and isolation evidence | R06 and consent |
-| R08 | 17 | Full create/resume article workflow, C.A.D.A. tasks, seven human scientific gates, recovery and privacy/rollback | Maintainer acceptance using consented synthetic projects; no automatic scientific approval | R07 |
-| R09 | 18 | Verified production app packaging, private installation and controlled researcher pilot | Prior/current release IDs, first-run checks and approved beta feedback | R08 and separate Plugin authorization |
-| R10 | 18 | With MCP directory submission, review, public approval and external installation | Public review approval, listing and independent researcher installation | R09 and separate publication authorization |
+## Ten stable go-live milestones — no resetting when a test passes
 
-**Remaining: ten acceptance milestones**. Automated source checks, negative
-tests, static review, release preparation and documentation can proceed without
-production access. Synthetic CI cannot close the real-host conditions in
-R02/R05/R06/R07.
+| Gate | Concrete end result | State | Verified advance | Unresolved closing evidence / owner |
+| --- | --- | --- | --- | --- |
+| R01 | Independent security and cumulative code/science boundary review | PARTIAL | Author-side tranche 1 and tranche 2 corrections, regression tests, 7/7 CI | **Independent** reviewer approval on exact final SHA; no author review may masquerade as independent |
+| R02 | Real ChatGPT E05 ALPHA→BRAVO: ten screens, focus, locale, teardown, CSP | BLOCKED — CONNECTOR SESSION | Historical 2026-10-17 screenshot confirms ALPHA inline; BRAVO tool accepted in prior session; E04 Chromium synthetic CI green | 2026-10-18 **both** E05 test Plugin calls returned `McpServerError: Session terminated`. No live view rendered today. Investigate isolated test connection state, then consented real acceptance and effective CSP. Do not alter the main pilot or production to work around it |
+| R03 | Authorized one-PR integration into main | WAITING FOR AUTHORIZATION | #89 has clean single branch, do not merge #87/#88 separately | Human SHA-specific merge approval and merge commit after R01/R02 |
+| R04 | Post-merge CI, package hash and reproducibility | DEPENDS ON R03 | Source-only 7/7 at pre-merge SHA | CI on merged main SHA and verification of SHA256 |
+| R05 | Reviewed production HTTPS Auth0-enabled endpoint, logs and rollback | DEPENDS ON R04 | Loopback health/ready and HTTP limits source-tested | Authorized infrastructure work, TLS/proxy checks and rollback proof |
+| R06 | Real ChatGPT Auth0 OAuth/PKCE with two accounts, denial and revocation | DEPENDS ON R05 | Synthetic JWT, issuer, scopes, bearer and origin tests | Two consented real accounts plus redacted A/B evidence |
+| R07 | Independent Drive A/B canonical F1–F9 and CAS/readback | DEPENDS ON R06 | Offline simulated journal/trust-gate controls | Real individual Drive permissions and consented cross-account checks |
+| R08 | Researcher create/resume article, tasks, seven human gates and recovery | DEPENDS ON R07 | Scientific source contracts and synthetic UI only | Real end-to-end project acceptance with human sign-offs |
+| R09 | Private ChatGPT Plugin delivery, installation and pilot | DEPENDS ON R08 | Candidate packaging/test guards | Explicit permission to update/install production private Plugin and limited pilot evidence |
+| R10 | Public With MCP directory review, listing and external researcher verification | DEPENDS ON R09 | No public distribution evidence | Explicit separate authorization, review/approval, public listing and external installation |
 
-## Documentary evidence checker
+**Remaining acceptance gates: 10** (R01–R10), comprising **three still-open original deliveries D16–D18**. Closed *go-live* gates: 0/10. Source progress is real, but it must not inflate the gate closure count.
 
-Run from a checked-out source repository:
+## Actual E05 investigation on 2026-10-18
 
-```sh
-python integrations/mcp-apps/scripts/release_gate.py --source-sha "$(git rev-parse HEAD)"
-```
+- Called connected `Meu Artigo — E05 Teste Sintético` exactly with approved fixed fake ALPHA fixture (one task, no real data, seven unapproved scientific gates): `INVALID_ARGUMENT ... McpServerError: Session terminated`.
+- Repeated independently with approved fixed fake BRAVO fixture: same result. No project data, credentials, file IDs or personal information submitted.
+- Called separate pre-existing private `Meu Artigo — MCP Piloto` in guidance-only/minimal mode: connector returned an error wrapping the neutral MCP guidance message. This is *not* a health-check or proof of production availability. It is a distinct plugin and must not be swapped into the E05 test.
+- **Interpretation:** live E05 acceptance is blocked at connector session/connectivity; this result alone neither proves a software regression nor identifies a root cause. No E05 screenshots, CSP enforcement or ten-screen result were obtained today.
+- **Actionable investigation order:** inspect isolated E05 test connection status/refresh in ChatGPT; independently confirm authorized test tunnel and its /readyz endpoint without exposing credentials; inspect sanitized service/process logs; restore only the isolated E05 test connection after explicit authorization; rerun ALPHA/BRAVO, ten-screen, locale, resizing, focus, teardown and CSP. Do not turn off authentication or relax CSP to make tests pass.
 
-The report defaults to all gates not verified. Optional `--records`
-accepts a sanitized local JSON document. Even if ten records say PASS,
-the tool must never authorize a merge, deployment, installation or
-publication. Each record requires an exact source commit, an externally
-held evidence reference and the expected observer role. This only checks
-the shape, not the truth or source of evidence.
+## Method of recording progress from now on
 
-Example of one **fictional**, unapproved record:
+1. Keep stable gate IDs; never create a new acceptance milestone to replace one left open.
+2. A source commit/test improvement changes **Verified advance**, NOT gate state to DONE.
+3. Close a gate only after its stated external evidence is available; link it, state observer and SHA.
+4. On each continuation, report delta: files/commits changed, checks on latest head, which gate advanced/closed, new blocker and exact next operation.
+5. Stop repetitive hardening when source CI is green, unless a specific reproducible defect is found. Prioritize E05 restoration and owner review toward real-user release.
+6. Every status claim must distinguish **observed**, **inferred** and **not verified**.
 
-```json
-{
-  "R01": {
-    "status": "PASS",
-    "source_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-    "evidence_ref": "EVID-REVIEW-0001",
-    "observer_role": "INDEPENDENT_REVIEWER"
-  }
-}
-```
+## Active decision
 
-Stale SHAs, missing evidence, extra fields, unexpected roles, credentials,
-private URLs, source documents or personal identifiers must not enter the
-public release record. The checker exposes only gate codes and statuses.
-
-## Current decision boundary
-
-- `GO_SOURCE_TESTS`: per-SHA CI results only.
-- `GO_INDEPENDENT_REVIEW`: not verified.
-- `GO_REAL_E05_CSP`: not verified.
-- `GO_MERGE`: NO-GO without SHA-specific approval.
-- `GO_REAL_OAUTH_AB`, `GO_DRIVE_AB`: not verified.
-- `GO_PRIVATE_PLUGIN`, `GO_PUBLIC`: NO-GO.
-
-No merge, production deployment, Auth0/Drive change, Plugin installation
-or public publication is authorized by this matrix.
+- GO_SOURCE_CI: PASS on `92a742dda8ca78bbdaa1259884d8049e5013e782` only; if this matrix commit becomes new head, check its own CI before claiming current HEAD passed.
+- GO_REAL_E05: BLOCKED (`Session terminated`); GO_INDEPENDENT_REVIEW: NOT COMPLETE.
+- GO_MERGE / GO_DEPLOY / GO_PRIVATE_PLUGIN / GO_PUBLIC: NO-GO.
