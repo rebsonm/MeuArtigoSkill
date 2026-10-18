@@ -1,35 +1,34 @@
-# Meu Artigo — entrada em operação real (pesquisadores em contas próprias)
+# Meu Artigo — production go-live for independently connected researchers
 
-Status: **SOURCE-ONLY / NÃO IMPLANTADO / SEM AUTORIZAÇÃO DE PUBLICAÇÃO**.
-Documento de execução concentrado. O objetivo é disponibilizar uma versão
-estável e atualizável, sem usar o túnel E05 de fixtures como produção. Nenhum
-comando a seguir foi executado na VPS nesta PR.
+Status: **SOURCE-ONLY / NOT DEPLOYED / NO PUBLICATION AUTHORIZATION**.
+This is a single operator runbook, not evidence that any command was executed.
+The goal is a stable version that can receive subsequent updates, without
+mistaking synthetic E05 fixtures for a multi-researcher production service.
 
-## Pré-condições para a janela de ativação
+## Mandatory prerequisites
 
-1. PRs candidatas e versão reconciliadas em **um SHA revisado**; merge em
-   `main` somente com autorização específica do mantenedor. Não integrar
-   isoladamente a PR incremental #91 antes da candidata ancestral #89.
-2. DNS sob controle do publicador para o host aprovado. Certificado TLS
-   válido, cadeia completa e chave privada protegida. Usuário de serviço
-   dedicado, código somente-leitura no runtime, logs sem cabeçalhos OAuth.
-3. Tenant Auth0 de produção identificado, `issuer` HTTPS EXATO, metadata
-   OAuth/OIDC com `code_challenge_methods_supported` contendo `S256`,
-   cliente OAuth escolhido (CIMD/DCR/provided conforme suporte real), URL de
-   retorno EXATA exibida pelo portal ChatGPT, fluxo Authorization Code + PKCE,
-   escopo `mcp:read`, audiência igual ao recurso HTTPS `/mcp`. Nunca usar
-   Client Secret, bearer, JWT, cookies, códigos OAuth ou screenshots de
-   credenciais em logs, GitHub ou conversas.
-4. Resolver o estado **NOT_OBSERVED da CSP aplicada no iframe real**.
-   A aprovação de metadados CSP e a ausência do aviso na UI não bastam.
-5. Autorização individual de duas contas ChatGPT independentes para os
-   primeiros testes. Usar documentos **fictícios**, em Drives distintos,
-   sem artigos confidenciais. O MCP serve UI transitória, NÃO administra
-   o Drive nem armazena tokens Google.
+1. Freeze the reviewed integration SHA and reconcile the Skill/Plugin/MCP
+   version. Merge to `main` requires explicit SHA-specific maintainer
+   approval; PR #91 is an incremental PR stacked on PR #89.
+2. Verify DNS ownership, a real production TLS certificate and private key,
+   the intended public endpoint and independent least-privilege service
+   identity. Keep authenticated request details and credentials out of logs.
+3. Verify the exact HTTPS Auth0 issuer, OAuth/OIDC discovery and
+   `code_challenge_methods_supported` including `S256`.
+   Select an actual supported client-registration approach: CIMD, DCR or
+   provided client. Allowlist the exact ChatGPT callback displayed by the
+   portal. Require Authorization Code + PKCE, `mcp:read`, and an audience
+   exactly equal to `https://<approved-host>/mcp`.
+   Never put a client secret, bearer, JWT or OAuth code into Git or chat.
+4. Resolve **effective host iframe CSP = NOT_OBSERVED** with real host
+   evidence. A declared CSP and an absent warning badge are not proof.
+5. Obtain express consent from two independent ChatGPT account owners
+   before real A/B tests. Only use researcher-owned fictional Drive records.
+   The shared MCP is a transient display service, not a Drive client.
 
-## Verificação OFFLINE, sem ativar serviços
+## Offline source-only preflight
 
-A partir do SHA revisado, na raiz do repositório:
+Run from the reviewed repository checkout:
 
 ```bash
 python integrations/mcp-apps/scripts/public_ingress_preflight.py \
@@ -38,109 +37,108 @@ python -m unittest discover -s integrations/mcp-apps/tests \
   -p test_public_ingress_preflight.py -v
 ```
 
-`SOURCE_TEMPLATE_PASS` **não é** prova de TLS, login, CSP ou produção.
-O template original antigo `nginx-auth0.conf.example` continua 404 e
-não deve ser instalado como configuração ativa.
+`SOURCE_TEMPLATE_PASS` does not verify certificates, OAuth or production.
+The older `nginx-auth0.conf.example` deliberately returns 404, and must
+not be represented as an activated proxy.
 
-## Janela autorizada de operação (responsável: operador da VPS)
+## Authorized operations window (VPS operator only)
 
-**Inspeção primeiro:** conferir baseline de hostname/DNS, serviços
-existentes, estado da VPS, portas, owner e SHA. Não parar, sobrepor,
-reiniciar nem renomear as instâncias E05 e stage17; não reutilizar seus
-segredos, porta pública ou diretório de pesquisa. Preferir plano de rollback
-aprovado antes de qualquer alteração.
+**Baseline first.** Inspect the real hostname, DNS, certificates, active
+services, current Git SHA, filesystems and listened ports. Preserve the
+existing E05/stage17 services, directories and secrets; do not restart or
+overwrite them. Prepare a rollback snapshot before doing anything.
 
-**MCP em loopback:** preparar um checkout produtivo separado no SHA
-integrado e um serviço restrito, `node server.mjs --http`, que mantenha
-`MEU_ARTIGO_BIND_HOST=127.0.0.1`, porta local aprovada (o template pressupõe
-8085), `MEU_ARTIGO_AUTH_MODE=auth0`,
-`MEU_ARTIGO_AUTH_ISSUER=<issuer HTTPS exato>`,
-`MEU_ARTIGO_AUTH_RESOURCE=https://<host aprovado>/mcp`,
-`MEU_ARTIGO_MCP_MULTIUSER=YES`, sem `MEU_ARTIGO_PILOT_SUB`.
-Ajustar `MEU_ARTIGO_ALLOWED_ORIGIN` apenas mediante observação do Origin
-legítimo esperado; não usar `*`, `null` ou HTTP. As configurações de
-identidade devem ficar em arquivo protegido do sistema, nunca na PR ou no
-terminal/chat como segredos; o MCP nunca deve receber tokens de Google Drive.
-Se o processo não abrir `/readyz` em loopback, STOP.
+**MCP loopback.** Use an isolated reviewed runtime checkout and a dedicated
+restricted service user. Start the reviewed HTTP MCP server only on
+`127.0.0.1` with the separately agreed local port (the proxy template
+expects 8085). Set protected environment configuration:
+`MEU_ARTIGO_AUTH_MODE=auth0`,
+`MEU_ARTIGO_AUTH_ISSUER=<exact production HTTPS issuer>`,
+`MEU_ARTIGO_AUTH_RESOURCE=https://<approved-host>/mcp`,
+`MEU_ARTIGO_MCP_MULTIUSER=YES`; leave `MEU_ARTIGO_PILOT_SUB` unset.
+Set `MEU_ARTIGO_ALLOWED_ORIGIN` only to an exact observed legitimate
+HTTPS Origin when needed; never use `*`, `null` or insecure HTTP.
+Only store runtime configuration in access-controlled local settings.
+Do not supply Google tokens, file IDs or research data to the MCP.
+Require a local `/readyz` pass before examining public ingress.
 
-**Nginx:** copiar o arquivo **template** para local de revisão temporário
-fora do `sites-enabled`; substituir hostname e caminhos reais de
-certificado/chave. A configuração já nega todas as rotas exceto
-`/mcp`, os dois caminhos RFC 9728 de metadados e
-`/.well-known/openai-apps-challenge`. Não habilitar alias de challenge com
-token inventado: obter o token EXATO no portal de publicação e gravar somente
-no filesystem autorizado. Antes de habilitar a configuração revisada:
+**Nginx candidate.** Copy the reviewed
+`nginx-auth0-production.conf.template` to a temporary configuration
+outside the active enabled-sites directory. Replace the exact intended
+hostname and the two certificate/key placeholders with verified paths.
+Only `/mcp`, the two OAuth RFC 9728 metadata paths and the optional
+OpenAI domain-challenge path may be externally reachable. Domain
+verification must use the exact portal-issued challenge token; never
+invent one or commit it. Run the following checks before any activation:
 
 ```bash
 python integrations/mcp-apps/scripts/public_ingress_preflight.py \
-  --config /CAMINHO/DE/CONFIGURACAO-RENDERIZADA.conf \
+  --config /PATH/TO/RENDERED-CONFIG.conf \
   --expected-host mcp.allflux.com.br --require-cert-files
 sudo nginx -t
 ```
 
-O host acima é **proposto, não verificado**: substituí-lo pelo domínio
-efetivamente comprovado se for diferente. O preflight rejeita chave
-privada acessível por grupo/outros e TLS inexistente, mas não valida o
-certificado criptograficamente; `nginx -t` também não prova OAuth real,
-CSP efetiva ou conectividade ChatGPT. Habilitar o site e fazer
-`nginx -s reload` SOMENTE após autorização expressa do mantenedor e
-backup verificado da configuração anterior. Manter acesso administrativo
-independente e rollback funcional.
+`mcp.allflux.com.br` is the intended host from the project sources,
+**not an observed live endpoint**. Substitute the verified hostname if
+different. The source check rejects missing certificate files and
+world/group-readable private keys. It does not cryptographically verify
+TLS, run OAuth/PKCE or attest to iframe CSP. Activate and reload the
+Nginx site **only after explicit maintainer authorization** and a known
+good rollback plan. Do not expose private health endpoints.
 
-## Prova real mínima pós-ativação
+## Minimum real acceptance tests
 
-Executar com os responsáveis consentidos, registrando apenas status e
-SHA, NUNCA credenciais ou documentos:
+Record only non-sensitive pass/fail evidence tied to the SHA, never
+bearers, cookies, private headers or unpublished research material.
 
-| Verificação | Esperado |
+| Probe | Expected evidence |
 | --- | --- |
-| GET `https://<host>/.well-known/oauth-protected-resource` | 200 JSON; resource `https://<host>/mcp`, issuer e scope corretos |
-| GET `https://<host>/.well-known/oauth-protected-resource/mcp` | 200 metadata coerente |
-| POST `https://<host>/mcp` sem token | 401 + `WWW-Authenticate: Bearer` |
-| POST com token expirado/issuer ou audience inválidos | 401 sem dados de pesquisa |
-| POST com JWT válido e escopo insuficiente | 403 |
-| GET `https://<host>/readyz` e `/healthz` | 404 externamente, 200 apenas em loopback |
-| Outros caminhos arbitrários | 404, sem proxy aberto |
-| OAuth ChatGPT A e B | Authorization Code+PKCE S256, scopes e issuer reconhecidos |
-| Dados sintéticos Drive A e B | Isolamento recíproco, sem cache cruzado, nenhum documento real no MCP |
-| CSP no iframe e painel | Enforcement real observado; interface responde nos dois perfis |
+| GET `https://<host>/.well-known/oauth-protected-resource` | 200 JSON with exact HTTPS resource, issuer and scopes |
+| GET `https://<host>/.well-known/oauth-protected-resource/mcp` | 200 consistent RFC 9728 metadata |
+| POST `https://<host>/mcp` without token | 401 with Bearer resource challenge |
+| Expired, wrong-issuer or wrong-audience token | 401 and no research data |
+| Valid token with insufficient scope | 403 |
+| External GET `/readyz` and `/healthz` | 404; 200 only on loopback |
+| Unexpected paths | 404 and no upstream forwarding |
+| Two independent ChatGPT/IdP users | Real PKCE S256, audience, issuer and scope validated |
+| Two independently connected Drive accounts | No A/B crossover, no shared cache; fictional records only |
+| Real host iframe and UI | Effective CSP and browser behavior directly observed |
 
-Código HTTP sozinho não comprova conteúdo/suporte de artigos ou decisões
-científicas. Os sete gates permanecem sob responsabilidade humana. Para cada
-falha, **STOP** e registrar código não sensível.
+The MCP never independently proves article quality, source support or
+scientific gate completion. Scientific judgments remain human-controlled.
+Any security or identity failure is a stop condition.
 
-## Rollback sem perda de dados
+## Rollback and subsequent updates
 
-Se houver erro, **desabilitar somente a rota produtiva nova** no proxy,
-revalidar o arquivo anterior com `nginx -t` e recarregar Nginx.
-Não interromper E05 nem o piloto antigo; não usar `git reset --hard`,
-`rm -rf`, alterações recursivas de permissões ou apagar conexões/Drives.
-Revogar credenciais comprometidas pelo painel Auth0, nunca por comandos
-publicados. O serviço MCP não possui dados canônicos a migrar. Registrar
-a versão anterior, SHA da falha, horários e decisão humana de rollback.
+On failure, disable **only the new production proxy route**, revalidate
+the saved previous Nginx configuration using `nginx -t` and reload it.
+Do not disturb E05, stage17, Drive projects or unrelated services.
+Never use recursive permission changes, `git reset --hard`, wildcard
+deletions or an anonymous emergency endpoint. Revoke exposed credentials
+through the identity provider's administration UI. The MCP itself stores
+no canonical research records. Record the SHA, time, neutral error category
+and operator decision.
 
-## Publicação e atualizações
+Researchers on separate ChatGPT accounts need a publicly discoverable
+With MCP plugin, or their own eligible individual remote MCP configuration.
+Directory publication requires verified publisher identity, HTTPS
+website/support/privacy/terms, real demonstration evidence, exactly five
+positive and three negative cases, domain challenge, current tool scan,
+and external OpenAI approval. The source beta.9 PRs are not a v1.0.0
+release. Eligible remote server updates may be rescanned after deployment;
+changes to packaged Skill or metadata require an updated plugin ZIP.
+Treat the published remote URL as a long-lived identifier.
 
-O fluxo de distribuição a contas ChatGPT independentes é **With MCP**
-no Diretório de Plugins, após registro/verificação do publicador, domínio
-e políticas HTTPS, vídeo de demonstração, cinco positivos/três negativos,
-OAuth de revisão e varredura. A publicação depende de aprovação da
-plataforma. A candidata beta.9 e a PR #91 não são a v1.0.0 lançada.
-Após publicação, mudanças elegíveis no servidor remoto passam por
-rescans da plataforma; atualização de Skill/metadata exige novo pacote.
-O URL público do servidor é compromisso de longo prazo: não alterar
-o host sem planejar a migração com o suporte da plataforma.
+## Decisions reserved for the maintainer
 
-### Próximas decisões (somente quando os bloqueios forem comprovados)
+- Accept or reject documented R01 risks RA-01–RA-06 and verify the real
+  R02 CSP evidence before any SHA-specific merge authorization.
+- Approve the actual VPS/Nginx/Auth0 changes and two consenting users
+  only after technical prerequisites have passed.
+- Approve submission and eventual publication separately from testing;
+  a successful source test never approves public release.
 
-- **Mantenedor:** aceitar/rejeitar riscos R01 documentados (RA-01–RA-06),
-  aprovar R02 com evidência CSP real, e autorizar merge no SHA exato.
-- **Mantenedor + operador:** aprovar alteração efetiva de VPS/NGINX/Auth0
-  depois dos testes e confirmar acesso a pesquisadoras(es) consentidos.
-- **Mantenedor + plataforma:** submeter o plugin para revisão pública;
-  autorizar a publicação após aprovação.
-
-Referências oficiais:
+Official references:
 - https://developers.openai.com/plugins/build/auth
 - https://developers.openai.com/plugins/build/mcp-server
 - https://developers.openai.com/plugins/deploy/submission
