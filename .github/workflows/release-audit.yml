@@ -41,6 +41,40 @@ jobs:
           python -m unittest discover -s "$suite_dir" -p "$suite_pattern" -v
           python -m unittest discover -s "$suite_dir" -p "test_public_ingress_preflight.py" -v
 
+      - name: Build source-only public hybrid Skill plus MCP candidate
+        run: |
+          python integrations/mcp-apps/scripts/build_chatgpt_plugin_candidate.py \
+            --channel public \
+            --mcp-url https://mcp.allflux.com.br/mcp \
+            --output "$RUNNER_TEMP/MeuArtigoChatGPT-public-v$(cat VERSION).zip"
+          python - <<'PY'
+          import os, pathlib, zipfile, json, hashlib
+          folder=pathlib.Path(os.environ["RUNNER_TEMP"])
+          files=list(folder.glob("MeuArtigoChatGPT-public-v*.zip"))
+          assert len(files)==1
+          z=files[0]
+          with zipfile.ZipFile(z) as pack:
+              names=set(pack.namelist())
+              assert {"plugin.json","mcp.json","skills/meu-artigo/SKILL.md","skills/meu-artigo/BUNDLE_MANIFEST.json"} <= names
+              assert ".app.json" not in names
+              mcp=json.loads(pack.read("mcp.json"))
+              assert mcp["mcpServers"]["meu-artigo"]["url"]=="https://mcp.allflux.com.br/mcp"
+              assert mcp["mcpServers"]["meu-artigo"]["extensions"]["com.openai"]["auth"]["baseScopes"]==["mcp:read"]
+              v=json.loads(pack.read("plugin.json"))["version"]
+              assert v==pathlib.Path("VERSION").read_text().strip()
+          print("PUBLIC_HYBRID_SOURCE_CANDIDATE=PASS")
+          print("PUBLIC_HYBRID_SHA256="+hashlib.sha256(z.read_bytes()).hexdigest())
+          print("PUBLIC_HYBRID_DISTRIBUTION=NOT_AUTHORIZED")
+          PY
+
+      - name: Retain public hybrid beta candidate for maintainer review only
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: MeuArtigo-hybrid-public-source-only
+          path: ${{ runner.temp }}/MeuArtigoChatGPT-public-v*.zip
+          if-no-files-found: error
+          retention-days: 30
+
       - name: Exercise eight fictional research journeys
         run: |
           python scripts/simulate_research_journeys.py \
