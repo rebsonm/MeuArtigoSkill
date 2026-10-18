@@ -160,14 +160,14 @@ class AdvisoryVersusBlockingPolicyTests(unittest.TestCase):
                 rc=claims.main([str(root),"--assessments",str(path),"--strict"])
         self.assertEqual(rc,1)
         self.assertEqual(stdout.getvalue(),"")
-        self.assertIn("DIAGNOSTIC_ERROR: INPUT_OR_OUTPUT_BLOCKED",stderr.getvalue())
+        self.assertIn("absent from the canonical literature ledger",stderr.getvalue())
         with contextlib.redirect_stdout(io.StringIO()) as stdout:
             with contextlib.redirect_stderr(io.StringIO()) as stderr:
                 rc=diagnostic.main([str(root),"--assessments",str(path),
                                     "--format","json","--strict"])
         self.assertEqual(rc,1)
         self.assertEqual(stdout.getvalue(),"")
-        self.assertIn("absent from the canonical literature ledger",stderr.getvalue())
+        self.assertIn("DIAGNOSTIC_ERROR: INPUT_OR_OUTPUT_BLOCKED",stderr.getvalue())
 
     def test_adverse_declared_outcomes_hold_strict_even_without_lexical_flags(self):
         for index,expected in ((4,"PARTIALLY_SUPPORTED"),
