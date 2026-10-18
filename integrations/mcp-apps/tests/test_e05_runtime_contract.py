@@ -83,7 +83,7 @@ class E05RuntimeContract(unittest.TestCase):
         self.assertIn('LoadCredential=control_plane_api_key:$KEY', script)
         self.assertIn('RestartPreventExitStatus=78', script)
         self.assertIn('E05_ACTIVATE_ROLLBACK=ORIGINAL_WRAPPER_RESTORED_SERVICE_STOPPED', script)
-        self.assertIn('LAUNCHER_BLOB=b2014cc3c6fec4c2608a0c8013dc7bff2ff7f47c', script)
+        self.assertIn('LAUNCHER_BLOB=466965378c8bad8a57c5816435439d18901f962e', script)
         self.assertNotIn('npm ci', script)
         self.assertNotIn('git switch', script)
         self.assertNotIn('git reset --hard', script)
@@ -101,6 +101,8 @@ class E05RuntimeContract(unittest.TestCase):
         p=self.run_launcher({'FAKE_DOCTOR':'fail'})
         self.assertEqual(p.returncode,78)
         self.assertIn('DOCTOR_LOCAL_CONTRACT_FAILED',p.stderr)
+        self.assertIn('E05_RUNTIME_DOCTOR_CONTROL_PLANE_API_KEY=FAIL',p.stderr)
+        self.assertNotIn('sk-SYNTHETIC',p.stderr)
         self.assertNotIn('FAKE_TUNNEL_RUN',p.stdout)
 
     def test_profile_and_credential_directory_missing(self):

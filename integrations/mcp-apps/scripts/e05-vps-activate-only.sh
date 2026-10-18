@@ -13,7 +13,7 @@ readonly PROFILE=/opt/meu-artigo-e05/tunnel-profiles/meu-artigo-e05.yaml
 readonly E05_SRC=/opt/meu-artigo-e05/src
 readonly PILOT=/opt/meu-artigo-stage17/src
 readonly PILOT_SHA=fab60a8a2a254461d1fcd1fc66e67d7e109ed760
-readonly LAUNCHER_BLOB=b2014cc3c6fec4c2608a0c8013dc7bff2ff7f47c
+readonly LAUNCHER_BLOB=466965378c8bad8a57c5816435439d18901f962e
 die(){ echo "E05_ACTIVATE_STOP=$1" >&2; exit 2; }
 [[ "$(id -u)" == 0 && $# -eq 2 ]] || die EXPLICIT_APPLY_AND_PIN_REQUIRED
 [[ "$1" == --apply && "$2" =~ ^[0-9a-f]{40}$ ]] || die EXPLICIT_APPLY_AND_PIN_REQUIRED
@@ -51,7 +51,7 @@ cleanup() {
     systemctl daemon-reload >/dev/null 2>&1 || true
     echo E05_ACTIVATE_ROLLBACK=ORIGINAL_WRAPPER_RESTORED_SERVICE_STOPPED
   fi
-  rm -f -- "$work/launcher" "$work/original-wrapper" "$work/preflight"
+  rm -f -- "$work/launcher" "$work/original-wrapper" "$work/preflight" "$work/preflight.err"
   rmdir "$work" 2>/dev/null || true
   exit "$status"
 }
@@ -71,7 +71,9 @@ if ! timeout 55 systemd-run --quiet --wait --collect --pipe \
   --property=Group=meuartigo-e05 \
   --property=WorkingDirectory=/opt/meu-artigo-e05 \
   --property="LoadCredential=control_plane_api_key:$KEY" \
-  -- /bin/bash "$work/launcher" --doctor-only >"$work/preflight" 2>/dev/null; then
+  -- /bin/bash "$work/launcher" --doctor-only >"$work/preflight" 2>"$work/preflight.err"; then
+  # Emit only launcher-owned finite-state codes, not raw journal or error text.
+  grep -E '^E05_RUNTIME_(DOCTOR_(CONFIG_SOURCE|PROFILE_LOAD|CONTROL_PLANE_API_KEY)=(PASS|FAIL|SKIP|UNKNOWN)|STOP=[A-Z_]+)$' "$work/preflight.err" || true
   die SAME_IDENTITY_CREDENTIAL_DOCTOR_FAILED
 fi
 grep -Fxq 'E05_RUNTIME_LOCAL_CONTRACT=PASS' "$work/preflight" || die DOCTOR_CONTRACT_DID_NOT_PASS

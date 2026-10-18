@@ -40,6 +40,11 @@ try:
     if (result.returncode != 0 or document.get("result") != "ok" or
         document.get("failed_checks") or
         any(checks.get(k) != "PASS" for k in required)):
+        for check_id in required:
+            state = checks.get(check_id)
+            safe_state = state if state in ("PASS", "FAIL", "SKIP") else "UNKNOWN"
+            print("E05_RUNTIME_DOCTOR_" + check_id.upper() + "=" + safe_state,
+                  file=sys.stderr)
         print("E05_RUNTIME_STOP=DOCTOR_LOCAL_CONTRACT_FAILED", file=sys.stderr)
         sys.exit(78)
 except (OSError, ValueError, UnicodeError, subprocess.TimeoutExpired, TypeError, AttributeError, KeyError):
