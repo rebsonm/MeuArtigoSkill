@@ -42,7 +42,7 @@ export function auth0Configuration(env = process.env) {
       (pilotSubjects.length < 1 || pilotSubjects.length > 2 ||
        new Set(pilotSubjects).size !== pilotSubjects.length ||
        !pilotSubjects.every(s =>
-         /^[A-Za-z0-9_-]{2,48}\\|[A-Za-z0-9_.-]{5,128}$/.test(s)))))
+         /^[A-Za-z0-9_-]{2,48}\|[A-Za-z0-9_.-]{5,128}$/.test(s)))))
     throw Error("Private pilot needs DENY_ALL or up to two exact Auth0 subjects");
   if (!multiUser && !/^google-oauth2\|[A-Za-z0-9_-]{5,128}$/.test(permittedSub))
     throw Error("Exactly one Google Auth0 subject must be allowlisted for pilot isolation");
