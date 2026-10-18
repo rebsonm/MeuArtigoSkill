@@ -10,7 +10,7 @@ import {JSDOM,VirtualConsole} from "jsdom";
 import {createServer} from "../server.mjs";
 import {normalizeHostSnapshot} from "../host_projection.mjs";
 import {uiOutputSchema} from "../ui_output_schema.mjs";
-const uri="ui://meu-artigo/site-v2.html";
+const uri="ui://meu-artigo/site-v3.html";
 const client=new Client({name:"meu-artigo-ui-resource-contract",version:"0.1.0"});
 const server=createServer();
 const [serverTransport,clientTransport]=InMemoryTransport.createLinkedPair();
@@ -39,6 +39,9 @@ try{
  assert.ok(html.includes("HOST_NOT_CONNECTED"));
  assert.deepEqual(resource._meta?.ui?.csp?.connectDomains,[]);
  assert.deepEqual(resource._meta?.ui?.csp?.resourceDomains,[]);
+ // ChatGPT should open this render in conversation when possible; the host MAY override.
+ assert.equal(resource._meta?.["openai/ui"]?.preferredDisplayMode,"inline");
+ assert.deepEqual(resource._meta?.["openai/ui"]?.availableDisplayModes,["inline","fullscreen"]);
  const parsed=new JSDOM(html,{runScripts:"outside-only",url:"https://synthetic.invalid/"});
  const scripts=[...parsed.window.document.querySelectorAll("script")];
  if(scripts.length!==3){
