@@ -74,6 +74,9 @@ jobs:
       - name: Test Stage 11 RFC 9728 HTTP discovery and denial
         working-directory: integrations/mcp-apps
         run: npm run test:oauth-http
+      - name: Reject unsafe browser Origins in bearer/Auth0 HTTP startup (synthetic)
+        working-directory: integrations/mcp-apps
+        run: npm run test:auth-origin
       - name: Verify ChatGPT-owned Drive boundary and privacy fail-closed
         working-directory: integrations/mcp-apps
         run: |
