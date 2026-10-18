@@ -55,8 +55,15 @@ def api_create_folder_once(token: str, parent_id: str, name: str, *,
                            sender=checkpoint.request) -> dict:
     """Issue ONE non-idempotent POST; any API error is an ambiguous outcome."""
     delivery.require_drive_id(parent_id)
-    if not isinstance(name, str) or not name or "/" in name:
-        raise HostBlock("INVALID_FOLDER_NAME")
+    # Recheck the *same* safe single-leaf contract used by the canonical
+    # delivery planner. Never let a direct API-helper caller bypass that
+    # boundary with dot, traversal, backslash or control characters.
+    try:
+        if (delivery.safe_relative(name) != name or "/" in name or
+                any(ord(char) < 32 or ord(char) == 127 for char in name)):
+            raise ValueError("INVALID_RELATIVE_PATH")
+    except ValueError:
+        raise HostBlock("INVALID_FOLDER_NAME") from None
     payload = json.dumps({
         "name": name, "mimeType": FOLDER_MIME, "parents": [parent_id]
     }, sort_keys=True).encode("utf-8")
