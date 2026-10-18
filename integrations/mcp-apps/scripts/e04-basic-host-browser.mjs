@@ -91,6 +91,22 @@ try{
  evidence.synthetic_task=(await target.locator("#content").innerText()).includes("SYNTHETIC E04 ALPHA");
  if(!evidence.ten_screens||!evidence.synthetic_task)
   throw Error("E04_SYNTHETIC_UI_ASSERTION_FAILED");
+ // Regress the actual mouse-on-menu case: leave the pointer over the clicked
+ // menu item during host iframe resizing, and require stable button geometry.
+ const ids=["steps","tasks","sources","evidence","validations","methods","trace","submission","sync","overview"];
+ for(const id of ids){
+  const button=target.locator('nav button[data-page="'+id+'"]');
+  await button.hover();
+  const start=await button.boundingBox();
+  await button.click();
+  await page.waitForTimeout(220);
+  const end=await button.boundingBox();
+  if(!start||!end||(await button.getAttribute("aria-current"))!=="page"||
+     Math.abs(start.x-end.x)>2||Math.abs(start.y-end.y)>2||
+     Math.abs(start.width-end.width)>2||Math.abs(start.height-end.height)>2)
+   throw Error("E04_NAV_HOVER_JITTER_"+id.toUpperCase());
+ }
+ evidence.menu_hover_stable=true;
  evidence.success=true;
  console.log("E04_BASIC_HOST_BROWSER_PASS");
 }catch(e){
