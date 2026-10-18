@@ -39,6 +39,7 @@ node --check dist/bridge.js
 node --check scripts/e05-synthetic-stdio.mjs
 npm run test:ui-resource-contract
 npm run test:e05-csp
+npm run test:auth-origin
 npm run test:e05-synthetic
 npm run test:smoke
 npm run test:synthetic
