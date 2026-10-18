@@ -88,6 +88,15 @@ class E05RuntimeContract(unittest.TestCase):
         self.assertNotIn('git switch', script)
         self.assertNotIn('git reset --hard', script)
         self.assertNotIn('curl | bash', script)
+        # Regression: systemd's non-root principal cannot traverse /root.
+        self.assertIn('probe="$(mktemp -d /run/.e05-doctor-', script)
+        self.assertIn('chown root:meuartigo-e05 "$probe"', script)
+        self.assertIn('chmod 0750 "$probe"', script)
+        self.assertIn('install -m 0750 -o root -g meuartigo-e05 -- "$work/launcher" "$probe/launcher"', script)
+        self.assertIn('runuser -u meuartigo-e05 -- test -r "$probe/launcher"', script)
+        self.assertIn('-- /bin/bash "$probe/launcher" --doctor-only', script)
+        self.assertNotIn('-- /bin/bash "$work/launcher" --doctor-only', script)
+        self.assertIn('rmdir "$probe"', script)
 
     def test_key_missing_or_invalid_rejects(self):
         self.credential.unlink()

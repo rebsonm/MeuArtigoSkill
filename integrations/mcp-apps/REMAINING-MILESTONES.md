@@ -21,6 +21,23 @@ It does not grant merge, deployment, OAuth, Drive access or publication approval
 **Engineering correction:** previous repair operations reinstalled dependencies and rebuilt source during runtime recovery. The one-pass E05 activation workflow uses a source-pinned, content-verified launcher and executes the same systemd identity and credential preflight before editing any service file. A key validation failure stops without unit changes; a process failure restores the original E05 wrapper and stops only the isolated E05 service. No credentials, raw journal, research records or profile body are emitted.
 
 **Stable master progress:** D01–D15 candidate source implemented, D16–D18 not accepted, 0/10 final R01–R10 acceptance gates closed. Neither source tests nor an active Linux process establish remote tunnel readiness.
+## VPS E05 acceptance incident: service-user traversal (2026-10-18)
+
+**Grounded operator output:** The pinned activation from PR HEAD `1861656afec769a90447609b9964552a55e7e6e6` returned `E05_ACTIVATE_PRECONDITIONS=PASS` and `E05_ACTIVATE_PINNED_SOURCE=VERIFIED`, then `E05_ACTIVATE_STOP=SAME_IDENTITY_CREDENTIAL_DOCTOR_FAILED` **with no launcher-owned diagnostic lines**. The immediately preceding failed key-repair tool (`SERVICE_CREDENTIAL_NOT_DECLARED`) was an outdated and unreliable check and does not establish absence of the credential. The original E05 service was not mutated by this activation (doctor precedes mutation).
+
+**Source-level root cause of the failed transient probe:** The script created the launcher at `/root/.e05-activate.*/launcher` (`mktemp -d` produces `0700`) but ran `/bin/bash /root/.../launcher --doctor-only` under `User=meuartigo-e05` via `systemd-run`. That account cannot traverse `/root`, even though the launcher file itself is `0755`. Therefore the launcher never ran and no `E05_RUNTIME_DOCTOR_*` codes could be printed. This is a verified POSIX path-access defect in our activation script; it does not establish the secret's validity or remote authorization.
+
+**Permanent corrected flow:** Root-only backup/output remains in `/root` mode `0700`; only the public SHA-pinned launcher is copied to `/run/.e05-doctor-*/launcher`, in a root-owned directory and file readable/executable by the dedicated E05 group (`0750`). A `runuser -u meuartigo-e05 -- test -r` precheck prevents another silent denial; `systemd-run` executes the accessible `/run` copy. Both temporary paths are cleaned on exit. The same `LoadCredential` source and original `--profile-file` remain unchanged. CI now emulates root/private vs non-root/readable path on a disposable Ubuntu runner using a temporary file and `runuser nobody`, with no secrets.
+
+| C.A.D.A. ID | Objective | Responsible | Trigger | State and acceptance |
+| --- | --- | --- | --- | --- |
+| OPS-05A | Identify cause of empty `systemd-run` doctor output | Engineering | Operator failed activation | **CLOSED IN SOURCE:** inaccessible executable path under `/root` confirmed |
+| OPS-05B | Repair only non-root probe execution path | Engineering / CI | After OPS-05A | **IMPLEMENTED IN CANDIDATE:** root-private evidence, group-readable `/run` launcher, non-root readability precheck and no service changes before doctor |
+| OPS-05C | Verify real doctor under the dedicated service account | Authorized VPS operator | After exact-SHA CI green | **PENDING REMOTE:** doctor PASS or individual official FAIL statuses; never substitute synthetic CI |
+| OPS-06 | E05-only restart + 25 sec stable, rollback | Authorized VPS operator | Only after OPS-05C PASS | **PENDING REMOTE**, no Git/npm/reinstall |
+| OPS-07 / R02 | Real ChatGPT synthetic ALPHA/BRAVO and host CSP | Consented tester | OPS-06 | **PENDING**, 10 real screens, state reset, CSP and tunnel readiness |
+
+**Master status is unchanged:** D01–D15 source implemented, D16–D18 unaccepted, 0/10 final R01–R10 acceptance gates closed. No claim that E05 is running until supported by the operator output.
 ## Current deliverables
 
 | Deliverable | State | Evidence / decision |

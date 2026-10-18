@@ -40,6 +40,10 @@ if pgrep -u meuartigo-e05 -x tunnel-client >/dev/null 2>&1; then die ANOTHER_E05
 echo E05_ACTIVATE_PRECONDITIONS=PASS
 
 work="$(mktemp -d /root/.e05-activate.XXXXXXXX)" || die TEMP_DIRECTORY_FAILED
+# Root-only workspace contains rollback backups and captured doctor output.
+# Transient systemd runs as meuartigo-e05 and cannot traverse /root.
+# Export only the already verified public launcher into a group-readable /run path.
+probe=""
 changed=NO
 accepted=NO
 cleanup() {
@@ -50,6 +54,10 @@ cleanup() {
     rm -f -- "$DROPIN"
     systemctl daemon-reload >/dev/null 2>&1 || true
     echo E05_ACTIVATE_ROLLBACK=ORIGINAL_WRAPPER_RESTORED_SERVICE_STOPPED
+  fi
+  if [[ -n "$probe" ]]; then
+    rm -f -- "$probe/launcher"
+    rmdir "$probe" 2>/dev/null || true
   fi
   rm -f -- "$work/launcher" "$work/original-wrapper" "$work/preflight" "$work/preflight.err"
   rmdir "$work" 2>/dev/null || true
@@ -63,6 +71,17 @@ bash -n "$work/launcher" || die PINNED_LAUNCHER_INVALID
 chmod 0755 "$work/launcher"
 echo E05_ACTIVATE_PINNED_SOURCE=VERIFIED
 
+# The script is public, checksum-pinned and contains no credentials. The service
+# identity may read it via this root-owned, dedicated-group /run directory.
+# Do not expose private backup files or doctor diagnostics stored under /root.
+probe="$(mktemp -d /run/.e05-doctor-XXXXXXXX)" || die PROBE_DIRECTORY_CREATE_FAILED
+chown root:meuartigo-e05 "$probe" || die PROBE_DIRECTORY_GROUP_FAILED
+chmod 0750 "$probe" || die PROBE_DIRECTORY_MODE_FAILED
+install -m 0750 -o root -g meuartigo-e05 -- "$work/launcher" "$probe/launcher" || die PROBE_LAUNCHER_INSTALL_FAILED
+[[ "$(stat -c %U:%G:%a "$probe")" == root:meuartigo-e05:750 ]] || die PROBE_DIRECTORY_PERMISSIONS_FAILED
+runuser -u meuartigo-e05 -- test -r "$probe/launcher" || die PROBE_LAUNCHER_UNREADABLE_BY_SERVICE_USER
+echo E05_ACTIVATE_PROBE_USER_ACCESS=PASS
+
 # Exact same LoadCredential source and dedicated UNIX user as the real service;
 # '--doctor-only' never polls/starts an additional tunnel runtime.
 if ! timeout 55 systemd-run --quiet --wait --collect --pipe \
@@ -71,7 +90,7 @@ if ! timeout 55 systemd-run --quiet --wait --collect --pipe \
   --property=Group=meuartigo-e05 \
   --property=WorkingDirectory=/opt/meu-artigo-e05 \
   --property="LoadCredential=control_plane_api_key:$KEY" \
-  -- /bin/bash "$work/launcher" --doctor-only >"$work/preflight" 2>"$work/preflight.err"; then
+  -- /bin/bash "$probe/launcher" --doctor-only >"$work/preflight" 2>"$work/preflight.err"; then
   # Emit only launcher-owned finite-state codes, not raw journal or error text.
   grep -E '^E05_RUNTIME_(DOCTOR_(CONFIG_SOURCE|PROFILE_LOAD|CONTROL_PLANE_API_KEY)=(PASS|FAIL|SKIP|UNKNOWN)|STOP=[A-Z_]+)$' "$work/preflight.err" || true
   die SAME_IDENTITY_CREDENTIAL_DOCTOR_FAILED

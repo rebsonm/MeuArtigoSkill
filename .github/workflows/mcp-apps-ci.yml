@@ -49,6 +49,7 @@ jobs:
             bash -n "$file"
           done
           python3 scripts/test_e05_vps_autonomous_contract.py
+          sudo python3 scripts/test_e05_probe_permissions.py
       - name: Reproducible npm install without install scripts
         working-directory: integrations/mcp-apps
         run: npm ci --ignore-scripts --no-audit --no-fund
