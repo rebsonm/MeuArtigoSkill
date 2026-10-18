@@ -5,6 +5,62 @@ This is a single operator runbook, not evidence that any command was executed.
 The goal is a stable version that can receive subsequent updates, without
 mistaking synthetic E05 fixtures for a multi-researcher production service.
 
+## Fast path — reuse E05 and the already-installed candidate
+
+**No rebuild of the app or new private plugin is required.** PR #89 + stacked
+PR #91 already combine the Skill with the **same E05-tested site-v3 visual
+resource**: `ui://meu-artigo/site-v3.html`, served from the shared static HTML
+and its bundled bridge. The E05 fixture restriction applies **only** when
+`MEU_ARTIGO_E05_SYNTHETIC_ONLY=YES`; never set that variable for production.
+Keep the E05 synthetic tunnel and older private plugins unchanged.
+
+The maintainer has completed the isolated stage acceptance at
+`/opt/meu-artigo-v1-acceptance` with reviewed source SHA
+`07a92e6decc9c79d6a297522079c7389f6762ac2`. Do **not** rerun the
+original bootstrap. The next standalone script
+`integrations/mcp-apps/scripts/v1-auth0-shadow-probe.sh` reuses this exact
+stage and the existing Auth0 configuration **without writing any credentials**:
+
+- Issuer: `https://dev-w6estudk22tzwdil.us.auth0.com/`.
+- Auth0 application: `meu-artigo`; OAuth audience and MCP public resource
+  `https://mcp.allflux.com.br/mcp`; required scope `mcp:read`.
+- Historical setup already covered Google Auth0 login, PKCE `S256`,
+  and the ChatGPT callback. Verify the *live* values before public use,
+  but do not recreate the tenant, API, application or DNS records.
+
+The shadow probe runs with `MEU_ARTIGO_AUTH_MODE=auth0` and
+`MEU_ARTIGO_MCP_MULTIUSER=YES` on **loopback-only port 18087** under the
+dedicated stage account, asserts both RFC 9728 metadata routes return the
+configured issuer/resource/scope, denies missing and malformed bearer tokens,
+then terminates the process. It does not authenticate a real user or check
+external Auth0 JWT delivery, PKCE, ChatGPT host CSP or independent accounts.
+It makes **no** systemd, E05, Nginx, OAuth tenant, Drive, plugin or
+publication changes.
+
+For an authorized operator shadow check, download the script from a **fixed
+CI-green SHA**, compare its Git blob hash against the reviewed GitHub source,
+run `bash -n` and `bash SCRIPT --check`, then `bash SCRIPT --probe`.
+Never run remote shell content by piping directly to `bash`. If the SHA
+of PR #91 moves, review and repin first. The operator output should include
+`V1_AUTH0_SHADOW_COMPLETE=PASS` but this is **not** real researcher login.
+
+**Only two remaining executive blocks:**
+
+1. **Real activation:** run the Auth0 shadow verification once; provision a
+   separate restricted persistent runtime from the already-staged code,
+   examine currently configured callback, obtain approval for a versioned
+   proxy change away from dead upstream port 18086 to the reviewed runtime,
+   check HTTPS/OAuth/PKCE/effective iframe CSP with two consenting users and
+   validate rollback. Do not point production at legacy bearer port 8085.
+2. **Researcher distribution:** submit **one** new public hybrid Skill+MCP
+   registration, not a recreated product, with verified publisher identity and
+   the stable endpoint above. Preserve existing private E05, MCP Piloto and
+   beta.8 installs. External review and approval are not under the
+   maintainer's direct control.
+
+The first block's public changes require explicit owner consent; passing
+CI or shadow probes alone cannot authorize them.
+
 ## Mandatory prerequisites
 
 1. Freeze the reviewed integration SHA and reconcile the Skill/Plugin/MCP
