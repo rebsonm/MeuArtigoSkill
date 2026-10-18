@@ -33,6 +33,9 @@ jobs:
       - name: Behavioral regression tests
         run: python -m unittest discover -s tests -v
 
+      - name: Validate public hybrid and private packaging contracts
+        run: python -m unittest discover -s integrations/mcp-apps/tests -p test_chatgpt_plugin_candidate.py -v
+
       - name: Exercise eight fictional research journeys
         run: |
           python scripts/simulate_research_journeys.py \
