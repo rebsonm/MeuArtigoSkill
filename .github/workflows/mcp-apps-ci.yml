@@ -32,6 +32,14 @@ jobs:
         run: python scripts/audit_optional_mcp_supply_chain.py
       - name: Validate private/public ChatGPT candidate ZIP boundaries (offline)
         run: python -m unittest discover -s integrations/mcp-apps/tests -p 'test_*.py' -v
+      - name: E05 isolated tunnel diagnostic syntax and read-only output contract
+        run: |
+          bash -n integrations/mcp-apps/scripts/e05-connection-diagnose.sh
+          result="$(bash integrations/mcp-apps/scripts/e05-connection-diagnose.sh)"
+          grep -Fxq 'E05_DIAG_SCHEMA=MEU_ARTIGO_E05_READONLY_V1' <<< "$result"
+          grep -Fxq 'E05_NO_CHANGES=YES' <<< "$result"
+          grep -Fxq 'E05_DIAG_COMPLETE=YES' <<< "$result"
+          ! grep -Eiq 'CONTROL_PLANE_API_KEY|OPENAI_ADMIN_KEY|Authorization:|Bearer |sk-[A-Za-z0-9]+' <<< "$result"
       - name: Reproducible npm install without install scripts
         working-directory: integrations/mcp-apps
         run: npm ci --ignore-scripts --no-audit --no-fund

@@ -13,7 +13,7 @@ It does not grant merge, deployment, OAuth, Drive access or publication approval
 | D17: real ChatGPT, Auth0, Drive and research workflow | OPEN | No full real-user end-to-end acceptance |
 | D18: private Plugin pilot and public directory | OPEN | Separate distribution and publication authorizations needed |
 
-**Source-only acceptance**: GitHub Actions 7/7 SUCCESS on source SHA `92a742dda8ca78bbdaa1259884d8049e5013e782` (seven workflow artifacts available in PR). This is NOT user-facing proof of working E05/production deployment. Last published Skill beta.6; candidate source beta.9; installed private Plugin metadata beta.8 with embedded beta.6. These are distinct artifacts, do not silently update or conflate them.
+**Source-only acceptance**: GitHub Actions 7/7 SUCCESS on source SHA `f281300f4e60a25c9a772439afce0923a44d0369` (seven workflow artifacts available in PR). This is NOT user-facing proof of working E05/production deployment. Last published Skill beta.6; candidate source beta.9; installed private Plugin metadata beta.8 with embedded beta.6. These are distinct artifacts, do not silently update or conflate them.
 
 ## Ten stable go-live milestones — no resetting when a test passes
 
@@ -40,6 +40,36 @@ It does not grant merge, deployment, OAuth, Drive access or publication approval
 - **Interpretation:** live E05 acceptance is blocked at connector session/connectivity; this result alone neither proves a software regression nor identifies a root cause. No E05 screenshots, CSP enforcement or ten-screen result were obtained today.
 - **Actionable investigation order:** inspect isolated E05 test connection status/refresh in ChatGPT; independently confirm authorized test tunnel and its /readyz endpoint without exposing credentials; inspect sanitized service/process logs; restore only the isolated E05 test connection after explicit authorization; rerun ALPHA/BRAVO, ten-screen, locale, resizing, focus, teardown and CSP. Do not turn off authentication or relax CSP to make tests pass.
 
+## R02 isolated E05 recovery: read-only one-shot diagnostic delivered
+
+The repository now includes `integrations/mcp-apps/scripts/e05-connection-diagnose.sh`,
+which is **strictly observational** and runs on the operator's existing VPS.
+It checks only the dedicated E05 UNIX account, isolated stage checkout,
+head SHA, worktree status, the original pilot's Git SHA and whether a
+`tunnel-client run --profile meu-artigo-e05` process is detectable under
+the E05 UNIX user. It does **not** read or print runtime keys, tunnel
+profile contents, application logs, research data or cloud credentials,
+does not make network requests and does not start/stop any service.
+
+CLI: `bash e05-connection-diagnose.sh <candidate-40-char-SHA>` from the
+VPS via a privately inspected copy. Do not assume the new script
+is already installed on the VPS simply because it is committed to GitHub.
+The operator can transfer/review it separately without updating or
+touching any server service. The sanitized `E05_*=...` output can be
+used to branch the next decision.
+
+A nonmatching process alone is **not** definitive proof of the failure's
+root cause: alternate invocation/profile, runtime shutdown, platform tunnel
+permissions or workspace association may be involved. A matching
+process is likewise **not** evidence of tunnel readiness, MCP discovery,
+ChatGPT authorization or CSP enforcement. The user's real VPS state is
+not observable from this repository or CI environment.
+
+**R02 source-side diagnostic tool: DELIVERED (pending CI). R02 real
+host acceptance: STILL BLOCKED, 0/10 go-live milestones closed.**
+No server restart, tunnel recreation, Plugin metadata change or
+Google Drive operation was executed here.
+
 ## Method of recording progress from now on
 
 1. Keep stable gate IDs; never create a new acceptance milestone to replace one left open.
@@ -51,6 +81,6 @@ It does not grant merge, deployment, OAuth, Drive access or publication approval
 
 ## Active decision
 
-- GO_SOURCE_CI: PASS on `92a742dda8ca78bbdaa1259884d8049e5013e782` only; if this matrix commit becomes new head, check its own CI before claiming current HEAD passed.
+- GO_SOURCE_CI: PASS on the prior `f281300f4e60a25c9a772439afce0923a44d0369` (7/7). A new diagnostic-only commit must finish CI at its own SHA before current-head source acceptance.
 - GO_REAL_E05: BLOCKED (`Session terminated`); GO_INDEPENDENT_REVIEW: NOT COMPLETE.
 - GO_MERGE / GO_DEPLOY / GO_PRIVATE_PLUGIN / GO_PUBLIC: NO-GO.
