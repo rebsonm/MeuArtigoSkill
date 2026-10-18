@@ -132,6 +132,21 @@ function equalToken(expected,actual){
  const a=Buffer.from(expected),b=Buffer.from(actual);
  return a.length===b.length&&timingSafeEqual(a,b);
 }
+// Browser Origin is a scheme/host/port tuple, not a URL path or wildcard.
+// Never allow opaque "null", insecure origins, credentials or a synthetic
+// host policy to weaken the authenticated MCP interface.
+export function configuredAllowedOrigin(env=process.env){
+ const value=env.MEU_ARTIGO_ALLOWED_ORIGIN??"";
+ if(value==="")return "";
+ if(typeof value!=="string")throw Error("INVALID_ALLOWED_ORIGIN");
+ let origin;
+ try{origin=new URL(value);}catch{throw Error("INVALID_ALLOWED_ORIGIN");}
+ if(origin.protocol!=="https:"||origin.username||origin.password||
+    origin.pathname!=="/"||origin.search||origin.hash||
+    origin.origin==="null"||origin.origin!==value)
+  throw Error("INVALID_ALLOWED_ORIGIN");
+ return value;
+}
 async function serveHttp(){
  noResearchAccess();
  const bind=process.env.MEU_ARTIGO_BIND_HOST||"127.0.0.1";
@@ -145,7 +160,7 @@ async function serveHttp(){
  const verify=config?createAuth0Verifier(config):null;
  if(!["127.0.0.1","::1"].includes(bind))
   throw Error("PUBLIC_HTTP_BIND_BLOCKED_UNTIL_AUTH0_OAUTH");
- const allowedOrigin=process.env.MEU_ARTIGO_ALLOWED_ORIGIN||"";
+ const allowedOrigin=configuredAllowedOrigin();
  const app=createHttpServer(async(req,res)=>{
   const pathname=req.url?.split("?")[0];
   if(config&&req.method==="GET"&&[
