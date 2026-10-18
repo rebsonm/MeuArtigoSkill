@@ -9,6 +9,17 @@ declare global {interface Window {MeuArtigoHost?:{
 }}}
 const app=new App({name:"Meu Artigo",version:"0.3.0"});
 let showingSnapshot=false;
+let lastHostLocaleKey:string|null=null;
+function syncHostLocale(value:unknown){
+ // ChatGPT emits host-context events for resize/theme/safe-area too.
+ // Only a genuine locale change may repaint the dashboard.
+ if(typeof value!=="string")return;
+ const key=value.trim().toLowerCase().replace(/_/g,"-").split("-")[0];
+ if(!["pt","en","es","fr"].includes(key)||key===lastHostLocaleKey)return;
+ lastHostLocaleKey=key;
+ const rendered=(document.documentElement.lang||"").toLowerCase().split("-")[0];
+ if(rendered!==key)window.MeuArtigoHost?.locale(value);
+}
 // Codes only, never research content, tokens or personal identifiers.
 const trace=(code:string)=>console.info("[MEU_ARTIGO_UI] "+code);
 const clear=()=>{
@@ -63,7 +74,7 @@ app.onhostcontextchanged=(ctx:any)=>{
  // They do not authenticate a new researcher or define a new tool invocation.
  // Clearing here erased valid results repeatedly during iframe auto-resizing.
  trace("HOST_CONTEXT_CHANGED");
- if(ctx?.locale)window.MeuArtigoHost?.locale(ctx.locale);
+ syncHostLocale(ctx?.locale);
 };
 app.onteardown=async()=>{
  trace("TEARDOWN");
@@ -73,5 +84,5 @@ app.onteardown=async()=>{
 app.connect().then(()=>{
  trace("CONNECTED");
  const ctx:any=app.getHostContext?.();
- if(ctx?.locale)window.MeuArtigoHost?.locale(ctx.locale);
+ syncHostLocale(ctx?.locale);
 }).catch(()=>{trace("CONNECT_FAILED");clear();});
