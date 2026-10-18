@@ -15,8 +15,16 @@ class Beta5PublicationTests(unittest.TestCase):
         self.readme=(ROOT/"README.md").read_text(encoding="utf-8")
 
     def test_consistent_release_metadata(self):
-        self.assertEqual(self.version,"0.9.0-beta.6")
-        self.assertEqual(audit_release_metadata(ROOT,expected_date="2026-10-15"),[])
+        self.assertEqual((ROOT/"OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip(),
+                         "0.9.0-beta.6")
+        self.assertRegex(self.version,r"^0\\.9\\.0-beta\\.\\d+$")
+        # Historical release has an official pointer; beta.9 source is not
+        # published and must fail manual publication-date preflight.
+        if self.version == "0.9.0-beta.6":
+            self.assertEqual(audit_release_metadata(ROOT,expected_date="2026-10-15"),[])
+        else:
+            self.assertIn("CITATION_DATE_MISSING_OR_AMBIGUOUS",
+                          audit_release_metadata(ROOT))
         self.assertIn("confirmed published",self.readme.lower())
         self.assertIn("pre-release",self.notes.lower())
         self.assertIn("not a stable",self.notes.lower())
