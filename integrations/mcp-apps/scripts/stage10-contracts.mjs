@@ -11,7 +11,7 @@ import os from "node:os";
 
 const PORT=18857, TOKEN="STAGE10_SYNTHETIC_BEARER_TOKEN_NEVER_PRODUCTION_1234";
 const BASE="http://127.0.0.1:"+PORT+"/mcp";
-const URI="ui://meu-artigo/site-v2.html";
+const URI="ui://meu-artigo/site-v3.html";
 const env={...process.env,MEU_ARTIGO_MCP_PORT:String(PORT),
  MEU_ARTIGO_BIND_HOST:"127.0.0.1",MEU_ARTIGO_MCP_BEARER:TOKEN,
  MEU_ARTIGO_PROJECT_ROOT:""};
