@@ -92,6 +92,9 @@ jobs:
       - name: Test Stage 11 RFC 9728 HTTP discovery and denial
         working-directory: integrations/mcp-apps
         run: npm run test:oauth-http
+      - name: Verify private Auth0 pilot deny-all and explicit JWT subject allowlists
+        working-directory: integrations/mcp-apps
+        run: npm run test:private-pilot
       - name: Reject unsafe browser Origins in bearer/Auth0 HTTP startup (synthetic)
         working-directory: integrations/mcp-apps
         run: npm run test:auth-origin
