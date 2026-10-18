@@ -45,7 +45,7 @@ def inspect(text: str, *, host: str | None = None,
              {path for _, path in locations} == REQUIRED_PATHS,
              "PROXY_LOCATION_ALLOWLIST_INVALID")
     for equal, route in locations:
-        _require((route == "/" and equal == "") or
+        _require((route == "/" and equal is None) or
                  (route != "/" and equal == "="),
                  "PROXY_LOCATION_MATCH_NOT_EXACT")
     parts = {}
