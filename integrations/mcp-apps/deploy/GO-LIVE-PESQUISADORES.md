@@ -204,9 +204,12 @@ Require a local `/readyz` pass before examining public ingress.
 `/etc/nginx/sites-enabled/meu-artigo-mcp.conf` exists and proxies to the dead
 `127.0.0.1:18086` upstream. Do not add a second `server_name` for the same
 hostname: render the reviewed replacement offline, preserve the exact old
-file with owner and mode for rollback, and replace that one vhost only in the
-approved change window. Never change DNS or its existing certificate just
-to solve this local upstream mismatch. Keep E05 and the legacy 8085 process
+file with owner and mode for rollback, and update **only the HTTPS
+server block** in the approved change window: preserve the existing HTTP/
+ACME challenge block, certificate-renewal behavior and working IPv4/IPv6
+listeners. The generic single-server template is not a drop-in replacement
+for the complete active file. Never change DNS or its existing certificate
+just to solve this local upstream mismatch. Keep E05 and the legacy 8085 process
 running. Refuse cutover unless the NEW 18087 Auth0 backend is persistently
 `readyz=200`, both metadata routes=200, and unauthenticated `/mcp`=401.
 
