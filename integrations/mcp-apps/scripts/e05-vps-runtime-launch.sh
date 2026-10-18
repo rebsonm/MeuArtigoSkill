@@ -8,6 +8,9 @@ CLIENT=/opt/meu-artigo-e05/bin/tunnel-client
 PROFILE=/opt/meu-artigo-e05/tunnel-profiles/meu-artigo-e05.yaml
 CREDENTIALS="${CREDENTIALS_DIRECTORY:-}"
 
+case "${1:-}" in ""|--doctor-only) : ;; *) stop UNSUPPORTED_ARGUMENT ;; esac
+[[ $# -le 1 ]] || stop TOO_MANY_ARGUMENTS
+
 stop() { printf 'E05_RUNTIME_STOP=%s\n' "$1" >&2; exit 78; }
 [[ "$(id -un)" == meuartigo-e05 ]] || stop WRONG_UNIX_PRINCIPAL
 [[ -n "$CREDENTIALS" && "$CREDENTIALS" == /* ]] || stop CREDENTIAL_DIRECTORY_MISSING
@@ -46,6 +49,11 @@ print("E05_RUNTIME_LOCAL_CONTRACT=PASS")
 PY_DOCTOR
 then
   exit 78
+fi
+
+if [[ "${1:-}" == "--doctor-only" ]]; then
+  echo E05_RUNTIME_DOCTOR_ONLY=PASS
+  exit 0
 fi
 
 exec "$CLIENT" run --profile-file "$PROFILE" \

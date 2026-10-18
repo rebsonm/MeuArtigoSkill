@@ -4,6 +4,23 @@ Updated: 2026-10-18. Scope: [Draft PR #89](https://github.com/rebsonm/MeuArtigoS
 This document is the **single source of truth for progress reporting**, and intentionally distinguishes source development from deployment and real-world acceptance.
 It does not grant merge, deployment, OAuth, Drive access or publication approval.
 
+## C.A.D.A. lote operacional unificado — E05 18/10/2026
+
+**Separação de aceites:** a PR #89 estar verde no CI NÃO demonstra que o serviço remoto foi reparado. O operador autorizou testes pontuais na VPS, mas esta sessão não contém executor SSH autenticado; não registrar mudanças em VPS que não tenham resultado remoto observado.
+
+| Código | Capturar — objeto e produto | Atribuir | Definir prazo — condição | Acompanhar — estado e evidência |
+| --- | --- | --- | --- | --- |
+| OPS-01 | Permissões Git da etapa antiga | Operador VPS | Fechado antes do estágio | **CONCLUÍDO em VPS**: índice recuperado |
+| OPS-02 | Instalar/validar fonte E05 antiga | Operador VPS | OPS-01 | **CONCLUÍDO em VPS**: SHA `3ed581f...` e preflight PASS |
+| OPS-03 | Binário OpenAI, perfil e secret file | Operador VPS | OPS-02 | **ARQUIVOS PRESENTES**: licença/configuração remota não comprovada |
+| OPS-04 | Serviço supervisionado do E05 | Engenheiro + operador | OPS-03 | **AINDA BLOQUEADO na VPS**: unit habilitada mas processo saiu com 1 |
+| OPS-05 | Doctor com mesmo UID/LoadCredential de systemd | Executor VPS restrito | Imediato antes de mutar | **FONTE IMPLEMENTADA**, real pendente: `--doctor-only`, transient unit, credencial e perfil explícitos. Sem alterar serviço se falhar |
+| OPS-06 | Reconciliar somente wrapper do E05, verificar 25 s e recuperar automaticamente | Executor VPS restrito | Só se OPS-05 PASS | **FONTE IMPLEMENTADA**, real pendente. Script guarda original, não executa npm/git checkout, não altera secret, original pilot, production, Auth0, Drive; rollback se a aceitação local falhar |
+| OPS-07 | Demonstrar E05 `readyz` e ChatGPT ALPHA/BRAVO | Revisor conectado | Depois do processo estável | **PENDENTE**: `readyz` exige porta atribuída ao PID do próprio E05; ChatGPT 10 telas/CSP/teardown são testes separados |
+
+**Correção de processo:** o modo antigo de reparo recompilava o projeto, baixava pacotes e fazia preflight técnico de modo repetitivo. `scripts/e05-vps-activate-only.sh` é a via estreita e idempotente de reparo operacional: usa o **launcher versionado como Git blob imutável** `b2014cc3c6fec4c2608a0c8013dc7bff2ff7f47c`, realiza `doctor` pelo próprio systemd, altera só o wrapper e uma configuração de restart dedicada a E05, e devolve códigos de falha sanitizados. O blob é verificado localmente antes de qualquer mudança. Um erro de chave bloqueia sem editar a unidade. Nenhum teste de fonte/CI dispensa execução e aceite do operador.
+
+**Estado dos marcos do Plano Mestre continua inalterado:** D01–D15 implementadas em fonte; D16–D18 não aceitas; R01–R10 **0/10 completas**. Para fechar R02, requer serviço VPS pronto e ChatGPT real aceito.
 ## Current deliverables
 
 | Deliverable | State | Evidence / decision |

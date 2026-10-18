@@ -55,11 +55,11 @@ class E05RuntimeContract(unittest.TestCase):
             .replace('== meuartigo-e05', '== ' + getpass.getuser()))
         self.launcher.write_text(synthetic, encoding='utf8')
 
-    def run_launcher(self, extra_env=None):
+    def run_launcher(self, extra_env=None, args=()):
         env = os.environ.copy()
         env['CREDENTIALS_DIRECTORY'] = str(self.credentialdir)
         if extra_env: env.update(extra_env)
-        return subprocess.run(['bash',str(self.launcher)],env=env,text=True,
+        return subprocess.run(['bash',str(self.launcher),*args],env=env,text=True,
                               stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=8)
 
     def test_same_profile_and_credential_doctor_and_run(self):
@@ -68,6 +68,26 @@ class E05RuntimeContract(unittest.TestCase):
         self.assertIn('E05_RUNTIME_LOCAL_CONTRACT=PASS',p.stdout)
         self.assertIn('FAKE_TUNNEL_RUN=OK',p.stdout)
         self.assertNotIn('sk-SYNTHETIC',p.stdout+p.stderr)
+
+    def test_real_doctor_only_mode_does_not_start_tunnel(self):
+        p = self.run_launcher(args=('--doctor-only',))
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn('E05_RUNTIME_DOCTOR_ONLY=PASS', p.stdout)
+        self.assertNotIn('FAKE_TUNNEL_RUN=OK', p.stdout)
+        self.assertEqual(self.run_launcher(args=('--other',)).returncode, 78)
+
+    def test_no_npm_git_checkout_in_isolated_reactivation(self):
+        script = (ROOT / 'scripts/e05-vps-activate-only.sh').read_text()
+        self.assertIn('E05_ACTIVATE_REAL_SYSTEMD_DOCTOR=PASS', script)
+        self.assertIn('E05_ACTIVATE_PINNED_SOURCE=VERIFIED', script)
+        self.assertIn('LoadCredential=control_plane_api_key:$KEY', script)
+        self.assertIn('RestartPreventExitStatus=78', script)
+        self.assertIn('E05_ACTIVATE_ROLLBACK=ORIGINAL_WRAPPER_RESTORED_SERVICE_STOPPED', script)
+        self.assertIn('LAUNCHER_BLOB=b2014cc3c6fec4c2608a0c8013dc7bff2ff7f47c', script)
+        self.assertNotIn('npm ci', script)
+        self.assertNotIn('git switch', script)
+        self.assertNotIn('git reset --hard', script)
+        self.assertNotIn('curl | bash', script)
 
     def test_key_missing_or_invalid_rejects(self):
         self.credential.unlink()
