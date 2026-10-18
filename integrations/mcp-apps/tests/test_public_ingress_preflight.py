@@ -1,7 +1,9 @@
 """Synthetic, offline tests for the read-only production proxy preflight."""
 from __future__ import annotations
 
-import os
+import stat
+from types import SimpleNamespace
+from unittest import mock
 from pathlib import Path
 import sys
 import tempfile
@@ -43,12 +45,13 @@ class IngressSourceGateTests(unittest.TestCase):
                              require_cert_files=True)
             self.assertEqual(result["status"], "RENDERED_SOURCE_CHECK_PASS")
             self.assertEqual(result["live_tls"], "NOT_TESTED")
-            key.chmod(0o644)
-            with self.assertRaisesRegex(ValueError, "PROXY_TLS_KEY_TOO_PERMISSIVE"):
-                inspect(rendered, host="mcp.allflux.com.br",
-                        require_cert_files=True)
-            # Keep the synthetic private-key marker out of artifacts.
-            key.chmod(0o600)
+            # Simulate an unsafe mode without creating a permissive real file.
+            fake_mode = SimpleNamespace(st_mode=stat.S_IFREG | 0o644)
+            with mock.patch("public_ingress_preflight.Path.stat",
+                            return_value=fake_mode):
+                with self.assertRaisesRegex(ValueError, "PROXY_TLS_KEY_TOO_PERMISSIVE"):
+                    inspect(rendered, host="mcp.allflux.com.br",
+                            require_cert_files=True)
 
     def test_malformed_or_unscoped_proxy_fails_closed(self):
         base = self.template
