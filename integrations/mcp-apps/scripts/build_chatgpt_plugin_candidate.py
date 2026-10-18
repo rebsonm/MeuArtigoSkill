@@ -2,8 +2,9 @@
 """Build a non-published Meu Artigo ChatGPT plugin candidate.
 
 The Skill payload is produced by the existing audited Skill ZIP builder.
-Public submission packages MUST NOT contain an .app.json reference: the remote
-MCP server is supplied separately via the OpenAI "With MCP" submission flow.
+Public submission packages MUST NOT contain .app.json references. They MUST
+bundle a portable mcp.json declaring the reviewed remote HTTPS MCP connection.
+The endpoint is explicit, never guessed or inferred from a synthetic E05 app.
 Private test candidates may reference a separately verified registered app.
 
 No deployment, plugin installation, publication, Google Drive access or
@@ -17,6 +18,7 @@ import json
 import re
 import tempfile
 from pathlib import Path
+from urllib.parse import urlsplit
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 import sys
 
@@ -51,7 +53,7 @@ def _manifest(version: str, channel: str) -> dict:
             "com.openai": {
                 "interface": {
                     "displayName": "Meu Artigo",
-                    "shortDescription": "Pesquisa científica rastreável",
+                    "shortDescription": "Pesquisa com IA e evidências",
                     "longDescription": "Organize artigos, tarefas C.A.D.A., evidências e decisões humanas. Cada pesquisador utiliza seu próprio Google Drive autorizado. O painel MCP não aprova decisões científicas nem comprova a sincronização do Drive.",
                     "developerName": "Rebson Mendes",
                     "category": "Productivity",
@@ -70,6 +72,59 @@ def _manifest(version: str, channel: str) -> dict:
     if channel == "private":
         manifest["extensions"]["com.openai"]["apps"] = "./.app.json"
     return manifest
+
+
+def _validated_public_mcp_url(value: str | None) -> str:
+    """Do not ship loopback, credentials, unreviewed suffixes or fake hosts."""
+    if not isinstance(value, str) or not value:
+        raise ValueError("PUBLIC_MCP_URL_REQUIRED")
+    try:
+        parsed = urlsplit(value)
+        port = parsed.port
+    except ValueError as exc:
+        raise ValueError("PUBLIC_MCP_URL_INVALID") from exc
+    host = (parsed.hostname or "").lower()
+    if (parsed.scheme != "https" or not host or parsed.username or parsed.password
+            or parsed.path != "/mcp" or parsed.query or parsed.fragment
+            or parsed.netloc != host or port is not None
+            or host in {"localhost", "127.0.0.1", "::1"}
+            or host.endswith((".localhost", ".local", ".invalid", ".example", ".test"))
+            or parsed.geturl() != value):
+        raise ValueError("PUBLIC_MCP_URL_INVALID")
+    return value
+
+
+def _remote_mcp_manifest(url: str) -> dict:
+    return {
+        "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+        "mcpServers": {
+            "meu-artigo": {
+                "type": "streamable-http",
+                "url": _validated_public_mcp_url(url),
+                "extensions": {
+                    "com.openai": {
+                        "auth": {"type": "oauth", "baseScopes": ["mcp:read"]}
+                    }
+                },
+            }
+        },
+    }
+
+
+def _check_public_metadata(plugin: dict) -> None:
+    interface = plugin.get("extensions", {}).get("com.openai", {}).get("interface", {})
+    if not isinstance(interface, dict):
+        raise ValueError("PUBLIC_LISTING_METADATA_INVALID")
+    if (len(interface.get("displayName", "")) > 30
+            or len(interface.get("shortDescription", "")) > 30
+            or len(interface.get("longDescription", "")) > 4000):
+        raise ValueError("PUBLIC_LISTING_METADATA_INVALID")
+    starters = interface.get("defaultPrompt", [])
+    if (not isinstance(starters, list) or len(starters) > 3
+            or any(not isinstance(x, str) or not x or len(x) > 128
+                   or "\\n" in x or "\\r" in x for x in starters)
+            or len(set(starters)) != len(starters)):
+        raise ValueError("PUBLIC_STARTER_PROMPTS_INVALID")
 
 
 def inspect_candidate(path: Path, root: Path, channel: str) -> dict:
@@ -120,9 +175,21 @@ def inspect_candidate(path: Path, root: Path, channel: str) -> dict:
         if not isinstance(openai, dict):
             raise ValueError("OPENAI_EXTENSION_INVALID")
         if channel == "public":
-            if ".app.json" in names or openai.get("apps") or "mcp.json" in names or ".mcp.json" in names:
+            if ".app.json" in names or openai.get("apps") or ".mcp.json" in names:
                 raise ValueError("PUBLIC_MCP_APP_REFERENCE_FORBIDDEN")
+            if "mcp.json" not in names:
+                raise ValueError("PUBLIC_MCP_MANIFEST_REQUIRED")
+            mcp = json.loads(archive.read("mcp.json"))
+            try:
+                url = mcp["mcpServers"]["meu-artigo"]["url"]
+            except (KeyError, TypeError) as exc:
+                raise ValueError("PUBLIC_MCP_MANIFEST_INVALID") from exc
+            if mcp != _remote_mcp_manifest(url):
+                raise ValueError("PUBLIC_MCP_MANIFEST_INVALID")
+            _check_public_metadata(plugin)
         else:
+            if "mcp.json" in names or ".mcp.json" in names:
+                raise ValueError("PRIVATE_APP_MAPPING_REQUIRED")
             if openai.get("apps") != "./.app.json" or ".app.json" not in names:
                 raise ValueError("PRIVATE_APP_MAPPING_REQUIRED")
             mapping = json.loads(archive.read(".app.json"))
@@ -151,11 +218,16 @@ def inspect_candidate(path: Path, root: Path, channel: str) -> dict:
 
 
 def build_candidate(root: Path, destination: Path, channel: str,
-                    app_id: str | None = None) -> dict:
+                    app_id: str | None = None,
+                    mcp_url: str | None = None) -> dict:
     if channel not in ALLOWED_CHANNELS:
         raise ValueError("CHANNEL_INVALID")
     if channel == "public" and app_id is not None:
         raise ValueError("PUBLIC_APP_REFERENCE_FORBIDDEN")
+    if channel == "public":
+        _validated_public_mcp_url(mcp_url)
+    elif mcp_url is not None:
+        raise ValueError("PRIVATE_MCP_URL_UNEXPECTED")
     if channel == "private" and (
         not isinstance(app_id, str) or not APP_ID_PATTERN.fullmatch(app_id)
         or app_id in FORBIDDEN_TEST_APP_IDS
@@ -175,6 +247,8 @@ def build_candidate(root: Path, destination: Path, channel: str,
     files["assets/icon.svg"] = (root / "assets/icon.svg").read_bytes()
     if channel == "private":
         files[".app.json"] = _json({"apps": {"meu-artigo": {"id": app_id}}})
+    else:
+        files["mcp.json"] = _json(_remote_mcp_manifest(mcp_url))
     destination.parent.mkdir(parents=True, exist_ok=True)
     with ZipFile(destination, "w", compression=ZIP_DEFLATED, compresslevel=9) as z:
         for name in sorted(files):
@@ -193,6 +267,8 @@ def main() -> int:
     parser.add_argument("--channel", choices=sorted(ALLOWED_CHANNELS), required=True)
     parser.add_argument("--app-id", default=None,
                         help="PRIVATE ONLY: a separately verified production app ID, never E05")
+    parser.add_argument("--mcp-url", default=None,
+                        help="PUBLIC ONLY: explicitly reviewed HTTPS URL ending /mcp; never E05")
     parser.add_argument("--output", type=Path, default=None)
     args = parser.parse_args()
     root = args.repo.resolve()
@@ -200,7 +276,7 @@ def main() -> int:
     target = args.output or root / "dist" / (
         "MeuArtigoChatGPT-" + args.channel + "-v" + version + ".zip")
     try:
-        outcome = build_candidate(root, target, args.channel, args.app_id)
+        outcome = build_candidate(root, target, args.channel, args.app_id, args.mcp_url)
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
         parser.error(str(exc))
     print(json.dumps(outcome, ensure_ascii=False, sort_keys=True, indent=2))
