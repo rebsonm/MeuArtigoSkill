@@ -39,6 +39,7 @@ jobs:
           suite_dir="integrations/m""cp-apps/tests"
           suite_pattern="test_chatgpt_pl""ugin_candidate.py"
           python -m unittest discover -s "$suite_dir" -p "$suite_pattern" -v
+          python -m unittest discover -s "$suite_dir" -p "test_public_ingress_preflight.py" -v
 
       - name: Exercise eight fictional research journeys
         run: |
