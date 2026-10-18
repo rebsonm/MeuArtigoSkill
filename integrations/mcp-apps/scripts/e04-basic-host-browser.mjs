@@ -98,13 +98,18 @@ try{
   const button=target.locator('nav button[data-page="'+id+'"]');
   await button.hover();
   const start=await button.boundingBox();
+  const scrollStart=await page.evaluate(()=>window.scrollY);
   await button.click();
   await page.waitForTimeout(220);
   const end=await button.boundingBox();
+  const scrollEnd=await page.evaluate(()=>window.scrollY);
   if(!start||!end||(await button.getAttribute("aria-current"))!=="page"||
      Math.abs(start.x-end.x)>2||Math.abs(start.y-end.y)>2||
-     Math.abs(start.width-end.width)>2||Math.abs(start.height-end.height)>2)
+     Math.abs(start.width-end.width)>2||Math.abs(start.height-end.height)>2){
+   // Only synthetic layout metrics; no project content or private addresses.
+   console.error("E04_NAV_LAYOUT_METRICS",JSON.stringify({id,start,end,scrollStart,scrollEnd}));
    throw Error("E04_NAV_HOVER_JITTER_"+id.toUpperCase());
+  }
  }
  evidence.menu_hover_stable=true;
  evidence.success=true;
