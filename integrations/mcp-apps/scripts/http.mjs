@@ -36,7 +36,7 @@ try{
  const result=await client.callTool({name:"meu_artigo_painel",arguments:{locale:"en"}});
  assert.equal(result.isError,true);
  assert.match(result.content[0].text,/personal ChatGPT Google Drive connection/);
- const resource=await client.readResource({uri:"ui://meu-artigo/site-v2.html"});
+ const resource=await client.readResource({uri:"ui://meu-artigo/site-v3.html"});
  assert.equal(resource.contents[0].mimeType,"text/html;profile=mcp-app");
  console.log("MCP HTTP local authentication, origin guard, tool/text fallback and UI resource passed.");
 }finally{
