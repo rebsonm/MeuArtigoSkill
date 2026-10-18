@@ -82,7 +82,7 @@ The last command runs in foreground. Keep this session open throughout ChatGPT t
 
 1. In https://chatgpt.com Plugins, choose **Add custom MCP server** → **Tunnel**, select the E05 tunnel or enter its `tunnel_id` as authorized by the workspace. Name the test connection `Meu Artigo — E05 Sintético`. Do **not** edit, delete, replace or refresh the existing pilot.
 2. Complete authentication settings required by the UI. The fixture-only server has no user Drive access; workspace-limited tunnel access is still required. If the UI requires external OAuth not supported by the chosen tunnel, STOP.
-3. Check `tools/list` shows `meu_artigo_painel` with the **E05 synthetic-only description** and resource `ui://meu-artigo/site-v2.html`, then start a **new chat** selecting ONLY the test plugin.
+3. Check `tools/list` shows `meu_artigo_painel` with the **E05 synthetic-only description** and resource `ui://meu-artigo/site-v3.html`, then start a **new chat** selecting ONLY the test plugin.
 4. Run two calls separately with **no Drive or project files**:
   - ALPHA: one task `SYN-E05-A-01`, name `SYNTHETIC E05 ALPHA`, owner `Synthetic Researcher`, deadline null, seven gates all false, code REVIEW, explanation SYNTHETIC E05 REVIEW, responsible Synthetic Researcher; schema MEU_ARTIGO_SITE_V1, route documentary, total gates 7, partial false.
   - BRAVO: same fields, but task `SYN-E05-B-01` and `SYNTHETIC E05 BRAVO`.
@@ -99,3 +99,10 @@ Record the reviewed SHA, ChatGPT browser version, new test plugin name, rendered
 - Remove/deactivate E05 custom test connection or revoke the E05 tunnel/runtime key when the acceptance is complete, according to the account's controls. Do NOT uninstall the production Plugin.
 - Any cleanup of `/opt/meu-artigo-e05` is a separate operator decision. Never use wildcard `rm -rf /opt/meu-artigo-*`.
 - **E05 complete** only after the real ChatGPT E05 plugin renders both fixture projections correctly. Local/Chromium CI alone is not sufficient.
+
+## Inline preference follow-up (E05 UI v3 — 2026-10-17)
+
+- Original synthetic ALPHA rendered in a ChatGPT conversation side panel. New resource `ui://meu-artigo/site-v3.html` requests `preferredDisplayMode: "inline"` with fullscreen allowed for ten-screen navigation. This is a **host hint, not a forced mode**.
+- The original E05 VPS checkout remains pinned to the former SHA until an operator performs a deliberate isolated-only update with the tunnel daemon stopped. **Do not update files while the old client is still serving them.** Existing profile, keys, and tunnel ID remain; never rerun T1 initial-clone instructions.
+- The user must review the new PR #81 HEAD, pass all checks, stop the E05 foreground daemon with Ctrl+C, check the original stage17 SHA, fast-forward only `/opt/meu-artigo-e05/src` to the exact reviewed new SHA, rerun preflight, then restart E05 tunnel with the existing scoped Runtime key. No production restart. Refresh the *test* ChatGPT connection metadata and start a new chat before testing v3.
+- Accept inline only with visual evidence; if the host still chooses side panel, record `HOST_INLINE_HINT_NOT_HONORED` without trying to bypass platform UI. No automatic requestDisplayMode without user action. No full E05 acceptance until BRAVO and all gates are tested.
