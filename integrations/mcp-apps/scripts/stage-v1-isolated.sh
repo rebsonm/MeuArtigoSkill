@@ -53,7 +53,7 @@ install -d -m 0700 -o "$USER_NAME" -g "$USER_NAME" "$STAGE" ||
   fail "STAGE_DIRECTORY_FAILED"
 
 # Never execute fetched unreviewed scripts as root.
-runuser -u "$USER_NAME" -- env \
+runuser -u "$USER_NAME" -- env -i \
   PATH="/usr/local/bin:/usr/bin:/bin" \
   HOME="$STAGE" \
   GIT_TERMINAL_PROMPT=0 \
