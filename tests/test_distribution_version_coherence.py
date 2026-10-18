@@ -15,7 +15,7 @@ class DistributionVersionCoherence(unittest.TestCase):
     def test_source_release_metadata_matches_candidate(self):
         v = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
         self.assertRegex(v, r"^\d+\.\d+\.\d+-beta\.\d+$")
-        self.assertIn(f"**Current source candidate:** `{v}`",
+        self.assertIn(f"**Current version:** `{v}`",
                       (ROOT / "README.md").read_text(encoding="utf-8"))
         cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
         self.assertIn(f'version: "{v}"', cff)
@@ -41,7 +41,7 @@ class DistributionVersionCoherence(unittest.TestCase):
         doc = (MCP / "STAGE17-VERSION-CANDIDATE.md").read_text(encoding="utf-8")
         self.assertIn("**UNCHANGED**", doc)
         self.assertIn("authorizes no merge", doc)
-        self.assertIn("SOURCE", doc)
+        self.assertIn("source-only decision evidence", doc)
 
 
 if __name__ == "__main__":
