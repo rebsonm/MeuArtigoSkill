@@ -17,7 +17,7 @@ releases, external deployment, tenant changes, or real project data access.
 ## PR #65: disposition by invariant, not by filename
 
 PR #65 adds or modifies scientific sidecar scenarios and documentation.
-On the original #85 tree, 15 files from its HEAD were absent; after #86 and this branch, the remaining absent paths are **12/40** (seven historical experiment docs, one older CI workflow, the old 12-case runner and test, and the original unified-panel test, plus one other source report). other
+On the original #85 tree, 15 files from its HEAD were absent; after #86 and this branch, the remaining absent paths are **12/40** (eight historical documents, one older CI workflow, the old 12-case runner and test, and the original unified-panel test). other
 shared implementation files were not byte-identical. This does **not**
 mean that all fifteen scientific controls are missing, and likewise
 overlapping current tests do not certify semantic equivalence.
