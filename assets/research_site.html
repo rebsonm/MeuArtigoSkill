@@ -59,6 +59,11 @@ button,input,select{font:inherit}.skip-link{position:absolute;top:-90px;left:12p
 .option.selected p{color:#334f78;font-weight:450}
 .option.selected .pill.green{color:#fff;background:#0B57D0}
 .option:focus-visible{outline:3px solid #93baff;outline-offset:2px}
+/* E05 observed in Chromium: selected 'Sources and searches' grew from 42
+   to 54px after the bold active state wrapped. Do not change item geometry. */
+.nav button,.nav button.active{font-weight:600}
+.nav button{white-space:nowrap;min-height:42px;overflow:hidden;text-overflow:ellipsis}
+.nav button .sym{flex:0 0 20px}
 /* E05: stable iframe dimensions while switching screens. Scrolling stays in
    the main panel instead of resizing the ChatGPT host around hovered menus. */
 .layout{height:740px;min-height:740px}
