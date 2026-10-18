@@ -50,7 +50,16 @@
 
 - Prepare resumable host-assisted Google Drive project-tree delivery: local manifest, safe next-step recommendation, remote readback reconciliation and incomplete/conflict reporting. Offline synthetic tests are included, but no direct Drive adapter or authenticated end-to-end host test is claimed; published beta.6 assets remain untouched.
 
-No later software release is planned at this time; further changes require a new maintainer decision. The beta.6 item below is a release candidate until an actual tagged GitHub release is published.
+The beta.9 integration below is an unpublished source candidate. The beta.6 release is historical; no release pointer, tag, installed Plugin, VPS or researcher account is updated by this Draft.
+
+## 0.9.0-beta.9 — pending publication
+
+**Unpublished integration candidate.** This Draft brings the read-only ChatGPT MCP Apps interface, Auth0/HTTP security guards, synthetic E05 visual acceptance, Drive F1–F9 fail-closed delivery safeguards, historical scientific regressions, and one integration review surface into a single proposed source version. Six workflows passed on the predecessor SHA `d0be8cb5b093a2681fc8991dd36a2862d51bd1f9`; they MUST run again after this metadata-only change.
+
+- Align canonical source VERSION, README, CITATION metadata, release notes and reproducible Skill/Plugin candidate build versions. The installed personal Plugin remains beta.8 and is not changed.
+- Align independent MCP Apps package, lockfile, server and browser bridge technical versions to 0.3.0 without claiming a deployed service.
+- Preserve seven researcher-approved scientific gates, zero implicit Google Drive write access, no research content in MCP persistence and privacy-safe errors.
+- Block merge, private distribution, real-user A/B acceptance and public directory release until their separate evidence and authorization gates are satisfied. No independent scientific validation is asserted.
 
 ## 0.9.0-beta.6 — 2026-10-15
 

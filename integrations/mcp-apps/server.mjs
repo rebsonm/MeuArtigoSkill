@@ -91,7 +91,7 @@ async function uiResource(){
 }
 export function createServer(){
  noResearchAccess();
- const server=new McpServer({name:"Meu Artigo — Host-Side Research",version:"0.2.0"});
+ const server=new McpServer({name:"Meu Artigo — Host-Side Research",version:"0.3.0"});
  registerAppTool(server,"meu_artigo_painel",{
   title:process.env.MEU_ARTIGO_E05_SYNTHETIC_ONLY==="YES"?"Meu Artigo E05 — synthetic visual acceptance":"Meu Artigo — current research dashboard (transient)",
   description:process.env.MEU_ARTIGO_E05_SYNTHETIC_ONLY==="YES"?
