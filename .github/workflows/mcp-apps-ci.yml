@@ -40,6 +40,13 @@ jobs:
           grep -Fxq 'E05_NO_CHANGES=YES' <<< "$result"
           grep -Fxq 'E05_DIAG_COMPLETE=YES' <<< "$result"
           ! grep -Eiq 'CONTROL_PLANE_API_KEY|OPENAI_ADMIN_KEY|Authorization:|Bearer |sk-[A-Za-z0-9]+' <<< "$result"
+      - name: Verify autonomous VPS E05 shell safety contracts offline
+        working-directory: integrations/mcp-apps
+        run: |
+          for file in scripts/e05-vps-autonomous-{bootstrap,status,rollback}.sh; do
+            bash -n "$file"
+          done
+          python3 scripts/test_e05_vps_autonomous_contract.py
       - name: Reproducible npm install without install scripts
         working-directory: integrations/mcp-apps
         run: npm ci --ignore-scripts --no-audit --no-fund

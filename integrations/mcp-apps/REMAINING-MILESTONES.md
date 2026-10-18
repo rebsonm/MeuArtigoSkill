@@ -84,3 +84,23 @@ Google Drive operation was executed here.
 - GO_SOURCE_CI: PASS on the prior `f281300f4e60a25c9a772439afce0923a44d0369` (7/7). A new diagnostic-only commit must finish CI at its own SHA before current-head source acceptance.
 - GO_REAL_E05: BLOCKED (`Session terminated`); GO_INDEPENDENT_REVIEW: NOT COMPLETE.
 - GO_MERGE / GO_DEPLOY / GO_PRIVATE_PLUGIN / GO_PUBLIC: NO-GO.
+
+## 2026-10-18 operational pivot: E05 VPS autonomy in C.A.D.A. batches
+
+Real VPS read-only evidence confirms a canonical clean isolated E05 checkout
+at `f7bdf1b92d62163b1530549361416fc0789cf98b`, unchanged primary pilot,
+and no matching running `tunnel-client` process. A later isolated update attempt
+failed at `.git/index: Permission denied` **before** preflight. The new
+source-controlled `E05-VPS-AUTONOMY.md` runbook and three protected shell
+scripts prepare a **single operator-executed** stage repair/update, systemd
+service, root-owned key via `LoadCredential`, startup recovery, status and
+rollback. These are prepared and statically testable, not installed on VPS.
+
+C.A.D.A. source deliverable stages: `OPS-01` index guard, `OPS-02` stage
+update/preflight, `OPS-03` credential, `OPS-04` systemd autostart,
+`OPS-05` real tunnel and host verification; owner = isolated VPS operator
+for OPS-01–04 and consented human test operator for OPS-05; deadlines are
+sequential dependencies, never guessed dates. Closure evidence: sanitized
+`E05_BOOTSTRAP_COMPLETE=YES`, service active/enabled and separately observed
+real ChatGPT fixture ALPHA/BRAVO + CSP. Go-live R01–R10 remain 0/10 CLOSED.
+No root shell, API key or production service was accessed by ChatGPT.
