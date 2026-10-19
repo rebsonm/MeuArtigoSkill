@@ -34,8 +34,10 @@ try{
  const tools=await client.listTools();
  assert.ok(tools.tools.find(x=>x.name==="meu_artigo_painel"));
  const result=await client.callTool({name:"meu_artigo_painel",arguments:{locale:"en"}});
- assert.equal(result.isError,true);
+ assert.notEqual(result.isError,true);
  assert.match(result.content[0].text,/personal ChatGPT Google Drive connection/);
+ assert.equal(result.structuredContent?.site?.kind,"HOST_NOT_CONNECTED");
+ assert.equal(result.structuredContent?.site?.project_loaded,false);
  const resource=await client.readResource({uri:"ui://meu-artigo/site-v3.html"});
  assert.equal(resource.contents[0].mimeType,"text/html;profile=mcp-app");
  console.log("MCP HTTP local authentication, origin guard, tool/text fallback and UI resource passed.");
