@@ -34,6 +34,16 @@ FORBIDDEN_TEST_APP_IDS = frozenset({
     "asdk_app_6ad3cf00e45c81918892e94fdcbf4a2e",  # private MCP pilot
 })
 ALLOWED_CHANNELS = {"private", "public"}
+# Publisher-owned static website deployed by GitHub Pages (PR #92).
+# URLs are for portal review metadata; CI deployment does not attest an
+# independent anonymous GET 200 or legal approval of the content.
+PUBLIC_LISTING_URLS = {
+    "websiteURL": "https://rebsonm.github.io/MeuArtigoSkill/",
+    "supportURL": "https://rebsonm.github.io/MeuArtigoSkill/suporte.html",
+    "privacyPolicyURL": "https://rebsonm.github.io/MeuArtigoSkill/privacidade.html",
+    "termsOfServiceURL": "https://rebsonm.github.io/MeuArtigoSkill/termos.html",
+}
+PUBLIC_PUBLISHER_NAME = "Rebson de Morais Mendes"
 
 
 def _json(data: dict) -> bytes:
@@ -127,6 +137,11 @@ def _manifest(version: str, channel: str) -> dict:
         # Review materials can be imported from the ZIP but still MUST be run
         # against consenting test accounts before directory submission.
         extension = manifest["extensions"]["com.openai"]
+        # Reviewer metadata must identify the same individual who owns the
+        # public website. No pages or credentials are bundled into the ZIP.
+        manifest["author"]["name"] = PUBLIC_PUBLISHER_NAME
+        extension["interface"]["developerName"] = PUBLIC_PUBLISHER_NAME
+        extension["interface"].update(PUBLIC_LISTING_URLS)
         extension["review"] = {
             "test_cases": _review_cases(),
             "commerce": False,
@@ -187,6 +202,11 @@ def _check_public_metadata(plugin: dict) -> None:
             or len(interface.get("shortDescription", "")) > 30
             or len(interface.get("longDescription", "")) > 4000):
         raise ValueError("PUBLIC_LISTING_METADATA_INVALID")
+    for key, expected_url in PUBLIC_LISTING_URLS.items():
+        if interface.get(key) != expected_url:
+            raise ValueError("PUBLIC_LISTING_URL_INVALID_" + key)
+    if interface.get("developerName") != PUBLIC_PUBLISHER_NAME:
+        raise ValueError("PUBLIC_PUBLISHER_IDENTITY_MISMATCH")
     starters = interface.get("defaultPrompt", [])
     if (not isinstance(starters, list) or len(starters) > 3
             or any(not isinstance(x, str) or not x or len(x) > 128
