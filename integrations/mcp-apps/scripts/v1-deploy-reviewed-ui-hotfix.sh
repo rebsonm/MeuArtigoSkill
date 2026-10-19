@@ -101,16 +101,27 @@ trap 'exit 143' TERM
 
 STAGED=YES
 cp -a -- "$ROOT" "$STAGE" || fail "RUNTIME_COPY_FAILED"
-# Only three source files differ: no changes to auth, HTTP, dependencies,
-# systemd security sandbox, E05 fixture policy or reverse proxy.
+# Exactly three production files and four TEST-ONLY scripts are updated in
+# this isolated staging copy. The old tests assert isError=true for blank calls
+# and must NOT be reused to validate the new no-snapshot success contract.
+# Auth, HTTP, dependency lockfile, systemd sandbox, E05 *runtime*, reverse
+# proxy and the original live runtime are not modified.
 for file in \
   assets/research_site.html \
   integrations/mcp-apps/server.mjs \
-  integrations/mcp-apps/ui_output_schema.mjs;do
+  integrations/mcp-apps/ui_output_schema.mjs \
+  integrations/mcp-apps/scripts/smoke.mjs \
+  integrations/mcp-apps/scripts/host-projection.mjs \
+  integrations/mcp-apps/scripts/host-projection-ui.mjs \
+  integrations/mcp-apps/scripts/e05-synthetic-test.mjs;do
  case "$file" in
   assets/research_site.html) expected=8866aabc8935fe7e6055b24b6dbcdaf8732bba61;;
   integrations/mcp-apps/server.mjs) expected=f821c78deec655e5b2d43b1c0314ee3a53d317f3;;
   integrations/mcp-apps/ui_output_schema.mjs) expected=dec3246d9ba0a7e402a17b544e3c4982bd3180fd;;
+  integrations/mcp-apps/scripts/smoke.mjs) expected=dd4e5e43565597d7d0f240db4ef3957aa5738d62;;
+  integrations/mcp-apps/scripts/host-projection.mjs) expected=aa31e6555f0fabe7bde366e4e2d9809b0e2ddd38;;
+  integrations/mcp-apps/scripts/host-projection-ui.mjs) expected=6475891244e0d2ba770c1b619e9d7df67515f63d;;
+  integrations/mcp-apps/scripts/e05-synthetic-test.mjs) expected=fd8bf66de7b44bce9dc5bd307cf3314ae15b5e85;;
   *) fail "UNAPPROVED_SOURCE_PATH";;
  esac
  dest="$STAGE/$file"
