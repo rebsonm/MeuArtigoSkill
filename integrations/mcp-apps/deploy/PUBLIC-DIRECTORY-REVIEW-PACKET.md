@@ -4,6 +4,8 @@
 **Product:** Meu Artigo — assisted research governance, traceable evidence and seven human scientific gates.
 **Architecture:** packaged scientific Skill + one remote, read-only MCP panel `meu_artigo_painel`.
 **Official endpoint:** `https://mcp.allflux.com.br/mcp`.
+**Publisher:** Rebson de Morais Mendes (pessoa física); **support/privacy:** `rebsonm@gmail.com`.
+**Static site host (GitHub Pages enabled, deployment NOT YET VERIFIED):** `https://rebsonm.github.io/MeuArtigoSkill/`. Intended paths: `/`, `/suporte.html`, `/privacidade.html`, `/termos.html`. Do not enter these as live submission URLs before legal sign-off and successful HTTPS checks.
 **MCP scope:** `mcp:read`; resource-server Auth0 issuer `https://dev-w6estudk22tzwdil.us.auth0.com/`.
 **Operational evidence and limits (19 Oct 2026):** the maintainer reported the V1 Auth0 authenticated-user activation and a successful authenticated `meu_artigo_painel` call from the owner's ChatGPT account, without snapshot and with bounded fictional snapshots. Earlier documentation describing `MEU_ARTIGO_MCP_PILOT_SUBS=DENY_ALL` as the *current* production state is stale. Current on-host policy and identity controls must be checked read-only before public review; an owner's successful call does **not** prove another user's consent, OAuth PKCE A/B, permission isolation, reviewer access or public approval.
 
@@ -41,7 +43,7 @@ For protocol security, separately verify anonymous/invalid token `401`, valid no
 - [ ] Review account: inspect the **effective** production Auth0 subject policy and authorize a separate, consenting reviewer identity through the approved configuration, preserving JWT checks and rollback. Do not infer `DENY_ALL` from stale source notes or expose arbitrary subjects merely to pass a scan.
 - [ ] OAuth client registration: verify exact callback and approved method in portal (`provided`, DCR or CIMD); no secrets in `mcp.json`.
 - [ ] OpenAI publisher: identity verification, suitable organization/project, `api.apps.write` permission, domain challenge, current successful MCP tool scan.
-- [ ] Four **actually available and accurate** HTTPS pages: product `websiteURL`, support `supportURL`, privacy `privacyPolicyURL`, and terms `termsOfServiceURL`. Do not invent URLs or policy promises.
+- [ ] Four **actually available and accurate** HTTPS pages on the user-selected GitHub Pages origin: product `websiteURL`, support `supportURL`, privacy `privacyPolicyURL`, and terms `termsOfServiceURL`. GitHub Pages is enabled but deployment is NOT verified; publish only after legal review, approved page copy and controlled manual workflow execution. Do not treat predicted paths as functioning URLs.
 - [ ] At least one secure reviewer test account, compliant access flow, and a real demo-recording URL; not created or uploaded in this packet.
 - [ ] Review cases: the exact five positive and three negative cases above must be run, corrected, and included or entered in the submission; do not imply PASS before real observation.
 - [ ] Release notes, final version consistency (source remains `0.9.0-beta.9`), submitted tool annotations/CSP, security evidence and explicit owner's go/no-go for public submission.
