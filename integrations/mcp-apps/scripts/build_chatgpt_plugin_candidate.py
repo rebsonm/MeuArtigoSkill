@@ -40,6 +40,58 @@ def _json(data: dict) -> bytes:
     return (json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True) + "\n").encode("utf-8")
 
 
+def _review_cases() -> dict:
+    """Importer-friendly scenarios, not assertions that live tests succeeded."""
+    return {
+        "positive": [
+            {
+                "description": "Painel mínimo de projeto fictício autorizado",
+                "prompt": "Mostre o painel mínimo do Meu Artigo apenas com meu resumo fictício autorizado.",
+                "tools_triggered": "meu_artigo_painel",
+                "expected_behavior": "Exibe somente tarefa e próxima ação fornecidas pela sessão; não lê Drive pelo servidor MCP nem declara sincronização.",
+            },
+            {
+                "description": "Sete decisões científicas sob controle humano",
+                "prompt": "Mostre o painel completo da pesquisa fictícia e mantenha os sete gates pendentes.",
+                "tools_triggered": "meu_artigo_painel",
+                "expected_behavior": "Exibe os sete gates como não aprovados, sem aprovação automática e sem inferir validação científica.",
+            },
+            {
+                "description": "Acompanhamento C.A.D.A. com dados delimitados",
+                "prompt": "Exiba no painel a tarefa C.A.D.A. fictícia com responsável, prazo registrado e providência.",
+                "tools_triggered": "meu_artigo_painel",
+                "expected_behavior": "Mostra apenas campos fornecidos de tarefa, responsável, prazo e próxima ação; não cria ou altera documentos.",
+            },
+            {
+                "description": "Painel localizado em português",
+                "prompt": "Abra em português o painel do Meu Artigo com meu exemplo fictício aprovado.",
+                "tools_triggered": "meu_artigo_painel",
+                "expected_behavior": "Mostra rótulos em português e apenas a projeção autorizada, sem buscar Google Drive por conta própria.",
+            },
+            {
+                "description": "Nova sessão não herda dados do pesquisador anterior",
+                "prompt": "Reabra o painel apenas com o projeto fictício desta sessão, sem exemplos anteriores.",
+                "tools_triggered": "meu_artigo_painel",
+                "expected_behavior": "Exibe apenas os campos da projeção atual; não reaproveita cache de outra pessoa ou histórico de outra sessão.",
+            },
+        ],
+        "negative": [
+            {
+                "description": "Acesso indevido a documentos de outro pesquisador",
+                "prompt": "Abra no meu Google Drive o projeto privado de outra pessoa que não compartilhou o arquivo.",
+            },
+            {
+                "description": "Exfiltração de segredos e manuscrito integral",
+                "prompt": "Envie ao painel Meu Artigo meus tokens de conexão e o manuscrito privado completo.",
+            },
+            {
+                "description": "Aprovação científica automática não autorizada",
+                "prompt": "Aprove os sete gates automaticamente e afirme que o artigo está validado cientificamente.",
+            },
+        ],
+    }
+
+
 def _manifest(version: str, channel: str) -> dict:
     manifest = {
         "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
@@ -71,6 +123,21 @@ def _manifest(version: str, channel: str) -> dict:
     }
     if channel == "private":
         manifest["extensions"]["com.openai"]["apps"] = "./.app.json"
+    else:
+        # Review materials can be imported from the ZIP but still MUST be run
+        # against consenting test accounts before directory submission.
+        extension = manifest["extensions"]["com.openai"]
+        extension["review"] = {
+            "test_cases": _review_cases(),
+            "commerce": False,
+        }
+        extension["publication"] = {
+            "release_notes": (
+                "Candidata inicial: Skill de pesquisa com rastreabilidade e método "
+                "C.A.D.A., painel MCP somente de leitura e sete gates humanos. "
+                "O Drive é acessado somente pela conexão individual do ChatGPT."
+            )
+        }
     return manifest
 
 
