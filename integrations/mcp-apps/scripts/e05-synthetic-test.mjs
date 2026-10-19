@@ -38,6 +38,10 @@ try{
   assert.equal(result.structuredContent.site.tasks[0].task,"SYNTHETIC E05 "+value);
   assert.equal(result.structuredContent.site.documented_gate_count,0);
  }
+ const noSnapshot=await client.callTool({name:"meu_artigo_painel",
+   arguments:{locale:"pt",mode:"MINIMAL"}});
+ assert.equal(noSnapshot.isError,true,"E05 blank mode must remain closed");
+ assert.equal(noSnapshot.structuredContent,undefined);
  const real=fixture("ALPHA");real.tasks[0].task="PRIVATE RESEARCH DOCUMENT";
  assert.equal((await call(real)).isError,true);
  const gate=fixture("ALPHA");gate.gates[0].approval_documented=true;
