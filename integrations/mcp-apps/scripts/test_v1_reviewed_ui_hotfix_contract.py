@@ -9,7 +9,7 @@ import unittest
 S=Path(__file__).with_name("v1-deploy-reviewed-ui-hotfix.sh").read_text(encoding="utf8")
 
 class DeploymentContract(unittest.TestCase):
-    def test_only_three_pinned_files_and_separate_runtime(self):
+    def test_pinned_runtime_and_matching_test_contracts(self):
         for required in (
             'SOURCE_SHA="4365456fd63cb6090dac7e79dd1cadaf0732da2c"',
             'ORIGINAL_SHA="02e03674e8e897d7f5e3f6769f7902062695b8dc"',
@@ -18,6 +18,14 @@ class DeploymentContract(unittest.TestCase):
             "assets/research_site.html",
             "integrations/mcp-apps/server.mjs",
             "integrations/mcp-apps/ui_output_schema.mjs",
+            "integrations/mcp-apps/scripts/smoke.mjs",
+            "integrations/mcp-apps/scripts/host-projection.mjs",
+            "integrations/mcp-apps/scripts/host-projection-ui.mjs",
+            "integrations/mcp-apps/scripts/e05-synthetic-test.mjs",
+            "dd4e5e43565597d7d0f240db4ef3957aa5738d62",
+            "aa31e6555f0fabe7bde366e4e2d9809b0e2ddd38",
+            "6475891244e0d2ba770c1b619e9d7df67515f63d",
+            "fd8bf66de7b44bce9dc5bd307cf3314ae15b5e85",
             'git hash-object "$dest.new"',
             'SOURCE_BLOB_NOT_PINNED',
             'HOTFIX_ALREADY_PRESENT',
