@@ -420,6 +420,8 @@ if(isCanonical){
   }[activeLocale]||['Partial view: ',' of ',' registered gates are visible. Total approvals cannot be inferred from this view.','unknown'];
   const totalText=Number.isInteger(siteData.registered_gate_total)?
     String(siteData.registered_gate_total):partialText[3];
+  if(!gates.length && siteData.registered_gate_total===null)
+    return '<p class="info" role="status">Nenhum gate exibido. O total de gates e de aprovações não foi informado nesta sessão.</p>';
   return gatePartial?
     '<p class="info" role="status">'+partialText[0]+gates.length+
     partialText[1]+totalText+partialText[2]+'</p>':'';
@@ -445,9 +447,11 @@ if(isCanonical){
       g.approval_documented===true?'Aprovação registrada; autenticidade não comprovada':'Sem aprovação verificada',
       '<span class="pill '+(g.approval_documented===true?'green':'yellow')+'">'+
       (g.approval_documented===true?'Documentado':'Requer revisão')+'</span>')).join('');
-  const nextCode=e(action.code||'UNKNOWN');
-  const nextText=e(action.explanation||'Consulte CONTINUIDADE.md e os registros autorizados.');
-  const nextOwner=e(action.responsible||'A definir');
+  const nextCode=action.code?e(action.code):'Nenhuma próxima ação registrada';
+  const nextText=action.explanation?e(action.explanation):
+    'Este snapshot não informa providências a executar. Consulte somente os registros autorizados.';
+  const nextOwner=action.responsible?e(action.responsible):'Não informado';
+  const nextActionPresent=Boolean(action.code||action.explanation||action.responsible);
   const logged=taskRows.length;
   screens.tasks=()=>{
    const matches=taskRows.filter(row=>row.join(' ').toLocaleLowerCase(activeLocale).includes(taskQuery.toLocaleLowerCase(activeLocale)));
@@ -482,16 +486,19 @@ if(isCanonical){
     '<div class="kpis">'+
       kpi('Tarefas registradas',String(logged),'Quantidade registrada; execução não comprovada','▤')+
       kpi('Gates visíveis documentados',documentedCount,'Contagem somente dos registros exibidos; não equivale à validação independente','✓')+
-      kpi('Pendências','Não avaliado','Depende de conferência do CONTINUIDADE.md','◷')+
+      kpi('Pendências','Não avaliado','Depende de conferência dos registros autorizados','◷')+
       kpi('Fontes verificadas','Não avaliado','Nenhuma auditoria de fontes executada nesta tela','▱')+
     '</div>'+gateScope()+'<div class="cols"><section class="pane tinted"><div class="mini-label">Próxima ação registrada</div>'+
     '<h2 data-research-original="true">'+nextCode+'</h2><p data-research-original="true">'+nextText+'</p><p class="quiet">Responsável: <span data-research-original="true">'+nextOwner+'</span></p>'+
-    '<button class="primary" data-go="tasks">Conferir tarefas →</button></section>'+
-    '<section class="pane"><h3>Estado científico</h3><p>'+observedGates+' registro(s) de aprovação identificados em '+gates.length+
-    ' gate(s) exibidos; a identidade do revisor não foi autenticada.</p>'+
-    '<div class="gates">'+Array.from({length:7},(_,i)=>'<span class="gate-dot'+(gates[i]?.approval_documented===true?' done':'')+'">'+
-    (gates[i]?.approval_documented===true?'✓':String(i+1))+'</span>').join('<span class="g-line"></span>')+
-    '</div><div class="footnote">Validações científicas não são calculadas a partir de tarefas.</div></section></div>'+
+    (nextActionPresent&&logged?'<button class="primary" data-go="tasks">Conferir tarefas →</button>':'')+'</section>'+
+    '<section class="pane"><h3>Estado científico</h3><p>'+
+    (gates.length?
+      observedGates+' registro(s) de aprovação identificados em '+gates.length+
+      ' gate(s) exibidos; a identidade do revisor não foi autenticada.':
+      'Nenhum gate ou aprovação foi apresentado neste snapshot.')+'</p>'+
+    (gates.length?'<div class="gates">'+Array.from({length:7},(_,i)=>'<span class="gate-dot'+(gates[i]?.approval_documented===true?' done':'')+'">'+
+    (gates[i]?.approval_documented===true?'✓':String(i+1))+'</span>').join('<span class="g-line"></span>')+'</div>':'')+
+    '<div class="footnote">Validações científicas não são calculadas a partir de tarefas.</div></section></div>'+
     safeNotice+realFooter;
   screens.steps=()=>heading('Etapas e gates científicos','Estados registrados, não autenticação de avaliadores ou aprovação científica.')+
     gateScope()+(gateList?'<div class="list">'+gateList+'</div>':'<div class="info">Nenhum registro de gate disponível neste snapshot.</div>')+safeNotice+realFooter;
