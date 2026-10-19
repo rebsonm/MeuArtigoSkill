@@ -88,6 +88,11 @@ jobs:
           bash -n integrations/mcp-apps/scripts/v1-allow-one-researcher.sh
           python integrations/mcp-apps/scripts/test_v1_one_user_contract.py
 
+      - name: Validate authenticated multiuser activation and rollback syntax
+        run: |
+          bash -n integrations/mcp-apps/scripts/v1-enable-authenticated-users.sh
+          python integrations/mcp-apps/scripts/test_v1_public_auth_activation_contract.py
+
       - name: Reproducible npm install without install scripts
         working-directory: integrations/mcp-apps
         run: npm ci --ignore-scripts --no-audit --no-fund
