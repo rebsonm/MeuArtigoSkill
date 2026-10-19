@@ -28,6 +28,9 @@ OPTIONAL_PROTOCOL_DOCS={
     ".github/workflows/mcp-apps-ci.yml",
     # Stage 17 E04 browser CI remains source-only and explicitly reviewed.
     ".github/workflows/mcp-apps-stage17-browser.yml",
+    # Exact GitHub Pages deployment workflow: source-only, static legal pages
+    # gated by explicit review; never included in standalone Skill packaging.
+    ".github/workflows/meu-artigo-pages.yml",
     "docs/ETAPA04-CI-SECURITY.md",
     "scripts/audit_optional_mcp_supply_chain.py",
     "tests/test_optional_mcp_supply_chain.py",
@@ -85,6 +88,7 @@ class PublicSkillBoundaryTests(unittest.TestCase):
             ".github/workflows/security-contracts.yml",
             ".github/workflows/codeql-javascript.yml",
             ".github/workflows/mcp-apps-stage17-browser.yml",
+            ".github/workflows/meu-artigo-pages.yml",
         ):
             self.assertNotIn(forbidden, packaged)
 
