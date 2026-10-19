@@ -26,6 +26,24 @@ const dom=new JSDOM(html.replace("__MEU_ARTIGO_SITE_MODEL_JSON__",
 try{
  const d=dom.window.document, host=dom.window.MeuArtigoHost;
  assert.ok(host?.receive);
+ const empty=normalizeHostSnapshot({
+  schema:"MEU_ARTIGO_SITE_V1",
+  tasks:[],gates:[],
+  next_action:{code:null,explanation:null,responsible:null}
+ });
+ assert.equal(host.receive({...empty,kind:"CANONICAL_LOCAL_SNAPSHOT"}),true);
+ const overview=d.getElementById("content");
+ const rendered=overview.textContent;
+ assert.match(rendered,/Nenhuma próxima ação registrada/);
+ assert.match(rendered,/Nenhum gate exibido/);
+ assert.match(rendered,/Nenhum gate ou aprovação foi apresentado/);
+ assert.doesNotMatch(rendered,/UNKNOWN|CONTINUIDADE\.md|0 de não informado/);
+ assert.equal(overview.querySelectorAll(".gate-dot").length,0,
+  "No imaginary 7-gate sequence may appear when registry total is unknown");
+ assert.equal(overview.querySelectorAll('button[data-go="tasks"]').length,0,
+  "No task CTA when neither action nor task was supplied");
+ d.querySelector('nav button[data-page="validations"]').click();
+ assert.match(d.getElementById("content").textContent,/Sem estados de validação disponíveis/);
  const a=make("ALPHA"),b=make("BRAVO");
  assert.equal(host.receive({...a,kind:"CANONICAL_LOCAL_SNAPSHOT"}),true);
  assert.equal(d.querySelectorAll("nav button[data-page]").length,10);
