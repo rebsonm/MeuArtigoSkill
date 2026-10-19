@@ -23,8 +23,11 @@ try{
  }));
  const result=await client.callTool({name:"meu_artigo_painel",
   arguments:{locale:"en",mode:"FULL"}});
- assert.equal(result.isError,true,"MCP must not read a project");
- assert.equal(result.structuredContent,undefined);
+ assert.notEqual(result.isError,true,"Connectivity must not require reading a project");
+ assert.equal(result.structuredContent?.site?.kind,"HOST_NOT_CONNECTED");
+ assert.equal(result.structuredContent?.site?.project_loaded,false);
+ assert.equal(result.structuredContent?.site?.drive_sync_verified,false);
+ assert.equal(result.structuredContent?.site?.scientific_approval_verified,false);
  assert.match(result.content[0].text,/personal ChatGPT Google Drive connection/);
  const view=await client.readResource({uri:"ui://meu-artigo/site-v3.html"});
  assert.match(view.contents[0].text,/HOST_NOT_CONNECTED/);
