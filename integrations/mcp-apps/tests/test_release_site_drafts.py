@@ -46,6 +46,25 @@ class SiteDrafts(unittest.TestCase):
                 self.assertNotIn("<iframe", page.lower())
                 self.assertNotIn("<form", page.lower())
 
+    def test_official_plugin_logo_and_blue_identity_are_shared_by_all_pages(self):
+        # Reuse the original repository logo, not a newly generated or linked image.
+        from pathlib import Path
+        logo = (PAGES.parents[2] / "assets" / "icon.svg").read_text(encoding="utf-8")
+        exact_logo = logo.replace(
+            'role="img" aria-label="Meu Artigo"',
+            'class="brand-icon" aria-hidden="true" focusable="false"'
+        )
+        for name in FILES:
+            with self.subTest(name=name):
+                page = (PAGES / name).read_text(encoding="utf-8")
+                self.assertIn(exact_logo, page)
+                self.assertIn('<span class="brand-name">Meu <strong>Artigo</strong></span>', page)
+                self.assertIn('#0B57D0', page)
+                self.assertIn('#2563EB', page)
+                self.assertIn('background:#eaf2ff', page)
+                self.assertNotIn('src="https://', page)
+                self.assertNotIn('class="mark">MA', page)
+
     def test_unapproved_policy_pages_are_deliberately_not_publishable(self):
         for name in FILES:
             with self.subTest(name=name):
