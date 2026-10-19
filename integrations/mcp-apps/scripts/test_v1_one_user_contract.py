@@ -35,7 +35,7 @@ class SingleUserPilotContract(unittest.TestCase):
     def test_identity_not_taken_from_cli_or_echoed(self):
         s=self.source
         self.assertIn("read -r -s",s)
-        self.assertIn('[[ "$#" -eq 1 ]]',s)
+        self.assertIn('"$#" -eq 1',s)
         self.assertIn('[[ "$SUB" =~',s)
         self.assertIn('printf \'MEU_ARTIGO_MCP_PILOT_SUBS=%s\\n\' "$SUB"',s)
         self.assertIn("chmod 0600",s)
