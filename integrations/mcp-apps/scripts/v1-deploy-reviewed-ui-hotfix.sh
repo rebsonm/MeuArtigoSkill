@@ -77,6 +77,7 @@ if [[ "$MODE" == --rollback ]];then
 fi
 fail_if_present
 TEMP=""
+STAGED=NO
 SWITCHED=NO
 COMPLETED=NO
 cleanup(){
@@ -89,12 +90,16 @@ cleanup(){
   systemctl restart "$SERVICE" >/dev/null 2>&1 || true
   echo 'V1_UI_HOTFIX_AUTO_ROLLBACK=ORIGINAL_RUNTIME' >&2
  fi
+ if [[ "$STAGED" == YES && "$COMPLETED" != YES ]];then
+  rm -rf -- "$STAGE"
+ fi
  exit "$code"
 }
 trap cleanup EXIT
 trap 'exit 130' INT
 trap 'exit 143' TERM
 
+STAGED=YES
 cp -a -- "$ROOT" "$STAGE" || fail "RUNTIME_COPY_FAILED"
 # Only three source files differ: no changes to auth, HTTP, dependencies,
 # systemd security sandbox, E05 fixture policy or reverse proxy.
