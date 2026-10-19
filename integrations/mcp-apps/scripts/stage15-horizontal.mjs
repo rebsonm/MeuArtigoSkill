@@ -108,9 +108,13 @@ try{
   for(const locale of localeCodes){
    const response=await client.callTool({name:"meu_artigo_painel",
     arguments:{mode,locale}});
-   assert.equal(response.isError,true);
+   assert.notEqual(response.isError,true);
    assert.ok(response.content?.[0]?.text);
-   assert.equal(response.structuredContent,undefined);
+   assert.equal(response.structuredContent?.site?.kind,"HOST_NOT_CONNECTED");
+   assert.equal(response.structuredContent?.site?.status,"NO_SNAPSHOT_PROVIDED");
+   assert.equal(response.structuredContent?.site?.project_loaded,false);
+   assert.equal(response.structuredContent?.site?.drive_sync_verified,false);
+   assert.equal(response.structuredContent?.site?.scientific_approval_verified,false);
    assert.match(response.content[0].text,/Meu Artigo/);
    assert.ok(!JSON.stringify(response).includes("SYNTHETIC_HORIZONTAL_FIFTEEN"));
    assert.ok(!JSON.stringify(response).includes("CADA-0015"));
