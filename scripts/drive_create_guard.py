@@ -1,0 +1,372 @@
+#!/usr/bin/env python3
+"""Fail-closed guard for non-idempotent, host-executed Drive folder creation.
+
+This tool NEVER calls Google Drive. It journals an intent BEFORE the host
+issues create_folder and blocks repeated creates after ambiguous outcomes.
+Host-provided scans are not independently authenticated by this script.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import os
+from pathlib import Path
+import tempfile
+
+import drive_delivery as delivery
+
+SCHEMA = "MEU_ARTIGO_DRIVE_CREATE_GUARD_V1"
+
+
+def plan_hash(plan: dict) -> str:
+    delivery.check_plan(plan)
+    return hashlib.sha256(json.dumps(plan, sort_keys=True,
+                                    separators=(",", ":")).encode("utf-8")).hexdigest()
+
+
+def direct_scan(plan: dict, inventory: dict, parent_id: str, *, allow_fixture: bool = False) -> dict:
+    """Require complete direct-child listing reconciled to inventory rows."""
+    delivery.check_inventory(plan, inventory, allow_fixture=allow_fixture)
+    delivery.require_drive_id(parent_id)
+    scans = inventory.get("parent_scans")
+    if not isinstance(scans, list):
+        raise ValueError("PARENT_COMPLETE_SCAN_REQUIRED")
+    selected = [x for x in scans if isinstance(x, dict) and x.get("parent_id") == parent_id]
+    if len(selected) != 1:
+        raise ValueError("PARENT_COMPLETE_SCAN_REQUIRED")
+    scan = selected[0]
+    token = scan.get("scan_token")
+    if scan.get("complete") is not True or not isinstance(token, str) or len(token) < 8:
+        raise ValueError("PARENT_COMPLETE_SCAN_REQUIRED")
+    children = scan.get("children")
+    if not isinstance(children, list):
+        raise ValueError("PARENT_SCAN_CHILDREN_REQUIRED")
+    seen_ids, children_by_id = set(), {}
+    for child in children:
+        if not isinstance(child, dict):
+            raise ValueError("INVALID_PARENT_SCAN_CHILD")
+        cid = delivery.require_drive_id(child.get("id"))
+        name = child.get("name")
+        kind = child.get("type")
+        if (not isinstance(name, str) or not name or "/" in name or
+                name in (".", "..") or kind not in ("folder", "file") or cid in seen_ids):
+            raise ValueError("INVALID_PARENT_SCAN_CHILD")
+        seen_ids.add(cid)
+        children_by_id[cid] = (name, kind)
+    # A boolean 'complete' flag alone is not evidence of pagination. For live
+    # operations require a cursor chain that terminates explicitly and covers
+    # every listed child ID. Fixtures bypass this provider-evidence contract.
+    if not allow_fixture:
+        pages = scan.get("page_evidence")
+        if not isinstance(pages, list) or not pages:
+            raise ValueError("PARENT_PAGE_EVIDENCE_REQUIRED")
+        expected_cursor = None
+        covered = set()
+        visited_cursors = set()
+        if len(pages) > 1000:
+            raise ValueError("PARENT_PAGINATION_PAGE_LIMIT")
+        for i, page in enumerate(pages):
+            if (not isinstance(page, dict) or
+                    page.get("source") != "GOOGLE_DRIVE_FILES_LIST" or
+                    "request_page_token" not in page or "next_page_token" not in page or
+                    page["request_page_token"] != expected_cursor or
+                    not isinstance(page.get("item_ids"), list)):
+                raise ValueError("PARENT_PAGINATION_CHAIN_INVALID")
+            next_cursor = page["next_page_token"]
+            if next_cursor is not None and next_cursor in visited_cursors:
+                raise ValueError("PARENT_PAGINATION_CURSOR_REPLAY")
+            if next_cursor is not None and (not isinstance(next_cursor, str) or not next_cursor):
+                raise ValueError("PARENT_PAGINATION_CHAIN_INVALID")
+            for item_id in page["item_ids"]:
+                delivery.require_drive_id(item_id)
+                if item_id in covered:
+                    raise ValueError("PARENT_PAGINATION_DUPLICATE_ID")
+                covered.add(item_id)
+            if next_cursor is None and i != len(pages) - 1:
+                raise ValueError("PARENT_PAGINATION_CHAIN_INVALID")
+            if next_cursor is not None:
+                visited_cursors.add(next_cursor)
+            expected_cursor = next_cursor
+        if expected_cursor is not None:
+            raise ValueError("PARENT_PAGINATION_INCOMPLETE")
+        if covered != seen_ids:
+            raise ValueError("PARENT_PAGINATION_CONTENT_MISMATCH")
+    actual = [e for e in inventory["entries"] if e["parent_id"] == parent_id]
+    if len(actual) != len(children_by_id) or len({e["id"] for e in actual}) != len(actual):
+        raise ValueError("PARENT_SCAN_INVENTORY_MISMATCH")
+    for e in actual:
+        if children_by_id.get(e["id"]) != (e["path"].split("/")[-1], e["type"]):
+            raise ValueError("PARENT_SCAN_INVENTORY_MISMATCH")
+    return scan
+
+
+def inspect_target(plan: dict, inventory: dict, path: str, parent_id: str, *, allow_fixture: bool = False) -> dict:
+    scan = direct_scan(plan, inventory, parent_id, allow_fixture=allow_fixture)
+    name = path.split("/")[-1]
+    matches = [c for c in scan["children"] if c["name"] == name]
+    if len(matches) > 1:
+        return {"action": "BLOCKED_DUPLICATE_NAME", "path": path, "count": len(matches)}
+    if matches and matches[0]["type"] != "folder":
+        return {"action": "BLOCKED_TYPE_CONFLICT", "path": path}
+    if matches:
+        return {"action": "REUSE_EXISTING", "path": path,
+                "id": matches[0]["id"], "parent_id": parent_id}
+    return {"action": "NOT_FOUND_AFTER_COMPLETE_SCAN", "path": path,
+            "parent_id": parent_id, "scan_token": scan["scan_token"]}
+
+
+def initial_journal(plan: dict) -> dict:
+    return {"schema": SCHEMA, "drive_root_id": plan["drive_root_id"],
+            "plan_sha256": plan_hash(plan), "operations": {}}
+
+
+def validate_journal(plan: dict, data: dict) -> None:
+    """Reject malformed Drive create intents before recovery or checkpointing.
+
+    Structural validation is not a substitute for an independently authenticated
+    provider read, durable signed anchor or external F8/F9 CAS.
+    """
+    delivery.check_plan(plan)
+    if (not isinstance(data, dict) or data.get("schema") != SCHEMA or
+            data.get("drive_root_id") != plan["drive_root_id"] or
+            data.get("plan_sha256") != plan_hash(plan) or
+            not isinstance(data.get("operations"), dict)):
+        raise ValueError("JOURNAL_PLAN_OR_ROOT_MISMATCH")
+    ops = data["operations"]
+    folders = {entry["path"] for entry in plan["entries"] if entry["type"] == "folder"}
+    if len(ops) > len(folders):
+        raise ValueError("JOURNAL_TOO_MANY_INTENTS")
+    pending = 0
+    for path, op in ops.items():
+        if path not in folders or not isinstance(op, dict):
+            raise ValueError("JOURNAL_UNKNOWN_OR_INVALID_INTENT")
+        if not set(op).issubset({"attempt_id", "parent_id", "state",
+                                  "before_scan_token", "observed_remote_id",
+                                  "after_scan_token"}):
+            raise ValueError("JOURNAL_UNKNOWN_INTENT_FIELD")
+        attempt, before = op.get("attempt_id"), op.get("before_scan_token")
+        if (not isinstance(attempt, str) or not (1 <= len(attempt) <= 128) or
+                not isinstance(before, str) or not (8 <= len(before) <= 256)):
+            raise ValueError("JOURNAL_INTENT_IDENTITY_INVALID")
+        try:
+            parent = delivery.require_drive_id(op.get("parent_id"))
+        except ValueError:
+            raise ValueError("JOURNAL_INTENT_PARENT_INVALID") from None
+        if "/" not in path and parent != plan["drive_root_id"]:
+            raise ValueError("JOURNAL_ROOT_INTENT_PARENT_DRIFT")
+        if op.get("state") == "OUTCOME_UNKNOWN":
+            pending += 1
+            if op.get("observed_remote_id") is not None or "after_scan_token" in op:
+                raise ValueError("JOURNAL_PENDING_WITH_RESOLUTION")
+        elif op.get("state") == "RESOLVED":
+            try:
+                delivery.require_drive_id(op.get("observed_remote_id"))
+            except ValueError:
+                raise ValueError("JOURNAL_RESOLVED_REMOTE_ID_INVALID") from None
+            after = op.get("after_scan_token")
+            if not isinstance(after, str) or not (8 <= len(after) <= 256):
+                raise ValueError("JOURNAL_RESOLVED_SCAN_INVALID")
+            if after == before:
+                raise ValueError("JOURNAL_STALE_RESOLUTION_SCAN")
+        else:
+            raise ValueError("JOURNAL_INVALID_INTENT_STATE")
+    if pending > 1:
+        raise ValueError("JOURNAL_MULTIPLE_UNRESOLVED_INTENTS")
+
+
+def read_journal(plan: dict, journal_path: Path) -> dict:
+    if journal_path.is_symlink():
+        raise ValueError("UNSAFE_JOURNAL_LINK")
+    if not journal_path.exists():
+        # A missing journal may be a lost session or an interrupted Drive call.
+        # Never reinterpret absence as a new-project authorization.
+        raise ValueError("JOURNAL_MISSING_RECOVERY_REQUIRED")
+    data = delivery.load_json(journal_path)
+    validate_journal(plan, data)
+    return data
+
+
+def create_preflight(plan: dict, inventory: dict, journal: dict, path: str, *, allow_fixture: bool = False) -> tuple[dict, dict]:
+    """Reserve a single create intent before the external call. No blind retries."""
+    try:
+        validate_journal(plan, journal)
+    except (ValueError, TypeError, KeyError):
+        raise ValueError("INVALID_CREATE_JOURNAL") from None
+    path = delivery.safe_relative(path)
+    entry = next((e for e in plan["entries"] if e["path"] == path), None)
+    if entry is None or entry["type"] != "folder":
+        raise ValueError("FOLDER_NOT_IN_PLAN")
+    # A guarded operation must be the exact next action from reconciliation.
+    action = delivery.next_action(plan, inventory, allow_fixture=allow_fixture)
+    if action.get("path") != path or action.get("action") != "CHECK_PARENT_FOR_CREATE":
+        return {"action": "BLOCKED_NOT_NEXT_MISSING_FOLDER", "path": path}, journal
+    parent_id = action["parent_id"]
+    observed = inspect_target(plan, inventory, path, parent_id, allow_fixture=allow_fixture)
+    if observed["action"] != "NOT_FOUND_AFTER_COMPLETE_SCAN":
+        return observed, journal
+    previous = journal["operations"].get(path)
+    if previous:
+        return {"action": "REINSPECT_NO_RETRY", "path": path,
+                "reason": "PREVIOUS_CREATE_INTENT", "attempt_id": previous["attempt_id"]}, journal
+    if any(op.get("state") == "OUTCOME_UNKNOWN" for op in journal["operations"].values()):
+        return {"action": "BLOCKED_OTHER_UNRESOLVED_OPERATION", "path": path}, journal
+    attempt_id = hashlib.sha256((plan_hash(plan) + "|" + path + "|" +
+                                 parent_id + "|" + observed["scan_token"]).encode()).hexdigest()[:24]
+    journal["operations"][path] = {
+        "attempt_id": attempt_id, "parent_id": parent_id, "state": "OUTCOME_UNKNOWN",
+        "before_scan_token": observed["scan_token"], "observed_remote_id": None
+    }
+    return {"action": "CREATE_FOLDER_ONCE", "path": path, "parent_id": parent_id,
+            "name": path.split("/")[-1], "attempt_id": attempt_id,
+            "warning": "Persisted intent; NEVER retry create directly after timeout/error."}, journal
+
+
+def verified_parent_id(plan: dict, inventory: dict, path: str, *, allow_fixture: bool = False) -> str | None:
+    """Resolve the expected current parent through the canonical plan, not an old intent."""
+    parent_path = delivery.parent_of(path)
+    if not parent_path:
+        return plan["drive_root_id"]
+    report = delivery.reconcile(plan, inventory, allow_fixture=allow_fixture)
+    row = next((e for e in report["entries"] if e["path"] == parent_path), None)
+    if not row or row["status"] != "VERIFIED":
+        return None
+    return row["remote_id"]
+
+
+def resolve_create(plan: dict, inventory: dict, journal: dict, path: str, *, allow_fixture: bool = False) -> tuple[dict, dict]:
+    """Reconcile after an uncertain return. No new create action is emitted."""
+    try:
+        validate_journal(plan, journal)
+    except (ValueError, TypeError, KeyError):
+        raise ValueError("INVALID_CREATE_JOURNAL") from None
+    path = delivery.safe_relative(path)
+    op = journal["operations"].get(path)
+    if not isinstance(op, dict):
+        raise ValueError("UNKNOWN_CREATE_INTENT")
+    if op["state"] not in ("RESOLVED", "OUTCOME_UNKNOWN"):
+        raise ValueError("INVALID_CREATE_STATE")
+    current_parent = verified_parent_id(plan, inventory, path, allow_fixture=allow_fixture)
+    if current_parent != op["parent_id"]:
+        return {"action": "BLOCKED_PARENT_DRIFT", "path": path,
+                "reason": "EXPECTED_PARENT_NO_LONGER_MATCHES_CREATE_INTENT"}, journal
+    scan = direct_scan(plan, inventory, op["parent_id"], allow_fixture=allow_fixture)
+    if scan["scan_token"] == op["before_scan_token"] or (op["state"] == "RESOLVED" and
+            scan["scan_token"] == op.get("after_scan_token")):
+        return {"action": "REINSPECT_PARENT", "path": path,
+                "reason": "STALE_OR_REUSED_SCAN"}, journal
+    result = inspect_target(plan, inventory, path, op["parent_id"], allow_fixture=allow_fixture)
+    report = delivery.reconcile(plan, inventory, allow_fixture=allow_fixture)
+    target = next((e for e in report["entries"] if e["path"] == path), None)
+    if op["state"] == "RESOLVED":
+        if (result["action"] == "REUSE_EXISTING" and target and
+                target["status"] == "VERIFIED" and
+                result["id"] == op["observed_remote_id"] == target["remote_id"]):
+            return {"action": "ALREADY_RESOLVED", "path": path,
+                    "remote_id": result["id"]}, journal
+        return {"action": "BLOCKED_PREVIOUS_RESOLUTION_DRIFT", "path": path,
+                "reason": "PREVIOUSLY_RESOLVED_FOLDER_NOT_CURRENTLY_VERIFIED"}, journal
+    if result["action"] == "REUSE_EXISTING":
+        if not target or target["status"] != "VERIFIED" or target["remote_id"] != result["id"]:
+            return {"action": "BLOCKED_INCONSISTENT_TARGET_PATH", "path": path}, journal
+        op["state"] = "RESOLVED"
+        op["observed_remote_id"] = result["id"]
+        op["after_scan_token"] = scan["scan_token"]
+        return {"action": "RESOLVED_EXISTING_REMOTE_FOLDER", "path": path,
+                "remote_id": result["id"], "parent_id": op["parent_id"]}, journal
+    if result["action"] == "NOT_FOUND_AFTER_COMPLETE_SCAN":
+        return {"action": "BLOCKED_AMBIGUOUS_OUTCOME", "path": path,
+                "reason": "NO_AUTOMATIC_RETRY_AFTER_POSSIBLE_EXTERNAL_SIDE_EFFECT"}, journal
+    return result, journal
+
+
+def locked_update(plan: dict, inventory: dict, journal_path: Path, path: str, command: str,
+                  *, project_root: Path | None = None,
+                  initialize_authorized: bool = False,
+                  enforce_root_scope: bool = False) -> dict:
+    """Exclusive journal lock prevents simultaneous local agents issuing same create."""
+    if enforce_root_scope:
+        # Public command-line operations require a My Drive root-bound
+        # project. Older synthetic in-process tests never perform Drive I/O.
+        import drive_root_anchor
+        drive_root_anchor.require_scope(plan)
+    journal_path = Path(journal_path).absolute()
+    if project_root is not None:
+        root = Path(project_root).resolve()
+        if journal_path.resolve() == root or root in journal_path.resolve().parents:
+            raise ValueError("JOURNAL_MUST_BE_OUTSIDE_PROJECT")
+    if journal_path.is_symlink():
+        raise ValueError("UNSAFE_JOURNAL_LINK")
+    journal_path.parent.mkdir(parents=True, exist_ok=True)
+    lock_path = journal_path.with_name(journal_path.name + ".lock")
+    # An existing lock is a blocker, not permission to race or remove its owner.
+    owned = False
+    try:
+        fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
+        owned = True
+        os.close(fd)
+        if command == "initialize":
+            # Bootstrap only after an explicit new-project attestation. The
+            # journal cannot be silently regenerated after loss or restart.
+            if not initialize_authorized:
+                raise ValueError("NEW_PROJECT_ATTESTATION_REQUIRED")
+            if journal_path.exists():
+                raise ValueError("JOURNAL_ALREADY_EXISTS")
+            next_step = delivery.next_action(plan, inventory)
+            if (next_step.get("action") != "CHECK_PARENT_FOR_CREATE" or
+                    next_step.get("path") != delivery.safe_relative(path)):
+                raise ValueError("INITIALIZATION_REQUIRES_NEXT_MISSING_FOLDER")
+            direct_scan(plan, inventory, next_step["parent_id"])
+            data = initial_journal(plan)
+            delivery.write_json(journal_path, data, root=project_root)
+            digest = hashlib.sha256(journal_path.read_bytes()).hexdigest()
+            return {"action": "JOURNAL_INITIALIZED_NEW_PROJECT",
+                    "path": path, "journal_sha256": digest,
+                    "warning": "Back up the journal in durable shared storage before creating Drive folders."}
+        data = read_journal(plan, journal_path)
+        if command == "prepare":
+            result, data = create_preflight(plan, inventory, data, path)
+        elif command == "resolve":
+            result, data = resolve_create(plan, inventory, data, path)
+        else:
+            raise ValueError("UNKNOWN_CREATE_GUARD_COMMAND")
+        if result["action"] in ("CREATE_FOLDER_ONCE", "RESOLVED_EXISTING_REMOTE_FOLDER"):
+            delivery.write_json(journal_path, data, root=project_root)
+            result["journal_sha256"] = hashlib.sha256(journal_path.read_bytes()).hexdigest()
+            result["durable_readback_required"] = True
+        return result
+    finally:
+        if owned:
+            lock_path.unlink()
+
+
+def main() -> int:
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument("command", choices=["initialize", "prepare", "resolve"])
+    p.add_argument("--attest-new-project", action="store_true",
+                   help="Explicit authorization only; never use to recover an interrupted operation.")
+    p.add_argument("--plan", type=Path, required=True)
+    p.add_argument("--inventory", type=Path, required=True)
+    p.add_argument("--journal", type=Path, required=True)
+    p.add_argument("--path", required=True)
+    p.add_argument("--project-root", type=Path, required=True)
+    args = p.parse_args()
+    try:
+        plan = delivery.load_json(args.plan)
+        inventory = delivery.load_json(args.inventory)
+        # No fixture bypass on the CLI.
+        result = locked_update(plan, inventory, args.journal, args.path, args.command,
+                               project_root=args.project_root,
+                               initialize_authorized=args.attest_new_project,
+                               enforce_root_scope=True)
+        print(json.dumps(result, ensure_ascii=False, sort_keys=True))
+        return 0 if result["action"] in (
+            "JOURNAL_INITIALIZED_NEW_PROJECT", "CREATE_FOLDER_ONCE",
+            "RESOLVED_EXISTING_REMOTE_FOLDER", "ALREADY_RESOLVED") else 2
+    except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
+        print(json.dumps({"action": "BLOCKED", "reason": str(exc)}))
+        return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
