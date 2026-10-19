@@ -80,9 +80,11 @@ try {
  assert.deepEqual(resources.resources.map(x=>x.uri),[URI]);
  const noProject=await client.callTool({name:"meu_artigo_painel",
    arguments:{locale:"fr"}});
- assert.equal(noProject.isError,true);
+ assert.notEqual(noProject.isError,true);
  assert.match(noProject.content[0].text,/ce MCP fournit uniquement/);
- assert.equal(noProject.structuredContent,undefined);
+ assert.equal(noProject.structuredContent?.site?.kind,"HOST_NOT_CONNECTED");
+ assert.equal(noProject.structuredContent?.site?.locale,"fr");
+ assert.equal(noProject.structuredContent?.site?.scientific_approval_verified,false);
  const wrongArgs=await client.callTool({name:"meu_artigo_painel",
    arguments:{mode:"NOT_AN_ALLOWED_MODE"}});
  assert.equal(wrongArgs.isError,true);
