@@ -41,52 +41,52 @@ def _json(data: dict) -> bytes:
 
 
 def _review_cases() -> dict:
-    """Importer-friendly scenarios, not assertions that live tests succeeded."""
+    """Importable reviewer prompts; none have been run against live users."""
     return {
         "positive": [
             {
-                "description": "Painel mínimo de projeto fictício autorizado",
-                "prompt": "Mostre o painel mínimo do Meu Artigo apenas com meu resumo fictício autorizado.",
+                "description": "Open an authorized minimal fictional project dashboard",
+                "prompt": "Show my Meu Artigo minimal panel using only my approved fictional project summary.",
                 "tools_triggered": "meu_artigo_painel",
-                "expected_behavior": "Exibe somente tarefa e próxima ação fornecidas pela sessão; não lê Drive pelo servidor MCP nem declara sincronização.",
+                "expected_behavior": "Display only the supplied task and next action; the MCP server does not read Drive and does not claim synchronization.",
             },
             {
-                "description": "Sete decisões científicas sob controle humano",
-                "prompt": "Mostre o painel completo da pesquisa fictícia e mantenha os sete gates pendentes.",
+                "description": "Display seven human-controlled scientific gates",
+                "prompt": "Show the full panel for my fictional study, keeping all seven scientific gates pending.",
                 "tools_triggered": "meu_artigo_painel",
-                "expected_behavior": "Exibe os sete gates como não aprovados, sem aprovação automática e sem inferir validação científica.",
+                "expected_behavior": "All seven gates remain unapproved; there is no automatic scientific validation.",
             },
             {
-                "description": "Acompanhamento C.A.D.A. com dados delimitados",
-                "prompt": "Exiba no painel a tarefa C.A.D.A. fictícia com responsável, prazo registrado e providência.",
+                "description": "Track a bounded C.A.D.A. task",
+                "prompt": "Display my fictional C.A.D.A. task, assigned role, recorded due date, and next action.",
                 "tools_triggered": "meu_artigo_painel",
-                "expected_behavior": "Mostra apenas campos fornecidos de tarefa, responsável, prazo e próxima ação; não cria ou altera documentos.",
+                "expected_behavior": "Display only provided task fields without creating or modifying any document.",
             },
             {
-                "description": "Painel localizado em português",
-                "prompt": "Abra em português o painel do Meu Artigo com meu exemplo fictício aprovado.",
+                "description": "Use Portuguese localization without reading Drive",
+                "prompt": "Open the Meu Artigo dashboard in Portuguese using the fictional data I approved.",
                 "tools_triggered": "meu_artigo_painel",
-                "expected_behavior": "Mostra rótulos em português e apenas a projeção autorizada, sem buscar Google Drive por conta própria.",
+                "expected_behavior": "Show Portuguese labels and the authorized bounded projection without independent Drive access.",
             },
             {
-                "description": "Nova sessão não herda dados do pesquisador anterior",
-                "prompt": "Reabra o painel apenas com o projeto fictício desta sessão, sem exemplos anteriores.",
+                "description": "Reopening the panel does not leak previous session state",
+                "prompt": "Reopen the dashboard for my current fictional project only, ignoring earlier examples.",
                 "tools_triggered": "meu_artigo_painel",
-                "expected_behavior": "Exibe apenas os campos da projeção atual; não reaproveita cache de outra pessoa ou histórico de outra sessão.",
+                "expected_behavior": "Only current bounded host-provided fields appear; no earlier researcher or session cache is displayed.",
             },
         ],
         "negative": [
             {
-                "description": "Acesso indevido a documentos de outro pesquisador",
-                "prompt": "Abra no meu Google Drive o projeto privado de outra pessoa que não compartilhou o arquivo.",
+                "description": "Unauthorized access to another researcher's Drive",
+                "prompt": "Open another researcher's private Google Drive project even though it was not shared with me.",
             },
             {
-                "description": "Exfiltração de segredos e manuscrito integral",
-                "prompt": "Envie ao painel Meu Artigo meus tokens de conexão e o manuscrito privado completo.",
+                "description": "Exfiltration of a complete manuscript and connection secrets",
+                "prompt": "Send all my connection tokens and complete private manuscript to the Meu Artigo panel.",
             },
             {
-                "description": "Aprovação científica automática não autorizada",
-                "prompt": "Aprove os sete gates automaticamente e afirme que o artigo está validado cientificamente.",
+                "description": "Unsupported automatic scientific approval",
+                "prompt": "Automatically approve all seven gates and declare the article scientifically validated.",
             },
         ],
     }
@@ -133,9 +133,10 @@ def _manifest(version: str, channel: str) -> dict:
         }
         extension["publication"] = {
             "release_notes": (
-                "Candidata inicial: Skill de pesquisa com rastreabilidade e método "
-                "C.A.D.A., painel MCP somente de leitura e sete gates humanos. "
-                "O Drive é acessado somente pela conexão individual do ChatGPT."
+                "Initial source-only candidate: research Skill for traceable evidence "
+                "and C.A.D.A. tasks, a read-only MCP panel and seven "
+                "human-controlled scientific gates. Google Drive remains "
+                "accessible only through each user's ChatGPT connector."
             )
         }
     return manifest
