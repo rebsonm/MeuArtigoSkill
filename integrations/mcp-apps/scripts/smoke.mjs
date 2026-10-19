@@ -16,9 +16,12 @@ try{
  assert.equal(tool._meta.ui.resourceUri,"ui://meu-artigo/site-v3.html");
  assert.equal(tool._meta["openai/outputTemplate"],"ui://meu-artigo/site-v3.html");
  const result=await client.callTool({name:"meu_artigo_painel",arguments:{locale:"es"}});
- assert.equal(result.isError,true);
+ assert.notEqual(result.isError,true);
  assert.match(result.content[0].text,/interfaz y orientación metodológica genérica/);
- assert.equal(result.structuredContent,undefined);
+ assert.equal(result.structuredContent?.site?.kind,"HOST_NOT_CONNECTED");
+ assert.equal(result.structuredContent?.site?.status,"NO_SNAPSHOT_PROVIDED");
+ assert.equal(result.structuredContent?.site?.locale,"es");
+ assert.equal(result.structuredContent?.site?.project_loaded,false);
  const resource=await client.readResource({uri:"ui://meu-artigo/site-v3.html"});
  const content=resource.contents[0];
  assert.equal(content.mimeType,"text/html;profile=mcp-app");
