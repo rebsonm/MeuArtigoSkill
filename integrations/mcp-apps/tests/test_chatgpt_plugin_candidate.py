@@ -56,6 +56,34 @@ class ChatGPTPluginCandidateTests(unittest.TestCase):
         self.assertEqual(inspect_candidate(output, ROOT, "public")["status"],
                          "SOURCE_PACKAGE_CHECK_PASS")
 
+    def test_review_cases_are_importable_but_do_not_claim_real_validation(self):
+        path = self.path("public")
+        build_candidate(ROOT, path, "public", mcp_url=TEST_PUBLIC_MCP_URL)
+        with ZipFile(path) as z:
+            manifest = json.loads(z.read("plugin.json"))
+            info = manifest["extensions"]["com.openai"]
+            cases = info["review"]["test_cases"]
+            self.assertEqual(len(cases["positive"]), 5)
+            self.assertEqual(len(cases["negative"]), 3)
+            for case in cases["positive"]:
+                self.assertTrue(case["description"])
+                self.assertTrue(case["prompt"])
+                self.assertEqual(case["tools_triggered"], "meu_artigo_painel")
+                self.assertTrue(case["expected_behavior"])
+            for case in cases["negative"]:
+                self.assertTrue(case["description"])
+                self.assertTrue(case["prompt"])
+            self.assertIs(info["review"]["commerce"], False)
+            self.assertNotIn("demo_recording_url", info["review"])
+            self.assertNotIn("test_credentials", info["review"])
+            self.assertNotIn("reviewer_instructions", info["review"])
+            self.assertTrue(info["publication"]["release_notes"])
+            self.assertNotIn("countries", info["publication"])
+            self.assertNotIn("websiteURL", info["interface"])
+            self.assertNotIn("supportURL", info["interface"])
+            self.assertNotIn("privacyPolicyURL", info["interface"])
+            self.assertNotIn("termsOfServiceURL", info["interface"])
+
     def test_public_rejects_unconfigured_or_unsafe_url(self):
         output = self.path("public")
         with self.assertRaisesRegex(ValueError, "PUBLIC_MCP_URL_REQUIRED"):
