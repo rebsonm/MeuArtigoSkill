@@ -1,0 +1,67 @@
+name: Meu Artigo | GitHub Pages (approved release only)
+
+on:
+  workflow_dispatch:
+    inputs:
+      legal_review_approved:
+        description: 'I confirm the public privacy, terms and contact pages have been reviewed and approved'
+        required: true
+        type: choice
+        options:
+          - 'NO'
+          - 'YES'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: meu-artigo-github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Verify and stage four public pages
+    if: ${{ github.ref == 'refs/heads/main' && inputs.legal_review_approved == 'YES' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout reviewed main
+        uses: actions/checkout@v4
+      - name: Refuse legal drafts, placeholders and unreviewed publication
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          source_dir="integrations/mcp-apps/deploy/site-drafts"
+          destination="$RUNNER_TEMP/meu-artigo-public-pages"
+          mkdir -p "$destination"
+          for page in index.html suporte.html privacidade.html termos.html; do
+            test -s "$source_dir/$page" || { echo "::error title=Missing site file::$page"; exit 2; }
+            if grep -Eiq 'Rascunho para revisão|noindex,nofollow|\[VALIDAR ANTES DA PUBLICAÇÃO\]|\[DEFINIR E VALIDAR ANTES DA PUBLICAÇÃO\]|\[CONFIRMAR E VALIDAR ANTES DA PUBLICAÇÃO\]|\[PREENCHER|não aprovado, publicado' "$source_dir/$page"; then
+              echo "::error title=Unapproved legal/public page::$page still contains draft markers or unreviewed placeholders"
+              exit 3
+            fi
+            cp -- "$source_dir/$page" "$destination/$page"
+          done
+          touch "$destination/.nojekyll"
+          test "$(find "$destination" -type f | wc -l)" -eq 5
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload only the four approved HTML pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ runner.temp }}/meu-artigo-public-pages
+
+  deploy:
+    name: Publish to GitHub Pages
+    needs: build
+    if: ${{ github.ref == 'refs/heads/main' && inputs.legal_review_approved == 'YES' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy vetted Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@v4
