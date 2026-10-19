@@ -25,11 +25,13 @@ The owner executed the pinned script from GitHub commit `ddd75040ff23db97aa258f0
 
 **Evidence conclusion:** Read-only VPS inspection = PASS. Actual effective time-to-delete logs = NOT_VERIFIED. Avoid claiming no logs or a fixed retention time. No source document, log event or bearer data was read or printed.
 
-## Auth0 — tenant-specific evidence from the administrator
+## Auth0 — dashboard evidence observed on 19 October 2026
 
-Auth0 retention depends on the effective paid/free plan. Auth0's public pricing identifies retention tiers of 1, 5, 10 and 30 days; **do not assume which one is active for this tenant**. Sign into your own authorized Auth0 dashboard and record only the plan tier and whether any Log Streams are enabled. Never export events, user emails, account IDs, settings containing secrets or bearer tokens. Provider documentation: https://auth0.com/pricing and https://support.auth0.com/center/s/article/retrieving-logs-after-auth0-retention-period-has-expired .
+The owner supplied a screenshot of **Monitoring → Log Streams**, whose notice reads: "This feature is not available for free plans. To configure a log stream, please upgrade your account to any paid plan." **No configured Log Streams were visible in that screenshot.** This supports a **Free-plan indication**, and proves neither the creation of an external stream nor provider-wide absence of authentication logs. A separate **Settings → Subscription** confirmation was not supplied; record the effective tenant subscription as *Free-indicated, not independently confirmed*.
 
-A Log Stream, if enabled, can forward event data to a destination with its **own** retention policy. This must be reviewed separately before public privacy promises.
+The provider's current [Auth0 Pricing](https://auth0.com/pt/pricing) shows **Log Retention: 1 Day (Free), 5 Days (Essentials), 10 Days (Professional), 30 Days (Enterprise)** and no Log Streaming entitlement for Free. Accordingly **1 day is the provider's published Free-tier retention, conditional on the tenant actually using that tier**, not an independently measured deletion test. Auth0's [expired-log policy](https://support.auth0.com/center/s/article/retrieving-logs-after-auth0-retention-period-has-expired) describes expiration after the applicable retention window.
+
+There is **no evidence of active Auth0 Log Streams** in the screenshot. This does not rule out operational logs held by ChatGPT, the VPS, third parties, or other independent logging mechanisms. Do not inspect or share user events, tokens, emails or credentials. For formal legal approval, verify the current subscription in the Auth0 tenant and review relevant subprocessors, cross-border transfer and retention policies separately.
 
 ## Final policy decision and publication gate
 
