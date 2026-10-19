@@ -1,0 +1,56 @@
+name: Meu Artigo - public website
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'website/**'
+      - '.github/workflows/meu-artigo-pages.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: meu-artigo-pages-public
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout reviewed source
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - name: Validate and stage exactly four public pages
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p "$RUNNER_TEMP/meu-artigo-pages"
+          for name in index.html suporte.html privacidade.html termos.html; do
+            test -s "website/$name"
+            grep -q 'class="brand-icon"' "website/$name"
+            grep -q 'Rebson de Morais Mendes' "website/$name"
+            if grep -Eqi 'Rascunho para revisão|noindex,nofollow|\[PREENCHER|\[VALIDAR ANTES DA PUBLICAÇÃO' "website/$name"; then
+              echo "::error title=Unreleased page::$name"
+              exit 2
+            fi
+            cp "website/$name" "$RUNNER_TEMP/meu-artigo-pages/$name"
+          done
+          touch "$RUNNER_TEMP/meu-artigo-pages/.nojekyll"
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ runner.temp }}/meu-artigo-pages
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Publish static site
+        id: deploy
+        uses: actions/deploy-pages@v4
