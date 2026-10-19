@@ -9,34 +9,38 @@
 | `privacyPolicyURL` | `privacidade.html` | Personal-data practices and processor boundaries |
 | `termsOfServiceURL` | `termos.html` | Use terms and human scientific responsibility |
 
-All four files share relative navigation, Portuguese copy, responsive CSS, keyboard focus, no JavaScript and no trackers. A prominent DRAFT banner, `noindex,nofollow` and placeholders keep them unsuitable for public portal submission until approved. Their GitHub preview addresses are *not* verified product website URLs; **do not fill manifest fields with guesses**.
+The four historical files in this **site-drafts** directory remain source-only draft previews. The separately deployed official website is in `website/` on `main`, using the owner-approved original logo and GitHub Pages URLs. The public ZIP already populates all four listing fields; use its values, not the draft page source. Actual HTTPS responses should be verified in the portal/browser.
 
 ## Required single owner decision before publication
 
-The maintainer supplied **rebsonm@gmail.com** as the intended public support, privacy and rights-contact mailbox (19 October 2026); it has been added to the draft HTML pages. This is owner-provided contact information, **not verification of mailbox deliverability or publication approval**. The project owner has confirmed **Rebson de Morais Mendes (individual, not company)** as responsible party and controller for processing performed under the project's responsibility. The responsible publisher must still confirm the legal bases, grounds and retention periods for Auth0 and infrastructure authentication logs, subprocessors, cross-border processing, applicable user rights notices, incident reporting route, terms validity and governing law. A legal/privacy review is necessary. Then deploy all four pages on an owned HTTPS origin, remove the DRAFT banners/noindex, verify every page with public GET 200 (valid certificate, no authentication) and only then populate the four manifest URL fields.
+The maintainer supplied **rebsonm@gmail.com** as the intended public support, privacy and rights-contact mailbox (19 October 2026); it has been added to the draft HTML pages. This is owner-provided contact information, **not verification of mailbox deliverability or publication approval**. The project owner has confirmed **Rebson de Morais Mendes (individual, not company)** as responsible party and controller for processing performed under the project's responsibility. The responsible publisher must still confirm the legal bases, grounds and retention periods for Auth0 and infrastructure authentication logs, subprocessors, cross-border processing, applicable user rights notices, incident reporting route, terms validity and governing law. A legal/privacy review is necessary. The standalone site was subsequently published from PR #92 and its four listing URLs are already in the generated package. Do not claim independent legal review or independently observed public HTTP 200 until those checks occur.
 
-The maintainer selected **GitHub Pages** for the four static pages on 19 October 2026. GitHub repository metadata now reports `has_pages=true` (Pages enabled), but **no public deployment has been verified**. Intended website: `https://rebsonm.github.io/MeuArtigoSkill/`; intended support, privacy and terms paths: `suporte.html`, `privacidade.html`, `termos.html` under that directory. These are **planned URLs, not publicly verified submission links**. The `.github/workflows/meu-artigo-pages.yml` workflow is manually gated to the reviewed `main` branch and deliberately refuses unapproved legal drafts. Keep `https://mcp.allflux.com.br/mcp` on its existing isolated authenticated VPS service; never proxy the marketing site through the MCP routes.
+The maintainer selected **GitHub Pages** for the four static pages on 19 October 2026. GitHub repository metadata now reports `has_pages=true` (Pages enabled), but **no public deployment has been verified**. Intended website: `https://rebsonm.github.io/MeuArtigoSkill/`; intended support, privacy and terms paths: `suporte.html`, `privacidade.html`, `termos.html` under that directory. These URLs are in the deployed GitHub Pages website package but independent HTTP GET verification is pending. The `.github/workflows/meu-artigo-pages.yml` workflow from standalone PR #92 is active on `main`; the Plugin directory remains unpublished. Keep `https://mcp.allflux.com.br/mcp` on its existing isolated authenticated VPS service; never proxy the marketing site through the MCP routes.
 
-## Recording script — 2–3 minutes; ONLY after consented real A/B verification
+## Real reviewer video — pre-submission; NO second researcher needed
 
-Record the following using a dedicated reviewer test account and entirely fictional material, never real academic files, tokens or student data. Do not substitute synthetic E05 recordings for actual hosted OAuth validation.
+Record a 2–3 minute walkthrough in an **authorized dedicated OpenAI review account** using wholly fictional data. Confirm a functioning OAuth session. The video is for the OpenAI reviewer; the external researcher joins only after the Plugin is published.
 
-| Duration | Screen and spoken demonstration | Pass evidence |
+| Time | Screen/demo | Evidence |
 | --- | --- | --- |
-| 0:00–0:20 | Introduce Meu Artigo in ChatGPT, explain seven scientific gates and C.A.D.A. task tracking; show the actual plugin name and confirmed current version | Real ChatGPT installation, not synthetic UI mock |
-| 0:20–0:45 | Show permitted Auth0 authorization-code + PKCE consent for a designated review account; redact account names, redirect codes and token values | Successful `mcp:read` login reported by ChatGPT |
-| 0:45–1:20 | Open approved fictional project A through its own ChatGPT Drive connection, display minimal/complete sanitized panel with gates pending | One bounded `meu_artigo_painel` call and current task state |
-| 1:20–1:45 | In separate consenting account B, display only fictional project B; attempt to access A's private project and demonstrate denial | Independent identity and Drive permission boundary; no shared content |
-| 1:45–2:10 | Reopen the A dashboard; demonstrate no cross-account cached state and no automatic gate approval | Human gates still pending, no data leakage |
-| 2:10–2:30 | Show keyboard and locale behavior, evidence that iframe host CSP allows required UI resource, and close with explicit research limitations | Real host console/policy observation recorded without secrets |
+| 0:00–0:20 | Introduce the actual Meu Artigo hybrid Skill + MCP and original brand | Installed review draft in ChatGPT, correct beta/source version |
+| 0:20–0:45 | Review account Auth0 login/consent; mask URL parameters, accounts and tokens | OAuth account can authenticate with `mcp:read` without a maintainer intervening |
+| 0:45–1:10 | Show fictional MINIMAL dashboard and next action | A single permitted `meu_artigo_painel` call, no Google Drive read by MCP |
+| 1:10–1:40 | Show FULL dashboard with seven human gates remaining unapproved | No fabricated scientific approvals |
+| 1:40–2:05 | Show the C.A.D.A. fictional task and explain the bounded projection | No manuscript or credentials transmitted to MCP |
+| 2:05–2:30 | Demonstrate one safe refusal, Portuguese interface and scope/privacy limits | No unauthorized data or claims; explain research use limitations |
 
-**Recording gate:** if either account has not consented, live plugin OAuth is not working, effective CSP is unresolved, or the runtime remains `MEU_ARTIGO_MCP_PILOT_SUBS=DENY_ALL`, do **not** record a fictional “success” video. The video URL must be reachable by the reviewer, and any reviewer credentials must be supplied only via the secure OpenAI portal.
+**Gate:** no authentic reviewer account, unavailable OAuth, inaccurate claims or private data in capture => NO video success claim. The real recording URL must be accessible to the OpenAI reviewers and verified by the publisher; do not invent a URL. Provide sign-in details through the secure submission dashboard, not the ZIP.
+
+## Researcher study — strictly AFTER Plugin publication
+
+After OpenAI review approval and the owner's Publish action, invite a consenting colleague to test their independent ChatGPT and Drive identity. Only then assess cross-account isolation and usability. These findings guide post-release hardening, not the initial submission gate.
 
 ## Current facts vs. pending evidence
 
 - **Observed by VPS operator:** external protected-resource metadata HTTP 200, anonymous MCP HTTP 401, private readiness externally 404, protected persistent runtime, prior cutover success and rollback backup recorded. This is NOT a successful researcher login.
 - **Verified in GitHub CI:** hybrid packaging and proposed 5 positive/3 negative tests, synthetic OAuth and host boundary tests. This is NOT a live-scanned or approved public directory plugin.
-- **Still pending:** two independent consented ChatGPT/Drive accounts, Auth0 PKCE and permission scope in actual ChatGPT, real CSP, legal/privacy review (contact and responsible individual already identified), four actually published/verified HTTPS URLs, demonstration recording, reviewed security risk acceptances, explicit owner approval to submit and platform review outcome.
+- **Before initial publication:** reviewer-only mock OAuth account, functional review flow and portal scan, identity/permissions, actual demo recording, real 5+3 reviewer test observations, any required CSP fixes, review decision and human Publish action. **After publication:** second researcher's independent ChatGPT/Drive A/B and usability study; do not block submission on that study.
 - **Untouched by this documentation work:** E05 synthetic test plugin, legacy service, source `main`, existing private Plugin installations, effective runtime Auth0 policy, and users' Google Drive data. Historical `DENY_ALL` deployment notes do not supersede the maintainer's later observation of authenticated access; verify the live policy before reviewer onboarding.
 
-Upon successful public validation and owner sign-off, repack with valid **real** URLs and the verified version. This document does not permit skipping any security gate or silently activating public OAuth access.
+The current public-candidate ZIP already contains the four GitHub Pages listing URLs; upload as a draft, then resolve any portal findings before submission. A directory publication requires an OpenAI approval and a separate owner Publish action. This document does not permit skipping any security gate or silently activating public OAuth access.

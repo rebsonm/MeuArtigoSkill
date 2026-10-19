@@ -1,46 +1,26 @@
-# Meu Artigo — consolidated public-release readiness matrix | 2026-10-19
+# Meu Artigo — public release and post-publication matrix | 2026-10-19
 
-**Evidence scope:** engineering and operational readiness only. Passing CI is not an independent security sign-off, a multiuser acceptance test, scientific validation, or OpenAI approval. This file neither authorizes merging PR #91 nor public distribution of the Plugin.
+**Owner's explicit sequencing decision (confirmed 2026-10-19):** the *independent researcher's A/B experience and usability test happens AFTER the Plugin is published*. Do not put that researcher, a second ChatGPT account, or a second researcher's Google Drive ahead of submission or directory publication. This instruction supersedes historical internal A/B pre-release gates. Preserve security, privacy, OAuth isolation and honest status claims; do not waive OpenAI's own review requirements.
 
-- **Publisher:** Rebson de Morais Mendes, an individual; **contact:** rebsonm@gmail.com.
-- **Plugin source candidate:** `0.9.0-beta.9`; package generated for review but **not a published version**.
-- **MCP candidate:** `https://mcp.allflux.com.br/mcp`, read-only `meu_artigo_painel`, OAuth scope `mcp:read`.
-- **App integration:** PR #91, based on `main`, **not merged**.
-- **Public informational website:** PR #92, merged into `main` with commit `bd399a12b59acca151ffce3ab186fdc86b6901c1`. GitHub Pages build/deploy SUCCESS in run `39328997760`. Independent external HTTPS GET checks have not been confirmed.
-- **Important boundary:** A public product website is not a public Plugin release, and does not grant access to private Drive data.
+**Source candidate:** 0.9.0-beta.9; PR #91 (`release/prepare-public-mcp-20261018`, currently not merged). **Read-only MCP:** https://mcp.allflux.com.br/mcp (`mcp:read`). **Individual publisher:** Rebson de Morais Mendes. **Support:** rebsonm@gmail.com. **Current public website:** https://rebsonm.github.io/MeuArtigoSkill/ ; GitHub Pages build and deploy SUCCESS on PR #92 (run 39328997760; independent browser HTTP status not verified here).
 
-## Six macro stages
-
-| Stage | Evidence completed | Remaining binding gate | Status |
+| Stage | Completed evidence | Next action / timing | Status |
 | --- | --- | --- | --- |
-| **01 — Consolidation / CI / security** | One integration PR (#91); release, security contracts, CodeQL and synthetic Chromium suites previously passed on reviewed heads. | Independent, documented security review (R01; GitHub PR has no separate human review); rerun all checks after any source change. | **PARTIAL** |
-| **02 — Real ChatGPT MCP / interface** | Real MCP calls: no snapshot, empty fictional snapshot, seven-gate FULL fictional snapshot, invalid extra-field rejection. Owner confirmed all ten UI routes work. | Effective host-enforced CSP validation; do not confuse Cloudflare challenge errors with Plugin UI violations. | **PARTIAL** |
-| **03 — Two independent researchers** | Researcher A's personal Drive connector returned folder metadata only; no files accessed or modified. | Researcher B with consent, OAuth PKCE and scopes, A→B→A no cross-access and no stale cache, invalid and unauthorized token denials. | **PARTIAL — B NOT TESTED** |
-| **04 — Release package and integration** | Skill + MCP beta.9 ZIP with per-file digests verified earlier; latest ZIP builder now writes exactly four public listing URLs and the legal publisher name, covered by tests. | Fresh CI and package integrity for exact current HEAD; independent review and owner approval for merging #91, deployment and release. | **CANDIDATE ONLY** |
-| **05 — Website, visual brand and policies** | Owner approved the exact existing `assets/icon.svg` design; standalone PR #92 merged; GitHub Pages workflow SUCCESS. | Public HTTPS 200 checks for four pages from an independent client; formal privacy/terms review and updated operational retention assurances where necessary. | **DEPLOYED; EXTERNAL/LEGAL CHECKS OPEN** |
-| **06 — OpenAI Plugin directory submission** | Five positive and three negative reviewer cases specified, demo script drafted, publication package metadata populated and reviewer packet prepared. | Individual identity verification, `api.apps.write` permission, reviewer test account and credentials in secure portal, correct OAuth registration/PKCE, domain challenge, live scan, CSP, real 5+3 execution, demonstration URL, explicit owner submission decision, and OpenAI review. | **NOT SUBMITTED** |
+| **01 — Consolidate and technically audit candidate** | PR #91 source candidate, automated CodeQL and CI 7/7 SUCCESS at reviewed commit; package checked for secrets, false approvals and forbidden mappings. | Preserve security controls; independent expert review is recommended but is not described as an OpenAI-specific mandatory A/B test. Do not merge a large unreleased code change by implication. | **Engineering checks passed; independent review unrecorded** |
+| **02 — Hosted MCP and visual interface** | Owner's ChatGPT MCP calls work, ten screens owner-confirmed; bounded fictional views, all seven gates pending, out-of-contract input rejected. OAuth Auth0 exists with `mcp:read` and pilot subject restrictions. | Resolve any real tool-scan, Auth0 reviewer-login or CSP findings during OpenAI's draft validation. Do not falsely claim real iframe CSP audit is done. | **Operational pilot working; official scan still pending** |
+| **03 — External researcher A/B and experience evaluation** | Owner A has connected and used their own account; mock and isolated input exercises completed. | **AFTER directory publication** invite consenting researcher B, evaluate independent Google Drive connections, isolation, onboarding, A→B→A state, usability and scientific workflows. Only fictional/sample data initially. | **PLANNED POST-PUBLICATION — NOT A SUBMISSION BLOCKER** |
+| **04 — Distribution ZIP and provenance** | Source package version `0.9.0-beta.9` zipped with complete Skill, official logo, one remote MCP, four official listing URLs, owner name, five positive and three negative review scenarios; no `.app.json`/secrets. | Upload candidate ZIP as a **new directory draft**; fix any portal validator findings. Do not confuse a private Plugin Creator upload with a directory submission. | **PACKAGED — READY TO UPLOAD** |
+| **05 — Product website and privacy** | Owner approved original `assets/icon.svg` design; PR #92 merged into main; GitHub Pages deployment succeeded and four HTTPS URLs were included in ZIP metadata. | Validate URLs from the actual submission portal/browser. Independent legal review is prudent; avoid claiming externally audited data retention or company identity. | **SITE DEPLOYED; LIVE EXTERNAL/LGL REVIEW UNCONFIRMED** |
+| **06 — Official OpenAI review and publish** | Listing and review materials assembled; GitHub CI confirms package contract. | Verify **publisher's individual OpenAI identity** and organization/project permission, upload ZIP in Plugins portal, complete OAuth/server verification and tool scan, set up **one dedicated reviewer test account** with fictional sample data and no interactive MFA, run five positive and three negative cases with the review identity, provide real demo video URL, submit for OpenAI review, then **publish when approved**. | **CURRENT STAGE — PORTAL DRAFT/APPROVAL NOT YET CONFIRMED** |
 
-## Public listing metadata (source candidate, not independently HTTP verified)
+## Exact official sequence, distinct from post-publication research
 
-- `websiteURL`: https://rebsonm.github.io/MeuArtigoSkill/
-- `supportURL`: https://rebsonm.github.io/MeuArtigoSkill/suporte.html
-- `privacyPolicyURL`: https://rebsonm.github.io/MeuArtigoSkill/privacidade.html
-- `termsOfServiceURL`: https://rebsonm.github.io/MeuArtigoSkill/termos.html
+1. **Upload draft** — Select verified individual developer identity and project in the Plugins directory, choose Upload new or existing plugin, upload the built ZIP (metadata and server MCP are already present). Successful upload creates a **private draft**, not a public listing.
+2. **Validation & access** — Resolve automated metadata, Skill, OAuth and tool scan issues. Supply one dedicated OpenAI **reviewer test identity** with fixed fictional data through secure Review details (never inside ZIP or GitHub). Configure only the minimum Auth0 access needed by a real reviewer. A second researcher is NOT required for this.
+3. **Review submission** — Run five positive/three negative sample scenarios in actual ChatGPT with the review identity, collect honest outputs, record a real accessible demonstration and submit. The **OpenAI team** decides approval; do not invent PASS or video URL.
+4. **Publish after approval** — The publisher clicks Publish plugin, making it discoverable in the directory. Until then, product website deployment and owner pilot do not make it public.
+5. **POST-PUBLICATION external researcher study** — Invite consenting researcher B, perform A/B permissions and real-workflow tests, record improvements and fixes. If a serious security defect is discovered, limit access or roll back in accordance with incident response; do not expose other users' Drive.
 
-The public ZIP must not contain a private `.app.json`, bearer secrets, reviewer passwords, synthetic test identifiers, or a fabricated video URL. It retains the existing OAuth MCP URL.
+**Do not make external researcher tests a GO/NO-GO requirement for directory submission.** The separate OpenAI reviewer-account requirement remains binding, together with platform validation and its approval. CI-green is not equivalent to formal security sign-off or public approval.
 
-## One consolidated external acceptance session
-
-After a second researcher gives informed consent, execute **one** bounded final session rather than repeating earlier CI:
-1. Record independent security assessment of the current PR with findings and explicit owner risk decisions.
-2. Check enforced CSP from the actual ChatGPT-hosted UI. Clearly distinguish host policy vs third-party browser challenges.
-3. Configure two narrowly permitted Auth0 subjects through an authorized, rollback-ready process; verify live PKCE and scope without logging JWTs.
-4. Use only fictional separate Drive materials for subject A and subject B; check A→B→A isolation, logged-out behavior, no MCP persistence, no automatic scientific-gate approval, plus required 401/403 denials.
-5. Run all **five positive plus three negative** reviewer prompts in real ChatGPT; record exact outcomes and rerun only failures.
-6. Record an authenticated reviewer video with no private data; verify all four website URLs with external HTTPS GET 200; finish domain and developer-identity checks; upload and submit only after explicit owner GO.
-
-## Non-negotiable release decision
-
-**PUBLIC_PLUGIN_RELEASE_GO = NO** until the above critical evidence is complete. Site publication and package metadata updates are not authority to merge #91, deploy a new VPS build, open Auth0 access to arbitrary users, read another person's Drive, or publish a Plugin.
-
-Related source records: `PUBLIC-DIRECTORY-REVIEW-PACKET.md`, `site-drafts/REVIEW-AND-VIDEO.md`. Official guidance: https://developers.openai.com/plugins/deploy/submission and https://developers.openai.com/plugins/deploy/app-review.
+**References:** https://developers.openai.com/plugins/deploy/submission ; https://developers.openai.com/plugins/deploy/app-review ; `PUBLIC-DIRECTORY-REVIEW-PACKET.md` ; `site-drafts/REVIEW-AND-VIDEO.md`.

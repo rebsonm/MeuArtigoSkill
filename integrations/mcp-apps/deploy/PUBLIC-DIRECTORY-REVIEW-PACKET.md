@@ -35,12 +35,18 @@ These prompts are candidates, NOT evidence. If a case does not reliably trigger 
 
 For protocol security, separately verify anonymous/invalid token `401`, valid nonallowlisted or insufficient-scope token `403`, Auth0 PKCE and two-account isolation; these are engineering acceptance checks, not a substitute for three user-prompt negative cases. Reviewer access credentials, if required, must be supplied through the *secure submission dashboard*, never the ZIP or GitHub.
 
-## Exact remaining submission blockers
+## Researcher scheduling — definitive owner instruction
+
+The independent second researcher is scheduled **AFTER publication**. The two-user A/B study of ChatGPT/Google Drive privacy boundaries, onboarding and perceived usability is an early post-launch acceptance exercise, not a condition to upload, submit, receive OpenAI approval or click Publish. Historical documents calling it a prerequisite are superseded by this policy.
+
+**Different mandatory identity:** The OpenAI review team needs a dedicated **reviewer test account** with fictional sample content and functional OAuth authorization BEFORE submission. It does **not** need to be the user's volunteer researcher. That test account must be accessible without user-mediated OTP/MFA or other interactive sign-in assistance. Keep the login outside ZIP and GitHub, in the secure OpenAI submission form.
+
+## Exact remaining submission tasks
 
 - [ ] R01: independent cumulative security review or documented owner-authorized alternative within its permitted scope, with public risk decisions handled separately.
-- [ ] R02: effective ChatGPT iframe CSP validation from real host; E05 screenshot/synthetic Chromium alone insufficient.
-- [ ] R06/R07: two *consenting* independently connected ChatGPT/Google Drive test accounts A/B; real Auth0 authorization-code PKCE, scope `mcp:read`, Drive isolation, and absence of cross-session data.
-- [ ] Review account: inspect the **effective** production Auth0 subject policy and authorize a separate, consenting reviewer identity through the approved configuration, preserving JWT checks and rollback. Do not infer `DENY_ALL` from stale source notes or expose arbitrary subjects merely to pass a scan.
+- [ ] Verify required CSP declarations and resolve any actual OpenAI tool scan/host findings for the review account; static/synthetic Chromium tests alone do not prove an independent real-host check.
+- [ ] **POST-PUBLICATION ONLY:** consenting independent researcher B and real ChatGPT/Drive A/B isolation evaluation. This is NOT a prerequisite for directory submission; re-evaluate privacy and mitigations when B participates.
+- [ ] **Required pre-submission:** establish a dedicated OpenAI reviewer test account with mock records; inspect the effective Auth0 subject policy and narrowly authorize that **reviewer**, retaining JWT validation and rollback. This account is distinct from post-launch researcher B. Do not expose arbitrary subjects or include credentials in the ZIP.
 - [ ] OAuth client registration: verify exact callback and approved method in portal (`provided`, DCR or CIMD); no secrets in `mcp.json`.
 - [ ] OpenAI publisher: identity verification, suitable organization/project, `api.apps.write` permission, domain challenge, current successful MCP tool scan.
 - [ ] Four external HTTPS GET/TLS checks: product `websiteURL`, support `supportURL`, privacy `privacyPolicyURL`, and terms `termsOfServiceURL`. GitHub Pages deployment is **SUCCESS** in Actions (run `39328997760`); direct independent accessibility and legal review are **NOT_VERIFIED**. The ZIP builder now includes the four URL fields matching the publisher's deployed origin; metadata inclusion alone does not prove GET 200.
@@ -55,4 +61,4 @@ For protocol security, separately verify anonymous/invalid token `401`, valid no
 - https://developers.openai.com/plugins/deploy/app-review
 - https://developers.openai.com/plugins/plugin-guidelines
 
-**Current phase boundary:** We can prepare and inspect a non-published candidate ZIP without claiming completion of live two-user acceptance. The first public submission is blocked until the prerequisites above are documented and independently verified. This packet authorizes no changes to private Plugins, synthetic E05, the VPS/Auth0 effective policy, GitHub `main`, or any individual's Drive.
+**Current phase boundary:** Plugin ZIP is READY TO UPLOAD AS A DRAFT; owner still needs verified OpenAI developer identity, a dedicated reviewer login, live portal MCP scan, honest actual review cases/video and the OpenAI decision. The independent researcher B evaluates **after publication**. This packet does not authorize modifications of the VPS/Auth0, arbitrary user access or unsafe access to Drive.
