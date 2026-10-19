@@ -106,9 +106,25 @@ export function createServer(){
   ...(process.env.MEU_ARTIGO_AUTH_MODE==="auth0"?{securitySchemes:[{type:"oauth2",scopes:["mcp:read"]}]}:{}),
   _meta:{ui:{resourceUri:URI},"openai/outputTemplate":URI}
  },async args=>{
-  if(args.snapshot===undefined)return {
-   isError:true,content:[{type:"text",text:guidance(args.locale)}]
-  };
+  if(args.snapshot===undefined){
+   // A successful connectivity check proves no research data and no Drive
+   // synchronization. E05 remains strictly synthetic-only and unchanged.
+   if(process.env.MEU_ARTIGO_E05_SYNTHETIC_ONLY==="YES")return {
+    isError:true,content:[{type:"text",text:guidance(args.locale)}]
+   };
+   return {
+    content:[{type:"text",text:guidance(args.locale)}],
+    structuredContent:{site:{
+     schema:"MEU_ARTIGO_SITE_V1",
+     kind:"HOST_NOT_CONNECTED",
+     locale:locale(args.locale),
+     status:"NO_SNAPSHOT_PROVIDED",
+     project_loaded:false,
+     drive_sync_verified:false,
+     scientific_approval_verified:false
+    }}
+   };
+  }
   if(process.env.MEU_ARTIGO_E05_SYNTHETIC_ONLY==="YES"&&!e05SyntheticFixture(args.snapshot))
    return {isError:true,content:[{type:"text",text:"E05_SYNTHETIC_ONLY: projection rejected. Use only approved fake ALPHA/BRAVO fixtures."}]};
   try{
