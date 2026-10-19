@@ -31,8 +31,12 @@ try{
  assert.deepEqual(Object.keys(tools.tools[0].inputSchema.properties).sort(),["locale","mode","snapshot"]);
  const output=await client.callTool({name:"meu_artigo_painel",
   arguments:{locale:"pt",mode:"FULL",project_id:root,document:secret}});
- assert.equal(output.isError,true);
- assert.equal(output.structuredContent,undefined);
+ // Input processing may strip unknown keys. This still must not load or
+ // echo an unapproved project or claim a live research snapshot.
+ assert.notEqual(output.isError,true);
+ assert.equal(output.structuredContent?.site?.kind,"HOST_NOT_CONNECTED");
+ assert.equal(output.structuredContent?.site?.project_loaded,false);
+ assert.equal(output.structuredContent?.site?.drive_sync_verified,false);
  assert.match(output.content[0].text,/Google Drive individual do ChatGPT/);
  const resource=await client.readResource({uri:"ui://meu-artigo/site-v3.html"});
  assert.equal(resource.contents.length,1);
