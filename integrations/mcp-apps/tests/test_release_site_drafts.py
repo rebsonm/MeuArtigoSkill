@@ -72,7 +72,11 @@ class SiteDrafts(unittest.TestCase):
         self.assertIn('mailto:rebsonm@gmail.com', privacy)
         self.assertIn('mailto:rebsonm@gmail.com', terms)
         self.assertNotIn("[PREENCHER E VALIDAR", support)
-        self.assertIn("[CONFIRMAR E VALIDAR ANTES DA PUBLICAÇÃO]", privacy)
+        self.assertIn("[DEFINIR E VALIDAR ANTES DA PUBLICAÇÃO]", privacy)
+        for page in (support, privacy, terms, product):
+            self.assertIn("Rebson de Morais Mendes", page)
+        self.assertIn("pessoa física", privacy)
+        self.assertIn("pessoa física", terms)
         self.assertIn("VALIDAR ANTES DA PUBLICAÇÃO", terms)
         self.assertIn("piloto técnico restrito", product)
         self.assertIn("licença Apache License 2.0", terms)
