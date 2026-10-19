@@ -10,6 +10,21 @@ The script prints only allowlisted service-state classes, whether systemd stdout
 
 **Interpretation limits:** `access_log off` at one site declaration is not proof of effective Nginx logging across includes/locations. `journald MaxRetentionSec=0` or a missing setting does **not** mean “zero retention” or “never retained”: disk quotas/rotation may still apply. A default or unset setting does not supply a factual number of days. Service availability and logs from other providers cannot be established by this script.
 
+## Read-only VPS audit observed on 19 October 2026
+
+The owner executed the pinned script from GitHub commit `ddd75040ff23db97aa258f079dbdc83919e4662f` in their VPS via SSH. The script finished with `V1_PRIVACY_INVENTORY_END=PASS_READ_ONLY` and `V1_PRIVACY_INVENTORY_WRITES=NONE`. Redacted result categories (no network addresses, identities, documents or logs):
+
+| Field | Actual result | Interpretation |
+| --- | --- | --- |
+| V1, legacy and E05 services | `active`, all `STDOUT=JOURNAL` | Operational stdout uses systemd journal; not zero logging |
+| Existing Nginx site | `FOUND` and `ACCESS_LOG=OFF_DIRECTIVE_PRESENT` | An `access_log off` declaration exists; no full effective-config proof |
+| Nginx error log | `INHERITED_OR_UNVERIFIED` | Error-log policy remains unverified |
+| Nginx effective logging | `REQUIRES_FULL_CONFIG_REVIEW` | Do not claim full disablement of logs |
+| `journald` | `Storage`, `MaxRetentionSec`, `SystemMaxUse`, `RuntimeMaxUse`, `SystemKeepFree`, `RuntimeKeepFree` all `INHERITED_OR_DEFAULT` | No numerical retention established |
+| Auth0 | `LOG_RETENTION=NOT_VERIFIED_CHECK_TENANT_PLAN`, `LOG_STREAMS=NOT_VERIFIED_CHECK_AUTH0_DASHBOARD` | Still requires provider tenant check |
+
+**Evidence conclusion:** Read-only VPS inspection = PASS. Actual effective time-to-delete logs = NOT_VERIFIED. Avoid claiming no logs or a fixed retention time. No source document, log event or bearer data was read or printed.
+
 ## Auth0 — tenant-specific evidence from the administrator
 
 Auth0 retention depends on the effective paid/free plan. Auth0's public pricing identifies retention tiers of 1, 5, 10 and 30 days; **do not assume which one is active for this tenant**. Sign into your own authorized Auth0 dashboard and record only the plan tier and whether any Log Streams are enabled. Never export events, user emails, account IDs, settings containing secrets or bearer tokens. Provider documentation: https://auth0.com/pricing and https://support.auth0.com/center/s/article/retrieving-logs-after-auth0-retention-period-has-expired .
