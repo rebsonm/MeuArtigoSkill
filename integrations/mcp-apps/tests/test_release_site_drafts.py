@@ -49,7 +49,7 @@ class SiteDrafts(unittest.TestCase):
     def test_official_plugin_logo_and_blue_identity_are_shared_by_all_pages(self):
         # Reuse the original repository logo, not a newly generated or linked image.
         from pathlib import Path
-        logo = (PAGES.parents[2] / "assets" / "icon.svg").read_text(encoding="utf-8")
+        logo = (PAGES.parents[3] / "assets" / "icon.svg").read_text(encoding="utf-8")
         exact_logo = logo.replace(
             'role="img" aria-label="Meu Artigo"',
             'class="brand-icon" aria-hidden="true" focusable="false"'
