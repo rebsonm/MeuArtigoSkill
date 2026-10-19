@@ -85,9 +85,13 @@ read -r -p 'Type ALLOW_ONE_PRIVATE_RESEARCHER to confirm: ' CONSENT || fail "CON
 
 CREATED="NO"
 DONE="NO"
+TEMP_ENV=""
+TEMP_CONF=""
 revert_on_failure(){
  local code="$?"
  trap - EXIT INT TERM
+ [[ -z "$TEMP_ENV" ]] || rm -f -- "$TEMP_ENV"
+ [[ -z "$TEMP_CONF" ]] || rm -f -- "$TEMP_CONF"
  if [[ "$DONE" != YES && "$CREATED" == YES ]]; then
   rm -f -- "$OVERRIDE" "$ALLOW_ENV"
   systemctl daemon-reload >/dev/null 2>&1 || true
