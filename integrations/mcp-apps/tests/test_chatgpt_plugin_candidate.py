@@ -79,10 +79,18 @@ class ChatGPTPluginCandidateTests(unittest.TestCase):
             self.assertNotIn("reviewer_instructions", info["review"])
             self.assertTrue(info["publication"]["release_notes"])
             self.assertNotIn("countries", info["publication"])
-            self.assertNotIn("websiteURL", info["interface"])
-            self.assertNotIn("supportURL", info["interface"])
-            self.assertNotIn("privacyPolicyURL", info["interface"])
-            self.assertNotIn("termsOfServiceURL", info["interface"])
+            self.assertEqual(manifest["author"]["name"], "Rebson de Morais Mendes")
+            self.assertEqual(info["interface"]["developerName"], "Rebson de Morais Mendes")
+            expected_urls = {
+                "websiteURL": "https://rebsonm.github.io/MeuArtigoSkill/",
+                "supportURL": "https://rebsonm.github.io/MeuArtigoSkill/suporte.html",
+                "privacyPolicyURL": "https://rebsonm.github.io/MeuArtigoSkill/privacidade.html",
+                "termsOfServiceURL": "https://rebsonm.github.io/MeuArtigoSkill/termos.html",
+            }
+            for key, url in expected_urls.items():
+                with self.subTest(listing_url=key):
+                    self.assertEqual(info["interface"].get(key), url)
+            self.assertNotIn("demo_recording_url", info["review"])
 
     def test_public_rejects_unconfigured_or_unsafe_url(self):
         output = self.path("public")
