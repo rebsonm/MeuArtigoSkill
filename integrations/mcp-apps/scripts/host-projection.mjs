@@ -47,8 +47,11 @@ try{
   "No previous request state may leak");
  const blank=await client.callTool({name:"meu_artigo_painel",
   arguments:{locale:"pt"}});
- assert.equal(blank.isError,true);
- assert.equal(blank.structuredContent,undefined);
+ assert.notEqual(blank.isError,true);
+ assert.equal(blank.structuredContent?.site?.kind,"HOST_NOT_CONNECTED");
+ assert.equal(blank.structuredContent?.site?.project_loaded,false);
+ assert.equal(blank.structuredContent?.site?.drive_sync_verified,false);
+ assert.equal(blank.structuredContent?.site?.scientific_approval_verified,false);
  assert.equal(JSON.stringify(blank).includes("bravo"),false,
   "No cached research data when next caller has no data");
  const badCases=[
