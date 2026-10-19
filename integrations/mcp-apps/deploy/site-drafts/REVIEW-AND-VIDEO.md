@@ -1,6 +1,6 @@
 # Meu Artigo — release website and demo handoff (DRAFT)
 
-**Source-only preview. DO NOT publish or submit as legally final pages.** Four static, self-contained HTML files already exist alongside this document:
+**Source-only preview. DO NOT publish or submit as legally final pages.** The maintainer's support/privacy contact is `rebsonm@gmail.com`, but controller identity, processing/retention practices and legal terms still require validation. Four static, self-contained HTML files already exist alongside this document:
 
 | Portal field | Source file | Intended meaning |
 | --- | --- | --- |
@@ -37,6 +37,6 @@ Record the following using a dedicated reviewer test account and entirely fictio
 - **Observed by VPS operator:** external protected-resource metadata HTTP 200, anonymous MCP HTTP 401, private readiness externally 404, protected persistent runtime, prior cutover success and rollback backup recorded. This is NOT a successful researcher login.
 - **Verified in GitHub CI:** hybrid packaging and proposed 5 positive/3 negative tests, synthetic OAuth and host boundary tests. This is NOT a live-scanned or approved public directory plugin.
 - **Still pending:** two independent consented ChatGPT/Drive accounts, Auth0 PKCE and permission scope in actual ChatGPT, real CSP, legal review and contact, four published and checked HTTPS URLs, demonstration recording, reviewed security risk acceptances, explicit owner approval to submit and platform review outcome.
-- **Untouched:** E05 synthetic test plugin, legacy 8085 service, source `main`, installed Skill beta.8, private pilot runtime `DENY_ALL`, users' Google Drive data.
+- **Untouched by this documentation work:** E05 synthetic test plugin, legacy service, source `main`, existing private Plugin installations, effective runtime Auth0 policy, and users' Google Drive data. Historical `DENY_ALL` deployment notes do not supersede the maintainer's later observation of authenticated access; verify the live policy before reviewer onboarding.
 
 Upon successful public validation and owner sign-off, repack with valid **real** URLs and the verified version. This document does not permit skipping any security gate or silently activating public OAuth access.
