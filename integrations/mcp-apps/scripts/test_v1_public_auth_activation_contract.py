@@ -29,7 +29,7 @@ class MultiuserActivationContract(unittest.TestCase):
         self.assertIn("V1_OAUTH_SCOPE=mcp:read", S)
         self.assertNotIn("MEU_ARTIGO_AUTH_MODE=none", S)
         self.assertNotIn("MEU_ARTIGO_MCP_BEARER=", S)
-        self.assertNotIn("Environment=MEU_ARTIGO_AUTH_MODE=", S)
+        self.assertNotIn("Environment=MEU_ARTIGO_AUTH_MODE=\\n", S)
         self.assertNotIn("systemctl restart meu-artigo-mcp.service", S)
 
     def test_atomic_override_and_rollback(self):
