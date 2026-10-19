@@ -29,8 +29,18 @@ const scientificDiagnostic=z.object({
   reports_written:z.literal(false),
   drive_sync_verified:z.literal(false)
 }).strict();
-export const uiOutputSchema={
-  site:z.object({
+// No-snapshot calls are legitimate connectivity checks, never research data.
+const disconnected=z.object({
+  schema:z.literal("MEU_ARTIGO_SITE_V1"),
+  kind:z.literal("HOST_NOT_CONNECTED"),
+  locale:z.enum(["pt","en","es","fr"]),
+  status:z.literal("NO_SNAPSHOT_PROVIDED"),
+  project_loaded:z.literal(false),
+  drive_sync_verified:z.literal(false),
+  scientific_approval_verified:z.literal(false)
+}).strict();
+
+const authorized=z.object({
     schema:z.literal("MEU_ARTIGO_SITE_V1"),
     kind:z.literal("HOST_AUTHORIZED_SNAPSHOT"),
     active_route:nullableText(120),
@@ -48,5 +58,6 @@ export const uiOutputSchema={
     canonical_drive_sync_verified:z.literal(false),
     automatic_scientific_approval:z.literal(false),
     canonical_writes_allowed:z.literal(false)
-  }).strict()
-};
+  }).strict();
+
+export const uiOutputSchema={site:z.union([disconnected,authorized])};
