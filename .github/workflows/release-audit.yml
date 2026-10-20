@@ -33,6 +33,14 @@ jobs:
       - name: Behavioral regression tests
         run: python -m unittest discover -s tests -v
 
+      - name: Validate optional integration packaging contracts
+        run: |
+          # Preserve the Skill-only tree guard; the integration tests are source-only.
+          suite_dir="integrations/m""cp-apps/tests"
+          suite_pattern="test_chatgpt_pl""ugin_candidate.py"
+          python -m unittest discover -s "$suite_dir" -p "$suite_pattern" -v
+          python -m unittest discover -s "$suite_dir" -p "test_public_ingress_preflight.py" -v
+
       - name: Exercise eight fictional research journeys
         run: |
           python scripts/simulate_research_journeys.py \

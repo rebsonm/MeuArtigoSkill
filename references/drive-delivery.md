@@ -8,6 +8,33 @@ One test file, a created Drive folder, and a ZIP upload do **not** prove that th
 
 The standard-library helper at scripts/drive_delivery.py prepares and checks a manifest. **It cannot connect to Google Drive, upload files, invoke platform tools, or independently authenticate JSON receipts.** The host must call real Drive tools, inspect their responses and collect fresh inventory and downloaded file bytes. Never manufacture tool outcomes.
 
+## My Drive root is fixed before planning or creation
+
+For new and resumed Drive-canonical article projects, the path is
+`My Drive / Meu Artigo / ARTIGO_<title>_<year> / existing subfolders`.
+Resolve My Drive using the provider's `files.get(fileId=root)` metadata,
+not a previously visited folder ID. The exact `Meu Artigo` must be
+a direct root child; the article must be its direct child. Verify metadata
+for every reused folder. Do not reuse a same-name folder under any other
+parent; never move or rename a legacy project silently.
+
+First use `scripts/drive_root_live_preflight.py` (read-only authenticated
+executor) or the equivalent connected authorized provider metadata. The
+source-only `scripts/drive_root_anchor.py` validates the returned actual
+metadata, **complete all-types** direct-parent scans and root scope. Every
+new real Drive creation plan must carry a checked `root_scope`. The external
+`drive_create_guard.py` CLI now blocks unscoped plans rather than
+issuing a create intent for a random existing parent.
+
+If a container or article folder is missing, the resolver returns
+`CHECK_PARENT_FOR_GUARDED_CREATE`, **never** direct permission to POST.
+A non-idempotent create still requires the separately trusted F7-F8
+durable signed intent, independent latest-head confirmation and a fresh
+post-create scan. The current CLI does not bypass those missing host
+integrations. Existing misplaced/legacy projects require a human-led
+migration decision; do not duplicate, delete or move them automatically.
+See [the canonical root policy](drive-root-anchor.md).
+
 ## Authorization and security
 
 1. Only operate on a designated private project root when the researcher has authorized Google Drive storage and the host has observed real writable access.
@@ -46,6 +73,181 @@ All identifiers above are illustrative. **Never label fixtures as live observati
 
 For existing remote files, a SHA-256 value in the inventory must be computed from content **retrieved back from Drive**, not copied from the local manifest or upload result. If remote bytes cannot be read, leave SHA-256 absent. Do not claim content integrity from metadata or a file name.
 
+## Safe folder creation: pre-inspect, persist intent, then reconcile
+
+The host MUST NOT directly repeat a Drive `create_folder` call after an
+error, timeout, tool block, interrupted workflow, or unobserved outcome.
+Such a call may have succeeded remotely even when the tool response failed.
+**A generic "retry" is not a recovery procedure.**
+
+For EVERY missing folder, the ordinary `drive_delivery.py next` now returns
+`CHECK_PARENT_FOR_CREATE` (not permission to call Drive). Complete the following
+host-assisted guard protocol first:
+
+1. **List the exact parent folder** using the authorized Drive connector.
+   Collect all direct children through every pagination page, preserving IDs,
+   names and types. Record `parent_scans` in the existing inventory:
+   `[{"parent_id":"REAL_ID","complete":true,"scan_token":"FRESH_UNIQUE_SCAN_ID","children":[{"id":"CHILD_ID","name":"FOLDER_NAME","type":"folder"}],"page_evidence":[{"source":"GOOGLE_DRIVE_FILES_LIST","request_page_token":null,"next_page_token":null,"item_ids":["CHILD_ID"]}]}]`.
+   Every actual Drive API listing page must be recorded in `page_evidence`:
+   the first `request_page_token` is null; each subsequent request token
+   matches the previous `next_page_token`; the final page explicitly returns
+   null, and the union of `item_ids` matches the complete children list.
+   The `scan_token` identifies a completed, actual observation, **not** an
+   AI-invented nonce proving an API response. A boolean `complete:true` on
+   its own is insufficient. Incomplete, unpaged or unsupported tool responses
+   MUST block creation (`PARENT_PAGE_EVIDENCE_REQUIRED`,
+   `PARENT_PAGINATION_INCOMPLETE` or a related validation error).
+2. **Initialize the journal for an expressly confirmed new project** (once):
+
+       python scripts/drive_create_guard.py initialize --attest-new-project --plan PRIVATE_AUDIT_PATH/delivery-plan.json --inventory PRIVATE_AUDIT_PATH/observed-drive.json --journal PRIVATE_AUDIT_PATH/create-journal.json --path RELATIVE_FOLDER_PATH --project-root PROJECT_PATH
+
+   This attestation MUST NOT be used as a recovery path after a crash, loss of
+   temporary files or an uncertain Drive create. Restore the original journal
+   from durable shared storage instead. A missing journal blocks ordinary
+   `prepare` and `resolve` with `JOURNAL_MISSING_RECOVERY_REQUIRED`.
+3. **Persist one create intent before calling Drive** using:
+
+       python scripts/drive_create_guard.py prepare --plan PRIVATE_AUDIT_PATH/delivery-plan.json --inventory PRIVATE_AUDIT_PATH/observed-drive.json --journal PRIVATE_AUDIT_PATH/create-journal.json --path RELATIVE_FOLDER_PATH --project-root PROJECT_PATH
+
+   Only `CREATE_FOLDER_ONCE` authorizes **one** attempt with the exact
+   name and parent ID returned. The guard journals `OUTCOME_UNKNOWN`
+   before emitting that action. Store its audit file outside the research
+   tree, **persist it in the designated durable shared location and verify the
+   remote copy BEFORE issuing the external create call**. `prepare` returns
+   `journal_sha256` as the digest of the actual serialized journal bytes;
+   compare that value with SHA-256 computed from bytes retrieved from the
+   durable copy, not from upload metadata. The digest is a comparison aid,
+   **not** independent authentication of the provider. An unverified or
+   unreachable durable copy blocks external creation. A concurrent or repeated
+   attempt is blocked, not retried.
+4. **Call the real Drive create tool at most once.** Regardless of whether
+   it returns success, failure or an ambiguous tool error, re-list the
+   parent completely and regenerate the inventory with a **new scan token**
+   grounded in that actual observation.
+5. **Reconcile the pending intent**:
+
+       python scripts/drive_create_guard.py resolve --plan PRIVATE_AUDIT_PATH/delivery-plan.json --inventory PRIVATE_AUDIT_PATH/observed-drive.json --journal PRIVATE_AUDIT_PATH/create-journal.json --path RELATIVE_FOLDER_PATH --project-root PROJECT_PATH
+
+   - `RESOLVED_EXISTING_REMOTE_FOLDER`: exactly one folder of that
+     name and correct parent was observed; reuse its actual ID.
+   - `REINSPECT_PARENT`: the evidence is stale; list again.
+   - `BLOCKED_AMBIGUOUS_OUTCOME`: no folder observed after an uncertain
+     call. **Do not blindly retry**. A human or explicit authorized
+     recovery procedure must resolve this ambiguity.
+   - `BLOCKED_DUPLICATE_NAME` or `BLOCKED_TYPE_CONFLICT`: stop; never
+     delete, rename or move existing objects without authorized reconciliation.
+   - `BLOCKED_PARENT_DRIFT`: the recorded parent is no longer the verified
+     parent of the target path. Stop; never resolve an old attempt beneath a
+     replaced or moved parent.
+   - `BLOCKED_INCONSISTENT_TARGET_PATH`: a scanned child is not reconciled to
+     the exact canonical path and remote ID expected for this project.
+   - `BLOCKED_PREVIOUS_RESOLUTION_DRIFT`: a prior resolution is no longer
+     observed at the same parent and ID. Never accept an earlier resolution as
+     proof of current presence.
+   - `REINSPECT_PARENT`: the remote observation is reused or stale. Re-list
+     the actual parent and submit a new, evidence-grounded scan token.
+
+### Interrupted sessions, journals and connector limits
+
+Keep the create journal and its lock in an access-controlled, **durable shared
+location** across retries and sessions. A temporary Python/container directory
+that disappears at session end cannot reliably enforce create-once semantics.
+The local helper verifies its local journal and emits a local SHA-256 receipt;
+it cannot perform or certify remote journal synchronization itself. The host is responsible for write and
+read-back of the durable copy, and must **withhold CREATE_FOLDER_ONCE** until
+its integrity and identity have been independently checked. On session restart,
+restore the existing journal with the same plan hash before any further writes.
+Never silently initialize a new journal to retry a previously uncertain
+operation. If a leftover `.lock` exists after a crash, do not delete it
+automatically: confirm that no process still owns it, preserve the journal
+and audit trail, then authorize manual lock recovery. The unresolved intent
+must still be reconciled, not recreated.
+
+The connected Drive interface may expose bounded `list_folder(top_k)`
+without an explicit `nextPageToken` or completeness receipt. **Do not
+invent `complete:true` or `page_evidence`** based only on the returned array
+length or on an
+AI-generated scan token. When exhaustive listing cannot be established,
+return `PARENT_PAGE_EVIDENCE_REQUIRED` (or another page-validation failure)
+and report live acceptance as blocked.
+The separate connected `search` tool can page `item_type="folder"`
+results with provider-owned `next_page_token` and an exact parent query, but
+this is **folder-only** visibility. It may assist safe detection and independent
+metadata checking of existing folders; it cannot establish absence of files
+or other MIME types that could conflict with a planned folder. Use the
+read-only `scripts/drive_f6_connected_search.py` protocol described in
+`references/drive-f6-connected-acceptance.md` only for candidate detection.
+Never convert folder-only search results into an all-types complete parent scan
+or use them to authorize create_folder. A successful manual folder-creation
+smoke test is not evidence that this guard was executed end-to-end by the
+installed Skill.
+
+There is no Google Drive atomic compare-and-create primitive supplied by
+this Skill. The guard reduces duplicate risk for a **cooperating serial
+host**, but cannot prove global exactly-once behavior or independently
+authenticate its user-provided observations. A concurrent actor or a
+fabricated host inventory remains outside its assurance.
+
+## Optional authenticated Drive v3 integration (external executor)
+
+Two additional tools are available:
+
+- scripts/drive_api_proof.py uses Drive v3 files.list with real
+  nextPageToken pagination to produce parent_scans[].page_evidence.
+  Parent IDs, child IDs, duplicate names, file types, incompleteSearch,
+  returned cursors and page limits are validated. No writes occur.
+- scripts/drive_journal_checkpoint.py verifies and restores a journal from
+  an independently provisioned private JSON file in a separate audit folder.
+  It may PATCH that EXISTING file once, followed by downloaded-byte SHA-256
+  verification. It never creates files or folders, deletes objects or
+  retries an uncertain PATCH. It does not implement multi-writer atomic CAS.
+
+These tools require an authorized secure external Python executor with an
+OAuth access token supplied in its environment variable
+MEU_ARTIGO_DRIVE_ACCESS_TOKEN. The ChatGPT connected Drive service does NOT
+expose its access token for use by these scripts. Never paste credentials
+into a chat, source code, a repository or any scientific record.
+
+Run a complete API scan with:
+
+    python scripts/drive_api_proof.py --parent-id REAL_PARENT_ID --drive-root-id REAL_PROJECT_ID --output PRIVATE_AUDIT_PATH/inventory.json
+
+For child parents supply --parent-path and --base-inventory from a previously
+verified inventory. The returned page chain is an API observation, not an
+independent signed attestation. The currently connected ChatGPT list_folder
+tool does not expose the needed pagination tokens; do not forge evidence.
+
+The journal checkpoint helper requires a fixed pre-provisioned private file
+ID, audit folder ID, a verified plan and the previously observed SHA-256.
+A new local journal intent MUST be synchronized and read back in full
+BEFORE any external folder creation. Synchronization is forward-only: prior
+create intentions cannot be removed, have their identity changed, or revert
+from RESOLVED to OUTCOME_UNKNOWN. This is a local semantic check, NOT an
+atomic remote multi-writer compare-and-swap. Example:
+
+    python scripts/drive_journal_checkpoint.py push --plan PRIVATE_AUDIT_PATH/delivery-plan.json --remote-file-id REAL_AUDIT_FILE_ID --audit-parent-id REAL_AUDIT_FOLDER_ID --journal PRIVATE_AUDIT_PATH/create-journal.json --expected-remote-sha256 PREVIOUS_SHA256
+
+Use the new digest returned after successful readback as the expected
+previous digest for the next checkpoint. Stop if the remote copy has changed
+unexpectedly, its parent does not match, or the write outcome is uncertain.
+The guard does not supply global atomic compare-and-swap between independent
+writers. Host-level serialization is required.
+
+On a later session with the same private file ID and plan, restore into a
+NEW local path (never overwrite or write inside the research project):
+
+    python scripts/drive_journal_checkpoint.py restore --plan PRIVATE_AUDIT_PATH/delivery-plan.json --remote-file-id REAL_AUDIT_FILE_ID --audit-parent-id REAL_AUDIT_FOLDER_ID --journal PRIVATE_AUDIT_PATH/restored-journal.json --project-root PROJECT_PATH --expected-remote-sha256 LAST_INDEPENDENTLY_RETAINED_SHA256
+
+Do not obtain the expected restoration digest from the remote journal being
+restored: it must be retained independently in a trusted checkpoint. A valid
+but older journal with the same plan hash can erase evidence of an attempted
+folder creation. If no independent digest is available, fail closed and
+recover evidence manually without starting a new create operation.
+
+The installed Skill is NOT using this adapter unless an authorized host
+explicitly installs and invokes it. The offline simulated tests do not prove
+live OAuth access or a real cross-session durable restore.
+
 ## Execute each safe next step
 
 With up-to-date observations recorded outside the source project, run:
@@ -54,13 +256,13 @@ With up-to-date observations recorded outside the source project, run:
 
 Interpret the next action:
 
-- CREATE_FOLDER: use the connected host Drive tool and its exact parent ID; retrieve the created ID.
+- CHECK_PARENT_FOR_CREATE: follow the guarded pre-inspection and journal protocol above before the host may issue CREATE_FOLDER_ONCE. A bare create or blind retry is forbidden.
 - UPLOAD_FILE: send that single local file into the verified parent folder only if its exact relative path is not already present.
 - READ_BACK_FILE: fetch the remote file using its ID; compute SHA-256 from actual bytes and update the observed inventory.
 - BLOCKED_CONFLICT: stop, preserve existing remote files, and explain duplicate names, wrong parents, size/content disagreement or type mismatch. Never silently overwrite or delete.
 - DONE: all expected folders and files have been reported in the requested hierarchy, and all expected file bytes have been read back and compared.
 
-**Re-list relevant folders after each external action**, refresh the inventory and call next again. If the action fails or times out, perform fresh inspection before retrying. A retried run must skip already verified files, not upload them again. Use real tool receipts where possible; the locally written inventory is not independently authenticated.
+**Re-list relevant folders after each external action**, refresh the inventory and call next again. If an external action fails or times out, inspect the actual parent and consult the persisted guard intent; never repeat folder creation automatically. A retried run must skip already verified files, not upload them again. Use real tool receipts where possible; the locally written inventory is not independently authenticated.
 
 ## Final verification and reporting
 
@@ -78,4 +280,4 @@ Never report the Drive tree as complete solely because the project's ZIP was upl
 
 ## Acceptance and real-world evidence
 
-Offline regression tests in tests/test_drive_delivery.py cover nested folders, partial delivery/resume, duplicate names, conflicts, missing content readback, wrong root, restricted PDF, unsafe paths and non-modification of scientific gates. A **real end-to-end test through an authorized connected Drive host**, using disposable synthetic data, is still necessary. A local fixture cannot establish live Drive integration, content access or independent user acceptance.
+Offline regression tests in tests/test_drive_delivery.py and tests/test_drive_create_guard.py cover nested folders, partial delivery/resume, duplicate names, conflicts, missing content readback, wrong root, restricted PDF, unsafe paths and non-modification of scientific gates. A **real end-to-end test through an authorized connected Drive host**, using disposable synthetic data, is still necessary. A local fixture cannot establish live Drive integration, content access or independent user acceptance.

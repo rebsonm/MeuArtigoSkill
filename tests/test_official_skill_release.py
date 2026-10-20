@@ -22,11 +22,14 @@ class OfficialRecommendationTests(unittest.TestCase):
 
     def test_current_source_is_not_equated_with_a_published_tag(self):
         dev_version = (ROOT / "VERSION").read_text().strip()
-        self.assertEqual(dev_version, "0.9.0-beta.6")
+        self.assertRegex(dev_version, r"^0\.9\.0-beta\.\d+$")
+        official = (ROOT / "OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip()
+        self.assertNotEqual(dev_version, official,
+                            "Unpublished source beta must not pretend to be the released beta")
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn(f"**Current version:** `{dev_version}`", readme)
         self.assertIn("experimental", readme.lower())
-        self.assertIn("published **experimental GitHub Pre-release**", readme)
+        self.assertIn("last confirmed published experimental Skill release", readme)
         self.assertIn("confirmed published", readme)
         self.assertIn("GitHub's", readme)
         self.assertIn("stable v1.0.0", readme)

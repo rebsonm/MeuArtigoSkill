@@ -1,0 +1,197 @@
+name: Optional MCP Apps interface acceptance
+on:
+  pull_request:
+    paths:
+      - "integrations/mcp-apps/**"
+      - "assets/research_site.html"
+      - "scripts/build_research_site.py"
+      - ".github/workflows/mcp-apps-ci.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: mcp-apps-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  mcp-apps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: integrations/mcp-apps/package-lock.json
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Require exact npm lock and private-only module
+        run: python scripts/audit_optional_mcp_supply_chain.py
+      - name: Validate private/public ChatGPT candidate ZIP boundaries (offline)
+        run: python -m unittest discover -s integrations/mcp-apps/tests -p 'test_*.py' -v
+      - name: Generate nonpublished hybrid Skill plus MCP candidate
+        run: |
+          python integrations/mcp-apps/scripts/build_chatgpt_plugin_candidate.py \
+            --channel public \
+            --mcp-url https://mcp.allflux.com.br/mcp \
+            --output "$RUNNER_TEMP/MeuArtigoChatGPT-public-v$(cat VERSION).zip"
+          python - <<'PY'
+          import os, pathlib, zipfile, json, hashlib
+          files=list(pathlib.Path(os.environ["RUNNER_TEMP"]).glob("MeuArtigoChatGPT-public-v*.zip"))
+          assert len(files)==1
+          z=files[0]
+          with zipfile.ZipFile(z) as pack:
+              names=set(pack.namelist())
+              assert {"plugin.json","mcp.json","skills/meu-artigo/SKILL.md","skills/meu-artigo/BUNDLE_MANIFEST.json"} <= names
+              assert ".app.json" not in names
+              mcp=json.loads(pack.read("mcp.json"))
+              item=mcp["mcpServers"]["meu-artigo"]
+              assert item["url"]=="https://mcp.allflux.com.br/mcp"
+              assert item["extensions"]["com.openai"]["auth"]["baseScopes"]==["mcp:read"]
+              assert json.loads(pack.read("plugin.json"))["version"]==pathlib.Path("VERSION").read_text().strip()
+          print("PUBLIC_HYBRID_SOURCE_CANDIDATE=PASS")
+          print("PUBLIC_HYBRID_SHA256="+hashlib.sha256(z.read_bytes()).hexdigest())
+          print("PUBLIC_HYBRID_DISTRIBUTION=NOT_AUTHORIZED")
+          PY
+      - name: Preserve hybrid candidate for maintainer offline review only
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: MeuArtigo-hybrid-public-source-only
+          path: ${{ runner.temp }}/MeuArtigoChatGPT-public-v*.zip
+          if-no-files-found: error
+          retention-days: 30
+      - name: Assemble offline Pages preview from still-unapproved site drafts
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          from shutil import copyfile
+          source=Path("integrations/mcp-apps/deploy/site-drafts")
+          destination=Path(os.environ["RUNNER_TEMP"])/"meu-artigo-pages-review-only"
+          destination.mkdir(parents=True,exist_ok=True)
+          pages=("index.html","suporte.html","privacidade.html","termos.html")
+          for name in pages:
+              data=(source/name).read_text(encoding="utf-8")
+              assert '<meta name="robots" content="noindex,nofollow">' in data
+              assert "Rascunho para revisão." in data
+              assert "Rebson de Morais Mendes" in data
+              copyfile(source/name,destination/name)
+          (destination/"LEIA-ANTES.txt").write_text(
+              "MEU ARTIGO - PREVIEW OFFLINE, NAO PUBLICADO\n"
+              "Este pacote contem quatro paginas para revisao do responsavel.\n"
+              "Abra index.html localmente e confira suporte, privacidade e termos.\n"
+              "ATENCAO: politicas e termos ainda nao tem aprovacao juridica;\n"
+              "nao usar este arquivo como site oficial, nem enviar ao portal OpenAI.\n"
+              "Origem: PR #91, GitHub Actions. Nao contem credenciais.\n",
+              encoding="utf-8")
+          print("PAGES_REVIEW_ARTIFACT=PREVIEW_ONLY_UNPUBLISHED")
+          print("PAGES_REVIEW_COUNT=4")
+          PY
+      - name: Preserve Pages legal-review preview without deploying it
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: MeuArtigo-Pages-review-only
+          path: ${{ runner.temp }}/meu-artigo-pages-review-only/
+          if-no-files-found: error
+          retention-days: 30
+      - name: E05 isolated tunnel diagnostic syntax and read-only output contract
+        run: |
+          bash -n integrations/mcp-apps/scripts/e05-connection-diagnose.sh
+          result="$(bash integrations/mcp-apps/scripts/e05-connection-diagnose.sh)"
+          grep -Fxq 'E05_DIAG_SCHEMA=MEU_ARTIGO_E05_READONLY_V1' <<< "$result"
+          grep -Fxq 'E05_NO_CHANGES=YES' <<< "$result"
+          grep -Fxq 'E05_DIAG_COMPLETE=YES' <<< "$result"
+          ! grep -Eiq 'CONTROL_PLANE_API_KEY|OPENAI_ADMIN_KEY|Authorization:|Bearer |sk-[A-Za-z0-9]+' <<< "$result"
+      - name: Verify autonomous VPS E05 shell safety contracts offline
+        working-directory: integrations/mcp-apps
+        run: |
+          bash -n scripts/e05-vps-runtime-launch.sh
+          bash -n scripts/e05-vps-activate-only.sh
+          for file in scripts/e05-vps-autonomous-{bootstrap,status,rollback}.sh; do
+            bash -n "$file"
+          done
+          python3 scripts/test_e05_vps_autonomous_contract.py
+          sudo python3 scripts/test_e05_probe_permissions.py
+      - name: Syntax-check resumable v1 cutover before operator delivery
+        run: bash -n integrations/mcp-apps/scripts/v1-resume-cutover.sh
+      - name: Audit private one-user Auth0 authorization command (source only)
+        run: |
+          bash -n integrations/mcp-apps/scripts/v1-allow-one-researcher.sh
+          python integrations/mcp-apps/scripts/test_v1_one_user_contract.py
+
+      - name: Validate authenticated multiuser activation and rollback syntax
+        run: |
+          bash -n integrations/mcp-apps/scripts/v1-enable-authenticated-users.sh
+          python integrations/mcp-apps/scripts/test_v1_public_auth_activation_contract.py
+
+      - name: Verify reviewed v1 UI hotfix is pinned and rollback-safe (source only)
+        run: |
+          bash -n integrations/mcp-apps/scripts/v1-deploy-reviewed-ui-hotfix.sh
+          python integrations/mcp-apps/scripts/test_v1_reviewed_ui_hotfix_contract.py
+
+      - name: Reproducible npm install without install scripts
+        working-directory: integrations/mcp-apps
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Audit production dependency advisories
+        working-directory: integrations/mcp-apps
+        run: npm audit --omit=dev --audit-level=high
+      - name: Bundle portable MCP Apps browser bridge
+        working-directory: integrations/mcp-apps
+        run: npm run build
+      - name: Verify assembled resources/read HTML and output schema (synthetic)
+        working-directory: integrations/mcp-apps
+        run: npm run test:ui-resource-contract
+      - name: Enforce CSP declarations and reject unreviewed external UI origins (offline)
+        working-directory: integrations/mcp-apps
+        run: npm run test:e05-csp
+      - name: Verify actual MCP stdio tool and UI resource (synthetic)
+        working-directory: integrations/mcp-apps
+        run: npm run test:smoke
+      - name: Verify synthetic project and localized text response
+        working-directory: integrations/mcp-apps
+        run: npm run test:synthetic
+      - name: Verify browser locale switches and fallback
+        working-directory: integrations/mcp-apps
+        run: npm run test:i18n
+      - name: Verify ten screens in four languages and host safety contracts
+        working-directory: integrations/mcp-apps
+        run: npm run test:stage09
+      - name: Stage 15 integrated four-projection acceptance
+        working-directory: integrations/mcp-apps
+        run: npm run test:stage15
+      - name: Verify Stage 13 scientific privacy and advisory-only blue panel
+        working-directory: integrations/mcp-apps
+        run: npm run test:stage13
+      - name: Verify Stage 10 single-server isolation and transport contracts
+        working-directory: integrations/mcp-apps
+        run: npm run test:stage10
+      - name: Test Stage 11 Auth0 JWT issuer/audience/JWKS/scope and PKCE simulation
+        working-directory: integrations/mcp-apps
+        run: npm run test:oauth
+      - name: Test Stage 11 RFC 9728 HTTP discovery and denial
+        working-directory: integrations/mcp-apps
+        run: npm run test:oauth-http
+      - name: Verify private Auth0 pilot deny-all and explicit JWT subject allowlists
+        working-directory: integrations/mcp-apps
+        run: npm run test:private-pilot
+      - name: Reject unsafe browser Origins in bearer/Auth0 HTTP startup (synthetic)
+        working-directory: integrations/mcp-apps
+        run: npm run test:auth-origin
+      - name: Verify ChatGPT-owned Drive boundary and privacy fail-closed
+        working-directory: integrations/mcp-apps
+        run: |
+          npm run test:host-boundary
+          npm run test:host-projection
+          npm run test:host-projection-ui
+      - name: E05 synthetic-only tunnel input guard
+        working-directory: integrations/mcp-apps
+        run: npm run test:e05-synthetic
+      - name: Validate preflight-gated loopback health/readiness endpoints in bearer and Auth0 modes
+        working-directory: integrations/mcp-apps
+        run: npm run test:operational
+      - name: Verify local authenticated Streamable HTTP transport
+        working-directory: integrations/mcp-apps
+        run: npm run test:http

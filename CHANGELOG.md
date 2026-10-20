@@ -3,6 +3,41 @@
 
 ## Unreleased
 
+- Optional multilingual MCP Apps companion: new isolated standards-based
+  read-only tool `meu_artigo_painel`, matching approved blue site resource
+  `ui://meu-artigo/site-v1.html`, structured canonical snapshot and
+  language-aware textual result for clients without HTML support.
+  The site has host/browser locale selection with manual PT/EN/ES/FR override
+  and English fallback for unsupported locale tags; user-authored research
+  text remains unmodified. MCP stdio and synthetic tests, DOM navigation,
+  source attribution and deployment limits are documented at
+  `integrations/mcp-apps/README.md`. No real remote ChatGPT installation
+  or Google Drive sync is claimed.
+
+
+- Approved Meu Artigo blue website UX: new standalone `assets/research_site.html` with official exact SVG identity, ten accessible navigation sections and readable selected-method cards, accompanied by `scripts/build_research_site.py` for a fictional demo or an authorized read-only LOCAL canonical snapshot. Canonical data never inherit fictional KPIs; Drive sync and scientific validation remain unverified. Add 12 safety/source projection tests, strict external-network-blocking CSP, and a narrow second-template package allowlist. Guide: `references/research-site-ux.md`.
+
+- Mandatory canonical My Drive layout for new projects: `My Drive/Meu Artigo/ARTIGO_<title>_<year>/existing scientific folders`. Add strict read-only root/container/project identity and metadata checks, complete all-types pagination, external guard CLI scope enforcement, and safe detection of same-name projects in misplaced folders. Reuse verified existing folders, block ambiguous duplicates and legacy moves; never issue a direct create without F7-F8 trusted journal authorization. See `references/drive-root-anchor.md`.
+
+- F9 candidate: optional DynamoDB trusted-head backend using strongly consistent reads and conditional compare-and-set. No AWS table, IAM role or credential is provisioned; live F5 CLI remains disabled until a real secure executor is reviewed. See `references/drive-f9-dynamodb-backend.md`.
+- Researcher UX refresh: accessible focus navigation (Panorama, Métodos, Minha justificativa, C.A.D.A., Ver tudo), privacy-safe manual continuation message in the local interactive workspace, and a shared progressive conversational experience contract for Skill and hosted environments. No scientific approvals, canonical writes or live synchronization are triggered by view controls. See `references/researcher-ux.md`.
+
+- F8 integration: wire signed F7 checkpoints into the F5 synthetic create host through mandatory external trusted-head compare-and-set and downloaded readback. Require and independently verify a signed pending-intent receipt before one POST and another signed resolution receipt before claiming success. Keep CLI live creates blocked when no real independently durable CAS backend is configured. Add simulated CAS and readback failure tests; see `references/drive-f8-trust-gate.md`.
+
+- F7 experimental remote-journal checkpoint anchors: add immutable, HMAC-SHA256 receipt-chain helper with independent trusted-head requirement, remote downloaded-byte verification before sealing, private directory checks, and synthetic rollback, forgery, secret and scope-drift tests. Not integrated into the F5 live create path, which remains unsuitable for release without an independently durable head authority and authorized OAuth executor. See `references/drive-f7-anchor-runbook.md`.
+
+- F6 connected read-only Drive improvement: documented actual isolated folder-only search plus independent metadata verification; added a strict folder-page receipt validator that never authorizes creation, and conservative synthetic tests. This does not replace complete all-types API pagination or durable journal acceptance; refer to `references/drive-f6-connected-acceptance.md`.
+
+- F5 optional isolated host integration: add a read-only-by-default Google Drive OAuth test harness (`drive_f5_operator.py`) that checks the exact synthetic root identity, obtains a complete pagination proof, validates an independently pinned durable journal, and allows exactly one synthetic folder-create attempt only after explicit operator opt-in and downloaded-byte intent readback. Fail closed on ambiguity; tests cover side effects, no effects, unsafe roots, stale checkpoints and pre-create failures. See `references/drive-f5-operator.md`. No authenticated live run or production installation is claimed.
+
+- F4 verification hardening: require an independently retained SHA-256 before any cross-session journal restore; reject replay of valid-but-old checkpoint content; add simulated end-to-end recovery scenarios that exercise the real folder guard, Drive pagination helper and remote checkpoint module together. Document researcher ownership, assistant-implemented patches, GitHub CI evidence, and separate live acceptance gates in `references/drive-f4-acceptance.md`. No live OAuth end-to-end acceptance, scientific validation, merge or publication is claimed.
+
+- Add optional authenticated read-only Drive v3 pagination observation helper and externally provisioned durable audit-file journal checkpoint/readback helper. Both require a separate secure OAuth executor and remain unverified as integrated ChatGPT host workflows; never claim that connected ChatGPT OAuth is accessible to local scripts or that Drive supports global atomic compare-and-swap. Add synthetic tests for pagination and journal restoration after ambiguous writes.
+
+- Phase F (draft only): fail closed if the Drive create journal is missing; require an explicit new-project-only journal initialization (never an interruption recovery shortcut); return a SHA-256 digest for durable remote readback; require a terminal provider pagination evidence chain and exact page-to-child ID reconciliation for non-fixture parent scans, including replayed cursor detection. Tests remain synthetic for these guarantees; no authenticated, exhaustive Drive adapter is shipped.
+
+- Add a create-once Drive folder operation guard with complete parent-list preflight, journaled intent before external calls and read-only post-error reconciliation; no blind retries, silent cleanup or scientific-gate changes. Reject parent replacement, reused post-resolution scans, previously resolved folder drift, duplicate inventory IDs and inconsistent canonical paths. Offline synthetic acceptance only; real ChatGPT host integration still requires a separate session.
+
 - Add source- versus package-aware local version diagnostics without claiming
   host installation or publication authentication; expose machine-readable
   initializer project root and optional spreadsheet status.
@@ -15,7 +50,16 @@
 
 - Prepare resumable host-assisted Google Drive project-tree delivery: local manifest, safe next-step recommendation, remote readback reconciliation and incomplete/conflict reporting. Offline synthetic tests are included, but no direct Drive adapter or authenticated end-to-end host test is claimed; published beta.6 assets remain untouched.
 
-No later software release is planned at this time; further changes require a new maintainer decision. The beta.6 item below is a release candidate until an actual tagged GitHub release is published.
+The beta.9 integration below is an unpublished source candidate. The beta.6 release is historical; no release pointer, tag, installed Plugin, VPS or researcher account is updated by this Draft.
+
+## 0.9.0-beta.9 — pending publication
+
+**Unpublished integration candidate.** This Draft brings the read-only ChatGPT MCP Apps interface, Auth0/HTTP security guards, synthetic E05 visual acceptance, Drive F1–F9 fail-closed delivery safeguards, historical scientific regressions, and one integration review surface into a single proposed source version. Six workflows passed on the predecessor SHA `d0be8cb5b093a2681fc8991dd36a2862d51bd1f9`; they MUST run again after this metadata-only change.
+
+- Align canonical source VERSION, README, CITATION metadata, release notes and reproducible Skill/Plugin candidate build versions. The installed personal Plugin remains beta.8 and is not changed.
+- Align independent MCP Apps package, lockfile, server and browser bridge technical versions to 0.3.0 without claiming a deployed service.
+- Preserve seven researcher-approved scientific gates, zero implicit Google Drive write access, no research content in MCP persistence and privacy-safe errors.
+- Block merge, private distribution, real-user A/B acceptance and public directory release until their separate evidence and authorization gates are satisfied. No independent scientific validation is asserted.
 
 ## 0.9.0-beta.6 — 2026-10-15
 
