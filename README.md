@@ -8,7 +8,7 @@ The project is available in a **public GitHub repository**. **Every 0.9.0-beta r
 
 **Recommended published experimental beta:** [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6), confirmed published with its [prepared Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.6/MeuArtigoSkill-v0.9.0-beta.6.zip) and SHA-256. Earlier beta.1 and beta.2, along with beta.4 and beta.5, remain archived for reproducibility.
 
-**Current version:** `0.9.0-beta.6`, a published **experimental GitHub Pre-release** (not stable or independently scientifically validated). New source candidates and unmerged PRs do not update that published package or installed Skills. GitHub's source archive is not the prepared Skill installer.
+**Current version:** `0.9.0-beta.9` — **source candidate ONLY, not published or installed**. The recommended published experimental Skill remains [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6). The existing private ChatGPT installation still identifies itself as beta.8 while its embedded Skill is beta.6; no installed software is changed by this candidate. The GitHub source archive is not the prepared Skill installer.
 
 1. Follow the [installation guide](docs/INSTALLATION.md) for a compatible assistant.
 2. Start a conversation about a genuine research problem. For example: *"I want to develop an article with Meu Artigo. Help me define the question and possible methodological approaches. First, check which storage and research tools are actually available."*

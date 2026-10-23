@@ -15,8 +15,20 @@ class Beta5PublicationTests(unittest.TestCase):
         self.readme=(ROOT/"README.md").read_text(encoding="utf-8")
 
     def test_consistent_release_metadata(self):
-        self.assertEqual(self.version,"0.9.0-beta.6")
-        self.assertEqual(audit_release_metadata(ROOT,expected_date="2026-10-15"),[])
+        # Keep published beta.6 recommendations immutable while allowing a
+        # strictly newer, unpublished candidate with no release date.
+        published=(ROOT/"OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip()
+        self.assertEqual(published,"0.9.0-beta.6")
+        self.assertGreaterEqual(int(self.version.rsplit(".",1)[1]),
+                                int(published.rsplit(".",1)[1]))
+        if self.version==published:
+            self.assertEqual(audit_release_metadata(ROOT,expected_date="2026-10-15"),[])
+        else:
+            citation=(ROOT/"CITATION.cff").read_text(encoding="utf-8")
+            self.assertIn(f'version: "{self.version}"',citation)
+            self.assertNotIn("date-released:",citation)
+            self.assertIn("source candidate",self.readme.lower())
+            self.assertTrue((ROOT/"docs"/f"NOTAS-DA-VERSAO-{self.version}.md").is_file())
         self.assertIn("confirmed published",self.readme.lower())
         self.assertIn("pre-release",self.notes.lower())
         self.assertIn("not a stable",self.notes.lower())

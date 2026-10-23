@@ -22,13 +22,24 @@ class OfficialRecommendationTests(unittest.TestCase):
 
     def test_current_source_is_not_equated_with_a_published_tag(self):
         dev_version = (ROOT / "VERSION").read_text().strip()
-        self.assertEqual(dev_version, "0.9.0-beta.6")
+        published=(ROOT/"OFFICIAL_SKILL_RELEASE").read_text().strip()
+        self.assertEqual(published,"0.9.0-beta.6")
+        self.assertGreaterEqual(int(dev_version.rsplit(".",1)[1]),
+                                int(published.rsplit(".",1)[1]))
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn(f"**Current version:** `{dev_version}`", readme)
         self.assertIn("experimental", readme.lower())
-        self.assertIn("published **experimental GitHub Pre-release**", readme)
+        if dev_version!=published:
+            self.assertIn("source candidate",readme.lower())
+            self.assertIn("not published or installed",readme.lower())
+            self.assertIn(f'version: "{dev_version}"',
+                          (ROOT/"CITATION.cff").read_text(encoding="utf-8"))
+            self.assertNotIn("date-released:",
+                             (ROOT/"CITATION.cff").read_text(encoding="utf-8"))
+        else:
+            self.assertIn("published **experimental GitHub Pre-release**",readme)
         self.assertIn("confirmed published", readme)
-        self.assertIn("GitHub's", readme)
+        self.assertIn("GitHub source archive is not the prepared Skill installer",readme)
         self.assertIn("stable v1.0.0", readme)
 
     def test_historical_releases_not_discarded(self):
