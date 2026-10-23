@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Meu Artigo • Protótipo visual navegável</title>
+<style>
+:root{--ink:#102047;--muted:#667a96;--line:#dde7f5;--green:#0B57D0;--green-light:#eaf2ff;--soft:#f7faff;--amber:#8b5d14;--amber-light:#fff5e3;--panel:#fff;--bg:#f2f6fb;--blue:#2563EB;--blue-dark:#093d9b}
+*{box-sizing:border-box}html{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink)}body{margin:0;background:var(--bg);font-size:14px}
+button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #4f8bea;outline-offset:3px}button:disabled{opacity:.55;cursor:not-allowed}
+.shell{max-width:1460px;margin:18px auto;box-shadow:0 14px 50px #122e5c12;border:1px solid var(--line);border-radius:17px;background:#fff;overflow:hidden;min-height:710px}
+.header{min-height:67px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 26px;background:#fff}
+.wordmark{font-size:15px;font-weight:750;letter-spacing:-.025em}.wordmark .mark{display:inline-grid;place-items:center;background:var(--green-light);color:var(--green);width:35px;height:35px;border-radius:10px;margin-right:10px;font-size:13px;letter-spacing:0}.wordmark em{font-style:normal;color:#91a0b7;font-weight:450}
+.header-right{display:flex;align-items:center;gap:12px}.mock-badge{border-radius:18px;background:var(--amber-light);color:var(--amber);font-size:11px;font-weight:700;padding:8px 11px;white-space:nowrap}.outline-btn{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 13px;font-size:12px;color:#52656c;font-weight:600}.outline-btn:hover{background:var(--soft)}
+.layout{display:grid;grid-template-columns:226px minmax(0,1fr);min-height:640px}.nav{border-right:1px solid var(--line);background:#f9fbff;padding:24px 12px;display:flex;flex-direction:column;gap:3px}.nav-label{padding:1px 12px 14px;color:#8a9bb5;font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.nav button{display:flex;align-items:center;gap:11px;width:100%;border:0;text-align:left;padding:12px 12px;background:transparent;color:#62748f;border-radius:9px;font-size:12.5px}.nav button:hover{background:#edf4ff;color:#0946ad}.nav button.active{background:var(--green-light);color:var(--green);font-weight:700}.nav button .sym{display:inline-flex;align-items:center;justify-content:center;width:20px;font-size:15px}.nav-help{padding:13px 12px 0;color:#8799b2;line-height:1.55;font-size:11px;margin-top:auto}.main{padding:30px 34px 26px;background:#fff;min-width:0}
+.page-top{display:flex;gap:14px;align-items:center;justify-content:space-between;margin-bottom:22px}.eyebrow{font-size:10.5px;letter-spacing:.11em;font-weight:800;color:#0B57D0;text-transform:uppercase}.page-title{font-size:25px;line-height:1.14;letter-spacing:-.035em;font-weight:790;margin:9px 0}.subtitle{color:#7a8ba3;font-size:12.5px;line-height:1.5;margin:4px 0 0}.stage{background:var(--amber-light);border-radius:8px;color:#0b57d0;padding:11px 13px;font-size:11px;white-space:nowrap}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin:20px 0}.kpi{border:1px solid var(--line);border-radius:14px;padding:15px;min-height:116px}.kpi .label{font-size:11px;color:#83949b;line-height:1.4}.kpi strong{display:block;font-size:28px;letter-spacing:-.05em;margin:8px 0 2px}.kpi small{color:#92a0a7;font-size:10.5px}
+.cols{display:grid;grid-template-columns:1.08fr 1fr;gap:15px;margin-top:14px}.pane{border:1px solid var(--line);border-radius:14px;padding:21px;min-width:0}.pane.tinted{background:#f2f7ff}.pane h3{font-size:14px;letter-spacing:-.02em;margin:0 0 11px}.pane h2{font-size:17px;line-height:1.35;letter-spacing:-.03em;margin:8px 0}.pane p{color:#819099;font-size:12px;line-height:1.55;margin:8px 0 15px}.mini-label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#88999e;font-weight:800}
+.primary{background:var(--green);color:white;border:0;border-radius:8px;padding:11px 16px;font-size:12px;font-weight:700}.primary:hover{background:#0943ae}.secondary{border:1px solid #c8daf4;background:#fff;color:var(--green);border-radius:8px;padding:10px 13px;font-size:12px;font-weight:700}.secondary:hover{background:var(--green-light)}
+.gates{display:flex;align-items:center;justify-content:space-between;gap:4px;margin:22px 0}.gate-dot{width:27px;height:27px;border-radius:50%;border:2px solid #dfe6e4;display:grid;place-items:center;color:#98a6aa;font-weight:750;font-size:12px;background:#fff;flex-shrink:0}.gate-dot.done{background:#0B57D0;color:#fff;border-color:#0B57D0}.gate-dot.now{color:#0b57d0;border-color:#2563eb;background:#f0f6ff}.g-line{height:2px;flex:1;background:#e0e9f7;min-width:4px}.footnote{font-size:10.5px;color:#9aa9ae;line-height:1.5}.source-line{margin-top:24px;color:#93a1a7;font-size:11px;border-top:1px solid #e4ecf6;padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.info{background:#f2f7ff;border:1px solid #d8e8fc;border-radius:12px;padding:15px 17px;color:#3a628e;font-size:12px;line-height:1.5}.amber{background:#fff8e9;border-color:#f2dfbb;color:#906524}
+.section-heading{display:flex;justify-content:space-between;gap:12px;align-items:start;margin-bottom:18px}.section-heading h2{font-size:23px;letter-spacing:-.04em;margin:0 0 5px}.section-heading p{font-size:12px;color:#8a9ca3;margin:0}.table-scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}th{background:#f7faff;color:#778991;font-size:11px;font-weight:700}th,td{padding:15px 12px;border-bottom:1px solid #e9eeee}td{color:#4e646d}td:first-child{font-weight:750;color:#40585f}tr:last-child td{border:0}.pill{display:inline-block;padding:6px 9px;border-radius:30px;background:#eef3f3;color:#5a727b;font-size:10px;font-weight:700}.pill.green{background:#e8f2ff;color:#0B57D0}.pill.yellow{background:#fff4e0;color:#a06d20}
+.list{display:grid;gap:11px}.line-item{border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;align-items:start;gap:14px}.line-item .bubble{display:grid;place-items:center;border-radius:10px;background:#e9f2ff;color:var(--green);width:39px;height:39px;flex-shrink:0;font-weight:800}.line-item h3{margin:0 0 4px;font-size:13px}.line-item p{margin:0;color:#85949c;font-size:12px;line-height:1.5}.line-item .right{margin-left:auto;white-space:nowrap}.quiet{font-size:11px;color:#8ca0a7}.search{width:100%;border:1px solid var(--line);border-radius:9px;padding:11px 12px;max-width:280px}.mini-select{border:1px solid var(--line);border-radius:8px;padding:9px;background:white;color:#53686f;font-size:12px}.stack{display:grid;gap:15px}.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.count{font-size:27px;font-weight:800;letter-spacing:-.045em}.option{border:1px solid var(--line);padding:17px;border-radius:12px;background:#fff;color:var(--ink);transition:border-color .15s,background .15s,box-shadow .15s}.option:hover{border-color:#bfd3f6;background:#fbfdff}.option h3{margin:0 0 7px;color:#152750}.option p{font-size:12px;line-height:1.5;color:#6d819f}.option.selected{border-color:#2563EB;background:linear-gradient(180deg,#edf4ff 0%,#f8fbff 100%);box-shadow:0 8px 20px #0b57d014}.option.selected h3{color:#0B57D0}.option.selected p{color:#36527a}.option.selected .pill.green{background:#0B57D0;color:#fff;box-shadow:0 2px 6px #0b57d022}.detail{min-height:100px}.danger-note{font-size:11px;color:#a16e22;background:#fff8e8;border-radius:8px;padding:9px 11px}
+@media(max-width:930px){.layout{grid-template-columns:190px minmax(0,1fr)}.main{padding:23px}.kpis{grid-template-columns:repeat(2,1fr)}.cols{grid-template-columns:1fr}.header{padding:10px 19px}}
+@media(max-width:650px){.shell{margin:0;border-radius:0;min-height:100vh}.header{min-height:65px;padding:10px 13px}.header-right{gap:6px}.header-right .outline-btn{display:none}.layout{display:block}.nav{display:flex;flex-direction:row;gap:5px;overflow-x:auto;border:0;border-bottom:1px solid var(--line);padding:10px}.nav-label,.nav-help{display:none}.nav button{flex:0 0 auto;width:auto;white-space:nowrap;padding:9px 12px}.nav button .sym{display:none}.main{padding:21px 15px}.page-title{font-size:22px}.page-top{align-items:start}.stage{white-space:normal;font-size:10px}.kpis{gap:8px}.kpi{padding:12px;min-height:108px}.kpi strong{font-size:24px}.cols,.two{grid-template-columns:1fr}}
+
+/* Identidade visual oficial Meu Artigo · azul #0B57D0 / #2563EB. */
+.header{min-height:82px;padding:12px 30px}
+.wordmark{display:flex;align-items:center;gap:12px;font-size:22px;font-weight:770;letter-spacing:-.04em;color:var(--ink)}
+.wordmark .brand-logo{display:block;width:48px;height:48px;flex:0 0 48px;object-fit:contain}
+.wordmark .brand-name{white-space:nowrap}
+.wordmark .brand-name strong{color:var(--blue);font-weight:800}
+.mock-badge{background:#eaf2ff;color:#0b57d0;border:1px solid #e0ebff;font-size:11px;letter-spacing:.015em}
+.stage{background:#eaf2ff;color:#0b57d0;border:1px solid #e5efff;font-weight:650}
+.shell{box-shadow:0 16px 48px #12345d12;border-color:#dbe6f5}
+.nav{background:#fbfcff;border-right-color:#dfe8f6;padding-top:31px}
+.nav button{transition:background .15s,color .15s;font-size:12.5px}
+.nav button.active{background:#e9f2ff;color:#0b57d0}
+.nav button:focus-visible,.primary:focus-visible,.secondary:focus-visible{outline:3px solid #76a9fa;outline-offset:2px}
+.page-title{color:#101d43;font-size:27px;line-height:1.2}
+.kpi{border-color:#dce7f6;box-shadow:0 2px 12px #173d7010;background:#fff}
+.kpi strong{color:#101d43}
+.kpi-heading{display:flex;gap:10px;align-items:center}
+.kpi-icon{display:inline-grid;place-items:center;width:36px;height:36px;background:#eaf2ff;color:#0b57d0;border-radius:9px;flex-shrink:0;font-size:17px;font-weight:750}
+.pane.tinted{background:linear-gradient(120deg,#f2f8ff,#f8fbff);border-color:#cce0fd}
+.pane.tinted .mini-label{color:#0b57d0}
+.primary{background:#0B57D0;box-shadow:0 2px 4px #0b57d018}
+.primary:hover{background:#0845ab}
+.secondary{color:#0b57d0}
+.secondary:hover{background:#eaf2ff}
+.gate-dot.done{background:#0B57D0;border-color:#0B57D0}
+.gate-dot.now{color:#0B57D0;border-color:#2563EB;background:#f0f6ff}
+.option.selected{border-color:#2563EB;background:linear-gradient(180deg,#edf4ff 0%,#f8fbff 100%)}
+.pill.green{background:#eaf2ff;color:#0b57d0}
+@media(max-width:650px){.header{padding:10px 13px;min-height:68px}.wordmark{font-size:18px;gap:8px}.wordmark .brand-logo{width:37px;height:37px;flex-basis:37px}.mock-badge{font-size:9px;padding:6px 8px}}
+/* Research choices: readable selected state, never green-on-blue text. */
+.option.selected{background:#ecf4ff;border:2px solid #0B57D0;color:#102047;box-shadow:0 3px 12px rgba(11,87,208,.12)}
+.option.selected h3{color:#073b91;font-weight:800}
+.option.selected p{color:#334f78;font-weight:450}
+.option.selected .pill.green{color:#fff;background:#0B57D0}
+.option:focus-visible{outline:3px solid #93baff;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+#site-language{background:#fff;color:#102047;border:1px solid #dbe6f5;border-radius:9px;padding:8px;max-width:134px;font-size:12px}.site-language-label{font-size:12px;color:#667a96}@media(max-width:650px){.site-language-label{display:none}#site-language{max-width:100px;font-size:11px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="header"><div class="wordmark"><img class="brand-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1ldSBBcnRpZ28iPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjcwIiB5MT0iNjAiIHgyPSI0NDAiIHkyPSI0NTUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iIzBCNTdEMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNTIiIHN0b3AtY29sb3I9IiMyNTYzRUIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNEY0NkU1Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJwYXBlciIgeDE9IjE4MCIgeTE9Ijk1IiB4Mj0iMzEwIiB5Mj0iMzMwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNGRkZGRkYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRTlGMkZGIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJib29rIiB4MT0iMTE2IiB5MT0iMjkwIiB4Mj0iMzQ1IiB5Mj0iNDA2IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNGOEZCRkYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRERFQkZGIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGZpbHRlciBpZD0ic2hhZG93IiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNTAlIj4KICAgICAgPGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjE0IiBzdGREZXZpYXRpb249IjE2IiBmbG9vZC1jb2xvcj0iIzA2MUI0RiIgZmxvb2Qtb3BhY2l0eT0iLjI4Ii8+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CgogIDxyZWN0IHg9IjI4IiB5PSIyOCIgd2lkdGg9IjQ1NiIgaGVpZ2h0PSI0NTYiIHJ4PSIxMTIiIGZpbGw9InVybCgjYmcpIi8+CiAgPGNpcmNsZSBjeD0iNDEwIiBjeT0iMTI2IiByPSI1MiIgZmlsbD0iIzA5M0Y5RCIgb3BhY2l0eT0iLjMyIi8+CiAgPGNpcmNsZSBjeD0iNDIyIiBjeT0iMzgwIiByPSI2NiIgZmlsbD0iIzVCMjFCNiIgb3BhY2l0eT0iLjIyIi8+CgogIDwhLS0gZG9jdW1lbnQgLS0+CiAgPGcgZmlsdGVyPSJ1cmwoI3NoYWRvdykiPgogICAgPHBhdGggZD0iTTE1NyAxMDNjMC0yMCAxNi0zNiAzNi0zNmgxMzNsNjUgNjZ2MTk0YzAgMjAtMTYgMzYtMzYgMzZIMTkzYy0yMCAwLTM2LTE2LTM2LTM2VjEwM3oiIGZpbGw9IiMwQjNFOTQiIG9wYWNpdHk9Ii41NSIvPgogICAgPHBhdGggZD0iTTE0NSA5MWMwLTIwIDE2LTM2IDM2LTM2aDEzNWw2NiA2NnYxOTRjMCAyMC0xNiAzNi0zNiAzNkgxODFjLTIwIDAtMzYtMTYtMzYtMzZWOTF6IiBmaWxsPSJ1cmwoI3BhcGVyKSIvPgogICAgPHBhdGggZD0iTTMxNiA1NXY0MmMwIDE3IDE0IDMxIDMxIDMxaDM1IiBmaWxsPSIjRDZFNkZGIi8+CiAgICA8cGF0aCBkPSJNMzE2IDU1bDY2IDY2aC0zNWMtMTcgMC0zMS0xNC0zMS0zMVY1NXoiIGZpbGw9IiNDOURCRjYiLz4KICAgIDxnIGZpbGw9IiM2RTk1QzkiPgogICAgICA8cmVjdCB4PSIxOTAiIHk9IjEzMiIgd2lkdGg9IjExOSIgaGVpZ2h0PSIxMyIgcng9IjYuNSIvPgogICAgICA8cmVjdCB4PSIxOTAiIHk9IjE2NiIgd2lkdGg9IjEzOSIgaGVpZ2h0PSIxMyIgcng9IjYuNSIvPgogICAgICA8cmVjdCB4PSIxOTAiIHk9IjIwMCIgd2lkdGg9IjEwNyIgaGVpZ2h0PSIxMyIgcng9IjYuNSIvPgogICAgICA8cmVjdCB4PSIxOTAiIHk9IjIzNCIgd2lkdGg9Ijg0IiBoZWlnaHQ9IjEzIiByeD0iNi41Ii8+CiAgICAgIDxyZWN0IHg9IjI5NSIgeT0iMjI5IiB3aWR0aD0iMTciIGhlaWdodD0iNTYiIHJ4PSI2Ii8+CiAgICAgIDxyZWN0IHg9IjMyMiIgeT0iMjExIiB3aWR0aD0iMTciIGhlaWdodD0iNzQiIHJ4PSI2Ii8+CiAgICAgIDxyZWN0IHg9IjM0OSIgeT0iMTkwIiB3aWR0aD0iMTciIGhlaWdodD0iOTUiIHJ4PSI2Ii8+CiAgICA8L2c+CiAgPC9nPgoKICA8IS0tIG9wZW4gYm9vayAtLT4KICA8ZyBmaWx0ZXI9InVybCgjc2hhZG93KSI+CiAgICA8cGF0aCBkPSJNOTYgMzAxYzQzLTQgODMgOCAxMjAgNDAgMTggMTYgMzIgMzMgNDAgNTAgOC0xNyAyMi0zNCA0MC01MCAzNy0zMiA3Ny00NCAxMjAtNDB2MTEyYy00Ni0zLTg5IDEwLTEyOCAzOS0xNCAxMC0yNSAyMS0zMiAzMS03LTEwLTE4LTIxLTMyLTMxLTM5LTI5LTgyLTQyLTEyOC0zOVYzMDF6IiBmaWxsPSIjMEEzQThCIiBvcGFjaXR5PSIuNTUiLz4KICAgIDxwYXRoIGQ9Ik04NiAyODZjNDUtNCA4NyA5IDEyNiA0MSAyMCAxNyAzNSAzNCA0NCA1MiA5LTE4IDI0LTM1IDQ0LTUyIDM5LTMyIDgxLTQ1IDEyNi00MXYxMTJjLTQ3LTMtOTEgMTAtMTMyIDQwLTE3IDEzLTMwIDI1LTM4IDM3LTgtMTItMjEtMjQtMzgtMzctNDEtMzAtODUtNDMtMTMyLTQwVjI4NnoiIGZpbGw9InVybCgjYm9vaykiLz4KICAgIDxwYXRoIGQ9Ik0yNTYgMzc5djU2IiBzdHJva2U9IiNBOEMzRTgiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMTExIDMxNmMzNyAxIDcwIDEzIDk5IDM2TTExMSAzNDNjMzMgMSA2MiAxMSA4OCAzMU00MDEgMzE2Yy0zNyAxLTcwIDEzLTk5IDM2TTQwMSAzNDNjLTMzIDEtNjIgMTEtODggMzEiIHN0cm9rZT0iI0I4Q0NFOCIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz4KICA8L2c+CgogIDwhLS0gd29ya2Zsb3cgbm9kZXMgLS0+CiAgPHBhdGggZD0iTTM5OSAxMDJjMzMgMjcgNDYgNTcgMzggOTFNNDM3IDIxM2M4IDMxIDMgNjAtMTYgODVNNDIxIDMyMGMtOCAyNy0yNiA0OS01MyA2NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjdDN0ZGIiBzdHJva2Utd2lkdGg9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9Ii45NSIvPgoKICA8ZyBmaWx0ZXI9InVybCgjc2hhZG93KSI+CiAgICA8Y2lyY2xlIGN4PSI0MDgiIGN5PSIxMDAiIHI9IjM4IiBmaWxsPSIjMEE1M0M2Ii8+CiAgICA8Y2lyY2xlIGN4PSI0NDIiIGN5PSIyMTUiIHI9IjM4IiBmaWxsPSIjMEVBNUE4Ii8+CiAgICA8Y2lyY2xlIGN4PSI0MTUiIGN5PSIzMjMiIHI9IjM4IiBmaWxsPSIjRjU5RTBCIi8+CiAgICA8Y2lyY2xlIGN4PSIzNjUiIGN5PSI0MDkiIHI9IjM4IiBmaWxsPSIjNUIyMUI2Ii8+CiAgPC9nPgoKICA8IS0tIHNlYXJjaCAtLT4KICA8Y2lyY2xlIGN4PSI0MDEiIGN5PSI5MyIgcj0iMTMiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPHBhdGggZD0iTTQxMSAxMDNsMTMgMTMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8IS0tIGRvY3VtZW50IG5vZGUgLS0+CiAgPHBhdGggZD0iTTQzMSAxOTRoMThsMTAgMTB2MjhoLTI4eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cGF0aCBkPSJNNDQ5IDE5NHYxMGgxME00MzcgMjE0aDE2TTQzNyAyMjNoMTMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8IS0tIGdlYXIgc2ltcGxpZmllZCAtLT4KICA8Y2lyY2xlIGN4PSI0MTUiIGN5PSIzMjMiIHI9IjEyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNyIvPgogIDxwYXRoIGQ9Ik00MTUgMzAxdjhNNDE1IDMzN3Y4TTM5MyAzMjNoOE00MjkgMzIzaDhNNDAwIDMwOGw2IDZNNDI0IDMzMmw2IDZNNDMwIDMwOGwtNiA2TTQwNiAzMzJsLTYgNiIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwhLS0gY2hlY2sgLS0+CiAgPHBhdGggZD0iTTM0NiA0MDlsMTMgMTQgMjYtMzEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+" alt="" aria-hidden="true" width="42" height="42"><span class="brand-name">Meu <strong>Artigo</strong></span></div><div class="header-right"><label class="site-language-label" for="site-language" id="language-label">Idioma</label><select id="site-language" aria-label="Interface language"><option value="pt-BR">Português</option><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option></select><span class="mock-badge">● DEMONSTRAÇÃO</span><button class="outline-btn" type="button" id="reset">↻ Reiniciar exemplo</button></div></header>
+<div class="layout"><nav class="nav" id="nav" aria-label="Navegação do Meu Artigo"><div class="nav-label">Área de pesquisa</div></nav><main class="main" id="content" tabindex="-1" aria-live="polite"></main></div>
+</div>
+<script type="application/json" id="site-data">__MEU_ARTIGO_SITE_MODEL_JSON__</script>
+<script>
+(()=>{
+'use strict';
+let siteData=JSON.parse(document.getElementById('site-data').textContent);
+let isCanonical=siteData.kind==='CANONICAL_LOCAL_SNAPSHOT';
+if(isCanonical||siteData.kind==='HOST_NOT_CONNECTED'){
+  const indicator=document.querySelector('.mock-badge');
+  if(indicator)indicator.textContent=isCanonical?
+    'SNAPSHOT LOCAL · SEM SINCRONIZAÇÃO':'AGUARDANDO DADOS';
+}
+
+const e=(value)=>String(value===null||value===undefined||value===''?'Não informado':value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* User-facing UI locale: independent of manuscript and research evidence.
+   The host may set document.lang; choose browser locale when a generic
+   pt-BR template is opened standalone. Unsupported languages fall back to EN,
+   while the conversational assistant retains the user's requested language. */
+const TRANSLATIONS={
+ en:{
+ "AGUARDANDO DADOS":"WAITING FOR DATA",
+ "Painel indisponível: projeto não autorizado":"No authorized project data",
+ "Nenhum snapshot autorizado foi recebido. Continue no chat ou conecte a ferramenta de pesquisa.":"No authorized research snapshot was received. Continue in chat or connect your authorized research tool.",
+ "Nenhum progresso fictício, fonte ou aprovação é apresentado nesta interface conectada.":"This connected view shows no fictional progress, source checks or approvals.",
+ "Idioma":"Language","Visão geral":"Overview","Etapas":"Stages",
+ "Tarefas C.A.D.A.":"C.A.D.A. tasks","Fontes e buscas":"Sources and searches",
+ "Evidências":"Evidence","Validações":"Human validations","Métodos":"Methods",
+ "Rastreabilidade":"Traceability","Submissão":"Submission","Sincronização":"Sync",
+ "Área de pesquisa":"Research workspace","DEMONSTRAÇÃO":"DEMONSTRATION",
+ "Reiniciar exemplo":"Reset example","Panorama da pesquisa":"Research overview",
+ "Explorar caminhos metodológicos":"Explore research methods",
+ "Compare possibilidades antes de registrar a decisão do pesquisador.":"Compare options before recording a researcher decision.",
+ "Estudo documental qualitativo":"Qualitative documentary study",
+ "Design Science Research":"Design Science Research",
+ "Métodos mistos":"Mixed methods","Outro caminho":"Another approach",
+ "Compreender práticas e registros, mas não concluir sobre todas as rotinas informais.":"Examine practices and records without claiming to cover every informal routine.",
+ "Construir e avaliar um artefato, sem confundir sua construção com eficácia validada.":"Design and evaluate an artifact without mistaking construction for proven effectiveness.",
+ "Articular evidências qualitativas e quantitativas com integração explícita.":"Integrate qualitative and quantitative evidence explicitly.",
+ "Usar uma tradição adequada à pergunta, sem forçar catálogo fechado.":"Choose a tradition that fits the question without restricting the options.",
+ "Em exploração":"Exploring","Explorar":"Explore",
+ "Alternativa selecionada para leitura":"Selected option for review",
+ "A decisão final deve ser tomada e justificada pelo pesquisador e registrada no projeto autorizado.":"The researcher must justify and record the final decision in the authorized project.",
+ "Ver gates relacionados":"View related gates",
+ "Fonte: demonstração fictícia da arquitetura Meu Artigo":"Source: fictional Meu Artigo interface demonstration",
+ "Nenhum dado real · Sem gravação · Sem aprovação de gates":"No real data · No writes · No gate approvals",
+ "Visão derivada dos registros canônicos. Não substitui a matriz nem valida decisões científicas.":"A view of canonical records, not a replacement for scientific decisions.",
+ "Gates aprovados":"Documented gates","Tarefas concluídas":"Tasks completed",
+ "Pendências":"Pending","Fontes verificadas":"Sources verified",
+ "Próxima ação recomendada":"Recommended next action","Estado científico":"Scientific status",
+ "Ver próximo passo":"View next step","Tarefas registradas":"Recorded tasks",
+ "Gates documentados":"Documented gates","Não avaliado":"Not assessed",
+ "Não informado":"Not provided","Snapshot local · não sincronizado":"Local snapshot · not synced",
+ "Próxima ação registrada":"Recorded next action",
+ "Conferir tarefas":"Review tasks",
+ "Google Drive: não verificado nesta sessão.":"Google Drive: not verified in this session.",
+ "Submissão não verificada.":"Submission not verified.",
+ "Etapas e gates científicos":"Stages and scientific gates",
+ "Validações humanas":"Human validations",
+ "Armazenamento e sincronização":"Storage and synchronization",
+ "Fontes e buscas":"Sources and searches",
+ "Evidências e sustentação":"Evidence and support",
+ "Rastreabilidade":"Traceability",
+ "Preparação para submissão":"Submission preparation",
+ "Tarefas C.A.D.A.":"C.A.D.A. tasks",
+ "Filtrar tarefas":"Filter tasks",
+ "ID Tarefa":"Task ID","Tarefa":"Task","Responsável execução":"Responsible","Prazo":"Deadline",
+ "Revisar a estratégia de busca e seus critérios":"Review the search strategy and criteria",
+ "Dados locais":"Local data","Sem sincronização":"Not synchronized",
+ "Responsável":"Responsible","Sem gravação":"No writes",
+ },
+ es:{
+ "AGUARDANDO DADOS":"ESPERANDO DATOS",
+ "Painel indisponível: projeto não autorizado":"Panel no disponible: proyecto no autorizado",
+ "Nenhum snapshot autorizado foi recebido. Continue no chat ou conecte a ferramenta de pesquisa.":"No se recibió un registro autorizado. Continúe en el chat o conecte la herramienta de investigación.",
+ "Nenhum progresso fictício, fonte ou aprovação é apresentado nesta interface conectada.":"Esta vista no muestra progreso, fuentes ni aprobaciones ficticias.",
+ "Idioma":"Idioma","Visão geral":"Vista general","Etapas":"Etapas",
+ "Tarefas C.A.D.A.":"Tareas C.A.D.A.","Fontes e buscas":"Fuentes y búsquedas",
+ "Evidências":"Evidencias","Validações":"Validaciones","Métodos":"Métodos",
+ "Rastreabilidade":"Trazabilidad","Submissão":"Envío","Sincronização":"Sincronización",
+ "Área de pesquisa":"Área de investigación","DEMONSTRAÇÃO":"DEMOSTRACIÓN",
+ "Reiniciar exemplo":"Reiniciar ejemplo","Panorama da pesquisa":"Panorama de la investigación",
+ "Explorar caminhos metodológicos":"Explorar enfoques metodológicos",
+ "Compare possibilidades antes de registrar a decisão do pesquisador.":"Compare alternativas antes de registrar la decisión del investigador.",
+ "Estudo documental qualitativo":"Estudio documental cualitativo",
+ "Métodos mistos":"Métodos mixtos","Outro caminho":"Otro enfoque",
+ "Compreender práticas e registros, mas não concluir sobre todas as rotinas informais.":"Comprender prácticas y registros sin generalizar a todas las rutinas informales.",
+ "Construir e avaliar um artefato, sem confundir sua construção com eficácia validada.":"Diseñar y evaluar un artefacto sin confundir su construcción con eficacia demostrada.",
+ "Articular evidências qualitativas e quantitativas com integração explícita.":"Integrar explícitamente evidencias cualitativas y cuantitativas.",
+ "Usar uma tradição adequada à pergunta, sem forçar catálogo fechado.":"Elegir una tradición adecuada a la pregunta sin restringir las opciones.",
+ "Em exploração":"En exploración","Explorar":"Explorar",
+ "Alternativa selecionada para leitura":"Opción seleccionada para revisar",
+ "A decisão final deve ser tomada e justificada pelo pesquisador e registrada no projeto autorizado.":"El investigador debe justificar y registrar la decisión final en el proyecto autorizado.",
+ "Ver gates relacionados":"Ver validaciones relacionadas",
+ "Fonte: demonstração fictícia da arquitetura Meu Artigo":"Fuente: demostración ficticia de Meu Artigo",
+ "Nenhum dado real · Sem gravação · Sem aprovação de gates":"Sin datos reales · Sin escritura · Sin aprobación de etapas",
+ "Visão derivada dos registros canônicos. Não substitui a matriz nem valida decisões científicas.":"Vista de registros canónicos, sin sustituir las decisiones científicas.",
+ "Gates aprovados":"Validaciones registradas","Tarefas concluídas":"Tareas completadas",
+ "Pendências":"Pendientes","Fontes verificadas":"Fuentes verificadas",
+ "Próxima ação recomendada":"Próxima acción recomendada","Estado científico":"Estado científico",
+ "Ver próximo passo":"Ver siguiente paso","Tarefas registradas":"Tareas registradas",
+ "Gates documentados":"Validaciones documentadas","Não avaliado":"No evaluado",
+ "Não informado":"No informado","Snapshot local · não sincronizado":"Copia local · no sincronizada",
+ "Próxima ação registrada":"Próxima acción registrada","Conferir tarefas":"Revisar tareas",
+ "Google Drive: não verificado nesta sessão.":"Google Drive: no verificado en esta sesión.",
+ "Submissão não verificada.":"Envío no verificado.",
+ "Etapas e gates científicos":"Etapas y validaciones científicas",
+ "Validações humanas":"Validaciones humanas",
+ "Armazenamento e sincronização":"Almacenamiento y sincronización",
+ "Evidências e sustentação":"Evidencias y sustento",
+ "Preparação para submissão":"Preparación para el envío",
+ "Filtrar tarefas":"Filtrar tareas","ID Tarefa":"ID de tarea","Tarefa":"Tarea",
+ "Responsável execução":"Responsable","Prazo":"Plazo",
+ "Revisar a estratégia de busca e seus critérios":"Revisar la estrategia y criterios de búsqueda",
+ },
+ fr:{
+ "AGUARDANDO DADOS":"EN ATTENTE DE DONNÉES",
+ "Painel indisponível: projeto não autorizado":"Tableau indisponible : aucun projet autorisé",
+ "Nenhum snapshot autorizado foi recebido. Continue no chat ou conecte a ferramenta de pesquisa.":"Aucune donnée autorisée reçue. Continuez dans la conversation ou connectez l'outil de recherche.",
+ "Nenhum progresso fictício, fonte ou aprovação é apresentado nesta interface conectada.":"Cette vue n'affiche aucun progrès, aucune source ni validation fictive.",
+ "Idioma":"Langue","Visão geral":"Vue d'ensemble","Etapas":"Étapes",
+ "Tarefas C.A.D.A.":"Tâches C.A.D.A.","Fontes e buscas":"Sources et recherches",
+ "Evidências":"Preuves","Validações":"Validations","Métodos":"Méthodes",
+ "Rastreabilidade":"Traçabilité","Submissão":"Soumission","Sincronização":"Synchronisation",
+ "Área de pesquisa":"Espace de recherche","DEMONSTRAÇÃO":"DÉMONSTRATION",
+ "Reiniciar exemplo":"Réinitialiser l'exemple","Panorama da pesquisa":"Vue d'ensemble de la recherche",
+ "Explorar caminhos metodológicos":"Explorer les méthodes de recherche",
+ "Compare possibilidades antes de registrar a decisão do pesquisador.":"Comparez les options avant de consigner votre décision.",
+ "Estudo documental qualitativo":"Étude documentaire qualitative",
+ "Métodos mistos":"Méthodes mixtes","Outro caminho":"Autre approche",
+ "Compreender práticas e registros, mas não concluir sobre todas as rotinas informais.":"Examiner les pratiques et les documents sans généraliser aux routines informelles.",
+ "Construir e avaliar um artefato, sem confundir sua construção com eficácia validada.":"Concevoir et évaluer un artefact sans confondre création et efficacité démontrée.",
+ "Articular evidências qualitativas e quantitativas com integração explícita.":"Intégrer explicitement des données qualitatives et quantitatives.",
+ "Usar uma tradição adequada à pergunta, sem forçar catálogo fechado.":"Choisir une approche adaptée sans limiter les options.",
+ "Em exploração":"En exploration","Explorar":"Explorer",
+ "Alternativa selecionada para leitura":"Option sélectionnée à examiner",
+ "A decisão final deve ser tomada e justificada pelo pesquisador e registrada no projeto autorizado.":"Le chercheur doit justifier et consigner la décision finale dans son projet.",
+ "Ver gates relacionados":"Voir les validations liées",
+ "Fonte: demonstração fictícia da arquitetura Meu Artigo":"Source : démonstration fictive de Meu Artigo",
+ "Nenhum dado real · Sem gravação · Sem aprovação de gates":"Aucune donnée réelle · Aucune écriture · Aucune validation",
+ "Gates aprovados":"Validations consignées","Tarefas concluídas":"Tâches terminées",
+ "Pendências":"En attente","Fontes verificadas":"Sources vérifiées",
+ "Próxima ação recomendada":"Prochaine action recommandée","Estado científico":"État scientifique",
+ "Ver próximo passo":"Étape suivante","Não avaliado":"Non évalué",
+ "Não informado":"Non renseigné","Tarefas registradas":"Tâches enregistrées",
+ "Gates documentados":"Validations documentées",
+ "Conferir tarefas":"Vérifier les tâches",
+ "Etapas e gates científicos":"Étapes et validations scientifiques",
+ "Validações humanas":"Validations humaines",
+ "Armazenamento e sincronização":"Stockage et synchronisation",
+ "Evidências e sustentação":"Preuves et justification",
+ "Preparação para submissão":"Préparation de la soumission",
+ "Filtrar tarefas":"Filtrer les tâches","ID Tarefa":"ID de tâche","Tarefa":"Tâche",
+ "Responsável execução":"Responsable","Prazo":"Échéance",
+ }
+};
+const sourceText=new WeakMap();
+const bcp=(raw)=>String(raw||"").replace(/_/g,"-").split("-")[0].toLowerCase();
+const chosen=(siteData.locale&&siteData.locale!=="auto"?siteData.locale:
+  ((document.documentElement.lang&&document.documentElement.lang!=="pt-BR")?
+    document.documentElement.lang:(navigator.languages&&navigator.languages[0])||navigator.language||"en"));
+let activeLocale=["pt","en","es","fr"].includes(bcp(chosen))?bcp(chosen):"en";
+function localized(raw){
+  const lex=TRANSLATIONS[activeLocale]||{};
+  let result=String(raw);
+  if(activeLocale==="pt")return result;
+  const sorted=Object.keys(lex).sort((a,b)=>b.length-a.length);
+  for(const word of sorted){if(result.includes(word))result=result.split(word).join(lex[word]);}
+  return result;
+}
+function translateContainer(root){
+ if(!root)return;
+ const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
+ const candidates=[];
+ while(walker.nextNode()){
+   const node=walker.currentNode,element=node.parentElement;
+   if(!element||element.closest("script,style,svg,textarea,input,[data-research-original]"))continue;
+   if(isCanonical&&element.closest("td,.page-title,.pane h2,.pane .quiet"))continue;
+   candidates.push(node);
+ }
+ for(const node of candidates){
+   if(!sourceText.has(node))sourceText.set(node,node.nodeValue);
+   node.nodeValue=localized(sourceText.get(node));
+ }
+ if(root.querySelectorAll){for(const element of root.querySelectorAll("input[placeholder]")){
+   if(!element.dataset.originalPlaceholder)element.dataset.originalPlaceholder=element.placeholder;
+   element.placeholder=localized(element.dataset.originalPlaceholder);
+ }}
+}
+function applyLanguage(raw){
+ const requested=bcp(raw);
+ activeLocale=["pt","en","es","fr"].includes(requested)?requested:"en";
+ document.documentElement.lang=activeLocale==="pt"?"pt-BR":activeLocale;
+ const select=document.getElementById("site-language");
+ if(select)select.value=activeLocale==="pt"?"pt-BR":activeLocale;
+ translateContainer(document.querySelector(".header"));
+ translateContainer(document.querySelector(".nav"));
+ translateContainer(document.getElementById("content"));
+ const label=document.getElementById("language-label");
+ if(label)label.textContent=({pt:"Idioma",en:"Language",es:"Idioma",fr:"Langue"})[activeLocale];
+}
+
+const pages=[['overview','◇','Visão geral'],['steps','▤','Etapas'],['tasks','☷','Tarefas C.A.D.A.'],['sources','⌕','Fontes e buscas'],['evidence','◇','Evidências'],['validations','◎','Validações'],['methods','⚑','Métodos'],['trace','↗','Rastreabilidade'],['submission','▣','Submissão'],['sync','⇄','Sincronização']];
+let current='overview',taskQuery='',methodChoice='doc';
+const $=id=>document.getElementById(id);
+const footer='<div class="source-line"><span>Fonte: demonstração fictícia da arquitetura Meu Artigo</span><span>Nenhum dado real · Sem gravação · Sem aprovação de gates</span></div>';
+function nav(){const n=$('nav');n.innerHTML='<div class="nav-label">Área de pesquisa</div>'+pages.map(([id,icon,label])=>`<button data-page="${id}" type="button" aria-current="${id===current?'page':'false'}" class="${id===current?'active':''}"><span class="sym" aria-hidden="true">${icon}</span>${label}</button>`).join('')+'<p class="nav-help">Visão derivada dos registros canônicos. Não substitui a matriz nem valida decisões científicas.</p>';n.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));translateContainer(n)}
+function go(page){if(!pages.some(x=>x[0]===page))return;current=page;nav();render();$('content').focus({preventScroll:true})}
+function heading(name,desc,action=''){return `<div class="section-heading"><div><h2>${name}</h2><p>${desc}</p></div>${action}</div>`}
+const kpi=(label,num,ex,icon="◻")=>`<div class="kpi"><div class="kpi-heading"><span class="kpi-icon" aria-hidden="true">${icon}</span><div class="label">${label}</div></div><strong>${num}</strong><small>${ex}</small></div>`;
+const iconLine=(icon,title,desc,right='')=>`<div class="line-item"><div class="bubble">${icon}</div><div><h3>${title}</h3><p>${desc}</p></div>${right?`<div class="right">${right}</div>`:''}</div>`;
+function overview(){return `<div class="page-top"><div><div class="eyebrow">Panorama da pesquisa</div><h1 class="page-title" style="max-width:640px">Governança de bases de conhecimento e IA</h1><p class="subtitle">Revisão integrativa · Revista ainda não definida</p></div><div class="stage">Etapa 3 · posicionamento teórico</div></div><div class="kpis">${kpi('Tarefas concluídas','12/20','60% · controle operacional','▤')}${kpi('Gates aprovados','2/7','Aprovações documentadas no exemplo','✓')}${kpi('Pendências','5','3 prontas · 2 bloqueadas','◷')}${kpi('Fontes verificadas','8','Número ilustrativo','▱')}</div><div class="cols"><section class="pane tinted"><div class="mini-label">Próxima ação recomendada</div><h2>Revisar a estratégia de busca e seus critérios</h2><p>Necessário antes da busca estruturada nas bases. Esta recomendação é ilustrativa.</p><button class="primary" data-go="steps">Ver próximo passo →</button></section><section class="pane"><h3>Estado científico</h3><p>Gates 1–2 documentados; gate 3 ainda pendente, no exemplo.</p><div class="gates"><span class="gate-dot done">✓</span><span class="g-line"></span><span class="gate-dot done">✓</span><span class="g-line"></span><span class="gate-dot now">3</span><span class="g-line"></span><span class="gate-dot">4</span><span class="g-line"></span><span class="gate-dot">5</span><span class="g-line"></span><span class="gate-dot">6</span><span class="g-line"></span><span class="gate-dot">7</span></div><div class="footnote">Validações científicas não são calculadas a partir de tarefas concluídas.</div></section></div>${footer}`}
+function steps(){let list=[['Pergunta de pesquisa','Aprovação documentada no cenário fictício'],['Desenho metodológico','Aprovação documentada no cenário fictício'],['Fundamentação e buscas','Decisão humana pendente no cenário'],['Corpus e materiais','Não avaliado'],['Análise e síntese','Não avaliado'],['Integridade das afirmações','Não avaliado'],['Preparação para submissão','Não avaliado']];return heading('Etapas e gates científicos','Sete pontos de decisão que exigem avaliação e justificativa humanas.')+`<div class="list">${list.map(([name,desc],i)=>iconLine(String(i+1),`GATE-000${i+1} · ${name}`,desc,`<span class="pill ${i<2?'green':i===2?'yellow':''}">${i<2?'Documentado':i===2?'Pendente':'Não avaliado'}</span>`)).join('')}</div><p class="danger-note">As aprovações acima são inventadas para mostrar a interface; não representam decisões do seu artigo.</p>`+footer}
+const demoTaskRows=[['CADA-001','Delimitar problema de pesquisa','Pesquisador','10/10/2026'],['CADA-002','Revisar descritores de busca','Pesquisador','A definir'],['CADA-003','Preparar termos por base','Assistente técnico','A definir'],['CADA-004','Conferir literatura elegível','Pesquisador','A definir'],['CADA-005','Revisar critérios de exclusão','Pesquisador','A definir']];
+let taskRows=isCanonical?(Array.isArray(siteData.tasks)?siteData.tasks:[]).map(t=>[e(t.id),e(t.task),e(t.execution_owner),e(t.deadline)]):demoTaskRows;
+function tasks(){const rows=taskRows.filter(x=>x.join(' ').toLocaleLowerCase('pt-BR').includes(taskQuery.toLocaleLowerCase('pt-BR')));return heading('Tarefas C.A.D.A.','Demandas administrativas com responsabilidade e prazo explícitos.',`<input class="search" id="task-filter" aria-label="Filtrar tarefas" placeholder="Filtrar tarefas" value="">`)+`<div class="pane table-scroll" style="padding:0"><table><thead><tr><th>ID Tarefa</th><th>Tarefa</th><th>Responsável execução</th><th>Prazo</th></tr></thead><tbody>${rows.map(row=>`<tr>${row.map(x=>`<td>${x}</td>`).join('')}</tr>`).join('')||'<tr><td colspan="4">Nenhuma tarefa encontrada</td></tr>'}</tbody></table></div><p class="footnote">C.A.D.A. exibe apenas estas quatro colunas. Os estados de execução são controlados separadamente.</p>`+footer}
+function sources(){return heading('Fontes e buscas','Organize a recuperação bibliográfica e diferencie planejamento de execução.')+`<div class="list">${iconLine('⌕','Estratégia de busca','Termos, bases, datas, filtros e versões devem ser documentados.','<span class="pill yellow">Revisão pendente</span>')}${iconLine('01','Scopus','Consulta ilustrativa; não houve acesso real à base.','<span class="pill">Não executada</span>')}${iconLine('02','Web of Science','Plano de consulta ilustrativo; sem resultados reais.','<span class="pill">Não executada</span>')}${iconLine('03','Outras fontes','Repositórios e periódicos relevantes a confirmar por projeto.','<span class="pill">A definir</span>')}</div>`+footer}
+function evidence(){return heading('Evidências e sustentação','Conecte cada afirmação a uma fonte ou a uma inferência delimitada.')+`<div class="two"><div class="pane"><div class="mini-label">[L] Literatura consultada</div><div class="count" style="margin:10px 0">Não avaliado</div><p>Uma referência só sustenta a afirmação após consulta e conferência reais.</p></div><div class="pane"><div class="mini-label">[I] Inferência analítica</div><div class="count" style="margin:10px 0">Não avaliado</div><p>Explicitar base de evidência, justificativa e limites da interpretação.</p></div><div class="pane"><div class="mini-label">[P] Proposição original</div><div class="count" style="margin:10px 0">Não avaliado</div><p>Distinguir contribuição proposta de literatura existente.</p></div><div class="pane"><div class="mini-label">Integridade científica</div><div class="count" style="margin:10px 0">Pendente</div><p>Auditoria semântica e validação humana não foram realizadas na demonstração.</p></div></div>`+footer}
+function validations(){return heading('Validações humanas','Decisões atribuídas ao pesquisador, sem aprovações automáticas.')+`<div class="info">Os dois gates documentados abaixo são exemplos fictícios. O painel real deve conferir registro, decisão, responsável e evidência antes de exibir um gate como aprovado.</div><div class="list" style="margin-top:16px">${iconLine('✓','GATE-0001 · Pergunta','Aprovação documentada apenas na simulação.','<span class="pill green">Exemplo</span>')}${iconLine('✓','GATE-0002 · Desenho','Aprovação documentada apenas na simulação.','<span class="pill green">Exemplo</span>')}${iconLine('3','GATE-0003 · Busca e teoria','Revisão humana ainda necessária.','<span class="pill yellow">Pendente</span>')}</div>`+footer}
+function methods(){const options=[['doc','Estudo documental qualitativo','Compreender práticas e registros, mas não concluir sobre todas as rotinas informais.'],['dsr','Design Science Research','Construir e avaliar um artefato, sem confundir sua construção com eficácia validada.'],['mix','Métodos mistos','Articular evidências qualitativas e quantitativas com integração explícita.'],['other','Outro caminho','Usar uma tradição adequada à pergunta, sem forçar catálogo fechado.']];const selected=options.find(x=>x[0]===methodChoice)||options[0];return heading('Explorar caminhos metodológicos','Compare possibilidades antes de registrar a decisão do pesquisador.')+`<div class="two">${options.map(([id,name,desc])=>`<button type="button" class="option ${methodChoice===id?'selected':''}" aria-pressed="${methodChoice===id?'true':'false'}" data-method="${id}" style="text-align:left"><h3>${name}</h3><p>${desc}</p><span class="pill ${methodChoice===id?'green':''}">${methodChoice===id?'Em exploração':'Explorar'}</span></button>`).join('')}</div><div class="pane tinted" style="margin-top:15px"><div class="mini-label">Alternativa selecionada para leitura</div><h2>${selected[1]}</h2><p>${selected[2]} A decisão final deve ser tomada e justificada pelo pesquisador e registrada no projeto autorizado.</p><button type="button" class="secondary" data-go="steps">Ver gates relacionados →</button></div>`+footer}
+function trace(){return heading('Rastreabilidade','Histórico de decisões e eventos — sem fabricar comprovação externa.')+`<div class="list">${iconLine('1','TRACE-EXEMPLO-001','Ideia inicial registrada apenas nesta simulação.')}${iconLine('2','DEC-EXEMPLO-001','Exemplo de deliberação metodológica; nenhuma autoria real atribuída.')}${iconLine('3','SNAP-EXEMPLO-001','Exemplo de fotografia de estado; nenhuma evidência de Drive real.')}</div>`+footer}
+function submission(){return heading('Preparação para submissão','Conformidade editorial, direitos e integridade antes do envio.')+`<div class="cols"><section class="pane"><div class="mini-label">Periódico-alvo</div><h2>Ainda não definido</h2><p>Na aplicação real, os requisitos editoriais só serão usados depois da consulta às diretrizes oficiais.</p><button class="secondary" data-go="evidence">Revisar evidências →</button></section><section class="pane"><h3>Checklist de preparação</h3><div class="list">${['Conferir diretrizes reais da revista','Revisar anonimização e direitos','Documentar uso de IA conforme política editorial','Verificar manuscrito e anexos finais'].map(t=>`<p style="margin:3px 0">○ ${t}</p>`).join('')}</div></section></div>`+footer}
+function sync(){return heading('Armazenamento e sincronização','Acesso observado e gravação confirmada são estados diferentes.')+`<div class="info amber"><strong>Nesta demonstração: sincronização NÃO verificada.</strong> Nenhuma pasta foi acessada, criada, duplicada ou atualizada.</div><div class="pane" style="margin-top:16px"><div class="mini-label">Estrutura pretendida</div><h2>Meu Drive / Meu Artigo / ARTIGO_Exemplo_2026</h2><p>Esse é somente um caminho de referência. O uso real exige conferir pasta-pai, ID, permissões e os registros do journal antes de qualquer criação.</p><div class="two"><div class="info"><strong>Leitura</strong><br>Não executada no protótipo</div><div class="info"><strong>Escrita</strong><br>Não autorizada no protótipo</div></div></div>`+footer}
+const screens={overview,steps,tasks,sources,evidence,validations,methods,trace,submission,sync};
+const baseScreens={...screens};
+function applyCanonical(){
+Object.assign(screens,baseScreens);
+if(siteData.kind==='HOST_NOT_CONNECTED'){
+ const unavailable=()=>heading('Painel indisponível: projeto não autorizado',
+ 'Nenhum snapshot autorizado foi recebido. Continue no chat ou conecte a ferramenta de pesquisa.')+
+ '<div class="info">Nenhum progresso fictício, fonte ou aprovação é apresentado nesta interface conectada.</div>';
+ for(const name of Object.keys(screens))screens[name]=unavailable;
+ return;
+}
+if(isCanonical){
+  const gates=Array.isArray(siteData.gates)?siteData.gates:[];
+  const action=siteData.next_action||{};
+  const observedGates=gates.filter(g=>g.approval_documented===true).length;
+  const documentedCount=siteData.documented_gate_count===null?"Não informado":e(siteData.documented_gate_count);
+  const noVerifiedAudit='<div class="info">Não avaliado. Esta visualização não executou auditoria científica ou consulta bibliográfica.</div>';
+  const safeNotice='<p class="footnote">Snapshot local autorizado, gerado a partir de registros existentes. Sincronização com Drive e validação científica independente não foram verificadas.</p>';
+  const gateList=gates.map((g,i)=>iconLine(String(i+1),e(g.id||'Gate sem ID'),
+      g.approval_documented===true?'Aprovação registrada; autenticidade não comprovada':'Sem aprovação verificada',
+      '<span class="pill '+(g.approval_documented===true?'green':'yellow')+'">'+
+      (g.approval_documented===true?'Documentado':'Requer revisão')+'</span>')).join('');
+  const nextCode=e(action.code||'UNKNOWN');
+  const nextText=e(action.explanation||'Consulte CONTINUIDADE.md e os registros autorizados.');
+  const nextOwner=e(action.responsible||'A definir');
+  const logged=taskRows.length;
+  const realFooter='<div class="source-line"><span>Origem: projeção de registros locais autorizados</span><span>Drive não verificado · Sem gravação · Sem aprovação automática</span></div>';
+  screens.overview=()=>'<div class="page-top"><div><div class="eyebrow">Panorama da pesquisa</div>'+
+    '<h1 class="page-title">Projeto autorizado · visão local</h1><p class="subtitle">'+e(siteData.active_route||'Rota não informada')+
+    ' · estado científico a conferir</p></div><div class="stage">Snapshot local · não sincronizado</div></div>'+
+    '<div class="kpis">'+
+      kpi('Tarefas registradas',String(logged),'Quantidade registrada; execução não comprovada','▤')+
+      kpi('Gates documentados',documentedCount,'Registro não equivale a validação independente','✓')+
+      kpi('Pendências','Não avaliado','Depende de conferência do CONTINUIDADE.md','◷')+
+      kpi('Fontes verificadas','Não avaliado','Nenhuma auditoria de fontes executada nesta tela','▱')+
+    '</div><div class="cols"><section class="pane tinted"><div class="mini-label">Próxima ação registrada</div>'+
+    '<h2 data-research-original="true">'+nextCode+'</h2><p data-research-original="true">'+nextText+'</p><p class="quiet">Responsável: <span data-research-original="true">'+nextOwner+'</span></p>'+
+    '<button class="primary" data-go="tasks">Conferir tarefas →</button></section>'+
+    '<section class="pane"><h3>Estado científico</h3><p>'+observedGates+' registro(s) de aprovação identificados em '+gates.length+
+    ' gate(s) exibidos; a identidade do revisor não foi autenticada.</p>'+
+    '<div class="gates">'+Array.from({length:7},(_,i)=>'<span class="gate-dot'+(gates[i]?.approval_documented===true?' done':'')+'">'+
+    (gates[i]?.approval_documented===true?'✓':String(i+1))+'</span>').join('<span class="g-line"></span>')+
+    '</div><div class="footnote">Validações científicas não são calculadas a partir de tarefas.</div></section></div>'+
+    safeNotice+realFooter;
+  screens.steps=()=>heading('Etapas e gates científicos','Estados registrados, não autenticação de avaliadores ou aprovação científica.')+
+    (gateList?'<div class="list">'+gateList+'</div>':'<div class="info">Nenhum registro de gate disponível neste snapshot.</div>')+safeNotice+realFooter;
+  screens.validations=()=>heading('Validações humanas','Os estados abaixo são declarativos; a decisão deve ser conferida nos registros originais.')+
+    (gateList?'<div class="list">'+gateList+'</div>':'<div class="info">Sem estados de validação disponíveis.</div>')+safeNotice+realFooter;
+  screens.sources=()=>heading('Fontes e buscas','Somente informações auditadas podem justificar conclusões bibliográficas.')+noVerifiedAudit+safeNotice+realFooter;
+  screens.evidence=()=>heading('Evidências e sustentação','Nenhuma verificação semântica foi executada ao gerar este painel.')+noVerifiedAudit+safeNotice+realFooter;
+  screens.trace=()=>heading('Rastreabilidade','DEC, TRACE e SNAP exigem conferência nos registros originais.')+
+    '<div class="info">Histórico não inspecionado por esta visualização. Não são apresentados eventos ou aprovações presumidos.</div>'+safeNotice+realFooter;
+  screens.submission=()=>heading('Preparação para submissão','Verifique perfil editorial, anonimização e aprovação dos gates.')+
+    '<div class="info">Submissão não verificada. Não há confirmação de periódico, envio ou aceite nesta tela.</div>'+safeNotice+realFooter;
+  screens.sync=()=>heading('Armazenamento e sincronização','Um arquivo local não comprova gravação remota.')+
+    '<div class="info amber"><strong>Google Drive: não verificado nesta sessão.</strong> Este painel é somente uma projeção local de leitura.</div>'+safeNotice+realFooter;
+}
+}
+applyCanonical();
+
+function receiveHostData(nextData){
+ if(!nextData||nextData.schema!=='MEU_ARTIGO_SITE_V1'||
+    nextData.kind!=='CANONICAL_LOCAL_SNAPSHOT'||
+    !Array.isArray(nextData.tasks)||!Array.isArray(nextData.gates)||
+    nextData.tasks.length>10000||nextData.gates.length>7)return false;
+ siteData=nextData;isCanonical=true;
+ taskRows=nextData.tasks.map(t=>[e(t.id),e(t.task),e(t.execution_owner),e(t.deadline)]);
+ applyCanonical();
+ const badge=document.querySelector('.mock-badge');
+ if(badge)badge.textContent='SNAPSHOT LOCAL · SEM SINCRONIZAÇÃO';
+ current='overview';nav();render();
+ applyLanguage(nextData.locale&&nextData.locale!=='auto'?nextData.locale:activeLocale);
+ return true;
+}
+window.MeuArtigoHost=Object.freeze({receive:receiveHostData,locale:applyLanguage});
+
+function render(){ $('content').innerHTML=screens[current]();$('content').querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));$('content').querySelectorAll('[data-method]').forEach(b=>b.addEventListener('click',()=>{methodChoice=b.dataset.method;render()}));const filter=$('task-filter');if(filter){filter.value=taskQuery;filter.addEventListener('input',()=>{taskQuery=filter.value;const cursor=filter.selectionStart;render();const fresh=$('task-filter');fresh.focus();fresh.setSelectionRange(cursor,cursor)})}translateContainer($('content'))}
+$('reset').addEventListener('click',()=>{taskQuery='';methodChoice='doc';go('overview')});
+document.getElementById('site-language').addEventListener('change',e=>applyLanguage(e.target.value));
+nav();render();applyLanguage(activeLocale);
+})();
+</script>
+</body></html>
