@@ -1,5 +1,7 @@
 # Meu Artigo
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24397699.svg)](https://doi.org/10.5281/zenodo.24397699)
+
 **A research-support Skill for people preparing scientific articles.** Meu Artigo helps a researcher organize a question, consider appropriate methods, find and assess sources, document decisions, and prepare a manuscript. You remain responsible for the scientific work.
 
 The project is available in a **public GitHub repository**. **Every 0.9.0-beta release is experimental**, not an independently validated research method; no stable v1.0.0 has been released.
@@ -32,5 +34,9 @@ The Skill separates **[L]** consulted literature, **[I]** interpretation/inferen
 Installing a Skill does not automatically connect Google Drive, academic databases or other services. Access and permission must be verified; a different storage location requires your explicit agreement. A source cited by an AI may still fail to support the claim. No scientific originality, publication acceptance, quality improvement or independent validation is guaranteed.
 
 **Help and documentation:** [Start here](docs/COMECE-AQUI.md) · [Installation](docs/INSTALLATION.md) · [ChatGPT](docs/CHATGPT.md) · [Claude](docs/CLAUDE.md) · [Gemini](docs/GEMINI.md) · [Methodological routes](docs/ROTAS-METODOLOGICAS.md) · [How to report a problem](docs/TESTE-BETA-PESQUISADORES.md).
+
+## Citation
+
+If you use Meu Artigo in your research, please cite the archived software: **Mendes, Rebson de Morais (2026). *Meu Artigo* [Computer software]. Zenodo. [https://doi.org/10.5281/zenodo.24397699](https://doi.org/10.5281/zenodo.24397699).** The repository's [CITATION.cff](CITATION.cff) also provides machine-readable citation metadata. This DOI identifies a software deposit, not an independently validated scientific method or a peer-reviewed article.
 
 The source and original documentation are licensed under the **Apache License 2.0**; third-party research materials retain their own rights. See [LICENSE](LICENSE), [NOTICE](NOTICE), [CITATION.cff](CITATION.cff) and [security guidance](SECURITY.md).
