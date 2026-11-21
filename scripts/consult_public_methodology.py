@@ -19,7 +19,7 @@ import public_method_pdf as pdf_reader
 SCHEMA = "MEU_ARTIGO_HYBRID_METHOD_RETRIEVAL_V1"
 # This source snapshot contains 174 provisional editorial methodology cards and 51
 # separately licensed public PDFs. No automatic gate or host approval.
-DEFAULT_PUBLIC_SNAPSHOT = "b02b340bc44248bb167504fafa8f0dee02802f64"
+DEFAULT_PUBLIC_SNAPSHOT = "b8df3d0a1699f73da63a132c07154efdafb6d5be"
 MAX_CONTEXT = 6000
 MIN_CONTEXT = 1200
 
