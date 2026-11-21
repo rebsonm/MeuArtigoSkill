@@ -29,7 +29,7 @@ An optional `--cache-dir` points to an existing, explicitly authorized local dir
 - If PDFs are not redistributable, do not push them to the public repository, including Git LFS or GitHub Releases. A separate private repository is only viable with documented lawful use and actual authenticated, read-only host access; the public reader does not use or request tokens.
 - An unavailable PDF parser, missing internet access, absent approved PDF documents or failed hashes must lead to a truthful fallback. The curated public cards remain separate from original-source claims.
 
-**Current state:** source-only engineering prototype with six public PDF records and four original editorial cards; no automated access to the user's Drive folder, no bulk ingestion, no scientific-gate advancement and no change to the v1.0.0 release candidate.
+**Current state:** source-only engineering prototype with reviewed public PDF records and original editorial cards; no automated access to the user's Drive folder, no bulk ingestion, no scientific-gate advancement and no change to the v1.0.0 release candidate.
 
 
 ## Original methodology cards + licensed-PDF retrieval (experimental)
