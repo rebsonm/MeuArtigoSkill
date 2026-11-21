@@ -1625,7 +1625,7 @@
       "batch_id": "IB-15/20",
       "source_id": "SRC-0385",
       "identity_confirmed": false,
-      "blocked_reason": "Proveniência/autenticidade editorial do periódico OEconomia requer confirmação independente; semelhança com SRC-0381.",
+      "blocked_reason": "Manter em quarentena por possível conflito de autoria/proveniência com trabalho oficial de Dacombe 2018; nenhuma inferência de fraude.",
       "title": "What can Systematic Reviews in Political Science contribute to political research?",
       "authors_edition": "Michael Smith (assim identificado no PDF) — 2020 (data online declarada: 25/12/2020)",
       "document_type": "artigo indicado pelo PDF, autenticidade editorial a verificar",
@@ -1636,7 +1636,7 @@
       "rights_observed": "Não há licença expressa confirmada. Atenção: sinais de irregularidade editorial e semelhança de formulação/estrutura com o item SRC-0381; autenticidade, autoria e proveniência precisam de verificação independente; NÃO publicar o PDF.",
       "filename": "Smith,2020.pdf",
       "size_bytes": 447277,
-      "card_sha256": "90909513638810ec9d0fe28484c5e4eed0ab74262fa80df8716770081f4436d1",
+      "card_sha256": "235d2604d8d62835bf8bfe44f327ccb0d7c08053d93cd2c098c3fb402d466816",
       "card_path": "knowledge/methodology/source_cards/src-0385.md",
       "scientific_review": "PENDING",
       "public_pdf_approved_by_batch": false
@@ -3312,5 +3312,6 @@
       "scientific_review": "PENDING",
       "public_pdf_approved_by_batch": false
     }
-  ]
+  ],
+  "reconciliation_update": "2026-11-21: 0117, 0138, 0169 bibliographic identities externally corroborated against original archived titles and publisher records; 0385 remains quarantined. No global registry change."
 }
