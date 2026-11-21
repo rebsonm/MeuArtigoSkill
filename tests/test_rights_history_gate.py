@@ -67,6 +67,7 @@ class RightsHistorySafetyTests(unittest.TestCase):
                     "historical_git_blob_sha": blob,
                     "deletion_commit": removal,
                     "owner_decision": "PENDING",
+                    "rewrite_authorized": False,
                     "history_review_status": "PENDING_COMPLETE_READ_ONLY_GIT_AUDIT"
                 }],
             }
