@@ -1,9 +1,9 @@
 {
   "schema": "MEU_ARTIGO_SOURCE_CARD_INDEX_V1",
-  "version": "pilot-2026-11-21-116-verified-359-provisional",
+  "version": "pilot-2026-11-21-132-verified-343-provisional",
   "source_archive_records": 475,
   "catalogue_identified_titles": 475,
-  "source_text_read_in_ledger": 118,
+  "source_text_read_in_ledger": 134,
   "third_party_full_text_included": false,
   "source_records_are_evidence": false,
   "retrieval_label": "BIBLIOGRAPHIC_PROSPECTING_ONLY_NOT_ORIGINAL_ARTICLE_READING",
@@ -3501,13 +3501,29 @@
         "2018",
         "src-0083"
       ],
-      "sha256": "818dd802f4aefccfe79625b697f9b3c83186a3eab25026cfa3f3cd1f619b0f39",
+      "sha256": "c3ada84321bc558df823071a0f54ad99f9049076da0a9e818351d7910262d6ba",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "work_type": "JOURNAL_ARTICLE",
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Sociologia Digital: balanço provisório e desafios",
+        "authors": "Richard Miskolci; Fernando de Figueiredo Balieiro",
+        "year": "2018",
+        "doi": "10.20336/rbs.237",
+        "public_url": "https://doi.org/10.20336/rbs.237",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "LICENCA_DA_EDICAO_NAO_VERIFICADA"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0084.md",
@@ -3528,13 +3544,29 @@
         "2023",
         "src-0084"
       ],
-      "sha256": "773caccfaa582eb38f4854969f0d2c94fd7169903f1403e0ca407b332bff96a0",
+      "sha256": "104639af1c9e3d196ace05f2d16c30fc97a31ce5d6536191e58789c62024afa7",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "work_type": "REVIEW_JOURNAL_ARTICLE",
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Digital sociology: origin, development, and prospects from a global perspective",
+        "authors": "Yizhang Zhao; Mingyu Wang",
+        "year": "2023",
+        "doi": "10.1186/s40711-023-00198-1",
+        "public_url": "https://doi.org/10.1186/s40711-023-00198-1",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "CC_BY_4_0_EXPLICIT_EXACT_COPY_NEEDS_PUBLISHER_CHECK_THIRD_PARTY"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0085.md",
@@ -3555,13 +3587,29 @@
         "2023",
         "src-0085"
       ],
-      "sha256": "81f36a634ea7eba11365e9abf515210e1a1c7dab968d09c11cee497c89abe51d",
+      "sha256": "01e03dade91e3cb9f0bf0397897e4d4655c7ccd2b572c785e708b41072d09cbc",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "work_type": "JOURNAL_ARTICLE",
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "A Sociologia Digital na era do big data: apontamentos preliminares e problemáticas teórico-metodológicas na pesquisa sociológica",
+        "authors": "Thiago Bicudo Castro",
+        "year": "2023",
+        "doi": "10.11606/issn.2176-8099.pcso.2023.205611",
+        "public_url": "https://doi.org/10.11606/issn.2176-8099.pcso.2023.205611",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "LICENCA_DA_EDICAO_NAO_VERIFICADA"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0086.md",
@@ -3581,13 +3629,29 @@
         "2017",
         "src-0086"
       ],
-      "sha256": "3c592c1cedf6be15d62518dc536953fe8443d20a66dcec8457e4f69856db8bf7",
+      "sha256": "e02caf43c6dd34e1082377e5f12b6b8778627894787db8faeb516a2222eff9dd",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "work_type": "JOURNAL_ARTICLE",
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "HISTÓRIA DIGITAL, SOCIOLOGIA DIGITAL E HUMANIDADES DIGITAIS: Algumas questões metodológicas",
+        "authors": "Helyom Viana Telles",
+        "year": "2017",
+        "doi": "10.20873/uft.2447-4266.2017v3n5p74",
+        "public_url": "https://doi.org/10.20873/uft.2447-4266.2017v3n5p74",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "LICENCA_DA_EDICAO_NAO_VERIFICADA"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0087.md",
@@ -3608,13 +3672,29 @@
         "2023",
         "src-0087"
       ],
-      "sha256": "b2b4cbed9f388102cfce4126497dc48341128a0d05a755a8785beb6dd2f85a61",
+      "sha256": "adadcee302f5cf3ed9097e68cab013e5a6d6eeabf682512f540071d99e288848",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "work_type": "JOURNAL_ARTICLE_ONLINE_2022_ISSUE_2023",
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Digital platforms as socio-cultural artifacts: developing digital methods for cultural research",
+        "authors": "Stefania Vicari; Daniel Kirby",
+        "year": "2023",
+        "doi": "10.1080/1369118X.2022.2027498",
+        "public_url": "https://doi.org/10.1080/1369118X.2022.2027498",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "CC_BY_4_0_EXPLICIT_EXACT_COPY_NEEDS_PUBLISHER_CHECK"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0088.md",
@@ -3629,13 +3709,29 @@
         "2015",
         "src-0088"
       ],
-      "sha256": "3cca341cd7cb9fa8c11c0b3c530042f8900ebdb03bc89d5c0aa6905a5b7223de",
+      "sha256": "9c7d1c29332e912821885e38b3c31505dbeae0eb1d9e219483fd141d6c9611ef",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "work_type": "COPYRIGHT_RESTRICTED_MONOGRAPH",
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "DIGITAL SOCIOLOGY",
+        "authors": "Deborah Lupton",
+        "year": "2015",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "ALL_RIGHTS_RESERVED_NO_REPRODUCTION_BOOK"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0089.md",
@@ -3651,13 +3747,29 @@
         "2022",
         "src-0089"
       ],
-      "sha256": "85dbc3c81d5f68b170435839a879ec31124ec3e9cec293d592fa42d59fe3c8e4",
+      "sha256": "0e79338c5aa9c88b8edb61b37dcb683288bbc002ab7dd8c41cc8ab7b4b72f13a",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "work_type": "JOURNAL_REVIEW_ARTICLE",
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Sociologia Digital: o fenômeno metaverso",
+        "authors": "Valéria Macedo",
+        "year": "2022",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "LICENCA_DA_EDICAO_NAO_VERIFICADA"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0090.md",
@@ -3677,13 +3789,29 @@
         "2020",
         "src-0090"
       ],
-      "sha256": "35ca7f56d4c5a4689a14069bf7c19e5f881d4c803b74b87627ed3baa2970bd55",
+      "sha256": "ef03be4ac6b7897f53329d63afbf9bb1f9e86e435a2ad69587b8faa46a6b1304",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "work_type": "JOURNAL_SPECIAL_ISSUE_INTRODUCTION",
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Digitizing Sociology: Continuity and Change in the Internet Era",
+        "authors": "Pete Fussey; Silke Roth",
+        "year": "2020",
+        "doi": "10.1177/0038038520918562",
+        "public_url": "https://doi.org/10.1177/0038038520918562",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "PUBLISHER_REUSE_GUIDELINES_NO_LICENSE_CLEARANCE"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0091.md",
@@ -3699,13 +3827,29 @@
         "2020",
         "src-0091"
       ],
-      "sha256": "84be941dda6772f90cab74fe181de077b78ecc29db67231bd2a853c468db74f2",
+      "sha256": "b0c1cb9d3534aad56e30a9bc3c06d2add548bf5c4538e4ac3303c8277e1f45b3",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "work_type": "UNIVERSITY_PRESS_MONOGRAPH",
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Sociologia digital: uma breve introdução",
+        "authors": "Leonardo F. Nascimento",
+        "year": "2020",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "BOOK_EDUFBA_RIGHTS_CEDED_NO_BROAD_REUSE"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0092.md",
@@ -3726,13 +3870,29 @@
         "2018",
         "src-0092"
       ],
-      "sha256": "4f57cddd97bdf8a459a1068c072cf0f808220aa6a3237380b9b0fe2176d40def",
+      "sha256": "b542f66e39928e749cec74d9dd8447b677f785a056f6a8be084327acadebd3d3",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "work_type": "JOURNAL_ARTICLE",
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Sociologia Digital: apontamentos teórico-metodológicos para uma analítica das mídias digitais",
+        "authors": "Felipe Padilha; Lara Facioli",
+        "year": "2018",
+        "doi": "10.4013/csu.2018.54.3.03",
+        "public_url": "https://doi.org/10.4013/csu.2018.54.3.03",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "CC_BY_4_0_ON_PDF_EXACT_COPY_NEEDS_REVIEW"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0093.md",
@@ -3751,13 +3911,29 @@
         "2018",
         "src-0093"
       ],
-      "sha256": "f1e4569052b95d32ebbf8ed03bcb3c135f1d7a60884062b6e08ac917b364562b",
+      "sha256": "cdea6f0a1421b6c565e4c479c43c5413f53b3ee82589cf9f3d7d1d5611158f47",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "work_type": "CONFERENCE_PAPER_ACM",
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Tool Criticism: From Digital Methods to Digital Methodology",
+        "authors": "Karin van Es; Maranke Wieringa; Mirko Tobias Schäfer",
+        "year": "2018",
+        "doi": "10.1145/3240431.3240436",
+        "public_url": "https://doi.org/10.1145/3240431.3240436",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "ACM_PUBLICATION_COPYRIGHT_NO_BROAD_REUSE"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0094.md",
@@ -3776,13 +3952,29 @@
         "2018",
         "src-0094"
       ],
-      "sha256": "8dfecb8adc19c081b0b36f1b6f5a2a3cae762c6a5b87f7d7c26ec05ae9658f07",
+      "sha256": "f5720e7414ebcbd9b71dc811fc5bfafc68cfab59aaf716e775dd883f5c8920b7",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "work_type": "COPYRIGHT_RESTRICTED_EDITED_BOOK",
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "ESTUDANDO CULTURA E COMUNICAÇÃO COM MÍDIAS SOCIAIS",
+        "authors": "Tarcízio Silva; Jaqueline Buckstegge; Pedro Rogedo (organizadores)",
+        "year": "2018",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "ALL_RIGHTS_RESERVED_IBPAD_EDITED_BOOK"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0095.md",
@@ -3801,13 +3993,29 @@
         "2018",
         "src-0095"
       ],
-      "sha256": "a276dc67445c350303466bee1a09cc764c2d247ae46293952450589ba1120f6f",
+      "sha256": "4fb6c36a45ad14279a0214dcc7369233ba22f88102897a052bf4ace054a7399c",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "work_type": "JOURNAL_ARTICLE",
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "A reality check(list) for digital methods",
+        "authors": "Tommaso Venturini; Liliana Bounegru; Jonathan Gray; Richard Rogers",
+        "year": "2018",
+        "doi": "10.1177/1461444818769236",
+        "public_url": "https://doi.org/10.1177/1461444818769236",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "PUBLISHER_REUSE_GUIDELINES_NO_LICENSE_CLEARANCE"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0096.md",
@@ -3824,13 +4032,29 @@
         "2019",
         "src-0096"
       ],
-      "sha256": "c6210d2fbbca2a538fe69f9090dee5a8cd4f3d6da2b5c642dd5ca9bf656443bf",
+      "sha256": "d60912e2e0fdc438f6bf59889d21a94637f9253806c99e79c6f4982d631bf235",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "work_type": "EDITED_BOOK_MULTI_AUTHOR",
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "MÉTODOS DIGITAIS: TEORIA PRÁTICA CRÍTICA",
+        "authors": "Janna Joceli Omena (organizadora)",
+        "year": "2019",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "EDITED_BOOK_RESEARCHGATE_DOWNLOAD_NOT_LICENSE"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0097.md",
@@ -3856,13 +4080,29 @@
         "2023",
         "src-0097"
       ],
-      "sha256": "90154ee716ccd1fa07c5e1a77f2007d92112a5ec3e28c057c0e31e2e504ac234",
+      "sha256": "8160ddacbfca57261d822e6e4d67d06e4330a77c18c33d41376c662a39cd08d1",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "work_type": "EDITED_BOOK_CHAPTER_RIGHTS_CONFLICT",
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "MÉTODOS DIGITAIS E PESQUISA APLICADA EM JORNALISMO: Um quadro teórico básico para estruturação de iniciativas de pesquisas focadas em dados e objetos binários",
+        "authors": "Márcio Carneiro dos Santos",
+        "year": "2023",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "CC_BY_4_NOTICE_CONFLICTS_WITH_NC_ND_TEXT_DO_NOT_REDISTRIBUTE"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0098.md",
@@ -3877,13 +4117,29 @@
         "2016",
         "src-0098"
       ],
-      "sha256": "bc4b15d6daaaf6f2fe39074d93d0c6c80b4c5f02d0a4f84638156a4ef481353e",
+      "sha256": "7130e98a3a5dd83c4f2f4d9f1865d43f1b449beaa6b73ecc29db166991b59e0e",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "work_type": "TRANSLATED_BOOK_CHAPTER_IN_JOURNAL",
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "O fim do virtual: os métodos digitais",
+        "authors": "Richard Rogers",
+        "year": "2016",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "TRANSLATION_AND_ORIGINAL_RIGHTS_UNCLEAR"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0099.md",
@@ -14199,6 +14455,6 @@
   "provisional_filename_title_cards": 71,
   "identities_still_unresolved": 0,
   "public_bibliographic_work_checks": 12,
-  "provisional_matches": 359,
-  "confirmed_pdf_work_identities": 116
+  "provisional_matches": 343,
+  "confirmed_pdf_work_identities": 132
 }
