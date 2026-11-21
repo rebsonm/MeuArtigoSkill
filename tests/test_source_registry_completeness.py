@@ -42,7 +42,7 @@ class SourceRegistryCompletenessTests(unittest.TestCase):
         self.assertEqual(len(ids), 475)
         self.assertEqual(len([x for x in self.docs
                               if x["bibliography_match_status"] ==
-                                 "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED"]), 359)
+                                 "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED"]), 343)
         self.assertEqual(len([x for x in self.docs
                               if x["bibliography_match_status"] ==
                                  "IDENTITY_UNRESOLVED"]), 0)
