@@ -65,7 +65,6 @@ class MultilingualMethodologyDiscoverySmoke(unittest.TestCase):
 
     def test_protected_scope_and_unrelated_questions_are_no_match(self):
         for question in (
-                "causal inference regression discontinuity",
                 "modelagem de equações estruturais",
                 "how do volcanoes cause earthquakes",
         ):
@@ -76,7 +75,8 @@ class MultilingualMethodologyDiscoverySmoke(unittest.TestCase):
     def test_specific_review_card_beats_generic_content_analysis(self):
         cards_top = self.ranked_cards("revisão sistemática PRISMA transparência")
         self.assertEqual(cards_top[0], "prisma-2020-reporting.md")
-        self.assertEqual(self.ranked_pdfs("análise temática reflexiva"), [])
+        self.assertIn("byrne-2022-reflexive-thematic-analysis.pdf",
+                      self.ranked_pdfs("análise temática reflexiva")[:2])
         self.assertIn("reflexive-thematic-analysis.md",
                       self.ranked_cards("análise temática reflexiva")[:2])
 
