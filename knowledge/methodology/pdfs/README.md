@@ -1,6 +1,6 @@
 # Methodological PDFs — rights and attribution
 
-These are **8 source PDFs** from journals which explicitly permit sharing under **Creative Commons Attribution 4.0 International (CC BY 4.0)**. They are **not** covered by the repository's Apache-2.0 software license. The binary PDF copies are unmodified; no endorsement by their authors or journals is implied.
+This public corpus contains **12 source PDFs** with documented publisher or repository licensing statements for Creative Commons Attribution 4.0 International (CC BY 4.0). They are **not** covered by the repository's Apache-2.0 software license. The binary PDF copies are unmodified; no endorsement by their authors or journals is implied.
 
 License: https://creativecommons.org/licenses/by/4.0/
 
@@ -17,7 +17,7 @@ License: https://creativecommons.org/licenses/by/4.0/
 
 Reproduction status: **unaltered originals**, copied from the user's research collection after independent comparison of document title, authors, DOI and public journal license. Exact byte counts and SHA-256 are in `../pdf_catalog.json`; the public corpus test rejects unindexed or altered PDFs.
 
-**8 source PDFs are publicly hosted; remaining personal archive items are inventory-only.** A document being in a personal Google Drive folder, available online, or accessible by link does not itself constitute permission for public redistribution. Full scholarly support, visual figures/tables and printed pagination still require primary-source review. The retrieval client currently in the installable Skill reads original editorial *cards*; the experimental PDF reader is not yet included in the ZIP.
+**12 source PDFs are publicly hosted; the 475-item personal archive remains inventory-only except for individually identified sources.** A document being in a personal Google Drive folder, available online, or accessible by link does not itself constitute permission for public redistribution. Full scholarly support, visual figures/tables and printed pagination still require primary-source review. The candidate Skill ZIP includes small optional read-only clients for cards and licensed PDFs; the PDF binaries and remote catalogues are excluded from the ZIP. Actual execution depends on host access and an optional PDF parser.
 
 ## Additional original PDFs with individual CC BY 4.0 evidence
 
