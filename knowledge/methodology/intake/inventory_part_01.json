@@ -1,0 +1,952 @@
+{
+  "schema": "MEU_ARTIGO_SOURCE_INVENTORY_V1",
+  "batch": 1,
+  "private_file_content": false,
+  "publishability": "NOT_ASSESSED",
+  "kind": "METADATA_ONLY_NOT_PRIMARY_SOURCE",
+  "folders": [
+    {
+      "category": "Etnografia Política e Digital",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [],
+      "subfolders": [
+        {
+          "name": "Etnografia Política"
+        }
+      ],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Etnografia Pol¡tica e Digital",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [],
+      "subfolders": [
+        {
+          "name": "Etnografia Digital"
+        },
+        {
+          "name": "Etnografia Pol¡tica"
+        }
+      ],
+      "next_page_token_present": false
+    },
+    {
+      "category": "An lise da Gram tica Institucional",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Siddiketal,2012.pdf",
+          "mime": "application/pdf",
+          "bytes": 217702,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Kantz,Siddiki,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 4847114,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Filgueiras,Lui,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 1378143,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Pol¡tica Comparada",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Pasquarelli,2014.pdf",
+          "mime": "application/pdf",
+          "bytes": 588238,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Gonzelez,2008.pdf",
+          "mime": "application/pdf",
+          "bytes": 78175,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Livro Desenhos de Pesquisa em Pol¡tica Comparada.pdf",
+          "mime": "application/pdf",
+          "bytes": 2535759,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "An lise Documental",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Fujitaetal,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 4637247,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Sa-Silvaetal,2009.pdf",
+          "mime": "application/pdf",
+          "bytes": 88945,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Morgan,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 553440,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Lima Junioretal,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 270425,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Silvaetal,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 682521,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Cechieneletal,+2016.pdf",
+          "mime": "application/pdf",
+          "bytes": 162818,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Alvesetal.pdf",
+          "mime": "application/pdf",
+          "bytes": 441378,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Kripkaetal,2015.pdf",
+          "mime": "application/pdf",
+          "bytes": 770962,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Souza,Giacomoni,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 537927,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Cardno,2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 149716,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Pesquisa Ação",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Peruzzo,2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 334996,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Koerichetal,2009.pdf",
+          "mime": "application/pdf",
+          "bytes": 78887,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Jesusetal,2014.pdf",
+          "mime": "application/pdf",
+          "bytes": 207067,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "ozanne-anderson-2010.pdf",
+          "mime": "application/pdf",
+          "bytes": 249291,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Corrêaetal,2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 234992,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Mourad,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 18648694,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Arnold,Norton.pdf",
+          "mime": "application/pdf",
+          "bytes": 1062595,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Santos,Oliveira,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 420016,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Streck,2013.pdf",
+          "mime": "application/pdf",
+          "bytes": 370088,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Tripp,2005.pdf",
+          "mime": "application/pdf",
+          "bytes": 296690,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Epistemologia Feminista",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Sardenberg,2001.pdf",
+          "mime": "application/pdf",
+          "bytes": 180362,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Scavone,2008.pdf",
+          "mime": "application/pdf",
+          "bytes": 52844,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Mendes,Freitas,2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 159529,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Keller,2006.pdf",
+          "mime": "application/pdf",
+          "bytes": 106214,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Schiebinger,2008.pdf",
+          "mime": "application/pdf",
+          "bytes": 176299,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Doucet-Mauthner-2005.pdf",
+          "mime": "application/pdf",
+          "bytes": 226756,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Figueiredo,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 377714,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Matos,2008.pdf",
+          "mime": "application/pdf",
+          "bytes": 110268,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Lazar,2007.pdf",
+          "mime": "application/pdf",
+          "bytes": 195474,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Longino.pdf",
+          "mime": "application/pdf",
+          "bytes": 3179024,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "ibrahim-voyer-2025-qualitative-research-with-llm-chatbots-technological-reflexivity-for-interpretative-technology.pdf",
+          "mime": "application/pdf",
+          "bytes": 3405641,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "misra-et-al-2026-large-language-models-in-qualitative-analysis-comparing-traditional-and-researcher-interpreted.pdf",
+          "mime": "application/pdf",
+          "bytes": 1827737,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "nguyen-welch-2025-generative-artificial-intelligence-in-qualitative-data-analysis-analyzing-or-just-chatting.pdf",
+          "mime": "application/pdf",
+          "bytes": 1581859,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Quevedo, Kuri, 2026 - AI for Qualitative.pdf",
+          "mime": "application/pdf",
+          "bytes": 4977441,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "friese-2026-from-coding-to-conversation-a-new-methodological-framework-for-ai-assisted-qualitative-analysis.pdf",
+          "mime": "application/pdf",
+          "bytes": 1273025,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "jiang-et-al-2025-the-feasibility-and-comparability-of-using-artificial-intelligence-for-qualitative-data-analysis-in.pdf",
+          "mime": "application/pdf",
+          "bytes": 1173219,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "vikan-et-al-2025-reflecting-on-llm-support-in-reflexive-thematic-analysis-an-exploratory-study.pdf",
+          "mime": "application/pdf",
+          "bytes": 1063915,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "wise-et-al-2026-why-ai-is-not-the-enemy-opportunities-to-strengthen-core-commitments-of-qualitative-inquiry-through.pdf",
+          "mime": "application/pdf",
+          "bytes": 1422184,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "costa-et-al-2025-ai-as-a-co-researcher-in-the-qualitative-research-workflow-transforming-human-ai-collaboration.pdf",
+          "mime": "application/pdf",
+          "bytes": 761286,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "duarte-orchard-garcia-2025-resisting-refusing-reclaiming-reimagining-charting-challenges-to-narratives-of-ai-inevitability.pdf",
+          "mime": "application/pdf",
+          "bytes": 1436740,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "macgeorge-2025-conversations-with-my-data-exploring-the-potential-of-large-language-models-in-qualitative-futures.pdf",
+          "mime": "application/pdf",
+          "bytes": 1324747,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "nguyen-trung-2025-chatgpt-in-thematic-analysis-can-ai-become-a-research-assistant-in-qualitative-research.pdf",
+          "mime": "application/pdf",
+          "bytes": 1131326,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "schroeder-et-al-2024-large-language-models-in-qualitative-research-uses-tensions-and-intentions.pdf",
+          "mime": "application/pdf",
+          "bytes": 836379,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "hayes-2025-conversing-with-qualitative-data-enhancing-qualitative-research-through-large-language-models-(llms).pdf",
+          "mime": "application/pdf",
+          "bytes": 1052522,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "messner-et-al-2025-artificial-intelligence-and-qualitative-data-analysis-epistemological-incongruences-and-the-future.pdf",
+          "mime": "application/pdf",
+          "bytes": 779818,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "al-fattal-singh-2025-comparative-reflections-on-human-driven-and-generative-artificial-intelligence-assisted-thematic.pdf",
+          "mime": "application/pdf",
+          "bytes": 565300,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "kon-et-al-2024-unravelling-chatgpt-potential-in-summarising-qualitative-indepth-interviews.pdf",
+          "mime": "application/pdf",
+          "bytes": 683858,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "wachinger-et-al-2024-prompts-pearls-imperfections-comparing-chatgpt-and-a-human-researcher-in-qualitative-data-analysis.pdf",
+          "mime": "application/pdf",
+          "bytes": 700932,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "prahl-2025-the-ai-reflexivity-checklist-(arc)-a-pre-analysis-pause-for-llm-assisted-coding.pdf",
+          "mime": "application/pdf",
+          "bytes": 554728,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "paulus-lester-davis-2025-the-construction-of-the-role-of-ai-in-qualitative-data-analysis-in-the-social-sciences.pdf",
+          "mime": "application/pdf",
+          "bytes": 625393,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "davison-2024-the-ethics-of-using-generative-ai-for-qualitative-data-analysis.pdf",
+          "mime": "application/pdf",
+          "bytes": 441104,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "dellafiore-et-al-2025-artificial-intelligence-in-qualitative-research-insights-from-experts-via-reflexive-thematic.pdf",
+          "mime": "application/pdf",
+          "bytes": 646161,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "jones-2025-generative-ai-in-qualitative-research-and-related-transparency-problems-a-novel-heuristic-for-disclosing.pdf",
+          "mime": "application/pdf",
+          "bytes": 606492,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "dahal-et-al-2025-navigating-the-meta-crisis-of-generativity-adapting-qualitative-research-quality-criteria-in-the-era-of-generative-ai.pdf",
+          "mime": "application/pdf",
+          "bytes": 190798,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "jowsey-et-al-2025-frankenstein-thematic-analysis-and-generative-artificial-intelligence-quality-appraisal-methods-and-considerations-for-qualitative-research.pdf",
+          "mime": "application/pdf",
+          "bytes": 405918,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Castellanosetal,2025-Large Language Models for Thematic Summarization in Qualitative Health Care Research.pdf",
+          "mime": "application/pdf",
+          "bytes": 224375,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "jowsey-et-al-2025-we-reject-the-use-of-generative-artificial-intelligence-for-reflexive-qualitative-research.pdf",
+          "mime": "application/pdf",
+          "bytes": 176374,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "jarrahi-2025-interviewing-ai-using-qualitative-methods-to-explore-and-capture-machines-characteristics-and-behaviors.pdf",
+          "mime": "application/pdf",
+          "bytes": 317209,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "nguyen-welch-2025-engaged-and-responsible-scholarship-why-qualitative-researchers-should-not-embrace-genai.pdf",
+          "mime": "application/pdf",
+          "bytes": 167139,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "friedman-et-al-2024-ai-and-qualitative-analysis.pdf",
+          "mime": "application/pdf",
+          "bytes": 295132,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "teixeira-et-al-2025-generative-artificial-intelligence-in-qualitative-research-methods-between-hype-and-risks.pdf",
+          "mime": "application/pdf",
+          "bytes": 191806,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "graciano-neto-et-al-2024-large-language-model-for-qualitative-research-a-systematic-mapping-study.pdf",
+          "mime": "application/pdf",
+          "bytes": 221706,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "mayring-2025-qualitative-content-analysis-with-chatgpt-pitfalls-rough-approximations-and-gross.pdf",
+          "mime": "application/pdf",
+          "bytes": 141258,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "paulus-marone-2024-in-minutes-instead-of-weeks-discursive-constructions-of-generative-ai-and-qualitative-data-analysis.pdf",
+          "mime": "application/pdf",
+          "bytes": 153554,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Mesec, 2023-preprint.pdf",
+          "mime": "application/pdf",
+          "bytes": 229470,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Paoli,2023-preprint.pdf",
+          "mime": "application/pdf",
+          "bytes": 388959,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "eschrich-sterman-2024-a-framework-for-discussing-llms-as-tools-for-qualitative-analysis.pdf",
+          "mime": "application/pdf",
+          "bytes": 112470,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Hayes,2023-preprint.pdf",
+          "mime": "application/pdf",
+          "bytes": 412081,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Marshall,Naff,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 259133,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "de-paoli-2026-why-we-should-reject-to-reject-the-use-of-generative-artificial-intelligence-in-qualitative-analysis-a.pdf",
+          "mime": "application/pdf",
+          "bytes": 135835,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Christou,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 601616,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Bail,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 175146,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Dengeletal,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 892752,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Hamiltonetal,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 588263,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Chubb,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 2145069,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "vanmanen,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 495842,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Sociologia Digital",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Miskolci,Balieiro,2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 762258,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Zhao,Wang,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 1422216,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Castro,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 789062,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Telles,2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 4835711,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Vicari,Kirby,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 3522700,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Lupton,2015.pdf",
+          "mime": "application/pdf",
+          "bytes": 1622573,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Macedo,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 738372,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "fussey,roth,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 95862,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Nascimento,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 3240013,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Padilha,Facioli,2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 191714,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "M‚todos Digitais",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "vanEsetal,2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 437076,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Silvaetal,2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 9085178,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Venturinietal,2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 1161832,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Omena,2019.pdf",
+          "mime": "application/pdf",
+          "bytes": 8391934,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Santos,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 1950753,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Rogers,2016.pdf",
+          "mime": "application/pdf",
+          "bytes": 456658,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Silva,Stabile,2016.pdf",
+          "mime": "application/pdf",
+          "bytes": 25526926,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Perriametal,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 1391278,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Vimieiro,Bargas,2019.pdf",
+          "mime": "application/pdf",
+          "bytes": 487973,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Hampton-2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 313007,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Observação Participante",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Marietto,2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 1062352,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Laurier,2010.pdf",
+          "mime": "application/pdf",
+          "bytes": 558231,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Mackellar,2013.pdf",
+          "mime": "application/pdf",
+          "bytes": 286357,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Schwartz,Elsen,2003.pdf",
+          "mime": "application/pdf",
+          "bytes": 178633,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Hennelletal,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 124979,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Camposetal_2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 3793803,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Fernandes,2011.pdf",
+          "mime": "application/pdf",
+          "bytes": 251024,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Lapassade,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 692481,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Valladares,2010.pdf",
+          "mime": "application/pdf",
+          "bytes": 63385,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Gillespie,Michelson,2011.pdf",
+          "mime": "application/pdf",
+          "bytes": 437651,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Prosopografia",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Braga,Nicolas,2008.pdf",
+          "mime": "application/pdf",
+          "bytes": 1069663,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Ankoud,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 605584,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "HEINZ,2011.pdf",
+          "mime": "application/pdf",
+          "bytes": 932657,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Bulst,2005.pdf",
+          "mime": "application/pdf",
+          "bytes": 198162,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Bukodietal,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 953896,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Stone,2011.pdf",
+          "mime": "application/pdf",
+          "bytes": 215867,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Rossier,2019.pdf",
+          "mime": "application/pdf",
+          "bytes": 1128564,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Heinz,Codato,2015.pdf",
+          "mime": "application/pdf",
+          "bytes": 753308,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Lundingetal,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 886779,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Monteiro,2014.pdf",
+          "mime": "application/pdf",
+          "bytes": 234767,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "An lise Tem tica",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Lochmiller,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 303107,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Kiger,Varpio,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 1539533,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Byrne,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 2860307,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Dias,Mishima,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 433874,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Scharp,Sanders,2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 844525,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "braun,clarke,2006.pdf",
+          "mime": "application/pdf",
+          "bytes": 712648,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Ramosdasilvaetal,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 672728,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Nowelletal,2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 639500,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Maguire,Delahunt,2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 640926,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Silvaetal,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 631240,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Causalidade na Pesquisa Qualitativa",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Erickson,2012.pdf",
+          "mime": "application/pdf",
+          "bytes": 447894,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Ruffa,Evangelista,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 249232,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Maxwell,2004.pdf",
+          "mime": "application/pdf",
+          "bytes": 175586,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Donmoyer,2012.pdf",
+          "mime": "application/pdf",
+          "bytes": 453217,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "tacq2010.pdf",
+          "mime": "application/pdf",
+          "bytes": 288275,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    }
+  ]
+}
