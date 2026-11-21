@@ -7,6 +7,11 @@ Corpus de leitura: `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`.
 **Estado da entrega:** ENTREGUE_PARA_AUDITORIA (documental); **não** AUDITADO, INTEGRADO, homologado nem autorizado a publicação.
 **Estado científico:** 18 cards permanecem [I], DRAFT_NEEDS_INDEPENDENT_REVIEW; nenhuma promoção a [L].
 
+## Decisão expressa do mantenedor — 21/11/2026
+- **Aprovação declarada pelo mantenedor nesta conversa:** “Aprovado os cards.” Escopo: 18 cards EC-019…EC-036 da etapa V1-05; decisão registrada como `APROVADO_PELO_MANTENEDOR`, sem presumir que as duas revisões independentes exigidas por `CARD-POLICY.md` ocorreram.
+- **Consequência imediata:** autorização de continuidade editorial dos 18 cards, conservando classificação `[I]`, triagem documental e a PR #104 em Draft. Este registro **não** converte 0/18 revisões independentes comprovadas em 18/18, **não** concede licença sobre obras de terceiros, **não** promove `[I]` a `[L]` e **não** autoriza merge, publicação, release ou alteração dos arquivos de card.
+- **Em execução / próximo passo:** verificar originais e licenças dos oito cards prioritários (EC-021, 024, 028, 030, 032, 033, 034 e 036); documentar riscos por edição; obter as duas checagens independentes para promoção a `ACCEPTED` e conciliar com segurança a subseção 31.05 do Markdown canônico.
+
 ## O que foi concluído
 - Checados 18/18 caminhos exatos do manifesto, todos únicos, sem inspecionar/editar cards de lotes alheios.
 - SHA-256 computado sobre bytes UTF-8 dos 18 cards retornados pelo GitHub no snapshot e confrontado com `catalog_blob_sha256` do manifesto: **18/18 MATCH**, 0 divergências.
