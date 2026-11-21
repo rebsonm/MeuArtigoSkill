@@ -1518,10 +1518,62 @@
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
       "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1014419.pdf"
+    },
+    {
+      "path": "knowledge/methodology/cards/dias-mishima-2023-thematic-practice.md",
+      "title": "Análise temática: decisões entre contexto, unidades de sentido e temas",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "30189fc441f2c9ba932650fb14470ea89de8b8b62813c08ad92a47c1077fc89a",
+      "keywords": [
+        "análise",
+        "temática",
+        "tematica",
+        "qualitativa",
+        "contexto",
+        "nucleos",
+        "sentido",
+        "temas",
+        "thematic",
+        "dias",
+        "mishima"
+      ],
+      "source_doi": "10.12957/sustinere.2023.71828",
+      "source_url": "https://doi.org/10.12957/sustinere.2023.71828",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false,
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/dias-mishima-2023-thematic-analysis.pdf"
+    },
+    {
+      "path": "knowledge/methodology/cards/campos-saidel-2022-qualitative-sampling-decisions.md",
+      "title": "Amostragem qualitativa: escolhas técnicas, contextuais e éticas",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "f4b0c160842bd752ec09da06dde3ff76c097949d043f13308620013279e56431",
+      "keywords": [
+        "amostragem",
+        "qualitativa",
+        "sampling",
+        "amostra",
+        "saturacao",
+        "saturação",
+        "etica",
+        "ética",
+        "campos",
+        "saidel",
+        "participantes"
+      ],
+      "source_doi": "10.33361/RPQ.2022.v.10.n.25.545",
+      "source_url": "https://editora.sepq.org.br/rpq/article/view/545",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false,
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/campos-saidel-2022-qualitative-sampling.pdf"
     }
   ],
   "license": "Apache-2.0 (original editorial cards only)",
   "repository": "rebsonm/MeuArtigoSkill",
   "schema": "MEU_ARTIGO_GITHUB_METHODOLOGY_V1",
-  "version": "pilot-2026-11-21-61-cards-33-pdfs"
+  "version": "pilot-2026-11-21-63-cards-35-pdfs"
 }
