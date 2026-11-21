@@ -539,7 +539,9 @@
     "attempted_intermediate_sha256": "0f0c920e17d637bbca0caa7c1aa37e8ad23d890d9e9254f055fdc6710b6b5c30",
     "concurrent_overwrite_or_race_suspected": true,
     "subsection_31_10_completion_saved": false,
-    "raw_markdown_further_writes_aborted": true
+    "raw_markdown_further_writes_aborted": true,
+    "comment_fallback_posted_and_verified": true,
+    "comment_contains_feito_execucao_proxima_acao": true
   },
   "continuity_addendum": {
     "date": "2026-11-21",
@@ -559,7 +561,14 @@
     "fetched_commit_workflow_runs": 0,
     "exclusive_branch_pr_found": false,
     "markdown_body_updated": false,
-    "markdown_comment_fallback": "CRIAR SOMENTE APOS CONFIRMACAO POR READBACK",
-    "note": "Páginas externas têm estatuto de evidência bibliográfica parcial, não parecer nem liberação de publicação."
+    "markdown_comment_fallback": "POSTADO_E_CONFIRMADO",
+    "note": "Páginas externas têm estatuto de evidência bibliográfica parcial, não parecer nem liberação de publicação.",
+    "results_commits": [
+      "36e4beca1727153be20b1a92be94d5eed1eb1afa",
+      "9a2b7df62df8b4ff251f753a1d6617bb042ef513"
+    ],
+    "results_blob_sha1_after_comment_sync": "cb8e772e12c0ff36aaa086dd72f01ed7bcbc1017",
+    "markdown_comment_readback_verified": true,
+    "markdown_canonical_body_still_outdated": true
   }
 }
