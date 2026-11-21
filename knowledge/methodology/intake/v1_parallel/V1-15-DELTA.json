@@ -235,7 +235,6 @@
     "ci_status": "NOT_RUN"
   },
   "canonical_md": {
-    "file_id": "1-dccVbAUX5-xLw6fq027cB15oVqOjl_U",
     "desired_section": "31.15",
     "write_status": "NOT_WRITTEN_CONCURRENT_RAW_MARKDOWN_RISK",
     "observed_content_length_first": 306686,
