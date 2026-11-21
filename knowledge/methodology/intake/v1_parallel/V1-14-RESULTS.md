@@ -73,3 +73,36 @@
 - **Proibido**: merge em `main`, tag, release, force-push, reescrita do histórico, MCP, distribuição do PDF CC BY-NC no catálogo irrestrito, alteração global de ledger/registry/catalog ou qualquer aprovação científica independente sem evidência.
 
 **Fontes delimitadas:** manifesto V1 fixado; Issues #102/#103; árvores e commits Git mencionados; metadados de ACL da pasta do acervo (valores minimizados); termos oficiais CC BY-NC; documentação GitHub sobre consequências da reescrita de histórico. Não foram lidos materiais atribuídos a tickets de cards ou identificações residuais.
+
+
+## 6. Continuidade V1-14 — verificação complementar independente (21/11/2026)
+
+**Natureza:** adendo verificável à auditoria previamente entregue, sem reexecutar a contagem dos 240 campos/14 recibos IB nem alterar direitos, ACL ou histórico. Referências e evidências sanitizadas.
+
+### C14-01 — Licença da edição oficial confirmada por fonte primária (NOVO)
+
+- A página pública da SciELO referente **exatamente** ao DOI `10.1590/0103-3352.2020.33.218584`, *Aplicação metodológica da análise de conteúdo em pesquisas de análise de política externa*, informa publicação na coleção em **30/11/2020**. O link de licença associado ao próprio artigo (âncora "Este é um artigo publicado em acesso aberto sob uma licença Creative Commons", link #124 do HTML) foi seguido em modo somente leitura e levou diretamente a `https://creativecommons.org/licenses/by-nc/4.0/` (**CC BY-NC 4.0**).
+- Fonte da **edição oficial**, sem acesso ao PDF: https://www.scielo.br/j/rbcpol/a/QFmq77JnT468fcBKCdh99ms/?format=html ; termo oficial: https://creativecommons.org/licenses/by-nc/4.0/legalcode.en .
+- **Interpretação delimitada:** BY-NC permite reproduzir/compartilhar sob atribuição e finalidade não comercial, sujeito aos demais termos; não licencia reutilização comercial irrestrita. A licença da edição está confirmada por redirecionamento da editora; **identidade, condições de atribuição e histórico de disponibilização do exato binário Git ainda exigem conferência editorial/jurídica**. Uma política de catálogo irrestrito não pode reclassificar BY-NC como BY. Isso não constitui, por si, parecer de infração.
+
+### C14-02 — Alcance de refs públicas de tags (NOVO)
+
+- API GitHub `git/matching-refs/tags` retornou **13 referências de tags**, todas com objeto do tipo commit. Foram feitas **13 comparações de ancestralidade** entre cada tag e o commit histórico `115ba34f168f9efc78da3ff4a79bf61cb608e2d7` (marco em que o blob do PDF já constava da árvore).
+- Resultado verificável: **13/13 tags são ancestrais do referido commit histórico** (`status=behind`, `ahead_by=0`, `behind_by>0` em todas as comparações). Portanto, **nenhuma dessas 13 refs de tag contém o commit histórico na própria ancestralidade**. Isso NÃO comprova ausência de cópias do PDF em outros commits, tags externas, branches ou forks; não foram inspecionados blobs nem PDF.
+- Consulta adicional `git/matching-refs/heads` retornou **139 referências de branches**. Foi inventariado apenas o universo de refs HEAD; **a análise de alcance histórico dessas 139 branches não foi executada individualmente**. Esse levantamento não é uma varredura completa de conteúdo nem do fork.
+- API GitHub `git/ref/heads/work/v1-14-20261121` confirmou HEAD inicial desta continuidade `a13a52be77e818567e8d3123e14ca0a96875d4fb`; PR #101 permanece **Draft**, aberta, não mesclada e seu HEAD é o snapshot congelado `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`. Issues #102/#103 continuavam **OPEN** na leitura.
+
+### C14-03 — ACL da raiz revalidada agora (NOVO)
+
+- Busca nominal exata da pasta `PPGA - LIVROS` no Drive retornou um único objeto. Nova consulta autenticada de **metadados**, sem baixar PDF ou expor URL/ID, confirmou `shared=true`, `canShare=true`, `source_visibility_status=permission_metadata_available`, permissão `anyone:reader` e `allowFileDiscovery=false`.
+- O risco P0-ACL **permanece ativo**: pessoas que detenham um link podem potencialmente ler conteúdo permitido pela ACL; não foi feito teste anônimo, verificação integral da árvore nem prova de acesso efetivamente realizado. As 11 amostras de descendentes são evidência da rodada anterior, **não** novas verificações deste adendo.
+
+### C14-04 — Alternativas, riscos e decisão pendente
+
+- **A (preservação com contenção):** manter SHAs/histórico e registrar aviso NC, verificação de atribuição/uso histórico, tratamento de ACL pelo proprietário e política de não exposição de IDs. Não elimina commits acessíveis, forks ou caches.
+- **B (plano de expurgo):** preparar inventário privado de refs/PRs/forks, cópia de segurança privada, parecer jurídico/editorial, coordenação de clones, janela de manutenção e avaliação de impactos em SHAs assinados/pinados antes de qualquer possível rewrite. Nenhum rewrite ou autorização foi concedido; GitHub alerta que clones/forks/caches podem permanecer.
+- Fonte técnica: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository .
+- **Evidência mínima para decisão humana:** (1) permissão atual e herança de cada objeto relevante, teste externo autorizado e registro assinado do proprietário; (2) parecer específico da edição/licença/uso histórico SRC-0367, atribuição e destino do binário; (3) matriz privada de alcance em branches, refs de PR e fork, mantendo zeros IDs privados em recibos públicos; (4) alternativa A/B deliberada pelo mantenedor e plano verificável de reteste.
+- **Estado final deste adendo:** `ENTREGUE_PARA_AUDITORIA`, `release_gate=BLOQUEADO`, P0#102/#103/P0-ACL sem aceite jurídico, científico ou de segurança. Não houve CI/pytest/host nesta continuidade; apenas testes de leitura, 13 comparações de ancestralidade e metadados de ACL. Nenhum PDF distribuído, ACL modificada, branch/PR de terceiros alterada, merge/tag/release/MCP ou rewrite executado.
+
+**Próxima ação única:** o proprietário do Drive deve registrar decisão de contenção da permissão `anyone:reader` na pasta `PPGA - LIVROS` e descendentes e autorizar teste externo de acesso, com comprovante anonimizado do resultado. Sem essa evidência, P0-ACL permanece bloqueado. Questões #102/#103 exigem deliberações adicionais separadas.
