@@ -150,6 +150,11 @@ def _relevance(question: str, doc: dict) -> int:
         return 0
     title = _terms(doc["title"])
     keys = _terms(" ".join(doc["keywords"]))
+    matched = {w for w in q if w in keys or w in title}
+    # Reject isolated generic hits in multi-topic questions. This is only a
+    # lexical safety heuristic; it is not semantic relevance validation.
+    if len(q) > 1 and len(matched) * 5 < len(q) * 3:
+        return 0
     return sum(3 for w in q if w in keys) + sum(2 for w in q if w in title)
 
 
