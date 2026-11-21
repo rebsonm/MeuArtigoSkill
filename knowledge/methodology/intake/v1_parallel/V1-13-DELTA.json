@@ -482,5 +482,52 @@
     "md_write_limit": "raw text/markdown sem CAS por subseção; comentário específico 31.13 será utilizado em vez de sobrescrita integral",
     "next_action_single": "cotejar a cópia/edição exata de EC-165 SRC-0007 com colofão/licença da editora; documentar divergência CC BY-NC-SA 3.0 vs CC BY 4.0 sem redistribuir o PDF",
     "advance_gate": "evidência por edição/cópia e 2 avaliações independentes distintas por card; manter P0 e V1-16 bloqueados até pré-requisitos"
+  },
+  "ec165_exact_copy_check_20261121": {
+    "stage": "DOCUMENTAL_COPY_AND_LICENSE_SURFACES_CROSSCHECK",
+    "source_id": "SRC-0007",
+    "card_id": "EC-165",
+    "private_pdf": {
+      "accessed": true,
+      "mime_type": "application/pdf",
+      "size_bytes": 4637247,
+      "bibliographic_frontmatter_read": true,
+      "doi": "10.36311/2020.978-65-86546-07-1",
+      "year": 2020,
+      "pages_stated": 460,
+      "license_text": "CC BY 4.0; except where otherwise noted",
+      "binary_sha256_computed": false,
+      "pdf_binary_redistributed": false,
+      "private_drive_identifiers_exposed": false,
+      "permission_risk": "anyone:reader permission observed; no access control changed"
+    },
+    "publisher_pdf": {
+      "url": "https://books.scielo.org/id/96v3r/pdf/fujita-9786586546071.pdf",
+      "license_text": "CC BY 4.0; except where otherwise noted",
+      "byte_identity_proven": false
+    },
+    "publisher_book_html": {
+      "url": "https://books.scielo.org/id/96v3r",
+      "license_notice": "CC BY-NC-SA 3.0 Unported; except where otherwise noted"
+    },
+    "unesp_catalogue": {
+      "url": "https://ebooks.marilia.unesp.br/index.php/lab_editorial/catalog/book/163",
+      "search_snippet_license": "CC BY-NC-ND 4.0; page not fully retrieved",
+      "evidence_grade": "secondary_unconfirmed"
+    },
+    "result": "COPY_FRONTMATTER_MATCHED_ON_BIBLIOGRAPHIC_FIELDS_LICENSE_NOTICE_CONFLICT_UNRESOLVED",
+    "prior_card_observation_reconciled": "CC BY 4.0 in the local PDF is supported by direct text; CC BY-NC-SA 3.0 appears in HTML surface, not necessarily the actual copy; avoid conflation",
+    "card_decision": "BLOQUEADO",
+    "card_modified": false,
+    "scientific_class": "[I]/[P], not [L]",
+    "independent_rights_originality_review": false,
+    "independent_scientific_editorial_review": false,
+    "other_branches_updated": false,
+    "global_files_updated": false,
+    "md_body_updated": false,
+    "results_commit": "9d7b1d5cce8f87384a350840ef120393fbb935d7",
+    "results_blob": "44ab62873ceb1a563c836716dd386d1b29e763ab",
+    "next_action_single": "obter confirmação específica do editor/SciELO Books sobre a licença do PDF desta edição e seus componentes ressalvados; documentar sem redistribuição de PDF",
+    "advancement": "confirmação inequívoca da licença por cópia/edição e exceções; pareceres independentes antes de publicação"
   }
 }
