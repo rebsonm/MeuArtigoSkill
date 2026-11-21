@@ -50,6 +50,10 @@ class SourceRegistryCompletenessTests(unittest.TestCase):
                               x["rights_review"] == "VERIFIED_PUBLISHER_LICENSE"]),
                          reviewed)
         self.assertEqual(reviewed, 3)
+        registry_obj = json.loads(C.read_text("utf-8"))
+        self.assertEqual(registry_obj["source_text_read_in_ledger"],
+                         sum(d["source_read_scope"] != "NOT_RECORDED_IN_LEDGER"
+                             for d in self.docs))
 
     def test_sha256_and_source_metadata_only_every_card(self):
         for item in self.docs:
