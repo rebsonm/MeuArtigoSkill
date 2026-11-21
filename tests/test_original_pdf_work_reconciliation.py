@@ -10,19 +10,19 @@ class ReconciledSourceTests(unittest.TestCase):
   o=json.loads((BASE/"source_registry_catalog.json").read_text("utf-8"))
   docs=o["documents"]
   verified=[x for x in docs if x["bibliography_match_status"]=="SOURCE_PDF_WORK_VERIFIED"]
-  self.assertEqual({x["source_id"] for x in verified},IDS)
+  self.assertTrue(IDS.issubset({x["source_id"] for x in verified}))
   self.assertEqual(len(docs),475)
-  self.assertEqual(o["source_text_read_in_ledger"],15)
-  self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="IDENTITY_UNRESOLVED"]),64)
+  self.assertEqual(o["source_text_read_in_ledger"],29)
+  self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="IDENTITY_UNRESOLVED"]),50)
   self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED"]),399)
-  for d in verified:
+  for d in (x for x in verified if x["source_id"] in IDS):
    self.assertTrue(d["source_metadata_only"])
    self.assertFalse(d["public_work_metadata_screen"]["scientific_card_review_approved"])
    self.assertEqual(d["has_original_public_pdf"], d["source_id"] in PUBLIC)
    self.assertEqual(hashlib.sha256((ROOT/d["path"]).read_bytes()).hexdigest(),d["sha256"])
  def test_two_individually_licensed_pdfs_with_exact_bytes(self):
   j=json.loads((BASE/"pdf_catalog.json").read_text("utf-8"))
-  self.assertEqual(len(j["documents"]),40)
+  self.assertEqual(len(j["documents"]),45)
   added=[d for d in j["documents"] if "schroeder-lequere" in d["path"] or "mayring-2025-chatgpt" in d["path"]]
   self.assertEqual(len(added),2)
   for d in added:

@@ -10,7 +10,7 @@ class SkillOnlyMethodAuditTests(unittest.TestCase):
   self.assertEqual(audit["count"],12)
   self.assertEqual(register["public_bibliographic_work_checks"],12)
   self.assertEqual(len(register["documents"]),475)
-  self.assertEqual(sum(x["bibliography_match_status"]=="IDENTITY_UNRESOLVED" for x in register["documents"]),64)
+  self.assertEqual(sum(x["bibliography_match_status"]=="IDENTITY_UNRESOLVED" for x in register["documents"]),50)
   for item in audit["rows"]:
    self.assertRegex(item["doi"],r"^10\.[0-9]{4,9}/")
    self.assertTrue(item["public_locator"].startswith("https://"))
@@ -33,7 +33,7 @@ class SkillOnlyMethodAuditTests(unittest.TestCase):
   self.assertIn("not a remotely hosted service",doc)
  def test_corrected_cards_match_manifest_hashes(self):
   j=json.loads((BASE/"catalog.json").read_text("utf-8"))
-  self.assertEqual(len(j["documents"]),100)
+  self.assertEqual(len(j["documents"]),114)
   names=("institutional-grammar-2-2021-encoding-design.md","prahl-2025-ai-reflexivity-checklist.md")
   for doc in j["documents"]:
    if Path(doc["path"]).name in names:

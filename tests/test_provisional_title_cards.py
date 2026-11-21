@@ -1,4 +1,4 @@
-"""Ensure provenance of 64 remaining unverified *prospecting-only* source cards.
+"""Ensure provenance of 50 remaining unverified *prospecting-only* source cards.
 
 This test never treats a filename title as proof of source identity or reading.
 """
@@ -10,7 +10,7 @@ class ProvisionalTitleTests(unittest.TestCase):
  def test_source_candidates_remain_unverified(self):
   j=json.loads((BASE/"source_registry_catalog.json").read_text(encoding="utf-8"))
   a=[x for x in j["documents"] if x["bibliography_match_status"]=="IDENTITY_UNRESOLVED"]
-  self.assertEqual(len(a),64)
+  self.assertEqual(len(a),50)
   for x in a:
    with self.subTest(x=x["source_id"]):
     self.assertTrue(x["source_metadata_only"])
@@ -23,9 +23,9 @@ class ProvisionalTitleTests(unittest.TestCase):
     self.assertIn("IDENTITY_UNRESOLVED",txt)
  def test_new_editorial_cards_do_not_claim_private_pdf_read(self):
   c=json.loads((BASE/"catalog.json").read_text(encoding="utf-8"))
-  self.assertEqual(len(c["documents"]),100)
+  self.assertEqual(len(c["documents"]),114)
   matched=[x for x in c["documents"] if x.get("source_registry_id")]
-  self.assertEqual(len(matched),12)
+  self.assertEqual(len(matched),26)
   for x in matched:
    raw=(ROOT/x["path"]).read_bytes()
    self.assertEqual(hashlib.sha256(raw).hexdigest(),x["sha256"])
