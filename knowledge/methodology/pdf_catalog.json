@@ -1,6 +1,6 @@
 {
   "schema": "MEU_ARTIGO_PUBLIC_PDF_CATALOG_V1",
-  "version": "pilot-2026-11-21-36-licensed-public-pdfs",
+  "version": "pilot-2026-11-21-38-licensed-original-pdfs",
   "documents": [
     {
       "path": "knowledge/methodology/pdfs/lycariao-roque-costa-2023.pdf",
@@ -1000,6 +1000,61 @@
         "aprendizagem",
         "ciclos",
         "organização"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/marzi-balzano-caputo-pellegrini-2025-bslr.pdf",
+      "title": "Guidelines for Bibliometric-Systematic Literature Reviews: 10 steps to combine analysis, synthesis and theory development",
+      "authors": "Giacomo Marzi; Marco Balzano; Andrea Caputo; Massimiliano M. Pellegrini",
+      "year": 2025,
+      "doi": "10.1111/ijmr.12381",
+      "size": 528164,
+      "sha256": "0a40cb1cdf36acff0446d6d4ce80597ea64afbb4ffaf20b2df386c8f66ccf117",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://onlinelibrary.wiley.com/doi/10.1111/ijmr.12381",
+      "source_url": "https://onlinelibrary.wiley.com/doi/10.1111/ijmr.12381",
+      "source_pdf_url": "https://arts.units.it/bitstream/11368/3093458/3/Marzi-Balzano-Caputo-Pellegrini-IJMR-2025.pdf",
+      "original_file_unchanged": true,
+      "keywords": [
+        "marzi",
+        "bsrl",
+        "b-slr",
+        "bibliometric",
+        "systematic",
+        "literature",
+        "review",
+        "bibliometria",
+        "revisao",
+        "dez etapas",
+        "teoria"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/jaakkola-2020-designing-conceptual-articles.pdf",
+      "title": "Designing conceptual articles: four approaches",
+      "authors": "Elina Jaakkola",
+      "year": 2020,
+      "doi": "10.1007/s13162-020-00161-0",
+      "size": 323376,
+      "sha256": "3ec15c06890a713057418e1a687a277ba86efe73f960cff558d84dc153260a66",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://link.springer.com/article/10.1007/s13162-020-00161-0",
+      "source_url": "https://link.springer.com/article/10.1007/s13162-020-00161-0",
+      "source_pdf_url": "https://link.springer.com/content/pdf/10.1007/s13162-020-00161-0.pdf",
+      "original_file_unchanged": true,
+      "keywords": [
+        "jaakkola",
+        "artigo conceitual",
+        "conceptual",
+        "theory synthesis",
+        "theory adaptation",
+        "typology",
+        "model",
+        "research design"
       ]
     }
   ],

@@ -1,6 +1,6 @@
 # Methodological PDFs — rights and attribution
 
-This public corpus contains **36 source PDFs** with documented publisher or repository licensing statements for Creative Commons Attribution 4.0 International (CC BY 4.0). They are **not** covered by the repository's Apache-2.0 software license. The binary PDF copies are unmodified; no endorsement by their authors or journals is implied.
+This public corpus contains **38 source PDFs** with documented publisher or repository licensing statements for Creative Commons Attribution 4.0 International (CC BY 4.0). They are **not** covered by the repository's Apache-2.0 software license. The binary PDF copies are unmodified; no endorsement by their authors or journals is implied.
 
 License: https://creativecommons.org/licenses/by/4.0/
 
@@ -68,3 +68,8 @@ These originals remain outside the installer; verified source DOI, authors and S
 - Campos, C. J. G.; Saidel, M. G. B. (2022), *Amostragem em investigações qualitativas: conceitos e aplicações ao campo da saúde*. DOI https://doi.org/10.33361/RPQ.2022.v.10.n.25.545. [Official journal CC BY 4.0 statement](https://editora.sepq.org.br/rpq/article/view/545). Unchanged `campos-saidel-2022-qualitative-sampling.pdf`; SHA256 `b3e78db1e163a787ec0ac08c44fca1cbb2c664f53564581128779c65a8ddd1a8`.
 
 - Koerich, M. S.; Backes, D. S.; Sousa, F. G. M.; Erdmann, A. L.; Albuquerque, G. L. (2009). *Pesquisa-ação: ferramenta metodológica para a pesquisa qualitativa*. [Publisher license CC BY 4.0](https://revistas.ufg.br/fen/article/view/47234); [DOI](https://doi.org/10.5216/ree.v11.47234). Unaltered `koerich-et-al-2009-action-research.pdf`; SHA256 `178ca5ae19c4e3fb2afee735b6a1e5c74ad804a2640c8be092e6df7bd28797d6`.
+
+## Additional PPGA sources (21 November 2026)
+
+- Marzi, G.; Balzano, M.; Caputo, A.; Pellegrini, M. (2025). *Guidelines for Bibliometric-Systematic Literature Reviews: 10 steps to combine analysis, synthesis and theory development*, International Journal of Management Reviews, 27(1), 81–103. DOI https://doi.org/10.1111/ijmr.12381. Original CC BY article; file `marzi-balzano-caputo-pellegrini-2025-bslr.pdf`, SHA256 `0a40cb1cdf36acff0446d6d4ce80597ea64afbb4ffaf20b2df386c8f66ccf117`. Attribution and license: https://creativecommons.org/licenses/by/4.0/ .
+- Jaakkola, E. (2020). *Designing conceptual articles: four approaches*, AMS Review, 10, 18–26. DOI https://doi.org/10.1007/s13162-020-00161-0. Original publisher CC BY 4.0; file `jaakkola-2020-designing-conceptual-articles.pdf`, SHA256 `3ec15c06890a713057418e1a687a277ba86efe73f960cff558d84dc153260a66`. License: https://creativecommons.org/licenses/by/4.0/ .
