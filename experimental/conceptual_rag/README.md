@@ -12,7 +12,7 @@
 
 The Drive folders used in the earlier research experiment are **not part of the new architecture**. No books or PDF-to-Markdown derivatives have been copied into the public repository. Those original files are unchanged. This revision does not delete existing user-owned pilot folders, change permissions or claim all of their copies are gone.
 
-Only public redistributable cards appear in Git. There is no automatic access to private sources, no MCP, no server and no automatic runtime network entitlement from installing a Skill. ChatGPT, Claude and Gemini require their own observed host permissions and execution support.
+Only original cards and individually approved redistributable public PDFs appear in Git. There is no automatic access to private sources, no MCP, no server and no automatic runtime network entitlement from installing a Skill. ChatGPT, Claude and Gemini require their own observed host permissions and execution support.
 
 ## Retrieval contract
 
@@ -29,10 +29,21 @@ Only public redistributable cards appear in Git. There is no automatic access to
 
 **Canonical source format:** keep permitted full-text methodological sources as original PDFs; do not require PDF-to-Markdown conversion. PDF page rendering/visual review is necessary for diagrams, equations, tables and pages without extractable text. Keep indexes and source metadata small, and only put bounded page content into the model context.
 
-- Public PDF discovery contract: `knowledge/methodology/pdf_catalog.json`, deliberately empty pending individual legal review.
+- Public PDF discovery contract: `knowledge/methodology/pdf_catalog.json`, currently six individually licensed and catalogued source PDFs.
 - Proof-of-concept PDF reader: `experimental/conceptual_rag/github_pdf_reader.py`; remains *experimental source only*, **not included in the installed Skill ZIP**.
 - Source selection is metadata-first. The local executor downloads at most one matching licensed PDF and checks its exact size and SHA256 before extracting a bounded number of pages. A scanned PDF returns a visual-review requirement rather than fabricated text.
 - Private/third-party PDFs, including personal Drive libraries, remain outside the public repository. A private GitHub source would require legitimately authorized use and an authenticated host; no access token is embedded or assumed.
-- No PDF has yet passed the redistribution review for this catalogue; a successful unit test does not establish copyright permission or scientific support.
+- Six PDFs have documented CC BY 4.0 licence metadata; metadata checks and unit tests do not replace human copyright review or establish scientific support.
 
 See `references/GITHUB-METHODOLOGY.md`. No changes to the v1 release candidate or scientific gates.
+
+
+## Hybrid editorial-card + licensed-PDF pilot
+
+Run only from an authorized source checkout with Python/HTTPS:
+
+```sh
+python experimental/conceptual_rag/hybrid_public_retriever.py --ref <full-40-character-Git-commit> --question 'How to choose a review design?'
+```
+
+This opt-in, experimental reader reuses the existing card and PDF clients, with separate rights and citation grades, fixed context budgets, immutable source SHA and conservative failure states. It is **lexical retrieval**, not validated embeddings or general semantic question answering. Cards are original editorial [I] guidance, never direct source [L] evidence; PDF excerpts still need visual and printed-page checks. Protected sources are never fetched from the personal archive by this module. Publication rules: `knowledge/methodology/CARD-POLICY.md`. No installed-host test or release approval is implied.
