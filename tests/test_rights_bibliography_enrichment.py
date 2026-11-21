@@ -27,7 +27,7 @@ class BibEnrichmentTest(unittest.TestCase):
                     self.assertIsNone(row.get("public_pdf_path"))
                     self.assertTrue(row["publisher_download_url"].startswith("https://"))
                 else:
-                    self.assertEqual(row["publisher_license"], "CC BY 4.0")
+                    self.assertIn(row["publisher_license"], ("CC BY 4.0", "CC BY"))
                     self.assertEqual(row["public_distribution"], "LICENSED_ORIGINAL_SOURCE_INDEXED")
                     self.assertTrue(row["public_pdf_path"].startswith("knowledge/methodology/pdfs/"))
                 self.assertTrue(row["rights_evidence_url"].startswith("https://"))

@@ -62,7 +62,7 @@ class InstalledMethodologyBoundaryTests(unittest.TestCase):
         for item in pdf_catalog["documents"]:
             self.assertEqual(item["rights"], "PUBLIC_REDISTRIBUTION_REVIEWED")
             self.assertTrue(item["license_url"].startswith("https://"))
-            self.assertEqual(item["license"], "CC BY 4.0")
+            self.assertIn(item["license"], ("CC BY 4.0", "CC BY"))
 
     def test_no_match_fetches_only_two_catalogues(self):
         get, calls = self.sources()

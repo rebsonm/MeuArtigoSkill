@@ -11,9 +11,9 @@ class ExtendedMethodsRegression(unittest.TestCase):
   reg=json.loads((BASE/"source_registry_catalog.json").read_text("utf-8"))
   docs=reg["documents"]
   self.assertEqual(len(docs),475)
-  self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="SOURCE_PDF_WORK_VERIFIED"]),45)
-  self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="IDENTITY_UNRESOLVED"]),31)
-  self.assertEqual(reg["source_text_read_in_ledger"],48)
+  self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="SOURCE_PDF_WORK_VERIFIED"]),76))
+  self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="IDENTITY_UNRESOLVED"]),0))
+  self.assertEqual(reg["source_text_read_in_ledger"],79)
   self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED"]),399)
   observed=[x for x in docs if x["source_id"] in IDS]
   self.assertEqual(len(observed),19)
@@ -24,10 +24,11 @@ class ExtendedMethodsRegression(unittest.TestCase):
    self.assertEqual(doc["has_original_public_pdf"],doc["source_id"] in PUBLIC)
    self.assertEqual(hashlib.sha256((ROOT/doc["path"]).read_bytes()).hexdigest(),doc["sha256"])
   closa=next(x for x in docs if x["source_id"]=="SRC-0154")
-  self.assertEqual(closa["bibliography_match_status"],"IDENTITY_UNRESOLVED")
+  self.assertEqual(closa["bibliography_match_status"],"SOURCE_PDF_WORK_VERIFIED")
+  self.assertIn("Carlos Closa",closa["public_work_metadata_screen"]["authors"])
  def test_exact_open_pdf_copies_are_indexed_not_other_licenses(self):
   c=json.loads((BASE/"pdf_catalog.json").read_text("utf-8"))["documents"]
-  self.assertEqual(len(c),47)
+  self.assertEqual(len(c),52)
   paths={"knowledge/methodology/pdfs/messner-smith-richards-2025-epistemological-incongruences.pdf","knowledge/methodology/pdfs/eschrich-sterman-2024-llm-qualitative-framework-arxiv-v1.pdf"}
   for row in (x for x in c if x["path"] in paths):
    data=(ROOT/row["path"]).read_bytes()
@@ -40,9 +41,9 @@ class ExtendedMethodsRegression(unittest.TestCase):
   self.assertFalse(any("gertler" in x["path"].lower() or "card-krueger" in x["path"] or "wiley" in x["path"] for x in c))
  def test_book_license_verified_but_pdf_not_uploaded(self):
   m=json.loads((BASE/"intake"/"rights-ledger-manifest.json").read_text("utf-8"))
-  self.assertEqual(m["actual_individually_verified_rights_in_this_ledger"],13)
-  self.assertEqual(m["source_pdf_count_public_catalogue"],47)
-  self.assertEqual(m["original_editorial_cards_count"],133)
+  self.assertEqual(m["actual_individually_verified_rights_in_this_ledger"],18)
+  self.assertEqual(m["source_pdf_count_public_catalogue"],52)
+  self.assertEqual(m["original_editorial_cards_count"],164)
   ledger=[]
   for i in range(1,6):
    ledger.extend(json.loads((BASE/"intake"/f"rights-ledger-part-0{i}.json").read_text("utf-8"))["records"])
@@ -50,11 +51,11 @@ class ExtendedMethodsRegression(unittest.TestCase):
   self.assertEqual(book["publisher_license"],"CC BY 3.0 IGO")
   self.assertIn("LINK_ONLY",book["public_distribution"])
   self.assertTrue(book["publisher_download_url"].startswith("https://"))
-  self.assertEqual(len([x for x in ledger if x["rights_review"]=="VERIFIED_PUBLISHER_LICENSE"]),13)
+  self.assertEqual(len([x for x in ledger if x["rights_review"]=="VERIFIED_PUBLISHER_LICENSE"]),18)
  def test_method_cards_are_original_and_science_unapproved(self):
   cat=json.loads((BASE/"catalog.json").read_text("utf-8"))["documents"]
   sub=[x for x in cat if x.get("source_registry_id") in IDS]
-  self.assertEqual(len(cat),133)
+  self.assertEqual(len(cat),164)
   self.assertEqual(len(sub),19)
   for x in sub:
    b=(ROOT/x["path"]).read_bytes()

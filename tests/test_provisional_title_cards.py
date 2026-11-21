@@ -7,10 +7,10 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/"knowledge"/"methodology"
 class ProvisionalTitleTests(unittest.TestCase):
- def test_source_candidates_remain_unverified(self):
+ def test_no_unresolved_source_candidates(self):
   j=json.loads((BASE/"source_registry_catalog.json").read_text(encoding="utf-8"))
   a=[x for x in j["documents"] if x["bibliography_match_status"]=="IDENTITY_UNRESOLVED"]
-  self.assertEqual(len(a),31)
+  self.assertEqual(len(a),0)
   for x in a:
    with self.subTest(x=x["source_id"]):
     self.assertTrue(x["source_metadata_only"])
@@ -23,9 +23,9 @@ class ProvisionalTitleTests(unittest.TestCase):
     self.assertIn("IDENTITY_UNRESOLVED",txt)
  def test_new_editorial_cards_do_not_claim_private_pdf_read(self):
   c=json.loads((BASE/"catalog.json").read_text(encoding="utf-8"))
-  self.assertEqual(len(c["documents"]),133)
+  self.assertEqual(len(c["documents"]),164)
   matched=[x for x in c["documents"] if x.get("source_registry_id")]
-  self.assertEqual(len(matched),45)
+  self.assertEqual(len(matched),76)
   for x in matched:
    raw=(ROOT/x["path"]).read_bytes()
    self.assertEqual(hashlib.sha256(raw).hexdigest(),x["sha256"])

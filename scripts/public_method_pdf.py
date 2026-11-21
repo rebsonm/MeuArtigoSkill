@@ -115,7 +115,10 @@ def _score(question: str, item: dict) -> int:
     # Avoid fetching a loosely related PDF from a single generic word.
     if len(q) > 1 and len(matched) * 5 < len(q) * 3:
         return 0
-    return sum(3 for w in q if w in keys) + sum(2 for w in q if w in title)
+    # Prioritize complete query coverage, not just repeated generic topic terms.
+    # This preserves specific distinctions such as reflexive vs general thematic analysis.
+    return (sum(3 for w in q if w in keys) +
+            sum(2 for w in q if w in title) + 2 * len(matched))
 
 
 def query(question: str, *, ref: str, fetch: Callable = fetch_github,
