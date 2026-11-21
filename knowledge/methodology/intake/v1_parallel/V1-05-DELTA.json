@@ -878,5 +878,27 @@
     "status": "completed",
     "conclusion": "success",
     "scope_limit": "Automação não certifica direitos/originalidade ou fidelidade; requer novo check após commits"
+  },
+  "rights_originality_round_a_request": {
+    "status": "SOLICITACAO_FORMAL_PUBLICADA_SEM_REVISOR_DESIGNADO",
+    "pr_number": 104,
+    "pr_comment_id": 7070769348,
+    "pr_comment_url": "https://github.com/rebsonm/MeuArtigoSkill/pull/104#issuecomment-7070769348",
+    "request_covers_cards": 18,
+    "request_criteria": [
+      "licença e direitos por cópia/edição",
+      "originalidade e similaridade com evidência",
+      "decisão individual e justificativa",
+      "independência e assinatura"
+    ],
+    "reviewer_assigned": false,
+    "reviewer_invitation_sent_to_named_person": false,
+    "independent_reviews_received": 0,
+    "scientific_reviews_received": 0,
+    "accepted_scientifically": false,
+    "accepted_legally": false,
+    "review_request_documented_in_results_commit": "19d8a0e100016fd9b7b8bd53c3f30b149efed514",
+    "next_single_action": "Designar revisor(a) A independente de direitos e originalidade e encaminhar-lhe a solicitação registrada na PR #104",
+    "next_acceptance": "18 pareceres A individuais e assinados com edição/cópia, evidência, decisão e justificativa"
   }
 }
