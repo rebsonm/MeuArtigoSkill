@@ -7,7 +7,7 @@
   "manifest_commit": "7c92045310eb3b1474a9612a777fb0012a511592",
   "manifest_git_blob": "2f85dc6c4283376b9fc3c312668f0a1f25a0a301",
   "snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
-  "status": "AUDITORIA_DOCUMENTAL_REALIZADA_SEM_ACEITE_INDEPENDENTE",
+  "status": "AUDITORIA_DOCUMENTAL_ENTREGUE_GITHUB_MD_CANONICO_BLOQUEADO_POR_CONCORRENCIA",
   "count": 17,
   "sha256_matches": 17,
   "scientific_independent_approved": 0,
@@ -21,7 +21,23 @@
   "pdfs_distributed": 0,
   "primary_sources_consulted": 0,
   "go": false,
-  "md_write_conflict": "abertura abortada em alteração concorrente; registro final será condicionado ao preflight",
+  "md_write_conflict": {
+    "status": "NAO_GRAVADO_POR_CONCORRENCIA",
+    "initial": {
+      "snapshot_bytes": 312644,
+      "snapshot_modified": "2026-11-21T22:18:31.685Z",
+      "preflight_bytes": 314993,
+      "preflight_modified": "2026-11-21T22:19:13.756Z"
+    },
+    "final": {
+      "snapshot_bytes": 318452,
+      "snapshot_modified": "2026-11-21T22:21:38.796Z",
+      "preflight_bytes": 320654,
+      "preflight_modified": "2026-11-21T22:22:19.899Z"
+    },
+    "safe_actions": "abortadas duas escritas; preservar atual arquivo; necessidade de atualização 31.13",
+    "md_canonic_written": false
+  },
   "receipts": [
     {
       "id": "EC-158",
