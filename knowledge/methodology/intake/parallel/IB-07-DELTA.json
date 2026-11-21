@@ -11,7 +11,7 @@
   "rights_approval_for_pdf_publication": false,
   "scientific_card_review_approved": false,
   "global_metadata_mutated": false,
-  "branch_head_after_commit": null,
+  "branch_head_after_commit": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073",
   "records": [
     {
       "batch_id": "IB-07/20",
@@ -30,7 +30,7 @@
       "direitos_observados": "Tradução atribuída a Frederico José Andries Lopes (maio/1997). Licença expressa da tradução e do original não observada.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "a080b83fdd6d5541b9714981c34928de669a26d7db47af316d2760e6c1e50122",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     },
     {
       "batch_id": "IB-07/20",
@@ -49,7 +49,7 @@
       "direitos_observados": "Cópia JSTOR sujeita aos termos do arquivo; © 2004 International Organization Foundation; redistribuição não autorizada.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "abfb4dcaed880dc0424c6afc9ac94442275c44b26673dcc6bb7e7c33d342b682",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     },
     {
       "batch_id": "IB-07/20",
@@ -68,7 +68,7 @@
       "direitos_observados": "Cópia JSTOR sujeita a termos; © autores 2005/Oxford University Press, aviso All rights reserved.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "9610df5a35bfa7cb301e8e8ecbbbfaef2494c35a7c277614df9f60d517d7bdc0",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     },
     {
       "batch_id": "IB-07/20",
@@ -87,7 +87,7 @@
       "direitos_observados": "Cópia JSTOR sujeita a termos; aviso © 1982 University of Texas Press; licença de reprodução não identificada.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "61152b2bca69dfce57925fb6a0307333c12d124d5a2c68f930034078ed0cabff",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     },
     {
       "batch_id": "IB-07/20",
@@ -106,7 +106,7 @@
       "direitos_observados": "Expediente © Springer Science+Business Media New York 2013; licença aberta não vista.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "26d96159ff97f3039e8cbcb2b1722e6391bd1b56e3e3c562739812bbc96805c9",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     },
     {
       "batch_id": "IB-07/20",
@@ -125,7 +125,7 @@
       "direitos_observados": "© 1998 Taylor & Francis Ltd no cabeçalho; sem licença aberta expressa vista.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "e78f28361d1780cd790197164513e0c462b5121f2208039cfbb7f8dd3a2de050",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     },
     {
       "batch_id": "IB-07/20",
@@ -144,7 +144,7 @@
       "direitos_observados": "© The Author(s) 2016; informações Sage de reprints/permissions; não há autorização de redistribuição do PDF.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "586f1971a9d0bec3cd534bf4c15bdd0fe72e8bbf5c0261e45fe9b5793c4fb89c",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     },
     {
       "batch_id": "IB-07/20",
@@ -163,7 +163,7 @@
       "direitos_observados": "Folha inicial declara licença Creative Commons Attribution (CC BY) e © 2018 autores. Verificar versão e materiais terceiros antes de aprovar reutilização.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "5cd9fef5eb205a7bfbbfeda1c7720b6f5c7fb86de118c4fd3347048870d1a434",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     },
     {
       "batch_id": "IB-07/20",
@@ -182,7 +182,7 @@
       "direitos_observados": "Licença expressa para redistribuição não localizada nas páginas examinadas.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "45b618a2f0efee861a127daa36313d7baeff24c7c4deda7639da35f5148a58c4",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     },
     {
       "batch_id": "IB-07/20",
@@ -201,7 +201,7 @@
       "direitos_observados": "Licença de reprodução não observada; acesso ao manuscrito não autoriza redistribuição.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "b28cf8afd9c95f3e3bd7d1cdc967e97b284d98d4c3668ee5b90314d8bdf86448",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     },
     {
       "batch_id": "IB-07/20",
@@ -220,7 +220,7 @@
       "direitos_observados": "Permissão expressa para trechos e links com devida citação; não há licença para redistribuir a íntegra da compilação.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "4a634b926c643287f3cbf66c1348f07735bef623730684cfbceb4359a37d8b8a",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     },
     {
       "batch_id": "IB-07/20",
@@ -239,7 +239,7 @@
       "direitos_observados": "Não localizada autorização de reprodução no documento original.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "dfcd4031ca9e92826a7c89107f565c8441dfe174fe4384618dea48a1a5de8348",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     },
     {
       "batch_id": "IB-07/20",
@@ -258,7 +258,7 @@
       "direitos_observados": "© The Author(s) 2016; instruções Sage de permissões/reprints; sem CC identificada no exemplar.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "6a89456a97d746165f40bbf97c14192959786b67fe5e95a708f75dccec22be8e",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     },
     {
       "batch_id": "IB-07/20",
@@ -277,7 +277,7 @@
       "direitos_observados": "Nenhuma licença aberta expressa foi localizada nas páginas inspecionadas.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "273bacd649daed5b8c55d1d4c98957ffa87fa5aa3a478a1d2a93ecf9a800600b",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     },
     {
       "batch_id": "IB-07/20",
@@ -296,7 +296,7 @@
       "direitos_observados": "Licença aberta não identificada no exemplar.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "922bc215ac4e7e4fb096e56d5676c8c6f204574f0a5b9a7ee364a8c61bc612ed",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     },
     {
       "batch_id": "IB-07/20",
@@ -315,7 +315,7 @@
       "direitos_observados": "Licença aberta expressa não localizada no texto do exemplar. Cópia homônima de mesmo tamanho em Bibliometria; nesta etapa usar só a pasta Jurimetria.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "8ca2b3d2e2b0bed39d9cad0ef08a190772a2309cd7b518eef240ae7914eab083",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     },
     {
       "batch_id": "IB-07/20",
@@ -334,7 +334,10 @@
       "direitos_observados": "Sem licença aberta expressa; nota referencial final omite segundo coautor, embora conste na folha inicial.",
       "estado_de_revisao_cientifica": "PENDENTE; [P] não revisada; [L] não autorizado",
       "novo_hash_da_ficha": "7ee90a10124f3aa021976ee44f9f383cf4688b84aea4a14f8e5edeab51c27e49",
-      "commit_da_branch": null
+      "commit_da_branch": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073"
     }
-  ]
+  ],
+  "cards_commit_sha": "0b16b58c4c9d99c2ab12064baf050ee29f8f7073",
+  "ci_status_at_validation": "NO_CHECKS_REPORTED_NO_PR_WORKFLOW_RUNS_FOR_COMMIT",
+  "local_structural_tests": "10/10 PASS"
 }
