@@ -3,6 +3,26 @@
 
 ## Unreleased
 
+No further post-candidate changes have been recorded.
+
+## 1.0.0-rc.1 — UNRELEASED
+
+**Skill-first release candidate for real-host acceptance.** This entry
+documents a development artifact, not a GitHub release or independent
+scientific validation. Consolidates PRs #95–#98 without changing
+historical beta tags or authorizing a merge, hosted deployment or publication.
+
+- Preview potential consequences of changes to quantitative inference
+  aims and fields on all eight methodological routes, without approving
+  or invalidating scientific decisions.
+- Guide recorded research continuation with one next action, reason,
+  primary blocker and expected exit criterion.
+- Diagnose two demonstrably repeated, unproductive local attempts with
+  receipt and current-file/source checks; exclude periodic work, fresh
+  evidence and unverified histories.
+- Prepare explicit release-candidate version metadata, a test installer
+  and a read-only CI artifact for controlled acceptance.
+
 - Add source- versus package-aware local version diagnostics without claiming
   host installation or publication authentication; expose machine-readable
   initializer project root and optional spreadsheet status.
@@ -15,11 +35,11 @@
 
 - Prepare resumable host-assisted Google Drive project-tree delivery: local manifest, safe next-step recommendation, remote readback reconciliation and incomplete/conflict reporting. Offline synthetic tests are included, but no direct Drive adapter or authenticated end-to-end host test is claimed; published beta.6 assets remain untouched.
 
-No later software release is planned at this time; further changes require a new maintainer decision. The beta.6 item below is a release candidate until an actual tagged GitHub release is published.
+The published beta.6 remains the recommended historical public installer; this candidate is not published.
 
 ## 0.9.0-beta.6 — 2026-10-15
 
-**Last planned experimental beta (pending manual publication).** Consolidates PR #67 (DEC/TRACE continuity, storage-writer authorization, and optional host-tool protocol), PR #68 (read-only conversational research resume), PR #69 (safe blocker guidance), and integrated acceptance in PR #70. The engineering candidate passed 758 regression tests, 11 synthetic end-to-end continuation scenarios, and eight fictional research journeys at commit `200e1d1e`; fresh release-commit audit is required.
+**Published experimental beta on 2026-10-15 (UTC).** Consolidates PR #67 (DEC/TRACE continuity, storage-writer authorization, and optional host-tool protocol), PR #68 (read-only conversational research resume), PR #69 (safe blocker guidance), and integrated acceptance in PR #70. The engineering candidate passed 758 regression tests, 11 synthetic end-to-end continuation scenarios, and eight fictional research journeys at commit `200e1d1e`; fresh release-commit audit is required.
 
 - Protect canonical provenance and scientific decisions across all seven researcher-controlled gates.
 - Report the next recorded research step and blockers without inventing decisions, authorizations, cloud sync, tool access or task execution.
