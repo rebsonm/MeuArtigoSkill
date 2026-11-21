@@ -64,7 +64,8 @@ class SourceRegistryCompletenessTests(unittest.TestCase):
                 text = data.decode("utf-8")
                 self.assertIn("FICHA_DE_PROSPECÇÃO_NÃO_REVISADA", text)
                 self.assertTrue("NÃO é [I] síntese de leitura nem [L]" in text or
-                                "Não representa [I] síntese científica aprovada nem [L]" in text)
+                                "Não representa [I] síntese científica aprovada nem [L]" in text or
+                                "NÃO é [I] síntese científica aprovada nem [L]" in text)
                 self.assertTrue("Não atribuir as propostas acima ao autor" in text or
                                 "Esta orientação é redação editorial original" in text)
                 self.assertNotIn("drive.google.com/drive/", text.lower())
