@@ -18,10 +18,10 @@ class AllFormerlyUnresolvedWorkIdentities(unittest.TestCase):
   self.assertTrue(NEW.issubset(ids))
   by_id={x["source_id"]:x for x in docs}
   self.assertEqual(by_id["SRC-0367"]["public_work_metadata_screen"]["restricted_license_observed"],"CC BY-NC 4.0")
-  self.assertEqual(sum(x["bibliography_match_status"]=="SOURCE_PDF_WORK_VERIFIED" for x in docs),116)
+  self.assertEqual(sum(x["bibliography_match_status"]=="SOURCE_PDF_WORK_VERIFIED" for x in docs),132)
   self.assertEqual(sum(x["bibliography_match_status"]=="IDENTITY_UNRESOLVED" for x in docs),0)
-  self.assertEqual(sum(x["bibliography_match_status"]=="CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED" for x in docs),359)
-  self.assertEqual(self.registry["source_text_read_in_ledger"],118)
+  self.assertEqual(sum(x["bibliography_match_status"]=="CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED" for x in docs),343)
+  self.assertEqual(self.registry["source_text_read_in_ledger"],134)
   for row in docs:
    if row["source_id"] not in NEW: continue
    self.assertTrue(row["source_metadata_only"])
