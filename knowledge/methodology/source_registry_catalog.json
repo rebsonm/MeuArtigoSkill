@@ -1,9 +1,9 @@
 {
   "schema": "MEU_ARTIGO_SOURCE_CARD_INDEX_V1",
-  "version": "pilot-2026-11-21-475-prospects-12-original-pdf-identities",
+  "version": "pilot-2026-11-21-475-prospects-26-original-PDF-identities",
   "source_archive_records": 475,
-  "catalogue_identified_titles": 411,
-  "source_text_read_in_ledger": 15,
+  "catalogue_identified_titles": 425,
+  "source_text_read_in_ledger": 29,
   "third_party_full_text_included": false,
   "source_records_are_evidence": false,
   "retrieval_label": "BIBLIOGRAPHIC_PROSPECTING_ONLY_NOT_ORIGINAL_ARTICLE_READING",
@@ -958,7 +958,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0037.md",
       "source_id": "SRC-0037",
-      "title": "Identificação ainda não verificada — Qualitative research with llm chatbots technological reflexivity for interpretative technology",
+      "title": "Qualitative research with LLM chatbots: Technological reflexivity for interpretative technology",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -976,20 +976,33 @@
         "technology",
         "src-0037"
       ],
-      "sha256": "54edffa586007e0fbc2d3790024919cecd8b86f28cf28ed0c07083c0207f2ccc",
+      "sha256": "a11ce1ef4085376531ef6ab251c7d6cf4259982aa22274146b004f5f675c3601",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Qualitative research with llm chatbots technological reflexivity for interpretative technology",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1177/14687941251390794",
+        "title": "Qualitative research with LLM chatbots: Technological reflexivity for interpretative technology",
+        "authors": "Elida Izani Ibrahim; Andrea Voyer",
+        "year": "online 2025; issue 2026",
+        "public_url": "https://doi.org/10.1177/14687941251390794",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0038.md",
       "source_id": "SRC-0038",
-      "title": "Identificação ainda não verificada — Large language models in qualitative analysis comparing traditional and researcher interpreted",
+      "title": "Large Language Models in Qualitative Analysis: Comparing Traditional and Researcher-Interpreted Approaches",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1009,20 +1022,33 @@
         "interpreted",
         "src-0038"
       ],
-      "sha256": "bec8acef008dcffb4e3ca63da0ba7a82da0fc7112b157f4bab720f1bea505f61",
+      "sha256": "d9ef65b9a6ab9e8f2a2753c42d1f70a8e5c4a95ad1fd373ed95639275695e734",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Large language models in qualitative analysis comparing traditional and researcher interpreted",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1177/16094069261426100",
+        "title": "Large Language Models in Qualitative Analysis: Comparing Traditional and Researcher-Interpreted Approaches",
+        "authors": "Ranjita Misra; Rajashree Dahal; Brenna Kirk; Raihan Khan; Gizem Dogan; Robin Chataut; Prashnna Gyawali",
+        "year": "2026",
+        "public_url": "https://doi.org/10.1177/16094069261426100",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0039.md",
       "source_id": "SRC-0039",
-      "title": "Identificação ainda não verificada — Generative artificial intelligence in qualitative data analysis analyzing or just chatting",
+      "title": "Generative Artificial Intelligence in Qualitative Data Analysis: Analyzing—Or Just Chatting?",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1042,15 +1068,28 @@
         "chatting",
         "src-0039"
       ],
-      "sha256": "404262d0ff5da90ec2a52542bef6e809dff1f2020abcb130c2fca710ba8f3222",
+      "sha256": "4b584f3985ad61638c529b00d5f99a037918aff4532dd33d43de71894ec507b5",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Generative artificial intelligence in qualitative data analysis analyzing or just chatting",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1177/10944281251377154",
+        "title": "Generative Artificial Intelligence in Qualitative Data Analysis: Analyzing—Or Just Chatting?",
+        "authors": "Duc Cuong Nguyen; Catherine Welch",
+        "year": "online 2025; issue 2026",
+        "public_url": "https://doi.org/10.1177/10944281251377154",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0040.md",
@@ -1126,7 +1165,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0042.md",
       "source_id": "SRC-0042",
-      "title": "Identificação ainda não verificada — The feasibility and comparability of using artificial intelligence for qualitative data analysis in",
+      "title": "The Feasibility and Comparability of Using Artificial Intelligence for Qualitative Data Analysis in Equity-Focused Research",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1144,20 +1183,33 @@
         "analysis",
         "src-0042"
       ],
-      "sha256": "0603bcca5d0c6ada831d4c3ed8fd0bf15e2f973a2fdc726a347897b0774edde6",
+      "sha256": "3e888de189c8810e2ca71805317bb27f5f3e40082194a15726b867c61ec7d1c2",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "The feasibility and comparability of using artificial intelligence for qualitative data analysis in",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.3102/0013189X251314821",
+        "title": "The Feasibility and Comparability of Using Artificial Intelligence for Qualitative Data Analysis in Equity-Focused Research",
+        "authors": "Yan Jiang; Lillie Ko-Wong; Ivan Valdovinos Gutierrez",
+        "year": "2025",
+        "public_url": "https://doi.org/10.3102/0013189X251314821",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0043.md",
       "source_id": "SRC-0043",
-      "title": "Identificação ainda não verificada — Reflecting on llm support in reflexive thematic analysis an exploratory study",
+      "title": "Reflecting on LLM Support in Reflexive Thematic Analysis: An Exploratory Study",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1175,15 +1227,28 @@
         "study",
         "src-0043"
       ],
-      "sha256": "0f46adb095efc3e96f1c3c3a34fe862f169a36ef62bbb0327a728c96e10fd355",
+      "sha256": "97a13e91e8ccb20d87bf5ced552f40d5111b155d8254c0d6b7d5ae9236c570cd",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Reflecting on llm support in reflexive thematic analysis an exploratory study",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1177/10497323251365211",
+        "title": "Reflecting on LLM Support in Reflexive Thematic Analysis: An Exploratory Study",
+        "authors": "Magnhild Vikan; Ramtin Aryan; Mari Serine Kannelønning; Michael Alexander Riegler; Stein Ove Danielsen",
+        "year": "online 2025; issue 2026",
+        "public_url": "https://doi.org/10.1177/10497323251365211",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0044.md",
@@ -1220,7 +1285,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0045.md",
       "source_id": "SRC-0045",
-      "title": "Identificação ainda não verificada — Ai as a co researcher in the qualitative research workflow transforming human ai collaboration",
+      "title": "AI as a Co-researcher in the Qualitative Research Workflow: Transforming Human-AI Collaboration",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1237,15 +1302,28 @@
         "collaboration",
         "src-0045"
       ],
-      "sha256": "fc12ebdff3077c52cd9c841533ef0d1b77791fd1fac54d857cb42d4a9cd28b23",
+      "sha256": "4b7f86d9ff65a5b629a25d8cf55ee37fe3d2180a36d6279aff1a438383f17a44",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
-      "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
-      "has_original_public_pdf": false,
-      "public_pdf_path": null,
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
+      "rights_review": "VERIFIED_PUBLISHER_LICENSE",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "has_original_public_pdf": true,
+      "public_pdf_path": "knowledge/methodology/pdfs/costa-bryda-christou-kasperiuniene-2025-ai-coresearcher.pdf",
       "title_candidate_from_filename": "Ai as a co researcher in the qualitative research workflow transforming human ai collaboration",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1177/16094069251383739",
+        "title": "AI as a Co-researcher in the Qualitative Research Workflow: Transforming Human-AI Collaboration",
+        "authors": "António Pedro Costa; Grzegorz Bryda; Prokopis A. Christou; Judita Kasperiuniene",
+        "year": "2025",
+        "public_url": "https://doi.org/10.1177/16094069251383739",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": true,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0046.md",
@@ -1317,7 +1395,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0048.md",
       "source_id": "SRC-0048",
-      "title": "Identificação ainda não verificada — Chatgpt in thematic analysis can ai become a research assistant in qualitative research",
+      "title": "ChatGPT in thematic analysis: Can AI become a research assistant in qualitative research?",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1335,15 +1413,28 @@
         "qualitative",
         "src-0048"
       ],
-      "sha256": "0fb840c39c8a6dd3401befee41da046329252f7875fb15f37229034b2ad97044",
+      "sha256": "f81b82c96bdadddbeb4b8c7820d1a2538efc5368461b8597a00eb6864ac8397d",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
-      "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
-      "has_original_public_pdf": false,
-      "public_pdf_path": null,
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
+      "rights_review": "VERIFIED_PUBLISHER_LICENSE",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "has_original_public_pdf": true,
+      "public_pdf_path": "knowledge/methodology/pdfs/nguyen-trung-2025-guided-ai-thematic-analysis.pdf",
       "title_candidate_from_filename": "Chatgpt in thematic analysis can ai become a research assistant in qualitative research",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1007/s11135-025-02165-z",
+        "title": "ChatGPT in thematic analysis: Can AI become a research assistant in qualitative research?",
+        "authors": "Kien Nguyen-Trung",
+        "year": "2025",
+        "public_url": "https://doi.org/10.1007/s11135-025-02165-z",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": true,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0049.md",
@@ -1471,7 +1562,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0052.md",
       "source_id": "SRC-0052",
-      "title": "Identificação ainda não verificada — Comparative reflections on human driven and generative artificial intelligence assisted thematic",
+      "title": "Comparative Reflections on Human-Driven and Generative Artificial Intelligence-Assisted Thematic Analysis: A Collaborative Autoethnography",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1491,15 +1582,28 @@
         "thematic",
         "src-0052"
       ],
-      "sha256": "67c57067bf3b9360bc9a8a8b7ccb542afc4d742831967ae059438d94ffe49d85",
+      "sha256": "2e165672034123421c7f9b4f3abaf7c742fed969d168ed7be43af377b34702a3",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Comparative reflections on human driven and generative artificial intelligence assisted thematic",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1177/16094069251337870",
+        "title": "Comparative Reflections on Human-Driven and Generative Artificial Intelligence-Assisted Thematic Analysis: A Collaborative Autoethnography",
+        "authors": "Anas Al-Fattal; Jasvir Singh",
+        "year": "2025",
+        "public_url": "https://doi.org/10.1177/16094069251337870",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0053.md",
@@ -1689,7 +1793,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0058.md",
       "source_id": "SRC-0058",
-      "title": "Identificação ainda não verificada — Artificial intelligence in qualitative research insights from experts via reflexive thematic",
+      "title": "Artificial Intelligence in Qualitative Research: Insights From Experts via Reflexive Thematic Analysis",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1706,20 +1810,33 @@
         "thematic",
         "src-0058"
       ],
-      "sha256": "ee762f119b0e76ceda0242541b1f9b1241569dd117bffc5ec17e98636663c462",
+      "sha256": "182db09822873e197e1a519fea79b404981aa04e04322de0f6b46d2ec3f1a49a",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Artificial intelligence in qualitative research insights from experts via reflexive thematic",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1177/10497323251389800",
+        "title": "Artificial Intelligence in Qualitative Research: Insights From Experts via Reflexive Thematic Analysis",
+        "authors": "Federica Dellafiore; Andreina Saba; Concetta Collaro; Giovanna Artioli",
+        "year": "online 2025; issue 2026",
+        "public_url": "https://doi.org/10.1177/10497323251389800",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0059.md",
       "source_id": "SRC-0059",
-      "title": "Identificação ainda não verificada — Generative ai in qualitative research and related transparency problems a novel heuristic for disclosing",
+      "title": "Generative AI in Qualitative Research and Related Transparency Problems: A Novel Heuristic for Disclosing Uses of AI",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1738,20 +1855,33 @@
         "disclosing",
         "src-0059"
       ],
-      "sha256": "58f7bb746a4827d73d372fba49de97e3df15099b423c646dd8b6a854fa7121ef",
+      "sha256": "7b8d3d9e3cdbaab63dcf3abd9286e1ae94bd59e84b4a2d94315107a3a29f22a1",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Generative ai in qualitative research and related transparency problems a novel heuristic for disclosing",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1177/16094069251404329",
+        "title": "Generative AI in Qualitative Research and Related Transparency Problems: A Novel Heuristic for Disclosing Uses of AI",
+        "authors": "Kyle M. L. Jones",
+        "year": "2025",
+        "public_url": "https://doi.org/10.1177/16094069251404329",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0060.md",
       "source_id": "SRC-0060",
-      "title": "Identificação ainda não verificada — Navigating the meta crisis of generativity adapting qualitative research quality criteria in the era of generative ai",
+      "title": "Navigating the meta-crisis of generativity: adapting qualitative research quality criteria in the era of generative AI",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1771,20 +1901,33 @@
         "generative",
         "src-0060"
       ],
-      "sha256": "706dd1fc2e3e1319044345cc5749e3b45bf15c3b2fb0d63b85a10e76c0f90546",
+      "sha256": "d4f5305053d1cef3962c61198fb8c3eb0305a8587657d54c9de7dc4f358fa9d1",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
-      "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
-      "has_original_public_pdf": false,
-      "public_pdf_path": null,
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
+      "rights_review": "VERIFIED_PUBLISHER_LICENSE",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "has_original_public_pdf": true,
+      "public_pdf_path": "knowledge/methodology/pdfs/dahal-et-al-2025-metacrisis-generativity.pdf",
       "title_candidate_from_filename": "Navigating the meta crisis of generativity adapting qualitative research quality criteria in the era of generative ai",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.3389/frma.2025.1685968",
+        "title": "Navigating the meta-crisis of generativity: adapting qualitative research quality criteria in the era of generative AI",
+        "authors": "Niroj Dahal; Md. Kamrul Hasan; Amine Ounissi; Md. Nurul Haque; Hiralal Kapar",
+        "year": "2025",
+        "public_url": "https://doi.org/10.3389/frma.2025.1685968",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": true,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0061.md",
       "source_id": "SRC-0061",
-      "title": "Identificação ainda não verificada — Frankenstein thematic analysis and generative artificial intelligence quality appraisal methods and considerations for qualitative resea",
+      "title": "Frankenstein, thematic analysis and generative artificial intelligence: Quality appraisal methods and considerations for qualitative research",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1805,20 +1948,33 @@
         "qualitative",
         "src-0061"
       ],
-      "sha256": "b4abd87f616042f0e01ac6fed505be7b75ebca586ad28e8ca7e32556f76dbcf9",
+      "sha256": "5b9e8166423a48d3d32f9ea68f3e69f14457eee1167b048bf35d4d911c48d622",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
-      "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
-      "has_original_public_pdf": false,
-      "public_pdf_path": null,
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
+      "rights_review": "VERIFIED_PUBLISHER_LICENSE",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "has_original_public_pdf": true,
+      "public_pdf_path": "knowledge/methodology/pdfs/jowsey-et-al-2025-frankenstein-thematic-appraisal.pdf",
       "title_candidate_from_filename": "Frankenstein thematic analysis and generative artificial intelligence quality appraisal methods and considerations for qualitative research",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1371/journal.pone.0330217",
+        "title": "Frankenstein, thematic analysis and generative artificial intelligence: Quality appraisal methods and considerations for qualitative research",
+        "authors": "Tanisha Jowsey; Peta Stapleton; Shawna Campbell; Alexandra Davidson; Cher McGillivray; Isabella Maugeri; Megan Lee; Justin Keogh",
+        "year": "2025",
+        "public_url": "https://doi.org/10.1371/journal.pone.0330217",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": true,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0062.md",
       "source_id": "SRC-0062",
-      "title": "Identificação ainda não verificada — Large Language Models for Thematic Summarization in Qualitative Health Care Research",
+      "title": "Large Language Models for Thematic Summarization in Qualitative Health Care Research: Comparative Analysis of Model and Human Performance",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1837,15 +1993,28 @@
         "care",
         "src-0062"
       ],
-      "sha256": "007c8eb371a5661a4fbcd5b503c92663b58fe817b96ef445e1191d5931c3fc37",
+      "sha256": "59b88367b11cb712762f9dbe65b9425726ffee5d5efb5d31dfb4ea4618caaa8b",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
-      "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
-      "has_original_public_pdf": false,
-      "public_pdf_path": null,
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
+      "rights_review": "VERIFIED_PUBLISHER_LICENSE",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "has_original_public_pdf": true,
+      "public_pdf_path": "knowledge/methodology/pdfs/castellanos-et-al-2025-llm-thematic-summarization.pdf",
       "title_candidate_from_filename": "Large Language Models for Thematic Summarization in Qualitative Health Care Research",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.2196/64447",
+        "title": "Large Language Models for Thematic Summarization in Qualitative Health Care Research: Comparative Analysis of Model and Human Performance",
+        "authors": "Arturo Castellanos; Haoqiang Jiang; Paulo Gomes; Debra Vander Meer; Alfred Castillo",
+        "year": "2025",
+        "public_url": "https://doi.org/10.2196/64447",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": true,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0063.md",
@@ -1893,7 +2062,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0064.md",
       "source_id": "SRC-0064",
-      "title": "Identificação ainda não verificada — Interviewing ai using qualitative methods to explore and capture machines characteristics and behaviors",
+      "title": "Interviewing AI: Using qualitative methods to explore and capture machines’ characteristics and behaviors",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1913,15 +2082,28 @@
         "behaviors",
         "src-0064"
       ],
-      "sha256": "f5ddf212159025fca06891225937df8e0c89826317a1ec7ecde56bb6985cb94c",
+      "sha256": "fe81f10ee2eca92685fbd3db484315dfba53b00bd30e7f81733554b127cfcf68",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Interviewing ai using qualitative methods to explore and capture machines characteristics and behaviors",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1177/20539517251381697",
+        "title": "Interviewing AI: Using qualitative methods to explore and capture machines’ characteristics and behaviors",
+        "authors": "Mohammad Hossein Jarrahi",
+        "year": "2025",
+        "public_url": "https://doi.org/10.1177/20539517251381697",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0065.md",
@@ -12550,8 +12732,8 @@
     }
   ],
   "provisional_filename_title_cards": 71,
-  "identities_still_unresolved": 64,
+  "identities_still_unresolved": 50,
   "public_bibliographic_work_checks": 12,
   "provisional_matches": 399,
-  "confirmed_pdf_work_identities": 12
+  "confirmed_pdf_work_identities": 26
 }
