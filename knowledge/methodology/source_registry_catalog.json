@@ -1,9 +1,9 @@
 {
   "schema": "MEU_ARTIGO_SOURCE_CARD_INDEX_V1",
-  "version": "pilot-2026-11-21-475-leads-3-verified-source-rights",
+  "version": "pilot-2026-11-21-475-leads-3-verified-public-sources",
   "source_archive_records": 475,
   "catalogue_identified_titles": 404,
-  "source_text_read_in_ledger": 2,
+  "source_text_read_in_ledger": 3,
   "third_party_full_text_included": false,
   "source_records_are_evidence": false,
   "retrieval_label": "BIBLIOGRAPHIC_PROSPECTING_ONLY_NOT_ORIGINAL_ARTICLE_READING",
