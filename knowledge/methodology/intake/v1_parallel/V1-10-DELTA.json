@@ -10,7 +10,7 @@
   },
   "cards_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
   "dependencies": [],
-  "status": "AUDITORIA_DOCUMENTAL_ENTREGUE_REVISAO_INDEPENDENTE_PENDENTE",
+  "status": "AUDITORIA_ENTREGUE_COM_BLOQUEIO_DE_SINCRONIZACAO_DRIVE",
   "acceptance": {
     "all_17_assigned_cards_read": true,
     "all_17_sha256_match": true,
@@ -460,7 +460,8 @@
     "Identidade, data, qualificação e decisão de revisores independentes indisponíveis",
     "Licença exata por cópia/edição dos PDFs não comprovada para liberação pública",
     "EC-116: versões e direitos no Zenodo pendentes",
-    "EC-117, EC-120, EC-123: conferir diferença entre data online e fascículo impresso"
+    "EC-117, EC-120, EC-123: conferir diferença entre data online e fascículo impresso",
+    "P0 operacional: conflito de gravação do MD canônico; atualização de conclusão da 31.10 não foi confirmada, não sobrepor alterações alheias."
   ],
   "forbidden_actions_not_performed": [
     "merge",
@@ -471,5 +472,16 @@
     "publicação de PDF",
     "alteração de catalog.json/registry/rights-ledgers",
     "outras etapas"
-  ]
+  ],
+  "drive_canonical_sync": {
+    "file_id": "1-dccVbAUX5-xLw6fq027cB15oVqOjl_U",
+    "initial_update_saved_and_readback_verified": true,
+    "intermediate_update_write_acknowledged": true,
+    "intermediate_readback_confirmed": false,
+    "last_remote_sha256_observed": "21fbeb03cb67e811489f4242d5c761178551512b5f4bf73c48a0ed6cd8e35080",
+    "attempted_intermediate_sha256": "0f0c920e17d637bbca0caa7c1aa37e8ad23d890d9e9254f055fdc6710b6b5c30",
+    "concurrent_overwrite_or_race_suspected": true,
+    "subsection_31_10_completion_saved": false,
+    "raw_markdown_further_writes_aborted": true
+  }
 }
