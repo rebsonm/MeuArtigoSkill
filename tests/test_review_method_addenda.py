@@ -56,12 +56,12 @@ class ReviewMethodAddendaTests(unittest.TestCase):
         body = (ROOT/"references/PRISMA-2020-CONTROLE.md").read_text("utf-8")
         items = [int(x) for x in re.findall(r"(?m)^\| (\d{1,2}) \|", body)]
         self.assertEqual(items, list(range(1, 28)))
-        self.assertIn("não é método de revisão", body.lower())
+        self.assertIn("not a review method", body.lower())
         for name in ("PRISMA-S", "PRISMA-ScR", "PRISMA-P", "B-SLR"):
             self.assertIn(name, body)
         self.assertIn("https://www.prisma-statement.org/prisma-2020-checklist", body)
-        self.assertIn("não aferido", body)
-        self.assertIn("estudos incluídos", body.lower())
+        self.assertIn("not measured", body)
+        self.assertIn("studies included", body.lower())
 
     def test_offline_guides_in_zip_and_no_private_collection_public_prose(self):
         package = {p.relative_to(ROOT).as_posix() for p in list_sources(ROOT)}
