@@ -106,10 +106,10 @@
   "tests": {
     "unique_source_ids": true,
     "source_hashes_64_hex": true,
-    "readback": "PASS_PRIOR_DELTA; NEW_DELTA_PENDING_POST_COMMIT",
+    "readback": "PASS_PREVIOUS_DELTA_POSTCOMMIT; THIS_CHANGE_PENDING_POSTCOMMIT",
     "ci": "NOT_EXECUTED",
     "real_host": "NOT_EXECUTED",
-    "github_receipt_readback": "PASS_RESULTS_BLOB_1cb68648a77b5f5746d9f83b8a5aaa320461754b_BEFORE_THIS_DELTA_WRITE"
+    "github_receipt_readback": "PASS_RESULTS_BLOB_a613f6309ab7e93d73f3220be825721d474849f5_BEFORE_THIS_DELTA_WRITE"
   },
   "next_step": "V1-16 conditioned on audited V1-01..V1-15, no global update now",
   "restrictions": [
@@ -189,7 +189,7 @@
     "next_action": "RECONCILE_ONLY_31_03_IN_EXCLUSIVE_SAFE_WINDOW_WITH_READBACK"
   },
   "canonical_reconciliation": {
-    "status": "PATCH_PREPARED_NOT_APPLIED_ALL_ATTEMPTS_SAFELY_ABORTED",
+    "status": "PATCH_PREPARED_NOT_APPLIED_EDITOR_UNAVAILABLE",
     "note": "Raw Google Drive text/markdown replacement lacks an exposed conditional revision/ETag guard. Simultaneous editors may overwrite each other; do not replace full bytes without demonstrated exclusive write window or safe revision guard.",
     "target_section": "31.03",
     "patch_only_in": "knowledge/methodology/intake/v1_parallel/V1-03-RESULTS.md",
@@ -198,7 +198,7 @@
     "current_canonical_body_still_stale": true,
     "comment_thread_updated_prior_turn": true,
     "acceptance": "Write only 31.03 with revision-safe or exclusive operation; read back; verify all other section bytes unchanged; no presumed scientific/legal/security approvals.",
-    "next_single_action": "ESTABLISH_PROVABLE_EXCLUSIVE_OR_CONDITIONAL_WRITE_FOR_SAME_RAW_MARKDOWN_THEN_APPLY_31_03_AND_VERIFY",
+    "next_single_action": "EDIT_ONLY_SECTION_31_03_WITH_FUNCTIONAL_SCOPED_EDITOR_AND_VERIFIED_EXCLUSIVITY",
     "native_docs_api_attempt": {
       "date": "2026-11-21",
       "precheck": "SEVEN_UNIQUE_TEXT_REPLACEMENTS_IN_31_03_CHECKED_WITH_GOOGLE_DOCS_REVISION_ID",
@@ -210,8 +210,8 @@
       "consequence": "NO_CANONICAL_BODY_MUTATION",
       "safe_next_step": "EXCLUSIVE_WINDOW_FOR_RAW_MARKDOWN_OR_PROVIDER_SUPPORTED_CONDITIONAL_UPLOAD; NEVER_UNGUARDED_OVERWRITE"
     },
-    "latest_receipt_commit": "bf716d653005ec82b92a6cd028563b8dad6e5ede",
-    "latest_receipt_blob": "1cb68648a77b5f5746d9f83b8a5aaa320461754b",
+    "latest_receipt_commit": "74d0e64a0676eef923957044ce5a32de8898494f",
+    "latest_receipt_blob": "a613f6309ab7e93d73f3220be825721d474849f5",
     "web_gui_attempt": {
       "date": "2026-11-21",
       "url_kind": "ORIGINAL_DRIVE_MARKDOWN_FILE",
@@ -223,6 +223,18 @@
       "format": "text/markdown",
       "results_commit": "bf716d653005ec82b92a6cd028563b8dad6e5ede",
       "results_blob": "1cb68648a77b5f5746d9f83b8a5aaa320461754b"
+    },
+    "attempt_with_browser_blocked": {
+      "date": "2026-11-21",
+      "intent": "USER_AUTHORIZED_EXCLUSIVE_WINDOW_AND_SCOPED_31_03_EDIT",
+      "reason": "SIGNED_IN_BROWSER_AUTOMATION_UNAVAILABLE_DUE_TO_PROVIDER_CREDIT_LIMIT_BEFORE_RUN_START",
+      "change_attempted": false,
+      "raw_file_replaced": false,
+      "other_sessions_suspended_by_this_tab": false,
+      "current_canonical_section_31_03": "STALE_UNMODIFIED",
+      "next_single_action": "USE_OPERATIONAL_SCOPED_EDITOR_WITH_CONFIRMED_EXCLUSIVE_WINDOW_THEN_APPLY_EXISTING_31_03_PATCH_AND_VERIFY",
+      "results_commit": "74d0e64a0676eef923957044ce5a32de8898494f",
+      "results_blob": "a613f6309ab7e93d73f3220be825721d474849f5"
     }
   }
 }
