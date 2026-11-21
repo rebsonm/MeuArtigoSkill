@@ -203,8 +203,8 @@ def main() -> int:
             "ba7816bf8f01cfea414140de5dae2223"
             "b00361a396177a9cb410ff61f20015ad"
         )
-        assert unicode_relation("a\\u0301", "\\u00e1") == "CANONICAL_UNICODE_EQUIVALENT_NOT_PHYSICAL_PATH_PROOF"
-        assert unicode_relation("\\uff21", "A") == "COMPATIBILITY_UNICODE_EQUIVALENT_NOT_PHYSICAL_PATH_PROOF"
+        assert unicode_relation("á", "á") == "CANONICAL_UNICODE_EQUIVALENT_NOT_PHYSICAL_PATH_PROOF"
+        assert unicode_relation("Ａ", "A") == "COMPATIBILITY_UNICODE_EQUIVALENT_NOT_PHYSICAL_PATH_PROOF"
         assert unicode_relation("TÃ­tulo", "Título") == "DIFFERENT_STRING_NO_AUTO_EQUIVALENCE"
         assert unicode_relation("caminho", "caminho") == "EXACT_STRING"
         print("SELF_TEST_OK: SHA-256 e relações Unicode, sem equivalência automática de pasta")
