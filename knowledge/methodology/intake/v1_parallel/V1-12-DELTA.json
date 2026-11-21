@@ -671,6 +671,22 @@
       "Teste estático por padrões não certifica resistência a prompt injection",
       "Revisão de originalidade/plágio e validação científica dependem de revisão independente",
       "Fontes públicas não transferem licenças automaticamente às cópias"
-    ]
+    ],
+    "pr_url": "https://github.com/rebsonm/MeuArtigoSkill/pull/109",
+    "pr_number": 109,
+    "pr_draft": true,
+    "pre_adendo_commits": [
+      "7b709b0d8d0ada56bb5e462d5b7f47587b835d7b",
+      "52378da37cc11a2c48f31e0388d976fa77a58a07",
+      "4056d25775f8ed00eb1037b4c5b0e15b6d914d75",
+      "eb4be0eb7b6007b4df47623e80b3f4499ea866a6"
+    ],
+    "status_checks_observed": 0,
+    "workflow_observed": {
+      "id": 44961064606,
+      "status": "in_progress",
+      "conclusion": null
+    },
+    "host_tests_observed": "NOT_EXECUTED"
   }
 }
