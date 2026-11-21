@@ -377,5 +377,29 @@
     "publicar PDF protegido"
   ],
   "scientific_approval": false,
-  "release_approval": false
+  "release_approval": false,
+  "commits_known_at_last_report": [
+    {
+      "kind": "RESULTS_CREATED",
+      "sha": "56c5332dc66f29a96848e0ddbd70e9d3e3379819"
+    },
+    {
+      "kind": "DELTA_CREATED",
+      "sha": "626750cacc1fe4f6c4efa71b48ae1abbcb8d2610"
+    },
+    {
+      "kind": "RESULTS_VERIFICATION_APPEND",
+      "sha": "fa961522b8ff25e091005336b10521c53976fd62"
+    }
+  ],
+  "ci_checks_reported": 0,
+  "ci_passed": false,
+  "tests_executed": [
+    "SHA-256 manifesto vs 18 cards",
+    "Conferência do escopo de diff",
+    "Readback GitHub RESULTS e DELTA",
+    "Verificação da ausência de aprovação científica independente"
+  ],
+  "md_drive_write_attempted": false,
+  "md_drive_write_aborted_at_preflight": true
 }
