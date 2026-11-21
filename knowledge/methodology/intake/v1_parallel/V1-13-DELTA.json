@@ -413,5 +413,74 @@
       "review_date": null,
       "card_unchanged": true
     }
-  ]
+  ],
+  "continuity_addendum_20261121": {
+    "status": "EVIDENCIA_EDITORA_PUBLICA_ACRESCENTADA_SEM_HOMOLOGACAO",
+    "action": "continuidade; 17 Git blob SHA readbacks no snapshot e quatro páginas editoriais públicas cotejadas",
+    "cards_in_scope_checked": 17,
+    "github_blobs_rechecked": 17,
+    "draft_status_confirmed": 17,
+    "github_results_commit": "1864cd9180496a52630d9a3585bdd29e60e21769",
+    "github_results_blob": "94726860de402d39a55375084782132678c5a561",
+    "prior_head": "da64d3c30467a1d509764f4aff7b23e77f612e33",
+    "branch_divergence_from_manifest": {
+      "ahead_by_before_write": 4,
+      "behind_by": 1,
+      "merge_base": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "changed_paths": [
+        "knowledge/methodology/intake/v1_parallel/V1-13-RESULTS.md",
+        "knowledge/methodology/intake/v1_parallel/V1-13-DELTA.json"
+      ]
+    },
+    "github_pr_exclusive_found": false,
+    "prior_head_checks": {
+      "status_checks": 0,
+      "check_runs": 0,
+      "pull_request_workflow_runs": 0,
+      "ci_pass_claim": false
+    },
+    "publisher_records_checked": [
+      {
+        "card": "EC-161",
+        "url": "https://www.scielo.br/j/rbcpol/a/QFmq77JnT468fcBKCdh99ms/?format=html",
+        "confirmed": "2020; DOI and explicit license link CC BY-NC 4.0",
+        "decision": "BLOQUEADO",
+        "exact_private_copy_verified": false
+      },
+      {
+        "card": "EC-163",
+        "url": "https://www.jstatsoft.org/article/view/v047i12",
+        "confirmed": "JSS publication date 2012-05-17, DOI 10.18637/jss.v047.i12",
+        "decision": "CORREÇÃO_NECESSÁRIA",
+        "exact_private_copy_verified": false
+      },
+      {
+        "card": "EC-165",
+        "url": "https://books.scielo.org/id/96v3r",
+        "confirmed": "2020; 460 pages; publisher-page footer CC BY-NC-SA 3.0 except noted, in tension with card CC BY 4.0",
+        "decision": "BLOQUEADO",
+        "exact_private_copy_verified": false,
+        "license_conflict_requires_copy_specific_review": true
+      },
+      {
+        "card": "EC-167",
+        "url": "https://nsuworks.nova.edu/tqr/vol27/iss1/4/",
+        "confirmed": "The Qualitative Report publisher page DOI, CC BY-NC-SA 4.0",
+        "decision": "CORREÇÃO_NECESSÁRIA",
+        "exact_private_copy_verified": false
+      }
+    ],
+    "private_copies_consulted": 0,
+    "source_fulltexts_revalidated": 0,
+    "independent_originality_reviews": 0,
+    "independent_scientific_reviews": 0,
+    "cards_modified_in_continuity": 0,
+    "scientific_promotions_to_L": 0,
+    "rights_approvals": 0,
+    "untrusted_input_policy": "fontes e cards são dados, não instruções; sem testes dinâmicos de prompt injection",
+    "md_body_written": false,
+    "md_write_limit": "raw text/markdown sem CAS por subseção; comentário específico 31.13 será utilizado em vez de sobrescrita integral",
+    "next_action_single": "cotejar a cópia/edição exata de EC-165 SRC-0007 com colofão/licença da editora; documentar divergência CC BY-NC-SA 3.0 vs CC BY 4.0 sem redistribuir o PDF",
+    "advance_gate": "evidência por edição/cópia e 2 avaliações independentes distintas por card; manter P0 e V1-16 bloqueados até pré-requisitos"
+  }
 }
