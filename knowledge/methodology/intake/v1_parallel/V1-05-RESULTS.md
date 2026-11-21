@@ -40,6 +40,11 @@ Critério transversal: **CORREÇÃO NECESSÁRIA** = falta de avaliação indepen
 | EC-035 | `thiem-2017-qca.md` | Validar distinções necessidade/suficiência, calibração e contraexemplos contra Thiem (2017) e sua edição. | CORREÇÃO NECESSÁRIA |
 | EC-036 | `couto-albala-2022-public-policy-qca.md` | DOI pendente; direitos explícitos; Confirmar identificação e edição do capítulo Couto/Albala; ResearchGate não é licença e DOI não consta confirmado. Não publicar PDF. | CORREÇÃO NECESSÁRIA |
 
+## Testes, CI e readback
+- Controle de integridade: SHA-256 dos 18 cards conferidos (18/18 MATCH) e verificação de leitura dos dois recibos no GitHub.
+- Comparação com manifesto-base: 3 commits à frente, 0 atrás, somente RESULTS.md e DELTA.json alterados.
+- Commit verificado 063c3221522c1ae65cbfaa4f6e307eeca43e1fdb: 0 status checks combinados e 0 workflow runs do tipo PR consultados. CI automatizada NÃO COMPROVADA para o lote; não alegar verde.
+
 ## O que ficou em execução e limitações
 - A revisão de conteúdo aqui foi de primeira triagem documental. Não se comprovou que fonte primária, versão ou página respaldam individualmente os enunciados dos 18 cards.
 - Não foram colhidas assinaturas nem atribuídos nomes de revisores. A qualidade editorial e a originalidade frente aos textos originais não estão comprovadas; permanecem sujeitas a dois controles independentes previstos no CARD-POLICY.md.
