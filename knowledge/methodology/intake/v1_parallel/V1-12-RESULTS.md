@@ -109,3 +109,11 @@
 - **PRÓXIMA AÇÃO ÚNICA:** realizar cotejo autenticado de edição/cópia e direitos da EC-154 com o capítulo institucional identificado, por pessoa autorizada, e documentar passagens/versão ou justificar bloqueio definitivo.
 - **CRITÉRIO:** título/autoria/ano/edição/cópia exata comprovados por evidência audível, licença separada por cópia, trechos locáveis e duas revisões independentes documentadas antes de aprovar o card; V1-16 segue condicionado à onda A inteira.
 - **MD canônico:** o corpo da seção 31.12 permanece desatualizado por não haver operação transacional para Markdown bruto e abas concorrentes; adendo feito por comentário no MESMO arquivo, não texto substituído. Sem merge, tag, release, MCP ou publicação protegida.
+
+### Vinculação da PR Draft e conferência de CI — 21/11/2026
+
+- **PR própria:** [#109](https://github.com/rebsonm/MeuArtigoSkill/pull/109), `DRAFT` e `OPEN`, base `plan/v1-methodology-20-stages-20261121`, HEAD antes deste adendo `4056d25775f8ed00eb1037b4c5b0e15b6d914d75`, sem merge; comparação confirmou **somente os dois recibos V1-12**.
+- **Commits desta continuidade, anteriores a este adendo:** [RESULTS](https://github.com/rebsonm/MeuArtigoSkill/commit/7b709b0d8d0ada56bb5e462d5b7f47587b835d7b), [DELTA](https://github.com/rebsonm/MeuArtigoSkill/commit/52378da37cc11a2c48f31e0388d976fa77a58a07), [correção do teste SHA-256](https://github.com/rebsonm/MeuArtigoSkill/commit/4056d25775f8ed00eb1037b4c5b0e15b6d914d75).
+- **Testes:** `RESULTS.md` relido, `DELTA.json` parseado com 17 recibos individuais e links públicos por card, hashes verificáveis; status checks retornados = 0 no HEAD consultado, e **1 workflow em execução, sem conclusão**. Isto NÃO é CI verde nem teste de host, e os recibos não homologam segurança.
+- **Sem direitos presumidos:** CC de EC-143/148 corroborada no artigo público, não licença concluída para byte da cópia Drive. EC-154 bloqueado, revisão independente 0/17.
+- **MD:** comentário localizado no mesmo arquivo canônico, corpo Markdown não atualizado por risco de concorrência.
