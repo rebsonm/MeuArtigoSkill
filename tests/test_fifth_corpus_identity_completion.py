@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/"knowledge"/"methodology"
 NEW={f"SRC-{n}" for n in ("0006","0011","0036","0040","0132","0154","0158","0181","0182","0184","0199","0205","0206","0239","0240","0242","0259","0267","0268","0270","0273","0274","0298","0310","0337","0353","0358","0367","0397","0401","0410")}
-LICENSED={f"SRC-{n}" for n in ("0132","0184","0240","0367","0397")}
+LICENSED={f"SRC-{n}" for n in ("0132","0184","0240","0397")}
 class AllFormerlyUnresolvedWorkIdentities(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
@@ -16,6 +16,8 @@ class AllFormerlyUnresolvedWorkIdentities(unittest.TestCase):
   docs=self.registry["documents"]; ids={d["source_id"] for d in docs}
   self.assertEqual(len(docs),475)
   self.assertTrue(NEW.issubset(ids))
+  by_id={x["source_id"]:x for x in docs}
+  self.assertEqual(by_id["SRC-0367"]["public_work_metadata_screen"]["restricted_license_observed"],"CC BY-NC 4.0")
   self.assertEqual(sum(x["bibliography_match_status"]=="SOURCE_PDF_WORK_VERIFIED" for x in docs),76)
   self.assertEqual(sum(x["bibliography_match_status"]=="IDENTITY_UNRESOLVED" for x in docs),0)
   self.assertEqual(sum(x["bibliography_match_status"]=="CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED" for x in docs),399)
@@ -40,10 +42,10 @@ class AllFormerlyUnresolvedWorkIdentities(unittest.TestCase):
    self.assertEqual(hashlib.sha256(raw).hexdigest(),row["sha256"])
    self.assertIn("REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE",raw.decode("utf-8"))
  def test_five_exact_redistributable_pdfs_and_binary_copyright_isolation(self):
-  self.assertEqual(len(self.pdfs),52)
+  self.assertEqual(len(self.pdfs),51)
   reg={x["source_id"]:x for x in self.registry["documents"]}
   pub=[x for x in self.pdfs if x["path"] in {reg[s]["public_pdf_path"] for s in LICENSED}]
-  self.assertEqual(len(pub),5)
+  self.assertEqual(len(pub),4)
   for x in pub:
    b=(ROOT/x["path"]).read_bytes()
    self.assertTrue(b.startswith(b"%PDF-"))
@@ -51,7 +53,7 @@ class AllFormerlyUnresolvedWorkIdentities(unittest.TestCase):
    self.assertEqual(hashlib.sha256(b).hexdigest(),x["sha256"])
    self.assertIn(x["license"],("CC BY","CC BY 4.0"))
    self.assertTrue(x["rights_evidence"].startswith("https://"))
-  self.assertEqual(len([x for x in self.ledger if x["rights_review"]=="VERIFIED_PUBLISHER_LICENSE"]),18)
+  self.assertEqual(len([x for x in self.ledger if x["rights_review"]=="VERIFIED_PUBLISHER_LICENSE"]),17)
   self.assertFalse(any("longino" in p["path"].lower() or "bonate" in p["path"].lower() or "quevedo" in p["path"].lower() for p in self.pdfs))
  def test_edition_corrections_duplicate_and_publisher_source_limit(self):
   reg={x["source_id"]:x for x in self.registry["documents"]}

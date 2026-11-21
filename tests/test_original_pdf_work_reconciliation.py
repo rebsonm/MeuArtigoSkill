@@ -22,7 +22,7 @@ class ReconciledSourceTests(unittest.TestCase):
    self.assertEqual(hashlib.sha256((ROOT/d["path"]).read_bytes()).hexdigest(),d["sha256"])
  def test_two_individually_licensed_pdfs_with_exact_bytes(self):
   j=json.loads((BASE/"pdf_catalog.json").read_text("utf-8"))
-  self.assertEqual(len(j["documents"]),52)
+  self.assertEqual(len(j["documents"]),51)
   added=[d for d in j["documents"] if "schroeder-lequere" in d["path"] or "mayring-2025-chatgpt" in d["path"]]
   self.assertEqual(len(added),2)
   for d in added:

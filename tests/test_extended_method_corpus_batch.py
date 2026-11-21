@@ -28,7 +28,7 @@ class ExtendedMethodsRegression(unittest.TestCase):
   self.assertIn("Carlos Closa",closa["public_work_metadata_screen"]["authors"])
  def test_exact_open_pdf_copies_are_indexed_not_other_licenses(self):
   c=json.loads((BASE/"pdf_catalog.json").read_text("utf-8"))["documents"]
-  self.assertEqual(len(c),52)
+  self.assertEqual(len(c),51)
   paths={"knowledge/methodology/pdfs/messner-smith-richards-2025-epistemological-incongruences.pdf","knowledge/methodology/pdfs/eschrich-sterman-2024-llm-qualitative-framework-arxiv-v1.pdf"}
   for row in (x for x in c if x["path"] in paths):
    data=(ROOT/row["path"]).read_bytes()
@@ -41,8 +41,8 @@ class ExtendedMethodsRegression(unittest.TestCase):
   self.assertFalse(any("gertler" in x["path"].lower() or "card-krueger" in x["path"] or "wiley" in x["path"] for x in c))
  def test_book_license_verified_but_pdf_not_uploaded(self):
   m=json.loads((BASE/"intake"/"rights-ledger-manifest.json").read_text("utf-8"))
-  self.assertEqual(m["actual_individually_verified_rights_in_this_ledger"],18)
-  self.assertEqual(m["source_pdf_count_public_catalogue"],52)
+  self.assertEqual(m["actual_individually_verified_rights_in_this_ledger"],17)
+  self.assertEqual(m["source_pdf_count_public_catalogue"],51)
   self.assertEqual(m["original_editorial_cards_count"],164)
   ledger=[]
   for i in range(1,6):
@@ -51,7 +51,7 @@ class ExtendedMethodsRegression(unittest.TestCase):
   self.assertEqual(book["publisher_license"],"CC BY 3.0 IGO")
   self.assertIn("LINK_ONLY",book["public_distribution"])
   self.assertTrue(book["publisher_download_url"].startswith("https://"))
-  self.assertEqual(len([x for x in ledger if x["rights_review"]=="VERIFIED_PUBLISHER_LICENSE"]),18)
+  self.assertEqual(len([x for x in ledger if x["rights_review"]=="VERIFIED_PUBLISHER_LICENSE"]),17)
  def test_method_cards_are_original_and_science_unapproved(self):
   cat=json.loads((BASE/"catalog.json").read_text("utf-8"))["documents"]
   sub=[x for x in cat if x.get("source_registry_id") in IDS]

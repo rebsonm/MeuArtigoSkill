@@ -24,6 +24,8 @@ class PublicPDFGuardTests(unittest.TestCase):
             "sha256": hashlib.sha256(data).hexdigest(),
             "size": len(data),
             "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+            "license": "CC BY 4.0",
+            "license_url": "https://creativecommons.org/licenses/by/4.0/",
             "rights_evidence": "https://example.org/test-license",
             "keywords": ["synthetic", "methods"],
         }

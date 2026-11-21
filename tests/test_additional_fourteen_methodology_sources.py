@@ -21,7 +21,7 @@ class NewOriginalBatchTests(unittest.TestCase):
    self.assertEqual(hashlib.sha256((ROOT/x["path"]).read_bytes()).hexdigest(),x["sha256"])
  def test_public_license_and_byte_hash_of_five_originals(self):
   cat=json.loads((BASE/"pdf_catalog.json").read_text("utf-8"))["documents"]
-  self.assertEqual(len(cat),52)
+  self.assertEqual(len(cat),51)
   target={"10.1177/16094069251383739","10.1007/s11135-025-02165-z","10.3389/frma.2025.1685968","10.1371/journal.pone.0330217","10.2196/64447"}
   got=[x for x in cat if x.get("doi") in target]
   self.assertEqual(len(got),5)
