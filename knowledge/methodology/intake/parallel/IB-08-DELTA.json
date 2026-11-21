@@ -32,7 +32,7 @@
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "O expediente autoriza reprodução integral ou parcial sem fins lucrativos, desde que citadas a fonte e o endereço do original; não é licença CC genérica.",
       "novo_hash_da_ficha": "ad05db0c075fc8c8d8c679ce4da93e992a72d2d78fb8ea3c634a68fbd1ee69f1",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
     {
@@ -54,7 +54,7 @@
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "O expediente autoriza reprodução integral ou parcial sem fins lucrativos, mediante indicação da fonte e do sítio do original; não implica autorização comercial.",
       "novo_hash_da_ficha": "18d31ec6a6d2e81c2e3584308527f3e38c26572b9c65e7fa3f08a989df408d3f",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
     {
@@ -76,7 +76,7 @@
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "Licença expressa CC BY 3.0 IGO no expediente, sujeita à atribuição, cláusulas para traduções/adaptações e exceções de conteúdo de terceiros; não afirmar automaticamente que todos os elementos visuais estão livres.",
       "novo_hash_da_ficha": "1c8b6679c6d4cd31e378cede95df9077a6816787d826df9083decf8599e9cbef",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
     {
@@ -98,7 +98,7 @@
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "Não foi identificada licença de redistribuição expressa no PDF consultado; manter somente ficha original.",
       "novo_hash_da_ficha": "52670eafcecf2676377cf516f140089636ae3499934811ea338a249c2621247d",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
     {
@@ -120,7 +120,7 @@
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "Licença expressa Creative Commons Atribuição–NãoComercial–CompartilhaIgual 4.0 Internacional (CC BY-NC-SA 4.0); respeitar NC, SA, atribuição e eventuais conteúdos de terceiros.",
       "novo_hash_da_ficha": "5f06f6cff5b992ef75894fbab199ddd814eb9619d72a130b256faa8227f629a7",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
     {
@@ -142,7 +142,7 @@
       "motivo_bloqueio_ou_null": "A cópia tem título Multiple Correspondence Analysis, URL politika.io/en/notice/multiple-correspondence-analysis e carimbo de impressão 14/12/2023. Autoria e ano da publicação original não aparecem identificáveis; 'Duval' consta apenas no nome do arquivo e em referências citadas, insuficiente para atribuição. Necessário resgate da página editorial/expediente da mesma obra.",
       "direitos_observados": "Nenhuma licença expressa de redistribuição identificada na captura; publicação do PDF não autorizada por este exame.",
       "novo_hash_da_ficha": "1f15dc0396d1ada5de1f9c9fd3e44ff1cf6e9dcb83f992a649d4f4eeacd4707d",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
     {
@@ -164,7 +164,7 @@
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "Não há autorização de redistribuição expressa na folha de rosto e nos trechos examinados; o copyright do software citado não licencia a monografia.",
       "novo_hash_da_ficha": "9e622babb1f6a84625d0010e740b3970160e0c609902c27db5743be19047d1c4",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
     {
@@ -186,7 +186,7 @@
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "Não identificada licença expressa de redistribuição no PDF; somente metadados e ficha autoral.",
       "novo_hash_da_ficha": "cd9d32b3d8925131192bac2c707b946d1ea07931c9fc2bf249b8c28c03eb9c7e",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
     {
@@ -208,7 +208,7 @@
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "PDF identificado como artigo publicado pelo Journal of Statistical Software; ausência de licença de redistribuição expressa no texto recuperado; não inferir licença pelo acesso público.",
       "novo_hash_da_ficha": "f9472daae457e285d40d02479cb4cd10936b940957932b006d8b8ac0dad5d85c",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
     {
@@ -230,7 +230,7 @@
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "Aviso © 2010 Midwest Political Science Association; nenhuma permissão de redistribuição identificada.",
       "novo_hash_da_ficha": "67af0317557003d1722c583537fa5d72b711b9aeb2b6aa60fd7d0ced0a362fd1",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
     {
@@ -252,7 +252,7 @@
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "Aviso expressamente 'All rights reserved', Oxford University Press/Society for Political Methodology; proibida redistribuição da cópia sem licença pertinente.",
       "novo_hash_da_ficha": "67ebf12fbee6b5c931b34059de13da428b7b895a888caf075888305dfde95a2f",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
     {
@@ -274,7 +274,7 @@
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "Não encontrada licença de redistribuição expressa na versão consultada; preservar somente descrição original e referência.",
       "novo_hash_da_ficha": "18bac43e13cd325ed73094b6a9703e0eed04572a1dac7301d6fdae1e1bc77602",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
     {
@@ -296,7 +296,7 @@
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "© 2019 Annual Reviews, All rights reserved; cópia assinalada como acesso CAPES e 'For personal use only'. Sem redistribuição.",
       "novo_hash_da_ficha": "e10764bdc6afb17da6ab09dfd2c86ecd0216894b3fbe157161783b97c76f4a26",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
     {
@@ -318,7 +318,7 @@
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "Aviso de publicação © Association for Behavior Analysis International 2020; sem licença de redistribuição geral comprovada na cópia.",
       "novo_hash_da_ficha": "b68061a02dad82b9372270a7e3ad1e55608922cf4db1c6e287dd2b717f4b7f62",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
     {
@@ -340,7 +340,7 @@
       "motivo_bloqueio_ou_null": "Título e autoria identificados na primeira página, porém o documento consultado não informa ano de publicação nem veículo editorial completo. O '2019' está somente no nome do arquivo e não foi tomado como data verificada.",
       "direitos_observados": "Licença expressa não localizada; o nome do arquivo não comprova direitos nem data.",
       "novo_hash_da_ficha": "1b2dde6f2e22be400e6990a4c5853d342020a3e19e63bad6efe9bf5bbb283587",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
     {
@@ -362,7 +362,7 @@
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "© 2021 Annual Reviews; licença expressa CC BY 4.0 para o artigo, com ressalva de verificar créditos de imagens e materiais de terceiros.",
       "novo_hash_da_ficha": "365a09e78b2d59c1ea69a3bc454bcbf291f7c4ad22d9fcf2a2f98c213945fc23",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
     {
@@ -384,8 +384,10 @@
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "© 2013 Academic Pediatric Association; não identificada autorização expressa de redistribuição do PDF.",
       "novo_hash_da_ficha": "567afba5a3be5f425858978a5ec8cf4359dac32470689c1fdaada1a057106dee",
-      "commit_da_branch": "PREENCHER_APOS_COMMIT",
+      "commit_da_branch": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
       "estado_de_revisao_cientifica": "PENDENTE"
     }
-  ]
+  ],
+  "card_content_commit": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
+  "delta_record_updated": "2026-11-21"
 }
