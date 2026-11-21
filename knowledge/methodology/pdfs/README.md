@@ -1,6 +1,6 @@
 # Methodological PDFs — rights and attribution
 
-These are **six source PDFs** from journals which explicitly permit sharing under **Creative Commons Attribution 4.0 International (CC BY 4.0)**. They are **not** covered by the repository's Apache-2.0 software license. The binary PDF copies are unmodified; no endorsement by their authors or journals is implied.
+These are **8 source PDFs** from journals which explicitly permit sharing under **Creative Commons Attribution 4.0 International (CC BY 4.0)**. They are **not** covered by the repository's Apache-2.0 software license. The binary PDF copies are unmodified; no endorsement by their authors or journals is implied.
 
 License: https://creativecommons.org/licenses/by/4.0/
 
@@ -17,4 +17,11 @@ License: https://creativecommons.org/licenses/by/4.0/
 
 Reproduction status: **unaltered originals**, copied from the user's research collection after independent comparison of document title, authors, DOI and public journal license. Exact byte counts and SHA-256 are in `../pdf_catalog.json`; the public corpus test rejects unindexed or altered PDFs.
 
-**Six source PDFs are publicly hosted; remaining personal archive items are inventory-only.** A document being in a personal Google Drive folder, available online, or accessible by link does not itself constitute permission for public redistribution. Full scholarly support, visual figures/tables and printed pagination still require primary-source review. The retrieval client currently in the installable Skill reads original editorial *cards*; the experimental PDF reader is not yet included in the ZIP.
+**8 source PDFs are publicly hosted; remaining personal archive items are inventory-only.** A document being in a personal Google Drive folder, available online, or accessible by link does not itself constitute permission for public redistribution. Full scholarly support, visual figures/tables and printed pagination still require primary-source review. The retrieval client currently in the installable Skill reads original editorial *cards*; the experimental PDF reader is not yet included in the ZIP.
+
+## Additional original PDFs with individual CC BY 4.0 evidence
+
+These are unchanged source PDFs; they are NOT part of the installed ZIP.
+
+- Helena Harrison; Melanie Birks; Richard Franklin; Jane Mills (2017), *Case Study Research: Foundations and Methodological Orientations*. DOI: https://doi.org/10.17169/fqs-18.1.2655. [Publisher/licensing evidence](https://researchonline.jcu.edu.au/47422/). Original `harrison-birks-franklin-mills-2017.pdf`, SHA-256 `3918abd6dc74255c4bf68075f1edc00528a46507fb0c97223e6ab4d3aee2ef5d`.
+- Greg Guest; Emily Namey; Mario Chen (2020), *A simple method to assess and report thematic saturation in qualitative research*. DOI: https://doi.org/10.1371/journal.pone.0232076. [Publisher/licensing evidence](https://journals.plos.org/plosone/s/licenses-and-copyright). Original `guest-namey-chen-2020-saturation.pdf`, SHA-256 `becf8d627dba454ee2780040adf83d0338ab3d8faffc628da3d9d2db9a606d04`.

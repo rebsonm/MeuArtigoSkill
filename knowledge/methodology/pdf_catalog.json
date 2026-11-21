@@ -1,6 +1,6 @@
 {
   "schema": "MEU_ARTIGO_PUBLIC_PDF_CATALOG_V1",
-  "version": "pilot-cc-by-2026-11-21-plus2",
+  "version": "pilot-cc-by-2026-11-21-multi-source",
   "documents": [
     {
       "path": "knowledge/methodology/pdfs/lycariao-roque-costa-2023.pdf",
@@ -140,12 +140,61 @@
         "avaliação",
         "intervenção"
       ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/harrison-birks-franklin-mills-2017.pdf",
+      "title": "Case Study Research: Foundations and Methodological Orientations",
+      "authors": "Helena Harrison; Melanie Birks; Richard Franklin; Jane Mills",
+      "year": 2017,
+      "doi": "10.17169/fqs-18.1.2655",
+      "size": 202781,
+      "sha256": "3918abd6dc74255c4bf68075f1edc00528a46507fb0c97223e6ab4d3aee2ef5d",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://researchonline.jcu.edu.au/47422/",
+      "source_url": "https://researchonline.jcu.edu.au/47422/",
+      "source_pdf_url": "https://researchonline.jcu.edu.au/47422/1/47422_Birks_2017.pdf",
+      "source_bytes_unmodified": true,
+      "keywords": [
+        "case",
+        "study",
+        "yin",
+        "merriam",
+        "stake",
+        "qualitative",
+        "context"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/guest-namey-chen-2020-saturation.pdf",
+      "title": "A simple method to assess and report thematic saturation in qualitative research",
+      "authors": "Greg Guest; Emily Namey; Mario Chen",
+      "year": 2020,
+      "doi": "10.1371/journal.pone.0232076",
+      "size": 702654,
+      "sha256": "becf8d627dba454ee2780040adf83d0338ab3d8faffc628da3d9d2db9a606d04",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://journals.plos.org/plosone/s/licenses-and-copyright",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0232076",
+      "source_pdf_url": "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0232076&type=printable",
+      "source_bytes_unmodified": true,
+      "keywords": [
+        "saturation",
+        "qualitative",
+        "sampling",
+        "interviews",
+        "threshold",
+        "thematic"
+      ]
     }
   ],
   "rights_policy": "PUBLIC_REDISTRIBUTION_REVIEWED_ONLY",
   "installer_includes_pdfs": false,
-  "catalog_status": "SIX_REVIEWED_OPEN_LICENSE_ARTICLES",
+  "catalog_status": "8_PUBLIC_LICENSE_REVIEWED_ARTICLES",
   "source_format": "PDF_ORIGINAL_UNMODIFIED",
   "scientific_quality_validated": false,
-  "note": "Each public PDF is separately attributed under its journal's CC BY 4.0 terms. Restricted works in the archive remain metadata-only."
+  "note": "Only original licensed public PDFs are stored. Catalog hashes and source license evidence document technical provenance, not independent scientific or legal validation. Private archive remains metadata-only."
 }
