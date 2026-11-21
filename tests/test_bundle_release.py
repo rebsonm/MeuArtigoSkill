@@ -66,6 +66,19 @@ class BundleTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Unrecognized file"):
             pkg.list_sources(self.root)
 
+    def test_only_two_explicit_html_templates_are_packaged(self):
+        (self.root / "assets" / "research_workspace.html").write_text(
+            "<!doctype html><title>workspace</title>", encoding="utf-8")
+        (self.root / "assets" / "research_site.html").write_text(
+            "<!doctype html><title>approved site</title>", encoding="utf-8")
+        found = [p.name for p in pkg.list_sources(self.root)]
+        self.assertIn("research_workspace.html", found)
+        self.assertIn("research_site.html", found)
+        (self.root / "assets" / "unreviewed_custom_dashboard.html").write_text(
+            "<title>not reviewed</title>", encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Only the exact reviewed UI template"):
+            pkg.list_sources(self.root)
+
     def test_symlink_is_rejected(self):
         target = self.root / "outside.pdf"
         target.write_bytes(b"synthetic")
