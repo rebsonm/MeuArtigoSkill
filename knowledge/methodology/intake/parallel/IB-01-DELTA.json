@@ -393,7 +393,7 @@
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "Permissão específica do autor à tradução em 2005 não autoriza republicação por terceiros",
       "redistribuicao_pdf_autorizada_por_esta_revisao": false,
-      "novo_hash_sha256_da_ficha": "63f657bfa4799ee35bafa3b3e12ede9ff77baaf",
+      "novo_hash_sha256_da_ficha": "63f657bfa4799ee35bafaec264bfaae916ef5898867f82904e12ede9ff77baaf",
       "commit_da_ficha_na_branch": "ff89dbf73025141e2d077ec7743f8e5c25943d81",
       "estado_de_revisao_cientifica": "PENDENTE",
       "ressalvas": null
