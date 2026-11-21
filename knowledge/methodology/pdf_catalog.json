@@ -1,6 +1,6 @@
 {
   "schema": "MEU_ARTIGO_PUBLIC_PDF_CATALOG_V1",
-  "version": "pilot-cc-by-2026-11-21-multi-source",
+  "version": "pilot-2026-11-21-12-pdfs-multilingual-index",
   "documents": [
     {
       "path": "knowledge/methodology/pdfs/lycariao-roque-costa-2023.pdf",
@@ -22,7 +22,11 @@
         "análise",
         "conteúdo",
         "replicabilidade",
-        "literatura"
+        "literatura",
+        "content analysis",
+        "review",
+        "revisao sistematica",
+        "confiabilidade de codificacao"
       ]
     },
     {
@@ -45,7 +49,11 @@
         "triangulação",
         "qualitativos",
         "quantitativos",
-        "pesquisa"
+        "pesquisa",
+        "integração",
+        "integracao",
+        "dados",
+        "mixed methods"
       ]
     },
     {
@@ -68,7 +76,10 @@
         "científica",
         "indicadores",
         "cientometria",
-        "citações"
+        "citações",
+        "bibliometrica",
+        "análise bibliométrica",
+        "citacoes"
       ]
     },
     {
@@ -90,7 +101,10 @@
         "metassíntese",
         "qualitativa",
         "hermenêutica",
-        "síntese"
+        "síntese",
+        "metaanalysis",
+        "metanalise",
+        "meta synthesis"
       ]
     },
     {
@@ -113,7 +127,10 @@
         "theory",
         "qualitativa",
         "construção",
-        "teoria"
+        "teoria",
+        "grounded theory",
+        "qualitative",
+        "codificacao"
       ]
     },
     {
@@ -138,7 +155,12 @@
         "ITS",
         "regressão",
         "avaliação",
-        "intervenção"
+        "intervenção",
+        "séries",
+        "temporais",
+        "interrompidas",
+        "causal",
+        "policy"
       ]
     },
     {
@@ -163,7 +185,11 @@
         "merriam",
         "stake",
         "qualitative",
-        "context"
+        "context",
+        "estudo",
+        "caso",
+        "organizacional",
+        "metodologia"
       ]
     },
     {
@@ -187,7 +213,12 @@
         "sampling",
         "interviews",
         "threshold",
-        "thematic"
+        "thematic",
+        "saturação",
+        "saturacao",
+        "amostragem",
+        "entrevistas",
+        "temática"
       ]
     },
     {
@@ -211,7 +242,11 @@
         "writing",
         "revisao",
         "narrative",
-        "bibliography"
+        "bibliography",
+        "escrita",
+        "revisão",
+        "literatura",
+        "bibliográfica"
       ]
     },
     {
@@ -235,7 +270,12 @@
         "structure",
         "manuscript",
         "scientific",
-        "article"
+        "article",
+        "escrita",
+        "artigo",
+        "científico",
+        "estrutura",
+        "manuscrito"
       ]
     },
     {
@@ -259,7 +299,11 @@
         "research",
         "code",
         "computational",
-        "data"
+        "data",
+        "reprodutibilidade",
+        "computacional",
+        "reproduzibilidade",
+        "replicação"
       ]
     },
     {
@@ -283,7 +327,12 @@
         "review",
         "quantitative",
         "synthesis",
-        "heterogeneity"
+        "heterogeneity",
+        "metanálise",
+        "metanalise",
+        "heterogeneidade",
+        "quantitativa",
+        "metaanálise"
       ]
     }
   ],
