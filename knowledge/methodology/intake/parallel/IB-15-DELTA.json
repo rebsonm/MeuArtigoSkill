@@ -336,11 +336,13 @@
       "tipo_publicacao": "artigo indicado pelo PDF, autenticidade editorial a verificar",
       "escopo_exato_da_inspecao": "Capa/cabeçalho, expediente, resumo/sumário quando disponível, aviso de direitos; leitura delimitada.",
       "identidade_confirmada_boolean": false,
-      "motivo_bloqueio_ou_null": "Proveniência/autenticidade editorial do periódico OEconomia requer confirmação independente; semelhança com SRC-0381.",
+      "motivo_bloqueio_ou_null": "Autenticidade do alegado artigo OEconomia 2020 não corroborada; título/enquadramento muito semelhantes à obra oficial de Rod Dacombe 2018, DOI 10.1177/1478929916680641. Quarentena, sem concluir fraude.",
       "direitos_observados": "Não há licença expressa confirmada. Atenção: sinais de irregularidade editorial e semelhança de formulação/estrutura com o item SRC-0381; autenticidade, autoria e proveniência precisam de verificação independente; NÃO publicar o PDF.",
-      "novo_hash_da_ficha": "90909513638810ec9d0fe28484c5e4eed0ab74262fa80df8716770081f4436d1",
-      "commit_da_branch": null,
-      "estado_de_revisao_cientifica": "PENDENTE"
+      "novo_hash_da_ficha": "235d2604d8d62835bf8bfe44f327ccb0d7c08053d93cd2c098c3fb402d466816",
+      "commit_da_branch": "9b635376f7dc70162eaf9a7970840d17b48b3e5e",
+      "estado_de_revisao_cientifica": "PENDENTE",
+      "complementacao_documental_20261121": "QUARENTENA_EDITORIAL_MANTIDA",
+      "fonte_editorial_externa": "https://kclpure.kcl.ac.uk/portal/en/publications/systematic-reviews-in-political-science-what-can-the-approach-con/"
     },
     {
       "batch_id": "IB-15/20",
@@ -388,5 +390,7 @@
     }
   ],
   "private_drive_ids_redacted_from_public_head": true,
-  "private_drive_id_redaction_note": "Original file IDs removed from this public branch HEAD. Source-document matching remains described by inventory ID, filename and size. Earlier commits may still retain these IDs. No history rewrite performed."
+  "private_drive_id_redaction_note": "Original file IDs removed from this public branch HEAD. Source-document matching remains described by inventory ID, filename and size. Earlier commits may still retain these IDs. No history rewrite performed.",
+  "source_0385_quarantine_confirmed": true,
+  "complementary_publisher_audit": "2026-11-21: source card and receipt revised after original archived PDF inspection + publisher metadata; no PDF redistribution, scientific review or global registry change."
 }
