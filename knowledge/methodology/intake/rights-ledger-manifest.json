@@ -17,7 +17,7 @@
   "actual_individually_verified_rights_in_this_ledger": 3,
   "private_corpus_copied": false,
   "source_pdf_count_public_catalogue": 38,
-  "original_editorial_cards_count": 93,
+  "original_editorial_cards_count": 100,
   "author_year_filename_possible_matches": 7,
   "scope": "Public metadata only; source-level legal decisions must be evidenced before public PDF distribution",
   "rights_decision_not_inferred_from": "public reachability, presence in the user's Drive, title or file extension",
@@ -38,5 +38,5 @@
   "crossref_screened_licenses_are_publication_authorizations": false,
   "document_level_rights_review_started": true,
   "last_updated": "2026-11-21",
-  "corpus_extension_note": "Five new source-page-screened original editorial cards plus improvements to the 71 still-unverified source identity cards; 475 source prospect cards still metadata-only. No newly uploaded third-party PDF."
+  "corpus_extension_note": "Five new source-page-screened original editorial cards plus improvements to the 71 still-unverified source identity cards; 475 source prospect cards still metadata-only. No newly uploaded third-party PDF. Additional seven source-specific publisher-backed original cards (Cardno, Friese, Schroeder, Wachinger, Prahl, Jowsey, Mayring) are all science-review-pending; 38 previously catalogued licensed PDFs unchanged. Neither DOI verification nor abstract consultation implies private PDF reading."
 }

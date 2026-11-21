@@ -43,3 +43,15 @@ Foram consultadas no Google Drive as **17 entradas de primeiro nível** da pasta
 - 71 fichas [P] com identidade ainda não resolvida foram reformuladas em **cards de triagem com propostas de perguntas e critérios metodológicos**, com título candidato deduzido exclusivamente do nome do arquivo quando informativo. Não se tratam de 71 resumos de fontes; mantêm a identidade como IDENTITY_UNRESOLVED.
 - Corpos de PDFs de terceiros permanecem 38, sem qualquer novo upload nem ampliação fictícia de direitos; o total de cards editoriais passa a 93; fichas de prospecção seguem 475.
 - A leitura integral dos 475 originais continua pendente; novas perguntas e critérios foram criados pelo projeto e não atribuídos aos autores.
+
+## Ampliação: sete cards específicos adicionais (21/11/2026)
+
+- Cardno (2018), análise documental de políticas, SRC-0016.
+- Friese (2026), análise dialógica assistida por IA, SRC-0041.
+- Schroeder et al. (2025), usos e tensões da IA em pesquisa qualitativa, SRC-0049.
+- Wachinger et al. (2024), comparação ChatGPT versus pesquisador, SRC-0054.
+- Prahl (2025), checklist ARC de reflexividade, SRC-0055.
+- Jowsey et al. (2025), crítica metodológica ao uso de GenAI na análise qualitativa reflexiva, SRC-0063.
+- Mayring (2025), erros e aproximações da análise de conteúdo com ChatGPT, SRC-0069.
+
+**Resultado do lote:** 100 cards editoriais originais provisórios; os 475 registros [P] e 38 PDFs públicos licenciados permanecem inalterados. A maior parte das referências depende de leitura original e de validação científica. Nenhum dos sete PDFs privados foi copiado, convertido ou redistribuído. As fontes públicas dos cards foram identificadas por DOI ou repositório; isso não autoriza publicação de quaisquer PDFs adicionais.

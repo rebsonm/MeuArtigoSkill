@@ -2188,10 +2188,161 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "PUBLIC_PUBLISHER_LANDING_OR_TEXT_ONLY_NOT_PRIVATE_PDF",
       "source_registry_id": "SRC-0035"
+    },
+    {
+      "path": "knowledge/methodology/cards/cardno-2018-policy-document-analysis.md",
+      "title": "Análise documental de políticas: texto, prática e contexto são dimensões distintas",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "622103c33c6361ec97fc7c2192b7b860979133526be2d08c8969d2c32c1f15c9",
+      "keywords": [
+        "documental",
+        "policy",
+        "política",
+        "documento",
+        "cardno",
+        "qualitativa",
+        "interpretação"
+      ],
+      "source_doi": "10.14527/kuey.2018.016",
+      "source_url": "https://eric.ed.gov/?id=EJ1305631",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "PUBLIC_PUBLISHER_LANDING_OR_TEXT_ONLY_NOT_PRIVATE_PDF",
+      "source_registry_id": "SRC-0016"
+    },
+    {
+      "path": "knowledge/methodology/cards/friese-2026-dialogical-qualitative-analysis-llm.md",
+      "title": "Análise dialógica com IA: hipótese de método não é validação automática",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "bfb3d0fea5cdd9932fa2e0610edcab1f235fc0be9ca0a8799ca533c1757725ed",
+      "keywords": [
+        "friese",
+        "CA AI",
+        "diálogo",
+        "LLM",
+        "qualitativa",
+        "codificação",
+        "conversacional",
+        "reflexividade"
+      ],
+      "source_doi": "10.1177/10778004251412871",
+      "source_url": "https://journals.sagepub.com/doi/10.1177/10778004251412871",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "PUBLIC_PUBLISHER_LANDING_OR_TEXT_ONLY_NOT_PRIVATE_PDF",
+      "source_registry_id": "SRC-0041"
+    },
+    {
+      "path": "knowledge/methodology/cards/schroeder-2025-llms-uses-tensions-intentions.md",
+      "title": "LLMs em pesquisa qualitativa: usos, tensões e intenção do pesquisador",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "158b264607dd0dceadb49a47c011aeaa87911a5cb5bba6ea343fea42e7b85311",
+      "keywords": [
+        "schroeder",
+        "tensões",
+        "LLM",
+        "pesquisa qualitativa",
+        "intenção",
+        "autoria",
+        "epistemologia"
+      ],
+      "source_doi": "10.1145/3706598.3713120",
+      "source_url": "https://dl.acm.org/doi/10.1145/3706598.3713120",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "PUBLIC_PUBLISHER_LANDING_OR_TEXT_ONLY_NOT_PRIVATE_PDF",
+      "source_registry_id": "SRC-0049"
+    },
+    {
+      "path": "knowledge/methodology/cards/wachinger-2024-prompts-pearls-imperfections.md",
+      "title": "ChatGPT versus pesquisador: semelhança de temas não basta para validar análise",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "35d1f6230086ad75bcadd3ee6e46c17f8ebaadedb79dbd8407a3555449e18330",
+      "keywords": [
+        "wachinger",
+        "chatgpt",
+        "prompts",
+        "qualitativa",
+        "temas",
+        "análise",
+        "comparação",
+        "validade"
+      ],
+      "source_doi": "10.1177/10497323241244669",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202826/",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "PUBLIC_PUBLISHER_LANDING_OR_TEXT_ONLY_NOT_PRIVATE_PDF",
+      "source_registry_id": "SRC-0054"
+    },
+    {
+      "path": "knowledge/methodology/cards/prahl-2025-ai-reflexivity-checklist.md",
+      "title": "Checklist de reflexividade para LLMs: pausa de decisão antes da codificação",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "0b6716b6e602c0871bda3be5880c439cb9eee5d4ca938d789a2ca2cb943b30ff",
+      "keywords": [
+        "prahl",
+        "ARC",
+        "reflexividade",
+        "IA",
+        "checklist",
+        "codificação",
+        "ética",
+        "qualitativa"
+      ],
+      "source_doi": "10.1177/10497323251401503",
+      "source_url": "https://journals.sagepub.com/doi/10.1177/10497323251401503",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "PUBLIC_PUBLISHER_LANDING_OR_TEXT_ONLY_NOT_PRIVATE_PDF",
+      "source_registry_id": "SRC-0055"
+    },
+    {
+      "path": "knowledge/methodology/cards/jowsey-2025-reject-genai-reflexive-qualitative.md",
+      "title": "Contestação do uso de GenAI na pesquisa qualitativa reflexiva",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "b7f6187eb2c52c8b6f2c06c5c2e56e7435127406ec0163c7ab0cf47abb230253",
+      "keywords": [
+        "jowsey",
+        "braun",
+        "clarke",
+        "GenAI",
+        "pesquisa reflexiva",
+        "qualitativa",
+        "epistemologia",
+        "crítica"
+      ],
+      "source_doi": "10.1177/10778004251401851",
+      "source_url": "https://journals.sagepub.com/doi/10.1177/10778004251401851",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "PUBLIC_PUBLISHER_LANDING_OR_TEXT_ONLY_NOT_PRIVATE_PDF",
+      "source_registry_id": "SRC-0063"
+    },
+    {
+      "path": "knowledge/methodology/cards/mayring-2025-chatgpt-content-analysis-pitfalls.md",
+      "title": "Análise de conteúdo com ChatGPT: testar erros antes de delegar inferências",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "958ee94896fed56a92036f76c6adea7e4c88deade600a2db8e96214b945f3db4",
+      "keywords": [
+        "mayring",
+        "chatgpt",
+        "análise de conteúdo",
+        "content analysis",
+        "erros",
+        "avaliação",
+        "qualitativa"
+      ],
+      "source_doi": "10.17169/fqs-26.1.4252",
+      "source_url": "https://www.qualitative-research.net/index.php/fqs/article/view/4252",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "PUBLIC_PUBLISHER_LANDING_OR_TEXT_ONLY_NOT_PRIVATE_PDF",
+      "source_registry_id": "SRC-0069"
     }
   ],
   "license": "Apache-2.0 (original editorial cards only)",
   "repository": "rebsonm/MeuArtigoSkill",
   "schema": "MEU_ARTIGO_GITHUB_METHODOLOGY_V1",
-  "version": "pilot-2026-11-21-93-editorial-cards"
+  "version": "pilot-2026-11-21-100-editorial-cards"
 }
