@@ -1,0 +1,432 @@
+{
+  "schema": "MEU_ARTIGO_LIBRARY_CANDIDATES_V1",
+  "description": "Bibliographic inventory only; no documents replicated and no author license attested. All entries are NOT_REVIEWED.",
+  "rights_status": "NOT_REVIEWED",
+  "source_format": "Original Google Drive PDF collection",
+  "batch": 4,
+  "folders": [
+    {
+      "folder": "Análise de Conteúdo",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Sampaio & Lycarião (2018).pdf",
+          "kind": "PDF",
+          "size_bytes": 2718117
+        },
+        {
+          "filename": "Sampaio & Lycarião (2018b).pdf",
+          "kind": "PDF",
+          "size_bytes": 709520
+        }
+      ]
+    },
+    {
+      "folder": "Revisão Sistemática e Meta-análise",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Harreretal,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 9579267
+        },
+        {
+          "filename": "Lycariaoetal,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 147563
+        },
+        {
+          "filename": "Chapman,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 1859256
+        },
+        {
+          "filename": "Bicudo,2014.pdf",
+          "kind": "PDF",
+          "size_bytes": 202373
+        },
+        {
+          "filename": "dacombe,2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 80995
+        },
+        {
+          "filename": "Navis,2009.pdf",
+          "kind": "PDF",
+          "size_bytes": 107237
+        },
+        {
+          "filename": "Sampaio e Mancini (2007).pdf",
+          "kind": "PDF",
+          "size_bytes": 45517
+        },
+        {
+          "filename": "Daigneaultetal,2012.pdf",
+          "kind": "PDF",
+          "size_bytes": 775803
+        },
+        {
+          "filename": "Smith,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 447277
+        },
+        {
+          "filename": "Figueiredo Filho et al (2018).pdf",
+          "kind": "PDF",
+          "size_bytes": 287946
+        }
+      ]
+    },
+    {
+      "folder": "Outliers",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Richetti et al (2016).pdf",
+          "kind": "PDF",
+          "size_bytes": 1010439
+        },
+        {
+          "filename": "Figueiredo Filho et al (2023).pdf",
+          "kind": "PDF",
+          "size_bytes": 2234615
+        }
+      ]
+    },
+    {
+      "folder": "Pareamento",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Schaefer e Figueiredo Filho (2023).pdf",
+          "kind": "PDF",
+          "size_bytes": 1190526
+        },
+        {
+          "filename": "King e Nielsen (2019).pdf",
+          "kind": "PDF",
+          "size_bytes": 706881
+        },
+        {
+          "filename": "Imai, Kim e Wang (2023).pdf",
+          "kind": "PDF",
+          "size_bytes": 889686
+        }
+      ]
+    },
+    {
+      "folder": "M‚todos Mistos",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Small(2012).pdf",
+          "kind": "PDF",
+          "size_bytes": 309387
+        },
+        {
+          "filename": "Rezende (2016).pdf",
+          "kind": "PDF",
+          "size_bytes": 255021
+        },
+        {
+          "filename": "Silva (2015).pdf",
+          "kind": "PDF",
+          "size_bytes": 297951
+        },
+        {
+          "filename": "Paranhos et al (2016).pdf",
+          "kind": "PDF",
+          "size_bytes": 274339
+        }
+      ]
+    },
+    {
+      "folder": "Survey",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Paranhos et al (2013).pdf",
+          "kind": "PDF",
+          "size_bytes": 429348
+        },
+        {
+          "filename": "Artigo_e2025-0695_v60_2026_PT___.pdf",
+          "kind": "PDF",
+          "size_bytes": 371310
+        },
+        {
+          "filename": "Owens (2022).pdf",
+          "kind": "PDF",
+          "size_bytes": 83080
+        },
+        {
+          "filename": "Lietz (2009).pdf",
+          "kind": "PDF",
+          "size_bytes": 1883816
+        },
+        {
+          "filename": "Tourangeau (2017).pdf",
+          "kind": "PDF",
+          "size_bytes": 151232
+        }
+      ]
+    },
+    {
+      "folder": "An lise de Cluster",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Heinrich Fritz, Luis A. Garc¡a-Escudero, Agust¡n Mayo-Iscar.pdf",
+          "kind": "PDF",
+          "size_bytes": 817956
+        },
+        {
+          "filename": "Figueiredo Filho et al (2021).pdf",
+          "kind": "PDF",
+          "size_bytes": 2633104
+        },
+        {
+          "filename": "Chapter 7 Clustering Analysis _ An R Companion for Introduction to Data Mining.pdf",
+          "kind": "PDF",
+          "size_bytes": 5682563
+        },
+        {
+          "filename": "Figueiredo Filho, Silva Junior e Rocha (2012).pdf",
+          "kind": "PDF",
+          "size_bytes": 1508465
+        },
+        {
+          "filename": "Figueiredo Fiho et al (2014).pdf",
+          "kind": "PDF",
+          "size_bytes": 3989254
+        }
+      ]
+    },
+    {
+      "folder": "An lise de Sobrevivˆncia",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Lins (2020)_slides.pdf",
+          "kind": "PDF",
+          "size_bytes": 602343
+        },
+        {
+          "filename": "Lins, Figueiredo Filho e Rocha (2017).pdf",
+          "kind": "PDF",
+          "size_bytes": 565700
+        },
+        {
+          "filename": "Lins (2020).pdf",
+          "kind": "PDF",
+          "size_bytes": 7569582
+        },
+        {
+          "filename": "Lystad e Brown (2018).pdf",
+          "kind": "PDF",
+          "size_bytes": 1103824
+        }
+      ]
+    },
+    {
+      "folder": "An lise Fatorial",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Dam sio (2012).pdf",
+          "kind": "PDF",
+          "size_bytes": 1074451
+        },
+        {
+          "filename": "Costello e Osborne (2005).pdf",
+          "kind": "PDF",
+          "size_bytes": 211518
+        },
+        {
+          "filename": "Figueiredo Filho et al (2014).pdf",
+          "kind": "PDF",
+          "size_bytes": 638544
+        },
+        {
+          "filename": "Matos e Rodrigues (2019).pdf",
+          "kind": "PDF",
+          "size_bytes": 1206414
+        },
+        {
+          "filename": "Figueiredo Filho e Silva Junior (2010).pdf",
+          "kind": "PDF",
+          "size_bytes": 259034
+        }
+      ]
+    },
+    {
+      "folder": "Regressão Logística",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Peng,  Lee and Ingersoll (2022).pdf",
+          "kind": "PDF",
+          "size_bytes": 2468185
+        },
+        {
+          "filename": "DeMaris (1995).pdf",
+          "kind": "PDF",
+          "size_bytes": 2406046
+        },
+        {
+          "filename": "Fernandes et al (2020).pdf",
+          "kind": "PDF",
+          "size_bytes": 792860
+        },
+        {
+          "filename": "Rainey e McCaskey (2021).pdf",
+          "kind": "PDF",
+          "size_bytes": 625042
+        },
+        {
+          "filename": "King and Zeng (2001).pdf",
+          "kind": "PDF",
+          "size_bytes": 314695
+        }
+      ]
+    },
+    {
+      "folder": "Correlação",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Paranhos et al (2014).pdf",
+          "kind": "PDF",
+          "size_bytes": 1444974
+        },
+        {
+          "filename": "Wei e Simko (2018).pdf",
+          "kind": "PDF",
+          "size_bytes": 3999351
+        },
+        {
+          "filename": "Figueiredo Filho e Silva Junior (2009).pdf",
+          "kind": "PDF",
+          "size_bytes": 410124
+        },
+        {
+          "filename": "Sousa (2019).pdf",
+          "kind": "PDF",
+          "size_bytes": 72061
+        }
+      ]
+    },
+    {
+      "folder": "Regressão linear",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Chein (2019).pdf",
+          "kind": "PDF",
+          "size_bytes": 3808538
+        },
+        {
+          "filename": "Krueger e Lewis-Beck (2008).pdf",
+          "kind": "PDF",
+          "size_bytes": 615790
+        },
+        {
+          "filename": "Berk (2010).pdf",
+          "kind": "PDF",
+          "size_bytes": 199835
+        },
+        {
+          "filename": "McCloskey e Ziliak (1996).pdf",
+          "kind": "PDF",
+          "size_bytes": 1290624
+        },
+        {
+          "filename": "Freedman (1991).pdf",
+          "kind": "PDF",
+          "size_bytes": 1519224
+        },
+        {
+          "filename": "Figueiredo Filho et al (2011).pdf",
+          "kind": "PDF",
+          "size_bytes": 913329
+        },
+        {
+          "filename": "Figueiredo Filho et al (2021).pdf",
+          "kind": "PDF",
+          "size_bytes": 2633104
+        }
+      ]
+    },
+    {
+      "folder": "An lise Envolt¢ria de Dados (DEA)",
+      "complete": true,
+      "entries": []
+    },
+    {
+      "folder": "Multilevel Regression",
+      "complete": true,
+      "entries": []
+    },
+    {
+      "folder": "S‚ries Temporais",
+      "complete": true,
+      "entries": []
+    },
+    {
+      "folder": "Desenho de pesquisa",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Leite,Rocha,2019.pdf",
+          "kind": "PDF",
+          "size_bytes": 341114
+        },
+        {
+          "filename": "Guerra,Almeida,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 3708183
+        },
+        {
+          "filename": "Rezende,2015.pdf",
+          "kind": "PDF",
+          "size_bytes": 245555
+        },
+        {
+          "filename": "Figueiredo Filho et al (2021).pdf",
+          "kind": "PDF",
+          "size_bytes": 2633104
+        },
+        {
+          "filename": "Barberia,2019-politica-comparada.pdf",
+          "kind": "PDF",
+          "size_bytes": 2535759
+        },
+        {
+          "filename": "Montenegro,2016.pdf",
+          "kind": "PDF",
+          "size_bytes": 883407
+        },
+        {
+          "filename": "Figueiredo Filho et al (2016).pdf",
+          "kind": "PDF",
+          "size_bytes": 353457
+        },
+        {
+          "filename": "Soares (2005).pdf",
+          "kind": "PDF",
+          "size_bytes": 120525
+        },
+        {
+          "filename": "Silva (2018).pdf",
+          "kind": "PDF",
+          "size_bytes": 1904970
+        },
+        {
+          "filename": "Neiva(2015).pdf",
+          "kind": "PDF",
+          "size_bytes": 974751
+        }
+      ]
+    }
+  ]
+}
