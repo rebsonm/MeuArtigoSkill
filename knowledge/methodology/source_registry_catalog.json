@@ -1,9 +1,9 @@
 {
   "schema": "MEU_ARTIGO_SOURCE_CARD_INDEX_V1",
-  "version": "pilot-2026-11-21-475-prospects-12-public-work-checks",
+  "version": "pilot-2026-11-21-475-prospects-12-original-pdf-identities",
   "source_archive_records": 475,
-  "catalogue_identified_titles": 404,
-  "source_text_read_in_ledger": 3,
+  "catalogue_identified_titles": 411,
+  "source_text_read_in_ledger": 15,
   "third_party_full_text_included": false,
   "source_records_are_evidence": false,
   "retrieval_label": "BIBLIOGRAPHIC_PROSPECTING_ONLY_NOT_ORIGINAL_ARTICLE_READING",
@@ -31,26 +31,27 @@
         "2012",
         "src-0001"
       ],
-      "sha256": "84c8094392a5f14121a0e0a589a675bedca6319d34ead8587317f778c152e208",
+      "sha256": "5079243f1b1e2f99bb668f086c0235016bb5890510811dcc2f33ff2a14c1f7a2",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "public_work_metadata_screen": {
-        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
         "doi": "10.1111/j.1748-5991.2012.01132.x",
         "title": "Using the institutional grammar tool to understand regulatory compliance: The case of Colorado aquaculture",
         "authors": "Saba Siddiki; Xavier Basurto; Christopher M. Weible",
         "year": "2012",
         "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1748-5991.2012.01132.x",
         "checked_at": "2026-11-21",
-        "original_archive_pdf_version_verified": false,
-        "original_archive_pdf_read": false,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
         "original_archive_pdf_redistribution_authorized": false,
         "scientific_card_review_approved": false
-      }
+      },
+      "source_identity_verified_not_citation_grade": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0002.md",
@@ -72,26 +73,27 @@
         "2020",
         "src-0002"
       ],
-      "sha256": "d48fc00c0a0d324ea52b08795c5bc8a9b08330ec031499ed20d2826ef7efc029",
+      "sha256": "7a4f2ff8e048b83e6734233501d5eca1e431d1b64fac9ca8bf24dfaf9403fe2b",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "public_work_metadata_screen": {
-        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
         "doi": "10.1111/padm.12719",
         "title": "Institutional Grammar 2.0: A specification for encoding and analyzing institutional design",
         "authors": "Christopher K. Frantz; Saba Siddiki",
         "year": "2021",
         "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/padm.12719",
         "checked_at": "2026-11-21",
-        "original_archive_pdf_version_verified": false,
-        "original_archive_pdf_read": false,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
         "original_archive_pdf_redistribution_authorized": false,
         "scientific_card_review_approved": false
-      }
+      },
+      "source_identity_verified_not_citation_grade": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0003.md",
@@ -422,26 +424,27 @@
         "2018",
         "src-0016"
       ],
-      "sha256": "3a597318041a6fb431b5d1504890be704722c8b59e55a27a1a7993ae39daf3ba",
+      "sha256": "d5822341c632b91d1b74201b50b8eba220cc9c7468a89b31c0eacee34d231c06",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "public_work_metadata_screen": {
-        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
         "doi": "10.14527/kuey.2018.016",
         "title": "Policy Document Analysis: A Practical Educational Leadership Tool and a Qualitative Research Method",
         "authors": "Carol Cardno",
         "year": "2018",
         "url": "https://eric.ed.gov/?id=EJ1305631",
         "checked_at": "2026-11-21",
-        "original_archive_pdf_version_verified": false,
-        "original_archive_pdf_read": false,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
         "original_archive_pdf_redistribution_authorized": false,
         "scientific_card_review_approved": false
-      }
+      },
+      "source_identity_verified_not_citation_grade": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0017.md",
@@ -673,26 +676,27 @@
         "2005",
         "src-0026"
       ],
-      "sha256": "613d372e3ae3feaf35a158c878d68538bcff7743451658d136727f29c96daedc",
+      "sha256": "1cffbea73a30e45cd2b4d3f15fd2b25e9424e21916d86c9519db41b7780e8e37",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "public_work_metadata_screen": {
-        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
         "doi": "10.1590/S1517-97022005000300009",
         "title": "Pesquisa-ação: uma introdução metodológica",
         "authors": "David Tripp",
         "year": "2005",
         "url": "https://revistas.usp.br/ep/pt_BR/article/view/27989/",
         "checked_at": "2026-11-21",
-        "original_archive_pdf_version_verified": false,
-        "original_archive_pdf_read": false,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
         "original_archive_pdf_redistribution_authorized": false,
         "scientific_card_review_approved": false
-      }
+      },
+      "source_identity_verified_not_citation_grade": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0027.md",
@@ -908,26 +912,27 @@
         "2007",
         "src-0035"
       ],
-      "sha256": "905b2564a1b6d02671a704f72e66a8d08d1790b9849056057449961581b68d7d",
+      "sha256": "65bb127814f54cb2f8e4b77b10995db35b0485ff2ecadac1237f362273bcc666",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "public_work_metadata_screen": {
-        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
         "doi": "10.1080/17405900701464816",
         "title": "Feminist Critical Discourse Analysis: Articulating a Feminist Discourse Praxis",
         "authors": "Michelle M. Lazar",
         "year": "2007",
         "url": "https://www.tandfonline.com/doi/abs/10.1080/17405900701464816",
         "checked_at": "2026-11-21",
-        "original_archive_pdf_version_verified": false,
-        "original_archive_pdf_read": false,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
         "original_archive_pdf_redistribution_authorized": false,
         "scientific_card_review_approved": false
-      }
+      },
+      "source_identity_verified_not_citation_grade": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0036.md",
@@ -1076,7 +1081,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0041.md",
       "source_id": "SRC-0041",
-      "title": "Identificação ainda não verificada — From coding to conversation a new methodological framework for ai assisted qualitative analysis",
+      "title": "From Coding to Conversation: A New Methodological Framework for AI-Assisted Qualitative Analysis",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1094,28 +1099,29 @@
         "analysis",
         "src-0041"
       ],
-      "sha256": "34ebd8e14d72fcff88feffded8483be5acfac686d82c625da0f90e181aa1048b",
+      "sha256": "282c3480a26a42d7e5fdff066c2dcd7a8ba2cb1deb2f89e32b5ffcb5eba669d1",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "From coding to conversation a new methodological framework for ai assisted qualitative analysis",
       "title_candidate_only": true,
       "public_work_metadata_screen": {
-        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
         "doi": "10.1177/10778004251412871",
         "title": "From Coding to Conversation: A New Methodological Framework for AI-Assisted Qualitative Analysis",
         "authors": "Susanne Friese",
         "year": "2026",
         "url": "https://journals.sagepub.com/doi/10.1177/10778004251412871",
         "checked_at": "2026-11-21",
-        "original_archive_pdf_version_verified": false,
-        "original_archive_pdf_read": false,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
         "original_archive_pdf_redistribution_authorized": false,
         "scientific_card_review_approved": false
-      }
+      },
+      "source_identity_verified_not_citation_grade": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0042.md",
@@ -1342,7 +1348,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0049.md",
       "source_id": "SRC-0049",
-      "title": "Identificação ainda não verificada — Large language models in qualitative research uses tensions and intentions",
+      "title": "Large Language Models in Qualitative Research: Uses, Tensions, and Intentions",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1360,33 +1366,34 @@
         "intentions",
         "src-0049"
       ],
-      "sha256": "d58a4a5b512f6474e660666a08e4cf26d41c1626e968b798122194ca86148047",
+      "sha256": "5218444f843078dc83ceeccfb3bb1bed74c33ef0237d62d247f5712ecbf4f4ce",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
-      "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
-      "has_original_public_pdf": false,
-      "public_pdf_path": null,
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
+      "rights_review": "VERIFIED_PUBLISHER_LICENSE",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "has_original_public_pdf": true,
+      "public_pdf_path": "knowledge/methodology/pdfs/schroeder-lequere-randazzo-mimno-schoenebeck-2025-llm-qualitative.pdf",
       "title_candidate_from_filename": "Large language models in qualitative research uses tensions and intentions",
       "title_candidate_only": true,
       "public_work_metadata_screen": {
-        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
         "doi": "10.1145/3706598.3713120",
         "title": "Large Language Models in Qualitative Research: Uses, Tensions, and Intentions",
         "authors": "Hope Schroeder; Marianne Aubin Le Quéré; Casey Randazzo; David Mimno; Sarita Schoenebeck",
         "year": "2025",
         "url": "https://doi.org/10.1145/3706598.3713120",
         "checked_at": "2026-11-21",
-        "original_archive_pdf_version_verified": false,
-        "original_archive_pdf_read": false,
-        "original_archive_pdf_redistribution_authorized": false,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": true,
         "scientific_card_review_approved": false
-      }
+      },
+      "source_identity_verified_not_citation_grade": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0050.md",
       "source_id": "SRC-0050",
-      "title": "Identificação ainda não verificada — Conversing with qualitative data enhancing qualitative research through large language models (llms)",
+      "title": "Conversing With Qualitative Data: Enhancing Qualitative Research Through Large Language Models (LLMs)",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1406,28 +1413,29 @@
         "llms",
         "src-0050"
       ],
-      "sha256": "7cae6c6d281e5920b86e5b18a7c38b124aa045c523b8893c5b1a28960e965a00",
+      "sha256": "8ec80a910c2fc20299f6077f45d0ea33366ea40294f4e1cc278230412de6f408",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Conversing with qualitative data enhancing qualitative research through large language models (llms)",
       "title_candidate_only": true,
       "public_work_metadata_screen": {
-        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
         "doi": "10.1177/16094069251322346",
         "title": "Conversing With Qualitative Data: Enhancing Qualitative Research Through Large Language Models (LLMs)",
         "authors": "Adam Hayes",
         "year": "2025",
         "url": "https://journals.sagepub.com/doi/10.1177/16094069251322346",
         "checked_at": "2026-11-21",
-        "original_archive_pdf_version_verified": false,
-        "original_archive_pdf_read": false,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
         "original_archive_pdf_redistribution_authorized": false,
         "scientific_card_review_approved": false
-      }
+      },
+      "source_identity_verified_not_citation_grade": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0051.md",
@@ -1526,7 +1534,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0054.md",
       "source_id": "SRC-0054",
-      "title": "Identificação ainda não verificada — Prompts pearls imperfections comparing chatgpt and a human researcher in qualitative data analysis",
+      "title": "Prompts, Pearls, Imperfections: Comparing ChatGPT and a Human Researcher in Qualitative Data Analysis",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1547,33 +1555,34 @@
         "analysis",
         "src-0054"
       ],
-      "sha256": "4b6cc78f43d42c531fcfde73345e8afa9d41291fcdf572144de3923f472e7e86",
+      "sha256": "78a88776ce6275882a2d25cc2a2a0fbab041920bf18f125d16f12deaabe3ee8b",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Prompts pearls imperfections comparing chatgpt and a human researcher in qualitative data analysis",
       "title_candidate_only": true,
       "public_work_metadata_screen": {
-        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
         "doi": "10.1177/10497323241244669",
         "title": "Prompts, Pearls, Imperfections: Comparing ChatGPT and a Human Researcher in Qualitative Data Analysis",
         "authors": "Jonas Wachinger; Kate Bärnighausen; Louis N. Schäfer; Kerry Scott; Shannon A. McMahon",
         "year": "2024",
         "url": "https://pubmed.ncbi.nlm.nih.gov/38775392/",
         "checked_at": "2026-11-21",
-        "original_archive_pdf_version_verified": false,
-        "original_archive_pdf_read": false,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
         "original_archive_pdf_redistribution_authorized": false,
         "scientific_card_review_approved": false
-      }
+      },
+      "source_identity_verified_not_citation_grade": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0055.md",
       "source_id": "SRC-0055",
-      "title": "Identificação ainda não verificada — The ai reflexivity checklist (arc) a pre analysis pause for llm assisted coding",
+      "title": "The AI-Reflexivity Checklist (ARC): A Pre-Analysis Pause for LLM-Assisted Coding",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1590,28 +1599,29 @@
         "coding",
         "src-0055"
       ],
-      "sha256": "af461ef1b3174ab0f0b642e9e23189f2bcfa7f40670dd259c6e71c67d4c4466e",
+      "sha256": "6e8f82f574d1b5ec46e966fe1831719bbd080ab8cdfcf0576918db1dc079765e",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "The ai reflexivity checklist (arc) a pre analysis pause for llm assisted coding",
       "title_candidate_only": true,
       "public_work_metadata_screen": {
-        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
         "doi": "10.1177/10497323251401503",
         "title": "The AI-Reflexivity Checklist (ARC): A Pre-Analysis Pause for LLM-Assisted Coding",
         "authors": "Andrew Prahl",
         "year": "2025 online; 2026 journal issue",
         "url": "https://pubmed.ncbi.nlm.nih.gov/41441839/",
         "checked_at": "2026-11-21",
-        "original_archive_pdf_version_verified": false,
-        "original_archive_pdf_read": false,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
         "original_archive_pdf_redistribution_authorized": false,
         "scientific_card_review_approved": false
-      }
+      },
+      "source_identity_verified_not_citation_grade": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0056.md",
@@ -1840,7 +1850,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0063.md",
       "source_id": "SRC-0063",
-      "title": "Identificação ainda não verificada — We reject the use of generative artificial intelligence for reflexive qualitative research",
+      "title": "We Reject the Use of Generative Artificial Intelligence for Reflexive Qualitative Research",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1856,28 +1866,29 @@
         "qualitative",
         "src-0063"
       ],
-      "sha256": "894650e382b1ecebc27c2696d17b426a9abddba1c580fa6e0bdeb014974b723c",
+      "sha256": "14b3f5ce1c89973bb084449ad8756a110b2568942b9a800ecdee275e0756b905",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "We reject the use of generative artificial intelligence for reflexive qualitative research",
       "title_candidate_only": true,
       "public_work_metadata_screen": {
-        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
         "doi": "10.1177/10778004251401851",
         "title": "We Reject the Use of Generative Artificial Intelligence for Reflexive Qualitative Research",
         "authors": "Tanisha Jowsey; Virginia Braun; Victoria Clarke; Deborah Lupton; Michelle Fine; 414 additional signatories",
         "year": "2025",
         "url": "https://journals.sagepub.com/doi/10.1177/10778004251401851",
         "checked_at": "2026-11-21",
-        "original_archive_pdf_version_verified": false,
-        "original_archive_pdf_read": false,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
         "original_archive_pdf_redistribution_authorized": false,
         "scientific_card_review_approved": false
-      }
+      },
+      "source_identity_verified_not_citation_grade": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0064.md",
@@ -2037,7 +2048,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0069.md",
       "source_id": "SRC-0069",
-      "title": "Identificação ainda não verificada — Qualitative content analysis with chatgpt pitfalls rough approximations and gross",
+      "title": "Qualitative Content Analysis With ChatGPT: Pitfalls, Rough Approximations and Gross Errors. A Field Report",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -2056,28 +2067,29 @@
         "gross",
         "src-0069"
       ],
-      "sha256": "76cfe3d99b5527f54798d79f1f180ebc8cde248ef6d48b6ffbac54221838d376",
+      "sha256": "4488183b98f83d2813f596e116758fd09a888d4087b04a1187fc044698ede8d1",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
-      "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
-      "has_original_public_pdf": false,
-      "public_pdf_path": null,
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
+      "rights_review": "VERIFIED_PUBLISHER_LICENSE",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "has_original_public_pdf": true,
+      "public_pdf_path": "knowledge/methodology/pdfs/mayring-2025-chatgpt-content-analysis.pdf",
       "title_candidate_from_filename": "Qualitative content analysis with chatgpt pitfalls rough approximations and gross",
       "title_candidate_only": true,
       "public_work_metadata_screen": {
-        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
         "doi": "10.17169/fqs-26.1.4252",
         "title": "Qualitative Content Analysis With ChatGPT: Pitfalls, Rough Approximations and Gross Errors. A Field Report",
         "authors": "Philipp Mayring",
         "year": "2025",
         "url": "https://doaj.org/article/00be4819aded4a7ebc37e917a54a0b9f",
         "checked_at": "2026-11-21",
-        "original_archive_pdf_version_verified": false,
-        "original_archive_pdf_read": false,
-        "original_archive_pdf_redistribution_authorized": false,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": true,
         "scientific_card_review_approved": false
-      }
+      },
+      "source_identity_verified_not_citation_grade": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0070.md",
@@ -12538,6 +12550,8 @@
     }
   ],
   "provisional_filename_title_cards": 71,
-  "identities_still_unresolved": 71,
-  "public_bibliographic_work_checks": 12
+  "identities_still_unresolved": 64,
+  "public_bibliographic_work_checks": 12,
+  "provisional_matches": 399,
+  "confirmed_pdf_work_identities": 12
 }

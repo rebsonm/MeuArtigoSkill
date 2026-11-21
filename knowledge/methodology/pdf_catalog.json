@@ -1,6 +1,6 @@
 {
   "schema": "MEU_ARTIGO_PUBLIC_PDF_CATALOG_V1",
-  "version": "pilot-2026-11-21-38-licensed-original-pdfs",
+  "version": "pilot-2026-11-21-40-licensed-original-pdfs",
   "documents": [
     {
       "path": "knowledge/methodology/pdfs/lycariao-roque-costa-2023.pdf",
@@ -1055,6 +1055,56 @@
         "typology",
         "model",
         "research design"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/schroeder-lequere-randazzo-mimno-schoenebeck-2025-llm-qualitative.pdf",
+      "title": "Large Language Models in Qualitative Research: Uses, Tensions, and Intentions",
+      "authors": "Hope Schroeder; Marianne Aubin Le Quéré; Casey Randazzo; David Mimno; Sarita Schoenebeck",
+      "year": 2025,
+      "doi": "10.1145/3706598.3713120",
+      "size": 836379,
+      "sha256": "1e0580e558bd2a12cc2de48c70f187ac7c178d7a6585e4a2e58ec5460ecfb62b",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://doi.org/10.1145/3706598.3713120",
+      "source_url": "https://doi.org/10.1145/3706598.3713120",
+      "source_pdf_url": "https://www.caseyrandazzo.com/_files/ugd/294ce3_eafcc4d5eb814d23b518f180c97212c8.pdf",
+      "rights_evidence_type": "ORIGINAL_PDF_CC_BY_4_VISUAL_AND_TEXT_VERIFICATION",
+      "original_file_unchanged": true,
+      "keywords": [
+        "llm",
+        "qualitative",
+        "schroeder",
+        "20 interviews",
+        "tensions",
+        "ethics"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/mayring-2025-chatgpt-content-analysis.pdf",
+      "title": "Qualitative Content Analysis With ChatGPT: Pitfalls, Rough Approximations and Gross Errors. A Field Report",
+      "authors": "Philipp Mayring",
+      "year": 2025,
+      "doi": "10.17169/fqs-26.1.4252",
+      "size": 141258,
+      "sha256": "224084ab56a7c51cc9200887186bab484fafeae9d5ec073c1a65258140caa180",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://www.qualitative-research.net/index.php/fqs/article/download/4252/5160/19733",
+      "source_url": "https://doaj.org/article/00be4819aded4a7ebc37e917a54a0b9f",
+      "source_pdf_url": "https://www.qualitative-research.net/index.php/fqs/article/download/4252/5160/19733",
+      "rights_evidence_type": "ORIGINAL_PDF_CC_BY_4_VISUAL_AND_TEXT_VERIFICATION",
+      "original_file_unchanged": true,
+      "keywords": [
+        "mayring",
+        "qualitative",
+        "chatgpt",
+        "content analysis",
+        "errors",
+        "method"
       ]
     }
   ],

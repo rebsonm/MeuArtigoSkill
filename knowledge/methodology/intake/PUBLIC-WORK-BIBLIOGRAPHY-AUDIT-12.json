@@ -15,11 +15,13 @@
       "authors": "Saba Siddiki; Xavier Basurto; Christopher M. Weible",
       "publication_year": "2012",
       "public_locator": "https://onlinelibrary.wiley.com/doi/10.1111/j.1748-5991.2012.01132.x",
-      "scope": "PUBLIC_BIBLIOGRAPHIC_METADATA_ONLY",
-      "archive_pdf_identity_confirmed": false,
-      "archive_pdf_text_read": false,
+      "scope": "ORIGINAL_ARCHIVE_PDF_DIRECT_TEXT_READ_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "archive_pdf_identity_confirmed": true,
+      "archive_pdf_text_read": true,
       "rights_to_redistribute_archive_pdf": false,
-      "independent_scientific_card_approval": false
+      "independent_scientific_card_approval": false,
+      "license_observation": "Licença exata de redistribuição não confirmada",
+      "reconciled_method_note": "A pesquisa articula gramática institucional, regras regulatórias do Colorado e níveis de conformidade relatados com técnica Q-Sort; regra escrita não equivale a conduta observada."
     },
     {
       "source_registry_id": "SRC-0002",
@@ -28,11 +30,13 @@
       "authors": "Christopher K. Frantz; Saba Siddiki",
       "publication_year": "2021",
       "public_locator": "https://onlinelibrary.wiley.com/doi/full/10.1111/padm.12719",
-      "scope": "PUBLIC_BIBLIOGRAPHIC_METADATA_ONLY",
-      "archive_pdf_identity_confirmed": false,
-      "archive_pdf_text_read": false,
+      "scope": "ORIGINAL_ARCHIVE_PDF_DIRECT_TEXT_READ_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "archive_pdf_identity_confirmed": true,
+      "archive_pdf_text_read": true,
       "rights_to_redistribute_archive_pdf": false,
-      "independent_scientific_card_approval": false
+      "independent_scientific_card_approval": false,
+      "license_observation": "Licença exata de redistribuição não confirmada",
+      "reconciled_method_note": "A Institutional Grammar 2.0 contempla enunciados regulativos e constitutivos; usar uma especificação declarada e justificar as decisões de codificação."
     },
     {
       "source_registry_id": "SRC-0016",
@@ -41,11 +45,13 @@
       "authors": "Carol Cardno",
       "publication_year": "2018",
       "public_locator": "https://eric.ed.gov/?id=EJ1305631",
-      "scope": "PUBLIC_BIBLIOGRAPHIC_METADATA_ONLY",
-      "archive_pdf_identity_confirmed": false,
-      "archive_pdf_text_read": false,
+      "scope": "ORIGINAL_ARCHIVE_PDF_DIRECT_TEXT_READ_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "archive_pdf_identity_confirmed": true,
+      "archive_pdf_text_read": true,
       "rights_to_redistribute_archive_pdf": false,
-      "independent_scientific_card_approval": false
+      "independent_scientific_card_approval": false,
+      "license_observation": "Licença exata de redistribuição não confirmada",
+      "reconciled_method_note": "A análise documental de políticas exige atenção à história, aos interesses, aos valores e à implementação; leitura de texto normativo isolada não demonstra resultados."
     },
     {
       "source_registry_id": "SRC-0026",
@@ -54,11 +60,13 @@
       "authors": "David Tripp",
       "publication_year": "2005",
       "public_locator": "https://revistas.usp.br/ep/pt_BR/article/view/27989/",
-      "scope": "PUBLIC_BIBLIOGRAPHIC_METADATA_ONLY",
-      "archive_pdf_identity_confirmed": false,
-      "archive_pdf_text_read": false,
+      "scope": "ORIGINAL_ARCHIVE_PDF_DIRECT_TEXT_READ_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "archive_pdf_identity_confirmed": true,
+      "archive_pdf_text_read": true,
       "rights_to_redistribute_archive_pdf": false,
-      "independent_scientific_card_approval": false
+      "independent_scientific_card_approval": false,
+      "license_observation": "Licença exata de redistribuição não confirmada",
+      "reconciled_method_note": "Tripp diferencia pesquisa-ação de melhoria administrativa genérica, examinando ciclos, teoria, reflexão, participação e ética."
     },
     {
       "source_registry_id": "SRC-0035",
@@ -67,11 +75,13 @@
       "authors": "Michelle M. Lazar",
       "publication_year": "2007",
       "public_locator": "https://www.tandfonline.com/doi/abs/10.1080/17405900701464816",
-      "scope": "PUBLIC_BIBLIOGRAPHIC_METADATA_ONLY",
-      "archive_pdf_identity_confirmed": false,
-      "archive_pdf_text_read": false,
+      "scope": "ORIGINAL_ARCHIVE_PDF_DIRECT_TEXT_READ_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "archive_pdf_identity_confirmed": true,
+      "archive_pdf_text_read": true,
       "rights_to_redistribute_archive_pdf": false,
-      "independent_scientific_card_approval": false
+      "independent_scientific_card_approval": false,
+      "license_observation": "Cópia editorial com proibição expressa de redistribuição substancial",
+      "reconciled_method_note": "Lazar discute análise crítica feminista do discurso como relação entre linguagem, ideologia, poder e estruturas de gênero, sem dispensar contextualização empírica."
     },
     {
       "source_registry_id": "SRC-0041",
@@ -80,11 +90,13 @@
       "authors": "Susanne Friese",
       "publication_year": "2026",
       "public_locator": "https://journals.sagepub.com/doi/10.1177/10778004251412871",
-      "scope": "PUBLIC_BIBLIOGRAPHIC_METADATA_ONLY",
-      "archive_pdf_identity_confirmed": false,
-      "archive_pdf_text_read": false,
+      "scope": "ORIGINAL_ARCHIVE_PDF_DIRECT_TEXT_READ_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "archive_pdf_identity_confirmed": true,
+      "archive_pdf_text_read": true,
       "rights_to_redistribute_archive_pdf": false,
-      "independent_scientific_card_approval": false
+      "independent_scientific_card_approval": false,
+      "license_observation": "Licença exata de redistribuição não confirmada",
+      "reconciled_method_note": "Friese propõe CAAI, análise conversacional com IA estruturada em cinco passos; é abordagem interpretativa proposta, não validação geral de automação."
     },
     {
       "source_registry_id": "SRC-0049",
@@ -93,11 +105,16 @@
       "authors": "Hope Schroeder; Marianne Aubin Le Quéré; Casey Randazzo; David Mimno; Sarita Schoenebeck",
       "publication_year": "2025",
       "public_locator": "https://doi.org/10.1145/3706598.3713120",
-      "scope": "PUBLIC_BIBLIOGRAPHIC_METADATA_ONLY",
-      "archive_pdf_identity_confirmed": false,
-      "archive_pdf_text_read": false,
-      "rights_to_redistribute_archive_pdf": false,
-      "independent_scientific_card_approval": false
+      "scope": "ORIGINAL_ARCHIVE_PDF_DIRECT_TEXT_READ_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "archive_pdf_identity_confirmed": true,
+      "archive_pdf_text_read": true,
+      "rights_to_redistribute_archive_pdf": true,
+      "independent_scientific_card_approval": false,
+      "license_observation": "CC BY 4.0 (licença conferida no PDF; atribuição obrigatória)",
+      "reconciled_method_note": "O estudo relata entrevistas com vinte pesquisadores qualitativos, usos de LLMs e tensões epistemológicas/éticas, sem estimar efeito causal.",
+      "original_pdf_sha256": "1e0580e558bd2a12cc2de48c70f187ac7c178d7a6585e4a2e58ec5460ecfb62b",
+      "original_pdf_size_bytes": 836379,
+      "public_pdf_path": "knowledge/methodology/pdfs/schroeder-lequere-randazzo-mimno-schoenebeck-2025-llm-qualitative.pdf"
     },
     {
       "source_registry_id": "SRC-0050",
@@ -106,11 +123,13 @@
       "authors": "Adam Hayes",
       "publication_year": "2025",
       "public_locator": "https://journals.sagepub.com/doi/10.1177/16094069251322346",
-      "scope": "PUBLIC_BIBLIOGRAPHIC_METADATA_ONLY",
-      "archive_pdf_identity_confirmed": false,
-      "archive_pdf_text_read": false,
+      "scope": "ORIGINAL_ARCHIVE_PDF_DIRECT_TEXT_READ_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "archive_pdf_identity_confirmed": true,
+      "archive_pdf_text_read": true,
       "rights_to_redistribute_archive_pdf": false,
-      "independent_scientific_card_approval": false
+      "independent_scientific_card_approval": false,
+      "license_observation": "CC BY-NC 4.0: não distribuir no catálogo CC BY",
+      "reconciled_method_note": "Hayes apresenta interações conversacionais com dados qualitativos e ressalta o julgamento humano e a transparência; texto não certifica validade automática."
     },
     {
       "source_registry_id": "SRC-0054",
@@ -119,11 +138,13 @@
       "authors": "Jonas Wachinger; Kate Bärnighausen; Louis N. Schäfer; Kerry Scott; Shannon A. McMahon",
       "publication_year": "2024",
       "public_locator": "https://pubmed.ncbi.nlm.nih.gov/38775392/",
-      "scope": "PUBLIC_BIBLIOGRAPHIC_METADATA_ONLY",
-      "archive_pdf_identity_confirmed": false,
-      "archive_pdf_text_read": false,
+      "scope": "ORIGINAL_ARCHIVE_PDF_DIRECT_TEXT_READ_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "archive_pdf_identity_confirmed": true,
+      "archive_pdf_text_read": true,
       "rights_to_redistribute_archive_pdf": false,
-      "independent_scientific_card_approval": false
+      "independent_scientific_card_approval": false,
+      "license_observation": "Licença exata de redistribuição não confirmada",
+      "reconciled_method_note": "Comparação de ChatGPT com pesquisador em análise de uma entrevista; houve convergência de temas e risco de ligação teórica persuasiva com modelos inadequados."
     },
     {
       "source_registry_id": "SRC-0055",
@@ -132,11 +153,13 @@
       "authors": "Andrew Prahl",
       "publication_year": "2025 online; 2026 journal issue",
       "public_locator": "https://pubmed.ncbi.nlm.nih.gov/41441839/",
-      "scope": "PUBLIC_BIBLIOGRAPHIC_METADATA_ONLY",
-      "archive_pdf_identity_confirmed": false,
-      "archive_pdf_text_read": false,
+      "scope": "ORIGINAL_ARCHIVE_PDF_DIRECT_TEXT_READ_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "archive_pdf_identity_confirmed": true,
+      "archive_pdf_text_read": true,
       "rights_to_redistribute_archive_pdf": false,
-      "independent_scientific_card_approval": false
+      "independent_scientific_card_approval": false,
+      "license_observation": "Licença exata de redistribuição não confirmada",
+      "reconciled_method_note": "O checklist ARC organiza cinco domínios de decisão antes de usar LLM na codificação; não equivale a autorização ética ou validação científica."
     },
     {
       "source_registry_id": "SRC-0063",
@@ -145,11 +168,13 @@
       "authors": "Tanisha Jowsey; Virginia Braun; Victoria Clarke; Deborah Lupton; Michelle Fine; 414 additional signatories",
       "publication_year": "2025",
       "public_locator": "https://journals.sagepub.com/doi/10.1177/10778004251401851",
-      "scope": "PUBLIC_BIBLIOGRAPHIC_METADATA_ONLY",
-      "archive_pdf_identity_confirmed": false,
-      "archive_pdf_text_read": false,
+      "scope": "ORIGINAL_ARCHIVE_PDF_DIRECT_TEXT_READ_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "archive_pdf_identity_confirmed": true,
+      "archive_pdf_text_read": true,
       "rights_to_redistribute_archive_pdf": false,
-      "independent_scientific_card_approval": false
+      "independent_scientific_card_approval": false,
+      "license_observation": "Licença exata de redistribuição não confirmada",
+      "reconciled_method_note": "Tomada de posição metodológica de 419 pesquisadores, de 32 países, crítica à GenAI em análise qualitativa reflexiva; é argumento acadêmico, não teste causal."
     },
     {
       "source_registry_id": "SRC-0069",
@@ -158,11 +183,20 @@
       "authors": "Philipp Mayring",
       "publication_year": "2025",
       "public_locator": "https://doaj.org/article/00be4819aded4a7ebc37e917a54a0b9f",
-      "scope": "PUBLIC_BIBLIOGRAPHIC_METADATA_ONLY",
-      "archive_pdf_identity_confirmed": false,
-      "archive_pdf_text_read": false,
-      "rights_to_redistribute_archive_pdf": false,
-      "independent_scientific_card_approval": false
+      "scope": "ORIGINAL_ARCHIVE_PDF_DIRECT_TEXT_READ_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "archive_pdf_identity_confirmed": true,
+      "archive_pdf_text_read": true,
+      "rights_to_redistribute_archive_pdf": true,
+      "independent_scientific_card_approval": false,
+      "license_observation": "CC BY 4.0 (licença conferida no PDF; atribuição obrigatória)",
+      "reconciled_method_note": "Mayring testa ChatGPT 3.5/4 na análise de conteúdo e descreve erros e aproximações superficiais; não generalizar para outros sistemas.",
+      "original_pdf_sha256": "224084ab56a7c51cc9200887186bab484fafeae9d5ec073c1a65258140caa180",
+      "original_pdf_size_bytes": 141258,
+      "public_pdf_path": "knowledge/methodology/pdfs/mayring-2025-chatgpt-content-analysis.pdf"
     }
-  ]
+  ],
+  "stage": "DIRECT_PDF_IDENTIFICATION_AND_METHOD_INSPECTION",
+  "archive_original_pdfs_examined": 12,
+  "archive_original_pdfs_cc_by_redistributable": 2,
+  "independent_scientific_approvals": 0
 }

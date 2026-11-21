@@ -81,7 +81,8 @@ def _catalog(blob: bytes) -> list[dict]:
                 or not doc["public_pdf_path"].startswith("knowledge/methodology/pdfs/")):
             raise ValueError("REGISTRY_UNLICENSED_PDF_REFERENCE")
         if doc.get("bibliography_match_status") not in {
-                "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED", "IDENTITY_UNRESOLVED"}:
+                "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED", "IDENTITY_UNRESOLVED",
+                "SOURCE_PDF_WORK_VERIFIED"}:
             raise ValueError("REGISTRY_MATCH_STATUS_INVALID")
         paths.add(path)
         ids.add(sid)
