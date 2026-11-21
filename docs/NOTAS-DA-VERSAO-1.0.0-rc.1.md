@@ -40,7 +40,7 @@ No confidential researcher data is required for acceptance.
 
 ## Exclusions and unresolved evidence
 
-- No separately hosted service, remote plugin, authenticated UI panel,
+- No separately hosted service, remote account integration, authenticated UI panel,
   account connector or infrastructure deployment is supplied by this ZIP.
 - No real ChatGPT, Claude or Gemini installation has been proven for this
   candidate merely by passing simulated tests or building the archive.
