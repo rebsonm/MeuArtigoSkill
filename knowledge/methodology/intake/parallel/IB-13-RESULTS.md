@@ -58,3 +58,9 @@ Confrontados nome e tamanho de cada um dos 17 PDFs com o ledger congelado e os m
 4. Registrar e verificar o bloco `25.13` do MD canônico no Drive mediante janela de escrita sem concorrência real.
 
 As fichas são apenas cartões próprios [P], sujeitos a leitura e revisão independentes. 
+
+## Situação de sincronização com o Markdown canônico do Drive
+
+- **Atualização direta ainda não realizada:** o arquivo `CONTINUIDADE_SKILL_MEUARTIGO.md` é `text/markdown` e a gravação disponível substitui os bytes integralmente, sem compare-and-swap/mesclagem; ao longo deste lote houve atualizações reais de outras abas e a exclusividade de escrita não pôde ser confirmada. Não sobrescrever alterações de terceiros. O bloco `25.13` continua pendente no canônico até aplicação segura e verificação posterior.
+- Alteração restrita à Seção `25.13` preparada em patch local de contingência `IB-13_ALTERACAO_EXCLUSIVA_SECAO_25_13.patch`; não supor que este patch tenha sido aplicado no Drive.
+- A conversa integradora deverá aplicar/reconciliar apenas o bloco 25.13, com releitura imediatamente antes e confirmação de todos os outros blocos depois. Esta limitação não invalida os 17 commits das fichas já verificados na branch.
