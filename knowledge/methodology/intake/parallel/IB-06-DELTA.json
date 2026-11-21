@@ -13,7 +13,7 @@
   "global_catalogue_changed": false,
   "ci_status": "NOT_RUN_IN_BATCH_PENDING_INTEGRATOR",
   "editorial_pending": [
-    "SRC-0208: nome do periódico não confirmado textualmente; inspeção visual complementar solicitada",
+    "SRC-0208: periódico e páginas confirmados por inspeção visual; ISSN/DOI e licença exata não identificados",
     "SRC-0209: preservar correção da autoria na errata",
     "SRC-0203 e SRC-0204: preservar créditos da tradução",
     "SRC-0209 e SRC-0213: versão específica da licença CC não identificada"
@@ -218,14 +218,14 @@
       "size_bytes_esperados": 3171845,
       "drive_file_id_confirmado_ou_null": "1rsnMm7bFmAaJ7MhrTVoe3Flf3ZfvVPxP",
       "nome_titulo_do_PDF": "A abordagem da grounded theory como alternativa metodológica qualitativa para pesquisas em Ciência Política",
-      "autores_ano_edicao": "José Alberto de Siqueira Brandão — 2020",
+      "autores_ano_edicao": "José Alberto de Siqueira Brandão — 2020; Revista Política Hoje 29(1), 161–196",
       "doi_isbn_confirmados_ou_null": null,
-      "tipo_publicacao": "artigo",
-      "escopo_exato_da_inspecao": "folha inicial, expediente, resumo ou sumário, busca pontual por DOI/licença",
+      "tipo_publicacao": "artigo em Revista Política Hoje",
+      "escopo_exato_da_inspecao": "folha inicial, resumo, inspeção visual da capa e paginação, busca pontual de avisos de direitos",
       "identidade_confirmada_boolean": true,
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "licença não observada",
-      "novo_hash_sha256_da_ficha": "f155323199ef23b32812c93340db664ae077c4de1b1bc401cab3aa58b956fe7f",
+      "novo_hash_sha256_da_ficha": "49ea73186b5cec238c4adc1f3ed88e1e9e325051be0e31d1c7e2c1e7b45d1bda",
       "estado_de_revisao_cientifica": "PENDENTE",
       "publicacao_pdf_autorizada_nesta_etapa": false
     },
