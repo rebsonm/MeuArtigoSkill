@@ -85,3 +85,7 @@ See [license-screening record](LICENSE-SCREENING-2026-11-21.md) for publisher-ba
 ## Atualização complementar — 21/11/2026
 
 Depois da auditoria documental de 12 cópias originais: **5/475** itens do ledger com CC BY 4.0 verificada; **40** PDFs públicos individualmente licenciados no catálogo. Os dois novos originais, Schroeder et al. e Mayring 2025, têm licenças indicadas no próprio documento e hashes registrados. Não estender essa conclusão aos demais 470 PDFs sem direitos confirmados. Em particular, o exemplar de Hayes 2025 indica CC BY-NC, e a cópia de Lazar 2007 proíbe redistribuição substancial; ambos permanecem fora do acervo público. A leitura documental de 12 obras não aprova cientificamente seus cards.
+
+## Última reconciliação de direitos — 21/11/2026, 14 trabalhos
+
+**ESTADO CORRENTE (prevalece sobre os parágrafos históricos anteriores):** 10/475 cópias do inventário com licença individual CC BY 4.0 confirmada, catálogo público com 45 PDFs originais. Cinco novas cópias: Costa et al. 2025, Nguyen-Trung 2025, Dahal et al. 2025, Jowsey et al. 2025 (*Frankenstein*) e Castellanos et al. 2025. Cada exemplar tem tamanho, SHA256, DOI, página de licença e nome no catálogo. Foram conferidas 14 identidades documentais adicionais: 26 verificadas, 399 provisórias e 50 não resolvidas. Cópias com CC BY-NC ou sem licença positiva documentada continuam fora do acervo público. Os 114 cards editoriais são textos próprios e continuam sem revisão científica independente.
