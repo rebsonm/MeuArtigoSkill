@@ -27,5 +27,13 @@
   "ambiguous_bibliographic_matches": 4,
   "source_records_not_in_spreadsheet": 67,
   "source_title_matching_guarantees_rights": false,
-  "source_title_matching_guarantees_scholarly_identity": false
+  "source_title_matching_guarantees_scholarly_identity": false,
+  "crossref_title_metadata_queries": 395,
+  "crossref_source_rows_screened": 404,
+  "crossref_results_by_status": {
+    "METADATA_LOOKUP_UNAVAILABLE": 401,
+    "MATCHED_PUBLISHER_METADATA_NOT_SOURCE_VERIFIED": 3
+  },
+  "crossref_ccby4_publisher_metadata_candidates": 0,
+  "crossref_screened_licenses_are_publication_authorizations": false
 }

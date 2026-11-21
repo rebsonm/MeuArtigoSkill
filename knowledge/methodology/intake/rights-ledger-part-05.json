@@ -21,7 +21,12 @@
       "bibliographic_topic_from_catalog": "Etnografia Política",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0442",
@@ -41,7 +46,12 @@
       "bibliographic_topic_from_catalog": "Etnografia Digital",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0443",
@@ -61,7 +71,12 @@
       "bibliographic_topic_from_catalog": "Etnografia Digital",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0444",
@@ -81,7 +96,12 @@
       "bibliographic_topic_from_catalog": "Etnografia Digital",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0445",
@@ -101,7 +121,12 @@
       "bibliographic_topic_from_catalog": "Etnografia Digital",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0446",
@@ -121,7 +146,12 @@
       "bibliographic_topic_from_catalog": "Etnografia Digital",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0447",
@@ -141,7 +171,12 @@
       "bibliographic_topic_from_catalog": "Etnografia Digital",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0448",
@@ -161,7 +196,12 @@
       "bibliographic_topic_from_catalog": "Etnografia Digital",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0449",
@@ -181,7 +221,12 @@
       "bibliographic_topic_from_catalog": "Etnografia Digital",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0450",
@@ -201,7 +246,12 @@
       "bibliographic_topic_from_catalog": "Etnografia Política",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0451",
@@ -221,7 +271,12 @@
       "bibliographic_topic_from_catalog": "Etnografia Política",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0452",
@@ -241,7 +296,12 @@
       "bibliographic_topic_from_catalog": "Etnografia Política",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0453",
@@ -261,7 +321,12 @@
       "bibliographic_topic_from_catalog": "Etnografia Política",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0454",
@@ -281,7 +346,12 @@
       "bibliographic_topic_from_catalog": "Observação Participante",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0455",
@@ -301,7 +371,12 @@
       "bibliographic_topic_from_catalog": "Etnografia Política",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0456",
@@ -321,7 +396,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais Online",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0457",
@@ -341,7 +421,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais Online",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0458",
@@ -361,7 +446,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais Online",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0459",
@@ -381,7 +471,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais Online",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0460",
@@ -401,7 +496,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais Online",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0461",
@@ -421,7 +521,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais Online",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0462",
@@ -441,7 +546,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais Online",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0463",
@@ -461,7 +571,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais Online",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0464",
@@ -481,7 +596,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais Online",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0465",
@@ -501,7 +621,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais Online",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0466",
@@ -521,7 +646,12 @@
       "bibliographic_topic_from_catalog": "Políticas públicas: modelos clássicos e 40 anos de produção no Brasil",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0467",
@@ -541,7 +671,12 @@
       "bibliographic_topic_from_catalog": "Entrevistas Online",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0468",
@@ -561,7 +696,12 @@
       "bibliographic_topic_from_catalog": "Entrevistas Online",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0469",
@@ -581,7 +721,12 @@
       "bibliographic_topic_from_catalog": "Entrevistas Online",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0470",
@@ -601,7 +746,12 @@
       "bibliographic_topic_from_catalog": "Entrevistas Online",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0471",
@@ -621,7 +771,12 @@
       "bibliographic_topic_from_catalog": "Entrevistas Online",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0472",
@@ -641,7 +796,12 @@
       "bibliographic_topic_from_catalog": "Entrevistas Online",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0473",
@@ -661,7 +821,12 @@
       "bibliographic_topic_from_catalog": "Entrevistas Online",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0474",
@@ -681,7 +846,12 @@
       "bibliographic_topic_from_catalog": "Entrevistas Online",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0475",
@@ -701,7 +871,12 @@
       "bibliographic_topic_from_catalog": "Entrevistas Online",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     }
   ]
 }

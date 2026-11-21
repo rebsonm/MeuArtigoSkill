@@ -21,7 +21,12 @@
       "bibliographic_topic_from_catalog": "Transparência na Pesquisa qualitativa",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0172",
@@ -41,7 +46,12 @@
       "bibliographic_topic_from_catalog": "Transparência na Pesquisa qualitativa",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0173",
@@ -61,7 +71,12 @@
       "bibliographic_topic_from_catalog": "Transparência na Pesquisa qualitativa",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0174",
@@ -81,7 +96,12 @@
       "bibliographic_topic_from_catalog": "Transparência na Pesquisa qualitativa",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0175",
@@ -101,7 +121,12 @@
       "bibliographic_topic_from_catalog": "Transparência na Pesquisa qualitativa",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0176",
@@ -121,7 +146,12 @@
       "bibliographic_topic_from_catalog": "Transparência na Pesquisa qualitativa",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0177",
@@ -141,7 +171,12 @@
       "bibliographic_topic_from_catalog": "Transparência na Pesquisa qualitativa",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0178",
@@ -161,7 +196,12 @@
       "bibliographic_topic_from_catalog": "Transparência na Pesquisa qualitativa",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0179",
@@ -181,7 +221,12 @@
       "bibliographic_topic_from_catalog": "Transparência na Pesquisa qualitativa",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0180",
@@ -201,7 +246,12 @@
       "bibliographic_topic_from_catalog": "Transparência na Pesquisa qualitativa",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0181",
@@ -251,7 +301,12 @@
       "bibliographic_topic_from_catalog": "Transparência e Replicabilidade",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0184",
@@ -286,7 +341,12 @@
       "bibliographic_topic_from_catalog": "Amostragem Qualitativa",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0186",
@@ -306,7 +366,12 @@
       "bibliographic_topic_from_catalog": "Amostragem Qualitativa",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0187",
@@ -326,7 +391,12 @@
       "bibliographic_topic_from_catalog": "Amostragem Qualitativa",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0188",
@@ -346,7 +416,12 @@
       "bibliographic_topic_from_catalog": "Amostragem Qualitativa",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0189",
@@ -366,7 +441,12 @@
       "bibliographic_topic_from_catalog": "Amostragem Qualitativa",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0190",
@@ -386,7 +466,12 @@
       "bibliographic_topic_from_catalog": "Amostragem Qualitativa",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0191",
@@ -406,7 +491,12 @@
       "bibliographic_topic_from_catalog": "Amostragem Qualitativa",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0192",
@@ -426,7 +516,12 @@
       "bibliographic_topic_from_catalog": "Amostragem Qualitativa",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0193",
@@ -446,7 +541,20 @@
       "bibliographic_topic_from_catalog": "Amostragem Qualitativa",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "MATCHED_PUBLISHER_METADATA_NOT_SOURCE_VERIFIED",
+        "doi_candidate": "10.25110/receu.v22i1.8346",
+        "official_title_candidate": "A AMOSTRAGEM EM SNOWBALL (BOLA DE NEVE) EM UMA PESQUISA QUALITATIVA NO CAMPO DA ADMINISTRAÇÃO",
+        "publisher_candidate": "Universidade Paranaense",
+        "published_year_candidate": 2021,
+        "publication_type_candidate": "journal-article",
+        "license_statements": [],
+        "cc_by_4_candidate": false,
+        "crossref_record_url": "https://api.crossref.org/works/10.25110%2Freceu.v22i1.8346",
+        "is_exact_source_file_identity_checked": false,
+        "rights_to_copy_original_pdf_established": false
+      }
     },
     {
       "id": "SRC-0194",
@@ -466,7 +574,12 @@
       "bibliographic_topic_from_catalog": "Amostragem Qualitativa",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0195",
@@ -486,7 +599,12 @@
       "bibliographic_topic_from_catalog": "Análise do Discurso",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0196",
@@ -506,7 +624,12 @@
       "bibliographic_topic_from_catalog": "Análise do Discurso",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0197",
@@ -526,7 +649,12 @@
       "bibliographic_topic_from_catalog": "Análise do Discurso",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0198",
@@ -546,7 +674,12 @@
       "bibliographic_topic_from_catalog": "Análise do Discurso",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0199",
@@ -581,7 +714,12 @@
       "bibliographic_topic_from_catalog": "Análise do Discurso",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0201",
@@ -601,7 +739,12 @@
       "bibliographic_topic_from_catalog": "Análise do Discurso",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0202",
@@ -621,7 +764,12 @@
       "bibliographic_topic_from_catalog": "Análise do Discurso",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0203",
@@ -641,7 +789,12 @@
       "bibliographic_topic_from_catalog": "Análise do Discurso",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0204",
@@ -661,7 +814,12 @@
       "bibliographic_topic_from_catalog": "Análise do Discurso",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0205",
@@ -711,7 +869,12 @@
       "bibliographic_topic_from_catalog": "Imagem como dado",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0208",
@@ -731,7 +894,12 @@
       "bibliographic_topic_from_catalog": "Grounded Theory",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0209",
@@ -751,7 +919,12 @@
       "bibliographic_topic_from_catalog": "Grounded Theory",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0210",
@@ -771,7 +944,12 @@
       "bibliographic_topic_from_catalog": "Grounded Theory",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0211",
@@ -791,7 +969,12 @@
       "bibliographic_topic_from_catalog": "Grounded Theory",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0212",
@@ -811,7 +994,12 @@
       "bibliographic_topic_from_catalog": "Grounded Theory",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0213",
@@ -831,7 +1019,12 @@
       "bibliographic_topic_from_catalog": "Grounded Theory",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0214",
@@ -851,7 +1044,12 @@
       "bibliographic_topic_from_catalog": "Grounded Theory",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0215",
@@ -871,7 +1069,12 @@
       "bibliographic_topic_from_catalog": "Grounded Theory",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0216",
@@ -891,7 +1094,12 @@
       "bibliographic_topic_from_catalog": "Termos interativos (multiplicativos)",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0217",
@@ -911,7 +1119,12 @@
       "bibliographic_topic_from_catalog": "Termos interativos (multiplicativos)",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0218",
@@ -931,7 +1144,12 @@
       "bibliographic_topic_from_catalog": "Termos interativos (multiplicativos)",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0219",
@@ -951,7 +1169,12 @@
       "bibliographic_topic_from_catalog": "Termos interativos (multiplicativos)",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0220",
@@ -971,7 +1194,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0221",
@@ -991,7 +1219,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0222",
@@ -1011,7 +1244,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0223",
@@ -1031,7 +1269,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0224",
@@ -1051,7 +1294,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0225",
@@ -1071,7 +1319,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0226",
@@ -1091,7 +1344,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0227",
@@ -1111,7 +1369,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0228",
@@ -1131,7 +1394,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0229",
@@ -1151,7 +1419,12 @@
       "bibliographic_topic_from_catalog": "Grupos Focais",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0230",
@@ -1171,7 +1444,12 @@
       "bibliographic_topic_from_catalog": "Jurimetria",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0231",
@@ -1191,7 +1469,12 @@
       "bibliographic_topic_from_catalog": "Jurimetria",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0232",
@@ -1211,7 +1494,12 @@
       "bibliographic_topic_from_catalog": "Avaliação de Impacto",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0233",
@@ -1231,7 +1519,12 @@
       "bibliographic_topic_from_catalog": "Avaliação de Impacto",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0234",
@@ -1251,7 +1544,12 @@
       "bibliographic_topic_from_catalog": "Avaliação de Impacto",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0235",
@@ -1271,7 +1569,12 @@
       "bibliographic_topic_from_catalog": "Avaliação de Impacto",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0236",
@@ -1291,7 +1594,12 @@
       "bibliographic_topic_from_catalog": "Análise de Correspondência",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0237",
@@ -1311,7 +1619,12 @@
       "bibliographic_topic_from_catalog": "Análise de Correspondência",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0238",
@@ -1331,7 +1644,12 @@
       "bibliographic_topic_from_catalog": "Análise de Correspondência",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0239",
@@ -1382,7 +1700,12 @@
       "bibliographic_topic_from_catalog": "Análise de Correspondência",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0242",
@@ -1417,7 +1740,12 @@
       "bibliographic_topic_from_catalog": "Análise de Correspondência",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0244",
@@ -1437,7 +1765,12 @@
       "bibliographic_topic_from_catalog": "Texto como Dado (text mining)",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0245",
@@ -1457,7 +1790,12 @@
       "bibliographic_topic_from_catalog": "Texto como Dado (text mining)",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0246",
@@ -1477,7 +1815,12 @@
       "bibliographic_topic_from_catalog": "Texto como Dado (text mining)",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0247",
@@ -1497,7 +1840,12 @@
       "bibliographic_topic_from_catalog": "Machine Learning",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0248",
@@ -1517,7 +1865,12 @@
       "bibliographic_topic_from_catalog": "Machine Learning",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0249",
@@ -1537,7 +1890,12 @@
       "bibliographic_topic_from_catalog": "Machine Learning",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0250",
@@ -1557,7 +1915,12 @@
       "bibliographic_topic_from_catalog": "Machine Learning",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0251",
@@ -1577,7 +1940,12 @@
       "bibliographic_topic_from_catalog": "Séries Temporais Interrompidas (ITS)",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0252",
@@ -1597,7 +1965,12 @@
       "bibliographic_topic_from_catalog": "Séries Temporais Interrompidas (ITS)",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0253",
@@ -1617,7 +1990,12 @@
       "bibliographic_topic_from_catalog": "Séries Temporais Interrompidas (ITS)",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0254",
@@ -1637,7 +2015,12 @@
       "bibliographic_topic_from_catalog": "Séries Temporais Interrompidas (ITS)",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0255",
@@ -1687,7 +2070,12 @@
       "bibliographic_topic_from_catalog": "Dif-in-Dif (regressão diferenças em diferenças)",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0258",
@@ -1737,7 +2125,12 @@
       "bibliographic_topic_from_catalog": "Dif-in-Dif (regressão diferenças em diferenças)",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0261",
@@ -1757,7 +2150,12 @@
       "bibliographic_topic_from_catalog": "REGRESSION DISCONTINUITY DESIGNS (RDD)",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0262",
@@ -1777,7 +2175,12 @@
       "bibliographic_topic_from_catalog": "REGRESSION DISCONTINUITY DESIGNS (RDD)",
       "bibliographic_language_from_catalog": "Inglês",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0263",
@@ -1797,7 +2200,12 @@
       "bibliographic_topic_from_catalog": "Políticas Públicas",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0264",
@@ -1817,7 +2225,12 @@
       "bibliographic_topic_from_catalog": "Políticas Públicas",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0265",
@@ -1837,7 +2250,12 @@
       "bibliographic_topic_from_catalog": "Políticas Públicas",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0266",
@@ -1857,7 +2275,12 @@
       "bibliographic_topic_from_catalog": "Políticas Públicas",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
-      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY"
+      "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
+      "crossref_metadata_screen": {
+        "status": "METADATA_LOOKUP_UNAVAILABLE",
+        "error_kind": "HTTPError",
+        "cc_by_4_candidate": false
+      }
     },
     {
       "id": "SRC-0267",
