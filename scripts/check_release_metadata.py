@@ -57,7 +57,7 @@ def audit_candidate_metadata(root: Path) -> list[str]:
     errors: list[str] = []
     try:
         version = read_version(root)
-        if not re.fullmatch(r"\\d+\\.\\d+\\.\\d+-rc\\.[1-9]\\d*", version):
+        if not re.fullmatch(r"\d+\.\d+\.\d+-rc\.[1-9]\d*", version):
             return ["SOURCE_VERSION_IS_NOT_RELEASE_CANDIDATE"]
         citation = (root / "CITATION.cff").read_text(encoding="utf-8")
         changelog = (root / "CHANGELOG.md").read_text(encoding="utf-8")
@@ -66,33 +66,9 @@ def audit_candidate_metadata(root: Path) -> list[str]:
         official = (root / "OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip()
     except (OSError, ValueError, UnicodeError):
         return ["SOURCE_CANDIDATE_DOCUMENTS_NOT_AVAILABLE"]
-    if not re.search(rf'(?m)^version:\\s*["\\\']?{re.escape(version)}["\\\']?\\s*    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--repo", default=str(ROOT))
-    mode = parser.add_mutually_exclusive_group()
-    mode.add_argument("--require-today", action="store_true",
-                      help="Require CITATION date to match UTC day of publication")
-    mode.add_argument("--candidate", action="store_true",
-                      help="Audit unpublished RC metadata without a publication date")
-    args = parser.parse_args(argv)
-    when = datetime.now(timezone.utc).date().isoformat() if args.require_today else None
-    try:
-        errors = (audit_candidate_metadata(Path(args.repo)) if args.candidate else
-                  audit_release_metadata(Path(args.repo), expected_date=when))
-    except (OSError, ValueError):
-        print("release_metadata=BLOCKED; cannot read verified source")
-        return 2
-    ready = "READY_FOR_CANDIDATE_TESTING" if args.candidate else "READY_FOR_MANUAL_REVIEW"
-    print("release_metadata=" + ("BLOCKED" if errors else ready))
-    for code in errors:
-        print("  " + code)
-    return 1 if errors else 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
-, citation):
+    if f'version: "{version}"' not in citation:
         errors.append("CITATION_VERSION_INCONSISTENT")
-    if re.search(r"(?m)^date-released\\s*:", citation):
+    if re.search(r"(?m)^date-released\s*:", citation):
         errors.append("UNPUBLISHED_CANDIDATE_MUST_NOT_CLAIM_RELEASE_DATE")
     if f"## {version} — UNRELEASED" not in changelog:
         errors.append("CHANGELOG_CANDIDATE_HEADING_MISSING")
@@ -112,16 +88,21 @@ if __name__ == "__main__":
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo", default=str(ROOT))
-    parser.add_argument("--require-today", action="store_true",
-                        help="Require CITATION date to match UTC day of publication")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--require-today", action="store_true",
+                      help="Require CITATION date to match UTC day of publication")
+    mode.add_argument("--candidate", action="store_true",
+                      help="Audit unpublished RC metadata without a publication date")
     args = parser.parse_args(argv)
     when = datetime.now(timezone.utc).date().isoformat() if args.require_today else None
     try:
-        errors = audit_release_metadata(Path(args.repo), expected_date=when)
+        errors = (audit_candidate_metadata(Path(args.repo)) if args.candidate else
+                  audit_release_metadata(Path(args.repo), expected_date=when))
     except (OSError, ValueError):
         print("release_metadata=BLOCKED; cannot read verified source")
         return 2
-    print("release_metadata=" + ("BLOCKED" if errors else "READY_FOR_MANUAL_REVIEW"))
+    ready = "READY_FOR_CANDIDATE_TESTING" if args.candidate else "READY_FOR_MANUAL_REVIEW"
+    print("release_metadata=" + ("BLOCKED" if errors else ready))
     for code in errors:
         print("  " + code)
     return 1 if errors else 0
