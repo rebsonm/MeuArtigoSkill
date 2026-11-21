@@ -40,6 +40,10 @@ def _catalog(blob: bytes) -> list[dict]:
     if not isinstance(root, dict) or root.get("schema") != SCHEMA:
         raise ValueError("REGISTRY_SCHEMA_INVALID")
     docs = root.get("documents")
+    if root.get("source_text_read_in_ledger") != sum(
+            1 for d in (docs if isinstance(docs, list) else [])
+            if isinstance(d, dict) and d.get("source_read_scope") != "NOT_RECORDED_IN_LEDGER"):
+        raise ValueError("REGISTRY_READING_COUNT_INCONSISTENT")
     if not isinstance(docs, list) or len(docs) != 475 or len(docs) > MAX_RECORDS:
         raise ValueError("REGISTRY_DOCUMENT_COUNT_INVALID")
     if root.get("third_party_full_text_included") is not False:
