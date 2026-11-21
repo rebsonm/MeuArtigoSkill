@@ -230,6 +230,7 @@ Consult the
 
 **Next/próximo:** Use [authorized continuity and C.A.D.A.](references/project-state.md). For local approved fallback, run `scripts/next_step_router.py PROJECT`. Navigation never approves a gate or verifies Drive sync.
 
+
 **Native in-chat visual dashboard:** For progress requests, read the
 authorized canonical project and follow the
 [native presentation contract](references/native-chat-dashboard.md).
