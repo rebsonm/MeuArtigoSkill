@@ -57,6 +57,13 @@ class CIWorkflowSafetyTests(unittest.TestCase):
         self.assertIn("github.event_name == 'pull_request'", self.ci)
         self.assertNotIn("gh release create", self.ci)
 
+    def test_ci_scans_all_tracked_files_for_credentials(self):
+        self.assertIn("python scripts/audit_repository_secrets.py", self.ci)
+        builder=(ROOT / "scripts/build_skill_bundle.py").read_text(encoding="utf-8")
+        self.assertIn('"audit_repository_secrets.py"', builder)
+        self.assertIn("contents: read", self.ci)
+        self.assertNotIn("gh release create", self.ci)
+
     def test_calibration_metadata_is_not_treated_as_validated_science(self):
         self.assertIn("scientific_quality_validated=false", self.quality)
         self.assertIn("contents: read", self.quality)
