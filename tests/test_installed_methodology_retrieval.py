@@ -53,7 +53,7 @@ class InstalledMethodologyBoundaryTests(unittest.TestCase):
                               x.get("editorial_status") == "DRAFT_NEEDS_INDEPENDENT_REVIEW"]), 19)
         self.assertRegex(hybrid.DEFAULT_PUBLIC_SNAPSHOT, r"^[a-f0-9]{40}$")
         self.assertEqual(hybrid.DEFAULT_PUBLIC_SNAPSHOT,
-                         "7d230a5957da477f0386d5881ad3e7ca4c032ca9")
+                         "2f45911c4485cfc738bf22972459802d8c74759e")
         for item in cards_catalog["documents"]:
             raw = (ROOT / item["path"]).read_bytes()
             self.assertEqual(hashlib.sha256(raw).hexdigest(), item["sha256"])
