@@ -15,6 +15,7 @@ import re
 import sys
 import urllib.error
 import urllib.request
+import unicodedata
 
 REPO = "rebsonm/MeuArtigoSkill"
 RAW_BASE = "https://raw.githubusercontent.com/" + REPO + "/"
@@ -129,8 +130,18 @@ def _catalog(blob: bytes) -> list[dict]:
     return documents
 
 
+_STOPWORDS = {"the", "and", "for", "with", "from", "how", "what", "when",
+              "para", "como", "uma", "com", "qual", "quais", "sobre",
+              "por", "del", "los", "las", "con", "una"}
+
 def _terms(value: str) -> set[str]:
-    return {w.casefold() for w in WORDS.findall(value) if len(w) > 2}
+    if not isinstance(value, str):
+        return set()
+    # Accent-folding lets Portuguese, Spanish and English labels share tokens.
+    folded = "".join(c for c in unicodedata.normalize("NFKD", value.casefold())
+                     if not unicodedata.combining(c))
+    return {w for w in WORDS.findall(folded)
+            if len(w) > 2 and w not in _STOPWORDS}
 
 
 def _relevance(question: str, doc: dict) -> int:
