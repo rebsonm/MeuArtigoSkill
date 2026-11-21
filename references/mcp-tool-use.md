@@ -64,6 +64,90 @@ Official documentation:
    before a WORK_FALLBACK switch. Do not report successful access based
    on synthetic tests.
 
+## Read existing C.A.D.A./research registers into the optional MCP Apps display
+
+For a user's progress, project view, or "open the Meu Artigo panel" request:
+
+1. **Authorize the specific researcher's own connected Drive first.**
+   Confirm that ChatGPT exposes a usable Drive connector in this session.
+   Look up only `My Drive/Meu Artigo/<current selected article folder>`
+   under **the current researcher's Google account**. Never substitute the
+   maintainer's account, a service-account Drive, a past user's folder,
+   or a host-selected unrelated project. Fail closed on ambiguous folders,
+   truncated listings, denied permissions, missing records or uncertain
+   canonical parent. A connection in a prior chat does not prove access now.
+2. **Read pre-existing source-of-truth records, not an MCP database.**
+   The Skill already creates and maintains scientific/managerial files
+   such as `CONTINUIDADE.md`, `PROJECT_CONFIG.json`, decision and trace
+   ledgers, seven human gates and the C.A.D.A. matrix. The official matrix
+   has 21 named tabs (`00_PAINEL` through `20_MAPA_CORPUS`), with
+   `01_CADA` for tasks, `17_DECISOES` and `18_VALIDACOES` for
+   scientific decisions/gates, and `19_SNAPSHOTS` for frozen states.
+   Consult only the relevant tabs/files actually available; never
+   fabricate a missing sheet. Do not confuse local test CSV naming with
+   an automatically available Drive-native sheet API.
+3. **Assemble a minimal display snapshot, not the source documents.**
+   The connected ChatGPT host, not the MCP, constructs the only allowed
+   `MEU_ARTIGO_SITE_V1` object from the verified records:
+   - `tasks`: up to 200 rows of
+     `{id,task,execution_owner,deadline}` based on actual C.A.D.A.
+     items; leave missing values null, not guessed.
+   - `gates`: no more than 7
+     `{id,approval_documented}` statuses, true ONLY when the original
+     researcher-approved register has sufficient supporting fields.
+     This is *recorded*, not independently certified, approval.
+   - `registered_gate_total` (0–7 or null),
+     `gate_view_partial` (boolean), and `active_route` (if recorded).
+   - `next_action`: exact
+     `{code,explanation,responsible}` from actual continuity/decision
+     records; use nulls if unknown.
+   - `scientific_diagnostic`: only the accepted advisory status and
+     approved count/code fields; omit if not verifiable.
+   Never insert document excerpts, references, article text, subjects,
+   file IDs, Drive URLs, emails, personal identifiers, raw researcher
+   notes, Google tokens or entire CSV/Excel contents.
+4. **Call the connected tool only when truly available and authorized.**
+   Discover `meu_artigo_painel` as an actual host-exposed callable MCP
+   tool with its real schema
+   `(locale?, mode?, snapshot?)`. Send only the per-call display
+   projection and locale/mode. If the tool or UI is unavailable, present
+   the same proven facts in the conversation or host-native dashboard;
+   do not invent an external UI success or upload the documents elsewhere.
+5. **Never promote display to evidence.** The MCP returns only
+   `HOST_AUTHORIZED_SNAPSHOT` and the UI is a temporary view, not a
+   Drive write/readback receipt, source semantic validation or gate
+   approval. The MCP server processes the fields sent for display
+   transiently; it does NOT offer end-to-end zero-knowledge confidentiality.
+   Do not send information that requires the server never to see it.
+6. **Prevent cross-researcher display leakage.** On changing project,
+   account, host authorization or call failure, clear stale UI results.
+   Never transfer an A snapshot into B's session. Never reuse a prior
+   snapshot without re-reading its current canonical records.
+7. **Keep updates canonical.** A user-approved task or gate change is
+   handled by the Skill through that researcher's authorized Drive
+   connector, governed by journal/CAS, provenance and human approval.
+   The MCP is strictly display-only and never updates Drive or copies
+   project documents to the VPS. After an approved update, read back the
+   original record and prepare a **new** display snapshot.
+
+Example **synthetic only**, not a verified Drive project:
+
+```json
+{
+ "schema":"MEU_ARTIGO_SITE_V1",
+ "active_route":"documentary",
+ "registered_gate_total":7,
+ "gate_view_partial":true,
+ "tasks":[{"id":"TASK-001","task":"Check the protocol",
+           "execution_owner":"Researcher","deadline":null}],
+ "gates":[{"id":"GATE-0001","approval_documented":false}],
+ "next_action":{"code":"REVIEW","explanation":"Verify evidence","responsible":"Researcher"}
+}
+```
+
+The original spreadsheet records remain the sole source of truth.
+No actual Google Drive file was read by this documentation contract.
+
 ## Two independent user experiences
 
 - **Skill-only:** instructions, research-method advice, continuity and

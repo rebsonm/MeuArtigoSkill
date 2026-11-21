@@ -1,5 +1,23 @@
 # Native chat dashboard — optional presentation for the Skill
 
+## Optional MCP Apps component and immediate fallback
+
+The separately maintained `integrations/mcp-apps/` companion registers
+`meu_artigo_painel` with a standard `ui://meu-artigo/site-v1.html`
+resource and a useful localized **text** result. The HTML begins without
+fabricated project data, accepts only valid authorized read-only snapshots
+and offers a manual interface-language selector. It is **not** loaded by
+a Skill-only installation automatically.
+
+If the MCP tool, UI resource or host rendering fails: use the existing
+source-grounded native dashboard/text workflow in the user's language,
+include actual blockers and a single safe next action, and never claim
+the missing tool was executed. Treat the conversation as an equal fallback
+for hosts without MCP Apps, including other AI services.
+
+For secure setup, translation coverage, authorized host requirements and
+tests see [the MCP Apps integration guide](../integrations/mcp-apps/README.md).
+
 ## Purpose and scope
 
 When a researcher asks "show the dashboard", "where is my paper?",
@@ -12,6 +30,17 @@ supplied by the host; this repository does **not** install a new UI engine.
 This presentation belongs to the Skill itself. It does not require an
 external hosted interface or a separate subscription.
 Never claim native widgets are supported on every host.
+
+## Guided use in an interactive host
+
+Apply the [shared researcher UX contract](researcher-ux.md) before choosing
+a native visual layout. Start in the Overview, allow lightweight navigation
+among Methods, My Justification, C.A.D.A. and All Details, and preserve a
+single safe next-action summary. A view switch or draft selection is never a
+canonical write. The portable local HTML view provides keyboard-accessible
+focus buttons and prepares a privacy-safe continuation message without
+network submission. Host-native controls must offer real actions or be
+omitted; never promise unsupported tabs.
 
 ## Source-of-truth gate: do this before rendering
 

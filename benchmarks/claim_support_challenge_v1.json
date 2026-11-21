@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "kind": "REG011_AUTHOR_LABELED_SYNTHETIC_SUPPORT_CHALLENGE",
+  "protocol": {
+    "frozen_case_count": 16,
+    "labels": [
+      "SUPPORTED",
+      "PARTIALLY_SUPPORTED",
+      "NOT_SUPPORTED",
+      "INCONCLUSIVE"
+    ],
+    "cases_per_label": 4,
+    "positive_label": "SUPPORTED",
+    "negative_labels": [
+      "PARTIALLY_SUPPORTED",
+      "NOT_SUPPORTED",
+      "INCONCLUSIVE"
+    ],
+    "evaluation_modes": [
+      "WITHOUT_REVIEW",
+      "BLANKET_SUPPORTED_ATTESTATION",
+      "LABEL_AWARE_DECLARED_REVIEW"
+    ],
+    "no_external_sources": true,
+    "study_population": "FICTIONAL_DOCUMENT_CASES_ONLY",
+    "gold_created_by": "DEVELOPMENT_ASSISTANT_NOT_INDEPENDENT_ADJUDICATOR",
+    "no_human_subjects": true,
+    "semantic_ground_truth_independently_established": false,
+    "software_behavior_only": true
+  },
+  "cases": [
+    {
+      "case_id": "SYN-001",
+      "gold_support": "SUPPORTED",
+      "error_type": "bounded_descriptive",
+      "source_passage": "In a synthetic comparison of two municipal offices, the researchers described differences in the number of recorded service requests between the offices. They did not estimate causes or predict future demand.",
+      "claim_text": "The synthetic study described differences in recorded service requests between two municipal offices.",
+      "gold_rationale": "Both source and claim are descriptive and preserve the scope.",
+      "synthetic": true
+    },
+    {
+      "case_id": "SYN-002",
+      "gold_support": "SUPPORTED",
+      "error_type": "bounded_quantitative",
+      "source_passage": "In the fictional audit dataset, 18 of 30 inspected records contained complete processing dates. Twelve records were missing at least one required date field, and the report supplied no data on other records.",
+      "claim_text": "In this fictional sample, 18 of the 30 inspected records had complete processing dates.",
+      "gold_rationale": "The numerator, denominator and inspected-sample boundary match.",
+      "synthetic": true
+    },
+    {
+      "case_id": "SYN-003",
+      "gold_support": "SUPPORTED",
+      "error_type": "bounded_time",
+      "source_passage": "The hypothetical monitoring exercise reviewed digital forms from January through March 2024 in one municipal department. No data were collected for the other nine months of the year.",
+      "claim_text": "The hypothetical exercise reviewed one department's digital forms from January to March 2024.",
+      "gold_rationale": "The claim accurately preserves the reporting period and organizational unit.",
+      "synthetic": true
+    },
+    {
+      "case_id": "SYN-004",
+      "gold_support": "SUPPORTED",
+      "error_type": "bounded_design",
+      "source_passage": "The fictional survey invited 45 workers to participate voluntarily and received 21 completed questionnaires. The study used a nonprobability convenience sample and did not estimate population prevalence.",
+      "claim_text": "The fictional survey used voluntary participation and a nonprobability convenience sample.",
+      "gold_rationale": "The design description follows directly from the quoted passage.",
+      "synthetic": true
+    },
+    {
+      "case_id": "SYN-005",
+      "gold_support": "PARTIALLY_SUPPORTED",
+      "error_type": "causal_leap",
+      "source_passage": "During the fictional observation period, teams using the new checklist reported fewer missing attachments than other teams. Assignment was not randomized, and the groups differed in staffing and case complexity.",
+      "claim_text": "Introducing the checklist caused a reduction in missing attachments across all teams.",
+      "gold_rationale": "The passage has an association signal but does not identify a causal effect or universal population.",
+      "synthetic": true
+    },
+    {
+      "case_id": "SYN-006",
+      "gold_support": "PARTIALLY_SUPPORTED",
+      "error_type": "population_expansion",
+      "source_passage": "The synthetic interview study included eight administrative staff from two local government offices in one region. Interviewees discussed difficulties learning the new digital workflow.",
+      "claim_text": "Public servants throughout Brazil experience the difficulties described in these interviews.",
+      "gold_rationale": "The finding applies only to a small regional interview group, not all Brazilian public servants.",
+      "synthetic": true
+    },
+    {
+      "case_id": "SYN-007",
+      "gold_support": "PARTIALLY_SUPPORTED",
+      "error_type": "denominator_expansion",
+      "source_passage": "In the fictional survey, 12 of 20 respondents said that the interface sometimes delayed completion of tasks. Another 35 invited staff members did not provide responses, and the paper made no population-level estimate.",
+      "claim_text": "Most employees across the organization reported that the interface delayed their work.",
+      "gold_rationale": "Twelve of twenty respondents is a majority of respondents, not evidence about all employees.",
+      "synthetic": true
+    },
+    {
+      "case_id": "SYN-008",
+      "gold_support": "PARTIALLY_SUPPORTED",
+      "error_type": "external_validity",
+      "source_passage": "The synthetic assistant was evaluated using 25 artificially generated request emails in one language. The report did not test legal memoranda, multilingual correspondence, or real agency submissions.",
+      "claim_text": "The assistant performs reliably on administrative correspondence in all public organizations.",
+      "gold_rationale": "The source discusses a narrow synthetic email exercise and cannot support general deployment reliability.",
+      "synthetic": true
+    },
+    {
+      "case_id": "SYN-009",
+      "gold_support": "NOT_SUPPORTED",
+      "error_type": "reversed_effect",
+      "source_passage": "In the fictional service-unit records, the median handling time rose from 11 days in the first period to 14 days in the second period. The report documented no intervention that would explain the change.",
+      "claim_text": "Median handling time decreased from 14 days to 11 days in the second period.",
+      "gold_rationale": "The direction of change is reversed relative to the source.",
+      "synthetic": true
+    },
+    {
+      "case_id": "SYN-010",
+      "gold_support": "NOT_SUPPORTED",
+      "error_type": "significance_inversion",
+      "source_passage": "The hypothetical analysis found no statistically significant difference in processing delays between the comparison groups at the prespecified significance threshold. The confidence interval included both improvements and worsening.",
+      "claim_text": "The intervention significantly improved processing delays compared with the control group.",
+      "gold_rationale": "The quoted report explicitly denies statistical significance.",
+      "synthetic": true
+    },
+    {
+      "case_id": "SYN-011",
+      "gold_support": "NOT_SUPPORTED",
+      "error_type": "method_inversion",
+      "source_passage": "The fictional study examined paper manuals and staff interviews without deploying any language model or automated decision workflow. Coding was performed manually by the research team.",
+      "claim_text": "The study evaluated an AI system that automatically classified administrative decisions.",
+      "gold_rationale": "The method claimed was absent from the source.",
+      "synthetic": true
+    },
+    {
+      "case_id": "SYN-012",
+      "gold_support": "NOT_SUPPORTED",
+      "error_type": "population_contradiction",
+      "source_passage": "The synthetic study sampled only public-sector units and explicitly excluded private companies from recruitment. Its findings were reported as public-administration observations.",
+      "claim_text": "The sample contained both public-sector units and private companies.",
+      "gold_rationale": "The sample composition contradicts the claim.",
+      "synthetic": true
+    },
+    {
+      "case_id": "SYN-013",
+      "gold_support": "INCONCLUSIVE",
+      "error_type": "planned_only",
+      "source_passage": "The fictional protocol proposed examining whether a revised intake form might reduce missing fields. Data collection had not started when the protocol was written, and no results were reported.",
+      "claim_text": "The revised intake form reduced missing fields in the participating offices.",
+      "gold_rationale": "The source is a proposal without outcome data.",
+      "synthetic": true
+    },
+    {
+      "case_id": "SYN-014",
+      "gold_support": "INCONCLUSIVE",
+      "error_type": "missing_subgroup_data",
+      "source_passage": "The synthetic report provided counts for Unit A and Unit B. Records for Unit C were missing because the local system was offline during the extraction period, so the report offered no Unit C outcomes.",
+      "claim_text": "Unit C reduced its backlog by 20 percent during the extraction period.",
+      "gold_rationale": "Unit C outcomes are unavailable in the quoted material.",
+      "synthetic": true
+    },
+    {
+      "case_id": "SYN-015",
+      "gold_support": "INCONCLUSIVE",
+      "error_type": "ambiguous_timestamp",
+      "source_passage": "Two versions of the fictional meeting record contain different dates for the decision, one dated 10 April 2024 and the other 12 April 2024. The report states that the discrepancy remains unresolved.",
+      "claim_text": "The decision was formally approved on 10 April 2024.",
+      "gold_rationale": "The text contains conflicting dates and provides no authenticated resolution.",
+      "synthetic": true
+    },
+    {
+      "case_id": "SYN-016",
+      "gold_support": "INCONCLUSIVE",
+      "error_type": "unobserved_nonrespondents",
+      "source_passage": "The fictional compliance questionnaire recorded responses only from staff who returned the survey. No compliance observations were collected for nonrespondents, and no adjustment for missing responses was attempted.",
+      "claim_text": "Nonrespondents had higher compliance than the staff who completed the questionnaire.",
+      "gold_rationale": "The quoted text contains no data on nonrespondents.",
+      "synthetic": true
+    }
+  ]
+}

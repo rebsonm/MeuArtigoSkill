@@ -72,7 +72,7 @@ class DriveDeliveryTests(unittest.TestCase):
     def test_missing_folders_are_created_before_files(self):
         inv = copy.deepcopy(self.inventory)
         inv["entries"] = []
-        self.assertEqual(self.action(inv)["action"], "CREATE_FOLDER")
+        self.assertEqual(self.action(inv)["action"], "CHECK_PARENT_FOR_CREATE")
         inv["entries"] = copy.deepcopy(self.inventory["entries"][:2])
         self.assertEqual(self.action(inv)["action"], "UPLOAD_FILE")
         self.assertEqual(self.action(inv)["parent_id"], MANAGE_ID)

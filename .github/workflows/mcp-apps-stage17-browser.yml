@@ -1,0 +1,103 @@
+name: Stage17 E04 official basic-host Chromium (synthetic)
+on:
+  pull_request:
+    paths:
+      - "integrations/mcp-apps/**"
+      - "assets/research_site.html"
+      - ".github/workflows/mcp-apps-stage17-browser.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: e04-browser-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  basic-host-chromium:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout isolated Meu Artigo candidate
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - name: Checkout pinned official MCP Apps basic-host source
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          repository: modelcontextprotocol/ext-apps
+          ref: 82221c0c8ce7661efa6771c9d461511b1650495f
+          path: vendor-ext-apps
+          persist-credentials: false
+      - name: Set up Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+      - name: Install pinned Bun runtime for official host
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: "1.2.23"
+      - name: Build candidate MCP bridge
+        working-directory: integrations/mcp-apps
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build
+          npm run test:ui-resource-contract
+      - name: Build pinned official basic-host and install Chromium
+        working-directory: vendor-ext-apps
+        run: |
+          # Upstream npm workspaces execute root prepare during installation.
+          # Remove that lifecycle hook ONLY in this disposable vendor checkout;
+          # SDK source and dependencies remain pinned and unchanged.
+          node -e 'const fs=require("fs"); const p=JSON.parse(fs.readFileSync("package.json")); delete p.scripts.prepare; fs.writeFileSync("package.json",JSON.stringify(p,null,2)+String.fromCharCode(10));'
+          npm ci --ignore-scripts --no-audit --no-fund
+          # The upstream package includes an npm Bun stub that is inert under
+          # --ignore-scripts. Prefer independently pinned global Bun.
+          rm -f node_modules/.bin/bun
+          bun --version
+          npm run build
+          npm run build --workspace @modelcontextprotocol/ext-apps-basic-host
+          npx playwright install --with-deps chromium
+      - name: Run actual sandboxed browser against synthetic loopback
+        shell: bash
+        env:
+          CI: "true"
+          MEU_ARTIGO_E04_SYNTHETIC_ONLY: "YES"
+        run: |
+          set -Eeuo pipefail
+          cleanup() {
+            for pid in "${HOST_PID:-}" "${MCP_PID:-}"; do
+              if [[ -n "$pid" ]]; then kill "$pid" 2>/dev/null || true; fi
+            done
+          }
+          trap cleanup EXIT
+          node integrations/mcp-apps/scripts/e04-test-host-server.mjs >/tmp/e04-mcp.log 2>&1 &
+          MCP_PID=$!
+          for i in $(seq 1 80); do
+            if curl -fsS http://127.0.0.1:18871/e04-ready >/dev/null 2>&1; then break; fi
+            if ! kill -0 "$MCP_PID" 2>/dev/null; then echo "E04_MCP_START_FAILED"; exit 1; fi
+            sleep 0.25
+          done
+          curl -fsS http://127.0.0.1:18871/e04-ready >/dev/null
+          (
+            cd vendor-ext-apps
+            SERVERS='["http://127.0.0.1:18871/mcp"]' npm run serve --workspace @modelcontextprotocol/ext-apps-basic-host
+          ) >/tmp/e04-host.log 2>&1 &
+          HOST_PID=$!
+          for i in $(seq 1 120); do
+            if curl -fsS http://localhost:8080/ >/dev/null 2>&1; then break; fi
+            if ! kill -0 "$HOST_PID" 2>/dev/null; then echo "E04_BASIC_HOST_START_FAILED"; exit 1; fi
+            sleep 0.25
+          done
+          curl -fsS http://localhost:8080/ >/dev/null
+          cp integrations/mcp-apps/scripts/e04-basic-host-browser.mjs vendor-ext-apps/stage17-e04-browser.mjs
+          cd vendor-ext-apps
+          node stage17-e04-browser.mjs
+      - name: Upload strictly synthetic browser evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: stage17-e04-basic-host-synthetic
+          if-no-files-found: warn
+          retention-days: 7
+          path: |
+            vendor-ext-apps/stage17-e04-browser-evidence.json
+            vendor-ext-apps/stage17-e04-browser.png

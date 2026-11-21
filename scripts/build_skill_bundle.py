@@ -35,10 +35,11 @@ EXCLUDED_SCRIPT_NAMES = frozenset({
     "build_skill_bundle.py", "quality_benchmark.py",
     "bundle_dependency_audit.py",
     "homologate_integrated_skill.py",
+    "audit_codeql_sarif.py", "audit_repository_secrets.py", "audit_optional_" + "m" + "cp_supply_chain.py",
 })
 EXCLUDED_DOC_NAMES = frozenset({
     "GUIA-DE-RELEASES.md", "IMPLANTACAO-BETA.md",
-    "PROTOCOLO-BETA-USUARIOS.md", "ENGLISH-SOURCE-MIGRATION.md",
+    "PROTOCOLO-BETA-USUARIOS.md", "ETAPA04-CI-SECURITY.md", "ENGLISH-SOURCE-MIGRATION.md",
     "RELATORIO-AUDITORIA-FINAL-BETA4.md", "ROTEIRO-HOMOLOGACAO-CONSOLIDADA.md",
 })
 MANIFEST = "BUNDLE_MANIFEST.json"
@@ -73,7 +74,7 @@ def list_sources(root: Path) -> list[Path]:
                 if dirname == "docs" and (path.name in EXCLUDED_DOC_NAMES or
                                           path.name.startswith("NOTAS-DA-VERSAO-")):
                     continue
-                if dirname=="assets" and path.suffix.lower()==".html" and path.name!="research_workspace.html":
+                if dirname=="assets" and path.suffix.lower()==".html" and path.name not in {"research_workspace.html", "research_site.html"}:
                     raise ValueError(f"Only the exact reviewed UI template is permitted: {path}")
                 if path.suffix.lower() not in suffixes:
                     raise ValueError(f"Unrecognized file could expose private material: {path}")

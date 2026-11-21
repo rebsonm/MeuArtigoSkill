@@ -26,7 +26,25 @@ approval from delivery status.
 
 ## Folder tree
 
-Use a project root named `ARTIGO_<short-title>_<YYYY>` unless the user supplies another title.
+**Mandatory My Drive hierarchy:** directly under the user's real My Drive
+root, create or reuse one exact folder named `Meu Artigo`. Its immediate
+children are the independent article roots. Never nest `Meu Artigo` under
+another folder and never nest an article under a different article.
+
+```text
+My Drive/
+└── Meu Artigo/
+    ├── ARTIGO_<short-title>_<YYYY>/
+    │   └── [existing per-project structure below]
+    └── ARTIGO_<another-title>_<YYYY>/
+```
+
+The structure below is **relative to each independently verified article
+root**, not to My Drive or directly to `Meu Artigo`. Use a project root
+named `ARTIGO_<short-title>_<YYYY>` unless the user supplies another title.
+Find and verify existing same-name folders at the intended parent before
+creating anything. Follow [the root identity and legacy migration guard](drive-root-anchor.md).
+
 
 ```text
 ARTIGO_<short-title>_<YYYY>/

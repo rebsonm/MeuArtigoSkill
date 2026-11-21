@@ -1,0 +1,51 @@
+# Meu Artigo — never publish local credentials, operational data or build caches.
+# Git ignore rules do not remove secrets already committed; scan history separately.
+
+# User and server secrets (keep examples deliberately non-secret).
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+!.env.sample
+!**/.env.sample
+!.env.template
+!**/.env.template
+*.secret
+*.secrets
+*credentials*.json
+*service-account*.json
+*oauth*client*secret*.json
+
+# Private keys, certificates and SSH credentials.
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+*.asc
+
+# Local runtime data that must never be copied into source control.
+node_modules/
+**/node_modules/
+integrations/mcp-apps/dist/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.envrc
+*.sqlite
+*.sqlite3
+*.db
+*.log
+
+# Local generated research outputs and distribution packages.
+dist/
+.local/
+private/
+secrets/

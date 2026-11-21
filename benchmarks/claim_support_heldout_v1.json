@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "kind": "REG011_HELDOUT_V1_AUTHOR_LABELED_SYNTHETIC",
+  "protocol": {
+    "frozen_case_count": 24,
+    "cases_per_label": 6,
+    "labels": [
+      "SUPPORTED",
+      "PARTIALLY_SUPPORTED",
+      "NOT_SUPPORTED",
+      "INCONCLUSIVE"
+    ],
+    "positive_label": "SUPPORTED",
+    "negative_labels": [
+      "PARTIALLY_SUPPORTED",
+      "NOT_SUPPORTED",
+      "INCONCLUSIVE"
+    ],
+    "evaluated_against_frozen_detector_commit": "486a50fe8fb6b9d43525efa9bbf6f15ca1125fdb",
+    "benchmark_created_after_detector_frozen": true,
+    "independent_human_ground_truth": false,
+    "labels_development_assistant_authored": true,
+    "no_source_retrieval_or_real_research_data": true,
+    "prohibited_use": "NEVER_CLAIM_INDEPENDENT_VALIDATION_OR_REAL_WORLD_METRICS",
+    "preregistered_before_execution": true,
+    "precommitted_change_freeze": true,
+    "assessment_mode": "ALL_CLAIMS_DECLARED_SUPPORTED_WITH_ALL_ALIGNMENT_FIELDS_ALIGNED",
+    "no_detector_refit_on_holdout": true
+  },
+  "cases": [
+    {
+      "case_id": "HLD-001",
+      "gold_support": "SUPPORTED",
+      "error_type": "qualified_causality",
+      "source_passage": "In a voluntary pilot, 14 staff members reported that the checklist improved their perception of handoff clarity. Assignment was not randomized and the investigators explicitly did not estimate causes.",
+      "claim_text": "Fourteen pilot participants reported improved perceived handoff clarity, but the design did not establish that the checklist caused the change.",
+      "gold_rationale": "The source supports a reported perception and the claim explicitly refuses causal attribution.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-002",
+      "gold_support": "SUPPORTED",
+      "error_type": "null_significance",
+      "source_passage": "In the comparison of the fictional units, the change in completion rates was not statistically significant. Confidence limits spanned both a small benefit and a small disadvantage.",
+      "claim_text": "The analysis did not establish a statistically significant improvement in completion rates between the units.",
+      "gold_rationale": "The negation of significance in the claim agrees with the source.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-003",
+      "gold_support": "SUPPORTED",
+      "error_type": "subgroup_direction",
+      "source_passage": "Within the high-volume subgroup, the median handling time fell from 16 to 9 days. Within the low-volume subgroup it rose from 10 to 12 days; no overall median was reported.",
+      "claim_text": "The median handling time decreased in the high-volume subgroup, while the low-volume subgroup showed the opposite pattern.",
+      "gold_rationale": "The claim explicitly attributes opposing directions to different subgroups.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-004",
+      "gold_support": "SUPPORTED",
+      "error_type": "bounded_universal_sample",
+      "source_passage": "The fictional evaluation covered only two municipal offices. All organizations included in that limited sample returned a completed questionnaire; other organizations were not approached.",
+      "claim_text": "All organizations in the two-office sample returned the questionnaire, without evidence about organizations outside that sample.",
+      "gold_rationale": "The universal quantifier is restricted to the sampled two offices.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-005",
+      "gold_support": "SUPPORTED",
+      "error_type": "absence_as_finding",
+      "source_passage": "Records for Unit C were missing and no outcomes were available for that unit. Analysts reported results only for Units A and B, both within one fictional region.",
+      "claim_text": "No improvement outcome can be assessed for Unit C because the source provides no Unit C results.",
+      "gold_rationale": "The claim accurately states an evidentiary absence, rather than an invented improvement.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-006",
+      "gold_support": "SUPPORTED",
+      "error_type": "uncertain_dates",
+      "source_passage": "Two drafts of the fictional meeting minutes listed different approval dates, 10 April and 12 April 2024. The discrepancy was unresolved, and the final decision date was not confirmed.",
+      "claim_text": "The documentary record does not establish a final approval date because the two versions conflict.",
+      "gold_rationale": "The claim preserves rather than conceals uncertainty over the date.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-007",
+      "gold_support": "PARTIALLY_SUPPORTED",
+      "error_type": "broader_agency_transfer",
+      "source_passage": "A structured survey of six clerks working in a single public archive reported occasional delays caused by the indexing screen. The report made no claims about other archives or government sectors.",
+      "claim_text": "The findings show a widespread pattern of indexing delays throughout public administration in the country.",
+      "gold_rationale": "A local signal is generalized to an unstudied national administration.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-008",
+      "gold_support": "PARTIALLY_SUPPORTED",
+      "error_type": "implicit_causal_inference",
+      "source_passage": "In the fictional case records, requests handled after a software redesign took less time. The group composition and workload differed across periods and no alternative explanations were assessed.",
+      "claim_text": "The software redesign was responsible for the faster processing observed in the later period.",
+      "gold_rationale": "Attribution of responsibility is causal even without using a trigger verb from the rule list.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-009",
+      "gold_support": "PARTIALLY_SUPPORTED",
+      "error_type": "population_denominator",
+      "source_passage": "Nine of the twelve employees who answered the fictional questionnaire indicated that the portal occasionally slowed their work. Forty colleagues were invited but did not answer.",
+      "claim_text": "Three quarters of the department's workforce experienced delays when using the portal.",
+      "gold_rationale": "The 9/12 respondent proportion cannot be extended to the unobserved workforce.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-010",
+      "gold_support": "PARTIALLY_SUPPORTED",
+      "error_type": "validity_transfer",
+      "source_passage": "The fictional prototype correctly categorized 29 of 30 artificially generated procurement requests in a supervised offline exercise. The authors did not test actual procurement cases or changing legal rules.",
+      "claim_text": "The prototype is ready for dependable use in authentic procurement operations involving current regulations.",
+      "gold_rationale": "Success on artificial requests alone does not justify deployment readiness.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-011",
+      "gold_support": "PARTIALLY_SUPPORTED",
+      "error_type": "selective_group_effect",
+      "source_passage": "In the fictional experiment, one subgroup showed a small gain in accuracy while two others showed no measurable change. The authors did not calculate a pooled effectiveness estimate.",
+      "claim_text": "Accuracy improved consistently throughout the participating workforce after the procedural change.",
+      "gold_rationale": "The claim discards non-improving subgroups and generalizes one signal.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-012",
+      "gold_support": "PARTIALLY_SUPPORTED",
+      "error_type": "turning_qualitative_into_prevalence",
+      "source_passage": "Five interviewees described difficulty finding uploaded records. The interviews were exploratory and the authors provided neither prevalence estimates nor a probability sample.",
+      "claim_text": "The majority of administrators face difficulty finding records on the platform.",
+      "gold_rationale": "The prevalence claim cannot be established by five exploratory testimonies.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-013",
+      "gold_support": "NOT_SUPPORTED",
+      "error_type": "inverse_policy_vote",
+      "source_passage": "In the fictional committee minutes, seven members opposed the proposal and two supported it. The chair recorded the motion as defeated after the vote.",
+      "claim_text": "The committee endorsed the proposal by a substantial majority after deliberation.",
+      "gold_rationale": "The documented outcome was rejection, whereas the claim asserts endorsement.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-014",
+      "gold_support": "NOT_SUPPORTED",
+      "error_type": "wrong_adoption_status",
+      "source_passage": "The hypothetical ministry documented an unapproved software concept. No operational deployment, field trial, or user training had occurred by the date of the report.",
+      "claim_text": "The ministry had already launched the system and trained administrative staff to use it in routine work.",
+      "gold_rationale": "The source explicitly rules out the claimed launch and training.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-015",
+      "gold_support": "NOT_SUPPORTED",
+      "error_type": "reversed_score_without_cues",
+      "source_passage": "The fictional examinations showed mean accuracy of 62 points before training and 48 points afterward. These are the only accuracy observations described.",
+      "claim_text": "Average accuracy was higher after training than before it, according to the examination record.",
+      "gold_rationale": "The direction of the 62 to 48 change is opposite the claim, expressed without a trigger word.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-016",
+      "gold_support": "NOT_SUPPORTED",
+      "error_type": "intervention_absent",
+      "source_passage": "The fictional comparison relied entirely on manually sorted correspondence. Neither predictive software nor machine-learning classification formed part of the methods.",
+      "claim_text": "An automated classifier produced the grouping decisions used in the experiment.",
+      "gold_rationale": "The source describes fully manual grouping, not automation.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-017",
+      "gold_support": "NOT_SUPPORTED",
+      "error_type": "scope_denial",
+      "source_passage": "The archival sample consisted exclusively of state-owned enterprises. Privately controlled firms were outside the sampling frame and were not represented.",
+      "claim_text": "Private firms were a substantial part of the sampled organizations in the archival study.",
+      "gold_rationale": "The claimed sampled population did not exist in the reported sampling frame.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-018",
+      "gold_support": "NOT_SUPPORTED",
+      "error_type": "negation_of_recommendation",
+      "source_passage": "The fictional ethics committee determined that the submitted proposal required substantial revision and should not proceed to recruitment at that time.",
+      "claim_text": "The ethics committee cleared the proposal to begin recruitment without further revision.",
+      "gold_rationale": "The source denies the alleged permission to start recruiting.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-019",
+      "gold_support": "INCONCLUSIVE",
+      "error_type": "proposal_presented_as_result",
+      "source_passage": "The authors described a future randomized test of a revised service form, but the protocol did not include any observations and recruitment had yet to begin.",
+      "claim_text": "The revised service form proved effective at preventing incomplete applications in the pilot agencies.",
+      "gold_rationale": "No results are available from a not-yet-conducted test.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-020",
+      "gold_support": "INCONCLUSIVE",
+      "error_type": "unmeasured_benefit",
+      "source_passage": "The fictional project report listed 12 completed training sessions but did not measure subsequent job performance, adherence to procedure, or participant competence.",
+      "claim_text": "The sessions left employees substantially more competent in their daily responsibilities.",
+      "gold_rationale": "Session counts provide no basis for a claimed competence gain.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-021",
+      "gold_support": "INCONCLUSIVE",
+      "error_type": "missing_unit_outcome",
+      "source_passage": "A system outage prevented extraction of Unit D records, so the fictional report offered no Unit D backlog figures for either quarter. Only Units A to C were included.",
+      "claim_text": "Unit D had eliminated its backlog by the end of the second quarter.",
+      "gold_rationale": "There are no observed backlog outcomes for Unit D.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-022",
+      "gold_support": "INCONCLUSIVE",
+      "error_type": "unverified_qualitative_feedback",
+      "source_passage": "One anonymous comment suggested that service users might prefer the redesigned notice. There were no structured interviews or before-and-after satisfaction measurements.",
+      "claim_text": "The redesigned notice was preferred by service users overall compared with the prior format.",
+      "gold_rationale": "The single anonymous comment cannot establish an overall preference.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-023",
+      "gold_support": "INCONCLUSIVE",
+      "error_type": "unresolved_origin",
+      "source_passage": "Two independently generated inventory files assigned different dates to the supposed asset transfer. The original signed transfer record was unavailable to the review team.",
+      "claim_text": "The asset was formally transferred on 6 June 2024 in the documented transaction.",
+      "gold_rationale": "No authoritative signed record settles the transfer date.",
+      "synthetic": true
+    },
+    {
+      "case_id": "HLD-024",
+      "gold_support": "INCONCLUSIVE",
+      "error_type": "absent_comparator",
+      "source_passage": "The fictional quarterly report recorded 51 completed requests during one quarter, but no earlier quarter's figures were available and the definition of completion had changed.",
+      "claim_text": "The office achieved better throughput than in the preceding quarter using an unchanged metric.",
+      "gold_rationale": "The comparator and consistent denominator needed for this trend claim are absent.",
+      "synthetic": true
+    }
+  ]
+}
