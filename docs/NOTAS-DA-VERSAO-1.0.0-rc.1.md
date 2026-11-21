@@ -3,7 +3,8 @@
 **RELEASE CANDIDATE ONLY — NOT PUBLISHED. NOT A STABLE RELEASE.**
 
 This source candidate consolidates the changes proposed in PRs #95, #96
-and #97 with the defensive review in PR #98. No main-branch merge,
+and #97 with the defensive review in PR #98 and selective Skill-only
+hardening proposed in PR #100. No main-branch merge,
 public GitHub tag, final release, platform installation or independently
 verified researcher evaluation follows from creating this candidate.
 
@@ -18,6 +19,14 @@ verified researcher evaluation follows from creating this candidate.
 - The conservative repeated-attempt warning considers hash-linked local
   execution receipts and current script and artifact state before suggesting
   that a repeated operation should be diagnosed rather than retried blindly.
+- A missing Drive folder produces a mandatory parent-check request,
+  not permission to create it. An offline create-once guard detects
+  ambiguous attempts, but **remote creation remains blocked** without
+  authenticated host scope, complete pagination and durable audit readback.
+- A compact HTML view explicitly labels partial gate lists; the total
+  recorded human approvals is never inferred from the visible subset.
+- Development CI scans tracked source files for possible secrets and does
+  not include that developer-only utility in the installed Skill.
 - The historical record, human-controlled scientific checkpoints,
   local/Drive permission boundary and distinction between source evidence,
   interpretations and propositions remain in force.
