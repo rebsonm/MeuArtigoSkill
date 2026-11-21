@@ -4,6 +4,10 @@ Data: 21/11/2026 (America/Fortaleza). Branch exclusiva: `work/v1-08-20261121`.
 Manifesto imutável: `7c92045310eb3b1474a9612a777fb0012a511592`, Git blob `2f85dc6c4283376b9fc3c312668f0a1f25a0a301`; snapshot de leitura: `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`.
 Dependências: nenhuma (Onda A). Escopo de escrita: somente os 17 cards atribuídos e `V1-08-RESULTS.md` / `V1-08-DELTA.json`.
 
+## Estado operacional: PARCIAL (bloqueio no MD canônico)
+
+- Entregas Github e auditoria documental concluídas; **obrigação de gravar 31.08 no mesmo MD canônico não satisfeita**. O arquivo Drive permanece `text/markdown`. Tentativa de `documents.batchUpdate` com controle de revisão devolveu `FAILED_PRECONDITION`: Markdown não é suportado por esse endpoint. Metadados do arquivo avançaram durante o trabalho (`2026-11-21T22:17:12Z` para `2026-11-21T22:20:39Z`), indicando atualizações concorrentes; para evitar sobrescrita por upload de arquivo inteiro sem precondição atômica, nenhum upload foi realizado. **31.08 permanece PENDENTE no Drive e o impedimento deve ser reconciliado em fluxo seguro.**
+
 ## Síntese, método e ressalvas
 
 - 17/17 cards atribuídos foram recuperados do snapshot do GitHub. 17/17 conteúdos UTF-8 tiveram seus SHA-256 computados e confrontados com o manifesto, todos coincidentes (auditoria de integridade, não de validade científica).
