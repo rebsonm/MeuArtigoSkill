@@ -9,7 +9,7 @@
   "scientific_approved": false,
   "rights_approved": false,
   "drive_canonical_updated": false,
-  "drive_write_blocker": "Native Docs batchUpdate unsupported for raw text/markdown; raw overwrite lacks concurrent revision CAS",
+  "drive_write_blocker": "arquivo text/markdown bruto; gravação integral sem CAS de revisão, comentários existentes atualizados separadamente",
   "cards_checked": 18,
   "hashes_match": 18,
   "modified_cards": 0,
@@ -40,7 +40,28 @@
       "source_consultation_claim": "LEAD_BIBLIOGRAFICO_SEM_CONFIRMACAO_PRIMARIA_NESTA_SESSAO",
       "flags": "Confirmar fidelidade aos diferentes critérios de adequação/saturação; distinguir análise temática reflexiva, contagem de códigos e grounded theory. Sem leitura independente das fontes primárias.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "Síntese editorial declarada; direitos das edições Guest/Byrne e similaridade textual ainda não atestados",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Confrontar a diferença entre saturação temática operacional, reflexividade e amostragem teórica; apontar passagens correspondentes nos originais",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
+      }
     },
     {
       "card_id": "EC-020",
@@ -59,7 +80,28 @@
       "source_consultation_claim": "LEAD_BIBLIOGRAFICO_SEM_CONFIRMACAO_PRIMARIA_NESTA_SESSAO",
       "flags": "Confrontar Pautasso (2013) com limites da revisão narrativa; não inferir cobertura sistemática a partir de orientações de redação.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "Síntese declarada de Pautasso/PLOS; licença da edição e confronto de originalidade pendentes",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Distinguir regras de redação narrativa de protocolo de revisão sistemática; marcar o que é inferência editorial",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
+      }
     },
     {
       "card_id": "EC-021",
@@ -88,6 +130,27 @@
         "scope": "Metadados e localizadores; sem auditoria integral de original ou aceitação independente",
         "scientific_accepted": false,
         "license_approved": false
+      },
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "PLOS informa CC BY no artigo e na correção; atribuição e versão corrigida devem ser verificadas (https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619 ; https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005830)",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Confrontar texto/alcance da correção de 09/11/2017 com a orientação sobre estrutura e distinguir regras prescritivas de evidência empírica",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
       }
     },
     {
@@ -107,7 +170,28 @@
       "source_consultation_claim": "LEAD_BIBLIOGRAFICO_SEM_CONFIRMACAO_PRIMARIA_NESTA_SESSAO",
       "flags": "Verificar o artigo de Sandve et al. quanto à reprodutibilidade computacional; não confundir rerun técnico com validação científica.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "Síntese declarada de Sandve/PLOS; autorias e termos de reutilização da edição ainda sem revisão formal",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Confrontar dez regras e separar rerun reprodutível de replicação/validade de afirmações",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
+      }
     },
     {
       "card_id": "EC-023",
@@ -126,7 +210,28 @@
       "source_consultation_claim": "LEAD_BIBLIOGRAFICO_SEM_CONFIRMACAO_PRIMARIA_NESTA_SESSAO",
       "flags": "Validar conceitos de estimando, comparabilidade e heterogeneidade contra a edição primária; não propor pooling sem estudos e protocolo.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "Síntese declarada de Forero/PLOS; verificar originalidade e termos da versão exata",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Conferir estimando, compatibilidade de efeitos, dependência entre estimativas e heterogeneidade: distinguir proposta editorial do conteúdo citado",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
+      }
     },
     {
       "card_id": "EC-024",
@@ -155,6 +260,27 @@
         "scope": "Metadados e localizadores; sem auditoria integral de original ou aceitação independente",
         "scientific_accepted": false,
         "license_approved": false
+      },
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "Página atual do periódico FURG exibe CC BY 4.0, mas licença da cópia arquivada/histórico de edição e autorização concreta pendentes (https://periodicos.furg.br/rbhcs/article/view/10351/0)",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Confrontar autoria/edição, natureza de pesquisa documental, crítica de fonte e distinção de revisão bibliográfica; registrar seção/página",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
       }
     },
     {
@@ -174,7 +300,28 @@
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Conferir edição/paginação e fidelidade ao artigo de Morgan; consulta ao PDF é autodeclarada, sem cotejo de cada afirmação.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "Card informa PDF consultado apenas para escopo; termos exatos do PDF Morgan não verificados",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Confrontar seleção amostral de documentos, unidades de análise e processo de interpretação no original",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
+      }
     },
     {
       "card_id": "EC-026",
@@ -193,7 +340,28 @@
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Conferir aderência a Byrne e pressupostos da análise temática reflexiva; não converter reflexividade em teste de concordância.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "Card informa consulta preliminar ao PDF Byrne; checar licença exata e possível dependência expressiva",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Confrontar análise temática reflexiva, construção de temas e inadequação de concordância intercodificador universal",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
+      }
     },
     {
       "card_id": "EC-027",
@@ -212,7 +380,28 @@
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Confirmar tipologia e edição do AMEE Guide de Kiger e Varpio; registrar diferenças entre abordagens de análise temática.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "Card informa consulta preliminar ao PDF Kiger/Varpio; direitos do AMEE Guide pendentes",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Conferir variantes da análise temática, etapas descritas e condições de aplicação dos critérios",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
+      }
     },
     {
       "card_id": "EC-028",
@@ -241,6 +430,27 @@
         "scope": "Metadados e localizadores; sem auditoria integral de original ou aceitação independente",
         "scientific_accepted": false,
         "license_approved": false
+      },
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "PDF hospedado pela editora SAGE exibe CC BY-NC 4.0 na primeira página; a restrição NC impede assumir uso comercial irrestrito (https://journals.sagepub.com/doi/pdf/10.1177/1609406917733847)",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Confrontar trilha de decisões, trustworthiness e limites da mera auditabilidade com a argumentação da fonte; registrar páginas",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
       }
     },
     {
@@ -260,7 +470,28 @@
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Confrontar condições da simulação de van Rijnsoever; rejeitar extrapolação para quota universal de entrevistas.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "PDF van Rijnsoever consultado apenas em identificação declarada; direitos e originalidade ainda não comparados",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Verificar hipóteses/simulações e impedir extrapolação de tamanho universal de amostra",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
+      }
     },
     {
       "card_id": "EC-030",
@@ -289,6 +520,27 @@
         "scope": "Metadados e localizadores; sem auditoria integral de original ou aceitação independente",
         "scientific_accepted": false,
         "license_approved": false
+      },
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "Card declara CC BY-NC-ND, sem certificação independente da licença da cópia (https://www.sciencedirect.com/science/article/pii/S0277953621008558)",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Verificar revisão sistemática, variabilidade dos contextos e diferença entre saturação de códigos e de significados; confirmar condições empíricas",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
       }
     },
     {
@@ -308,7 +560,28 @@
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Conferir texto e edição de Roth et al. para pressupostos de tendências paralelas, tratamentos escalonados e efeitos heterogêneos.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "Síntese Roth et al. sem validação independente do regime de direitos da edição citada",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Conferir tendências paralelas, heterogeneidade temporal, efeitos de tratamento e críticas a TWFE",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
+      }
     },
     {
       "card_id": "EC-032",
@@ -337,6 +610,27 @@
         "scope": "Metadados e localizadores; sem auditoria integral de original ou aceitação independente",
         "scientific_accepted": false,
         "license_approved": false
+      },
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "Portal da Annual Reviews declara copyright © 2022 e 'All rights reserved'; nenhuma autorização de redistribuição identificada (https://www.annualreviews.org/content/journals/10.1146/annurev-economics-051520-021409)",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Verificar validade local, manipulação do running variable, largura da janela, inferência e extrapolação",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
       }
     },
     {
@@ -366,6 +660,27 @@
         "scope": "Metadados e localizadores; sem auditoria integral de original ou aceitação independente",
         "scientific_accepted": false,
         "license_approved": false
+      },
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "NBER w13039 identificado; não assumir autorização pela acessibilidade; distinção entre w13039 e t0337 necessária (https://www.nber.org/papers/w13039)",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Confrontar sharp/fuzzy, continuidades e opções práticas na edição exata; não misturar versões posteriores",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
       }
     },
     {
@@ -395,6 +710,27 @@
         "scope": "Metadados e localizadores; sem auditoria integral de original ou aceitação independente",
         "scientific_accepted": false,
         "license_approved": false
+      },
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "Depósito SSRN DOI identificado, mas uma licença do SSRN para hospedar não concede licença de redistribuição a terceiros (https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3333405)",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Conferir autoria/versão do relatório QTD e diferença entre inferência de mecanismo, evidência diagnóstica e sequência narrativa",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
       }
     },
     {
@@ -414,7 +750,28 @@
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Validar distinções necessidade/suficiência, calibração e contraexemplos contra Thiem (2017) e sua edição.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "Síntese editorial de Thiem; regime de direitos/semelhança do original ainda não verificados",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Conferir necessidade, suficiência, calibragem, contradições e limites de interpretações causais de solução QCA",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
+      }
     },
     {
       "card_id": "EC-036",
@@ -443,6 +800,27 @@
         "scope": "Metadados e localizadores; sem auditoria integral de original ou aceitação independente",
         "scientific_accepted": false,
         "license_approved": false
+      },
+      "independent_review_packet_v1": {
+        "source": "V1-05-RESULTS.md#pacotes-individuais-para-duas-revisoes-independentes--continuidade-21112026",
+        "copyright_originality": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "rights_observation": "Somente rastro bibliográfico de capítulo; ResearchGate não concede direito de redistribuição, DOI não confirmado (https://www.researchgate.net/publication/358594522)",
+          "needs_exact_edition_license_and_similarity_review": true,
+          "decision": null
+        },
+        "scientific_fidelity": {
+          "status": "PENDENTE_PARECER_INDEPENDENTE",
+          "reviewer_assigned": false,
+          "signed_evidence": false,
+          "verification_target": "Conferir capítulo/edição e exemplos de política pública, calibragem e inferência configuracional; requer exemplar primário",
+          "needs_primary_source_location_and_counterevidence": true,
+          "decision": null
+        },
+        "maintainer_approval_is_independent_review": false,
+        "no_pdf_redistribution": true
       }
     }
   ],
@@ -482,5 +860,23 @@
     "rights_decisions_positive": 0,
     "independent_reviews_completed": 0,
     "details_in": "V1-05-RESULTS.md"
+  },
+  "independent_review_packets_prepared": 18,
+  "independent_rights_originality_reviews_received": 0,
+  "independent_scientific_fidelity_reviews_received": 0,
+  "review_packets_source_commit": "0938836a7bd4fa5e25993e77b4795fde05799f77",
+  "license_preflight_limited": {
+    "EC_021": "PLOS CC BY no original e correção - licença observada em página do editor; sem liberação do lote",
+    "EC_024": "Página atual FURG CC BY 4.0; cópia arquivada e uso específico não homologados",
+    "EC_028": "PDF SAGE CC BY-NC 4.0 primeira página; uso não comercial condicional",
+    "EC_032": "Annual Reviews 2022 all rights reserved; não redistribuir original"
+  },
+  "ci_last_observed": {
+    "head_sha": "01d8ea7cab5988583d5e79cb24495ff5157a7298",
+    "workflow_name": "Release audit",
+    "workflow_run_id": 44959898288,
+    "status": "completed",
+    "conclusion": "success",
+    "scope_limit": "Automação não certifica direitos/originalidade ou fidelidade; requer novo check após commits"
   }
 }
