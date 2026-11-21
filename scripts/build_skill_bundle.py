@@ -13,7 +13,7 @@ import re
 import subprocess
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
-from version_info import read_version
+from version_info import read_version, release_channel
 from bundle_dependency_audit import audit as audit_bundle
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -140,6 +140,8 @@ def package(root: Path, destination: Path) -> dict:
         raise ValueError("BUNDLE_DEPENDENCY_CLOSURE_FAILED: " + "; ".join(closure["errors"][:8]))
     provenance = source_provenance(root, files)
     manifest = {"schema_version": 2, "version": version,
+                "source_release_channel": release_channel(version),
+                "publication_verified": False,
                 "entrypoint": "SKILL.md", "license": "Apache-2.0",
                 "scientific_quality_validated": False,
                 "installed_dependency_closure_checked": True,
@@ -197,6 +199,13 @@ def verify_package(path: Path) -> dict:
         manifest = json.loads(z.read(MANIFEST))
         if manifest.get("entrypoint") != "SKILL.md" or manifest.get("license") != "Apache-2.0":
             raise ValueError("Wrong bundle entrypoint or license")
+        # Optional for historical beta bundles: newer candidates self-identify
+        # their source channel without claiming they were publicly released.
+        if "source_release_channel" in manifest:
+            if manifest["source_release_channel"] != release_channel(str(manifest.get("version", ""))):
+                raise ValueError("Manifest source release channel is inconsistent")
+        if manifest.get("publication_verified") is True:
+            raise ValueError("Offline bundle cannot attest GitHub publication")
         items = manifest.get("files") or {}
         if set(items) != set(names) - {MANIFEST}:
             raise ValueError("Manifest and packaged contents diverge")

@@ -1,11 +1,11 @@
-"""Preserve historical beta.5 notes; verify beta.6 release-preparation safeguards."""
+"""Preserve published beta history while source advances to test-only RC."""
 from pathlib import Path
 import sys
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"scripts"))
-from check_release_metadata import audit_release_metadata
+from check_release_metadata import audit_candidate_metadata
 from version_info import read_version
 
 class Beta5PublicationTests(unittest.TestCase):
@@ -15,9 +15,10 @@ class Beta5PublicationTests(unittest.TestCase):
         self.readme=(ROOT/"README.md").read_text(encoding="utf-8")
 
     def test_consistent_release_metadata(self):
-        self.assertEqual(self.version,"0.9.0-beta.6")
-        self.assertEqual(audit_release_metadata(ROOT,expected_date="2026-10-15"),[])
+        self.assertEqual(self.version,"1.0.0-rc.1")
+        self.assertEqual(audit_candidate_metadata(ROOT),[])
         self.assertIn("confirmed published",self.readme.lower())
+        self.assertIn("unpublished release candidate",self.readme.lower())
         self.assertIn("pre-release",self.notes.lower())
         self.assertIn("not a stable",self.notes.lower())
 
