@@ -106,10 +106,10 @@
   "tests": {
     "unique_source_ids": true,
     "source_hashes_64_hex": true,
-    "readback": "PASS_PREVIOUS_DELTA; CURRENT_WRITE_PENDING_POST_COMMIT",
+    "readback": "PASS_PRIOR_DELTA; NEW_DELTA_PENDING_POST_COMMIT",
     "ci": "NOT_EXECUTED",
     "real_host": "NOT_EXECUTED",
-    "github_receipt_readback": "PASS_RESULTS_BLOB_7bbe4b597413b3ca7d83637234ef37a1a349123b_BEFORE_THIS_DELTA_WRITE"
+    "github_receipt_readback": "PASS_RESULTS_BLOB_1cb68648a77b5f5746d9f83b8a5aaa320461754b_BEFORE_THIS_DELTA_WRITE"
   },
   "next_step": "V1-16 conditioned on audited V1-01..V1-15, no global update now",
   "restrictions": [
@@ -189,7 +189,7 @@
     "next_action": "RECONCILE_ONLY_31_03_IN_EXCLUSIVE_SAFE_WINDOW_WITH_READBACK"
   },
   "canonical_reconciliation": {
-    "status": "PATCH_PREPARED_NOT_APPLIED_NATIVE_DOCS_API_UNSUPPORTED_FOR_MARKDOWN",
+    "status": "PATCH_PREPARED_NOT_APPLIED_ALL_ATTEMPTS_SAFELY_ABORTED",
     "note": "Raw Google Drive text/markdown replacement lacks an exposed conditional revision/ETag guard. Simultaneous editors may overwrite each other; do not replace full bytes without demonstrated exclusive write window or safe revision guard.",
     "target_section": "31.03",
     "patch_only_in": "knowledge/methodology/intake/v1_parallel/V1-03-RESULTS.md",
@@ -198,7 +198,7 @@
     "current_canonical_body_still_stale": true,
     "comment_thread_updated_prior_turn": true,
     "acceptance": "Write only 31.03 with revision-safe or exclusive operation; read back; verify all other section bytes unchanged; no presumed scientific/legal/security approvals.",
-    "next_single_action": "SECURE_EXCLUSIVE_RAW_MARKDOWN_WRITE_WINDOW_THEN_RECONCILE_31_03_AND_COMPARE_UNTOUCHED_BYTES",
+    "next_single_action": "ESTABLISH_PROVABLE_EXCLUSIVE_OR_CONDITIONAL_WRITE_FOR_SAME_RAW_MARKDOWN_THEN_APPLY_31_03_AND_VERIFY",
     "native_docs_api_attempt": {
       "date": "2026-11-21",
       "precheck": "SEVEN_UNIQUE_TEXT_REPLACEMENTS_IN_31_03_CHECKED_WITH_GOOGLE_DOCS_REVISION_ID",
@@ -210,7 +210,19 @@
       "consequence": "NO_CANONICAL_BODY_MUTATION",
       "safe_next_step": "EXCLUSIVE_WINDOW_FOR_RAW_MARKDOWN_OR_PROVIDER_SUPPORTED_CONDITIONAL_UPLOAD; NEVER_UNGUARDED_OVERWRITE"
     },
-    "latest_receipt_commit": "2a947888960bb293c82659204d300ee7c604fadc",
-    "latest_receipt_blob": "7bbe4b597413b3ca7d83637234ef37a1a349123b"
+    "latest_receipt_commit": "bf716d653005ec82b92a6cd028563b8dad6e5ede",
+    "latest_receipt_blob": "1cb68648a77b5f5746d9f83b8a5aaa320461754b",
+    "web_gui_attempt": {
+      "date": "2026-11-21",
+      "url_kind": "ORIGINAL_DRIVE_MARKDOWN_FILE",
+      "target": "ONLY_SECTION_31_03",
+      "outcome": "ABORTED_WITHOUT_CHANGES",
+      "reason": "Section located in outline but seven body paragraphs could not be selected confidently in 171-page editor",
+      "modified_lines": 0,
+      "post_browser_drive_readback": "STILL_STALE",
+      "format": "text/markdown",
+      "results_commit": "bf716d653005ec82b92a6cd028563b8dad6e5ede",
+      "results_blob": "1cb68648a77b5f5746d9f83b8a5aaa320461754b"
+    }
   }
 }
