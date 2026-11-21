@@ -187,3 +187,27 @@ Durante a abertura, o MD canônico havia mudado entre leitura e preflight: vers�
 Não iniciar V1-16…V1-20, merge, release, tag, force-push, MCP ou redistribuição de PDF. O diagnóstico documental não é homologação de direitos nem científica. V1-16 aguarda a entrega auditada de todas as 15 etapas da onda A.
 
 **Segunda tentativa de gravação do MD (fechamento):** abortada preventivamente antes de escrita: a versão-base de 318.452 bytes, modificada em `2026-11-21T22:21:38.796Z`, foi substituída por versão de 320.654 bytes, modificada em `2026-11-21T22:22:19.899Z`, entre materialização e preflight. **Nenhuma alteração da subseção 31.13 foi enviada ao Google Drive**. Permanecem preservadas as versões atuais de outras abas. O próprio MD canônico segue pendente de atualização por concorrência; nunca considerar a V1-13 formalmente encerrada no diário do Drive. A retomada exigirá reconciliação em janela de escrita exclusiva ou edição transacional específica da subseção, sem sobrescrever o Markdown bruto de outras abas.
+
+## Complemento documental verificado nesta continuidade — 21/11/2026
+
+**Acréscimo sem retrabalho:** conferidos os 17 cards atribuídos no snapshot `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`: 17 caminhos e 17 Git blobs coincidentes com os recibos existentes, todos ainda `DRAFT_NEEDS_INDEPENDENT_REVIEW`. Isto não substitui validação SHA-256 independente nesta passagem, autenticação da cópia ou revisão científica.
+
+### Evidências editoriais públicas adicionais (sem acesso ao PDF privado)
+
+- **EC-161 / SRC-0367:** a página da *Revista Brasileira de Ciência Política* confirma autores, artigo de 2020, DOI `10.1590/0103-3352.2020.33.218584` e vincula expressamente a licença **CC BY-NC 4.0**: https://www.scielo.br/j/rbcpol/a/QFmq77JnT468fcBKCdh99ms/?format=html . Manter **BLOQUEADO** até equivalência da cópia, direitos de terceiros e deliberação da Issue #102.
+- **EC-163 / SRC-0401:** ficha do *Journal of Statistical Software* confirma autoria, DOI `10.18637/jss.v047.i12` e publicação em **17/05/2012**: https://www.jstatsoft.org/article/view/v047i12 . A dúvida entre 2012/2023 se resolve para a publicação catalogada, mas a versão específica e seus direitos seguem pendentes; manter **CORREÇÃO_NECESSÁRIA**.
+- **EC-165 / SRC-0007:** a página da obra na SciELO/Unesp confirma 2020, 460 páginas e DOI `10.36311/2020.978-65-86546-07-1`, mas apresenta ao rodapé **CC BY-NC-SA 3.0 Unported** com ressalvas, diferente da licença **CC BY 4.0** afirmada no card: https://books.scielo.org/id/96v3r . Manter **BLOQUEADO**; conferir a licença aplicada ao exemplar, colofão, capítulos e materiais de terceiros antes de eventual distribuição, sem inferir permissão para a cópia privada.
+- **EC-167 / SRC-0009:** página editorial de *The Qualitative Report* confirma o artigo de Hani Morgan, DOI `10.46743/2160-3715/2022.5044` e licença **CC BY-NC-SA 4.0**: https://nsuworks.nova.edu/tqr/vol27/iss1/4/ . Manter **CORREÇÃO_NECESSÁRIA** até correspondência com a cópia específica e checagem de componentes de terceiros.
+
+### Limites, risco e estado Git
+
+- Os demais 13 cards conservam as avaliações e contraprovas individuais anteriores. Nenhum card foi modificado ou promovido de [P]/[I] para [L]. As quatro fontes editoriais públicas não substituem confronto integral por exemplar/página, teste sistemático de originalidade ou as duas avaliações independentes requeridas.
+- Fontes recuperadas e cards foram tratados como **entrada não confiável**, não como instruções operacionais. Não houve teste dinâmico de prompt injection, CI, pytest ou teste de host nesta continuidade.
+- HEAD auditado antes deste adendo: `da64d3c30467a1d509764f4aff7b23e77f612e33`. Comparação `7c92045310eb3b1474a9612a777fb0012a511592...work/v1-13-20261121`: 4 commits à frente e 1 atrás, com ancestral comum `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`, diff restrito a RESULTS e DELTA da V1-13. A branch **não contém** o commit de planejamento na ancestralidade; reconciliar apenas em futura integração autorizada. PR exclusiva não encontrada. Verificação do HEAD retornou **zero status checks, zero check runs, zero workflow runs**, o que não prova aprovação de testes.
+- **MD canônico:** MIME `text/markdown` bruto, 31.13 inicial desatualizada e atualização por substituição integral sem CAS transacional. Nenhuma regravação de bytes será feita; acompanhamento por comentário vinculado à seção com relato explícito da limitação.
+
+**FEITO:** leitura atual e controle de escopo, checagem de 17 Git blobs, quatro evidências editoriais públicas novas, verificação de HEAD/diff/PR/CI. **EM EXECUÇÃO / BLOQUEIOS:** direitos por edição/cópia, divergência de licença no EC-165, originalidade e fidelidade científica independentes para 17/17; nenhum GO.
+
+**PRÓXIMA AÇÃO ÚNICA:** cotejar a edição/cópia exata de EC-165 / SRC-0007 com colofão/licença do editor, registrando de forma auditável a divergência CC BY-NC-SA 3.0 versus CC BY 4.0, sem distribuição do PDF.
+
+**CRITÉRIO PARA AVANÇAR:** evidência primária de identidade e direitos por edição/cópia, tratamento de componentes de terceiros, e dois pareceres independentes distintos por card (originalidade/direitos e fidelidade científica/editorial), com decisões humanas e links/hashes verificáveis; não liberar V1-16 ou publicação diante de bloqueios P0 e dependências da onda A.
