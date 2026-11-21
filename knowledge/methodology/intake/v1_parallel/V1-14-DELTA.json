@@ -228,6 +228,16 @@
       "maintainer: A retain-history vs B supervised rewrite after scope audit"
     ],
     "next_action_single": "Drive owner must document whether anyone:reader remains justified for PPGA - LIVROS and its descendants, and authorize an external access check.",
-    "advance_criterion": "Dated access decision + anonymized ACL and authorized external-access test evidence for the root and relevant descendants; release still blocked until #102/#103 and remaining stages cleared."
+    "advance_criterion": "Dated access decision + anonymized ACL and authorized external-access test evidence for the root and relevant descendants; release still blocked until #102/#103 and remaining stages cleared.",
+    "review_pr": {
+      "url": "https://github.com/rebsonm/MeuArtigoSkill/pull/111",
+      "number": 111,
+      "state": "OPEN_DRAFT",
+      "merged": false,
+      "base": "plan/v1-methodology-20-stages-20261121",
+      "head_branch": "work/v1-14-20261121",
+      "head_sha_at_open": "6e1c141ac1b9b993c2042bd6fae25f9a5e21ee41",
+      "description": "Revisão exclusiva de dois recibos; não autoriza merge, GO ou publicação."
+    }
   }
 }
