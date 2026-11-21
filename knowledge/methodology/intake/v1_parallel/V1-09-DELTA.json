@@ -14,7 +14,7 @@
   "repository_mutations": "Only V1-09-RESULTS.md and V1-09-DELTA.json; no card or global catalog changed",
   "source_verification_scope": "17 cards congelados + manifesto + metadados públicos correspondentes aos mesmos 17 artigos: 10 páginas HTML de editoras/repositórios e 7 referências bibliográficas alternativas, sem acesso a PDFs privados e sem revisão científica integral independente.",
   "pdf_policy": "No PDF bytes or private Drive IDs published; CC BY-NC does not become CC BY; other copy-specific rights pending",
-  "drive_canonical_sync": "IMPEDIDO_SEM_GRAVACAO: o Markdown bruto mudou após materialização (risco de sobrescrever outras abas); Google Docs batchUpdate recusou a edição delimitada com FAILED_PRECONDITION (documento Markdown). A API Drive update_file não disponibiliza if-match/compare-and-swap; não foi enviada substituição bruta. O texto exato da subseção 31.09 consta em V1-09-RESULTS.md para reconciliação controlada.",
+  "drive_canonical_sync": "IMPEDIDO_SEM_GRAVACAO_NO_CORPO: conteudo 31.09 permanece PENDENTE no MD bruto. Sem compare-and-swap/edicao transacional para text/markdown; comentario novo vinculado a 31.09 criado em 21/11/2026 com FEITO/EM EXECUCAO/PROXIMA ACAO. Reconciliar texto do corpo somente em janela exclusiva/controle de revisao e verificar preservacao das outras abas.",
   "counts": {
     "assigned": 17,
     "read": 17,
@@ -53,6 +53,20 @@
         "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/padm.12719",
         "evidence": "Frantz e Siddiki (2021) e IG 2.0 confirmados em página editorial",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "5fb696a41245eaeabc7ffbbee2b5fedd0ec11b9e",
+        "prior_documentary_sha256_preserved": "9669020d9e167a2774bcac0f3c011981c629d566be7a72c6be7e0eb05d401623",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": true,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     },
     {
@@ -82,6 +96,20 @@
         "url": "https://www.scielo.br/j/ep/a/3DkbXnqBQqyq5bV4TCL9NSH/?format=html",
         "evidence": "Tripp (2005), texto HTML SciELO acessível",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "86c38cabe622c31d3f0547e734ae0d8793be3cb4",
+        "prior_documentary_sha256_preserved": "bb191bfe1059279c6341a20c573946f03c8a053ae536d166e9be5de2a99efc80",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": true,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     },
     {
@@ -111,6 +139,20 @@
         "url": "https://journals.sagepub.com/doi/10.1177/16094069251322346",
         "evidence": "Hayes (2025); direitos da página indicam CC BY-NC 4.0",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "6c4eb74e3925c564d7fea70d90e5012b92606fdb",
+        "prior_documentary_sha256_preserved": "65a1e8e25fef0f0d763be2fc97fb94f08da41b5c26c1c652328982f049403048",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": true,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     },
     {
@@ -140,6 +182,20 @@
         "url": "https://www.scienceopen.com/document?vid=c969f169-9c94-45c9-995a-c099c0241a90",
         "evidence": "DOI/Lazar (2007) em fonte indexadora; editora retornou 403",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "5b28bd16d185ee2b69e2ab1b339be141cd4f5cd1",
+        "prior_documentary_sha256_preserved": "de1441b0fbf8fa7997f582b6a5c935b148cdd17e6740f46f0cd24b6d7b32b122",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": true,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     },
     {
@@ -169,6 +225,20 @@
         "url": "https://www.scilit.com/publications/5aba961cb4f78c5045da36f0711e70b8",
         "evidence": "Cardno (2018) e DOI identificados em índice; ERIC retornou timeout",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "456d5216e82ee60cfc3220223d34d58f36067c09",
+        "prior_documentary_sha256_preserved": "67d14742e6865ac0be0e7bf9de268533ccef45f64721ea5039d3e45bb2c3b152",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": true,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     },
     {
@@ -198,6 +268,20 @@
         "url": "https://journals.sagepub.com/doi/10.1177/10778004251412871",
         "evidence": "Friese (2026), acesso restrito e pedido de permissão explícitos",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "6671798ad36c8f60e8f5442eaea8f2d4ffca1287",
+        "prior_documentary_sha256_preserved": "6df5311b3db289c41f7ee6fddfcf4b1fbdce7a978da36c0e911dae6338b2def0",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": true,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     },
     {
@@ -227,6 +311,20 @@
         "url": "https://dspace.mit.edu/entities/publication/0938ce9e-3d5c-4711-8a9f-2fc312b5536d",
         "evidence": "Schroeder et al., CHI 2025 e estudo com 20 entrevistas; ACM retornou 403",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "57e7f74e61c029ab28e2827da0ebda6f84c3aefb",
+        "prior_documentary_sha256_preserved": "847f6264c0d75b7e03899c8f7d27272c6dbac832856f30b4a248af49548e345d",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": true,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     },
     {
@@ -256,6 +354,20 @@
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202826/",
         "evidence": "Wachinger: online 22/05/2024; volume 35(9) de 2025",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "aadb880ab520c693915b3778dd14138eb2e4ddec",
+        "prior_documentary_sha256_preserved": "603b5e6065b9e76dc272af737e1bcc2022b68a6744c74c802e0df1d2311bd90a",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": true,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     },
     {
@@ -285,6 +397,20 @@
         "url": "https://journals.sagepub.com/doi/10.1177/10497323251401503",
         "evidence": "Prahl: online 24/12/2025; fascículo 36(2–3) de 2026; solicitação de permissão",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "f3d09322dcb9e3bbef0c72e456ff68b30da97c24",
+        "prior_documentary_sha256_preserved": "eb434b655f9b4b3ad0a44ebf2f4d6a101c4add0ec65d90df905c137f7cc65da4",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": true,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     },
     {
@@ -314,6 +440,20 @@
         "url": "https://journals.sagepub.com/doi/10.1177/10778004251401851",
         "evidence": "Jowsey et al.: online 17/12/2025; issue 12/2026; 419 de 32 países; CC BY 4.0",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "31c488b2a13d521774a7badfb91caa8c1fd4e12a",
+        "prior_documentary_sha256_preserved": "699b23bae748da48eed369c0c8df7b169f2b9ac855b40cd1e50ccf46e3889092",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": true,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     },
     {
@@ -343,6 +483,20 @@
         "url": "https://doaj.org/article/00be4819aded4a7ebc37e917a54a0b9f",
         "evidence": "Mayring (2025), DOI e testes ChatGPT 3.5/4 confirmados por DOAJ; página FQS retornou timeout",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "5cf14235a68052dc51ba13b373bed6e829ffbd83",
+        "prior_documentary_sha256_preserved": "9d3f763f20b601420f575c8021ea6ac7c665de3321ba298fe6e28e0e309a6854",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": true,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     },
     {
@@ -372,6 +526,20 @@
         "url": "https://journals.sagepub.com/doi/10.1177/14687941251390794",
         "evidence": "Ibrahim/Voyer: online 05/11/2025, volume 26(1) de 2026; CC BY 4.0",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "5871e4fb76d51680b539968c646c0317e6e515db",
+        "prior_documentary_sha256_preserved": "eba4afdcb42beb58fe8b0949a509d4d4955406f92177376692aefda184483291",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": false,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     },
     {
@@ -401,6 +569,20 @@
         "url": "https://journals.sagepub.com/doi/full/10.1177/16094069261426100",
         "evidence": "Misra et al. (2026), artigo e DOI confirmados no índice editorial; acesso direto DOI falhou",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "aef588d66cc5da2343a923064834d922026cb46d",
+        "prior_documentary_sha256_preserved": "794178b00be3844852e2136c2b2785e7b3a13bdd60cfd3f0b69f76075e4e519f",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": false,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     },
     {
@@ -430,6 +612,20 @@
         "url": "https://journals.sagepub.com/doi/10.1177/10944281251377154",
         "evidence": "Nguyen/Welch: online 30/09/2025, volume 29(1) de 2026; CC BY-NC 4.0",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "44dda34ec3a43a4093d818bd053eefc3c38b0e71",
+        "prior_documentary_sha256_preserved": "23425b7cc3d014b6e07cc75c2716160483f79ec89bf8cdaa068fe446d70cdd81",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": false,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     },
     {
@@ -459,6 +655,20 @@
         "url": "https://journals.sagepub.com/doi/abs/10.3102/0013189X251314821",
         "evidence": "Jiang et al. (2025) e DOI confirmados; acesso DOI direto falhou",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "67cbf7f851cb0c2a1f2b970984b75d7a88f8646f",
+        "prior_documentary_sha256_preserved": "36c2d5d52b50d9394fa97fdff06cc458befcf853ea11fce107981ade0d31a471",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": false,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     },
     {
@@ -488,6 +698,20 @@
         "url": "https://journals.sagepub.com/doi/10.1177/10497323251365211",
         "evidence": "Vikan et al.: online 08/09/2025, volume 36(2–3) de 2026; CC BY 4.0",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "fd8f88f4d2a2ce49c26cf0150a6002aeacb6e3f2",
+        "prior_documentary_sha256_preserved": "dedf8976bc59a4b9c9c074db9fd4fb4ce103f44e15cf5b70aa8437b0adaac1ca",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": false,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     },
     {
@@ -517,6 +741,20 @@
         "url": "https://cidtff.web.ua.pt/blog/?p=78974",
         "evidence": "Costa et al. e DOI AbductivAI em blog institucional; DOI direto falhou",
         "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      },
+      "continuity_validation": {
+        "branch_blob_sha_verified_against_previous_receipt": true,
+        "source_file_git_blob": "b88a50bd5611da4549d810db34faa12b64dceb3c",
+        "prior_documentary_sha256_preserved": "376785000ca038fb1527df2ff1ad832ef41ee48a235a80b6a38fb73a5fef5ba3",
+        "claim_markers_ILP_present": true,
+        "independent_scientific_review_still_pending": true,
+        "explicit_numeric_page_anchor_detected": false,
+        "historical_exemplar_verification_section_detected": false,
+        "private_drive_file_url_detected": false,
+        "obvious_injection_command_regex_hit": false,
+        "security_note": "Triagem de strings restritas, nao auditoria exaustiva; toda fonte recuperada permanece dado nao confiavel",
+        "rights_conclusion": "Nao inferir autorizacao para copia/PDF; preservar condicoes de origem por edicao/versao",
+        "editorial_disposition_unchanged": "CORREÇÃO_NECESSÁRIA"
       }
     }
   ],
@@ -529,7 +767,12 @@
     "10/17 HTML de editoras ou repositórios lidos, 7/17 metadados bibliográficos alternativos corroborados; nenhum PDF privado processado",
     "GitHub compare: exatamente dois caminhos de V1-09 adicionados; nenhum card/global alterado",
     "GitHub get_commit_combined_status: statuses=[]; nenhum CI aprovado ou executado foi demonstrado",
-    "Google Docs batchUpdate: HTTP 400 FAILED_PRECONDITION para Markdown, sem mutação; não foi usada substituição bruta potencialmente conflitante"
+    "Google Docs batchUpdate: HTTP 400 FAILED_PRECONDITION para Markdown, sem mutação; não foi usada substituição bruta potencialmente conflitante",
+    "CONTINUIDADE NOVA: releitura de 17/17 cards na branch e Git blob SHAs correspondentes aos recibos anteriores",
+    "CONTINUIDADE NOVA: 17/17 mostram [L]/[I]/[P], 17/17 status cientifico independente pendente, 0/17 ancoras explicitas de pagina numerica encontradas na triagem",
+    "CONTINUIDADE NOVA: 11 cards com secao historica e 6 sem essa secao; EC-094 com cadeia de proveniencia a aclarar",
+    "CONTINUIDADE NOVA: 0 URLs Google Drive privadas e 0 frases obvias de prompt injection encontradas por regex restritas; NAO prova seguranca",
+    "CONTINUIDADE NOVA: comentario para secao 31.09 criado por impossibilidade segura de alterar Markdown bruto sob concorrencia"
   ],
   "next_steps": [
     "Cotejar trechos, páginas e edição de cada DOI com revisor humano independente, em cópia licenciada",
@@ -542,6 +785,35 @@
   "blockers": [
     "Sincronização exclusiva da subseção 31.09 sem API transacional para Markdown e atualizações concorrentes detectadas",
     "Duas revisões humanas independentes por card ainda pendentes",
-    "Direitos de distribuição relativos à cópia/edição privada ainda não comprovados"
-  ]
+    "Direitos de distribuição relativos à cópia/edição privada ainda não comprovados",
+    "Cards sem ancoragem de pagina numerica identificada; cotejo independente de [L] por trecho/pagina e edicao pendente",
+    "Proveniencia/cronologia de consultas antigas nao atribuida de modo auditavel, especialmente EC-094"
+  ],
+  "continuity_audit_20261121": {
+    "description": "Reabertura e revalidacao estrutural real; resultados anteriores preservados",
+    "branch_head_before_new_commits": "0a0ef10ddf7d104a6f97b73e5a08cd1a81846c87",
+    "manifest_compared_against": "7c92045310eb3b1474a9612a777fb0012a511592",
+    "snapshot": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+    "branch_commits_ahead_before": 6,
+    "branch_commits_behind_before": 0,
+    "git_blob_matches_against_prior_receipts": 17,
+    "sha256_values": "17 valores do recibo antigo mantidos, nao recalculados na revalidacao",
+    "ilp_presence": 17,
+    "independent_review_pending_explicit_in_cards": 17,
+    "explicit_numeric_page_anchors_found": 0,
+    "historical_section_count": 11,
+    "private_drive_url_count_in_cards": 0,
+    "obvious_injection_phrase_regex_count": 0,
+    "injection_security_warning": "0 deteccoes por padroes restritos nao significa documento seguro ou fonte confiavel",
+    "pr_exclusive": "NAO_LOCALIZADA_NA_BUSCA",
+    "ci_status_initial_head": "statuses=[]",
+    "workflow_runs_initial_head": "workflow_runs=[]",
+    "source_edition_note": "Pareceres anteriores e fontes publicas seguem documentados por card; nenhum PDF privado reaberto nessa revalidacao",
+    "ec094_provenance_conflict": "Cabecalho limita consulta do PDF nesta etapa, secao historica registra verificacao posterior; requer cronologia, autor e cotejo por pagina",
+    "drive_body_edit": "NAO_APLICADA_MIME_MARKDOWN_SEM_CAS",
+    "drive_comment": "CRIADO_NA_SECAO_31_09",
+    "branch_only": true,
+    "independent_scientific_approval": false,
+    "independent_rights_approval": false
+  }
 }
