@@ -2,7 +2,7 @@
   "schema": "v1-workpackage-delta-1",
   "batch_id": "V1-08/20",
   "date": "2026-11-21",
-  "status": "ENTREGUE_PARA_AUDITORIA",
+  "status": "PARCIAL",
   "branch": "work/v1-08-20261121",
   "manifest_commit": "7c92045310eb3b1474a9612a777fb0012a511592",
   "manifest_git_blob_sha1": "2f85dc6c4283376b9fc3c312668f0a1f25a0a301",
@@ -292,5 +292,14 @@
     "license and originality review",
     "review EC-086 and EC-089",
     "V1-16 may integrate only after 01-15 accepted"
-  ]
+  ],
+  "canonical_md": {
+    "id_not_exported_for_public_receipts": true,
+    "update_confirmed": false,
+    "attempt": "Google Docs batchUpdate using revision guard",
+    "error": "FAILED_PRECONDITION: Markdown file is not supported by Docs batchUpdate",
+    "source_mime_type": "text/markdown",
+    "concurrent_modifications_observed_between": "2026-11-21T22:17:12Z and 2026-11-21T22:20:39Z",
+    "resolution": "No unsafe full-file replacement attempted; preserve other tabs; follow safe Drive raw-file edit with concurrency guard and verify 31.08"
+  }
 }
