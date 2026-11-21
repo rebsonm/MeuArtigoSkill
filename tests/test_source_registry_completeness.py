@@ -79,7 +79,7 @@ class SourceRegistryCompletenessTests(unittest.TestCase):
             self.assertLessEqual(len(files[path]), limit)
             calls.append(path)
             return files[path]
-        result = registry.query("gramática institucional", ref=REF,
+        result = registry.query("institutional grammar specification encoding", ref=REF,
                                 fetch=fetch, max_chars=1450)
         self.assertEqual(result["status"], "BIBLIOGRAPHIC_LEADS_ONLY")
         self.assertTrue(result["hits"])
