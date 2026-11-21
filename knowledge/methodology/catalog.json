@@ -1839,10 +1839,247 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/braun-clarke-2022-reflexive-thematic-guide.md",
+      "title": "Braun e Clarke: análise temática reflexiva é interpretação teórica, não contagem de códigos",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "c98f29d470fcad22c8815279c424a9da4c93174a8ded8d7d43ebc906e4707bf4",
+      "keywords": [
+        "braun",
+        "clarke",
+        "analise tematica reflexiva",
+        "reflexividade",
+        "thematic analysis"
+      ],
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "DIRECT_PROTECTED_BOOK_PDF_PARTIAL_REVIEW",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/miles-huberman-saldana-2014-qualitative-analysis.md",
+      "title": "Miles, Huberman e Saldaña (2014): condensação de dados, visualizações e conclusões",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "964eac10057e5d18be779b18e74ea7176cc48d2b15aa2c92f5427c1117ede0bb",
+      "keywords": [
+        "miles",
+        "huberman",
+        "saldana",
+        "data display",
+        "qualitative analysis",
+        "matriz"
+      ],
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "DIRECT_PROTECTED_BOOK_PDF_PARTIAL_REVIEW",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/saldana-2009-coding-manual.md",
+      "title": "Saldaña (2009): ciclos de codificação devem corresponder à pergunta",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "3b432400dd7893ac4da2a29e6a2630275f9312d52a1001f5c9cf12ded0811f27",
+      "keywords": [
+        "saldana",
+        "coding",
+        "codificacao",
+        "categorias",
+        "qualitative"
+      ],
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "DIRECT_BOOK_FILE_IDENTIFIED_SCOPE_NOT_FULLY_READ",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/saunders-lewis-thornhill-2023-onion.md",
+      "title": "Saunders, Lewis e Thornhill: coerência da cebola de pesquisa (edição identificada de 2023)",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "6990c37355451d10fcb4104b03151870e4d4197849d6a981a233cb7fc01220e4",
+      "keywords": [
+        "saunders",
+        "research onion",
+        "cebola",
+        "metodologia",
+        "business methods"
+      ],
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "DIRECT_PROTECTED_BOOK_PDF_PARTIAL_REVIEW",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/creswell-creswell-2021-mixed-research-design.md",
+      "title": "Creswell e Creswell (2021): vincular pergunta à abordagem qualitativa, quantitativa ou mista",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "b3fdf3f6f24699f1bcc1f7c92b87a2114e886c55f7d902bb598dd3f55f1c8487",
+      "keywords": [
+        "creswell",
+        "mixed methods",
+        "projeto de pesquisa",
+        "qualitativo",
+        "quantitativo"
+      ],
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "DIRECT_PROTECTED_PORTUGUESE_EDITION_PDF_PARTIAL_REVIEW",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/yin-2018-case-study-design.md",
+      "title": "Yin (2018): protocolo, unidade de análise e explicações alternativas no estudo de caso",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "b23529f585d34b4839924ffb7b8bdf00a1c7c523c6332ce7f917e5c4f8dd66fe",
+      "keywords": [
+        "yin",
+        "case study",
+        "estudo de caso",
+        "protocolo",
+        "cadeia de evidencia"
+      ],
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "DIRECT_PROTECTED_BOOK_PDF_PARTIAL_REVIEW",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/eisenhardt-1989-building-theory-cases.md",
+      "title": "Eisenhardt (1989): teoria a partir de múltiplos casos exige comparação disciplinada",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "51e61e009b23edb22e18e0ded93c4e57b6916fcc057377d20326683124a4651f",
+      "keywords": [
+        "eisenhardt",
+        "case studies",
+        "building theory",
+        "comparacao casos",
+        "amostragem teorica"
+      ],
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "DIRECT_PROTECTED_JSTOR_ARTICLE_PDF_PARTIAL_REVIEW",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/hevner-2004-design-science.md",
+      "title": "Hevner et al. (2004): artefato, relevância, rigor e avaliação em DSR",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "c66146c64854a499758110ac0c89fb8d6670a88ca953b8b22f3823eb9d698129",
+      "keywords": [
+        "hevner",
+        "design science",
+        "dsr",
+        "artefato",
+        "avaliacao"
+      ],
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "DIRECT_PROTECTED_ARTICLE_PDF_PARTIAL_REVIEW",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/peffers-2008-dsrm-process.md",
+      "title": "Peffers et al. (2008): ciclo DSRM distingue demonstração de avaliação",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "b680098296b7889f3791567bb04f5d724547f691366785ad1552248bdfa85b52",
+      "keywords": [
+        "peffers",
+        "dsrm",
+        "design science",
+        "demonstracao",
+        "avaliacao"
+      ],
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "DIRECT_PROTECTED_ARTICLE_PDF_PARTIAL_REVIEW",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/suddaby-2006-grounded-theory-not.md",
+      "title": "Suddaby (2006): o que não caracteriza grounded theory",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "3f1acea5204a6f5974c51a37cfbf4e69be9ccf4da52e145b36175f43a6adb3a6",
+      "keywords": [
+        "suddaby",
+        "grounded theory",
+        "teoria fundamentada",
+        "memo",
+        "comparacao constante"
+      ],
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "DIRECT_PROTECTED_ARTICLE_PDF_PARTIAL_REVIEW",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/sampaio-sabbatini-limongi-2024-research-ai.md",
+      "title": "Sampaio, Sabbatini e Limongi (2024): uso responsável de IA generativa na pesquisa",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "e10c3910bb841d4465cf75b7b75c70a8761d93a015a95300765d4c557f93b476",
+      "keywords": [
+        "sampaio",
+        "sabbatini",
+        "limongi",
+        "ia generativa",
+        "etica",
+        "pesquisa cientifica"
+      ],
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "DIRECT_BOOK_PDF_PARTIAL_REVIEW_RIGHTS_PENDING",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/zupic-cater-2015-bibliometric-methods.md",
+      "title": "Zupic e Čater (2015): métodos bibliométricos como mapas, não testes causais",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "c62cd14c7bfd7d12b938eb99863f8b9c0964b66595f0d9909f213930561462e0",
+      "keywords": [
+        "zupic",
+        "cater",
+        "bibliometria",
+        "cocitacao",
+        "coupling",
+        "science mapping"
+      ],
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "BIBLIOGRAPHIC_CROSS_REFERENCE_VIA_MARZI_NOT_DIRECT_SOURCE_READ",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/donthu-2021-bibliometric-how-to.md",
+      "title": "Donthu et al. (2021): decisões para análise bibliométrica reprodutível",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "e6a4bf185e8835ec29d2dc997cf8ca1ea1a925db5cbf65e653e64606f7fa62b4",
+      "keywords": [
+        "donthu",
+        "bibliometric analysis",
+        "bibliometria",
+        "science mapping",
+        "metadata"
+      ],
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_read_scope": "BIBLIOGRAPHIC_CROSS_REFERENCE_VIA_MARZI_NOT_DIRECT_SOURCE_READ",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
     }
   ],
   "license": "Apache-2.0 (original editorial cards only)",
   "repository": "rebsonm/MeuArtigoSkill",
   "schema": "MEU_ARTIGO_GITHUB_METHODOLOGY_V1",
-  "version": "pilot-2026-11-21-75-methodology-cards-38-pdfs-prisma-bslr"
+  "version": "pilot-2026-11-21-88-cards-38-pdfs-ppga-broad-review"
 }
