@@ -14,7 +14,10 @@
         "sintese",
         "síntese",
         "scoping",
-        "salsa"
+        "salsa",
+        "revisões",
+        "literature",
+        "revisiones"
       ],
       "path": "knowledge/methodology/cards/reviews.md",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
@@ -36,7 +39,10 @@
         "pergunta",
         "question",
         "método",
-        "methodology"
+        "methodology",
+        "desenho de pesquisa",
+        "research",
+        "research design"
       ],
       "path": "knowledge/methodology/cards/design.md",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
@@ -56,7 +62,12 @@
         "coding",
         "codificação",
         "grounded",
-        "narrativa"
+        "narrativa",
+        "analise",
+        "analisis",
+        "tema",
+        "reflexividade",
+        "entrevistas"
       ],
       "path": "knowledge/methodology/cards/qualitative.md",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
@@ -76,7 +87,11 @@
         "prototype",
         "protótipo",
         "validação",
-        "validation"
+        "validation",
+        "ciência",
+        "artefatos",
+        "prototipo",
+        "evaluacion"
       ],
       "path": "knowledge/methodology/cards/design-science.md",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
@@ -99,7 +114,12 @@
         "flowchart",
         "checklist",
         "sistemática",
-        "review"
+        "review",
+        "relato",
+        "transparência",
+        "transparencia",
+        "reporte",
+        "relatorio"
       ],
       "source_doi": "10.1186/s13643-021-01626-4",
       "source_url": "https://link.springer.com/article/10.1186/s13643-021-01626-4",
@@ -123,7 +143,12 @@
         "protocol",
         "mapa",
         "revisão",
-        "revisao"
+        "revisao",
+        "mapeamento",
+        "evidências",
+        "mapas",
+        "evidence map",
+        "ambiental"
       ],
       "source_doi": "10.1186/s13750-018-0121-7",
       "source_url": "https://link.springer.com/article/10.1186/s13750-018-0121-7",
@@ -148,7 +173,12 @@
         "byrne",
         "qualitative",
         "coding",
-        "reflexivity"
+        "reflexivity",
+        "reflexiva",
+        "reflexividade",
+        "interpretativa",
+        "códigos",
+        "temas"
       ],
       "source_doi": "10.1007/s11135-021-01182-y",
       "source_url": "https://link.springer.com/article/10.1007/s11135-021-01182-y",
@@ -172,7 +202,11 @@
         "discussion",
         "participantes",
         "moderation",
-        "qualitative"
+        "qualitative",
+        "focais",
+        "interação",
+        "interaccion",
+        "moderacao"
       ],
       "source_doi": "10.1111/2041-210X.12860",
       "source_url": "https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12860",
@@ -196,7 +230,12 @@
         "merriam",
         "qualitative",
         "bounded",
-        "context"
+        "context",
+        "casos",
+        "organização",
+        "organizacional",
+        "case study",
+        "estudio caso"
       ],
       "source_doi": "10.17169/fqs-18.1.2655",
       "source_url": "https://researchonline.jcu.edu.au/47422/",
@@ -219,7 +258,12 @@
         "sampling",
         "interviews",
         "observation",
-        "document"
+        "document",
+        "qualidade",
+        "pesquisa qualitativa",
+        "amostragem",
+        "entrevistas",
+        "observação"
       ],
       "source_doi": "10.1186/s42466-020-00059-z",
       "source_url": "https://link.springer.com/article/10.1186/s42466-020-00059-z",
@@ -242,7 +286,12 @@
         "qualitativa",
         "themes",
         "interviews",
-        "entrevistas"
+        "entrevistas",
+        "saturação temática",
+        "amostra",
+        "amostragem qualitativa",
+        "saturation interview",
+        "saturacion"
       ],
       "source_doi": "10.1371/journal.pone.0232076",
       "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0232076",
@@ -266,7 +315,12 @@
         "conteudo",
         "revisão",
         "revisao",
-        "lycariao"
+        "lycariao",
+        "reliability",
+        "coder",
+        "codificação",
+        "codificacao",
+        "concordância"
       ],
       "source_doi": "10.1590/2318-0889202335e220027",
       "source_url": "https://periodicos.puc-campinas.edu.br/transinfo/article/view/10064",
@@ -289,7 +343,13 @@
         "integration",
         "triangulation",
         "qualitative",
-        "quantitative"
+        "quantitative",
+        "mistura",
+        "integração",
+        "integracao",
+        "triangulação",
+        "triangulacion",
+        "dados"
       ],
       "source_doi": "10.1590/15174522-018004221",
       "source_url": "https://www.scielo.br/j/soc/a/WtDMmCV3jQB8mT6tmpnzkKc/?format=html&lang=pt",
@@ -312,7 +372,12 @@
         "citacao",
         "network",
         "produção",
-        "producao"
+        "producao",
+        "bibliométrica",
+        "bibliometrico",
+        "citações",
+        "citacoes",
+        "análise bibliométrica"
       ],
       "source_doi": "10.20396/rdbci.v18i0.8658889",
       "source_url": "https://periodicos.sbu.unicamp.br/ojs/index.php/rdbci/article/view/8658889",
@@ -334,7 +399,11 @@
         "metassintese",
         "meta-synthesis",
         "interpretation",
-        "bicudo"
+        "bicudo",
+        "metanálise",
+        "metassíntese",
+        "metasintese",
+        "síntese qualitativa"
       ],
       "source_doi": "10.5007/1981-1322.2014v9nespp7",
       "source_url": "https://periodicos.ufsc.br/index.php/revemat/article/view/1981-1322.2014v9nespp7",
@@ -357,7 +426,11 @@
         "comparison",
         "amostragem",
         "qualitative",
-        "codificacao"
+        "codificacao",
+        "teoria fundamentada",
+        "codificação",
+        "categorias",
+        "amostragem teórica"
       ],
       "source_doi": "10.1590/2175-623684611",
       "source_url": "https://www.scielo.br/j/edreal/a/rDDFsHvBCQyWKpthzPjMGzk/?format=html&lang=pt",
@@ -381,7 +454,12 @@
         "causal",
         "regression",
         "regressao",
-        "policy"
+        "policy",
+        "temporais",
+        "interrompidas",
+        "intervenção",
+        "series temporales",
+        "série temporal"
       ],
       "source_doi": "10.1093/ije/dyw098",
       "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5407170/",
@@ -405,7 +483,10 @@
         "sistemática",
         "sistematica",
         "environmental",
-        "checklist"
+        "checklist",
+        "transparência",
+        "mapa de evidências",
+        "guia de relato"
       ],
       "source_doi": "10.1186/s13643-021-01626-4",
       "source_url": "https://link.springer.com/article/10.1186/s13643-021-01626-4",
@@ -428,7 +509,12 @@
         "reflexive",
         "grounded",
         "theory",
-        "qualitative"
+        "qualitative",
+        "amostra",
+        "amostragem qualitativa",
+        "entrevistas",
+        "saturación",
+        "reflexiva"
       ],
       "source_doi": "10.1371/journal.pone.0232076",
       "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0232076",
@@ -450,7 +536,12 @@
         "synthesis",
         "revisão",
         "literatura",
-        "pautasso"
+        "pautasso",
+        "escrita",
+        "bibliográfica",
+        "bibliografica",
+        "artigo",
+        "revisão narrativa"
       ],
       "source_doi": "10.1371/journal.pcbi.1003149",
       "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003149",
@@ -473,7 +564,13 @@
         "structure",
         "argument",
         "results",
-        "methods"
+        "methods",
+        "escrita",
+        "artigo",
+        "científico",
+        "cientifico",
+        "estrutura",
+        "manuscrito"
       ],
       "source_doi": "10.1371/journal.pcbi.1005619",
       "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619",
@@ -496,7 +593,13 @@
         "analysis",
         "pipeline",
         "provenance",
-        "research"
+        "research",
+        "reprodutibilidade",
+        "computacional",
+        "reproduzibilidade",
+        "replicação",
+        "replicacao",
+        "código"
       ],
       "source_doi": "10.1371/journal.pcbi.1003285",
       "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285",
@@ -519,7 +622,13 @@
         "synthesis",
         "revisão",
         "quantitative",
-        "meta"
+        "meta",
+        "metanálise",
+        "metanalise",
+        "meta-análise",
+        "metaanálise",
+        "heterogeneidade",
+        "quantitativa"
       ],
       "source_doi": "10.1371/journal.pcbi.1006922",
       "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006922",
@@ -531,5 +640,5 @@
   "license": "Apache-2.0 (original editorial cards only)",
   "repository": "rebsonm/MeuArtigoSkill",
   "schema": "MEU_ARTIGO_GITHUB_METHODOLOGY_V1",
-  "version": "pilot-2026-11-21-card-batch2-draft"
+  "version": "pilot-2026-11-21-23-cards-pt-en-es-test"
 }
