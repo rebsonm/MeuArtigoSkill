@@ -19,7 +19,7 @@ import public_method_pdf as pdf_reader
 SCHEMA = "MEU_ARTIGO_HYBRID_METHOD_RETRIEVAL_V1"
 # This approved-for-testing snapshot contains 23 draft/pilot cards and 12
 # separately catalogued open-license PDFs. Updating requires a distinct review.
-DEFAULT_PUBLIC_SNAPSHOT = "7d230a5957da477f0386d5881ad3e7ca4c032ca9"
+DEFAULT_PUBLIC_SNAPSHOT = "2f45911c4485cfc738bf22972459802d8c74759e"
 MAX_CONTEXT = 6000
 MIN_CONTEXT = 1200
 
