@@ -8,7 +8,7 @@
 - **Direitos observados:** `SRC-0405` CC BY 4.0 expressa; `SRC-0389` CC Attribution sem versão especificada; `SRC-0388`/`SRC-0402` indicam Creative Commons sem especificação da modalidade; demais versões com reserva de direitos, termos de reimpressão ou ausência de licença explícita. Nenhum PDF publicado.
 - **Metadados divergentes do nome:** `SRC-0392` Small(2012) é publicação 2011; `SRC-0393` Rezende(2016) é edição 2014; `SRC-0398` Owens(2022) é apresentação de 2002 com overlay ResearchGate 2014; `SRC-0399` Lietz(2009) é periódico 2010, DOI verificado visualmente.
 - **Múltiplas cópias:** `SRC-0391` e `SRC-0402` têm homônimos de mesmo tamanho em pastas distintas. Somente cópias das pastas atribuídas examinadas; duplicidade intelectual/hash entre diferentes IDs precisa de reconciliação pela integração, sem contabilizar nova obra automaticamente.
-- **Pendências:** autenticar autoria/data/edição de `SRC-0403`; conferir o DOI de `SRC-0394`, extraído com caracteres de paginação concatenados; resolver modalidades de Creative Commons, direitos de terceiros, duplicidades e revisão científica posterior.
+- **Pendências:** autenticar autoria/data/edição de `SRC-0403`; conferir o DOI de `SRC-0394`, agora visualmente confirmado como `10.17666/3088115-128/2015` após sanar erro de extração; resolver modalidades de Creative Commons, direitos de terceiros, duplicidades e revisão científica posterior.
 - **Controle técnico:** ficha SHA-256 individual no JSON `IB-16-DELTA.json`; documento-fonte por ID do Drive e tamanho do ledger; arquivo da branch recebe `commit_da_branch` anterior ao recibo por impossibilidade de hash autorreferencial.
 - **Sem alteração de** source_registry_catalog.json, rights-ledger-part-04.json, manifestos, catálogo de PDFs, snapshots, testes globais, main ou PR #101; sem merge/tag/release/MCP/publicação de PDFs.
 - **CI:** não afirmado/apurado pelo recibo. Consultar status do HEAD e registrar no MD canônico.
@@ -23,7 +23,7 @@
 | SRC-0391 | Imai, Kim e Wang (2023).pdf | 2023 (©2021) | 10.1111/ajps.12685 | © 2021 Midwest Political Science Association; sem CC expressa | VERIFICADO |
 | SRC-0392 | Small(2012).pdf | 2011 | 10.1146/annurev.soc.012809.102657 | © 2011 Annual Reviews; All rights reserved | VERIFICADO |
 | SRC-0393 | Rezende (2016).pdf | 2014 | não confirmado | nenhuma licença CC expressa no expediente consultado | VERIFICADO |
-| SRC-0394 | Silva (2015).pdf | 2015 | não confirmado | sem licença CC expressa; DOI no PDF com paginação concatenada | VERIFICADO |
+| SRC-0394 | Silva (2015).pdf | 2015 | 10.17666/3088115-128/2015 | sem licença CC expressa; DOI no PDF com paginação concatenada | VERIFICADO |
 | SRC-0395 | Paranhos et al (2016).pdf | 2016 | 10.1590/15174522-018004221 | sem CC expressa observada | VERIFICADO |
 | SRC-0396 | Paranhos et al (2013).pdf | 2013 (ed. 2013–2014) | não confirmado | sem licença CC expressa observada | VERIFICADO |
 | SRC-0398 | Owens (2022).pdf | 2002 (capa ResearchGate 2014) | não confirmado | sem licença expressa; ResearchGate não prova permissão | VERIFICADO |

@@ -154,13 +154,16 @@
       "drive_file_id_confirmado_ou_null": "1VTBYJvkZVUCCO0uZq7tiJN_fkD_J8LQt",
       "nome_titulo_do_PDF": "DESAFIOS ONTOLÓGICOS E EPISTEMOLÓGICOS PARA OS MÉTODOS MISTOS NA CIÊNCIA POLÍTICA",
       "autores_ano_edicao": "Glauco Peres da Silva — 2015",
-      "doi_isbn_confirmados_ou_null": null,
+      "doi_isbn_confirmados_ou_null": {
+        "doi": "10.17666/3088115-128/2015",
+        "isbn": null
+      },
       "tipo_publicacao": "artigo teórico-metodológico",
       "escopo_exato_da_inspecao": "expediente, resumo/estrutura, aviso de direitos; inspeção limitada",
       "identidade_confirmada_boolean": true,
       "motivo_bloqueio_ou_null": null,
       "direitos_observados": "sem licença CC expressa; DOI no PDF com paginação concatenada",
-      "novo_hash_da_ficha": "39b846cc086399651c0a5ecc8b312b3e1e1db889910514c653c2322930a27528",
+      "novo_hash_da_ficha": "33f3e59a726f63024905d82174b1ec06dc99bdbfde374fe10ac49133919de7e5",
       "commit_da_branch": "39bd3ae2a2b7ba5d29f3a9ae83f5238c31c8959c",
       "estado_de_revisao_cientifica": "PENDENTE"
     },
