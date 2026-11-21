@@ -20,6 +20,12 @@ OPTIONAL_PROTOCOL_DOCS={
     "scripts/homologate_integrated_skill.py",
     "tests/test_integrated_skill_homologation.py",
     "docs/INTEGRATED-SKILL-HOMOLOGATION.md",
+    # Stage 04: exact reviewed source-only CI checks (never packaged).
+    "docs/ETAPA04-CI-SECURITY.md",
+    "scripts/audit_optional_mcp_supply_chain.py",
+    "tests/test_optional_mcp_supply_chain.py",
+    ".github/workflows/security-contracts.yml",
+    ".github/workflows/codeql-javascript.yml",
 }
 SOURCE_TYPES={".py",".md",".yaml",".yml",".json",".ts",".html",".cff",".txt"}
 
@@ -58,6 +64,20 @@ class PublicSkillBoundaryTests(unittest.TestCase):
                         if term in content:
                             problems.append((relative,term))
         self.assertEqual(problems,[],f"Public Skill boundary violated: {problems}")
+
+    def test_stage04_source_only_checks_cannot_enter_skill_zip(self):
+        from sys import path as sys_path
+        sys_path.insert(0, str(ROOT / "scripts"))
+        from build_skill_bundle import list_sources
+        packaged = {p.relative_to(ROOT).as_posix() for p in list_sources(ROOT)}
+        for forbidden in (
+            "scripts/audit_repository_secrets.py",
+            "scripts/audit_optional_mcp_supply_chain.py",
+            "docs/ETAPA04-CI-SECURITY.md",
+            ".github/workflows/security-contracts.yml",
+            ".github/workflows/codeql-javascript.yml",
+        ):
+            self.assertNotIn(forbidden, packaged)
 
     def test_scientific_human_controls_remain(self):
         source=(ROOT/"SKILL.md").read_text(encoding="utf-8")
