@@ -54,7 +54,7 @@ class InstalledMethodologyBoundaryTests(unittest.TestCase):
                          len(cards_catalog["documents"]) - 4)  # four earlier unreviewed cards
         self.assertRegex(hybrid.DEFAULT_PUBLIC_SNAPSHOT, r"^[a-f0-9]{40}$")
         self.assertEqual(hybrid.DEFAULT_PUBLIC_SNAPSHOT,
-                         "55cd03781cc98ae1b20843820d85aae9e3f90895")
+                         "bc89bc7f56847f7255698e8c47cbb66a6ae94cac")
         for item in cards_catalog["documents"]:
             raw = (ROOT / item["path"]).read_bytes()
             self.assertEqual(hashlib.sha256(raw).hexdigest(), item["sha256"])
