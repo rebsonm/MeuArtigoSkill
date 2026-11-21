@@ -19,7 +19,7 @@
       "folder_do_ledger": "Avaliação de Impacto",
       "filename_esperado": "guiaexpost (1).pdf",
       "size_bytes_esperados": 11932808,
-      "drive_file_id_confirmado_ou_null": "1nmxKzGTOHxHd1PbvWo9dDOyX9XcqQdMT",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "Avaliação dePolíticas Públicas Guia prático de análise ex post",
       "autores_ano_edicao": "Brasil, Casa Civil da Presidência da República; Instituto de Pesquisa Econômica Aplicada (Ipea) [coordenação institucional]; 2018",
       "doi_isbn_confirmados_ou_null": {
@@ -41,7 +41,7 @@
       "folder_do_ledger": "Avaliação de Impacto",
       "filename_esperado": "153743_analise-ex-ante_web_novo.pdf",
       "size_bytes_esperados": 4161095,
-      "drive_file_id_confirmado_ou_null": "1bZoqwh-Ppov-PuOd3GxMDCDLLqXeZquA",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "Avaliação de Políticas Públicas Guia Prático de Análise Ex Ante",
       "autores_ano_edicao": "Brasil, Casa Civil da Presidência da República; Instituto de Pesquisa Econômica Aplicada (Ipea) [coordenação institucional]; 2018",
       "doi_isbn_confirmados_ou_null": {
@@ -63,7 +63,7 @@
       "folder_do_ledger": "Avaliação de Impacto",
       "filename_esperado": "gertler_etl_2018.pdf",
       "size_bytes_esperados": 7561242,
-      "drive_file_id_confirmado_ou_null": "1-Unjllbd1I22ra11yo1WBXCw4VLtSasX",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "Avaliação de Impacto na Prática",
       "autores_ano_edicao": "Paul J. Gertler; Sebastián Martínez; Patrick Premand; Laura B. Rawlings; Christel M. J. Vermeersch; 2018 (tradução portuguesa da 2ª edição inglesa de 2016)",
       "doi_isbn_confirmados_ou_null": {
@@ -85,7 +85,7 @@
       "folder_do_ledger": "Avaliação de Impacto",
       "filename_esperado": "Batista e Domingos (2017).pdf",
       "size_bytes_esperados": 263280,
-      "drive_file_id_confirmado_ou_null": "1XsdGqXlZYHR3Vl1AqczQFIbQKHnVJ6WQ",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "MAIS QUE BOAS INTENÇÕES Técnicas quantitativas e qualitativas na avaliação de impacto de políticas públicas",
       "autores_ano_edicao": "Mariana Batista; Amanda Domingos; 2017",
       "doi_isbn_confirmados_ou_null": {
@@ -107,7 +107,7 @@
       "folder_do_ledger": "An lise de Correspondˆncia",
       "filename_esperado": "Bertoncelo,2022.pdf",
       "size_bytes_esperados": 4671950,
-      "drive_file_id_confirmado_ou_null": "1M4hS6pSF42lXxBNn7jmd5BwQSj7Wk3Wk",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "Construindo espaços relacionais com a análise de correspondências múltiplas: aplicações nas ciências sociais",
       "autores_ano_edicao": "Edison Bertoncelo; 2022",
       "doi_isbn_confirmados_ou_null": {
@@ -129,7 +129,7 @@
       "folder_do_ledger": "An lise de Correspondˆncia",
       "filename_esperado": "Duval (ano).pdf",
       "size_bytes_esperados": 91520298,
-      "drive_file_id_confirmado_ou_null": "1XmLiabYV3CHQYlAdZAOkg0_xkwrewEqB",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "Multiple Correspondence Analysis",
       "autores_ano_edicao": null,
       "doi_isbn_confirmados_ou_null": {
@@ -151,7 +151,7 @@
       "folder_do_ledger": "An lise de Correspondˆncia",
       "filename_esperado": "Souza (1990).pdf",
       "size_bytes_esperados": 4781342,
-      "drive_file_id_confirmado_ou_null": "1RpdXjionOU2UycEOJiHtgDi4STitjaaj",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "Análise de Correspondência",
       "autores_ano_edicao": "Norma Martinez de Souza; 1990 (dezembro)",
       "doi_isbn_confirmados_ou_null": {
@@ -173,7 +173,7 @@
       "folder_do_ledger": "An lise de Correspondˆncia",
       "filename_esperado": "Doey and Kurta (2011).pdf",
       "size_bytes_esperados": 588996,
-      "drive_file_id_confirmado_ou_null": "1qCcpcezj4DivXkr1QPy9cOQFzOyL9Ki9",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "Correspondence Analysis applied to psychological research",
       "autores_ano_edicao": "Laura Doey; Jessica Kurta; 2011",
       "doi_isbn_confirmados_ou_null": {
@@ -195,7 +195,7 @@
       "folder_do_ledger": "An lise de Correspondˆncia",
       "filename_esperado": "Nenadic e Greenacre (2007).pdf",
       "size_bytes_esperados": 273863,
-      "drive_file_id_confirmado_ou_null": "1To4E79KbzXaAk8J9nuMw8pH-B8jgeNlv",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "Correspondence Analysis in R, with Two- and Three-dimensional Graphics: The ca Package",
       "autores_ano_edicao": "Oleg Nenadić; Michael Greenacre; 2007 (maio)",
       "doi_isbn_confirmados_ou_null": {
@@ -217,7 +217,7 @@
       "folder_do_ledger": "Texto como Dado (text mining)",
       "filename_esperado": "Hopkins and King (2010).pdf",
       "size_bytes_esperados": 528155,
-      "drive_file_id_confirmado_ou_null": "1bd-nsefBfp6tD-JY6tEDcVdCpgcROzmy",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "A Method of Automated Nonparametric Content Analysis for Social Science",
       "autores_ano_edicao": "Daniel J. Hopkins; Gary King; 2010",
       "doi_isbn_confirmados_ou_null": {
@@ -239,7 +239,7 @@
       "folder_do_ledger": "Texto como Dado (text mining)",
       "filename_esperado": "Grimmer e Stewart (2013).pdf",
       "size_bytes_esperados": 972383,
-      "drive_file_id_confirmado_ou_null": "15FX-LqbpC1nvM1ZLAql57PyCNgzBQWrn",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "Text as Data: The Promise and Pitfalls of Automatic Content Analysis Methods for Political Texts",
       "autores_ano_edicao": "Justin Grimmer; Brandon M. Stewart; 2013",
       "doi_isbn_confirmados_ou_null": {
@@ -261,7 +261,7 @@
       "folder_do_ledger": "Texto como Dado (text mining)",
       "filename_esperado": "Izumi e Moreira (2018).pdf",
       "size_bytes_esperados": 726950,
-      "drive_file_id_confirmado_ou_null": "1VjebfWPYxMy_5wp9UqaK7tPm4AViXxN5",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "O texto como dado: desafios e oportunidades para as ciências sociais",
       "autores_ano_edicao": "Maurício Izumi; Davi Moreira; 2018 (publicado em outubro; BIB n. 86, 2/2018)",
       "doi_isbn_confirmados_ou_null": {
@@ -283,7 +283,7 @@
       "folder_do_ledger": "Machine Learning",
       "filename_esperado": "Molina e Garip (2019).pdf",
       "size_bytes_esperados": 299976,
-      "drive_file_id_confirmado_ou_null": "1SFmYHJoORQ8Gq8c6SmLfx3g2gV2UzSo7",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "Machine Learning for Sociology",
       "autores_ano_edicao": "Mario Molina; Filiz Garip; 2019 (publicação online antecipada 13/05/2019)",
       "doi_isbn_confirmados_ou_null": {
@@ -305,7 +305,7 @@
       "folder_do_ledger": "Machine Learning",
       "filename_esperado": "s40614-020-00270-y (1)_pdf.pdf",
       "size_bytes_esperados": 1452255,
-      "drive_file_id_confirmado_ou_null": "1jDbqQSGCqut6oFFwT8Uv-MlPde30THLL",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "Tutorial: Applying Machine Learning in Behavioral Research",
       "autores_ano_edicao": "Stéphanie Turgeon; Marc J. Lanovaz; 2020 (publicado online em 10/11/2020)",
       "doi_isbn_confirmados_ou_null": {
@@ -327,7 +327,7 @@
       "folder_do_ledger": "Machine Learning",
       "filename_esperado": "Cranmer_2019.pdf",
       "size_bytes_esperados": 127938,
-      "drive_file_id_confirmado_ou_null": "1A3ko53htXYJNqbalGALm2YqQxogNhGh6",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "Introduction to the Virtual Issue: Machine Learning in Political Science",
       "autores_ano_edicao": "Skyler J. Cranmer; ANO NÃO CONFIRMADO",
       "doi_isbn_confirmados_ou_null": {
@@ -349,7 +349,7 @@
       "folder_do_ledger": "Machine Learning",
       "filename_esperado": "grimmer-et-al-2021.pdf",
       "size_bytes_esperados": 460853,
-      "drive_file_id_confirmado_ou_null": "1P_M4_k13qft2pzLXY9-22HGlb07-WiOo",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "Machine Learning for Social Science: An Agnostic Approach",
       "autores_ano_edicao": "Justin Grimmer; Margaret E. Roberts; Brandon M. Stewart; 2021 (Review in Advance 05/03/2021)",
       "doi_isbn_confirmados_ou_null": {
@@ -371,7 +371,7 @@
       "folder_do_ledger": "S‚ries Temporais Interrompidas (ITS)",
       "filename_esperado": "Penfold e Zhang (2013).pdf",
       "size_bytes_esperados": 246567,
-      "drive_file_id_confirmado_ou_null": "11vc23_aJXgnpwNp-gBAA8Ic_dOgacGb5",
+      "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "Use of Interrupted Time Series Analysis in Evaluating Health Care Quality Improvements",
       "autores_ano_edicao": "Robert B. Penfold; Fang Zhang; 2013",
       "doi_isbn_confirmados_ou_null": {
@@ -389,5 +389,7 @@
     }
   ],
   "card_content_commit": "75b53a4399b9c1cd8847f7ba333425a66c1956a7",
-  "delta_record_updated": "2026-11-21"
+  "delta_record_updated": "2026-11-21",
+  "private_drive_ids_redacted_from_public_head": true,
+  "private_drive_id_redaction_note": "Original file IDs removed from this public branch HEAD. Source-document matching remains described by inventory ID, filename and size. Earlier commits may still retain these IDs. No history rewrite performed."
 }
