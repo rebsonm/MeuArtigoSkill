@@ -772,7 +772,8 @@
     "CONTINUIDADE NOVA: 17/17 mostram [L]/[I]/[P], 17/17 status cientifico independente pendente, 0/17 ancoras explicitas de pagina numerica encontradas na triagem",
     "CONTINUIDADE NOVA: 11 cards com secao historica e 6 sem essa secao; EC-094 com cadeia de proveniencia a aclarar",
     "CONTINUIDADE NOVA: 0 URLs Google Drive privadas e 0 frases obvias de prompt injection encontradas por regex restritas; NAO prova seguranca",
-    "CONTINUIDADE NOVA: comentario para secao 31.09 criado por impossibilidade segura de alterar Markdown bruto sob concorrencia"
+    "CONTINUIDADE NOVA: comentario para secao 31.09 criado por impossibilidade segura de alterar Markdown bruto sob concorrencia",
+    "PR #110 criada e observada como Draft/open apontando exclusivamente para a branch V1-09, sem aprovacao cientifica/seguranca/direitos"
   ],
   "next_steps": [
     "Cotejar trechos, páginas e edição de cada DOI com revisor humano independente, em cópia licenciada",
@@ -814,6 +815,17 @@
     "drive_comment": "CRIADO_NA_SECAO_31_09",
     "branch_only": true,
     "independent_scientific_approval": false,
-    "independent_rights_approval": false
+    "independent_rights_approval": false,
+    "pr": {
+      "number": 110,
+      "url": "https://github.com/rebsonm/MeuArtigoSkill/pull/110",
+      "draft": true,
+      "state": "open",
+      "head": "work/v1-09-20261121",
+      "base": "plan/v1-methodology-20-stages-20261121",
+      "scientific_approval": false,
+      "rights_approval": false,
+      "merge_authorized": false
+    }
   }
 }
