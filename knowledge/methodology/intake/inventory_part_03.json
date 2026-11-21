@@ -1,0 +1,577 @@
+{
+  "schema": "MEU_ARTIGO_SOURCE_INVENTORY_V1",
+  "batch": 3,
+  "private_file_content": false,
+  "publishability": "NOT_ASSESSED",
+  "kind": "METADATA_ONLY_NOT_PRIMARY_SOURCE",
+  "folders": [
+    {
+      "category": "An lise de Correspondˆncia",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Bertoncelo,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 4671950,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Duval (ano).pdf",
+          "mime": "application/pdf",
+          "bytes": 91520298,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Souza (1990).pdf",
+          "mime": "application/pdf",
+          "bytes": 4781342,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Abdi e  B‚ra (2017).pdf",
+          "mime": "application/pdf",
+          "bytes": 289832,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Atkinson (2023).pdf",
+          "mime": "application/pdf",
+          "bytes": 1387673,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Doey and Kurta (2011).pdf",
+          "mime": "application/pdf",
+          "bytes": 588996,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Beh (2007).pdf",
+          "mime": "application/pdf",
+          "bytes": 163962,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Nenadic e Greenacre (2007).pdf",
+          "mime": "application/pdf",
+          "bytes": 273863,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Texto como Dado (text mining)",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Hopkins and King (2010).pdf",
+          "mime": "application/pdf",
+          "bytes": 528155,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Grimmer e Stewart (2013).pdf",
+          "mime": "application/pdf",
+          "bytes": 972383,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Izumi e Moreira (2018).pdf",
+          "mime": "application/pdf",
+          "bytes": 726950,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Machine Learning",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Molina e Garip (2019).pdf",
+          "mime": "application/pdf",
+          "bytes": 299976,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "s40614-020-00270-y (1)_pdf.pdf",
+          "mime": "application/pdf",
+          "bytes": 1452255,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Cranmer_2019.pdf",
+          "mime": "application/pdf",
+          "bytes": 127938,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "grimmer-et-al-2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 460853,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "S‚ries Temporais Interrompidas (ITS)",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Penfold e Zhang (2013).pdf",
+          "mime": "application/pdf",
+          "bytes": 246567,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Linden (2015).pdf",
+          "mime": "application/pdf",
+          "bytes": 300450,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Figueiredo Filho (2022).pdf",
+          "mime": "application/pdf",
+          "bytes": 2454260,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Bernal, Cummings e Gasparrini (2017).pdf",
+          "mime": "application/pdf",
+          "bytes": 482146,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Dif-in-Dif (regressão diferenças em diferenças)",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "02_two_by_two.pdf",
+          "mime": "application/pdf",
+          "bytes": 2072934,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "gertler_et_al_2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 7561242,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Fredriksson e Oliveira (2019).pdf",
+          "mime": "application/pdf",
+          "bytes": 660405,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "card and krueger (1994).pdf",
+          "mime": "application/pdf",
+          "bytes": 582964,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "01_Introduction.pdf",
+          "mime": "application/pdf",
+          "bytes": 2476275,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Roth et al (2023).pdf",
+          "mime": "application/pdf",
+          "bytes": 513256,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "REGRESSION DISCONTINUITY DESIGNS (RDD)",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Cattaneo e Titiunik (2022).pdf",
+          "mime": "application/pdf",
+          "bytes": 473052,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Imbens e Lemieux (2007).pdf",
+          "mime": "application/pdf",
+          "bytes": 294451,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Pol¡ticas P£blicas",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "celina2.pdf",
+          "mime": "application/pdf",
+          "bytes": 193799,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "RCRH-2006-273[1] ADM.pdf",
+          "mime": "application/pdf",
+          "bytes": 218689,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "celina3.pdf",
+          "mime": "application/pdf",
+          "bytes": 860992,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "celina.pdf",
+          "mime": "application/pdf",
+          "bytes": 72641,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Batista e Domingos (2017) (1).pdf",
+          "mime": "application/pdf",
+          "bytes": 263280,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Batista, Domingos e Vieira (2021).pdf",
+          "mime": "application/pdf",
+          "bytes": 305022,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Análise Espacial",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Conceição et al (2026)_port.pdf",
+          "mime": "application/pdf",
+          "bytes": 581998,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Conceição et al (2026)_en.pdf",
+          "mime": "application/pdf",
+          "bytes": 520173,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "An lise Espacial",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Kopczewskaa e Elhors (2024).pdf",
+          "mime": "application/pdf",
+          "bytes": 654105,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Anselin (2003).pdf",
+          "mime": "application/pdf",
+          "bytes": 861846,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Cƒmara et al (2004).pdf",
+          "mime": "application/pdf",
+          "bytes": 3646672,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Rttenauer (2024).pdf",
+          "mime": "application/pdf",
+          "bytes": 1415150,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Anselin et al (2000).pdf",
+          "mime": "application/pdf",
+          "bytes": 458409,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Vari veis instrumentais",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Baiocchi, Cheng e Small (2014).pdf",
+          "mime": "application/pdf",
+          "bytes": 1267443,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Sovey e Green (2011).pdf",
+          "mime": "application/pdf",
+          "bytes": 2115521,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Process Tracing",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "CDI_Practice_Paper_25.pdf",
+          "mime": "application/pdf",
+          "bytes": 221286,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Bennettetal,2019.pdf",
+          "mime": "application/pdf",
+          "bytes": 229994,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Zaks,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 195936,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Mendes,Mueller,2024.pdf",
+          "mime": "application/pdf",
+          "bytes": 433929,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Henriquesetal,2015.pdf",
+          "mime": "application/pdf",
+          "bytes": 3371631,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Raimondo,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 302386,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Cunha (2018).pdf",
+          "mime": "application/pdf",
+          "bytes": 1495786,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Lima,2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 145801,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Paula,2021-politica-comparada.pdf",
+          "mime": "application/pdf",
+          "bytes": 381374,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Gabriel,Pereira,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 199137,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Qualitative Comparative Analysis (QCA)",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Couto,Albala.pdf",
+          "mime": "application/pdf",
+          "bytes": 292410,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Tamaki,  Araujo, 2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 196590,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Parente e Federo (2019).pdf",
+          "mime": "application/pdf",
+          "bytes": 484518,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Dusa (2007).pdf",
+          "mime": "application/pdf",
+          "bytes": 2166540,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Santos,Botelho,2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 687806,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Sandes-Freitas e Bizarro-Neto (2016).pdf",
+          "mime": "application/pdf",
+          "bytes": 645133,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Ide e Mello (2022).pdf",
+          "mime": "application/pdf",
+          "bytes": 331360,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Campos,2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 725524,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Thiem (2017).pdf",
+          "mime": "application/pdf",
+          "bytes": 244241,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "QCA Aula 1 - Introdução ao método (MQ2023).pdf",
+          "mime": "application/pdf",
+          "bytes": 2677663,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Simulação",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Bonate (2011).pdf",
+          "mime": "application/pdf",
+          "bytes": 154514,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Introduction_to_Monte_Carlo_simulation.pdf",
+          "mime": "application/pdf",
+          "bytes": 283505,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Meireles, Silva e Correa (2017).pdf",
+          "mime": "application/pdf",
+          "bytes": 1706113,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Paula (2014).pdf",
+          "mime": "application/pdf",
+          "bytes": 2016191,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "An lise de Redes",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Lazer,2011.pdf",
+          "mime": "application/pdf",
+          "bytes": 358573,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Zukiewiczetal,2015.pdf",
+          "mime": "application/pdf",
+          "bytes": 1149741,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Resende,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 337815,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Wardetal,2011.pdf",
+          "mime": "application/pdf",
+          "bytes": 353476,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Ferrettietal,2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 1403809,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Higgins e Ribeiro (2018).pdf",
+          "mime": "application/pdf",
+          "bytes": 5736651,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Recuero,2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 6156447,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Scott,2012.pdf",
+          "mime": "application/pdf",
+          "bytes": 1709936,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Santos,Tavares,2016.pdf",
+          "mime": "application/pdf",
+          "bytes": 1267884,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Souza e Quandt (2008).pdf",
+          "mime": "application/pdf",
+          "bytes": 556803,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    }
+  ]
+}
