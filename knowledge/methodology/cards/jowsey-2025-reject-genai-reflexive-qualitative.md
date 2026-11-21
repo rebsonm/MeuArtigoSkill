@@ -26,3 +26,9 @@ Para métodos reflexivos, apresentar essa objeção como posição substantiva a
 Desqualificar o debate ou tratar opinião coletiva como teste causal seria metodologicamente inadequado.
 
 Este card NÃO substitui o artigo, nem atesta leitura do PDF original. Para usar [L] em manuscrito, acessar diretamente a fonte, verificar edição, método, resultados, passagens e páginas, e obter julgamento crítico do pesquisador. Aceite científico independente e aprovação de qualquer gate permanecem PENDENTES.
+
+## Verificação direta do exemplar identificado — 21/11/2026
+
+Jowsey et al. representam posição explícita de **419 pesquisadores de 32 países** contrários à GenAI para Big-Q/reflexiva. O argumento deve ser apresentado em contraste com posições mais permissivas, sem transformá-lo em experimento.
+
+**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.

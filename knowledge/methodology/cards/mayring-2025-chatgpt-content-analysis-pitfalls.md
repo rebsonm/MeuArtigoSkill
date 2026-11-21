@@ -26,3 +26,9 @@ Antes de automatizar uma análise de conteúdo, realizar teste documentado com e
 Generalizar falhas observadas em versões antigas para qualquer modelo ou confundir boas etiquetas com interpretação correta são conclusões indevidas.
 
 Este card NÃO substitui o artigo, nem atesta leitura do PDF original. Para usar [L] em manuscrito, acessar diretamente a fonte, verificar edição, método, resultados, passagens e páginas, e obter julgamento crítico do pesquisador. Aceite científico independente e aprovação de qualquer gate permanecem PENDENTES.
+
+## Verificação direta do exemplar identificado — 21/11/2026
+
+Mayring (2025) testou versões **ChatGPT 3.5 e 4** em análise qualitativa de conteúdo e encontrou aproximações e erros. O PDF original foi conferido visualmente e apresenta licença CC BY 4.0; o achado não generaliza para modelos posteriores.
+
+**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. PDF CC BY 4.0 redistribuído apenas com a licença e a atribuição exigidas. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.

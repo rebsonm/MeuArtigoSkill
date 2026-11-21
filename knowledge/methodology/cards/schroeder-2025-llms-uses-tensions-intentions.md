@@ -26,3 +26,9 @@ Classificar a tarefa e justificar o recurso à IA separadamente para busca, orga
 Experiências de um grupo de pesquisadores não estabelecem uma norma universal para todas as tradições qualitativas.
 
 Este card NÃO substitui o artigo, nem atesta leitura do PDF original. Para usar [L] em manuscrito, acessar diretamente a fonte, verificar edição, método, resultados, passagens e páginas, e obter julgamento crítico do pesquisador. Aceite científico independente e aprovação de qualquer gate permanecem PENDENTES.
+
+## Verificação direta do exemplar identificado — 21/11/2026
+
+Schroeder et al. (2025) entrevistaram **20 pesquisadores qualitativos** para compreender usos e tensões do LLM. O PDF identificado traz CC BY 4.0, mas os resultados não representam todo o campo qualitativo.
+
+**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. PDF CC BY 4.0 redistribuído apenas com a licença e a atribuição exigidas. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.

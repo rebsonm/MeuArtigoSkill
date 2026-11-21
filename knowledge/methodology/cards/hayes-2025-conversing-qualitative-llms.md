@@ -27,3 +27,9 @@ Delimitar tarefas da IA: sugerir hipóteses ou contrastes pode ser admissível; 
 Concordância entre respostas de LLM não demonstra fidelidade ao corpus nem validade interpretativa.
 
 Não cite este card como prova [L] de um resultado acadêmico; abra e confira a fonte para qualquer uso em manuscrito. A descrição pública e o resumo não substituem leitura integral. Não há aprovação de gate, de protocolo, de direitos para PDFs ou de validade acadêmica independente.
+
+## Verificação direta do exemplar identificado — 21/11/2026
+
+Hayes (2025) propõe diálogo entre pesquisador, corpus e LLM sem deslocar responsabilidade interpretativa. O PDF consultado é **CC BY-NC 4.0**, não incluído no catálogo de redistribuição CC BY.
+
+**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. PDF CC BY-NC mantido fora do catálogo público CC BY. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.

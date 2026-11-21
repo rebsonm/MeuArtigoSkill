@@ -27,3 +27,9 @@ Antes de usar a IG 2.0, escolha o tipo de enunciado, o grau de granularidade e o
 A boa qualidade de uma codificação institucional não equivale a evidência de eficácia da política.
 
 Não cite este card como prova [L] de um resultado acadêmico; abra e confira a fonte para qualquer uso em manuscrito. A descrição pública e o resumo não substituem leitura integral. Não há aprovação de gate, de protocolo, de direitos para PDFs ou de validade acadêmica independente.
+
+## Verificação direta do exemplar identificado — 21/11/2026
+
+O texto de Frantz e Siddiki (2021) esclarece que a Institutional Grammar 2.0 amplia a sintaxe para enunciados regulativos e constitutivos, sem tratar a representação do desenho institucional como prova de seus efeitos.
+
+**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.

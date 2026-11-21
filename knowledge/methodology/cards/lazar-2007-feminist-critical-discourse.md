@@ -27,3 +27,9 @@ Se esta abordagem for pertinente, explicitar pressupostos sobre poder e gênero,
 A presença de termos associados ao gênero não é, por si só, prova de uma relação causal ou estrutura social determinada.
 
 Não cite este card como prova [L] de um resultado acadêmico; abra e confira a fonte para qualquer uso em manuscrito. A descrição pública e o resumo não substituem leitura integral. Não há aprovação de gate, de protocolo, de direitos para PDFs ou de validade acadêmica independente.
+
+## Verificação direta do exemplar identificado — 21/11/2026
+
+Lazar (2007) propõe uma práxis de análise crítica feminista do discurso em torno de poder, ideologia e gênero. O PDF consultado contém restrição editorial expressa de redistribuição substancial.
+
+**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. Exemplar com restrição expressa de reprodução substancial; não redistribuir. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.

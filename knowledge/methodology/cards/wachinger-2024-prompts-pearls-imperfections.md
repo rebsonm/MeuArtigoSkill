@@ -26,3 +26,9 @@ Comparar não somente tópicos gerados, mas fidelidade a trechos, casos discrepa
 Alta sobreposição temática pode ocultar interpretações superficiais e exclusões relevantes.
 
 Este card NÃO substitui o artigo, nem atesta leitura do PDF original. Para usar [L] em manuscrito, acessar diretamente a fonte, verificar edição, método, resultados, passagens e páginas, e obter julgamento crítico do pesquisador. Aceite científico independente e aprovação de qualquer gate permanecem PENDENTES.
+
+## Verificação direta do exemplar identificado — 21/11/2026
+
+Wachinger et al. têm copyright/publicação antecipada de **2024**, com indicação editorial no volume **35(9) de 2025**. A comparação de uma entrevista não torna correspondência temática sinônimo de validade.
+
+**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.

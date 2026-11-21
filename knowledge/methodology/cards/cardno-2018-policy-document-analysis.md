@@ -26,3 +26,9 @@ Delimitar o corpus e a origem de cada documento, cotejar objetivos formais com e
 Inferir efeitos de uma política a partir do texto oficial não produz avaliação de impacto.
 
 Este card NÃO substitui o artigo, nem atesta leitura do PDF original. Para usar [L] em manuscrito, acessar diretamente a fonte, verificar edição, método, resultados, passagens e páginas, e obter julgamento crítico do pesquisador. Aceite científico independente e aprovação de qualquer gate permanecem PENDENTES.
+
+## Verificação direta do exemplar identificado — 21/11/2026
+
+Cardno (2018) vincula análise de políticas à história da formulação, valores, atores e decisões de implementação. O pesquisador deve distinguir utilidade gerencial da análise documental como método científico.
+
+**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.

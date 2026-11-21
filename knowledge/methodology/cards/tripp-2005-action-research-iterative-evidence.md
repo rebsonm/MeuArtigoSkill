@@ -27,3 +27,9 @@ Se a pesquisa pretende ser pesquisa-ação, explicite quem participa das decisõ
 Chamar uma intervenção ou uma consultoria de pesquisa-ação não demonstra participação nem investigação sistemática.
 
 Não cite este card como prova [L] de um resultado acadêmico; abra e confira a fonte para qualquer uso em manuscrito. A descrição pública e o resumo não substituem leitura integral. Não há aprovação de gate, de protocolo, de direitos para PDFs ou de validade acadêmica independente.
+
+## Verificação direta do exemplar identificado — 21/11/2026
+
+Tripp (2005) discute pesquisa-ação como investigação de melhoria sistemática fundamentada empiricamente; intervenção rotineira sem método explícito não é equivalente.
+
+**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.
