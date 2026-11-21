@@ -1,0 +1,243 @@
+{
+  "schema": "MEU_ARTIGO_V1_PARALLEL_DELTA_V1",
+  "batch_id": "V1-14/20",
+  "category": "SECURITY_RIGHTS",
+  "date": "2026-11-21",
+  "timezone": "America/Fortaleza",
+  "status": "ENTREGUE_PARA_AUDITORIA",
+  "release_gate": "BLOQUEADO",
+  "branch": "work/v1-14-20261121",
+  "base_commit": "7c92045310eb3b1474a9612a777fb0012a511592",
+  "manifesto": {
+    "path": "knowledge/methodology/intake/v1_parallel/V1-WORKPACKAGES-MANIFEST.json",
+    "blob_sha": "2f85dc6c4283376b9fc3c312668f0a1f25a0a301",
+    "read_only": true
+  },
+  "dependencies": [],
+  "write_scope": [
+    "knowledge/methodology/intake/v1_parallel/V1-14-RESULTS.md",
+    "knowledge/methodology/intake/v1_parallel/V1-14-DELTA.json"
+  ],
+  "unrelated_files_changed": false,
+  "result": {
+    "path": "knowledge/methodology/intake/v1_parallel/V1-14-RESULTS.md",
+    "commit_sha": "ff632b2520ac6c80fc62df366de66f64a6037734",
+    "git_blob_sha": "ed40e73ba85e5220ecffbdb9b31da25cd5ad155a"
+  },
+  "facts": {
+    "issue_102": {
+      "url": "https://github.com/rebsonm/MeuArtigoSkill/issues/102",
+      "status": "OPEN",
+      "source_id": "SRC-0367",
+      "doi": "10.1590/0103-3352.2020.33.218584",
+      "observed_license": "CC BY-NC 4.0 (per issue/editorial record)",
+      "irretricted_cc_by_approved": false,
+      "historic_git_commit": "115ba34f168f9efc78da3ff4a79bf61cb608e2d7",
+      "historical_pdf_git_blob_sha": "36de02c67d14754ac77c8f6681a5427820763d0e",
+      "removal_commit": "feaf1908008c3ae6e2e554c4c45b6cc25f89b468",
+      "snapshot_without_blob": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "prior_blob_in_git_history": true,
+      "final_legal_decision": false
+    },
+    "issue_103": {
+      "url": "https://github.com/rebsonm/MeuArtigoSkill/issues/103",
+      "status": "OPEN",
+      "sanitized_head_receipts_checked": 14,
+      "historical_receipts_checked": 14,
+      "original_non_null_private_identifier_fields": 240,
+      "current_head_null_identifier_fields": 240,
+      "affected_ib_lots": [
+        "IB-01",
+        "IB-03",
+        "IB-05",
+        "IB-06",
+        "IB-07",
+        "IB-08",
+        "IB-09",
+        "IB-10",
+        "IB-11",
+        "IB-13",
+        "IB-15",
+        "IB-16",
+        "IB-19",
+        "IB-20"
+      ],
+      "raw_identifier_values_recorded": false,
+      "full_git_history_exhaustively_audited": false
+    },
+    "drive_acl": {
+      "scope": "PPGA - LIVROS (only minimized permission metadata)",
+      "root_anyone_reader": true,
+      "allow_file_discovery": false,
+      "direct_pdfs_sampled": 1,
+      "subfolders_sampled": 6,
+      "nested_pdfs_sampled": 4,
+      "total_children_sampled": 11,
+      "all_sampled_anyone_reader": true,
+      "permission_changed": false,
+      "anonymous_access_test_performed": false,
+      "all_files_audited": false,
+      "private_identifiers_in_report": 0
+    },
+    "git_repo_context": {
+      "is_public": true,
+      "forks_count_at_check": 1,
+      "tag_refs_count_returned": 13,
+      "fork_content_audited": false,
+      "history_compare_ahead_by": 139,
+      "history_compare_behind_by": 0
+    }
+  },
+  "rights": {
+    "nc_allowed_only_with_conditions": "attribution + noncommercial",
+    "commercial_reuse_authorized": false,
+    "license_change_executed": false,
+    "do_not_publish_binary": true,
+    "independent_copy_license_verification": "PENDENTE",
+    "legal_opinion": "PENDENTE"
+  },
+  "scientific_review": {
+    "status": "NAO_REALIZADA",
+    "approved_cards": 0,
+    "promoted_to_L": 0,
+    "independent_review_completed": false
+  },
+  "tests": {
+    "manifest_parsed": true,
+    "task_dependencies_checked": true,
+    "git_trees_checked": 3,
+    "all_git_trees_untruncated": true,
+    "current_receipts_json_parsed": 14,
+    "historical_receipts_json_parsed": 14,
+    "drive_metadata_items_checked": 12,
+    "results_readback_verified": true,
+    "pytest_executed": false,
+    "ci_executed": false,
+    "host_real_tested": false
+  },
+  "acceptance": {
+    "risk_refs_and_history_report": "ATENDIDO_COM_LIMITES_DECLARADOS",
+    "effective_permissions_minimized": "ATENDIDO_POR_AMOSTRAGEM_META_DADOS",
+    "risks_and_pending_decisions": "ATENDIDO",
+    "all_blockers_resolved": false,
+    "can_integrate_with_V1_16_only_after_deps_and_audit": true
+  },
+  "blockers": [
+    {
+      "id": "P0-ACL",
+      "summary": "Coleção PPGA - LIVROS possui permissões anyone:reader por link em amostra; decisão de restrição, auditoria integral e reteste por autorizado ainda pendentes."
+    },
+    {
+      "id": "P0-102",
+      "summary": "Licença NC de SRC-0367 e objeto histórico; decisão jurídico-editorial/histórico ainda pendente."
+    },
+    {
+      "id": "P0-103",
+      "summary": "240 IDs de recibos presentes em commits históricos; refs, forks, caches e revisão final de ACL pendentes."
+    }
+  ],
+  "human_decisions_required": [
+    "restringir/rever_acl_do_acervo",
+    "decidir_alternativa_A_ou_B_para_historico_sem_rewrite_automatico",
+    "avaliar_licenca_NC_e_uso_historico",
+    "autorizar_auditoria_completa_de_refs_e_permissoes"
+  ],
+  "actions_not_taken": [
+    "drive_permission_change",
+    "force_push",
+    "git_history_rewrite",
+    "merge",
+    "tag",
+    "release",
+    "MCP",
+    "protected_pdf_distribution",
+    "global_registry_edit",
+    "independent_scientific_approval"
+  ],
+  "next_step": "Drive owner must document whether anyone:reader remains justified for PPGA - LIVROS and its descendants, and authorize an external access check.",
+  "continuity_verification_20261121": {
+    "state": "ENTREGUE_PARA_AUDITORIA",
+    "new_evidence": "Official SciELO 2020 edition link resolves to CC BY-NC 4.0; 13 tag refs checked for history ancestry; Drive root ACL rechecked.",
+    "source_edition": {
+      "source_id": "SRC-0367",
+      "doi": "10.1590/0103-3352.2020.33.218584",
+      "official_article_url": "https://www.scielo.br/j/rbcpol/a/QFmq77JnT468fcBKCdh99ms/?format=html",
+      "publication_date": "2020-11-30",
+      "license_link_resolves_to": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "license_legal_code": "https://creativecommons.org/licenses/by-nc/4.0/legalcode.en",
+      "independent_html_link_verified": true,
+      "exact_historical_git_binary_verified": false,
+      "unrestricted_catalog_reuse_authorized": false,
+      "legal_conclusion": false
+    },
+    "git_refs": {
+      "tags_returned": 13,
+      "tags_compared_with_historic_commit": 13,
+      "tags_ancestry_status": "13/13 behind, ahead_by=0; no returned tag contains that historical commit in ancestry",
+      "heads_returned": 139,
+      "heads_ancestry_fully_checked": false,
+      "forks_fully_checked": false,
+      "pr_refs_fully_checked": false,
+      "v1_14_head_before_new_commits": "a13a52be77e818567e8d3123e14ca0a96875d4fb",
+      "pr101_open_draft_unmerged": true,
+      "historical_pdf_blob_retrieved": false
+    },
+    "acl_root_recheck": {
+      "folder_label": "PPGA - LIVROS",
+      "result_count_exact_name": 1,
+      "permission_metadata_available": true,
+      "shared": true,
+      "anyone_reader": true,
+      "allow_file_discovery": false,
+      "anonymous_access_test": false,
+      "acl_changed": false,
+      "all_children_checked": false,
+      "raw_folder_id_recorded": false,
+      "raw_document_ids_recorded": false
+    },
+    "followup_results": {
+      "path": "knowledge/methodology/intake/v1_parallel/V1-14-RESULTS.md",
+      "update_commit": "60daf2b856db0900a0cee02a7299a5e41f74ef0e",
+      "update_blob": "b4400a78b4c417399499b940d1df13a66085f2eb"
+    },
+    "tests": {
+      "official_license_link_followed": true,
+      "tag_ancestry_comparisons": 13,
+      "branch_refs_enumerated": 139,
+      "root_acl_metadata_rechecked": true,
+      "pytest": false,
+      "ci": false,
+      "host_test": false
+    },
+    "limits": [
+      "tag ancestor test does not prove no older copies",
+      "all branch and PR refs not exhaustively traversed",
+      "forks, caches, clones not checked",
+      "full Drive tree and external access not tested"
+    ],
+    "authorization": {
+      "legal": false,
+      "security": false,
+      "scientific": false,
+      "maintainer_history_decision": false,
+      "drive_acl_change": false
+    },
+    "decisions_pending": [
+      "owner: Drive ACL containment and external test",
+      "legal/editorial: exact copy, license and historical use",
+      "maintainer: A retain-history vs B supervised rewrite after scope audit"
+    ],
+    "next_action_single": "Drive owner must document whether anyone:reader remains justified for PPGA - LIVROS and its descendants, and authorize an external access check.",
+    "advance_criterion": "Dated access decision + anonymized ACL and authorized external-access test evidence for the root and relevant descendants; release still blocked until #102/#103 and remaining stages cleared.",
+    "review_pr": {
+      "url": "https://github.com/rebsonm/MeuArtigoSkill/pull/111",
+      "number": 111,
+      "state": "OPEN_DRAFT",
+      "merged": false,
+      "base": "plan/v1-methodology-20-stages-20261121",
+      "head_branch": "work/v1-14-20261121",
+      "head_sha_at_open": "6e1c141ac1b9b993c2042bd6fae25f9a5e21ee41",
+      "description": "Revisão exclusiva de dois recibos; não autoriza merge, GO ou publicação."
+    }
+  }
+}
