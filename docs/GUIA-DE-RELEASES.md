@@ -177,7 +177,8 @@ unchanged throughout candidate testing.
 A source `VERSION` ending in `-rc.N` is a **candidate channel**, not
 a public release. The candidate `CITATION.cff` identifies that version
 but **does not** have `date-released`; `CHANGELOG.md` uses an
-`UNRELEASED` candidate heading. Do not run the historical
+`UNRELEASED` candidate heading. Use `python scripts/sync_version.py --candidate` to align README and citation
+version without inserting a date. Do not run the historical
 `sync_version.py --date` command to invent a candidate publication date.
 
 For a candidate PR, the read-only `Release audit` workflow:
