@@ -235,3 +235,13 @@
 **Revisões humanas:** 0/18 pareceres independentes com identidade, data e evidência de direitos/originalidade; 0/18 pareceres independentes de fidelidade científica. Nenhum aceite, validação jurídica, teste host/MCP ou gate aprovado. O corpo da seção 31.06 do MD no Drive continua desatualizado: a gravação integral sem CAS não é segura sob concorrência, e o progresso é registrado em comentário localizado no mesmo arquivo.
 
 **Próxima ação exclusiva:** designar revisor humano competente para documentar, por edição/cópia, a primeira revisão independente de direitos/originalidade dos 18 cards, antes de considerar homologação ou integração V1-16.
+
+
+## Decisão explícita do mantenedor — 18 cards aprovados (21/11/2026)
+
+- **Manifestação literal:** “Cards aprovados.” (declaração expressa do mantenedor nesta conversa, 21/11/2026, referente à aba exclusiva V1-06/20).
+- **Alcance:** aceite do mantenedor para **continuidade editorial dos 18 cards EC-037…EC-054**, conforme a amostra fechada do manifesto. O aceite não implica que as cinco classificações `CORREÇÃO_NECESSÁRIA` tenham sido resolvidas, nem substitui o parecer de terceiros, a licença da cópia original ou a auditoria da fidelidade textual.
+- **Decisões existentes preservadas:** 13 `APROVÁVEL_COM_EVIDÊNCIA` condicionais; 5 `CORREÇÃO_NECESSÁRIA`; 18 [I] sem promoção [L] ou [P]. O campo histórico `decision_summary.accepted: 0` no DELTA permanece como contagem de **homologações científicas/independentes**, e não de aceite do mantenedor; a aprovação explícita é registrada em campo independente.
+- **O que não foi aprovado:** autoria ou originalidade comprovada, redistribuição de PDFs, licenças das cópias exatas, validação jurídica, duas revisões humanas independentes, CI, segurança contra prompt injection, integração V1-16, merge de PR, tag ou release.
+- **Rastreio:** branch `work/v1-06-20261121`, PR Draft [#107](https://github.com/rebsonm/MeuArtigoSkill/pull/107), HEAD antes desta decisão `ab2212e83e4cb808b1edbbb79ba22ac22eafbd90`. Registro somente nos recibos do lote e em comentário na seção 31.06 do documento canônico, sem substituir seu Markdown bruto sob concorrência.
+- **Próxima ação única:** colher e documentar parecer humano independente de direitos/originalidade por edição e cópia para os 18 cards; a segunda revisão científica permanece condicionante posterior, não executada.
