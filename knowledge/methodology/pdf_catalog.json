@@ -1281,7 +1281,7 @@
       "title": "A Framework for Discussing LLMs as Tools for Qualitative Analysis",
       "authors": "James Eschrich; Sarah Sterman",
       "year": 2024,
-      "doi": null,
+      "doi": "10.48550/arXiv.2407.11198",
       "size": 112470,
       "sha256": "2c4e1e1e012a5fda2b8f153aff0f74b073b2c5e844483be9e74d20413d7b8850",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
@@ -1303,7 +1303,9 @@
         "discussing",
         "qualitative",
         "analysis"
-      ]
+      ],
+      "doi_provenance": "External arXiv identifier cross-checked against arXiv:2407.11198v1, not printed in first-page PDF",
+      "publication_class": "PREPRINT_NOT_CERTIFIED_PEER_REVIEW"
     }
   ],
   "rights_policy": "PUBLIC_REDISTRIBUTION_REVIEWED_ONLY",

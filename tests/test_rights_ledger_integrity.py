@@ -21,11 +21,17 @@ class RightsLedgerTests(unittest.TestCase):
                     self.assertEqual(row["public_distribution"], "NOT_AUTHORIZED_BY_THIS_LEDGER")
                     self.assertEqual(row["publisher_license"], "NOT_CHECKED")
                 elif row["rights_review"] == "VERIFIED_PUBLISHER_LICENSE":
-                    self.assertEqual(row["publisher_license"], "CC BY 4.0")
-                    self.assertEqual(row["public_distribution"], "LICENSED_ORIGINAL_SOURCE_INDEXED")
+                    if row["id"] == "SRC-0256":
+                        self.assertEqual(row["publisher_license"], "CC BY 3.0 IGO")
+                        self.assertIn("LINK_ONLY", row["public_distribution"])
+                        self.assertIsNone(row.get("public_pdf_path"))
+                        self.assertTrue(row["publisher_download_url"].startswith("https://"))
+                    else:
+                        self.assertEqual(row["publisher_license"], "CC BY 4.0")
+                        self.assertEqual(row["public_distribution"], "LICENSED_ORIGINAL_SOURCE_INDEXED")
+                        self.assertTrue(row["public_pdf_path"].startswith("knowledge/methodology/pdfs/"))
                     self.assertTrue(row["rights_evidence_url"].startswith("https://"))
                     self.assertRegex(row["original_pdf_sha256"], r"^[0-9a-f]{64}$")
-                    self.assertTrue(row["public_pdf_path"].startswith("knowledge/methodology/pdfs/"))
                 else:
                     self.fail("Unexpected unreviewed file promoted to rights approval")
                 self.assertNotIn("drive_file_id",row)

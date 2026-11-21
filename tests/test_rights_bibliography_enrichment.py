@@ -21,11 +21,17 @@ class BibEnrichmentTest(unittest.TestCase):
                 self.assertEqual(row["public_distribution"], "NOT_AUTHORIZED_BY_THIS_LEDGER")
             else:
                 self.assertEqual(row["rights_review"], "VERIFIED_PUBLISHER_LICENSE")
-                self.assertEqual(row["publisher_license"], "CC BY 4.0")
-                self.assertEqual(row["public_distribution"], "LICENSED_ORIGINAL_SOURCE_INDEXED")
+                if row["id"] == "SRC-0256":
+                    self.assertEqual(row["publisher_license"], "CC BY 3.0 IGO")
+                    self.assertIn("LINK_ONLY", row["public_distribution"])
+                    self.assertIsNone(row.get("public_pdf_path"))
+                    self.assertTrue(row["publisher_download_url"].startswith("https://"))
+                else:
+                    self.assertEqual(row["publisher_license"], "CC BY 4.0")
+                    self.assertEqual(row["public_distribution"], "LICENSED_ORIGINAL_SOURCE_INDEXED")
+                    self.assertTrue(row["public_pdf_path"].startswith("knowledge/methodology/pdfs/"))
                 self.assertTrue(row["rights_evidence_url"].startswith("https://"))
                 self.assertRegex(row["original_pdf_sha256"], r"^[a-f0-9]{64}$")
-                self.assertTrue(row["public_pdf_path"].startswith("knowledge/methodology/pdfs/"))
                 independently_reviewed.append(row)
         self.assertEqual(len(independently_reviewed),
                          m["actual_individually_verified_rights_in_this_ledger"])
