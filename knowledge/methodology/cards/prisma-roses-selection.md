@@ -24,8 +24,10 @@ Do not mistake a reporting checklist for a recipe for scientific rigor. Never im
 
 Comparative editorial synthesis informed by Page et al. (2021), DOI 10.1186/s13643-021-01626-4; Haddaway et al. (2018), DOI 10.1186/s13750-018-0121-7.
 
-Primary-source locator: https://doi.org/10.1186/s13643-021-01626-4
-Publisher or repository: https://link.springer.com/article/10.1186/s13643-021-01626-4
+Primary-source locator (PRISMA 2020): https://doi.org/10.1186/s13643-021-01626-4
+Publisher or repository (PRISMA 2020): https://link.springer.com/article/10.1186/s13643-021-01626-4
+Primary-source locator (ROSES): https://doi.org/10.1186/s13750-018-0121-7
+Publisher or repository (ROSES): https://link.springer.com/article/10.1186/s13750-018-0121-7
 
 ## Provenance limits
 

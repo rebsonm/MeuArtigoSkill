@@ -1,5 +1,10 @@
 # Design science and evaluation of research artifacts
 
+Card ID: design-science
+Publication state: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_RIGHTS_REVIEW
+Research evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_ONLY
+Rights status: UNVERIFIED_FOR_PUBLICATION — bibliographic leads do not establish reproduction rights or scientific fidelity.
+
 ## Conceptual orientation
 
 When a study creates an artifact, distinguish its motivating problem, requirements, design rationale, implementation, and independent assessment. The existence of a prototype does not demonstrate effectiveness. Technical unit tests are evidence of particular software behaviors, not automatically evidence of academic rigor or practical impact.

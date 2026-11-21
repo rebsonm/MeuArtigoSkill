@@ -22,7 +22,7 @@ Do not equate software-generated codes or a high agreement statistic with constr
 
 ## Bibliographic trail (not a verified [L] claim for any user's research)
 
-Lycariao, D., Roque, R., & Costa, D. (2023). Revisao sistematica de literatura e analise de conteudo na area da comunicacao e informacao: o problema da confiabilidade e como resolve-lo. Transinformacao 35. DOI 10.1590/2318-0889202335e220027.
+Lycarião, D., Roque, R., & Costa, D. (2023). Revisão Sistemática de Literatura e Análise de Conteúdo na Área da Comunicação e Informação: o problema da confiabilidade e como resolvê-lo. *Transinformação*, 35, e220027. DOI 10.1590/2318-0889202335e220027.
 
 Primary-source locator: https://doi.org/10.1590/2318-0889202335e220027
 Publisher or repository: https://periodicos.puc-campinas.edu.br/transinfo/article/view/10064
