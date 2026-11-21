@@ -106,10 +106,10 @@
   "tests": {
     "unique_source_ids": true,
     "source_hashes_64_hex": true,
-    "readback": "PENDING_POST_COMMIT",
+    "readback": "PASS_EXISTING_RECEIPTS_AND_ORIGIN_IB_BLOBS_BEFORE_THIS_WRITE; CURRENT_DELTA_PENDING_POST_COMMIT",
     "ci": "NOT_EXECUTED",
     "real_host": "NOT_EXECUTED",
-    "github_receipt_readback": "PASS_PREVIOUS_COMMITS"
+    "github_receipt_readback": "PASS_PREVIOUS_VERSION; RESULTS_COMMIT_VERIFIED_BEFORE_DELTA_WRITE"
   },
   "next_step": "V1-16 conditioned on audited V1-01..V1-15, no global update now",
   "restrictions": [
@@ -126,5 +126,66 @@
     "last_observed_section": "EM_EXECUCAO",
     "blocker": "CONCURRENT_RAW_MARKDOWN_WRITES_OTHER_TABS",
     "resolution": "Retomar apenas 31.03 de versão fresca do MD, conferir estado remoto pré-escrita e pós-escrita; preservar registros de outras abas"
+  },
+  "continuity_verification": {
+    "date": "2026-11-21",
+    "audit_kind": "EXISTING_RECEIPTS_AND_PRIOR_IB_CARD_BLOB_RECHECK_NO_NEW_PDF_READING",
+    "initial_audited_head": "a5e1b26eca51a58934bd4f025e2bf3817670072a",
+    "results_audit_commit": "43362f32c0599ba86e4070898e5acba29b2c4db3",
+    "results_audit_blob": "8120d051310b864a7df193945a70eb8ff1aeb1f4",
+    "manifest_blob": "2f85dc6c4283376b9fc3c312668f0a1f25a0a301",
+    "ib_card_blobs": [
+      {
+        "source_id": "SRC-0321",
+        "prior_ib_branch": "work/ib-12-20261121",
+        "observed_blob_sha": "6903c9eceacc40ce3de073b7559d75d892cd5431",
+        "match_prior_receipt": true
+      },
+      {
+        "source_id": "SRC-0325",
+        "prior_ib_branch": "work/ib-12-20261121",
+        "observed_blob_sha": "163f4160ec60000ed7477ddb171a5e6f2d926fe7",
+        "match_prior_receipt": true
+      },
+      {
+        "source_id": "SRC-0336",
+        "prior_ib_branch": "work/ib-13-20261121",
+        "observed_blob_sha": "ffbfd48aac35965c53b953fa783edad8e16c2d7b",
+        "match_prior_receipt": true
+      },
+      {
+        "source_id": "SRC-0385",
+        "prior_ib_branch": "work/ib-15-20261121",
+        "observed_blob_sha": "b0afbf7b391b1cc9624daed3f3aab7bc2e247515",
+        "match_prior_receipt": true
+      },
+      {
+        "source_id": "SRC-0403",
+        "prior_ib_branch": "work/ib-16-20261121",
+        "observed_blob_sha": "3dafb7485e41e05cb1088181e8afe76e5c89ea1d",
+        "match_prior_receipt": true
+      }
+    ],
+    "logical_checks": {
+      "exact_manifest_source_ids": true,
+      "unique_source_ids": true,
+      "source_hashes_64_hex": true,
+      "prior_ib_blobs_confirmed": 5,
+      "source_branches_confirmed": 4,
+      "changed_paths_at_initial_head": [
+        "knowledge/methodology/intake/v1_parallel/V1-03-RESULTS.md",
+        "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json"
+      ],
+      "branch_commits_ahead_at_initial_head": 4,
+      "pr_found": false,
+      "commit_status_checks_returned": 0,
+      "pr_triggered_workflow_runs_returned": 0,
+      "ci_execution_not_demonstrated": true
+    },
+    "source_0385": "CONTINUE_QUARANTINE_PENDING_INDEPENDENT_PRIMARY_AUTHENTICATION_OR_MOTIVATED_EXCLUSION",
+    "scientific_review": "NOT_DONE",
+    "copyright_copy_license": "NOT_VERIFIED_FOR_ANY_OF_FIVE",
+    "canonical_section_31_03": "BODY_STALE_CONCURRENT_MARKDOWN_WRITE_UNSAFE; COMMENT_CREATED_FOR_STAGE; NO_BODY_OVERWRITE",
+    "next_action": "RECONCILE_ONLY_31_03_IN_EXCLUSIVE_SAFE_WINDOW_WITH_READBACK"
   }
 }
