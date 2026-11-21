@@ -2,7 +2,7 @@
 
 Branch: `work/ib-04-20261121` • Base congelada: `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf` • PR #101 **não alterada/mesclada**.
 **Escopo:** 17 PDFs exclusivos (SRC-0157; SRC-0159–0174), localizados no Google Drive, com nome, pasta e tamanho reconciliados com os dois ledgers do snapshot.
-**Resultado:** 15 identidades documentais verificadas; 2 registros com identidade/edição incompleta. Nenhuma ficha promovida para [L], sem RAG semântico/MCP e sem redistribuição de PDF.
+**Resultado após complementação:** 16 identidades documentais verificadas; 1 registro ainda incompleto (SRC-0160). Nenhuma ficha promovida para [L], sem RAG semântico/MCP e sem redistribuição de PDF.
 
 ## Controle por fonte
 
@@ -19,7 +19,7 @@ Branch: `work/ib-04-20261121` • Base congelada: `c5e0ca9abd98f824f1576c3ad94c6
 | SRC-0166 | `Leung,2015.pdf` | 444600 | IDENTIDADE_DOCUMENTAL_VERIFICADA_CC_BY_NC_SA_3 | O PDF declara Creative Commons Attribution–NonCommercial–ShareAlike 3.0 Unp | `0491c368f553` | `9c408e9fca7a90525d52427dba2f857d05fad22c566d573f3dcf2abad7b09677` |
 | SRC-0167 | `Cho,Trent,2006.pdf` | 255145 | IDENTIDADE_DOCUMENTAL_VERIFICADA | Copyright © 2006 SAGE Publications; exemplar de biblioteca/baixado da plata | `ff4988e39f53` | `8af1d4c0e96be2967280c10e25d8b25836454b8fa1db742e09a3927b581cb409` |
 | SRC-0168 | `Hayashietal,2019.pdf` | 685796 | IDENTIDADE_DOCUMENTAL_VERIFICADA_CC_BY_NC_SA_4 | O PDF da revista declara licença Creative Commons Attribution–NonCommercial | `470774f09959` | `d9770cb222908a291f25c1f3fcaaf2f82a6929dd9a90a9cecf5a42823fd6c0cb` |
-| SRC-0169 | `Dennis_ChapterOne.pdf` | 491149 | BLOQUEADO_IDENTIFICACAO_COMPLETA_DA_EDICAO | Nenhuma licença de redistribuição observada. Acesso ao capítulo não autoriz | `5bf81115a8b0` | `9d9283859a0674afe3b49f28814d6918ee9b7264a7ecea7682e57fffd25622b7` |
+| SRC-0169 | `Dennis_ChapterOne.pdf` | 491149 | IDENTIDADE_VERIFICADA_EDITORA_EXTERNA | Nenhuma licença de redistribuição observada. Acesso ao capítulo não autoriz | `5bf81115a8b0` | `215b367a6b64828f9b7e3f77afd042298be447ea9fa9600bdbfcd379530edead` |
 | SRC-0170 | `Souto, Korkischko, 2012.pdf` | 341585 | IDENTIDADE_DOCUMENTAL_VERIFICADA | Sem licença de redistribuição expressa observada no exemplar; manter PDF pr | `38c0f0c73f8b` | `bb638b8110754fc9a7086f6c92fd72f3ae45519329450b0716a7b611f75f3333` |
 | SRC-0171 | `Prattetal,2020.pdf` | 172338 | IDENTIDADE_DOCUMENTAL_VERIFICADA | © autores 2019; guidelines de reutilização SAGE indicadas; não há licença C | `1b13fd938b0f` | `b3e5b4d0d3558d36b803192161838006c4c4ad4fe4a6d9f85842f307a3bbb2cf` |
 | SRC-0172 | `Kaneetal,2021.pdf` | 4384848 | IDENTIDADE_DOCUMENTAL_VERIFICADA | © autores 2019; SAGE Article Reuse Guidelines indicadas, mas nenhuma licenç | `6c06f80098d4` | `cbbe412bb0fd5cdb78dd6ba10e926785f8ebfe96c76625e58063a209901a88c1` |
@@ -44,5 +44,11 @@ Branch: `work/ib-04-20261121` • Base congelada: `c5e0ca9abd98f824f1576c3ad94c6
 
 - Conferir por comparação de commits que somente 17 cards desta etapa e estes dois recibos foram alterados.
 - Validar recuperação das fichas e hashes SHA256, e se possível executar a CI específica em ambiente disponível; a existência de commits não representa CI verde.
-- Resolver versão/ano do preprint 0160, identificar livro e ano do capítulo 0169 e reconciliar DOI 0157.
+- Resolver versão/ano do preprint 0160, preservar edição e direitos da obra-mãe SRC-0169 e reconciliar DOI 0157.
 - Somente a coordenação deve incorporar o DELTA aos índices globais; sem merge, release, tag, publicação de PDF ou implementação MCP.
+
+## Complementação bibliográfica e ressalvas da auditoria transversal — 21/11/2026
+
+- **Registro:** `SRC-0169`; **novo SHA-256 da ficha:** `215b367a6b64828f9b7e3f77afd042298be447ea9fa9600bdbfcd379530edead`.
+- O capítulo 1 de Barbara Dennis foi relacionado à coletânea *Qualitative Research: A Reader in Philosophy, Core Concepts, and Practice*, orgs. Barbara Dennis, Lucinda Carspecken e Phil Carspecken, Peter Lang, 2013, pp. 3–37, ISBN do livro 9781433104725 (catálogo da obra/JSTOR). SRC-0160 permanece bloqueado; direitos e revisão científica continuam pendentes.
+- **MD canônico:** a atualização global das contagens depende da reconciliação dos 20 lotes; nenhum merge, release, tag, MCP ou PDF foi publicado.
