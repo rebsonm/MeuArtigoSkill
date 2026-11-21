@@ -1,6 +1,6 @@
 # Methodological PDFs — rights and attribution
 
-These are **four source PDFs** from journals which explicitly permit sharing under **Creative Commons Attribution 4.0 International (CC BY 4.0)**. They are **not** covered by the repository's Apache-2.0 software license. The binary PDF copies are unmodified; no endorsement by their authors or journals is implied.
+These are **six source PDFs** from journals which explicitly permit sharing under **Creative Commons Attribution 4.0 International (CC BY 4.0)**. They are **not** covered by the repository's Apache-2.0 software license. The binary PDF copies are unmodified; no endorsement by their authors or journals is implied.
 
 License: https://creativecommons.org/licenses/by/4.0/
 
