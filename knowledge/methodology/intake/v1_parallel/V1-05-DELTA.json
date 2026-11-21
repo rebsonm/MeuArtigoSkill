@@ -39,7 +39,8 @@
       "doi_status": "TRILHA_DOI_PRESENTE_NAO_REVALIDADA",
       "source_consultation_claim": "LEAD_BIBLIOGRAFICO_SEM_CONFIRMACAO_PRIMARIA_NESTA_SESSAO",
       "flags": "Confirmar fidelidade aos diferentes critérios de adequação/saturação; distinguir análise temática reflexiva, contagem de códigos e grounded theory. Sem leitura independente das fontes primárias.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-020",
@@ -57,7 +58,8 @@
       "doi_status": "TRILHA_DOI_PRESENTE_NAO_REVALIDADA",
       "source_consultation_claim": "LEAD_BIBLIOGRAFICO_SEM_CONFIRMACAO_PRIMARIA_NESTA_SESSAO",
       "flags": "Confrontar Pautasso (2013) com limites da revisão narrativa; não inferir cobertura sistemática a partir de orientações de redação.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-021",
@@ -75,7 +77,8 @@
       "doi_status": "TRILHA_DOI_PRESENTE_NAO_REVALIDADA",
       "source_consultation_claim": "LEAD_BIBLIOGRAFICO_SEM_CONFIRMACAO_PRIMARIA_NESTA_SESSAO",
       "flags": "Conferir aviso de correção editorial associado ao artigo de Mensh e Kording e a edição efetivamente usada antes da aceitação.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-022",
@@ -93,7 +96,8 @@
       "doi_status": "TRILHA_DOI_PRESENTE_NAO_REVALIDADA",
       "source_consultation_claim": "LEAD_BIBLIOGRAFICO_SEM_CONFIRMACAO_PRIMARIA_NESTA_SESSAO",
       "flags": "Verificar o artigo de Sandve et al. quanto à reprodutibilidade computacional; não confundir rerun técnico com validação científica.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-023",
@@ -111,7 +115,8 @@
       "doi_status": "TRILHA_DOI_PRESENTE_NAO_REVALIDADA",
       "source_consultation_claim": "LEAD_BIBLIOGRAFICO_SEM_CONFIRMACAO_PRIMARIA_NESTA_SESSAO",
       "flags": "Validar conceitos de estimando, comparabilidade e heterogeneidade contra a edição primária; não propor pooling sem estudos e protocolo.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-024",
@@ -129,7 +134,8 @@
       "doi_status": "NAO_CONFIRMADO_NESTA_EDICAO",
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Conferir edição, identidade bibliográfica e eventuais direitos da fonte Sá-Silva et al.; DOI não confirmado nesta edição. Consulta ao PDF é apenas autodeclarada no card.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-025",
@@ -147,7 +153,8 @@
       "doi_status": "TRILHA_DOI_PRESENTE_NAO_REVALIDADA",
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Conferir edição/paginação e fidelidade ao artigo de Morgan; consulta ao PDF é autodeclarada, sem cotejo de cada afirmação.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-026",
@@ -165,7 +172,8 @@
       "doi_status": "TRILHA_DOI_PRESENTE_NAO_REVALIDADA",
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Conferir aderência a Byrne e pressupostos da análise temática reflexiva; não converter reflexividade em teste de concordância.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-027",
@@ -183,7 +191,8 @@
       "doi_status": "TRILHA_DOI_PRESENTE_NAO_REVALIDADA",
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Confirmar tipologia e edição do AMEE Guide de Kiger e Varpio; registrar diferenças entre abordagens de análise temática.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-028",
@@ -201,7 +210,8 @@
       "doi_status": "TRILHA_DOI_PRESENTE_NAO_REVALIDADA",
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Verificar a licença exata CC BY-NC indicada para Nowell et al., sem promover PDF para catálogo irrestrito; revisar critérios de rigor sem reduzir qualidade a checklist.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-029",
@@ -219,7 +229,8 @@
       "doi_status": "TRILHA_DOI_PRESENTE_NAO_REVALIDADA",
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Confrontar condições da simulação de van Rijnsoever; rejeitar extrapolação para quota universal de entrevistas.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-030",
@@ -237,7 +248,8 @@
       "doi_status": "TRILHA_DOI_PRESENTE_NAO_REVALIDADA",
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Verificar a licença CC BY-NC-ND indicada no card de Hennink e Kaiser; não redistribuir derivativos/PDF em regime irrestrito. Distinguir saturação de códigos e de significados.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-031",
@@ -255,7 +267,8 @@
       "doi_status": "TRILHA_DOI_PRESENTE_NAO_REVALIDADA",
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Conferir texto e edição de Roth et al. para pressupostos de tendências paralelas, tratamentos escalonados e efeitos heterogêneos.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-032",
@@ -273,7 +286,8 @@
       "doi_status": "TRILHA_DOI_PRESENTE_NAO_REVALIDADA",
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "A publicação Cattaneo/Titiunik é descrita como protegida; revisar metadados/licença da edição e não reproduzir tabelas/figuras.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-033",
@@ -291,7 +305,8 @@
       "doi_status": "NAO_CONFIRMADO_NESTA_EDICAO",
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "O working paper NBER indica reserva de direitos; conferir edição e DOI (não confirmado no card), vedada redistribuição do PDF por mera acessibilidade.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-034",
@@ -309,7 +324,8 @@
       "doi_status": "NAO_CONFIRMADO_NESTA_EDICAO",
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Confirmar autoria/edição do relatório SSRN do grupo QTD e condições de reutilização; DOI não confirmado e PDF não liberado.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-035",
@@ -327,7 +343,8 @@
       "doi_status": "TRILHA_DOI_PRESENTE_NAO_REVALIDADA",
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Validar distinções necessidade/suficiência, calibração e contraexemplos contra Thiem (2017) e sua edição.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     },
     {
       "card_id": "EC-036",
@@ -345,16 +362,17 @@
       "doi_status": "NAO_CONFIRMADO_NESTA_EDICAO",
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Confirmar identificação e edição do capítulo Couto/Albala; ResearchGate não é licença e DOI não consta confirmado. Não publicar PDF.",
-      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana."
+      "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
     }
   ],
   "global_mutations": false,
   "notes": "Triage of card documents, not primary works or PDFs; no [L] promotion.",
   "next_actions": [
-    "independent rights and originality check for 18 cards",
-    "independent scientific/editorial fidelity check for 18 cards",
-    "reconcile subsection 31.05 using concurrency-safe in-place edit and readback",
-    "integrator audits dependencies and P0 before V1-16"
+    "conferir fontes e direitos dos 8 cards prioritários EC-021/024/028/030/032/033/034/036",
+    "obter as duas revisões independentes por card com evidências",
+    "conciliar com segurança seção 31.05 no MD canônico sem substituir atualizações concorrentes",
+    "manter PR #104 Draft e liberar V1-16 apenas após dependências P0 e auditoria integradora"
   ],
   "validation": {
     "sha256_matches": 18,
@@ -365,5 +383,14 @@
     "ci_claim": "NOT_PROVEN; new commits require fresh CI",
     "readback": "RESULTS and DELTA read back from branch",
     "git_ahead_observed_before_ci_addendum": 3
+  },
+  "maintainer_approval": {
+    "decision": "APROVADO_PELO_MANTENEDOR",
+    "date": "2026-11-21",
+    "scope": "18 cards EC-019..EC-036",
+    "source": "Declaração expressa do usuário nesta conversa: 'Aprovado os cards.'",
+    "meaning": "Aceite do mantenedor para continuidade editorial; não substitui revisões independentes, validação científica, direitos por edição nem gates de publicação.",
+    "independent_review_gate_satisfied": false,
+    "publication_authorized": false
   }
 }
