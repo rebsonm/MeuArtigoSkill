@@ -91,7 +91,18 @@ jobs:
       - name: Provenance smoke test
         run: python scripts/smoke_test_provenance.py
 
-      - name: Build and verify installable beta ZIP
+      - name: Verify unpublished release-candidate metadata
+        id: rc
+        shell: bash
+        run: |
+          if [[ "$(cat VERSION)" =~ -rc\.[1-9][0-9]*$ ]]; then
+            python scripts/check_release_metadata.py --candidate
+            echo "eligible=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "eligible=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build and verify installable Skill ZIP
         run: |
           python scripts/build_skill_bundle.py
           python scripts/build_skill_bundle.py --verify "dist/MeuArtigoSkill-v$(cat VERSION).zip"
@@ -105,5 +116,17 @@ jobs:
           path: |
             dist/MeuArtigoSkill-v*.zip
             dist/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload RC installation ZIP for controlled review (not a release)
+        if: github.event_name == 'pull_request' && steps.rc.outputs.eligible == 'true'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: MeuArtigoSkill-rc-test-only
+          path: |
+            dist/MeuArtigoSkill-v*.zip
+            dist/SHA256SUMS.txt
+            dist/BUNDLE_BUILD_RECEIPT.json
           if-no-files-found: error
           retention-days: 30
