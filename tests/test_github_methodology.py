@@ -92,7 +92,8 @@ class RemoteMethodologyTests(unittest.TestCase):
             mod.query("revisão integrativa",ref=REF,fetch=fetch,cache_dir=cache,catalog_sha256=h)
             self.assertEqual(calls,[])
             candidates=list(cache.glob("*.cache"))
-            self.assertEqual(len(candidates),2)
+            self.assertGreaterEqual(len(candidates),2)
+            self.assertLessEqual(len(candidates),4)  # one catalogue plus up to three matched cards
             candidates[0].write_bytes(b"changed")
             with self.assertRaisesRegex(ValueError,"CACHE_DIGEST_MISMATCH"):
                 mod.query("revisão integrativa",ref=REF,fetch=fetch,cache_dir=cache,catalog_sha256=h)
