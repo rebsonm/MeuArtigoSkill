@@ -1,6 +1,6 @@
 {
   "schema": "MEU_ARTIGO_PUBLIC_PDF_CATALOG_V1",
-  "version": "pilot-2026-11-21-52-licensed-pdf-originals",
+  "version": "pilot-2026-11-21-51-unrestricted-rights-approved-pdfs",
   "documents": [
     {
       "path": "knowledge/methodology/pdfs/lycariao-roque-costa-2023.pdf",
@@ -1391,36 +1391,6 @@
         "correspondence",
         "analysis",
         "categorical"
-      ]
-    },
-    {
-      "path": "knowledge/methodology/pdfs/silva-hernandez-2020-analise-conteudo-politica-externa.pdf",
-      "title": "Aplicação metodológica da análise de conteúdo em pesquisas de análise de política externa",
-      "authors": "Danielle Costa da Silva; Lorena Granja Hernández",
-      "year": 2020,
-      "doi": "10.1590/0103-3352.2020.33.218584",
-      "size": 751629,
-      "sha256": "0df9f5a67a86d541cfdc8dcc5c222fa6caaec76d3e764078dfb942351fc4e5b3",
-      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
-      "license": "CC BY",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "rights_evidence": "https://www.scielo.br/j/rbcpol/a/QFmq77JnT468fcBKCdh99ms/",
-      "source_url": "https://doi.org/10.1590/0103-3352.2020.33.218584",
-      "original_file_unchanged": true,
-      "keywords": [
-        "lise",
-        "conte",
-        "silva",
-        "hern",
-        "ndez",
-        "2020",
-        "aplicação",
-        "metodológica",
-        "análise",
-        "conteúdo",
-        "pesquisas",
-        "política",
-        "externa"
       ]
     },
     {

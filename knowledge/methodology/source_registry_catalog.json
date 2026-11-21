@@ -1,6 +1,6 @@
 {
   "schema": "MEU_ARTIGO_SOURCE_CARD_INDEX_V1",
-  "version": "pilot-2026-11-21-source-identity-completion",
+  "version": "pilot-2026-11-21-rights-corrected-restricted-source",
   "source_archive_records": 475,
   "catalogue_identified_titles": 475,
   "source_text_read_in_ledger": 79,
@@ -10660,13 +10660,13 @@
         "política",
         "externa"
       ],
-      "sha256": "db9fc2a459b6d3c58e44c815148c5766343605296a1d6670aa9046550a302e1c",
+      "sha256": "374aaa94db7be892d8d38ca639ed038d218f2da70139d3b0ac769627623c6e4c",
       "source_metadata_only": true,
       "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
-      "rights_review": "VERIFIED_PUBLISHER_LICENSE",
+      "rights_review": "NOT_CHECKED",
       "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
-      "has_original_public_pdf": true,
-      "public_pdf_path": "knowledge/methodology/pdfs/silva-hernandez-2020-analise-conteudo-politica-externa.pdf",
+      "has_original_public_pdf": false,
+      "public_pdf_path": null,
       "title_candidate_from_filename": "Silva,Hernández,2020",
       "title_candidate_only": false,
       "source_identity_verified_not_citation_grade": true,
@@ -10678,11 +10678,14 @@
         "public_url": "https://doi.org/10.1590/0103-3352.2020.33.218584",
         "original_archive_pdf_version_verified": true,
         "original_archive_pdf_read": true,
-        "original_archive_pdf_redistribution_authorized": true,
+        "original_archive_pdf_redistribution_authorized": false,
         "scientific_card_review_approved": false,
-        "public_binary_in_github": true,
+        "public_binary_in_github": false,
         "original_pdf_screen_limited": true,
-        "provenance_note": null
+        "provenance_note": null,
+        "restricted_license_observed": "CC BY-NC 4.0",
+        "restriction_source": "https://www.scielo.br/j/rbcpol/a/QFmq77JnT468fcBKCdh99ms/",
+        "public_redistribution_clearance": "NOT_APPROVED_FOR_UNRESTRICTED_SKILL"
       }
     },
     {

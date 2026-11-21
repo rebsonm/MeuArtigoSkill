@@ -12,7 +12,7 @@ Exemplifica análises de conteúdo de política externa e discute escolhas metod
 
 ## Contraprova e limitação
 
-Artigo específico em SciELO sob Creative Commons Attribution; manter citação da publicação original. Perguntar também se outra interpretação do mesmo material ou uma estratégia metodológica rival é compatível com os dados. Uma posição editorial ou didática não é teste de superioridade experimental.
+A SciELO vincula este artigo à licença **CC BY-NC 4.0**. A versão consultada não deve ser incluída no corpus público irrestrito; somente o card autoral e os links editoriais são mantidos. Perguntar também se outra interpretação do mesmo material ou uma estratégia metodológica rival é compatível com os dados. Uma posição editorial ou didática não é teste de superioridade experimental.
 
 ## Perguntas aplicáveis
 
@@ -22,4 +22,4 @@ Artigo específico em SciELO sob Creative Commons Attribution; manter citação 
 
 ## Transparência
 
-Texto editorial autoral, sem reprodução extensa. A confirmação do PDF não significa que um avaliador científico tenha aprovado este card. A cópia foi incorporada somente por licença de redistribuição com atribuição; isso não certifica sua qualidade científica. Preserve [I] como inferência e [P] como hipótese de consulta. Nenhum gate aprovado, nenhuma leitura integral simulada e nenhuma certificação de host.
+Texto editorial autoral, sem reprodução extensa. A confirmação do PDF não significa que um avaliador científico tenha aprovado este card. A cópia protegida por restrição não comercial foi retirada do catálogo público atual; o card permanece como orientação original, sem reprodução integral e sem certificação científica. Preserve [I] como inferência e [P] como hipótese de consulta. Nenhum gate aprovado, nenhuma leitura integral simulada e nenhuma certificação de host.

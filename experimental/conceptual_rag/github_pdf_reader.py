@@ -76,6 +76,10 @@ def metadata(blob: bytes) -> list[dict]:
         seen.add(path)
         if entry.get("rights") != "PUBLIC_REDISTRIBUTION_REVIEWED":
             raise ValueError("PUBLIC_PDF_RIGHTS_NOT_REVIEWED")
+        if entry.get("license") not in {"CC BY", "CC BY 4.0"}:
+            raise ValueError("PUBLIC_PDF_LICENSE_NOT_UNRESTRICTED")
+        if not isinstance(entry.get("license_url"), str) or not entry["license_url"].startswith("https://"):
+            raise ValueError("PUBLIC_PDF_LICENSE_REFERENCE_REQUIRED")
         if (not isinstance(entry.get("rights_evidence"), str)
                 or not entry["rights_evidence"].startswith("https://")
                 or len(entry["rights_evidence"]) > 600):
