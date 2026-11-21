@@ -1,0 +1,8 @@
+{
+  "schema": "MEU_ARTIGO_PUBLIC_PDF_CATALOG_V1",
+  "documents": [],
+  "rights_policy": "PUBLIC_REDISTRIBUTION_REVIEWED_ONLY",
+  "catalog_status": "EMPTY_PENDING_DOCUMENT_LEVEL_LICENSE_REVIEW",
+  "installer_includes_pdfs": false,
+  "note": "Never copy personal Drive libraries into this public repository. Each future PDF requires source license evidence, SHA256, exact size and an immutable release snapshot."
+}
