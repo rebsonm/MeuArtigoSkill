@@ -51,4 +51,6 @@ This opt-in, experimental reader reuses the existing card and PDF clients, with 
 
 ## Source code versus installable candidate
 
-A small two-channel adapter is now separately packaged in the **draft test ZIP** as `scripts/consult_public_methodology.py` and `scripts/public_method_pdf.py`. This is **not** a live production feature, nor proof of support on any specific host. The original experimental source-only readers stay outside the ZIP. The 63 editorial cards, 35 original licensed PDFs and both remote catalogues remain out of the ZIP and can only be retrieved on demand from a pinned commit after real runtime permission checks. No bulk import of the personal archive is authorized.
+A small two-channel adapter is now separately packaged in the **draft test ZIP** as `scripts/consult_public_methodology.py` and `scripts/public_method_pdf.py`. This is **not** a live production feature, nor proof of support on any specific host. The original experimental source-only readers stay outside the ZIP. The 64 editorial cards, 36 original licensed PDFs and both remote catalogues remain out of the ZIP and can only be retrieved on demand from a pinned commit after real runtime permission checks. No bulk import of the personal archive is authorized.
+
+A separate public source registry provides 475 bibliography-only prospecting leads (404 matched catalogue titles, 71 unresolved), not source-derived research summaries. See `scripts/consult_source_registry.py` and `knowledge/methodology/source_cards/README.md`. Its indexing does not authorize private-PDF redistribution.
