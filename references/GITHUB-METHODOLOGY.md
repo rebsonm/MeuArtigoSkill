@@ -34,7 +34,7 @@ An optional `--cache-dir` points to an existing, explicitly authorized local dir
 
 ## Original methodology cards + licensed-PDF retrieval (experimental)
 
-Use the optional installed `scripts/consult_public_methodology.py` with a 40-character immutable Git commit, defaulting to a fixed trial snapshot (`e7d4a8f2e93e3a0f5611b47c884b5e2b208237e5`). It combines **two bounded lexical channels**, never private content: original editorial cards ([I] guidance only), and individually redistribution-licensed source PDFs (extracted PDF pages needing printed-page and scientific review). Source metadata links to author, DOI and publisher; a bibliographic lead inside a card is **not** evidence that the primary source was opened. No scientific gates are approved automatically.
+Use the optional installed `scripts/consult_public_methodology.py` with a 40-character immutable Git commit, defaulting to a fixed trial snapshot (`16227b9e8bebb11e38ad44521abd036083b7b2a7`). It combines **two bounded lexical channels**, never private content: original editorial cards ([I] guidance only), and individually redistribution-licensed source PDFs (extracted PDF pages needing printed-page and scientific review). Source metadata links to author, DOI and publisher; a bibliographic lead inside a card is **not** evidence that the primary source was opened. No scientific gates are approved automatically.
 
 The card publication policy is `knowledge/methodology/CARD-POLICY.md`: independent originality/rights and scientific-fidelity reviews, no reconstruction of protected books, no unrestricted serial excerpting or PDF-to-Markdown workaround, and verified bibliographic provenance. No server component, credentials, automatic installation download or Drive dependency. The small Python readers **are included in the test ZIP**, while cards, catalogues and PDFs **remain outside the ZIP**. This is not a validated semantic/vector RAG. User-host Python/HTTPS capabilities remain unverified.
 
@@ -54,7 +54,7 @@ The command **does not run automatically at installation**. Its immutable trial 
 ## Third optional channel: all 475 bibliographic source leads
 
 The user's methodology archive is now **indexed in full as 475 source-specific
-prospecting cards**, separate from the **63 original method/editorial cards**
+prospecting cards**, separate from the **64 original method/editorial cards**
 and **36 license-reviewed public PDFs**. The source-card register resolves
 **404 provisional bibliographic titles** and marks 71 identities unresolved.
 It intentionally contains no personal PDF binaries, private file IDs or text
