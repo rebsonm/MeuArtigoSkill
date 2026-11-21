@@ -281,3 +281,23 @@ treating it as legacy. Only local confirmed executions are checked;
 the audit does not itself validate interpretation, causality, external
 API retrieval, paper quality or claimed human reviews.
 
+### Retomada guiada e prevenção de repetição sem progresso (candidata)
+
+No fluxo de conversa, priorize **uma** próxima ação indicada pelo roteador
+existente, a razão, a evidência esperada e a condição verificável de saída.
+Para fallback local autorizado, use
+`python scripts/research_resume_brief.py PROJECT --format guided`.
+O modo `--format json` existente preserva os detalhes técnicos sob demanda.
+
+Um alerta de circularidade é apenas diagnóstico: duas execuções locais
+consecutivas equivalentes, com recibos TRACE vinculados por hash, insumos
+estáveis e nenhuma saída nova verificada. Não repetir cegamente uma terceira
+tentativa; explicar o impedimento, a ação mínima e alternativa independente
+quando comprovável. Revisões periódicas, mudanças reais de evidência e
+histórico incompleto não devem ser falsamente bloqueados. A condição de
+conclusão sugerida não aprova nenhum gate e não certifica pesquisa concluída.
+Se o estado canônico estiver no Drive, confirmar acesso real pelo conector
+autorizado; uma cópia local nunca prova sincronização.
+
+Contrato e indicadores: [continuidade guiada e anticircularidade]
+(../docs/CONTINUIDADE-GUIADA-ANTICIRCULARIDADE.md).
