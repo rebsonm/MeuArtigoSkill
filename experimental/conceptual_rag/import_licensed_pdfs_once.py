@@ -120,7 +120,7 @@ class OnlyReviewedHTTPSRedirects(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
         parsed = urllib.parse.urlsplit(newurl)
         if parsed.scheme != "https" or parsed.hostname not in ALLOWED_HOSTS:
-            raise ValueError("UNREVIEWED_REDIRECT_HOST")
+            raise ValueError("UNREVIEWED_REDIRECT_HOST:" + str(parsed.hostname))
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
