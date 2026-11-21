@@ -28,7 +28,7 @@
       "folder_do_ledger": "S‚ries Temporais Interrompidas (ITS)",
       "filename_esperado": "Linden (2015).pdf",
       "size_bytes_esperados": 300450,
-      "drive_file_id_confirmado_ou_null": "1p2_5DQIgsSrBJBfkhO7k7ZPcwiPAnKaz",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "65a6ffd2512a02b3da6367caaccfd68d94a69f5c3ca548edca0b8592d9c65df0",
       "nome_titulo_do_PDF": "Conducting interrupted time-series analysis forsingle- and multiple-group comparisons",
       "autores_ano_edicao": {
@@ -53,7 +53,7 @@
       "folder_do_ledger": "S‚ries Temporais Interrompidas (ITS)",
       "filename_esperado": "Figueiredo Filho (2022).pdf",
       "size_bytes_esperados": 2454260,
-      "drive_file_id_confirmado_ou_null": "1cHfot1DUtN8LO7ZT-WnQyEU4bmbl4jFM",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "8435799b9de4c04a34f8fbf5ad6c4d4e6eedd2d06e7f2a8303c71aa6090d00e1",
       "nome_titulo_do_PDF": "Avaliação de impacto do Projeto Vida no Trânsito",
       "autores_ano_edicao": {
@@ -78,7 +78,7 @@
       "folder_do_ledger": "S‚ries Temporais Interrompidas (ITS)",
       "filename_esperado": "Bernal, Cummings e Gasparrini (2017).pdf",
       "size_bytes_esperados": 482146,
-      "drive_file_id_confirmado_ou_null": "1-9m5bxFYXw6DtWBO_Qo349v_Kxj4nhNn",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "9232ae91f9cdb1de826e3f14d78bd9c82acf96a7b7e7524c52cebf658352e5ff",
       "nome_titulo_do_PDF": "Interrupted time series regression for the evaluation of public health interventions: a tutorial",
       "autores_ano_edicao": {
@@ -103,7 +103,7 @@
       "folder_do_ledger": "Dif-in-Dif (regressão diferenças em diferenças)",
       "filename_esperado": "Fredriksson e Oliveira (2019).pdf",
       "size_bytes_esperados": 660405,
-      "drive_file_id_confirmado_ou_null": "1dTwu-8ygWq3Ndz0Q2WlB8hyKVR9-07nG",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "f678aa5269341c05767e10be77cdfb81f397930a7a7ac77e5af6faef6309bad7",
       "nome_titulo_do_PDF": "Impact evaluation using Difference-in-Differences",
       "autores_ano_edicao": {
@@ -128,7 +128,7 @@
       "folder_do_ledger": "Dif-in-Dif (regressão diferenças em diferenças)",
       "filename_esperado": "Roth et al (2023).pdf",
       "size_bytes_esperados": 513256,
-      "drive_file_id_confirmado_ou_null": "1WfQUOJMuLbj1Slwq_LO4HMmuB7PxOUeU",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "b46aa8405e8e2534e636b4df250b40f7aae52e12d4d85b3ef34588c62aeb3dee",
       "nome_titulo_do_PDF": "What’s trending in difference-in-differences? A synthesis of the recent econometrics literature",
       "autores_ano_edicao": {
@@ -153,7 +153,7 @@
       "folder_do_ledger": "REGRESSION DISCONTINUITY DESIGNS (RDD)",
       "filename_esperado": "Cattaneo e Titiunik (2022).pdf",
       "size_bytes_esperados": 473052,
-      "drive_file_id_confirmado_ou_null": "1iKsfbnWanhltSWsdjP7m1USJXv8yA4-g",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "5e22b7bb4065ca5da18c5f02aa49b01bf963ebf7d7aeec5f3ef305ecdc00ac99",
       "nome_titulo_do_PDF": "Regression Discontinuity Designs",
       "autores_ano_edicao": {
@@ -178,7 +178,7 @@
       "folder_do_ledger": "REGRESSION DISCONTINUITY DESIGNS (RDD)",
       "filename_esperado": "Imbens e Lemieux (2007).pdf",
       "size_bytes_esperados": 294451,
-      "drive_file_id_confirmado_ou_null": "1H87OL5Lm57UShVG8fiV6nLrXAkbpLhI0",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "dc0b7b637b96fc0245b8e5c8cec9b598364015e903686873a3e0993a1f09a082",
       "nome_titulo_do_PDF": "REGRESSION DISCONTINUITY DESIGNS: A GUIDE TO PRACTICE",
       "autores_ano_edicao": {
@@ -203,7 +203,7 @@
       "folder_do_ledger": "Pol¡ticas P£blicas",
       "filename_esperado": "celina2.pdf",
       "size_bytes_esperados": 193799,
-      "drive_file_id_confirmado_ou_null": "1TCJsUinnNOCvVO-h1JObUj0Ejh6A4V-B",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "d2722e7fdcefcde1ef7b460c5fe4494221ad96e84066f261df598d44bd499172",
       "nome_titulo_do_PDF": "Políticas Públicas: Conceitos, Tipologias e Sub-Áreas*",
       "autores_ano_edicao": {
@@ -228,7 +228,7 @@
       "folder_do_ledger": "Pol¡ticas P£blicas",
       "filename_esperado": "RCRH-2006-273[1] ADM.pdf",
       "size_bytes_esperados": 218689,
-      "drive_file_id_confirmado_ou_null": "15Dr-qMaiW-Nefr_qJ6J83ZKb5UMzdTjF",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "c188b1dece497b6ea893ad907395843ea3302e69c82740a7a21d6cb22f57c588",
       "nome_titulo_do_PDF": "POLÍTICAS PÚBLICAS: questões temáticas e de pesquisa",
       "autores_ano_edicao": {
@@ -253,7 +253,7 @@
       "folder_do_ledger": "Pol¡ticas P£blicas",
       "filename_esperado": "celina3.pdf",
       "size_bytes_esperados": 860992,
-      "drive_file_id_confirmado_ou_null": "1cM-7a2kYwx2CtEAR9NoRs7HNg_obDY3F",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "1fea01c72b16021bc0745c65efcc93cf80eb120c8d0be4437fa1ff37cab9d53d",
       "nome_titulo_do_PDF": "Coordenação de Políticas Públicas",
       "autores_ano_edicao": {
@@ -278,7 +278,7 @@
       "folder_do_ledger": "Pol¡ticas P£blicas",
       "filename_esperado": "celina.pdf",
       "size_bytes_esperados": 72641,
-      "drive_file_id_confirmado_ou_null": "1XIHSdxfHo7zvA14wvG1syJA2_mBS1tIY",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "df6a3f469b66e78e50b7f5b424e64b98d429ee34028fad7815f431e36e596b92",
       "nome_titulo_do_PDF": "Políticas públicas: uma revisão da literatura",
       "autores_ano_edicao": {
@@ -303,7 +303,7 @@
       "folder_do_ledger": "An lise Espacial",
       "filename_esperado": "Kopczewskaa e Elhors (2024).pdf",
       "size_bytes_esperados": 654105,
-      "drive_file_id_confirmado_ou_null": "1jKEMgAOVpmy0pUCYJhrhAuHO2F6T41Dm",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "98f5dc61fcc01e85539db3a4bd2281402b90d16447b595d464613af2953c26c9",
       "nome_titulo_do_PDF": "New developments in spatial econometric modelling",
       "autores_ano_edicao": {
@@ -328,7 +328,7 @@
       "folder_do_ledger": "An lise Espacial",
       "filename_esperado": "Anselin (2003).pdf",
       "size_bytes_esperados": 861846,
-      "drive_file_id_confirmado_ou_null": "13Ha1Tw4R3s5liF8w8KSkjMb3YC6A4PRy",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "2b1b99b7d706966411961d0faa491df4d5f8d4a5fe849b0185715ef10eeebe32",
       "nome_titulo_do_PDF": "An Introduction to Spatial Autocorrelation Analysis with GeoDa",
       "autores_ano_edicao": {
@@ -353,7 +353,7 @@
       "folder_do_ledger": "An lise Espacial",
       "filename_esperado": "Anselin et al (2000).pdf",
       "size_bytes_esperados": 458409,
-      "drive_file_id_confirmado_ou_null": "19FshA8Ou3y03m32DezUJcB1eXbGUbgte",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "1f31bb861cad63f2aaedf9dc954d2ebcf6df46addc500f5a9b5eb5a695be8d5a",
       "nome_titulo_do_PDF": "Spatial Analyses of Crime",
       "autores_ano_edicao": {
@@ -378,7 +378,7 @@
       "folder_do_ledger": "Vari veis instrumentais",
       "filename_esperado": "Baiocchi, Cheng e Small (2014).pdf",
       "size_bytes_esperados": 1267443,
-      "drive_file_id_confirmado_ou_null": "1krbvGu9LIjNCJTKbgySlF87w_Znfsx4Y",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "e2aa85c7266e3a136b6735adfeee470496aff8e6bf26389a11929a575a26f9dc",
       "nome_titulo_do_PDF": "Instrumental variable methods for causal inference",
       "autores_ano_edicao": {
@@ -403,7 +403,7 @@
       "folder_do_ledger": "Vari veis instrumentais",
       "filename_esperado": "Sovey e Green (2011).pdf",
       "size_bytes_esperados": 2115521,
-      "drive_file_id_confirmado_ou_null": "12HYesMds0cFMSQ_w5IOdlQT5Gr5B8AaF",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "3c4befcd9b352cb48264686e5005f2dd7bea9f2b7b912ac805e1e9ad08278563",
       "nome_titulo_do_PDF": "Instrumental Variables Estimation in Political Science: A Readers' Guide",
       "autores_ano_edicao": {
@@ -428,7 +428,7 @@
       "folder_do_ledger": "Process Tracing",
       "filename_esperado": "CDI_Practice_Paper_25.pdf",
       "size_bytes_esperados": 221286,
-      "drive_file_id_confirmado_ou_null": "1P0XKSp9EKDmAeIndwFt90CzuMOLQ2_OX",
+      "drive_file_id_confirmado_ou_null": null,
       "pdf_original_sha256": "5db74d4c5ce85e19ca22039d84ddd6a8ccadd9b09b4fcd6a181847b09c1a10b9",
       "nome_titulo_do_PDF": "Process Tracing Innovations in\nPractice: Finding the Middle Path",
       "autores_ano_edicao": {
@@ -452,5 +452,7 @@
     "Resolver SRC-0263 sem inventar ano ou editora",
     "Integrar sequencialmente registry, ledger e manifestos",
     "Executar CI global; não redistribuir PDFs protegidos"
-  ]
+  ],
+  "private_drive_ids_redacted_from_public_head": true,
+  "private_drive_id_redaction_note": "Original file IDs removed from this public branch HEAD. Source-document matching remains described by inventory ID, filename and size. Earlier commits may still retain these IDs. No history rewrite performed."
 }
