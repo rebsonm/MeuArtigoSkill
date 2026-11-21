@@ -122,6 +122,12 @@ Este adendo **não refaz** os 17 pareceres nem a pesquisa de metadados públicos
 
 **Decisão editorial:** preservar `CORREÇÃO_NECESSÁRIA` para 17/17 e `PARCIAL` como estado da etapa. Faltam cotejo de trecho/página/edição/cópia, direitos por exemplar, revisão científica independente, avaliação independente de originalidade/direitos e conclusão segura do acompanhamento no MD. Sem merge, tag, release, MCP, PDF protegido ou aprovação de gate.
 
+## PR exclusiva de auditoria — criada na continuidade
+
+- PR **Draft #110**: https://github.com/rebsonm/MeuArtigoSkill/pull/110
+- Head: `work/v1-09-20261121`; base: `plan/v1-methodology-20-stages-20261121`, verificadas após abertura; estado `open`, `draft=true`.
+- Este registro **não** atesta revisão humana, revisão de direitos, CI, aprovação de gate, permissão de PDF ou autorização de merge/release. A PR mantém os dois recibos exclusivos e permanece aguardando saneamento documental e pareceres independentes.
+
 ## Substituição proposta exclusivamente para a subseção 31.09 do MD canônico — NÃO APLICADA
 
 A seguir consta a substituição exata para integração controlada. Ela não foi gravada no Drive, pois o arquivo Markdown mudou durante a preparação e o endpoint de edição por trechos retornou `FAILED_PRECONDITION`; a API de substituição bruta não oferece trava otimista de versão. Em caso de janela de edição exclusiva, reler o MD integral mais recente, substituir somente o trecho entre 31.09 e 31.10 e conferir os demais blocos após a escrita.
