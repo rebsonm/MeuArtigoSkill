@@ -4,13 +4,13 @@
 
 **Escopo fixo:** SRC-0117, SRC-0118, SRC-0119, SRC-0120, SRC-0121, SRC-0122, SRC-0123, SRC-0124, SRC-0125, SRC-0126, SRC-0127, SRC-0128, SRC-0129, SRC-0130, SRC-0131, SRC-0133, SRC-0134, SRC-0135.
 
-**Identidades documentais verificadas:** 17/18; **bloqueada:** SRC-0117 (manuscrito aceito sem ano/edição de publicação identificáveis na própria cópia). **Originais localizados:** 18/18 no Drive privado, nome, pasta e tamanho correspondentes ao ledger de referência. A inspeção foi limitada a capas, expediente, resumo/enquadramento e direitos observados, não leitura científica integral.
+**Identidades documentais verificadas após complemento editorial:** 18/18; **sem bloqueios de identidade**. O manuscrito aceito SRC-0117 foi identificado como a obra publicada em 2021; sua versão arquivada não é o PDF final. **Originais localizados:** 18/18 no Drive privado, nome, pasta e tamanho correspondentes ao ledger de referência. A inspeção foi limitada a capas, expediente, resumo/enquadramento e direitos observados, não leitura científica integral.
 
 **Regra de direitos:** obras CC BY 4.0 observadas em SRC-0121, SRC-0125, SRC-0126, SRC-0134; CC BY-NC 4.0 em SRC-0130. Outros documentos apresentam copyright/termos/ausência de licença explícita. Nenhum PDF novo é publicado aqui. Os IDs privados do Drive foram reservados ao MD canônico privado, não ao repositório GitHub público.
 
 | Fonte | Tipologia | Identidade | DOI verificado na cópia | Direitos | Hash SHA-256 da ficha |
 |---|---|---|---|---|---|
-| SRC-0117 | ARTIGO_ACEITO_MANUSCRITO | BLOQUEADA | NÃO CONFIRMADO | Sem licença expressa identificada no manuscrito; não redistribuir. | `c16f3cfd1716cb7090929cc931c421923512d0345db1c822ef25212f047c2cea` |
+| SRC-0117 | ARTIGO_ACEITO_MANUSCRITO | IDENTIFICADA_OBRA_PUBLICADA (2021; cópia aceita, não final) | 10.1111/1467-923X.13072 (editora; não impresso na cópia) | Sem licença expressa no manuscrito; não redistribuir | `69c062bcdf76f7cd7c7262d45abd12119de5505c143a604c73fef01774cdd632` |
 | SRC-0118 | ARTIGO_TRADUCAO | VERIFICADA | NÃO CONFIRMADO | Nenhuma licença expressa de redistribuição identificada para esta tradução. | `8869315f52a22f638e1a81a36411614e437914aa4e7b4af37a5f31ada2d2f2c1` |
 | SRC-0119 | ARTIGO | VERIFICADA | 10.1177/0759106319880148 | © Autor 2019, informações de direitos/permissão SAGE, sem CC expressa na cópia. | `ed385f3ba491753d46bc46b7f1854ffa33081ba657eb8d3f73459d774cbb8a8f` |
 | SRC-0120 | CAPITULO_EM_COLETANEA_COM_APENDICE | VERIFICADA | NÃO CONFIRMADO | Expediente: direitos desta edição reservados à Editora UFPR; não redistribuir. | `6aabe7b96fe487b05940d91f565e0736209837c01c0e13329615da82cd943405` |
@@ -46,4 +46,10 @@
 - **Arquivos alterados:** exclusivamente 18 fichas `knowledge/methodology/source_cards/src-XXXX.md` deste lote e os dois recibos `knowledge/methodology/intake/parallel/IB-02-*`.
 - **Proibições mantidas:** sem alteração de `source_registry_catalog`, ledger, manifestos globais, PDF, main, PR 101 compartilhada, merge, tag, release ou MCP.
 - **CI/HEAD:** consultar CI real do SHA da branch após criação do commit; não presumir teste de CI aprovado.
-- **Próximo passo:** obter edição/ano de SRC-0117 da obra ou página editorial primária, resolver bloqueio e permitir ao integrador consolidar o lote sequencialmente, com recálculo dos índices e verificações globais.
+- **Próximo passo:** manter a distinção entre edição final e manuscrito aceito SRC-0117 e sua licença e permitir ao integrador consolidar o lote sequencialmente, com recálculo dos índices e verificações globais.
+
+## Complementação bibliográfica e ressalvas da auditoria transversal — 21/11/2026
+
+- **Registro:** `SRC-0117`; **novo SHA-256 da ficha:** `69c062bcdf76f7cd7c7262d45abd12119de5505c143a604c73fef01774cdd632`.
+- A obra foi conferida em dois níveis: PDF arquivado como manuscrito aceito e registro da editora Wiley (*The Political Quarterly* 92(4), 673–681, 2021, DOI 10.1111/1467-923X.13072). A cópia não é a edição editorial final. Nenhuma licença de redistribuição, aprovação científica ou mudança no catálogo global decorre deste complemento.
+- **MD canônico:** a atualização global das contagens depende da reconciliação dos 20 lotes; nenhum merge, release, tag, MCP ou PDF foi publicado.
