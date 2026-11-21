@@ -1,76 +1,76 @@
-# PRISMA 2020 — controle de relato e fluxograma (guia autoral)
+# PRISMA 2020 — 27-item reporting audit and evidence-flow worksheet
 
-**Status:** referência operacional de relato, não parecer de conformidade. **PRISMA não é método de revisão**. Registro publicado como texto autoral da Skill, com links para o material oficial em licença CC BY 4.0. Não substitui o checklist oficial nem instrui criação de números fictícios.
+**Status:** an original reporting aid, not an endorsement of a research design or a claim of PRISMA compliance. **PRISMA is a reporting guideline, not a review method.** This offline Skill reference links to official CC BY 4.0 sources but does not reproduce their original flow diagrams, tables or wording.
 
-## Escolha da diretriz
+## Choose the appropriate reporting guideline
 
-- **PRISMA 2020**: relato de revisão sistemática; conferir [checklist de 27 itens](https://www.prisma-statement.org/prisma-2020-checklist), [fluxogramas oficiais](https://www.prisma-statement.org/prisma-2020-flow-diagram), [declaração](https://doi.org/10.1136/bmj.n71) e [explicação detalhada](https://doi.org/10.1136/bmj.n160).
-- **PRISMA-S (2021)**: extensão de relato de buscas bibliográficas e fontes; conferir [Rethlefsen et al.](https://doi.org/10.1186/s13643-020-01542-z).
-- **PRISMA-ScR (2018)**: extensão apropriada ao relato de *scoping reviews*; conferir [orientação oficial](https://www.prisma-statement.org/scoping).
-- **PRISMA-P (2015)**: relato de protocolos de revisões sistemáticas; conferir [orientação oficial](https://www.prisma-statement.org/protocols).
-- **B-SLR (Marzi et al., 2025)**: processo metodológico de 10 etapas; PRISMA trata transparência de partes do relato, **não substitui etapas de bibliometria, síntese e teorização**.
-- **Snyder (2019)**: a revisão semissistemática pode justificar outros procedimentos de transparência; não afirme conformidade integral PRISMA sem correspondência efetiva com escopo e itens.
+- **PRISMA 2020:** reporting for systematic reviews. Consult the official [27-item checklist](https://www.prisma-statement.org/prisma-2020-checklist), [official flow templates](https://www.prisma-statement.org/prisma-2020-flow-diagram), [statement](https://doi.org/10.1136/bmj.n71) and [explanation](https://doi.org/10.1136/bmj.n160).
+- **PRISMA-S (2021):** literature-search reporting extension. Source: [Rethlefsen et al.](https://doi.org/10.1186/s13643-020-01542-z).
+- **PRISMA-ScR (2018):** scoping-review reporting extension. Source: [official extension](https://www.prisma-statement.org/scoping).
+- **PRISMA-P (2015):** systematic-review protocol reporting. Source: [official protocol guidance](https://www.prisma-statement.org/protocols).
+- **Marzi et al. (2025) B-SLR:** a ten-step bibliometric-systematic review design. PRISMA only supports transparent reporting where applicable and does not replace bibliometric or theory-building decisions.
+- **Snyder (2019):** semisystematic and integrative reviews may require appropriately justified reporting practices, rather than falsely claiming full systematic-review PRISMA compliance.
 
-## Verificação autoral dos 27 itens — preencher local ou justificativa
+## Original review checklist aligned with the 27 PRISMA 2020 items
 
-Use `[ ]` como controle de redação; mantenha evidência, versão, localização no manuscrito e indicação de não aplicabilidade quando apropriado.
+For each item, record a page/section locator in the actual manuscript, source evidence, any justified nonapplicability and the reviewer's decision. Refer to the official expanded checklist for item-level subpoints.
 
-| Item PRISMA 2020 | Verificar e documentar |
+| Item | Reporting evidence to verify |
 | --- | --- |
-| 1 | Título reconhecível como revisão sistemática |
-| 2 | Resumo com o conteúdo essencial previsto no checklist específico |
-| 3 | Razão científica para revisar esta evidência |
-| 4 | Pergunta e objetivos de síntese |
-| 5 | Critérios e grupos de elegibilidade |
-| 6 | Cada fonte consultada e data da última busca |
-| 7 | Estratégia integral de busca por fonte, preservada literalmente |
-| 8 | Procedimento e pessoas/ferramentas que selecionaram registros |
-| 9 | Processo de extração e conferência dos dados |
-| 10 | Variáveis e resultados buscados, inclusive dados ausentes |
-| 11 | Como foi julgado o viés nos estudos |
-| 12 | Medida de efeito ou outra medida apropriada |
-| 13 | Como cada síntese foi organizada e realizada |
-| 14 | Como se considerou risco de relato seletivo |
-| 15 | Como se julgou certeza/qualidade do conjunto de evidências |
-| 16 | Quantidades da seleção e motivos, em fluxograma compatível |
-| 17 | Descrição dos estudos finalmente incluídos |
-| 18 | Resultados da avaliação de viés |
-| 19 | Resultados dos estudos individuais |
-| 20 | Resultados da(s) síntese(s) e heterogeneidade quando cabível |
-| 21 | Viés relacionado a resultados ausentes ou seletivos |
-| 22 | Certeza da evidência sintetizada |
-| 23 | Interpretação crítica dos resultados e limitações |
-| 24 | Registro, protocolo e explicação das alterações |
-| 25 | Apoios, financiamento e papel dos apoiadores |
-| 26 | Declarações de interesses pertinentes |
-| 27 | Acesso a dados, instrumentos, códigos e outros materiais |
+| 1 | Title identifies a systematic review |
+| 2 | Abstract includes the required review information |
+| 3 | Rationale explains why the synthesis is needed |
+| 4 | Review objectives and questions are explicit |
+| 5 | Eligibility rules and relevant groups are described |
+| 6 | Each information source and its last-search date are named |
+| 7 | Complete source-specific search strategies are available |
+| 8 | Screening methods, people and tools are described |
+| 9 | Extraction procedures and verification are explained |
+| 10 | Outcomes, variables and missing information are specified |
+| 11 | Within-study risk-of-bias assessment methods are described |
+| 12 | Effect measures or appropriate quantitative outcomes are defined |
+| 13 | Grouping and synthesis methods are traceable |
+| 14 | Missing-results reporting-bias assessments are explained |
+| 15 | Certainty-of-evidence assessment methods are specified |
+| 16 | Selection counts and exclusion reasons are reconciled |
+| 17 | Included-study characteristics are presented |
+| 18 | Risk-of-bias assessment results are reported |
+| 19 | Results from individual studies are available |
+| 20 | Synthesized results, including heterogeneity if relevant, are reported |
+| 21 | Risk of bias from missing results is addressed |
+| 22 | Certainty of the evidence for each outcome is reported |
+| 23 | Discussion interprets evidence and its limitations |
+| 24 | Registration, protocol and amendments are described |
+| 25 | Funding, support and sponsor roles are disclosed |
+| 26 | Conflicts of interest are disclosed |
+| 27 | Data, code and other research-material availability is stated |
 
-Os textos acima são **paráfrases de orientação**, não reprodução do formulário oficial. Para a redação, aplicar as subalíneas e explicações oficiais associadas a cada item.
+This checklist is independently worded. Consult the official sources for precise wording and all required subitems; do not treat checking the boxes as a scientific approval.
 
-## Fluxograma: registrar números observados, não inventar
+## Evidence flow: enter actual counts, never fabricated examples
 
-Preencher por fonte e preservar logs reais de triagem. Use `não aferido` até dispor dos dados.
+A record retrieved from a database, a report assessed in full text and a study synthesized are **different levels of observation**. One study may have more than one report.
 
-| Fase | Campo factual a registrar | Valor |
+| Flow phase | Source value to record | Current value |
 | --- | --- | --- |
-| Identificação | Registros por cada base de dados e registro | não aferido |
-| Identificação | Registros de outras fontes, incluindo busca manual | não aferido |
-| Antes da triagem | Duplicatas retiradas | não aferido |
-| Antes da triagem | Registros retirados por automação, se utilizada | não aferido |
-| Antes da triagem | Outros registros retirados, com razão | não aferido |
-| Triagem | Registros examinados por título/resumo | não aferido |
-| Triagem | Registros excluídos | não aferido |
-| Elegibilidade | Relatórios buscados em texto completo | não aferido |
-| Elegibilidade | Relatórios não recuperados | não aferido |
-| Elegibilidade | Relatórios efetivamente avaliados | não aferido |
-| Elegibilidade | Relatórios excluídos por cada motivo | não aferido |
-| Inclusão | Estudos incluídos | não aferido |
-| Inclusão | Relatórios referentes aos estudos incluídos | não aferido |
+| Identification | Records identified in each database and register | not measured |
+| Identification | Records from other sources, including citation chasing | not measured |
+| Pre-screening | Duplicate records removed | not measured |
+| Pre-screening | Records removed using automation, when applicable | not measured |
+| Pre-screening | Other documented pre-screening removals | not measured |
+| Screening | Records actually screened by title or abstract | not measured |
+| Screening | Records excluded from screening | not measured |
+| Eligibility | Full reports sought for retrieval | not measured |
+| Eligibility | Reports not retrieved | not measured |
+| Eligibility | Full reports assessed | not measured |
+| Eligibility | Reports excluded, broken down by reason | not measured |
+| Inclusion | Distinct studies included | not measured |
+| Inclusion | Reports describing included studies | not measured |
 
-**Controle aritmético essencial:** entradas dos bancos + outras fontes − exclusões documentadas antes da triagem = registros triados; nunca confundir registros, relatórios e estudos, pois um mesmo estudo pode gerar vários relatórios. Reconcilie os vínculos a partir das linhas de evidência originais; a equivalência numérica entre níveis diferentes não pode ser presumida.
+**Minimal arithmetic check:** initial database and other-source records minus documented removals before screening should match records screened. Continue reconciling reports and studies with explicit record-to-report-to-study links; do not assume a one-to-one relationship or force incompatible denominators to match.
 
-**Automação:** IA pode ajudar a classificar duplicatas ou rascunhar o fluxograma, mas seus resultados devem ser rastreáveis e revisados. O agente não decide elegibilidade, não atribui motivos fictícios e não declara conformidade científica.
+Automated tools may propose deduplication or a draft flow diagram. They must not invent inclusion/exclusion decisions, reasons, review dates, screening records or scientific certification. Keep a human-reviewed source of truth.
 
-## Fontes e direitos
+## Attribution and license
 
-Page et al. (2021), *BMJ* 372:n71, DOI https://doi.org/10.1136/bmj.n71. Checklist e diagramas oficiais sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), conforme o site do PRISMA: crédito, ligação à licença e indicação de alterações. Esta versão não contém cópias de diagramas, imagens ou tabelas oficiais.
+Page et al. (2021), *The PRISMA 2020 statement*, BMJ 372:n71, DOI https://doi.org/10.1136/bmj.n71. The official checklist and flow templates are distributed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Cite the original, link to the license and indicate adaptations as required. This independent guide includes no copied official diagrams.
