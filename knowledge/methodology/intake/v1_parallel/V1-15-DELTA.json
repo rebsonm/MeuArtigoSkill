@@ -59,81 +59,117 @@
         "SRC-0111",
         "SRC-0454"
       ],
-      "evidence": "SAME_SIZE_BYTES_ONLY",
-      "same_file_as_confirmed": false,
-      "same_work_as_confirmed": false
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "9b12a0c0f29cc77cbe06c20fd2b0fb2bba3ff1d20db14f677bfa87a937471036",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
     },
     {
       "ids": [
         "SRC-0354",
         "SRC-0438"
       ],
-      "evidence": "SAME_SIZE_BYTES_ONLY",
-      "same_file_as_confirmed": false,
-      "same_work_as_confirmed": false
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "c8d8e7792adc0bc8b8893f5a7ecd9b9cec3bf913429bf5ee80c9ac07019231b0",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
     },
     {
       "ids": [
         "SRC-0206",
         "SRC-0337"
       ],
-      "evidence": "SAME_SIZE_BYTES_ONLY",
-      "same_file_as_confirmed": false,
-      "same_work_as_confirmed": false
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "9ec4986eacda3dfccc8ceef0b7f0f96198144fd9b61c3a81cf15954b51a1ab99",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
     },
     {
       "ids": [
         "SRC-0235",
         "SRC-0267"
       ],
-      "evidence": "SAME_SIZE_BYTES_ONLY",
-      "same_file_as_confirmed": false,
-      "same_work_as_confirmed": false
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "9a2d07e4f62edfa668bcf311e13920f99263c704a8187fae77065d0c1369674e",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
     },
     {
       "ids": [
         "SRC-0244",
         "SRC-0371"
       ],
-      "evidence": "SAME_SIZE_BYTES_ONLY",
-      "same_file_as_confirmed": false,
-      "same_work_as_confirmed": false
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "cf7139ab385e44efb75e26e8c6334f1c959cceb5bb29010e4670f59070446d5d",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
     },
     {
       "ids": [
         "SRC-0230",
         "SRC-0344"
       ],
-      "evidence": "SAME_SIZE_BYTES_ONLY",
-      "same_file_as_confirmed": false,
-      "same_work_as_confirmed": false
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "b9160abe4e69654761076dc02a2edd6cfc114511d169c10b2c7d0194593edc84",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
     },
     {
       "ids": [
         "SRC-0349",
         "SRC-0391"
       ],
-      "evidence": "SAME_SIZE_BYTES_ONLY",
-      "same_file_as_confirmed": false,
-      "same_work_as_confirmed": false
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "a4f11f5d1a13bb4c150a3f4090f74aa522cf2f3e8276704847a9841d47153986",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
     },
     {
       "ids": [
         "SRC-0245",
         "SRC-0370"
       ],
-      "evidence": "SAME_SIZE_BYTES_ONLY",
-      "same_file_as_confirmed": false,
-      "same_work_as_confirmed": false
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "329b88773b6d4c1c82bba37f7f83b995add6f2e188f380eb332081da53ddd390",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
     },
     {
       "ids": [
         "SRC-0006",
         "SRC-0435"
       ],
-      "evidence": "SAME_SIZE_BYTES_ONLY",
-      "same_file_as_confirmed": false,
-      "same_work_as_confirmed": false
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "fe1ba0c860a4c8b4fb23ecec3cbd6701d5a63a0a7702d82ab01805542eec7c04",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
     },
     {
       "ids": [
@@ -141,18 +177,26 @@
         "SRC-0430",
         "SRC-0434"
       ],
-      "evidence": "SAME_SIZE_BYTES_ONLY",
-      "same_file_as_confirmed": false,
-      "same_work_as_confirmed": false
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "daed917cbcca5ad77cfa3ac53150012600748cf235de376835e7d00990b8731b",
+      "copies_verified": 3,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
     },
     {
       "ids": [
         "SRC-0234",
         "SRC-0256"
       ],
-      "evidence": "SAME_SIZE_BYTES_ONLY",
-      "same_file_as_confirmed": false,
-      "same_work_as_confirmed": false
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "e383b25084ae5d73a535a04758d651867152d89e5f7b512331ac384840ed30f2",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
     }
   ],
   "aliases_candidate_groups": [
@@ -227,13 +271,14 @@
   "folder_alias_records_count": 25,
   "delta_vs_ledger_filename_mismatch_count": 0,
   "delta_vs_ledger_size_mismatch_count": 0,
-  "aliases_validated_against_private_Drive": false,
+  "aliases_validated_against_private_Drive": true,
   "copyright": {
     "source_pdfs_republished": 0,
-    "exact_copy_pdf_sha256_compared": 0,
+    "exact_copy_pdf_sha256_compared": 23,
     "rights_for_exact_pdf_copies_newly_approved": 0,
     "editorial_cards_independently_scientifically_approved": 0,
-    "prior_rights_counters_not_promoted": true
+    "prior_rights_counters_not_promoted": true,
+    "sha256_identical_pdf_groups": 11
   },
   "script": {
     "path": "scripts/v1_15_integrity_audit.py",
@@ -244,20 +289,22 @@
   },
   "canonical_md": {
     "desired_section": "31.15",
-    "write_status": "NOT_WRITTEN_CONCURRENT_RAW_MARKDOWN_RISK",
+    "write_status": "NOT_WRITTEN_NO_ATOMIC_CONDITIONAL_SECTION_PATCH",
     "observed_content_length_first": 306686,
     "observed_content_length_later": 307566,
-    "blocker": "Raw text/markdown object; no conditional atomic section-level patch offered by connected Drive actions; file changed during review. Preserved remote state."
+    "blocker": "Drive raw text/markdown update overwrites entire file without version precondition; 90 revisions and active multi-tab edits observed; preserve all other sections.",
+    "observed_current_size_bytes": 331875,
+    "observed_current_modified_time": "2026-11-21T22:39:57.758Z"
   },
   "prohibited_actions_performed": [
     "Unintentional Drive locator inclusion in public V1-15 commit history; value removed from HEAD without rewriting history; pending authorized review."
   ],
   "next_steps": [
-    "Verificar SHA-256 das cópias privadas dos 11 grupos, sem publicar PDFs",
-    "Validar os 25 aliases contra pastas originais autorizadas",
-    "Atualizar exclusivamente 31.15 após obter edição segura e conciliação transacional",
-    "Manter V1-16 bloqueada até evidências e demais entregas auditadas",
-    "Executar o script proposto em clone/CI como reprodução independente da auditoria de hashes no snapshot fixo, sem modificar catálogos."
+    "Prioridade P0: avaliar e conter 25 PDFs confirmados com ACL anyone:reader e auditar demais permissões do acervo; coordenar Issue #103 sem reescrever histórico sem autorização",
+    "Manter IDs SRC e caminhos originais; 11 grupos de PDFs binariamente idênticos não equivalem a autorização de merge ou licença",
+    "Tratar 25 grafias IB como aliases de exibição de seis pastas físicas com Unicode corrompido; preservar colisão de pastas Análise de Conteúdo",
+    "Atualizar somente 31.15 do MD quando houver edição serializada com exclusividade ou precondição atômica de versão e conferir readback",
+    "Executar script de validação Python em clone com todas as refs; CI não executada; não aprovar V1-16 antes de revisão humana."
   ],
   "public_history_security_incident": {
     "severity": "NEEDS_REVIEW",
@@ -345,5 +392,35 @@
       "Does not prove PDF byte identity, rights or scholarly validity",
       "The checked contents are not guaranteed to match a future integrated HEAD without another verification"
     ]
+  },
+  "duplicate_pdf_byte_audit": {
+    "pdfs_hashed": 23,
+    "groups_confirmed_same_sha256": 11,
+    "groups_nonmatching": 0,
+    "method": "Authenticated Drive raw-PDF reads; SHA-256 of complete ephemeral local bytes with Python hashlib.file_digest; repeated 2 or 3 copies per size group; no PDFs committed or republished",
+    "security": "No Drive file IDs, URLs, or binary PDF bytes embedded in this public delta; temporary local PDF copies erased after hashing.",
+    "scope_limit": "Binary equality does not certify scholarly identity/license, nor authorize catalog deduplication."
+  },
+  "alias_drive_verification": {
+    "target_records": 25,
+    "records_found_unique_in_ledger_named_physical_folder": 25,
+    "filename_and_byte_size_matches": 25,
+    "physical_folders_found": 6,
+    "physical_folder_names_contain_original_damaged_unicode": true,
+    "normalized_ib_names_are_display_aliases_only": true,
+    "folders_must_not_be_renamed_or_merged": true,
+    "collision": "Drive also has a separate correctly accented 'Análise de Conteúdo' folder; physical 'An lise de Conte£do' is distinct.",
+    "rights_warning": "25/25 matched PDFs have anyone:reader permission; source is accessible with the link regardless of copyright status."
+  },
+  "security_followup": {
+    "github_repository_visibility": "public",
+    "canonical_md_drive_permissions": "owner_only_no_external_share_observed",
+    "pdfs_examined_for_acl": 25,
+    "pdfs_with_anyone_reader_acl": 25,
+    "risk": "HIGH_PUBLIC_PDF_LINK_ACCESS_WITH_UNREVIEWED_COPYRIGHT",
+    "related_issue": "rebsonm/MeuArtigoSkill#103",
+    "acl_changes_performed": 0,
+    "pdf_bytes_published": 0,
+    "remediation": "Audit all private-archive PDF ACLs and revoke anyone:reader only after owner-approved share-impact decision; handle historical Git locator separately without force push."
   }
 }
