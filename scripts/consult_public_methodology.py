@@ -1,4 +1,4 @@
- !/usr/bin/env python3
+#!/usr/bin/env python3
 """Optional installed Skill retrieval for public original cards and licensed PDFs.
 
 On-demand only; requires real Python/HTTPS and an optional local PDF parser.
@@ -17,8 +17,8 @@ import consult_github_methodology as card_reader
 import public_method_pdf as pdf_reader
 
 SCHEMA = "MEU_ARTIGO_HYBRID_METHOD_RETRIEVAL_V1"
-  This approved-for-testing snapshot contains 23 draft/pilot cards and 12
-# separately catalogued open-license PDFs. Updating requires a distinct review.
+# This source snapshot contains 63 editorial methodology cards and 35
+# separately licensed public PDFs. No automatic gate or host approval.
 DEFAULT_PUBLIC_SNAPSHOT = "e7d4a8f2e93e3a0f5611b47c884b5e2b208237e5"
 MAX_CONTEXT = 6000
 MIN_CONTEXT = 1200
