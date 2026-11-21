@@ -420,5 +420,32 @@
       "risk": "Comparação PRISMA/ROSES é orientação editorial, não equivalência normativa; localizador de ROSES não está duplicado.",
       "action": "Incluir localizador separado de ROSES após verificação e selecionar diretriz segundo domínio e produto."
     }
-  ]
+  ],
+  "commits_to_receipt_version": [
+    {
+      "kind": "EC-001 reviews.md",
+      "sha": "a697ee587802d83a255b69b203d4c096cf8f3f0d"
+    },
+    {
+      "kind": "EC-002 design.md",
+      "sha": "195ffe31bb3241b09fe99794e03d3fa5b5fd17b1"
+    },
+    {
+      "kind": "EC-003 qualitative.md",
+      "sha": "d84ea3ce1d54a33fd3d8556d913f1140910b47a0"
+    },
+    {
+      "kind": "EC-004 design-science.md",
+      "sha": "7d5e3886bf673db182afb5fa718f33ec077c9389"
+    },
+    {
+      "kind": "V1-04-DELTA.json inicial",
+      "sha": "97209b3557e91b684c023fbc6af55faad467cdb5"
+    },
+    {
+      "kind": "V1-04-RESULTS.md inicial",
+      "sha": "3512631311ed41abdcec5d6748246a5f1fb9600c"
+    }
+  ],
+  "ci_checks_observed_at_receipt": "No combined status checks returned for 3512631311ed41abdcec5d6748246a5f1fb9600c; no CI claim"
 }
