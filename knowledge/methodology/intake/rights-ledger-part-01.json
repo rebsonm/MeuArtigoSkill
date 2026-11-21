@@ -1789,11 +1789,11 @@
       "filename": "Mesec, 2023-preprint.pdf",
       "size_bytes": 229470,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -1806,7 +1806,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "The language model of artificial inteligence chatGPT - a tool of qualitative analysis of texts",
+      "source_text_authors": "Blaž Mesec",
+      "source_text_year": "2023",
+      "source_text_doi": "10.22541/au.168182047.70243364/v1",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "PREPRINT_ALL_RIGHTS_RESERVED"
     },
     {
       "id": "SRC-0072",
@@ -1814,11 +1820,11 @@
       "filename": "Paoli,2023-preprint.pdf",
       "size_bytes": 388959,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -1831,7 +1837,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Can Large Language Models perform an inductive Thematic Analysis of semi-structured interviews? An exploration and provocation on the limits of the approach and the model",
+      "source_text_authors": "Stefano De Paoli",
+      "source_text_year": "2023",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "PREPRINT_LICENSE_UNCLEAR"
     },
     {
       "id": "SRC-0073",
@@ -1863,11 +1874,11 @@
       "filename": "Hayes,2023-preprint.pdf",
       "size_bytes": 412081,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -1880,7 +1891,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Conversing with Qualitative Data: Enhancing Qualitative Sociological Research through Large Language Models (LLMs)",
+      "source_text_authors": "Adam S. Hayes",
+      "source_text_year": "2023",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "PREPRINT_LICENSE_UNCLEAR"
     },
     {
       "id": "SRC-0075",
@@ -1888,11 +1904,11 @@
       "filename": "Marshall,Naff,2023.pdf",
       "size_bytes": 259133,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -1905,7 +1921,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "The Ethics of Using Artificial Intelligence in Qualitative Research",
+      "source_text_authors": "David T. Marshall; David B. Naff",
+      "source_text_year": "2023",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "SURVEY_PREPRINT_LICENSE_UNCLEAR"
     },
     {
       "id": "SRC-0076",
@@ -1933,11 +1954,11 @@
       "filename": "Christou,2023.pdf",
       "size_bytes": 601616,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -1950,7 +1971,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "How to Use Artificial Intelligence (AI) as a Resource, Methodological and Analysis Tool in Qualitative Research?",
+      "source_text_authors": "Prokopis A. Christou",
+      "source_text_year": "2023",
+      "source_text_doi": "10.46743/2160-3715/2023.6406",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "CC_BY_NC_SA_4_0_NOT_UNRESTRICTED"
     },
     {
       "id": "SRC-0078",
@@ -1958,11 +1985,11 @@
       "filename": "Bail,2023.pdf",
       "size_bytes": 175146,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -1975,7 +2002,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Can Generative Artificial Intelligence Improve Social Science?",
+      "source_text_authors": "Christopher Bail",
+      "source_text_year": "2023",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "WORKING_PAPER_RIGHTS_UNCHECKED"
     },
     {
       "id": "SRC-0079",
@@ -1983,11 +2015,11 @@
       "filename": "Dengeletal,2023.pdf",
       "size_bytes": 892752,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -2000,7 +2032,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Qualitative Research Methods for Large Language Models: Conducting Semi-Structured Interviews with ChatGPT and BARD on Computer Science Education",
+      "source_text_authors": "Andreas Dengel; Rupert Gehrlein; David Fernes; Sebastian Görlich; Jonas Maurer; Hai Hoang Pham; Gabriel Großmann; Niklas Dietrich genannt Eisermann",
+      "source_text_year": "2023",
+      "source_text_doi": "10.3390/informatics10040078",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "CC_BY_4_CANDIDATE_EXACT_COPY_UNCLEARED"
     },
     {
       "id": "SRC-0080",
@@ -2008,11 +2046,11 @@
       "filename": "Hamiltonetal,2023.pdf",
       "size_bytes": 588263,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -2025,7 +2063,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Exploring the Use of AI in Qualitative Analysis: A Comparative Study of Guaranteed Income Data",
+      "source_text_authors": "Leah Hamilton; Desha Elliott; Aaron Quick; Simone Smith; Victoria Choplin",
+      "source_text_year": "2023",
+      "source_text_doi": "10.1177/16094069231201504",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "CC_BY_NC_4_0_NOT_UNRESTRICTED"
     },
     {
       "id": "SRC-0081",
@@ -2033,11 +2077,11 @@
       "filename": "Chubb,2023.pdf",
       "size_bytes": 2145069,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -2050,7 +2094,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Me and the Machines: Possibilities and Pitfalls of Using Artificial Intelligence for Qualitative Data Analysis",
+      "source_text_authors": "Laura Ann Chubb",
+      "source_text_year": "2023",
+      "source_text_doi": "10.1177/16094069231193593",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "CC_BY_4_CANDIDATE_EXACT_COPY_UNCLEARED"
     },
     {
       "id": "SRC-0082",
@@ -2058,11 +2108,11 @@
       "filename": "vanmanen,2023.pdf",
       "size_bytes": 495842,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -2075,7 +2125,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "What Does ChatGPT Mean for Qualitative Health Research?",
+      "source_text_authors": "Michael van Manen",
+      "source_text_year": "2023",
+      "source_text_doi": "10.1177/10497323231210816",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "EDITORIAL_RIGHTS_UNCHECKED"
     },
     {
       "id": "SRC-0083",
