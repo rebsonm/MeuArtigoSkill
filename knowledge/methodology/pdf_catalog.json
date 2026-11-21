@@ -1,8 +1,81 @@
 {
   "schema": "MEU_ARTIGO_PUBLIC_PDF_CATALOG_V1",
-  "documents": [],
+  "version": "pilot-cc-by-2026-11-21",
+  "documents": [
+    {
+      "path": "knowledge/methodology/pdfs/lycariao-roque-costa-2023.pdf",
+      "title": "Revisão Sistemática de Literatura e Análise de Conteúdo na Área da Comunicação e Informação: o problema da confiabilidade e como resolvê-lo",
+      "authors": "Diógenes Lycarião; Robson Roque; Débora Costa",
+      "year": 2023,
+      "doi": "10.1590/2318-0889202335e220027",
+      "size": 147563,
+      "sha256": "37c3906ba2ac39827ae1ae3c2066dd225c941f4d451cde65e6a09be2646651d6",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://periodicos.puc-campinas.edu.br/transinfo/article/view/10064",
+      "source_url": "https://periodicos.puc-campinas.edu.br/transinfo/article/view/10064",
+      "keywords": [
+        "revisão",
+        "sistemática",
+        "confiabilidade",
+        "análise",
+        "conteúdo",
+        "replicabilidade",
+        "literatura"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/paranhos-et-al-2016.pdf",
+      "title": "Uma introdução aos métodos mistos",
+      "authors": "Ranulfo Paranhos; Dalson Britto Figueiredo Filho; Enivaldo Carvalho da Rocha; José Alexandre da Silva Júnior; Diego Freitas",
+      "year": 2016,
+      "doi": "10.1590/15174522-018004221",
+      "size": 274339,
+      "sha256": "36cfd9c1ce8313c7fe753abcaf74cb1bb007cbe19b9a1cca1b4a397f68c3c7c4",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://www.scielo.br/j/soc/a/WtDMmCV3jQB8mT6tmpnzkKc/?format=html&lang=pt",
+      "source_url": "https://www.scielo.br/j/soc/a/WtDMmCV3jQB8mT6tmpnzkKc/?format=html&lang=pt",
+      "keywords": [
+        "métodos",
+        "mistos",
+        "mixed",
+        "triangulação",
+        "qualitativos",
+        "quantitativos",
+        "pesquisa"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/maia-bezerra-2020.pdf",
+      "title": "Análise bibliométrica dos artigos científicos de jurimetria publicados no Brasil",
+      "authors": "Marcos Maia; Cicero Aparecido Bezerra",
+      "year": 2020,
+      "doi": "10.20396/rdbci.v18i0.8658889",
+      "size": 574651,
+      "sha256": "b9160abe4e69654761076dc02a2edd6cfc114511d169c10b2c7d0194593edc84",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://periodicos.sbu.unicamp.br/ojs/index.php/rdbci/copyright",
+      "source_url": "https://periodicos.sbu.unicamp.br/ojs/index.php/rdbci/article/view/8658889",
+      "keywords": [
+        "bibliometria",
+        "jurimetria",
+        "produção",
+        "científica",
+        "indicadores",
+        "cientometria",
+        "citações"
+      ]
+    }
+  ],
   "rights_policy": "PUBLIC_REDISTRIBUTION_REVIEWED_ONLY",
-  "catalog_status": "EMPTY_PENDING_DOCUMENT_LEVEL_LICENSE_REVIEW",
   "installer_includes_pdfs": false,
-  "note": "Never copy personal Drive libraries into this public repository. Each future PDF requires source license evidence, SHA256, exact size and an immutable release snapshot."
+  "catalog_status": "THREE_REVIEWED_OPEN_LICENSE_ARTICLES",
+  "source_format": "PDF_ORIGINAL_UNMODIFIED",
+  "scientific_quality_validated": false,
+  "note": "Public PDFs are individually attributed and CC BY 4.0 licensed. Original PDF files remain canonical. License proof is listed per item. No user-private research corpus is copied."
 }
