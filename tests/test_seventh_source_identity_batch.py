@@ -50,14 +50,14 @@ class SeventhSourceIdentityBatchTests(unittest.TestCase):
         docs = self.registry["documents"]
         self.assertEqual(len(docs), 475)
         self.assertEqual(sum(d["bibliography_match_status"] == "SOURCE_PDF_WORK_VERIFIED"
-                             for d in docs), 106)
+                             for d in docs), 116)
         self.assertEqual(sum(d["bibliography_match_status"] == "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED"
-                             for d in docs), 369)
+                             for d in docs), 359)
         self.assertEqual(sum(d["source_read_scope"] != "NOT_RECORDED_IN_LEDGER"
-                             for d in docs), 108)
-        self.assertEqual(self.manifest["source_pdf_work_verified_count"], 106)
-        self.assertEqual(self.manifest["provisional_matches_remaining"], 369)
-        self.assertEqual(self.manifest["original_archive_text_scoped_read_count"], 108)
+                             for d in docs), 118)
+        self.assertEqual(self.manifest["source_pdf_work_verified_count"], 116)
+        self.assertEqual(self.manifest["provisional_matches_remaining"], 359)
+        self.assertEqual(self.manifest["original_archive_text_scoped_read_count"], 118)
         self.assertEqual(self.manifest["actual_individually_verified_rights_in_this_ledger"], 17)
         self.assertEqual(self.manifest["source_pdf_count_public_catalogue"], 51)
         self.assertEqual(self.manifest["original_editorial_cards_count"], 174)
