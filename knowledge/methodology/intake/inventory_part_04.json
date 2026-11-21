@@ -1,0 +1,575 @@
+{
+  "schema": "MEU_ARTIGO_SOURCE_INVENTORY_V1",
+  "batch": 4,
+  "private_file_content": false,
+  "publishability": "NOT_ASSESSED",
+  "kind": "METADATA_ONLY_NOT_PRIMARY_SOURCE",
+  "folders": [
+    {
+      "category": "Controle Sint‚tico",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Abadie, Diamond e Hainmueller (2011).pdf",
+          "mime": "application/pdf",
+          "bytes": 541986,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Abadie, Diamond e Hainmueller (2010).pdf",
+          "mime": "application/pdf",
+          "bytes": 645544,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Ellery, Nascimento e Sachsida (ano).pdf",
+          "mime": "application/pdf",
+          "bytes": 833574,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Pontos Ideais",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Martins (2020).pdf",
+          "mime": "application/pdf",
+          "bytes": 10000784,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Escrita Científica",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Guțoiu,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 314821,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Escrita Cient¡fica",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Ronai,Sobreira,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 443607,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "McWilliams,2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 488781,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Luiz,2019.pdf",
+          "mime": "application/pdf",
+          "bytes": 2863852,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Lindsay,2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 286492,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Stinson (2019).pdf",
+          "mime": "application/pdf",
+          "bytes": 129923,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Gustafssona and Hagstrom (2017).pdf",
+          "mime": "application/pdf",
+          "bytes": 279185,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Bailey,2003.pdf",
+          "mime": "application/pdf",
+          "bytes": 3123995,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Little,2016.pdf",
+          "mime": "application/pdf",
+          "bytes": 93928,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Baglioni,2016.pdf",
+          "mime": "application/pdf",
+          "bytes": 2141471,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Estudo de Caso",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Maia,Maia,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 199382,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Rezende,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 582260,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Machado,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 329421,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Ev,Gomes,2014.pdf",
+          "mime": "application/pdf",
+          "bytes": 171895,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Sátyro e D´Albuquerque (2020).pdf",
+          "mime": "application/pdf",
+          "bytes": 431653,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Spositoetal,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 798986,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Rezende (2011).pdf",
+          "mime": "application/pdf",
+          "bytes": 444748,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Steiner (2011).pdf",
+          "mime": "application/pdf",
+          "bytes": 1608687,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Fotografias",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Fotografia.pdf",
+          "mime": "application/pdf",
+          "bytes": 739583,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Bonetto (2016).pdf",
+          "mime": "application/pdf",
+          "bytes": 151851,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "fotografias_.pdf",
+          "mime": "application/pdf",
+          "bytes": 498722,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "O uso das imagens em pesquisas nas ciˆncias sociais.pdf",
+          "mime": "application/pdf",
+          "bytes": 230328,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Modelos de Equações Estruturais",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "RelatorioTecnico_Marcos_Modelagem Variaveis Latentes no R.pdf",
+          "mime": "application/pdf",
+          "bytes": 885234,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Lemke (2005).pdf",
+          "mime": "application/pdf",
+          "bytes": 12210538,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Tutorial - Identificado -AFC-SEM - ComApendices_versao_final_18.pdf",
+          "mime": "application/pdf",
+          "bytes": 8303447,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Neves (2018).pdf",
+          "mime": "application/pdf",
+          "bytes": 2304763,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Bibliometria",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Santos e Kobashi (2009).pdf",
+          "mime": "application/pdf",
+          "bytes": 803139,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Rezende (2017).pdf",
+          "mime": "application/pdf",
+          "bytes": 1756317,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Maia e Bezerra (2020).pdf",
+          "mime": "application/pdf",
+          "bytes": 574651,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Codatoetal,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 1631422,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Sangalli e Kauchakje (2020).pdf",
+          "mime": "application/pdf",
+          "bytes": 6601817,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Araujo (2006).pdf",
+          "mime": "application/pdf",
+          "bytes": 120803,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Clementeetal,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 6576155,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Regressão de Painel",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Imai, Kim e Wang (2023).pdf",
+          "mime": "application/pdf",
+          "bytes": 889686,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Mesquita, Fernandes e Figueiredo Filho (2020).pdf",
+          "mime": "application/pdf",
+          "bytes": 18911930,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Epistemologia",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Leite,FeresJr,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 472123,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Ballestrin,2013.pdf",
+          "mime": "application/pdf",
+          "bytes": 793322,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Lenine, M”rschb„cher, 2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 482173,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Soares,2005.pdf",
+          "mime": "application/pdf",
+          "bytes": 120525,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Barberiaetal,2014.pdf",
+          "mime": "application/pdf",
+          "bytes": 497343,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Silva,2009.pdf",
+          "mime": "application/pdf",
+          "bytes": 218994,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Albuquerque,Mesquita,Brito,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 508240,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "R“mulo,Machado,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 342676,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Rezende (2020).pdf",
+          "mime": "application/pdf",
+          "bytes": 922159,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Entrevistas",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Barros,2011-entrevistas.pdf",
+          "mime": "application/pdf",
+          "bytes": 185182,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Boni,Quaresma,2005.pdf",
+          "mime": "application/pdf",
+          "bytes": 157394,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Roberts,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 382533,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Cheron, Salvagni e Colomby (2022).pdf",
+          "mime": "application/pdf",
+          "bytes": 534285,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Rocha (2020).pdf",
+          "mime": "application/pdf",
+          "bytes": 5649799,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Duarte (2004).pdf",
+          "mime": "application/pdf",
+          "bytes": 40111,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Cunha,2014.pdf",
+          "mime": "application/pdf",
+          "bytes": 318891,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [
+        {
+          "name": "Entrevistas Online"
+        }
+      ],
+      "next_page_token_present": false
+    },
+    {
+      "category": "An lise de Conte£do",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Silva,Hern ndez,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 751629,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Silvaetal,2015-politicaexterna.pdf",
+          "mime": "application/pdf",
+          "bytes": 412484,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Jerzak, King e Strezhnev (2022).pdf",
+          "mime": "application/pdf",
+          "bytes": 1185558,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Grimmer e Stewart (2013).pdf",
+          "mime": "application/pdf",
+          "bytes": 972383,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Hopkins and King (2010).pdf",
+          "mime": "application/pdf",
+          "bytes": 528155,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Silva,2017-ACpoliticaexterna.pdf",
+          "mime": "application/pdf",
+          "bytes": 781974,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Carlomagno,Rocha,2016.pdf",
+          "mime": "application/pdf",
+          "bytes": 413255,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Alves, Figueiredo Filho e Silva (2015).pdf",
+          "mime": "application/pdf",
+          "bytes": 1312217,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Análise de Conteúdo",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Sampaio & Lycarião (2018).pdf",
+          "mime": "application/pdf",
+          "bytes": 2718117,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Sampaio & Lycarião (2018b).pdf",
+          "mime": "application/pdf",
+          "bytes": 709520,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Revisão Sistemática e Meta-análise",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Harreretal,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 9579267,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Lycariaoetal,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 147563,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Chapman,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 1859256,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Bicudo,2014.pdf",
+          "mime": "application/pdf",
+          "bytes": 202373,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "dacombe,2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 80995,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Navis,2009.pdf",
+          "mime": "application/pdf",
+          "bytes": 107237,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Sampaio e Mancini (2007).pdf",
+          "mime": "application/pdf",
+          "bytes": 45517,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Daigneaultetal,2012.pdf",
+          "mime": "application/pdf",
+          "bytes": 775803,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Smith,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 447277,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Figueiredo Filho et al (2018).pdf",
+          "mime": "application/pdf",
+          "bytes": 287946,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    }
+  ]
+}
