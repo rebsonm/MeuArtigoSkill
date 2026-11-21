@@ -95,6 +95,20 @@ class AutomaticLanguageTests(unittest.TestCase):
             self.assertEqual(report["source_files_requiring_editorial_language_review"],1)
             self.assertEqual(report["unresolved"][0]["path"],"docs/guide.md")
 
+    def test_methodology_catalog_keywords_are_source_metadata_not_instructions(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / "knowledge/methodology").mkdir(parents=True)
+            multilingual = (
+                "A pesquisa cientifica e a revisao, analise e metodologia "
+                "fundamentada por evidencia de pesquisa para pesquisadores. "
+            ) * 3
+            (root / "knowledge/methodology/catalog.json").write_text(
+                multilingual, encoding="utf-8"
+            )
+            report = audit(root)
+            self.assertEqual(report["source_files_requiring_editorial_language_review"], 0)
+
     def test_entrypoint_and_adapter_treat_english_source_as_not_english_user(self):
         text=(ROOT/"SKILL.md").read_text(encoding="utf-8")
         adapter=(ROOT/"agents/openai.yaml").read_text(encoding="utf-8")
