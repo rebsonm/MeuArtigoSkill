@@ -21,7 +21,7 @@ An optional `--cache-dir` points to an existing, explicitly authorized local dir
 
 **Approved design change:** Prefer the original PDF for permitted public methodological sources; Markdown conversion is **not** required. Preserve page layout, tables, figures, mathematical notation and edition-specific visual evidence. Store only a compact metadata catalogue in the repository; select by question before reading any PDF. The installer **does not package the PDF catalogue or PDFs**. No large bibliography is loaded into the model context automatically.
 
-- Public catalogue: `knowledge/methodology/pdf_catalog.json` currently lists six individually license-reviewed PDFs. Rights evidence is recorded per source; metadata checks are not independent legal review.
+- Public catalogue: `knowledge/methodology/pdf_catalog.json` lists individually license-reviewed public PDFs (see the live catalog for the exact count). Rights evidence is recorded per source; metadata checks are not independent legal review.
 - Experimental, standalone reader: `experimental/conceptual_rag/github_pdf_reader.py` (not in the public Skill installer, not host-validated).
 - A future public PDF entry requires a manually reviewed redistribution license and evidence URL, exact filename, verified size and SHA256. A Drive file, personal research access or an open sharing link **does not grant republication rights**.
 - Keep the Git commit immutable; validate the hash *before* parsing and limit the number of pages and characters exposed to the model. A document's bytes may be downloaded into an authorized execution environment, but only selected, bounded page text enters model context. A page number in the PDF file is **not necessarily** its printed page label.
