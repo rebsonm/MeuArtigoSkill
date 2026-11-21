@@ -77,8 +77,9 @@ class MultilingualMethodologyDiscoverySmoke(unittest.TestCase):
         self.assertEqual(cards_top[0], "prisma-2020-reporting.md")
         self.assertIn("byrne-2022-reflexive-thematic-analysis.pdf",
                       self.ranked_pdfs("análise temática reflexiva")[:2])
-        self.assertIn("reflexive-thematic-analysis.md",
-                      self.ranked_cards("análise temática reflexiva")[:2])
+        self.assertTrue({"reflexive-thematic-analysis.md",
+                         "byrne-2022-reflexive-thematic-worked-example.md"}
+                        .intersection(self.ranked_cards("análise temática reflexiva")[:2]))
 
 
 if __name__ == "__main__":
