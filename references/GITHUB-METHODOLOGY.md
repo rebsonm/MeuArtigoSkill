@@ -4,10 +4,10 @@ The Skill bundles essential methodological guidance. An independently versioned 
 
 The optional `scripts/consult_github_methodology.py` requires real Python and HTTPS capability on the current platform. It reads a small catalog at an **exact Git commit SHA**, ranks document metadata locally, downloads only matching hash-checked cards (at most five) and returns a controlled budget (default 3,300 characters). No automatic access or downloading occurs at installation time.
 
-After verifying the commit contains the index, substitute its 40-character SHA:
+Use the bundled pinned knowledge snapshot by default; pass a different exact commit SHA only for an explicit, authorized test:
 
 ```sh
-python scripts/consult_github_methodology.py --ref GIT_COMMIT_SHA --question 'How do integrative and systematic literature reviews differ?'
+python scripts/consult_github_methodology.py --question 'How do integrative and systematic literature reviews differ?'
 ```
 
 An optional `--cache-dir` points to an existing, explicitly authorized local directory; cache is disabled by default. By itself, a SHA/digest attests version consistency, **not scientific support**, a verified source edition or permission to redistribute third-party texts.

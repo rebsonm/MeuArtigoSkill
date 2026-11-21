@@ -88,10 +88,7 @@ If denied or unanswered, stop substantive work at the storage gate.
 Drive-local files remain staging until [individual Drive folders and files
 are verified](references/drive-delivery.md). ZIP-only upload is incomplete.
 
-Preserve the research question and intended contribution. Choose a
-**provisional route** via [method pathways](docs/ROTAS-METODOLOGICAS.md)
-and [review design](references/review-design.md). `UNDECIDED` is not
-a confirmed scientific choice. Optional method choices: [adaptive guide](docs/ADAPTIVE-METHOD-MAP.md). Never autoselect or approve; allow other methods.
+Preserve the research question and intended contribution. Choose a provisional route via [method pathways](docs/ROTAS-METODOLOGICAS.md) and [review design](references/review-design.md). `UNDECIDED` is not a choice. Optional guidance: [adaptive map](docs/ADAPTIVE-METHOD-MAP.md) and [GitHub cards](references/GITHUB-METHODOLOGY.md) on demand. Never autoapprove; allow other methods.
 
 Obtain the researcher's original,
 attributable methodological decision; use `scripts/choose_method_route.py`
@@ -114,9 +111,6 @@ New projects default to `presentation_mode=MINIMAL`; older projects
 without this setting retain `FULL`. This changes only what is presented,
 not scientific checks: [minimal/full](docs/MODO-NUCLEO-MINIMO.md).
 Both modes follow the researcher's current language.
-
-## Optional extended conceptual methodology
-The bundled methodological map is sufficient for offline guidance. On explicit methodology-retrieval needs, consult [the optional pinned GitHub reference](references/GITHUB-METHODOLOGY.md). Do not fetch external material at installation, assume host network tools exist, preload the knowledge base or infer scientific [L] evidence from a curated card. No third-party full texts are bundled or automatically imported.
 
 ## 3. Progressive reading — do not load every document
 

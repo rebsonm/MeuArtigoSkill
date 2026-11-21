@@ -38,6 +38,9 @@ class RemoteMethodologyTests(unittest.TestCase):
         self.assertLessEqual(result["returned_context_chars"],900)
         self.assertFalse(result["scientific_quality_validated"])
 
+    def test_default_ref_is_pinned_commit(self):
+        self.assertRegex(mod.DEFAULT_REF, r"^[0-9a-f]{40}$")
+
     def test_no_match_does_not_fetch_documents(self):
         fetch,calls=self.fixture()
         result=mod.query("meteorologia quasar elipse",ref=REF,fetch=fetch)

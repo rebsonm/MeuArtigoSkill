@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline, local-only experimental conceptual RAG index for a private Drive mirror.
+"""Offline, local-only experimental conceptual RAG index for authorized material.
 
 SQLite FTS5 lexical retrieval is always available. Vector retrieval is enabled
 ONLY when an already installed, local-only sentence-transformer model is supplied.

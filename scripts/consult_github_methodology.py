@@ -20,6 +20,7 @@ REPO = "rebsonm/MeuArtigoSkill"
 RAW_BASE = "https://raw.githubusercontent.com/" + REPO + "/"
 INDEX_PATH = "knowledge/methodology/catalog.json"
 SCHEMA = "MEU_ARTIGO_GITHUB_METHODOLOGY_V1"
+DEFAULT_REF = "a5e056b11b395b25dd06aa91d8b71c15fb039a63"  # immutable knowledge snapshot
 REF_SHA = re.compile(r"[0-9a-f]{40}\Z")
 DOC_PATH = re.compile(r"knowledge/methodology/cards/[a-z0-9_-]{3,60}\.md\Z")
 HASH = re.compile(r"[0-9a-f]{64}\Z")
@@ -181,7 +182,7 @@ def query(question: str, *, ref: str, top: int = 3, max_chars: int = 3300,
 
 def main(argv = None):
     p = argparse.ArgumentParser(description = __doc__)
-    p.add_argument("--ref", required = True, help = "Exact 40-character GitHub commit SHA; branches/tags are not accepted")
+    p.add_argument("--ref", default = DEFAULT_REF, help = "Pinned GitHub commit SHA; default points to the reviewed snapshot")
     p.add_argument("--question", required = True)
     p.add_argument("--top", type = int, default = 3)
     p.add_argument("--max-chars", type = int, default = 3300)
