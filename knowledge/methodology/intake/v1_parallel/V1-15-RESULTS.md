@@ -6,7 +6,7 @@
 
 - Manifesto imutável `knowledge/methodology/intake/v1_parallel/V1-WORKPACKAGES-MANIFEST.json`, commit `7c92045310eb3b1474a9612a777fb0012a511592`, blob `2f85dc6c4283376b9fc3c312668f0a1f25a0a301`.
 - Snapshot de leitura da PR #101 `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`; `source_registry_catalog.json` blob `511b519f6524cd1f7f977dc41a330ce62fbd00c1`; `catalog.json` blob `6ca3ebde72b117717ae994390121c5aee884d7be`.
-- Somente os cinco `rights-ledger-part-01..05.json` para metadados de inventário e os 20 `IB-XX-DELTA.json` nas branches IB correspondentes; **343 fichas source nas branches IB** e **174 cards editoriais no snapshot da PR #101** lidos integralmente para recomputação de hashes. **Nenhum PDF privado foi baixado, copiado ou publicado.**
+- Somente os cinco `rights-ledger-part-01..05.json` para metadados de inventário e os 20 `IB-XX-DELTA.json` nas branches IB correspondentes; **343 fichas source nas branches IB** e **174 cards editoriais no snapshot da PR #101** lidos integralmente para recomputação de hashes. **Atualização:** no saneamento posterior, 23 cópias de PDFs foram lidas de forma autenticada e temporária, exclusivamente para recomputar SHA-256; os arquivos temporários foram apagados e nenhum PDF foi incorporado ou publicado no GitHub.
 - O ticket V1-15 autoriza apenas relatórios e scripts da própria etapa. Índices, catálogo, ledger, fichas de outras etapas e manifestos não foram modificados.
 
 ## Resultados efetivamente demonstrados
@@ -17,14 +17,14 @@
 4. **SHA-256 efetivamente recalculados (sobre bytes UTF-8 das fichas obtidas do GitHub):**
    - `SRC-0099` em `work/ib-01-20261121`: esperado e obtido `c9d2f4481f90ad19b91fa52e1e97a2dfa4412ca88574a88af80ccb3635264096` — **MATCH**.
    - `knowledge/methodology/cards/reviews.md` no snapshot congelado: esperado e obtido `331db84256e59599d0a8674b0064d9c3058a9261917efb03e403f083dfcde8af` — **MATCH**.
-   - **Auditoria integral de hashes: 343/343 source cards + 174/174 editorial cards = 517/517 correspondências, 0 divergências e 0 arquivos indisponíveis.** Os dois hashes detalhados acima são exemplos verificáveis. O recálculo foi feito sobre o conteúdo UTF-8 efetivamente obtido das refs do GitHub; não se auditou o conteúdo científico nem a cópia privada de qualquer PDF. As contagens por lote (18×3 + 17×17 e 17×10 + 4) estão no DELTA.
-5. **Duplicatas candidatas (11 grupos por tamanho de arquivo idêntico):** `0111/0454`, `0354/0438`, `0206/0337`, `0235/0267`, `0244/0371`, `0230/0344`, `0349/0391`, `0245/0370`, `0006/0435`, `0402/0430/0434`, `0234/0256` (todos os números se referem a IDs `SRC-XXXX`). É hipótese de cópia/obra comum, **não prova**: falta SHA-256 dos PDFs privados e conferência de identidade/edição. Nenhum ID deve ser eliminado automaticamente.
-6. **Aliases de pastas (25 diferenças de string, sem diferença de nome ou tamanho do PDF):** IB-05 = sete (`SRC-0175..0180`, `SRC-0183`); IB-06 = nove (`SRC-0195..0198`, `SRC-0200..0204`); IB-14 = dois (`SRC-0368..0369`); IB-17 = sete (`SRC-0407..0409`, `SRC-0411..0414`). Casos associados a grafia corrompida de acentuação, **pendentes de cotejo com o Drive privado**. Mapa de equivalência candidato consta em `V1-15-DELTA.json`.
+   - **Auditoria integral de hashes: 343/343 source cards + 174/174 editorial cards = 517/517 correspondências, 0 divergências e 0 arquivos indisponíveis.** Os dois hashes detalhados acima são exemplos verificáveis. O recálculo foi feito sobre o conteúdo UTF-8 efetivamente obtido das refs do GitHub; não se auditou o conteúdo científico; a auditoria independente dos PDFs foi realizada em etapa posterior e está documentada abaixo. As contagens por lote (18×3 + 17×17 e 17×10 + 4) estão no DELTA.
+5. **Duplicatas candidatas (11 grupos por tamanho de arquivo idêntico):** `0111/0454`, `0354/0438`, `0206/0337`, `0235/0267`, `0244/0371`, `0230/0344`, `0349/0391`, `0245/0370`, `0006/0435`, `0402/0430/0434`, `0234/0256` (todos os números se referem a IDs `SRC-XXXX`). **Saneamento posterior: os SHA-256 de todas as 23 cópias privadas foram calculados e são iguais dentro de cada um dos 11 grupos.** A duplicidade binária foi comprovada, mas revisão bibliográfica independente, decisão de consolidação de registros e autorização de redistribuição continuam pendentes. Nenhum ID foi eliminado.
+6. **Aliases de pastas (25 diferenças de string, sem diferença de nome ou tamanho do PDF):** IB-05 = sete (`SRC-0175..0180`, `SRC-0183`); IB-06 = nove (`SRC-0195..0198`, `SRC-0200..0204`); IB-14 = dois (`SRC-0368..0369`); IB-17 = sete (`SRC-0407..0409`, `SRC-0411..0414`). Os 25 PDFs foram localizados de modo único nos seis diretórios físicos com nomes corrompidos e confirmados por nome e tamanho. As grafias normalizadas nas fichas IB são **aliases de exibição**, não nomes para substituir o caminho físico. Existe outra pasta distinta com a grafia correta “Análise de Conteúdo”; não confundir nem fundir as duas. Mapa no `V1-15-DELTA.json`.
 
 ## Direitos, ciência e condições de uso
 
 - No índice de origem, `rights_review` apresenta 458 `NOT_CHECKED` e 17 `VERIFIED_PUBLISHER_LICENSE` — isso não autoriza inferir direito de distribuição de edição/cópia privada e não representa revisão científica independente.
-- Não se acrescentaram PDFs, não se validaram SHA-256 de PDFs, não se alteraram decisões de licença, nem se promoveram proposições [P]/[I] a evidências [L].
+- Não se acrescentaram PDFs ao GitHub. Em saneamento separado foram conferidos 23 PDFs privados por SHA-256 sem publicação ou retenção de cópias locais; não se alteraram decisões de licença nem se promoveram proposições [P]/[I] a evidências [L].
 - Os 517 SHA-256 recomputados verificam apenas os bytes dos arquivos Markdown nas refs especificadas; a auditoria não certifica identidade da obra, PDF original, autoria, licença de redistribuição, integridade de uma futura integração nem veracidade dos conteúdos. **Não houve revisão independente de originalidade ou fidelidade acadêmica**.
 
 ## Entregas e testes
@@ -37,28 +37,64 @@
 
 - **MD canônico não gravado.** O alvo é um arquivo `text/markdown`, não um Google Doc nativo. A interface de atualização disponibilizada para raw Markdown substitui o arquivo inteiro e não oferece patch atômico de subseção nem guarda por versão. O conteúdo remoto mudou durante a auditoria (comprimento em caracteres de 306686 para 307566); uma substituição integral poderia apagar avanços de outras abas. **A regra de preservar estado em caso de conflito prevalece.** A subseção 31.15 continua pendente de atualização segura, com releitura e verificação.
 - **Incidente restrito aos commits próprios V1-15:** o primeiro recibo DELTA incluiu por erro um identificador de localização do MD no Drive. O valor foi retirado do HEAD em commit posterior; o commit anterior permanece alcançável no histórico Git. Não reproduzir o identificador, não reescrever histórico, não fazer force-push, nem presumir que o saneamento do HEAD removeu a exposição histórica. Registrar para decisão de segurança/privacidade, incluindo articulação com o tratamento da Issue #103.
-- Pendentes: hash dos PDFs originais dos 11 grupos, validação dos 25 aliases no Drive, revisão humana de direitos/originalidade e fidelidade científica, reprodução do script Python/CI, deliberação sobre incidente de privacidade e escrita segura do bloco 31.15.
+- Os 11 grupos de hashes PDF e os 25 aliases foram efetivamente reconciliados. **Permanecem bloqueadores:** permissão pública confirmada em 25 PDFs (qualquer pessoa com link), decisão sobre exposição histórica de identificador no Git, revisão humana de direitos e ciência, reprodução do script Python/CI, e escrita concorrente segura no bloco 31.15.
 
 ## Próximos passos, sem antecipar V1-16
 
-Executar o validador V1-15 em clone controlado com as 20 refs IB e o snapshot imutável; revisar divergências reais; pedir verificação autorizada do arquivo privado para duplicatas e aliases; examinar o incidente sem intervenção unilateral no histórico; atualizar o **mesmo** MD canônico apenas com recurso de gravação seguro, conferindo bloco 31.15 e preservação dos demais. **V1-16 permanece condicionada à entrega auditada de todas as V1-01..V1-15.** Nenhum merge, release, tag, force-push ou MCP foi realizado.
+Executar o validador V1-15 em clone controlado com as 20 refs IB e o snapshot imutável; revisar divergências reais; preservar o registro dos 11 grupos de PDFs binariamente idênticos e dos 25 aliases de exibição sem fundir IDs/pastas; auditar e conter as permissões públicas dos PDFs com deliberação do mantenedor; examinar o incidente sem intervenção unilateral no histórico; atualizar o **mesmo** MD canônico apenas com recurso de gravação seguro, conferindo bloco 31.15 e preservação dos demais. **V1-16 permanece condicionada à entrega auditada de todas as V1-01..V1-15.** Nenhum merge, release, tag, force-push ou MCP foi realizado.
 
-## Anexo — texto de reconciliação proposto para a subseção 31.15 (NÃO aplicado ao Drive)
+## Saneamento controlado complementar — verificações executadas em 21/11/2026
+
+### Duplicatas: auditoria binária das 11 classes (23 PDFs originais)
+
+As cópias foram recuperadas por acesso autenticado ao Drive, usando correspondência exata de nome e tamanho, e seu SHA-256 foi calculado com `hashlib.file_digest` sobre os bytes integrais. Em todos os grupos os hashes das duas ou três cópias são **idênticos**; os digest completos por grupo estão no DELTA. Os PDFs de trabalho foram apagados da área temporária após a aferição, não enviados ao GitHub. Contagens: **23/23 PDFs verificados; 11/11 classes com equivalência binária; zero divergência SHA-256.**
+
+| Grupo de SRC | Arquivos | SHA-256 do PDF (prefixo) | Resultado |
+|---|---:|---|---|
+| 0111/0454 | 2 | `9b12a0c0f29cc77c` | idênticos |
+| 0354/0438 | 2 | `c8d8e7792adc0bc8` | idênticos |
+| 0206/0337 | 2 | `9ec4986eacda3dfc` | idênticos |
+| 0235/0267 | 2 | `9a2d07e4f62edfa6` | idênticos |
+| 0244/0371 | 2 | `cf7139ab385e44ef` | idênticos |
+| 0230/0344 | 2 | `b9160abe4e696547` | idênticos |
+| 0349/0391 | 2 | `a4f11f5d1a13bb4c` | idênticos |
+| 0245/0370 | 2 | `329b88773b6d4c1c` | idênticos |
+| 0006/0435 | 2 | `fe1ba0c860a4c8b` | idênticos |
+| 0402/0430/0434 | 3 | `daed917cbcca5ad7` | idênticos |
+| 0234/0256 | 2 | `e383b25084ae5d73` | idênticos |
+
+Conclusão restrita: comprovada identidade **binária** das cópias de cada grupo; não se comprova licença para republicação, nem se conclui que duas ocorrências em tópicos distintos sejam redundantes do ponto de vista da recuperação temática. Manter os 475 IDs e todas as ligações até decisão humana sobre modelagem de obras versus exemplares.
+
+### Aliases: seis pastas reais, 25/25 fichas localizadas
+
+Leitura de metadados diretamente dos seis diretórios físicos correspondentes aos seis agrupamentos de alias identificados no ledger (IB-05, IB-06, IB-14 e IB-17). **25/25 PDFs** localizados uma única vez na respectiva pasta original; 25/25 nomes e tamanhos coincidem. Os nomes reais das pastas apresentam grafias corrompidas; as formas normalizadas dos lotes IB servem apenas para exibição e pesquisa, **nunca** como substituição destrutiva de caminho. Especial atenção: existem duas pastas distintas, uma com a grafia normalizada `Análise de Conteúdo` e outra com grafia danificada; não confundir as duas.
+
+### Achado de segurança P0 — ACL dos PDFs e histórico Git
+
+- O repositório do GitHub é **público** e o histórico da branch V1-15 inclui um commit anterior com identificador do MD privado; o HEAD atual foi saneado, mas isso **não elimina** o commit histórico. Tratamento sob decisão do mantenedor e coordenação com a Issue #103; nenhuma reescrita ou force-push.
+- O **MD canônico** está com permissão restrita ao próprio proprietário na verificação pontual. Contudo, **25/25 PDFs investigados nos aliases têm permissão efetiva `anyone:reader`**. Isso significa acesso por qualquer pessoa com o link; não foi verificado que todos os demais 450 arquivos do acervo tenham essa configuração. A exposição de identificadores no histórico pode, portanto, ter impacto real de acesso, não apenas de metadados.
+- **Nenhuma ACL foi modificada**, em respeito ao escopo: a V1-15 não possui autorização específica para mudar acessos dos 25 PDFs pertencentes ao acervo compartilhado com outras etapas. Priorizar deliberação do proprietário sobre revisão das permissões, impacto sobre compartilhamentos legítimos e contenção, inclusive das demais cópias.
+- Sem licença de distribuição de cópias privadas aprovada neste lote, sem publicação de PDFs, sem promoção de [P]/[I] a [L].
+
+### Condição do MD canônico
+
+O arquivo canônico é `text/markdown` em Drive, com histórico de **90 revisões** observado e modificações contemporâneas de outras abas. A ferramenta disponível **não oferece patch atômico por subseção nem substituição com pré-condição de versão**; substituir o arquivo integral a partir de leitura momentânea pode apagar edições concorrentes. Por isso, **o mesmo MD NÃO foi alterado** neste saneamento. Somente depois de exclusividade de escrita verificável ou ferramenta de atualização condicional deve-se aplicar o bloco 31.15 a seguir, relendo antes de gravar e conferindo todos os outros blocos depois.
+
+## Anexo — subseção 31.15 pronta para reconciliação futura (NÃO aplicada ao Drive)
 
 ```markdown
 ### 31.15 — V1-15/20 — Integridade, duplicatas e codificação
 
-- **Estado:** `PARCIAL` — auditoria de hashes Markdown concluída; validação de PDFs privados, aliases e revisão humana pendentes; atualização concorrente do MD canônico bloqueada para preservar outras abas.
-- **Onda / dependências:** A; nenhuma dependência de início. **Branch exclusiva:** `work/v1-15-20261121`, criada a partir do manifesto no commit `7c92045310eb3b1474a9612a777fb0012a511592`.
-- **Escopo:** cinco ledgers de direitos, registry de 475, 20 DELTAs IB com 343 fichas, catálogo e 174 cards editoriais no snapshot PR #101 `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`.
-- **RESULTADOS e DELTA:** `knowledge/methodology/intake/v1_parallel/V1-15-RESULTS.md` e `V1-15-DELTA.json`; validador de leitura `scripts/v1_15_integrity_audit.py`.
-- **Hashes e testes:** SHA-256 recalculado diretamente de 343/343 fichas IB e 174/174 cards editoriais, **517/517 correspondências e 0 divergências**; nenhuma falha de leitura. Conferência estrutural de 343 deltas sem diferenças de nome/tamanho contra ledgers. Script Python disponível, ainda **não executado em clone**; CI/host real não testados.
-- **Duplicatas e codificação:** onze grupos de igual tamanho e 25 divergências de pastas por acentuação; candidatos, sem declaração de cópia idêntica; necessitam SHA-256 dos PDFs originais e cotejo com pastas privadas, mantendo todos os 475 IDs.
-- **Direitos e ciência:** 458/475 rights `NOT_CHECKED` no registry congelado e 17 registros `VERIFIED_PUBLISHER_LICENSE` sem autorização automática de cópia privada. 170/174 cards em `DRAFT_NEEDS_INDEPENDENT_REVIEW` e quatro sem campo explícito. Nenhuma aprovação científica independente, nenhuma licença nova, nenhum PDF distribuído, nenhuma promoção de [P] para [L].
-- **Incidente próprio da V1-15:** identificador de localização do MD apareceu em commit anterior de recibo público; removido do HEAD, mas permanece no histórico. Necessária decisão de privacidade/histórico; sem reescrita nem force-push.
-- **Bloqueio do MD:** o mesmo arquivo `text/markdown` recebeu edições concorrentes durante as releituras; a ferramenta exposta não permite substituição atômica apenas do bloco 31.15 com controle de versão. Para evitar perda de registros das outras abas, **NÃO foi gravado**; aplicar esta subseção somente com edição segura, relendo antes e verificando depois.
-- **Commits:** script `4d4cb1a2e448bb0fa0ff863b49f7d5725e9c30ca`; recibos e ajustes posteriores rastreáveis na branch. Sem merge, tag, release, MCP, publicação de PDFs ou force-push.
-- **Próximos passos:** validar 11 possíveis duplicatas e 25 aliases nas cópias privadas autorizadas; revisar direitos e ciência por pessoas competentes; reproduzir validador/CI; tratar o incidente de privacidade; reconciliar 31.15 no MD com operação segura. V1-16 só após todas V1-01…V1-15 entregues e auditadas.
+- **Estado:** PARCIAL — auditorias binárias e metadados concluídas; bloqueadores de privacidade/permissões, reexecução do script em checkout, revisão humana e escrita segura do MD ainda pendentes.
+- **Manifesto / branch:** commit imutável `7c92045310eb3b1474a9612a777fb0012a511592`; branch exclusiva `work/v1-15-20261121`; snapshot PR #101 `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`. Onda A, sem dependências de início.
+- **Escopo de evidência:** 475 registros em cinco ledgers; 343 registros IB (20 lotes), 343 source cards e 174 editorial cards. **517/517 hashes SHA-256 das fichas Markdown correspondentes; 0 divergências.** 0 divergências de nomes e tamanhos nas fichas do ledger.
+- **Duplicatas físicas:** **11/11 grupos binariamente idênticos** por SHA-256 de **23/23 cópias PDF** obtidas apenas para auditoria; 0 hashes divergentes. Arquivos de trabalho apagados; nenhum PDF publicado, nenhuma ficha ou índice consolidado automaticamente, nenhuma licença concedida.
+- **Aliases:** **25/25** arquivos localizados nas seis pastas originais de grafia corrompida, com correspondência única de nome e tamanho. Grafias normalizadas IB são aliases de apresentação. Preservar separadamente as duas pastas com variantes de “Análise de Conteúdo”.
+- **Segurança:** repositório público; identificador do MD exposto no histórico de commit V1-15 anterior, retirado do HEAD sem reescrita; Issue #103 aberta. MD atual sem compartilhamento além do proprietário, **25/25 PDFs examinados com ACL `anyone:reader`**. ACLs não alteradas nesta etapa. Deliberação e contenção do mantenedor prioritárias.
+- **Direitos/ciência:** 458/475 `NOT_CHECKED` e 17 `VERIFIED_PUBLISHER_LICENSE` conforme snapshot do registry; nenhuma licença nova ou direito de redistribuição inferido. 170/174 cards `DRAFT_NEEDS_INDEPENDENT_REVIEW`, quatro sem status; nenhuma aprovação científica independente.
+- **Artefatos próprios:** `knowledge/methodology/intake/v1_parallel/V1-15-RESULTS.md`, `V1-15-DELTA.json`, `scripts/v1_15_integrity_audit.py`; somente esses três caminhos alterados nesta branch. Script Python ainda não executado em clone/CI; testes independentes de hash GitHub e PDF Drive efetuados.
+- **MD / concorrência:** arquivo `text/markdown` sujeito a edição simultânea e sem gravação condicional disponível; **31.15 NÃO escrita no MD canônico**. Aplicar apenas em edição serializada/com garantia atômica e conferir readback.
+- **Próximos passos e bloqueios:** coordenar contenção ACL dos PDFs com o mantenedor e Issue #103; não reescrever história sem aprovação; executar validador Python em checkout com todas as refs; revisar direitos e modelagem das duplicatas; efetuar reconciliação segura 31.15. Não fazer merge, release, tag, implementação MCP, publicação de PDFs ou avançar V1-16 antes de aprovação formal.
 ```
 
-Esse anexo não altera o MD, não é resultado de gravação e **não** concede a autorização para regravar todo o Markdown bruto em presença de concorrência.
+**O anexo é proposta de texto, não evidência de gravação ou aceite da etapa.**
