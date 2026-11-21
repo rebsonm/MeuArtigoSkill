@@ -311,7 +311,6 @@
   ],
   "prohibited_operations_performed": [],
   "canonical_md_sync": {
-    "file_id": "1-dccVbAUX5-xLw6fq027cB15oVqOjl_U",
     "initial_write": "CONFIRMED",
     "progress_write": {
       "status": "CONFIRMED_THEN_LOST_BY_CONCURRENT_WRITE",
@@ -326,8 +325,43 @@
     },
     "conclusion_write": "ABORTED_TO_PRESERVE_CONCURRENT_STATE",
     "overall": "BLOCKED_CONCURRENT_RAW_MARKDOWN_UPDATE",
-    "corrective_action": "Coordinate single writer, re-read current MD, reconcile only 31.11, validate adjacent sections, no blind overwrite"
+    "corrective_action": "Coordinate single writer, re-read current MD, reconcile only 31.11, validate adjacent sections, no blind overwrite",
+    "file_reference": "[identificador privado omitido]"
   },
   "operational_execution_status": "PARCIAL_CANONICAL_MD_CONFLICT",
-  "results_conflict_receipt_commit": "0df1f7ddc15c9bf027f0aeb0880cb2e87fb08be9"
+  "results_conflict_receipt_commit": "0df1f7ddc15c9bf027f0aeb0880cb2e87fb08be9",
+  "continuity_revalidation_2026_11_21": {
+    "scope": "EC-0124..EC-0140; only V1-11 receipts changed",
+    "source_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+    "branch_head_before_revalidation": "a16385d456595aa9b3afd5dac5ab49d2d41c0b91",
+    "original_diff_from_manifest": {
+      "ahead_by": 4,
+      "behind_by": 0,
+      "files": [
+        "knowledge/methodology/intake/v1_parallel/V1-11-RESULTS.md",
+        "knowledge/methodology/intake/v1_parallel/V1-11-DELTA.json"
+      ]
+    },
+    "cards_re_fetched_from_frozen_snapshot": 17,
+    "cards_with_git_blob_sha1_matching_prior_receipts": 17,
+    "new_scientific_reviews": 0,
+    "new_legal_licence_acceptances": 0,
+    "cards_changed": 0,
+    "errors_detected": 0,
+    "checks": {
+      "commit_statuses": 0,
+      "check_runs": 0,
+      "workflow_runs": 0,
+      "automated_ci_verified": false,
+      "json_parseable": true,
+      "source_blobs_checked": true,
+      "status_literal_distinction": "manifest DRAFT_NEEDS_INDEPENDENT_REVIEW may differ from editorial text in Markdown"
+    },
+    "results_revalidation_commit": "8befd475e649787f66349514f7c5017ac4df7e99",
+    "private_identifier_sanitized_in_current_receipts": true,
+    "historical_git_redaction_performed": false,
+    "canonical_md_body_modified_in_continuity": false,
+    "canonical_md_body_concurrent_write_risk": "OPEN; use comment in same Drive file, do not replace raw Markdown",
+    "sole_next_action": "Coordinate exclusive writer and reconcile section 31.11 only, verifying all adjacent sections unchanged and post-write readback"
+  }
 }
