@@ -1,7 +1,7 @@
 {
   "schema": "MEU_ARTIGO_V1_BIBLIOGRAPHIC_DELTA_V1",
   "batch_id": "V1-03/20",
-  "status": "ENTREGUE_PARA_AUDITORIA",
+  "status": "PARCIAL_PENDENTE_SINCRONIZACAO_CANONICA",
   "date": "2026-11-21",
   "branch": "work/v1-03-20261121",
   "base_commit": "7c92045310eb3b1474a9612a777fb0012a511592",
@@ -108,7 +108,8 @@
     "source_hashes_64_hex": true,
     "readback": "PENDING_POST_COMMIT",
     "ci": "NOT_EXECUTED",
-    "real_host": "NOT_EXECUTED"
+    "real_host": "NOT_EXECUTED",
+    "github_receipt_readback": "PASS_PREVIOUS_COMMITS"
   },
   "next_step": "V1-16 conditioned on audited V1-01..V1-15, no global update now",
   "restrictions": [
@@ -117,5 +118,13 @@
     "NO_FORCE_PUSH",
     "NO_PDF_REDISTRIBUTION",
     "NO_SCIENTIFIC_APPROVAL"
-  ]
+  ],
+  "canonical_drive": {
+    "initial_update": "CONFIRMED_REMOTE_READBACK",
+    "middle_update": "ABORTED_STALE_SNAPSHOT",
+    "final_update": "ABORTED_STALE_SNAPSHOT",
+    "last_observed_section": "EM_EXECUCAO",
+    "blocker": "CONCURRENT_RAW_MARKDOWN_WRITES_OTHER_TABS",
+    "resolution": "Retomar apenas 31.03 de versão fresca do MD, conferir estado remoto pré-escrita e pós-escrita; preservar registros de outras abas"
+  }
 }
