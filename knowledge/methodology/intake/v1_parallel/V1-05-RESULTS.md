@@ -130,3 +130,12 @@ A escrita GitHub desta etapa limita-se exclusivamente a `V1-05-RESULTS.md` e `V1
 - Google Drive: somente comentários de 31.05 são elegíveis nesta janela; o corpo `text/markdown` bruto permanece sem edição transacional/CAS garantida e não será substituído.
 
 **Próxima ação única:** solicitar e receber o **primeiro parecer independente de direitos/originalidade (revisor A)** para EC-019…EC-036 com o pacote acima, preservando a segunda trilha científica pendente. Nenhum merge/publicação.
+
+## Solicitação formal da rodada A — 21/11/2026
+
+- **Ação concluída:** registrada na PR Draft #104 a [solicitação formal de primeira revisão independente de direitos e originalidade](https://github.com/rebsonm/MeuArtigoSkill/pull/104#issuecomment-7070769348). A solicitação abrange 18/18 cards EC-019…EC-036, contém critérios por card, exigência de edição/cópia exata, análise de originalidade e decisões fundamentadas, preservando direitos e privacidade.
+- **Natureza da ação:** convite/documentação **publicado na PR**, sem nomeação de pessoa e sem evidência de que alguém externo tenha recebido ou aceitado o convite. Não equivale a revisão independente, assinatura, homologação jurídica ou licença.
+- **FEITO:** 18 pacotes de revisão elaborados e lidos de volta; esta solicitação formal publicada.
+- **EM EXECUÇÃO/BLOQUEIO:** escolha/convite direcionado a revisor A independente de fato e recebimento de pareceres assinados, ainda **0/18**; revisão B científica igualmente **0/18**. Questões #102/#103 continuam barreiras. O corpo `text/markdown` do MD canônico não é regravado integralmente sob concorrência.
+- **PRÓXIMA AÇÃO ÚNICA:** designar um(a) revisor(a) independente de direitos/originalidade para a rodada A e lhe encaminhar a solicitação da PR #104; não atribuir a revisores fictícios nem tratar reações na PR como parecer.
+- **Critério verificável para o avanço da rodada A:** 18/18 pareceres A assinados, um por card, com fontes permitidas, versão/cópia, decisão, justificativa e limites. Até então, status editorial [I] / Draft e sem integração.
