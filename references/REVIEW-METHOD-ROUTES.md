@@ -18,7 +18,7 @@
 
 **Fontes verificadas:**
 - Marzi et al. (2025), DOI https://doi.org/10.1111/ijmr.12381 — PDF aberto CC BY disponível na biblioteca.
-- Snyder (2019), DOI https://doi.org/10.1016/j.jbusres.2019.07.039 — cópia do PPGA identificada em CC BY-NC-ND, não redistribuída.
+- Snyder (2019), DOI https://doi.org/10.1016/j.jbusres.2019.07.039 — cópia arquivada identificada em CC BY-NC-ND, não redistribuída.
 - Grant & Booth (2009), DOI https://doi.org/10.1111/j.1471-1842.2009.00848.x — texto protegido; card independente.
 - Jaakkola (2020), DOI https://doi.org/10.1007/s13162-020-00161-0 — PDF aberto CC BY disponível na biblioteca.
 - Salvador, A. D., *Métodos e técnicas de pesquisa bibliográfica* — existência confirmada em [registro bibliográfico](https://search.worldcat.org/title/252941439); procedimento discutido por [Lima & Mioto (2007)](https://www.scielo.br/j/rk/a/HSF5Ns7dkTNjQVpRyvhc8RR/), não por leitura direta do livro nesta execução.
