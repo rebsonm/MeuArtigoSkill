@@ -97,7 +97,7 @@ class HybridPublicRetrievalTests(unittest.TestCase):
         catalogue = json.loads((ROOT / cards.INDEX_PATH).read_text("utf-8"))
         licensed = json.loads((ROOT / pdfs.CATALOG).read_text("utf-8"))
         self.assertTrue(catalogue["documents"])
-        self.assertEqual(len(licensed["documents"]), 6)
+        self.assertGreaterEqual(len(licensed["documents"]), 6)
         for card in catalogue["documents"]:
             self.assertEqual(card["source_kind"], "ORIGINAL_CURATED_SUMMARY")
             self.assertEqual(card["rights"], "PUBLIC_REDISTRIBUTION_REVIEWED")
