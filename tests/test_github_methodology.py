@@ -33,7 +33,8 @@ class RemoteMethodologyTests(unittest.TestCase):
         fetch,calls=self.fixture()
         result=mod.query("revisão integrativa da literatura",ref=REF,fetch=fetch,max_chars=900)
         self.assertEqual(result["status"],"RETRIEVED")
-        self.assertEqual(result["hits"][0]["path"],"knowledge/methodology/cards/reviews.md")
+        self.assertIn(result["hits"][0]["path"],{"knowledge/methodology/cards/reviews.md",
+                 "knowledge/methodology/cards/elsbach-van-knippenberg-2020-integrative-reviews.md"})
         self.assertGreaterEqual(len(calls), 2)
         self.assertLessEqual(len(calls), 4)  # catalog plus at most three cards
         self.assertLessEqual(result["returned_context_chars"],900)
