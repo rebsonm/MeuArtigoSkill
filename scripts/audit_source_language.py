@@ -50,8 +50,12 @@ def scoped_files(root: Path) -> list[Path]:
         # translating or stripping those titles would damage provenance.
         corpus_data = rel.as_posix() in {
             "knowledge/methodology/pdf_catalog.json",
+            "knowledge/methodology/catalog.json",
             "knowledge/methodology/pdfs/README.md",
-        } or rel.as_posix().startswith("knowledge/methodology/inventory/")
+        } or any(rel.as_posix().startswith(prefix) for prefix in (
+            "knowledge/methodology/inventory/",
+            "knowledge/methodology/intake/",
+        ))
         if corpus_data:
             continue
         # The scanner stores Portuguese trigger words as DATA, not untranslated UI/source prose.
