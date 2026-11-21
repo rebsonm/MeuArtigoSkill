@@ -106,10 +106,10 @@
   "tests": {
     "unique_source_ids": true,
     "source_hashes_64_hex": true,
-    "readback": "PASS_EXISTING_RECEIPTS_AND_ORIGIN_IB_BLOBS_BEFORE_THIS_WRITE; CURRENT_DELTA_PENDING_POST_COMMIT",
+    "readback": "PASS_POST_COMMIT_FOR_PRIOR_DELTA_BLOB_7f3eb6202d4eb3f23f241b42c0fcebe4cdcfc04e; THIS_EDIT_PENDING_POST_COMMIT",
     "ci": "NOT_EXECUTED",
     "real_host": "NOT_EXECUTED",
-    "github_receipt_readback": "PASS_PREVIOUS_VERSION; RESULTS_COMMIT_VERIFIED_BEFORE_DELTA_WRITE"
+    "github_receipt_readback": "PASS_RESULTS_BLOB_6b3acfc7dbb1c2fa44366703ca425a44f35ef20c_AND_PRIOR_DELTA; THIS_EDIT_PENDING_POST_COMMIT"
   },
   "next_step": "V1-16 conditioned on audited V1-01..V1-15, no global update now",
   "restrictions": [
@@ -187,5 +187,17 @@
     "copyright_copy_license": "NOT_VERIFIED_FOR_ANY_OF_FIVE",
     "canonical_section_31_03": "BODY_STALE_CONCURRENT_MARKDOWN_WRITE_UNSAFE; COMMENT_CREATED_FOR_STAGE; NO_BODY_OVERWRITE",
     "next_action": "RECONCILE_ONLY_31_03_IN_EXCLUSIVE_SAFE_WINDOW_WITH_READBACK"
+  },
+  "canonical_reconciliation": {
+    "status": "PATCH_PREPARED_NOT_APPLIED",
+    "note": "Raw Google Drive text/markdown replacement lacks an exposed conditional revision/ETag guard. Simultaneous editors may overwrite each other; do not replace full bytes without demonstrated exclusive write window or safe revision guard.",
+    "target_section": "31.03",
+    "patch_only_in": "knowledge/methodology/intake/v1_parallel/V1-03-RESULTS.md",
+    "patch_commit": "70697de64315ac57d1b66c03ff80d60d32c44468",
+    "patch_blob": "6b3acfc7dbb1c2fa44366703ca425a44f35ef20c",
+    "current_canonical_body_still_stale": true,
+    "comment_thread_updated_prior_turn": true,
+    "acceptance": "Write only 31.03 with revision-safe or exclusive operation; read back; verify all other section bytes unchanged; no presumed scientific/legal/security approvals.",
+    "next_single_action": "APPLY_PREPARED_31_03_PATCH_ONLY_ON_EXCLUSIVE_SAFE_WRITE_WINDOW"
   }
 }
