@@ -1,6 +1,6 @@
 {
   "schema": "MEU_ARTIGO_PUBLIC_PDF_CATALOG_V1",
-  "version": "pilot-2026-11-21-45-licensed-original-pdfs",
+  "version": "pilot-2026-11-21-47-public-licensed-pdfs",
   "documents": [
     {
       "path": "knowledge/methodology/pdfs/lycariao-roque-costa-2023.pdf",
@@ -1244,6 +1244,65 @@
         "model",
         "human",
         "performance"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/messner-smith-richards-2025-epistemological-incongruences.pdf",
+      "title": "Artificial Intelligence and Qualitative Data Analysis: Epistemological Incongruences and the Future of the Human Experience",
+      "authors": "Rudolf Messner; Samuel Smith; Carol Richards",
+      "year": 2025,
+      "doi": "10.1177/16094069251371481",
+      "size": 779818,
+      "sha256": "af28adfce56d6ce33763a2538f5fd6e1e1d32fe4d39c10b8fe9d875fafdc20be",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://doi.org/10.1177/16094069251371481",
+      "source_url": "https://doi.org/10.1177/16094069251371481",
+      "rights_evidence_type": "EXACT_PDF_CC_BY_4_FIRST_PAGE_VERIFIED",
+      "original_file_unchanged": true,
+      "keywords": [
+        "inteligˆncia",
+        "artificial",
+        "todos",
+        "qualitativos",
+        "messner",
+        "2025",
+        "intelligence",
+        "qualitative",
+        "analysis",
+        "epistemological",
+        "incongruences",
+        "future"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/eschrich-sterman-2024-llm-qualitative-framework-arxiv-v1.pdf",
+      "title": "A Framework for Discussing LLMs as Tools for Qualitative Analysis",
+      "authors": "James Eschrich; Sarah Sterman",
+      "year": 2024,
+      "doi": null,
+      "size": 112470,
+      "sha256": "2c4e1e1e012a5fda2b8f153aff0f74b073b2c5e844483be9e74d20413d7b8850",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://arxiv.org/abs/2407.11198",
+      "source_url": "https://arxiv.org/abs/2407.11198",
+      "rights_evidence_type": "EXACT_PDF_CC_BY_4_FIRST_PAGE_VERIFIED",
+      "original_file_unchanged": true,
+      "keywords": [
+        "inteligˆncia",
+        "artificial",
+        "todos",
+        "qualitativos",
+        "eschrich",
+        "sterman",
+        "2024",
+        "framework",
+        "discussing",
+        "qualitative",
+        "analysis"
       ]
     }
   ],

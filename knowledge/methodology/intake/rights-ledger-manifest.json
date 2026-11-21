@@ -14,14 +14,14 @@
     "P2": 226
   },
   "work_identification_complete": false,
-  "actual_individually_verified_rights_in_this_ledger": 10,
+  "actual_individually_verified_rights_in_this_ledger": 13,
   "private_corpus_copied": false,
-  "source_pdf_count_public_catalogue": 45,
+  "source_pdf_count_public_catalogue": 47,
   "original_editorial_cards_count": 114,
   "author_year_filename_possible_matches": 7,
   "scope": "Public metadata only; source-level legal decisions must be evidenced before public PDF distribution",
   "rights_decision_not_inferred_from": "public reachability, presence in the user's Drive, title or file extension",
-  "next": "Continue verification of 50 unresolved originals and 399 provisional works. Review 114 original editorial cards independently; test standalone Skill installation.",
+  "next": "Resolve 31 remaining identities (including Closa 2021), 399 provisional work matches, independently review editorial cards; host-level clean-install acceptance pending.",
   "research_catalogue_rows": 433,
   "matched_bibliographic_titles": 404,
   "ambiguous_bibliographic_matches": 4,
@@ -38,8 +38,8 @@
   "crossref_screened_licenses_are_publication_authorizations": false,
   "document_level_rights_review_started": true,
   "last_updated": "2026-11-21",
-  "corpus_extension_note": "Five new source-page-screened original editorial cards plus improvements to the 71 still-unverified source identity cards; 475 source prospect cards still metadata-only. No newly uploaded third-party PDF. Additional seven source-specific publisher-backed original cards (Cardno, Friese, Schroeder, Wachinger, Prahl, Jowsey, Mayring) are all science-review-pending; 38 previously catalogued licensed PDFs unchanged. Neither DOI verification nor abstract consultation implies private PDF reading. Twelve archived PDF identities and method outlines inspected directly; five source-archive rights now individually verified, two CC BY 4.0 PDFs added for public Skill retrieval; 64 private identities remain unresolved. Scientific review still pending. 14 more original PDF works directly identified; five exact CC BY 4.0 files added. The 100 editorial cards remain independently unreviewed. Fourteen additional source-specific original editorial cards added as DRAFT_NEEDS_INDEPENDENT_REVIEW (114 total); original rights and scientific checks separate.",
-  "original_archive_text_scoped_read_count": 29,
-  "source_pdf_work_verified_count": 26,
-  "remaining_ambiguous_source_identities": 50
+  "corpus_extension_note": "Five new source-page-screened original editorial cards plus improvements to the 71 still-unverified source identity cards; 475 source prospect cards still metadata-only. No newly uploaded third-party PDF. Additional seven source-specific publisher-backed original cards (Cardno, Friese, Schroeder, Wachinger, Prahl, Jowsey, Mayring) are all science-review-pending; 38 previously catalogued licensed PDFs unchanged. Neither DOI verification nor abstract consultation implies private PDF reading. Twelve archived PDF identities and method outlines inspected directly; five source-archive rights now individually verified, two CC BY 4.0 PDFs added for public Skill retrieval; 64 private identities remain unresolved. Scientific review still pending. 14 more original PDF works directly identified; five exact CC BY 4.0 files added. The 100 editorial cards remain independently unreviewed. Fourteen additional source-specific original editorial cards added as DRAFT_NEEDS_INDEPENDENT_REVIEW (114 total); original rights and scientific checks separate. Next batch: 20 PDFs examined, 19 works fully identified, one Closa candidate retained unresolved pending author confirmation; two CC BY 4.0 PDFs included and one CC BY 3.0 IGO book linked to publisher after binary transfer failed. Ledger rights 13/475, PDF files 47.",
+  "original_archive_text_scoped_read_count": 48,
+  "source_pdf_work_verified_count": 45,
+  "remaining_ambiguous_source_identities": 31
 }

@@ -1,9 +1,9 @@
 {
   "schema": "MEU_ARTIGO_SOURCE_CARD_INDEX_V1",
-  "version": "pilot-2026-11-21-475-prospects-26-original-PDF-identities",
+  "version": "pilot-2026-11-21-475-prospects-45-verifications",
   "source_archive_records": 475,
-  "catalogue_identified_titles": 425,
-  "source_text_read_in_ledger": 29,
+  "catalogue_identified_titles": 444,
+  "source_text_read_in_ledger": 48,
   "third_party_full_text_included": false,
   "source_records_are_evidence": false,
   "retrieval_label": "BIBLIOGRAPHIC_PROSPECTING_ONLY_NOT_ORIGINAL_ARTICLE_READING",
@@ -1253,7 +1253,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0044.md",
       "source_id": "SRC-0044",
-      "title": "Identificação ainda não verificada — Why ai is not the enemy opportunities to strengthen core commitments of qualitative inquiry through",
+      "title": "Why AI is Not the Enemy: Opportunities to Strengthen Core Commitments of Qualitative Inquiry Through Trustworthy AI-in-the-Loop Analysis",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1265,22 +1265,35 @@
         "enemy",
         "opportunities",
         "strengthen",
-        "core",
         "commitments",
         "qualitative",
         "inquiry",
         "through",
-        "src-0044"
+        "trustworthy",
+        "analysis"
       ],
-      "sha256": "0da6eec8f2a06568e5bda6765107daf05759d07df78f8ce50efc3a217d7b9c0c",
+      "sha256": "f0c647d20da70396b363f2a64ba0d4d2a4594c136c7f87f709a4ff648af9b9f1",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Why ai is not the enemy opportunities to strengthen core commitments of qualitative inquiry through",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1177/16094069261435579",
+        "authors": "Wise; Gresalfi; Spencer-Smith",
+        "year": "2026",
+        "public_url": "https://doi.org/10.1177/16094069261435579",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0045.md",
@@ -1328,7 +1341,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0046.md",
       "source_id": "SRC-0046",
-      "title": "Identificação ainda não verificada — Resisting refusing reclaiming reimagining charting challenges to narratives of ai inevitability",
+      "title": "Resisting, Refusing, Reclaiming, Reimagining: Charting Challenges to Narratives of AI Inevitability",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1338,7 +1351,6 @@
         "duarte",
         "orchard",
         "garcia",
-        "2025",
         "resisting",
         "refusing",
         "reclaiming",
@@ -1346,23 +1358,35 @@
         "charting",
         "challenges",
         "narratives",
-        "inevitability",
-        "src-0046"
+        "inevitability"
       ],
-      "sha256": "505ca145c005315815513a137ed030a91f5f799403305f25f0c7c260ed698661",
+      "sha256": "96bc76fbf2c4e46e43c7f8141966ebcade4bc2167aa72cd698c69fbeef03a042",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Resisting refusing reclaiming reimagining charting challenges to narratives of ai inevitability",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.5281/zenodo.17343830",
+        "authors": "Duarte et al.",
+        "year": "2025",
+        "public_url": "https://doi.org/10.5281/zenodo.17343830",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0047.md",
       "source_id": "SRC-0047",
-      "title": "Identificação ainda não verificada — Conversations with my data exploring the potential of large language models in qualitative futures",
+      "title": "Conversations With my Data: Exploring the Potential of Large Language Models in Qualitative Futures Research",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1372,25 +1396,36 @@
         "macgeorge",
         "2025",
         "conversations",
-        "data",
         "exploring",
         "potential",
-        "large",
         "language",
         "models",
         "qualitative",
         "futures",
-        "src-0047"
+        "research"
       ],
-      "sha256": "4df0758e26753207d6e5ae37ce2b3978a742232a9ab1aab8d58c55f529c98b45",
+      "sha256": "9f6639766a521b1b1963d1493645e676195f8f2fe2135a5bf285de10752b0e5b",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Conversations with my data exploring the potential of large language models in qualitative futures",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1177/19467567251330210",
+        "authors": "Richard B. MacGeorge",
+        "year": "online 2025; indicação de volume 2024",
+        "public_url": "https://doi.org/10.1177/19467567251330210",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0048.md",
@@ -1531,7 +1566,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0051.md",
       "source_id": "SRC-0051",
-      "title": "Identificação ainda não verificada — Artificial intelligence and qualitative data analysis epistemological incongruences and the future",
+      "title": "Artificial Intelligence and Qualitative Data Analysis: Epistemological Incongruences and the Future of the Human Experience",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1542,22 +1577,34 @@
         "2025",
         "intelligence",
         "qualitative",
-        "data",
         "analysis",
         "epistemological",
         "incongruences",
         "future",
-        "src-0051"
+        "experience"
       ],
-      "sha256": "abf7bb925bfec670750c1e6709753327f88fbc90e3706957fd97e3feab8662be",
+      "sha256": "da184ede95020df972c7e2f043dd12e234a20beafa7223bb39d86485130d7cec",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
-      "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
-      "has_original_public_pdf": false,
-      "public_pdf_path": null,
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
+      "rights_review": "VERIFIED_PUBLISHER_LICENSE",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "has_original_public_pdf": true,
+      "public_pdf_path": "knowledge/methodology/pdfs/messner-smith-richards-2025-epistemological-incongruences.pdf",
       "title_candidate_from_filename": "Artificial intelligence and qualitative data analysis epistemological incongruences and the future",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1177/16094069251371481",
+        "authors": "Rudolf Messner; Samuel Smith; Carol Richards",
+        "year": "2025",
+        "public_url": "https://doi.org/10.1177/16094069251371481",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": true,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": true
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0052.md",
@@ -1608,7 +1655,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0053.md",
       "source_id": "SRC-0053",
-      "title": "Identificação ainda não verificada — Unravelling chatgpt potential in summarising qualitative indepth interviews",
+      "title": "Unravelling ChatGPT’s Potential in Summarising Qualitative In-Depth Interviews",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1621,19 +1668,30 @@
         "potential",
         "summarising",
         "qualitative",
-        "indepth",
-        "interviews",
-        "src-0053"
+        "interviews"
       ],
-      "sha256": "81b5db9fa130885c56d6d21579a16fa43fd0bab02d9d31399f6088dcd50990f3",
+      "sha256": "c826aaf760a202e2188953e7bf61849d6596697ff568935e7667f34cad99a0ef",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Unravelling chatgpt potential in summarising qualitative indepth interviews",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1038/s41433-024-03419-0",
+        "authors": "Kon et al.",
+        "year": "online 2024; volume 2025",
+        "public_url": "https://doi.org/10.1038/s41433-024-03419-0",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0054.md",
@@ -1730,7 +1788,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0056.md",
       "source_id": "SRC-0056",
-      "title": "Identificação ainda não verificada — The construction of the role of ai in qualitative data analysis in the social sciences",
+      "title": "The Construction of the Role of AI in Qualitative Data Analysis in the Social Sciences",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1740,30 +1798,39 @@
         "paulus",
         "lester",
         "davis",
-        "2025",
         "construction",
-        "role",
         "qualitative",
-        "data",
         "analysis",
         "social",
-        "sciences",
-        "src-0056"
+        "sciences"
       ],
-      "sha256": "ecc43d1254d4116809453cf87d0b700c609ee0fdf5566773bba7e41d90f37d9a",
+      "sha256": "29e9106e113004fee8702258802eeca5ed98bc971bc51d4b2466d4c977e408b2",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "The construction of the role of ai in qualitative data analysis in the social sciences",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1007/s00146-025-02488-3",
+        "authors": "Trena Paulus; Jessica Nina Lester; Charlie Davis",
+        "year": "online 2025; issue 2026",
+        "public_url": "https://doi.org/10.1007/s00146-025-02488-3",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0057.md",
       "source_id": "SRC-0057",
-      "title": "Identificação ainda não verificada — The ethics of using generative ai for qualitative data analysis",
+      "title": "The Ethics of Using Generative AI for Qualitative Data Analysis",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -1773,22 +1840,32 @@
         "davison",
         "2024",
         "ethics",
-        "using",
         "generative",
         "qualitative",
-        "data",
-        "analysis",
-        "src-0057"
+        "analysis"
       ],
-      "sha256": "425ace580c66fa0a9f73b4c058b51fa02bf3939819c823bb4498236d3d237622",
+      "sha256": "3cbb06043a6bb7302954289158f8e4ecd5954e9d2b5151c1cc6c059f4087428d",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "The ethics of using generative ai for qualitative data analysis",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1111/isj.12504",
+        "authors": "Robert M. Davison et al.",
+        "year": "2024",
+        "public_url": "https://doi.org/10.1111/isj.12504",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0058.md",
@@ -2108,7 +2185,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0065.md",
       "source_id": "SRC-0065",
-      "title": "Identificação ainda não verificada — Engaged and responsible scholarship why qualitative researchers should not embrace genai",
+      "title": "Engaged and Responsible Scholarship: Why Qualitative Researchers Should Not Embrace GenAI",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -2124,24 +2201,35 @@
         "qualitative",
         "researchers",
         "should",
-        "embrace",
-        "genai",
-        "src-0065"
+        "embrace"
       ],
-      "sha256": "88c1d7aa413b041180d1ca13f01538e4709ec1e1dc407cf82d2a399236910e0d",
+      "sha256": "39839a08e5f3ef9798bff9df17dda53599ca2e807525988ebf9a39bb6486e52b",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Engaged and responsible scholarship why qualitative researchers should not embrace genai",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1177/00076503251386539",
+        "authors": "Duc Cuong Nguyen; Catherine Welch",
+        "year": "2025",
+        "public_url": "https://doi.org/10.1177/00076503251386539",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0066.md",
       "source_id": "SRC-0066",
-      "title": "Identificação ainda não verificada — Ai and qualitative analysis",
+      "title": "Should ChatGPT Help with My Research? A Caution Against Artificial Intelligence in Qualitative Analysis",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -2151,23 +2239,40 @@
         "friedman",
         "2024",
         "qualitative",
-        "analysis",
-        "src-0066"
+        "should",
+        "chatgpt",
+        "research",
+        "caution",
+        "against",
+        "intelligence"
       ],
-      "sha256": "18554535b10776a3559939da0de764170f29e5b6e90589e6d67160e72540c4e0",
+      "sha256": "89b4237f9a3b3c81e64f8c88f2524aea01260401737898df69e593d19db5c08c",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Ai and qualitative analysis",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1177/14687941241297375",
+        "authors": "Carli Friedman; Aleksa Owen; Laura VanPuymbrouck",
+        "year": "2024",
+        "public_url": "https://doi.org/10.1177/14687941241297375",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0067.md",
       "source_id": "SRC-0067",
-      "title": "Identificação ainda não verificada — Generative artificial intelligence in qualitative research methods between hype and risks",
+      "title": "Generative Artificial Intelligence in Qualitative Research Methods: Between Hype and Risks?",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -2179,26 +2284,37 @@
         "generative",
         "intelligence",
         "qualitative",
+        "research",
         "methods",
-        "between",
-        "hype",
-        "risks",
-        "src-0067"
+        "between"
       ],
-      "sha256": "a756efd9ba60be6357e545796b5306719a8dd1ec3e5f8c0aedde85103dd6920d",
+      "sha256": "09fdafab12ea09406ba01de86bc0e2eae19083791aeb30c20739b1e8903c90f5",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Generative artificial intelligence in qualitative research methods between hype and risks",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": null,
+        "authors": "Maria Couto Teixeira; Marisa Tschopp; Anna Jobin",
+        "year": "position paper de workshop, 2025; fora dos anais",
+        "public_url": null,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0068.md",
       "source_id": "SRC-0068",
-      "title": "Identificação ainda não verificada — Large language model for qualitative research a systematic mapping study",
+      "title": "Large Language Model for Qualitative Research: A Systematic Mapping Study",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -2208,24 +2324,34 @@
         "graciano",
         "neto",
         "2024",
-        "large",
         "language",
-        "model",
         "qualitative",
+        "research",
         "systematic",
-        "mapping",
-        "study",
-        "src-0068"
+        "mapping"
       ],
-      "sha256": "5e92952e39d729fe0a70dc3e1c95fb845ea0e509129a0d9bbfd216dc3bf4cbae",
+      "sha256": "c16c6aed1e908c91a969add72973d06a8bd313d2fd2a20161c79f37df530463a",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Large language model for qualitative research a systematic mapping study",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.5281/zenodo.14177022",
+        "authors": "Caua F. Barros et al.",
+        "year": "2024",
+        "public_url": "https://doi.org/10.5281/zenodo.14177022",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0069.md",
@@ -2276,7 +2402,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0070.md",
       "source_id": "SRC-0070",
-      "title": "Identificação ainda não verificada — In minutes instead of weeks discursive constructions of generative ai and qualitative data analysis",
+      "title": "“In Minutes Instead of Weeks”: Discursive Constructions of Generative AI and Qualitative Data Analysis",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -2288,24 +2414,34 @@
         "2024",
         "minutes",
         "instead",
-        "weeks",
         "discursive",
         "constructions",
         "generative",
         "qualitative",
-        "data",
-        "analysis",
-        "src-0070"
+        "analysis"
       ],
-      "sha256": "e6caf1e7b93728ec3e5033352dd12695e7f856efa33083b4e475dd6c7574191f",
+      "sha256": "e0083ba900d5836c1bb1e85cd5309894c499c5f04d40ac4435e3f34596b39f1a",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "In minutes instead of weeks discursive constructions of generative ai and qualitative data analysis",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1177/10778004241250065",
+        "authors": "Trena M. Paulus; Vittorio Marone",
+        "year": "online 2024; volume 2025",
+        "public_url": "https://doi.org/10.1177/10778004241250065",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0071.md",
@@ -2379,7 +2515,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0073.md",
       "source_id": "SRC-0073",
-      "title": "Identificação ainda não verificada — A framework for discussing llms as tools for qualitative analysis",
+      "title": "A Framework for Discussing LLMs as Tools for Qualitative Analysis",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -2391,21 +2527,31 @@
         "2024",
         "framework",
         "discussing",
-        "llms",
-        "tools",
         "qualitative",
-        "analysis",
-        "src-0073"
+        "analysis"
       ],
-      "sha256": "405078778947607d64842f366814782be3148a0f8cd8d5344a383662c238e612",
+      "sha256": "da17742cf2582bf7c017bab9247eb3b0e7311acd8c4900068d6fcd15efb4aada",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
-      "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
-      "has_original_public_pdf": false,
-      "public_pdf_path": null,
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
+      "rights_review": "VERIFIED_PUBLISHER_LICENSE",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "has_original_public_pdf": true,
+      "public_pdf_path": "knowledge/methodology/pdfs/eschrich-sterman-2024-llm-qualitative-framework-arxiv-v1.pdf",
       "title_candidate_from_filename": "A framework for discussing llms as tools for qualitative analysis",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": null,
+        "authors": "James Eschrich; Sarah Sterman",
+        "year": "arXiv v1, 15/07/2024",
+        "public_url": "https://arxiv.org/abs/2407.11198",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": true,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": true
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0074.md",
@@ -2470,7 +2616,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0076.md",
       "source_id": "SRC-0076",
-      "title": "Identificação ainda não verificada — Why we should reject to reject the use of generative artificial intelligence in qualitative analysis a",
+      "title": "Why We Should Reject to Reject the Use of Generative Artificial Intelligence in Qualitative Analysis: A Response to Jowsey, Braun, Clarke, Lupton, and Fine (2025)",
       "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
@@ -2484,18 +2630,30 @@
         "generative",
         "intelligence",
         "qualitative",
-        "analysis",
-        "src-0076"
+        "analysis"
       ],
-      "sha256": "c87835410ff13cdb2a42bd1ec85843eb041c2f03296d37cc742cf284bf59dc63",
+      "sha256": "ccc071b49260c2ed38f018dd9d89a4d2341abc8ee70af122fbaf6c8716016088",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Why we should reject to reject the use of generative artificial intelligence in qualitative analysis a",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1177/10778004261425137",
+        "authors": "Stefano De Paoli",
+        "year": "2026",
+        "public_url": "https://doi.org/10.1177/10778004261425137",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0077.md",
@@ -7071,44 +7229,81 @@
     {
       "path": "knowledge/methodology/source_cards/src-0255.md",
       "source_id": "SRC-0255",
-      "title": "Identificação ainda não verificada — 02 two by two",
+      "title": "Causal Inference using Difference-in-Differences — Lecture 2: Classical 2×2 DiD Setup",
       "topic": "Dif-in-Dif (regressão diferenças em diferenças)",
       "keywords": [
         "regressao",
         "diferencas",
-        "src-0255"
+        "src-0255",
+        "causal",
+        "inference",
+        "difference",
+        "differences",
+        "lecture",
+        "classical"
       ],
-      "sha256": "6484c1696d3252a2dd4f4ec0b26735700e68885373e6a9845a2482e84a0173b2",
+      "sha256": "cd3a73edfa51d7bfb49e0e4afdf81bbaaa032d9351856a8dc01cff179c6680e1",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "02 two by two",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": null,
+        "authors": "Pedro H. C. Sant’Anna",
+        "year": "material didático, janeiro de 2025",
+        "public_url": null,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0256.md",
       "source_id": "SRC-0256",
-      "title": "Identificação ainda não verificada — Gertler et al 2018",
+      "title": "Avaliação de Impacto na Prática, Segunda Edição",
       "topic": "Dif-in-Dif (regressão diferenças em diferenças)",
       "keywords": [
         "regressao",
         "diferencas",
         "gertler",
         "2018",
-        "src-0256"
+        "src-0256",
+        "avaliação",
+        "impacto",
+        "prática",
+        "segunda",
+        "edição"
       ],
-      "sha256": "60a0aae497d44c0fb6feeb45596837cec0cac76a16fc7800b3b4a44f79f6edce",
+      "sha256": "d8b9e5a347fb65ddfbfab0075b033b101c1bed9383b4a7f554eea1ccb5b88966",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
-      "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
+      "rights_review": "VERIFIED_PUBLISHER_LICENSE",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Gertler et al 2018",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1596/978-1-4648-0889-0",
+        "authors": "Paul J. Gertler; Sebastián Martínez; Patrick Premand; Laura B. Rawlings; Christel M. J. Vermeersch",
+        "year": "edição portuguesa 2018",
+        "public_url": "https://doi.org/10.1596/978-1-4648-0889-0",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": true,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0257.md",
@@ -7139,7 +7334,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0258.md",
       "source_id": "SRC-0258",
-      "title": "Identificação ainda não verificada — Card and krueger (1994)",
+      "title": "Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania",
       "topic": "Dif-in-Dif (regressão diferenças em diferenças)",
       "keywords": [
         "regressao",
@@ -7147,17 +7342,35 @@
         "card",
         "krueger",
         "1994",
-        "src-0258"
+        "src-0258",
+        "minimum",
+        "employment",
+        "industry",
+        "jersey",
+        "pennsylvania"
       ],
-      "sha256": "a896366f1f499e061c77e226314d28010bf99c88cb849d3b73bf6ff26b12ac71",
+      "sha256": "3f4524eb2ce5381c1900d51eb0184ab8f548e30a4eed9cf614dc573083b0a017",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Card and krueger (1994)",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": null,
+        "authors": "David Card; Alan B. Krueger",
+        "year": "1994; American Economic Review 84(4)",
+        "public_url": null,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0259.md",
@@ -7390,7 +7603,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0269.md",
       "source_id": "SRC-0269",
-      "title": "Identificação ainda não verificada — Conceição et al (2026) port",
+      "title": "Regressão linear em estudos ecológicos envolvendo o espaço: metodologia e exemplo de aplicação na área da saúde",
       "topic": "Análise Espacial",
       "keywords": [
         "analise",
@@ -7398,17 +7611,38 @@
         "conceicao",
         "2026",
         "port",
-        "src-0269"
+        "src-0269",
+        "regressão",
+        "linear",
+        "estudos",
+        "ecológicos",
+        "envolvendo",
+        "espaço",
+        "metodologia",
+        "exemplo"
       ],
-      "sha256": "ff3ceed17f18846ccde6aa837437954b5f63fc6f99922f700fc6941b82e4daa5",
+      "sha256": "71eabdfe02a54ffa318d031db3f27eebffcb4a811f87e94d5e3370d60a881dcd",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Conceição et al (2026) port",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": "10.1590/1980-549720260018.2",
+        "authors": "Gleice M. S. Conceição et al.",
+        "year": "2026",
+        "public_url": "https://doi.org/10.1590/1980-549720260018.2",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0270.md",
@@ -10054,7 +10288,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0373.md",
       "source_id": "SRC-0373",
-      "title": "Identificação ainda não verificada — Carlomagno,Rocha,2016",
+      "title": "Como criar e classificar categorias para fazer análise de conteúdo: uma questão metodológica",
       "topic": "An lise de Conteúdo",
       "keywords": [
         "lise",
@@ -10062,17 +10296,36 @@
         "carlomagno",
         "rocha",
         "2016",
-        "src-0373"
+        "src-0373",
+        "classificar",
+        "categorias",
+        "análise",
+        "conteúdo",
+        "questão",
+        "metodológica"
       ],
-      "sha256": "ddcb243acfc251d38a5f72bac92d809b3921101ce94a0a2ca2bc6a91c9c8e2ec",
+      "sha256": "326221d929db4c4dbce08354373bb61ca26005731b0db2f7348255b4f7b03786",
       "source_metadata_only": true,
-      "bibliography_match_status": "IDENTITY_UNRESOLVED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Carlomagno,Rocha,2016",
-      "title_candidate_only": true
+      "title_candidate_only": false,
+      "source_identity_verified_not_citation_grade": true,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "doi": null,
+        "authors": "Márcio C. Carlomagno; Leonardo Caetano da Rocha",
+        "year": "2016; Revista Eletrônica de Ciência Política 7(1)",
+        "public_url": null,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "public_binary_in_github": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0374.md",
@@ -12732,8 +12985,8 @@
     }
   ],
   "provisional_filename_title_cards": 71,
-  "identities_still_unresolved": 50,
+  "identities_still_unresolved": 31,
   "public_bibliographic_work_checks": 12,
   "provisional_matches": 399,
-  "confirmed_pdf_work_identities": 26
+  "confirmed_pdf_work_identities": 45
 }

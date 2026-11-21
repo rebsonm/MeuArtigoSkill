@@ -2508,14 +2508,19 @@
       "filename": "Carlomagno,Rocha,2016.pdf",
       "size_bytes": 413255,
       "priority": "P2",
-      "bibliographic_identity": "NOT_MATCHED_IN_RESEARCH_CATALOGUE",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
-      "possible_match_strength": null
+      "possible_match_strength": null,
+      "source_text_title": "Como criar e classificar categorias para fazer análise de conteúdo: uma questão metodológica",
+      "source_text_doi": null,
+      "source_text_year": "2016; Revista Eletrônica de Ciência Política 7(1)",
+      "pdf_redistribution_observation": "Não há autorização individual de redistribuição comprovada para esta cópia",
+      "scientific_review": "PENDING"
     },
     {
       "id": "SRC-0374",
