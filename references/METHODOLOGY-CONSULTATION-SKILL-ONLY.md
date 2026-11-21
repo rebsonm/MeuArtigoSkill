@@ -1,6 +1,6 @@
 # Optional methodological consultation — Skill-only route
 
-**NO_MCP_REQUIRED.** This is an instruction/reference module inside the installable **Meu Artigo Skill** ZIP. It does not define or require an MCP server, endpoint, daemon, tokens, OAuth, hosted backend, vector DB service, background sync, private Drive access or any action outside the user's host capabilities.
+**SKILL_ONLY_NO_SERVER_REQUIRED.** This is an instruction/reference module inside the installable **Meu Artigo Skill** ZIP. It does not define or require an remote protocol server, endpoint, daemon, tokens, OAuth, hosted backend, vector DB service, background sync, private Drive access or any action outside the user's host capabilities.
 
 ## Activation
 
@@ -23,7 +23,7 @@ Use this guide only when the researcher's actual question involves selecting, co
 - A technical test suite verifies software behavior, not scientific correctness. Do not approve gates, infer method validity or claim a researcher review.
 - Some works oppose GenAI in reflexive qualitative traditions while others discuss assisted analysis; show the relevant methodological disagreement rather than silently imposing the Skill author's preference.
 - Use only publicly licensed exact PDFs in the public catalog when host extraction is authorized. Copyrighted literature cannot be redistributed as full-text PDF or substituted by serial derivative MD cards.
-- GitHub is public storage of allowed editorial material and separately licensed PDFs, not an MCP service or live research execution backend.
+- GitHub is public storage of allowed editorial material and separately licensed PDFs, not an remotely hosted service or live research execution backend.
 
 ## Evidence and acceptance boundary
 

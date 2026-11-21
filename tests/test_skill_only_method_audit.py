@@ -23,14 +23,14 @@ class SkillOnlyMethodAuditTests(unittest.TestCase):
    self.assertTrue(doc["source_metadata_only"])
    self.assertFalse(doc["public_work_metadata_screen"]["original_archive_pdf_read"])
    self.assertFalse(doc["public_work_metadata_screen"]["original_archive_pdf_redistribution_authorized"])
- def test_skill_routing_no_mcp_or_auto_gate(self):
+ def test_skill_routing_no_server_or_auto_gate(self):
   skill=(ROOT/"SKILL.md").read_text("utf-8")
   doc=(ROOT/"references"/"METHODOLOGY-CONSULTATION-SKILL-ONLY.md").read_text("utf-8")
   self.assertIn("METHODOLOGY-CONSULTATION-SKILL-ONLY.md",skill)
-  self.assertIn("NO_MCP_REQUIRED",doc)
+  self.assertIn("SKILL_ONLY_NO_SERVER_REQUIRED",doc)
   self.assertIn("If Python/HTTPS is unavailable",doc)
   self.assertIn("Do not approve gates",doc)
-  self.assertIn("not an MCP service",doc)
+  self.assertIn("not a remotely hosted service",doc)
  def test_corrected_cards_match_manifest_hashes(self):
   j=json.loads((BASE/"catalog.json").read_text("utf-8"))
   self.assertEqual(len(j["documents"]),100)
