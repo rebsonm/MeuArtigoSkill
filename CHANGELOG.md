@@ -23,6 +23,17 @@ historical beta tags or authorizing a merge, hosted deployment or publication.
 - Prepare explicit release-candidate version metadata, a test installer
   and a read-only CI artifact for controlled acceptance.
 
+- Recover a conservative Drive folder-create guard: a missing path cannot
+  directly authorize a remote create, uncertain prior attempts cannot be
+  repeated blindly, and the public Skill CLI remains blocked without verified
+  host scope, complete pagination and durable shared journal evidence.
+- Preserve an explicit partial-gate warning in standalone read-only HTML
+  and retain the complete documented human-approval count.
+- Add read-only tracked-source credential scanning to CI and synthetic
+  regression tests; exclude the developer scanner from the Skill ZIP.
+  These safeguards do not establish connected Drive acceptance or real
+  researcher testing.
+
 - Add source- versus package-aware local version diagnostics without claiming
   host installation or publication authentication; expose machine-readable
   initializer project root and optional spreadsheet status.
