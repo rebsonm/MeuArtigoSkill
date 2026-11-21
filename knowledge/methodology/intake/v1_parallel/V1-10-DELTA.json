@@ -18,7 +18,8 @@
     "source_doi_links_mapped": true,
     "pdf_distribution_permitted": false,
     "independent_scientific_acceptance": false,
-    "public_release_allowed": false
+    "public_release_allowed": false,
+    "edition_metadata_reconciled_three_cards": true
   },
   "aggregate": {
     "cards": 17,
@@ -26,7 +27,9 @@
     "external_doi_landing_or_abstract_checked": 16,
     "full_scientific_reviews": 0,
     "independent_rights_reviews": 0,
-    "unmodified_cards": 17
+    "unmodified_cards": 17,
+    "edition_metadata_reconciled_in_continuity": 3,
+    "zenodo_later_version_records_confirmed_in_continuity": 2
   },
   "records": [
     {
@@ -277,7 +280,30 @@
       "counterevidence_or_limit": "Resistir, recusar, recuperar/reivindicar e reimaginar: identidade Zenodo citada, versões e licença da cópia continuam incertas; sem redistribuição.",
       "risk_prompt_injection": "Nenhum comando externo incorporado observado no Markdown; conteúdo externo continua não confiável",
       "card_file_modified": false,
-      "action_required": "Revisão por avaliador humano independente; ancoragem de afirmações em seção/página/edição; decisão de licença por cópia exata."
+      "action_required": "Revisão por avaliador humano independente; ancoragem de afirmações em seção/página/edição; decisão de licença por cópia exata.",
+      "external_version_metadata": {
+        "verification_scope": "PÁGINAS PUBLICAS DE VERSÕES RELACIONADAS; NAO LICENCA DA COPIA DO DOI DO CARD",
+        "card_cited_doi": "10.5281/zenodo.17343830",
+        "card_cited_version_landing_and_license_directly_verified": false,
+        "later_versions": [
+          {
+            "version": "v2",
+            "doi": "10.5281/zenodo.17382120",
+            "published": "2025-10-17",
+            "public_record_url": "https://zenodo.org/records/17382120",
+            "rights_label": "Copyright © 2025 by author(s) and We and AI Ltd"
+          },
+          {
+            "version": "v3",
+            "doi": "10.5281/zenodo.22875115",
+            "published": "2026-09-21",
+            "public_record_url": "https://zenodo.org/records/22875115",
+            "rights_label": "Copyright © 2025 by author(s) and We and AI Ltd"
+          }
+        ],
+        "private_copy_rights_verified": false,
+        "conservative_decision": "Não redistribuir; não trocar o DOI citado sem cotejo de versão e autorização"
+      }
     },
     {
       "card_id": "EC-117",
@@ -302,7 +328,19 @@
       "counterevidence_or_limit": "Futuros qualitativos com LLM: estudo exploratório e dependente de versões; reconciliar referência online 2025 versus indicação de volume/capa 2024 antes de padronizar metadado.",
       "risk_prompt_injection": "Nenhum comando externo incorporado observado no Markdown; conteúdo externo continua não confiável",
       "card_file_modified": false,
-      "action_required": "Revisão por avaliador humano independente; ancoragem de afirmações em seção/página/edição; decisão de licença por cópia exata."
+      "action_required": "Revisão por avaliador humano independente; ancoragem de afirmações em seção/página/edição; decisão de licença por cópia exata.",
+      "edition_metadata_checked": {
+        "online_first": "2025-03-24",
+        "issue_published": "2024-12",
+        "journal": "World Futures Review",
+        "volume": 16,
+        "issue": 4,
+        "pages": "281-293",
+        "editorial_url": "https://journals.sagepub.com/doi/10.1177/19467567251330210",
+        "article_rights_display": "Creative Commons Attribution-NonCommercial 4.0",
+        "private_pdf_copy_license_verified": false,
+        "status": "ONLINE_E_FASCICULO_CONCILIADOS_NA_EDITORA_SEM_VALIDAR_COPIA"
+      }
     },
     {
       "card_id": "EC-118",
@@ -377,7 +415,16 @@
       "counterevidence_or_limit": "Papéis discursivos atribuídos à IA: unidade de análise são artigos e metáforas, não um teste controlado; confirmar edição online 2025/volume 2026.",
       "risk_prompt_injection": "Nenhum comando externo incorporado observado no Markdown; conteúdo externo continua não confiável",
       "card_file_modified": false,
-      "action_required": "Revisão por avaliador humano independente; ancoragem de afirmações em seção/página/edição; decisão de licença por cópia exata."
+      "action_required": "Revisão por avaliador humano independente; ancoragem de afirmações em seção/página/edição; decisão de licença por cópia exata.",
+      "edition_metadata_checked": {
+        "online_first": "2025-07-14",
+        "volume_year": 2026,
+        "journal": "AI & SOCIETY",
+        "volume": 41,
+        "pages": "1737-1748",
+        "editorial_url": "https://link.springer.com/article/10.1007/s00146-025-02488-3",
+        "status": "ONLINE_E_FASCICULO_CONCILIADOS_NA_EDITORA_SEM_VALIDAR_COPIA"
+      }
     },
     {
       "card_id": "EC-121",
@@ -452,15 +499,25 @@
       "counterevidence_or_limit": "Friedman/Owen/VanPuymbrouck: crítica situada à codificação por IA; conferir data online 2024/volume 2025 e limites, sem equipará-la a proibição universal.",
       "risk_prompt_injection": "Nenhum comando externo incorporado observado no Markdown; conteúdo externo continua não confiável",
       "card_file_modified": false,
-      "action_required": "Revisão por avaliador humano independente; ancoragem de afirmações em seção/página/edição; decisão de licença por cópia exata."
+      "action_required": "Revisão por avaliador humano independente; ancoragem de afirmações em seção/página/edição; decisão de licença por cópia exata.",
+      "edition_metadata_checked": {
+        "online_first": "2024-12-05",
+        "issue_published": "2025-10",
+        "journal": "Qualitative Research",
+        "volume": 25,
+        "issue": 5,
+        "pages": "1062-1088",
+        "editorial_url": "https://journals.sagepub.com/doi/10.1177/14687941241297375",
+        "publisher_access": "Restricted access; request permissions",
+        "status": "ONLINE_E_FASCICULO_CONCILIADOS_NA_EDITORA_SEM_VALIDAR_COPIA"
+      }
     }
   ],
   "unresolved": [
     "Amostra científica completa e páginas exatas da fonte não conferidas em 17/17; confirmação externa limitada a textos/editoriais e resumos quando disponível",
     "Identidade, data, qualificação e decisão de revisores independentes indisponíveis",
     "Licença exata por cópia/edição dos PDFs não comprovada para liberação pública",
-    "EC-116: versões e direitos no Zenodo pendentes",
-    "EC-117, EC-120, EC-123: conferir diferença entre data online e fascículo impresso",
+    "EC-116: v2/v3 relacionadas confirmadas em páginas públicas, mas página/licença e identidade material da versão/cópia exata do DOI citado 10.5281/zenodo.17343830 continuam pendentes",
     "P0 operacional: conflito de gravação do MD canônico; atualização de conclusão da 31.10 não foi confirmada, não sobrepor alterações alheias."
   ],
   "forbidden_actions_not_performed": [
@@ -483,5 +540,26 @@
     "concurrent_overwrite_or_race_suspected": true,
     "subsection_31_10_completion_saved": false,
     "raw_markdown_further_writes_aborted": true
+  },
+  "continuity_addendum": {
+    "date": "2026-11-21",
+    "prior_branch_head": "6ef28cb475e6d24f4617e374a923478cbe8402ac",
+    "prior_results_blob_sha1": "154254a54e652dc30eba8610e5d145e1dab7d94b",
+    "prior_delta_blob_sha1": "d0394674c1b06f16961907d636af7cf3cf484749",
+    "results_commit_sha": "36e4beca1727153be20b1a92be94d5eed1eb1afa",
+    "results_commit_url": "https://github.com/rebsonm/MeuArtigoSkill/commit/36e4beca1727153be20b1a92be94d5eed1eb1afa",
+    "manifest_records_correspond_one_to_one": true,
+    "manifest_blob_sha1": "2f85dc6c4283376b9fc3c312668f0a1f25a0a301",
+    "previous_diff_only_two_receipts": true,
+    "current_cards_modified": 0,
+    "full_source_reviews": 0,
+    "independent_scientific_reviews": 0,
+    "independent_rights_reviews": 0,
+    "fetched_commit_ci_status_records": 0,
+    "fetched_commit_workflow_runs": 0,
+    "exclusive_branch_pr_found": false,
+    "markdown_body_updated": false,
+    "markdown_comment_fallback": "CRIAR SOMENTE APOS CONFIRMACAO POR READBACK",
+    "note": "Páginas externas têm estatuto de evidência bibliográfica parcial, não parecer nem liberação de publicação."
   }
 }
