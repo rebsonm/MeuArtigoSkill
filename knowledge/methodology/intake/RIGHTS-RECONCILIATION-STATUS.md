@@ -1,6 +1,8 @@
 # Rights and corpus reconciliation — incomplete, evidence-limited audit (21 November 2026)
 
-**IMPORTANT: NOT A COMPLETE RIGHTS AUDIT.** This ledger distinguishes
+**IMPORTANT: NOT A COMPLETE RIGHTS AUDIT.**
+
+**Latest supplementary audit, 2026-11-21:** The draft now has **63 editorial cards**, **35 documented CC BY PDFs**, and **475 original inventory records**. Bibliographic title matching currently identifies **404 original inventory records**; this is metadata matching, not source-rights authorization. Two original-archive source records (Dias/Mishima 2023 and Campos/Saidel 2022) have individually recorded publisher CC BY 4.0 evidence in the rights ledger. The 23-card/12-PDF quantities below are preserved solely as a historical baseline, **not the current library totals**. This ledger distinguishes
 source-archive metadata from actual public repository files. Do not call the
 source archive imported, licensed or read in full.
 
