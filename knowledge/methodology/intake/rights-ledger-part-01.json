@@ -511,7 +511,7 @@
       "filename": "Koerichetal,2009.pdf",
       "size_bytes": 78887,
       "priority": "P2",
-      "bibliographic_identity": "VERIFIED_PUBLISHED_WORK_AND_DOI",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "CC BY 4.0",
       "rights_review": "VERIFIED_PUBLISHER_LICENSE",
       "public_distribution": "LICENSED_ORIGINAL_SOURCE_INDEXED",
@@ -532,7 +532,13 @@
       "doi": "10.5216/ree.v11.47234",
       "rights_evidence_url": "https://revistas.ufg.br/fen/article/view/47234",
       "public_pdf_path": "knowledge/methodology/pdfs/koerich-et-al-2009-action-research.pdf",
-      "original_pdf_sha256": "178ca5ae19c4e3fb2afee735b6a1e5c74ad804a2640c8be092e6df7bd28797d6"
+      "original_pdf_sha256": "178ca5ae19c4e3fb2afee735b6a1e5c74ad804a2640c8be092e6df7bd28797d6",
+      "source_text_title": "Pesquisa-ação: ferramenta metodológica para a pesquisa qualitativa",
+      "source_text_authors": "Magda Santos Koerich; Dirce Stein Backes; Francisca Georgina Macêdo de Sousa; Alacoque Lorenzini Erdmann; Gelson Luiz Alburquerque (grafia no exemplar)",
+      "source_text_year": "2009",
+      "source_text_doi": "10.5216/ree.v11.47234",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "PREVIOUSLY_VERIFIED_EXACT_CC_BY_4"
     },
     {
       "id": "SRC-0019",
@@ -630,16 +636,16 @@
       "filename": "Mourad,2021.pdf",
       "size_bytes": 18648694,
       "priority": "P2",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
       "bibliographic_title_original": "GLOSSÁRIO DE CIÊNCIA POLÍTICA: CONTRIBUIÇÕES PARA OS\n ESTUDOS DAS POLÍTICAS EDUCACIONAIS",
-      "bibliographic_topic_from_catalog": "Pesquisa Ação",
+      "bibliographic_topic_from_catalog": "Pesquisa Ação (pasta original; corrigida no índice de consulta)",
       "bibliographic_language_from_catalog": "Português",
       "bibliographic_catalogue_provenance": "PPGA_INVENTARIO_DF_RESEARCH_CATALOGUE",
       "bibliographic_match_confidence": "SOURCE_METADATA_MATCH_ONLY",
@@ -647,7 +653,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Glossário de ciência política: contribuições para os estudos das políticas educacionais",
+      "source_text_authors": "Leonice Aparecida de Fátima Alves Pereira Mourad",
+      "source_text_year": "2021",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "MASTER_DISSERTATION_RESTRICTED_UNCHECKED"
     },
     {
       "id": "SRC-0023",
@@ -774,11 +785,11 @@
       "filename": "Sardenberg,2001.pdf",
       "size_bytes": 180362,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -791,7 +802,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Da crítica feminista à ciência a uma ciência feminista?",
+      "source_text_authors": "Cecilia Maria Bacellar Sardenberg",
+      "source_text_year": "2001",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "REVISED_CONFERENCE_INTERVENTION_RIGHTS_UNCHECKED"
     },
     {
       "id": "SRC-0028",
@@ -799,11 +815,11 @@
       "filename": "Scavone,2008.pdf",
       "size_bytes": 52844,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -816,7 +832,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Estudos de gênero: uma sociologia feminista?",
+      "source_text_authors": "Lucila Scavone",
+      "source_text_year": "2008",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "PUBLISHER_COPYRIGHT_RESTRICTION_UNCHECKED"
     },
     {
       "id": "SRC-0029",
@@ -824,11 +845,11 @@
       "filename": "Mendes,Freitas,2017.pdf",
       "size_bytes": 159529,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -841,7 +862,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Abordagens feministas de análise de discurso: a formação de um campo",
+      "source_text_authors": "Isadora Costa Mendes; Lúcia Freitas",
+      "source_text_year": "2017",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "EDITED_BOOK_CHAPTER_PROHIBITS_UNAUTHORIZED_REPRODUCTION"
     },
     {
       "id": "SRC-0030",
@@ -849,11 +875,11 @@
       "filename": "Keller,2006.pdf",
       "size_bytes": 106214,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -866,7 +892,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Qual foi o impacto do feminismo na ciência?",
+      "source_text_authors": "Evelyn Fox Keller",
+      "source_text_year": "2006",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "TRANSLATED_ARTICLE_2004_ORIGINAL_RIGHTS_UNCHECKED"
     },
     {
       "id": "SRC-0031",
@@ -874,11 +905,11 @@
       "filename": "Schiebinger,2008.pdf",
       "size_bytes": 176299,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -891,7 +922,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Mais mulheres na ciência: questões de conhecimento",
+      "source_text_authors": "Londa Schiebinger",
+      "source_text_year": "2008",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "TRANSLATED_ARTICLE_RIGHTS_UNCHECKED"
     },
     {
       "id": "SRC-0032",
@@ -899,11 +935,11 @@
       "filename": "Doucet-Mauthner-2005.pdf",
       "size_bytes": 226756,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -916,7 +952,11 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Feminist methodologies and epistemology",
+      "source_text_authors": "Andrea Doucet; Natasha S. Mauthner",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "HANDBOOK_CHAPTER_2005_2006_EDITION_UNCONFIRMED"
     },
     {
       "id": "SRC-0033",
@@ -924,11 +964,11 @@
       "filename": "Figueiredo,2020.pdf",
       "size_bytes": 377714,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -941,7 +981,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Epistemologia insubmissa feminista negra decolonial",
+      "source_text_authors": "Angela Figueiredo",
+      "source_text_year": "2020",
+      "source_text_doi": "10.5965/2175180312292020e0102",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "OPEN_ACCESS_HOST_NOT_PDF_REUSE_LICENSE"
     },
     {
       "id": "SRC-0034",
@@ -949,11 +995,11 @@
       "filename": "Matos,2008.pdf",
       "size_bytes": 110268,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -966,7 +1012,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Teorias de gênero ou teorias e gênero? Se e como os estudos de gênero e feministas se transformaram em um campo novo para as ciências",
+      "source_text_authors": "Marlise Matos",
+      "source_text_year": "2008",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "PUBLISHER_COPYRIGHT_RESTRICTION_UNCHECKED"
     },
     {
       "id": "SRC-0035",
