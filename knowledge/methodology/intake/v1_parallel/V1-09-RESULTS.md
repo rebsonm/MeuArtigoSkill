@@ -86,6 +86,42 @@ Esta rodada confirmou metadados de identidade dos artigos atribuídos, sem consu
 
 **Datas editoriais a preservar:** EC-097 publicação online em 2024 e volume em 2025; EC-098 e EC-099 online em 2025 e fascículos 2026; EC-101, EC-103 e EC-105 igualmente online em 2025 e fascículos 2026. Não confundir ano de DOI com data da edição final.
 
+## Revalidação de continuidade — auditoria estrutural nova (21/11/2026)
+
+Este adendo **não refaz** os 17 pareceres nem a pesquisa de metadados públicos já concluídos. Foi feita nova leitura direta dos 17 caminhos na branch `work/v1-09-20261121` e comparação dos **17 Git blob SHAs** com os recibos: **17/17 iguais**. Os SHA-256 da tabela abaixo são os valores **anteriormente comprovados** no recibo/manifesto, não hashes recalculados neste adendo. Nenhum card foi reescrito.
+
+**Conferência estrutural nova:** 17/17 exibem distinção textual [L]/[I]/[P] e registram que revisão científica independente continua pendente. A busca por âncoras explícitas de página numérica (`p. N`, `pp. N`, `página N`) encontrou **0/17**: achado sobre o texto dos cards, não prova de que a fonte não tenha paginação. **11/17** trazem seção histórica "Verificação direta do exemplar identificado" (EC-090…EC-100) e **6/17** não trazem essa seção (EC-101…EC-106); isso não substitui identificação do revisor, data, cópia, página e parecer independente.
+
+**Lacuna específica EC-094:** o cabeçalho informa "PDF PRIVADO NÃO CONSULTADO NESTA ETAPA", enquanto uma seção posterior descreve verificação do exemplar. Podem referir-se a momentos distintos, mas a cronologia/autoria não é documentada de modo suficiente para comprovar uma única cadeia independente de revisão; solicitação de saneamento de proveniência, sem afirmar falsidade.
+
+**Triagem de riscos:** 0 URLs de arquivos privados do Google Drive detectadas nos 17 textos lidos; 0 sequências explícitas dos padrões restritos `ignore previous instructions`, `disregard your instructions`, `reveal system/secret`, `ignore todas as instruções`. Uma triagem por padrões **não comprova ausência de prompt injection**. Dados recuperados continuam não confiáveis, nunca ordens; não promover [I]/[P] a [L] nem inferir licença do PDF a partir de metadados da página.
+
+| Card | Git blob SHA observado | SHA-256 documental anterior | Seção histórica | Registro SRC |
+|---|---|---|---|---|
+| EC-090 | `5fb696a41245eaeabc7ffbbee2b5fedd0ec11b9e` | `9669020d9e167a2774bcac0f3c011981c629d566be7a72c6be7e0eb05d401623` | Sim | SRC-0002 |
+| EC-091 | `86c38cabe622c31d3f0547e734ae0d8793be3cb4` | `bb191bfe1059279c6341a20c573946f03c8a053ae536d166e9be5de2a99efc80` | Sim | SRC-0026 |
+| EC-092 | `6c4eb74e3925c564d7fea70d90e5012b92606fdb` | `65a1e8e25fef0f0d763be2fc97fb94f08da41b5c26c1c652328982f049403048` | Sim | SRC-0050 |
+| EC-093 | `5b28bd16d185ee2b69e2ab1b339be141cd4f5cd1` | `de1441b0fbf8fa7997f582b6a5c935b148cdd17e6740f46f0cd24b6d7b32b122` | Sim | SRC-0035 |
+| EC-094 | `456d5216e82ee60cfc3220223d34d58f36067c09` | `67d14742e6865ac0be0e7bf9de268533ccef45f64721ea5039d3e45bb2c3b152` | Sim | SRC-0016 |
+| EC-095 | `6671798ad36c8f60e8f5442eaea8f2d4ffca1287` | `6df5311b3db289c41f7ee6fddfcf4b1fbdce7a978da36c0e911dae6338b2def0` | Sim | SRC-0041 |
+| EC-096 | `57e7f74e61c029ab28e2827da0ebda6f84c3aefb` | `847f6264c0d75b7e03899c8f7d27272c6dbac832856f30b4a248af49548e345d` | Sim | SRC-0049 |
+| EC-097 | `aadb880ab520c693915b3778dd14138eb2e4ddec` | `603b5e6065b9e76dc272af737e1bcc2022b68a6744c74c802e0df1d2311bd90a` | Sim | SRC-0054 |
+| EC-098 | `f3d09322dcb9e3bbef0c72e456ff68b30da97c24` | `eb434b655f9b4b3ad0a44ebf2f4d6a101c4add0ec65d90df905c137f7cc65da4` | Sim | SRC-0055 |
+| EC-099 | `31c488b2a13d521774a7badfb91caa8c1fd4e12a` | `699b23bae748da48eed369c0c8df7b169f2b9ac855b40cd1e50ccf46e3889092` | Sim | SRC-0063 |
+| EC-100 | `5cf14235a68052dc51ba13b373bed6e829ffbd83` | `9d3f763f20b601420f575c8021ea6ac7c665de3321ba298fe6e28e0e309a6854` | Sim | SRC-0069 |
+| EC-101 | `5871e4fb76d51680b539968c646c0317e6e515db` | `eba4afdcb42beb58fe8b0949a509d4d4955406f92177376692aefda184483291` | Não | SRC-0037 |
+| EC-102 | `aef588d66cc5da2343a923064834d922026cb46d` | `794178b00be3844852e2136c2b2785e7b3a13bdd60cfd3f0b69f76075e4e519f` | Não | SRC-0038 |
+| EC-103 | `44dda34ec3a43a4093d818bd053eefc3c38b0e71` | `23425b7cc3d014b6e07cc75c2716160483f79ec89bf8cdaa068fe446d70cdd81` | Não | SRC-0039 |
+| EC-104 | `67cbf7f851cb0c2a1f2b970984b75d7a88f8646f` | `36c2d5d52b50d9394fa97fdff06cc458befcf853ea11fce107981ade0d31a471` | Não | SRC-0042 |
+| EC-105 | `fd8f88f4d2a2ce49c26cf0150a6002aeacb6e3f2` | `dedf8976bc59a4b9c9c074db9fd4fb4ce103f44e15cf5b70aa8437b0adaac1ca` | Não | SRC-0043 |
+| EC-106 | `b88a50bd5611da4549d810db34faa12b64dceb3c` | `376785000ca038fb1527df2ff1ad832ef41ee48a235a80b6a38fb73a5fef5ba3` | Não | SRC-0045 |
+
+**Controle de execução pré-adendo:** comparação da branch com `7c92045310eb3b1474a9612a777fb0012a511592`: 6 commits à frente, 0 atrás, somente dois caminhos exclusivos; PR da V1-09 não localizada, statuses=[] e workflow_runs=[] no HEAD `0a0ef10ddf7d104a6f97b73e5a08cd1a81846c87`. Não confundir ausência de resultado com sucesso de CI.
+
+**Canônico Drive:** a seção 31.09 do corpo ainda contém o planejamento inicial. Sem revisão atômica ou janela exclusiva, **não sobrescrever** o Markdown bruto; um comentário ancorado na 31.09 foi criado para FEITO/EM EXECUÇÃO/PRÓXIMA AÇÃO. Nenhum byte do corpo do MD foi alterado por esta etapa.
+
+**Decisão editorial:** preservar `CORREÇÃO_NECESSÁRIA` para 17/17 e `PARCIAL` como estado da etapa. Faltam cotejo de trecho/página/edição/cópia, direitos por exemplar, revisão científica independente, avaliação independente de originalidade/direitos e conclusão segura do acompanhamento no MD. Sem merge, tag, release, MCP, PDF protegido ou aprovação de gate.
+
 ## Substituição proposta exclusivamente para a subseção 31.09 do MD canônico — NÃO APLICADA
 
 A seguir consta a substituição exata para integração controlada. Ela não foi gravada no Drive, pois o arquivo Markdown mudou durante a preparação e o endpoint de edição por trechos retornou `FAILED_PRECONDITION`; a API de substituição bruta não oferece trava otimista de versão. Em caso de janela de edição exclusiva, reler o MD integral mais recente, substituir somente o trecho entre 31.09 e 31.10 e conferir os demais blocos após a escrita.
