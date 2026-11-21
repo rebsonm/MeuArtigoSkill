@@ -109,9 +109,9 @@ class GuidedResearchContinuationTests(unittest.TestCase):
         view = self.guided()
         text = resume.guided_text(view)
         self.assertEqual(view["schema"], "MEU_ARTIGO_GUIDED_RESEARCH_CONTINUATION_V1")
-        self.assertEqual(text.count("Próxima ação:"), 1)
-        self.assertEqual(text.count("Condição de conclusão:"), 1)
-        self.assertIn("C.A.D.A.", view["one_next_action"] + " C.A.D.A.")
+        self.assertEqual(text.count("Next action:"), 1)
+        self.assertEqual(text.count("Exit criterion:"), 1)
+        self.assertIn("Continue the previously recorded", view["one_next_action"])
         self.assertNotIn("Trace_ID", text)
         self.assertFalse(view["scientific_completion_verified"])
 
@@ -119,13 +119,13 @@ class GuidedResearchContinuationTests(unittest.TestCase):
         view = self.guided()
         # There is an authorized operational next task: a new route
         # selection must not preempt that task by mere UX preference.
-        self.assertEqual(view["state"], "PREPARACAO_TECNICA_POSSIVEL")
+        self.assertEqual(view["state"], "TECHNICAL_PREPARATION_POSSIBLE")
         self.assertEqual(view["existing_cada_id"], "CADA-0002")
-        self.assertNotIn("Escolher método", view["one_next_action"])
+        self.assertNotIn("Choose a method", view["one_next_action"])
 
     def test_c_completed_task_count_is_operational_not_science(self):
         view = self.guided()
-        self.assertIn("tarefa(s) registrada(s) como concluída(s)",
+        self.assertIn("task(s) marked complete in the operational register",
                       view["what_is_recorded"])
         self.assertFalse(view["scientific_completion_verified"])
         self.assertTrue(view["not_an_automatic_task_or_gate_transition"])
@@ -139,13 +139,13 @@ class GuidedResearchContinuationTests(unittest.TestCase):
         self.assertEqual(cycle["verified_equivalent_attempts"], 2)
         self.assertTrue(cycle["human_diagnostic_advised"])
         self.assertFalse(cycle["automatically_blocked"])
-        self.assertIn("Diagnosticar", view["one_next_action"])
-        self.assertIn("evidência nova", view["exit_criterion"])
+        self.assertIn("Diagnose", view["one_next_action"])
+        self.assertIn("new evidence", view["exit_criterion"])
 
     def test_e_unavailable_canonical_state_has_no_fake_progress(self):
         self.root.joinpath("CONTINUIDADE.md").write_text("Conflicting copy")
         view = self.guided()
-        self.assertEqual(view["state"], "BLOQUEADO")
+        self.assertEqual(view["state"], "BLOCKED")
         self.assertIsNotNone(view["primary_blocker_code"])
         self.assertFalse(view["scientific_completion_verified"])
         self.assertFalse(view["canonical_state_modified"])
@@ -157,7 +157,7 @@ class GuidedResearchContinuationTests(unittest.TestCase):
         data["fallback_authorized"] = False
         config.write_text(json.dumps(data), encoding="utf-8")
         view = self.guided()
-        self.assertEqual(view["state"], "BLOQUEADO")
+        self.assertEqual(view["state"], "BLOCKED")
         self.assertEqual(view["cycle_signal"]["status"],
                          "CANONICAL_STORAGE_NOT_VERIFIED")
         self.assertFalse(view["drive_sync_verified"])
@@ -252,7 +252,7 @@ class GuidedResearchContinuationTests(unittest.TestCase):
                 text=True, capture_output=True)
             self.assertEqual(p.returncode, 0, p.stderr)
             if fmt == "guided":
-                self.assertEqual(p.stdout.count("Próxima ação:"), 1)
+                self.assertEqual(p.stdout.count("Next action:"), 1)
             else:
                 doc = json.loads(p.stdout)
                 self.assertEqual(doc["existing_cada_id"], "CADA-0002")
