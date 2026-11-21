@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "knowledge" / "methodology"
 IDS = {"SRC-0071", "SRC-0072", "SRC-0074", "SRC-0075", "SRC-0077",
        "SRC-0078", "SRC-0079", "SRC-0080", "SRC-0081", "SRC-0082"}
-RESTRICTED = {"SRC-0071", "SRC-0077", "SRC-0080"}
+NONCOMMERCIAL = {"SRC-0077", "SRC-0080"}
 CC_BY_CANDIDATES = {"SRC-0079", "SRC-0081"}
 
 class EighthAIQualitativeIdentitiesTests(unittest.TestCase):
@@ -50,7 +50,7 @@ class EighthAIQualitativeIdentitiesTests(unittest.TestCase):
 
     def test_restricted_licenses_and_cc_by_candidates_not_conflated(self):
         docs = {r["source_id"]: r for r in self.registry["documents"]}
-        for source_id in RESTRICTED:
+        for source_id in NONCOMMERCIAL:
             self.assertIn("NOT_UNRESTRICTED", docs[source_id]["public_work_metadata_screen"]["rights_screen"])
         self.assertEqual(docs["SRC-0071"]["public_work_metadata_screen"]["rights_screen"],
                          "PREPRINT_ALL_RIGHTS_RESERVED")
