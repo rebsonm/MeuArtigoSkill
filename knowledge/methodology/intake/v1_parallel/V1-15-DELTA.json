@@ -1,0 +1,253 @@
+{
+  "schema": "MEU_ARTIGO_V1_15_AUDIT_DELTA_V1",
+  "batch_id": "V1-15/20",
+  "status": "PARCIAL",
+  "date_local": "2026-11-21",
+  "branch": "work/v1-15-20261121",
+  "manifest_commit": "7c92045310eb3b1474a9612a777fb0012a511592",
+  "manifest_blob_sha1": "2f85dc6c4283376b9fc3c312668f0a1f25a0a301",
+  "reference_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+  "reference_blobs": {
+    "source_registry": "511b519f6524cd1f7f977dc41a330ce62fbd00c1",
+    "editorial_catalog": "6ca3ebde72b117717ae994390121c5aee884d7be"
+  },
+  "inspected_scopes": {
+    "frozen_source_registry_records": 475,
+    "provisional_source_records": 343,
+    "ib_delta_batches": 20,
+    "ib_delta_records": 343,
+    "source_delta_sha256_valid_format": 343,
+    "editorial_catalog_records": 174,
+    "editorial_catalog_sha256_valid_format": 174,
+    "editorial_draft_status": 170,
+    "editorial_missing_explicit_status": 4,
+    "rights_registry_not_checked": 458,
+    "rights_registry_verified_publisher_license": 17
+  },
+  "concrete_sha256_recomputations": [
+    {
+      "class": "SOURCE_CARD",
+      "id": "SRC-0099",
+      "ref": "work/ib-01-20261121",
+      "path": "knowledge/methodology/source_cards/src-0099.md",
+      "expected": "c9d2f4481f90ad19b91fa52e1e97a2dfa4412ca88574a88af80ccb3635264096",
+      "actual": "c9d2f4481f90ad19b91fa52e1e97a2dfa4412ca88574a88af80ccb3635264096",
+      "outcome": "MATCH"
+    },
+    {
+      "class": "EDITORIAL_CARD",
+      "path": "knowledge/methodology/cards/reviews.md",
+      "ref": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "expected": "331db84256e59599d0a8674b0064d9c3058a9261917efb03e403f083dfcde8af",
+      "actual": "331db84256e59599d0a8674b0064d9c3058a9261917efb03e403f083dfcde8af",
+      "outcome": "MATCH"
+    }
+  ],
+  "scope_full_hashes_recomputed": false,
+  "actual_sha256_divergences_in_verified_sample": [],
+  "pending_recompute_count": 515,
+  "duplicate_size_candidate_groups": [
+    {
+      "ids": [
+        "SRC-0111",
+        "SRC-0454"
+      ],
+      "evidence": "SAME_SIZE_BYTES_ONLY",
+      "same_file_as_confirmed": false,
+      "same_work_as_confirmed": false
+    },
+    {
+      "ids": [
+        "SRC-0354",
+        "SRC-0438"
+      ],
+      "evidence": "SAME_SIZE_BYTES_ONLY",
+      "same_file_as_confirmed": false,
+      "same_work_as_confirmed": false
+    },
+    {
+      "ids": [
+        "SRC-0206",
+        "SRC-0337"
+      ],
+      "evidence": "SAME_SIZE_BYTES_ONLY",
+      "same_file_as_confirmed": false,
+      "same_work_as_confirmed": false
+    },
+    {
+      "ids": [
+        "SRC-0235",
+        "SRC-0267"
+      ],
+      "evidence": "SAME_SIZE_BYTES_ONLY",
+      "same_file_as_confirmed": false,
+      "same_work_as_confirmed": false
+    },
+    {
+      "ids": [
+        "SRC-0244",
+        "SRC-0371"
+      ],
+      "evidence": "SAME_SIZE_BYTES_ONLY",
+      "same_file_as_confirmed": false,
+      "same_work_as_confirmed": false
+    },
+    {
+      "ids": [
+        "SRC-0230",
+        "SRC-0344"
+      ],
+      "evidence": "SAME_SIZE_BYTES_ONLY",
+      "same_file_as_confirmed": false,
+      "same_work_as_confirmed": false
+    },
+    {
+      "ids": [
+        "SRC-0349",
+        "SRC-0391"
+      ],
+      "evidence": "SAME_SIZE_BYTES_ONLY",
+      "same_file_as_confirmed": false,
+      "same_work_as_confirmed": false
+    },
+    {
+      "ids": [
+        "SRC-0245",
+        "SRC-0370"
+      ],
+      "evidence": "SAME_SIZE_BYTES_ONLY",
+      "same_file_as_confirmed": false,
+      "same_work_as_confirmed": false
+    },
+    {
+      "ids": [
+        "SRC-0006",
+        "SRC-0435"
+      ],
+      "evidence": "SAME_SIZE_BYTES_ONLY",
+      "same_file_as_confirmed": false,
+      "same_work_as_confirmed": false
+    },
+    {
+      "ids": [
+        "SRC-0402",
+        "SRC-0430",
+        "SRC-0434"
+      ],
+      "evidence": "SAME_SIZE_BYTES_ONLY",
+      "same_file_as_confirmed": false,
+      "same_work_as_confirmed": false
+    },
+    {
+      "ids": [
+        "SRC-0234",
+        "SRC-0256"
+      ],
+      "evidence": "SAME_SIZE_BYTES_ONLY",
+      "same_file_as_confirmed": false,
+      "same_work_as_confirmed": false
+    }
+  ],
+  "aliases_candidate_groups": [
+    {
+      "ib": "IB-05",
+      "ids": [
+        "SRC-0175",
+        "SRC-0176",
+        "SRC-0177",
+        "SRC-0178",
+        "SRC-0179",
+        "SRC-0180"
+      ],
+      "ledger_folder": "Transparˆncia na Pesquisa Qualitativa",
+      "delta_folder": "Transparência na Pesquisa Qualitativa"
+    },
+    {
+      "ib": "IB-05",
+      "ids": [
+        "SRC-0183"
+      ],
+      "ledger_folder": "Transparˆncia e Replicabilidade (quanti)",
+      "delta_folder": "Transparência e Replicabilidade (quanti)"
+    },
+    {
+      "ib": "IB-06",
+      "ids": [
+        "SRC-0195",
+        "SRC-0196",
+        "SRC-0197",
+        "SRC-0198",
+        "SRC-0200",
+        "SRC-0201",
+        "SRC-0202",
+        "SRC-0203",
+        "SRC-0204"
+      ],
+      "ledger_folder": "An lise do Discurso",
+      "delta_folder": "Análise do Discurso"
+    },
+    {
+      "ib": "IB-14",
+      "ids": [
+        "SRC-0368",
+        "SRC-0369"
+      ],
+      "ledger_folder": "An lise de Conte£do",
+      "delta_folder": "Análise de Conteúdo"
+    },
+    {
+      "ib": "IB-17",
+      "ids": [
+        "SRC-0407",
+        "SRC-0408",
+        "SRC-0409"
+      ],
+      "ledger_folder": "An lise de Sobrevivˆncia",
+      "delta_folder": "Análise de Sobrevivência"
+    },
+    {
+      "ib": "IB-17",
+      "ids": [
+        "SRC-0411",
+        "SRC-0412",
+        "SRC-0413",
+        "SRC-0414"
+      ],
+      "ledger_folder": "An lise Fatorial",
+      "delta_folder": "Análise Fatorial"
+    }
+  ],
+  "folder_alias_records_count": 25,
+  "delta_vs_ledger_filename_mismatch_count": 0,
+  "delta_vs_ledger_size_mismatch_count": 0,
+  "aliases_validated_against_private_Drive": false,
+  "copyright": {
+    "source_pdfs_republished": 0,
+    "exact_copy_pdf_sha256_compared": 0,
+    "rights_for_exact_pdf_copies_newly_approved": 0,
+    "editorial_cards_independently_scientifically_approved": 0,
+    "prior_rights_counters_not_promoted": true
+  },
+  "script": {
+    "path": "scripts/v1_15_integrity_audit.py",
+    "commit": "4d4cb1a2e448bb0fa0ff863b49f7d5725e9c30ca",
+    "executed_in_full_git_checkout": false,
+    "ci_status": "NOT_RUN"
+  },
+  "canonical_md": {
+    "file_id": "1-dccVbAUX5-xLw6fq027cB15oVqOjl_U",
+    "desired_section": "31.15",
+    "write_status": "NOT_WRITTEN_CONCURRENT_RAW_MARKDOWN_RISK",
+    "observed_content_length_first": 306686,
+    "observed_content_length_later": 307566,
+    "blocker": "Raw text/markdown object; no conditional atomic section-level patch offered by connected Drive actions; file changed during review. Preserved remote state."
+  },
+  "prohibited_actions_performed": [],
+  "next_steps": [
+    "Executar script contra clone com refs IB congeladas, registrar lista real de divergências dos 517 SHA-256",
+    "Verificar SHA-256 das cópias privadas dos 11 grupos, sem publicar PDFs",
+    "Validar os 25 aliases contra pastas originais autorizadas",
+    "Atualizar exclusivamente 31.15 após obter edição segura e conciliação transacional",
+    "Manter V1-16 bloqueada até evidências e demais entregas auditadas"
+  ]
+}
