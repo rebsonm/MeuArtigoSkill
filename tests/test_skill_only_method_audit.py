@@ -12,7 +12,7 @@ class SkillOnlyMethodAuditTests(unittest.TestCase):
   self.assertEqual(len(register["documents"]),475)
   self.assertEqual(sum(x["bibliography_match_status"]=="IDENTITY_UNRESOLVED" for x in register["documents"]),71)
   for item in audit["rows"]:
-   self.assertRegex(item["doi"],r"^10\\.[0-9]{4,9}/")
+   self.assertRegex(item["doi"],r"^10\.[0-9]{4,9}/")
    self.assertTrue(item["public_locator"].startswith("https://"))
    self.assertFalse(item["archive_pdf_identity_confirmed"])
    self.assertFalse(item["archive_pdf_text_read"])
