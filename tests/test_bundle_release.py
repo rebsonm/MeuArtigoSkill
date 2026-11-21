@@ -36,6 +36,8 @@ class BundleTests(unittest.TestCase):
         m = pkg.package(self.root, self.output)
         self.assertEqual(m["version"], self.version)
         self.assertFalse(m["scientific_quality_validated"])
+        self.assertEqual(m["source_release_channel"], pkg.release_channel(self.version))
+        self.assertFalse(m["publication_verified"])
         with ZipFile(self.output) as z:
             self.assertIn("SKILL.md", z.namelist())
             self.assertIn("LICENSE", z.namelist())
