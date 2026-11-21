@@ -355,5 +355,15 @@
     "independent scientific/editorial fidelity check for 18 cards",
     "reconcile subsection 31.05 using concurrency-safe in-place edit and readback",
     "integrator audits dependencies and P0 before V1-16"
-  ]
+  ],
+  "validation": {
+    "sha256_matches": 18,
+    "git_scope_compare_files": 2,
+    "git_ahead_from_manifest": 3,
+    "git_behind_from_manifest": 0,
+    "combined_status_checks_at_previous_head": 0,
+    "pr_workflow_runs_at_previous_head": 0,
+    "ci_claim": "NOT_PROVEN; new commits require fresh CI",
+    "readback": "RESULTS and DELTA read back from branch"
+  }
 }
