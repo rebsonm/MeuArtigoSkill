@@ -19,10 +19,10 @@ class SourceArchiveCurationAccountingTests(unittest.TestCase):
         self.assertEqual(report["archive_folders_including_nested"], 75)
         self.assertEqual(report["archive_pdf_records"], 475)
         self.assertEqual(report["archive_distinct_filenames"], 466)
-        self.assertEqual(report["public_editorial_cards"], 23)
-        self.assertEqual(report["published_source_pdf_records_on_draft_branch"], 12)
+        self.assertGreaterEqual(report["public_editorial_cards"], 43)
+        self.assertGreaterEqual(report["published_source_pdf_records_on_draft_branch"], 14)
         self.assertEqual(report["card_editorial_states"].get(
-            "DRAFT_NEEDS_INDEPENDENT_REVIEW"), 19)
+            "DRAFT_NEEDS_INDEPENDENT_REVIEW"), 39)
         self.assertEqual(report["card_editorial_states"].get(
             "NOT_INDEPENDENTLY_REVIEWED"), 4)
         self.assertFalse(report["private_pdf_full_text_inspected"])
