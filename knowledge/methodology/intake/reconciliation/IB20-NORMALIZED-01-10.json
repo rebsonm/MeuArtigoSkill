@@ -6,8 +6,8 @@
   "privacy": "No Google Drive IDs or private-file URLs are retained; original Git history may still expose older values",
   "status": "PROVISIONAL_INTENT_TO_INTEGRATE_NOT_GLOBAL_REGISTRY",
   "total": 173,
-  "verified": 162,
-  "blocked": 11,
+  "verified": 165,
+  "blocked": 8,
   "summary": [
     {
       "batch_id": "IB-01/20",
@@ -18,26 +18,21 @@
     {
       "batch_id": "IB-02/20",
       "total": 18,
-      "verified": 17,
-      "blocked": [
-        "SRC-0117"
-      ]
+      "verified": 18,
+      "blocked": []
     },
     {
       "batch_id": "IB-03/20",
       "total": 18,
-      "verified": 17,
-      "blocked": [
-        "SRC-0138"
-      ]
+      "verified": 18,
+      "blocked": []
     },
     {
       "batch_id": "IB-04/20",
       "total": 17,
-      "verified": 15,
+      "verified": 16,
       "blocked": [
-        "SRC-0160",
-        "SRC-0169"
+        "SRC-0160"
       ]
     },
     {
@@ -398,22 +393,20 @@
     {
       "batch_id": "IB-02/20",
       "source_id": "SRC-0117",
-      "identity_confirmed": false,
-      "blocked_reason": "Ano/edição da publicação definitiva não comprovados no manuscrito aceito.",
+      "identity_confirmed": true,
+      "blocked_reason": null,
       "title": "Elite Studies: For a New Approach",
-      "authors_edition": "Erzsébet Bukodi; John H. Goldthorpe; ano/edição de publicação não constam no manuscrito aceito",
+      "authors_edition": "Erzsébet Bukodi; John H. Goldthorpe; *The Political Quarterly* 92(4), 673–681 (2021); original privado é manuscrito aceito.",
       "document_type": "ARTIGO_ACEITO_MANUSCRITO",
-      "doi_isbn": {
-        "doi": null,
-        "isbn": null
-      },
+      "doi_isbn": "10.1111/1467-923X.13072 (Wiley, não impresso na cópia)",
       "rights_observed": "Sem licença expressa identificada no manuscrito; não redistribuir.",
       "filename": "Bukodietal,2021.pdf",
       "size_bytes": 953896,
-      "card_sha256": "c16f3cfd1716cb7090929cc931c421923512d0345db1c822ef25212f047c2cea",
+      "card_sha256": "69c062bcdf76f7cd7c7262d45abd12119de5505c143a604c73fef01774cdd632",
       "card_path": "knowledge/methodology/source_cards/src-0117.md",
       "scientific_review": "PENDING",
-      "public_pdf_approved_by_batch": false
+      "public_pdf_approved_by_batch": false,
+      "bibliography_source_version_caveat": "Identidade bibliográfica corroborada com fonte editorial; arquivo privado pode representar manuscrito/trecho, não PDF final."
     },
     {
       "batch_id": "IB-02/20",
@@ -798,19 +791,20 @@
     {
       "batch_id": "IB-03/20",
       "source_id": "SRC-0138",
-      "identity_confirmed": false,
-      "blocked_reason": "Sem autor/ano/editor verificados; nome Closa,2021.pdf é pista não prova",
+      "identity_confirmed": true,
+      "blocked_reason": null,
       "title": "Planning, implementing and reporting. Increasing transparency, replicability and credibility in qualitative political science research",
-      "authors_edition": "não confirmado — não confirmado",
+      "authors_edition": "Carlos Closa; *European Political Science* 20(2), 270–280 (2021); cópia privada = manuscrito sem DOI/cabeçalho editorial.",
       "document_type": "manuscrito incerto",
-      "doi_isbn": null,
+      "doi_isbn": "10.1057/s41304-020-00299-2 (Cambridge, não impresso na cópia)",
       "rights_observed": "sem licença observada",
       "filename": "Closa,2021.pdf",
       "size_bytes": 791129,
-      "card_sha256": "d991b643468de8137c80a92ac8eb1d47acc4fbe3d492e132807a36616acdc62b",
+      "card_sha256": "38eb506648c01470c6b9562262ba6121ea9b3c4bbe16b508d026a6d983e8d8f8",
       "card_path": "knowledge/methodology/source_cards/src-0138.md",
       "scientific_review": "PENDING",
-      "public_pdf_approved_by_batch": false
+      "public_pdf_approved_by_batch": false,
+      "bibliography_source_version_caveat": "Identidade bibliográfica corroborada com fonte editorial; arquivo privado pode representar manuscrito/trecho, não PDF final."
     },
     {
       "batch_id": "IB-03/20",
@@ -1281,19 +1275,20 @@
     {
       "batch_id": "IB-04/20",
       "source_id": "SRC-0169",
-      "identity_confirmed": false,
-      "blocked_reason": "Obra-mãe, editora, ano e ISBN do capítulo não confirmados",
+      "identity_confirmed": true,
+      "blocked_reason": null,
       "title": "Barbara Dennis (formerly Korth). “Validity Crisis” in Qualitative Research Still? Movement Toward a Unified Approach. CAPÍTULO UM de coletânea/livro; obra maior, editora e ano não demonstrados na folha do exemplar.",
-      "authors_edition": "Barbara Dennis (formerly Korth). “Validity Crisis” in Qualitative Research Still? Movement Toward a Unified Approach. CAPÍTULO UM de coletânea/livro; obra maior, editora e ano não demonstrados na folha do exemplar.",
+      "authors_edition": "Barbara Dennis, capítulo 1 em *Qualitative Research: A Reader in Philosophy, Core Concepts, and Practice*, Peter Lang (2013), pp. 3–37.",
       "document_type": "Capítulo de livro de autoria própria (NÃO artigo).",
-      "doi_isbn": "DOI/ISBN, ano, título do livro e editora não confirmados na cópia examinada..",
+      "doi_isbn": "ISBN 9781433104725 da obra-mãe (JSTOR/catálogo)",
       "rights_observed": "Nenhuma licença de redistribuição observada. Acesso ao capítulo não autoriza republicá-lo.",
       "filename": "Dennis_ChapterOne.pdf",
       "size_bytes": 491149,
-      "card_sha256": "9d9283859a0674afe3b49f28814d6918ee9b7264a7ecea7682e57fffd25622b7",
+      "card_sha256": "215b367a6b64828f9b7e3f77afd042298be447ea9fa9600bdbfcd379530edead",
       "card_path": "knowledge/methodology/source_cards/src-0169.md",
       "scientific_review": "PENDING",
-      "public_pdf_approved_by_batch": false
+      "public_pdf_approved_by_batch": false,
+      "bibliography_source_version_caveat": "Identidade bibliográfica corroborada com fonte editorial; arquivo privado pode representar manuscrito/trecho, não PDF final."
     },
     {
       "batch_id": "IB-04/20",
@@ -3216,5 +3211,6 @@
       "scientific_review": "PENDING",
       "public_pdf_approved_by_batch": false
     }
-  ]
+  ],
+  "reconciliation_update": "2026-11-21: 0117, 0138, 0169 bibliographic identities externally corroborated against original archived titles and publisher records; 0385 remains quarantined. No global registry change."
 }
