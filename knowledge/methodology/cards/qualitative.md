@@ -1,5 +1,10 @@
 # Qualitative analysis and reflexivity
 
+Card ID: qualitative
+Publication state: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_RIGHTS_REVIEW
+Research evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_ONLY
+Rights status: UNVERIFIED_FOR_PUBLICATION — bibliographic leads do not establish reproduction rights or scientific fidelity.
+
 ## Conceptual orientation
 
 Methods such as thematic analysis, grounded theory, qualitative case study, ethnography, and narrative inquiry involve distinct research aims, assumptions, analytic processes, and quality criteria. Treating all qualitative studies as a generic process of coding loses material methodological differences.
