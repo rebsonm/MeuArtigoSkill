@@ -42,3 +42,23 @@
 ## Próximos passos, sem antecipar V1-16
 
 Executar o validador V1-15 em clone controlado com as 20 refs IB e o snapshot imutável; revisar divergências reais; pedir verificação autorizada do arquivo privado para duplicatas e aliases; examinar o incidente sem intervenção unilateral no histórico; atualizar o **mesmo** MD canônico apenas com recurso de gravação seguro, conferindo bloco 31.15 e preservação dos demais. **V1-16 permanece condicionada à entrega auditada de todas as V1-01..V1-15.** Nenhum merge, release, tag, force-push ou MCP foi realizado.
+
+## Anexo — texto de reconciliação proposto para a subseção 31.15 (NÃO aplicado ao Drive)
+
+```markdown
+### 31.15 — V1-15/20 — Integridade, duplicatas e codificação
+
+- **Estado:** `PARCIAL` — auditoria de hashes Markdown concluída; validação de PDFs privados, aliases e revisão humana pendentes; atualização concorrente do MD canônico bloqueada para preservar outras abas.
+- **Onda / dependências:** A; nenhuma dependência de início. **Branch exclusiva:** `work/v1-15-20261121`, criada a partir do manifesto no commit `7c92045310eb3b1474a9612a777fb0012a511592`.
+- **Escopo:** cinco ledgers de direitos, registry de 475, 20 DELTAs IB com 343 fichas, catálogo e 174 cards editoriais no snapshot PR #101 `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`.
+- **RESULTADOS e DELTA:** `knowledge/methodology/intake/v1_parallel/V1-15-RESULTS.md` e `V1-15-DELTA.json`; validador de leitura `scripts/v1_15_integrity_audit.py`.
+- **Hashes e testes:** SHA-256 recalculado diretamente de 343/343 fichas IB e 174/174 cards editoriais, **517/517 correspondências e 0 divergências**; nenhuma falha de leitura. Conferência estrutural de 343 deltas sem diferenças de nome/tamanho contra ledgers. Script Python disponível, ainda **não executado em clone**; CI/host real não testados.
+- **Duplicatas e codificação:** onze grupos de igual tamanho e 25 divergências de pastas por acentuação; candidatos, sem declaração de cópia idêntica; necessitam SHA-256 dos PDFs originais e cotejo com pastas privadas, mantendo todos os 475 IDs.
+- **Direitos e ciência:** 458/475 rights `NOT_CHECKED` no registry congelado e 17 registros `VERIFIED_PUBLISHER_LICENSE` sem autorização automática de cópia privada. 170/174 cards em `DRAFT_NEEDS_INDEPENDENT_REVIEW` e quatro sem campo explícito. Nenhuma aprovação científica independente, nenhuma licença nova, nenhum PDF distribuído, nenhuma promoção de [P] para [L].
+- **Incidente próprio da V1-15:** identificador de localização do MD apareceu em commit anterior de recibo público; removido do HEAD, mas permanece no histórico. Necessária decisão de privacidade/histórico; sem reescrita nem force-push.
+- **Bloqueio do MD:** o mesmo arquivo `text/markdown` recebeu edições concorrentes durante as releituras; a ferramenta exposta não permite substituição atômica apenas do bloco 31.15 com controle de versão. Para evitar perda de registros das outras abas, **NÃO foi gravado**; aplicar esta subseção somente com edição segura, relendo antes e verificando depois.
+- **Commits:** script `4d4cb1a2e448bb0fa0ff863b49f7d5725e9c30ca`; recibos e ajustes posteriores rastreáveis na branch. Sem merge, tag, release, MCP, publicação de PDFs ou force-push.
+- **Próximos passos:** validar 11 possíveis duplicatas e 25 aliases nas cópias privadas autorizadas; revisar direitos e ciência por pessoas competentes; reproduzir validador/CI; tratar o incidente de privacidade; reconciliar 31.15 no MD com operação segura. V1-16 só após todas V1-01…V1-15 entregues e auditadas.
+```
+
+Esse anexo não altera o MD, não é resultado de gravação e **não** concede a autorização para regravar todo o Markdown bruto em presença de concorrência.
