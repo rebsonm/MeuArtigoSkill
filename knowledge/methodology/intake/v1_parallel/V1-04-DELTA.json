@@ -497,6 +497,16 @@
     "approvals": "Zero distinct documented independent scientific or rights reviews; no public license approval.",
     "ci": "No workflow/combined statuses observed at head 65abb975318b73fc74ed30d5d4afdf26531ccc22; not a CI PASS",
     "canonical_md": "Body 31.04 not rewritten: no concurrency-safe transaction on raw markdown; comment-based continuity required.",
-    "next": "Obter duas revisões independentes documentadas, começando pelo cotejo das alegações de EC-012 com o texto primário e direitos da edição."
+    "next": "Obter duas revisões independentes documentadas, começando pelo cotejo das alegações de EC-012 com o texto primário e direitos da edição.",
+    "pr": "https://github.com/rebsonm/MeuArtigoSkill/pull/108"
+  },
+  "pr": {
+    "number": 108,
+    "url": "https://github.com/rebsonm/MeuArtigoSkill/pull/108",
+    "draft": true,
+    "base": "plan/v1-methodology-20-stages-20261121",
+    "opened_head_sha": "ca525627fc9383131a43b246b57a2201704a8ef3",
+    "state_at_creation": "open",
+    "no_merge": true
   }
 }
