@@ -1,6 +1,6 @@
 # V1-03/20 — RESULTS (21/11/2026)
 
-**Estado:** ENTREGUE_PARA_AUDITORIA, sem revisão científica independente nem integração. **Onda:** A; nenhuma dependência. **Branch exclusiva:** `work/v1-03-20261121` derivada de `7c92045310eb3b1474a9612a777fb0012a511592`. Manifesto fixo: blob `2f85dc6c4283376b9fc3c312668f0a1f25a0a301`. Snapshot de consulta PR #101: `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`.
+**Estado:** PARCIAL — recibos documentais entregues para auditoria, mas sincronização final do MD canônico impedida por conflitos de escrita; sem revisão científica independente nem integração. **Onda:** A; nenhuma dependência. **Branch exclusiva:** `work/v1-03-20261121` derivada de `7c92045310eb3b1474a9612a777fb0012a511592`. Manifesto fixo: blob `2f85dc6c4283376b9fc3c312668f0a1f25a0a301`. Snapshot de consulta PR #101: `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`.
 
 **Método:** confronto das cinco fichas anteriores nas respectivas branches IB; inspeção pontual de capa, expediente e metadados das cinco cópias privadas; SHA-256 das cópias exatas; confronto bibliográfico externo. **Não houve revisão científica integral, revisão editorial independente, auditoria jurídica conclusiva nem publicação de PDFs.** Hash não prova licença, autenticidade ou qualidade científica. Nenhum ID privado do Drive é registrado aqui.
 
@@ -59,3 +59,7 @@
 - Não foram alteradas fichas IB, registros globais, catálogo, ledgers, outras etapas, PDFs, ACL ou histórico.
 - Próxima etapa de consolidação V1-16 **somente depois** da entrega e auditoria de V1-01 a V1-15. A integração deverá avaliar os patch-intents, validar identidade e direitos de cópia exata e decidir a exclusão fundamentada do SRC-0385 se sua autenticidade não puder ser verificada.
 - Proibidos merge, release, tag, force-push, MCP, download público de PDF e aprovação científica presumida.
+
+## Registro operacional de concorrência do MD canônico
+
+A abertura V1-03 foi atualizada e verificada no MESMO MD original no Google Drive (ID canônico conhecido pelo mantenedor). Durante e ao término da execução, novas versões concorrentes foram detectadas entre a preparação do patch e a verificação imediatamente anterior ao `files.update`: os snapshots de 22:18:31.685Z, 22:20:39.312Z e 22:21:38.796Z tornaram-se obsoletos. **Todas as gravações intermediárias/finais baseadas em versões obsoletas foram abortadas sem mutação remota**. O bloco 31.03 permanece no estado de abertura `EM_EXECUCAO` no último readback da sessão; não alegar encerramento ou sincronização final. Os dois recibos GitHub já contêm as evidências e devem ser reconciliados exclusivamente em 31.03 por uma execução futura com janela de escrita segura. Não substituir o arquivo canônico por cópia nem sobrescrever abas concorrentes. A classificação documental V1-03 está pronta para auditoria, mas a etapa operacional permanece PARCIAL até o readback do MD final.
