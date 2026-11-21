@@ -88,6 +88,8 @@ class AutomaticLanguageTests(unittest.TestCase):
                 "exigem metodologia, evidência, fontes e verificação "
                 "para a construção de conhecimento. "
             )*2
+            (root/"knowledge/methodology/cards").mkdir(parents=True)
+            (root/"knowledge/methodology/cards/card.md").write_text(original,encoding="utf-8")
             (root/"knowledge/methodology/pdfs/README.md").write_text(original,encoding="utf-8")
             (root/"knowledge/methodology/pdf_catalog.json").write_text(original,encoding="utf-8")
             (root/"docs/guide.md").write_text(original,encoding="utf-8")
