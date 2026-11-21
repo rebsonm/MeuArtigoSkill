@@ -3845,10 +3845,221 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
       "source_registry_id": "SRC-0410"
+    },
+    {
+      "path": "knowledge/methodology/cards/source-checked-0007.md",
+      "title": "Modelos de leitura documentária para indexação: abordagens teóricas interdisciplinares e aplicações em diferentes tipos de documentos",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "df2fafc5c40123e8d195131d24ab7a6840d877a997832ecb3e5d46d92ca06670",
+      "source_url": "https://books.scielo.org/id/96v3r",
+      "source_doi": "10.36311/2020.978-65-86546-07-1",
+      "source_registry_id": "SRC-0007",
+      "source_read_scope": "DOCUMENT_IDENTITY_AND_METHOD_OUTLINE_ONLY_INDEPENDENT_REVIEW_PENDING",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "keywords": [
+        "Pesquisa Documental",
+        "modelos",
+        "leitura",
+        "documentária",
+        "indexação",
+        "abordagens",
+        "teóricas",
+        "interdisciplinares",
+        "aplicações"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/cards/source-checked-0008.md",
+      "title": "Pesquisa documental: pistas teóricas e metodológicas",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "1f934429f388d8eb2190a9d0ffbc0d69f637fd65be15223ac9cea31abf4e2601",
+      "source_url": null,
+      "source_doi": null,
+      "source_registry_id": "SRC-0008",
+      "source_read_scope": "DOCUMENT_IDENTITY_AND_METHOD_OUTLINE_ONLY_INDEPENDENT_REVIEW_PENDING",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "keywords": [
+        "Pesquisa Documental",
+        "pesquisa",
+        "documental",
+        "pistas",
+        "teóricas",
+        "metodológicas"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/cards/source-checked-0009.md",
+      "title": "Conducting a Qualitative Document Analysis",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "62f6446e6e8e2084a8df6dc019f185a8dfe446909e08e3a5b5b19c060e24791e",
+      "source_url": "https://doi.org/10.46743/2160-3715/2022.5044",
+      "source_doi": "10.46743/2160-3715/2022.5044",
+      "source_registry_id": "SRC-0009",
+      "source_read_scope": "DOCUMENT_IDENTITY_AND_METHOD_OUTLINE_ONLY_INDEPENDENT_REVIEW_PENDING",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "keywords": [
+        "Pesquisa Documental",
+        "conducting",
+        "qualitative",
+        "document",
+        "analysis"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/cards/source-checked-0010.md",
+      "title": "Análise documental como percurso metodológico na pesquisa qualitativa",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "76df07c052df796f916efccc7d64889eeb9574bf8db583f2f916a2a18922a23d",
+      "source_url": null,
+      "source_doi": null,
+      "source_registry_id": "SRC-0010",
+      "source_read_scope": "DOCUMENT_IDENTITY_AND_METHOD_OUTLINE_ONLY_INDEPENDENT_REVIEW_PENDING",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "keywords": [
+        "Pesquisa Documental",
+        "análise",
+        "documental",
+        "percurso",
+        "metodológico",
+        "pesquisa",
+        "qualitativa"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/cards/source-checked-0012.md",
+      "title": "Estudo/análise documental: uma revisão teórica e metodológica",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "4f4e662052abc28e245daad9a2d4c3330a7367fa54b4953ce83d88ed38165d31",
+      "source_url": null,
+      "source_doi": null,
+      "source_registry_id": "SRC-0012",
+      "source_read_scope": "DOCUMENT_IDENTITY_AND_METHOD_OUTLINE_ONLY_INDEPENDENT_REVIEW_PENDING",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "keywords": [
+        "Pesquisa Documental",
+        "estudo",
+        "análise",
+        "documental",
+        "revisão",
+        "teórica",
+        "metodológica"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/cards/source-checked-0013.md",
+      "title": "Análise documental e sua contribuição no desenvolvimento da pesquisa científica",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "15d7a382add2d98817ac6752354d2087448ad22a7587da79a1df9330cface68e",
+      "source_url": null,
+      "source_doi": null,
+      "source_registry_id": "SRC-0013",
+      "source_read_scope": "DOCUMENT_IDENTITY_AND_METHOD_OUTLINE_ONLY_INDEPENDENT_REVIEW_PENDING",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "keywords": [
+        "Pesquisa Documental",
+        "análise",
+        "documental",
+        "contribuição",
+        "desenvolvimento",
+        "pesquisa",
+        "científica"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/cards/source-checked-0014.md",
+      "title": "Pesquisa documental: considerações sobre conceitos e características na pesquisa qualitativa",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "4fa98ebed6484b5f3fde68a90722a99a48ddd3bc5313619c3c52dec5460d3ec4",
+      "source_url": null,
+      "source_doi": null,
+      "source_registry_id": "SRC-0014",
+      "source_read_scope": "DOCUMENT_IDENTITY_AND_METHOD_OUTLINE_ONLY_INDEPENDENT_REVIEW_PENDING",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "keywords": [
+        "Pesquisa Documental",
+        "pesquisa",
+        "documental",
+        "considerações",
+        "conceitos",
+        "características",
+        "qualitativa"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/cards/source-checked-0015.md",
+      "title": "Análise documental como ferramenta metodológica em história da educação: um olhar para pesquisas locais",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "fc2bebe70af44d85b072e140eb9d8b664c196b4c63acded945c6a8118ecb4b3a",
+      "source_url": null,
+      "source_doi": null,
+      "source_registry_id": "SRC-0015",
+      "source_read_scope": "DOCUMENT_IDENTITY_AND_METHOD_OUTLINE_ONLY_INDEPENDENT_REVIEW_PENDING",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "keywords": [
+        "Pesquisa Documental",
+        "análise",
+        "documental",
+        "ferramenta",
+        "metodológica",
+        "história",
+        "educação",
+        "pesquisas",
+        "locais"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/cards/source-checked-0146.md",
+      "title": "Intercoder Reliability in Qualitative Research: Debates and Practical Guidelines",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "2ea24ba23785ad49bec283b3f38cfd5daf00d4f875d3ba43caca2eddd9daf3d6",
+      "source_url": "https://doi.org/10.1177/1609406919899220",
+      "source_doi": "10.1177/1609406919899220",
+      "source_registry_id": "SRC-0146",
+      "source_read_scope": "DOCUMENT_IDENTITY_AND_METHOD_OUTLINE_ONLY_INDEPENDENT_REVIEW_PENDING",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "keywords": [
+        "Confiabilidade na Pesquisa Qualitativa",
+        "intercoder",
+        "reliability",
+        "qualitative",
+        "research",
+        "debates",
+        "practical",
+        "guidelines"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/cards/source-checked-0149.md",
+      "title": "Qualitative Quality: Eight ‘Big-Tent’ Criteria for Excellent Qualitative Research",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "80277f8ff0b2dbe16183c449093f6336ebca94de6265a231b6035bf39445add1",
+      "source_url": "https://doi.org/10.1177/1077800410383121",
+      "source_doi": "10.1177/1077800410383121",
+      "source_registry_id": "SRC-0149",
+      "source_read_scope": "DOCUMENT_IDENTITY_AND_METHOD_OUTLINE_ONLY_INDEPENDENT_REVIEW_PENDING",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "keywords": [
+        "Qualidade na Pesquisa Qualitativa",
+        "qualitative",
+        "quality",
+        "criteria",
+        "excellent",
+        "research"
+      ]
     }
   ],
   "license": "Apache-2.0 (original editorial cards only)",
   "repository": "rebsonm/MeuArtigoSkill",
   "schema": "MEU_ARTIGO_GITHUB_METHODOLOGY_V1",
-  "version": "pilot-2026-11-21-164-editorial-methodology-cards"
+  "version": "pilot-2026-11-21-174-editorial-method-cards"
 }

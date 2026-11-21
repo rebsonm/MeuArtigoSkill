@@ -1,9 +1,9 @@
 {
   "schema": "MEU_ARTIGO_SOURCE_CARD_INDEX_V1",
-  "version": "pilot-2026-11-21-rights-corrected-restricted-source",
+  "version": "pilot-2026-11-21-86-verified-389-provisional",
   "source_archive_records": 475,
   "catalogue_identified_titles": 475,
-  "source_text_read_in_ledger": 79,
+  "source_text_read_in_ledger": 89,
   "third_party_full_text_included": false,
   "source_records_are_evidence": false,
   "retrieval_label": "BIBLIOGRAPHIC_PROSPECTING_ONLY_NOT_ORIGINAL_ARTICLE_READING",
@@ -207,7 +207,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0007.md",
       "source_id": "SRC-0007",
-      "title": "Modelos de Leitura Documentária para Indexação: abordagens teóricas interdisciplinares e aplicações em diferentes tipos de documentos",
+      "title": "Modelos de leitura documentária para indexação: abordagens teóricas interdisciplinares e aplicações em diferentes tipos de documentos",
       "topic": "Pesquisa Documental",
       "keywords": [
         "documental",
@@ -226,13 +226,28 @@
         "2020",
         "src-0007"
       ],
-      "sha256": "6f5fa3fc795bdaadf0f2a7622dbddde5dbe25b6a681181db3a2e1dc5b1296685",
+      "sha256": "1a7cacaee4f2172b90b2ea5fbd8448f005b08ce230300b83a59329ff52bf266a",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Modelos de leitura documentária para indexação: abordagens teóricas interdisciplinares e aplicações em diferentes tipos de documentos",
+        "authors": "Mariângela Spotti Lopes Fujita; Roberta Caroline Vesu Alves; Carlos Cândido de Almeida (organizadores)",
+        "year": "2020",
+        "doi": "10.36311/2020.978-65-86546-07-1",
+        "public_url": "https://books.scielo.org/id/96v3r",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "CC_BY_WORK_DIFFERENT_BYTES"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0008.md",
@@ -248,13 +263,28 @@
         "2009",
         "src-0008"
       ],
-      "sha256": "57124219c976ce0e05bb2677f42fdc102c912f0f99198f3a57f140e696e349f1",
+      "sha256": "c0c37705de44d8b08cef08e45a4c2ba20f6a2618492dcf6c0dc37d6a8a57bf9d",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Pesquisa documental: pistas teóricas e metodológicas",
+        "authors": "Jackson Ronie Sá-Silva; Cristóvão Domingos de Almeida; Joel Felipe Guindani",
+        "year": "2009",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "NOT_CLEARED"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0009.md",
@@ -271,18 +301,33 @@
         "2022",
         "src-0009"
       ],
-      "sha256": "2e21afaa1143d19021f07361360e2c03e86556832e9529597a667b0032a5d0c2",
+      "sha256": "b7b9e31eac6af82ce44184d6847d0e017641ef0d5765e12db8b61c0630a05256",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Conducting a Qualitative Document Analysis",
+        "authors": "Hani Morgan",
+        "year": "2022",
+        "doi": "10.46743/2160-3715/2022.5044",
+        "public_url": "https://doi.org/10.46743/2160-3715/2022.5044",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "CC_BY_NC_SA_4"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0010.md",
       "source_id": "SRC-0010",
-      "title": "ANÁLISE DOCUMENTAL COMO PERCURSO METODOLÓGICO NA PESQUISA QUALITATIVA",
+      "title": "Análise documental como percurso metodológico na pesquisa qualitativa",
       "topic": "Pesquisa Documental",
       "keywords": [
         "documental",
@@ -295,13 +340,28 @@
         "2021",
         "src-0010"
       ],
-      "sha256": "7b1c32455c1182c26033472f1741d034975f42c30393da52a13801bf1f5959fd",
+      "sha256": "eb56322ca66ff6a43272a33f6b468b9c013359f606d955514aa16659df0930ac",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Análise documental como percurso metodológico na pesquisa qualitativa",
+        "authors": "Eduardo Brandão Lima Júnior; Guilherme Saramago de Oliveira; Adriana Cristina Omena dos Santos; Guilherme Fernando Schnekenberg",
+        "year": "2021",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "NOT_CLEARED"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0011.md",
@@ -350,7 +410,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0012.md",
       "source_id": "SRC-0012",
-      "title": "ESTUDO/ANÁLISE DOCUMENTAL: UMA REVISÃO TEÓRICA E METODOLÓGICA",
+      "title": "Estudo/análise documental: uma revisão teórica e metodológica",
       "topic": "Pesquisa Documental",
       "keywords": [
         "documental",
@@ -363,18 +423,33 @@
         "2016",
         "src-0012"
       ],
-      "sha256": "89f0de2f680af1ef90f6c8f0c53201cf60b2a50d3c3265ef5619744026af8cec",
+      "sha256": "e2513c1c499b7ef80c8501ec6816f9088723179f12bbabe77c2107f0c3cdd7e1",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Estudo/análise documental: uma revisão teórica e metodológica",
+        "authors": "André Cechinel; Silvia Aparecida Pereira Fontana; Kelli Pazeto Della Giustina; Antonio Serafim Pereira; Silvia Salvador do Prado",
+        "year": "2016",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "NOT_CLEARED"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0013.md",
       "source_id": "SRC-0013",
-      "title": "ANÁLISE DOCUMENTAL E SUA CONTRIBUIÇÃO NO DESENVOLVIMENTO DA PESQUISA CIENTÍFICA",
+      "title": "Análise documental e sua contribuição no desenvolvimento da pesquisa científica",
       "topic": "Pesquisa Documental",
       "keywords": [
         "documental",
@@ -385,18 +460,33 @@
         "alvesetal",
         "src-0013"
       ],
-      "sha256": "a54a9cd87deaf0af3711ce49480ce581c7d6d6d791d2dd17dffaa7d863e9eae8",
+      "sha256": "dd94a4822d15b610a9e460ce718e4cce0d6b038769d74538cea48c5e437fb921",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Análise documental e sua contribuição no desenvolvimento da pesquisa científica",
+        "authors": "Laís Hilário Alves; Guilherme Saramago; Lucia de Fátima Valente; Angélica Silva de Sousa",
+        "year": "2021",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "NOT_CLEARED"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0014.md",
       "source_id": "SRC-0014",
-      "title": "Pesquisa Documental: considerações sobre conceitos e características na Pesquisa Qualitativa",
+      "title": "Pesquisa documental: considerações sobre conceitos e características na pesquisa qualitativa",
       "topic": "Pesquisa Documental",
       "keywords": [
         "documental",
@@ -408,18 +498,33 @@
         "2015",
         "src-0014"
       ],
-      "sha256": "72ad79c3b7f8fa762cde1b50122ca8fbf0ef9e249bdc6588013601b462503caa",
+      "sha256": "8d0e7dc8fe14f16f52617a89c178d362960c7555c9692be3da164023b5a72db9",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Pesquisa documental: considerações sobre conceitos e características na pesquisa qualitativa",
+        "authors": "Rosana Maria Luvezute Kripka; Morgana Scheller; Danusa de Lara Bonotto",
+        "year": "2015",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "NOT_CLEARED"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0015.md",
       "source_id": "SRC-0015",
-      "title": "ANÁLISE DOCUMENTAL COMO FERRAMENTA METODOLÓGICA EM HISTÓRIA DA EDUCAÇÃO: UM OLHAR PARA PESQUISAS LOCAIS",
+      "title": "Análise documental como ferramenta metodológica em história da educação: um olhar para pesquisas locais",
       "topic": "Pesquisa Documental",
       "keywords": [
         "documental",
@@ -436,13 +541,28 @@
         "2021",
         "src-0015"
       ],
-      "sha256": "1449f7debe3c51511ec401cb721fce5739bb2ce0e2b03307785a4486f873c75d",
+      "sha256": "2d86f830cc83aecbfe7216fd4753c87274eda1191a4a4010a8fab166759e87ea",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Análise documental como ferramenta metodológica em história da educação: um olhar para pesquisas locais",
+        "authors": "José Edimar de Souza; Cristian Giacomoni",
+        "year": "2021",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "NOT_CLEARED"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0016.md",
@@ -4556,13 +4676,28 @@
         "2020",
         "src-0146"
       ],
-      "sha256": "dfdf4fedb05fe4cefedfe4062f226709cea5526df7fa2329a32faa029e87075c",
+      "sha256": "117c001a3eb557baee917f86a8e297559bf30b73baf314307d04419ef90c8a3b",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Intercoder Reliability in Qualitative Research: Debates and Practical Guidelines",
+        "authors": "Cliodhna O’Connor; Helene Joffe",
+        "year": "2020",
+        "doi": "10.1177/1609406919899220",
+        "public_url": "https://doi.org/10.1177/1609406919899220",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "CC_BY_NC_4"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0147.md",
@@ -4622,7 +4757,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0149.md",
       "source_id": "SRC-0149",
-      "title": "Qualitative Quality: Eight ''Big-Tent'' Criteria for Excellent Qualitative Research",
+      "title": "Qualitative Quality: Eight ‘Big-Tent’ Criteria for Excellent Qualitative Research",
       "topic": "Qualidade na Pesquisa Qualitativa",
       "keywords": [
         "qualidade",
@@ -4636,13 +4771,28 @@
         "tracy2010",
         "src-0149"
       ],
-      "sha256": "71ba4943991dbc48ee020d296b7b0223a88b595b123424bf80bbe81862a9bb87",
+      "sha256": "0cca547d5d6ca3ad84b1e3ba686aceef77a487c00596d5aa71c81e873906ed3f",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Qualitative Quality: Eight ‘Big-Tent’ Criteria for Excellent Qualitative Research",
+        "authors": "Sarah J. Tracy",
+        "year": "2010",
+        "doi": "10.1177/1077800410383121",
+        "public_url": "https://doi.org/10.1177/1077800410383121",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "NOT_CLEARED"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0150.md",
@@ -13590,6 +13740,6 @@
   "provisional_filename_title_cards": 71,
   "identities_still_unresolved": 0,
   "public_bibliographic_work_checks": 12,
-  "provisional_matches": 399,
-  "confirmed_pdf_work_identities": 76
+  "provisional_matches": 389,
+  "confirmed_pdf_work_identities": 86
 }

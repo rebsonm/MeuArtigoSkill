@@ -165,11 +165,11 @@
       "filename": "Fujitaetal,2020.pdf",
       "size_bytes": 4637247,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -182,7 +182,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Modelos de leitura documentária para indexação: abordagens teóricas interdisciplinares e aplicações em diferentes tipos de documentos",
+      "source_text_year": "2020",
+      "source_text_doi": "10.36311/2020.978-65-86546-07-1",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "A edição consultada expõe CC BY 4.0 com ressalva para conteúdos individualmente excluídos, mas o exemplar baixado não coincide em tamanho com o inventário; licença da cópia exata ainda não aprovada.",
+      "observed_license_conditions": "CC_BY_WORK_DIFFERENT_BYTES"
     },
     {
       "id": "SRC-0008",
@@ -190,11 +196,11 @@
       "filename": "Sa-Silvaetal,2009.pdf",
       "size_bytes": 88945,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -207,7 +213,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Pesquisa documental: pistas teóricas e metodológicas",
+      "source_text_year": "2009",
+      "source_text_doi": null,
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "Não há licença de reprodução da cópia exata comprovada. Um ensaio teórico não é validação empírica universal de todos os desenhos documentais.",
+      "observed_license_conditions": "NOT_CLEARED"
     },
     {
       "id": "SRC-0009",
@@ -215,11 +227,11 @@
       "filename": "Morgan,2022.pdf",
       "size_bytes": 553440,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -232,7 +244,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Conducting a Qualitative Document Analysis",
+      "source_text_year": "2022",
+      "source_text_doi": "10.46743/2160-3715/2022.5044",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "O exemplar mostra CC BY-NC-SA 4.0, incompatível com redistribuição irrestrita do PDF no projeto; somente card original e referência bibliográfica.",
+      "observed_license_conditions": "CC_BY_NC_SA_4"
     },
     {
       "id": "SRC-0010",
@@ -240,11 +258,11 @@
       "filename": "Lima Junioretal,2021.pdf",
       "size_bytes": 270425,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -257,7 +275,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Análise documental como percurso metodológico na pesquisa qualitativa",
+      "source_text_year": "2021",
+      "source_text_doi": null,
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "Sem licença da cópia original demonstrada; o artigo não substitui obras fundamentais citadas e seus conceitos requerem confronto com o método eleito.",
+      "observed_license_conditions": "NOT_CLEARED"
     },
     {
       "id": "SRC-0011",
@@ -287,11 +311,11 @@
       "filename": "Cechieneletal,+2016.pdf",
       "size_bytes": 162818,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -304,7 +328,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Estudo/análise documental: uma revisão teórica e metodológica",
+      "source_text_year": "2016",
+      "source_text_doi": null,
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "A síntese não equivale a prova de que documentos administrativos representem toda a ação institucional. Permissão de redistribuição não confirmada.",
+      "observed_license_conditions": "NOT_CLEARED"
     },
     {
       "id": "SRC-0013",
@@ -312,11 +342,11 @@
       "filename": "Alvesetal.pdf",
       "size_bytes": 441378,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -329,7 +359,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Análise documental e sua contribuição no desenvolvimento da pesquisa científica",
+      "source_text_year": "2021",
+      "source_text_doi": null,
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "A delimitação conceitual da técnica não comprova validade externa de um corpus qualquer. Licença do PDF não esclarecida.",
+      "observed_license_conditions": "NOT_CLEARED"
     },
     {
       "id": "SRC-0014",
@@ -337,11 +373,11 @@
       "filename": "Kripkaetal,2015.pdf",
       "size_bytes": 770962,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -354,7 +390,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Pesquisa documental: considerações sobre conceitos e características na pesquisa qualitativa",
+      "source_text_year": "2015",
+      "source_text_doi": null,
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "A capa de terceiros não confere licença ao artigo. Não afirmar que este exemplar seja uma versão editorial com direitos de redistribuição confirmados.",
+      "observed_license_conditions": "NOT_CLEARED"
     },
     {
       "id": "SRC-0015",
@@ -362,11 +404,11 @@
       "filename": "Souza,Giacomoni,2021.pdf",
       "size_bytes": 537927,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -379,7 +421,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Análise documental como ferramenta metodológica em história da educação: um olhar para pesquisas locais",
+      "source_text_year": "2021",
+      "source_text_doi": null,
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "Estratégias de História da Educação não são automaticamente aplicáveis à administração sem adaptar objeto e pressupostos. Direitos da edição não verificados.",
+      "observed_license_conditions": "NOT_CLEARED"
     },
     {
       "id": "SRC-0016",
@@ -3515,11 +3563,11 @@
       "filename": "o-connor-joffe-2020.pdf",
       "size_bytes": 766064,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -3532,7 +3580,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Intercoder Reliability in Qualitative Research: Debates and Practical Guidelines",
+      "source_text_year": "2020",
+      "source_text_doi": "10.1177/1609406919899220",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "A obra não impõe ICR à análise temática reflexiva; o exemplar é CC BY-NC 4.0 e não pode ser tratado como livre para distribuição comercial.",
+      "observed_license_conditions": "CC_BY_NC_4"
     },
     {
       "id": "SRC-0147",
@@ -3590,11 +3644,11 @@
       "filename": "tracy2010.pdf",
       "size_bytes": 335879,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -3607,7 +3661,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Qualitative Quality: Eight ‘Big-Tent’ Criteria for Excellent Qualitative Research",
+      "source_text_year": "2010",
+      "source_text_doi": "10.1177/1077800410383121",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "O texto não substitui fundamentos epistemológicos de cada tradição; a cópia editorial da SAGE não apresenta licença permissiva identificada.",
+      "observed_license_conditions": "NOT_CLEARED"
     },
     {
       "id": "SRC-0150",
