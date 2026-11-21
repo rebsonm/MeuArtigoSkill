@@ -1,64 +1,69 @@
-# Meu Artigo — RAG Conceitual no Google Drive (piloto experimental)
+# Meu Artigo — Conceptual RAG in private Google Drive (experimental pilot)
 
-**Status:** prova de conceito local; não integrada ao ZIP oficial, não publicada, não homologada no ChatGPT e sem acesso automático ao Google Drive.
+**Status: source-only prototype.** Not integrated with the official Skill ZIP, not published, not validated inside ChatGPT, and not autonomously connected to Google Drive.
 
-## Arquitetura
+## Architecture and strict separation
 
-O Google Drive é o armazenamento **privado** da biblioteca, do Markdown convertido e dos índices persistentes. A extração e as consultas ocorrem localmente e apenas quando o host oferece execução de Python e acesso explícito aos arquivos. Google Drive não calcula embeddings nem garante consultas vetoriais. A pasta ser privada não impede escrita pelo proprietário; a Skill deve consumir os arquivos somente em leitura, por uma conexão com escopo de leitura quando disponível.
+Google Drive is an **optional private object store** for the researcher's source documents, page-addressable Markdown and persistent indexes. PDF extraction, indexing and similarity calculations take place in an explicitly authorized local execution environment. Google Drive does not run vector similarity or offer a built-in vector database through this module.
 
-Estrutura recomendada:
+The intended private folder layout is:
 
-- `01_Fontes_Originais`: PDFs licenciados/autorizações; originais preservados e não incluídos no repositório.
-- `02_Biblioteca_MD`: um `.md` por obra e seu `.md.meta.json` de proveniência. **Conversão não aprova direito de uso ou qualidade.**
-- `03_Indice_Conceitual`: dicionários/relacionamentos revisados por humanos; ainda não usados automaticamente por este MVP.
-- `04_Indice_Semantico`: cópia versionada dos artefatos gerados localmente (`chunks.jsonl`, `lexical.sqlite3`, `vectors.f32` opcional, `manifest.json`).
+- \`01_Fontes_Originais\`: authorized source PDFs, preserved unchanged and never committed to a public repository.
+- \`02_Biblioteca_MD\`: one Markdown derivative per source and a matching \`.md.meta.json\` sidecar.
+- \`03_Indice_Conceitual\`: researcher-reviewed concepts and relations; **not yet automated** by this initial prototype.
+- \`04_Indice_Semantico\`: a versioned index containing \`chunks.jsonl\`, \`lexical.sqlite3\`, optional \`vectors.f32\` and \`manifest.json\`.
 
-A geração usa diretório de índice **novo e vazio** fora dos originais. Não substitua um índice anterior; cada versão deve ter seu próprio caminho. O índice contém trechos potencialmente protegidos — não compartilhar publicamente.
+Although the folder currently has no public sharing, the owner can still edit it. A read-only consumer requires appropriate platform permissions or enforced access scopes, not merely an instruction to the language model.
 
-## PDF → MD: extração com proveniência de página
+**Never ship third-party full text, private source excerpts, a Drive connection token or a populated private index inside the public Skill installer.**
 
-Instale PyMuPDF **somente no executor autorizado**, sem enviar PDFs a sites de terceiros:
+## Local PDF-to-Markdown conversion
 
-```sh
+Install the optional PyMuPDF dependency on the researcher's authorized local executor; neither a PDF nor a model is sent to an external conversion website:
+
+\`\`\`sh
 python -m pip install pymupdf
-python pdf_to_md.py /CAMINHO/obra.pdf /CAMINHO/02_Biblioteca_MD/obra.md \
-  --source-id OBRA001 --title 'Título da obra'
-```
+python experimental/conceptual_rag/pdf_to_md.py /PRIVATE/source.pdf /PRIVATE/02_Biblioteca_MD/source.md --source-id SOURCE001 --title 'Example Source'
+\`\`\`
 
-Cada página recebe `<!-- source_page: N -->`. O conversor cria `obra.md.meta.json` com SHA256 do PDF e do MD, registra páginas problemáticas e define **`extraction_status=REVIEW_REQUIRED`** e **`rights_status=NOT_REVIEWED`**. PDFs escaneados sem texto necessitam OCR controlado e comparação com imagem; tabelas/figuras requerem inspeção manual. **Não apague o PDF original.**
+Every extracted page receives a \`<!-- source_page: N -->\` locator. The sidecar contains the source and derivative SHA256 digests, page count, low-text warnings and two **unapproved** statuses: \`extraction_status=REVIEW_REQUIRED\` and \`rights_status=NOT_REVIEWED\`.
 
-Após revisão humana da integridade de texto, páginas, edição e permissões, atualizar o JSON de metadados de modo atribuível para `extraction_status=HUMAN_REVIEWED` e `rights_status=PRIVATE_AUTHORIZED` (ou `PUBLIC_DOMAIN` se realmente comprovado). Recalcular `md_sha256` caso o Markdown tenha sido corrigido. Esses rótulos são operacionais, não licença científica universal.
+The converter never grants a license, verifies an academic claim, validates the whole extraction, runs OCR, removes the original or overwrites an existing derivative. Scanned pages, tables, mathematical formulae, illustrations and edition/page mismatches require separate manual inspection.
 
-## Indexação e consulta
+Once a human **actually** reviews the Markdown against the source and confirms appropriate permitted use, the sidecar may be explicitly updated with \`extraction_status=HUMAN_REVIEWED\` and \`rights_status=PRIVATE_AUTHORIZED\` (or \`PUBLIC_DOMAIN\` only when supported). Recompute \`md_sha256\` after any correction. No test fixture or assistant-generated metadata authenticates a human review.
 
-Sem modelo local, as consultas são **lexicais** (SQLite FTS5); o sistema nunca chama isso de busca vetorial:
+## Build and query a private persistent index
 
-```sh
-python rag.py build --library /CAMINHO/02_Biblioteca_MD \
-  --index /CAMINHO/04_Indice_Semantico/indice_v001
-python rag.py query --index /CAMINHO/04_Indice_Semantico/indice_v001 \
-  --text 'Qual a diferença entre revisão integrativa e sistemática?'
-```
+The standard-library-only baseline supports SQLite FTS5 full-text retrieval:
 
-Para busca **híbrida de verdade**, forneça um modelo Sentence Transformers previamente instalado e armazenado **localmente**, após aprovar suas condições de uso e direitos, tanto na indexação quanto na consulta:
+\`\`\`sh
+python experimental/conceptual_rag/rag.py build --library /PRIVATE/02_Biblioteca_MD --index /PRIVATE/04_Indice_Semantico/index_v001
+python experimental/conceptual_rag/rag.py query --index /PRIVATE/04_Indice_Semantico/index_v001 --text 'How do integrative and systematic reviews differ?'
+\`\`\`
 
-```sh
+For **genuine vector retrieval**, provide a separately installed, previously provisioned **local-only** SentenceTransformers model to both build and query operations:
+
+\`\`\`sh
 python -m pip install sentence-transformers
-python rag.py build --library /CAMINHO/02_Biblioteca_MD \
-  --index /CAMINHO/04_Indice_Semantico/indice_v002 --local-model /CAMINHO/MODELO_LOCAL
-python rag.py query --index /CAMINHO/04_Indice_Semantico/indice_v002 \
-  --text 'Pergunta metodológica' --local-model /CAMINHO/MODELO_LOCAL
-```
+python experimental/conceptual_rag/rag.py build --library /PRIVATE/02_Biblioteca_MD --index /PRIVATE/04_Indice_Semantico/index_v002 --local-model /PRIVATE/LOCAL_MODEL
+python experimental/conceptual_rag/rag.py query --index /PRIVATE/04_Indice_Semantico/index_v002 --text 'Methodological question' --local-model /PRIVATE/LOCAL_MODEL
+\`\`\`
 
-O código exige `local_files_only=True` e não baixa modelos. Sem o encoder de consulta, o resultado é explicitamente `LEXICAL_ONLY`, mesmo havendo vetores no índice. A ordenação híbrida usa Reciprocal Rank Fusion; **similaridade não comprova sustentação semântica de claims**. Citações são apenas identificadores de obra, página e fragmento extraído, não aprovação acadêmica.
+The model loader requests \`local_files_only=True\`; absent local support is a blocker, **never** an invitation to download silently. The query path verifies indexed file hashes. If no compatible query encoder exists, it explicitly returns \`LEXICAL_ONLY\`. Reciprocal Rank Fusion is a ranking technique, not a guarantee that retrieved text semantically supports an academic claim.
 
-## Limites e critérios de aceite
+The index is created at a **new destination** and never silently overwrites previous versions. It contains source excerpts; therefore any synchronized copy must remain private and properly authorized. It is *not* necessarily smaller than the original PDF library.
 
-1. Não ingerir PPGA - LIVROS, projetos privados ou PDFs protegidos automaticamente. O piloto deve começar com arquivos sintéticos ou fontes selecionadas com permissão.
-2. Não montar biblioteca global pública ou indexar livros de terceiros no ZIP da Skill.
-3. Não alterar os sete gates, rotas metodológicas, decisões do pesquisador ou armazenamento canônico dos artigos.
-4. Conferir integridade, páginas, resumos e negativas por especialistas antes de qualificar como RAG metodológica homologada.
-5. Avaliar 5–10 fontes heterogêneas, consultas literais e paráfrases, citações verificáveis, zero vazamento, paginação e custo de reindexação. O ambiente deve registrar quando `sentence-transformers`/modelo local não existe.
-6. Validar Drive com operações autorizadas e recibos de leitura; esta prova de conceito não utiliza o conector.
+## Evidence, tests and unresolved acceptance
 
-**Versão/integração:** módulo experimental para *depois* de v1.0.0, sem modificar a RC #99/#100. `v1.1.0` é apenas hipótese de planejamento, não versão publicada.
+Synthetic unit tests are located at \`tests/test_conceptual_rag_pilot.py\`. They cover page markers, hash integrity, refusing unreviewed/unauthorized files, non-overwrite, lexical selection, optional hybrid ranking, explicit semantic fallback and read-only queries. Their in-memory toy vectors are an **engineering fixture, not a validated scientific embedding model**.
+
+Requirements before real use:
+
+1. Select 5–10 documents with individually verified access rights. Do not automatically import a personal library or an unrelated project.
+2. Manually inspect source/Markdown parity for pages, tables, diagrams and non-searchable PDFs.
+3. Register actual model identity, version and licensing; test realistic paraphrases, negative searches, citation accuracy, recall and false-positive behavior.
+4. Verify authorized Drive readback, access boundaries and the actual current host. The module itself does not call the Drive API.
+5. Document human assessment; preserve [L]/[I]/[P] distinctions and researcher-controlled scientific gates.
+6. Keep this experimental branch separate from v1.0.0 release-candidate acceptance. Integration and publishing require new explicit maintainer approval.
+
+**No substantive methodological or manuscript inference is certified by these local software checks.**
