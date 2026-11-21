@@ -151,3 +151,13 @@ Inspeção delimitada dos cinco PDFs específicos mantidos no Drive privado (pri
 - **Quarentena de SRC-0385:** pertence à V1-03 e foi preservada, não auditada nem liberada aqui.
 - **Testes esperados:** sintaxe JSON, cinco IDs únicos, caminhos exclusivos, ausência de PDFs/IDs privados, leitura pós-commit no branch.  
 - **Disposição:** `ENTREGUE_PARA_AUDITORIA`; não alterar contadores globais de 475 fontes/15 bloqueios neste lote isolado.
+
+## Verificações executadas após a gravação GitHub
+
+- PASSOU: JSON do DELTA analisado com parser, com cinco objetos e cinco `source_id` únicos correspondentes ao manifesto.
+- PASSOU: hashes SHA-256 das cinco cópias privadas são hexadecimais com 64 caracteres; as cópias não foram incluídas no repositório.
+- PASSOU: cada recibo registra direitos observados e pendências; `independent_scientific_approval=false` permanece explícito.
+- PASSOU: comparação GitHub contra o commit fixo `7c92045310eb3b1474a9612a777fb0012a511592` apresentou **apenas** os dois caminhos exclusivos da V1-02 (`RESULTS.md` e `DELTA.json`), sem modificações de fichas IB, catálogo, manifesto ou outros lotes.
+- PASSOU: ausência de links contendo IDs privados de PDFs do Drive nos próprios recibos; checagem textual de caminhos PDF não incluídos no diff.
+- PENDENTE: revisão científica independente, licenças de cada cópia, resolução da data/edição SRC-0297, versionamento exato SRC-0283, integração global, testes de consulta e homologação de host. Esses testes não fazem parte do aceite científico desta etapa.
+- Commits de criação dos recibos: `21e74038523903d0e4b0c5bbdd7b0158bf5fe076` (RESULTS), `557fca3e38e1e8b7e770f8e932583f65280a299b` (DELTA).
