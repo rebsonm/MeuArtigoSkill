@@ -25,9 +25,9 @@ REF_RE = re.compile(r"[a-f0-9]{40}\Z")
 SHA_RE = re.compile(r"[a-f0-9]{64}\Z")
 PATH_RE = re.compile(r"knowledge/methodology/pdfs/[a-z0-9][a-z0-9_-]{2,75}\.pdf\Z")
 WORDS = re.compile(r"[^\W_]+", re.UNICODE)
-MAX_CATALOG = 40000
+MAX_CATALOG = 250_000
 MAX_PDF = 20_000_000
-MAX_SOURCES = 150
+MAX_SOURCES = 600
 MAX_PAGES = 4
 MAX_CONTEXT = 5000
 
