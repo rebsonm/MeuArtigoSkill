@@ -155,7 +155,18 @@ def _relevance(question: str, doc: dict) -> int:
     # lexical safety heuristic; it is not semantic relevance validation.
     if len(q) > 1 and len(matched) * 5 < len(q) * 3:
         return 0
-    return sum(3 for w in q if w in keys) + sum(2 for w in q if w in title)
+    score = sum(3 for w in q if w in keys) + sum(2 for w in q if w in title)
+    # Unqualified PRISMA queries ordinarily refer to the 2020 systematic-review
+    # reporting statement, not protocol/search/scoping extensions. Do not
+    # penalize explicitly selected PRISMA-P, PRISMA-S or PRISMA-ScR requests.
+    qraw = "".join(c for c in unicodedata.normalize("NFKD", question.casefold())
+                   if not unicodedata.combining(c))
+    if "prisma" in q and not any(token in qraw for token in
+                                 ("prisma-p", "prisma-s", "prisma-scr",
+                                  "prisma p", "prisma s", "prisma scr")):
+        if doc["path"].endswith("/prisma-2020-reporting.md"):
+            score += 18
+    return score
 
 
 def query(question: str, *, ref: str, top: int = 3, max_chars: int = 3300,
