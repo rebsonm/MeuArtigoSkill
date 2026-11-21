@@ -47,3 +47,8 @@ python experimental/conceptual_rag/hybrid_public_retriever.py --ref <full-40-cha
 ```
 
 This opt-in, experimental reader reuses the existing card and PDF clients, with separate rights and citation grades, fixed context budgets, immutable source SHA and conservative failure states. It is **lexical retrieval**, not validated embeddings or general semantic question answering. Cards are original editorial [I] guidance, never direct source [L] evidence; PDF excerpts still need visual and printed-page checks. Protected sources are never fetched from the personal archive by this module. Publication rules: `knowledge/methodology/CARD-POLICY.md`. No installed-host test or release approval is implied.
+
+
+## Source code versus installable candidate
+
+A small two-channel adapter is now separately packaged in the **draft test ZIP** as `scripts/consult_public_methodology.py` and `scripts/public_method_pdf.py`. This is **not** a live production feature, nor proof of support on any specific host. The original experimental source-only readers stay outside the ZIP. The 23 editorial cards, 12 original licensed PDFs and both remote catalogues remain out of the ZIP and can only be retrieved on demand from a pinned commit after real runtime permission checks. No bulk import of the personal archive is authorized.
