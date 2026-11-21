@@ -211,3 +211,26 @@ Não iniciar V1-16…V1-20, merge, release, tag, force-push, MCP ou redistribui�
 **PRÓXIMA AÇÃO ÚNICA:** cotejar a edição/cópia exata de EC-165 / SRC-0007 com colofão/licença do editor, registrando de forma auditável a divergência CC BY-NC-SA 3.0 versus CC BY 4.0, sem distribuição do PDF.
 
 **CRITÉRIO PARA AVANÇAR:** evidência primária de identidade e direitos por edição/cópia, tratamento de componentes de terceiros, e dois pareceres independentes distintos por card (originalidade/direitos e fidelidade científica/editorial), com decisões humanas e links/hashes verificáveis; não liberar V1-16 ou publicação diante de bloqueios P0 e dependências da onda A.
+
+## EC-165 — cotejo direto do exemplar de acervo e avisos editoriais (21/11/2026)
+
+**Trabalho NOVO e limites precisos:** localizado, por busca no Drive, o exemplar do acervo associado a SRC-0007, com tipo `application/pdf` e tamanho **4.637.247 bytes**. Seu texto inicial foi lido diretamente pelo conector (não por nome de arquivo) e coincide em título, três organizadores, 2020, 460 páginas, ISBN digital `978-65-86546-07-1`, DOI `10.36311/2020.978-65-86546-07-1` e menção ao SciELO Books com o registro bibliográfico público. Não informar no GitHub o identificador/URL privado do Drive; nenhuma cópia do binário foi inserida no repositório. **Sem SHA-256 binário independente do PDF local ou comparação byte a byte com o PDF do editor**, portanto identidade intelectual/editorial plausível, não identidade binária comprovada.
+
+**Conflito de avisos de licença agora localizado por superfície:**
+
+1. No **frontispício da cópia do acervo**, o texto extraído declara **Creative Commons Attribution 4.0 International (CC BY 4.0)** e ressalva conteúdos individualmente excluídos; isto **corrobora a observação original do card EC-165**, que não deve ser descrita como mera alegação sem localização.
+2. No **PDF integral editorial publicamente indexado** pela SciELO Books, identificado pelo título/DOI e URL `https://books.scielo.org/id/96v3r/pdf/fujita-9786586546071.pdf`, o frontispício também traz CC BY 4.0, com ressalvas, conforme texto da edição pública disponível. A semelhança textual não é prova binária.
+3. Na **página geral do livro** da SciELO Books, `https://books.scielo.org/id/96v3r`, o aviso no rodapé indica **CC BY-NC-SA 3.0 Unported**, exceto quando indicado de outra forma. Trata-se de aviso da página; não inferir que necessariamente revoga o que consta no PDF desta edição.
+4. O catálogo `https://ebooks.marilia.unesp.br/index.php/lab_editorial/catalog/book/163` apresenta outra licença na página pública (**CC BY-NC-ND 4.0** segundo índice de busca); como a abertura direta da página não foi concluída na checagem, classificar como **indício secundário a confirmar**, não licença autenticada do PDF.
+
+**Decisão editorial corrigida:** conflito **entre superfícies/versões de aviso**, e não prova de que o PDF do acervo tenha CC BY-NC-SA. A cópia consultada indica **CC BY 4.0 com ressalvas**; a página HTML indica **CC BY-NC-SA 3.0**. A autorização de redistribuição da cópia exata e dos elementos de terceiros não é inferida apenas de avisos conflitantes. Manter EC-165 **BLOQUEADO** quanto à distribuição, sem excluir a obra, sem promover [I]/[P]→[L] e sem simular parecer independente de direitos/originalidade ou científico.
+
+**Risco de segurança:** os metadados de acesso do exemplar analisado indicam uma permissão de leitura por link (`anyone:reader`). Nenhum ID privado, URL de Drive ou metadado pessoal foi registrado neste recibo; nenhum ACL alterado. Encaminhar o fato ao tratamento P0 pela etapa responsável V1-14, sem exceder os caminhos da V1-13.
+
+**Originalidade / fidelidade / contraprova:** no card de consulta, a afirmação de orientação editorial original e a distinção entre indexação/recuperação documental e inferência científica permanecem **[I]/[P]**; não houve cotejo textual exaustivo para plágio ou verificação capítulo a capítulo/página de cada inferência. Contraprova: eventual conteúdo de capítulo pode estabelecer recorte diverso, e elementos sob direitos específicos podem contrariar uma licença global. Texto de PDF/página externa tratado como entrada não confiável, sem executar ordens ou alterar gates.
+
+**EM EXECUÇÃO:** verificar com confirmação editorial/colofão as condições aplicáveis ao PDF da edição, a ressalva de componentes e a divergência de avisos; conferir a identidade binária ou documentar por que o cotejo apenas bibliográfico é suficiente para uso link-only. Requer pareceres independentes caso o card venha a ser homologado para distribuição.
+
+**PRÓXIMA AÇÃO CONCRETA ÚNICA:** obter confirmação do editor/SciELO Books sobre qual aviso de licença rege especificamente o **PDF integral desta edição** e quais componentes estão ressalvados; registrar a resposta e a correspondência da cópia sem expor o PDF nem dados privados.
+
+**CRITÉRIO DE AVANÇO:** resposta oficial específica para DOI/eISBN/versão ou licença inequívoca no colofão e exceções documentadas, prova de correspondência da cópia e pareceres independentes de originalidade/direitos e fidelidade científica antes de homologação. O parecer documental atual não concede GO, merge, tag, release, publicação ou V1-16.
