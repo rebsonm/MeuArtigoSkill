@@ -42,7 +42,7 @@ Critério transversal: **CORREÇÃO NECESSÁRIA** = falta de avaliação indepen
 
 ## Testes, CI e readback
 - Controle de integridade: SHA-256 dos 18 cards conferidos (18/18 MATCH) e verificação de leitura dos dois recibos no GitHub.
-- Comparação com manifesto-base: 3 commits à frente, 0 atrás, somente RESULTS.md e DELTA.json alterados.
+- Comparação de escopo com o manifesto-base: 0 commits atrás e somente RESULTS.md e DELTA.json alterados; a contagem de commits varia com cada atualização do diário.
 - Commit verificado 063c3221522c1ae65cbfaa4f6e307eeca43e1fdb: 0 status checks combinados e 0 workflow runs do tipo PR consultados. CI automatizada NÃO COMPROVADA para o lote; não alegar verde.
 
 ## O que ficou em execução e limitações
