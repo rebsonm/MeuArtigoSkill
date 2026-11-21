@@ -189,11 +189,107 @@
         "threshold",
         "thematic"
       ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/pautasso-2013-literature-review.pdf",
+      "title": "Ten Simple Rules for Writing a Literature Review",
+      "authors": "Marco Pautasso",
+      "year": 2013,
+      "doi": "10.1371/journal.pcbi.1003149",
+      "size": 184027,
+      "sha256": "c8b15037bfc77e25368ee210837f321eceb4869f12c1774ed139215167746b59",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://journals.plos.org/ploscompbiol/s/licenses-and-copyright",
+      "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003149",
+      "source_pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003149&type=printable",
+      "source_bytes_unmodified": true,
+      "keywords": [
+        "literature",
+        "review",
+        "writing",
+        "revisao",
+        "narrative",
+        "bibliography"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/mensh-kording-2017-paper-structure.pdf",
+      "title": "Ten simple rules for structuring papers",
+      "authors": "Brett Mensh; Konrad Kording",
+      "year": 2017,
+      "doi": "10.1371/journal.pcbi.1005619",
+      "size": 1053975,
+      "sha256": "f02a2c14c630369f2058403a448f94e7aaeafb3c1cc681c9d6862812590b7b6c",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://journals.plos.org/ploscompbiol/s/licenses-and-copyright",
+      "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619",
+      "source_pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1005619&type=printable",
+      "source_bytes_unmodified": true,
+      "keywords": [
+        "writing",
+        "paper",
+        "structure",
+        "manuscript",
+        "scientific",
+        "article"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/sandve-et-al-2013-reproducible-research.pdf",
+      "title": "Ten Simple Rules for Reproducible Computational Research",
+      "authors": "Geir K. Sandve; Anton Nekrutenko; James Taylor; Eivind Hovig",
+      "year": 2013,
+      "doi": "10.1371/journal.pcbi.1003285",
+      "size": 131527,
+      "sha256": "35648a3880bdd8bf30e8212a3847b7bd35f504ee5ccbd1ad3856d206acd181db",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://journals.plos.org/ploscompbiol/s/licenses-and-copyright",
+      "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285",
+      "source_pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003285&type=printable",
+      "source_bytes_unmodified": true,
+      "keywords": [
+        "reproducibility",
+        "replicability",
+        "research",
+        "code",
+        "computational",
+        "data"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/forero-et-al-2019-meta-analysis.pdf",
+      "title": "Ten simple rules for carrying out and writing meta-analyses",
+      "authors": "Diego A. Forero; Sandra Lopez-Leon; Yeimy Gonzalez-Giraldo; Pantelis G. Bagos",
+      "year": 2019,
+      "doi": "10.1371/journal.pcbi.1006922",
+      "size": 406064,
+      "sha256": "412601e19c72d26945cf32237197c9f5aa480a944a319c076474bc01061528c1",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://journals.plos.org/ploscompbiol/s/licenses-and-copyright",
+      "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006922",
+      "source_pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006922&type=printable",
+      "source_bytes_unmodified": true,
+      "keywords": [
+        "meta-analysis",
+        "systematic",
+        "review",
+        "quantitative",
+        "synthesis",
+        "heterogeneity"
+      ]
     }
   ],
   "rights_policy": "PUBLIC_REDISTRIBUTION_REVIEWED_ONLY",
   "installer_includes_pdfs": false,
-  "catalog_status": "8_PUBLIC_LICENSE_REVIEWED_ARTICLES",
+  "catalog_status": "12_PUBLIC_LICENSE_REVIEWED_ARTICLES",
   "source_format": "PDF_ORIGINAL_UNMODIFIED",
   "scientific_quality_validated": false,
   "note": "Only original licensed public PDFs are stored. Catalog hashes and source license evidence document technical provenance, not independent scientific or legal validation. Private archive remains metadata-only."

@@ -25,3 +25,12 @@ These are unchanged source PDFs; they are NOT part of the installed ZIP.
 
 - Helena Harrison; Melanie Birks; Richard Franklin; Jane Mills (2017), *Case Study Research: Foundations and Methodological Orientations*. DOI: https://doi.org/10.17169/fqs-18.1.2655. [Publisher/licensing evidence](https://researchonline.jcu.edu.au/47422/). Original `harrison-birks-franklin-mills-2017.pdf`, SHA-256 `3918abd6dc74255c4bf68075f1edc00528a46507fb0c97223e6ab4d3aee2ef5d`.
 - Greg Guest; Emily Namey; Mario Chen (2020), *A simple method to assess and report thematic saturation in qualitative research*. DOI: https://doi.org/10.1371/journal.pone.0232076. [Publisher/licensing evidence](https://journals.plos.org/plosone/s/licenses-and-copyright). Original `guest-namey-chen-2020-saturation.pdf`, SHA-256 `becf8d627dba454ee2780040adf83d0338ab3d8faffc628da3d9d2db9a606d04`.
+
+## Additional original PDFs with individual CC BY 4.0 evidence
+
+These are unchanged source PDFs; they are NOT part of the installed ZIP.
+
+- Marco Pautasso (2013), *Ten Simple Rules for Writing a Literature Review*. DOI: https://doi.org/10.1371/journal.pcbi.1003149. [Publisher/licensing evidence](https://journals.plos.org/ploscompbiol/s/licenses-and-copyright). Original `pautasso-2013-literature-review.pdf`, SHA-256 `c8b15037bfc77e25368ee210837f321eceb4869f12c1774ed139215167746b59`.
+- Brett Mensh; Konrad Kording (2017), *Ten simple rules for structuring papers*. DOI: https://doi.org/10.1371/journal.pcbi.1005619. [Publisher/licensing evidence](https://journals.plos.org/ploscompbiol/s/licenses-and-copyright). Original `mensh-kording-2017-paper-structure.pdf`, SHA-256 `f02a2c14c630369f2058403a448f94e7aaeafb3c1cc681c9d6862812590b7b6c`.
+- Geir K. Sandve; Anton Nekrutenko; James Taylor; Eivind Hovig (2013), *Ten Simple Rules for Reproducible Computational Research*. DOI: https://doi.org/10.1371/journal.pcbi.1003285. [Publisher/licensing evidence](https://journals.plos.org/ploscompbiol/s/licenses-and-copyright). Original `sandve-et-al-2013-reproducible-research.pdf`, SHA-256 `35648a3880bdd8bf30e8212a3847b7bd35f504ee5ccbd1ad3856d206acd181db`.
+- Diego A. Forero; Sandra Lopez-Leon; Yeimy Gonzalez-Giraldo; Pantelis G. Bagos (2019), *Ten simple rules for carrying out and writing meta-analyses*. DOI: https://doi.org/10.1371/journal.pcbi.1006922. [Publisher/licensing evidence](https://journals.plos.org/ploscompbiol/s/licenses-and-copyright). Original `forero-et-al-2019-meta-analysis.pdf`, SHA-256 `412601e19c72d26945cf32237197c9f5aa480a944a319c076474bc01061528c1`.
