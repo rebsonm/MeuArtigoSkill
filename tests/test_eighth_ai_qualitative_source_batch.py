@@ -66,14 +66,14 @@ class EighthAIQualitativeIdentitiesTests(unittest.TestCase):
         docs = self.registry["documents"]
         self.assertEqual(len(docs), 475)
         self.assertEqual(sum(x["bibliography_match_status"] == "SOURCE_PDF_WORK_VERIFIED"
-                             for x in docs), 116)
+                             for x in docs), 132)
         self.assertEqual(sum(x["bibliography_match_status"] == "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED"
-                             for x in docs), 359)
+                             for x in docs), 343)
         self.assertEqual(sum(x["source_read_scope"] != "NOT_RECORDED_IN_LEDGER"
-                             for x in docs), 118)
-        self.assertEqual(self.manifest["source_pdf_work_verified_count"], 116)
-        self.assertEqual(self.manifest["provisional_matches_remaining"], 359)
-        self.assertEqual(self.manifest["original_archive_text_scoped_read_count"], 118)
+                             for x in docs), 134)
+        self.assertEqual(self.manifest["source_pdf_work_verified_count"], 132)
+        self.assertEqual(self.manifest["provisional_matches_remaining"], 343)
+        self.assertEqual(self.manifest["original_archive_text_scoped_read_count"], 134)
         self.assertEqual(self.manifest["source_pdf_count_public_catalogue"], 51)
         self.assertEqual(self.manifest["actual_individually_verified_rights_in_this_ledger"], 17)
         self.assertEqual(self.manifest["original_editorial_cards_count"], 174)
