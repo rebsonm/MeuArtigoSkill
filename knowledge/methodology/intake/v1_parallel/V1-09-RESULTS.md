@@ -85,3 +85,22 @@ Esta rodada confirmou metadados de identidade dos artigos atribuídos, sem consu
 **Direitos conferidos diretamente em páginas editoriais:** EC-092 e EC-103 — **CC BY-NC 4.0**; EC-095 — acesso restrito e permissão; EC-098 — acesso gratuito, mas pedido de permissão; EC-099, EC-101, EC-105 — **CC BY 4.0**, condicionada à atribuição e versão. Para EC-100 a licença CC BY foi declarada historicamente e pode ser corroborada por índice público, mas a conferência de exemplar privado/versão continua pendente. Nenhum direito de redistribuição dos PDFs armazenados foi promovido.
 
 **Datas editoriais a preservar:** EC-097 publicação online em 2024 e volume em 2025; EC-098 e EC-099 online em 2025 e fascículos 2026; EC-101, EC-103 e EC-105 igualmente online em 2025 e fascículos 2026. Não confundir ano de DOI com data da edição final.
+
+## Substituição proposta exclusivamente para a subseção 31.09 do MD canônico — NÃO APLICADA
+
+A seguir consta a substituição exata para integração controlada. Ela não foi gravada no Drive, pois o arquivo Markdown mudou durante a preparação e o endpoint de edição por trechos retornou `FAILED_PRECONDITION`; a API de substituição bruta não oferece trava otimista de versão. Em caso de janela de edição exclusiva, reler o MD integral mais recente, substituir somente o trecho entre 31.09 e 31.10 e conferir os demais blocos após a escrita.
+
+### 31.09 — V1-09/20 — Curadoria editorial de cards 090–106
+
+- **Estado:** `PARCIAL` — a revisão documental e os recibos próprios foram entregues à auditoria no GitHub; gravação no MD canônico não realizada por conflito concorrente e falta de edição transacional de Markdown.
+- **Onda e dependências:** A; nenhuma. Escopo exclusivo: 17 cards EC-090…EC-106, conforme manifesto `7c92045310eb3b1474a9612a777fb0012a511592`.
+- **Branch exclusiva:** `work/v1-09-20261121`, derivada do commit-base; nenhum merge em `main`, tag, release, force-push ou implementação MCP.
+- **Início:** 21/11/2026, os 17 cards do snapshot `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf` foram lidos. 17/17 SHA-256 dos conteúdos corresponderam ao manifesto. Tentativa de registro inicial foi abortada quando o MD mudou em outra aba antes da gravação.
+- **Evolução:** metadados dos 17 trabalhos corroborados (10 páginas HTML acessíveis de editoras/repositórios e 7 verificações bibliográficas alternativas). Dois recibos exclusivos produzidos; 17 pareceres `CORREÇÃO_NECESSÁRIA`, sem alteração de cards globais ou de outras etapas. A API Docs recusou edição por trecho por se tratar de Markdown; operação não aplicada.
+- **Direitos:** EC-092 e EC-103 com CC BY-NC 4.0; EC-095 com acesso restrito; EC-098 com aviso de solicitação de permissão; EC-099, EC-101 e EC-105 com CC BY 4.0 nas páginas editoriais, sempre condicionadas a versão e atribuição. Nenhum PDF privado redistribuído, nenhum ID privado do Drive exposto.
+- **Decisão científica:** revisão científica independente e checagem independente de direitos/originalidade seguem pendentes; não promover [P]/[I] a [L] nem interpretar hash como aprovação.
+- **Commits confirmados:** `a514976fb48bd1561ced4eace33385796ff99588` (RESULTS inicial), `d936263030a794eb8a3ba64db759386ba64323b3` (DELTA inicial), `a5e4488605b073920c2dc21033b967c223784a69` e `5850041847fe499008c6f6ddfeac19b6d16aa2cd` (verificação bibliográfica/direitos).
+- **Testes:** 17 caminhos e hashes conferidos, 17 IDs únicos, comparação do GitHub limitada aos 2 arquivos do próprio lote; nenhum status CI publicado (não declarar CI aprovado).
+- **Bloqueios:** falta de revisão humana independente por obra/página, licença do exemplar privado, conflito de concorrência do Markdown e ausência de API com compare-and-swap para edição de subseção `31.09`.
+- **Próximos passos:** só reconciliar este bloco do MD em janela exclusiva e conferir preservação das outras seções; após isso, encaminhar revisão científica/direitos. Etapas V1-16…V1-20 somente após pré-requisitos globais, sem GO antecipado.
+
