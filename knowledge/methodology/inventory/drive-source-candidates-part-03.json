@@ -1,0 +1,642 @@
+{
+  "schema": "MEU_ARTIGO_LIBRARY_CANDIDATES_V1",
+  "description": "Bibliographic inventory only; no documents replicated and no author license attested. All entries are NOT_REVIEWED.",
+  "rights_status": "NOT_REVIEWED",
+  "source_format": "Original Google Drive PDF collection",
+  "batch": 3,
+  "folders": [
+    {
+      "folder": "An lise Espacial",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Kopczewskaa e Elhors (2024).pdf",
+          "kind": "PDF",
+          "size_bytes": 654105
+        },
+        {
+          "filename": "Anselin (2003).pdf",
+          "kind": "PDF",
+          "size_bytes": 861846
+        },
+        {
+          "filename": "Cƒmara et al (2004).pdf",
+          "kind": "PDF",
+          "size_bytes": 3646672
+        },
+        {
+          "filename": "Rttenauer (2024).pdf",
+          "kind": "PDF",
+          "size_bytes": 1415150
+        },
+        {
+          "filename": "Anselin et al (2000).pdf",
+          "kind": "PDF",
+          "size_bytes": 458409
+        }
+      ]
+    },
+    {
+      "folder": "Vari veis instrumentais",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Baiocchi, Cheng e Small (2014).pdf",
+          "kind": "PDF",
+          "size_bytes": 1267443
+        },
+        {
+          "filename": "Sovey e Green (2011).pdf",
+          "kind": "PDF",
+          "size_bytes": 2115521
+        }
+      ]
+    },
+    {
+      "folder": "Process Tracing",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "CDI_Practice_Paper_25.pdf",
+          "kind": "PDF",
+          "size_bytes": 221286
+        },
+        {
+          "filename": "Bennettetal,2019.pdf",
+          "kind": "PDF",
+          "size_bytes": 229994
+        },
+        {
+          "filename": "Zaks,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 195936
+        },
+        {
+          "filename": "Mendes,Mueller,2024.pdf",
+          "kind": "PDF",
+          "size_bytes": 433929
+        },
+        {
+          "filename": "Henriquesetal,2015.pdf",
+          "kind": "PDF",
+          "size_bytes": 3371631
+        },
+        {
+          "filename": "Raimondo,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 302386
+        },
+        {
+          "filename": "Cunha (2018).pdf",
+          "kind": "PDF",
+          "size_bytes": 1495786
+        },
+        {
+          "filename": "Lima,2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 145801
+        },
+        {
+          "filename": "Paula,2021-politica-comparada.pdf",
+          "kind": "PDF",
+          "size_bytes": 381374
+        },
+        {
+          "filename": "Gabriel,Pereira,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 199137
+        }
+      ]
+    },
+    {
+      "folder": "Qualitative Comparative Analysis (QCA)",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Couto,Albala.pdf",
+          "kind": "PDF",
+          "size_bytes": 292410
+        },
+        {
+          "filename": "Tamaki,  Araujo, 2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 196590
+        },
+        {
+          "filename": "Parente e Federo (2019).pdf",
+          "kind": "PDF",
+          "size_bytes": 484518
+        },
+        {
+          "filename": "Dusa (2007).pdf",
+          "kind": "PDF",
+          "size_bytes": 2166540
+        },
+        {
+          "filename": "Santos,Botelho,2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 687806
+        },
+        {
+          "filename": "Sandes-Freitas e Bizarro-Neto (2016).pdf",
+          "kind": "PDF",
+          "size_bytes": 645133
+        },
+        {
+          "filename": "Ide e Mello (2022).pdf",
+          "kind": "PDF",
+          "size_bytes": 331360
+        },
+        {
+          "filename": "Campos,2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 725524
+        },
+        {
+          "filename": "Thiem (2017).pdf",
+          "kind": "PDF",
+          "size_bytes": 244241
+        },
+        {
+          "filename": "QCA Aula 1 - Introdução ao método (MQ2023).pdf",
+          "kind": "PDF",
+          "size_bytes": 2677663
+        }
+      ]
+    },
+    {
+      "folder": "Simulação",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Bonate (2011).pdf",
+          "kind": "PDF",
+          "size_bytes": 154514
+        },
+        {
+          "filename": "Introduction_to_Monte_Carlo_simulation.pdf",
+          "kind": "PDF",
+          "size_bytes": 283505
+        },
+        {
+          "filename": "Meireles, Silva e Correa (2017).pdf",
+          "kind": "PDF",
+          "size_bytes": 1706113
+        },
+        {
+          "filename": "Paula (2014).pdf",
+          "kind": "PDF",
+          "size_bytes": 2016191
+        }
+      ]
+    },
+    {
+      "folder": "An lise de Redes",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Lazer,2011.pdf",
+          "kind": "PDF",
+          "size_bytes": 358573
+        },
+        {
+          "filename": "Zukiewiczetal,2015.pdf",
+          "kind": "PDF",
+          "size_bytes": 1149741
+        },
+        {
+          "filename": "Resende,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 337815
+        },
+        {
+          "filename": "Wardetal,2011.pdf",
+          "kind": "PDF",
+          "size_bytes": 353476
+        },
+        {
+          "filename": "Ferrettietal,2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 1403809
+        },
+        {
+          "filename": "Higgins e Ribeiro (2018).pdf",
+          "kind": "PDF",
+          "size_bytes": 5736651
+        },
+        {
+          "filename": "Recuero,2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 6156447
+        },
+        {
+          "filename": "Scott,2012.pdf",
+          "kind": "PDF",
+          "size_bytes": 1709936
+        },
+        {
+          "filename": "Santos,Tavares,2016.pdf",
+          "kind": "PDF",
+          "size_bytes": 1267884
+        },
+        {
+          "filename": "Souza e Quandt (2008).pdf",
+          "kind": "PDF",
+          "size_bytes": 556803
+        }
+      ]
+    },
+    {
+      "folder": "Controle Sint‚tico",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Abadie, Diamond e Hainmueller (2011).pdf",
+          "kind": "PDF",
+          "size_bytes": 541986
+        },
+        {
+          "filename": "Abadie, Diamond e Hainmueller (2010).pdf",
+          "kind": "PDF",
+          "size_bytes": 645544
+        },
+        {
+          "filename": "Ellery, Nascimento e Sachsida (ano).pdf",
+          "kind": "PDF",
+          "size_bytes": 833574
+        }
+      ]
+    },
+    {
+      "folder": "Pontos Ideais",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Martins (2020).pdf",
+          "kind": "PDF",
+          "size_bytes": 10000784
+        }
+      ]
+    },
+    {
+      "folder": "Escrita Científica",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Guțoiu,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 314821
+        }
+      ]
+    },
+    {
+      "folder": "Escrita Cient¡fica",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Ronai,Sobreira,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 443607
+        },
+        {
+          "filename": "McWilliams,2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 488781
+        },
+        {
+          "filename": "Luiz,2019.pdf",
+          "kind": "PDF",
+          "size_bytes": 2863852
+        },
+        {
+          "filename": "Lindsay,2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 286492
+        },
+        {
+          "filename": "Stinson (2019).pdf",
+          "kind": "PDF",
+          "size_bytes": 129923
+        },
+        {
+          "filename": "Gustafssona and Hagstrom (2017).pdf",
+          "kind": "PDF",
+          "size_bytes": 279185
+        },
+        {
+          "filename": "Bailey,2003.pdf",
+          "kind": "PDF",
+          "size_bytes": 3123995
+        },
+        {
+          "filename": "Little,2016.pdf",
+          "kind": "PDF",
+          "size_bytes": 93928
+        },
+        {
+          "filename": "Baglioni,2016.pdf",
+          "kind": "PDF",
+          "size_bytes": 2141471
+        }
+      ]
+    },
+    {
+      "folder": "Estudo de Caso",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Maia,Maia,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 199382
+        },
+        {
+          "filename": "Rezende,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 582260
+        },
+        {
+          "filename": "Machado,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 329421
+        },
+        {
+          "filename": "Ev,Gomes,2014.pdf",
+          "kind": "PDF",
+          "size_bytes": 171895
+        },
+        {
+          "filename": "Sátyro e D´Albuquerque (2020).pdf",
+          "kind": "PDF",
+          "size_bytes": 431653
+        },
+        {
+          "filename": "Spositoetal,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 798986
+        },
+        {
+          "filename": "Rezende (2011).pdf",
+          "kind": "PDF",
+          "size_bytes": 444748
+        },
+        {
+          "filename": "Steiner (2011).pdf",
+          "kind": "PDF",
+          "size_bytes": 1608687
+        }
+      ]
+    },
+    {
+      "folder": "Fotografias",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Fotografia.pdf",
+          "kind": "PDF",
+          "size_bytes": 739583
+        },
+        {
+          "filename": "Bonetto (2016).pdf",
+          "kind": "PDF",
+          "size_bytes": 151851
+        },
+        {
+          "filename": "fotografias_.pdf",
+          "kind": "PDF",
+          "size_bytes": 498722
+        },
+        {
+          "filename": "O uso das imagens em pesquisas nas ciˆncias sociais.pdf",
+          "kind": "PDF",
+          "size_bytes": 230328
+        }
+      ]
+    },
+    {
+      "folder": "Modelos de Equações Estruturais",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "RelatorioTecnico_Marcos_Modelagem Variaveis Latentes no R.pdf",
+          "kind": "PDF",
+          "size_bytes": 885234
+        },
+        {
+          "filename": "Lemke (2005).pdf",
+          "kind": "PDF",
+          "size_bytes": 12210538
+        },
+        {
+          "filename": "Tutorial - Identificado -AFC-SEM - ComApendices_versao_final_18.pdf",
+          "kind": "PDF",
+          "size_bytes": 8303447
+        },
+        {
+          "filename": "Neves (2018).pdf",
+          "kind": "PDF",
+          "size_bytes": 2304763
+        }
+      ]
+    },
+    {
+      "folder": "Bibliometria",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Santos e Kobashi (2009).pdf",
+          "kind": "PDF",
+          "size_bytes": 803139
+        },
+        {
+          "filename": "Rezende (2017).pdf",
+          "kind": "PDF",
+          "size_bytes": 1756317
+        },
+        {
+          "filename": "Maia e Bezerra (2020).pdf",
+          "kind": "PDF",
+          "size_bytes": 574651
+        },
+        {
+          "filename": "Codatoetal,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 1631422
+        },
+        {
+          "filename": "Sangalli e Kauchakje (2020).pdf",
+          "kind": "PDF",
+          "size_bytes": 6601817
+        },
+        {
+          "filename": "Araujo (2006).pdf",
+          "kind": "PDF",
+          "size_bytes": 120803
+        },
+        {
+          "filename": "Clementeetal,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 6576155
+        }
+      ]
+    },
+    {
+      "folder": "Regressão de Painel",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Imai, Kim e Wang (2023).pdf",
+          "kind": "PDF",
+          "size_bytes": 889686
+        },
+        {
+          "filename": "Mesquita, Fernandes e Figueiredo Filho (2020).pdf",
+          "kind": "PDF",
+          "size_bytes": 18911930
+        }
+      ]
+    },
+    {
+      "folder": "Epistemologia",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Leite,FeresJr,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 472123
+        },
+        {
+          "filename": "Ballestrin,2013.pdf",
+          "kind": "PDF",
+          "size_bytes": 793322
+        },
+        {
+          "filename": "Lenine, M”rschb„cher, 2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 482173
+        },
+        {
+          "filename": "Soares,2005.pdf",
+          "kind": "PDF",
+          "size_bytes": 120525
+        },
+        {
+          "filename": "Barberiaetal,2014.pdf",
+          "kind": "PDF",
+          "size_bytes": 497343
+        },
+        {
+          "filename": "Silva,2009.pdf",
+          "kind": "PDF",
+          "size_bytes": 218994
+        },
+        {
+          "filename": "Albuquerque,Mesquita,Brito,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 508240
+        },
+        {
+          "filename": "R“mulo,Machado,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 342676
+        },
+        {
+          "filename": "Rezende (2020).pdf",
+          "kind": "PDF",
+          "size_bytes": 922159
+        }
+      ]
+    },
+    {
+      "folder": "Entrevistas",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Entrevistas Online",
+          "kind": "FOLDER",
+          "size_bytes": null
+        },
+        {
+          "filename": "Barros,2011-entrevistas.pdf",
+          "kind": "PDF",
+          "size_bytes": 185182
+        },
+        {
+          "filename": "Boni,Quaresma,2005.pdf",
+          "kind": "PDF",
+          "size_bytes": 157394
+        },
+        {
+          "filename": "Roberts,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 382533
+        },
+        {
+          "filename": "Cheron, Salvagni e Colomby (2022).pdf",
+          "kind": "PDF",
+          "size_bytes": 534285
+        },
+        {
+          "filename": "Rocha (2020).pdf",
+          "kind": "PDF",
+          "size_bytes": 5649799
+        },
+        {
+          "filename": "Duarte (2004).pdf",
+          "kind": "PDF",
+          "size_bytes": 40111
+        },
+        {
+          "filename": "Cunha,2014.pdf",
+          "kind": "PDF",
+          "size_bytes": 318891
+        }
+      ]
+    },
+    {
+      "folder": "An lise de Conte£do",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Silva,Hern ndez,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 751629
+        },
+        {
+          "filename": "Silvaetal,2015-politicaexterna.pdf",
+          "kind": "PDF",
+          "size_bytes": 412484
+        },
+        {
+          "filename": "Jerzak, King e Strezhnev (2022).pdf",
+          "kind": "PDF",
+          "size_bytes": 1185558
+        },
+        {
+          "filename": "Grimmer e Stewart (2013).pdf",
+          "kind": "PDF",
+          "size_bytes": 972383
+        },
+        {
+          "filename": "Hopkins and King (2010).pdf",
+          "kind": "PDF",
+          "size_bytes": 528155
+        },
+        {
+          "filename": "Silva,2017-ACpoliticaexterna.pdf",
+          "kind": "PDF",
+          "size_bytes": 781974
+        },
+        {
+          "filename": "Carlomagno,Rocha,2016.pdf",
+          "kind": "PDF",
+          "size_bytes": 413255
+        },
+        {
+          "filename": "Alves, Figueiredo Filho e Silva (2015).pdf",
+          "kind": "PDF",
+          "size_bytes": 1312217
+        }
+      ]
+    }
+  ]
+}

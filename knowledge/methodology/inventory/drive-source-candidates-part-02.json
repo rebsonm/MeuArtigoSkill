@@ -1,0 +1,622 @@
+{
+  "schema": "MEU_ARTIGO_LIBRARY_CANDIDATES_V1",
+  "description": "Bibliographic inventory only; no documents replicated and no author license attested. All entries are NOT_REVIEWED.",
+  "rights_status": "NOT_REVIEWED",
+  "source_format": "Original Google Drive PDF collection",
+  "batch": 2,
+  "folders": [
+    {
+      "folder": "Transparˆncia na Pesquisa Qualitativa",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Prattetal,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 172338
+        },
+        {
+          "filename": "Kaneetal,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 4384848
+        },
+        {
+          "filename": "moravcsik2014.pdf",
+          "kind": "PDF",
+          "size_bytes": 252316
+        },
+        {
+          "filename": "QR Transparency & Reporting May 2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 887515
+        },
+        {
+          "filename": "Tongetal,2012.pdf",
+          "kind": "PDF",
+          "size_bytes": 553766
+        },
+        {
+          "filename": "moravcsik2013.pdf",
+          "kind": "PDF",
+          "size_bytes": 308039
+        },
+        {
+          "filename": "TransparencyinQualitativeResearch.pdf",
+          "kind": "PDF",
+          "size_bytes": 577062
+        },
+        {
+          "filename": "Jacobsetal,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 455343
+        },
+        {
+          "filename": "monroe2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 142302
+        },
+        {
+          "filename": "aguinis,solarino,2019.pdf",
+          "kind": "PDF",
+          "size_bytes": 7106350
+        }
+      ]
+    },
+    {
+      "folder": "Transparˆncia e Replicabilidade (quanti)",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "King (2006) (1).pdf",
+          "kind": "PDF",
+          "size_bytes": 90077
+        },
+        {
+          "filename": "Miguel et al (2014) (1).pdf",
+          "kind": "PDF",
+          "size_bytes": 277251
+        },
+        {
+          "filename": "King_1995.pdf",
+          "kind": "PDF",
+          "size_bytes": 259815
+        },
+        {
+          "filename": "Figueiredo Filho et al (2019) (1).pdf",
+          "kind": "PDF",
+          "size_bytes": 693693
+        }
+      ]
+    },
+    {
+      "folder": "Amostragem Qualitativa",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Simetal,2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 848083
+        },
+        {
+          "filename": "Rijnsoever,2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 4215360
+        },
+        {
+          "filename": "gill-2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 279673
+        },
+        {
+          "filename": "Minayo,2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 366354
+        },
+        {
+          "filename": "Hennink,Kaiser,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 1838359
+        },
+        {
+          "filename": "Campos,Saidel,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 223205
+        },
+        {
+          "filename": "Nobreetal,2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 155433
+        },
+        {
+          "filename": "Fontanellaetal,2011.pdf",
+          "kind": "PDF",
+          "size_bytes": 104289
+        },
+        {
+          "filename": "Bockorni, Gomes, 2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 339007
+        },
+        {
+          "filename": "Subedi,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 526953
+        }
+      ]
+    },
+    {
+      "folder": "An lise do Discurso",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Sthapitetal,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 649937
+        },
+        {
+          "filename": "Gee,2011.pdf",
+          "kind": "PDF",
+          "size_bytes": 1172964
+        },
+        {
+          "filename": "Korobov,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 77326
+        },
+        {
+          "filename": "Resende, Ramalho, 2004.pdf",
+          "kind": "PDF",
+          "size_bytes": 280803
+        },
+        {
+          "filename": "Chiarotti Ces rio, Chiatotti Almeida, 2008.pdf",
+          "kind": "PDF",
+          "size_bytes": 178681
+        },
+        {
+          "filename": "Nogueira,2008.pdf",
+          "kind": "PDF",
+          "size_bytes": 84482
+        },
+        {
+          "filename": "Dias,2011.pdf",
+          "kind": "PDF",
+          "size_bytes": 185542
+        },
+        {
+          "filename": "SOTO,1997.pdf",
+          "kind": "PDF",
+          "size_bytes": 6246789
+        },
+        {
+          "filename": "Lttr13,2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 453381
+        },
+        {
+          "filename": "LeBart, 2019.pdf",
+          "kind": "PDF",
+          "size_bytes": 364558
+        }
+      ]
+    },
+    {
+      "folder": "Imagem como dado",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "000633536.pdf",
+          "kind": "PDF",
+          "size_bytes": 136974
+        },
+        {
+          "filename": "O uso das imagens em pesquisas nas ciˆncias sociais.pdf",
+          "kind": "PDF",
+          "size_bytes": 230328
+        },
+        {
+          "filename": "Joo and Steinert-Threlkeld (2018).pdf",
+          "kind": "PDF",
+          "size_bytes": 8549727
+        }
+      ]
+    },
+    {
+      "folder": "Grounded Theory - Teoria Fundamentada em Dados",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Brandao,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 3171845
+        },
+        {
+          "filename": "Santosetal,2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 347428
+        },
+        {
+          "filename": "Centenoetal,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 407918
+        },
+        {
+          "filename": "Prigol,Behrens,2019.pdf",
+          "kind": "PDF",
+          "size_bytes": 414982
+        },
+        {
+          "filename": "Andrewsetal,2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 632315
+        },
+        {
+          "filename": "Metelski,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 241981
+        },
+        {
+          "filename": "Pinto,Santos,2012.pdf",
+          "kind": "PDF",
+          "size_bytes": 225281
+        },
+        {
+          "filename": "Strauss,Corbin,1997.pdf",
+          "kind": "PDF",
+          "size_bytes": 214064
+        }
+      ]
+    },
+    {
+      "folder": "Termos Interativos (multiplicativos)",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Braumoeller (2004).pdf",
+          "kind": "PDF",
+          "size_bytes": 752056
+        },
+        {
+          "filename": "Brambor_Clark and Golder_2006.pdf",
+          "kind": "PDF",
+          "size_bytes": 2218372
+        },
+        {
+          "filename": "Friedrich (1982).pdf",
+          "kind": "PDF",
+          "size_bytes": 2457604
+        },
+        {
+          "filename": "Dawson (2014).pdf",
+          "kind": "PDF",
+          "size_bytes": 560115
+        }
+      ]
+    },
+    {
+      "folder": "Grupos Focais",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Grupos Focais Online",
+          "kind": "FOLDER",
+          "size_bytes": null
+        },
+        {
+          "filename": "wilkinson1998.pdf",
+          "kind": "PDF",
+          "size_bytes": 1616977
+        },
+        {
+          "filename": "Stanley, 2016.pdf",
+          "kind": "PDF",
+          "size_bytes": 498228
+        },
+        {
+          "filename": "Nyumbaetal,2018- The use of focus group discussion methodology Insights from two decades of.pdf",
+          "kind": "PDF",
+          "size_bytes": 1170571
+        },
+        {
+          "filename": "Aschidamini,Saupe,2004.pdf",
+          "kind": "PDF",
+          "size_bytes": 92012
+        },
+        {
+          "filename": "Gui,2003.pdf",
+          "kind": "PDF",
+          "size_bytes": 95247
+        },
+        {
+          "filename": "Focus Group Method April 2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 1428415
+        },
+        {
+          "filename": "Netoetal,2002.pdf",
+          "kind": "PDF",
+          "size_bytes": 301336
+        },
+        {
+          "filename": "Guestetal,2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 327129
+        },
+        {
+          "filename": "Gondim,2003.pdf",
+          "kind": "PDF",
+          "size_bytes": 1345423
+        },
+        {
+          "filename": "Kind,2004.pdf",
+          "kind": "PDF",
+          "size_bytes": 73978
+        }
+      ]
+    },
+    {
+      "folder": "Jurimetria",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Maia e Bezerra (2020).pdf",
+          "kind": "PDF",
+          "size_bytes": 574651
+        },
+        {
+          "filename": "Zabala e Silveira (2014).pdf",
+          "kind": "PDF",
+          "size_bytes": 154270
+        }
+      ]
+    },
+    {
+      "folder": "Avaliação de Impacto",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "guiaexpost (1).pdf",
+          "kind": "PDF",
+          "size_bytes": 11932808
+        },
+        {
+          "filename": "153743_analise-ex-ante_web_novo.pdf",
+          "kind": "PDF",
+          "size_bytes": 4161095
+        },
+        {
+          "filename": "gertler_etl_2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 7561242
+        },
+        {
+          "filename": "Batista e Domingos (2017).pdf",
+          "kind": "PDF",
+          "size_bytes": 263280
+        }
+      ]
+    },
+    {
+      "folder": "An lise de Correspondˆncia",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Bertoncelo,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 4671950
+        },
+        {
+          "filename": "Duval (ano).pdf",
+          "kind": "PDF",
+          "size_bytes": 91520298
+        },
+        {
+          "filename": "Souza (1990).pdf",
+          "kind": "PDF",
+          "size_bytes": 4781342
+        },
+        {
+          "filename": "Abdi e  B‚ra (2017).pdf",
+          "kind": "PDF",
+          "size_bytes": 289832
+        },
+        {
+          "filename": "Atkinson (2023).pdf",
+          "kind": "PDF",
+          "size_bytes": 1387673
+        },
+        {
+          "filename": "Doey and Kurta (2011).pdf",
+          "kind": "PDF",
+          "size_bytes": 588996
+        },
+        {
+          "filename": "Beh (2007).pdf",
+          "kind": "PDF",
+          "size_bytes": 163962
+        },
+        {
+          "filename": "Nenadic e Greenacre (2007).pdf",
+          "kind": "PDF",
+          "size_bytes": 273863
+        }
+      ]
+    },
+    {
+      "folder": "Texto como Dado (text mining)",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Hopkins and King (2010).pdf",
+          "kind": "PDF",
+          "size_bytes": 528155
+        },
+        {
+          "filename": "Grimmer e Stewart (2013).pdf",
+          "kind": "PDF",
+          "size_bytes": 972383
+        },
+        {
+          "filename": "Izumi e Moreira (2018).pdf",
+          "kind": "PDF",
+          "size_bytes": 726950
+        }
+      ]
+    },
+    {
+      "folder": "Machine Learning",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Molina e Garip (2019).pdf",
+          "kind": "PDF",
+          "size_bytes": 299976
+        },
+        {
+          "filename": "s40614-020-00270-y (1)_pdf.pdf",
+          "kind": "PDF",
+          "size_bytes": 1452255
+        },
+        {
+          "filename": "Cranmer_2019.pdf",
+          "kind": "PDF",
+          "size_bytes": 127938
+        },
+        {
+          "filename": "grimmer-et-al-2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 460853
+        }
+      ]
+    },
+    {
+      "folder": "S‚ries Temporais Interrompidas (ITS)",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Penfold e Zhang (2013).pdf",
+          "kind": "PDF",
+          "size_bytes": 246567
+        },
+        {
+          "filename": "Linden (2015).pdf",
+          "kind": "PDF",
+          "size_bytes": 300450
+        },
+        {
+          "filename": "Figueiredo Filho (2022).pdf",
+          "kind": "PDF",
+          "size_bytes": 2454260
+        },
+        {
+          "filename": "Bernal, Cummings e Gasparrini (2017).pdf",
+          "kind": "PDF",
+          "size_bytes": 482146
+        }
+      ]
+    },
+    {
+      "folder": "Dif-in-Dif (regressão diferenças em diferenças)",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "02_two_by_two.pdf",
+          "kind": "PDF",
+          "size_bytes": 2072934
+        },
+        {
+          "filename": "gertler_et_al_2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 7561242
+        },
+        {
+          "filename": "Fredriksson e Oliveira (2019).pdf",
+          "kind": "PDF",
+          "size_bytes": 660405
+        },
+        {
+          "filename": "card and krueger (1994).pdf",
+          "kind": "PDF",
+          "size_bytes": 582964
+        },
+        {
+          "filename": "01_Introduction.pdf",
+          "kind": "PDF",
+          "size_bytes": 2476275
+        },
+        {
+          "filename": "Roth et al (2023).pdf",
+          "kind": "PDF",
+          "size_bytes": 513256
+        }
+      ]
+    },
+    {
+      "folder": "REGRESSION DISCONTINUITY DESIGNS (RDD)",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Cattaneo e Titiunik (2022).pdf",
+          "kind": "PDF",
+          "size_bytes": 473052
+        },
+        {
+          "filename": "Imbens e Lemieux (2007).pdf",
+          "kind": "PDF",
+          "size_bytes": 294451
+        }
+      ]
+    },
+    {
+      "folder": "Pol¡ticas P£blicas",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "celina2.pdf",
+          "kind": "PDF",
+          "size_bytes": 193799
+        },
+        {
+          "filename": "RCRH-2006-273[1] ADM.pdf",
+          "kind": "PDF",
+          "size_bytes": 218689
+        },
+        {
+          "filename": "celina3.pdf",
+          "kind": "PDF",
+          "size_bytes": 860992
+        },
+        {
+          "filename": "celina.pdf",
+          "kind": "PDF",
+          "size_bytes": 72641
+        },
+        {
+          "filename": "Batista e Domingos (2017) (1).pdf",
+          "kind": "PDF",
+          "size_bytes": 263280
+        },
+        {
+          "filename": "Batista, Domingos e Vieira (2021).pdf",
+          "kind": "PDF",
+          "size_bytes": 305022
+        }
+      ]
+    },
+    {
+      "folder": "Análise Espacial",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Conceição et al (2026)_port.pdf",
+          "kind": "PDF",
+          "size_bytes": 581998
+        },
+        {
+          "filename": "Conceição et al (2026)_en.pdf",
+          "kind": "PDF",
+          "size_bytes": 520173
+        }
+      ]
+    }
+  ]
+}

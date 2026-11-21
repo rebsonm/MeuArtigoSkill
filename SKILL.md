@@ -9,8 +9,7 @@ description: Build and resume traceable scientific articles using research-appro
 
 **MANDATORY ON FIRST TURN AND EVERY SUBSEQUENT TURN:** Apply
 [automatic user-language policy](references/language-policy.md).
-This Skill's source files, instructions and adapter prompts are in
-**English**, but they are **not a request for the user to speak English**.
+Skill source files are English; users need not respond in English.
 Infer the response language from the researcher's current substantive direct
 message, respecting any explicit instruction to use another language and
 the established conversational preference. Ask onboarding questions,
@@ -61,11 +60,9 @@ the workflow look traceable. An AI-authored log and a local receipt are not
 independent evidence that an external operation occurred. See
 [event evidence](docs/COMPROVACAO-EVENTOS.md).
 
-The Skill is experimental research-support software, not a scientifically
-validated research method. Passing engineering tests does not prove
-methodological correctness, causal impact, paper quality, productivity
-benefits or multi-platform operation. Empirical evaluations remain pending:
-[validation matrix](docs/VALIDACOES-PENDENTES.md).
+The Skill is experimental, not a scientifically validated research method.
+Engineering tests do not prove methodological accuracy, causal impact, paper
+quality, productivity or host compatibility. See [pending validation](docs/VALIDACOES-PENDENTES.md).
 
 ## 2. Open/resume research — solve storage authorization before research
 
@@ -88,10 +85,7 @@ If denied or unanswered, stop substantive work at the storage gate.
 Drive-local files remain staging until [individual Drive folders and files
 are verified](references/drive-delivery.md). ZIP-only upload is incomplete.
 
-Preserve the research question and intended contribution. Choose a
-**provisional route** via [method pathways](docs/ROTAS-METODOLOGICAS.md)
-and [review design](references/review-design.md). `UNDECIDED` is not
-a confirmed scientific choice. Optional method choices: [adaptive guide](docs/ADAPTIVE-METHOD-MAP.md). Never autoselect or approve; allow other methods.
+Preserve the research question and intended contribution. Choose a provisional route via [method pathways](docs/ROTAS-METODOLOGICAS.md) and [review design](references/review-design.md). `UNDECIDED` is not a choice. Optional guidance: [adaptive map](docs/ADAPTIVE-METHOD-MAP.md), [Skill-only method route](references/METHODOLOGY-CONSULTATION-SKILL-ONLY.md), and [public sources](references/GITHUB-METHODOLOGY.md). Never autoapprove; allow other methods.
 
 Obtain the researcher's original,
 attributable methodological decision; use `scripts/choose_method_route.py`

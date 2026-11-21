@@ -1,0 +1,218 @@
+{
+  "schema": "MEU_ARTIGO_LIBRARY_CANDIDATES_V1",
+  "description": "Nested folder metadata only; no documents replicated, no redistribution license attested. Status NOT_REVIEWED.",
+  "rights_status": "NOT_REVIEWED",
+  "batch": 5,
+  "folders": [
+    {
+      "folder": "Etnografia Política",
+      "parent": "Etnografia Política e Digital",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "bernardes nunez 2021 tripla identidade em tensão.pdf",
+          "kind": "PDF",
+          "size_bytes": 200798
+        }
+      ]
+    },
+    {
+      "folder": "Etnografia Digital",
+      "parent": "Etnografia Pol¡tica e Digital",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Cesarino, Silvia Walz, Tatiana Balistieri.pdf",
+          "kind": "PDF",
+          "size_bytes": 6979914
+        },
+        {
+          "filename": "Noveli,2010.pdf",
+          "kind": "PDF",
+          "size_bytes": 461666
+        },
+        {
+          "filename": "Soares, Stengel, 2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 765992
+        },
+        {
+          "filename": "Polivanov,2013.pdf",
+          "kind": "PDF",
+          "size_bytes": 102708
+        },
+        {
+          "filename": "Rocha,Montardo,2005.pdf",
+          "kind": "PDF",
+          "size_bytes": 348026
+        },
+        {
+          "filename": "Leitao,Gomes,2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 669155
+        },
+        {
+          "filename": "Cesarino,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 432762
+        },
+        {
+          "filename": "Ferraz,2019.pdf",
+          "kind": "PDF",
+          "size_bytes": 529438
+        }
+      ]
+    },
+    {
+      "folder": "Etnografia Pol¡tica",
+      "parent": "Etnografia Pol¡tica e Digital",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Alcoforado,2010.pdf",
+          "kind": "PDF",
+          "size_bytes": 964847
+        },
+        {
+          "filename": "Hoyler,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 8862076
+        },
+        {
+          "filename": "Fernandez, Guimaraes, 2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 334713
+        },
+        {
+          "filename": "wedeen2010.pdf",
+          "kind": "PDF",
+          "size_bytes": 238459
+        },
+        {
+          "filename": "Valladares,2010.pdf",
+          "kind": "PDF",
+          "size_bytes": 63385
+        },
+        {
+          "filename": "Teixeiraetal,2019.pdf",
+          "kind": "PDF",
+          "size_bytes": 2940625
+        }
+      ]
+    },
+    {
+      "folder": "Grupos Focais Online",
+      "parent": "Grupos Focais",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "abrams-et-al-2014.pdf",
+          "kind": "PDF",
+          "size_bytes": 178789
+        },
+        {
+          "filename": "boydelletal,2014.pdf",
+          "kind": "PDF",
+          "size_bytes": 525336
+        },
+        {
+          "filename": "Zwaanswijk, van Dulmen,2014.pdf",
+          "kind": "PDF",
+          "size_bytes": 271828
+        },
+        {
+          "filename": "Mineiroetal,2019.pdf",
+          "kind": "PDF",
+          "size_bytes": 402403
+        },
+        {
+          "filename": "stewart,shamdasani,2016.pdf",
+          "kind": "PDF",
+          "size_bytes": 457805
+        },
+        {
+          "filename": "richard-et-al-2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 249304
+        },
+        {
+          "filename": "Wallaceetal,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 236122
+        },
+        {
+          "filename": "Gil,Silveira,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 329204
+        },
+        {
+          "filename": "Jonesetal,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 574817
+        },
+        {
+          "filename": "Cioffietal,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 459829
+        }
+      ]
+    },
+    {
+      "folder": "Entrevistas Online",
+      "parent": "Entrevistas",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Rodriguesetal,2015.pdf",
+          "kind": "PDF",
+          "size_bytes": 125859
+        },
+        {
+          "filename": "Prior,Lachover,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 560652
+        },
+        {
+          "filename": "Zadkowskaetal,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 595147
+        },
+        {
+          "filename": "Oatesetal,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 2302366
+        },
+        {
+          "filename": "Laconoetal,2016-skype.pdf",
+          "kind": "PDF",
+          "size_bytes": 272033
+        },
+        {
+          "filename": "Chiaetal,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 453977
+        },
+        {
+          "filename": "Lobeetal,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 584384
+        },
+        {
+          "filename": "khan, Maceachen,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 590345
+        },
+        {
+          "filename": "Saarijarvi,Bratt,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 372070
+        },
+        {
+          "filename": "Schmidtetal,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 285709
+        }
+      ]
+    }
+  ]
+}
