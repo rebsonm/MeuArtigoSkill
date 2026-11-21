@@ -19,7 +19,7 @@ import unicodedata
 from adaptive_method_guide import for_project, preview
 from method_decision_dimensions import DIMENSIONS
 from method_routes import (
-    INFERENCE_AIMS, INTEGRATION_TYPES, MIXED_DESIGNS, REQUIRED_DESIGN, ROUTES
+    INFERENCE_AIMS, INTEGRATION_TYPES, MIXED_DESIGNS, REQUIRED_DESIGN, ROUTES, load as load_method_profile
 )
 
 SCHEMA="MEU_ARTIGO_METHOD_FILL_PREFLIGHT_V1"
@@ -188,13 +188,90 @@ def inspect(guide: dict, *, proposal: str|None=None,
         ],
     }
 
+def inference_aim_change_impact(previous: str, proposed: str) -> dict:
+    """Advisory comparison of two *declared labels*, not scientific revalidation.
+
+    Return only canonical enum labels and static review targets. Never inspect,
+    echo or decide the researcher's original question, rationale or claim text.
+    """
+    old = previous.strip() if isinstance(previous, str) else ""
+    new = proposed.strip() if isinstance(proposed, str) else ""
+    valid_old = old in INFERENCE_AIMS
+    valid_new = new in INFERENCE_AIMS
+    result = {
+        "schema": "MEU_ARTIGO_INFERENCE_AIM_CHANGE_PREVIEW_V1",
+        "status": "NO_CANONICAL_BASELINE",
+        "previous_aim": old if valid_old else None,
+        "proposed_aim": new if valid_new else None,
+        "inference_aim_changed": False,
+        "review_targets": [],
+        "human_researcher_review_required_for_change": False,
+        "affected_records_identified_or_invalidated": False,
+        "methodological_adequacy_verified": False,
+        "claim_semantics_verified": False,
+        "scientific_gate_approved": False,
+        "canonical_project_modified": False,
+        "note": "Potential dependencies only; no source, analysis or claim has been independently examined.",
+    }
+    if not valid_new:
+        result["status"] = "INVALID_PROPOSAL_NOT_COMPARED"
+    elif not valid_old:
+        result["status"] = "NO_CANONICAL_BASELINE"
+    elif old == new:
+        result["status"] = "NO_INFERENCE_AIM_CHANGE"
+    else:
+        if new == "CAUSAL":
+            result["status"] = "CAUSAL_ESCALATION_REQUIRES_REVIEW"
+        elif old == "CAUSAL":
+            result["status"] = "CAUSAL_DEESCALATION_REQUIRES_REVIEW"
+        else:
+            result["status"] = "INFERENCE_AIM_CHANGE_REQUIRES_REVIEW"
+        result["inference_aim_changed"] = True
+        result["human_researcher_review_required_for_change"] = True
+        # Existing field names, plus explicitly conditional downstream
+        # artifacts. This list is a checklist, not verified dependency edges.
+        result["review_targets"] = [
+            "research_question",
+            "intended_inference",
+            "study_limits",
+            "analysis_plan",
+            "identification_or_inference_limits",
+            "claims_and_conclusions_if_any",
+            "prior_gate_decisions_if_any",
+        ]
+        if old == "CAUSAL" or new == "CAUSAL":
+            result["review_targets"].extend([
+                "population_or_unit",
+                "sampling_logic",
+                "constructs_and_measures",
+                "data_sources",
+                "causal_identification_assumptions",
+            ])
+    return result
+
+
 def for_existing_project(project: Path, *, field: str|None=None,
                          dimension: str|None=None, proposal: str|None=None,
                          option_id: str|None=None) -> dict:
     # The existing guide detects route/profile inconsistency and does not
     # expose source text or private method rationale.
     g=for_project(project,field=field,dimension=dimension)
-    return inspect(g,proposal=proposal,option_id=option_id)
+    report=inspect(g,proposal=proposal,option_id=option_id)
+    if (proposal is not None and
+        g.get("bound_to_canonical_project") is True and
+        g.get("route_recorded") == "QUANTITATIVE" and
+        g.get("target_field") == "inference_aim"):
+        path = Path(project)/"00_Gestao_e_Continuidade"/"METHOD_PROFILE.json"
+        # Fail closed on unsafe/read-inconsistent canonical profile files.
+        if path.is_symlink() or not path.is_file() or path.stat().st_size > 1_000_000:
+            raise ValueError("Unsafe method profile during impact preview")
+        profile = load_method_profile(Path(project))
+        details = profile.get("route_details")
+        if profile.get("route") != "QUANTITATIVE" or not isinstance(details, dict):
+            raise ValueError("Method profile changed during impact preview")
+        report["inference_change_impact"] = inference_aim_change_impact(
+            details.get("inference_aim"), proposal)
+    return report
 
 def main(argv=None) -> int:
     p=argparse.ArgumentParser(description=__doc__)
