@@ -230,10 +230,6 @@ Consult the
 
 **Next/próximo:** Use [authorized continuity and C.A.D.A.](references/project-state.md). For local approved fallback, run `scripts/next_step_router.py PROJECT`. Navigation never approves a gate or verifies Drive sync.
 
-**Guided continuation (candidate):** For an authorized local fallback, run
-`scripts/research_resume_brief.py PROJECT --format guided`; explain one action,
-its exit criterion and evidence-bounded repeat alerts. Never infer Drive sync
-or scientific approval. See [guidance](docs/CONTINUIDADE-GUIADA-ANTICIRCULARIDADE.md).
 
 **Native in-chat visual dashboard:** For progress requests, read the
 authorized canonical project and follow the
