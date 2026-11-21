@@ -29,7 +29,7 @@ Only original cards and individually approved redistributable public PDFs appear
 
 **Canonical source format:** keep permitted full-text methodological sources as original PDFs; do not require PDF-to-Markdown conversion. PDF page rendering/visual review is necessary for diagrams, equations, tables and pages without extractable text. Keep indexes and source metadata small, and only put bounded page content into the model context.
 
-- Public PDF discovery contract: `knowledge/methodology/pdf_catalog.json`, currently six individually licensed and catalogued source PDFs.
+- Public PDF discovery contract: `knowledge/methodology/pdf_catalog.json`, individually licensed and catalogued source PDFs (consult the current catalog for the exact count).
 - Proof-of-concept PDF reader: `experimental/conceptual_rag/github_pdf_reader.py`; remains *experimental source only*, **not included in the installed Skill ZIP**.
 - Source selection is metadata-first. The local executor downloads at most one matching licensed PDF and checks its exact size and SHA256 before extracting a bounded number of pages. A scanned PDF returns a visual-review requirement rather than fabricated text.
 - Private/third-party PDFs, including personal Drive libraries, remain outside the public repository. A private GitHub source would require legitimately authorized use and an authenticated host; no access token is embedded or assumed.
