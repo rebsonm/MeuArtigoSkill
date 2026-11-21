@@ -163,7 +163,10 @@ def query(question: str, *, ref: str, fetch: Callable = fetch_github,
                          "page_label_verified": False, "excerpt": excerpt,
                          "truncated": len(excerpt) < len(body),
                          "visual_review_recommended": has_images,
-                         "evidence_type": "EXTRACTED_PDF_PAGE_NOT_SCIENTIFICALLY_VALIDATED"})
+                         "evidence_type": "EXTRACTED_PDF_PAGE_NOT_SCIENTIFICALLY_VALIDATED",
+                         "authors": item.get("authors"), "year": item.get("year"),
+                         "doi": item.get("doi"), "source_url": item.get("source_url"),
+                         "license": item.get("license"), "sha256": item["sha256"]})
             remaining -= len(excerpt)
             if remaining <= 0:
                 break
