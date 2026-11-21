@@ -422,5 +422,100 @@
     "acl_changes_performed": 0,
     "pdf_bytes_published": 0,
     "remediation": "Audit all private-archive PDF ACLs and revoke anyone:reader only after owner-approved share-impact decision; handle historical Git locator separately without force push."
+  },
+  "continuity_v1_15_20261121_unicode": {
+    "status": "PARCIAL_SEM_ACEITE",
+    "evidence_type": "CONTINUIDADE_AMOSTRAL_E_REVISAO_DE_SCRIPT_SEM_REAUDITAR_PDFS",
+    "manifest_commit": "7c92045310eb3b1474a9612a777fb0012a511592",
+    "frozen_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+    "independent_utf8_sha256_recomputation": [
+      {
+        "path": "knowledge/methodology/source_cards/src-0099.md",
+        "ref": "work/ib-01-20261121",
+        "sha256": "c9d2f4481f90ad19b91fa52e1e97a2dfa4412ca88574a88af80ccb3635264096",
+        "status": "MATCH",
+        "git_blob": "214f0926fa60e8b468343f495165bf3628f7dbea"
+      },
+      {
+        "path": "knowledge/methodology/cards/reviews.md",
+        "ref": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+        "sha256": "331db84256e59599d0a8674b0064d9c3058a9261917efb03e403f083dfcde8af",
+        "status": "MATCH",
+        "git_blob": "3c53e1f77d174556db4b30fa3ecc73580c910833"
+      },
+      {
+        "path": "knowledge/methodology/cards/design-science.md",
+        "ref": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+        "sha256": "fefdaa9fc5847a397dff9c065f42e910032fddf08dfbfae04bbf4fdc7a085256",
+        "status": "MATCH",
+        "git_blob": "394c2642f32acdd5f60239c0c3b83a6b327b4f78"
+      }
+    ],
+    "sha256_vectors_run": 3,
+    "sha256_sample_matched": 3,
+    "sha256_sample_mismatched": 0,
+    "historical_full_517_recount_repeated_in_this_continuity": false,
+    "historical_pdf_23_rehashed_in_this_continuity": false,
+    "duplicate_groups_consistency": {
+      "groups": 11,
+      "copies": 23,
+      "groups_with_valid_sha256_and_prior_binary_match": 11,
+      "false_positive_binary_matches_observed": 0,
+      "infer_same_intellectual_work": false,
+      "new_pdf_read": false
+    },
+    "folder_alias_string_comparison": {
+      "groups": 6,
+      "records": 25,
+      "nfc_equivalent_groups": 0,
+      "nfkc_equivalent_groups": 0,
+      "distinctly_encoded_groups": 6,
+      "group_counts_by_ib": {
+        "IB-05": 7,
+        "IB-06": 9,
+        "IB-14": 2,
+        "IB-17": 7
+      },
+      "classification": "DIFFERENT_STRING_NO_AUTO_EQUIVALENCE",
+      "note": "Metadados previos do Drive indicam correspondencias por nome/tamanho; equivalencia Unicode e identidade fisica automatica NAO demonstradas."
+    },
+    "script_correction": {
+      "path": "scripts/v1_15_integrity_audit.py",
+      "commits": [
+        "54c0022d304aea885c19d66e891718df707739be",
+        "c0818cd324a3673b8e7e54446210c2988563253a"
+      ],
+      "blob_after": "fff187a54c8857f318aa01518f6c6112c18fca88",
+      "output_alias_folder_names": "REMOVED_FROM_NEW_SCRIPT_OUTPUT",
+      "unicode_classification": "FOUR_CONSERVATIVE_CATEGORIES_NO_AUTO_MERGE",
+      "isolated_python_mirrored_logic_test": "PASS_5_OF_5",
+      "script_selftest_executed_in_checkout": false,
+      "full_script_run_in_checkout": false,
+      "ci_pass": false
+    },
+    "privacy": {
+      "current_receipts_direct_private_google_drive_urls_found": 0,
+      "historical_git_exposure_resolved": false,
+      "known_25_pdf_acl_anyone_reader_status": "PREVIOUSLY_OBSERVED_NOT_CHANGED",
+      "permissions_changed": false,
+      "public_pr_created": false
+    },
+    "results_receipt_update_commit": "3e4655fbbea283374fe022ebac2697336b0f2516",
+    "results_receipt_blob_after": "be5552a28336d39601152af66e968b196a37383d",
+    "canonical_md_body_changed": false,
+    "canonical_comment": "PENDING_VERIFIED_REPLY_OR_NEW_SECTION_COMMENT",
+    "one_next_action": "RUN_V1_15_VALIDATOR_IN_CONTROLLED_CHECKOUT_WITH_20_IB_REFS_AND_RECONCILE_RESULTS",
+    "acceptance_gate": "REPRODUCIBLE_COUNTS_343_174_11_25_PLUS_PRIVACY_AND_HUMAN_RIGHTS_REVIEW",
+    "forbidden_actions_not_taken": [
+      "MERGE",
+      "TAG",
+      "RELEASE",
+      "FORCE_PUSH",
+      "CATALOG_EDIT",
+      "RIGHTS_LEDGER_EDIT",
+      "PDF_PUBLICATION",
+      "SCIENTIFIC_APPROVAL",
+      "SECURITY_APPROVAL"
+    ]
   }
 }
