@@ -1,9 +1,9 @@
 {
   "schema": "MEU_ARTIGO_SOURCE_CARD_INDEX_V1",
-  "version": "pilot-2026-11-21-96-verified-379-provisional",
+  "version": "pilot-2026-11-21-106-verified-369-provisional",
   "source_archive_records": 475,
   "catalogue_identified_titles": 475,
-  "source_text_read_in_ledger": 99,
+  "source_text_read_in_ledger": 108,
   "third_party_full_text_included": false,
   "source_records_are_evidence": false,
   "retrieval_label": "BIBLIOGRAPHIC_PROSPECTING_ONLY_NOT_ORIGINAL_ARTICLE_READING",
@@ -704,13 +704,28 @@
         "2009",
         "src-0018"
       ],
-      "sha256": "95822e4ae69f7f22561e1f6755ab9b4563b74a16eaded605e1bc19a18821b025",
+      "sha256": "b1c9557ea72d3890281a04533a4fecda745ef879641a16f1316d60c1567fecab",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "VERIFIED_PUBLISHER_LICENSE",
       "source_read_scope": "TITLE_ABSTRACT_AND_METHOD_EXPOSITION_CONSULTED",
       "has_original_public_pdf": true,
-      "public_pdf_path": "knowledge/methodology/pdfs/koerich-et-al-2009-action-research.pdf"
+      "public_pdf_path": "knowledge/methodology/pdfs/koerich-et-al-2009-action-research.pdf",
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Pesquisa-ação: ferramenta metodológica para a pesquisa qualitativa",
+        "authors": "Magda Santos Koerich; Dirce Stein Backes; Francisca Georgina Macêdo de Sousa; Alacoque Lorenzini Erdmann; Gelson Luiz Alburquerque (grafia no exemplar)",
+        "year": "2009",
+        "doi": "10.5216/ree.v11.47234",
+        "public_url": "https://revistas.ufg.br/fen/article/view/47234",
+        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": true,
+        "scientific_card_review_approved": false,
+        "rights_screen": "PREVIOUSLY_VERIFIED_EXACT_CC_BY_4"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0019.md",
@@ -827,28 +842,43 @@
     {
       "path": "knowledge/methodology/source_cards/src-0022.md",
       "source_id": "SRC-0022",
-      "title": "GLOSSÁRIO DE CIÊNCIA POLÍTICA: CONTRIBUIÇÕES PARA OS ESTUDOS DAS POLÍTICAS EDUCACIONAIS",
-      "topic": "Pesquisa Ação",
+      "title": "Glossário de ciência política: contribuições para os estudos das políticas educacionais",
+      "topic": "Ciência Política e Políticas Educacionais",
       "keywords": [
-        "acao",
         "glossario",
         "ciencia",
         "politica",
-        "contribuicoes",
-        "estudos",
         "politicas",
         "educacionais",
+        "educacao",
+        "mestrado",
         "mourad",
         "2021",
         "src-0022"
       ],
-      "sha256": "728006c15cd1d40f68213fb4d2259ed1a064e58887798f60ef4415ce01802f1e",
+      "sha256": "4de728fe58168fd0c9952d399297637943244e1cda4de6cd42881a1e7c3781c4",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Glossário de ciência política: contribuições para os estudos das políticas educacionais",
+        "authors": "Leonice Aparecida de Fátima Alves Pereira Mourad",
+        "year": "2021",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "MASTER_DISSERTATION_RESTRICTED_UNCHECKED"
+      },
+      "work_type": "MASTER_DISSERTATION"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0023.md",
@@ -1010,7 +1040,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0027.md",
       "source_id": "SRC-0027",
-      "title": "Da Crítica Feminista à Ciência a uma Ciência Feminista?",
+      "title": "Da crítica feminista à ciência a uma ciência feminista?",
       "topic": "Epistemologia Feminista",
       "keywords": [
         "epistemologia",
@@ -1021,13 +1051,28 @@
         "2001",
         "src-0027"
       ],
-      "sha256": "888d845669acf18ac7d8fd337fac296de1e2f73cff39d20be095dd859383bdbf",
+      "sha256": "be512b58c437d055b42e61d172846a320ad8dd1b22e4c7fc7964c8a8179c044d",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Da crítica feminista à ciência a uma ciência feminista?",
+        "authors": "Cecilia Maria Bacellar Sardenberg",
+        "year": "2001",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "REVISED_CONFERENCE_INTERVENTION_RIGHTS_UNCHECKED"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0028.md",
@@ -1044,18 +1089,33 @@
         "2008",
         "src-0028"
       ],
-      "sha256": "46db3d600e13d2237d9c410a7e7c023497be0e534789159120b8138c67ef8584",
+      "sha256": "2443f67ea80867a77fecf9de2ea7baf8c175b4af3a23c0bb130355ae7e2f85e4",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Estudos de gênero: uma sociologia feminista?",
+        "authors": "Lucila Scavone",
+        "year": "2008",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "PUBLISHER_COPYRIGHT_RESTRICTION_UNCHECKED"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0029.md",
       "source_id": "SRC-0029",
-      "title": "ABORDAGENS FEMINISTAS DE ANÁLISE DE DISCURSO: A FORMAÇÃO DE UM CAMPO",
+      "title": "Abordagens feministas de análise de discurso: a formação de um campo",
       "topic": "Epistemologia Feminista",
       "keywords": [
         "epistemologia",
@@ -1071,13 +1131,29 @@
         "2017",
         "src-0029"
       ],
-      "sha256": "c7e3323b1f1437c0f118bf6d2ced0133533195fe85ff6f9dc4eba42dfc0b5d85",
+      "sha256": "4e6eb56329b04fa9c947874c0bb0a0692d8a02d6e2835e055d0b32b955dabae4",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Abordagens feministas de análise de discurso: a formação de um campo",
+        "authors": "Isadora Costa Mendes; Lúcia Freitas",
+        "year": "2017",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "EDITED_BOOK_CHAPTER_PROHIBITS_UNAUTHORIZED_REPRODUCTION"
+      },
+      "work_type": "EDITED_BOOK_CHAPTER"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0030.md",
@@ -1095,13 +1171,29 @@
         "2006",
         "src-0030"
       ],
-      "sha256": "e49660f80a5da762a133db745701d49bc6c49588ce2a6719f953a8876947a073",
+      "sha256": "786dcb4ecc906e2f80fd3efbac2ca2cae8bf2f79692e3aa4937b70906b1cfce1",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Qual foi o impacto do feminismo na ciência?",
+        "authors": "Evelyn Fox Keller",
+        "year": "2006",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "TRANSLATED_ARTICLE_2004_ORIGINAL_RIGHTS_UNCHECKED"
+      },
+      "work_type": "TRANSLATED_ARTICLE"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0031.md",
@@ -1120,18 +1212,34 @@
         "2008",
         "src-0031"
       ],
-      "sha256": "37ec2df1b357b7e425195ac54fe6710efc1360be8306b5ac011f5d86a0642b2b",
+      "sha256": "4ea52a88e970995fc7a2c9613fc7499086df7e997c08b2e196fe397fb0bc3c09",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Mais mulheres na ciência: questões de conhecimento",
+        "authors": "Londa Schiebinger",
+        "year": "2008",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "TRANSLATED_ARTICLE_RIGHTS_UNCHECKED"
+      },
+      "work_type": "TRANSLATED_ARTICLE"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0032.md",
       "source_id": "SRC-0032",
-      "title": "FEMINIST METHODOLOGIES AND EPISTEMOLOGY",
+      "title": "Feminist methodologies and epistemology",
       "topic": "Epistemologia Feminista",
       "keywords": [
         "epistemologia",
@@ -1144,13 +1252,29 @@
         "2005",
         "src-0032"
       ],
-      "sha256": "1cb47f7c5acebd700cdd5fc40ea3804a9940c65f16de8683a1e7636d2887d017",
+      "sha256": "c70bc61602790991b08f4da205c418219004a56a3fd1bdd7df3e0f2485fef1a9",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Feminist methodologies and epistemology",
+        "authors": "Andrea Doucet; Natasha S. Mauthner",
+        "year": "NOT_VERIFIED",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "HANDBOOK_CHAPTER_2005_2006_EDITION_UNCONFIRMED"
+      },
+      "work_type": "HANDBOOK_CHAPTER"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0033.md",
@@ -1167,13 +1291,28 @@
         "2020",
         "src-0033"
       ],
-      "sha256": "4f028d8e38c2ec8a83cd4809496fb3fd5c2a1c06fdda0e789b687901b8e786fe",
+      "sha256": "a46aad0f63c72c9e015ec0a209a97a63806d618b486599c64c338b96545eb402",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Epistemologia insubmissa feminista negra decolonial",
+        "authors": "Angela Figueiredo",
+        "year": "2020",
+        "doi": "10.5965/2175180312292020e0102",
+        "public_url": "https://doi.org/10.5965/2175180312292020e0102",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "OPEN_ACCESS_HOST_NOT_PDF_REUSE_LICENSE"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0034.md",
@@ -1195,13 +1334,28 @@
         "2008",
         "src-0034"
       ],
-      "sha256": "0031ac67995492796e9ab80536ba645bb6f2601a23f13f2f3ea548e972c1b335",
+      "sha256": "ab0efae5bbb81dc5a9d6b9028fcacd4a72f025297f2ff6c541106236130bd25d",
       "source_metadata_only": true,
-      "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
+      "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
+      "source_read_scope": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "source_identity_verified_not_citation_grade": true,
+      "title_candidate_only": false,
+      "public_work_metadata_screen": {
+        "status": "SOURCE_PDF_WORK_IDENTITY_VERIFIED",
+        "title": "Teorias de gênero ou teorias e gênero? Se e como os estudos de gênero e feministas se transformaram em um campo novo para as ciências",
+        "authors": "Marlise Matos",
+        "year": "2008",
+        "doi": null,
+        "public_url": null,
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": true,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false,
+        "rights_screen": "PUBLISHER_COPYRIGHT_RESTRICTION_UNCHECKED"
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0035.md",
@@ -13890,6 +14044,6 @@
   "provisional_filename_title_cards": 71,
   "identities_still_unresolved": 0,
   "public_bibliographic_work_checks": 12,
-  "provisional_matches": 379,
-  "confirmed_pdf_work_identities": 96
+  "provisional_matches": 369,
+  "confirmed_pdf_work_identities": 106
 }
