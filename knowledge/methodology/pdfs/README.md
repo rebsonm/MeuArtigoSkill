@@ -1,6 +1,6 @@
 # Methodological PDFs — rights and attribution
 
-This public corpus contains **35 source PDFs** with documented publisher or repository licensing statements for Creative Commons Attribution 4.0 International (CC BY 4.0). They are **not** covered by the repository's Apache-2.0 software license. The binary PDF copies are unmodified; no endorsement by their authors or journals is implied.
+This public corpus contains **36 source PDFs** with documented publisher or repository licensing statements for Creative Commons Attribution 4.0 International (CC BY 4.0). They are **not** covered by the repository's Apache-2.0 software license. The binary PDF copies are unmodified; no endorsement by their authors or journals is implied.
 
 License: https://creativecommons.org/licenses/by/4.0/
 
@@ -66,3 +66,5 @@ These originals remain outside the installer; verified source DOI, authors and S
 
 - Dias, E. G.; Mishima, S. M. (2023), *Análise temática de dados qualitativos: uma proposta prática para efetivação*. DOI https://doi.org/10.12957/sustinere.2023.71828. [Official journal licensing statement](https://doi.org/10.12957/sustinere.2023.71828). Unchanged `dias-mishima-2023-thematic-analysis.pdf`; SHA256 `9d623d1f2e22d8d93b571ded0eb9f34e5b6062669ee32f47f12fca67aad97d7a`.
 - Campos, C. J. G.; Saidel, M. G. B. (2022), *Amostragem em investigações qualitativas: conceitos e aplicações ao campo da saúde*. DOI https://doi.org/10.33361/RPQ.2022.v.10.n.25.545. [Official journal CC BY 4.0 statement](https://editora.sepq.org.br/rpq/article/view/545). Unchanged `campos-saidel-2022-qualitative-sampling.pdf`; SHA256 `b3e78db1e163a787ec0ac08c44fca1cbb2c664f53564581128779c65a8ddd1a8`.
+
+- Koerich, M. S.; Backes, D. S.; Sousa, F. G. M.; Erdmann, A. L.; Albuquerque, G. L. (2009). *Pesquisa-ação: ferramenta metodológica para a pesquisa qualitativa*. [Publisher license CC BY 4.0](https://revistas.ufg.br/fen/article/view/47234); [DOI](https://doi.org/10.5216/ree.v11.47234). Unaltered `koerich-et-al-2009-action-research.pdf`; SHA256 `178ca5ae19c4e3fb2afee735b6a1e5c74ad804a2640c8be092e6df7bd28797d6`.

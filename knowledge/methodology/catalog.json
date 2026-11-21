@@ -1570,10 +1570,32 @@
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
       "source_catalogue_pdf_path": "knowledge/methodology/pdfs/campos-saidel-2022-qualitative-sampling.pdf"
+    },
+    {
+      "path": "knowledge/methodology/cards/koerich-et-al-2009-action-research.md",
+      "title": "Action research: linking participatory change and scientific inquiry",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "a266aba6510460e9a29511285652fa5e3ff21d0eb99a844f6b4ab51ec74e3cbf",
+      "keywords": [
+        "pesquisa ação",
+        "action research",
+        "intervenção",
+        "participação",
+        "métodos qualitativos",
+        "diagnóstico",
+        "aprendizagem"
+      ],
+      "source_doi": "10.5216/ree.v11.47234",
+      "source_url": "https://revistas.ufg.br/fen/article/view/47234",
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/koerich-et-al-2009-action-research.pdf",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
     }
   ],
   "license": "Apache-2.0 (original editorial cards only)",
   "repository": "rebsonm/MeuArtigoSkill",
   "schema": "MEU_ARTIGO_GITHUB_METHODOLOGY_V1",
-  "version": "pilot-2026-11-21-63-cards-35-pdfs"
+  "version": "pilot-2026-11-21-64-editorial-cards-36-pdfs"
 }

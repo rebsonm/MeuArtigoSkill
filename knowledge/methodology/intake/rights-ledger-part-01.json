@@ -415,12 +415,12 @@
       "filename": "Koerichetal,2009.pdf",
       "size_bytes": 78887,
       "priority": "P2",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
-      "publisher_license": "NOT_CHECKED",
-      "rights_review": "NOT_CHECKED",
-      "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
-      "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
+      "bibliographic_identity": "VERIFIED_PUBLISHED_WORK_AND_DOI",
+      "publisher_license": "CC BY 4.0",
+      "rights_review": "VERIFIED_PUBLISHER_LICENSE",
+      "public_distribution": "LICENSED_ORIGINAL_SOURCE_INDEXED",
+      "original_reading": "TITLE_ABSTRACT_AND_METHOD_EXPOSITION_CONSULTED",
+      "suggested_next_step": "INDEPENDENT_EDITORIAL_AND_SCIENTIFIC_REVIEW",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
       "bibliographic_title_original": "Pesquisa-ação: ferramenta metodológica para a pesquisa qualitativa",
@@ -432,7 +432,11 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "doi": "10.5216/ree.v11.47234",
+      "rights_evidence_url": "https://revistas.ufg.br/fen/article/view/47234",
+      "public_pdf_path": "knowledge/methodology/pdfs/koerich-et-al-2009-action-research.pdf",
+      "original_pdf_sha256": "178ca5ae19c4e3fb2afee735b6a1e5c74ad804a2640c8be092e6df7bd28797d6"
     },
     {
       "id": "SRC-0019",

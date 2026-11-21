@@ -49,7 +49,7 @@ class SourceRegistryCompletenessTests(unittest.TestCase):
         self.assertEqual(len([x for x in self.docs if
                               x["rights_review"] == "VERIFIED_PUBLISHER_LICENSE"]),
                          reviewed)
-        self.assertEqual(reviewed, 2)
+        self.assertEqual(reviewed, 3)
 
     def test_sha256_and_source_metadata_only_every_card(self):
         for item in self.docs:

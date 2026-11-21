@@ -1,6 +1,6 @@
 {
   "schema": "MEU_ARTIGO_PUBLIC_PDF_CATALOG_V1",
-  "version": "public-open-cc-by-sources-with-archived-methodology-2026-11-21",
+  "version": "pilot-2026-11-21-36-licensed-public-pdfs",
   "documents": [
     {
       "path": "knowledge/methodology/pdfs/lycariao-roque-costa-2023.pdf",
@@ -973,6 +973,34 @@
         "participantes"
       ],
       "original_file_unchanged": true
+    },
+    {
+      "path": "knowledge/methodology/pdfs/koerich-et-al-2009-action-research.pdf",
+      "title": "Pesquisa-ação: ferramenta metodológica para a pesquisa qualitativa",
+      "authors": "Magda Santos Koerich; Dirce Stein Backes; Francisca Georgina Macêdo de Sousa; Alacoque Lorenzini Erdmann; Gelson Luiz Albuquerque",
+      "year": 2009,
+      "doi": "10.5216/ree.v11.47234",
+      "size": 78887,
+      "sha256": "178ca5ae19c4e3fb2afee735b6a1e5c74ad804a2640c8be092e6df7bd28797d6",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://revistas.ufg.br/fen/article/view/47234",
+      "source_url": "https://revistas.ufg.br/fen/article/view/47234",
+      "source_pdf_url": "https://revistas.ufg.br/fen/article/download/47234/23150/197860",
+      "rights_evidence_type": "PUBLISHER_ARTICLE_EXPLICIT_CC_BY_4",
+      "original_file_unchanged": true,
+      "keywords": [
+        "pesquisa-ação",
+        "action research",
+        "ação",
+        "participação",
+        "qualitativa",
+        "intervenção",
+        "aprendizagem",
+        "ciclos",
+        "organização"
+      ]
     }
   ],
   "rights_policy": "PUBLIC_REDISTRIBUTION_REVIEWED_ONLY",

@@ -1,6 +1,6 @@
 {
   "schema": "MEU_ARTIGO_SOURCE_CARD_INDEX_V1",
-  "version": "pilot-2026-11-21-475-sources-metadata",
+  "version": "pilot-2026-11-21-475-leads-3-verified-source-rights",
   "source_archive_records": 475,
   "catalogue_identified_titles": 404,
   "source_text_read_in_ledger": 2,
@@ -439,13 +439,13 @@
         "2009",
         "src-0018"
       ],
-      "sha256": "d285d1a6b27eaeba49cb96d1c56e8e62bbd2943f82eaa4546ca2c638f8ff21d6",
+      "sha256": "95822e4ae69f7f22561e1f6755ab9b4563b74a16eaded605e1bc19a18821b025",
       "source_metadata_only": true,
       "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
-      "rights_review": "NOT_CHECKED",
-      "source_read_scope": "NOT_RECORDED_IN_LEDGER",
-      "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "rights_review": "VERIFIED_PUBLISHER_LICENSE",
+      "source_read_scope": "TITLE_ABSTRACT_AND_METHOD_EXPOSITION_CONSULTED",
+      "has_original_public_pdf": true,
+      "public_pdf_path": "knowledge/methodology/pdfs/koerich-et-al-2009-action-research.pdf"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0019.md",
