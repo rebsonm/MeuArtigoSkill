@@ -116,10 +116,10 @@
       "pdf_size_bytes": 91520298,
       "pages": 40,
       "evidence": "PDF p. 1, p. 2 e p. 40 (URL, carimbos, rodapé); metadados Skia/PDF.",
-      "identity_verification": "Multiple Correspondence Analysis; captura impressa do site Politika de 14/12/2023 (40 páginas). Não há autoria/ano editorial verificados na cópia. 'Duval' no nome do arquivo não é prova de autoria. Carimbo de impressão não é data de publicação.",
-      "status": "BLOQUEADO_AUTORIA_ANO",
+      "identity_verification": "PDF privado de impressão da mesma URL Politika em 14/12/2023: título/estrutura e passagens amostradas correspondem à obra editorial de Julien Duval, publicada em 06/06/2017 e modificada em 25/10/2022. A criação do PDF não é a data editorial. Comparação textual integral com versão arquivada de 2023 não realizada; direitos de imagens/captura não liberados.",
+      "status": "BLOQUEADO_EQUIVALENCIA_INTEGRAL_E_DIREITOS",
       "disposition": "CORREÇÃO_NECESSÁRIA",
-      "rights": "Sem licença de redistribuição demonstrada para a captura integral; não publicar PDF.",
+      "rights": "Página de avisos legais Politika declara All Rights Reserved Tepsis-EHESS; sem licença específica pública para a captura exata nem imagens de terceiros. PDF privado, metadata+link only.",
       "scientific_status": "P_ONLY_INDEPENDENT_REVIEW_PENDING",
       "edit_target": "DEFER_TO_V1_16_NO_GLOBAL_EDIT",
       "external_editorial_followup": {
@@ -128,9 +128,94 @@
         "source_type": "MATCHING_PUBLISHER_URL",
         "primary_url": "https://www.politika.io/en/notice/multiple-correspondence-analysis",
         "bibliographic_findings": "O próprio expediente Politika atribui Multiple Correspondence Analysis a Julien Duval, publicação 06-06-2017, atualização 25-10-2022. URL editorial corresponde à URL registrada no PDF impresso do acervo. A data 14-12-2023 é de impressão, não de publicação. Não há licença verificada para redistribuição da captura integral.",
-        "copy_equivalence": "URL_CORRESPONDE_MAS_BINARIO_NAO_RECONCILIADO",
-        "closure": "METADADOS_AUTORITATIVOS_LOCALIZADOS_BLOQUEIO_DIREITOS_VERSAO",
-        "remaining": "Comparar captura de 40 páginas com expediente atual/arquivado e validar direitos de captura; não publicar PDF"
+        "copy_equivalence": "MATCH_SAMPLED_WITH_VERIFIED_PDF_HASH_FULL_EDITION_NOT_PROVEN",
+        "closure": "SOURCE_BIBLIOGRAPHIC_IDENTIFIED_NOT_REDISTRIBUTION_APPROVED",
+        "remaining": "Revisão editorial de equivalência integral/snapshot arquivado, direitos e terceiros; conservar bloqueio de redistribuição"
+      },
+      "copy_edition_reconciliation": {
+        "audit_date": "2026-11-21",
+        "review_type": "PRIVATE_BINARY_TO_PUBLISHER_PAGE_SAMPLED_CONTENT_COMPARISON",
+        "copy_integrity": {
+          "size_bytes_verified": 91520298,
+          "pages_verified": 40,
+          "sha256_verified": "5a9f71cfa273e623e294b4f7e6b8273e98f36f0a4e2cd86c5dc68d31727309ed",
+          "pdf_producer": "Skia/PDF m120 (browser print)",
+          "pdf_technical_creation_date": "2023-12-14",
+          "page_footer_url_matches_publisher": true,
+          "printed_pages_header_date": "2023-12-14",
+          "technical_creation_is_not_publication": true,
+          "local_visual_pages_checked": [
+            1,
+            20,
+            40
+          ]
+        },
+        "publisher_evidence": {
+          "url": "https://www.politika.io/en/notice/multiple-correspondence-analysis",
+          "legal_notices_url": "https://www.politika.io/en/page-simple/legal-notices",
+          "author": "Julien Duval",
+          "title": "Multiple Correspondence Analysis",
+          "publisher": "Politika",
+          "kind": "online notice / digital editorial entry",
+          "first_publication": "2017-06-06",
+          "page_last_modified": "2022-10-25",
+          "doi": "NOT_PRESENT_OR_CONFIRMED",
+          "url_confirmed": true
+        },
+        "correspondence": {
+          "url_same": true,
+          "internal_title_same": true,
+          "publisher_authorship_confirmed_in_editorial_not_in_pdf_byline": true,
+          "sampled_text_and_structure_matches": true,
+          "page_anchor_samples": [
+            {
+              "pdf_page": 1,
+              "publisher_section": "opening MCA definition and article purpose"
+            },
+            {
+              "pdf_page": 4,
+              "publisher_section": "historical French school of data analysis; Jozef Krakovsky image credit"
+            },
+            {
+              "pdf_page": 7,
+              "publisher_section": "centred cloud / table 2"
+            },
+            {
+              "pdf_page": 11,
+              "publisher_section": "graph 4 to graph 5 sequence"
+            },
+            {
+              "pdf_page": 21,
+              "publisher_section": "ministers in first factorial plane; graph 9"
+            },
+            {
+              "pdf_page": 26,
+              "publisher_section": "Ségolène Royal and modality comparison"
+            },
+            {
+              "pdf_page": 31,
+              "publisher_section": "graph 15: supplementary individual"
+            },
+            {
+              "pdf_page": 38,
+              "publisher_section": "numbered bibliography/footnotes"
+            }
+          ],
+          "full_text_diff_performed": false,
+          "archived_2023_publisher_snapshot_verified": false,
+          "exact_2022_edition_equivalence": "HIGHLY_PLAUSIBLE_BUT_NOT_FULLY_PROVEN"
+        },
+        "rights": {
+          "legal_notice": "All Rights Reserved Tepsis-EHESS",
+          "license_on_this_notice": "NO_PUBLIC_REDISTRIBUTION_LICENSE_OBSERVED",
+          "image_or_third_party_rights": "NOT_CLEARED",
+          "copy_publication": "PROHIBITED_PENDING_SPECIFIC_LICENSE_OR_AUTHORIZATION",
+          "allowed_now": "PUBLIC_METADATA_AND_LINK_ONLY",
+          "rights_decision": "REQUIRES_HUMAN_LEGAL_REVIEW"
+        },
+        "disposition": "PUBLISHER_IDENTITY_VERIFIED_COPY_MATCH_SAMPLED_RIGHTS_BLOCKED",
+        "remaining_required": "É necessária decisão editorial sobre o grau de equivalência amostral versus integral e autorização específica de redistribuição, se desejada. Sem isso, citar metadados públicos via URL e manter a captura privada.",
+        "evidence_limit": "O PDF não contém expediente completo de autoria/data; os dados foram obtidos da página editorial autoritativa. Amostragem de conteúdo não constitui prova de identidade byte-a-byte nem de versão arquivada de 2023."
       }
     },
     {
@@ -175,7 +260,12 @@
     "ib_original_card_git_blobs_reverified": true,
     "external_bibliographic_followup_documented": true,
     "exact_private_copy_equivalence_not_revalidated_in_this_followup": true,
-    "web_pdf_screenshot_for_cambridge": "ATTEMPTED_BUT_CACHE_MISS"
+    "web_pdf_screenshot_for_cambridge": "ATTEMPTED_BUT_CACHE_MISS",
+    "src_0237_exact_private_pdf_sha256_recomputed": true,
+    "src_0237_pages_and_visuals_checked": true,
+    "src_0237_publisher_text_sampled_match": true,
+    "src_0237_full_version_diff": "NOT_PERFORMED",
+    "src_0237_rights_notice_verified": "ALL_RIGHTS_RESERVED_NO_PUBLIC_COPY_LICENSE"
   },
   "blockers": [
     "Faltam metadados bibliográficos finais por exemplar nos cinco casos",
