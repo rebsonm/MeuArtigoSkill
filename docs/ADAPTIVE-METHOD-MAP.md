@@ -551,3 +551,32 @@ must deliberately start/stop the local process to view a live project;
 all actual scientific choices and their authorized recording remain
 human responsibilities. Independent evaluation, integrating PR #65,
 merging PR #66 and publishing remain separately authorized tasks.
+
+## Skill-only quantitative inference-change preview (development candidate)
+
+The existing read-only scripts/method_fill_preflight.py now previews a change
+between two canonical quantitative inference-aim labels. A researcher can
+propose CAUSAL when ASSOCIATIONAL is already recorded, receiving a
+CAUSAL_ESCALATION_REQUIRES_REVIEW status and a bounded checklist of potential
+review areas. This does not infer that causal identification is satisfied.
+
+Example: save the single canonical label CAUSAL in an authorized local text
+file, then run:
+
+    python scripts/method_fill_preflight.py /authorized/project --field inference_aim --draft-file /authorized/proposed-aim.txt
+
+The inference_change_impact response exists only when an explicit draft
+targets the inference_aim field in a coherent QUANTITATIVE project. Statuses:
+NO_CANONICAL_BASELINE, NO_INFERENCE_AIM_CHANGE,
+INFERENCE_AIM_CHANGE_REQUIRES_REVIEW, CAUSAL_ESCALATION_REQUIRES_REVIEW,
+CAUSAL_DEESCALATION_REQUIRES_REVIEW, INVALID_PROPOSAL_NOT_COMPARED.
+
+The existing preflight retains its write-block on already recorded method
+fields, so a nonzero exit code can coexist with a useful read-only preview.
+Nothing is written to the method profile, DEC, TRACE, gates, claims or Drive.
+Neither previous researcher rationales nor private research text are echoed.
+
+Review targets are possible dependencies, not verified edges. This feature
+does not validate semantic support, perform selective revalidation, approve
+human decisions, or prove scientific originality. It is absent from the
+published v0.9.0-beta.6 reference pending a separately approved integration.
