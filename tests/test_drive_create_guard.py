@@ -379,6 +379,19 @@ class FolderGuardTests(unittest.TestCase):
             guard.create_preflight(self.plan, self.inventory, self.journal,
                                    "01_Dados/test.csv", allow_fixture=True)
 
+    def test_public_skill_cli_guard_remains_blocked_without_live_host_evidence(self):
+        # Even a forged LIVE_DRIVE label cannot establish provider identity,
+        # complete scanning or a remotely durable shared intent.
+        fake = self.live()
+        with self.assertRaisesRegex(ValueError, "DRIVE_HOST_CREATE_CAPABILITY_NOT_VERIFIED"):
+            guard.locked_update(
+                self.plan, fake, self.journal_path, "01_Dados", "prepare",
+                project_root=self.temp / "canonical-project",
+                enforce_root_scope=True)
+        self.assertFalse(self.journal_path.exists())
+        self.assertFalse(self.journal_path.with_name(
+            self.journal_path.name + ".lock").exists())
+
     def test_no_scientific_records_written(self):
         gates = self.temp / "18_Human_Validation_Gates.csv"
         gates.write_text("GATE-0001,PENDING")
