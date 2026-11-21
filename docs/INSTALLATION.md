@@ -8,6 +8,17 @@ The [beta.6 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9
 
 All current releases are experimental; none is independently scientifically validated.
 
+**For controlled acceptance testers only:** the development PR for
+`1.0.0-rc.1` can provide a temporary GitHub Actions artifact named
+`MeuArtigoSkill-rc-test-only`, containing the prepared installer,
+`SHA256SUMS.txt` and a build receipt. Verify the successful audit,
+the exact PR commit and digest. This is **not** a published GitHub
+Release, not a stable version and not an automatic update. Unpack the
+CI artifact first and import only its prepared
+`MeuArtigoSkill-v1.0.0-rc.1.zip` through a compatible Skills interface.
+Do not import the outer Actions artifact or GitHub source-code ZIP as
+the Skill. Do not use sensitive research records in experimental tests.
+
 ## Install in a supported assistant
 
 1. On the published release page, download the file named `MeuArtigoSkill-v0.9.0-beta.6.zip` and, if you wish to verify it, `SHA256SUMS.txt`.
