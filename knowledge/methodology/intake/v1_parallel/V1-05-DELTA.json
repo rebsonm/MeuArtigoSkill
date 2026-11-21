@@ -5,7 +5,7 @@
   "manifest_commit": "7c92045310eb3b1474a9612a777fb0012a511592",
   "snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
   "date": "2026-11-21",
-  "status": "ENTREGUE_PARA_AUDITORIA",
+  "status": "CONCLUIDA_DOCUMENTALMENTE_POR_DECISAO_DO_MANTENEDOR_COM_RESSALVAS",
   "scientific_approved": false,
   "rights_approved": false,
   "drive_canonical_updated": false,
@@ -61,6 +61,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -101,6 +111,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -151,6 +171,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -191,6 +221,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -231,6 +271,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -281,6 +331,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -321,6 +381,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -361,6 +431,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -401,6 +481,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -451,6 +541,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -491,6 +591,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -541,6 +651,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -581,6 +701,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -631,6 +761,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -681,6 +821,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -731,6 +881,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -771,6 +931,16 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     },
     {
@@ -821,16 +991,23 @@
         },
         "maintainer_approval_is_independent_review": false,
         "no_pdf_redistribution": true
+      },
+      "operational_closeout": {
+        "stage": "V1-05/20",
+        "decision": "CONCLUIDO_DOCUMENTALMENTE_COM_RESSALVAS",
+        "reviewer_waiver_scope": "FECHAMENTO_OPERACIONAL_APENAS",
+        "card_integrity_verified": true,
+        "scientific_validation_completed": false,
+        "rights_validation_completed": false,
+        "original_card_unchanged": true,
+        "publication_gate_satisfied": false
       }
     }
   ],
   "global_mutations": false,
   "notes": "Triage of card documents, not primary works or PDFs; no [L] promotion.",
   "next_actions": [
-    "revisar formalmente direitos e fidelidade com pareceres independentes para os 18 cards, começando pelos 8 de risco",
-    "registrar eventual decisão de corrigir IDs bibliográficos dos 4 cards com DOI ausente em etapa autorizada, sem alterar cards nesta etapa",
-    "sincronizar com segurança somente seção 31.05 no MD canônico do Drive com mecanismo de concorrência adequado",
-    "avaliar dependências e P0 #102/#103 antes de V1-16; PR #104 permanece Draft"
+    "A coordenação V1-16, quando autorizada, verifica este fechamento com ressalvas e os P0 #102/#103 sem dar GO nem liberar publicação"
   ],
   "validation": {
     "sha256_matches": 18,
@@ -838,9 +1015,11 @@
     "git_behind_from_manifest": 0,
     "combined_status_checks_at_previous_head": 0,
     "pr_workflow_runs_at_previous_head": 0,
-    "ci_claim": "NOT_PROVEN; new commits require fresh CI",
+    "ci_claim": "Success apenas no HEAD anterior; verificar novo HEAD",
     "readback": "RESULTS and DELTA read back from branch",
-    "git_ahead_observed_before_ci_addendum": 3
+    "git_ahead_observed_before_ci_addendum": 3,
+    "prior_head_sha": "85ab83b544fa9ba13229eb4ccc562f368aaa5d44",
+    "prior_head_release_audit": "success"
   },
   "maintainer_approval": {
     "decision": "APROVADO_PELO_MANTENEDOR",
@@ -849,7 +1028,9 @@
     "source": "Declaração expressa do usuário nesta conversa: 'Aprovado os cards.'",
     "meaning": "Aceite do mantenedor para continuidade editorial; não substitui revisões independentes, validação científica, direitos por edição nem gates de publicação.",
     "independent_review_gate_satisfied": false,
-    "publication_authorized": false
+    "publication_authorized": false,
+    "operational_closeout_decision": "DISPENSA_REVISORES_SOMENTE_PARA_CONCLUIR_V1_05",
+    "operational_closeout_effect": "Fecho do trabalho documental sem satisfação do gate de publicação"
   },
   "external_metadata_preflight": {
     "date": "2026-11-21",
@@ -880,7 +1061,7 @@
     "scope_limit": "Automação não certifica direitos/originalidade ou fidelidade; requer novo check após commits"
   },
   "rights_originality_round_a_request": {
-    "status": "SOLICITACAO_FORMAL_PUBLICADA_SEM_REVISOR_DESIGNADO",
+    "status": "SUPERADA_POR_DECISAO_DO_MANTENEDOR_NO_ESCOPO_DESTA_ETAPA",
     "pr_number": 104,
     "pr_comment_id": 7070769348,
     "pr_comment_url": "https://github.com/rebsonm/MeuArtigoSkill/pull/104#issuecomment-7070769348",
@@ -898,7 +1079,32 @@
     "accepted_scientifically": false,
     "accepted_legally": false,
     "review_request_documented_in_results_commit": "19d8a0e100016fd9b7b8bd53c3f30b149efed514",
-    "next_single_action": "Designar revisor(a) A independente de direitos e originalidade e encaminhar-lhe a solicitação registrada na PR #104",
-    "next_acceptance": "18 pareceres A individuais e assinados com edição/cópia, evidência, decisão e justificativa"
+    "next_single_action": "A coordenação V1-16, quando autorizada, verifica este fechamento com ressalvas e os P0 #102/#103 sem dar GO nem liberar publicação",
+    "next_acceptance": "Não condiciona fecho documental, mas CARD-POLICY.md continua impedindo publicar sem revisões",
+    "superseded_for_stage_closeout": true
+  },
+  "stage_closeout": {
+    "kind": "MANTENEDOR_DISPENSA_REVISAO_PARA_FECHO_OPERACIONAL",
+    "date": "2026-11-21",
+    "decision_quote": "N precisa de revisor independente. Finalize",
+    "cards_in_scope": 18,
+    "closed_operationally": true,
+    "independent_reviews_waived_for_stage_closeout_only": true,
+    "basis": "18/18 cards e hashes conferidos; 18 recibos; aceite expresso do mantenedor; decisão de dispensar revisores exclusivamente para fecho da V1-05",
+    "policy_path": "knowledge/methodology/CARD-POLICY.md",
+    "policy_unchanged": true,
+    "policy_acceptance_review_requirement_remains": true,
+    "ready_for_card_publication": false,
+    "ready_for_merge": false,
+    "ready_for_integrated_v1_go": false,
+    "keep_original_card_states": "[I] / DRAFT_NEEDS_INDEPENDENT_REVIEW",
+    "open_issues": [
+      102,
+      103
+    ],
+    "reviewer_request_superseded": "https://github.com/rebsonm/MeuArtigoSkill/pull/104#issuecomment-7070769348",
+    "results_closure_commit": "d3f5733bfac5a048511b3939fcbaf23ca5b83215",
+    "next_single_action": "A coordenação V1-16, quando autorizada, verifica este fechamento com ressalvas e os P0 #102/#103 sem dar GO nem liberar publicação",
+    "publication_acceptance_condition": "Duas revisões independentes continuam necessárias por CARD-POLICY.md para publicar / ACCEPTED, salvo alteração formal futura; sanear direitos e privacidade"
   }
 }
