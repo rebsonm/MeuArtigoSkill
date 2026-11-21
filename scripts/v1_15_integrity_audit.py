@@ -3,6 +3,7 @@
 Uso: python scripts/v1_15_integrity_audit.py --repo . --output /tmp/v1-15-audit.json
 Antes, obtenha no clone local as refs work/ib-01-20261121 ... work/ib-20-20261121.
 O script NUNCA lê PDFs privados, altera o repositório, resolve direitos ou certifica ciência.
+O JSON de saída NÃO inclui nomes de pastas; nenhuma relação Unicode autoriza fusão de caminhos.
 """
 from __future__ import annotations
 
@@ -11,6 +12,7 @@ import hashlib
 import json
 import re
 import subprocess
+import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -23,6 +25,17 @@ HASH_FIELDS = (
     "novo_hash_sha256_da_ficha", "novo_hash_da_ficha",
     "sha256_da_ficha", "card_sha256",
 )
+
+
+def unicode_relation(ledger_value: str, alias_value: str) -> str:
+    """Triagem de Unicode; nunca transforma isto em identidade de pastas."""
+    if ledger_value == alias_value:
+        return "EXACT_STRING"
+    if unicodedata.normalize("NFC", ledger_value) == unicodedata.normalize("NFC", alias_value):
+        return "CANONICAL_UNICODE_EQUIVALENT_NOT_PHYSICAL_PATH_PROOF"
+    if unicodedata.normalize("NFKC", ledger_value) == unicodedata.normalize("NFKC", alias_value):
+        return "COMPATIBILITY_UNICODE_EQUIVALENT_NOT_PHYSICAL_PATH_PROOF"
+    return "DIFFERENT_STRING_NO_AUTO_EQUIVALENCE"
 
 
 def git_bytes(repo: Path, ref: str, path: str) -> bytes:
@@ -91,8 +104,9 @@ def summarize(repo: Path) -> dict:
             if folder is not None and folder != original["folder"]:
                 aliases.append({
                     "batch": batch, "source_id": sid,
-                    "ledger_folder": original["folder"], "delta_folder": folder,
+                    "unicode_relation": unicode_relation(original["folder"], folder),
                     "status": "ALIAS_CANDIDATE_NOT_DRIVE_VALIDATED",
+                    # Não imprimir nomes físicos nem URLs privados no JSON de auditoria.
                 })
             expected = next((entry[k] for k in HASH_FIELDS if entry.get(k)), None)
             path_card = f"{ROOT}/source_cards/{sid.lower()}.md"
@@ -189,7 +203,11 @@ def main() -> int:
             "ba7816bf8f01cfea414140de5dae2223"
             "b00361a396177a9cb410ff61f20015ad"
         )
-        print("SELF_TEST_OK: SHA-256")
+        assert unicode_relation("a\\u0301", "\\u00e1") == "CANONICAL_UNICODE_EQUIVALENT_NOT_PHYSICAL_PATH_PROOF"
+        assert unicode_relation("\\uff21", "A") == "COMPATIBILITY_UNICODE_EQUIVALENT_NOT_PHYSICAL_PATH_PROOF"
+        assert unicode_relation("TÃ­tulo", "Título") == "DIFFERENT_STRING_NO_AUTO_EQUIVALENCE"
+        assert unicode_relation("caminho", "caminho") == "EXACT_STRING"
+        print("SELF_TEST_OK: SHA-256 e relações Unicode, sem equivalência automática de pasta")
         return 0
     result = summarize(args.repo)
     encoded = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
