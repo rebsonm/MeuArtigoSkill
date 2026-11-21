@@ -58,7 +58,7 @@
       "folder_do_ledger": "Grupos Focais Online",
       "filename_esperado": "Mineiroetal,2019.pdf",
       "size_bytes_esperados": 402403,
-      "drive_file_id_confirmado_ou_null": "1USr8w5ehjyVegmysGFTzWj25owFiEiD8",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "0deb6f8bfe14f923e74e7ea256f18b33c920148bfaa589279e75867fed2c2dee",
       "nome_titulo_do_PDF": "Grupos Focais Presenciais e Virtuais: Semelhanças e Desafios",
       "autores_ano_edicao": {
@@ -85,7 +85,7 @@
       "folder_do_ledger": "Grupos Focais Online",
       "filename_esperado": "stewart,shamdasani,2016.pdf",
       "size_bytes_esperados": 457805,
-      "drive_file_id_confirmado_ou_null": "1Flat7wwwSioLcV6g8rPxIttSktXMjwCq",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "5630f765e73976d58b68a4453a03b6b8d1851e1d186e062aed589efcfe3908fb",
       "nome_titulo_do_PDF": "Online Focus Groups",
       "autores_ano_edicao": {
@@ -112,7 +112,7 @@
       "folder_do_ledger": "Grupos Focais Online",
       "filename_esperado": "richard-et-al-2020.pdf",
       "size_bytes_esperados": 249304,
-      "drive_file_id_confirmado_ou_null": "1MrgTXrZSQsAX1wwZyH9rj1Jv-0-Y0FcI",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "7bf0604b4b14a30de2762e76eebbe4692c0024e8e4fefc205c15b13ae5047304",
       "nome_titulo_do_PDF": "Qualitative Research via Focus Groups: Will Going Online Affect the Diversity of Your Findings?",
       "autores_ano_edicao": {
@@ -139,7 +139,7 @@
       "folder_do_ledger": "Grupos Focais Online",
       "filename_esperado": "Wallaceetal,2021.pdf",
       "size_bytes_esperados": 236122,
-      "drive_file_id_confirmado_ou_null": "16vjo12X01fCDBZaaudCrIxEx0ri-w6Yx",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "aaef2f60c571dd97e4f637b8e612ae693b489047ea14a12901271a82ff099e57",
       "nome_titulo_do_PDF": "Harnessing Technologies in Focus Group Research",
       "autores_ano_edicao": {
@@ -166,7 +166,7 @@
       "folder_do_ledger": "Grupos Focais Online",
       "filename_esperado": "Gil,Silveira,2023.pdf",
       "size_bytes_esperados": 329204,
-      "drive_file_id_confirmado_ou_null": "18p-pg_jQKktTG0_pPowcQsmzIle_FTm3",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "d9b56dc44a8d591a7b2a85cc55d9b8e44b8b3512b7a5d864d4277260c97a5830",
       "nome_titulo_do_PDF": "Utilização de grupos focais online na pesquisa em Administração",
       "autores_ano_edicao": {
@@ -193,7 +193,7 @@
       "folder_do_ledger": "Grupos Focais Online",
       "filename_esperado": "Jonesetal,2022.pdf",
       "size_bytes_esperados": 574817,
-      "drive_file_id_confirmado_ou_null": "19LcruhoNI86Lhs1kwaDavqPsfq4aqOpC",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "129370ad6ee93b122e2e7d141b3090b6bb463c11e716df28c4c7e2b70a5605b8",
       "nome_titulo_do_PDF": "A Literature Review of Studies that Have Compared the Use of Face-To-Face and Online Focus Groups",
       "autores_ano_edicao": {
@@ -220,7 +220,7 @@
       "folder_do_ledger": "Grupos Focais Online",
       "filename_esperado": "Cioffietal,2023.pdf",
       "size_bytes_esperados": 459829,
-      "drive_file_id_confirmado_ou_null": "19Px62YxCsn7vW7B6I0K-kp1tcCqhZwgb",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "a6e35234c80972b2ff315a71f8cb35f62d9e0e23cad8bd158973a37bee770d56",
       "nome_titulo_do_PDF": "Operacionalização de grupos focais online síncronos: relato de experiência",
       "autores_ano_edicao": {
@@ -247,7 +247,7 @@
       "folder_do_ledger": "Entrevistas Online",
       "filename_esperado": "Rodriguesetal,2015.pdf",
       "size_bytes_esperados": 125859,
-      "drive_file_id_confirmado_ou_null": "1PLedtd2T62wyEXcyDPnVu36c80KyPVRk",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "89d2d01023cf11deb1111874426e871cb808d396358b72d6e82471078cd48266",
       "nome_titulo_do_PDF": "Pesquisa mediada pela internet: possibilidades de aplicação de entrevista online nas ciências da gestão",
       "autores_ano_edicao": {
@@ -274,7 +274,7 @@
       "folder_do_ledger": "Entrevistas Online",
       "filename_esperado": "Prior,Lachover,2023.pdf",
       "size_bytes_esperados": 560652,
-      "drive_file_id_confirmado_ou_null": "1JNA5dw2Xe3-Jfsk29KbwnbXFWb5QyuSX",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "07306cbf0a9c3b291e80a62520ef9b00a24a04aa6bad312052e3913fba95b184",
       "nome_titulo_do_PDF": "Online Interview Shocks: Reflecting on Power Relations in Online Qualitative Interviews",
       "autores_ano_edicao": {
@@ -301,7 +301,7 @@
       "folder_do_ledger": "Entrevistas Online",
       "filename_esperado": "Zadkowskaetal,2022.pdf",
       "size_bytes_esperados": 595147,
-      "drive_file_id_confirmado_ou_null": "1N28GSOb5Y_juaRQnURTHZqFvAQuL-NWW",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "f818dcd82c508a22b34c60a46a028d3b70d9535ead0be5d2fc2eabcae6ac13a7",
       "nome_titulo_do_PDF": "The Sociological Confessional: A Reflexive Process in the Transformation From Face-To-Face to Online Interview",
       "autores_ano_edicao": {
@@ -328,7 +328,7 @@
       "folder_do_ledger": "Entrevistas Online",
       "filename_esperado": "Oatesetal,2021.pdf",
       "size_bytes_esperados": 2302366,
-      "drive_file_id_confirmado_ou_null": "1Pt3aLa1AjK8Wg5bvCeF6vhIYZHXpD0pf",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "ef1a0239b6cc9e6467b6cd5313905f84651b885ce3b987ca907427a727beb827",
       "nome_titulo_do_PDF": "Audio, video, chat, email, or survey: How much does online interview mode matter?",
       "autores_ano_edicao": {
@@ -355,7 +355,7 @@
       "folder_do_ledger": "Entrevistas Online",
       "filename_esperado": "Laconoetal,2016-skype.pdf",
       "size_bytes_esperados": 272033,
-      "drive_file_id_confirmado_ou_null": "1dht7sENRzbIy0yTOV3Z7Po-pTu6YSmZI",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "3e1dacbe9751decae1826377770ed767931360f7238894af4f3492d06b486ef4",
       "nome_titulo_do_PDF": "Skype as a Tool for Qualitative Research Interviews",
       "autores_ano_edicao": {
@@ -382,7 +382,7 @@
       "folder_do_ledger": "Entrevistas Online",
       "filename_esperado": "Chiaetal,2021.pdf",
       "size_bytes_esperados": 453977,
-      "drive_file_id_confirmado_ou_null": "1ZlCjAvIGp7hBe2LUJeaA7X55tpD_l6ex",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "79a3895bc1ddf785e0f6e2c4e1a6112e85419705a7146f0015b74beaa5be7de7",
       "nome_titulo_do_PDF": "Online Interview Tools for Qualitative Data Collection During COVID-19 Pandemic: Review of Web Conferencing Platforms' Functionality",
       "autores_ano_edicao": {
@@ -409,7 +409,7 @@
       "folder_do_ledger": "Entrevistas Online",
       "filename_esperado": "Lobeetal,2022.pdf",
       "size_bytes_esperados": 584384,
-      "drive_file_id_confirmado_ou_null": "1D1uxsIa8iQptJXFLofIr0Lv4LzBK0tM5",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "a0807076b03bb087304708ff6524601a97078215eab17bea0ea04fe345f87fb0",
       "nome_titulo_do_PDF": "A Systematic Comparison of In-Person and Video-Based Online Interviewing",
       "autores_ano_edicao": {
@@ -436,7 +436,7 @@
       "folder_do_ledger": "Entrevistas Online",
       "filename_esperado": "khan, Maceachen,2022.pdf",
       "size_bytes_esperados": 590345,
-      "drive_file_id_confirmado_ou_null": "10lfIjp1gLVWfK_pHlyCYNwAHG5xEbb0k",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "729ad91f8502583bbbefa06e19e78f638a40d71f94bcc0848b0bdbb8151476e1",
       "nome_titulo_do_PDF": "An Alternative Method of Interviewing: Critical Reflections on Videoconference Interviews for Qualitative Data Collection",
       "autores_ano_edicao": {
@@ -463,7 +463,7 @@
       "folder_do_ledger": "Entrevistas Online",
       "filename_esperado": "Saarijarvi,Bratt,2021.pdf",
       "size_bytes_esperados": 372070,
-      "drive_file_id_confirmado_ou_null": "1OkRXYk52CuPUEpOtQBkyLfNcRo31uegJ",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "d1dd5643813b51b6ffa3049fb533c0c6eedb5b7687d2a62dc9fd377ba04768a6",
       "nome_titulo_do_PDF": "When face-to-face interviews are not possible: tips and tricks for video, telephone, online chat, and email interviews in qualitative research",
       "autores_ano_edicao": {
@@ -490,7 +490,7 @@
       "folder_do_ledger": "Entrevistas Online",
       "filename_esperado": "Schmidtetal,2020.pdf",
       "size_bytes_esperados": 285709,
-      "drive_file_id_confirmado_ou_null": "1BO14WlatvLVouYGQdyxXK8c14mARCzmD",
+      "drive_file_id_confirmado_ou_null": null,
       "sha256_pdf_privado": "54797b91f798a67ca1c43d88ec6e0feb2348f1f5fae3841af7a75e59e93f6772",
       "nome_titulo_do_PDF": "Entrevistas online: potencialidades e desafios para coleta de dados no contexto da pandemia de COVID-19",
       "autores_ano_edicao": {
@@ -518,5 +518,7 @@
     "Run global CI in the integrator branch",
     "Do not redistribute protected PDFs; review exact license/third-party components",
     "Do not promote to scientific evidence or approve gates"
-  ]
+  ],
+  "private_drive_ids_redacted_from_public_head": true,
+  "private_drive_id_redaction_note": "Original file IDs removed from this public branch HEAD. Source-document matching remains described by inventory ID, filename and size. Earlier commits may still retain these IDs. No history rewrite performed."
 }
