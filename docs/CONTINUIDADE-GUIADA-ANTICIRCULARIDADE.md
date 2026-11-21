@@ -54,9 +54,13 @@ An anti-loop signal is possible only if all conditions hold:
    fingerprint, arguments fingerprint and recorded input state.
 3. No output change occurred in either attempt and the recorded output
    state matches between attempts.
-4. The task has not been classified as periodic/recurring/monitoring.
+4. The current allowlisted script still matches the receipt fingerprint,
+   and the actual files observed at the end of the latest attempt still
+   match the receipt (absence is checked as well as file hashes).
+5. Receipt status is consistent with its captured process exit code.
+6. The task has not been classified as periodic/recurring/monitoring.
    Standard local validation and verification scripts are also exempt.
-5. The original task remains active and no canonical reconciliation
+7. The original task remains active and no canonical reconciliation
    problem is present.
 
 An exact match causes only a diagnostic suggestion: investigate the
@@ -67,7 +71,8 @@ a legitimate later attempt.
 
 **Missing proof is not proof of circularity.** A changed input, script
 version, declared arguments or relevant output remains eligible for
-independent review. Local hash integrity does not authenticate the
+independent review. A stale executable fingerprint, changed live file state,
+or inconsistent exit-code receipt does not trigger the warning. Local hash integrity does not authenticate the
 actor, externally collected evidence, scientific suitability or real
 cloud synchronization. Drive-canonical states require an actual
 authorized connected read before any such conclusion.
