@@ -47,7 +47,7 @@ Confrontados nome e tamanho de cada um dos 17 PDFs com o ledger congelado e os m
 ## Testes e integração
 
 - Validações internas da etapa: IDs únicos e restritos ao escopo, 17 fichas acessíveis na branch, hashes SHA256 calculados do UTF-8 exato das fichas, 16 verificadas + 1 bloqueio. Resultado: `{"all17":true,"uniq":true,"onlyScope":true,"filesPresent":true,"sha256":true,"verified":16,"blocked":1,"exactCCBY":[]}`.
-- CI do GitHub: **não presumida**; verificar Actions/status do commit final. Não há PR ou merge deste lote.
+- CI do GitHub: para o commit `1ffd6f6504f11fc06d784ec2b1c8d0207b6074e6` as consultas retornaram `statuses=[]` e `workflow_runs=[]`; **não há CI automatizada observada** para esse commit, e isso NÃO comprova aprovação de testes de integração. Não há PR ou merge deste lote.
 - O catálogo `source_registry_catalog.json`, ledger, manifestos, totais globais e testes globais **não foram alterados**; sua reconciliação compete à conversa integradora.
 
 ## Próximos passos
