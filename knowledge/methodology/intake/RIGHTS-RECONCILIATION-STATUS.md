@@ -2,7 +2,7 @@
 
 **IMPORTANT: NOT A COMPLETE RIGHTS AUDIT.**
 
-**Latest supplementary audit, 2026-11-21:** The draft now has **63 editorial cards**, **35 documented CC BY PDFs**, and **475 original inventory records**. Bibliographic title matching currently identifies **404 original inventory records**; this is metadata matching, not source-rights authorization. Two original-archive source records (Dias/Mishima 2023 and Campos/Saidel 2022) have individually recorded publisher CC BY 4.0 evidence in the rights ledger. The 23-card/12-PDF quantities below are preserved solely as a historical baseline, **not the current library totals**. This ledger distinguishes
+**Latest supplementary audit, 2026-11-21:** The draft now has **64 editorial cards**, **36 documented CC BY PDFs**, and **475 original inventory records**. Bibliographic title matching currently identifies **404 original inventory records**; this is metadata matching, not source-rights authorization. Three original-archive source records (Koerich et al. 2009, Dias/Mishima 2023 and Campos/Saidel 2022) have individually recorded publisher CC BY 4.0 evidence in the rights ledger. The 23-card/12-PDF quantities below are preserved solely as a historical baseline, **not the current library totals**. This ledger distinguishes
 source-archive metadata from actual public repository files. Do not call the
 source archive imported, licensed or read in full.
 
@@ -10,9 +10,7 @@ source archive imported, licensed or read in full.
 
 - Source inventory: **475 PDF records** over 75 folder/nested folder records;
   **466 distinct filenames**, not 466 verified unique scholarly works.
-- Each source-inventory batch has `rights_status: NOT_REVIEWED`. There is
-  **no document-level license matrix** that could establish how many of the
-  475 are legally redistributable.
+- Each source-inventory batch retains a conservative `rights_status: NOT_REVIEWED` default. A separate 475-record ledger now tracks individual assessments: three originals have explicit publisher CC BY 4.0 evidence, while the others are not cleared for unrestricted publication.
 - Public bibliography: **23 independently authored methodology cards**, with
   19 marked DRAFT_NEEDS_INDEPENDENT_REVIEW and 4 without documented
   independent scientific review. Cards are metadata-indexed editorial [I]
@@ -79,3 +77,7 @@ Track unmatched documents explicitly as UNKNOWN, not as denied or completed.
 Status remains **INCOMPLETE**. No merge, release, full-text bulk ingestion,
 unreviewed redistribution, scientific gate approval or private Drive copying
 is authorized by this ledger.
+
+## Specific publisher license screening (21 November 2026)
+
+See [license-screening record](LICENSE-SCREENING-2026-11-21.md) for publisher-backed distinctions between CC BY, CC BY-NC, CC BY-NC-SA and unresolved editions. The historic 23-card/12-PDF count below describes a prior checkpoint, not current totals.
