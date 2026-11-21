@@ -4,7 +4,7 @@ Data: 2026-11-21 (America/Fortaleza)
 Branch exclusiva: `work/v1-05-20261121`.
 Manifesto imutável: `7c92045310eb3b1474a9612a777fb0012a511592` em `knowledge/methodology/intake/v1_parallel/V1-WORKPACKAGES-MANIFEST.json`.
 Corpus de leitura: `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`.
-**Estado da entrega:** ENTREGUE_PARA_AUDITORIA (documental); **não** AUDITADO, INTEGRADO, homologado nem autorizado a publicação.
+**Estado da entrega:** CONCLUIDA_DOCUMENTALMENTE_POR_DECISAO_DO_MANTENEDOR_COM_RESSALVAS; **não** cientificamente AUDITADO, INTEGRADO, homologado nem autorizado a publicação.
 **Estado científico:** 18 cards permanecem [I], DRAFT_NEEDS_INDEPENDENT_REVIEW; nenhuma promoção a [L].
 
 ## Decisão expressa do mantenedor — 21/11/2026
@@ -139,3 +139,26 @@ A escrita GitHub desta etapa limita-se exclusivamente a `V1-05-RESULTS.md` e `V1
 - **EM EXECUÇÃO/BLOQUEIO:** escolha/convite direcionado a revisor A independente de fato e recebimento de pareceres assinados, ainda **0/18**; revisão B científica igualmente **0/18**. Questões #102/#103 continuam barreiras. O corpo `text/markdown` do MD canônico não é regravado integralmente sob concorrência.
 - **PRÓXIMA AÇÃO ÚNICA:** designar um(a) revisor(a) independente de direitos/originalidade para a rodada A e lhe encaminhar a solicitação da PR #104; não atribuir a revisores fictícios nem tratar reações na PR como parecer.
 - **Critério verificável para o avanço da rodada A:** 18/18 pareceres A assinados, um por card, com fontes permitidas, versão/cópia, decisão, justificativa e limites. Até então, status editorial [I] / Draft e sem integração.
+
+## Encerramento operacional por decisão expressa do mantenedor — 21/11/2026
+
+**Decisão mais recente e prevalente para a V1-05/20:** o mantenedor determinou expressamente nesta conversa: **“N precisa de revisor independente. Finalize”**. Interpretação operacional restrita: **dispensa da exigência de solicitar/coletar revisores independentes PARA ENCERRAR A ETAPA DE TRIAGEM DOCUMENTAL V1-05**, mas **não** altera nem revoga o arquivo global `knowledge/methodology/CARD-POLICY.md`, que exige duas verificações para promoção de cards ao estado `ACCEPTED` / prontidão para publicação. Não autoriza concessão de direitos de terceiros, aceitação científica formal, mudança dos arquivos de card, promoção [I]→[L] ou realização de merge, tag, release, publicação ou V1-16 nesta aba.
+
+### FEITO — fechamento limitado, auditável
+- Mantenedor aprovou expressamente os 18 cards para a finalidade editorial da V1-05; nova decisão dispensa obter pareceres independentes para **fechar o pacote documental**, mantendo os pareceres **0/18 em cada trilha**, não simulados.
+- Conferidos 18/18 caminhos únicos do manifesto imutável `7c92045310eb3b1474a9612a777fb0012a511592`, corpus congelado `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf` e 18/18 SHA-256 em igualdade. 18 pacotes individuais de risco de direitos/originalidade e fidelidade registrados em recibos, mesmo com revisão independente dispensada para a etapa.
+- Oito verificações de metadados externas já incorporadas; EC-024/033/034 com DOIs externos identificados, EC-036 **sem DOI confirmado**, sem correção direta dos quatro cards.
+- A solicitação anterior de revisor A na PR #104 (comentário 7070769348) fica **superada/cancelada quanto ao fluxo desta etapa** pela decisão posterior do mantenedor, que será explicitada em adendo à PR, preservando o histórico. Não há revisão externa recebida.
+- GitHub: PR #104 aberta Draft, diff limitado aos 2 recibos `V1-05-RESULTS.md` e `V1-05-DELTA.json`; 0 alterações em cards, manifesto, índices globais, main, outras branches, PDFs ou políticas. O workflow `Release audit` do HEAD precedente `85ab83b544fa9ba13229eb4ccc562f368aaa5d44` foi observado com conclusão `success`. Novo HEAD exigirá observação específica antes de qualquer afirmação de CI verde.
+- Issues [#102](https://github.com/rebsonm/MeuArtigoSkill/issues/102) (licença/histórico público) e [#103](https://github.com/rebsonm/MeuArtigoSkill/issues/103) (privacidade/IDs) **confirmadas abertas**; esses P0 não são encerrados ou dispensados pela decisão.
+
+### EM EXECUÇÃO / RESSALVAS NÃO HOMOLOGADAS
+- **Nenhuma frente de execução restante autorizada nesta aba V1-05.** Permanecem não atestados: 18 revisões A de direitos/originalidade, 18 revisões B de fidelidade; direitos por edição/cópia, cotejo primário integral, originalidade humana e integração em V1-16. Sua ausência é **exceção documentada de fechamento**, e não verificação bem-sucedida.
+- `knowledge/methodology/CARD-POLICY.md` permanece inalterada. Os 18 cards continuam **[I] / DRAFT_NEEDS_INDEPENDENT_REVIEW** quanto à **publicação**. `scientific_approved=false`, `rights_approved=false`, `publication_approved=0`.
+- O texto bruto `text/markdown` da subseção 31.05 no arquivo canônico do Google Drive pode ficar desatualizado por ausência de escrita transacional segura. Só se registrará adendo no comentário já existente, sem substituir bytes em face de atualizações concorrentes.
+
+### PRÓXIMA AÇÃO ÚNICA (FORA DESTA ABA)
+O coordenador de integração **V1-16** deverá **examinar este encerramento com exceção, os recibos e os bloqueios #102/#103 quando for autorizado a avaliar a onda A**, sem tratá-lo como aceite para publicação. **Critério de avanço ao estado ACCEPTED/public-release-ready:** satisfazer efetivamente a política de duas verificações ou obter mudança explícita e formal da política em procedimento próprio, além de resolver direitos e privacidade; a decisão atual **não** satisfaz esses critérios. Não iniciar V1-16 aqui.
+
+**Resultado da etapa:** `CONCLUIDA_DOCUMENTALMENTE_POR_DECISAO_DO_MANTENEDOR_COM_RESSALVAS`. A PR Draft #104 continua para rastreabilidade; o estado dos cards originais não se altera.
+
