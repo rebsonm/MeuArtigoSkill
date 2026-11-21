@@ -1,0 +1,14 @@
+# EXAMPLE ONLY — DO NOT INSTALL/INCLUDE AS A LIVE NGINX VHOST.
+# The externally reachable site remains 404 during Stage 11.
+# Add a reviewed explicit /mcp proxy only after authorization and HTTPS
+# callback E2E evidence are accepted. This file has NO active proxy_pass.
+server {
+    listen 443 ssl;
+    server_name YOUR_MCP_HOST.example;
+    ssl_certificate /path/to/reviewed/fullchain.pem;
+    ssl_certificate_key /path/to/reviewed/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    server_tokens off;
+    client_max_body_size 256k;
+    location / { return 404; }
+}

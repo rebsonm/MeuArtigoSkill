@@ -122,6 +122,25 @@ def check_plan(plan: dict) -> None:
     if plan.get("schema") != SCHEMA or plan.get("kind") != "MEU_ARTIGO_DRIVE_DELIVERY_PLAN":
         raise ValueError("INVALID_DELIVERY_PLAN")
     require_drive_id(plan.get("drive_root_id"))
+    scope = plan.get("root_scope")
+    if scope is not None:
+        if not isinstance(scope, dict) or set(scope) != {
+                "scheme", "my_drive_root_id", "container_id",
+                "project_id", "project_name"}:
+            raise ValueError("CANONICAL_ROOT_SCOPE_INVALID")
+        if scope["scheme"] != "MY_DRIVE_MEU_ARTIGO_V1":
+            raise ValueError("CANONICAL_ROOT_SCOPE_INVALID")
+        for key in ("my_drive_root_id", "container_id", "project_id"):
+            require_drive_id(scope.get(key))
+        if (len({scope["my_drive_root_id"], scope["container_id"],
+                 scope["project_id"]}) != 3 or
+                scope["project_id"] != plan["drive_root_id"] or
+                scope["project_name"] != plan.get("project_folder") or
+                not isinstance(scope["project_name"], str) or
+                safe_relative(scope["project_name"]) != scope["project_name"] or
+                "/" in scope["project_name"] or
+                scope["project_name"] == "Meu Artigo"):
+            raise ValueError("CANONICAL_ROOT_SCOPE_MISMATCH")
     seen = set()
     folders = {""}
     for e in plan.get("entries", []):
@@ -225,8 +244,9 @@ def next_action(plan: dict, inventory: dict, *, allow_fixture: bool = False) -> 
         if row["status"] == "MISSING":
             entry = by_path[row["path"]]
             if typ == "folder":
-                return {"action": "CREATE_FOLDER", "path": row["path"],
-                        "parent_id": row["parent_id"]}
+                return {"action": "CHECK_PARENT_FOR_CREATE", "path": row["path"],
+                        "parent_id": row["parent_id"],
+                        "required_guard": "scripts/drive_create_guard.py prepare"}
             return {"action": "UPLOAD_FILE", "path": row["path"],
                     "parent_id": row["parent_id"],
                     "sha256": entry["sha256"], "size": entry["size"],
