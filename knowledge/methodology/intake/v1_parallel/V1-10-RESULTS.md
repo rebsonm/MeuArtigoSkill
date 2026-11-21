@@ -44,3 +44,12 @@
 ## Próximas ações
 
 Designar ao menos um revisor científico e um revisor de direitos/originalidade (preferivelmente diferentes), registrar suas identidades/datas/decisões, verificar edição e páginas para cada alegação, sanar as ressalvas por card apenas com fonte conferível, então submeter deltas à V1-16. Nenhum merge, tag, release, force-push, alteração de outros lotes, implementação MCP ou distribuição de PDFs executados.
+
+## Incidente de concorrência do MD canônico — não resolvido
+
+- Arquivo único Drive: `CONTINUIDADE_SKILL_MEUARTIGO.md`, ID `1-dccVbAUX5-xLw6fq027cB15oVqOjl_U`.
+- A abertura da V1-10 foi gravada e verificada com SHA-256 remoto `83de3f32de804630fccdfa9488dc2bedf4927a0da71e70f9aade07e5a40d13c9`.
+- Em gravação intermediária, a API Drive retornou êxito e tamanho 318783, mas a leitura imediata retornou 320654 bytes e SHA-256 `21fbeb03cb67e811489f4242d5c761178551512b5f4bf73c48a0ed6cd8e35080`, **sem** o novo bloco de commits V1-10 que constava do conteúdo enviado (SHA-256 `0f0c920e17d637bbca0caa7c1aa37e8ad23d890d9e9254f055fdc6710b6b5c30`).
+- Interpretação: indício forte de corrida com outra aba; nenhuma restauração cega, nenhuma outra gravação no arquivo bruto; outras subseções preservadas no estado remoto observado. Somente a abertura V1-10 estava confirmada naquele readback.
+- **Status de sincronização Drive: CONFLITO_DE_GRAVACAO — ENCERRAMENTO_NAO_REGISTRADO_NO_MD**. A auditoria GitHub desta etapa existe e foi verificada, mas não significa que o MD canônico esteja sincronizado na conclusão.
+- Próximo passo obrigatório antes da integração: intervenção com janela exclusiva de escrita ou mecanismo transacional/CAS, releitura do MD mais recente e inserção apenas da subseção 31.10, seguida de readback e comparação de todas as demais subseções.
