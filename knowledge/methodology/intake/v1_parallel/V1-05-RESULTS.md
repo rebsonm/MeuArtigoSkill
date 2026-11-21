@@ -45,6 +45,25 @@ Critério transversal: **CORREÇÃO NECESSÁRIA** = falta de avaliação indepen
 | EC-035 | `thiem-2017-qca.md` | Validar distinções necessidade/suficiência, calibração e contraexemplos contra Thiem (2017) e sua edição. | CORREÇÃO NECESSÁRIA |
 | EC-036 | `couto-albala-2022-public-policy-qca.md` | DOI pendente; direitos explícitos; Confirmar identificação e edição do capítulo Couto/Albala; ResearchGate não é licença e DOI não consta confirmado. Não publicar PDF. | CORREÇÃO NECESSÁRIA |
 
+## Verificação bibliográfica externa focalizada — 21/11/2026
+
+A pesquisa abaixo confronta **metadados de páginas identificadas** dos oito cards de maior risco (EC-021/024/028/030/032/033/034/036). Não equivale a ler integralmente as fontes originais, verificar página a página as afirmações, revisar originalidade nem emitir parecer jurídico ou qualquer uma das duas revisões independentes obrigatórias.
+
+| Card | Achado verificável e URL | Situação após pré-verificação |
+|---|---|---|
+| EC-021 | O editor PLOS identifica o artigo original (DOI [10.1371/journal.pcbi.1005619](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619)) e a correção (DOI [10.1371/journal.pcbi.1005830](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005830)). | Correção bibliográfica confirmada; detalhes alterados devem ser cotejados antes de citação científica. |
+| EC-024 | A página oficial do periódico apresenta [10.63595/rbhcs.v1i1.10351](https://periodicos.furg.br/rbhcs/article/view/10351/0) para o artigo de 2009; o DOI não constava no card. | DOI **localizado na página atual do periódico**; confirmar metadados e eventuais alterações de registro, sem supor que existia em 2009. |
+| EC-028 | A página DOI do artigo da SAGE é [10.1177/1609406917733847](https://doi.org/10.1177/1609406917733847); o PDF de origem indicado pelo próprio card menciona CC BY-NC. | DOI e identidade bibliográfica identificados; licença aplicável por edição e direitos do uso pretendido requerem checagem independente. |
+| EC-030 | O editor identifica Hennink/Kaiser 2022 com DOI [10.1016/j.socscimed.2021.114523](https://www.sciencedirect.com/science/article/pii/S0277953621008558). | Metadados compatíveis; **licença CC BY-NC-ND ainda não confirmada independentemente na cópia exata**. |
+| EC-032 | O editor Annual Reviews identifica Cattaneo/Titiunik 2022, vol. 14, pp. 821–851, DOI [10.1146/annurev-economics-051520-021409](https://www.annualreviews.org/content/journals/10.1146/annurev-economics-051520-021409), com copyright/reserva de direitos no portal. | Identidade/DOI confirmados; não redistribuir a obra original. |
+| EC-033 | O NBER identifica o *Working Paper* 13039 de 2007 com DOI [10.3386/w13039](https://www.nber.org/papers/w13039). Existe **outra identificação, Technical Working Paper t0337**, com DOI [10.3386/t0337](https://www.nber.org/papers/t0337). | DOI confirmado **para edição w13039 citada no card**, não confundir com t0337 ou artigo de periódico posterior; direitos não liberados. |
+| EC-034 | O SSRN identifica o relatório *Comparative Methods and Process Tracing* (2019), Bennett/Fairfield/Soifer, com DOI [10.2139/ssrn.3333405](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3333405). | DOI de depósito SSRN identificado; confirmar edição/autorizações da versão exata e não presumir licença do PDF. |
+| EC-036 | Produção institucional do autor vinculada ao livro *Política Comparada: Teoria e Método* (ABCP/EduERJ, 2022): [registro UnB](https://sigaa.unb.br/sigaa/public/docente/producao.jsf?siape=1421282). | Capítulo bibliográfico localizado de modo preliminar; **DOI e direitos não confirmados**; ResearchGate não autoriza redistribuição. |
+
+**Saldo deste pré-check:** oito referências examinadas em fontes externas; dentre os quatro cards originalmente sem DOI textual (EC-024/033/034/036), três ganharam identificador externo plausível ligado à edição declarada (EC-024/033/034), e um continua sem DOI verificado (EC-036). **Os cards originais não foram alterados; os quatro ainda não exibem DOI no corpo.** Nenhuma licença de redistribuição foi aprovada, nenhum card passou pelas duas checagens independentes e nenhuma fonte foi promovida a [L].
+
+**Próxima ação concreta:** cotejar licença/edição e originalidade dos oito itens com documentação primária e pareceres independentes; depois, sob coordenação, conciliar os recibos com as demais etapas para avaliar V1-16, mantendo #102/#103 P0 pendentes.
+
 ## Testes, CI e readback
 - Controle de integridade: SHA-256 dos 18 cards conferidos (18/18 MATCH) e verificação de leitura dos dois recibos no GitHub.
 - Comparação de escopo com o manifesto-base: 0 commits atrás e somente RESULTS.md e DELTA.json alterados; a contagem de commits varia com cada atualização do diário.
