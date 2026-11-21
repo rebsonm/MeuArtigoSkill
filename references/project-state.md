@@ -281,23 +281,23 @@ treating it as legacy. Only local confirmed executions are checked;
 the audit does not itself validate interpretation, causality, external
 API retrieval, paper quality or claimed human reviews.
 
-### Retomada guiada e prevenção de repetição sem progresso (candidata)
+### Guided continuation and evidence-bounded repeat warnings (candidate)
 
-No fluxo de conversa, priorize **uma** próxima ação indicada pelo roteador
-existente, a razão, a evidência esperada e a condição verificável de saída.
-Para fallback local autorizado, use
+In conversation, show **one** next action selected by the existing router,
+its reason, expected evidence and a verifiable exit criterion. For an
+explicitly authorized local fallback project, use
 `python scripts/research_resume_brief.py PROJECT --format guided`.
-O modo `--format json` existente preserva os detalhes técnicos sob demanda.
+The existing `--format json` option exposes technical details on demand.
 
-Um alerta de circularidade é apenas diagnóstico: duas execuções locais
-consecutivas equivalentes, com recibos TRACE vinculados por hash, insumos
-estáveis e nenhuma saída nova verificada. Não repetir cegamente uma terceira
-tentativa; explicar o impedimento, a ação mínima e alternativa independente
-quando comprovável. Revisões periódicas, mudanças reais de evidência e
-histórico incompleto não devem ser falsamente bloqueados. A condição de
-conclusão sugerida não aprova nenhum gate e não certifica pesquisa concluída.
-Se o estado canônico estiver no Drive, confirmar acesso real pelo conector
-autorizado; uma cópia local nunca prova sincronização.
+A cycle warning is only diagnostic: two consecutive equivalent local
+executions with hash-linked TRACE receipts, unchanged inputs and no new
+output verified. Do not blindly propose a third identical attempt; explain
+the specific obstacle, the minimum remedy and a permitted independent
+alternative when available. Periodic checks, actual new evidence and
+incomplete attempt history must not be incorrectly blocked. The suggested
+exit criterion does not approve a gate or certify a completed study.
+For Drive-canonical projects, verify access with authorized connected
+tools; a local mirror never proves synchronization.
 
-Contrato e indicadores: [continuidade guiada e anticircularidade]
+Contract and measures: [guided continuity and anti-loop assessment]
 (../docs/CONTINUIDADE-GUIADA-ANTICIRCULARIDADE.md).
