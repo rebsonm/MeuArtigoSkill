@@ -175,3 +175,8 @@ Inspeção delimitada dos cinco PDFs específicos mantidos no Drive privado (pri
 - **EM EXECUÇÃO / BLOQUEIOS:** metadados de data/edição SRC-0297 e correspondência da versão SRC-0283 continuam sem confirmação; direitos da cópia exata/terceiros e revisão independente dos cinco registros continuam pendentes. Mantenha a integração V1-16 bloqueada por suas dependências.
 - **ÚNICA PRÓXIMA AÇÃO:** obter dos responsáveis UFMG/autores um expediente datado, inequivocamente ligado à versão exata de slides de SRC-0297; na ausência, conservar `BLOQUEADA_DATA_EDICAO_NAO_CONFIRMADA`.
 - **Critério verificável para superar este bloqueio:** documento primário identificando obra, autores, data e versão dos slides específicos, com origem e URL/recibo, além de verificação separada de direitos; nome de arquivo ou criação técnica de PDF não servem como prova.
+
+
+## Controle de gravação segura do MD canônico — nova aba V1-02
+
+O mesmo arquivo Drive `CONTINUIDADE_SKILL_MEUARTIGO.md` é `text/markdown` bruto e recebe atualizações de outras abas; uma substituição integral sem precondição transacional de revisão é insegura. Nesta continuação **não houve sobrescrita do corpo do MD**. A seção 31.02 já preservava o recebimento anterior; a atualização adicional foi destinada ao comentário contextual da própria seção 31.02, com `FEITO / EM EXECUÇÃO / PRÓXIMA AÇÃO`, após verificação de que não existia thread prévia específica da seção. A existência e persistência desse comentário precisam ser conferidas em leitura remota; não presumir que comentário seja alteração dos bytes do MD.
