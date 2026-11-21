@@ -26,9 +26,9 @@ REF_SHA = re.compile(r"[0-9a-f]{40}\Z")
 DOC_PATH = re.compile(r"knowledge/methodology/cards/[a-z0-9_-]{3,60}\.md\Z")
 HASH = re.compile(r"[0-9a-f]{64}\Z")
 WORDS = re.compile(r"[^\W_]+", re.UNICODE)
-MAX_INDEX_BYTES = 80_000
+MAX_INDEX_BYTES = 250_000
 MAX_CARD_BYTES = 18_000
-MAX_DOCS = 200
+MAX_DOCS = 600
 MAX_QUESTION_CHARS = 800
 
 
