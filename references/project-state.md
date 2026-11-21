@@ -299,5 +299,4 @@ exit criterion does not approve a gate or certify a completed study.
 For Drive-canonical projects, verify access with authorized connected
 tools; a local mirror never proves synchronization.
 
-Contract and measures: [guided continuity and anti-loop assessment]
-(../docs/CONTINUIDADE-GUIADA-ANTICIRCULARIDADE.md).
+Contract and measures: [guided continuity and anti-loop assessment](../docs/CONTINUIDADE-GUIADA-ANTICIRCULARIDADE.md).
