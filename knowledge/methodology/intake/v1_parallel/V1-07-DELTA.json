@@ -6,8 +6,8 @@
   "manifest_commit": "7c92045310eb3b1474a9612a777fb0012a511592",
   "manifest_blob": "2f85dc6c4283376b9fc3c312668f0a1f25a0a301",
   "snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
-  "results_commit": null,
-  "results_git_blob_sha": "34198bea7e4c9f0951a059fa231602a1db66fdbd",
+  "results_commit": "999f08c64b9575bb4cd7b9e5a3f669ef9b5b94c4",
+  "results_git_blob_sha": "03ff013d3e0cd848159f7ae832585c7b54607c5e",
   "dependencies": [],
   "write_scope": "somente V1-07-RESULTS.md, V1-07-DELTA.json; nenhum card modificado",
   "state": "ENTREGUE_PARA_AUDITORIA",
@@ -21,7 +21,11 @@
     "sha256_matching": 18,
     "cards_edited": 0,
     "pdfs_read": 0,
-    "global_files_written": 0
+    "global_files_written": 0,
+    "external_public_metadata_lookups": 18,
+    "independent_scientific_reviews_documented": 0,
+    "independent_rights_reviews_documented": 0,
+    "ci_on_this_continuation": "NOT_EXECUTED"
   },
   "receipts": [
     {
@@ -389,11 +393,169 @@
     "dupla revisão humana independente faltante",
     "direitos e licenças dos originais não revalidados",
     "EC-067: fonte livro sem leitura direta, grau [P]",
-    "cotejo de trechos e páginas das fontes não executado"
+    "cotejo de trechos e páginas das fontes não executado",
+    "licença publicada verificada não substitui autorização para cópia exata, material de terceiros ou PDFs privados",
+    "MD Drive Markdown bruto sem escrita parcial transacional; acompanhamento via comentário até janela exclusiva"
   ],
   "next_steps": [
-    "revisores humanos distintos para direitos/originalidade e fidelidade científica/editorial",
-    "confirmar fontes/cópias/versões e contraprovas por card",
-    "integrar na V1-16 somente depois de V1-01..V1-15 auditadas"
-  ]
+    "Designar primeira revisão HUMANA independente de direitos/originalidade para EC-066/067/068/070/071 com parecer, edição, evidência e assinatura; requer segunda revisão humana científica distinta para aceite"
+  ],
+  "followup_primary_metadata_20261121": {
+    "method": "PUBLIC_PUBLISHER_OR_BIBLIOGRAPHIC_METADATA_DESK_CHECK_NOT_FULL_TEXT_NOT_HUMAN_REVIEW",
+    "checked_at": "2026-11-21",
+    "checked": 18,
+    "checks": [
+      {
+        "card_id": "EC-055",
+        "source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006379",
+        "published_article_rights_observation": "CC_BY_4_PAGINA_ARTIGO",
+        "finding_and_limit": "Título, DOI e licença da editora; orientação de produtividade não é prova de validade científica.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-056",
+        "source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010139",
+        "published_article_rights_observation": "CC_BY_4_PAGINA_ARTIGO",
+        "finding_and_limit": "Fonte sobre boas práticas, não garantia de ausência de viés ou de protocolos implementados.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-057",
+        "source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005412",
+        "published_article_rights_observation": "CC_BY_4_PAGINA_ARTIGO",
+        "finding_and_limit": "Artigo sobre robustez de software; não comprova validade inferencial.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-058",
+        "source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007846",
+        "published_article_rights_observation": "CC_BY_4_PAGINA_ARTIGO",
+        "finding_and_limit": "Título da fonte especifica pesquisa em SAÚDE HUMANA: transposição para outros campos requer contextualização e proteção de participantes.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-059",
+        "source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006036",
+        "published_article_rights_observation": "CC_BY_4_PAGINA_ARTIGO",
+        "finding_and_limit": "Orientação sobre referências; DOI isolado não demonstra suporte à proposição.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-060",
+        "source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010749",
+        "published_article_rights_observation": "CC_BY_4_PAGINA_ARTIGO",
+        "finding_and_limit": "Fonte trata de DADOS BIOLÓGICOS; licença do artigo não determina licenças dos datasets.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-061",
+        "source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1014419",
+        "published_article_rights_observation": "CC_BY_4_PAGINA_ARTIGO",
+        "finding_and_limit": "PLOS identifica publicação de 22/06/2026 e recomenda suplemento autocontido; não implica abertura de dados protegidos.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-062",
+        "source": "https://www.e-publicacoes.uerj.br/sustinere/article/view/71828",
+        "published_article_rights_observation": "CC_4_POLITICA_REVISTA_VARIANTE_NAO_COTEJADA",
+        "finding_and_limit": "Resumo da editora enumera etapas de análise temática; licença genérica CC 4.0 no periódico, sem confirmação da modalidade para a cópia exata.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-063",
+        "source": "https://editora.sepq.org.br/rpq/article/view/545",
+        "published_article_rights_observation": "CC_BY_4_PAGINA_ARTIGO",
+        "finding_and_limit": "Fonte da revista refere amostragem qualitativa em saúde; transposição interdisciplinar e saturação precisam de justificativa.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-064",
+        "source": "https://revistas.ufg.br/fen/article/view/47234",
+        "published_article_rights_observation": "CC_BY_4_PAGINA_ARTIGO",
+        "finding_and_limit": "Editora indica CC BY 4.0; página informa disponibilização digital 2017 e edição v.11 n.3 (2009): distinguir publicação online e volume original.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-065",
+        "source": "https://onlinelibrary.wiley.com/doi/10.1111/ijmr.12381",
+        "published_article_rights_observation": "OA_EDITORA_E_CC_BY_DEPOSITO_INSTITUCIONAL",
+        "finding_and_limit": "Texto da editora confirma DEZ etapas e TRÊS checkpoints (após etapa 5, após etapa 8 e após etapa 10); versão de PDF interna não foi cotejada.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-066",
+        "source": "https://www.sciencedirect.com/science/article/pii/S0148296319304564",
+        "published_article_rights_observation": "CC_BY_NC_ND_4_PUBLICACAO",
+        "finding_and_limit": "Título/DOI Snyder confirmados; registro da obra informa CC BY-NC-ND, sem autorização de derivações/uso comercial por essa licença.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-067",
+        "source": "https://books.google.com/books/about/Metodos_e_tecnicas_de_pesquisa_bibliogra.html?id=PS2QmgEACAAJ",
+        "published_article_rights_observation": "LIVRO_COMERCIAL_SEM_AUTORIZACAO",
+        "finding_and_limit": "Catálogo Google Books identifica 11ª edição, Sulina, 1986 (239 pp.); isso verifica bibliografia, NÃO leitura da obra nem fórmulas atribuídas ao autor.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-068",
+        "source": "https://doi.org/10.1111/j.1471-1842.2009.00848.x",
+        "published_article_rights_observation": "LICENCA_NAO_ENCONTRADA",
+        "finding_and_limit": "Metadados registram artigo de Grant e Booth com 14 tipos de revisão; SALSA deve ser confrontada no original e tabela não pode ser copiada.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-069",
+        "source": "https://link.springer.com/article/10.1007/s13162-020-00161-0",
+        "published_article_rights_observation": "CC_BY_4_PAGINA_ARTIGO",
+        "finding_and_limit": "Editora confirma Theory Synthesis, Theory Adaptation, Typology e Model e licença CC BY 4.0; não equivale a quatro modelos universalmente exaustivos.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-070",
+        "source": "https://onlinelibrary.wiley.com/doi/10.1111/joms.12581",
+        "published_article_rights_observation": "LICENCA_NAO_ENCONTRADA",
+        "finding_and_limit": "Resumo Wiley confirma argumento sobre integrar e gerar perspectiva nova; direitos do texto integral não foram demonstrados.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-071",
+        "source": "https://journals.aom.org/doi/10.5465/amr.2009.0188",
+        "published_article_rights_observation": "LICENCA_NAO_ENCONTRADA",
+        "finding_and_limit": "Resumo da Academy of Management confirma problematização de pressupostos; não foi realizado confronto completo do artigo.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      },
+      {
+        "card_id": "EC-072",
+        "source": "https://link.springer.com/article/10.1186/s13643-020-01542-z",
+        "published_article_rights_observation": "CC_BY_4_PAGINA_ARTIGO",
+        "finding_and_limit": "Editora declara expressamente CC BY 4.0 para o artigo PRISMA-S; é guia de RELATO da busca, não valida a sensibilidade da estratégia.",
+        "human_rights_signoff": false,
+        "human_scientific_signoff": false
+      }
+    ],
+    "notes": [
+      "O campo rights_assessment em receipts descreve a triagem anterior e NÃO autoriza publicar a cópia exata.",
+      "EC-072: CC BY 4.0 de artigo confirmada; status editorial CORREÇÃO_NECESSÁRIA preservado.",
+      "EC-065: dez passos e três checkpoints localizados no texto Wiley; ainda sem cotejo detalhado integral.",
+      "EC-067: existência de edição bibliográfica 1986 corroborada, mas livro não lido.",
+      "Nenhuma aprovação científica, jurídica, de privacidade ou de segurança foi presumida."
+    ]
+  }
 }
