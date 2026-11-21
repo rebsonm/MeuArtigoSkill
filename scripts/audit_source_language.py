@@ -55,6 +55,7 @@ def scoped_files(root: Path) -> list[Path]:
         } or any(rel.as_posix().startswith(prefix) for prefix in (
             "knowledge/methodology/inventory/",
             "knowledge/methodology/intake/",
+            "knowledge/methodology/cards/",  # original research cards are corpus data, not instructions
         ))
         if corpus_data:
             continue
