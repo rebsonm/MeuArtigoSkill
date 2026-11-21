@@ -17,7 +17,7 @@ that a user or the running host opened an identified book or article.
 3. Distinguish a **bibliographic lead** from a **primary work actually
    inspected**. Record a source page only when directly checked against the
    applicable edition; a PDF page index need not equal its printed label.
-4. Require **two independent acceptance checks** before catalog inclusion:
+4. Require **two independent acceptance checks** before a draft is promoted to accepted/public-release-ready:
    rights/originality review and scientific/editorial fidelity review.
    A machine-generated draft or lexical similarity test cannot approve either.
 5. A published card is labeled **[I] editorial synthesis**. A bibliographic
@@ -45,7 +45,7 @@ that a user or the running host opened an identified book or article.
   decisions and date; link to internal editorial receipt when applicable
 - Public release status: DRAFT / NEEDS_REVIEW / ACCEPTED
 
-The four existing methodology cards are initial original editorial summaries.
+The four earliest methodology cards and the subsequent nineteen drafts are original editorial summaries; all remain subject to independent methodological and originality review.
 Their bibliographies are **leads only**, not source-page-verified claims.
 Their presence in a catalog does not prove independent scientific validation.
 No automatic conversion or import of the separately inventoried 475 PDFs is
@@ -53,7 +53,7 @@ authorized by this policy.
 
 ## Distribution boundary
 
-The installed ZIP is small and contains no public PDF corpus or private
+The installed ZIP is small; it contains a read-only optional Python lookup client but no public PDF corpus or private
 research library. Public catalogues and PDFs stay in GitHub; runtime queries
 require an exact immutable commit and actual HTTPS/Python support. Access
 to a user's personal documents is outside this module, not shared with other
