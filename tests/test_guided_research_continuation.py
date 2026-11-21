@@ -19,6 +19,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import init_project
 import next_step_router as router
 import research_resume_brief as resume
+import trace_execution
 from native_chat_dashboard import panel
 
 
@@ -40,6 +41,9 @@ class GuidedResearchContinuationTests(unittest.TestCase):
         self.mgmt = self.root / router.MGMT
         self.trace_file = self.mgmt / "13_Traceability_Log.csv"
         self.tasks_file = self.mgmt / "11_CADA_Control.csv"
+        (self.root / "audit").mkdir(exist_ok=True)
+        self.synthetic_input = self.root / "audit" / "inputs.csv"
+        self.synthetic_input.write_text("synthetic input at baseline\n", encoding="utf-8")
 
     def read_csv(self, path):
         with path.open(encoding="utf-8-sig", newline="") as stream:
@@ -62,31 +66,31 @@ class GuidedResearchContinuationTests(unittest.TestCase):
         return resume.guided_view(brief, root=self.root, overview=snap["overview"])
 
     def record_attempt(self, number, *, script="dedupe_records.py", status="FAILED",
-                       arguments="a"*64, input_hash="1"*64, different_output=False):
+                       arguments="a"*64, input_hash=None, different_output=False,
+                       script_sha256=None, exit_code=None):
         tid = f"TRACE-{number:04d}"
         self.assertIn(status, {"FAILED", "PARTIAL"})
+        recorded_input = trace_execution.file_state(self.root, "audit/inputs.csv")
+        if input_hash is not None:
+            recorded_input = {**recorded_input, "sha256": input_hash}
+        no_output = trace_execution.file_state(self.root, "audit/result.csv")
+        output_after = ({"path": "audit/result.csv", "exists": True,
+                         "bytes": 2, "sha256": "5"*64}
+                        if different_output else no_output)
         receipt = {
             "schema_version": 1,
             "trace_id": tid,
             "status": status,
             "script": script,
-            "script_sha256": "b"*64,
+            "script_sha256": (script_sha256 or trace_execution.sha256(
+                trace_execution.SCRIPTS_ROOT / script)),
             "arguments_sha256": arguments,
-            "exit_code": 1 if status == "FAILED" else 0,
-            "inputs_before": [
-                {"path": "audit/inputs.csv", "exists": True, "sha256": input_hash}
-            ],
-            "inputs_after": [
-                {"path": "audit/inputs.csv", "exists": True, "sha256": input_hash}
-            ],
-            "outputs_before": [
-                {"path": "audit/result.csv", "exists": bool(different_output),
-                 "sha256": "4"*64 if different_output else ""}
-            ],
-            "outputs_after": [
-                {"path": "audit/result.csv", "exists": bool(different_output),
-                 "sha256": "5"*64 if different_output else ""}
-            ],
+            "exit_code": (exit_code if exit_code is not None
+                          else 1 if status == "FAILED" else 0),
+            "inputs_before": [recorded_input],
+            "inputs_after": [dict(recorded_input)],
+            "outputs_before": [no_output],
+            "outputs_after": [output_after],
         }
         folder = self.mgmt / "TRACE_RECEIPTS"
         folder.mkdir(exist_ok=True)
@@ -233,6 +237,37 @@ class GuidedResearchContinuationTests(unittest.TestCase):
         self.record_attempt(2002, different_output=True)
         self.assertEqual(self.guided()["cycle_signal"]["status"],
                          "DIFFERENT_ATTEMPT_OR_ARTIFACT_CHANGE")
+
+    def test_script_changed_after_attempts_requires_fresh_review(self):
+        for number in (2001, 2002):
+            self.record_attempt(number, script_sha256="b"*64)
+        cycle = self.guided()["cycle_signal"]
+        self.assertEqual(cycle["status"], "EXECUTABLE_CHANGED_SINCE_ATTEMPTS")
+        self.assertFalse(cycle["human_diagnostic_advised"])
+
+    def test_new_input_since_attempts_must_not_be_called_a_loop(self):
+        self.record_attempt(2001)
+        self.record_attempt(2002)
+        self.synthetic_input.write_text("new input since attempts\n", encoding="utf-8")
+        cycle = self.guided()["cycle_signal"]
+        self.assertEqual(cycle["status"], "ARTIFACT_CHANGED_SINCE_ATTEMPTS")
+        self.assertFalse(cycle["human_diagnostic_advised"])
+
+    def test_new_output_since_attempts_must_not_be_called_a_loop(self):
+        self.record_attempt(2001)
+        self.record_attempt(2002)
+        (self.root / "audit" / "result.csv").write_text(
+            "independently recorded progress\n", encoding="utf-8")
+        cycle = self.guided()["cycle_signal"]
+        self.assertEqual(cycle["status"], "ARTIFACT_CHANGED_SINCE_ATTEMPTS")
+        self.assertFalse(cycle["human_diagnostic_advised"])
+
+    def test_inconsistent_exit_code_is_not_execution_proof(self):
+        self.record_attempt(2001)
+        self.record_attempt(2002, exit_code=0)
+        cycle = self.guided()["cycle_signal"]
+        self.assertEqual(cycle["status"], "INSUFFICIENT_VERIFIED_ATTEMPTS")
+        self.assertFalse(cycle["human_diagnostic_advised"])
 
     def test_private_task_and_rationale_not_echoed(self):
         h, tasks = self.read_csv(self.tasks_file)
