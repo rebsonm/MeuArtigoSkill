@@ -17,9 +17,9 @@ import consult_github_methodology as card_reader
 import public_method_pdf as pdf_reader
 
 SCHEMA = "MEU_ARTIGO_HYBRID_METHOD_RETRIEVAL_V1"
-# This source snapshot contains 114 editorial methodology cards and 45
+# This source snapshot contains 133 editorial methodology cards and 47
 # separately licensed public PDFs. No automatic gate or host approval.
-DEFAULT_PUBLIC_SNAPSHOT = "3701a84ab2f9c116d8a50de5cd8ef66f383c9269"
+DEFAULT_PUBLIC_SNAPSHOT = "d982c005be9f47d4f5d66819c16118409e161de2"
 MAX_CONTEXT = 6000
 MIN_CONTEXT = 1200
 

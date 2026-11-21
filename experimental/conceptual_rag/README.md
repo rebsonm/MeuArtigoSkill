@@ -57,4 +57,8 @@ A separate public source registry provides 475 bibliography-only prospecting lea
 
 The 21 November reconciliation checked 12 original work identities; 45 individually licensed PDFs and 114 provisional editorial cards are available in the public branch, but this **does not** certify host compatibility or scientific source claims.
 
-New direct-examination batch: 14 more PDF identities confirmed, 5 individually redistributable CC BY 4.0 originals stored, 14 original editorial cards created. Total verified identities 26 / 475; 50 unresolved; 399 provisional. No scientific editorial approval or host acceptance is implied. Optional readers use the immutable `3701a84ab2f9c116d8a50de5cd8ef66f383c9269` corpus snapshot.
+New direct-examination batch: 14 more PDF identities confirmed, 5 individually redistributable CC BY 4.0 originals stored, 14 original editorial cards created. Total verified identities 26 / 475; 50 unresolved; 399 provisional. No scientific editorial approval or host acceptance is implied. Optional readers use the immutable `d982c005be9f47d4f5d66819c16118409e161de2` corpus snapshot.
+
+### Work identity and rights update (21 Nov 2026)
+
+The current immutable `d982c005be9f47d4f5d66819c16118409e161de2` snapshot contains 133 provisional original editorial cards, 47 public CC BY 4.0 PDFs, and 475 [P] bibliographic prospecting records. Work identities: 45 directly checked, 31 unresolved, 399 tentative title matches. Two PDF binaries added; one CC BY 3.0 IGO licensed Portuguese World Bank book remains a publisher-link-only record (7.5 MB upload did not complete). Excerpts and data from protected editions were not copied. No running service, hosted retrieval backend, scientific approval or host-level clean-install certification.
