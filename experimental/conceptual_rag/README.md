@@ -33,7 +33,7 @@ Only original cards and individually approved redistributable public PDFs appear
 - Proof-of-concept PDF reader: `experimental/conceptual_rag/github_pdf_reader.py`; remains *experimental source only*, **not included in the installed Skill ZIP**.
 - Source selection is metadata-first. The local executor downloads at most one matching licensed PDF and checks its exact size and SHA256 before extracting a bounded number of pages. A scanned PDF returns a visual-review requirement rather than fabricated text.
 - Private/third-party PDFs, including personal Drive libraries, remain outside the public repository. A private GitHub source would require legitimately authorized use and an authenticated host; no access token is embedded or assumed.
-- Six PDFs have documented CC BY 4.0 licence metadata; metadata checks and unit tests do not replace human copyright review or establish scientific support.
+- Public PDFs have individual CC BY 4.0 licence metadata; metadata checks and unit tests do not replace human copyright review or establish scientific support.
 
 See `references/GITHUB-METHODOLOGY.md`. No changes to the v1 release candidate or scientific gates.
 
