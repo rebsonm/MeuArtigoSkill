@@ -190,3 +190,12 @@
 3. Requerer **duas revisões independentes** com nome, data, evidência e decisão.
 4. Reconciliar e registrar apenas a subseção 31.06 no MD, evitando sobreposição entre abas.
 5. Entregar a V1-16 apenas quando seus pré-requisitos estiverem satisfeitos; não iniciar V1-16–20 nem release.
+
+## Rastreabilidade de commits e CI (pós-gravação)
+
+- Commit de criação do RESULTS: `56c5332dc66f29a96848e0ddbd70e9d3e3379819`.
+- Commit de criação do DELTA: `626750cacc1fe4f6c4efa71b48ae1abbcb8d2610`.
+- Readback na branch: 18 seções EC individuais no RESULTS e 18 registros no DELTA, sem campos essenciais vazios.
+- Diff contra base `7c92045310eb3b1474a9612a777fb0012a511592`: somente os dois recibos próprios, sem alteração de cards ou arquivos globais.
+- CI: consulta de status do commit de criação do DELTA retornou **zero verificações reportadas**; não é passe de CI nem homologação em host.
+- Escopo dos testes: integridade de conteúdo dos cards, parsing dos 18 registros, inspeção textual de riscos e isolamento do diff; não foram executados testes do sistema, recuperação, MCP ou validação de PDFs.
