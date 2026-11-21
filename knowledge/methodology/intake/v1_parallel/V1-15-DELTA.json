@@ -585,5 +585,52 @@
     "next_single_action": "COORDINAR_REVISAO_DE_ACL_DOS_25_PDFS_PREVIAMENTE_IDENTIFICADOS_COM_MANTENEDOR_E_ISSUE_103",
     "acceptance_gate": "ACL_PRIVACY_CONFIRMED_SAFE_RIGHTS_AND_SCIENTIFIC_REVIEW_INDEPENDENT_PLUS_OTHER_V1_BATCHES",
     "no_pdf_private_read_in_this_execution": true
+  },
+  "acl_metadata_reverification_20261121": {
+    "status": "READ_ONLY_COMPLETED_NO_PERMISSION_CHANGES",
+    "related_issue_number": 103,
+    "issue_state_at_check": "open",
+    "frozen_snapshot": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+    "method": "GOOGLE_DRIVE_EXACT_ORIGINAL_FOLDER_AND_FILENAME_AND_SIZE_MATCH_FOLLOWED_BY_GET_FILE_METADATA_PERMISSIONS",
+    "drive_pdf_bytes_opened": 0,
+    "targeted_records": 25,
+    "unique_targets_matched": 25,
+    "ambiguous_matches": 0,
+    "target_groups": 6,
+    "group_counts": [
+      6,
+      1,
+      9,
+      2,
+      3,
+      4
+    ],
+    "individual_metadata_read_success": 25,
+    "individual_metadata_read_errors": 0,
+    "visibility_permission_metadata_available_count": 25,
+    "explicit_anyone_reader_count": 25,
+    "explicit_anyone_reader_by_group": [
+      6,
+      1,
+      9,
+      2,
+      3,
+      4
+    ],
+    "explicit_anyone_reader_count_unknown": 0,
+    "other_450_pdf_acl_verified_in_this_step": false,
+    "public_access_using_link_possible": true,
+    "public_link_leaked_or_accessed_confirmed": false,
+    "file_locator_or_pdf_id_written_to_public_repo": false,
+    "acl_changed": 0,
+    "github_history_rewritten": false,
+    "security_approval": false,
+    "legal_or_copyright_approval": false,
+    "remediation_pending": "OWNER_APPROVED_ACL_CHANGE_AFTER_IMPACT_REVIEW_PRESERVING_NAMED_COLLABORATORS",
+    "verify_remediation": "GET_FILE_METADATA_FOR_25_EXPECT_NO_TYPE_ANYONE_OR_EXPLICIT_APPROVED_EXCEPTION",
+    "results_receipt_commit": "c462493969216049223f26c6ce2ccdb5ac93d128",
+    "results_receipt_blob_sha1": "9d14ddbcdd3d14db0dcd8e0876e22d2c1f4b68ce",
+    "one_next_action": "OBTAIN_EXPLICIT_OWNER_DECISION_ON_REVOKING_ANYONE_READER_FROM_25_FILES_WITH_SHARE_IMPACT_CHECK",
+    "advance_gate": "NO_UNAPPROVED_PUBLIC_LINK_ACL_FOR_25_AND_HISTORICAL_PRIVACY_RIGHTS_SCIENCE_REVIEW"
   }
 }
