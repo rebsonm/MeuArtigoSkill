@@ -17,15 +17,26 @@ class RightsLedgerTests(unittest.TestCase):
             self.assertEqual(part["status"],"UNREVIEWED_ITEMS_NOT_PUBLICATION_APPROVAL")
             for row in part["records"]:
                 actual.append((row["folder"],row["filename"]))
-                self.assertEqual(row["rights_review"],"NOT_CHECKED")
-                self.assertEqual(row["public_distribution"],"NOT_AUTHORIZED_BY_THIS_LEDGER")
-                self.assertEqual(row["publisher_license"],"NOT_CHECKED")
+                if row["rights_review"] == "NOT_CHECKED":
+                    self.assertEqual(row["public_distribution"], "NOT_AUTHORIZED_BY_THIS_LEDGER")
+                    self.assertEqual(row["publisher_license"], "NOT_CHECKED")
+                elif row["rights_review"] == "VERIFIED_PUBLISHER_LICENSE":
+                    self.assertEqual(row["publisher_license"], "CC BY 4.0")
+                    self.assertEqual(row["public_distribution"], "LICENSED_ORIGINAL_SOURCE_INDEXED")
+                    self.assertTrue(row["rights_evidence_url"].startswith("https://"))
+                    self.assertRegex(row["original_pdf_sha256"], r"^[0-9a-f]{64}$")
+                    self.assertTrue(row["public_pdf_path"].startswith("knowledge/methodology/pdfs/"))
+                else:
+                    self.fail("Unexpected unreviewed file promoted to rights approval")
                 self.assertNotIn("drive_file_id",row)
                 self.assertRegex(row["id"],r"^SRC-[0-9]{4}$")
         self.assertEqual(len(wanted),475)
         self.assertEqual(wanted,actual)
         manifest = json.loads((ROOT / "intake" / "rights-ledger-manifest.json").read_text(encoding="utf-8"))
         self.assertEqual(sum(manifest["part_counts"]),475)
-        self.assertEqual(manifest["actual_individually_verified_rights_in_this_ledger"],0)
+        self.assertEqual(manifest["actual_individually_verified_rights_in_this_ledger"],
+                         sum(1 for i in range(1,6) for row in
+                             json.loads((ROOT / "intake" / f"rights-ledger-part-0{i}.json").read_text(encoding="utf-8"))["records"]
+                             if row["rights_review"] == "VERIFIED_PUBLISHER_LICENSE"))
         self.assertFalse(manifest["private_corpus_copied"])
 if __name__ == "__main__": unittest.main()
