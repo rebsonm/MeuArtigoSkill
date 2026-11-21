@@ -2745,12 +2745,12 @@
       "filename": "Dias,Mishima,2023.pdf",
       "size_bytes": 433874,
       "priority": "P2",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
-      "publisher_license": "NOT_CHECKED",
-      "rights_review": "NOT_CHECKED",
-      "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
-      "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
+      "bibliographic_identity": "VERIFIED_PUBLISHED_WORK_AND_DOI",
+      "publisher_license": "CC BY 4.0",
+      "rights_review": "VERIFIED_PUBLISHER_LICENSE",
+      "public_distribution": "LICENSED_ORIGINAL_SOURCE_INDEXED",
+      "original_reading": "TITLE_ABSTRACT_AND_METHOD_SECTIONS_CONSULTED",
+      "suggested_next_step": "INDEPENDENT_SCIENTIFIC_EDITORIAL_REVIEW",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
       "bibliographic_title_original": "Análise temática de dados qualitativos: uma proposta prática para efetivação",
@@ -2762,7 +2762,11 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "doi": "10.12957/sustinere.2023.71828",
+      "rights_evidence_url": "https://doi.org/10.12957/sustinere.2023.71828",
+      "public_pdf_path": "knowledge/methodology/pdfs/dias-mishima-2023-thematic-analysis.pdf",
+      "original_pdf_sha256": "9d623d1f2e22d8d93b571ded0eb9f34e5b6062669ee32f47f12fca67aad97d7a"
     },
     {
       "id": "SRC-0127",
