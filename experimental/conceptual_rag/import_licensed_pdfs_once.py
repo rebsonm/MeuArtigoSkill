@@ -172,7 +172,7 @@ def main() -> int:
             blob = read_public_pdf(item["pdf_url"])
         except (OSError, ValueError, urllib.error.URLError, TimeoutError) as exc:
             failures.append({"doi": item["doi"], "kind": type(exc).__name__})
-            print("SOURCE_UNAVAILABLE:", item["doi"], type(exc).__name__)
+            print("SOURCE_UNAVAILABLE:", item["doi"], type(exc).__name__, str(exc)[:100])
             continue
         total += len(blob)
         if total > MAX_TOTAL_BYTES:
