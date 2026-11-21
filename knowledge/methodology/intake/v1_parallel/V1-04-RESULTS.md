@@ -212,3 +212,14 @@
 - Registrar revisão independente técnica e de direitos de cada card, com localizador de fonte e data de parecer; corrigir imprecisões com evidência, não por suposição.
 - Integrar os deltas de V1-04 em V1-16 apenas quando todas V1-01…V1-15 estiverem entregues e avaliadas; manter o catálogo global intacto até então.
 - Retomar a gravação no **mesmo** Markdown canônico apenas com controle seguro de versão/reconciliação, nunca sobrescrever enquanto outras abas modificam o arquivo.
+
+## Trilha de commits verificada
+
+- EC-001 reviews.md: `a697ee587802d83a255b69b203d4c096cf8f3f0d`.
+- EC-002 design.md: `195ffe31bb3241b09fe99794e03d3fa5b5fd17b1`.
+- EC-003 qualitative.md: `d84ea3ce1d54a33fd3d8556d913f1140910b47a0`.
+- EC-004 design-science.md: `7d5e3886bf673db182afb5fa718f33ec077c9389`.
+- V1-04-DELTA.json inicial: `97209b3557e91b684c023fbc6af55faad467cdb5`.
+- V1-04-RESULTS.md inicial: `3512631311ed41abdcec5d6748246a5f1fb9600c`.
+- Atualização posterior do DELTA com linhagem: `17d1b8bbf13b68fb07dbb679336e9efb854985e4`.
+- Head e checks de CI devem ser conferidos novamente na leitura final; ausência de status não equivale a aprovação.
