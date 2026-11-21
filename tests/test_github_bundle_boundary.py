@@ -11,6 +11,8 @@ class GitMethodologyBundleBoundary(unittest.TestCase):
     def test_remote_catalog_is_not_shipped(self):
         files={x.relative_to(ROOT).as_posix() for x in build_skill_bundle.list_sources(ROOT)}
         self.assertIn('scripts/consult_github_methodology.py',files)
+        self.assertIn('scripts/consult_public_methodology.py',files)
+        self.assertIn('scripts/public_method_pdf.py',files)
         self.assertIn('references/GITHUB-METHODOLOGY.md',files)
         self.assertFalse(any(x.startswith('knowledge/') for x in files))
         self.assertTrue((ROOT/'knowledge/methodology/catalog.json').exists())
