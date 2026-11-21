@@ -70,12 +70,34 @@
         "cientometria",
         "citações"
       ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/bicudo-2014.pdf",
+      "title": "Meta-análise: seu significado para a pesquisa qualitativa",
+      "authors": "Maria Aparecida Viggiani Bicudo",
+      "year": 2014,
+      "doi": "10.5007/1981-1322.2014v9nespp7",
+      "size": 202373,
+      "sha256": "0a1bc9ab6316d1d1f5644fe2f28e71ec8af0a5163b1a80ea9ace04931efce04d",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://periodicos.ufsc.br/index.php/revemat/article/view/1981-1322.2014v9nespp7",
+      "source_url": "https://periodicos.ufsc.br/index.php/revemat/article/view/1981-1322.2014v9nespp7",
+      "keywords": [
+        "metanálise",
+        "meta-análise",
+        "metassíntese",
+        "qualitativa",
+        "hermenêutica",
+        "síntese"
+      ]
     }
   ],
   "rights_policy": "PUBLIC_REDISTRIBUTION_REVIEWED_ONLY",
   "installer_includes_pdfs": false,
-  "catalog_status": "THREE_REVIEWED_OPEN_LICENSE_ARTICLES",
+  "catalog_status": "FOUR_REVIEWED_OPEN_LICENSE_ARTICLES",
   "source_format": "PDF_ORIGINAL_UNMODIFIED",
   "scientific_quality_validated": false,
-  "note": "Public PDFs are individually attributed and CC BY 4.0 licensed. Original PDF files remain canonical. License proof is listed per item. No user-private research corpus is copied."
+  "note": "Each public PDF is separately attributed under its journal's CC BY 4.0 terms. Restricted works in the archive remain metadata-only."
 }
