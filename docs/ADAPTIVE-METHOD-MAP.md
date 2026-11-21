@@ -616,7 +616,7 @@ Only literal/enum differences and known field names are checked.
 The original PR #95 `inference_change_impact` output is retained for
 compatibility. The existing write block for recorded fields is unchanged.
 The preview never updates DEC/TRACE, gates, evidence, snapshots, or Drive;
-there is no MCP server dependency and no new scientific approval mechanism.
+there is no requirement for an additional remote service and no new scientific approval mechanism.
 The published v0.9.0-beta.6 reference and the article corpus are unaffected.
 
 Reproduce on an authorized local project (draft file holds researcher text):
