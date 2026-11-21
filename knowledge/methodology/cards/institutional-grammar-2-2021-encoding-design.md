@@ -2,7 +2,7 @@
 
 - Status: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 - Limite da consulta: Página pública da editora, resumo e recursos institucionais da gramática; não foi feita validação independente de uma codificação empírica.
-- Referência identificada: Frantz e colaboradores (2021; autoria completa a conferir na publicação). DOI: 10.1111/padm.12719
+- Referência identificada: Christopher K. Frantz e Saba Siddiki (2021). DOI: 10.1111/padm.12719
 - Fonte primária consultada nesta etapa: https://onlinelibrary.wiley.com/doi/full/10.1111/padm.12719
 - Registro correlato do inventário: SRC-0002 (identidade do PDF privado ainda não estabelecida por hash/edição)
 - Direitos do PDF privado: NÃO AUTORIZADOS por este card. Este card é criação editorial, não substituto do artigo.

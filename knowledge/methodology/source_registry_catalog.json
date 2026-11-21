@@ -1,6 +1,6 @@
 {
   "schema": "MEU_ARTIGO_SOURCE_CARD_INDEX_V1",
-  "version": "pilot-2026-11-21-475-prospect-cards-71-title-candidates",
+  "version": "pilot-2026-11-21-475-prospects-12-public-work-checks",
   "source_archive_records": 475,
   "catalogue_identified_titles": 404,
   "source_text_read_in_ledger": 3,
@@ -37,7 +37,20 @@
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "public_work_metadata_screen": {
+        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "doi": "10.1111/j.1748-5991.2012.01132.x",
+        "title": "Using the institutional grammar tool to understand regulatory compliance: The case of Colorado aquaculture",
+        "authors": "Saba Siddiki; Xavier Basurto; Christopher M. Weible",
+        "year": "2012",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1748-5991.2012.01132.x",
+        "checked_at": "2026-11-21",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": false,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0002.md",
@@ -65,7 +78,20 @@
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "public_work_metadata_screen": {
+        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "doi": "10.1111/padm.12719",
+        "title": "Institutional Grammar 2.0: A specification for encoding and analyzing institutional design",
+        "authors": "Christopher K. Frantz; Saba Siddiki",
+        "year": "2021",
+        "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/padm.12719",
+        "checked_at": "2026-11-21",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": false,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0003.md",
@@ -402,7 +428,20 @@
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "public_work_metadata_screen": {
+        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "doi": "10.14527/kuey.2018.016",
+        "title": "Policy Document Analysis: A Practical Educational Leadership Tool and a Qualitative Research Method",
+        "authors": "Carol Cardno",
+        "year": "2018",
+        "url": "https://eric.ed.gov/?id=EJ1305631",
+        "checked_at": "2026-11-21",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": false,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0017.md",
@@ -640,7 +679,20 @@
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "public_work_metadata_screen": {
+        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "doi": "10.1590/S1517-97022005000300009",
+        "title": "Pesquisa-ação: uma introdução metodológica",
+        "authors": "David Tripp",
+        "year": "2005",
+        "url": "https://revistas.usp.br/ep/pt_BR/article/view/27989/",
+        "checked_at": "2026-11-21",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": false,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0027.md",
@@ -862,7 +914,20 @@
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "public_work_metadata_screen": {
+        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "doi": "10.1080/17405900701464816",
+        "title": "Feminist Critical Discourse Analysis: Articulating a Feminist Discourse Praxis",
+        "authors": "Michelle M. Lazar",
+        "year": "2007",
+        "url": "https://www.tandfonline.com/doi/abs/10.1080/17405900701464816",
+        "checked_at": "2026-11-21",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": false,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0036.md",
@@ -1037,7 +1102,20 @@
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "From coding to conversation a new methodological framework for ai assisted qualitative analysis",
-      "title_candidate_only": true
+      "title_candidate_only": true,
+      "public_work_metadata_screen": {
+        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "doi": "10.1177/10778004251412871",
+        "title": "From Coding to Conversation: A New Methodological Framework for AI-Assisted Qualitative Analysis",
+        "authors": "Susanne Friese",
+        "year": "2026",
+        "url": "https://journals.sagepub.com/doi/10.1177/10778004251412871",
+        "checked_at": "2026-11-21",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": false,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0042.md",
@@ -1290,7 +1368,20 @@
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Large language models in qualitative research uses tensions and intentions",
-      "title_candidate_only": true
+      "title_candidate_only": true,
+      "public_work_metadata_screen": {
+        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "doi": "10.1145/3706598.3713120",
+        "title": "Large Language Models in Qualitative Research: Uses, Tensions, and Intentions",
+        "authors": "Hope Schroeder; Marianne Aubin Le Quéré; Casey Randazzo; David Mimno; Sarita Schoenebeck",
+        "year": "2025",
+        "url": "https://doi.org/10.1145/3706598.3713120",
+        "checked_at": "2026-11-21",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": false,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0050.md",
@@ -1323,7 +1414,20 @@
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Conversing with qualitative data enhancing qualitative research through large language models (llms)",
-      "title_candidate_only": true
+      "title_candidate_only": true,
+      "public_work_metadata_screen": {
+        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "doi": "10.1177/16094069251322346",
+        "title": "Conversing With Qualitative Data: Enhancing Qualitative Research Through Large Language Models (LLMs)",
+        "authors": "Adam Hayes",
+        "year": "2025",
+        "url": "https://journals.sagepub.com/doi/10.1177/16094069251322346",
+        "checked_at": "2026-11-21",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": false,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0051.md",
@@ -1451,7 +1555,20 @@
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Prompts pearls imperfections comparing chatgpt and a human researcher in qualitative data analysis",
-      "title_candidate_only": true
+      "title_candidate_only": true,
+      "public_work_metadata_screen": {
+        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "doi": "10.1177/10497323241244669",
+        "title": "Prompts, Pearls, Imperfections: Comparing ChatGPT and a Human Researcher in Qualitative Data Analysis",
+        "authors": "Jonas Wachinger; Kate Bärnighausen; Louis N. Schäfer; Kerry Scott; Shannon A. McMahon",
+        "year": "2024",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38775392/",
+        "checked_at": "2026-11-21",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": false,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0055.md",
@@ -1481,7 +1598,20 @@
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "The ai reflexivity checklist (arc) a pre analysis pause for llm assisted coding",
-      "title_candidate_only": true
+      "title_candidate_only": true,
+      "public_work_metadata_screen": {
+        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "doi": "10.1177/10497323251401503",
+        "title": "The AI-Reflexivity Checklist (ARC): A Pre-Analysis Pause for LLM-Assisted Coding",
+        "authors": "Andrew Prahl",
+        "year": "2025 online; 2026 journal issue",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41441839/",
+        "checked_at": "2026-11-21",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": false,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0056.md",
@@ -1734,7 +1864,20 @@
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "We reject the use of generative artificial intelligence for reflexive qualitative research",
-      "title_candidate_only": true
+      "title_candidate_only": true,
+      "public_work_metadata_screen": {
+        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "doi": "10.1177/10778004251401851",
+        "title": "We Reject the Use of Generative Artificial Intelligence for Reflexive Qualitative Research",
+        "authors": "Tanisha Jowsey; Virginia Braun; Victoria Clarke; Deborah Lupton; Michelle Fine; 414 additional signatories",
+        "year": "2025",
+        "url": "https://journals.sagepub.com/doi/10.1177/10778004251401851",
+        "checked_at": "2026-11-21",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": false,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0064.md",
@@ -1921,7 +2064,20 @@
       "has_original_public_pdf": false,
       "public_pdf_path": null,
       "title_candidate_from_filename": "Qualitative content analysis with chatgpt pitfalls rough approximations and gross",
-      "title_candidate_only": true
+      "title_candidate_only": true,
+      "public_work_metadata_screen": {
+        "status": "PUBLIC_WORK_BIBLIOGRAPHY_CHECKED_NOT_PRIVATE_ARCHIVE_FILE",
+        "doi": "10.17169/fqs-26.1.4252",
+        "title": "Qualitative Content Analysis With ChatGPT: Pitfalls, Rough Approximations and Gross Errors. A Field Report",
+        "authors": "Philipp Mayring",
+        "year": "2025",
+        "url": "https://doaj.org/article/00be4819aded4a7ebc37e917a54a0b9f",
+        "checked_at": "2026-11-21",
+        "original_archive_pdf_version_verified": false,
+        "original_archive_pdf_read": false,
+        "original_archive_pdf_redistribution_authorized": false,
+        "scientific_card_review_approved": false
+      }
     },
     {
       "path": "knowledge/methodology/source_cards/src-0070.md",
@@ -12382,5 +12538,6 @@
     }
   ],
   "provisional_filename_title_cards": 71,
-  "identities_still_unresolved": 71
+  "identities_still_unresolved": 71,
+  "public_bibliographic_work_checks": 12
 }

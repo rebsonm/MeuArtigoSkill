@@ -1,7 +1,7 @@
 # Checklist de reflexividade para LLMs: pausa de decisão antes da codificação
 
 - Status científico: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Identificação bibliográfica: Andrew Prahl (2025). DOI: 10.1177/10497323251401503
+- Identificação bibliográfica: Andrew Prahl (online em 2025; edição do periódico em 2026). DOI: 10.1177/10497323251401503
 - Fonte pública consultada: https://journals.sagepub.com/doi/10.1177/10497323251401503
 - Registro de origem do inventário privado: SRC-0055 (correspondência por título, não por identidade de bytes/edição)
 - Escopo da consulta: página editorial, resumo ou texto aberto da publicação; PDF PRIVADO NÃO CONSULTADO NESTA ETAPA
