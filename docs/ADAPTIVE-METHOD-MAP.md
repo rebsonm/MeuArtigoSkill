@@ -580,3 +580,49 @@ Review targets are possible dependencies, not verified edges. This feature
 does not validate semantic support, perform selective revalidation, approve
 human decisions, or prove scientific originality. It is absent from the
 published v0.9.0-beta.6 reference pending a separately approved integration.
+
+## Cross-route change preview (stage 2 development branch; Skill only)
+
+The same read-only method field preflight now returns `method_change_impact`
+for every canonical field of the eight configured research routes whenever
+the researcher supplies a proposed text file. The preview reuses the current
+METHOD_PROFILE.json and does not change the canonical data schema.
+
+Coverage is *conservative* and explicitly limited:
+
+- Exact strings: `IDENTICAL_FIELD_NO_NEW_REVIEW`, with no added targets.
+- Boundary whitespace or CRLF/LF differences: `BOUNDARY_FORMATTING_ONLY_NO_NEW_REVIEW`.
+- Any other prose difference: `TEXT_CHANGED_SEMANTIC_IMPACT_UNKNOWN`.
+- Change in declared canonical enum (quantitative inference, mixed-method
+  design or integration type): `CANONICAL_DESIGN_LABEL_CHANGED_REVIEW_REQUIRED`.
+- Missing baseline: `NO_RECORDED_BASELINE`; invalid or blocked proposal:
+  `INVALID_OR_BLOCKED_PROPOSAL_NOT_COMPARED`.
+- Old/proposed invalid canonical enums: `INVALID_CANONICAL_ENUM_NOT_COMPARED`.
+
+The candidate documents a few route-specific *potential* dependencies:
+integrative review selection; systematic review eligibility; problematizing
+review assumptions; conceptual theory problem; qualitative sampling;
+quantitative inference aim; mixed design/integration type; design-science
+evaluation plan. Other fields are still compared, but return
+`FIELD_ONLY_UNMAPPED` rather than inventing downstream dependencies.
+
+Potential review targets identify fields a researcher might check. They
+DO NOT mean those fields have been invalidated, or that a changed field
+necessarily constitutes a scientific redesign. Internal whitespace changes
+and other editorial rewrites cannot be classified semantically by the code;
+the status deliberately remains unknown instead of silently approving them.
+Only literal/enum differences and known field names are checked.
+
+The original PR #95 `inference_change_impact` output is retained for
+compatibility. The existing write block for recorded fields is unchanged.
+The preview never updates DEC/TRACE, gates, evidence, snapshots, or Drive;
+there is no MCP server dependency and no new scientific approval mechanism.
+The published v0.9.0-beta.6 reference and the article corpus are unaffected.
+
+Reproduce on an authorized local project (draft file holds researcher text):
+
+    python scripts/method_fill_preflight.py /authorized/project --field evaluation_plan --draft-file /authorized/new-evaluation-plan.txt
+
+Engineering tests with synthetic scenarios verify the behavior; they do not
+prove methodological adequacy, independent scientific evaluation or user
+benefit. Human review and actual project permissions remain mandatory.
