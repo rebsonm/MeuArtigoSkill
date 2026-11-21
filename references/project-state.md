@@ -281,3 +281,23 @@ treating it as legacy. Only local confirmed executions are checked;
 the audit does not itself validate interpretation, causality, external
 API retrieval, paper quality or claimed human reviews.
 
+### Guided continuation and evidence-bounded repeat warnings (candidate)
+
+In conversation, show **one** next action selected by the existing router,
+its reason, expected evidence and a verifiable exit criterion. For an
+explicitly authorized local fallback project, use
+`python scripts/research_resume_brief.py PROJECT --format guided`.
+The existing `--format json` option exposes technical details on demand.
+
+A cycle warning is only diagnostic: two consecutive equivalent local
+executions with hash-linked TRACE receipts, unchanged inputs and no new
+output verified. Do not blindly propose a third identical attempt; explain
+the specific obstacle, the minimum remedy and a permitted independent
+alternative when available. Periodic checks, actual new evidence and
+incomplete attempt history must not be incorrectly blocked. The suggested
+exit criterion does not approve a gate or certify a completed study.
+For Drive-canonical projects, verify access with authorized connected
+tools; a local mirror never proves synchronization.
+
+Contract and measures: [guided continuity and anti-loop assessment]
+(../docs/CONTINUIDADE-GUIADA-ANTICIRCULARIDADE.md).
