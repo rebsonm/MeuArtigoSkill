@@ -4785,13 +4785,14 @@
         "authors": "Carlos Closa",
         "year": "2021",
         "public_url": "https://doi.org/10.1057/s41304-020-00299-2",
-        "original_archive_pdf_version_verified": true,
+        "original_archive_pdf_version_verified": false,
         "original_archive_pdf_read": true,
         "original_archive_pdf_redistribution_authorized": false,
         "scientific_card_review_approved": false,
         "public_binary_in_github": false,
         "original_pdf_screen_limited": true,
-        "provenance_note": "Publisher/book public metadata resolved author"
+        "provenance_note": "Work title directly found in archived manuscript; Carlos Closa and final article DOI separately checked against public publisher entry. Do not assert this file is identical to version of record.",
+        "publisher_version_uncertain": true
       }
     },
     {
@@ -9841,7 +9842,8 @@
         "public_binary_in_github": false,
         "original_pdf_screen_limited": true,
         "provenance_note": null
-      }
+      },
+      "work_duplicate_of": "SRC-0206"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0338.md",
