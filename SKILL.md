@@ -230,20 +230,10 @@ Consult the
 
 **Next/próximo:** Use [authorized continuity and C.A.D.A.](references/project-state.md). For local approved fallback, run `scripts/next_step_router.py PROJECT`. Navigation never approves a gate or verifies Drive sync.
 
-**Guided continuation (development candidate):** When a local fallback project is
-explicitly authorized, prefer `python scripts/research_resume_brief.py PROJECT --format guided`
-for a concise explanation of where the research stands, what was recorded, the
-single next action and its concrete exit condition. Use `--format json`
-or the existing dashboard for technical details on request. Both views reuse
-the same next-step router; neither grants permission. For a Drive-canonical
-project, obtain the actual state from the connected authorized Drive; a local
-copy cannot authenticate access or synchronization. If the read-only cycle
-signal finds two equivalent failed/partial local operations with verified
-matching TRACE receipts and unchanged inputs/outputs, diagnose the obstacle
-before recommending a third identical operation. Missing proof and periodic
-checks are not considered loops; a meaningful new attempt remains allowed.
-Do not mark a scientific task or gate completed solely because its exit
-condition is described.
+**Guided continuation (candidate):** For an authorized local fallback, run
+`scripts/research_resume_brief.py PROJECT --format guided`; explain one action,
+its exit criterion and evidence-bounded repeat alerts. Never infer Drive sync
+or scientific approval. See [guidance](docs/CONTINUIDADE-GUIADA-ANTICIRCULARIDADE.md).
 
 **Native in-chat visual dashboard:** For progress requests, read the
 authorized canonical project and follow the
