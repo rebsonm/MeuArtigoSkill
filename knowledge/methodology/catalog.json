@@ -1,0 +1,92 @@
+{
+  "contains_third_party_full_text": false,
+  "documents": [
+    {
+      "keywords": [
+        "integrative",
+        "integrativa",
+        "revisão",
+        "review",
+        "systematic",
+        "sistemática",
+        "snyder",
+        "literatura",
+        "sintese",
+        "síntese",
+        "scoping",
+        "salsa"
+      ],
+      "path": "knowledge/methodology/cards/reviews.md",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "sha256": "331db84256e59599d0a8674b0064d9c3058a9261917efb03e403f083dfcde8af",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "title": "Literature reviews and integrative synthesis"
+    },
+    {
+      "keywords": [
+        "desenho",
+        "design",
+        "onion",
+        "cebola",
+        "causal",
+        "quantitativa",
+        "quantitative",
+        "inferência",
+        "inference",
+        "pergunta",
+        "question",
+        "método",
+        "methodology"
+      ],
+      "path": "knowledge/methodology/cards/design.md",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "sha256": "d819d33b1a2f93b8a521f870e09cdac32c7fb18333eabd0b8be82f4de314b142",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "title": "Study design and research inference"
+    },
+    {
+      "keywords": [
+        "qualitative",
+        "qualitativa",
+        "temática",
+        "thematic",
+        "reflexiva",
+        "reflexive",
+        "entrevista",
+        "coding",
+        "codificação",
+        "grounded",
+        "narrativa"
+      ],
+      "path": "knowledge/methodology/cards/qualitative.md",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "sha256": "cab9733a5fe55f3e91e17e0a8a549b9e74d076d09cf2587f8111c0a35dbbf4b6",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "title": "Qualitative analysis and thematic approaches"
+    },
+    {
+      "keywords": [
+        "artefato",
+        "artifact",
+        "design",
+        "science",
+        "dsr",
+        "avaliação",
+        "evaluation",
+        "prototype",
+        "protótipo",
+        "validação",
+        "validation"
+      ],
+      "path": "knowledge/methodology/cards/design-science.md",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "sha256": "fefdaa9fc5847a397dff9c065f42e910032fddf08dfbfae04bbf4fdc7a085256",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "title": "Design science and artifact evaluation"
+    }
+  ],
+  "license": "Apache-2.0 (original editorial cards only)",
+  "repository": "rebsonm/MeuArtigoSkill",
+  "schema": "MEU_ARTIGO_GITHUB_METHODOLOGY_V1",
+  "version": "pilot-2026-11-21"
+}

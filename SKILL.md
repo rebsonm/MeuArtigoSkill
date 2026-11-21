@@ -115,6 +115,9 @@ without this setting retain `FULL`. This changes only what is presented,
 not scientific checks: [minimal/full](docs/MODO-NUCLEO-MINIMO.md).
 Both modes follow the researcher's current language.
 
+## Optional extended conceptual methodology
+The bundled methodological map is sufficient for offline guidance. On explicit methodology-retrieval needs, consult [the optional pinned GitHub reference](references/GITHUB-METHODOLOGY.md). Do not fetch external material at installation, assume host network tools exist, preload the knowledge base or infer scientific [L] evidence from a curated card. No third-party full texts are bundled or automatically imported.
+
 ## 3. Progressive reading — do not load every document
 
 Use the [stage-context map](references/CONTEXTO-POR-ETAPA.md) to load
