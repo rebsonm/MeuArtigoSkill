@@ -155,9 +155,22 @@ Data: 2026-11-21. Branch: `work/v1-11-20261121`. Manifesto fixo: commit `7c92045
 
 ## Incidente de concorrência no MD canônico — 21/11/2026
 
-- Arquivo canônico: ID Drive `1-dccVbAUX5-xLw6fq027cB15oVqOjl_U`, mesmo MD, sem criar substituto.
+- Arquivo canônico: ID Drive `[identificador privado omitido]`, mesmo MD, sem criar substituto.
 - Registro inicial da etapa `EM_EXECUCAO`: gravado e confirmado na subseção 31.11.
 - Atualização de evolução: Drive confirmou `success=true` às `2026-11-21T22:23:38.778Z`, tamanho 321425 bytes; leitura após essa gravação confirmou os commits e o parecer 17/17.
 - Novo snapshot Drive às `2026-11-21T22:23:43.573Z`, tamanho 321701 bytes: a subseção 31.11 retornou ao conteúdo anterior de início (sem evolução), enquanto outras seções avançaram. Indício documentado de sobrescrita concorrente por outra aba usando base anterior.
 - **Decisão de segurança:** **não gravar novamente o MD** até reconciliação coordenada/sem escrituras concorrentes; preservar o estado remoto e não alegar conclusão de sincronização canônica. O trabalho editorial e os recibos GitHub continuam válidos, mas o requisito de atualização na conclusão ficou **BLOQUEADO POR CONFLITO**.
 - Próximo passo: coordenar pausa de escritores, reler MD canônico mais recente, comparar as subseções adjacentes e reaplicar somente a 31.11 a partir de uma base conciliada, validando hash e leitura pós-escrita; jamais substituir cegamente o Markdown bruto.
+
+
+## Continuidade verificada — rechecagem pós-incidente de concorrência (21/11/2026)
+
+- **FEITO NOVO (revalidação):** relidos diretamente, no snapshot imutável `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`, os 17 Markdown autorizados EC-0124…EC-0140. Os **17 hashes SHA-1 dos blobs Git** retornados coincidem com os 17 hashes preservados nos recibos anteriores. As classificações individuais já registradas foram **mantidas**, sem refazer a curadoria nem editar cards. Este teste confirma integridade e continuidade documental, **não** a validade científica das afirmações ou as licenças.
+- **Escopo:** rechecado o diff da branch contra o commit do manifesto `7c92045310eb3b1474a9612a777fb0012a511592`: HEAD anterior `a16385d456595aa9b3afd5dac5ab49d2d41c0b91`, quatro commits, zero atrás, exatamente dois caminhos exclusivos (RESULTS/DELTA). Não havia PR exclusiva da V1-11 identificada na consulta; a PR #101 não deve ser confundida com esta etapa.
+- **CI:** consulta ao commit anterior retornou **0 statuses, 0 check runs e 0 workflow runs**. Portanto, não declarar CI/testes automatizados executados ou aprovados; houve somente conferência de blobs, escopo e integridade textual.
+- **Precisão dos status:** `DRAFT_NEEDS_INDEPENDENT_REVIEW` é a classificação **do manifesto** para os 17 caminhos; os próprios cards usam também expressões editoriais de revisão independente pendente. Não confundir a classificação de metadados com presença literal dessa string em cada Markdown.
+- **Privacidade:** referência ao identificador privado do MD canônico foi omitida da **versão corrente deste recibo**. O histórico anterior do Git permanece intacto, exigindo tratamento próprio na trilha de segurança; nenhuma revisão de histórico, alteração de ACL ou alegação de remoção histórica foi feita.
+- **EM EXECUÇÃO / BLOQUEIOS:** comprovação por fonte primária e edição/cópia, cadeia de licença, checagem de originalidade e revisão científica independente, inclusive para os 10 pareceres condicionais e os 7 pedidos de correção. A sincronização do **corpo bruto** da subseção 31.11 segue bloqueada por concorrência, conforme incidente documentado; o acompanhamento seguro deve ocorrer por comentário no mesmo arquivo até haver janela exclusiva ou mecanismo CAS.
+- **PRÓXIMA AÇÃO ÚNICA:** obter uma janela de escrita exclusiva e conciliar **somente a subseção 31.11** com os recibos atuais, comprovando ausência de alterações em seções adjacentes por leitura e comparação antes/depois. Critério: leitura posterior confirma FEITO/EM EXECUÇÃO/PRÓXIMA AÇÃO e preservação integral das demais seções; caso contrário, não gravar o Markdown.
+
+A revalidação não configura aprovação jurídica, científica, de segurança, GO nem autorização de V1-16, merge, tag, release ou publicação de PDFs.
