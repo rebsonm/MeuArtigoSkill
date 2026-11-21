@@ -1,26 +1,26 @@
-# Inventário do acervo metodológico — etapa de licença
+# Methodological research archive inventory — licensing review
 
-**Estado (21/11/2026):** inventário concluído, redistribuição **não** autorizada em bloco.
+**Status (2026-11-21):** inventory completed; blanket public redistribution of the original PDFs is **not authorized**.
 
-- Origem: pasta temática de pesquisa indicada pelo proprietário (IDs do Google Drive deliberadamente excluídos deste repositório público).
-- Escopo inspecionado: **70 pastas de primeiro nível + 5 subpastas**, totalizando **475 PDFs**.
-- Volume informado pela metadata do Drive: **688.482.286 bytes** (aproximadamente **688,5 MB**, antes de qualquer deduplicação).
-- Entre os 475 arquivos, existem **466 nomes de arquivo distintos**; nomes repetidos **não** comprovam conteúdo duplicado.
-- Maior PDF cadastrado: aproximadamente 91,5 MB. Todos os arquivos encontrados possuem menos de 100 MB, mas isso não implica viabilidade/recomendação de versioná-los no Git.
-- Publicações efetivamente incluídas na branch: consultar `../pdf_catalog.json`; só documentos com redistribuição individualmente verificada podem entrar em `../pdfs/`.
+- Source: a thematic research archive identified by its owner. Google Drive IDs and account details are intentionally excluded from this public repository.
+- Enumerated scope: **70 top-level folders and 5 nested folders, containing 475 PDFs**.
+- Size according to Drive metadata: **688,482,286 bytes (approximately 688.5 MB)** before deduplication.
+- The 475 files have **466 distinct filenames**; repeated names do not establish identical file contents.
+- Largest recorded PDF: approximately 91.5 MB. Every observed file is smaller than 100 MB; that fact does not make it advisable or lawful to put the files into Git.
+- Original PDFs actually published in this branch are explicitly listed in `../pdf_catalog.json`. Only sources with separately verified redistribution rights may be committed in `../pdfs/`.
 
-## Partes do inventário
+## Metadata inventory files
 
-1. [Parte 01 — primeiras 18 pastas](./drive-source-candidates-part-01.json) — 170 PDFs
-2. [Parte 02 — próximas 18 pastas](./drive-source-candidates-part-02.json) — 100 PDFs
-3. [Parte 03 — próximas 18 pastas](./drive-source-candidates-part-03.json) — 104 PDFs
-4. [Parte 04 — 16 pastas finais](./drive-source-candidates-part-04.json) — 66 PDFs
-5. [Parte 05 — 5 subpastas](./drive-source-candidates-part-05.json) — 35 PDFs
+1. [Part 01 — first 18 folders](./drive-source-candidates-part-01.json): 170 PDFs
+2. [Part 02 — next 18 folders](./drive-source-candidates-part-02.json): 100 PDFs
+3. [Part 03 — next 18 folders](./drive-source-candidates-part-03.json): 104 PDFs
+4. [Part 04 — last 16 folders](./drive-source-candidates-part-04.json): 66 PDFs
+5. [Part 05 — five nested folders](./drive-source-candidates-part-05.json): 35 PDFs
 
-Cada entrada representa **metadados**, não o PDF. `rights_status: NOT_REVIEWED` marca ausência de atestado de redistribuição no inventário. A licença é comprovada em separado, por arquivo, no catálogo de PDFs publicados. Acesso por link público, DOI ou uso acadêmico pessoal **não** tornam automaticamente um arquivo redistribuível.
+These entries are **metadata, not PDF contents**. The value `rights_status: NOT_REVIEWED` identifies an unverified redistribution right, not a presumption of permission. Each published PDF requires its own verified license evidence in the public PDF catalog. A DOI, openly shared Drive link, or personal academic access alone does **not** establish redistribution permission.
 
-**Regra:** nunca publicar um PDF protegido no repositório público, em qualquer branch, Git LFS, Actions ou Release, sem evidência documental da licença. Não colocar IDs, URLs privados, tokens, dados pessoais de acesso ou cópias de livros protegidos nos metadados públicos. Links bibliográficos e sínteses autorais são permitidos nos termos aplicáveis.
+**Guardrail:** do not upload a protected PDF into this public repository, its branches, Git LFS, Actions artifacts or Releases unless the public redistribution license is properly documented. Do not expose private account IDs, secret tokens, cloud credentials or restricted full texts in public metadata. Bibliographic links and original editorial syntheses may be included subject to applicable terms.
 
-Para um eventual repositório GitHub **privado e dedicado** (separado do código público), ainda será preciso comprovar que o armazenamento e o acesso pretendidos são autorizados. A Skill só poderá ler fontes privadas com autenticação legítima no host; não inserir credenciais no ZIP público. Sem isso, a consulta privada não pode ser anunciada como disponível.
+A separate **private GitHub repository** would still require lawful storage and access, and authenticated host permissions for the installed Skill. Never embed credentials inside a publicly distributable ZIP.
 
-**Estado funcional:** inventário completo ≠ corpus integral instalado ≠ recuperação vetorial homologada. A instalação da Skill deve continuar leve; índices e documentos permanecem fora do ZIP.
+**Functional distinction:** a complete metadata inventory is not a full text corpus and does not demonstrate validated vector retrieval. The installed Skill must remain small, with indexes and source documents excluded from the installer.
