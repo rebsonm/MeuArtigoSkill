@@ -1,6 +1,6 @@
 # Methodological PDFs — rights and attribution
 
-This public corpus contains **33 source PDFs** with documented publisher or repository licensing statements for Creative Commons Attribution 4.0 International (CC BY 4.0). They are **not** covered by the repository's Apache-2.0 software license. The binary PDF copies are unmodified; no endorsement by their authors or journals is implied.
+This public corpus contains **35 source PDFs** with documented publisher or repository licensing statements for Creative Commons Attribution 4.0 International (CC BY 4.0). They are **not** covered by the repository's Apache-2.0 software license. The binary PDF copies are unmodified; no endorsement by their authors or journals is implied.
 
 License: https://creativecommons.org/licenses/by/4.0/
 
@@ -61,3 +61,8 @@ These originals remain outside the installer; verified source DOI, authors and S
 - Bart Penders (2018), *Ten simple rules for responsible referencing*. DOI https://doi.org/10.1371/journal.pcbi.1006036. Source https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006036. Original file plos-pcbi-1006036.pdf, SHA256 093a8ad0fd8501b87981bbc99219411418e04f07d17e7ae33bb9edbe577881c3.
 - Vishal H. Oza; Jordan H. Whitlock; Elizabeth J. Wilk; Angelina Uno-Antonison; Brandon Wilk; Manavalan Gajapathy; Timothy C. Howton; Austyn Trull; Lara Ianov; Elizabeth A. Worthey; Brittany N. Lasseigne (2023), *Ten simple rules for using public biological data for your research*. DOI https://doi.org/10.1371/journal.pcbi.1010749. Source https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010749. Original file plos-pcbi-1010749.pdf, SHA256 91f24205d15596227407fc5ade92c71d37c86dd1fc589b8dc1d64d7c7dd38ed0.
 - Volker Grimm; Uta Berger; Stefano Mammola (2026), *Ten simple rules for making the supplement increase your paper’s impact*. DOI https://doi.org/10.1371/journal.pcbi.1014419. Source https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1014419. Original file plos-pcbi-1014419.pdf, SHA256 ad679a03d64fbbede69aebb6cc2b418d218672ff44223b9ff0d41f473114f9f3.
+
+## Two additional journal PDFs from the research archive (CC BY 4.0)
+
+- Dias, E. G.; Mishima, S. M. (2023), *Análise temática de dados qualitativos: uma proposta prática para efetivação*. DOI https://doi.org/10.12957/sustinere.2023.71828. [Official journal licensing statement](https://doi.org/10.12957/sustinere.2023.71828). Unchanged `dias-mishima-2023-thematic-analysis.pdf`; SHA256 `9d623d1f2e22d8d93b571ded0eb9f34e5b6062669ee32f47f12fca67aad97d7a`.
+- Campos, C. J. G.; Saidel, M. G. B. (2022), *Amostragem em investigações qualitativas: conceitos e aplicações ao campo da saúde*. DOI https://doi.org/10.33361/RPQ.2022.v.10.n.25.545. [Official journal CC BY 4.0 statement](https://editora.sepq.org.br/rpq/article/view/545). Unchanged `campos-saidel-2022-qualitative-sampling.pdf`; SHA256 `b3e78db1e163a787ec0ac08c44fca1cbb2c664f53564581128779c65a8ddd1a8`.
