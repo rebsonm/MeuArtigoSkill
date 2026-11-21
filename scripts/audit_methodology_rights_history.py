@@ -14,8 +14,8 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 INCIDENTS = Path("knowledge/methodology/intake/rights-history-incidents.json")
-HEX40 = re.compile(r"[a-f0-9]{40}\\Z")
-SAFE_PATH = re.compile(r"knowledge/methodology/pdfs/[a-z0-9][a-z0-9_-]*\\.pdf\\Z")
+HEX40 = re.compile(r"[a-f0-9]{40}\Z")
+SAFE_PATH = re.compile(r"knowledge/methodology/pdfs/[a-z0-9][a-z0-9_-]*\.pdf\Z")
 
 
 def _git(root: Path, *arguments: str, allow_missing: bool = False) -> str | None:
