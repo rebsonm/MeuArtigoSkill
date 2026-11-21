@@ -70,3 +70,11 @@ Designar ao menos um revisor científico e um revisor de direitos/originalidade 
 **Acompanhamento seguro do MD:** nova leitura do arquivo canônico `text/markdown` mostrou o corpo da seção 31.10 ainda em `EM_EXECUCAO` e texto antigo de recibos em desenvolvimento. Por ausência de edição parcial com controle transacional e histórico de corrida, NÃO se realizou substituição integral dos bytes. Registrar o resumo em comentário ancorado na seção 31.10, após readback dos recibos. Esta limitação persiste e não é homologação.
 
 **PRÓXIMA AÇÃO ÚNICA:** obter da fonte/autoria responsável a identificação e a licença explícita da versão/cópia exata do EC-116 (`10.5281/zenodo.17343830`), com evidência de permissão ou restrição documentada, antes de decidir eventual reutilização pública; em paralelo, nenhuma integração ou publicação é autorizada.
+
+
+### Confirmação do comentário no MD canônico — sem edição do corpo
+
+- Em 21/11/2026, foi criado e relido no **mesmo arquivo canônico** um comentário contextualizado no título exato da seção 31.10, registrando **FEITO / EM EXECUÇÃO / PRÓXIMA AÇÃO**, os dois commits `36e4beca1727153be20b1a92be94d5eed1eb1afa` e `8cbad9b84606d1738e681616ea4dedd39704722c`, os blobs dos recibos, os limites dos testes e as pendências de direitos/ciência. A consulta posterior confirmou texto e presença do comentário.
+- A leitura do arquivo após o comentário continuou a mostrar a seção 31.10 antiga, `EM_EXECUCAO`: **corpo do arquivo Markdown NÃO atualizado**. Não foi executada gravação integral ou substituição sem proteção transacional.
+- O controle canônico desta continuidade está no comentário e nestes recibos; reconciliar o corpo 31.10 somente com janela exclusiva ou mecanismo CAS verificado. A ação científica seguinte segue **a obtenção de licença/versão exata de EC-116**, sem autorizar V1-16.
+- Recibos: https://github.com/rebsonm/MeuArtigoSkill/blob/work/v1-10-20261121/knowledge/methodology/intake/v1_parallel/V1-10-RESULTS.md e https://github.com/rebsonm/MeuArtigoSkill/blob/work/v1-10-20261121/knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json .
