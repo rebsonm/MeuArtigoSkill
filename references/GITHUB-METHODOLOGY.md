@@ -49,4 +49,36 @@ python scripts/consult_public_methodology.py --question 'How should I justify a 
 
 The command **does not run automatically at installation**. Its immutable trial commit covers 63 cards and 35 public PDFs; a future snapshot change requires an explicit reviewed code update. An authorized maintainer may supply an alternative exact 40-hex `--ref` for tests. The reader downloads only relevant cards and, at most, one metadata-matched PDF. If a local PDF parser is unavailable or blocked, it reports the limitation and does not invent a PDF reading. The API outputs separate statuses for editorial card guidance [I], actual PDF page extraction needing primary-source/printed-page review, and source unavailability. Metadata or a card's bibliographic DOI is not direct [L] evidence for a manuscript.
 
-**Publication state:** the 19 new cards are marked `DRAFT_NEEDS_INDEPENDENT_REVIEW`, and the four earlier cards lack an independent review receipt. Treat all as provisional editorial guidance. Neither a technical hash nor an open license proves source interpretation. The Python client does not expose the protected private archive. The installed module and ZIP require hands-on testing in a clean supported host before any public release decision.
+**Publication state:** the 59 newer editorial cards are marked `DRAFT_NEEDS_INDEPENDENT_REVIEW`, and the four earlier cards lack an independent review receipt. Treat all as provisional editorial guidance. Neither a technical hash nor an open license proves source interpretation. The Python client does not expose the protected private archive. The installed module and ZIP require hands-on testing in a clean supported host before any public release decision.
+
+## Third optional channel: all 475 bibliographic source leads
+
+The user's methodology archive is now **indexed in full as 475 source-specific
+prospecting cards**, separate from the **63 original method/editorial cards**
+and **35 license-reviewed public PDFs**. The source-card register resolves
+**404 provisional bibliographic titles** and marks 71 identities unresolved.
+It intentionally contains no personal PDF binaries, private file IDs or text
+excerpts; most source identities and reuse permissions require manual review.
+
+When Python and HTTPS are genuinely available, invoke the separate opt-in
+read-only source registry client:
+
+```sh
+python scripts/consult_source_registry.py --question 'institutional grammar in policy research'
+```
+
+This is a bibliography/prospecting channel: every result is **[P] methodological
+consultation guidance, not [I] a verified interpretation of the named source
+and never [L] primary evidence**. The 475 cards give source identification,
+the topic and an original research decision prompt based on that topic.
+They do not certify that all 475 original works were read or that their
+copyright permits publication. A text referring to one source must not be
+cited as a primary-source reading. The registry is pinned at an exact immutable
+Git commit, validates each card hash and blocks retrieval outside the explicit
+public source-card path. When a source can be read lawfully, a separate human-
+reviewed substantive editorial card may be added to the 63-card catalogue.
+Neither this client nor metadata matching downloads a user's private PDFs.
+
+For public use, preserve three distinct labels in every interface: **63 draft
+editorial methodology cards**, **35 publicly licensed PDF originals**, and
+**475 bibliographic prospecting leads**. These populations can overlap.
