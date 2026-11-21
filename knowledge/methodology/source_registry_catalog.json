@@ -1,6 +1,6 @@
 {
   "schema": "MEU_ARTIGO_SOURCE_CARD_INDEX_V1",
-  "version": "pilot-2026-11-21-475-leads-3-verified-public-sources",
+  "version": "pilot-2026-11-21-475-prospect-cards-71-title-candidates",
   "source_archive_records": 475,
   "catalogue_identified_titles": 404,
   "source_text_read_in_ledger": 3,
@@ -140,8 +140,8 @@
     {
       "path": "knowledge/methodology/source_cards/src-0006.md",
       "source_id": "SRC-0006",
-      "title": "Documento ainda não identificado: Livro Desenhos de Pesquisa em Pol¡tica Comparada.pdf",
-      "topic": "Pol¡tica Comparada",
+      "title": "Identificação ainda não verificada — Livro Desenhos de Pesquisa em Política Comparada",
+      "topic": "Política Comparada",
       "keywords": [
         "tica",
         "comparada",
@@ -149,13 +149,15 @@
         "desenhos",
         "src-0006"
       ],
-      "sha256": "065405cda6a82073c43c06d0b4976cac965476f687dbc6750ca3a8eff9c76c72",
+      "sha256": "a0b9c277c8c82c31ff21d9bbd0175524bc78c408443ad69aa27de19f5b7bee65",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Livro Desenhos de Pesquisa em Política Comparada",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0007.md",
@@ -259,7 +261,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0011.md",
       "source_id": "SRC-0011",
-      "title": "Documento ainda não identificado: Silvaetal,2020.pdf",
+      "title": "Identificação ainda não verificada — NENHUM — somente nome opaco",
       "topic": "An lise Documental",
       "keywords": [
         "lise",
@@ -268,13 +270,15 @@
         "2020",
         "src-0011"
       ],
-      "sha256": "3f9fb0a89b7881775485a8debacabf684b92ea8f8ecd9804f1c52a5839b82307",
+      "sha256": "6e7f3b5f3a717f4f2cd1939dd061fb6c14026c31682bdf7ee277fe881ff828c9",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": null,
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0012.md",
@@ -863,7 +867,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0036.md",
       "source_id": "SRC-0036",
-      "title": "Documento ainda não identificado: Longino.pdf",
+      "title": "Identificação ainda não verificada — Longino",
       "topic": "Epistemologia Feminista",
       "keywords": [
         "epistemologia",
@@ -871,19 +875,21 @@
         "longino",
         "src-0036"
       ],
-      "sha256": "9633303aac3e9c7cdb115aac83799e55184ffaf7326920a86e36895264f7c0ff",
+      "sha256": "72cf075e2ba951a89214a5f27b0bae0b44b270dd7b7be41aff2e0b4f85871253",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Longino",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0037.md",
       "source_id": "SRC-0037",
-      "title": "Documento ainda não identificado: ibrahim-voyer-2025-qualitative-research-with-llm-chatbots-technological-reflexivity-for-interpretative-technology.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Qualitative research with llm chatbots technological reflexivity for interpretative technology",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -900,19 +906,21 @@
         "technology",
         "src-0037"
       ],
-      "sha256": "4a73625c6f223f62972add975e206c56ee55d4ab87c529a006cb9d253c6197e9",
+      "sha256": "54edffa586007e0fbc2d3790024919cecd8b86f28cf28ed0c07083c0207f2ccc",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Qualitative research with llm chatbots technological reflexivity for interpretative technology",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0038.md",
       "source_id": "SRC-0038",
-      "title": "Documento ainda não identificado: misra-et-al-2026-large-language-models-in-qualitative-analysis-comparing-traditional-and-researcher-interpreted.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Large language models in qualitative analysis comparing traditional and researcher interpreted",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -931,19 +939,21 @@
         "interpreted",
         "src-0038"
       ],
-      "sha256": "5d9e2e378ce31caa4b14a8f5719febb521eecb8deaa7b59719bf0519517cb202",
+      "sha256": "bec8acef008dcffb4e3ca63da0ba7a82da0fc7112b157f4bab720f1bea505f61",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Large language models in qualitative analysis comparing traditional and researcher interpreted",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0039.md",
       "source_id": "SRC-0039",
-      "title": "Documento ainda não identificado: nguyen-welch-2025-generative-artificial-intelligence-in-qualitative-data-analysis-analyzing-or-just-chatting.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Generative artificial intelligence in qualitative data analysis analyzing or just chatting",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -962,19 +972,21 @@
         "chatting",
         "src-0039"
       ],
-      "sha256": "0470ed7a262208873634c86dfcb556fec7d7706ecefcf5ebcc54d6ca065a9d82",
+      "sha256": "404262d0ff5da90ec2a52542bef6e809dff1f2020abcb130c2fca710ba8f3222",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Generative artificial intelligence in qualitative data analysis analyzing or just chatting",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0040.md",
       "source_id": "SRC-0040",
-      "title": "Documento ainda não identificado: Quevedo, Kuri, 2026 - AI for Qualitative.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — AI for Qualitative",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -986,19 +998,21 @@
         "qualitative",
         "src-0040"
       ],
-      "sha256": "cf55f5bfcada09c27fb26e6375dfe153cf7aafe76b559e7789e5e46e47e5b6b8",
+      "sha256": "e823f5731dc766487426efb351323daf3cea5fef3d76797feef766dd2c600975",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "AI for Qualitative",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0041.md",
       "source_id": "SRC-0041",
-      "title": "Documento ainda não identificado: friese-2026-from-coding-to-conversation-a-new-methodological-framework-for-ai-assisted-qualitative-analysis.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — From coding to conversation a new methodological framework for ai assisted qualitative analysis",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1015,19 +1029,21 @@
         "analysis",
         "src-0041"
       ],
-      "sha256": "247aee413421354bba1f8e18f17313dd33c5a7b719c154f32571e2bf60b3cebb",
+      "sha256": "34ebd8e14d72fcff88feffded8483be5acfac686d82c625da0f90e181aa1048b",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "From coding to conversation a new methodological framework for ai assisted qualitative analysis",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0042.md",
       "source_id": "SRC-0042",
-      "title": "Documento ainda não identificado: jiang-et-al-2025-the-feasibility-and-comparability-of-using-artificial-intelligence-for-qualitative-data-analysis-in.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — The feasibility and comparability of using artificial intelligence for qualitative data analysis in",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1044,19 +1060,21 @@
         "analysis",
         "src-0042"
       ],
-      "sha256": "494a77693e8a67cad8a20c6cfde0efdb97f94e7cd616ad75d6a8ba133936ee53",
+      "sha256": "0603bcca5d0c6ada831d4c3ed8fd0bf15e2f973a2fdc726a347897b0774edde6",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "The feasibility and comparability of using artificial intelligence for qualitative data analysis in",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0043.md",
       "source_id": "SRC-0043",
-      "title": "Documento ainda não identificado: vikan-et-al-2025-reflecting-on-llm-support-in-reflexive-thematic-analysis-an-exploratory-study.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Reflecting on llm support in reflexive thematic analysis an exploratory study",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1073,19 +1091,21 @@
         "study",
         "src-0043"
       ],
-      "sha256": "b0fdd40562a463b3694d3fa44fd8eb632a49432dc334231260fd180633b42a74",
+      "sha256": "0f46adb095efc3e96f1c3c3a34fe862f169a36ef62bbb0327a728c96e10fd355",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Reflecting on llm support in reflexive thematic analysis an exploratory study",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0044.md",
       "source_id": "SRC-0044",
-      "title": "Documento ainda não identificado: wise-et-al-2026-why-ai-is-not-the-enemy-opportunities-to-strengthen-core-commitments-of-qualitative-inquiry-through.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Why ai is not the enemy opportunities to strengthen core commitments of qualitative inquiry through",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1103,19 +1123,21 @@
         "through",
         "src-0044"
       ],
-      "sha256": "079230ee8995c86f7acefb3148e94a5f5edb4d4e47dfe0dddb1c59eccd9029c1",
+      "sha256": "0da6eec8f2a06568e5bda6765107daf05759d07df78f8ce50efc3a217d7b9c0c",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Why ai is not the enemy opportunities to strengthen core commitments of qualitative inquiry through",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0045.md",
       "source_id": "SRC-0045",
-      "title": "Documento ainda não identificado: costa-et-al-2025-ai-as-a-co-researcher-in-the-qualitative-research-workflow-transforming-human-ai-collaboration.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Ai as a co researcher in the qualitative research workflow transforming human ai collaboration",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1131,19 +1153,21 @@
         "collaboration",
         "src-0045"
       ],
-      "sha256": "74d62fd987ccc492162ea0562f0caca4beb81fd8e4a9e313b1ae1a73c8774c38",
+      "sha256": "fc12ebdff3077c52cd9c841533ef0d1b77791fd1fac54d857cb42d4a9cd28b23",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Ai as a co researcher in the qualitative research workflow transforming human ai collaboration",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0046.md",
       "source_id": "SRC-0046",
-      "title": "Documento ainda não identificado: duarte-orchard-garcia-2025-resisting-refusing-reclaiming-reimagining-charting-challenges-to-narratives-of-ai-inevitability.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Resisting refusing reclaiming reimagining charting challenges to narratives of ai inevitability",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1163,19 +1187,21 @@
         "inevitability",
         "src-0046"
       ],
-      "sha256": "d57997e24404bd3ff18619bc17d217b97729141487b4ad1414ebfc8c28484700",
+      "sha256": "505ca145c005315815513a137ed030a91f5f799403305f25f0c7c260ed698661",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Resisting refusing reclaiming reimagining charting challenges to narratives of ai inevitability",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0047.md",
       "source_id": "SRC-0047",
-      "title": "Documento ainda não identificado: macgeorge-2025-conversations-with-my-data-exploring-the-potential-of-large-language-models-in-qualitative-futures.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Conversations with my data exploring the potential of large language models in qualitative futures",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1194,19 +1220,21 @@
         "futures",
         "src-0047"
       ],
-      "sha256": "ae8e318103bff98c5fe0f433d48e35fd07315504e301b455933b6ea1e23f2b28",
+      "sha256": "4df0758e26753207d6e5ae37ce2b3978a742232a9ab1aab8d58c55f529c98b45",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Conversations with my data exploring the potential of large language models in qualitative futures",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0048.md",
       "source_id": "SRC-0048",
-      "title": "Documento ainda não identificado: nguyen-trung-2025-chatgpt-in-thematic-analysis-can-ai-become-a-research-assistant-in-qualitative-research.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Chatgpt in thematic analysis can ai become a research assistant in qualitative research",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1223,19 +1251,21 @@
         "qualitative",
         "src-0048"
       ],
-      "sha256": "4884f9cf332948b3cc76f8265e7b024ca5a4b68482d60d781958f6c5306195f1",
+      "sha256": "0fb840c39c8a6dd3401befee41da046329252f7875fb15f37229034b2ad97044",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Chatgpt in thematic analysis can ai become a research assistant in qualitative research",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0049.md",
       "source_id": "SRC-0049",
-      "title": "Documento ainda não identificado: schroeder-et-al-2024-large-language-models-in-qualitative-research-uses-tensions-and-intentions.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Large language models in qualitative research uses tensions and intentions",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1252,19 +1282,21 @@
         "intentions",
         "src-0049"
       ],
-      "sha256": "bf301f9ec85dcc0382cd0077e5f4bb793ef7e824c8489c21897eab1edc476aae",
+      "sha256": "d58a4a5b512f6474e660666a08e4cf26d41c1626e968b798122194ca86148047",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Large language models in qualitative research uses tensions and intentions",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0050.md",
       "source_id": "SRC-0050",
-      "title": "Documento ainda não identificado: hayes-2025-conversing-with-qualitative-data-enhancing-qualitative-research-through-large-language-models-(llms).pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Conversing with qualitative data enhancing qualitative research through large language models (llms)",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1283,19 +1315,21 @@
         "llms",
         "src-0050"
       ],
-      "sha256": "589e3311b45a856b94c982f684ef0642124275b9eecff56fb83a0fa378c1417f",
+      "sha256": "7cae6c6d281e5920b86e5b18a7c38b124aa045c523b8893c5b1a28960e965a00",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Conversing with qualitative data enhancing qualitative research through large language models (llms)",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0051.md",
       "source_id": "SRC-0051",
-      "title": "Documento ainda não identificado: messner-et-al-2025-artificial-intelligence-and-qualitative-data-analysis-epistemological-incongruences-and-the-future.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Artificial intelligence and qualitative data analysis epistemological incongruences and the future",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1312,19 +1346,21 @@
         "future",
         "src-0051"
       ],
-      "sha256": "b0fb9cdcfa28b612914c22ad220a088bd6e6228ac529b022fd0a00e8489ea52e",
+      "sha256": "abf7bb925bfec670750c1e6709753327f88fbc90e3706957fd97e3feab8662be",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Artificial intelligence and qualitative data analysis epistemological incongruences and the future",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0052.md",
       "source_id": "SRC-0052",
-      "title": "Documento ainda não identificado: al-fattal-singh-2025-comparative-reflections-on-human-driven-and-generative-artificial-intelligence-assisted-thematic.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Comparative reflections on human driven and generative artificial intelligence assisted thematic",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1343,19 +1379,21 @@
         "thematic",
         "src-0052"
       ],
-      "sha256": "b0eb284a38c8061d515678bb3e6128dfe144fdc0d457f524e780488eb478d2c9",
+      "sha256": "67c57067bf3b9360bc9a8a8b7ccb542afc4d742831967ae059438d94ffe49d85",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Comparative reflections on human driven and generative artificial intelligence assisted thematic",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0053.md",
       "source_id": "SRC-0053",
-      "title": "Documento ainda não identificado: kon-et-al-2024-unravelling-chatgpt-potential-in-summarising-qualitative-indepth-interviews.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Unravelling chatgpt potential in summarising qualitative indepth interviews",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1371,19 +1409,21 @@
         "interviews",
         "src-0053"
       ],
-      "sha256": "5960d6f13fc28a3553557ad32a47e4e143326b803c183b7511a2f5c4a55bfd9d",
+      "sha256": "81b5db9fa130885c56d6d21579a16fa43fd0bab02d9d31399f6088dcd50990f3",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Unravelling chatgpt potential in summarising qualitative indepth interviews",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0054.md",
       "source_id": "SRC-0054",
-      "title": "Documento ainda não identificado: wachinger-et-al-2024-prompts-pearls-imperfections-comparing-chatgpt-and-a-human-researcher-in-qualitative-data-analysis.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Prompts pearls imperfections comparing chatgpt and a human researcher in qualitative data analysis",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1403,19 +1443,21 @@
         "analysis",
         "src-0054"
       ],
-      "sha256": "aaa240ab2a025df0187ae972ce65bee97254b6f24db732a57227750b0b49ff56",
+      "sha256": "4b6cc78f43d42c531fcfde73345e8afa9d41291fcdf572144de3923f472e7e86",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Prompts pearls imperfections comparing chatgpt and a human researcher in qualitative data analysis",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0055.md",
       "source_id": "SRC-0055",
-      "title": "Documento ainda não identificado: prahl-2025-the-ai-reflexivity-checklist-(arc)-a-pre-analysis-pause-for-llm-assisted-coding.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — The ai reflexivity checklist (arc) a pre analysis pause for llm assisted coding",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1431,19 +1473,21 @@
         "coding",
         "src-0055"
       ],
-      "sha256": "be90cfe0295bf47bd4081c3632ced2d8860f4ecc16e193333583539bd66e34ca",
+      "sha256": "af461ef1b3174ab0f0b642e9e23189f2bcfa7f40670dd259c6e71c67d4c4466e",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "The ai reflexivity checklist (arc) a pre analysis pause for llm assisted coding",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0056.md",
       "source_id": "SRC-0056",
-      "title": "Documento ainda não identificado: paulus-lester-davis-2025-the-construction-of-the-role-of-ai-in-qualitative-data-analysis-in-the-social-sciences.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — The construction of the role of ai in qualitative data analysis in the social sciences",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1462,19 +1506,21 @@
         "sciences",
         "src-0056"
       ],
-      "sha256": "78115135ef09eb0e72a00719b31f64305344fbb97892ccc61e5a019a80424987",
+      "sha256": "ecc43d1254d4116809453cf87d0b700c609ee0fdf5566773bba7e41d90f37d9a",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "The construction of the role of ai in qualitative data analysis in the social sciences",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0057.md",
       "source_id": "SRC-0057",
-      "title": "Documento ainda não identificado: davison-2024-the-ethics-of-using-generative-ai-for-qualitative-data-analysis.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — The ethics of using generative ai for qualitative data analysis",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1490,19 +1536,21 @@
         "analysis",
         "src-0057"
       ],
-      "sha256": "fde8ce0bbc2bd275b2ac08ce854a6fbcca06cd7c9eff5a9639f370f60d1826e1",
+      "sha256": "425ace580c66fa0a9f73b4c058b51fa02bf3939819c823bb4498236d3d237622",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "The ethics of using generative ai for qualitative data analysis",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0058.md",
       "source_id": "SRC-0058",
-      "title": "Documento ainda não identificado: dellafiore-et-al-2025-artificial-intelligence-in-qualitative-research-insights-from-experts-via-reflexive-thematic.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Artificial intelligence in qualitative research insights from experts via reflexive thematic",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1518,19 +1566,21 @@
         "thematic",
         "src-0058"
       ],
-      "sha256": "d73038113c83e02523cd6db3da18edfab7f2a390a661552591091a3596172f4b",
+      "sha256": "ee762f119b0e76ceda0242541b1f9b1241569dd117bffc5ec17e98636663c462",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Artificial intelligence in qualitative research insights from experts via reflexive thematic",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0059.md",
       "source_id": "SRC-0059",
-      "title": "Documento ainda não identificado: jones-2025-generative-ai-in-qualitative-research-and-related-transparency-problems-a-novel-heuristic-for-disclosing.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Generative ai in qualitative research and related transparency problems a novel heuristic for disclosing",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1548,19 +1598,21 @@
         "disclosing",
         "src-0059"
       ],
-      "sha256": "99f166f10c869dddf887dc118e7432c23497968ab0c2219671f99761176eda47",
+      "sha256": "58f7bb746a4827d73d372fba49de97e3df15099b423c646dd8b6a854fa7121ef",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Generative ai in qualitative research and related transparency problems a novel heuristic for disclosing",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0060.md",
       "source_id": "SRC-0060",
-      "title": "Documento ainda não identificado: dahal-et-al-2025-navigating-the-meta-crisis-of-generativity-adapting-qualitative-research-quality-criteria-in-the-era-of-generative-ai.p",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Navigating the meta crisis of generativity adapting qualitative research quality criteria in the era of generative ai",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1579,19 +1631,21 @@
         "generative",
         "src-0060"
       ],
-      "sha256": "73c873b1aacefa1a34ce10408a84035cb93ebc07c62894de36aa96e2f17c828a",
+      "sha256": "706dd1fc2e3e1319044345cc5749e3b45bf15c3b2fb0d63b85a10e76c0f90546",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Navigating the meta crisis of generativity adapting qualitative research quality criteria in the era of generative ai",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0061.md",
       "source_id": "SRC-0061",
-      "title": "Documento ainda não identificado: jowsey-et-al-2025-frankenstein-thematic-analysis-and-generative-artificial-intelligence-quality-appraisal-methods-and-considerations-for",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Frankenstein thematic analysis and generative artificial intelligence quality appraisal methods and considerations for qualitative resea",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1611,19 +1665,21 @@
         "qualitative",
         "src-0061"
       ],
-      "sha256": "716433dfd172002eb2a01bbf75bf35790497e04887c7fe54a6ca78ade0686556",
+      "sha256": "b4abd87f616042f0e01ac6fed505be7b75ebca586ad28e8ca7e32556f76dbcf9",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Frankenstein thematic analysis and generative artificial intelligence quality appraisal methods and considerations for qualitative research",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0062.md",
       "source_id": "SRC-0062",
-      "title": "Documento ainda não identificado: Castellanosetal,2025-Large Language Models for Thematic Summarization in Qualitative Health Care Research.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Large Language Models for Thematic Summarization in Qualitative Health Care Research",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1641,19 +1697,21 @@
         "care",
         "src-0062"
       ],
-      "sha256": "78288be6c03c16678362055088ee271af496299e9274cdb7a06364dcf8ab8eff",
+      "sha256": "007c8eb371a5661a4fbcd5b503c92663b58fe817b96ef445e1191d5931c3fc37",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Large Language Models for Thematic Summarization in Qualitative Health Care Research",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0063.md",
       "source_id": "SRC-0063",
-      "title": "Documento ainda não identificado: jowsey-et-al-2025-we-reject-the-use-of-generative-artificial-intelligence-for-reflexive-qualitative-research.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — We reject the use of generative artificial intelligence for reflexive qualitative research",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1668,19 +1726,21 @@
         "qualitative",
         "src-0063"
       ],
-      "sha256": "5262ff93249bc44a625b46ae78ba2a72ac809b9e1a05eb988351016cf792781e",
+      "sha256": "894650e382b1ecebc27c2696d17b426a9abddba1c580fa6e0bdeb014974b723c",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "We reject the use of generative artificial intelligence for reflexive qualitative research",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0064.md",
       "source_id": "SRC-0064",
-      "title": "Documento ainda não identificado: jarrahi-2025-interviewing-ai-using-qualitative-methods-to-explore-and-capture-machines-characteristics-and-behaviors.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Interviewing ai using qualitative methods to explore and capture machines characteristics and behaviors",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1699,19 +1759,21 @@
         "behaviors",
         "src-0064"
       ],
-      "sha256": "15498b946fb5ab138fb8530589eb00007883f30c611b7426b282348d9ac750ee",
+      "sha256": "f5ddf212159025fca06891225937df8e0c89826317a1ec7ecde56bb6985cb94c",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Interviewing ai using qualitative methods to explore and capture machines characteristics and behaviors",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0065.md",
       "source_id": "SRC-0065",
-      "title": "Documento ainda não identificado: nguyen-welch-2025-engaged-and-responsible-scholarship-why-qualitative-researchers-should-not-embrace-genai.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Engaged and responsible scholarship why qualitative researchers should not embrace genai",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1730,19 +1792,21 @@
         "genai",
         "src-0065"
       ],
-      "sha256": "8ef45e1ce3a28d03bcbc311528fa183a8ff3479e05204ad619ad3a6a7dc16acc",
+      "sha256": "88c1d7aa413b041180d1ca13f01538e4709ec1e1dc407cf82d2a399236910e0d",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Engaged and responsible scholarship why qualitative researchers should not embrace genai",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0066.md",
       "source_id": "SRC-0066",
-      "title": "Documento ainda não identificado: friedman-et-al-2024-ai-and-qualitative-analysis.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Ai and qualitative analysis",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1754,19 +1818,21 @@
         "analysis",
         "src-0066"
       ],
-      "sha256": "92383ee041a3e333ff67d72680631a9c12fecea846a852241fecb181c6609e94",
+      "sha256": "18554535b10776a3559939da0de764170f29e5b6e90589e6d67160e72540c4e0",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Ai and qualitative analysis",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0067.md",
       "source_id": "SRC-0067",
-      "title": "Documento ainda não identificado: teixeira-et-al-2025-generative-artificial-intelligence-in-qualitative-research-methods-between-hype-and-risks.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Generative artificial intelligence in qualitative research methods between hype and risks",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1783,19 +1849,21 @@
         "risks",
         "src-0067"
       ],
-      "sha256": "e2e57425dfd7fd80ec1f0149e448be79a8da42422397affe07b7116b98cf7f57",
+      "sha256": "a756efd9ba60be6357e545796b5306719a8dd1ec3e5f8c0aedde85103dd6920d",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Generative artificial intelligence in qualitative research methods between hype and risks",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0068.md",
       "source_id": "SRC-0068",
-      "title": "Documento ainda não identificado: graciano-neto-et-al-2024-large-language-model-for-qualitative-research-a-systematic-mapping-study.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Large language model for qualitative research a systematic mapping study",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1813,19 +1881,21 @@
         "study",
         "src-0068"
       ],
-      "sha256": "81bcaed16ee9a9969b8b60726f4716f3353ac592cbdfd2ecc1fc5cd261939899",
+      "sha256": "5e92952e39d729fe0a70dc3e1c95fb845ea0e509129a0d9bbfd216dc3bf4cbae",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Large language model for qualitative research a systematic mapping study",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0069.md",
       "source_id": "SRC-0069",
-      "title": "Documento ainda não identificado: mayring-2025-qualitative-content-analysis-with-chatgpt-pitfalls-rough-approximations-and-gross.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Qualitative content analysis with chatgpt pitfalls rough approximations and gross",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1843,19 +1913,21 @@
         "gross",
         "src-0069"
       ],
-      "sha256": "34096dd9d35892439d2251be723e10f4d4d63b726e2a39cb54ac28eee1bc8e97",
+      "sha256": "76cfe3d99b5527f54798d79f1f180ebc8cde248ef6d48b6ffbac54221838d376",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Qualitative content analysis with chatgpt pitfalls rough approximations and gross",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0070.md",
       "source_id": "SRC-0070",
-      "title": "Documento ainda não identificado: paulus-marone-2024-in-minutes-instead-of-weeks-discursive-constructions-of-generative-ai-and-qualitative-data-analysis.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — In minutes instead of weeks discursive constructions of generative ai and qualitative data analysis",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1875,13 +1947,15 @@
         "analysis",
         "src-0070"
       ],
-      "sha256": "b4e6d55758b039b29df1754f37a6289faae97de76a0fa45f97a7768f9894d93e",
+      "sha256": "e6caf1e7b93728ec3e5033352dd12695e7f856efa33083b4e475dd6c7574191f",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "In minutes instead of weeks discursive constructions of generative ai and qualitative data analysis",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0071.md",
@@ -1955,8 +2029,8 @@
     {
       "path": "knowledge/methodology/source_cards/src-0073.md",
       "source_id": "SRC-0073",
-      "title": "Documento ainda não identificado: eschrich-sterman-2024-a-framework-for-discussing-llms-as-tools-for-qualitative-analysis.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — A framework for discussing llms as tools for qualitative analysis",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -1973,13 +2047,15 @@
         "analysis",
         "src-0073"
       ],
-      "sha256": "8f625bd0726a3a0cfe1304cde90545350bf4ddbfd8b10af64d8a13ba56b6195a",
+      "sha256": "405078778947607d64842f366814782be3148a0f8cd8d5344a383662c238e612",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "A framework for discussing llms as tools for qualitative analysis",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0074.md",
@@ -2044,8 +2120,8 @@
     {
       "path": "knowledge/methodology/source_cards/src-0076.md",
       "source_id": "SRC-0076",
-      "title": "Documento ainda não identificado: de-paoli-2026-why-we-should-reject-to-reject-the-use-of-generative-artificial-intelligence-in-qualitative-analysis-a.pdf",
-      "topic": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "title": "Identificação ainda não verificada — Why we should reject to reject the use of generative artificial intelligence in qualitative analysis a",
+      "topic": "Inteligência artificial para métodos Qualitativos",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -2061,13 +2137,15 @@
         "analysis",
         "src-0076"
       ],
-      "sha256": "c4663ce30a8c57dfa158e747c78a7a7046ad1b0bef779a9aeee92b03edf8cdad",
+      "sha256": "c87835410ff13cdb2a42bd1ec85843eb041c2f03296d37cc742cf284bf59dc63",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Why we should reject to reject the use of generative artificial intelligence in qualitative analysis a",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0077.md",
@@ -3481,7 +3559,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0132.md",
       "source_id": "SRC-0132",
-      "title": "Documento ainda não identificado: Silvaetal,2020.pdf",
+      "title": "Identificação ainda não verificada — NENHUM — somente nome opaco",
       "topic": "An lise Tem tica",
       "keywords": [
         "lise",
@@ -3490,13 +3568,15 @@
         "2020",
         "src-0132"
       ],
-      "sha256": "4bc339766b01292a8146905cdf63c54cff9baf1223de04842c749cb108c40d74",
+      "sha256": "c0a9eeb42df77ccdb4ee01870b7082f4c04e5bfdd818562b5ca26800a61b1cb8",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": null,
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0133.md",
@@ -4068,7 +4148,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0154.md",
       "source_id": "SRC-0154",
-      "title": "Documento ainda não identificado: Closa_2021.pdf",
+      "title": "Identificação ainda não verificada — Closa 2021",
       "topic": "Qualidade da Pesquisa Qualitativa_Avaliação de",
       "keywords": [
         "qualidade",
@@ -4078,13 +4158,15 @@
         "2021",
         "src-0154"
       ],
-      "sha256": "7efbd5d7020a578e77cee0a45a202ca99994b2c029a65a0e1d76d9d85b1c4fbe",
+      "sha256": "23d144a479d606e10aead74f0087c25fbf24b5028e341dc8aafc00550fdbe7da",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Closa 2021",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0155.md",
@@ -4162,7 +4244,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0158.md",
       "source_id": "SRC-0158",
-      "title": "Documento ainda não identificado: Cap¡tulo 4 Amostragem Aleat¢ria Simples _ _main.pdf",
+      "title": "Identificação ainda não verificada — Capítulo 4 Amostragem Aleatória Simples main",
       "topic": "Amostragem",
       "keywords": [
         "amostragem",
@@ -4172,13 +4254,15 @@
         "main",
         "src-0158"
       ],
-      "sha256": "9e056a66ca5fd855557f33b52c3d33bcfe82102633795a48abb33ce600216a4c",
+      "sha256": "850f92b880511b238bd018e153034921a8fbd9a3420e643f17dbd6b5165828a1",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Capítulo 4 Amostragem Aleatória Simples main",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0159.md",
@@ -4746,8 +4830,8 @@
     {
       "path": "knowledge/methodology/source_cards/src-0181.md",
       "source_id": "SRC-0181",
-      "title": "Documento ainda não identificado: King (2006) (1).pdf",
-      "topic": "Transparˆncia e Replicabilidade (quanti)",
+      "title": "Identificação ainda não verificada — King (2006) (1)",
+      "topic": "Transparência e Replicabilidade (quanti)",
       "keywords": [
         "transparˆncia",
         "replicabilidade",
@@ -4756,19 +4840,21 @@
         "2006",
         "src-0181"
       ],
-      "sha256": "bd4b19e5ca2c3c3dc10ddecc33a417d188c85b79096bc535bf0430ef2b8a4315",
+      "sha256": "0ed29785867e2fa58aca8ad7f4e70774219537144aa43d744b1049c3df326207",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "King (2006) (1)",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0182.md",
       "source_id": "SRC-0182",
-      "title": "Documento ainda não identificado: Miguel et al (2014) (1).pdf",
-      "topic": "Transparˆncia e Replicabilidade (quanti)",
+      "title": "Identificação ainda não verificada — Miguel et al (2014) (1)",
+      "topic": "Transparência e Replicabilidade (quanti)",
       "keywords": [
         "transparˆncia",
         "replicabilidade",
@@ -4777,13 +4863,15 @@
         "2014",
         "src-0182"
       ],
-      "sha256": "fb7da82038c57f998fa7afeca3637555c99cc0e6b93fb6356fec79bdc81f7916",
+      "sha256": "a6ed466b88fbbeee9a63e50427d76dda1d637908a5e0388133f78a504927c05e",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Miguel et al (2014) (1)",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0183.md",
@@ -4809,8 +4897,8 @@
     {
       "path": "knowledge/methodology/source_cards/src-0184.md",
       "source_id": "SRC-0184",
-      "title": "Documento ainda não identificado: Figueiredo Filho et al (2019) (1).pdf",
-      "topic": "Transparˆncia e Replicabilidade (quanti)",
+      "title": "Identificação ainda não verificada — Figueiredo Filho et al (2019) (1)",
+      "topic": "Transparência e Replicabilidade (quanti)",
       "keywords": [
         "transparˆncia",
         "replicabilidade",
@@ -4820,13 +4908,15 @@
         "2019",
         "src-0184"
       ],
-      "sha256": "fe3b728aa2e65f1897f64db1b3c4d09d793410c49dd9ebe82db17b2bb2ab8567",
+      "sha256": "cabd5ba6a229c48828f8f526eb0d435e5a347f2eee865657304664de5905e43e",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Figueiredo Filho et al (2019) (1)",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0185.md",
@@ -5195,7 +5285,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0199.md",
       "source_id": "SRC-0199",
-      "title": "Documento ainda não identificado: Chiarotti Ces rio, Chiatotti Almeida, 2008.pdf",
+      "title": "Identificação ainda não verificada — Chiarotti Cesário, Chiatotti Almeida, 2008",
       "topic": "An lise do Discurso",
       "keywords": [
         "lise",
@@ -5206,13 +5296,15 @@
         "2008",
         "src-0199"
       ],
-      "sha256": "c6e0bc03648e80a4e16dc0d699d35beddda4ba4dcec96a0d458ffb991c4fbc13",
+      "sha256": "54e8b1fc8afa1abe6ce3de4a22567511dfbc38f6b547ea80c428711a38d9ffeb",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Chiarotti Cesário, Chiatotti Almeida, 2008",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0200.md",
@@ -5338,7 +5430,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0205.md",
       "source_id": "SRC-0205",
-      "title": "Documento ainda não identificado: 000633536.pdf",
+      "title": "Identificação ainda não verificada — NENHUM — somente nome opaco",
       "topic": "Imagem como dado",
       "keywords": [
         "imagem",
@@ -5346,18 +5438,20 @@
         "000633536",
         "src-0205"
       ],
-      "sha256": "4f19af8ebd4f5e757701a955720b4d2ea123e675377d761b34ed85c8291c32c5",
+      "sha256": "744a76a3c2acbdfb5447f2c97489ee9134fd9b915523ed8de150dc3a9b1b40fb",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": null,
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0206.md",
       "source_id": "SRC-0206",
-      "title": "Documento ainda não identificado: O uso das imagens em pesquisas nas ciˆncias sociais.pdf",
+      "title": "Identificação ainda não verificada — O uso das imagens em pesquisas nas ciências sociais",
       "topic": "Imagem como dado",
       "keywords": [
         "imagem",
@@ -5368,13 +5462,15 @@
         "sociais",
         "src-0206"
       ],
-      "sha256": "d9fb3ca0887eb67dc98498df9c53882bc1d6977c14aea0bad3d58da47512f9d2",
+      "sha256": "449d4acc5be5e4c25c5ab3ca6a9c832a2a27bc91244390cdf28c8a2ed7bca516",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "O uso das imagens em pesquisas nas ciências sociais",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0207.md",
@@ -6209,8 +6305,8 @@
     {
       "path": "knowledge/methodology/source_cards/src-0239.md",
       "source_id": "SRC-0239",
-      "title": "Documento ainda não identificado: Abdi e B‚ra (2017).pdf",
-      "topic": "An lise de Correspondˆncia",
+      "title": "Identificação ainda não verificada — Abdi e Béra (2017)",
+      "topic": "An lise de Correspondência",
       "keywords": [
         "lise",
         "correspondˆncia",
@@ -6218,19 +6314,21 @@
         "2017",
         "src-0239"
       ],
-      "sha256": "4e091d94a4377cb0bc0230d04db86cfceeaed7044ad22bc6e9f622a398fb71cc",
+      "sha256": "a581787796ded7899d9987170ebd1b9c544d3af4e6d5f326ec8b3fb7fca79a64",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Abdi e Béra (2017)",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0240.md",
       "source_id": "SRC-0240",
-      "title": "Documento ainda não identificado: Atkinson (2023).pdf",
-      "topic": "An lise de Correspondˆncia",
+      "title": "Identificação ainda não verificada — Atkinson (2023)",
+      "topic": "An lise de Correspondência",
       "keywords": [
         "lise",
         "correspondˆncia",
@@ -6238,13 +6336,15 @@
         "2023",
         "src-0240"
       ],
-      "sha256": "a1785de4e336fd887de6a76f1074e98ff1a2bdb0b424f6a10f04d5d13ab21100",
+      "sha256": "3e15dc8b582aff6684c19b992c529f83f1fd236545b1e5765f259fa42713af9e",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Atkinson (2023)",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0241.md",
@@ -6274,21 +6374,23 @@
     {
       "path": "knowledge/methodology/source_cards/src-0242.md",
       "source_id": "SRC-0242",
-      "title": "Documento ainda não identificado: Beh (2007).pdf",
-      "topic": "An lise de Correspondˆncia",
+      "title": "Identificação ainda não verificada — Beh (2007)",
+      "topic": "An lise de Correspondência",
       "keywords": [
         "lise",
         "correspondˆncia",
         "2007",
         "src-0242"
       ],
-      "sha256": "18a2b8d808b0a8db28eb01b2c82c9184c9d69a1414c2281babdac4cd5ea21233",
+      "sha256": "302de49ed3d7c8bf5d1176257b5a4a3aeb3620ddf66b396b4bdd41a530698e6d",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Beh (2007)",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0243.md",
@@ -6619,25 +6721,27 @@
     {
       "path": "knowledge/methodology/source_cards/src-0255.md",
       "source_id": "SRC-0255",
-      "title": "Documento ainda não identificado: 02_two_by_two.pdf",
+      "title": "Identificação ainda não verificada — 02 two by two",
       "topic": "Dif-in-Dif (regressão diferenças em diferenças)",
       "keywords": [
         "regressao",
         "diferencas",
         "src-0255"
       ],
-      "sha256": "086c18141f5fbb6c997b443d03337552a957e813f0b73c8fa07645eed396c911",
+      "sha256": "6484c1696d3252a2dd4f4ec0b26735700e68885373e6a9845a2482e84a0173b2",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "02 two by two",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0256.md",
       "source_id": "SRC-0256",
-      "title": "Documento ainda não identificado: gertler_et_al_2018.pdf",
+      "title": "Identificação ainda não verificada — Gertler et al 2018",
       "topic": "Dif-in-Dif (regressão diferenças em diferenças)",
       "keywords": [
         "regressao",
@@ -6646,13 +6750,15 @@
         "2018",
         "src-0256"
       ],
-      "sha256": "08f565848292b53ce49efae2dc369c1bc5fea9858b9af79fa9ffa3856b900ecc",
+      "sha256": "60a0aae497d44c0fb6feeb45596837cec0cac76a16fc7800b3b4a44f79f6edce",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Gertler et al 2018",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0257.md",
@@ -6683,7 +6789,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0258.md",
       "source_id": "SRC-0258",
-      "title": "Documento ainda não identificado: card and krueger (1994).pdf",
+      "title": "Identificação ainda não verificada — Card and krueger (1994)",
       "topic": "Dif-in-Dif (regressão diferenças em diferenças)",
       "keywords": [
         "regressao",
@@ -6693,18 +6799,20 @@
         "1994",
         "src-0258"
       ],
-      "sha256": "f499a4f2b9b859ea29adba92e9285a2ed10ae90a064b7f7c2270eb5d7e8c3182",
+      "sha256": "a896366f1f499e061c77e226314d28010bf99c88cb849d3b73bf6ff26b12ac71",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Card and krueger (1994)",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0259.md",
       "source_id": "SRC-0259",
-      "title": "Documento ainda não identificado: 01_Introduction.pdf",
+      "title": "Identificação ainda não verificada — 01 Introduction",
       "topic": "Dif-in-Dif (regressão diferenças em diferenças)",
       "keywords": [
         "regressao",
@@ -6712,13 +6820,15 @@
         "introduction",
         "src-0259"
       ],
-      "sha256": "2387a9eff01f5d6cb9d05cccb8eaab2720625978d57eaff2a8c96ba9c9d9adc0",
+      "sha256": "e9380031840fd9fa398ff3a7bc3d2344b0226712d551ff66e373307d71bf1dc5",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "01 Introduction",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0260.md",
@@ -6883,8 +6993,8 @@
     {
       "path": "knowledge/methodology/source_cards/src-0267.md",
       "source_id": "SRC-0267",
-      "title": "Documento ainda não identificado: Batista e Domingos (2017) (1).pdf",
-      "topic": "Pol¡ticas P£blicas",
+      "title": "Identificação ainda não verificada — Batista e Domingos (2017) (1)",
+      "topic": "Políticas Públicas",
       "keywords": [
         "ticas",
         "blicas",
@@ -6893,19 +7003,21 @@
         "2017",
         "src-0267"
       ],
-      "sha256": "0ca952ac298085ff04b0d50902e18260c5e134604ac35cc24938ad5700f07413",
+      "sha256": "0a1ba735fad44fa3a1d47018eac3ef77cb5276455205d3a7ee4af11cda3974fe",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Batista e Domingos (2017) (1)",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0268.md",
       "source_id": "SRC-0268",
-      "title": "Documento ainda não identificado: Batista, Domingos e Vieira (2021).pdf",
-      "topic": "Pol¡ticas P£blicas",
+      "title": "Identificação ainda não verificada — Batista, Domingos e Vieira (2021)",
+      "topic": "Políticas Públicas",
       "keywords": [
         "ticas",
         "blicas",
@@ -6915,18 +7027,20 @@
         "2021",
         "src-0268"
       ],
-      "sha256": "6a0046e9e79283b2758f821e14134c38d1f8d445c25335b39847026a179ce075",
+      "sha256": "41fd82fb3473a25e6b17c31afbf95b400e124acee83bcea4e85b635f68a2c90c",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Batista, Domingos e Vieira (2021)",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0269.md",
       "source_id": "SRC-0269",
-      "title": "Documento ainda não identificado: Conceição et al (2026)_port.pdf",
+      "title": "Identificação ainda não verificada — Conceição et al (2026) port",
       "topic": "Análise Espacial",
       "keywords": [
         "analise",
@@ -6936,18 +7050,20 @@
         "port",
         "src-0269"
       ],
-      "sha256": "070719d8732cd26b1c4df6c76518719b20f14a193dcca0ce25dabaa2c744d05a",
+      "sha256": "ff3ceed17f18846ccde6aa837437954b5f63fc6f99922f700fc6941b82e4daa5",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Conceição et al (2026) port",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0270.md",
       "source_id": "SRC-0270",
-      "title": "Documento ainda não identificado: Conceição et al (2026)_en.pdf",
+      "title": "Identificação ainda não verificada — Conceição et al (2026) en",
       "topic": "Análise Espacial",
       "keywords": [
         "analise",
@@ -6956,13 +7072,15 @@
         "2026",
         "src-0270"
       ],
-      "sha256": "92040e4efc9904e5ffc015f3c033c9d00440d4088094fa3a7f97f8f9b47648cb",
+      "sha256": "9ee325b8db2c878dad888cc5ecdcba12f779c4a1feab5991814ad138e8cd54d4",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Conceição et al (2026) en",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0271.md",
@@ -7017,7 +7135,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0273.md",
       "source_id": "SRC-0273",
-      "title": "Documento ainda não identificado: Cƒmara et al (2004).pdf",
+      "title": "Identificação ainda não verificada — Câmara et al (2004)",
       "topic": "An lise Espacial",
       "keywords": [
         "lise",
@@ -7026,18 +7144,20 @@
         "2004",
         "src-0273"
       ],
-      "sha256": "243257ddb58e2a7132fd37c6401314a144b753a4285ecf175c323403e43ae8ff",
+      "sha256": "84616d337d05387ae6b184481a36113b6e35be5e3bb3da38bb93c9fb71b26e21",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Câmara et al (2004)",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0274.md",
       "source_id": "SRC-0274",
-      "title": "Documento ainda não identificado: Rttenauer (2024).pdf",
+      "title": "Identificação ainda não verificada — Rüttenauer (2024)",
       "topic": "An lise Espacial",
       "keywords": [
         "lise",
@@ -7046,13 +7166,15 @@
         "2024",
         "src-0274"
       ],
-      "sha256": "ca9cc7643200fb654883ba84756faeba410cfef90eb2b85365a30570f10fbc5d",
+      "sha256": "cbfa6e9930d2b192116acc1fbfc9b21d6976781aa711ff44c3bb9cb465b5934b",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Rüttenauer (2024)",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0275.md",
@@ -7664,7 +7786,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0298.md",
       "source_id": "SRC-0298",
-      "title": "Documento ainda não identificado: Bonate (2011).pdf",
+      "title": "Identificação ainda não verificada — Bonate (2011)",
       "topic": "Simulação",
       "keywords": [
         "simulacao",
@@ -7672,13 +7794,15 @@
         "2011",
         "src-0298"
       ],
-      "sha256": "4c334bdee27897e64637261a13e8e6480ccef1ccb048bd88bb2cf86469c0b82f",
+      "sha256": "d216758c67ffc26d10ce9ccfa351e834cf1ef8fd469807e3b530eefd6bf5422c",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Bonate (2011)",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0299.md",
@@ -7951,7 +8075,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0310.md",
       "source_id": "SRC-0310",
-      "title": "Documento ainda não identificado: Santos,Tavares,2016.pdf",
+      "title": "Identificação ainda não verificada — Santos,Tavares,2016",
       "topic": "An lise de Redes",
       "keywords": [
         "lise",
@@ -7961,13 +8085,15 @@
         "2016",
         "src-0310"
       ],
-      "sha256": "ecfb2bf9998d732bf4dc4b1a8e9b2d731dce08208f0caaea0ac7ae88c7425680",
+      "sha256": "dadf24326a2600f5016844be5730ed42443b05b105ccae2b2b901dfbd89e045a",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Santos,Tavares,2016",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0311.md",
@@ -8633,7 +8759,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0337.md",
       "source_id": "SRC-0337",
-      "title": "Documento ainda não identificado: O uso das imagens em pesquisas nas ciˆncias sociais.pdf",
+      "title": "Identificação ainda não verificada — O uso das imagens em pesquisas nas ciências sociais",
       "topic": "Fotografias",
       "keywords": [
         "fotografias",
@@ -8643,13 +8769,15 @@
         "sociais",
         "src-0337"
       ],
-      "sha256": "fb92599a1ff8d20299ba7f9a4cad64ce9e11c4541da53979052ca5902c406569",
+      "sha256": "a81d1f3929b1bdb666a94a5a9147c8f4eb96f8d3e1edc391d8e235da415a7946",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "O uso das imagens em pesquisas nas ciências sociais",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0338.md",
@@ -9046,7 +9174,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0353.md",
       "source_id": "SRC-0353",
-      "title": "Documento ainda não identificado: Lenine, M”rschb„cher, 2020.pdf",
+      "title": "Identificação ainda não verificada — Lenine, Mörschb„cher, 2020",
       "topic": "Epistemologia",
       "keywords": [
         "epistemologia",
@@ -9056,13 +9184,15 @@
         "2020",
         "src-0353"
       ],
-      "sha256": "a3a2e51b294abe4ba5fe682580705986040d31e5656585a5695e902acd045336",
+      "sha256": "0e0d26eb185704a81940f8f0a0c3ea00571c6491cd2e782d9ecae3fceea00860",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Lenine, Mörschb„cher, 2020",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0354.md",
@@ -9178,7 +9308,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0358.md",
       "source_id": "SRC-0358",
-      "title": "Documento ainda não identificado: R“mulo,Machado,2023.pdf",
+      "title": "Identificação ainda não verificada — Rômulo,Machado,2023",
       "topic": "Epistemologia",
       "keywords": [
         "epistemologia",
@@ -9187,13 +9317,15 @@
         "2023",
         "src-0358"
       ],
-      "sha256": "0cbf3a409801afb7bf55aba796a9b98fcae7efaf26facb528f0190e20c48ba39",
+      "sha256": "904894ac4a406fccd3fa0b411aa481ffbe47a934b32ca728004b2a8c4ca21f4f",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Rômulo,Machado,2023",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0359.md",
@@ -9403,8 +9535,8 @@
     {
       "path": "knowledge/methodology/source_cards/src-0367.md",
       "source_id": "SRC-0367",
-      "title": "Documento ainda não identificado: Silva,Hern ndez,2020.pdf",
-      "topic": "An lise de Conte£do",
+      "title": "Identificação ainda não verificada — Silva,Hernández,2020",
+      "topic": "An lise de Conteúdo",
       "keywords": [
         "lise",
         "conte",
@@ -9414,13 +9546,15 @@
         "2020",
         "src-0367"
       ],
-      "sha256": "42f63d9c435decdb21f21c89a2fc08a5fdb21ee579979b4a2438f52a877f9b01",
+      "sha256": "e4cdc8e21b679b41c0564ebda461b57adc07e6035444b2291eaa5b7b06f37164",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Silva,Hernández,2020",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0368.md",
@@ -9570,8 +9704,8 @@
     {
       "path": "knowledge/methodology/source_cards/src-0373.md",
       "source_id": "SRC-0373",
-      "title": "Documento ainda não identificado: Carlomagno,Rocha,2016.pdf",
-      "topic": "An lise de Conte£do",
+      "title": "Identificação ainda não verificada — Carlomagno,Rocha,2016",
+      "topic": "An lise de Conteúdo",
       "keywords": [
         "lise",
         "conte",
@@ -9580,13 +9714,15 @@
         "2016",
         "src-0373"
       ],
-      "sha256": "a34cc88f9ad2bcf0527be1e297a3d7c14636598a386ca6cd27987da5030c29dc",
+      "sha256": "ddcb243acfc251d38a5f72bac92d809b3921101ce94a0a2ca2bc6a91c9c8e2ec",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Carlomagno,Rocha,2016",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0374.md",
@@ -10203,7 +10339,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0397.md",
       "source_id": "SRC-0397",
-      "title": "Documento ainda não identificado: Artigo_e2025-0695_v60_2026_PT___.pdf",
+      "title": "Identificação ainda não verificada — 0695 v60 2026 PT",
       "topic": "Survey",
       "keywords": [
         "survey",
@@ -10213,13 +10349,15 @@
         "2026",
         "src-0397"
       ],
-      "sha256": "428a085c364863aceb6bacdd8fdd4e1ef5ff1149a1da97829fb7d42d6b29d8d7",
+      "sha256": "71b189743684a85ed453e988da35d4f6df62ee2f6e32b94674b83f0687fc771c",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "0695 v60 2026 PT",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0398.md",
@@ -10292,7 +10430,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0401.md",
       "source_id": "SRC-0401",
-      "title": "Documento ainda não identificado: Heinrich Fritz, Luis A. Garc¡a-Escudero, Agust¡n Mayo-Iscar.pdf",
+      "title": "Identificação ainda não verificada — Heinrich Fritz, Luis A. García Escudero, Agustín Mayo Iscar",
       "topic": "An lise de Cluster",
       "keywords": [
         "lise",
@@ -10307,13 +10445,15 @@
         "iscar",
         "src-0401"
       ],
-      "sha256": "0016d715fe0eeb8b680a0ab90aaf17157d1e8a6df930836156aef60b105140d4",
+      "sha256": "6867986574298ce79f8fba33726e65b6d672486f0024202a6d54026229f73259",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Heinrich Fritz, Luis A. García Escudero, Agustín Mayo Iscar",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0402.md",
@@ -10526,7 +10666,7 @@
     {
       "path": "knowledge/methodology/source_cards/src-0410.md",
       "source_id": "SRC-0410",
-      "title": "Documento ainda não identificado: Dam sio (2012).pdf",
+      "title": "Identificação ainda não verificada — Damásio (2012)",
       "topic": "An lise Fatorial",
       "keywords": [
         "lise",
@@ -10534,13 +10674,15 @@
         "2012",
         "src-0410"
       ],
-      "sha256": "39dc027cd9f5c39ae27e471fc6e65e5dcada9e826fc2d71b1fc74cbc32a8bdeb",
+      "sha256": "35160098b1a0fe67426e97a1badb7ed10dbe58820c6ecbe415befef49e4426f7",
       "source_metadata_only": true,
       "bibliography_match_status": "IDENTITY_UNRESOLVED",
       "rights_review": "NOT_CHECKED",
       "source_read_scope": "NOT_RECORDED_IN_LEDGER",
       "has_original_public_pdf": false,
-      "public_pdf_path": null
+      "public_pdf_path": null,
+      "title_candidate_from_filename": "Damásio (2012)",
+      "title_candidate_only": true
     },
     {
       "path": "knowledge/methodology/source_cards/src-0411.md",
@@ -12238,5 +12380,7 @@
       "has_original_public_pdf": false,
       "public_pdf_path": null
     }
-  ]
+  ],
+  "provisional_filename_title_cards": 71,
+  "identities_still_unresolved": 71
 }

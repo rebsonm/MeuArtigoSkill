@@ -35,3 +35,11 @@ Foram consultadas no Google Drive as **17 entradas de primeiro nível** da pasta
 7. **Versão estável:** PR #101 continua Draft; não há autorização para merge, release, nem aceite automático de gates. Antes de release faltam revisão científica, revisão jurídica final das licenças, homologação multiusuário e política de atualização.
 
 **Decisão:** encerrada a ampliação temática desta rodada, **não** o trabalho de revisão de todas as fontes, nem a homologação de uma biblioteca científica completa.
+
+
+## Atualização operacional — 21/11/2026, lote seguinte (PR #101)
+
+- 5 cards editoriais **originais e provisórios** a partir de páginas públicas de editoras/DOIs verificados (gramática institucional 2012/2021, Tripp 2005, Hayes 2025, Lazar 2007). A versão privada dos PDFs não foi lida; as alegações verificáveis se restringem ao texto público examinado. Revisão científica independente ainda pendente.
+- 71 fichas [P] com identidade ainda não resolvida foram reformuladas em **cards de triagem com propostas de perguntas e critérios metodológicos**, com título candidato deduzido exclusivamente do nome do arquivo quando informativo. Não se tratam de 71 resumos de fontes; mantêm a identidade como IDENTITY_UNRESOLVED.
+- Corpos de PDFs de terceiros permanecem 38, sem qualquer novo upload nem ampliação fictícia de direitos; o total de cards editoriais passa a 93; fichas de prospecção seguem 475.
+- A leitura integral dos 475 originais continua pendente; novas perguntas e critérios foram criados pelo projeto e não atribuídos aos autores.
