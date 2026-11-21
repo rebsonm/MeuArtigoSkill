@@ -154,5 +154,80 @@
     "global_registry_edit",
     "independent_scientific_approval"
   ],
-  "next_step": "Auditoria independente do relatório e deliberações sobre P0 antes de V1-16; manter demais gates bloqueados."
+  "next_step": "Drive owner must document whether anyone:reader remains justified for PPGA - LIVROS and its descendants, and authorize an external access check.",
+  "continuity_verification_20261121": {
+    "state": "ENTREGUE_PARA_AUDITORIA",
+    "new_evidence": "Official SciELO 2020 edition link resolves to CC BY-NC 4.0; 13 tag refs checked for history ancestry; Drive root ACL rechecked.",
+    "source_edition": {
+      "source_id": "SRC-0367",
+      "doi": "10.1590/0103-3352.2020.33.218584",
+      "official_article_url": "https://www.scielo.br/j/rbcpol/a/QFmq77JnT468fcBKCdh99ms/?format=html",
+      "publication_date": "2020-11-30",
+      "license_link_resolves_to": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "license_legal_code": "https://creativecommons.org/licenses/by-nc/4.0/legalcode.en",
+      "independent_html_link_verified": true,
+      "exact_historical_git_binary_verified": false,
+      "unrestricted_catalog_reuse_authorized": false,
+      "legal_conclusion": false
+    },
+    "git_refs": {
+      "tags_returned": 13,
+      "tags_compared_with_historic_commit": 13,
+      "tags_ancestry_status": "13/13 behind, ahead_by=0; no returned tag contains that historical commit in ancestry",
+      "heads_returned": 139,
+      "heads_ancestry_fully_checked": false,
+      "forks_fully_checked": false,
+      "pr_refs_fully_checked": false,
+      "v1_14_head_before_new_commits": "a13a52be77e818567e8d3123e14ca0a96875d4fb",
+      "pr101_open_draft_unmerged": true,
+      "historical_pdf_blob_retrieved": false
+    },
+    "acl_root_recheck": {
+      "folder_label": "PPGA - LIVROS",
+      "result_count_exact_name": 1,
+      "permission_metadata_available": true,
+      "shared": true,
+      "anyone_reader": true,
+      "allow_file_discovery": false,
+      "anonymous_access_test": false,
+      "acl_changed": false,
+      "all_children_checked": false,
+      "raw_folder_id_recorded": false,
+      "raw_document_ids_recorded": false
+    },
+    "followup_results": {
+      "path": "knowledge/methodology/intake/v1_parallel/V1-14-RESULTS.md",
+      "update_commit": "60daf2b856db0900a0cee02a7299a5e41f74ef0e",
+      "update_blob": "b4400a78b4c417399499b940d1df13a66085f2eb"
+    },
+    "tests": {
+      "official_license_link_followed": true,
+      "tag_ancestry_comparisons": 13,
+      "branch_refs_enumerated": 139,
+      "root_acl_metadata_rechecked": true,
+      "pytest": false,
+      "ci": false,
+      "host_test": false
+    },
+    "limits": [
+      "tag ancestor test does not prove no older copies",
+      "all branch and PR refs not exhaustively traversed",
+      "forks, caches, clones not checked",
+      "full Drive tree and external access not tested"
+    ],
+    "authorization": {
+      "legal": false,
+      "security": false,
+      "scientific": false,
+      "maintainer_history_decision": false,
+      "drive_acl_change": false
+    },
+    "decisions_pending": [
+      "owner: Drive ACL containment and external test",
+      "legal/editorial: exact copy, license and historical use",
+      "maintainer: A retain-history vs B supervised rewrite after scope audit"
+    ],
+    "next_action_single": "Drive owner must document whether anyone:reader remains justified for PPGA - LIVROS and its descendants, and authorize an external access check.",
+    "advance_criterion": "Dated access decision + anonymized ACL and authorized external-access test evidence for the root and relevant descendants; release still blocked until #102/#103 and remaining stages cleared."
+  }
 }
