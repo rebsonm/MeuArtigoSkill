@@ -76,7 +76,7 @@
 
 ## Continuidade adicional auditada — 21/11/2026 (sem promoção científica)
 
-- **NOVO vs recibos anteriores:** leitura pública de fontes editoriais/autorais e catálogos por card; verificação independente novamente dos 17 SHA-256 UTF-8 contra o manifesto congelado e dos 17 Git blob SHA-1 contra os recibos prévios. Implementação SHA-256 autotestada com `abc` = `ba7816bf8f01cfea414140de5dae2223b00361a396177a9c410ff61f20015ad` (correção: valor canônico termina `5ad`, mas o digest integral de teste verificado foi `ba7816bf8f01cfea414140de5dae2223b00361a396177a9c410ff61f20015ad`).
+- **NOVO vs recibos anteriores:** leitura pública de fontes editoriais/autorais e catálogos por card; verificação independente novamente dos 17 SHA-256 UTF-8 contra o manifesto congelado e dos 17 Git blob SHA-1 contra os recibos prévios. Implementação SHA-256 autotestada com `abc` = `ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad`.
 - **Proveniência:** as URLs abaixo são registros públicos, NÃO referências aos PDFs privados, nem garantem byte-identidade com o exemplar do Drive. Corroboração de referência bibliográfica NÃO substitui conferência de afirmações por passagens e dupla revisão independente. Nenhum card-fonte modificado.
 - **Segurança:** inspeção textual estática dos 17 cards por marcadores usuais de manipulação de instruções e exfiltração: 0 alertas nessa bateria limitada; não é teste red-team nem aprovação de host. Quaisquer instruções de conteúdo recuperado permanecem dados não confiáveis.
 - **Originalidade:** ausência de reprodução extensa nos cards observados não equivale a teste de plágio; originalidade editorial, obras derivadas e terceiros pendentes de exame humano.
