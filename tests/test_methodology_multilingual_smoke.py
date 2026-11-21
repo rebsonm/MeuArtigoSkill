@@ -78,7 +78,8 @@ class MultilingualMethodologyDiscoverySmoke(unittest.TestCase):
         self.assertIn("byrne-2022-reflexive-thematic-analysis.pdf",
                       self.ranked_pdfs("análise temática reflexiva")[:2])
         self.assertTrue({"reflexive-thematic-analysis.md",
-                         "byrne-2022-reflexive-thematic-worked-example.md"}
+                         "byrne-2022-reflexive-thematic-worked-example.md",
+                         "braun-clarke-2022-reflexive-thematic-guide.md"}
                         .intersection(self.ranked_cards("análise temática reflexiva")[:2]))
 
 
