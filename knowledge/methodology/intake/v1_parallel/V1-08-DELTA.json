@@ -345,6 +345,10 @@
     "canonical_md_section": "31.08",
     "canonical_md_body_updated": false,
     "canonical_md_safety_reason": "text/markdown full-file replacement lacks safe atomic section-scoped concurrency precondition",
-    "single_next_action": "Independently cotejo exact primary edition and page/claim in each of 17 cards and record reviewers' documented decisions"
+    "single_next_action": "Independently cotejo exact primary edition and page/claim in each of 17 cards and record reviewers' documented decisions",
+    "canonical_md_comment_created": true,
+    "canonical_md_comment_readback_confirmed": true,
+    "canonical_md_body_remains_stale": true,
+    "results_confirmation_commit": "766578e48c4d6822c3cc20c5d027b5a526f01b47"
   }
 }
