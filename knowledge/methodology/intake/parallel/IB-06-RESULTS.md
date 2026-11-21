@@ -22,7 +22,7 @@
 | SRC-0203 | Coletivo Lttr13 (Badir, Polis, Provenzano), tradução Ricardo Ferreira Filho; *Narração e argumentação*; *Estudos Semióticos* 14(1), 2018 | Licença não observada; direitos da tradução pendentes | Não converter autoria coletiva em sobrenome individual |
 | SRC-0204 | Christian Le Bart; tradução Julia Lourenço Costa e Roberto Leiser Baronas; artigo, *Ensino e Tecnologia em Revista* 3(2), 2019, DOI 10.3895/etr.v3n2.8337 | **CC BY 4.0 expressa na edição** | Preservar crédito de tradução e verificar elementos de terceiros |
 | SRC-0207 | Joo e Steinert-Threlkeld; *Image as Data*; **preprint** arXiv:1810.01544v1 de 2018 | Licença explícita de redistribuição não observada | Não presumir artigo revisado por pares |
-| SRC-0208 | José Alberto de Siqueira Brandão; grounded theory em Ciência Política; artigo, volume 29(1), 2020, páginas observáveis 161–196 | Licença não observada | Nome do periódico pendente de confirmação visual |
+| SRC-0208 | José Alberto de Siqueira Brandão; grounded theory em Ciência Política; artigo, **Revista Política Hoje** 29(1), 161–196 (2020) | Licença não observada | Periódico confirmado por inspeção visual; ISSN/DOI pendentes |
 | SRC-0209 | Santos, Cunha e colaboradores; perspectivas da grounded theory; artigo, *Rev Esc Enferm USP* 52:e03303, 2018, DOI 10.1590/S1980-220X2017021803303 | CC genérica indicada, variante não confirmada | PDF inclui **errata** corrigindo nome Kamylla Santos da Cunha |
 | SRC-0210 | Centeno, Silva, Souza e Reis; grounded theory na Administração; artigo, *Contribuciones a las Ciencias Sociales*, maio 2020 | Licença não observada | Handle não é DOI |
 | SRC-0211 | Prigol e Behrens; teoria fundamentada na Educação; artigo, *Educação & Realidade* 44(3), 2019, DOI 10.1590/2175-623684611 | **CC BY 4.0 expressa** | Não implica publicação automática do PDF |
@@ -38,7 +38,7 @@
 - **Publicações:** zero PDFs enviados ao GitHub; zero materiais protegidos republicados; nenhuma licença presumida; zero cards promovidos a [L]/[I] aprovados.
 - **Integridade:** fonte congelada como base, branch própria; catálogos, ledger, manifestos, contadores globais, snapshots, testes globais, main e PR #101 compartilhada não alterados.
 - **Execução de CI:** CI remoto específico da branch **não executado/confirmado** nesta fase. Testes de regressão globais devem ser executados na integração coordenada após reconciliar contadores e SHA-256; não declarar CI verde sem evidência.
-- **Pendências:** nome do periódico do SRC-0208; licença exata das cópias com CC não especificada; responsabilidade da tradução e materiais de terceiros; DOI não visíveis; revisão científica independente; integração sequencial coordenada. Se o arquivo canônico do Drive não tiver sido atualizado, a pendência deve permanecer explícita, sem fingir que a atualização ocorreu.
+- **Pendências:** ISSN/DOI e licença do SRC-0208; licença exata das cópias com CC não especificada; responsabilidade da tradução e materiais de terceiros; DOI não visíveis; revisão científica independente; integração sequencial coordenada. Se o arquivo canônico do Drive não tiver sido atualizado, a pendência deve permanecer explícita, sem fingir que a atualização ocorreu.
 
 ## Próximo passo para a conversa integradora
 
