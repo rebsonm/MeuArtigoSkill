@@ -55,3 +55,7 @@ Foram consultadas no Google Drive as **17 entradas de primeiro nível** da pasta
 - Mayring (2025), erros e aproximações da análise de conteúdo com ChatGPT, SRC-0069.
 
 **Resultado do lote:** 100 cards editoriais originais provisórios; os 475 registros [P] e 38 PDFs públicos licenciados permanecem inalterados. A maior parte das referências depende de leitura original e de validação científica. Nenhum dos sete PDFs privados foi copiado, convertido ou redistribuído. As fontes públicas dos cards foram identificadas por DOI ou repositório; isso não autoriza publicação de quaisquer PDFs adicionais.
+
+## Confronto de 12 PDFs originais com a biblioteca pública — 21/11/2026
+
+Conferidos diretamente título, autoria, DOI e conteúdo metodológico de 12 originais do acervo: **12 identidades documentais confirmadas**, 399 correspondências bibliográficas ainda provisórias e 64 identidades não resolvidas. Os trabalhos de **Schroeder et al. (2025)** e **Mayring (2025)** trazem CC BY 4.0 na própria cópia, com inspeção visual, integridade/hash e fonte editorial verificáveis; esses dois PDFs foram adicionados, chegando a **40 PDFs públicos**. O ledger registra **5/475** cópias originais com autorização verificável; nenhuma cópia sem direito documentado foi publicada. Os 100 cards editoriais seguem em revisão científica pendente. Ver relatório `ORIGINAL-PDF-WORK-RECONCILIATION-12-2026-11-21.md`.

@@ -81,3 +81,7 @@ is authorized by this ledger.
 ## Specific publisher license screening (21 November 2026)
 
 See [license-screening record](LICENSE-SCREENING-2026-11-21.md) for publisher-backed distinctions between CC BY, CC BY-NC, CC BY-NC-SA and unresolved editions. The historic 23-card/12-PDF count below describes a prior checkpoint, not current totals.
+
+## Atualização complementar — 21/11/2026
+
+Depois da auditoria documental de 12 cópias originais: **5/475** itens do ledger com CC BY 4.0 verificada; **40** PDFs públicos individualmente licenciados no catálogo. Os dois novos originais, Schroeder et al. e Mayring 2025, têm licenças indicadas no próprio documento e hashes registrados. Não estender essa conclusão aos demais 470 PDFs sem direitos confirmados. Em particular, o exemplar de Hayes 2025 indica CC BY-NC, e a cópia de Lazar 2007 proíbe redistribuição substancial; ambos permanecem fora do acervo público. A leitura documental de 12 obras não aprova cientificamente seus cards.
