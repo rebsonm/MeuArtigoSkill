@@ -11,10 +11,10 @@ class ExtendedMethodsRegression(unittest.TestCase):
   reg=json.loads((BASE/"source_registry_catalog.json").read_text("utf-8"))
   docs=reg["documents"]
   self.assertEqual(len(docs),475)
-  self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="SOURCE_PDF_WORK_VERIFIED"]),86)
+  self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="SOURCE_PDF_WORK_VERIFIED"]),96)
   self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="IDENTITY_UNRESOLVED"]),0)
-  self.assertEqual(reg["source_text_read_in_ledger"],89)
-  self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED"]),389)
+  self.assertEqual(reg["source_text_read_in_ledger"],99)
+  self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED"]),379)
   observed=[x for x in docs if x["source_id"] in IDS]
   self.assertEqual(len(observed),19)
   for doc in observed:
