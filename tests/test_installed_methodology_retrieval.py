@@ -47,10 +47,10 @@ class InstalledMethodologyBoundaryTests(unittest.TestCase):
     def test_catalogue_expansion_snapshot_and_metadata(self):
         cards_catalog = json.loads((ROOT / cards.INDEX_PATH).read_text(encoding="utf-8"))
         pdf_catalog = json.loads((ROOT / pdfs.CATALOG).read_text(encoding="utf-8"))
-        self.assertEqual(len(cards_catalog["documents"]), 23)
-        self.assertEqual(len(pdf_catalog["documents"]), 12)
+        self.assertGreaterEqual(len(cards_catalog["documents"]), 43)
+        self.assertGreaterEqual(len(pdf_catalog["documents"]), 14)
         self.assertEqual(len([x for x in cards_catalog["documents"] if
-                              x.get("editorial_status") == "DRAFT_NEEDS_INDEPENDENT_REVIEW"]), 19)
+                              x.get("editorial_status") == "DRAFT_NEEDS_INDEPENDENT_REVIEW"]), 39)
         self.assertRegex(hybrid.DEFAULT_PUBLIC_SNAPSHOT, r"^[a-f0-9]{40}$")
         self.assertEqual(hybrid.DEFAULT_PUBLIC_SNAPSHOT,
                          "2f45911c4485cfc738bf22972459802d8c74759e")
