@@ -186,3 +186,47 @@
 - Específicos: EC-066 licença de versão NC-ND; EC-067 livro não lido [P] e direitos comerciais; EC-068, 070, 071 direitos restritos/não confirmados; EC-072 alcance da fonte consultada limitado; EC-065 conferir 10 passos/checkpoints com original.
 - Testes: leitura 18/18; integridade SHA-256 dos arquivos contra manifesto; verificação de escopo 18 caminhos; 0 cards editados, 0 PDFs publicados, 0 alterações globais; nenhuma homologação de direitos/científica ou testes MCP/host.
 - Próximo passo: auditar os recibos com revisão humana independente e entregar estes deltas à etapa V1-16 **somente após** conclusão auditada de toda onda A. Esta etapa NÃO executa V1-16 nem autoriza release.
+
+## Continuidade verificada — fontes primárias/metadata e direitos (21/11/2026)
+
+Esta rodada não repetiu a conferência já validada dos 18 blobs SHA-256. É uma verificação complementar de páginas públicas de editoras e catálogos, de natureza **documental e automatizada**, sem equiparação a leitura integral, licença da cópia física/digital exata, homologação antiplágio ou duas revisões humanas independentes. Nenhum PDF foi baixado ou republicado.
+
+| Card | Fonte externa consultada | Situação *da obra publicada* | Confronto novo / ressalva |
+|---|---|---|---|
+| EC-055 | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006379 | `CC_BY_4_PAGINA_ARTIGO` | Título, DOI e licença da editora; orientação de produtividade não é prova de validade científica. |
+| EC-056 | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010139 | `CC_BY_4_PAGINA_ARTIGO` | Fonte sobre boas práticas, não garantia de ausência de viés ou de protocolos implementados. |
+| EC-057 | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005412 | `CC_BY_4_PAGINA_ARTIGO` | Artigo sobre robustez de software; não comprova validade inferencial. |
+| EC-058 | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007846 | `CC_BY_4_PAGINA_ARTIGO` | Título da fonte especifica pesquisa em SAÚDE HUMANA: transposição para outros campos requer contextualização e proteção de participantes. |
+| EC-059 | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006036 | `CC_BY_4_PAGINA_ARTIGO` | Orientação sobre referências; DOI isolado não demonstra suporte à proposição. |
+| EC-060 | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010749 | `CC_BY_4_PAGINA_ARTIGO` | Fonte trata de DADOS BIOLÓGICOS; licença do artigo não determina licenças dos datasets. |
+| EC-061 | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1014419 | `CC_BY_4_PAGINA_ARTIGO` | PLOS identifica publicação de 22/06/2026 e recomenda suplemento autocontido; não implica abertura de dados protegidos. |
+| EC-062 | https://www.e-publicacoes.uerj.br/sustinere/article/view/71828 | `CC_4_POLITICA_REVISTA_VARIANTE_NAO_COTEJADA` | Resumo da editora enumera etapas de análise temática; licença genérica CC 4.0 no periódico, sem confirmação da modalidade para a cópia exata. |
+| EC-063 | https://editora.sepq.org.br/rpq/article/view/545 | `CC_BY_4_PAGINA_ARTIGO` | Fonte da revista refere amostragem qualitativa em saúde; transposição interdisciplinar e saturação precisam de justificativa. |
+| EC-064 | https://revistas.ufg.br/fen/article/view/47234 | `CC_BY_4_PAGINA_ARTIGO` | Editora indica CC BY 4.0; página informa disponibilização digital 2017 e edição v.11 n.3 (2009): distinguir publicação online e volume original. |
+| EC-065 | https://onlinelibrary.wiley.com/doi/10.1111/ijmr.12381 | `OA_EDITORA_E_CC_BY_DEPOSITO_INSTITUCIONAL` | Texto da editora confirma DEZ etapas e TRÊS checkpoints (após etapa 5, após etapa 8 e após etapa 10); versão de PDF interna não foi cotejada. |
+| EC-066 | https://www.sciencedirect.com/science/article/pii/S0148296319304564 | `CC_BY_NC_ND_4_PUBLICACAO` | Título/DOI Snyder confirmados; registro da obra informa CC BY-NC-ND, sem autorização de derivações/uso comercial por essa licença. |
+| EC-067 | https://books.google.com/books/about/Metodos_e_tecnicas_de_pesquisa_bibliogra.html?id=PS2QmgEACAAJ | `LIVRO_COMERCIAL_SEM_AUTORIZACAO` | Catálogo Google Books identifica 11ª edição, Sulina, 1986 (239 pp.); isso verifica bibliografia, NÃO leitura da obra nem fórmulas atribuídas ao autor. |
+| EC-068 | https://doi.org/10.1111/j.1471-1842.2009.00848.x | `LICENCA_NAO_ENCONTRADA` | Metadados registram artigo de Grant e Booth com 14 tipos de revisão; SALSA deve ser confrontada no original e tabela não pode ser copiada. |
+| EC-069 | https://link.springer.com/article/10.1007/s13162-020-00161-0 | `CC_BY_4_PAGINA_ARTIGO` | Editora confirma Theory Synthesis, Theory Adaptation, Typology e Model e licença CC BY 4.0; não equivale a quatro modelos universalmente exaustivos. |
+| EC-070 | https://onlinelibrary.wiley.com/doi/10.1111/joms.12581 | `LICENCA_NAO_ENCONTRADA` | Resumo Wiley confirma argumento sobre integrar e gerar perspectiva nova; direitos do texto integral não foram demonstrados. |
+| EC-071 | https://journals.aom.org/doi/10.5465/amr.2009.0188 | `LICENCA_NAO_ENCONTRADA` | Resumo da Academy of Management confirma problematização de pressupostos; não foi realizado confronto completo do artigo. |
+| EC-072 | https://link.springer.com/article/10.1186/s13643-020-01542-z | `CC_BY_4_PAGINA_ARTIGO` | Editora declara expressamente CC BY 4.0 para o artigo PRISMA-S; é guia de RELATO da busca, não valida a sensibilidade da estratégia. |
+
+### Reconciliação com o recibo original
+- Permanecem **18/18 hashes anteriores válidos conforme a rodada anterior**; esta continuidade não repetiu o cálculo nem alterou o corpus congelado.
+- O parecer de triagem continua **12 `APROVÁVEL_COM_EVIDÊNCIA` condicionais e 6 `CORREÇÃO_NECESSÁRIA`**; **EC-072** tem agora evidência pública de CC BY 4.0 para a *publicação*, mas permanece `CORREÇÃO_NECESSÁRIA` por depender de cotejo científico do texto e revisão editorial. Não confundir licença do artigo com licença de anexos, terceiros e arquivos privados.
+- **EC-065**: estrutura 10 passos/3 checkpoints confirmada no texto da editora; a redação compactada das dez etapas no card ainda exige confronto detalhado, item a item, antes de aprovação científica.
+- **EC-067**: a 11ª edição de 1986 foi localizada em catálogo; não se inferiu leitura direta, direitos de reprodução ou confirmação das proposições do livro. Grau **[P]** preservado.
+- **EC-066**: registro de CC BY-NC-ND deve permanecer restritivo; não classificar como CC BY irrestrita.
+- **EC-062**: licença divulgada genericamente como Creative Commons 4.0; modalidade específica e cobertura do exemplar exato não confirmadas nesta rodada.
+- **EC-068, EC-070, EC-071**: não há, nas fontes consultadas, evidência específica suficiente para declarar licença de redistribuição. Ausência de licença comprovada não equivale a afirmar que nenhum acesso autorizado exista.
+- **Originalidade**: textos curtos e informação de licença não constituem verificação antiplágio. Não foi realizada comparação textual sistemática com artigos integrais, e **0/18 pareceres humanos de direitos/originalidade e 0/18 de fidelidade científica** estão documentados nesta aba.
+- **Integridade/escopo**: esta continuidade altera somente os dois recibos V1-07, sem tocar cards, manifesto, índices, `main`, outras branches, PRs ou PDFs.
+- **Testes**: inspeção de URLs e metadados das 18 fontes; não executados testes de software, CI, host, MCP ou validação jurídica. Ausência de workflows/status no commit de partida não é sucesso de CI.
+
+### FEITO / EM EXECUÇÃO / PRÓXIMA AÇÃO
+- **FEITO:** conferência do HEAD e diff de 2 arquivos; recibos originais reconciliados, metadados públicos e situação de direitos anotados separadamente para cada um dos 18 cards; resolvida a incerteza da licença pública do **artigo EC-072** e confirmado o aparato metodológico **EC-065**.
+- **EM EXECUÇÃO (pendências):** originalidade comparada à íntegra, direitos de versão/cópia exata e material de terceiros, rastreio proposição–trecho e revisão humana independente dos 18 cards. Liberação V1-16 segue bloqueada.
+- **PRÓXIMA AÇÃO ÚNICA:** atribuir a um revisor humano independente a primeira checagem documentada de originalidade e direitos, começando por **EC-066, EC-067, EC-068, EC-070 e EC-071**, registrando obra/versão, evidência e assinatura; depois submeter à revisão científica distinta.
+- **CRITÉRIO VERIFICÁVEL:** para cada card, dois pareceres independentes datados e identificados (direitos/originalidade + fidelidade científica), com trechos/versão, limitações, conclusão e registro nos recibos; sem essa evidência não há aprovação nem integração científica.
+
