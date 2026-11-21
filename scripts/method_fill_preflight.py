@@ -18,6 +18,7 @@ import unicodedata
 
 from adaptive_method_guide import for_project, preview
 from method_decision_dimensions import DIMENSIONS
+from method_change_impact import preview_change
 from method_routes import (
     INFERENCE_AIMS, INTEGRATION_TYPES, MIXED_DESIGNS, REQUIRED_DESIGN, ROUTES, load as load_method_profile
 )
@@ -257,20 +258,33 @@ def for_existing_project(project: Path, *, field: str|None=None,
     # expose source text or private method rationale.
     g=for_project(project,field=field,dimension=dimension)
     report=inspect(g,proposal=proposal,option_id=option_id)
+    route = g.get("route_recorded")
+    canonical_field = g.get("target_field")
     if (proposal is not None and
         g.get("bound_to_canonical_project") is True and
-        g.get("route_recorded") == "QUANTITATIVE" and
-        g.get("target_field") == "inference_aim"):
+        route in REQUIRED_DESIGN and
+        canonical_field in REQUIRED_DESIGN[route]):
         path = Path(project)/"00_Gestao_e_Continuidade"/"METHOD_PROFILE.json"
         # Fail closed on unsafe/read-inconsistent canonical profile files.
         if path.is_symlink() or not path.is_file() or path.stat().st_size > 1_000_000:
             raise ValueError("Unsafe method profile during impact preview")
         profile = load_method_profile(Path(project))
         details = profile.get("route_details")
-        if profile.get("route") != "QUANTITATIVE" or not isinstance(details, dict):
+        if (profile.get("schema_version") != 1 or
+            profile.get("route") != route or not isinstance(details, dict)):
             raise ValueError("Method profile changed during impact preview")
-        report["inference_change_impact"] = inference_aim_change_impact(
-            details.get("inference_aim"), proposal)
+        invalid = any(x["code"] in {
+            "INVALID_CANONICAL_ENUM", "PLACEHOLDER_NOT_EVIDENCE",
+            "INVALID_DRAFT_TEXT", "GUIDANCE_NOT_READY",
+        } for x in report["findings"])
+        report["method_change_impact"] = preview_change(
+            route, canonical_field, details.get(canonical_field), proposal,
+            proposal_eligible=not invalid)
+        # Keep the original quantitative response unchanged for clients of
+        # the PR #95 pilot. Neither preview authorizes a field rewrite.
+        if route == "QUANTITATIVE" and canonical_field == "inference_aim":
+            report["inference_change_impact"] = inference_aim_change_impact(
+                details.get("inference_aim"), proposal)
     return report
 
 def main(argv=None) -> int:
