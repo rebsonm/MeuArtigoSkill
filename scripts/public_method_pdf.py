@@ -14,6 +14,7 @@ import re
 import sys
 import urllib.error
 import urllib.request
+import unicodedata
 from typing import Callable
 
 REPO = "rebsonm/MeuArtigoSkill"
@@ -93,8 +94,17 @@ def metadata(blob: bytes) -> list[dict]:
     return docs
 
 
+_STOPWORDS = {"the", "and", "for", "with", "from", "how", "what", "when",
+              "para", "como", "uma", "com", "qual", "quais", "sobre",
+              "por", "del", "los", "las", "con", "una"}
+
 def _tokens(value: str) -> set[str]:
-    return {w.casefold() for w in WORDS.findall(value) if len(w) > 2}
+    if not isinstance(value, str):
+        return set()
+    folded = "".join(c for c in unicodedata.normalize("NFKD", value.casefold())
+                     if not unicodedata.combining(c))
+    return {w for w in WORDS.findall(folded)
+            if len(w) > 2 and w not in _STOPWORDS}
 
 
 def _score(question: str, item: dict) -> int:
