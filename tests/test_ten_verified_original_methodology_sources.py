@@ -48,13 +48,13 @@ class TenWorkIdentityEvidenceTests(unittest.TestCase):
         docs = self.registry["documents"]
         self.assertEqual(len(docs), 475)
         self.assertEqual(sum(x["bibliography_match_status"] == "SOURCE_PDF_WORK_VERIFIED"
-                             for x in docs), 96)
+                             for x in docs), 106)
         self.assertEqual(sum(x["bibliography_match_status"] == "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED"
-                             for x in docs), 379)
-        self.assertEqual(self.registry["source_text_read_in_ledger"], 99)
-        self.assertEqual(self.manifest["source_pdf_work_verified_count"], 96)
-        self.assertEqual(self.manifest["provisional_matches_remaining"], 379)
-        self.assertEqual(self.manifest["original_archive_text_scoped_read_count"], 99)
+                             for x in docs), 369)
+        self.assertEqual(self.registry["source_text_read_in_ledger"], 108)
+        self.assertEqual(self.manifest["source_pdf_work_verified_count"], 106)
+        self.assertEqual(self.manifest["provisional_matches_remaining"], 369)
+        self.assertEqual(self.manifest["original_archive_text_scoped_read_count"], 108)
         self.assertEqual(self.manifest["actual_individually_verified_rights_in_this_ledger"], 17)
         self.assertEqual(self.manifest["source_pdf_count_public_catalogue"], 51)
         self.assertEqual(self.manifest["original_editorial_cards_count"], 174)
