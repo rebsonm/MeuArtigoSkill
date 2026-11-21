@@ -454,12 +454,12 @@
       "filename": "Campos,Saidel,2022.pdf",
       "size_bytes": 223205,
       "priority": "P1",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
-      "publisher_license": "NOT_CHECKED",
-      "rights_review": "NOT_CHECKED",
-      "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
-      "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
+      "bibliographic_identity": "VERIFIED_PUBLISHED_WORK_AND_DOI",
+      "publisher_license": "CC BY 4.0",
+      "rights_review": "VERIFIED_PUBLISHER_LICENSE",
+      "public_distribution": "LICENSED_ORIGINAL_SOURCE_INDEXED",
+      "original_reading": "TITLE_ABSTRACT_AND_METHOD_SECTIONS_CONSULTED",
+      "suggested_next_step": "INDEPENDENT_SCIENTIFIC_EDITORIAL_REVIEW",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
       "bibliographic_title_original": "AMOSTRAGEM EM INVESTIGAÇÕES QUALITATIVAS: CONCEITOS E\nAPLICAÇÕES AO CAMPO DA SAÚDE",
@@ -471,7 +471,11 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "doi": "10.33361/RPQ.2022.v.10.n.25.545",
+      "rights_evidence_url": "https://editora.sepq.org.br/rpq/article/view/545",
+      "public_pdf_path": "knowledge/methodology/pdfs/campos-saidel-2022-qualitative-sampling.pdf",
+      "original_pdf_sha256": "b3e78db1e163a787ec0ac08c44fca1cbb2c664f53564581128779c65a8ddd1a8"
     },
     {
       "id": "SRC-0191",
