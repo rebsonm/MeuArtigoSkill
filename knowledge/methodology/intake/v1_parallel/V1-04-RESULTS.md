@@ -8,7 +8,7 @@
 
 - Onda A, **sem dependências**. Exatamente 18 cards permitidos, todos lidos e confrontados com o manifesto; **18/18 SHA-256 de origem coincidiram** com o snapshot congelado.
 - EC-001 a EC-004: adicionados metadados conservadores de rascunho, grau [I] e ressalva de direitos. Nenhuma afirmação de leitura, licença ou validade foi promovida.
-- EC-005 a EC-018: **14 cards preservados**, sem alteração textual ou de hash.
+- EC-005 a EC-018: **12 cards preservados**; EC-012 teve metadados bibliográficos normalizados por cotejo SciELO e EC-018 recebeu localizador ROSES independente. As verificações não equivalem a parecer científico.
 - A referência por título ou DOI não equivale a consulta à obra original; **não foram consultados PDFs nem textos integrais primários externos**. Nenhum PDF, excerto extenso, identificador privado ou material protegido foi distribuído.
 - 18/18 pareceres preliminares registrados; **0/18 revisões científicas independentes aprovadas** e **0/18 revisões independentes de direitos aprovadas**. As decisões de gate continuam humanas.
 
@@ -27,13 +27,13 @@
 | EC-009 | `case-study-bounded-design.md` | Sem alteração; Definir fronteiras, unidade do caso e orientação filosófica; triangulação não valida automaticamente. | `c656b1917470…` |
 | EC-010 | `qualitative-design-quality.md` | Sem alteração; Checklist de qualidade é sensível à epistemologia; member checking não é universal. | `f4d700341740…` |
 | EC-011 | `thematic-saturation.md` | Sem alteração; Saturação não é regra numérica universal; Guest et al. abordam um desenho delimitado. | `3c42119920be…` |
-| EC-012 | `content-analysis-reliability.md` | Sem alteração; Título/nomes bibliográficos sem acentuação e sem identificação de trecho; confiabilidade não equivale a validade. | `3c0a9acbddfe…` |
+| EC-012 | `content-analysis-reliability.md` | Bibliografia normalizada contra SciELO (Lycarião, acentos, e220027); fidelidade metodológica independente continua pendente. | `17671b0bc192…` |
 | EC-013 | `mixed-methods-integration.md` | Sem alteração; Duas bases de dados não bastam para métodos mistos; contradição não é erro por si. | `e69b4bf0e545…` |
 | EC-014 | `bibliometrics-claim-boundary.md` | Sem alteração; Citações/ocorrências não demonstram qualidade, causalidade ou impacto. | `39e86ac39e49…` |
 | EC-015 | `qualitative-metaanalysis.md` | Sem alteração; 'Meta-análise qualitativa' pode designar rotas epistemicamente distintas. | `3e196f6528fd…` |
 | EC-016 | `grounded-theory-analytic-logic.md` | Sem alteração; Grounded theory exige comparação constante e amostragem teórica coerente com tradição. | `1f4e534ae730…` |
 | EC-017 | `interrupted-time-series-inference.md` | Sem alteração; Série interrompida é vulnerável a tendência secular, autocorrelação e choques simultâneos. | `f0d420f9db1b…` |
-| EC-018 | `prisma-roses-selection.md` | Sem alteração; Comparação PRISMA/ROSES é orientação editorial, não equivalência normativa; localizador de ROSES não está duplicado. | `75434122b133…` |
+| EC-018 | `prisma-roses-selection.md` | Localizador ROSES incluído separadamente com fonte Springer; cotejo técnico de aplicação continua pendente. | `79c4059dfa76…` |
 
 ## Recibos individuais: fontes, direitos, riscos e ações
 
@@ -139,12 +139,14 @@
 ### EC-012 — Systematic literature synthesis and content-analysis reliability
 
 - Caminho: `knowledge/methodology/cards/content-analysis-reliability.md`.
-- SHA-256 congelado: `3c0a9acbddfeb6fd28373a36aa1833a54af438e36182f139e6062c1a5af46730`; SHA-256 atualizado: `3c0a9acbddfeb6fd28373a36aa1833a54af438e36182f139e6062c1a5af46730`; blob Git: `5e0983edac4e1ad06eb66537d04e28f38c9d9e26`.
+- SHA-256 congelado: `3c0a9acbddfeb6fd28373a36aa1833a54af438e36182f139e6062c1a5af46730`; SHA-256 atualizado: `17671b0bc192256fdfd0c950bfc56155344ec0987170492fde53e2744430a015`; blob Git: `dfccda0c5bf7794c511d056ad6b3bfe8f39f0180`.
 - Fonte/DOI declarados no card: `10.1590/2318-0889202335e220027`.
 - Achado: Título/nomes bibliográficos sem acentuação e sem identificação de trecho; confiabilidade não equivale a validade.
 - Correção recomendada: Normalizar metadados após consulta original e separar acordo de codificação de validade das categorias.
 - Direitos: nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados. Revisão científica independente e jurídica: PENDENTES. Texto integral das obras primárias: NÃO CONSULTADO. Decisão: **BLOQUEADO PARA ACEITE**, sem rejeição definitiva.
 
+
+- **Correção documental nova (21/11/2026):** corrigidos `Lycarião`, acentuação do título e localizador `e220027` mediante cotejo de metadados editoriais do [SciELO/Transinformação](https://new.scielo.br/j/tinf/a/hX8CfMV7xgKV4JbghWL4yXJ/?lang=pt). Commit [`80dea480`](https://github.com/rebsonm/MeuArtigoSkill/commit/80dea4809dde67054413b3babf852ff06568f974). Não comprova correção do argumento nem aceite científico/jurídico.
 ### EC-013 — Mixed methods: integration requires more than two datasets
 
 - Caminho: `knowledge/methodology/cards/mixed-methods-integration.md`.
@@ -193,19 +195,36 @@
 ### EC-018 — Reporting review designs: do not force one checklist everywhere
 
 - Caminho: `knowledge/methodology/cards/prisma-roses-selection.md`.
-- SHA-256 congelado: `75434122b13328dc9cc9dca49c81aab8203103a9a04d9e140a65e42c91a9fdd9`; SHA-256 atualizado: `75434122b13328dc9cc9dca49c81aab8203103a9a04d9e140a65e42c91a9fdd9`; blob Git: `61dd96e09454b55e70607646fec105f337151536`.
+- SHA-256 congelado: `75434122b13328dc9cc9dca49c81aab8203103a9a04d9e140a65e42c91a9fdd9`; SHA-256 atualizado: `79c4059dfa76a41a0124515222956975fa6f704dd39ae958422367b0350195ef`; blob Git: `07ed22c75cf901a935b359dbb58150c85c694d3b`.
 - Fonte/DOI declarados no card: `10.1186/s13643-021-01626-4`; `10.1186/s13750-018-0121-7`.
 - Achado: Comparação PRISMA/ROSES é orientação editorial, não equivalência normativa; localizador de ROSES não está duplicado.
 - Correção recomendada: Incluir localizador separado de ROSES após verificação e selecionar diretriz segundo domínio e produto.
 - Direitos: nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados. Revisão científica independente e jurídica: PENDENTES. Texto integral das obras primárias: NÃO CONSULTADO. Decisão: **BLOQUEADO PARA ACEITE**, sem rejeição definitiva.
 
+
+- **Correção documental nova (21/11/2026):** localizador e periódico PRISMA distinguidos de ROSES, cuja referência oficial foi conferida na [Springer/Environmental Evidence](https://link.springer.com/article/10.1186/s13750-018-0121-7). Commit [`65abb975`](https://github.com/rebsonm/MeuArtigoSkill/commit/65abb975318b73fc74ed30d5d4afdf26531ccc22). A pertinência metodológica ainda requer revisão independente.
 ## Testes, commits e bloqueios
 
-1. **PASS:** SHA-256 conferido pelo vetor de referência; 18/18 hashes congelados corretos; 4 cards atualizados com draft/[I] explícitos; 14/14 preservados; verificações estáticas de integridade e escopo. **NÃO EXECUTADO:** CI GitHub Actions, testes em host real, validação científica independente, comparação textual por direitos.
+1. **PASS:** SHA-256 conferido pelo vetor de referência; 18/18 hashes congelados reconferidos diretamente; 6 cards com ajustes documentais (4 anteriores de status/[I], 2 novos de metadados/fontes); 12/12 preservados; 18/18 hashes atuais e escopo verificados. **NÃO EXECUTADO:** CI GitHub Actions, testes em host real, validação científica independente, comparação textual por direitos.
 2. Os quatro SHA-256 novos constam do arquivo `V1-04-DELTA.json`; o catálogo global permanece com hashes antigos por proibição de escrita nesta etapa, exigindo atualização **somente em V1-16** após verificação de conflitos e dependências.
 3. Todos os cards continuam provisórios e bloqueados para aceite; não promover [I]/[P] a [L]. Nenhuma evidência de licença por edição exata foi verificada. Direitos/originalidade e fidelidade científica requerem pareceres independentes distintos.
 4. **Registro MD canônico no Drive — BLOQUEADO:** a chamada de edição localizada Google Docs foi recusada porque o arquivo é `text/markdown` (`FAILED_PRECONDITION`). Detectadas modificações remotas concorrentes; não houve sobrescrita do Markdown bruto, edição de outros blocos nem substituição por cópia. O bloco 31.04 segue não sincronizado.
 5. Permanecem pendentes leitura primária de cada referência, análise de contraprovas, licenças por edição, testes de prompt injection em contexto de recuperação, revisão externa e conciliação V1-16. Sem merge, release, tag, force-push, MCP ou publicação de PDFs.
+
+## Continuidade nova verificada em 21/11/2026 — sem homologação
+
+**FEITO:**
+- Releitura do manifesto imutável (blob `2f85dc6c4283376b9fc3c312668f0a1f25a0a301`) e dos 18 caminhos do snapshot congelado `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`. SHA-256 recalculado individualmente: **18/18 coincidentes** com o manifesto, e **18/18 na branch** com os recibos após as duas edições novas.
+- Triagem dos **18/18** cards por texto integral quanto a status [I]/[L]/[P], limitações, títulos/DOI declarados, contraprovas e URLs: todos permanecem **[I], rascunho e sem aprovação independente**. **Zero correspondências** em varredura estática de padrões conhecidos de prompt injection; **zero URLs privadas do Drive** nesses 18 cards. Isto NÃO prova segurança no sistema de recuperação nem originalidade por comparação integral de obras.
+- EC-012: bibliografia do artigo de 2023 normalizada com fonte primária de metadados [SciELO](https://new.scielo.br/j/tinf/a/hX8CfMV7xgKV4JbghWL4yXJ/?lang=pt) (autores, acentuação, título e e-location); SHA-256 novo `17671b0bc192256fdfd0c950bfc56155344ec0987170492fde53e2744430a015`, Git blob `dfccda0c5bf7794c511d056ad6b3bfe8f39f0180`, commit `80dea4809dde67054413b3babf852ff06568f974`.
+- EC-018: acrescentados localizadores separados PRISMA e ROSES com página oficial [Springer](https://link.springer.com/article/10.1186/s13750-018-0121-7); SHA-256 novo `79c4059dfa76a41a0124515222956975fa6f704dd39ae958422367b0350195ef`, Git blob `07ed22c75cf901a935b359dbb58150c85c694d3b`, commit `65abb975318b73fc74ed30d5d4afdf26531ccc22`.
+- Recibo DELTA conciliado e relido no commit `2c21b37d0d3008a20bab47383d2a6264343d7c63` (blob `84a98f0cfcc9f0b9c37071f55aa2aaf4e5e2c1a1`); 18 entradas, 6 ajustados, 12 preservados. Nenhum arquivo global ou externo à V1-04 foi modificado.
+
+**EM EXECUÇÃO / BLOQUEADO:** correção de metadados NÃO substitui cotejo das alegações científicas com texto integral nem revisão por especialistas. Permanecem 0/18 pares de verificações independentes documentados, direitos por edição/cópia não aprovados, revisão de originalidade não concluída, teste dinâmico de prompt injection não executado e CI sem execução associada ao HEAD no momento da checagem. O corpo do arquivo canônico `text/markdown` na seção 31.04 continua desatualizado: Drive não fornece escrita parcial transacional segura com as outras abas; **nenhuma substituição integral realizada**. Acompanhamento deve ocorrer por comentário do mesmo arquivo, sem alegar alteração do texto bruto.
+
+**PRÓXIMA AÇÃO ÚNICA:** obter e registrar **primeira revisão independente de fidelidade e direitos do EC-012** com edição identificada, trechos/locadores, data e responsável, preservando [I] até completar também a segunda revisão independente.
+
+**Critério verificável:** pareceres independentes e distintos para ciência/editoria e direitos/originalidade, ligados à edição exata e aos SHA-256 deste card, com controvérsias, contraprovas e eventuais correções explicitadas; somente então submeter decisão editorial humana. Não integrar globalmente nem publicar antes das demais etapas e controles.
 
 ## Próximos passos
 
