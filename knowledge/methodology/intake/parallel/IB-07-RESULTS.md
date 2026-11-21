@@ -44,3 +44,11 @@
 2. Localizar capa/expediente/editor e data da publicação SRC-0224, evitando inferências a partir do nome do arquivo.
 3. Coordenar integração SEQUENCIAL de hashes, catálogo, ledger, manifestos e contadores após revisão; testes globais fora desta branch.
 4. Registrar SHA/CI reais e manter pendência de direitos e revisão científica independente.
+
+## Commit e validações efetivas (21/11/2026)
+
+- Commit inicial das 17 fichas [P] e dos dois recibos: `0b16b58c4c9d99c2ab12064baf050ee29f8f7073`.
+- Diff confirmado: 19 arquivos permitidos (17 fichas próprias e 2 recibos), sem modificações globais nem binários PDFs.
+- Testes estruturais locais reproduzíveis: **10/10 PASS** (17 IDs, 17 fichas, 19 caminhos, 15 identidades e 2 bloqueios, hashes SHA256 de todas as fichas, Drive IDs/tamanhos, flags de direitos, ausência de PDF, privacidade e integridade dos arquivos globais).
+- GitHub CI: **nenhum status de check e nenhum workflow PR associado ao commit encontrado** na consulta; isso não equivale a CI aprovada. Testes locais NÃO substituem a CI integradora.
+- Integração futura exige revalidar o catálogo, ledger e manifestos globais após incorporar resultados; preservar estado PARCIAL enquanto SRC-0215 e SRC-0224 não tiverem prova editorial.
