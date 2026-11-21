@@ -435,10 +435,101 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/literature-review-writing-practice.md",
+      "title": "Writing a literature review without mistaking narrative for systematic evidence",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "ad217b701d06e740638f28c00c8970bfdbd66d763f91682060dd58f6e8c84ea3",
+      "keywords": [
+        "literature",
+        "review",
+        "writing",
+        "narrative",
+        "synthesis",
+        "revisão",
+        "literatura",
+        "pautasso"
+      ],
+      "source_doi": "10.1371/journal.pcbi.1003149",
+      "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003149",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/manuscript-argument-structure.md",
+      "title": "Scientific article structure: align claims, evidence and reader navigation",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "2fe6e5a440306a6bec3197e50040dd9ad122c24fc73ffe06540239b41fe93056",
+      "keywords": [
+        "writing",
+        "article",
+        "manuscript",
+        "scientific",
+        "paper",
+        "structure",
+        "argument",
+        "results",
+        "methods"
+      ],
+      "source_doi": "10.1371/journal.pcbi.1005619",
+      "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/reproducible-computational-workflow.md",
+      "title": "Computational reproducibility: preserve a checkable chain from inputs to outputs",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "05eb38d06074343d273acc8409bd35c20f91f0c883d40437c3c5ce2db5769e0e",
+      "keywords": [
+        "reproducible",
+        "reproducibility",
+        "code",
+        "data",
+        "scripts",
+        "analysis",
+        "pipeline",
+        "provenance",
+        "research"
+      ],
+      "source_doi": "10.1371/journal.pcbi.1003285",
+      "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
+    },
+    {
+      "path": "knowledge/methodology/cards/meta-analysis-design-and-reporting.md",
+      "title": "Meta-analysis: an estimand and compatibility review precede statistical pooling",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "source_kind": "ORIGINAL_CURATED_SUMMARY",
+      "sha256": "5eb63bfc7c50209293ec0f2256a3af6cd093b3f1b119be9d3d361df1203ba668",
+      "keywords": [
+        "meta-analysis",
+        "metaanalysis",
+        "effect",
+        "heterogeneity",
+        "systematic",
+        "synthesis",
+        "revisão",
+        "quantitative",
+        "meta"
+      ],
+      "source_doi": "10.1371/journal.pcbi.1006922",
+      "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006922",
+      "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+      "source_uses_full_text": false,
+      "source_reference_verified_for_this_project": false
     }
   ],
   "license": "Apache-2.0 (original editorial cards only)",
   "repository": "rebsonm/MeuArtigoSkill",
   "schema": "MEU_ARTIGO_GITHUB_METHODOLOGY_V1",
-  "version": "pilot-2026-11-21-card-batch1-draft"
+  "version": "pilot-2026-11-21-card-batch2-draft"
 }
