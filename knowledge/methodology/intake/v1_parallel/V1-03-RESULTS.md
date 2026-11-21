@@ -63,3 +63,21 @@
 ## Registro operacional de concorrência do MD canônico
 
 A abertura V1-03 foi atualizada e verificada no MESMO MD original no Google Drive (ID canônico conhecido pelo mantenedor). Durante e ao término da execução, novas versões concorrentes foram detectadas entre a preparação do patch e a verificação imediatamente anterior ao `files.update`: os snapshots de 22:18:31.685Z, 22:20:39.312Z e 22:21:38.796Z tornaram-se obsoletos. **Todas as gravações intermediárias/finais baseadas em versões obsoletas foram abortadas sem mutação remota**. O bloco 31.03 permanece no estado de abertura `EM_EXECUCAO` no último readback da sessão; não alegar encerramento ou sincronização final. Os dois recibos GitHub já contêm as evidências e devem ser reconciliados exclusivamente em 31.03 por uma execução futura com janela de escrita segura. Não substituir o arquivo canônico por cópia nem sobrescrever abas concorrentes. A classificação documental V1-03 está pronta para auditoria, mas a etapa operacional permanece PARCIAL até o readback do MD final.
+
+## Continuidade — confronto dos blobs IB e auditoria do HEAD (21/11/2026)
+
+**FEITO nesta continuidade, sem repetir a inspeção dos PDFs:** releitura do manifesto fixado (blob `2f85dc6c4283376b9fc3c312668f0a1f25a0a301`), dos dois recibos já existentes e dos **cinco cards originais nas branches IB exigidas**; confronto direto dos blobs Git com os hashes que já constavam nos recibos. Cinco confrontos **MATCH**:
+
+| ID | Branch IB de origem | Blob Git da ficha IB | Confronto com recibo |
+| --- | --- | --- | --- |
+| SRC-0321 | `work/ib-12-20261121` | `6903c9eceacc40ce3de073b7559d75d892cd5431` | MATCH |
+| SRC-0325 | `work/ib-12-20261121` | `163f4160ec60000ed7477ddb171a5e6f2d926fe7` | MATCH |
+| SRC-0336 | `work/ib-13-20261121` | `ffbfd48aac35965c53b953fa783edad8e16c2d7b` | MATCH |
+| SRC-0385 | `work/ib-15-20261121` | `b0afbf7b391b1cc9624daed3f3aab7bc2e247515` | MATCH |
+| SRC-0403 | `work/ib-16-20261121` | `3dafb7485e41e05cb1088181e8afe76e5c89ea1d` | MATCH |
+
+**Estado bibliográfico pós-confronto:** as fichas IB originais permanecem, respectivamente, com incertezas de ano da tradução (0321), copyright/expediente (0325), veículo e ano (0336), autenticidade editorial não demonstrada (0385) e autoria/edição da cópia (0403). Os recibos V1-03 propõem completar metadados por confrontos posteriores, **não** substituem os cards originais, nem validam direitos/licenças das cópias. Para SRC-0385, manter **BLOQUEADO/QUARENTENA**, sem imputação de fraude e sem citação afirmativa, até fonte primária independente ou decisão editorial motivada de exclusão. A semelhança com Rod Dacombe, DOI `10.1177/1478929916680641`, é indício para confronto, **não** autenticação da alegada obra de Michael Smith.
+
+**Evidência de integridade do isolamento:** no HEAD `a5e1b26eca51a58934bd4f025e2bf3817670072a` observado antes desta atualização, a branch tinha exatamente **4 commits à frente** do commit-base `7c92045310eb3b1474a9612a777fb0012a511592`, zero atrás e apenas `V1-03-RESULTS.md` e `V1-03-DELTA.json` como arquivos alterados. Nenhuma PR da branch foi encontrada na busca realizada. O endpoint de status retornou **0 checks** e o de workflow runs retornou **0 execuções** para esse HEAD; não tratar ausência como PASS. Validação lógica/documental (identidade dos cinco IDs, unicidade, blobs, escopo e JSON) é distinta de testes de CI/host, **não executados**.
+
+**MD canônico:** na nova leitura, o corpo da seção `31.03` ainda dizia `EM_EXECUCAO` e “entregas em preparação”; por risco de concorrência do `text/markdown` bruto, **não houve sobrescrita**. Como não havia thread específica de `31.03` entre os comentários existentes, foi criado comentário delimitado à seção, com FEITO/EM EXECUÇÃO/PRÓXIMA AÇÃO; verificar readback. **Status operacional:** PARCIAL; **próxima ação única:** reconciliar somente o corpo de `31.03` em janela sem edição concorrente e verificar por leitura remota. Sem merge, release, tag, MCP ou aprovação científica/jurídica/de segurança.
