@@ -39,7 +39,8 @@
     "12 unchanged files and 6 metadata-edited cards confined to V1-04 PASS",
     "18/18 static scan for typical prompt-injection directives and private Drive locators: 0 hits; NOT a dynamic security test",
     "SciELO metadata EC-012 and publisher ROSES EC-018 checked; NOT full scientific/rights review",
-    "Current HEAD CI checks not established (no combined statuses or PR workflow runs observed)"
+    "Release audit #44961093790 on exact SHA 9f53b1fc4b30bbc12467a379322aef438b3a65d5: FAILURE; 893 tests, 4 failures, 1 error, 2 skipped; Static release audit PASS; behavioral regression FAIL",
+    "Catalog points to frozen SHA256 for edited cards; two logged test failures explicitly compare reviews.md new 59c17017… against old 331db842…; remote digest mismatch and blocked retriever symptoms"
   ],
   "canonical_md": {
     "write_status": "BLOCKED_NOT_WRITTEN",
@@ -51,7 +52,8 @@
     "Four modified cards have new SHA256; global catalog remains intentionally untouched and its old hashes must be reconciled exclusively during V1-16.",
     "Approval of editorial science and rights remains independent, unresolved; no [L] promotion.",
     "No third-party PDFs, original source full texts, private identifiers or personal data copied.",
-    "The two additional edited cards EC-012 and EC-018 require hash reconciliation only by future V1-16; no global index was touched."
+    "The two additional edited cards EC-012 and EC-018 require hash reconciliation only by future V1-16; no global index was touched.",
+    "CI blocking: six card SHAs differ from frozen global catalog; tests fail by design until integration reconciles indices. NEVER patch global catalog in V1-04."
   ],
   "cards": [
     {
@@ -495,10 +497,25 @@
     ],
     "safety": "No detected static prompt-injection markers is NOT proof of runtime safety; no private locator observed in 18 card bodies.",
     "approvals": "Zero distinct documented independent scientific or rights reviews; no public license approval.",
-    "ci": "No workflow/combined statuses observed at head 65abb975318b73fc74ed30d5d4afdf26531ccc22; not a CI PASS",
+    "ci": "Workflow run https://github.com/rebsonm/MeuArtigoSkill/actions/runs/44961093790 FAILED on prior SHA 9f53b1fc4b30bbc12467a379322aef438b3a65d5; 893 tests, failures=4, errors=1, skipped=2. After receipt updates the branch HEAD is different, with CI not presumed. Global catalog reconciliation permitted only in V1-16.",
     "canonical_md": "Body 31.04 not rewritten: no concurrency-safe transaction on raw markdown; comment-based continuity required.",
     "next": "Obter duas revisões independentes documentadas, começando pelo cotejo das alegações de EC-012 com o texto primário e direitos da edição.",
-    "pr": "https://github.com/rebsonm/MeuArtigoSkill/pull/108"
+    "pr": "https://github.com/rebsonm/MeuArtigoSkill/pull/108",
+    "ci_failure": {
+      "head_sha": "9f53b1fc4b30bbc12467a379322aef438b3a65d5",
+      "run_id": 44961093790,
+      "run_url": "https://github.com/rebsonm/MeuArtigoSkill/actions/runs/44961093790",
+      "conclusion": "failure",
+      "test_count": 893,
+      "failures": 4,
+      "errors": 1,
+      "skipped": 2,
+      "static_release_audit": "success",
+      "behavioral_regressions": "failure",
+      "root_cause_evidence": "At least two asserted SHA256 mismatches between updated reviews.md and old global catalog. A remote digest mismatch and two retriever failures are consistent with stale catalog entries.",
+      "allowed_fix": "Propose reconciliation only for V1-16; not permitted in this V1-04 branch",
+      "do_not_infer": "No security, rights or scientific approval; no CI pass for later commits"
+    }
   },
   "pr": {
     "number": 108,
