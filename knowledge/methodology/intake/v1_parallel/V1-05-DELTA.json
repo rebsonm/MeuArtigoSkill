@@ -78,7 +78,17 @@
       "source_consultation_claim": "LEAD_BIBLIOGRAFICO_SEM_CONFIRMACAO_PRIMARIA_NESTA_SESSAO",
       "flags": "Conferir aviso de correção editorial associado ao artigo de Mensh e Kording e a edição efetivamente usada antes da aceitação.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "external_metadata_preflight": {
+        "result": "CORRECAO_DO_ARTIGO_CONFIRMADA",
+        "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005830",
+        "original_doi": "10.1371/journal.pcbi.1005619",
+        "rights": "PENDENTE",
+        "date": "2026-11-21",
+        "scope": "Metadados e localizadores; sem auditoria integral de original ou aceitação independente",
+        "scientific_accepted": false,
+        "license_approved": false
+      }
     },
     {
       "card_id": "EC-022",
@@ -135,7 +145,17 @@
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Conferir edição, identidade bibliográfica e eventuais direitos da fonte Sá-Silva et al.; DOI não confirmado nesta edição. Consulta ao PDF é apenas autodeclarada no card.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "external_metadata_preflight": {
+        "result": "DOI_LOCALIZADO_NO_PERIÓDICO",
+        "url": "https://periodicos.furg.br/rbhcs/article/view/10351/0",
+        "original_doi": "10.63595/rbhcs.v1i1.10351",
+        "rights": "PENDENTE",
+        "date": "2026-11-21",
+        "scope": "Metadados e localizadores; sem auditoria integral de original ou aceitação independente",
+        "scientific_accepted": false,
+        "license_approved": false
+      }
     },
     {
       "card_id": "EC-025",
@@ -211,7 +231,17 @@
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Verificar a licença exata CC BY-NC indicada para Nowell et al., sem promover PDF para catálogo irrestrito; revisar critérios de rigor sem reduzir qualidade a checklist.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "external_metadata_preflight": {
+        "result": "METADADOS_IDENTIFICADOS",
+        "url": "https://doi.org/10.1177/1609406917733847",
+        "original_doi": "10.1177/1609406917733847",
+        "rights": "PENDENTE_VERIFICACAO_CC_BY_NC_EDICAO",
+        "date": "2026-11-21",
+        "scope": "Metadados e localizadores; sem auditoria integral de original ou aceitação independente",
+        "scientific_accepted": false,
+        "license_approved": false
+      }
     },
     {
       "card_id": "EC-029",
@@ -249,7 +279,17 @@
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Verificar a licença CC BY-NC-ND indicada no card de Hennink e Kaiser; não redistribuir derivativos/PDF em regime irrestrito. Distinguir saturação de códigos e de significados.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "external_metadata_preflight": {
+        "result": "DOI_EDITORA_IDENTIFICADO",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0277953621008558",
+        "original_doi": "10.1016/j.socscimed.2021.114523",
+        "rights": "PENDENTE_VERIFICACAO_CC_BY_NC_ND_COPIA",
+        "date": "2026-11-21",
+        "scope": "Metadados e localizadores; sem auditoria integral de original ou aceitação independente",
+        "scientific_accepted": false,
+        "license_approved": false
+      }
     },
     {
       "card_id": "EC-031",
@@ -287,7 +327,17 @@
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "A publicação Cattaneo/Titiunik é descrita como protegida; revisar metadados/licença da edição e não reproduzir tabelas/figuras.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "external_metadata_preflight": {
+        "result": "EDITOR_VOLUME_PAGINAS_DOI_CONFIRMADOS",
+        "url": "https://www.annualreviews.org/content/journals/10.1146/annurev-economics-051520-021409",
+        "original_doi": "10.1146/annurev-economics-051520-021409",
+        "rights": "COPYRIGHT_RESERVADO_NAO_REDISTRIBUIR",
+        "date": "2026-11-21",
+        "scope": "Metadados e localizadores; sem auditoria integral de original ou aceitação independente",
+        "scientific_accepted": false,
+        "license_approved": false
+      }
     },
     {
       "card_id": "EC-033",
@@ -306,7 +356,17 @@
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "O working paper NBER indica reserva de direitos; conferir edição e DOI (não confirmado no card), vedada redistribuição do PDF por mera acessibilidade.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "external_metadata_preflight": {
+        "result": "DOI_NBER_EDICAO_W13039_IDENTIFICADO",
+        "url": "https://www.nber.org/papers/w13039",
+        "original_doi": "10.3386/w13039",
+        "rights": "PENDENTE",
+        "date": "2026-11-21",
+        "scope": "Metadados e localizadores; sem auditoria integral de original ou aceitação independente",
+        "scientific_accepted": false,
+        "license_approved": false
+      }
     },
     {
       "card_id": "EC-034",
@@ -325,7 +385,17 @@
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Confirmar autoria/edição do relatório SSRN do grupo QTD e condições de reutilização; DOI não confirmado e PDF não liberado.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "external_metadata_preflight": {
+        "result": "DOI_DEPOSITO_SSRN_IDENTIFICADO",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3333405",
+        "original_doi": "10.2139/ssrn.3333405",
+        "rights": "PENDENTE",
+        "date": "2026-11-21",
+        "scope": "Metadados e localizadores; sem auditoria integral de original ou aceitação independente",
+        "scientific_accepted": false,
+        "license_approved": false
+      }
     },
     {
       "card_id": "EC-035",
@@ -363,16 +433,26 @@
       "source_consultation_claim": "DECLARACAO_CARD_PDF_IDENTIFICACAO_APENAS_SEM_VALIDACAO_NESTA_SESSAO",
       "flags": "Confirmar identificação e edição do capítulo Couto/Albala; ResearchGate não é licença e DOI não consta confirmado. Não publicar PDF.",
       "validation_limit": "Leitura documental do card, não cotejo integral de fontes originais, nem auditoria jurídica, nem revisão científica humana.",
-      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES"
+      "maintainer_decision": "APROVADO_PELO_MANTENEDOR;_REVISOES_E_DIREITOS_PENDENTES",
+      "external_metadata_preflight": {
+        "result": "CAPITULO_LOCALIZADO_SEM_DOI_CONFERIDO",
+        "url": "https://sigaa.unb.br/sigaa/public/docente/producao.jsf?siape=1421282",
+        "original_doi": null,
+        "rights": "PENDENTE",
+        "date": "2026-11-21",
+        "scope": "Metadados e localizadores; sem auditoria integral de original ou aceitação independente",
+        "scientific_accepted": false,
+        "license_approved": false
+      }
     }
   ],
   "global_mutations": false,
   "notes": "Triage of card documents, not primary works or PDFs; no [L] promotion.",
   "next_actions": [
-    "conferir fontes e direitos dos 8 cards prioritários EC-021/024/028/030/032/033/034/036",
-    "obter as duas revisões independentes por card com evidências",
-    "conciliar com segurança seção 31.05 no MD canônico sem substituir atualizações concorrentes",
-    "manter PR #104 Draft e liberar V1-16 apenas após dependências P0 e auditoria integradora"
+    "revisar formalmente direitos e fidelidade com pareceres independentes para os 18 cards, começando pelos 8 de risco",
+    "registrar eventual decisão de corrigir IDs bibliográficos dos 4 cards com DOI ausente em etapa autorizada, sem alterar cards nesta etapa",
+    "sincronizar com segurança somente seção 31.05 no MD canônico do Drive com mecanismo de concorrência adequado",
+    "avaliar dependências e P0 #102/#103 antes de V1-16; PR #104 permanece Draft"
   ],
   "validation": {
     "sha256_matches": 18,
@@ -392,5 +472,15 @@
     "meaning": "Aceite do mantenedor para continuidade editorial; não substitui revisões independentes, validação científica, direitos por edição nem gates de publicação.",
     "independent_review_gate_satisfied": false,
     "publication_authorized": false
+  },
+  "external_metadata_preflight": {
+    "date": "2026-11-21",
+    "focused_card_count": 8,
+    "external_doi_found_for_previously_no_doi_cards": 3,
+    "remaining_no_doi_verified": "EC-036",
+    "card_files_modified": 0,
+    "rights_decisions_positive": 0,
+    "independent_reviews_completed": 0,
+    "details_in": "V1-05-RESULTS.md"
   }
 }
