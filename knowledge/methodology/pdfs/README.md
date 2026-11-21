@@ -1,6 +1,6 @@
 # Methodological PDFs — rights and attribution
 
-This public corpus contains **12 source PDFs** with documented publisher or repository licensing statements for Creative Commons Attribution 4.0 International (CC BY 4.0). They are **not** covered by the repository's Apache-2.0 software license. The binary PDF copies are unmodified; no endorsement by their authors or journals is implied.
+This public corpus contains **14 source PDFs** with documented publisher or repository licensing statements for Creative Commons Attribution 4.0 International (CC BY 4.0). They are **not** covered by the repository's Apache-2.0 software license. The binary PDF copies are unmodified; no endorsement by their authors or journals is implied.
 
 License: https://creativecommons.org/licenses/by/4.0/
 
@@ -17,7 +17,7 @@ License: https://creativecommons.org/licenses/by/4.0/
 
 Reproduction status: **unaltered originals**, copied from the user's research collection after independent comparison of document title, authors, DOI and public journal license. Exact byte counts and SHA-256 are in `../pdf_catalog.json`; the public corpus test rejects unindexed or altered PDFs.
 
-**12 source PDFs are publicly hosted; the 475-item personal archive remains inventory-only except for individually identified sources.** A document being in a personal Google Drive folder, available online, or accessible by link does not itself constitute permission for public redistribution. Full scholarly support, visual figures/tables and printed pagination still require primary-source review. The candidate Skill ZIP includes small optional read-only clients for cards and licensed PDFs; the PDF binaries and remote catalogues are excluded from the ZIP. Actual execution depends on host access and an optional PDF parser.
+**14 source PDFs are publicly hosted; the 475-item personal archive remains inventory-only except for individually identified sources.** A document being in a personal Google Drive folder, available online, or accessible by link does not itself constitute permission for public redistribution. Full scholarly support, visual figures/tables and printed pagination still require primary-source review. The candidate Skill ZIP includes small optional read-only clients for cards and licensed PDFs; the PDF binaries and remote catalogues are excluded from the ZIP. Actual execution depends on host access and an optional PDF parser.
 
 ## Additional original PDFs with individual CC BY 4.0 evidence
 
@@ -34,3 +34,7 @@ These are unchanged source PDFs; they are NOT part of the installed ZIP.
 - Brett Mensh; Konrad Kording (2017), *Ten simple rules for structuring papers*. DOI: https://doi.org/10.1371/journal.pcbi.1005619. [Publisher/licensing evidence](https://journals.plos.org/ploscompbiol/s/licenses-and-copyright). Original `mensh-kording-2017-paper-structure.pdf`, SHA-256 `f02a2c14c630369f2058403a448f94e7aaeafb3c1cc681c9d6862812590b7b6c`.
 - Geir K. Sandve; Anton Nekrutenko; James Taylor; Eivind Hovig (2013), *Ten Simple Rules for Reproducible Computational Research*. DOI: https://doi.org/10.1371/journal.pcbi.1003285. [Publisher/licensing evidence](https://journals.plos.org/ploscompbiol/s/licenses-and-copyright). Original `sandve-et-al-2013-reproducible-research.pdf`, SHA-256 `35648a3880bdd8bf30e8212a3847b7bd35f504ee5ccbd1ad3856d206acd181db`.
 - Diego A. Forero; Sandra Lopez-Leon; Yeimy Gonzalez-Giraldo; Pantelis G. Bagos (2019), *Ten simple rules for carrying out and writing meta-analyses*. DOI: https://doi.org/10.1371/journal.pcbi.1006922. [Publisher/licensing evidence](https://journals.plos.org/ploscompbiol/s/licenses-and-copyright). Original `forero-et-al-2019-meta-analysis.pdf`, SHA-256 `412601e19c72d26945cf32237197c9f5aa480a944a319c076474bc01061528c1`.
+
+- David Byrne (2022), *A worked example of Braun and Clarke's approach to reflexive thematic analysis*. DOI: https://doi.org/10.1007/s11135-021-01182-y. [Publisher CC BY 4.0 evidence](https://link.springer.com/article/10.1007/s11135-021-01182-y). Original byrne-2022-reflexive-thematic-analysis.pdf, SHA-256 fbe98aa82d7caea73f1bad2785eabe70c88c58a6f4b4037d8cb1d331f3abab3c.
+
+- Magnhild Vikan; Ramtin Aryan; Mari Serine Kannelonning; Michael Alexander Riegler; Stein Ove Danielsen (2025), *Reflecting on LLM Support in Reflexive Thematic Analysis: An Exploratory Study*. DOI: https://doi.org/10.1177/10497323251365211. [Publisher CC BY 4.0 evidence](https://journals.sagepub.com/doi/10.1177/10497323251365211). Original vikan-et-al-2025-llm-rta.pdf, SHA-256 8432987a7e7a95ad035bd55ab0d46e6c8f7eb311f9ed624b11bd195b96f5cfa7.

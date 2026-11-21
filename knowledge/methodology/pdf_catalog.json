@@ -1,6 +1,6 @@
 {
   "schema": "MEU_ARTIGO_PUBLIC_PDF_CATALOG_V1",
-  "version": "pilot-2026-11-21-12-pdfs-multilingual-index",
+  "version": "pilot-ccby-2026-11-21-14-public-originals",
   "documents": [
     {
       "path": "knowledge/methodology/pdfs/lycariao-roque-costa-2023.pdf",
@@ -333,6 +333,60 @@
         "heterogeneidade",
         "quantitativa",
         "metaanálise"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/byrne-2022-reflexive-thematic-analysis.pdf",
+      "title": "A worked example of Braun and Clarke's approach to reflexive thematic analysis",
+      "authors": "David Byrne",
+      "year": 2022,
+      "doi": "10.1007/s11135-021-01182-y",
+      "size": 2860307,
+      "sha256": "fbe98aa82d7caea73f1bad2785eabe70c88c58a6f4b4037d8cb1d331f3abab3c",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://link.springer.com/article/10.1007/s11135-021-01182-y",
+      "source_url": "https://link.springer.com/article/10.1007/s11135-021-01182-y",
+      "source_pdf_origin": "RESEARCH_ARCHIVE_COPY_WITH_VERIFIED_PUBLISHER_LICENSE",
+      "equivalence_to_publisher_version": "ARTICLE_TITLE_DOI_AND_PUBLISHER_FORMAT_MATCHED_NOT_INDEPENDENT_BINARY_COMPARISON",
+      "keywords": [
+        "thematic",
+        "reflexive",
+        "analise",
+        "tematica",
+        "reflexiva",
+        "byrne",
+        "braun",
+        "clarke",
+        "qualitative"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/vikan-et-al-2025-llm-rta.pdf",
+      "title": "Reflecting on LLM Support in Reflexive Thematic Analysis: An Exploratory Study",
+      "authors": "Magnhild Vikan; Ramtin Aryan; Mari Serine Kannelonning; Michael Alexander Riegler; Stein Ove Danielsen",
+      "year": 2025,
+      "doi": "10.1177/10497323251365211",
+      "size": 1063915,
+      "sha256": "8432987a7e7a95ad035bd55ab0d46e6c8f7eb311f9ed624b11bd195b96f5cfa7",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://journals.sagepub.com/doi/10.1177/10497323251365211",
+      "source_url": "https://journals.sagepub.com/doi/10.1177/10497323251365211",
+      "source_pdf_origin": "RESEARCH_ARCHIVE_COPY_WITH_VERIFIED_PUBLISHER_LICENSE",
+      "equivalence_to_publisher_version": "ARTICLE_TITLE_DOI_AND_PUBLISHER_FORMAT_MATCHED_NOT_INDEPENDENT_BINARY_COMPARISON",
+      "keywords": [
+        "llm",
+        "generative",
+        "qualitative",
+        "reflexive",
+        "tematica",
+        "reflexividade",
+        "analise",
+        "ia",
+        "vikan"
       ]
     }
   ],
