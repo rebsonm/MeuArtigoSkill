@@ -1,6 +1,6 @@
 {
   "schema": "MEU_ARTIGO_PUBLIC_PDF_CATALOG_V1",
-  "version": "plos-cc-by4-import-2026-11-21",
+  "version": "public-open-cc-by-sources-with-archived-methodology-2026-11-21",
   "documents": [
     {
       "path": "knowledge/methodology/pdfs/lycariao-roque-costa-2023.pdf",
@@ -920,6 +920,57 @@
         "simple",
         "supplement",
         "your"
+      ],
+      "original_file_unchanged": true
+    },
+    {
+      "path": "knowledge/methodology/pdfs/dias-mishima-2023-thematic-analysis.pdf",
+      "title": "Análise temática de dados qualitativos: uma proposta prática para efetivação",
+      "authors": "Ernandes Gonçalves Dias; Silvana Martins Mishima",
+      "year": 2023,
+      "doi": "10.12957/sustinere.2023.71828",
+      "size": 433874,
+      "sha256": "9d623d1f2e22d8d93b571ded0eb9f34e5b6062669ee32f47f12fca67aad97d7a",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://doi.org/10.12957/sustinere.2023.71828",
+      "source_url": "https://doi.org/10.12957/sustinere.2023.71828",
+      "source_pdf_url": "https://www.e-publicacoes.uerj.br/index.php/sustinere/article/view/71828",
+      "keywords": [
+        "análise",
+        "temática",
+        "qualitativa",
+        "núcleos",
+        "contexto",
+        "interpretação",
+        "thematic",
+        "analysis"
+      ],
+      "original_file_unchanged": true
+    },
+    {
+      "path": "knowledge/methodology/pdfs/campos-saidel-2022-qualitative-sampling.pdf",
+      "title": "Amostragem em investigações qualitativas: conceitos e aplicações ao campo da saúde",
+      "authors": "Claudinei José Gomes Campos; Maria Giovana Borges Saidel",
+      "year": 2022,
+      "doi": "10.33361/RPQ.2022.v.10.n.25.545",
+      "size": 223205,
+      "sha256": "b3e78db1e163a787ec0ac08c44fca1cbb2c664f53564581128779c65a8ddd1a8",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://editora.sepq.org.br/rpq/article/view/545",
+      "source_url": "https://editora.sepq.org.br/rpq/article/view/545",
+      "source_pdf_url": "https://editora.sepq.org.br/rpq/article/download/545/337",
+      "keywords": [
+        "amostragem",
+        "qualitativa",
+        "sampling",
+        "amostra",
+        "saturação",
+        "ética",
+        "participantes"
       ],
       "original_file_unchanged": true
     }
