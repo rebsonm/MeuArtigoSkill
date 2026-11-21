@@ -50,12 +50,10 @@ class CIWorkflowSafetyTests(unittest.TestCase):
     def test_beta_publisher_refuses_rc_and_stable_versions(self):
         self.assertIn("Refuse release candidates and stable versions", self.release)
         self.assertIn("Beta publisher accepts only beta versions", self.release)
-        self.assertIn("release-audit.yml", self.ci.replace("Release audit", "release-audit.yml")
-                      if "release-audit.yml" in self.ci else "release-audit.yml")
 
     def test_candidate_zip_is_ci_test_artifact_without_publication(self):
         self.assertIn("check_release_metadata.py --candidate", self.ci)
-        self.assertIn("MeinArtigoSkill" if False else "MeuArtigoSkill-rc-test-only", self.ci)
+        self.assertIn("MeuArtigoSkill-rc-test-only", self.ci)
         self.assertIn("github.event_name == 'pull_request'", self.ci)
         self.assertNotIn("gh release create", self.ci)
 
