@@ -7,8 +7,8 @@
   "expected": 18,
   "pdfs_located": 18,
   "pdfs_inspected_limited": 18,
-  "identities_verified": 17,
-  "identities_blocked": 1,
+  "identities_verified": 18,
+  "identities_blocked": 0,
   "global_index_not_integrated": true,
   "rights_publication_approved": false,
   "scientific_review_completed": false,
@@ -22,19 +22,22 @@
       "drive_file_id_confirmado_ou_null": null,
       "drive_file_id_no_MD_privado": true,
       "nome_titulo_do_PDF": "Elite Studies: For a New Approach",
-      "autores_ano_edicao": "Erzsébet Bukodi; John H. Goldthorpe; ano/edição de publicação não constam no manuscrito aceito",
+      "autores_ano_edicao": "Erzsébet Bukodi; John H. Goldthorpe. Obra publicada em 2021, *The Political Quarterly* 92(4), 673–681; PDF do Drive é manuscrito aceito (não versão final).",
       "doi_isbn_confirmados_ou_null": {
-        "doi": null,
+        "doi": "10.1111/1467-923X.13072",
         "isbn": null
       },
-      "tipo_publicacao": "ARTIGO_ACEITO_MANUSCRITO",
+      "tipo_publicacao": "ARTIGO_MANUSCRITO_ACEITO_OBRA_PUBLICADA_IDENTIFICADA",
       "escopo_exato_da_inspecao": "p. 1 (manuscrito aceito), p. 2 (resumo)",
-      "identidade_confirmada_boolean": false,
-      "motivo_bloqueio_ou_null": "Ano/edição da publicação definitiva não comprovados no manuscrito aceito.",
+      "identidade_confirmada_boolean": true,
+      "motivo_bloqueio_ou_null": null,
       "direitos_observados": "Sem licença expressa identificada no manuscrito; não redistribuir.",
-      "novo_hash_da_ficha": "c16f3cfd1716cb7090929cc931c421923512d0345db1c822ef25212f047c2cea",
-      "commit_da_branch": null,
-      "estado_de_revisao_cientifica": "PENDENTE"
+      "novo_hash_da_ficha": "69c062bcdf76f7cd7c7262d45abd12119de5505c143a604c73fef01774cdd632",
+      "commit_da_branch": "08a15ef69e80dad3943c703c50d8347e9f786832",
+      "estado_de_revisao_cientifica": "PENDENTE",
+      "complementacao_documental_20261121": "IDENTIDADE_OBRA_PUBLICADA_CONFERIDA",
+      "fonte_editorial_externa": "https://onlinelibrary.wiley.com/doi/10.1111/1467-923X.13072",
+      "ressalva_versao": "A obra bibliográfica foi identificada por confronto do original privado com fonte editorial externa; o arquivo do Drive não deve ser tratado como PDF final da editora sem prova da versão."
     },
     {
       "batch_id": "IB-02/20",
@@ -432,5 +435,6 @@
   "notes": [
     "IDs privados de origem encontram-se somente no MD canônico restrito do Google Drive.",
     "Commit SHA do lote é informado no recibo final do MD canônico para evitar referência circular."
-  ]
+  ],
+  "complementary_publisher_audit": "2026-11-21: source card and receipt revised after original archived PDF inspection + publisher metadata; no PDF redistribution, scientific review or global registry change."
 }
