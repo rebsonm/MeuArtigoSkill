@@ -12,7 +12,7 @@
   "independent_scientific_review": "PENDENTE",
   "independent_rights_review": "PENDENTE",
   "repository_mutations": "Only V1-09-RESULTS.md and V1-09-DELTA.json; no card or global catalog changed",
-  "source_verification_scope": "17 frozen card texts + exact manifest; DOI/public links listed as declarations, not independently accessed in this task",
+  "source_verification_scope": "17 cards congelados + manifesto + metadados públicos correspondentes aos mesmos 17 artigos: 10 páginas HTML de editoras/repositórios e 7 referências bibliográficas alternativas, sem acesso a PDFs privados e sem revisão científica integral independente.",
   "pdf_policy": "No PDF bytes or private Drive IDs published; CC BY-NC does not become CC BY; other copy-specific rights pending",
   "drive_canonical_sync": "PENDENTE: stale-file update deliberately aborted after concurrent modification detected; MD must be reread and reconciled before a safe attempt",
   "counts": {
@@ -21,7 +21,9 @@
     "sha256_matches": 17,
     "editorial_corrections_needed": 17,
     "cards_modified": 0,
-    "independent_reviews_completed": 0
+    "independent_reviews_completed": 0,
+    "public_source_html_accessible": 10,
+    "alternative_metadata_corroborrated": 7
   },
   "cards": [
     {
@@ -45,7 +47,13 @@
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": true
+      "has_historical_verification_section": true,
+      "public_metadata_check": {
+        "status": "HTML editora",
+        "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/padm.12719",
+        "evidence": "Frantz e Siddiki (2021) e IG 2.0 confirmados em página editorial",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     },
     {
       "card_id": "EC-091",
@@ -68,7 +76,13 @@
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": true
+      "has_historical_verification_section": true,
+      "public_metadata_check": {
+        "status": "HTML publicação",
+        "url": "https://www.scielo.br/j/ep/a/3DkbXnqBQqyq5bV4TCL9NSH/?format=html",
+        "evidence": "Tripp (2005), texto HTML SciELO acessível",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     },
     {
       "card_id": "EC-092",
@@ -84,14 +98,20 @@
       "editorial_state_before": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "disposition": "CORREÇÃO_NECESSÁRIA",
       "scope_check": "Card no commit congelado; DOI e fonte registrados no card, sem validação independente da obra integral nesta execução",
-      "rights_note": "CC BY-NC 4.0 declarado: PDF não pode entrar no catálogo CC BY",
+      "rights_note": "Fonte editorial pública: CC BY-NC 4.0; não incorporar a catálogo CC BY nem distribuir com finalidade comercial; a licença da cópia privada permanece sem autenticação de bytes nesta etapa",
       "observations": "Fonte informa CC BY-NC 4.0: não converter em CC BY; diálogo com LLM não valida análise, especialmente com corpus sensível.",
       "needs_independent_rights_originality_review": true,
       "needs_independent_scientific_fidelity_review": true,
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": true
+      "has_historical_verification_section": true,
+      "public_metadata_check": {
+        "status": "HTML editora",
+        "url": "https://journals.sagepub.com/doi/10.1177/16094069251322346",
+        "evidence": "Hayes (2025); direitos da página indicam CC BY-NC 4.0",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     },
     {
       "card_id": "EC-093",
@@ -114,7 +134,13 @@
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": true
+      "has_historical_verification_section": true,
+      "public_metadata_check": {
+        "status": "Metadados alternativos",
+        "url": "https://www.scienceopen.com/document?vid=c969f169-9c94-45c9-995a-c099c0241a90",
+        "evidence": "DOI/Lazar (2007) em fonte indexadora; editora retornou 403",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     },
     {
       "card_id": "EC-094",
@@ -137,7 +163,13 @@
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": true
+      "has_historical_verification_section": true,
+      "public_metadata_check": {
+        "status": "Metadados alternativos",
+        "url": "https://www.scilit.com/publications/5aba961cb4f78c5045da36f0711e70b8",
+        "evidence": "Cardno (2018) e DOI identificados em índice; ERIC retornou timeout",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     },
     {
       "card_id": "EC-095",
@@ -153,14 +185,20 @@
       "editorial_state_before": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "disposition": "CORREÇÃO_NECESSÁRIA",
       "scope_check": "Card no commit congelado; DOI e fonte registrados no card, sem validação independente da obra integral nesta execução",
-      "rights_note": "Licença de PDF não comprovada nesta auditoria; proibição de redistribuição",
+      "rights_note": "Fonte editorial pública: acesso restrito, copyright e permissão requerida; nenhuma licença pública para cópia inferida; a licença da cópia privada permanece sem autenticação de bytes nesta etapa",
       "observations": "CAAI e alegação de cinco etapas exigem verificação pelo revisor no artigo e limites da tradição interpretativa; não equivaler diálogo a validação.",
       "needs_independent_rights_originality_review": true,
       "needs_independent_scientific_fidelity_review": true,
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": true
+      "has_historical_verification_section": true,
+      "public_metadata_check": {
+        "status": "HTML editora",
+        "url": "https://journals.sagepub.com/doi/10.1177/10778004251412871",
+        "evidence": "Friese (2026), acesso restrito e pedido de permissão explícitos",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     },
     {
       "card_id": "EC-096",
@@ -183,7 +221,13 @@
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": true
+      "has_historical_verification_section": true,
+      "public_metadata_check": {
+        "status": "Metadados alternativos",
+        "url": "https://dspace.mit.edu/entities/publication/0938ce9e-3d5c-4711-8a9f-2fc312b5536d",
+        "evidence": "Schroeder et al., CHI 2025 e estudo com 20 entrevistas; ACM retornou 403",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     },
     {
       "card_id": "EC-097",
@@ -206,7 +250,13 @@
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": true
+      "has_historical_verification_section": true,
+      "public_metadata_check": {
+        "status": "HTML repositório público",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202826/",
+        "evidence": "Wachinger: online 22/05/2024; volume 35(9) de 2025",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     },
     {
       "card_id": "EC-098",
@@ -222,14 +272,20 @@
       "editorial_state_before": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "disposition": "CORREÇÃO_NECESSÁRIA",
       "scope_check": "Card no commit congelado; DOI e fonte registrados no card, sem validação independente da obra integral nesta execução",
-      "rights_note": "Licença de PDF não comprovada nesta auditoria; proibição de redistribuição",
+      "rights_note": "Fonte editorial pública: free access não equivale a open license; permissão indicada pelo publisher; a licença da cópia privada permanece sem autenticação de bytes nesta etapa",
       "observations": "ARC e suas cinco dimensões são descritos pelo card; confirmar nome, categorias e edição online 2025/volume 2026 antes de uso [L].",
       "needs_independent_rights_originality_review": true,
       "needs_independent_scientific_fidelity_review": true,
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": true
+      "has_historical_verification_section": true,
+      "public_metadata_check": {
+        "status": "HTML editora",
+        "url": "https://journals.sagepub.com/doi/10.1177/10497323251401503",
+        "evidence": "Prahl: online 24/12/2025; fascículo 36(2–3) de 2026; solicitação de permissão",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     },
     {
       "card_id": "EC-099",
@@ -245,14 +301,20 @@
       "editorial_state_before": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "disposition": "CORREÇÃO_NECESSÁRIA",
       "scope_check": "Card no commit congelado; DOI e fonte registrados no card, sem validação independente da obra integral nesta execução",
-      "rights_note": "Licença de PDF não comprovada nesta auditoria; proibição de redistribuição",
+      "rights_note": "Fonte editorial pública: CC BY 4.0 com atribuição exigida; confirmar a versão usada na distribuição; a licença da cópia privada permanece sem autenticação de bytes nesta etapa",
       "observations": "419 signatários/32 países é afirmação apresentada no card e requer conferência; manifesto argumentativo não é experimento; evitar prescrição universal.",
       "needs_independent_rights_originality_review": true,
       "needs_independent_scientific_fidelity_review": true,
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": true
+      "has_historical_verification_section": true,
+      "public_metadata_check": {
+        "status": "HTML editora",
+        "url": "https://journals.sagepub.com/doi/10.1177/10778004251401851",
+        "evidence": "Jowsey et al.: online 17/12/2025; issue 12/2026; 419 de 32 países; CC BY 4.0",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     },
     {
       "card_id": "EC-100",
@@ -275,7 +337,13 @@
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": true
+      "has_historical_verification_section": true,
+      "public_metadata_check": {
+        "status": "Metadados alternativos",
+        "url": "https://doaj.org/article/00be4819aded4a7ebc37e917a54a0b9f",
+        "evidence": "Mayring (2025), DOI e testes ChatGPT 3.5/4 confirmados por DOAJ; página FQS retornou timeout",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     },
     {
       "card_id": "EC-101",
@@ -291,14 +359,20 @@
       "editorial_state_before": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "disposition": "CORREÇÃO_NECESSÁRIA",
       "scope_check": "Card no commit congelado; DOI e fonte registrados no card, sem validação independente da obra integral nesta execução",
-      "rights_note": "Licença de PDF não comprovada nesta auditoria; proibição de redistribuição",
+      "rights_note": "Fonte editorial pública: CC BY 4.0 com atribuição, válida conforme exemplar/versão correspondente; a licença da cópia privada permanece sem autenticação de bytes nesta etapa",
       "observations": "Reflexividade tecnológica proposta como orientação [I], não validação empírica; confirmar obra e licença da cópia de origem.",
       "needs_independent_rights_originality_review": true,
       "needs_independent_scientific_fidelity_review": true,
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": false
+      "has_historical_verification_section": false,
+      "public_metadata_check": {
+        "status": "HTML editora",
+        "url": "https://journals.sagepub.com/doi/10.1177/14687941251390794",
+        "evidence": "Ibrahim/Voyer: online 05/11/2025, volume 26(1) de 2026; CC BY 4.0",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     },
     {
       "card_id": "EC-102",
@@ -321,7 +395,13 @@
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": false
+      "has_historical_verification_section": false,
+      "public_metadata_check": {
+        "status": "Metadados de editora via pesquisa",
+        "url": "https://journals.sagepub.com/doi/full/10.1177/16094069261426100",
+        "evidence": "Misra et al. (2026), artigo e DOI confirmados no índice editorial; acesso direto DOI falhou",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     },
     {
       "card_id": "EC-103",
@@ -337,14 +417,20 @@
       "editorial_state_before": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "disposition": "CORREÇÃO_NECESSÁRIA",
       "scope_check": "Card no commit congelado; DOI e fonte registrados no card, sem validação independente da obra integral nesta execução",
-      "rights_note": "Licença de PDF não comprovada nesta auditoria; proibição de redistribuição",
+      "rights_note": "Fonte editorial pública: CC BY-NC 4.0; não incorporar a catálogo CC BY nem distribuir comercialmente; a licença da cópia privada permanece sem autenticação de bytes nesta etapa",
       "observations": "Crítica epistemológica é argumento, não demonstração causal de impossibilidade de assistência computacional; preservar dissenso metodológico.",
       "needs_independent_rights_originality_review": true,
       "needs_independent_scientific_fidelity_review": true,
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": false
+      "has_historical_verification_section": false,
+      "public_metadata_check": {
+        "status": "HTML editora",
+        "url": "https://journals.sagepub.com/doi/10.1177/10944281251377154",
+        "evidence": "Nguyen/Welch: online 30/09/2025, volume 29(1) de 2026; CC BY-NC 4.0",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     },
     {
       "card_id": "EC-104",
@@ -367,7 +453,13 @@
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": false
+      "has_historical_verification_section": false,
+      "public_metadata_check": {
+        "status": "Metadados de editora via pesquisa",
+        "url": "https://journals.sagepub.com/doi/abs/10.3102/0013189X251314821",
+        "evidence": "Jiang et al. (2025) e DOI confirmados; acesso DOI direto falhou",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     },
     {
       "card_id": "EC-105",
@@ -383,14 +475,20 @@
       "editorial_state_before": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "disposition": "CORREÇÃO_NECESSÁRIA",
       "scope_check": "Card no commit congelado; DOI e fonte registrados no card, sem validação independente da obra integral nesta execução",
-      "rights_note": "Licença de PDF não comprovada nesta auditoria; proibição de redistribuição",
+      "rights_note": "Fonte editorial pública: CC BY 4.0 com atribuição exigida e versão correspondente; a licença da cópia privada permanece sem autenticação de bytes nesta etapa",
       "observations": "Uso offline não prova confidencialidade ou equivalência epistemológica da RTA; verificação técnica e ética pendente.",
       "needs_independent_rights_originality_review": true,
       "needs_independent_scientific_fidelity_review": true,
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": false
+      "has_historical_verification_section": false,
+      "public_metadata_check": {
+        "status": "HTML editora",
+        "url": "https://journals.sagepub.com/doi/10.1177/10497323251365211",
+        "evidence": "Vikan et al.: online 08/09/2025, volume 36(2–3) de 2026; CC BY 4.0",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     },
     {
       "card_id": "EC-106",
@@ -413,7 +511,13 @@
       "prompt_injection_review": "Nenhum comando contido em fontes foi executado; material referenciado deve permanecer dado não confiável",
       "no_source_pdf_distributed": true,
       "card_changed": false,
-      "has_historical_verification_section": false
+      "has_historical_verification_section": false,
+      "public_metadata_check": {
+        "status": "Metadados alternativos institucionais",
+        "url": "https://cidtff.web.ua.pt/blog/?p=78974",
+        "evidence": "Costa et al. e DOI AbductivAI em blog institucional; DOI direto falhou",
+        "limitations": "A fonte aberta corrobora identidade/metadados, não constitui leitura comparativa independente de páginas e resultados"
+      }
     }
   ],
   "tests": [
@@ -421,7 +525,8 @@
     "17 SHA256 content values equal manifest",
     "17 distinct card IDs, DOI and SRC declarations present",
     "0 GitHub writes to other tasks/global files",
-    "No independent approval/rights grant recorded"
+    "No independent approval/rights grant recorded",
+    "10/17 HTML de editoras ou repositórios lidos, 7/17 metadados bibliográficos alternativos corroborados; nenhum PDF privado processado"
   ],
   "next_steps": [
     "Cotejar trechos, páginas e edição de cada DOI com revisor humano independente, em cópia licenciada",
@@ -429,5 +534,6 @@
     "Esclarecer proveniência e cronologia das verificações históricas, em especial EC-094",
     "Reconciliar somente a subseção 31.09 do MD canônico quando houver janela sem conflitos",
     "Encaminhar recibos ao V1-16 somente após encerramento/auditoria e dependências globais"
-  ]
+  ],
+  "public_source_check_date": "2026-11-21"
 }
