@@ -66,3 +66,8 @@ The current immutable `6d1b75eedf221f544d4416c7f1baf2220acab78d` snapshot contai
 ### Current fifth snapshot and tightened copyright review (21 Nov 2026)
 
 Public readers pin immutable `6d1b75eedf221f544d4416c7f1baf2220acab78d`: **164 original editorial draft cards, 51 public PDF binaries** and **475 prospecting [P] source leads**. Direct work-identity checks: **76**, provisional catalogue matches **399**, unresolved **0**. Archive rights-positive records **17/475** (includes one World Bank CC BY 3.0 IGO book as publisher link only). The initial SRC-0367 PDF was withdrawn after the official publication showed CC BY-NC 4.0, not permitted for this unrestricted public binary collection. See the rights correction note and the fifth-lot identity audit. No service, no scientific approval, no hosted backend and no installation acceptance inferred.
+
+
+## Current corrected installed-reader snapshot (21 November 2026)
+
+The optional installed readers use immutable trial source commit `b02b340bc44248bb167504fafa8f0dee02802f64`, with **174 provisional original editorial methodology cards**, **475 bibliographic [P] source leads**, **51 listed public PDFs**, **86 source-work identities verified by limited document inspection**, **389 title-only provisional matches**, and rights decisions positively recorded for **17 of the 475** exact original archive items. Earlier numeric snapshots in this document remain historical. A removed non-commercially licensed binary may still exist in prior *public Git history*; removing it from the working tree did not erase history. Human rights/history remediation and clean-host testing remain release blockers. No MCP, merge, tag, release or scientific gate approval.
