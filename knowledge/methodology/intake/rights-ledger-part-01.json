@@ -69,11 +69,11 @@
       "filename": "Filgueiras,Lui,2023.pdf",
       "size_bytes": 1378143,
       "priority": "P2",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -86,7 +86,13 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "A gramática das instituições como ferramenta de análise do desenho institucional",
+      "source_text_authors": "Fernando Filgueiras; Lizandro Lui",
+      "source_text_year": "2023",
+      "source_text_doi": "10.1590/3811032/2023",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "CC_ATTRIBUTION_NOTICE_PRESENT_NOT_PDF_CLEARED"
     },
     {
       "id": "SRC-0004",
@@ -94,11 +100,11 @@
       "filename": "Pasquarelli,2014.pdf",
       "size_bytes": 588238,
       "priority": "P2",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -111,7 +117,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Política Comparada: Tradições, Métodos e Estudos de Caso",
+      "source_text_authors": "Bruno Vicente Lippe Pasquarelli",
+      "source_text_year": "2014",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "RIGHTS_UNREVIEWED"
     },
     {
       "id": "SRC-0005",
@@ -119,11 +130,11 @@
       "filename": "Gonzelez,2008.pdf",
       "size_bytes": 78175,
       "priority": "P2",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -136,7 +147,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "O Método Comparativo e a Ciência Política",
+      "source_text_authors": "Rodrigo Stumpf Gonzalez",
+      "source_text_year": "2008",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "INTERNAL_2007_2008_HEADER_CONFLICT"
     },
     {
       "id": "SRC-0006",
@@ -465,11 +481,11 @@
       "filename": "Peruzzo,2017.pdf",
       "size_bytes": 334996,
       "priority": "P2",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -482,7 +498,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Pressupostos epistemológicos e metodológicos da pesquisa participativa: da observação participante à pesquisa-ação",
+      "source_text_authors": "Cicilia M. Krohling Peruzzo",
+      "source_text_year": "2017",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "RIGHTS_UNREVIEWED"
     },
     {
       "id": "SRC-0018",
@@ -519,11 +540,11 @@
       "filename": "Jesusetal,2014.pdf",
       "size_bytes": 207067,
       "priority": "P2",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -536,7 +557,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Pesquisa-Ação Colaborativo-Crítica: em busca de uma epistemologia",
+      "source_text_authors": "Denise Meyrelles de Jesus; Alexandro Braga Vieira; Ariadna Pereira Siqueira Effgen",
+      "source_text_year": "2014",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "RIGHTS_UNREVIEWED"
     },
     {
       "id": "SRC-0020",
@@ -544,11 +570,11 @@
       "filename": "ozanne-anderson-2010.pdf",
       "size_bytes": 249291,
       "priority": "P2",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -561,7 +587,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Community Action Research",
+      "source_text_authors": "Julie L. Ozanne; Laurel Anderson",
+      "source_text_year": "2010",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "PUBLISHER_COPYRIGHT_NOTICE"
     },
     {
       "id": "SRC-0021",
@@ -569,11 +600,11 @@
       "filename": "Corrêaetal,2018.pdf",
       "size_bytes": 234992,
       "priority": "P2",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -586,7 +617,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Pesquisa-ação: uma abordagem prática de pesquisa qualitativa",
+      "source_text_authors": "Giovana Camila Garcia Corrêa; Isabel Cristina Pires de Campos; Ricardo Campanha Almagro",
+      "source_text_year": "2018",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "RIGHTS_UNREVIEWED"
     },
     {
       "id": "SRC-0022",
@@ -619,11 +655,11 @@
       "filename": "Arnold,Norton.pdf",
       "size_bytes": 1062595,
       "priority": "P2",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -636,7 +672,11 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "HEA Action Research: Practice Guide",
+      "source_text_authors": "Lydia Arnold; Lin Norton",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "YEAR_UNCONFIRMED_AND_RIGHTS_UNREVIEWED"
     },
     {
       "id": "SRC-0024",
@@ -644,11 +684,11 @@
       "filename": "Santos,Oliveira,2023.pdf",
       "size_bytes": 420016,
       "priority": "P2",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -661,7 +701,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "A pesquisa-ação no planejamento urbano e territorial: o que é, como fazer e uma reflexão sobre a utilização do método",
+      "source_text_authors": "Eduardo Abramowicz Santos; Vanessa Elias de Oliveira",
+      "source_text_year": "2023",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "TEXT_ONLY_CC_BY_4_THIRD_PARTY_ELEMENTS_RESTRICTED"
     },
     {
       "id": "SRC-0025",
@@ -669,11 +714,11 @@
       "filename": "Streck,2013.pdf",
       "size_bytes": 370088,
       "priority": "P2",
-      "bibliographic_identity": "SOURCE_CATALOGUE_FILENAME_AND_TOPIC_MATCH_NOT_PRIMARY_VERIFIED",
+      "bibliographic_identity": "SOURCE_PDF_WORK_IDENTIFIED_FROM_ORIGINAL",
       "publisher_license": "NOT_CHECKED",
       "rights_review": "NOT_CHECKED",
       "public_distribution": "NOT_AUTHORIZED_BY_THIS_LEDGER",
-      "original_reading": "NOT_RECORDED_IN_LEDGER",
+      "original_reading": "SOURCE_PDF_TEXT_INSPECTED_FOR_IDENTITY_AND_METHOD_NOT_SCIENTIFICALLY_REVIEWED",
       "suggested_next_step": "IDENTIFY_WORK_AND_EXACT_EDITION_THEN_CHECK_PUBLISHER_LICENSE",
       "public_catalogue_possible_work_match_doi": null,
       "possible_match_strength": null,
@@ -686,7 +731,12 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "source_text_title": "Pesquisa (ação) participante e convergências disciplinares: reflexões a partir do estudo do orçamento participativo no sul do Brasil",
+      "source_text_authors": "Danilo R. Streck",
+      "source_text_year": "2013",
+      "scientific_review": "PENDING",
+      "pdf_redistribution_observation": "CC_BY_NC_ND_3_0_NOT_UNRESTRICTED"
     },
     {
       "id": "SRC-0026",
