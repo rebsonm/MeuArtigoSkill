@@ -1,0 +1,1812 @@
+{
+  "schema": "MEU_ARTIGO_V1_PARALLEL_WORKPACKAGES_V1",
+  "date": "2026-11-21",
+  "status": "PLANEJADO_NAO_EXECUTADO",
+  "repo": "rebsonm/MeuArtigoSkill",
+  "snapshot": {
+    "pr101_sha": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+    "editorial_catalog_path": "knowledge/methodology/catalog.json",
+    "editorial_catalog_git_blob": "6ca3ebde72b117717ae994390121c5aee884d7be",
+    "source_registry_git_blob": "511b519f6524cd1f7f977dc41a330ce62fbd00c1",
+    "source_records": 475,
+    "old_verified": 132,
+    "delta_verified_claims": 328,
+    "unresolved_source_records": 15,
+    "editorial_cards": 174,
+    "editorial_card_with_explicit_draft_status": 170,
+    "editorial_card_missing_status": 4
+  },
+  "execution_rule": "Pacotes V1-01..V1-15 paralelos entre si; V1-16..V1-20 sequenciais por dependência; cada aba atualiza SOMENTE seu bloco no MD canônico e caminhos exclusivos na branch, lendo e reconciliando o MD mais recente antes de cada gravação; não há merge atômico do Markdown bruto",
+  "rights_rule": "Não copiar IDs privados no GitHub, PDF protegido, reescrever histórico ou publicar sem deliberação; aprovação de cards exige checagem de originalidade/direitos e de fidelidade/editoria independentes, não apenas texto do modelo",
+  "project_go_condition": "Todos V1-01..V1-20 com evidência e critérios completos, consentimento humano específico para release, Issues P0 tratadas e documentação correta; V1-20 apenas prepara decisão, não dispara lançamento",
+  "groups": {
+    "parallel_wave_A": [
+      "V1-01/20",
+      "V1-02/20",
+      "V1-03/20",
+      "V1-04/20",
+      "V1-05/20",
+      "V1-06/20",
+      "V1-07/20",
+      "V1-08/20",
+      "V1-09/20",
+      "V1-10/20",
+      "V1-11/20",
+      "V1-12/20",
+      "V1-13/20",
+      "V1-14/20",
+      "V1-15/20"
+    ],
+    "sequential_B_to_F": [
+      "V1-16/20",
+      "V1-17/20",
+      "V1-18/20",
+      "V1-19/20",
+      "V1-20/20"
+    ]
+  },
+  "tasks": [
+    {
+      "batch_id": "V1-01/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-01-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-01-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json",
+      "write_scope": "Apenas RESULTS/DELTA/patch-intent no diretório v1_parallel próprio; NÃO sobrescrever as fichas IB prévias que vivem em branches diferentes",
+      "dependencies": [],
+      "stage": "A",
+      "records": [
+        {
+          "source_id": "SRC-0160",
+          "prior_ib_branch": "work/ib-04-20261121",
+          "source_card": "knowledge/methodology/source_cards/src-0160.md",
+          "inventory_title": "Using Multilevel Regression and Poststratification to Efficiently Derive Accurate Norms"
+        },
+        {
+          "source_id": "SRC-0215",
+          "prior_ib_branch": "work/ib-07-20261121",
+          "source_card": "knowledge/methodology/source_cards/src-0215.md",
+          "inventory_title": "Metodologia da Teoria Fundamentada: Uma visão geral"
+        },
+        {
+          "source_id": "SRC-0224",
+          "prior_ib_branch": "work/ib-07-20261121",
+          "source_card": "knowledge/methodology/source_cards/src-0224.md",
+          "inventory_title": "Grupo focal em pesquisa qualitativa aplicada: intersubjetividade e construção de sentido"
+        },
+        {
+          "source_id": "SRC-0237",
+          "prior_ib_branch": "work/ib-08-20261121",
+          "source_card": "knowledge/methodology/source_cards/src-0237.md",
+          "inventory_title": "Multiple Correspondence Analysis"
+        },
+        {
+          "source_id": "SRC-0249",
+          "prior_ib_branch": "work/ib-08-20261121",
+          "source_card": "knowledge/methodology/source_cards/src-0249.md",
+          "inventory_title": "Introduction to the Virtual Issue: Machine Learning in Political Science"
+        }
+      ],
+      "editorial_cards": [],
+      "goal": "Resolver por fonte primária ou registrar bloqueio fundamentado para os cinco registros; preservar cópia/edição original, direitos e evidência.",
+      "acceptance": [
+        "5 registros auditados e recibo por ID",
+        "Nenhum ano/edição inferido de nome de arquivo",
+        "SRC-0385 permanece em quarentena até autenticação ou exclusão motivada"
+      ],
+      "category": "BIBLIOGRAPHIC_CLOSURE"
+    },
+    {
+      "batch_id": "V1-02/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-02-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-02-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json",
+      "write_scope": "Apenas RESULTS/DELTA/patch-intent no diretório v1_parallel próprio; NÃO sobrescrever as fichas IB prévias que vivem em branches diferentes",
+      "dependencies": [],
+      "stage": "A",
+      "records": [
+        {
+          "source_id": "SRC-0263",
+          "prior_ib_branch": "work/ib-09-20261121",
+          "source_card": "knowledge/methodology/source_cards/src-0263.md",
+          "inventory_title": "Políticas Públicas: Conceitos, Tipologias e Sub-Áreas*"
+        },
+        {
+          "source_id": "SRC-0283",
+          "prior_ib_branch": "work/ib-10-20261121",
+          "source_card": "knowledge/methodology/source_cards/src-0283.md",
+          "inventory_title": "Getting Practical with Causal Mechanisms: The application of Process-Tracing Under Real-World Evaluation Constraints"
+        },
+        {
+          "source_id": "SRC-0293",
+          "prior_ib_branch": "work/ib-10-20261121",
+          "source_card": "knowledge/methodology/source_cards/src-0293.md",
+          "inventory_title": "Qualitative Comparative Analysis (QCA): usos e aplicações do método"
+        },
+        {
+          "source_id": "SRC-0297",
+          "prior_ib_branch": "work/ib-11-20261121",
+          "source_card": "knowledge/methodology/source_cards/src-0297.md",
+          "inventory_title": "Qualitative Comparative Analysis (QCA)"
+        },
+        {
+          "source_id": "SRC-0314",
+          "prior_ib_branch": "work/ib-11-20261121",
+          "source_card": "knowledge/methodology/source_cards/src-0314.md",
+          "inventory_title": "CONTROLE SINTÉTICO COMO FERRAMENTA PARA AVALIAÇÃO DE POLÍTICAS PÚBLICAS"
+        }
+      ],
+      "editorial_cards": [],
+      "goal": "Resolver por fonte primária ou registrar bloqueio fundamentado para os cinco registros; preservar cópia/edição original, direitos e evidência.",
+      "acceptance": [
+        "5 registros auditados e recibo por ID",
+        "Nenhum ano/edição inferido de nome de arquivo",
+        "SRC-0385 permanece em quarentena até autenticação ou exclusão motivada"
+      ],
+      "category": "BIBLIOGRAPHIC_CLOSURE"
+    },
+    {
+      "batch_id": "V1-03/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-03-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-03-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json",
+      "write_scope": "Apenas RESULTS/DELTA/patch-intent no diretório v1_parallel próprio; NÃO sobrescrever as fichas IB prévias que vivem em branches diferentes",
+      "dependencies": [],
+      "stage": "A",
+      "records": [
+        {
+          "source_id": "SRC-0321",
+          "prior_ib_branch": "work/ib-12-20261121",
+          "source_card": "knowledge/methodology/source_cards/src-0321.md",
+          "inventory_title": "Um Guia Para Escrever Profissionalmente Na Ciência Política"
+        },
+        {
+          "source_id": "SRC-0325",
+          "prior_ib_branch": "work/ib-12-20261121",
+          "source_card": "knowledge/methodology/source_cards/src-0325.md",
+          "inventory_title": "Writing a Research Paper in Political Science"
+        },
+        {
+          "source_id": "SRC-0336",
+          "prior_ib_branch": "work/ib-13-20261121",
+          "source_card": "knowledge/methodology/source_cards/src-0336.md",
+          "inventory_title": "POSSIBILIDADES DO USO DA FOTOGRAFIA E DA FILMAGEM NA PESQUISA SOCIAL QUALITATIVA"
+        },
+        {
+          "source_id": "SRC-0385",
+          "prior_ib_branch": "work/ib-15-20261121",
+          "source_card": "knowledge/methodology/source_cards/src-0385.md",
+          "inventory_title": "What can Systematic Reviews in Political Science contribute to political research?"
+        },
+        {
+          "source_id": "SRC-0403",
+          "prior_ib_branch": "work/ib-16-20261121",
+          "source_card": "knowledge/methodology/source_cards/src-0403.md",
+          "inventory_title": "Cluster Analysis"
+        }
+      ],
+      "editorial_cards": [],
+      "goal": "Resolver por fonte primária ou registrar bloqueio fundamentado para os cinco registros; preservar cópia/edição original, direitos e evidência.",
+      "acceptance": [
+        "5 registros auditados e recibo por ID",
+        "Nenhum ano/edição inferido de nome de arquivo",
+        "SRC-0385 permanece em quarentena até autenticação ou exclusão motivada"
+      ],
+      "category": "BIBLIOGRAPHIC_CLOSURE"
+    },
+    {
+      "batch_id": "V1-04/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-04-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-04-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-04-DELTA.json",
+      "write_scope": "Somente cards listados neste ticket e seus próprios RESULTS/DELTA/recibos; NUNCA catalog.json global ou outro card",
+      "dependencies": [],
+      "stage": "A",
+      "records": [],
+      "editorial_cards": [
+        {
+          "card_id": "EC-001",
+          "path": "knowledge/methodology/cards/reviews.md",
+          "catalog_blob_sha256": "331db84256e59599d0a8674b0064d9c3058a9261917efb03e403f083dfcde8af",
+          "editorial_status": "SEM_STATUS_EXPLICITO",
+          "title": "Literature reviews and integrative synthesis"
+        },
+        {
+          "card_id": "EC-002",
+          "path": "knowledge/methodology/cards/design.md",
+          "catalog_blob_sha256": "d819d33b1a2f93b8a521f870e09cdac32c7fb18333eabd0b8be82f4de314b142",
+          "editorial_status": "SEM_STATUS_EXPLICITO",
+          "title": "Study design and research inference"
+        },
+        {
+          "card_id": "EC-003",
+          "path": "knowledge/methodology/cards/qualitative.md",
+          "catalog_blob_sha256": "cab9733a5fe55f3e91e17e0a8a549b9e74d076d09cf2587f8111c0a35dbbf4b6",
+          "editorial_status": "SEM_STATUS_EXPLICITO",
+          "title": "Qualitative analysis and thematic approaches"
+        },
+        {
+          "card_id": "EC-004",
+          "path": "knowledge/methodology/cards/design-science.md",
+          "catalog_blob_sha256": "fefdaa9fc5847a397dff9c065f42e910032fddf08dfbfae04bbf4fdc7a085256",
+          "editorial_status": "SEM_STATUS_EXPLICITO",
+          "title": "Design science and artifact evaluation"
+        },
+        {
+          "card_id": "EC-005",
+          "path": "knowledge/methodology/cards/prisma-2020-reporting.md",
+          "catalog_blob_sha256": "5dd99bd4bce2f2a713e6f15f88e96f6c4c4b34267d49c319403fc07ed05d77b4",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "PRISMA 2020: transparent reporting, not a conduct certificate"
+        },
+        {
+          "card_id": "EC-006",
+          "path": "knowledge/methodology/cards/roses-systematic-maps.md",
+          "catalog_blob_sha256": "cea628d1079fbdcb2cb8fa637b8c047016be936ffb4c474f090f6e522dddec63",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "ROSES: reporting systematic reviews and evidence maps"
+        },
+        {
+          "card_id": "EC-007",
+          "path": "knowledge/methodology/cards/reflexive-thematic-analysis.md",
+          "catalog_blob_sha256": "344ba709864f3e8d777c5d4dca8c615e6e6375de6f59cc8cb57e47ad680df56a",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Reflexive thematic analysis: coherence before coding counts"
+        },
+        {
+          "card_id": "EC-008",
+          "path": "knowledge/methodology/cards/focus-group-design.md",
+          "catalog_blob_sha256": "89a0472fab7d13f0fb533cbb9b61d92bf567ba946f22e3786279a48af31dbb80",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Focus groups: data from interaction, not multiple interviews at once"
+        },
+        {
+          "card_id": "EC-009",
+          "path": "knowledge/methodology/cards/case-study-bounded-design.md",
+          "catalog_blob_sha256": "c656b1917470f643af5da1d7ae9532297c91af9711281f44b7e4a9247399c172",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Case study: specify the case and philosophical orientation"
+        },
+        {
+          "card_id": "EC-010",
+          "path": "knowledge/methodology/cards/qualitative-design-quality.md",
+          "catalog_blob_sha256": "f4d70034174097a9ded5739d1db10815d0e15a264c1f6936276231d5c2a721dc",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Qualitative design and quality: choose evidence for the question"
+        },
+        {
+          "card_id": "EC-011",
+          "path": "knowledge/methodology/cards/thematic-saturation.md",
+          "catalog_blob_sha256": "3c42119920be38d30ba42ca051bd9e00ec5082de38ccb884d60d0839b512d367",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Thematic saturation is conditional, not a magic interview count"
+        },
+        {
+          "card_id": "EC-012",
+          "path": "knowledge/methodology/cards/content-analysis-reliability.md",
+          "catalog_blob_sha256": "3c0a9acbddfeb6fd28373a36aa1833a54af438e36182f139e6062c1a5af46730",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Systematic literature synthesis and content-analysis reliability"
+        },
+        {
+          "card_id": "EC-013",
+          "path": "knowledge/methodology/cards/mixed-methods-integration.md",
+          "catalog_blob_sha256": "e69b4bf0e54519088d7cf83dc9983ee085e179588f3d549551d2babb186f1c05",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Mixed methods: integration requires more than two datasets"
+        },
+        {
+          "card_id": "EC-014",
+          "path": "knowledge/methodology/cards/bibliometrics-claim-boundary.md",
+          "catalog_blob_sha256": "39e86ac39e493af9705a949c9b42f398d555301488dd5f2cdad5868cb5d849f4",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Bibliometrics: distinguish publication patterns from knowledge quality"
+        },
+        {
+          "card_id": "EC-015",
+          "path": "knowledge/methodology/cards/qualitative-metaanalysis.md",
+          "catalog_blob_sha256": "3e196f6528fda7d9f06e6ff174e4d16959fa6c6597b89e3451a6f19821c0dab6",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Qualitative meta-analysis requires interpretive synthesis logic"
+        },
+        {
+          "card_id": "EC-016",
+          "path": "knowledge/methodology/cards/grounded-theory-analytic-logic.md",
+          "catalog_blob_sha256": "1f4e534ae7305c3316a3f55c78de1194a620184bfefa076e8e6a0fec16192c3c",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Grounded theory: iterative category development, not generic coding"
+        },
+        {
+          "card_id": "EC-017",
+          "path": "knowledge/methodology/cards/interrupted-time-series-inference.md",
+          "catalog_blob_sha256": "f0d420f9db1b57cec993581df330f1fc7816ec9bc10db30f9c08230fc77d114b",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Interrupted time series: separate an interruption from a causal effect"
+        },
+        {
+          "card_id": "EC-018",
+          "path": "knowledge/methodology/cards/prisma-roses-selection.md",
+          "catalog_blob_sha256": "75434122b13328dc9cc9dca49c81aab8203103a9a04d9e140a65e42c91a9fdd9",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Reporting review designs: do not force one checklist everywhere"
+        }
+      ],
+      "goal": "Auditar criticamente os cards quanto a originalidade, direitos, fidelidade à fonte, limites e categorias [I]/[L]/[P]; registrar parecer sem simular revisão independente ou conceder aprovação automática.",
+      "acceptance": [
+        "Todos os caminhos exatos do lote auditados",
+        "Recibo por card com fontes e direitos observados",
+        "Pendências e decisões científicas não inferidas",
+        "Card alterado somente se evidencia e escopo permitirem"
+      ],
+      "category": "EDITORIAL_CARD_AUDIT"
+    },
+    {
+      "batch_id": "V1-05/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-05-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-05-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-05-DELTA.json",
+      "write_scope": "Somente cards listados neste ticket e seus próprios RESULTS/DELTA/recibos; NUNCA catalog.json global ou outro card",
+      "dependencies": [],
+      "stage": "A",
+      "records": [],
+      "editorial_cards": [
+        {
+          "card_id": "EC-019",
+          "path": "knowledge/methodology/cards/sampling-saturation-compatibility.md",
+          "catalog_blob_sha256": "80cc1417dde8fafb8d7ee7a86ace5c9c096788839295fd643a0284e256202b8c",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Sampling adequacy must match the qualitative analytic tradition"
+        },
+        {
+          "card_id": "EC-020",
+          "path": "knowledge/methodology/cards/literature-review-writing-practice.md",
+          "catalog_blob_sha256": "ad217b701d06e740638f28c00c8970bfdbd66d763f91682060dd58f6e8c84ea3",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Writing a literature review without mistaking narrative for systematic evidence"
+        },
+        {
+          "card_id": "EC-021",
+          "path": "knowledge/methodology/cards/manuscript-argument-structure.md",
+          "catalog_blob_sha256": "2fe6e5a440306a6bec3197e50040dd9ad122c24fc73ffe06540239b41fe93056",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Scientific article structure: align claims, evidence and reader navigation"
+        },
+        {
+          "card_id": "EC-022",
+          "path": "knowledge/methodology/cards/reproducible-computational-workflow.md",
+          "catalog_blob_sha256": "05eb38d06074343d273acc8409bd35c20f91f0c883d40437c3c5ce2db5769e0e",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Computational reproducibility: preserve a checkable chain from inputs to outputs"
+        },
+        {
+          "card_id": "EC-023",
+          "path": "knowledge/methodology/cards/meta-analysis-design-and-reporting.md",
+          "catalog_blob_sha256": "5eb63bfc7c50209293ec0f2256a3af6cd093b3f1b119be9d3d361df1203ba668",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Meta-analysis: an estimand and compatibility review precede statistical pooling"
+        },
+        {
+          "card_id": "EC-024",
+          "path": "knowledge/methodology/cards/sa-silva-2009-documentary-research.md",
+          "catalog_blob_sha256": "45e6502d81006195dc4e44f6febe1970e98ec4ba9f27caa5b6ca0570e8941dcd",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Documentary research: source criticism before interpretation"
+        },
+        {
+          "card_id": "EC-025",
+          "path": "knowledge/methodology/cards/morgan-2022-qualitative-document-analysis.md",
+          "catalog_blob_sha256": "51896401b10ca28dbcfb1f51ec045dbf67ec2aac987aa3b23cc6ed42bdc4d848",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Qualitative document analysis: selection and interpretation are different decisions"
+        },
+        {
+          "card_id": "EC-026",
+          "path": "knowledge/methodology/cards/byrne-2022-reflexive-thematic-worked-example.md",
+          "catalog_blob_sha256": "cceb602dec48fa29bf720523b386fbc5e8a4996cb3837bd43b2e07632d24e911",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Reflexive thematic analysis: worked analytic decisions"
+        },
+        {
+          "card_id": "EC-027",
+          "path": "knowledge/methodology/cards/kiger-varpio-2020-thematic-analysis.md",
+          "catalog_blob_sha256": "534a4f0e28fea489ec30506f5457112a3d54c2c5ee4521ce5b67caeb7fa6bca2",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Thematic analysis: match the coding process to the research objective"
+        },
+        {
+          "card_id": "EC-028",
+          "path": "knowledge/methodology/cards/nowell-2017-trustworthy-analysis.md",
+          "catalog_blob_sha256": "d3448803e35f7ae3bc960c5987e381a65891f19565ef22eb5ce3777f081a30b7",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Trustworthiness of thematic analysis: auditability is more than a checklist"
+        },
+        {
+          "card_id": "EC-029",
+          "path": "knowledge/methodology/cards/rijnsoever-2017-saturation-simulation.md",
+          "catalog_blob_sha256": "acf11fae0407e9a26ea754fc2d5c943434d45238efca4094af998bc58057c563",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Qualitative sampling saturation: heterogeneity defeats fixed sample recipes"
+        },
+        {
+          "card_id": "EC-030",
+          "path": "knowledge/methodology/cards/hennink-kaiser-2022-saturation-review.md",
+          "catalog_blob_sha256": "d5c66f9eeb846d890030869df70fb2ca5b76776d5e2e004f2dcdb6be6f68f1f5",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Empirical saturation studies: distinguish code and meaning saturation"
+        },
+        {
+          "card_id": "EC-031",
+          "path": "knowledge/methodology/cards/roth-etal-2023-did-identification.md",
+          "catalog_blob_sha256": "702737cbb9eb949de46dc27a1aabd4ef950ffec2be77dac20a09b8d9920e39da",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Difference-in-differences: parallel trends and heterogeneous effects"
+        },
+        {
+          "card_id": "EC-032",
+          "path": "knowledge/methodology/cards/cattaneo-titiunik-2022-rdd.md",
+          "catalog_blob_sha256": "b4a0e97e0bdf767f10c8887ffce6fd59bf135aaf44226c7f0484bad3cf125b3e",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Regression discontinuity: the identification neighborhood matters"
+        },
+        {
+          "card_id": "EC-033",
+          "path": "knowledge/methodology/cards/imbens-lemieux-2007-rdd-practice.md",
+          "catalog_blob_sha256": "595f9a95e62426df8ff7561d313c4c0855ce10e4243997c3d3d1f3d490c8f92a",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Regression discontinuity: practical assumptions before estimation"
+        },
+        {
+          "card_id": "EC-034",
+          "path": "knowledge/methodology/cards/bennett-fairfield-soifer-2019-process-tracing.md",
+          "catalog_blob_sha256": "20e395738b5072fd1802fda4c8eb6e38c8859da1ece162d50f3be167b2207307",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Process tracing and cross-case comparison: specify the evidentiary test"
+        },
+        {
+          "card_id": "EC-035",
+          "path": "knowledge/methodology/cards/thiem-2017-qca.md",
+          "catalog_blob_sha256": "2e0dd94877974e03fbf26c20ba20349f15515c0546ca18e99269231cfe9caadc",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Qualitative comparative analysis: necessity, sufficiency and calibration"
+        },
+        {
+          "card_id": "EC-036",
+          "path": "knowledge/methodology/cards/couto-albala-2022-public-policy-qca.md",
+          "catalog_blob_sha256": "e7e77f31c9bd7b9391ec785222b9d58b4dda1b6e4c0c9fe16375364c75296709",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "QCA for public policy: configurations of institutional conditions"
+        }
+      ],
+      "goal": "Auditar criticamente os cards quanto a originalidade, direitos, fidelidade à fonte, limites e categorias [I]/[L]/[P]; registrar parecer sem simular revisão independente ou conceder aprovação automática.",
+      "acceptance": [
+        "Todos os caminhos exatos do lote auditados",
+        "Recibo por card com fontes e direitos observados",
+        "Pendências e decisões científicas não inferidas",
+        "Card alterado somente se evidencia e escopo permitirem"
+      ],
+      "category": "EDITORIAL_CARD_AUDIT"
+    },
+    {
+      "batch_id": "V1-06/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-06-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-06-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-06-DELTA.json",
+      "write_scope": "Somente cards listados neste ticket e seus próprios RESULTS/DELTA/recibos; NUNCA catalog.json global ou outro card",
+      "dependencies": [],
+      "stage": "A",
+      "records": [],
+      "editorial_cards": [
+        {
+          "card_id": "EC-037",
+          "path": "knowledge/methodology/cards/lietz-2009-survey-questionnaire.md",
+          "catalog_blob_sha256": "61736b7c519202e35f93d2ed883ec21530a01019aed63f4875f3de56b6f953f4",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Survey questionnaire quality: response wording is a measurement decision"
+        },
+        {
+          "card_id": "EC-038",
+          "path": "knowledge/methodology/cards/harrer-etal-2022-meta-analysis-r.md",
+          "catalog_blob_sha256": "8006030e79250b8eeb2e544c45d95e50800abe9fea95dbe8fc70d84a42eb8a9c",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Meta-analysis with R: effect sizes and dependence before code"
+        },
+        {
+          "card_id": "EC-039",
+          "path": "knowledge/methodology/cards/sampaio-mancini-2007-systematic-review.md",
+          "catalog_blob_sha256": "a8b93433d1b2cd5742e3a303cca663ace914e681b096177207a643632777a974",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Systematic reviews: searching, screening and synthesis are separate decisions"
+        },
+        {
+          "card_id": "EC-040",
+          "path": "knowledge/methodology/cards/ibrahim-voyer-2025-llm-reflexivity.md",
+          "catalog_blob_sha256": "4cbc0e7d80767de8b0c9b04527b9478e5c0fb9c4db3c3693a3bc18c81bc7d83c",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "LLM-assisted qualitative inquiry: technological reflexivity as an audit obligation"
+        },
+        {
+          "card_id": "EC-041",
+          "path": "knowledge/methodology/cards/vikan-2025-rta-llm-support.md",
+          "catalog_blob_sha256": "c600a58b01396c73c2f9eae8556283aacad89bc5e60226b9b85a311b719417fd",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Reflexive thematic analysis with LLM support: preserve interpretive ownership"
+        },
+        {
+          "card_id": "EC-042",
+          "path": "knowledge/methodology/cards/nguyen-welch-2025-genai-qualitative-judgement.md",
+          "catalog_blob_sha256": "2725f819bfdd830683292371344b75b7f6389383e0743679f6a244faf92da2c7",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Generative AI in qualitative data analysis: avoid mistaking dialogue for inference"
+        },
+        {
+          "card_id": "EC-043",
+          "path": "knowledge/methodology/cards/sim-etal-2018-qualitative-sample-size.md",
+          "catalog_blob_sha256": "270900540abf3109a5a582ca481e4f654716b3c9af8c9d90a4b23b14392013b9",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "A priori qualitative sample size: justify a range without pretending saturation is known"
+        },
+        {
+          "card_id": "EC-044",
+          "path": "knowledge/methodology/cards/field-based-interview-sampling.md",
+          "catalog_blob_sha256": "73d14098f87b20fa3c9719fdaac686519ff2d157a64499c66bfd482fbe46b418",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Field interview sampling: recruitment and context matter"
+        },
+        {
+          "card_id": "EC-045",
+          "path": "knowledge/methodology/cards/smartphone-respondent-driven-sampling.md",
+          "catalog_blob_sha256": "1dc3fd357ac0f3b8f169dc9debd55b3fea2da33e1740dabbcd0b3559811d77b6",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Respondent-driven sampling: assumptions behind digital recruitment"
+        },
+        {
+          "card_id": "EC-046",
+          "path": "knowledge/methodology/cards/rds-versus-snowball-sampling.md",
+          "catalog_blob_sha256": "2f6c7547887a6cff5c59c13161be05d7523979c92184c0d1cee3238e4b04ddfe",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Snowball and RDS sampling are not interchangeable"
+        },
+        {
+          "card_id": "EC-047",
+          "path": "knowledge/methodology/cards/survey-invitation-participation.md",
+          "catalog_blob_sha256": "669d9e949d787309a2a3f6fd5c50a9e3123abaef21ec0669ecb8a7a27f6dc7fc",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Survey participation: mode, contact and denominator"
+        },
+        {
+          "card_id": "EC-048",
+          "path": "knowledge/methodology/cards/survey-mode-nonresponse-bias.md",
+          "catalog_blob_sha256": "b0cd9c0541124af93c5f02fcbfe7b5b6866f3e62a271b599f3f53da50c0d8c62",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Survey mode and nonresponse: two different sources of bias"
+        },
+        {
+          "card_id": "EC-049",
+          "path": "knowledge/methodology/cards/effective-statistical-decisions.md",
+          "catalog_blob_sha256": "026e4e5d6e0913960448594081dc802bb08d8bc99ecdf72c1ccb0faf6c9a66ca",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Statistical practice: specify the estimand before choosing the test"
+        },
+        {
+          "card_id": "EC-050",
+          "path": "knowledge/methodology/cards/computable-knowledge-reuse.md",
+          "catalog_blob_sha256": "c8ffcba18e9053d12767e6f16fb71d27efefe747d6dffef51df93de7a6716e6c",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Computable knowledge needs provenance and reuse conditions"
+        },
+        {
+          "card_id": "EC-051",
+          "path": "knowledge/methodology/cards/responsible-ai-research-assistance.md",
+          "catalog_blob_sha256": "29f4ec706284e4227b7978e797ac4812490505f96593a3f10ec82014c4ca2703",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Responsible AI in scientific workflows: separate assistance from proof"
+        },
+        {
+          "card_id": "EC-052",
+          "path": "knowledge/methodology/cards/scientific-publication-clarity.md",
+          "catalog_blob_sha256": "ff19292b1a831e1ebe9fba6e893ddcd73f156ac00a7c6d703f9c3a893293e451",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Scientific presentation: clear graphics must remain faithful to data"
+        },
+        {
+          "card_id": "EC-053",
+          "path": "knowledge/methodology/cards/multi-author-manuscript-governance.md",
+          "catalog_blob_sha256": "f03fa84d1d360493dee398b3382348f5676cc33f9aaed38f7caaf0a4d6e47391",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Collaborative writing: integrate contributions without losing accountability"
+        },
+        {
+          "card_id": "EC-054",
+          "path": "knowledge/methodology/cards/computational-research-notebook.md",
+          "catalog_blob_sha256": "2f1bbd3bf7f71f0480cf2a4acb8ce2d62a1fcb72710113cce4f23878308190a7",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Research notebooks: reconstruct inputs, operations and decisions"
+        }
+      ],
+      "goal": "Auditar criticamente os cards quanto a originalidade, direitos, fidelidade à fonte, limites e categorias [I]/[L]/[P]; registrar parecer sem simular revisão independente ou conceder aprovação automática.",
+      "acceptance": [
+        "Todos os caminhos exatos do lote auditados",
+        "Recibo por card com fontes e direitos observados",
+        "Pendências e decisões científicas não inferidas",
+        "Card alterado somente se evidencia e escopo permitirem"
+      ],
+      "category": "EDITORIAL_CARD_AUDIT"
+    },
+    {
+      "batch_id": "V1-07/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-07-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-07-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-07-DELTA.json",
+      "write_scope": "Somente cards listados neste ticket e seus próprios RESULTS/DELTA/recibos; NUNCA catalog.json global ou outro card",
+      "dependencies": [],
+      "stage": "A",
+      "records": [],
+      "editorial_cards": [
+        {
+          "card_id": "EC-055",
+          "path": "knowledge/methodology/cards/scientific-writing-productivity.md",
+          "catalog_blob_sha256": "c1d4ab17a793f29c18584e92f5da7dd2a5b6e489df033e478e7f26914b28317f",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Scientific writing productivity: protect evidence-review time"
+        },
+        {
+          "card_id": "EC-056",
+          "path": "knowledge/methodology/cards/research-practice-protocol.md",
+          "catalog_blob_sha256": "3993d5b8aa70eda6eb820c86cc1c20548d65907029f3fa5a797f32f170ade988",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Good research practice: make choices and deviations explicit"
+        },
+        {
+          "card_id": "EC-057",
+          "path": "knowledge/methodology/cards/research-software-robustness.md",
+          "catalog_blob_sha256": "92518dce5105d7d435d026b9e3b00ca83e53f0dba0a60151df8e7261407ff436",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Research software robustness: tests versus scientific validation"
+        },
+        {
+          "card_id": "EC-058",
+          "path": "knowledge/methodology/cards/open-human-research-privacy.md",
+          "catalog_blob_sha256": "d2b34736a665c964afa44adcb8629f278fe13dab053eebff4e45371736f0fd39",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Open human research: share methods without exposing private data"
+        },
+        {
+          "card_id": "EC-059",
+          "path": "knowledge/methodology/cards/responsible-referencing-practice.md",
+          "catalog_blob_sha256": "fcacf5563cbc7800ba8867c5155e45ab1d1e46df37a0ed1dc3b7830ba2bb924f",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Responsible referencing: evidence rather than citation prestige"
+        },
+        {
+          "card_id": "EC-060",
+          "path": "knowledge/methodology/cards/reusing-public-datasets.md",
+          "catalog_blob_sha256": "6b443df820cbcb23f2af6ab3112069d7771ee479b84945e58ef247bf0d575de1",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Reuse of public datasets: data access is not method fit"
+        },
+        {
+          "card_id": "EC-061",
+          "path": "knowledge/methodology/cards/scientific-supplement-evidence.md",
+          "catalog_blob_sha256": "a6d1216a8ac108a5d5596d8fc42664e6598065b0f6e0d72c6479707384fc51c5",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Scientific supplements: expose a complete audit trail"
+        },
+        {
+          "card_id": "EC-062",
+          "path": "knowledge/methodology/cards/dias-mishima-2023-thematic-practice.md",
+          "catalog_blob_sha256": "30189fc441f2c9ba932650fb14470ea89de8b8b62813c08ad92a47c1077fc89a",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Análise temática: decisões entre contexto, unidades de sentido e temas"
+        },
+        {
+          "card_id": "EC-063",
+          "path": "knowledge/methodology/cards/campos-saidel-2022-qualitative-sampling-decisions.md",
+          "catalog_blob_sha256": "f4b0c160842bd752ec09da06dde3ff76c097949d043f13308620013279e56431",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Amostragem qualitativa: escolhas técnicas, contextuais e éticas"
+        },
+        {
+          "card_id": "EC-064",
+          "path": "knowledge/methodology/cards/koerich-et-al-2009-action-research.md",
+          "catalog_blob_sha256": "a266aba6510460e9a29511285652fa5e3ff21d0eb99a844f6b4ab51ec74e3cbf",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Action research: linking participatory change and scientific inquiry"
+        },
+        {
+          "card_id": "EC-065",
+          "path": "knowledge/methodology/cards/marzi-et-al-2025-bslr-ten-steps.md",
+          "catalog_blob_sha256": "b2248ec12576d02787b5ff65e7d7e3e930258fe81ecdf355c4b66fd6c4a2b2c9",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "B-SLR de Marzi (2025): integração crítica entre bibliometria, revisão sistemática e teoria"
+        },
+        {
+          "card_id": "EC-066",
+          "path": "knowledge/methodology/cards/snyder-2019-literature-review-designs.md",
+          "catalog_blob_sha256": "4a34ad838a4b5abe5b18e103471b91b00708415542b328b4e2bdb5a716c979f2",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Snyder (2019): critérios para escolher entre revisões sistemáticas, semissistemáticas e integrativas"
+        },
+        {
+          "card_id": "EC-067",
+          "path": "knowledge/methodology/cards/salvador-1986-bibliographic-research-foundation.md",
+          "catalog_blob_sha256": "7cc5a900ff806d434dcc498d45291cdc6964909029d539a6089fbbce3e72be74",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Ângelo Domingos Salvador: investigação bibliográfica e leitura crítica — referência histórica"
+        },
+        {
+          "card_id": "EC-068",
+          "path": "knowledge/methodology/cards/grant-booth-2009-salsa-review-typology.md",
+          "catalog_blob_sha256": "2f45987ad2b77492eab35f00f050cf2c42f432803ac68f3cd4018aee85ed6df2",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Grant e Booth (2009): 14 tipos de revisão e comparação SALSA"
+        },
+        {
+          "card_id": "EC-069",
+          "path": "knowledge/methodology/cards/jaakkola-2020-four-conceptual-approaches.md",
+          "catalog_blob_sha256": "41160fb1339daed11c4cebf6b494f9fef6b5198f2eda32b7a13ed983896ae7c3",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Jaakkola (2020): síntese, adaptação, tipologia e modelos em artigos conceituais"
+        },
+        {
+          "card_id": "EC-070",
+          "path": "knowledge/methodology/cards/elsbach-van-knippenberg-2020-integrative-reviews.md",
+          "catalog_blob_sha256": "c75a495153f5537d3a3cd41b4bbb2ffa8dcd68d34b3cfd6dad114e0c7ee4cf9f",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Elsbach e Van Knippenberg (2020): revisão integrativa como contribuição nova"
+        },
+        {
+          "card_id": "EC-071",
+          "path": "knowledge/methodology/cards/alvesson-sandberg-2011-problematization.md",
+          "catalog_blob_sha256": "d40eb4b1fc2f96da7412c6ff1ebe6f6571ad408a75be98f4957ebe9c7a8ea0ea",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Alvesson e Sandberg (2011): problematização de pressupostos como origem da pergunta"
+        },
+        {
+          "card_id": "EC-072",
+          "path": "knowledge/methodology/cards/prisma-s-2021-search-reporting.md",
+          "catalog_blob_sha256": "4deb2c6f9934db366afe15fa608478d248afd2f96406e17c37d4e87d5a6eee3d",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "PRISMA-S (2021): transparência de estratégias e fontes de busca"
+        }
+      ],
+      "goal": "Auditar criticamente os cards quanto a originalidade, direitos, fidelidade à fonte, limites e categorias [I]/[L]/[P]; registrar parecer sem simular revisão independente ou conceder aprovação automática.",
+      "acceptance": [
+        "Todos os caminhos exatos do lote auditados",
+        "Recibo por card com fontes e direitos observados",
+        "Pendências e decisões científicas não inferidas",
+        "Card alterado somente se evidencia e escopo permitirem"
+      ],
+      "category": "EDITORIAL_CARD_AUDIT"
+    },
+    {
+      "batch_id": "V1-08/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-08-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-08-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
+      "write_scope": "Somente cards listados neste ticket e seus próprios RESULTS/DELTA/recibos; NUNCA catalog.json global ou outro card",
+      "dependencies": [],
+      "stage": "A",
+      "records": [],
+      "editorial_cards": [
+        {
+          "card_id": "EC-073",
+          "path": "knowledge/methodology/cards/prisma-scr-2018-scoping.md",
+          "catalog_blob_sha256": "cd551a1dc10fecb52069e5a3360376d3c3a44316c0a06d415b6852aa753c559f",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "PRISMA-ScR (2018): relato específico para revisões de escopo"
+        },
+        {
+          "card_id": "EC-074",
+          "path": "knowledge/methodology/cards/prisma-2020-operational-reporting.md",
+          "catalog_blob_sha256": "87ca6c2715bfab9f61fbf91b51d88d42d2b9fa684809c1249f22170e99c3b2e7",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "PRISMA 2020: controle operacional dos 27 itens e fluxograma auditável"
+        },
+        {
+          "card_id": "EC-075",
+          "path": "knowledge/methodology/cards/prisma-p-2015-protocol.md",
+          "catalog_blob_sha256": "8191a73fa32faed9632ed9c2189893a809bf06a1450d0b947bc60af653806187",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "PRISMA-P (2015): transparência prévia de protocolos de revisão sistemática"
+        },
+        {
+          "card_id": "EC-076",
+          "path": "knowledge/methodology/cards/braun-clarke-2022-reflexive-thematic-guide.md",
+          "catalog_blob_sha256": "c98f29d470fcad22c8815279c424a9da4c93174a8ded8d7d43ebc906e4707bf4",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Braun e Clarke: análise temática reflexiva é interpretação teórica, não contagem de códigos"
+        },
+        {
+          "card_id": "EC-077",
+          "path": "knowledge/methodology/cards/miles-huberman-saldana-2014-qualitative-analysis.md",
+          "catalog_blob_sha256": "964eac10057e5d18be779b18e74ea7176cc48d2b15aa2c92f5427c1117ede0bb",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Miles, Huberman e Saldaña (2014): condensação de dados, visualizações e conclusões"
+        },
+        {
+          "card_id": "EC-078",
+          "path": "knowledge/methodology/cards/saldana-2009-coding-manual.md",
+          "catalog_blob_sha256": "3b432400dd7893ac4da2a29e6a2630275f9312d52a1001f5c9cf12ded0811f27",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Saldaña (2009): ciclos de codificação devem corresponder à pergunta"
+        },
+        {
+          "card_id": "EC-079",
+          "path": "knowledge/methodology/cards/saunders-lewis-thornhill-2023-onion.md",
+          "catalog_blob_sha256": "6990c37355451d10fcb4104b03151870e4d4197849d6a981a233cb7fc01220e4",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Saunders, Lewis e Thornhill: coerência da cebola de pesquisa (edição identificada de 2023)"
+        },
+        {
+          "card_id": "EC-080",
+          "path": "knowledge/methodology/cards/creswell-creswell-2021-mixed-research-design.md",
+          "catalog_blob_sha256": "b3fdf3f6f24699f1bcc1f7c92b87a2114e886c55f7d902bb598dd3f55f1c8487",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Creswell e Creswell (2021): vincular pergunta à abordagem qualitativa, quantitativa ou mista"
+        },
+        {
+          "card_id": "EC-081",
+          "path": "knowledge/methodology/cards/yin-2018-case-study-design.md",
+          "catalog_blob_sha256": "b23529f585d34b4839924ffb7b8bdf00a1c7c523c6332ce7f917e5c4f8dd66fe",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Yin (2018): protocolo, unidade de análise e explicações alternativas no estudo de caso"
+        },
+        {
+          "card_id": "EC-082",
+          "path": "knowledge/methodology/cards/eisenhardt-1989-building-theory-cases.md",
+          "catalog_blob_sha256": "51e61e009b23edb22e18e0ded93c4e57b6916fcc057377d20326683124a4651f",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Eisenhardt (1989): teoria a partir de múltiplos casos exige comparação disciplinada"
+        },
+        {
+          "card_id": "EC-083",
+          "path": "knowledge/methodology/cards/hevner-2004-design-science.md",
+          "catalog_blob_sha256": "c66146c64854a499758110ac0c89fb8d6670a88ca953b8b22f3823eb9d698129",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Hevner et al. (2004): artefato, relevância, rigor e avaliação em DSR"
+        },
+        {
+          "card_id": "EC-084",
+          "path": "knowledge/methodology/cards/peffers-2008-dsrm-process.md",
+          "catalog_blob_sha256": "b680098296b7889f3791567bb04f5d724547f691366785ad1552248bdfa85b52",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Peffers et al. (2008): ciclo DSRM distingue demonstração de avaliação"
+        },
+        {
+          "card_id": "EC-085",
+          "path": "knowledge/methodology/cards/suddaby-2006-grounded-theory-not.md",
+          "catalog_blob_sha256": "3f1acea5204a6f5974c51a37cfbf4e69be9ccf4da52e145b36175f43a6adb3a6",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Suddaby (2006): o que não caracteriza grounded theory"
+        },
+        {
+          "card_id": "EC-086",
+          "path": "knowledge/methodology/cards/sampaio-sabbatini-limongi-2024-research-ai.md",
+          "catalog_blob_sha256": "e10c3910bb841d4465cf75b7b75c70a8761d93a015a95300765d4c557f93b476",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Sampaio, Sabbatini e Limongi (2024): uso responsável de IA generativa na pesquisa"
+        },
+        {
+          "card_id": "EC-087",
+          "path": "knowledge/methodology/cards/zupic-cater-2015-bibliometric-methods.md",
+          "catalog_blob_sha256": "c62cd14c7bfd7d12b938eb99863f8b9c0964b66595f0d9909f213930561462e0",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Zupic e Čater (2015): métodos bibliométricos como mapas, não testes causais"
+        },
+        {
+          "card_id": "EC-088",
+          "path": "knowledge/methodology/cards/donthu-2021-bibliometric-how-to.md",
+          "catalog_blob_sha256": "e6a4bf185e8835ec29d2dc997cf8ca1ea1a925db5cbf65e653e64606f7fa62b4",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Donthu et al. (2021): decisões para análise bibliométrica reprodutível"
+        },
+        {
+          "card_id": "EC-089",
+          "path": "knowledge/methodology/cards/siddiki-basurto-weible-2012-institutional-grammar-compliance.md",
+          "catalog_blob_sha256": "24906c8f222a6f0c4c3f5c2acfb95e7bc52109c420470b85649f2484f0697ee5",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Gramática institucional: o texto da regra não é o comportamento de conformidade"
+        }
+      ],
+      "goal": "Auditar criticamente os cards quanto a originalidade, direitos, fidelidade à fonte, limites e categorias [I]/[L]/[P]; registrar parecer sem simular revisão independente ou conceder aprovação automática.",
+      "acceptance": [
+        "Todos os caminhos exatos do lote auditados",
+        "Recibo por card com fontes e direitos observados",
+        "Pendências e decisões científicas não inferidas",
+        "Card alterado somente se evidencia e escopo permitirem"
+      ],
+      "category": "EDITORIAL_CARD_AUDIT"
+    },
+    {
+      "batch_id": "V1-09/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-09-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-09-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-09-DELTA.json",
+      "write_scope": "Somente cards listados neste ticket e seus próprios RESULTS/DELTA/recibos; NUNCA catalog.json global ou outro card",
+      "dependencies": [],
+      "stage": "A",
+      "records": [],
+      "editorial_cards": [
+        {
+          "card_id": "EC-090",
+          "path": "knowledge/methodology/cards/institutional-grammar-2-2021-encoding-design.md",
+          "catalog_blob_sha256": "9669020d9e167a2774bcac0f3c011981c629d566be7a72c6be7e0eb05d401623",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Gramática institucional 2.0: codificação de regras como escolha analítica"
+        },
+        {
+          "card_id": "EC-091",
+          "path": "knowledge/methodology/cards/tripp-2005-action-research-iterative-evidence.md",
+          "catalog_blob_sha256": "bb191bfe1059279c6341a20c573946f03c8a053ae536d166e9be5de2a99efc80",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Pesquisa-ação: ciclos de melhoria exigem evidência e reflexividade"
+        },
+        {
+          "card_id": "EC-092",
+          "path": "knowledge/methodology/cards/hayes-2025-conversing-qualitative-llms.md",
+          "catalog_blob_sha256": "65a1e8e25fef0f0d763be2fc97fb94f08da41b5c26c1c652328982f049403048",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Conversar com dados qualitativos via LLM: hipótese exploratória não é achado validado"
+        },
+        {
+          "card_id": "EC-093",
+          "path": "knowledge/methodology/cards/lazar-2007-feminist-critical-discourse.md",
+          "catalog_blob_sha256": "de1441b0fbf8fa7997f582b6a5c935b148cdd17e6740f46f0cd24b6d7b32b122",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Análise crítica feminista do discurso: poder e gênero exigem posição teórica explícita"
+        },
+        {
+          "card_id": "EC-094",
+          "path": "knowledge/methodology/cards/cardno-2018-policy-document-analysis.md",
+          "catalog_blob_sha256": "67d14742e6865ac0be0e7bf9de268533ccef45f64721ea5039d3e45bb2c3b152",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Análise documental de políticas: texto, prática e contexto são dimensões distintas"
+        },
+        {
+          "card_id": "EC-095",
+          "path": "knowledge/methodology/cards/friese-2026-dialogical-qualitative-analysis-llm.md",
+          "catalog_blob_sha256": "6df5311b3db289c41f7ee6fddfcf4b1fbdce7a978da36c0e911dae6338b2def0",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Análise dialógica com IA: hipótese de método não é validação automática"
+        },
+        {
+          "card_id": "EC-096",
+          "path": "knowledge/methodology/cards/schroeder-2025-llms-uses-tensions-intentions.md",
+          "catalog_blob_sha256": "847f6264c0d75b7e03899c8f7d27272c6dbac832856f30b4a248af49548e345d",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "LLMs em pesquisa qualitativa: usos, tensões e intenção do pesquisador"
+        },
+        {
+          "card_id": "EC-097",
+          "path": "knowledge/methodology/cards/wachinger-2024-prompts-pearls-imperfections.md",
+          "catalog_blob_sha256": "603b5e6065b9e76dc272af737e1bcc2022b68a6744c74c802e0df1d2311bd90a",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "ChatGPT versus pesquisador: semelhança de temas não basta para validar análise"
+        },
+        {
+          "card_id": "EC-098",
+          "path": "knowledge/methodology/cards/prahl-2025-ai-reflexivity-checklist.md",
+          "catalog_blob_sha256": "eb434b655f9b4b3ad0a44ebf2f4d6a101c4add0ec65d90df905c137f7cc65da4",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Checklist de reflexividade para LLMs: pausa de decisão antes da codificação"
+        },
+        {
+          "card_id": "EC-099",
+          "path": "knowledge/methodology/cards/jowsey-2025-reject-genai-reflexive-qualitative.md",
+          "catalog_blob_sha256": "699b23bae748da48eed369c0c8df7b169f2b9ac855b40cd1e50ccf46e3889092",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Contestação do uso de GenAI na pesquisa qualitativa reflexiva"
+        },
+        {
+          "card_id": "EC-100",
+          "path": "knowledge/methodology/cards/mayring-2025-chatgpt-content-analysis-pitfalls.md",
+          "catalog_blob_sha256": "9d3f763f20b601420f575c8021ea6ac7c665de3321ba298fe6e28e0e309a6854",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Análise de conteúdo com ChatGPT: testar erros antes de delegar inferências"
+        },
+        {
+          "card_id": "EC-101",
+          "path": "knowledge/methodology/cards/ibrahim-voyer-2025-technological-reflexivity.md",
+          "catalog_blob_sha256": "eba4afdcb42beb58fe8b0949a509d4d4955406f92177376692aefda184483291",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Reflexividade tecnológica antes de interpretar textos com chatbots"
+        },
+        {
+          "card_id": "EC-102",
+          "path": "knowledge/methodology/cards/misra-et-al-2026-inductive-deductive-code-comparison.md",
+          "catalog_blob_sha256": "794178b00be3844852e2136c2b2785e7b3a13bdd60cfd3f0b69f76075e4e519f",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Comparar códigos de LLMs com humanos sem confundir volume e validade"
+        },
+        {
+          "card_id": "EC-103",
+          "path": "knowledge/methodology/cards/nguyen-welch-2025-epistemic-risks-qualitative-ai.md",
+          "catalog_blob_sha256": "23425b7cc3d014b6e07cc75c2716160483f79ec89bf8cdaa068fe446d70cdd81",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Risco epistêmico: conversar com dados não equivale a interpretá-los"
+        },
+        {
+          "card_id": "EC-104",
+          "path": "knowledge/methodology/cards/jiang-et-al-2025-equity-research-ai-comparability.md",
+          "catalog_blob_sha256": "36c2d5d52b50d9394fa97fdff06cc458befcf853ea11fce107981ade0d31a471",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Comparabilidade de códigos em pesquisa sobre equidade exige contexto"
+        },
+        {
+          "card_id": "EC-105",
+          "path": "knowledge/methodology/cards/vikan-et-al-2025-rta-offline-llm-limitations.md",
+          "catalog_blob_sha256": "dedf8976bc59a4b9c9c074db9fd4fb4ce103f44e15cf5b70aa8437b0adaac1ca",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Em análise temática reflexiva, suporte offline não elimina interpretação humana"
+        },
+        {
+          "card_id": "EC-106",
+          "path": "knowledge/methodology/cards/costa-et-al-2025-abductivai-collaboration.md",
+          "catalog_blob_sha256": "376785000ca038fb1527df2ff1ad832ef41ee48a235a80b6a38fb73a5fef5ba3",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "AbductivAI: IA como interlocutora abductiva, com responsabilidade humana"
+        }
+      ],
+      "goal": "Auditar criticamente os cards quanto a originalidade, direitos, fidelidade à fonte, limites e categorias [I]/[L]/[P]; registrar parecer sem simular revisão independente ou conceder aprovação automática.",
+      "acceptance": [
+        "Todos os caminhos exatos do lote auditados",
+        "Recibo por card com fontes e direitos observados",
+        "Pendências e decisões científicas não inferidas",
+        "Card alterado somente se evidencia e escopo permitirem"
+      ],
+      "category": "EDITORIAL_CARD_AUDIT"
+    },
+    {
+      "batch_id": "V1-10/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-10-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-10-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
+      "write_scope": "Somente cards listados neste ticket e seus próprios RESULTS/DELTA/recibos; NUNCA catalog.json global ou outro card",
+      "dependencies": [],
+      "stage": "A",
+      "records": [],
+      "editorial_cards": [
+        {
+          "card_id": "EC-107",
+          "path": "knowledge/methodology/cards/nguyen-trung-2025-gaita-actor-thematic.md",
+          "catalog_blob_sha256": "d0d29279987cecf37c8e4917835fe5b4d323f7f16241d94dc8ee2d6675338ba0",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "GAITA e ACTOR: orientar análise temática assistida sem automatizar juízo"
+        },
+        {
+          "card_id": "EC-108",
+          "path": "knowledge/methodology/cards/al-fattal-singh-2025-collaborative-autoethnography.md",
+          "catalog_blob_sha256": "1a27c6b5f1a6e15d889b12e2c29e6dc2e787043562448cc43013c1258c4c9602",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Autoetnografia comparativa: profundidade interpretativa e eficiência não são a mesma medida"
+        },
+        {
+          "card_id": "EC-109",
+          "path": "knowledge/methodology/cards/dellafiore-et-al-2025-expert-qualitative-tensions.md",
+          "catalog_blob_sha256": "fa1b28244b4062ffd7ed107ee21ae1f6a7026865008ac617c17160913211a561",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Entrevistas com especialistas: separar percepção de IA e desempenho verificado"
+        },
+        {
+          "card_id": "EC-110",
+          "path": "knowledge/methodology/cards/jones-2025-genai-disclosure-heuristic.md",
+          "catalog_blob_sha256": "45367ac02ae062584dab3adfc3f802ff6f494d05e67f3e8093e9bac23e16f4f3",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Declarar o uso de GenAI: heurística de rastreabilidade não é certificado de rigor"
+        },
+        {
+          "card_id": "EC-111",
+          "path": "knowledge/methodology/cards/dahal-et-al-2025-generativity-quality-crises.md",
+          "catalog_blob_sha256": "f493243e9c71bba9c0e224a83d899d2b9479352ecacb0d9a677c6bd589ea322d",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Crises de representação, legitimação e práxis na pesquisa qualitativa com GenAI"
+        },
+        {
+          "card_id": "EC-112",
+          "path": "knowledge/methodology/cards/jowsey-et-al-2025-frankenstein-copilot-validity.md",
+          "catalog_blob_sha256": "ba26850b63a122b51d64fc9dea3acaa50c9a29fe3315658694846a1157cc901a",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Citações fabricadas em análise temática automatizada: auditoria de evidência primeiro"
+        },
+        {
+          "card_id": "EC-113",
+          "path": "knowledge/methodology/cards/castellanos-et-al-2025-llm-human-theme-agreement.md",
+          "catalog_blob_sha256": "b064f7d268e20070465234836bf276ffb5b871295f00e6fb42857f96446e8e93",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Acordo temático 247/310: associação entre interpretações não prova equivalência"
+        },
+        {
+          "card_id": "EC-114",
+          "path": "knowledge/methodology/cards/jarrahi-2025-interviewing-ai-machine-behavior.md",
+          "catalog_blob_sha256": "460223053445bc2528aac72d88ed7097f707f420b02a7eabb418a39c987cbd4e",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Entrevistar sistemas de IA: investigação de comportamento, não participante humano"
+        },
+        {
+          "card_id": "EC-115",
+          "path": "knowledge/methodology/cards/wise-gresalfi-spencer-smith-2026-ai-in-the-loop.md",
+          "catalog_blob_sha256": "8917620a5627ed1defaa31fe9fddd3700f824b7a242d43c0227b115d6063bd57",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "IA no circuito interpretativo: compromisso qualitativo antes de eficiência"
+        },
+        {
+          "card_id": "EC-116",
+          "path": "knowledge/methodology/cards/duarte-et-al-2025-counter-inevitability.md",
+          "catalog_blob_sha256": "db2182fd5d5c681e1c6f541dfe730de86254bd561f5c3585f5b764e73ebb9ada",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Questionar a inevitabilidade de IA como decisão metodológica legítima"
+        },
+        {
+          "card_id": "EC-117",
+          "path": "knowledge/methodology/cards/macgeorge-2025-qualitative-futures-llm.md",
+          "catalog_blob_sha256": "7999717e7ad61f2d00d973ce1dc79c7dfb52658d24205d7b6944392d02493f01",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Pesquisa de futuros: diferenciação entre rapidez e interpretação"
+        },
+        {
+          "card_id": "EC-118",
+          "path": "knowledge/methodology/cards/messner-smith-richards-2025-epistemic-incongruences.md",
+          "catalog_blob_sha256": "1bda6e46c90630865677f89e01a143ee9c1cdf02fadd6959876354c753e339a1",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Incongruência epistemológica entre linguagem de IA e experiência humana"
+        },
+        {
+          "card_id": "EC-119",
+          "path": "knowledge/methodology/cards/kon-et-al-2024-interviews-three-transcripts.md",
+          "catalog_blob_sha256": "1f3d26913af8b1ef4cba97aa5faf370370db3849380332c48c70828dc9458e74",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Três entrevistas clínicas não validam sumarização qualitativa universal"
+        },
+        {
+          "card_id": "EC-120",
+          "path": "knowledge/methodology/cards/paulus-lester-davis-2025-roles-ai-qualitative.md",
+          "catalog_blob_sha256": "9d5ce4ea8cfde6341eb9f0791458382aad1af8ef1e90ed7e944458b0a4613f6e",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Papéis atribuídos à IA nos artigos não são capacidades demonstradas"
+        },
+        {
+          "card_id": "EC-121",
+          "path": "knowledge/methodology/cards/davison-et-al-2024-ethics-sharing-qualitative-data.md",
+          "catalog_blob_sha256": "f74b744d1f1b4c870087b0562dc2156b951d519871f3358a89e8350effa80f7c",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Dados para treinamento: distinguir finalidade analítica de exploração secundária"
+        },
+        {
+          "card_id": "EC-122",
+          "path": "knowledge/methodology/cards/nguyen-welch-2025-engaged-scholarship-anti-genai.md",
+          "catalog_blob_sha256": "bfd4d9f43fab933d755c4980bf83176a2e9b330d504559074511cfd30b523c77",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Pesquisa engajada: objeção substantiva ao uso de GenAI"
+        },
+        {
+          "card_id": "EC-123",
+          "path": "knowledge/methodology/cards/friedman-owen-vanpuymbrouck-2024-caution.md",
+          "catalog_blob_sha256": "4ef10a9fec68c67071d6d35e0433e99c9bf1cabd308ae529aaa2bf71a7867799",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Cautela interpretativista: questões que uma codificação automática não resolve"
+        }
+      ],
+      "goal": "Auditar criticamente os cards quanto a originalidade, direitos, fidelidade à fonte, limites e categorias [I]/[L]/[P]; registrar parecer sem simular revisão independente ou conceder aprovação automática.",
+      "acceptance": [
+        "Todos os caminhos exatos do lote auditados",
+        "Recibo por card com fontes e direitos observados",
+        "Pendências e decisões científicas não inferidas",
+        "Card alterado somente se evidencia e escopo permitirem"
+      ],
+      "category": "EDITORIAL_CARD_AUDIT"
+    },
+    {
+      "batch_id": "V1-11/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-11-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-11-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-11-DELTA.json",
+      "write_scope": "Somente cards listados neste ticket e seus próprios RESULTS/DELTA/recibos; NUNCA catalog.json global ou outro card",
+      "dependencies": [],
+      "stage": "A",
+      "records": [],
+      "editorial_cards": [
+        {
+          "card_id": "EC-124",
+          "path": "knowledge/methodology/cards/teixeira-tschopp-jobin-2025-hype-vs-risks.md",
+          "catalog_blob_sha256": "1305b6202d4904287499786661461e1d6a37477bde4f57c6cf91735e5e86dc53",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Limites da codificação por GenAI em documento de posição não publicado em anais"
+        },
+        {
+          "card_id": "EC-125",
+          "path": "knowledge/methodology/cards/barros-et-al-2024-llm-qualitative-systematic-mapping.md",
+          "catalog_blob_sha256": "07ae264f5e79cb27859695aeb222a6685bb122c22ab9375fdeb25308a01a02f5",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Mapeamento de aplicações de LLM: frequência não é acurácia metodológica"
+        },
+        {
+          "card_id": "EC-126",
+          "path": "knowledge/methodology/cards/paulus-marone-2024-commercial-claims.md",
+          "catalog_blob_sha256": "2c51894e1643c77df2f16c4558ed1e2cca8019e1951c40fb05dc41cc9ec75a7d",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Promessas comerciais de análise automática não substituem evidência científica"
+        },
+        {
+          "card_id": "EC-127",
+          "path": "knowledge/methodology/cards/eschrich-sterman-2024-llm-qualitative-framework.md",
+          "catalog_blob_sha256": "47257996ab3c9525d448783b765fa893ef92117d32541a238c46a5246d58d8b3",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "LLM para propor ou refutar interpretações: contraexemplos sob checagem humana"
+        },
+        {
+          "card_id": "EC-128",
+          "path": "knowledge/methodology/cards/de-paoli-2026-reply-to-jowsey-letter.md",
+          "catalog_blob_sha256": "170756c4cbae0d1f0a41542b436f03b787fbd0a485ce540245f7ffe51b135b0b",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Contraponto à rejeição total de GenAI: distinguir réplica filosófica de teste"
+        },
+        {
+          "card_id": "EC-129",
+          "path": "knowledge/methodology/cards/santanna-2025-classical-2x2-did.md",
+          "catalog_blob_sha256": "ec7ffa2577e48805ef0e4a19ec608e1b5fac2b7170541ce15ff04118c61d7654",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Diferenças-em-diferenças 2×2: pressupostos antes do coeficiente"
+        },
+        {
+          "card_id": "EC-130",
+          "path": "knowledge/methodology/cards/gertler-et-al-2018-impact-evaluation-pt.md",
+          "catalog_blob_sha256": "e2ba46c29446d8e057de4e052e2c4233350aec50fc502a387175fdcc28ff3a5b",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Avaliação de impacto: identificar contrafactual e versão da obra"
+        },
+        {
+          "card_id": "EC-131",
+          "path": "knowledge/methodology/cards/card-krueger-1994-nj-pa-did-study.md",
+          "catalog_blob_sha256": "c2ef9be9c56ed1e022010f6e12ffd87ca277fd509cafa0884b9cc1bc019a958a",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Estudo clássico de salário mínimo: contraste quase experimental e limites"
+        },
+        {
+          "card_id": "EC-132",
+          "path": "knowledge/methodology/cards/conceicao-et-al-2026-spatial-ecological-regression.md",
+          "catalog_blob_sha256": "d3903bc8bcf3446ba0f4d441de659b2ba8a11cb4038a6393df15668acff6eb5b",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Regressão ecológica espacial: dependência geográfica e erro de inferência"
+        },
+        {
+          "card_id": "EC-133",
+          "path": "knowledge/methodology/cards/carlomagno-rocha-2016-content-categories.md",
+          "catalog_blob_sha256": "365b092703312adbeebf9749e2aef2afd32c9d9ce9e8f6e39184bd41ae09b87e",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Cinco regras de categorias na análise de conteúdo: limites de aplicação"
+        },
+        {
+          "card_id": "EC-134",
+          "path": "knowledge/methodology/cards/source-review-0006.md",
+          "catalog_blob_sha256": "98c71669de715e0122cc3b5e3d1a8d6fd861a2e600e1594f4af8d5b9605ef941",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Desenhos de pesquisa em política comparada"
+        },
+        {
+          "card_id": "EC-135",
+          "path": "knowledge/methodology/cards/source-review-0011.md",
+          "catalog_blob_sha256": "2790dc3d8da81572c27d164c67a528ae76a37e204b8c67f3b3c424038df1ab34",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Análise Documental Ilustrada em Administração Pública: uma Proposta Operacional (Re)Aplicável"
+        },
+        {
+          "card_id": "EC-136",
+          "path": "knowledge/methodology/cards/source-review-0036.md",
+          "catalog_blob_sha256": "fc969cf7960c1ae594010319c535dafd01d811bc1a3fbbe9d2eb5fa6319cc168",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Feminist Epistemology"
+        },
+        {
+          "card_id": "EC-137",
+          "path": "knowledge/methodology/cards/source-review-0040.md",
+          "catalog_blob_sha256": "99c02c113c62cd8a35a342c9eeee7558c53cfd07376c881091aad415cf83e39c",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "AI for Qualitative Research: A Hands-On Guide for Management Scholars"
+        },
+        {
+          "card_id": "EC-138",
+          "path": "knowledge/methodology/cards/source-review-0132.md",
+          "catalog_blob_sha256": "89e23ac72cb63647fe8b88ef9df4aa378753a90648b9b89d40c019524b31b029",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Usos e possibilidades metodológicas para os estudos qualitativos em Administração: explorando a análise temática"
+        },
+        {
+          "card_id": "EC-139",
+          "path": "knowledge/methodology/cards/source-review-0154.md",
+          "catalog_blob_sha256": "e6a80dcbc8d585cda7e08bed9fe0eec658caa215cd806fdbc0513b13262f05bb",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Planning, implementing and reporting: increasing transparency, replicability and credibility in qualitative political science research"
+        },
+        {
+          "card_id": "EC-140",
+          "path": "knowledge/methodology/cards/source-review-0158.md",
+          "catalog_blob_sha256": "80d2e16656c81a6cf893668fd76dd31d4d93e5cfa4b38c531956bdb6c7dfa599",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Capítulo 4: Amostragem Aleatória Simples, de Amostragem: Teoria e Prática Usando R"
+        }
+      ],
+      "goal": "Auditar criticamente os cards quanto a originalidade, direitos, fidelidade à fonte, limites e categorias [I]/[L]/[P]; registrar parecer sem simular revisão independente ou conceder aprovação automática.",
+      "acceptance": [
+        "Todos os caminhos exatos do lote auditados",
+        "Recibo por card com fontes e direitos observados",
+        "Pendências e decisões científicas não inferidas",
+        "Card alterado somente se evidencia e escopo permitirem"
+      ],
+      "category": "EDITORIAL_CARD_AUDIT"
+    },
+    {
+      "batch_id": "V1-12/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-12-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-12-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-12-DELTA.json",
+      "write_scope": "Somente cards listados neste ticket e seus próprios RESULTS/DELTA/recibos; NUNCA catalog.json global ou outro card",
+      "dependencies": [],
+      "stage": "A",
+      "records": [],
+      "editorial_cards": [
+        {
+          "card_id": "EC-141",
+          "path": "knowledge/methodology/cards/source-review-0181.md",
+          "catalog_blob_sha256": "ef8786b93e7c11a0a18e4fc54e6e9553f3984cd7e2c292d1bd73626e98a919e5",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Publication, Publication"
+        },
+        {
+          "card_id": "EC-142",
+          "path": "knowledge/methodology/cards/source-review-0182.md",
+          "catalog_blob_sha256": "2b3d85f5ac25b2828c33c660ef77a630016e38faea02eac3d0338f3a18e79537",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Promoting Transparency in Social Science Research"
+        },
+        {
+          "card_id": "EC-143",
+          "path": "knowledge/methodology/cards/source-review-0184.md",
+          "catalog_blob_sha256": "ea920287c3f1d30b926f24756e1abbfa624822fd547ec00b40cd5260feada5a9",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Seven Reasons Why: A User's Guide to Transparency and Reproducibility"
+        },
+        {
+          "card_id": "EC-144",
+          "path": "knowledge/methodology/cards/source-review-0199.md",
+          "catalog_blob_sha256": "f7c945c7a9e12193a1b5f111735fb9d228d0ef1991b1d417a3b6b4b38105d7db",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "A análise do discurso político"
+        },
+        {
+          "card_id": "EC-145",
+          "path": "knowledge/methodology/cards/source-review-0205.md",
+          "catalog_blob_sha256": "770036af3dd714c8d27449458506883969e4c4044faa7a976cabd408c745a4d3",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Imagens como estratégia metodológica em pesquisa: a fotocomposição e outros caminhos possíveis"
+        },
+        {
+          "card_id": "EC-146",
+          "path": "knowledge/methodology/cards/source-review-0206.md",
+          "catalog_blob_sha256": "18adbf907ca0b832904e9f5ece7e6980fa598d9686eb15dde923ad86a7ff0310",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "O uso das imagens em pesquisas nas ciências sociais"
+        },
+        {
+          "card_id": "EC-147",
+          "path": "knowledge/methodology/cards/source-review-0239.md",
+          "catalog_blob_sha256": "0e169ded8e223b993d80558da7ece127b7a0ff7565db028416899365540d7673",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Correspondence Analysis"
+        },
+        {
+          "card_id": "EC-148",
+          "path": "knowledge/methodology/cards/source-review-0240.md",
+          "catalog_blob_sha256": "125e2e4cde78880361476200d8ffb4496d433b2e732ffe3c8213de14c610e726",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Charting fields and spaces quantitatively: from multiple correspondence analysis to categorical principal components analysis"
+        },
+        {
+          "card_id": "EC-149",
+          "path": "knowledge/methodology/cards/source-review-0242.md",
+          "catalog_blob_sha256": "70ee48000d275bf57f4f1b79ceb5cf92239c2b847451e9bd95b6aea342ce175a",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Simple Correspondence Analysis: A Bibliographic Review"
+        },
+        {
+          "card_id": "EC-150",
+          "path": "knowledge/methodology/cards/source-review-0259.md",
+          "catalog_blob_sha256": "188ce74ba623e150b1ed9e5e28e2fb5811a85a44a0d59cc97337b0e31e2bb82f",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Causal Inference using Difference-in-Differences — Lecture 1: Introduction"
+        },
+        {
+          "card_id": "EC-151",
+          "path": "knowledge/methodology/cards/source-review-0267.md",
+          "catalog_blob_sha256": "3b6d3cbf1240dadb2b92df3a9299ea1064c4ba823d12280775530db1ba96f12c",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Mais que boas intenções: técnicas quantitativas e qualitativas na avaliação de impacto de políticas públicas"
+        },
+        {
+          "card_id": "EC-152",
+          "path": "knowledge/methodology/cards/source-review-0268.md",
+          "catalog_blob_sha256": "9f1614979fb9928b521a34199a8f6889430d0ef0354c72a7e5fff68b1db4878d",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Políticas públicas: modelos clássicos e 40 anos de produção no Brasil"
+        },
+        {
+          "card_id": "EC-153",
+          "path": "knowledge/methodology/cards/source-review-0270.md",
+          "catalog_blob_sha256": "f989196065f3f5f63e6c27f8f9f1c087b8f7f2db5357938aee453027590ef0d4",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Linear regression in ecological studies involving space: methodology and an application example in public health"
+        },
+        {
+          "card_id": "EC-154",
+          "path": "knowledge/methodology/cards/source-review-0273.md",
+          "catalog_blob_sha256": "267e1b63a2847ac3ef1419d366f87663ed96a8c734cf4030bbfe037fa65e1da6",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Análise espacial e geoprocessamento"
+        },
+        {
+          "card_id": "EC-155",
+          "path": "knowledge/methodology/cards/source-review-0274.md",
+          "catalog_blob_sha256": "5897c54be8b1e345179e3357531ec6cc02412bde79817cc3ecb731f901124495",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Spatial Data Analysis"
+        },
+        {
+          "card_id": "EC-156",
+          "path": "knowledge/methodology/cards/source-review-0298.md",
+          "catalog_blob_sha256": "3fa09ee57c707d6d7fa54487889c47c3e3872e3319622aaf68154418b843bebf",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "A Brief Introduction to Monte Carlo Simulation"
+        },
+        {
+          "card_id": "EC-157",
+          "path": "knowledge/methodology/cards/source-review-0310.md",
+          "catalog_blob_sha256": "4e238473b65ac7ef3118e9bc5487e7f3bfae29a223e0660253f0ef7768549f34",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Análise de redes sociais aplicada à comunicação política: uma proposta metodológica"
+        }
+      ],
+      "goal": "Auditar criticamente os cards quanto a originalidade, direitos, fidelidade à fonte, limites e categorias [I]/[L]/[P]; registrar parecer sem simular revisão independente ou conceder aprovação automática.",
+      "acceptance": [
+        "Todos os caminhos exatos do lote auditados",
+        "Recibo por card com fontes e direitos observados",
+        "Pendências e decisões científicas não inferidas",
+        "Card alterado somente se evidencia e escopo permitirem"
+      ],
+      "category": "EDITORIAL_CARD_AUDIT"
+    },
+    {
+      "batch_id": "V1-13/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-13-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-13-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-13-DELTA.json",
+      "write_scope": "Somente cards listados neste ticket e seus próprios RESULTS/DELTA/recibos; NUNCA catalog.json global ou outro card",
+      "dependencies": [],
+      "stage": "A",
+      "records": [],
+      "editorial_cards": [
+        {
+          "card_id": "EC-158",
+          "path": "knowledge/methodology/cards/source-review-0337.md",
+          "catalog_blob_sha256": "cb068cae79d7cd59bf24c315839cd93203f4f150975d74f99bb249a47f1f0a8c",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "O uso das imagens em pesquisas nas ciências sociais"
+        },
+        {
+          "card_id": "EC-159",
+          "path": "knowledge/methodology/cards/source-review-0353.md",
+          "catalog_blob_sha256": "d16318216a5a0be51e3da4403128b44d65a7055b0578fafd7dd1a874db71a6a8",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Pesquisa bibliométrica e hierarquias do conhecimento em Ciência Política"
+        },
+        {
+          "card_id": "EC-160",
+          "path": "knowledge/methodology/cards/source-review-0358.md",
+          "catalog_blob_sha256": "87f602cde7dfe8a14667f740f2a80d10bebab5e0a190027997a9a37fd9b893b7",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Das causas na Ciência Política: uma intervenção filosófica necessária"
+        },
+        {
+          "card_id": "EC-161",
+          "path": "knowledge/methodology/cards/source-review-0367.md",
+          "catalog_blob_sha256": "a27078ed44bafa7791a88567958214eb7c9b11ffb592d06010cda9b9d04ae850",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Aplicação metodológica da análise de conteúdo em pesquisas de análise de política externa"
+        },
+        {
+          "card_id": "EC-162",
+          "path": "knowledge/methodology/cards/source-review-0397.md",
+          "catalog_blob_sha256": "cfbad1bc5a2866fb63b22e66d9027553ba5c044047e059ac038a6a08c0fb6458",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Experimentos de survey na administração pública brasileira: conceitos, métodos e exemplos"
+        },
+        {
+          "card_id": "EC-163",
+          "path": "knowledge/methodology/cards/source-review-0401.md",
+          "catalog_blob_sha256": "3891198d4b9f7df3a36e1ba6a7165467e418866adfa36697db62dd462e410013",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "tclust: An R Package for a Trimming Approach to Cluster Analysis"
+        },
+        {
+          "card_id": "EC-164",
+          "path": "knowledge/methodology/cards/source-review-0410.md",
+          "catalog_blob_sha256": "4a47bd42b1c5d30d4a10a516a8bb76d081d6526c2fbb255c46d61fa0de4e976d",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Uso da análise fatorial exploratória em psicologia"
+        },
+        {
+          "card_id": "EC-165",
+          "path": "knowledge/methodology/cards/source-checked-0007.md",
+          "catalog_blob_sha256": "df2fafc5c40123e8d195131d24ab7a6840d877a997832ecb3e5d46d92ca06670",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Modelos de leitura documentária para indexação: abordagens teóricas interdisciplinares e aplicações em diferentes tipos de documentos"
+        },
+        {
+          "card_id": "EC-166",
+          "path": "knowledge/methodology/cards/source-checked-0008.md",
+          "catalog_blob_sha256": "1f934429f388d8eb2190a9d0ffbc0d69f637fd65be15223ac9cea31abf4e2601",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Pesquisa documental: pistas teóricas e metodológicas"
+        },
+        {
+          "card_id": "EC-167",
+          "path": "knowledge/methodology/cards/source-checked-0009.md",
+          "catalog_blob_sha256": "62f6446e6e8e2084a8df6dc019f185a8dfe446909e08e3a5b5b19c060e24791e",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Conducting a Qualitative Document Analysis"
+        },
+        {
+          "card_id": "EC-168",
+          "path": "knowledge/methodology/cards/source-checked-0010.md",
+          "catalog_blob_sha256": "76df07c052df796f916efccc7d64889eeb9574bf8db583f2f916a2a18922a23d",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Análise documental como percurso metodológico na pesquisa qualitativa"
+        },
+        {
+          "card_id": "EC-169",
+          "path": "knowledge/methodology/cards/source-checked-0012.md",
+          "catalog_blob_sha256": "4f4e662052abc28e245daad9a2d4c3330a7367fa54b4953ce83d88ed38165d31",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Estudo/análise documental: uma revisão teórica e metodológica"
+        },
+        {
+          "card_id": "EC-170",
+          "path": "knowledge/methodology/cards/source-checked-0013.md",
+          "catalog_blob_sha256": "15d7a382add2d98817ac6752354d2087448ad22a7587da79a1df9330cface68e",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Análise documental e sua contribuição no desenvolvimento da pesquisa científica"
+        },
+        {
+          "card_id": "EC-171",
+          "path": "knowledge/methodology/cards/source-checked-0014.md",
+          "catalog_blob_sha256": "4fa98ebed6484b5f3fde68a90722a99a48ddd3bc5313619c3c52dec5460d3ec4",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Pesquisa documental: considerações sobre conceitos e características na pesquisa qualitativa"
+        },
+        {
+          "card_id": "EC-172",
+          "path": "knowledge/methodology/cards/source-checked-0015.md",
+          "catalog_blob_sha256": "fc2bebe70af44d85b072e140eb9d8b664c196b4c63acded945c6a8118ecb4b3a",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Análise documental como ferramenta metodológica em história da educação: um olhar para pesquisas locais"
+        },
+        {
+          "card_id": "EC-173",
+          "path": "knowledge/methodology/cards/source-checked-0146.md",
+          "catalog_blob_sha256": "2ea24ba23785ad49bec283b3f38cfd5daf00d4f875d3ba43caca2eddd9daf3d6",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Intercoder Reliability in Qualitative Research: Debates and Practical Guidelines"
+        },
+        {
+          "card_id": "EC-174",
+          "path": "knowledge/methodology/cards/source-checked-0149.md",
+          "catalog_blob_sha256": "80277f8ff0b2dbe16183c449093f6336ebca94de6265a231b6035bf39445add1",
+          "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
+          "title": "Qualitative Quality: Eight ‘Big-Tent’ Criteria for Excellent Qualitative Research"
+        }
+      ],
+      "goal": "Auditar criticamente os cards quanto a originalidade, direitos, fidelidade à fonte, limites e categorias [I]/[L]/[P]; registrar parecer sem simular revisão independente ou conceder aprovação automática.",
+      "acceptance": [
+        "Todos os caminhos exatos do lote auditados",
+        "Recibo por card com fontes e direitos observados",
+        "Pendências e decisões científicas não inferidas",
+        "Card alterado somente se evidencia e escopo permitirem"
+      ],
+      "category": "EDITORIAL_CARD_AUDIT"
+    },
+    {
+      "batch_id": "V1-14/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-14-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-14-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-14-DELTA.json",
+      "write_scope": "Apenas relatórios V1-14, sem mudanças em compartilhamento/ACL/force-push/rewrite; nenhuma exfiltração de ID privado",
+      "dependencies": [],
+      "stage": "A",
+      "records": [],
+      "editorial_cards": [],
+      "goal": "Auditar Issues #102/#103, histórico e permissões do Drive sem expor IDs; separar licença NC de autorização de distribuição; preparar opções de mitigação/aceite humano.",
+      "acceptance": [
+        "Relatório de risco/refs/escopo histórico",
+        "Avaliação efetiva de permissões com evidências minimizadas",
+        "Riscos e decisões pendentes explicitados"
+      ],
+      "category": "SECURITY_RIGHTS"
+    },
+    {
+      "batch_id": "V1-15/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-15-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-15-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-15-DELTA.json",
+      "write_scope": "Apenas relatórios e scripts exclusivos V1-15, nunca ficheiros de catalog/rights-ledger",
+      "dependencies": [],
+      "stage": "A",
+      "records": [],
+      "editorial_cards": [],
+      "goal": "Auditar hashes/estrutura dos 343 source-cards e 174 editorial cards, duplicatas e 25 aliases Unicode; reconstruir índices sem promover evidência.",
+      "acceptance": [
+        "Lista de divergências SHA-256 efetivamente recomputadas",
+        "Auditoria das 11 classes suspeitas de duplicatas",
+        "Reconciliação de 25 aliases de pastas",
+        "Proposta de script/teste sem alterar catálogos globais"
+      ],
+      "category": "INTEGRITY_DUPLICATES"
+    },
+    {
+      "batch_id": "V1-16/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-16-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-16-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-16-DELTA.json",
+      "write_scope": "Branch integradora exclusiva; SOMENTE esta etapa pode alterar registry, ledger parts, manifestos e catálogo editorial, depois de validar todas as entregas",
+      "dependencies": [
+        "V1-01/20",
+        "V1-02/20",
+        "V1-03/20",
+        "V1-04/20",
+        "V1-05/20",
+        "V1-06/20",
+        "V1-07/20",
+        "V1-08/20",
+        "V1-09/20",
+        "V1-10/20",
+        "V1-11/20",
+        "V1-12/20",
+        "V1-13/20",
+        "V1-14/20",
+        "V1-15/20"
+      ],
+      "stage": "B",
+      "records": [],
+      "editorial_cards": [],
+      "goal": "Consolidar deltas dos 20 IB e 15 V1 iniciais, integrar com rastreio e validação de conflitos, atualizar registry, ledger, catálogo editorial, manifestos numa branch de integração isolada; preservando pendências, direitos e zero promoção [L] sem dupla aprovação.",
+      "acceptance": [
+        "100% dos 475 IDs preservados ou mudança justificada",
+        "174 cards cobertos; sem aceitação científica inventada",
+        "Índices e manifestos coerentes; validador de 343 lotes executado",
+        "Nenhum merge na main ou publicação"
+      ],
+      "category": "INTEGRATION"
+    },
+    {
+      "batch_id": "V1-17/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-17-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-17-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-17-DELTA.json",
+      "write_scope": "Apenas testes e relatórios exclusivos de QA em branch própria; não aceitar as próprias evidências sem segunda revisão",
+      "dependencies": [
+        "V1-16/20"
+      ],
+      "stage": "C",
+      "records": [],
+      "editorial_cards": [],
+      "goal": "Auditar tecnicamente recuperação metodológica, rastreabilidade, licenças, limites lexicais, resultados falsos, negação de PDFs protegidos, gates e fontes em ambiente de teste.",
+      "acceptance": [
+        "Plano de casos positivos/negativos e evidência reproduzível",
+        "Testes de sensibilidade a prompt injection e autorização",
+        "CI documentada no SHA testado",
+        "Falhas P0/P1 reabertas para correção"
+      ],
+      "category": "INDEPENDENT_SYSTEM_QA"
+    },
+    {
+      "batch_id": "V1-18/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-18-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-18-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-18-DELTA.json",
+      "write_scope": "Branch candidata isolada (somente coordenador); não atualizar automaticamente refs de PRs existentes",
+      "dependencies": [
+        "V1-16/20",
+        "V1-17/20"
+      ],
+      "stage": "D",
+      "records": [],
+      "editorial_cards": [],
+      "goal": "Revisar e compor a cadeia #98→#99→#100 com biblioteca validada #101 em candidata 1.0 isolada, sem MCP e sem mudanças em main; emitir ZIP de teste e SHA256.",
+      "acceptance": [
+        "Diff/contratos e dependências revisados",
+        "Script de auditoria e pacote preparados sem PDFs protegidos",
+        "CI verde em HEAD candidato",
+        "Não ocorre merge release tag"
+      ],
+      "category": "SKILL_INTEGRATION_CANDIDATE"
+    },
+    {
+      "batch_id": "V1-19/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-19-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-19-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-19-DELTA.json",
+      "write_scope": "Apenas recibos e matriz de homologação V1-19; ensaios de Drive apenas em pasta autorizada",
+      "dependencies": [
+        "V1-18/20"
+      ],
+      "stage": "E",
+      "records": [],
+      "editorial_cards": [],
+      "goal": "Testar instalação limpa real da Skill no ChatGPT e apenas hosts anunciados, fluxos de 7 gates, DEC/TRACE, retomada, consentimento Drive e recuperação metodológica; evidência e bugs.",
+      "acceptance": [
+        "Matriz de ambientes/versões/execuções reais",
+        "Falhas críticas corrigidas ou bloqueio explícito",
+        "Reteste após alteração de ZIP/commit",
+        "Não alegar host não testado"
+      ],
+      "category": "REAL_HOST_ACCEPTANCE"
+    },
+    {
+      "batch_id": "V1-20/20",
+      "status": "PENDENTE",
+      "branch_suggested": "work/v1-20-20261121",
+      "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "results_path": "knowledge/methodology/intake/v1_parallel/V1-20-RESULTS.md",
+      "delta_path": "knowledge/methodology/intake/v1_parallel/V1-20-DELTA.json",
+      "write_scope": "Documentação e checklist de lançamento em branch exclusiva; sem publicação automática",
+      "dependencies": [
+        "V1-19/20"
+      ],
+      "stage": "F",
+      "records": [],
+      "editorial_cards": [],
+      "goal": "Conferir todos os gates de segurança/direitos/bibliografia/cards/testes/hosts; preparar documentação, notas, VERSION, CITATION, ZIP e checklist; pedir GO humano. Não publicar sem autorização expressa.",
+      "acceptance": [
+        "Checklist pass/fail por dependência",
+        "Nenhum P0/P1 não aceito",
+        "Autorização humana explícita registrada se houver GO",
+        "Sem tag, release ou merge nesta etapa por padrão"
+      ],
+      "category": "RELEASE_GO_NO_GO"
+    }
+  ]
+}
