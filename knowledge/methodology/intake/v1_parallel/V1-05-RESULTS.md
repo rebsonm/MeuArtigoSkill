@@ -83,3 +83,50 @@ A pesquisa abaixo confronta **metadados de páginas identificadas** dos oito car
 
 ## Controle de escopo
 A escrita GitHub desta etapa limita-se exclusivamente a `V1-05-RESULTS.md` e `V1-05-DELTA.json`. Os 18 cards consultados foram preservados sem edição; nenhum registry, ledger, catálogo, manifesto, main ou branch de terceiro foi modificado.
+
+## Pacotes individuais para duas revisões independentes — continuidade 21/11/2026
+
+**Natureza desta entrega:** PACOTES DE REVISÃO preparados com base nos 18 cards do snapshot imutável `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf` e nos resultados de triagem já registrados. Isto **não** constitui parecer independente, verificação de plágio/similaridade, certificação de licença, revisão jurídica ou aceite científico.
+
+**Controle de independência:** para cada card devem existir **dois pareceres assinados e distintos**, com identificação interna controlada (sem expor IDs privados), data, edição/cópia exata, links autorizados, trecho/localização de evidência, decisão, objeções e resolução. O revisor A examina **direitos e originalidade**; o revisor B examina **fidelidade científica e editorial**. Os autores da triagem e o mantenedor não são contados automaticamente como esses revisores. Ambos permanecem **NÃO RECEBIDOS (0/18 em cada trilha)**.
+
+| Card | Revisor A — direitos/originalidade: achado preliminar e prova a exigir | Revisor B — fidelidade: confronto obrigatório | Estado A/B |
+|---|---|---|---|
+| EC-019 | Síntese editorial declarada; direitos das edições Guest/Byrne e similaridade textual ainda não atestados | Confrontar a diferença entre saturação temática operacional, reflexividade e amostragem teórica; apontar passagens correspondentes nos originais | PENDENTE / PENDENTE |
+| EC-020 | Síntese declarada de Pautasso/PLOS; licença da edição e confronto de originalidade pendentes | Distinguir regras de redação narrativa de protocolo de revisão sistemática; marcar o que é inferência editorial | PENDENTE / PENDENTE |
+| EC-021 | PLOS informa CC BY no artigo e na correção; atribuição e versão corrigida devem ser verificadas (https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619 ; https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005830) | Confrontar texto/alcance da correção de 09/11/2017 com a orientação sobre estrutura e distinguir regras prescritivas de evidência empírica | PENDENTE / PENDENTE |
+| EC-022 | Síntese declarada de Sandve/PLOS; autorias e termos de reutilização da edição ainda sem revisão formal | Confrontar dez regras e separar rerun reprodutível de replicação/validade de afirmações | PENDENTE / PENDENTE |
+| EC-023 | Síntese declarada de Forero/PLOS; verificar originalidade e termos da versão exata | Conferir estimando, compatibilidade de efeitos, dependência entre estimativas e heterogeneidade: distinguir proposta editorial do conteúdo citado | PENDENTE / PENDENTE |
+| EC-024 | Página atual do periódico FURG exibe CC BY 4.0, mas licença da cópia arquivada/histórico de edição e autorização concreta pendentes (https://periodicos.furg.br/rbhcs/article/view/10351/0) | Confrontar autoria/edição, natureza de pesquisa documental, crítica de fonte e distinção de revisão bibliográfica; registrar seção/página | PENDENTE / PENDENTE |
+| EC-025 | Card informa PDF consultado apenas para escopo; termos exatos do PDF Morgan não verificados | Confrontar seleção amostral de documentos, unidades de análise e processo de interpretação no original | PENDENTE / PENDENTE |
+| EC-026 | Card informa consulta preliminar ao PDF Byrne; checar licença exata e possível dependência expressiva | Confrontar análise temática reflexiva, construção de temas e inadequação de concordância intercodificador universal | PENDENTE / PENDENTE |
+| EC-027 | Card informa consulta preliminar ao PDF Kiger/Varpio; direitos do AMEE Guide pendentes | Conferir variantes da análise temática, etapas descritas e condições de aplicação dos critérios | PENDENTE / PENDENTE |
+| EC-028 | PDF hospedado pela editora SAGE exibe CC BY-NC 4.0 na primeira página; a restrição NC impede assumir uso comercial irrestrito (https://journals.sagepub.com/doi/pdf/10.1177/1609406917733847) | Confrontar trilha de decisões, trustworthiness e limites da mera auditabilidade com a argumentação da fonte; registrar páginas | PENDENTE / PENDENTE |
+| EC-029 | PDF van Rijnsoever consultado apenas em identificação declarada; direitos e originalidade ainda não comparados | Verificar hipóteses/simulações e impedir extrapolação de tamanho universal de amostra | PENDENTE / PENDENTE |
+| EC-030 | Card declara CC BY-NC-ND, sem certificação independente da licença da cópia (https://www.sciencedirect.com/science/article/pii/S0277953621008558) | Verificar revisão sistemática, variabilidade dos contextos e diferença entre saturação de códigos e de significados; confirmar condições empíricas | PENDENTE / PENDENTE |
+| EC-031 | Síntese Roth et al. sem validação independente do regime de direitos da edição citada | Conferir tendências paralelas, heterogeneidade temporal, efeitos de tratamento e críticas a TWFE | PENDENTE / PENDENTE |
+| EC-032 | Portal da Annual Reviews declara copyright © 2022 e 'All rights reserved'; nenhuma autorização de redistribuição identificada (https://www.annualreviews.org/content/journals/10.1146/annurev-economics-051520-021409) | Verificar validade local, manipulação do running variable, largura da janela, inferência e extrapolação | PENDENTE / PENDENTE |
+| EC-033 | NBER w13039 identificado; não assumir autorização pela acessibilidade; distinção entre w13039 e t0337 necessária (https://www.nber.org/papers/w13039) | Confrontar sharp/fuzzy, continuidades e opções práticas na edição exata; não misturar versões posteriores | PENDENTE / PENDENTE |
+| EC-034 | Depósito SSRN DOI identificado, mas uma licença do SSRN para hospedar não concede licença de redistribuição a terceiros (https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3333405) | Conferir autoria/versão do relatório QTD e diferença entre inferência de mecanismo, evidência diagnóstica e sequência narrativa | PENDENTE / PENDENTE |
+| EC-035 | Síntese editorial de Thiem; regime de direitos/semelhança do original ainda não verificados | Conferir necessidade, suficiência, calibragem, contradições e limites de interpretações causais de solução QCA | PENDENTE / PENDENTE |
+| EC-036 | Somente rastro bibliográfico de capítulo; ResearchGate não concede direito de redistribuição, DOI não confirmado (https://www.researchgate.net/publication/358594522) | Conferir capítulo/edição e exemplos de política pública, calibragem e inferência configuracional; requer exemplar primário | PENDENTE / PENDENTE |
+
+### Evidências novas e cautelas específicas
+- EC-021: a página da PLOS registra CC BY para o artigo e para a correção, além da correção publicada em 09/11/2017. A licença do artigo não prova que todo material de terceiros ou figura seja livre de ressalvas; atribuição e versão exata continuam no roteiro do revisor A.
+- EC-024: a página contemporânea do periódico FURG anuncia CC BY 4.0. **Isto não comprova que a cópia armazenada foi obtida dessa edição/versão, nem configura homologação jurídica**. Não modificar automaticamente `doi_status` ou `rights_approved` do card.
+- EC-028: a primeira página do PDF disponibilizado pela SAGE traz CC BY-NC 4.0. O texto do card já alertava NC; o novo ganho é a localização da declaração na cópia do editor. Não promover redistribuição comercial.
+- EC-032: o portal da Annual Reviews registra 'All rights reserved'. Não publicar figura, tabela, PDF ou extenso excerto; usar apenas síntese independente enquanto direitos permanecem não aprovados.
+- EC-030, EC-033, EC-034 e EC-036: persistem bloqueios para concluir os termos de direitos da **cópia exata**, mesmo com DOI ou localizador bibliográfico. EC-036 não tem DOI verificado.
+
+### Critério de aceite verificável por card
+1. **A/rights-originality:** registro assinado de um revisor independente com fonte oficial para titular/termos/edição da cópia, comparação editorial de originalidade e decisão `ACEITAR_COM_LIMITE` / `CORRIGIR` / `REJEITAR`; sem publicar o material protegido.
+2. **B/scientific-fidelity:** registro assinado por segundo revisor distinto, com cotejo item a item de afirmações vs. fonte primária, localizador de seção/página e contraexemplo, decisão e justificativa; vedada promoção automática [I]→[L].
+3. **Conciliação:** se há ressalva, correção e revisão das partes pertinentes com evidência, mantendo o card em Draft até ambas as decisões documentadas; os pareceres **não** substituem o controle dos bloqueios #102/#103 nem a decisão de integração por V1-16.
+
+### Teste e rastreabilidade desta continuidade
+- Manifesto fixo: `7c92045310eb3b1474a9612a777fb0012a511592`, apenas EC-019…EC-036; nenhuma outra etapa ou card editado.
+- HEAD precedente da PR Draft #104: `01d8ea7cab5988583d5e79cb24495ff5157a7298`; comparação antes desta escrita: 11 commits à frente, 0 atrás, somente dois recibos alterados.
+- CI observada nesse HEAD: workflow `Release audit` ID 44959898288 concluiu `success`; status checks combinados retornaram lista vazia. **Esse teste não certifica revisão de direitos nem fidelidade**. Após novos commits, CI precisa ser revalidada no novo HEAD.
+- Google Drive: somente comentários de 31.05 são elegíveis nesta janela; o corpo `text/markdown` bruto permanece sem edição transacional/CAS garantida e não será substituído.
+
+**Próxima ação única:** solicitar e receber o **primeiro parecer independente de direitos/originalidade (revisor A)** para EC-019…EC-036 com o pacote acima, preservando a segunda trilha científica pendente. Nenhum merge/publicação.
