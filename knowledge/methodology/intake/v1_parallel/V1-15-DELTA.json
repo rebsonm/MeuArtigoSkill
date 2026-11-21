@@ -241,12 +241,23 @@
     "observed_content_length_later": 307566,
     "blocker": "Raw text/markdown object; no conditional atomic section-level patch offered by connected Drive actions; file changed during review. Preserved remote state."
   },
-  "prohibited_actions_performed": [],
+  "prohibited_actions_performed": [
+    "Unintentional Drive locator inclusion in public V1-15 commit history; value removed from HEAD without rewriting history; pending authorized review."
+  ],
   "next_steps": [
     "Executar script contra clone com refs IB congeladas, registrar lista real de divergências dos 517 SHA-256",
     "Verificar SHA-256 das cópias privadas dos 11 grupos, sem publicar PDFs",
     "Validar os 25 aliases contra pastas originais autorizadas",
     "Atualizar exclusivamente 31.15 após obter edição segura e conciliação transacional",
     "Manter V1-16 bloqueada até evidências e demais entregas auditadas"
-  ]
+  ],
+  "public_history_security_incident": {
+    "severity": "NEEDS_REVIEW",
+    "description": "A previous V1-15 DELTA commit briefly included the Drive locator of the canonical Markdown. Removed from current HEAD; historical Git commit remains addressable. No rewrite/force-push attempted.",
+    "introduced_commit": "f2248b5475fe5623b026f1284d6fcf8f2ecb35ed",
+    "sanitized_head_commit": "d1f67ffe7ab8c9bbba110db7f38ce91decbd6f02",
+    "needs_human_rights_privacy_review": true,
+    "scope": "V1-15 own new commit only; possible overlap with existing Issue #103",
+    "identifier_value_in_report": false
+  }
 }
