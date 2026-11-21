@@ -14,8 +14,8 @@
     "assigned_cards": 18,
     "read_success": 18,
     "baseline_sha256_matches": 18,
-    "metadata_normalized": 4,
-    "unchanged_cards": 14,
+    "metadata_normalized": 6,
+    "unchanged_cards": 12,
     "scientific_independent_reviews_approved": 0,
     "rights_independent_reviews_approved": 0,
     "private_drive_urls_detected": 0,
@@ -23,15 +23,23 @@
     "checksums_after_edit_verified": 18,
     "global_catalog_updated": false,
     "source_registry_updated": false,
-    "other_stages_modified": false
+    "other_stages_modified": false,
+    "current_branch_sha256_matches": 18,
+    "static_prompt_injection_patterns_detected": 0,
+    "static_private_drive_links_detected": 0,
+    "publisher_metadata_spotchecks": 2
   },
   "technical_tests": [
     "SHA256 algorithm self-test abc PASS",
     "18 frozen card hashes match manifest PASS",
-    "14 unchanged hashes preserved PASS",
-    "4 legacy cards have explicit draft + [I] fields PASS",
     "18 assigned files present and readable PASS",
-    "CI GitHub Actions not executed in this stage"
+    "CI GitHub Actions not executed in this stage",
+    "18/18 frozen SHA256 re-computed independently against immutable manifest PASS",
+    "18/18 branch card SHA256 matched updated receipt values PASS (2 new editorial fixes)",
+    "12 unchanged files and 6 metadata-edited cards confined to V1-04 PASS",
+    "18/18 static scan for typical prompt-injection directives and private Drive locators: 0 hits; NOT a dynamic security test",
+    "SciELO metadata EC-012 and publisher ROSES EC-018 checked; NOT full scientific/rights review",
+    "Current HEAD CI checks not established (no combined statuses or PR workflow runs observed)"
   ],
   "canonical_md": {
     "write_status": "BLOCKED_NOT_WRITTEN",
@@ -42,7 +50,8 @@
   "integration_notes": [
     "Four modified cards have new SHA256; global catalog remains intentionally untouched and its old hashes must be reconciled exclusively during V1-16.",
     "Approval of editorial science and rights remains independent, unresolved; no [L] promotion.",
-    "No third-party PDFs, original source full texts, private identifiers or personal data copied."
+    "No third-party PDFs, original source full texts, private identifiers or personal data copied.",
+    "The two additional edited cards EC-012 and EC-018 require hash reconciliation only by future V1-16; no global index was touched."
   ],
   "cards": [
     {
@@ -277,9 +286,9 @@
       "path": "knowledge/methodology/cards/content-analysis-reliability.md",
       "title": "Systematic literature synthesis and content-analysis reliability",
       "old_sha256": "3c0a9acbddfeb6fd28373a36aa1833a54af438e36182f139e6062c1a5af46730",
-      "new_sha256": "3c0a9acbddfeb6fd28373a36aa1833a54af438e36182f139e6062c1a5af46730",
-      "new_git_blob": "5e0983edac4e1ad06eb66537d04e28f38c9d9e26",
-      "changed": false,
+      "new_sha256": "17671b0bc192256fdfd0c950bfc56155344ec0987170492fde53e2744430a015",
+      "new_git_blob": "dfccda0c5bf7794c511d056ad6b3bfe8f39f0180",
+      "changed": true,
       "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
       "evidence_grade": "[I]",
       "sources_cited_doi": [
@@ -290,8 +299,11 @@
       "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
       "scientific_review": "PENDENTE",
       "rights_review": "PENDENTE",
-      "risk": "Título/nomes bibliográficos sem acentuação e sem identificação de trecho; confiabilidade não equivale a validade.",
-      "action": "Normalizar metadados após consulta original e separar acordo de codificação de validade das categorias."
+      "risk": "Grafia e e-location bibliográficos normalizados com metadados SciELO; verificação de fidelidade científica e validade de inferência ainda não realizada.",
+      "action": "Metadados corrigidos conforme SciELO, Transinformação 35, e220027; obter cotejo metodológico e avaliações independentes antes de aceite.",
+      "metadata_source_consulted": true,
+      "metadata_only_verification": true,
+      "metadata_source_url": "https://new.scielo.br/j/tinf/a/hX8CfMV7xgKV4JbghWL4yXJ/?lang=pt"
     },
     {
       "card_id": "EC-013",
@@ -403,9 +415,9 @@
       "path": "knowledge/methodology/cards/prisma-roses-selection.md",
       "title": "Reporting review designs: do not force one checklist everywhere",
       "old_sha256": "75434122b13328dc9cc9dca49c81aab8203103a9a04d9e140a65e42c91a9fdd9",
-      "new_sha256": "75434122b13328dc9cc9dca49c81aab8203103a9a04d9e140a65e42c91a9fdd9",
-      "new_git_blob": "61dd96e09454b55e70607646fec105f337151536",
-      "changed": false,
+      "new_sha256": "79c4059dfa76a41a0124515222956975fa6f704dd39ae958422367b0350195ef",
+      "new_git_blob": "07ed22c75cf901a935b359dbb58150c85c694d3b",
+      "changed": true,
       "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
       "evidence_grade": "[I]",
       "sources_cited_doi": [
@@ -417,8 +429,11 @@
       "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
       "scientific_review": "PENDENTE",
       "rights_review": "PENDENTE",
-      "risk": "Comparação PRISMA/ROSES é orientação editorial, não equivalência normativa; localizador de ROSES não está duplicado.",
-      "action": "Incluir localizador separado de ROSES após verificação e selecionar diretriz segundo domínio e produto."
+      "risk": "Separados os localizadores de PRISMA e ROSES. O cotejo completo dos critérios normativos com as fontes não equivale à verificação dos DOIs.",
+      "action": "Localizador ROSES acrescentado com base na página oficial do periódico; cotejo crítico por revisor independente continua necessário.",
+      "metadata_source_consulted": true,
+      "metadata_only_verification": true,
+      "metadata_source_url": "https://link.springer.com/article/10.1186/s13750-018-0121-7"
     }
   ],
   "commits_to_receipt_version": [
@@ -445,7 +460,43 @@
     {
       "kind": "V1-04-RESULTS.md inicial",
       "sha": "3512631311ed41abdcec5d6748246a5f1fb9600c"
+    },
+    {
+      "kind": "EC-012 correct metadata",
+      "sha": "80dea4809dde67054413b3babf852ff06568f974"
+    },
+    {
+      "kind": "EC-018 ROSES locator",
+      "sha": "65abb975318b73fc74ed30d5d4afdf26531ccc22"
     }
   ],
-  "ci_checks_observed_at_receipt": "No combined status checks returned for 3512631311ed41abdcec5d6748246a5f1fb9600c; no CI claim"
+  "ci_checks_observed_at_receipt": "No combined status checks returned for 3512631311ed41abdcec5d6748246a5f1fb9600c; no CI claim",
+  "continuity_2026_11_21": {
+    "scope": "V1-04 exclusive branch, receipts and assigned cards only",
+    "frozen_snapshot_verified": "18/18 SHA256",
+    "current_head_verified": "18/18 SHA256",
+    "new_changes": [
+      {
+        "card_id": "EC-012",
+        "commit": "80dea4809dde67054413b3babf852ff06568f974",
+        "reason": "bibliographic names, Portuguese diacritics and e-locator aligned with publisher metadata",
+        "publisher": "https://new.scielo.br/j/tinf/a/hX8CfMV7xgKV4JbghWL4yXJ/?lang=pt",
+        "new_git_blob": "dfccda0c5bf7794c511d056ad6b3bfe8f39f0180",
+        "new_sha256": "17671b0bc192256fdfd0c950bfc56155344ec0987170492fde53e2744430a015"
+      },
+      {
+        "card_id": "EC-018",
+        "commit": "65abb975318b73fc74ed30d5d4afdf26531ccc22",
+        "reason": "separate public primary-source locators for PRISMA and ROSES",
+        "publisher": "https://link.springer.com/article/10.1186/s13750-018-0121-7",
+        "new_git_blob": "07ed22c75cf901a935b359dbb58150c85c694d3b",
+        "new_sha256": "79c4059dfa76a41a0124515222956975fa6f704dd39ae958422367b0350195ef"
+      }
+    ],
+    "safety": "No detected static prompt-injection markers is NOT proof of runtime safety; no private locator observed in 18 card bodies.",
+    "approvals": "Zero distinct documented independent scientific or rights reviews; no public license approval.",
+    "ci": "No workflow/combined statuses observed at head 65abb975318b73fc74ed30d5d4afdf26531ccc22; not a CI PASS",
+    "canonical_md": "Body 31.04 not rewritten: no concurrency-safe transaction on raw markdown; comment-based continuity required.",
+    "next": "Obter duas revisões independentes documentadas, começando pelo cotejo das alegações de EC-012 com o texto primário e direitos da edição."
+  }
 }
