@@ -309,5 +309,25 @@
     "Run two independent checks: rights/originality; scientific/editorial fidelity",
     "Correct only eligible assigned cards with evidence, then integrate in V1-16 after all A stages"
   ],
-  "prohibited_operations_performed": []
+  "prohibited_operations_performed": [],
+  "canonical_md_sync": {
+    "file_id": "1-dccVbAUX5-xLw6fq027cB15oVqOjl_U",
+    "initial_write": "CONFIRMED",
+    "progress_write": {
+      "status": "CONFIRMED_THEN_LOST_BY_CONCURRENT_WRITE",
+      "confirmed_at": "2026-11-21T22:23:38.778Z",
+      "size_bytes": 321425
+    },
+    "subsequent_readback": {
+      "at": "2026-11-21T22:23:43.573Z",
+      "size_bytes": 321701,
+      "progress_text_absent": true,
+      "initial_text_present": true
+    },
+    "conclusion_write": "ABORTED_TO_PRESERVE_CONCURRENT_STATE",
+    "overall": "BLOCKED_CONCURRENT_RAW_MARKDOWN_UPDATE",
+    "corrective_action": "Coordinate single writer, re-read current MD, reconcile only 31.11, validate adjacent sections, no blind overwrite"
+  },
+  "operational_execution_status": "PARCIAL_CANONICAL_MD_CONFLICT",
+  "results_conflict_receipt_commit": "0df1f7ddc15c9bf027f0aeb0880cb2e87fb08be9"
 }
