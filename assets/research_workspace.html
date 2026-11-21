@@ -56,6 +56,7 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
        <div class="stat"><span>Campos registrados</span><strong id="fields"></strong></div>
        <div class="stat"><span>Gates com aprovação documentada</span><strong id="gates"></strong></div>
      </div>
+     <p id="gate-scope" class="micro" role="status" aria-live="polite"></p>
      <div class="notice weak">Campos preenchidos e aprovações documentadas não são comprovação de qualidade científica, nem autenticação independente.</div>
    </section>
    <section aria-labelledby="choices-title">
@@ -192,6 +193,12 @@ footer{font-size:.81rem;color:var(--muted);padding:0 2px 16px}
    $("fields").textContent=(progress.required_field_count===0?"Não avaliado":
        progress.completed_field_count+" de "+progress.required_field_count);
    $("gates").textContent=uiText(model.overview.human_gate_approvals_recorded,"Não verificado");
+   const gateView=model.human_gates||{};
+   $("gate-scope").textContent=gateView.items_partial===true?
+     "Visualização parcial: "+(gateView.items||[]).length+" de "+uiText(gateView.total,"?")+
+     " gates exibidos. As aprovações documentadas referem-se ao registro completo; consulte-o antes de decidir.":
+     (gateView.total===null||gateView.total===undefined?
+       "Registros de gates não verificados.":"Resumo de "+gateView.total+" gates registrados.");
    const last=model.decision_continuity.last_recorded_decision;
    $("last-decision").textContent=(last.decision_id?last.decision_id+" · ":"")+uiText(last.status);
    $("route-implications").textContent=uiText(model.decision_continuity.route_implications.summary,"A rota ainda precisa ser fundamentada pelo pesquisador.");
