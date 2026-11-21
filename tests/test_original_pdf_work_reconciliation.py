@@ -12,9 +12,9 @@ class ReconciledSourceTests(unittest.TestCase):
   verified=[x for x in docs if x["bibliography_match_status"]=="SOURCE_PDF_WORK_VERIFIED"]
   self.assertTrue(IDS.issubset({x["source_id"] for x in verified}))
   self.assertEqual(len(docs),475)
-  self.assertEqual(o["source_text_read_in_ledger"],108)
+  self.assertEqual(o["source_text_read_in_ledger"],118)
   self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="IDENTITY_UNRESOLVED"]),0)
-  self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED"]),369)
+  self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED"]),359)
   for d in (x for x in verified if x["source_id"] in IDS):
    self.assertTrue(d["source_metadata_only"])
    self.assertFalse(d["public_work_metadata_screen"]["scientific_card_review_approved"])
