@@ -3,15 +3,15 @@
   "batch_id": "IB-03/20",
   "snapshot_sha": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
   "branch": "work/ib-03-20261121",
-  "source_card_last_commit_sha": "6e51d5add7932d47f668b213795c0419da97a6e2",
+  "source_card_last_commit_sha": "e3f91f86b3cf343c43edcd6e70a435550fb0ec63",
   "date_local": "2026-11-21",
   "source_registry_global_modified": false,
   "rights_ledger_global_modified": false,
   "publication_of_protected_pdf": false,
   "documents_expected": 18,
   "documents_with_exact_drive_name_size": 18,
-  "identities_confirmed_on_exact_copies": 17,
-  "bibliographic_blocks": 1,
+  "identities_confirmed_on_exact_copies": 18,
+  "bibliographic_blocks": 0,
   "approved_scientific_cards": 0,
   "ci_status": "not_run_or_not_reported_on_branch_pending_check",
   "records": [
@@ -67,16 +67,19 @@
       "size_bytes_esperados": 791129,
       "drive_file_id_confirmado_ou_null": null,
       "nome_titulo_do_PDF": "Planning, implementing and reporting. Increasing transparency, replicability and credibility in qualitative political science research",
-      "autores_ano_edicao": "não confirmado — não confirmado",
-      "doi_isbn_confirmados_ou_null": null,
-      "tipo_publicacao": "manuscrito incerto",
+      "autores_ano_edicao": "Carlos Closa; obra publicada em 2021 em *European Political Science* 20(2), 270–280; PDF é manuscrito sem autoria/DOI impressos, a identidade foi corroborada com a editora.",
+      "doi_isbn_confirmados_ou_null": "10.1057/s41304-020-00299-2 (confirmado externamente na editora; não observado no manuscrito)",
+      "tipo_publicacao": "ARTIGO_MANUSCRITO_PRE_EDITORIAL",
       "escopo_exato_da_inspecao": "folha de rosto/expediente + resumo/enquadramento + avisos autorais; sem revisão científica integral",
-      "identidade_confirmada_boolean": false,
-      "motivo_bloqueio_ou_null": "Sem autor/ano/editor verificados; nome Closa,2021.pdf é pista não prova",
+      "identidade_confirmada_boolean": true,
+      "motivo_bloqueio_ou_null": null,
       "direitos_observados": "sem licença observada",
-      "novo_hash_da_ficha": "d991b643468de8137c80a92ac8eb1d47acc4fbe3d492e132807a36616acdc62b",
-      "commit_da_branch": "6e51d5add7932d47f668b213795c0419da97a6e2",
-      "estado_de_revisao_cientifica": "PENDENTE"
+      "novo_hash_da_ficha": "38eb506648c01470c6b9562262ba6121ea9b3c4bbe16b508d026a6d983e8d8f8",
+      "commit_da_branch": "e3f91f86b3cf343c43edcd6e70a435550fb0ec63",
+      "estado_de_revisao_cientifica": "PENDENTE",
+      "complementacao_documental_20261121": "IDENTIDADE_OBRA_PUBLICADA_CONFERIDA",
+      "fonte_editorial_externa": "https://www.cambridge.org/core/journals/european-political-science/article/abs/planning-implementing-and-reporting-increasing-transparency-replicability-and-credibility-in-qualitative-political-science-research/20F5E17CE9C31D1821365220765127A7",
+      "ressalva_versao": "A obra bibliográfica foi identificada por confronto do original privado com fonte editorial externa; o arquivo do Drive não deve ser tratado como PDF final da editora sem prova da versão."
     },
     {
       "batch_id": "IB-03/20",
@@ -389,5 +392,6 @@
     }
   ],
   "private_drive_ids_redacted_from_public_head": true,
-  "private_drive_id_redaction_note": "Original file IDs removed from this public branch HEAD. Source-document matching remains described by inventory ID, filename and size. Earlier commits may still retain these IDs. No history rewrite performed."
+  "private_drive_id_redaction_note": "Original file IDs removed from this public branch HEAD. Source-document matching remains described by inventory ID, filename and size. Earlier commits may still retain these IDs. No history rewrite performed.",
+  "complementary_publisher_audit": "2026-11-21: source card and receipt revised after original archived PDF inspection + publisher metadata; no PDF redistribution, scientific review or global registry change."
 }
