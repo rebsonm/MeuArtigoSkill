@@ -163,7 +163,7 @@ def main() -> int:
     failures = []
     for item in CANDIDATES:
         path = "knowledge/methodology/pdfs/" + item["file"]
-        if not re.fullmatch(r"knowledge/methodology/pdfs/[a-z0-9][a-z0-9_-]{2,75}\\.pdf", path):
+        if not re.fullmatch(r"knowledge/methodology/pdfs/[a-z0-9][a-z0-9_-]{2,75}\.pdf", path):
             raise ValueError("UNSAFE_PDF_PATH")
         if path in existing or item["doi"].casefold() in existing_dois:
             print("ALREADY_CATALOGUED:", item["doi"])
@@ -225,7 +225,7 @@ def main() -> int:
             f"- {entry['authors']} ({entry['year']}), *{entry['title']}*. "
             f"DOI: https://doi.org/{entry['doi']}. "
             f"[Publisher/licensing evidence]({entry['rights_evidence']}). "
-            f"Original \`{Path(entry['path']).name}\`, SHA-256 \`{entry['sha256']}\`."
+            f"Original `{Path(entry['path']).name}`, SHA-256 `{entry['sha256']}`."
         )
     readme.write_text(old.rstrip() + "\n" + "\n".join(new_lines) + "\n", encoding="utf-8")
     print(json.dumps({"new_pdf_count": len(staged),
