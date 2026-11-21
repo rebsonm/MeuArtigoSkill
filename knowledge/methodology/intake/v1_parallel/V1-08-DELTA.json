@@ -301,5 +301,50 @@
     "source_mime_type": "text/markdown",
     "concurrent_modifications_observed_between": "2026-11-21T22:17:12Z and 2026-11-21T22:20:39Z",
     "resolution": "No unsafe full-file replacement attempted; preserve other tabs; follow safe Drive raw-file edit with concurrency guard and verify 31.08"
+  },
+  "followup_20261121": {
+    "operation": "CONTROLLED_CONTINUATION_OF_EXISTING_AUDIT",
+    "prior_head": "6ae0c4c88d177a87f4653e88ce6512d66afa828e",
+    "baseline_integrity": {
+      "snapshot_cards": 17,
+      "sha256_match": 17,
+      "source_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf"
+    },
+    "security_triage": {
+      "method": "non-executing lexical screening of 17 scoped Markdown cards",
+      "explicit_pattern_matches": 0,
+      "result": "NO_OBVIOUS_PATTERN_DETECTED_NOT_SECURITY_APPROVAL"
+    },
+    "source_bibliography_checks": [
+      {
+        "card": "EC-086",
+        "source": "https://zenodo.org/records/14629745",
+        "fact": "2024 Intercom bibliographic record, DOI and ISBN",
+        "status": "BIBLIOGRAPHY_VERIFIED_ONLY"
+      },
+      {
+        "card": "EC-086",
+        "source": "https://econtents.sbu.unicamp.br/boletins/index.php/ppec/article/view/9509",
+        "fact": "2025 Unicamp bibliographic republication declares CC BY-NC 4.0 on that work; not a license determination for a different Intercom PDF copy",
+        "status": "RIGHTS_EXACT_FILE_PENDING"
+      },
+      {
+        "card": "EC-089",
+        "source": "https://onlinelibrary.wiley.com/doi/10.1111/j.1748-5991.2012.01132.x",
+        "fact": "Publisher metadata and abstract consistent with card on Colorado aquaculture and Q-Sort",
+        "status": "PRIMARY_ABSTRACT_ONLY_NOT_FULLTEXT_REVIEW"
+      }
+    ],
+    "claim_policy": "Only bibliography/metadata and publisher abstract directly checked; editorial methodological assertions remain [I] or [P]. No card promoted to [L], independent scientific review absent.",
+    "independent_rights_review": "PENDENTE",
+    "independent_scientific_review": "PENDENTE",
+    "input_prompt_injection_disposition": "NO_OBVIOUS_LEXICAL_INDICATOR_NOT_APPROVED",
+    "card_edits_this_followup": 0,
+    "CI_on_head": "NOT_EXECUTED_OR_VERIFIED",
+    "dedicated_PR": "NOT_FOUND_IN_SEARCH",
+    "canonical_md_section": "31.08",
+    "canonical_md_body_updated": false,
+    "canonical_md_safety_reason": "text/markdown full-file replacement lacks safe atomic section-scoped concurrency precondition",
+    "single_next_action": "Independently cotejo exact primary edition and page/claim in each of 17 cards and record reviewers' documented decisions"
   }
 }
