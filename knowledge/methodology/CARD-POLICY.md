@@ -45,11 +45,10 @@ that a user or the running host opened an identified book or article.
   decisions and date; link to internal editorial receipt when applicable
 - Public release status: DRAFT / NEEDS_REVIEW / ACCEPTED
 
-The four earliest methodology cards and the subsequent nineteen drafts are original editorial summaries; all remain subject to independent methodological and originality review.
+The four earliest methodology cards and the subsequent fifty-nine drafts are original editorial summaries; all remain subject to independent methodological and originality review.
 Their bibliographies are **leads only**, not source-page-verified claims.
 Their presence in a catalog does not prove independent scientific validation.
-No automatic conversion or import of the separately inventoried 475 PDFs is
-authorized by this policy.
+The 475 original archive records now have a separate **metadata-only prospecting card** each under `source_cards/`. These are [P] questions, not 475 new scientific interpretations. No automatic full-text conversion or import of those 475 source PDFs is authorized by this policy.
 
 ## Distribution boundary
 
