@@ -22,7 +22,14 @@
     "editorial_draft_status": 170,
     "editorial_missing_explicit_status": 4,
     "rights_registry_not_checked": 458,
-    "rights_registry_verified_publisher_license": 17
+    "rights_registry_verified_publisher_license": 17,
+    "source_card_sha256_recomputed": 343,
+    "source_card_sha256_matched": 343,
+    "editorial_card_sha256_recomputed": 174,
+    "editorial_card_sha256_matched": 174,
+    "source_and_editorial_sha256_recomputed_total": 517,
+    "source_and_editorial_sha256_mismatch_count": 0,
+    "source_and_editorial_sha256_fetch_failure_count": 0
   },
   "concrete_sha256_recomputations": [
     {
@@ -43,9 +50,9 @@
       "outcome": "MATCH"
     }
   ],
-  "scope_full_hashes_recomputed": false,
+  "scope_full_hashes_recomputed": true,
   "actual_sha256_divergences_in_verified_sample": [],
-  "pending_recompute_count": 515,
+  "pending_recompute_count": 0,
   "duplicate_size_candidate_groups": [
     {
       "ids": [
@@ -232,7 +239,8 @@
     "path": "scripts/v1_15_integrity_audit.py",
     "commit": "4d4cb1a2e448bb0fa0ff863b49f7d5725e9c30ca",
     "executed_in_full_git_checkout": false,
-    "ci_status": "NOT_RUN"
+    "ci_status": "NOT_RUN",
+    "independent_api_side_sha256_audit_executed": true
   },
   "canonical_md": {
     "desired_section": "31.15",
@@ -245,11 +253,11 @@
     "Unintentional Drive locator inclusion in public V1-15 commit history; value removed from HEAD without rewriting history; pending authorized review."
   ],
   "next_steps": [
-    "Executar script contra clone com refs IB congeladas, registrar lista real de divergências dos 517 SHA-256",
     "Verificar SHA-256 das cópias privadas dos 11 grupos, sem publicar PDFs",
     "Validar os 25 aliases contra pastas originais autorizadas",
     "Atualizar exclusivamente 31.15 após obter edição segura e conciliação transacional",
-    "Manter V1-16 bloqueada até evidências e demais entregas auditadas"
+    "Manter V1-16 bloqueada até evidências e demais entregas auditadas",
+    "Executar o script proposto em clone/CI como reprodução independente da auditoria de hashes no snapshot fixo, sem modificar catálogos."
   ],
   "public_history_security_incident": {
     "severity": "NEEDS_REVIEW",
@@ -259,5 +267,83 @@
     "needs_human_rights_privacy_review": true,
     "scope": "V1-15 own new commit only; possible overlap with existing Issue #103",
     "identifier_value_in_report": false
+  },
+  "full_sha256_audit_evidence": {
+    "result": "MATCH_517_OF_517",
+    "method": "Authenticated GitHub fetch_file UTF-8 contents at frozen editorial snapshot and 20 individually bounded IB branch refs, independent SHA-256 recomputation in execution environment",
+    "algorithm_self_test": "SHA256(abc)=ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+    "per_ib_batch_counts": {
+      "IB-01": 18,
+      "IB-02": 18,
+      "IB-03": 18,
+      "IB-04": 17,
+      "IB-05": 17,
+      "IB-06": 17,
+      "IB-07": 17,
+      "IB-08": 17,
+      "IB-09": 17,
+      "IB-10": 17,
+      "IB-11": 17,
+      "IB-12": 17,
+      "IB-13": 17,
+      "IB-14": 17,
+      "IB-15": 17,
+      "IB-16": 17,
+      "IB-17": 17,
+      "IB-18": 17,
+      "IB-19": 17,
+      "IB-20": 17
+    },
+    "editorial_batches": [
+      {
+        "indexes": "0..16",
+        "matched": 17
+      },
+      {
+        "indexes": "17..33",
+        "matched": 17
+      },
+      {
+        "indexes": "34..50",
+        "matched": 17
+      },
+      {
+        "indexes": "51..67",
+        "matched": 17
+      },
+      {
+        "indexes": "68..84",
+        "matched": 17
+      },
+      {
+        "indexes": "85..101",
+        "matched": 17
+      },
+      {
+        "indexes": "102..118",
+        "matched": 17
+      },
+      {
+        "indexes": "119..135",
+        "matched": 17
+      },
+      {
+        "indexes": "136..152",
+        "matched": 17
+      },
+      {
+        "indexes": "153..169",
+        "matched": 17
+      },
+      {
+        "indexes": "170..173",
+        "matched": 4
+      }
+    ],
+    "caveats": [
+      "Confirms only source-card Markdown bytes in their IB branch refs and editorial Markdown bytes at frozen PR101 snapshot",
+      "Does not prove PDF byte identity, rights or scholarly validity",
+      "The checked contents are not guaranteed to match a future integrated HEAD without another verification"
+    ]
   }
 }
