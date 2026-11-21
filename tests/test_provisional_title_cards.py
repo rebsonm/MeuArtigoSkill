@@ -1,4 +1,4 @@
-"""Ensure provenance of 71 enriched *prospecting-only* source cards.
+"""Ensure provenance of 64 remaining unverified *prospecting-only* source cards.
 
 This test never treats a filename title as proof of source identity or reading.
 """
@@ -10,7 +10,7 @@ class ProvisionalTitleTests(unittest.TestCase):
  def test_source_candidates_remain_unverified(self):
   j=json.loads((BASE/"source_registry_catalog.json").read_text(encoding="utf-8"))
   a=[x for x in j["documents"] if x["bibliography_match_status"]=="IDENTITY_UNRESOLVED"]
-  self.assertEqual(len(a),71)
+  self.assertEqual(len(a),64)
   for x in a:
    with self.subTest(x=x["source_id"]):
     self.assertTrue(x["source_metadata_only"])

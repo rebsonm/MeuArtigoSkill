@@ -42,14 +42,14 @@ class SourceRegistryCompletenessTests(unittest.TestCase):
         self.assertEqual(len(ids), 475)
         self.assertEqual(len([x for x in self.docs
                               if x["bibliography_match_status"] ==
-                                 "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED"]), 404)
+                                 "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED"]), 399)
         self.assertEqual(len([x for x in self.docs
                               if x["bibliography_match_status"] ==
-                                 "IDENTITY_UNRESOLVED"]), 71)
+                                 "IDENTITY_UNRESOLVED"]), 64)
         self.assertEqual(len([x for x in self.docs if
                               x["rights_review"] == "VERIFIED_PUBLISHER_LICENSE"]),
                          reviewed)
-        self.assertEqual(reviewed, 3)
+        self.assertEqual(reviewed, 5)
         registry_obj = json.loads(C.read_text("utf-8"))
         self.assertEqual(registry_obj["source_text_read_in_ledger"],
                          sum(d["source_read_scope"] != "NOT_RECORDED_IN_LEDGER"

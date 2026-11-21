@@ -4,25 +4,25 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/"knowledge"/"methodology"
 class SkillOnlyMethodAuditTests(unittest.TestCase):
- def test_audit_records_are_work_metadata_not_archive_reading_or_rights(self):
+ def test_verified_archive_work_identities_do_not_approve_science(self):
   audit=json.loads((BASE/"intake"/"PUBLIC-WORK-BIBLIOGRAPHY-AUDIT-12.json").read_text("utf-8"))
   register=json.loads((BASE/"source_registry_catalog.json").read_text("utf-8"))
   self.assertEqual(audit["count"],12)
   self.assertEqual(register["public_bibliographic_work_checks"],12)
   self.assertEqual(len(register["documents"]),475)
-  self.assertEqual(sum(x["bibliography_match_status"]=="IDENTITY_UNRESOLVED" for x in register["documents"]),71)
+  self.assertEqual(sum(x["bibliography_match_status"]=="IDENTITY_UNRESOLVED" for x in register["documents"]),64)
   for item in audit["rows"]:
    self.assertRegex(item["doi"],r"^10\.[0-9]{4,9}/")
    self.assertTrue(item["public_locator"].startswith("https://"))
-   self.assertFalse(item["archive_pdf_identity_confirmed"])
-   self.assertFalse(item["archive_pdf_text_read"])
-   self.assertFalse(item["rights_to_redistribute_archive_pdf"])
+   self.assertTrue(item["archive_pdf_identity_confirmed"])
+   self.assertTrue(item["archive_pdf_text_read"])
+   self.assertEqual(item["rights_to_redistribute_archive_pdf"],item["source_registry_id"] in {"SRC-0049","SRC-0069"})
    self.assertFalse(item["independent_scientific_card_approval"])
    doc=next(x for x in register["documents"] if x["source_id"]==item["source_registry_id"])
    self.assertEqual(doc["public_work_metadata_screen"]["doi"],item["doi"])
    self.assertTrue(doc["source_metadata_only"])
-   self.assertFalse(doc["public_work_metadata_screen"]["original_archive_pdf_read"])
-   self.assertFalse(doc["public_work_metadata_screen"]["original_archive_pdf_redistribution_authorized"])
+   self.assertTrue(doc["public_work_metadata_screen"]["original_archive_pdf_read"])
+   self.assertEqual(doc["public_work_metadata_screen"]["original_archive_pdf_redistribution_authorized"],item["source_registry_id"] in {"SRC-0049","SRC-0069"})
  def test_skill_routing_no_server_or_auto_gate(self):
   skill=(ROOT/"SKILL.md").read_text("utf-8")
   doc=(ROOT/"references"/"METHODOLOGY-CONSULTATION-SKILL-ONLY.md").read_text("utf-8")
