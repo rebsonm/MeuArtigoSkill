@@ -1,5 +1,10 @@
 # Research design and intended inference
 
+Card ID: design
+Publication state: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_RIGHTS_REVIEW
+Research evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_ONLY
+Rights status: UNVERIFIED_FOR_PUBLICATION — bibliographic leads do not establish reproduction rights or scientific fidelity.
+
 ## Conceptual orientation
 
 Define the research problem and the type of inference being sought before choosing a method. Descriptive, interpretive, associative, predictive, and causal questions demand different warrants and designs. Quantitative, qualitative, mixed, theoretical, and artifact-based designs are not interchangeable labels.
