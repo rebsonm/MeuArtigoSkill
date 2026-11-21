@@ -14,9 +14,20 @@ class BibEnrichmentTest(unittest.TestCase):
         self.assertEqual(len([r for r in all_records if r.get("bibliographic_title_original")]),m["matched_bibliographic_titles"])
         self.assertGreaterEqual(m["matched_bibliographic_titles"],370)
         self.assertEqual(m["matched_bibliographic_titles"]+m["ambiguous_bibliographic_matches"]+m["source_records_not_in_spreadsheet"],475)
+        independently_reviewed = []
         for row in all_records:
-            self.assertEqual(row["rights_review"],"NOT_CHECKED")
-            self.assertEqual(row["publisher_license"],"NOT_CHECKED")
-            self.assertEqual(row["public_distribution"],"NOT_AUTHORIZED_BY_THIS_LEDGER")
+            if row["rights_review"] == "NOT_CHECKED":
+                self.assertEqual(row["publisher_license"], "NOT_CHECKED")
+                self.assertEqual(row["public_distribution"], "NOT_AUTHORIZED_BY_THIS_LEDGER")
+            else:
+                self.assertEqual(row["rights_review"], "VERIFIED_PUBLISHER_LICENSE")
+                self.assertEqual(row["publisher_license"], "CC BY 4.0")
+                self.assertEqual(row["public_distribution"], "LICENSED_ORIGINAL_SOURCE_INDEXED")
+                self.assertTrue(row["rights_evidence_url"].startswith("https://"))
+                self.assertRegex(row["original_pdf_sha256"], r"^[a-f0-9]{64}$")
+                self.assertTrue(row["public_pdf_path"].startswith("knowledge/methodology/pdfs/"))
+                independently_reviewed.append(row)
+        self.assertEqual(len(independently_reviewed),
+                         m["actual_individually_verified_rights_in_this_ledger"])
         self.assertFalse(m["source_title_matching_guarantees_rights"])
 if __name__=="__main__":unittest.main()
