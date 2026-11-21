@@ -1,30 +1,28 @@
-# Continuidade guiada e sinal de circularidade (proposta incremental)
+# Guided research continuation and anti-loop evidence signal
 
-**Estado:** implementação experimental somente leitura, empilhada sobre as propostas
-de coerência metodológica. Não constitui publicação ou recurso da referência
-científica histórica `v0.9.0-beta.6`.
+**Status:** Read-only development candidate stacked on earlier methodology
+consistency proposals. This is neither a published release nor part of the
+scientifically frozen historical reference `v0.9.0-beta.6`.
 
-## Linha de base verificável
+## Verifiable baseline
 
-- Existe um roteador canônico: `scripts/next_step_router.py`.
-- Existe o resumo de retomada: `scripts/research_resume_brief.py`.
-- Existe o explicador de bloqueios: `scripts/research_blocker_guide.py`.
-- A apresentação tradicional do resumo mostra códigos e referências técnicas,
-  mas não oferece no próprio resumo uma condição de saída da ação indicada.
-- O registro TRACE já guarda comprovantes de execuções locais e hashes; não
-  existe uma prova geral de equivalência semântica de todas as tentativas.
-- Na PR imediatamente anterior, a suíte executou 815 testes sem falhas.
+- One authoritative route/task resolver already exists: `scripts/next_step_router.py`.
+- One read-only restart projection exists: `scripts/research_resume_brief.py`.
+- A separate presentation helper for recorded blockers already exists:
+  `scripts/research_blocker_guide.py`.
+- The prior restart text presents technical identifiers but has no explicit
+  user-facing task exit criterion within its compact summary.
+- TRACE already records some local execution attempts with hash-linked
+  receipts. It cannot prove the semantics of every proposed research action.
+- The preceding development branch passed 815 software tests; no real-user
+  time, workload, confusion or productivity measure was available.
 
-Não há medida de tempo, esforço cognitivo ou produtividade de usuários reais.
+## Integration decision: presentation, not a new authority
 
-## Escolha arquitetural
-
-A melhoria está dentro do resumo existente, sem registrar uma segunda lista
-de tarefas, outro sistema de gates ou outra fonte de verdade. A mesma
-projeção do painel e o mesmo roteador determinam a ação. O modo guiado
-apresenta a informação essencial; o modo JSON existente preserva os detalhes.
-
-Execução num projeto local com fallback autorizado:
+The improvement remains in the existing restart projection; it does not
+create another task register, another gate system or a second source of
+truth. The existing router and panel still determine the next action.
+Use the local CLI only for an expressly authorized local fallback:
 
 ```bash
 python scripts/research_resume_brief.py PROJECT --format guided
@@ -32,71 +30,85 @@ python scripts/research_resume_brief.py PROJECT --format guided-json
 python scripts/research_resume_brief.py PROJECT --format json
 ```
 
-O texto guiado informa: situação, estado registrado (não validação),
-pendência, uma única próxima ação, motivo e condição de conclusão.
-A descrição de um critério de saída **não comprova** que ele foi atendido.
-Não há classificação automática de conclusão científica do manuscrito.
+The guided response reports the observed state, recorded operational work
+(not scientific validation), outstanding items, exactly one next action,
+its reason and an exit criterion. The described criterion is not evidence
+that it has been met. A completed manuscript is never inferred from an
+absent task or structurally filled method fields.
 
-## Heurística anticircularidade (escopo inicial estrito)
+All repository source instructions and CLI labels remain English-first.
+The conversational Skill adapts its user-visible explanation to the
+researcher's current language. Translating a message does not alter its
+data source, permissions, gate status or scientific authority.
 
-O sinal experimental usa apenas comprovantes TRACE existentes e, por
-segurança, está limitado a projetos com `WORK_FALLBACK` autorizado e
-continuidade conciliada. Ele inspeciona as duas últimas entradas TRACE
-registradas para a mesma tarefa canônica e requer:
+## Narrow anti-loop heuristic
 
-1. Duas tentativas reais `FAILED`/`PARTIAL` do mesmo script permitido.
-2. Comprovantes locais referenciados no TRACE, íntegros por SHA-256.
-3. Mesmo script, versão registrada, fingerprint dos argumentos e entradas.
-4. Nenhum avanço observável nas saídas ou nos arquivos de entrada.
-5. Tarefa não declarada recorrente e operação diferente das verificações
-   rotineiras, que podem legitimamente ser repetidas.
+The optional read-only warning reuses existing TRACE receipts and only
+examines explicitly authorized, reconciled local fallback workspaces.
+It considers the two latest TRACE entries for the *same current task*.
+An anti-loop signal is possible only if all conditions hold:
 
-Se todos os critérios forem atendidos, o resumo recomenda **diagnosticar
-o impedimento**, sem criar uma tarefa, emitir nova aprovação ou proibir
-a execução posterior. O código não verifica a verdade do que foi
-executado fora do processo local, nem a equivalência semântica de ações
-distintas, nem afirma que o trabalho científico permaneceu estagnado.
+1. Both local attempts have a `FAILED` or `PARTIAL` status, with
+   a hash-linked receipt at the established TRACE receipt path.
+2. Both attempts used the same allowlisted script, recorded script
+   fingerprint, arguments fingerprint and recorded input state.
+3. No output change occurred in either attempt and the recorded output
+   state matches between attempts.
+4. The task has not been classified as periodic/recurring/monitoring.
+   Standard local validation and verification scripts are also exempt.
+5. The original task remains active and no canonical reconciliation
+   problem is present.
 
-**Ausência de comprovantes não prova circularidade.** Uma alteração real de
-entradas ou de abordagem mantém a possibilidade legítima de novo ciclo.
-Para projetos no Drive, a leitura local continua insuficiente para esse
-diagnóstico: é necessário conferir a origem canônica com ferramentas
-autorizadas; nenhuma sincronização é presumida.
+An exact match causes only a diagnostic suggestion: investigate the
+obstacle before a third identical action, document new evidence or
+change the approach through existing human authorization. It never
+executes an action, alters the task, marks a gate approved, or prevents
+a legitimate later attempt.
 
-## Critérios de aceitação e métricas
+**Missing proof is not proof of circularity.** A changed input, script
+version, declared arguments or relevant output remains eligible for
+independent review. Local hash integrity does not authenticate the
+actor, externally collected evidence, scientific suitability or real
+cloud synchronization. Drive-canonical states require an actual
+authorized connected read before any such conclusion.
 
-| Indicador | Base anterior observável | Critério técnico proposto |
+## Proposed verification metrics
+
+| Metric | Grounded prior state | Technical acceptance criterion |
 | --- | --- | --- |
-| Uma ação principal na retomada | Resumo em códigos, sem apresentação orientada explícita | Exatamente uma ação e um critério de saída |
-| Perguntas duplicadas sobre decisão | Não mensurado empiricamente | Não sobrepor decisão humana à tarefa já autorizada |
-| Duas tentativas sem progresso | Sem sinal de diagnóstico no resumo | Sinal somente com dois comprovantes equivalentes válidos |
-| Falso bloqueio por dado novo | Não mensurado empiricamente | Sem sinal de ciclo quando muda o fingerprint da entrada |
-| Falso bloqueio de rotina | Não mensurado empiricamente | Não alertar monitoramento declarado e verificação rotineira |
-| Reconciliação do Drive | Acesso local não prova sincronização | Falhar fechado sem inventar estado |
-| Registros novos | Nenhum neste incremento | Zero novos registros canônicos |
-| Preservação da governança | Gates dependem do pesquisador | Zero aprovações e zero alterações canônicas |
-| Compatibilidade | 815 testes na base anterior | Toda a regressão e novos testes no commit proposto |
+| One next action | Existing restart did not contain an explicit exit criterion | Exactly one action and one exit criterion per guided response |
+| Duplicate researcher choices | Not empirically measured | A ready task must not be replaced by a redundant new method-choice prompt |
+| Repeated unproductive attempts | No diagnostic in restart view | Warn only for two equivalent validated receipt-linked attempts |
+| False positive after changed input | Not measured | New input fingerprint does not trigger a loop warning |
+| False positive for recurring actions | Not measured | Skip declared recurring work and routine validation |
+| Canonical Drive uncertainty | Local project alone is insufficient | No fake connected access or synchronization success |
+| Parallel registers | Existing task/decision/TRACE ledgers | Zero additional canonical tables or gate families |
+| Governance preservation | Human-reviewed gates already required | Zero automatic approvals or project writes |
+| Regression | 815 tests in the previous branch | Full existing suite plus new synthetic tests must pass on final SHA |
 
-Não declarar redução percentual de fricção, ganho de produtividade nem
-validade científica sem avaliação independente. O contador de testes
-será preenchido somente com resultado efetivo do CI.
+No percentage reduction in friction, actual researcher productivity gain,
+validated usability or improved paper quality is claimed by these tests.
+CI test counts are factual only when a successful run is linked.
 
-## Encerramento e fases pendentes
+## Exit conditions and deliberately open work
 
-Esta primeira etapa não automatiza os estados **CONCLUÍDO** ou
-**ENCERRADO COM RESSALVAS** para projetos inteiros: exigiria conferir
-critérios de entrega e decisões científicas efetivas. Por enquanto,
-**BLOQUEADO** representa impedimentos tecnicamente registrados.
+The new view does not automatically award `COMPLETED` or
+`COMPLETED_WITH_RESERVATIONS` to an entire study: this would require
+actual deliverables and researcher decisions, including any mandatory
+scientific gates. `BLOCKED` reflects real documented impediments only.
 
-Próximas evoluções condicionadas a evidências:
+Later stages must address the following separately, without spawning
+unnecessary authoritative subprojects:
 
-- Integrar avisos de circularidade para operações externas apenas quando
-  existirem recibos ou eventos equivalentes verificáveis.
-- Tratar fechamento com ressalvas sem ultrapassar gates obrigatórios.
-- Reutilizar `METHOD_PROFILE`, DEC, TRACE e o ledger de claims para
-  dependências documentadas e hipóteses de retirada de fontes.
-- Comparar por testes A–L e posteriormente avaliar com pesquisadores
-  reais, respeitando eventual revisão ética quando aplicável.
+- Extend repetition diagnostics beyond local scripts only where
+  trustworthy equivalently scoped evidence is actually available.
+- Support bounded completion with disclosed reservations, preserving
+  all non-waivable scientific and ethical requirements.
+- Trace documented dependencies among METHOD_PROFILE, DEC, TRACE,
+  evidence, claims and explicitly versioned sources; explore hypothetical
+  source removal without mutating the project.
+- Exercise the full A–L acceptance matrix, then evaluate the
+  experience with real researchers under appropriate study controls.
 
-**Limite:** código e testes de software não são estudos de usabilidade,
-provas de validade metodológica, nem autorização de avanço científico.
+**Limit:** software tests do not constitute scientific validation,
+user research or independent evidence of improved cognitive effort.
