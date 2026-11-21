@@ -205,5 +205,65 @@
     "private_drive_ids_absent": true,
     "scientific_approval_claimed": false
   },
-  "next_step": "Integrador V1-16 avaliar patches depois de todas as etapas A entregues e auditadas; obter provas faltantes sem publicar nem autorizar por inferência."
+  "next_step": "Integrador V1-16 avaliar patches depois de todas as etapas A entregues e auditadas; obter provas faltantes sem publicar nem autorizar por inferência.",
+  "continuity_verification_20261121": {
+    "type": "FOLLOW_UP_DOCUMENTARY_AUDIT_NOT_SCIENTIFIC_APPROVAL",
+    "checked_prior_ib_card_blobs": {
+      "SRC-0263": "7830a37c38a06203d434fa29bedf59ac8e68df1d",
+      "SRC-0283": "40eb5ade4f0deb770e68d33979f200b79a33a4c8",
+      "SRC-0293": "f93c6ef067d7394a81468f9f4468b90a20047d0a",
+      "SRC-0297": "d2a3b1be22823d84aa89b721f8aed04de939cb81",
+      "SRC-0314": "81f60d8c4db271d976c2d43251a3babde3d25e47"
+    },
+    "source_checks": [
+      {
+        "source_id": "SRC-0263",
+        "result": "retained_previous_inspection_no_new_binary_or_visual_verification"
+      },
+      {
+        "source_id": "SRC-0283",
+        "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/ev.20430",
+        "result": "publisher_venue_year_pages_doi_confirmed_private_manuscript_version_unverified"
+      },
+      {
+        "source_id": "SRC-0293",
+        "url": "https://sigaa.ufpi.br/sigaa/public/docente/turma.jsf?tid=330857",
+        "result": "institutional_bibliography_2015_and_103_117_official_pdf_visual_check_not_completed"
+      },
+      {
+        "source_id": "SRC-0297",
+        "url": "https://ufmg-mq2.com.br/analise-qualitativa-comparativa-qca/",
+        "result": "course_faculty_correlated_slides_year_edition_unverified"
+      },
+      {
+        "source_id": "SRC-0314",
+        "url": "https://web.bndes.gov.br/bib/jspui/handle/1408/27227",
+        "result": "official_catalog_year_chapter_pages_and_noncommercial_attribution_condition_observed_not_copy_license"
+      }
+    ],
+    "base_commit": "7c92045310eb3b1474a9612a777fb0012a511592",
+    "verified_prior_head": "287f219fcde39d1b8d590dcf6504cf4784bfe3c1",
+    "prior_diff_paths": [
+      "knowledge/methodology/intake/v1_parallel/V1-02-RESULTS.md",
+      "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json"
+    ],
+    "pull_request_found_for_this_head": false,
+    "commit_statuses_returned": 0,
+    "associated_workflow_runs_returned": 0,
+    "technical_checks": {
+      "five_unique_records": true,
+      "original_cards_sha_match": true,
+      "sha256_receipts_well_formed": true,
+      "distribution_allowed_false_for_all": true,
+      "no_scientific_approval": true
+    },
+    "unresolved": [
+      "SRC-0297 year/edition",
+      "SRC-0283 manuscript edition match",
+      "copy-specific redistribution rights and third-party components",
+      "independent scientific/editorial review"
+    ],
+    "single_next_action": "Obter comprovante primário datado da versão específica dos slides SRC-0297, preservando bloqueio até validação.",
+    "integration_allowed": false
+  }
 }
