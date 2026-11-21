@@ -109,8 +109,13 @@ def _tokens(value: str) -> set[str]:
 
 def _score(question: str, item: dict) -> int:
     q = _tokens(question)
-    return (sum(3 for w in q if w in _tokens(" ".join(item["keywords"])))
-            + sum(2 for w in q if w in _tokens(item["title"])))
+    keys = _tokens(" ".join(item["keywords"]))
+    title = _tokens(item["title"])
+    matched = {w for w in q if w in keys or w in title}
+    # Avoid fetching a loosely related PDF from a single generic word.
+    if len(q) > 1 and len(matched) * 5 < len(q) * 3:
+        return 0
+    return sum(3 for w in q if w in keys) + sum(2 for w in q if w in title)
 
 
 def query(question: str, *, ref: str, fetch: Callable = fetch_github,
