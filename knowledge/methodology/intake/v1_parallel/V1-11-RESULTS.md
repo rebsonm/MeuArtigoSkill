@@ -152,3 +152,12 @@ Data: 2026-11-21. Branch: `work/v1-11-20261121`. Manifesto fixo: commit `7c92045
 - Artefatos alterados nesta execução: apenas `knowledge/methodology/intake/v1_parallel/V1-11-RESULTS.md` e `knowledge/methodology/intake/v1_parallel/V1-11-DELTA.json`. Cards e arquivos globais (catalog.json, registry, ledgers, manifestos) intactos.
 - Limitações e bloqueios: fontes primárias/páginas, DOI e licença por cópia/edição, originalidade e fidelidade científica independente, revisão contraditória e aceite humano.
 - Próximos passos: submeter a dois exames separados (direitos/originalidade; fidelidade científica/editorial), registrar prova, corrigir cards **somente** em escopo permitido e com evidência. V1-16 não pode avançar sem V1-01…V1-15; nada de merge, tag, release, force-push, MCP ou PDFs protegidos.
+
+## Incidente de concorrência no MD canônico — 21/11/2026
+
+- Arquivo canônico: ID Drive `1-dccVbAUX5-xLw6fq027cB15oVqOjl_U`, mesmo MD, sem criar substituto.
+- Registro inicial da etapa `EM_EXECUCAO`: gravado e confirmado na subseção 31.11.
+- Atualização de evolução: Drive confirmou `success=true` às `2026-11-21T22:23:38.778Z`, tamanho 321425 bytes; leitura após essa gravação confirmou os commits e o parecer 17/17.
+- Novo snapshot Drive às `2026-11-21T22:23:43.573Z`, tamanho 321701 bytes: a subseção 31.11 retornou ao conteúdo anterior de início (sem evolução), enquanto outras seções avançaram. Indício documentado de sobrescrita concorrente por outra aba usando base anterior.
+- **Decisão de segurança:** **não gravar novamente o MD** até reconciliação coordenada/sem escrituras concorrentes; preservar o estado remoto e não alegar conclusão de sincronização canônica. O trabalho editorial e os recibos GitHub continuam válidos, mas o requisito de atualização na conclusão ficou **BLOQUEADO POR CONFLITO**.
+- Próximo passo: coordenar pausa de escritores, reler MD canônico mais recente, comparar as subseções adjacentes e reaplicar somente a 31.11 a partir de uma base conciliada, validando hash e leitura pós-escrita; jamais substituir cegamente o Markdown bruto.
