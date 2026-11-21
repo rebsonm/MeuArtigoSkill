@@ -14,7 +14,7 @@
   "repository_mutations": "Only V1-09-RESULTS.md and V1-09-DELTA.json; no card or global catalog changed",
   "source_verification_scope": "17 cards congelados + manifesto + metadados públicos correspondentes aos mesmos 17 artigos: 10 páginas HTML de editoras/repositórios e 7 referências bibliográficas alternativas, sem acesso a PDFs privados e sem revisão científica integral independente.",
   "pdf_policy": "No PDF bytes or private Drive IDs published; CC BY-NC does not become CC BY; other copy-specific rights pending",
-  "drive_canonical_sync": "PENDENTE: stale-file update deliberately aborted after concurrent modification detected; MD must be reread and reconciled before a safe attempt",
+  "drive_canonical_sync": "IMPEDIDO_SEM_GRAVACAO: o Markdown bruto mudou após materialização (risco de sobrescrever outras abas); Google Docs batchUpdate recusou a edição delimitada com FAILED_PRECONDITION (documento Markdown). A API Drive update_file não disponibiliza if-match/compare-and-swap; não foi enviada substituição bruta. O texto exato da subseção 31.09 consta em V1-09-RESULTS.md para reconciliação controlada.",
   "counts": {
     "assigned": 17,
     "read": 17,
@@ -526,7 +526,10 @@
     "17 distinct card IDs, DOI and SRC declarations present",
     "0 GitHub writes to other tasks/global files",
     "No independent approval/rights grant recorded",
-    "10/17 HTML de editoras ou repositórios lidos, 7/17 metadados bibliográficos alternativos corroborados; nenhum PDF privado processado"
+    "10/17 HTML de editoras ou repositórios lidos, 7/17 metadados bibliográficos alternativos corroborados; nenhum PDF privado processado",
+    "GitHub compare: exatamente dois caminhos de V1-09 adicionados; nenhum card/global alterado",
+    "GitHub get_commit_combined_status: statuses=[]; nenhum CI aprovado ou executado foi demonstrado",
+    "Google Docs batchUpdate: HTTP 400 FAILED_PRECONDITION para Markdown, sem mutação; não foi usada substituição bruta potencialmente conflitante"
   ],
   "next_steps": [
     "Cotejar trechos, páginas e edição de cada DOI com revisor humano independente, em cópia licenciada",
@@ -535,5 +538,10 @@
     "Reconciliar somente a subseção 31.09 do MD canônico quando houver janela sem conflitos",
     "Encaminhar recibos ao V1-16 somente após encerramento/auditoria e dependências globais"
   ],
-  "public_source_check_date": "2026-11-21"
+  "public_source_check_date": "2026-11-21",
+  "blockers": [
+    "Sincronização exclusiva da subseção 31.09 sem API transacional para Markdown e atualizações concorrentes detectadas",
+    "Duas revisões humanas independentes por card ainda pendentes",
+    "Direitos de distribuição relativos à cópia/edição privada ainda não comprovados"
+  ]
 }
