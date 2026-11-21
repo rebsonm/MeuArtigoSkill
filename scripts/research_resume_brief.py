@@ -316,6 +316,11 @@ def _receipt_for_attempt(root: Path, row: dict) -> dict | None:
         not isinstance(receipt.get("script_sha256"), str) or
         not re.fullmatch("[0-9a-f]{64}", receipt["script_sha256"])):
         return None
+    exit_code = receipt.get("exit_code")
+    if (not isinstance(exit_code, int) or isinstance(exit_code, bool)
+            or (status == "FAILED" and exit_code == 0)
+            or (status == "PARTIAL" and exit_code != 0)):
+        return None
     for field in ("inputs_before", "inputs_after", "outputs_before", "outputs_after"):
         if not isinstance(receipt.get(field), list):
             return None
@@ -348,6 +353,7 @@ def cycle_diagnostic(root: Path, brief: dict) -> dict:
     }
     if brief.get("schema") != SCHEMA:
         raise ValueError("Cycle guard requires the existing verified resume brief")
+    root = Path(root).resolve()
     storage = brief.get("storage") or {}
     if (storage.get("mode_recorded") != "WORK_FALLBACK" or
             storage.get("local_fallback_declared_in_config") is not True):
@@ -416,6 +422,31 @@ def cycle_diagnostic(root: Path, brief: dict) -> dict:
     if not equivalence or not unchanged:
         result["status"] = "DIFFERENT_ATTEMPT_OR_ARTIFACT_CHANGE"
         return result
+    # A matching old receipt does not prove that the executable or its
+    # observed workspace files still have the same state now. Check the
+    # current source and the final observed files before advising a repeat.
+    import trace_execution
+    script_path = (trace_execution.SCRIPTS_ROOT / b["script"]).resolve()
+    if (not script_path.is_file() or
+            not script_path.is_relative_to(trace_execution.SCRIPTS_ROOT)):
+        result["status"] = "CURRENT_EXECUTABLE_UNAVAILABLE"
+        return result
+    try:
+        current_script_hash = trace_execution.sha256(script_path)
+    except OSError:
+        result["status"] = "CURRENT_EXECUTABLE_UNAVAILABLE"
+        return result
+    if current_script_hash != b["script_sha256"]:
+        result["status"] = "EXECUTABLE_CHANGED_SINCE_ATTEMPTS"
+        return result
+    try:
+        for item in b["inputs_after"] + b["outputs_after"]:
+            if trace_execution.file_state(root, item["path"]) != item:
+                result["status"] = "ARTIFACT_CHANGED_SINCE_ATTEMPTS"
+                return result
+    except (OSError, ValueError, TypeError, KeyError):
+        result["status"] = "CURRENT_ARTIFACT_STATE_UNVERIFIED"
+        return result
     result.update({
         "status": "TWO_EQUIVALENT_UNPRODUCTIVE_ATTEMPTS",
         "verified_equivalent_attempts": 2,
@@ -429,7 +460,7 @@ def cycle_diagnostic(root: Path, brief: dict) -> dict:
 
 def guided_view(brief: dict, *, root: Path | None=None,
                 overview: dict | None=None) -> dict:
-    """Single-action Portuguese presentation of one established router result."""
+    """Single-action, English-source projection of the established router."""
     if not isinstance(brief, dict) or brief.get("schema") != SCHEMA:
         raise ValueError("A sanitized resume brief is required")
     step = brief["next_step"]
