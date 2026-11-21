@@ -1,0 +1,982 @@
+{
+  "schema": "MEU_ARTIGO_LIBRARY_CANDIDATES_V1",
+  "description": "Bibliographic inventory only; no documents replicated and no author license attested. All entries are NOT_REVIEWED.",
+  "rights_status": "NOT_REVIEWED",
+  "source_format": "Original Google Drive PDF collection",
+  "batch": 1,
+  "folders": [
+    {
+      "folder": "Etnografia Política e Digital",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Etnografia Política",
+          "kind": "FOLDER",
+          "size_bytes": null
+        }
+      ]
+    },
+    {
+      "folder": "Etnografia Pol¡tica e Digital",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Etnografia Digital",
+          "kind": "FOLDER",
+          "size_bytes": null
+        },
+        {
+          "filename": "Etnografia Pol¡tica",
+          "kind": "FOLDER",
+          "size_bytes": null
+        }
+      ]
+    },
+    {
+      "folder": "An lise da Gram tica Institucional",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Siddiketal,2012.pdf",
+          "kind": "PDF",
+          "size_bytes": 217702
+        },
+        {
+          "filename": "Kantz,Siddiki,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 4847114
+        },
+        {
+          "filename": "Filgueiras,Lui,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 1378143
+        }
+      ]
+    },
+    {
+      "folder": "Pol¡tica Comparada",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Pasquarelli,2014.pdf",
+          "kind": "PDF",
+          "size_bytes": 588238
+        },
+        {
+          "filename": "Gonzelez,2008.pdf",
+          "kind": "PDF",
+          "size_bytes": 78175
+        },
+        {
+          "filename": "Livro Desenhos de Pesquisa em Pol¡tica Comparada.pdf",
+          "kind": "PDF",
+          "size_bytes": 2535759
+        }
+      ]
+    },
+    {
+      "folder": "An lise Documental",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Fujitaetal,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 4637247
+        },
+        {
+          "filename": "Sa-Silvaetal,2009.pdf",
+          "kind": "PDF",
+          "size_bytes": 88945
+        },
+        {
+          "filename": "Morgan,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 553440
+        },
+        {
+          "filename": "Lima Junioretal,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 270425
+        },
+        {
+          "filename": "Silvaetal,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 682521
+        },
+        {
+          "filename": "Cechieneletal,+2016.pdf",
+          "kind": "PDF",
+          "size_bytes": 162818
+        },
+        {
+          "filename": "Alvesetal.pdf",
+          "kind": "PDF",
+          "size_bytes": 441378
+        },
+        {
+          "filename": "Kripkaetal,2015.pdf",
+          "kind": "PDF",
+          "size_bytes": 770962
+        },
+        {
+          "filename": "Souza,Giacomoni,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 537927
+        },
+        {
+          "filename": "Cardno,2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 149716
+        }
+      ]
+    },
+    {
+      "folder": "Pesquisa Ação",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Peruzzo,2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 334996
+        },
+        {
+          "filename": "Koerichetal,2009.pdf",
+          "kind": "PDF",
+          "size_bytes": 78887
+        },
+        {
+          "filename": "Jesusetal,2014.pdf",
+          "kind": "PDF",
+          "size_bytes": 207067
+        },
+        {
+          "filename": "ozanne-anderson-2010.pdf",
+          "kind": "PDF",
+          "size_bytes": 249291
+        },
+        {
+          "filename": "Corrêaetal,2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 234992
+        },
+        {
+          "filename": "Mourad,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 18648694
+        },
+        {
+          "filename": "Arnold,Norton.pdf",
+          "kind": "PDF",
+          "size_bytes": 1062595
+        },
+        {
+          "filename": "Santos,Oliveira,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 420016
+        },
+        {
+          "filename": "Streck,2013.pdf",
+          "kind": "PDF",
+          "size_bytes": 370088
+        },
+        {
+          "filename": "Tripp,2005.pdf",
+          "kind": "PDF",
+          "size_bytes": 296690
+        }
+      ]
+    },
+    {
+      "folder": "Epistemologia Feminista",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Sardenberg,2001.pdf",
+          "kind": "PDF",
+          "size_bytes": 180362
+        },
+        {
+          "filename": "Scavone,2008.pdf",
+          "kind": "PDF",
+          "size_bytes": 52844
+        },
+        {
+          "filename": "Mendes,Freitas,2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 159529
+        },
+        {
+          "filename": "Keller,2006.pdf",
+          "kind": "PDF",
+          "size_bytes": 106214
+        },
+        {
+          "filename": "Schiebinger,2008.pdf",
+          "kind": "PDF",
+          "size_bytes": 176299
+        },
+        {
+          "filename": "Doucet-Mauthner-2005.pdf",
+          "kind": "PDF",
+          "size_bytes": 226756
+        },
+        {
+          "filename": "Figueiredo,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 377714
+        },
+        {
+          "filename": "Matos,2008.pdf",
+          "kind": "PDF",
+          "size_bytes": 110268
+        },
+        {
+          "filename": "Lazar,2007.pdf",
+          "kind": "PDF",
+          "size_bytes": 195474
+        },
+        {
+          "filename": "Longino.pdf",
+          "kind": "PDF",
+          "size_bytes": 3179024
+        }
+      ]
+    },
+    {
+      "folder": "Inteligˆncia artificial para m‚todos Qualitativos",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "ibrahim-voyer-2025-qualitative-research-with-llm-chatbots-technological-reflexivity-for-interpretative-technology.pdf",
+          "kind": "PDF",
+          "size_bytes": 3405641
+        },
+        {
+          "filename": "misra-et-al-2026-large-language-models-in-qualitative-analysis-comparing-traditional-and-researcher-interpreted.pdf",
+          "kind": "PDF",
+          "size_bytes": 1827737
+        },
+        {
+          "filename": "nguyen-welch-2025-generative-artificial-intelligence-in-qualitative-data-analysis-analyzing-or-just-chatting.pdf",
+          "kind": "PDF",
+          "size_bytes": 1581859
+        },
+        {
+          "filename": "Quevedo, Kuri, 2026 - AI for Qualitative.pdf",
+          "kind": "PDF",
+          "size_bytes": 4977441
+        },
+        {
+          "filename": "friese-2026-from-coding-to-conversation-a-new-methodological-framework-for-ai-assisted-qualitative-analysis.pdf",
+          "kind": "PDF",
+          "size_bytes": 1273025
+        },
+        {
+          "filename": "jiang-et-al-2025-the-feasibility-and-comparability-of-using-artificial-intelligence-for-qualitative-data-analysis-in.pdf",
+          "kind": "PDF",
+          "size_bytes": 1173219
+        },
+        {
+          "filename": "vikan-et-al-2025-reflecting-on-llm-support-in-reflexive-thematic-analysis-an-exploratory-study.pdf",
+          "kind": "PDF",
+          "size_bytes": 1063915
+        },
+        {
+          "filename": "wise-et-al-2026-why-ai-is-not-the-enemy-opportunities-to-strengthen-core-commitments-of-qualitative-inquiry-through.pdf",
+          "kind": "PDF",
+          "size_bytes": 1422184
+        },
+        {
+          "filename": "costa-et-al-2025-ai-as-a-co-researcher-in-the-qualitative-research-workflow-transforming-human-ai-collaboration.pdf",
+          "kind": "PDF",
+          "size_bytes": 761286
+        },
+        {
+          "filename": "duarte-orchard-garcia-2025-resisting-refusing-reclaiming-reimagining-charting-challenges-to-narratives-of-ai-inevitability.pdf",
+          "kind": "PDF",
+          "size_bytes": 1436740
+        },
+        {
+          "filename": "macgeorge-2025-conversations-with-my-data-exploring-the-potential-of-large-language-models-in-qualitative-futures.pdf",
+          "kind": "PDF",
+          "size_bytes": 1324747
+        },
+        {
+          "filename": "nguyen-trung-2025-chatgpt-in-thematic-analysis-can-ai-become-a-research-assistant-in-qualitative-research.pdf",
+          "kind": "PDF",
+          "size_bytes": 1131326
+        },
+        {
+          "filename": "schroeder-et-al-2024-large-language-models-in-qualitative-research-uses-tensions-and-intentions.pdf",
+          "kind": "PDF",
+          "size_bytes": 836379
+        },
+        {
+          "filename": "hayes-2025-conversing-with-qualitative-data-enhancing-qualitative-research-through-large-language-models-(llms).pdf",
+          "kind": "PDF",
+          "size_bytes": 1052522
+        },
+        {
+          "filename": "messner-et-al-2025-artificial-intelligence-and-qualitative-data-analysis-epistemological-incongruences-and-the-future.pdf",
+          "kind": "PDF",
+          "size_bytes": 779818
+        },
+        {
+          "filename": "al-fattal-singh-2025-comparative-reflections-on-human-driven-and-generative-artificial-intelligence-assisted-thematic.pdf",
+          "kind": "PDF",
+          "size_bytes": 565300
+        },
+        {
+          "filename": "kon-et-al-2024-unravelling-chatgpt-potential-in-summarising-qualitative-indepth-interviews.pdf",
+          "kind": "PDF",
+          "size_bytes": 683858
+        },
+        {
+          "filename": "wachinger-et-al-2024-prompts-pearls-imperfections-comparing-chatgpt-and-a-human-researcher-in-qualitative-data-analysis.pdf",
+          "kind": "PDF",
+          "size_bytes": 700932
+        },
+        {
+          "filename": "prahl-2025-the-ai-reflexivity-checklist-(arc)-a-pre-analysis-pause-for-llm-assisted-coding.pdf",
+          "kind": "PDF",
+          "size_bytes": 554728
+        },
+        {
+          "filename": "paulus-lester-davis-2025-the-construction-of-the-role-of-ai-in-qualitative-data-analysis-in-the-social-sciences.pdf",
+          "kind": "PDF",
+          "size_bytes": 625393
+        },
+        {
+          "filename": "davison-2024-the-ethics-of-using-generative-ai-for-qualitative-data-analysis.pdf",
+          "kind": "PDF",
+          "size_bytes": 441104
+        },
+        {
+          "filename": "dellafiore-et-al-2025-artificial-intelligence-in-qualitative-research-insights-from-experts-via-reflexive-thematic.pdf",
+          "kind": "PDF",
+          "size_bytes": 646161
+        },
+        {
+          "filename": "jones-2025-generative-ai-in-qualitative-research-and-related-transparency-problems-a-novel-heuristic-for-disclosing.pdf",
+          "kind": "PDF",
+          "size_bytes": 606492
+        },
+        {
+          "filename": "dahal-et-al-2025-navigating-the-meta-crisis-of-generativity-adapting-qualitative-research-quality-criteria-in-the-era-of-generative-ai.pdf",
+          "kind": "PDF",
+          "size_bytes": 190798
+        },
+        {
+          "filename": "jowsey-et-al-2025-frankenstein-thematic-analysis-and-generative-artificial-intelligence-quality-appraisal-methods-and-considerations-for-qualitative-research.pdf",
+          "kind": "PDF",
+          "size_bytes": 405918
+        },
+        {
+          "filename": "Castellanosetal,2025-Large Language Models for Thematic Summarization in Qualitative Health Care Research.pdf",
+          "kind": "PDF",
+          "size_bytes": 224375
+        },
+        {
+          "filename": "jowsey-et-al-2025-we-reject-the-use-of-generative-artificial-intelligence-for-reflexive-qualitative-research.pdf",
+          "kind": "PDF",
+          "size_bytes": 176374
+        },
+        {
+          "filename": "jarrahi-2025-interviewing-ai-using-qualitative-methods-to-explore-and-capture-machines-characteristics-and-behaviors.pdf",
+          "kind": "PDF",
+          "size_bytes": 317209
+        },
+        {
+          "filename": "nguyen-welch-2025-engaged-and-responsible-scholarship-why-qualitative-researchers-should-not-embrace-genai.pdf",
+          "kind": "PDF",
+          "size_bytes": 167139
+        },
+        {
+          "filename": "friedman-et-al-2024-ai-and-qualitative-analysis.pdf",
+          "kind": "PDF",
+          "size_bytes": 295132
+        },
+        {
+          "filename": "teixeira-et-al-2025-generative-artificial-intelligence-in-qualitative-research-methods-between-hype-and-risks.pdf",
+          "kind": "PDF",
+          "size_bytes": 191806
+        },
+        {
+          "filename": "graciano-neto-et-al-2024-large-language-model-for-qualitative-research-a-systematic-mapping-study.pdf",
+          "kind": "PDF",
+          "size_bytes": 221706
+        },
+        {
+          "filename": "mayring-2025-qualitative-content-analysis-with-chatgpt-pitfalls-rough-approximations-and-gross.pdf",
+          "kind": "PDF",
+          "size_bytes": 141258
+        },
+        {
+          "filename": "paulus-marone-2024-in-minutes-instead-of-weeks-discursive-constructions-of-generative-ai-and-qualitative-data-analysis.pdf",
+          "kind": "PDF",
+          "size_bytes": 153554
+        },
+        {
+          "filename": "Mesec, 2023-preprint.pdf",
+          "kind": "PDF",
+          "size_bytes": 229470
+        },
+        {
+          "filename": "Paoli,2023-preprint.pdf",
+          "kind": "PDF",
+          "size_bytes": 388959
+        },
+        {
+          "filename": "eschrich-sterman-2024-a-framework-for-discussing-llms-as-tools-for-qualitative-analysis.pdf",
+          "kind": "PDF",
+          "size_bytes": 112470
+        },
+        {
+          "filename": "Hayes,2023-preprint.pdf",
+          "kind": "PDF",
+          "size_bytes": 412081
+        },
+        {
+          "filename": "Marshall,Naff,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 259133
+        },
+        {
+          "filename": "de-paoli-2026-why-we-should-reject-to-reject-the-use-of-generative-artificial-intelligence-in-qualitative-analysis-a.pdf",
+          "kind": "PDF",
+          "size_bytes": 135835
+        },
+        {
+          "filename": "Christou,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 601616
+        },
+        {
+          "filename": "Bail,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 175146
+        },
+        {
+          "filename": "Dengeletal,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 892752
+        },
+        {
+          "filename": "Hamiltonetal,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 588263
+        },
+        {
+          "filename": "Chubb,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 2145069
+        },
+        {
+          "filename": "vanmanen,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 495842
+        }
+      ]
+    },
+    {
+      "folder": "Sociologia Digital",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Miskolci,Balieiro,2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 762258
+        },
+        {
+          "filename": "Zhao,Wang,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 1422216
+        },
+        {
+          "filename": "Castro,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 789062
+        },
+        {
+          "filename": "Telles,2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 4835711
+        },
+        {
+          "filename": "Vicari,Kirby,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 3522700
+        },
+        {
+          "filename": "Lupton,2015.pdf",
+          "kind": "PDF",
+          "size_bytes": 1622573
+        },
+        {
+          "filename": "Macedo,2022.pdf",
+          "kind": "PDF",
+          "size_bytes": 738372
+        },
+        {
+          "filename": "fussey,roth,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 95862
+        },
+        {
+          "filename": "Nascimento,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 3240013
+        },
+        {
+          "filename": "Padilha,Facioli,2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 191714
+        }
+      ]
+    },
+    {
+      "folder": "M‚todos Digitais",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "vanEsetal,2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 437076
+        },
+        {
+          "filename": "Silvaetal,2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 9085178
+        },
+        {
+          "filename": "Venturinietal,2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 1161832
+        },
+        {
+          "filename": "Omena,2019.pdf",
+          "kind": "PDF",
+          "size_bytes": 8391934
+        },
+        {
+          "filename": "Santos,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 1950753
+        },
+        {
+          "filename": "Rogers,2016.pdf",
+          "kind": "PDF",
+          "size_bytes": 456658
+        },
+        {
+          "filename": "Silva,Stabile,2016.pdf",
+          "kind": "PDF",
+          "size_bytes": 25526926
+        },
+        {
+          "filename": "Perriametal,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 1391278
+        },
+        {
+          "filename": "Vimieiro,Bargas,2019.pdf",
+          "kind": "PDF",
+          "size_bytes": 487973
+        },
+        {
+          "filename": "Hampton-2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 313007
+        }
+      ]
+    },
+    {
+      "folder": "Observação Participante",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Marietto,2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 1062352
+        },
+        {
+          "filename": "Laurier,2010.pdf",
+          "kind": "PDF",
+          "size_bytes": 558231
+        },
+        {
+          "filename": "Mackellar,2013.pdf",
+          "kind": "PDF",
+          "size_bytes": 286357
+        },
+        {
+          "filename": "Schwartz,Elsen,2003.pdf",
+          "kind": "PDF",
+          "size_bytes": 178633
+        },
+        {
+          "filename": "Hennelletal,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 124979
+        },
+        {
+          "filename": "Camposetal_2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 3793803
+        },
+        {
+          "filename": "Fernandes,2011.pdf",
+          "kind": "PDF",
+          "size_bytes": 251024
+        },
+        {
+          "filename": "Lapassade,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 692481
+        },
+        {
+          "filename": "Valladares,2010.pdf",
+          "kind": "PDF",
+          "size_bytes": 63385
+        },
+        {
+          "filename": "Gillespie,Michelson,2011.pdf",
+          "kind": "PDF",
+          "size_bytes": 437651
+        }
+      ]
+    },
+    {
+      "folder": "Prosopografia",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Braga,Nicolas,2008.pdf",
+          "kind": "PDF",
+          "size_bytes": 1069663
+        },
+        {
+          "filename": "Ankoud,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 605584
+        },
+        {
+          "filename": "HEINZ,2011.pdf",
+          "kind": "PDF",
+          "size_bytes": 932657
+        },
+        {
+          "filename": "Bulst,2005.pdf",
+          "kind": "PDF",
+          "size_bytes": 198162
+        },
+        {
+          "filename": "Bukodietal,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 953896
+        },
+        {
+          "filename": "Stone,2011.pdf",
+          "kind": "PDF",
+          "size_bytes": 215867
+        },
+        {
+          "filename": "Rossier,2019.pdf",
+          "kind": "PDF",
+          "size_bytes": 1128564
+        },
+        {
+          "filename": "Heinz,Codato,2015.pdf",
+          "kind": "PDF",
+          "size_bytes": 753308
+        },
+        {
+          "filename": "Lundingetal,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 886779
+        },
+        {
+          "filename": "Monteiro,2014.pdf",
+          "kind": "PDF",
+          "size_bytes": 234767
+        }
+      ]
+    },
+    {
+      "folder": "An lise Tem tica",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Lochmiller,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 303107
+        },
+        {
+          "filename": "Kiger,Varpio,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 1539533
+        },
+        {
+          "filename": "Byrne,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 2860307
+        },
+        {
+          "filename": "Dias,Mishima,2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 433874
+        },
+        {
+          "filename": "Scharp,Sanders,2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 844525
+        },
+        {
+          "filename": "braun,clarke,2006.pdf",
+          "kind": "PDF",
+          "size_bytes": 712648
+        },
+        {
+          "filename": "Ramosdasilvaetal,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 672728
+        },
+        {
+          "filename": "Nowelletal,2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 639500
+        },
+        {
+          "filename": "Maguire,Delahunt,2017.pdf",
+          "kind": "PDF",
+          "size_bytes": 640926
+        },
+        {
+          "filename": "Silvaetal,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 631240
+        }
+      ]
+    },
+    {
+      "folder": "Causalidade na Pesquisa Qualitativa",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Erickson,2012.pdf",
+          "kind": "PDF",
+          "size_bytes": 447894
+        },
+        {
+          "filename": "Ruffa,Evangelista,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 249232
+        },
+        {
+          "filename": "Maxwell,2004.pdf",
+          "kind": "PDF",
+          "size_bytes": 175586
+        },
+        {
+          "filename": "Donmoyer,2012.pdf",
+          "kind": "PDF",
+          "size_bytes": 453217
+        },
+        {
+          "filename": "tacq2010.pdf",
+          "kind": "PDF",
+          "size_bytes": 288275
+        }
+      ]
+    },
+    {
+      "folder": "Confiabilidade na Pesquisa Qualitativa",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Closa,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 791129
+        },
+        {
+          "filename": "Mcdonaldetal,2019.pdf",
+          "kind": "PDF",
+          "size_bytes": 435640
+        },
+        {
+          "filename": "Castro,Rezende,2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 750615
+        },
+        {
+          "filename": "cole-2023.pdf",
+          "kind": "PDF",
+          "size_bytes": 858105
+        },
+        {
+          "filename": "Watts,Quinn,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 694260
+        },
+        {
+          "filename": "PaivaJretal,2011.pdf",
+          "kind": "PDF",
+          "size_bytes": 348443
+        },
+        {
+          "filename": "Yadav,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 107537
+        },
+        {
+          "filename": "Sevilmis,Yidiz,2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 394303
+        },
+        {
+          "filename": "o-connor-joffe-2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 766064
+        },
+        {
+          "filename": "Ullrichetal,2012.pdf",
+          "kind": "PDF",
+          "size_bytes": 436702
+        }
+      ]
+    },
+    {
+      "folder": "Qualidade da Pesquisa Qualitativa_Avaliação de",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Johnsonetal,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 528607
+        },
+        {
+          "filename": "tracy2010.pdf",
+          "kind": "PDF",
+          "size_bytes": 335879
+        },
+        {
+          "filename": "barbour2001.pdf",
+          "kind": "PDF",
+          "size_bytes": 184450
+        },
+        {
+          "filename": "Costa,Minayo,2019.pdf",
+          "kind": "PDF",
+          "size_bytes": 383640
+        },
+        {
+          "filename": "Mandal, 2018.pdf",
+          "kind": "PDF",
+          "size_bytes": 221985
+        },
+        {
+          "filename": "Tobin, Begley, 2004.pdf",
+          "kind": "PDF",
+          "size_bytes": 84765
+        },
+        {
+          "filename": "Closa_2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 237245
+        },
+        {
+          "filename": "poortman, Schildkamp,2011.pdf",
+          "kind": "PDF",
+          "size_bytes": 370436
+        },
+        {
+          "filename": "jarzabkowski-et-al-2021.pdf",
+          "kind": "PDF",
+          "size_bytes": 82115
+        },
+        {
+          "filename": "Velloso,Tizzoni,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 279837
+        }
+      ]
+    },
+    {
+      "folder": "Amostragem",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Cap¡tulo 4 Amostragem Aleat¢ria Simples _ _main.pdf",
+          "kind": "PDF",
+          "size_bytes": 672259
+        },
+        {
+          "filename": "statistical_paradises_and_paradoxes.pdf",
+          "kind": "PDF",
+          "size_bytes": 1020025
+        },
+        {
+          "filename": "MRP Norming pre-print v4 (1).pdf",
+          "kind": "PDF",
+          "size_bytes": 1434131
+        }
+      ]
+    },
+    {
+      "folder": "Validação de Pesquisa Qualitativa",
+      "complete": true,
+      "entries": [
+        {
+          "filename": "Noble,Smith,2015.pdf",
+          "kind": "PDF",
+          "size_bytes": 261258
+        },
+        {
+          "filename": "Ollaik,Ziller,2012.pdf",
+          "kind": "PDF",
+          "size_bytes": 729855
+        },
+        {
+          "filename": "Melo,2020.pdf",
+          "kind": "PDF",
+          "size_bytes": 246613
+        },
+        {
+          "filename": "Anney, 2014.pdf",
+          "kind": "PDF",
+          "size_bytes": 207301
+        },
+        {
+          "filename": "Gondimetal,2011.pdf",
+          "kind": "PDF",
+          "size_bytes": 147572
+        },
+        {
+          "filename": "Leung,2015.pdf",
+          "kind": "PDF",
+          "size_bytes": 444600
+        },
+        {
+          "filename": "Cho,Trent,2006.pdf",
+          "kind": "PDF",
+          "size_bytes": 255145
+        },
+        {
+          "filename": "Hayashietal,2019.pdf",
+          "kind": "PDF",
+          "size_bytes": 685796
+        },
+        {
+          "filename": "Dennis_ChapterOne.pdf",
+          "kind": "PDF",
+          "size_bytes": 491149
+        },
+        {
+          "filename": "Souto, Korkischko, 2012.pdf",
+          "kind": "PDF",
+          "size_bytes": 341585
+        }
+      ]
+    }
+  ]
+}
