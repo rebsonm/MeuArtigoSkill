@@ -222,60 +222,60 @@ def text(brief: dict) -> str:
 # These are completion checks to look for, not automatically satisfied gates.
 GUIDED_ACTIONS = {
     "RECONCILE_PENDING_TRANSACTION": (
-        "Conferir a transação interrompida antes de retomar a pesquisa.",
-        "Verificar os registros originais e concluir o procedimento autorizado de recuperação."),
+        "Review the interrupted transaction before resuming research.",
+        "Verify original records and complete the authorized recovery procedure."),
     "RECONCILE_CADA_AND_CONTINUITY": (
-        "Conferir a divergência entre a tarefa registrada e a continuidade.",
-        "Confirmar que tarefa, continuidade e comprovantes apontam para o mesmo estado."),
+        "Reconcile the discrepancy between the recorded task and continuity.",
+        "Confirm that task, continuity and receipts reflect the same recorded state."),
     "REVIEW_CONFLICTING_METHOD_DECISION_EVIDENCE": (
-        "Revisar com o pesquisador a decisão metodológica e sua evidência.",
-        "Conciliar a decisão humana original com o método e sua rastreabilidade."),
+        "Review the methodological decision and its evidence with the researcher.",
+        "Reconcile the original human decision with method and trace records."),
     "VERIFY_AUTHORIZED_CANONICAL_STORAGE": (
-        "Verificar o acesso ao armazenamento canônico autorizado.",
-        "Confirmar diretamente o acesso efetivo aos documentos canônicos, sem presumir sincronização."),
+        "Verify access to authorized canonical storage.",
+        "Directly confirm canonical access without assuming synchronization."),
     "RECONCILE_PROJECT_RECORDS": (
-        "Conferir os registros canônicos divergentes ou indisponíveis.",
-        "Resolver a inconsistência verificável e executar novamente a checagem de continuidade."),
+        "Review conflicting or unavailable canonical records.",
+        "Resolve the documented discrepancy and repeat continuity checks."),
     "EXECUTE_RECORDED_CADA_TASK": (
-        "Continuar a tarefa operacional já registrada e autorizada.",
-        "Apresentar o resultado efetivo, o comprovante de execução e o registro de conclusão correspondente."),
+        "Continue the previously recorded, eligible operational task.",
+        "Provide actual output, execution evidence and the matching completion record."),
     "RESEARCHER_DECIDE_RECORDED_CADA_TASK": (
-        "Solicitar apenas a decisão humana pendente na tarefa registrada.",
-        "Registrar a escolha realmente expressa, sua justificativa e o vínculo à tarefa."),
+        "Request only the pending human decision linked to the recorded task.",
+        "Record the researcher's actual choice, rationale and task linkage."),
     "RESEARCHER_CHOOSE_AND_JUSTIFY_METHOD_ROUTE": (
-        "Comparar as rotas plausíveis e solicitar a escolha metodológica do pesquisador.",
-        "Registrar a escolha e a justificativa humanas, sem aprovar automaticamente qualquer etapa."),
+        "Compare plausible routes and request the researcher's methodological choice.",
+        "Record the actual human choice and rationale without stage approval."),
     "RESEARCHER_REVIEW_PENDING_SCIENTIFIC_GATE": (
-        "Apresentar o gate pendente e as evidências necessárias à avaliação humana.",
-        "Ter decisão expressa do pesquisador e evidência auditável; a aprovação não é automática."),
+        "Present the pending gate and evidence needed for human evaluation.",
+        "Obtain an explicit researcher decision and auditable evidence; no automatic approval."),
     "RESEARCHER_REVIEW_NEXT_METHOD_FIELD": (
-        "Examinar o próximo componente metodológico registrado como pendente.",
-        "Registrar uma definição realmente escolhida pelo pesquisador, com sua justificativa."),
+        "Examine the next recorded outstanding methodological component.",
+        "Record the researcher's actual definition and justification."),
     "REQUEST_RESEARCHER_REVIEW_OF_CONTINUATION": (
-        "Verificar se há trabalho concluído ou um próximo passo ainda não registrado.",
-        "Localizar o resultado ou impedimento real; ausência de tarefa não prova conclusão do projeto."),
+        "Check for completed work or an as-yet unrecorded next step.",
+        "Find actual output or an obstacle; missing tasks do not prove project completion."),
 }
-BLOCKER_PT = {
+BLOCKER_DESCRIPTIONS = {
     "CANONICAL_DRIVE_ACCESS_NOT_VERIFIED_BY_LOCAL_PANEL":
-        "Esta leitura local não confirma acesso ao Drive canônico.",
+        "This local view does not confirm canonical Drive access.",
     "CANONICAL_STORAGE_NOT_VERIFIED":
-        "O armazenamento canônico ainda precisa ser verificado.",
+        "Canonical storage still requires verification.",
     "LOCAL_FALLBACK_AUTHORIZATION_NOT_RECORDED":
-        "O uso do armazenamento local não está autorizado no registro.",
+        "Local storage is not authorized in the current record.",
     "PENDING_RESEARCH_TRANSACTION_RECOVERY":
-        "Há uma transação interrompida a conciliar.",
+        "An interrupted transaction requires reconciliation.",
     "CADA_CONTINUITY_INTEGRITY_REVIEW":
-        "Tarefa e comprovante de continuidade não estão conciliados.",
+        "Task and continuity evidence are not reconciled.",
     "CONTINUITY_NEXT_ACTION_MISMATCH":
-        "Os registros apontam próximas tarefas diferentes.",
+        "The records point to different next tasks.",
     "DECISION_PROVENANCE_RECONCILIATION_REQUIRED":
-        "É necessário conferir a proveniência da decisão científica.",
+        "Scientific decision provenance needs verification.",
     "METHOD_PROFILE_REQUIRES_RECONCILIATION":
-        "O perfil metodológico precisa ser reconciliado.",
+        "The methodological profile needs reconciliation.",
     "PRIOR_HUMAN_GATE_NOT_DOCUMENTED":
-        "A aprovação humana exigida para esta transição não está documentada.",
+        "Required human approval for this transition is not documented.",
     "CANONICAL_STORAGE_MODE_UNKNOWN":
-        "A modalidade de armazenamento do projeto não foi verificada.",
+        "Project storage mode has not been verified.",
 }
 
 
@@ -442,48 +442,48 @@ def guided_view(brief: dict, *, root: Path | None=None,
         from research_blocker_guide import explain
         blocker = explain(brief, limit=1)["primary"]
         code = blocker["code"] if blocker else "UNCLASSIFIED_RECONCILIATION_CAUSE"
-        issue = BLOCKER_PT.get(code, "Os registros precisam de uma conferência antes do avanço.")
+        issue = BLOCKER_DESCRIPTIONS.get(code, "The records require review before advancing.")
     else:
         code, issue = None, None
     recorded = brief["recorded"]
     complete_count = (overview or {}).get("tasks_reported_done")
-    complete_text = (f"{complete_count} tarefa(s) registrada(s) como concluída(s)"
+    complete_text = (f"{complete_count} task(s) marked complete in the operational register"
                      if isinstance(complete_count, int) and complete_count >= 0
-                     else "Quantidade de tarefas concluídas não verificada")
+                     else "Number of completed tasks not verified")
     fields = recorded.get("completed_method_fields")
     required = recorded.get("required_method_fields")
     if isinstance(fields, int) and isinstance(required, int) and required:
-        complete_text += f"; {fields}/{required} campos metodológicos preenchidos (sem validação científica)"
+        complete_text += f"; {fields}/{required} method fields recorded (not scientifically validated)"
     next_field = recorded.get("next_missing_method_field")
-    remaining = ("Há campo metodológico pendente: " + next_field
-                 if next_field else "Verificar pendências científicas e operacionais no estado canônico")
+    remaining = ("Outstanding methodological field: " + next_field
+                 if next_field else "Review scientific and operational requirements in canonical state")
     cycle = (cycle_diagnostic(Path(root), brief) if root is not None else None)
     if cycle and cycle["status"] == "TWO_EQUIVALENT_UNPRODUCTIVE_ATTEMPTS":
-        reason = ("Diagnosticar o impedimento da tarefa antes de repetir a "
-                  "mesma execução; considerar alternativa independente autorizada.")
-        exit_criterion = ("Identificar a causa e documentar evidência nova, "
-                          "mudança de abordagem ou decisão humana necessária.")
+        reason = ("Diagnose the task obstacle before repeating the "
+                  "same execution; consider an independently authorized alternative.")
+        exit_criterion = ("Identify the cause and record new evidence, "
+                          "a different approach or a necessary human decision.")
     return {
         "schema": "MEU_ARTIGO_GUIDED_RESEARCH_CONTINUATION_V1",
-        "state": "BLOQUEADO" if blocked else (
-            "PREPARACAO_TECNICA_POSSIVEL" if brief["status"] == "TECHNICAL_PREPARATION_CANDIDATE"
-            else "DECISAO_HUMANA_PENDENTE" if brief["status"] == "HUMAN_DECISION_REQUIRED"
-            else "ORIENTACAO_SEM_EXECUCAO"),
-        "where_we_are": ("Rota registrada: " +
-                         (recorded["method_route"] or "não verificável") +
-                         "; última decisão documentada: " +
-                         (recorded["last_decision_id"] or "não identificada")),
+        "state": "BLOCKED" if blocked else (
+            "TECHNICAL_PREPARATION_POSSIBLE" if brief["status"] == "TECHNICAL_PREPARATION_CANDIDATE"
+            else "HUMAN_DECISION_PENDING" if brief["status"] == "HUMAN_DECISION_REQUIRED"
+            else "READ_ONLY_GUIDANCE"),
+        "where_we_are": ("Recorded route: " +
+                         (recorded["method_route"] or "unverified") +
+                         "; last recorded decision: " +
+                         (recorded["last_decision_id"] or "not identified")),
         "what_is_recorded": complete_text,
         "what_is_missing": remaining,
         "one_next_action": reason,
         "why": issue if blocked else (
-            "Próxima ação indicada pelo roteador existente; nenhuma execução foi iniciada."),
+            "Next action selected by existing router; nothing was executed."),
         "exit_criterion": exit_criterion,
         "primary_blocker_code": code,
         "existing_cada_id": step["existing_cada_id"],
         "existing_gate_id": step["existing_gate_id"],
         "cycle_signal": cycle,
-        "more_detail": "Use --format json para consultar os detalhes e os identificadores existentes.",
+        "more_detail": "Use --format json to view existing detail and record identifiers.",
         "not_an_automatic_task_or_gate_transition": True,
         "scientific_completion_verified": False,
         "canonical_state_modified": False,
@@ -495,18 +495,18 @@ def guided_text(view: dict) -> str:
     if view.get("schema") != "MEU_ARTIGO_GUIDED_RESEARCH_CONTINUATION_V1":
         raise ValueError("Invalid guided continuation")
     lines = [
-        "Meu Artigo — continuidade da pesquisa",
-        "Situação: " + view["state"],
-        "Onde estamos: " + view["where_we_are"],
-        "Já registrado: " + view["what_is_recorded"],
-        "Pendente: " + view["what_is_missing"],
-        "Próxima ação: " + view["one_next_action"],
-        "Por quê: " + view["why"],
-        "Condição de conclusão: " + view["exit_criterion"],
+        "Meu Artigo - research continuation",
+        "Status: " + view["state"],
+        "Where we are: " + view["where_we_are"],
+        "Already recorded: " + view["what_is_recorded"],
+        "Outstanding: " + view["what_is_missing"],
+        "Next action: " + view["one_next_action"],
+        "Why: " + view["why"],
+        "Exit criterion: " + view["exit_criterion"],
     ]
     if view["cycle_signal"] and view["cycle_signal"]["human_diagnostic_advised"]:
-        lines.append("Atenção: duas execuções equivalentes, sem novo resultado verificável.")
-    lines.append("Detalhamento técnico disponível sob demanda. Nenhum gate foi aprovado.")
+        lines.append("Attention: two equivalent executions produced no verified new output.")
+    lines.append("Technical details are available on demand. No gate was approved.")
     return "\n".join(lines)
 
 
