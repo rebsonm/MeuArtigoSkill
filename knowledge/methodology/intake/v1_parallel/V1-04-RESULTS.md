@@ -227,6 +227,13 @@
 
 **Critério verificável:** pareceres independentes e distintos para ciência/editoria e direitos/originalidade, ligados à edição exata e aos SHA-256 deste card, com controvérsias, contraprovas e eventuais correções explicitadas; somente então submeter decisão editorial humana. Não integrar globalmente nem publicar antes das demais etapas e controles.
 
+## Evidência de CI no SHA auditado (bloqueio técnico, não científico)
+
+- Após abertura da [PR Draft #108](https://github.com/rebsonm/MeuArtigoSkill/pull/108), [Release audit #44961093790](https://github.com/rebsonm/MeuArtigoSkill/actions/runs/44961093790) concluiu com **FAILURE** no HEAD `9f53b1fc4b30bbc12467a379322aef438b3a65d5`. Job `audit`: passo `Static release audit` **PASS**, `Behavioral regression tests` **FAIL**, com **893 testes executados, 4 falhas, 1 erro, 2 ignorados**; etapas posteriores condicionais não executadas. Não confundir com CI dos commits de recibo subsequentes.
+- **Diagnóstico sustentado por log:** `test_installed_methodology_retrieval` e `test_review_method_addenda` compararam SHA real de `reviews.md` (`59c17017…`) ao SHA ainda congelado no catálogo (`331db842…`), causando duas falhas explícitas; `test_github_methodology` retornou `REMOTE_DIGEST_MISMATCH`; dois testes de `test_hybrid_public_retriever` retornaram card bloqueado/sem `card_hits`. O grupo é **compatível com a desatualização do catálogo global frente aos cards editados**, ainda que a causalidade específica de cada retorno do recuperador precise de reconfirmação após reconciliação.
+- **Decisão de escopo:** a V1-04 não pode corrigir `knowledge/methodology/catalog.json`, o leitor global nem os testes fora de seus 18 cards; não contornar hashes, não desabilitar testes nem inventar CI verde. A conciliação de hashes/índices cabe exclusivamente à futura **V1-16**, depois de suas dependências e conferência cruzada; enquanto isso, PR #108 permanece Draft e **bloqueada para merge**.
+- Este relatório acrescenta evidência retrospectiva do run no SHA anterior à documentação do bloqueio. A nova gravação do próprio recibo altera o HEAD e, portanto, **não atesta resultado de CI no HEAD subsequente**.
+
 ## Próximos passos
 
 - Registrar revisão independente técnica e de direitos de cada card, com localizador de fonte e data de parecer; corrigir imprecisões com evidência, não por suposição.
