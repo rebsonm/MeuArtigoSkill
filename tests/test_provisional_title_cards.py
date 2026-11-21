@@ -23,9 +23,9 @@ class ProvisionalTitleTests(unittest.TestCase):
     self.assertIn("IDENTITY_UNRESOLVED",txt)
  def test_new_editorial_cards_do_not_claim_private_pdf_read(self):
   c=json.loads((BASE/"catalog.json").read_text(encoding="utf-8"))
-  self.assertEqual(len(c["documents"]),164)
+  self.assertEqual(len(c["documents"]),174)
   matched=[x for x in c["documents"] if x.get("source_registry_id")]
-  self.assertEqual(len(matched),76)
+  self.assertEqual(len(matched),86)
   for x in matched:
    raw=(ROOT/x["path"]).read_bytes()
    self.assertEqual(hashlib.sha256(raw).hexdigest(),x["sha256"])

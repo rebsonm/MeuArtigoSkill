@@ -10,9 +10,9 @@ class NewOriginalBatchTests(unittest.TestCase):
   reg=json.loads((BASE/"source_registry_catalog.json").read_text("utf-8"))
   docs=[x for x in reg["documents"] if x["source_id"] in IDS]
   self.assertEqual(len(docs),14)
-  self.assertEqual(sum(x["bibliography_match_status"]=="SOURCE_PDF_WORK_VERIFIED" for x in reg["documents"]),76)
+  self.assertEqual(sum(x["bibliography_match_status"]=="SOURCE_PDF_WORK_VERIFIED" for x in reg["documents"]),86)
   self.assertEqual(sum(x["bibliography_match_status"]=="IDENTITY_UNRESOLVED" for x in reg["documents"]),0)
-  self.assertEqual(reg["source_text_read_in_ledger"],79)
+  self.assertEqual(reg["source_text_read_in_ledger"],89)
   for x in docs:
    self.assertTrue(x["source_metadata_only"])
    self.assertTrue(x["source_identity_verified_not_citation_grade"])
@@ -36,7 +36,7 @@ class NewOriginalBatchTests(unittest.TestCase):
   self.assertFalse(excluded.intersection(x.get("doi") for x in cat))
  def test_all_fourteen_original_method_cards_remain_unapproved(self):
   a=json.loads((BASE/"catalog.json").read_text("utf-8"))["documents"]
-  self.assertEqual(len(a),164)
+  self.assertEqual(len(a),174)
   sub=[x for x in a if x.get("source_registry_id") in IDS]
   self.assertEqual(len(sub),14)
   for x in sub:

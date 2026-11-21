@@ -33,7 +33,7 @@ class SkillOnlyMethodAuditTests(unittest.TestCase):
   self.assertIn("not a remotely hosted service",doc)
  def test_corrected_cards_match_manifest_hashes(self):
   j=json.loads((BASE/"catalog.json").read_text("utf-8"))
-  self.assertEqual(len(j["documents"]),164)
+  self.assertEqual(len(j["documents"]),174)
   names=("institutional-grammar-2-2021-encoding-design.md","prahl-2025-ai-reflexivity-checklist.md")
   for doc in j["documents"]:
    if Path(doc["path"]).name in names:

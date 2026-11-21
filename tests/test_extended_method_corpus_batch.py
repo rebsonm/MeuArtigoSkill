@@ -11,10 +11,10 @@ class ExtendedMethodsRegression(unittest.TestCase):
   reg=json.loads((BASE/"source_registry_catalog.json").read_text("utf-8"))
   docs=reg["documents"]
   self.assertEqual(len(docs),475)
-  self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="SOURCE_PDF_WORK_VERIFIED"]),76)
+  self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="SOURCE_PDF_WORK_VERIFIED"]),86)
   self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="IDENTITY_UNRESOLVED"]),0)
-  self.assertEqual(reg["source_text_read_in_ledger"],79)
-  self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED"]),399)
+  self.assertEqual(reg["source_text_read_in_ledger"],89)
+  self.assertEqual(len([x for x in docs if x["bibliography_match_status"]=="CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED"]),389)
   observed=[x for x in docs if x["source_id"] in IDS]
   self.assertEqual(len(observed),19)
   for doc in observed:
@@ -43,7 +43,7 @@ class ExtendedMethodsRegression(unittest.TestCase):
   m=json.loads((BASE/"intake"/"rights-ledger-manifest.json").read_text("utf-8"))
   self.assertEqual(m["actual_individually_verified_rights_in_this_ledger"],17)
   self.assertEqual(m["source_pdf_count_public_catalogue"],51)
-  self.assertEqual(m["original_editorial_cards_count"],164)
+  self.assertEqual(m["original_editorial_cards_count"],174)
   ledger=[]
   for i in range(1,6):
    ledger.extend(json.loads((BASE/"intake"/f"rights-ledger-part-0{i}.json").read_text("utf-8"))["records"])
@@ -55,7 +55,7 @@ class ExtendedMethodsRegression(unittest.TestCase):
  def test_method_cards_are_original_and_science_unapproved(self):
   cat=json.loads((BASE/"catalog.json").read_text("utf-8"))["documents"]
   sub=[x for x in cat if x.get("source_registry_id") in IDS]
-  self.assertEqual(len(cat),164)
+  self.assertEqual(len(cat),174)
   self.assertEqual(len(sub),19)
   for x in sub:
    b=(ROOT/x["path"]).read_bytes()
