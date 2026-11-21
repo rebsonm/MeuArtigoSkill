@@ -45,3 +45,9 @@ Licenças expressas observadas: SRC-0375 (CC BY-NC-SA 4.0, livro Enap 2021) e SR
 Conferências estruturais em memória: 17 IDs únicos do lote; 17 fichas próprias; 17 referências ao ledger; 17 hashes SHA256; nenhuma alteração prevista em catálogos/ledgers/manifestos globais; nenhuma inclusão de PDF. CI remoto: aguarda consulta após commit. A integração global dos contadores, SHA256 do catálogo e eventual liberação de PDFs permanece com a coordenação; sem merge, tag, release ou MCP.
 
 Próximos passos: auditar autenticidade SRC-0385; conferir licenciamentos em fonte editorial; integração sequencial da branch, atualização de catálogos/hashes globais e execução da suíte CI do integrador.
+
+## Complementação bibliográfica e ressalvas da auditoria transversal — 21/11/2026
+
+- **Registro:** `SRC-0385`; **novo SHA-256 da ficha:** `235d2604d8d62835bf8bfe44f327ccb0d7c08053d93cd2c098c3fb402d466816`.
+- Quarentena expressa de SRC-0385 mantida: exemplar privado atribui título a Michael Smith/OEconomia (2020), enquanto King's College London e SAGE confirmam artigo anterior de Rod Dacombe (2018), DOI 10.1177/1478929916680641, com título/enquadramento muito semelhantes. Não há conclusão de fraude ou violação de direitos baseada na comparação delimitada. Sem promoção [L], publicação ou validação científica.
+- **MD canônico:** a atualização global das contagens depende da reconciliação dos 20 lotes; nenhum merge, release, tag, MCP ou PDF foi publicado.
