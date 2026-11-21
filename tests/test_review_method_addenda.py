@@ -20,7 +20,7 @@ class ReviewMethodAddendaTests(unittest.TestCase):
         cls.pdfs = json.loads((ROOT/"knowledge/methodology/pdf_catalog.json").read_text("utf-8"))["documents"]
 
     def test_methodology_catalog_has_new_sources_and_verifiable_digests(self):
-        self.assertEqual(len(self.cards), 114)
+        self.assertEqual(len(self.cards), 133)
         wanted = {
             "marzi-et-al-2025-bslr-ten-steps.md",
             "snyder-2019-literature-review-designs.md",
@@ -41,7 +41,7 @@ class ReviewMethodAddendaTests(unittest.TestCase):
             self.assertNotEqual(x.get("editorial_status"), "ACCEPTED")
 
     def test_two_new_licensed_pdf_originals_publisher_evidence_and_integrity(self):
-        self.assertEqual(len(self.pdfs), 45)
+        self.assertEqual(len(self.pdfs), 47)
         for doi in ("10.1111/ijmr.12381", "10.1007/s13162-020-00161-0"):
             item = next((x for x in self.pdfs if x.get("doi")==doi), None)
             self.assertIsNotNone(item)
@@ -77,9 +77,9 @@ class ReviewMethodAddendaTests(unittest.TestCase):
 
     def test_no_unlicensed_original_pdf_promoted_by_registry_matching(self):
         manifest = json.loads((ROOT/"knowledge/methodology/intake/rights-ledger-manifest.json").read_text("utf-8"))
-        self.assertEqual(manifest["actual_individually_verified_rights_in_this_ledger"], 10)
-        self.assertEqual(manifest["source_pdf_count_public_catalogue"], 45)
-        self.assertEqual(manifest["original_editorial_cards_count"], 114)
+        self.assertEqual(manifest["actual_individually_verified_rights_in_this_ledger"], 13)
+        self.assertEqual(manifest["source_pdf_count_public_catalogue"], 47)
+        self.assertEqual(manifest["original_editorial_cards_count"], 133)
         self.assertFalse(manifest["private_corpus_copied"])
 
 
