@@ -39,6 +39,15 @@ jobs:
             exit 1
           fi
 
+      - name: Refuse release candidates and stable versions in beta publisher
+        shell: bash
+        run: |
+          VERSION="$(cat VERSION)"
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+-beta\.[1-9][0-9]*$ ]]; then
+            echo "::error::Beta publisher accepts only beta versions; RC/stable require separate release approval."
+            exit 1
+          fi
+
       - name: Recheck code and documentation on the release commit
         run: |
           python scripts/release_audit.py
