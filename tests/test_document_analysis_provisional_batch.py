@@ -7,9 +7,9 @@ class TenDocumentProspects(unittest.TestCase):
  def test_original_exemplar_identity_instead_of_filename_guess(self):
   idx=json.loads((BASE/"source_registry_catalog.json").read_text("utf-8"));ds=idx["documents"]
   self.assertEqual(len(ds),475)
-  self.assertEqual(sum(x["bibliography_match_status"]=="SOURCE_PDF_WORK_VERIFIED" for x in ds),106)
-  self.assertEqual(sum(x["bibliography_match_status"]=="CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED" for x in ds),369)
-  self.assertEqual(idx["source_text_read_in_ledger"],108)
+  self.assertEqual(sum(x["bibliography_match_status"]=="SOURCE_PDF_WORK_VERIFIED" for x in ds),116)
+  self.assertEqual(sum(x["bibliography_match_status"]=="CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED" for x in ds),359)
+  self.assertEqual(idx["source_text_read_in_ledger"],118)
   picked=[x for x in ds if x["source_id"] in IDS]
   self.assertEqual(len(picked),10)
   for x in picked:
