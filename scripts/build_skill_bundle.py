@@ -28,6 +28,7 @@ DIR_TYPES = {
 # Researcher installation contains operational science files only.
 # Development, distribution and release checks remain in the source repository.
 EXCLUDED_SCRIPT_NAMES = frozenset({
+    "audit_methodology_rights_history.py",
     "audit_public_docs.py", "audit_source_language.py",
     "check_documentation_links.py", "check_install_package.py",
     "check_release_metadata.py", "release_audit.py",

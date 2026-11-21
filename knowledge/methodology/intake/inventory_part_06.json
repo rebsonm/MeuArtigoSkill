@@ -1,0 +1,259 @@
+{
+  "schema": "MEU_ARTIGO_SOURCE_INVENTORY_V1",
+  "batch": 6,
+  "kind": "METADATA_ONLY_NOT_PRIMARY_SOURCE",
+  "private_file_content": false,
+  "publishability": "NOT_ASSESSED",
+  "folders": [
+    {
+      "category": "Etnografia Política e Digital / Etnografia Política",
+      "status": "LISTED_SECOND_LEVEL",
+      "files": [
+        {
+          "name": "bernardes nunez 2021 tripla identidade em tensão.pdf",
+          "mime": "application/pdf",
+          "bytes": 200798,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Etnografia Pol¡tica e Digital / Etnografia Digital",
+      "status": "LISTED_SECOND_LEVEL",
+      "files": [
+        {
+          "name": "Cesarino, Silvia Walz, Tatiana Balistieri.pdf",
+          "mime": "application/pdf",
+          "bytes": 6979914,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Noveli,2010.pdf",
+          "mime": "application/pdf",
+          "bytes": 461666,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Soares, Stengel, 2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 765992,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Polivanov,2013.pdf",
+          "mime": "application/pdf",
+          "bytes": 102708,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Rocha,Montardo,2005.pdf",
+          "mime": "application/pdf",
+          "bytes": 348026,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Leitao,Gomes,2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 669155,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Cesarino,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 432762,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Ferraz,2019.pdf",
+          "mime": "application/pdf",
+          "bytes": 529438,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Etnografia Pol¡tica e Digital / Etnografia Pol¡tica",
+      "status": "LISTED_SECOND_LEVEL",
+      "files": [
+        {
+          "name": "Alcoforado,2010.pdf",
+          "mime": "application/pdf",
+          "bytes": 964847,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Hoyler,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 8862076,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Fernandez, Guimaraes, 2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 334713,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "wedeen2010.pdf",
+          "mime": "application/pdf",
+          "bytes": 238459,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Valladares,2010.pdf",
+          "mime": "application/pdf",
+          "bytes": 63385,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Teixeiraetal,2019.pdf",
+          "mime": "application/pdf",
+          "bytes": 2940625,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Grupos Focais / Grupos Focais Online",
+      "status": "LISTED_SECOND_LEVEL",
+      "files": [
+        {
+          "name": "abrams-et-al-2014.pdf",
+          "mime": "application/pdf",
+          "bytes": 178789,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "boydelletal,2014.pdf",
+          "mime": "application/pdf",
+          "bytes": 525336,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Zwaanswijk, van Dulmen,2014.pdf",
+          "mime": "application/pdf",
+          "bytes": 271828,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Mineiroetal,2019.pdf",
+          "mime": "application/pdf",
+          "bytes": 402403,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "stewart,shamdasani,2016.pdf",
+          "mime": "application/pdf",
+          "bytes": 457805,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "richard-et-al-2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 249304,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Wallaceetal,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 236122,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Gil,Silveira,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 329204,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Jonesetal,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 574817,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Cioffietal,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 459829,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Entrevistas / Entrevistas Online",
+      "status": "LISTED_SECOND_LEVEL",
+      "files": [
+        {
+          "name": "Rodriguesetal,2015.pdf",
+          "mime": "application/pdf",
+          "bytes": 125859,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Prior,Lachover,2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 560652,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Zadkowskaetal,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 595147,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Oatesetal,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 2302366,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Laconoetal,2016-skype.pdf",
+          "mime": "application/pdf",
+          "bytes": 272033,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Chiaetal,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 453977,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Lobeetal,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 584384,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "khan, Maceachen,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 590345,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Saarijarvi,Bratt,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 372070,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Schmidtetal,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 285709,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    }
+  ]
+}

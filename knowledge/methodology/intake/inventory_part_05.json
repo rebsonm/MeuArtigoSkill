@@ -1,0 +1,442 @@
+{
+  "schema": "MEU_ARTIGO_SOURCE_INVENTORY_V1",
+  "batch": 5,
+  "private_file_content": false,
+  "publishability": "NOT_ASSESSED",
+  "kind": "METADATA_ONLY_NOT_PRIMARY_SOURCE",
+  "folders": [
+    {
+      "category": "Outliers",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Richetti et al (2016).pdf",
+          "mime": "application/pdf",
+          "bytes": 1010439,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Figueiredo Filho et al (2023).pdf",
+          "mime": "application/pdf",
+          "bytes": 2234615,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Pareamento",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Schaefer e Figueiredo Filho (2023).pdf",
+          "mime": "application/pdf",
+          "bytes": 1190526,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "King e Nielsen (2019).pdf",
+          "mime": "application/pdf",
+          "bytes": 706881,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Imai, Kim e Wang (2023).pdf",
+          "mime": "application/pdf",
+          "bytes": 889686,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "M‚todos Mistos",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Small(2012).pdf",
+          "mime": "application/pdf",
+          "bytes": 309387,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Rezende (2016).pdf",
+          "mime": "application/pdf",
+          "bytes": 255021,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Silva (2015).pdf",
+          "mime": "application/pdf",
+          "bytes": 297951,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Paranhos et al (2016).pdf",
+          "mime": "application/pdf",
+          "bytes": 274339,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Survey",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Paranhos et al (2013).pdf",
+          "mime": "application/pdf",
+          "bytes": 429348,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Artigo_e2025-0695_v60_2026_PT___.pdf",
+          "mime": "application/pdf",
+          "bytes": 371310,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Owens (2022).pdf",
+          "mime": "application/pdf",
+          "bytes": 83080,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Lietz (2009).pdf",
+          "mime": "application/pdf",
+          "bytes": 1883816,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Tourangeau (2017).pdf",
+          "mime": "application/pdf",
+          "bytes": 151232,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "An lise de Cluster",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Heinrich Fritz, Luis A. Garc¡a-Escudero, Agust¡n Mayo-Iscar.pdf",
+          "mime": "application/pdf",
+          "bytes": 817956,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Figueiredo Filho et al (2021).pdf",
+          "mime": "application/pdf",
+          "bytes": 2633104,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Chapter 7 Clustering Analysis _ An R Companion for Introduction to Data Mining.pdf",
+          "mime": "application/pdf",
+          "bytes": 5682563,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Figueiredo Filho, Silva Junior e Rocha (2012).pdf",
+          "mime": "application/pdf",
+          "bytes": 1508465,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Figueiredo Fiho et al (2014).pdf",
+          "mime": "application/pdf",
+          "bytes": 3989254,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "An lise de Sobrevivˆncia",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Lins (2020)_slides.pdf",
+          "mime": "application/pdf",
+          "bytes": 602343,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Lins, Figueiredo Filho e Rocha (2017).pdf",
+          "mime": "application/pdf",
+          "bytes": 565700,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Lins (2020).pdf",
+          "mime": "application/pdf",
+          "bytes": 7569582,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Lystad e Brown (2018).pdf",
+          "mime": "application/pdf",
+          "bytes": 1103824,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "An lise Fatorial",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Dam sio (2012).pdf",
+          "mime": "application/pdf",
+          "bytes": 1074451,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Costello e Osborne (2005).pdf",
+          "mime": "application/pdf",
+          "bytes": 211518,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Figueiredo Filho et al (2014).pdf",
+          "mime": "application/pdf",
+          "bytes": 638544,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Matos e Rodrigues (2019).pdf",
+          "mime": "application/pdf",
+          "bytes": 1206414,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Figueiredo Filho e Silva Junior (2010).pdf",
+          "mime": "application/pdf",
+          "bytes": 259034,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Regressão Logística",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Peng,  Lee and Ingersoll (2022).pdf",
+          "mime": "application/pdf",
+          "bytes": 2468185,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "DeMaris (1995).pdf",
+          "mime": "application/pdf",
+          "bytes": 2406046,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Fernandes et al (2020).pdf",
+          "mime": "application/pdf",
+          "bytes": 792860,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Rainey e McCaskey (2021).pdf",
+          "mime": "application/pdf",
+          "bytes": 625042,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "King and Zeng (2001).pdf",
+          "mime": "application/pdf",
+          "bytes": 314695,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Correlação",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Paranhos et al (2014).pdf",
+          "mime": "application/pdf",
+          "bytes": 1444974,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Wei e Simko (2018).pdf",
+          "mime": "application/pdf",
+          "bytes": 3999351,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Figueiredo Filho e Silva Junior (2009).pdf",
+          "mime": "application/pdf",
+          "bytes": 410124,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Sousa (2019).pdf",
+          "mime": "application/pdf",
+          "bytes": 72061,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Regressão linear",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Chein (2019).pdf",
+          "mime": "application/pdf",
+          "bytes": 3808538,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Krueger e Lewis-Beck (2008).pdf",
+          "mime": "application/pdf",
+          "bytes": 615790,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Berk (2010).pdf",
+          "mime": "application/pdf",
+          "bytes": 199835,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "McCloskey e Ziliak (1996).pdf",
+          "mime": "application/pdf",
+          "bytes": 1290624,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Freedman (1991).pdf",
+          "mime": "application/pdf",
+          "bytes": 1519224,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Figueiredo Filho et al (2011).pdf",
+          "mime": "application/pdf",
+          "bytes": 913329,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Figueiredo Filho et al (2021).pdf",
+          "mime": "application/pdf",
+          "bytes": 2633104,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "An lise Envolt¢ria de Dados (DEA)",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Multilevel Regression",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "S‚ries Temporais",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Desenho de pesquisa",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Leite,Rocha,2019.pdf",
+          "mime": "application/pdf",
+          "bytes": 341114,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Guerra,Almeida,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 3708183,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Rezende,2015.pdf",
+          "mime": "application/pdf",
+          "bytes": 245555,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Figueiredo Filho et al (2021).pdf",
+          "mime": "application/pdf",
+          "bytes": 2633104,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Barberia,2019-politica-comparada.pdf",
+          "mime": "application/pdf",
+          "bytes": 2535759,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Montenegro,2016.pdf",
+          "mime": "application/pdf",
+          "bytes": 883407,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Figueiredo Filho et al (2016).pdf",
+          "mime": "application/pdf",
+          "bytes": 353457,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Soares (2005).pdf",
+          "mime": "application/pdf",
+          "bytes": 120525,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Silva (2018).pdf",
+          "mime": "application/pdf",
+          "bytes": 1904970,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Neiva(2015).pdf",
+          "mime": "application/pdf",
+          "bytes": 974751,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    }
+  ]
+}

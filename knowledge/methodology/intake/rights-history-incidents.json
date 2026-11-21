@@ -1,0 +1,32 @@
+{
+  "schema": "MEU_ARTIGO_RIGHTS_HISTORY_INCIDENTS_V1",
+  "updated": "2026-11-21",
+  "release_clearance": "BLOCKED_PENDING_DOCUMENTED_DECISION",
+  "legal_conclusion": "NOT_DETERMINED",
+  "policy_note": "CC BY-NC 4.0 may permit noncommercial sharing with required attribution; it is incompatible with the unrestricted public PDF corpus policy. This manifest does not allege infringement.",
+  "issue_url": "https://github.com/rebsonm/MeuArtigoSkill/issues/102",
+  "review_required": [
+    "version-specific attribution and use conditions",
+    "all reachable source refs and pull-request caches",
+    "forks, clones and publication artefacts",
+    "written owner decision before rewrite or public release"
+  ],
+  "incidents": [
+    {
+      "source_id": "SRC-0367",
+      "path": "knowledge/methodology/pdfs/silva-hernandez-2020-analise-conteudo-politica-externa.pdf",
+      "observed_license": "CC BY-NC 4.0",
+      "unrestricted_catalog_allowed": false,
+      "last_known_containing_commit": "115ba34f168f9efc78da3ff4a79bf61cb608e2d7",
+      "deletion_commit": "feaf1908008c3ae6e2e554c4c45b6cc25f89b468",
+      "historical_git_blob_sha": "36de02c67d14754ac77c8f6681a5427820763d0e",
+      "head_tree_removed": true,
+      "history_review_status": "PENDING_COMPLETE_READ_ONLY_GIT_AUDIT",
+      "owner_decision": "PENDING",
+      "rewrite_authorized": false,
+      "rights_evidence_url": "https://www.scielo.br/j/rbcpol/a/QFmq77JnT468fcBKCdh99ms/",
+      "license_terms_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "accepted_decision_receipt": null
+    }
+  ]
+}
