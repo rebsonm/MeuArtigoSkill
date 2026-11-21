@@ -106,7 +106,13 @@ class RemoteMethodologyTests(unittest.TestCase):
         data=json.loads((BASE/"catalog.json").read_text())
         self.assertFalse(data["contains_third_party_full_text"])
         for x in (ROOT/"knowledge").rglob("*"):
-            if x.is_file():
+            if x.is_file() and x.suffix.lower() == ".pdf":
+                # The separate public-PDF corpus test verifies catalog, license,
+                # size and SHA256; do not weaken the editorial-card boundary.
+                self.assertEqual(
+                    x.parent, ROOT/"knowledge"/"methodology"/"pdfs"
+                )
+            elif x.is_file():
                 self.assertIn(x.suffix,{".md",".json"})
 
 if __name__=="__main__":
