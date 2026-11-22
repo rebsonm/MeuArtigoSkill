@@ -63,3 +63,18 @@ These six cases merit human comparison first. They are **possible complementary 
 ## Reproducible deterministic check (repository metadata only)
 
 Group `knowledge/methodology/source_registry_catalog.json:documents` by `title` after Unicode NFD deaccenting, lowercasing and replacement of punctuation with spaces. Keep groups of size > 1, excluding titles shorter than 18 normalized characters. This yielded 13 groups / 27 entries on the observed registry snapshot. Edition and PDF identity must be checked separately.
+
+## Editorial overlap triage — six PPGA candidates (2026-11-22)
+
+These are non-scientific, metadata-and-prose-level scope judgments; no candidate is activated.
+
+| PPGA candidate | Triage | Existing active relationship |
+|---|---|---|
+| `ppga-online-focus-groups` | `RETAIN_AS_DISTINCT_MODALITY` | The existing focus-group-design |
+| `ppga-feminist-epistemology` | `RETAIN_AS_DISTINCT_METHOD_CHOICE` | Existing source-review-0036 |
+| `ppga-dresch-lacerda-antunes-design-science` | `HOLD_FOR_SOURCE_EDITION_AND_SCOPE` | Existing design-science |
+| `ppga-cluster-analysis` | `RETAIN_AS_DISTINCT_METHOD_CHOICE` | Existing source-review-0401 |
+| `ppga-correspondence-analysis` | `RETAIN_AS_DISTINCT_METHOD_CHOICE` | Existing source-review-0239 |
+| `ppga-qualitative-validation-transparency` | `RETAIN_AS_DISTINCT_CROSS_TRADITION_CHECK` | Existing qualitative-design-quality |
+
+All six now carry their provisional disposition inside the draft card itself; no active card, source PDF, scientific gate or published catalog was changed.

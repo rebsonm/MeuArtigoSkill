@@ -33,3 +33,11 @@ Reading status: METADATA_ONLY: source files identified; PDF text was not returne
 [P] only; separate from existing Hevner/Peffers source-specific cards and does not assert this book's precise prescriptions. This file is not an extended paraphrase, translation, reproduction of a protected work, source-verified [L] claim, publisher permission or independent scientific acceptance. The researcher's seven gates remain PENDING unless the researcher makes an explicit, separate scientific decision.
 
 Pending checks: identify exact edition/ISBN or DOI; check applicable original chapters, page locators and fidelity; conduct separately documented editorial/scientific review and rights/originality review before moving into the active catalog.
+
+## Editorial overlap disposition (22 November 2026)
+
+**Provisional triage: HOLD_FOR_SOURCE_EDITION_AND_SCOPE**. This is an editorial scope comparison, **not** source validation, scientific acceptance, licensing approval, or catalog promotion.
+
+Existing design-science.md already covers generic artifact construction and evaluation, with other Hevner/Peffers routes. Retain a Dresch-specific card only after checking the exact book edition and identifying independently evidenced decisions not covered by the general DSR card. Otherwise consolidate this prospecting question into the existing design-science card.
+
+**Primary-source and duplication check required:** Compare exact edition, DOI/ISBN, substantive methodological claims and the listed active cards before deciding to retain, merge or drop. In the absence of that evidence this item remains a [P] staged card; the existing active file is unmodified and the researcher's seven gates remain PENDING.

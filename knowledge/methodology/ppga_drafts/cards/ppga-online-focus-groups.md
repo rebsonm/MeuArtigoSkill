@@ -30,3 +30,11 @@ Collection topic: Grupos Focais Online, nested under Grupos Focais; ten source f
 ## Review and governance
 
 Source-specific support, edition/DOI, rights/originality and scientific/editorial fidelity remain unverified. Keep this outside the published active 174-card catalogue until independent checks and hash/catalog reconciliation. Do not move research gates from PENDING or treat operational source inventory as scientific approval.
+
+## Editorial overlap disposition (22 November 2026)
+
+**Provisional triage: RETAIN_AS_DISTINCT_MODALITY**. This is an editorial scope comparison, **not** source validation, scientific acceptance, licensing approval, or catalog promotion.
+
+The existing focus-group-design.md covers the general interaction-based strategy; this candidate adds online-specific platform, access, security and participation concerns. Keep the two only if those digital safeguards are verified with appropriately identified original sources. Existing general guidance must not be copied.
+
+**Primary-source and duplication check required:** Compare exact edition, DOI/ISBN, substantive methodological claims and the listed active cards before deciding to retain, merge or drop. In the absence of that evidence this item remains a [P] staged card; the existing active file is unmodified and the researcher's seven gates remain PENDING.

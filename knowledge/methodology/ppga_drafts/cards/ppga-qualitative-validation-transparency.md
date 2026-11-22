@@ -30,3 +30,11 @@ Collection topic: Validação de Pesquisa Qualitativa; Confiabilidade; Transpar�
 ## Review and governance
 
 Source-specific support, edition/DOI, rights/originality and scientific/editorial fidelity remain unverified. Keep this outside the published active 174-card catalogue until independent checks and hash/catalog reconciliation. Do not move research gates from PENDING or treat operational source inventory as scientific approval.
+
+## Editorial overlap disposition (22 November 2026)
+
+**Provisional triage: RETAIN_AS_DISTINCT_CROSS_TRADITION_CHECK**. This is an editorial scope comparison, **not** source validation, scientific acceptance, licensing approval, or catalog promotion.
+
+Existing qualitative-design-quality.md guides overall qualitative design; nowell-2017-trustworthy-analysis.md addresses thematic analysis trustworthiness. This candidate separates epistemology-dependent validation and transparent reporting across multiple traditions. Treat it as a cross-cutting checklist only after its sources and intended non-universal criteria are checked.
+
+**Primary-source and duplication check required:** Compare exact edition, DOI/ISBN, substantive methodological claims and the listed active cards before deciding to retain, merge or drop. In the absence of that evidence this item remains a [P] staged card; the existing active file is unmodified and the researcher's seven gates remain PENDING.
