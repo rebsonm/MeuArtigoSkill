@@ -69,6 +69,49 @@ def write_csv(path:Path, headers:list[str]):
     with path.open("w",newline="",encoding="utf-8-sig") as f:
         csv.writer(f).writerow(headers)
 
+
+def seed_project_metadata(path: Path, *, name: str, problem: str,
+                          article_type: str, method_route: str,
+                          journal: str, storage_mode: str,
+                          storage_state: str, drive_url: str) -> bool:
+    """Persist actual initialization arguments, never inferred science.
+
+    The file is a project metadata register, not a scientific approval.
+    Preserve existing researcher-entered rows on every subsequent run.
+    """
+    if path.is_symlink() or not path.is_file():
+        raise ValueError("PROJECT_METADATA_FILE_UNSAFE")
+    with path.open("r", encoding="utf-8-sig", newline="") as source:
+        reader = csv.DictReader(source)
+        if reader.fieldnames != TABLES["00_Gestao_e_Continuidade/00_Projeto.csv"]:
+            raise ValueError("PROJECT_METADATA_HEADER_INVALID")
+        if any(reader):
+            return False
+    today = date.today().isoformat()
+    fields = (
+        ("Project_name", name, "USER_INPUT"),
+        ("Original_research_problem", problem, "USER_INPUT" if problem.strip() else "PENDING_USER_INPUT"),
+        ("Article_type", article_type, "PROVISIONAL_NOT_APPROVED"),
+        ("Proposed_method_route", method_route, "PROVISIONAL_NOT_APPROVED"),
+        ("Target_journal", journal, "USER_INPUT" if journal.strip() else "PENDING"),
+        ("Storage_mode", storage_mode, "TECHNICAL_SETTING"),
+        ("Storage_state", storage_state, "NOT_DRIVE_SYNC_PROOF"),
+        ("Drive_workspace_url", drive_url, "UNVERIFIED_BY_INITIALIZER" if drive_url else "PENDING"),
+    )
+    fd, staging = tempfile.mkstemp(prefix=".project-meta-", suffix=".tmp", dir=path.parent)
+    try:
+        with os.fdopen(fd, "w", newline="", encoding="utf-8-sig") as stream:
+            writer = csv.DictWriter(stream, fieldnames=TABLES["00_Gestao_e_Continuidade/00_Projeto.csv"])
+            writer.writeheader()
+            for field, value, status in fields:
+                writer.writerow({"Field": field, "Value": value, "Status": status,
+                                 "Updated": today, "Notes": "Initialization input; not a research GATE or proof of Drive sync."})
+        os.replace(staging, path)
+    finally:
+        if os.path.exists(staging):
+            os.unlink(staging)
+    return True
+
 # Project-core validation is intentionally independent of visual workbook generation.
 # This helper checks durable local staging only; it never claims Google Drive sync.
 CORE_DOCUMENTS = [
@@ -491,6 +534,13 @@ def main()->int:
         },ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
     for rel,h in TABLES.items():write_csv(root/rel,h)
+
+    seed_project_metadata(
+        root / "00_Gestao_e_Continuidade/00_Projeto.csv",
+        name=a.name, problem=a.problem, article_type=a.article_type,
+        method_route=method_route, journal=target_journal, storage_mode=storage_mode,
+        storage_state=storage_state, drive_url=drive_workspace_url,
+    )
 
     submission_path=root/"00_Gestao_e_Continuidade/10_Submission_Checklist.csv"
     with submission_path.open("r",encoding="utf-8-sig",newline="") as f:
