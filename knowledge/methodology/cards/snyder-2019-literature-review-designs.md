@@ -1,4 +1,4 @@
-# Snyder (2019): critérios para escolher entre revisões sistemáticas, semissistemáticas e integrativas
+# Snyder (2019): choosing among systematic, semi-systematic and integrative reviews
 
 Card ID: snyder-2019-literature-review-designs
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -6,29 +6,29 @@ Evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_NEEDS_HUMAN_VERIFICATION
 Source consultation scope: DIRECT_SOURCE_PDF_PARTIAL_REVIEW_RESTRICTED_CC_BY_NC_ND
 Third-party text reproduced: NONE
 
-## Questão metodológica
+## Methodological question
 
-Que modalidade de revisão responde à pergunta sem prometer uma exaustividade que o desenho não pode sustentar?
+Which review design answers the research question without promising exhaustive coverage that the study cannot substantiate?
 
-## Síntese autoral para decisão
+## Original editorial guidance for decision-making
 
-Usar o propósito como discriminante: a revisão sistemática testa uma pergunta delimitada com rastreabilidade rigorosa; a semissistemática acompanha o desenvolvimento ou perspectivas de um campo heterogêneo; a integrativa reconceptualiza um problema pela combinação crítica de literaturas. Descrever exatamente o nível de cobertura e transparência efetivamente alcançados.
+Use the purpose of the review to distinguish the alternatives: a systematic review addresses a defined question through a rigorously traceable process; a semi-systematic review examines the development of, or differing perspectives within, a heterogeneous field; and an integrative review seeks to reconceptualize a problem through a critical combination of literatures. Report the actual scope of searching, selection and synthesis rather than an idealized procedure.
 
-## Condições de aplicação e auditoria
+## Application and audit conditions
 
-Pergunta, tradição, critérios de busca e inclusão, estratégia de síntese, criticidade, limitações de cobertura e nova contribuição devem ser coerentes.
+The research question, scholarly tradition, search and inclusion criteria, synthesis strategy, critical assessment, coverage limitations and intended contribution must remain coherent.
 
-## Alertas e limites
+## Warnings and limitations
 
-Revisão semissistemática não vira sistemática por apresentar um fluxograma PRISMA. O PDF do autor está em CC BY-NC-ND; não o redistribuir como PDF CC BY 4.0.
+A semi-systematic review does not become a systematic review merely by displaying a PRISMA-style flowchart. The author's source PDF carries CC BY-NC-ND conditions; do not redistribute it as if it were a CC BY 4.0 PDF.
 
-## Fonte para verificação
+## Bibliographic lead for verification
 
 Snyder, H. (2019). Literature review as a research methodology: An overview and guidelines. Journal of Business Research, 104, 333–339.
 DOI: https://doi.org/10.1016/j.jbusres.2019.07.039
-Registro original/editora: https://doi.org/10.1016/j.jbusres.2019.07.039
-PDF original NÃO disponibilizado por esta ficha; direitos/versão a verificar.
+Publisher/source: https://doi.org/10.1016/j.jbusres.2019.07.039
+The original source PDF is NOT supplied by this card; verify the exact edition and reuse conditions.
 
-## Estatuto científico e direitos
+## Scientific status and rights
 
-Card curto com redação e organização próprias; NÃO reproduz texto, figuras, tabelas ou etapas originais na íntegra. Esta orientação não comprova consulta integral nem autoriza alegação de páginas específicas. A decisão e o método permanecem do pesquisador; nenhum gate é aprovado automaticamente.
+This is a short, independently written editorial card, NOT a reproduction of the original article's prose, figures, tables or complete procedures. It does not establish full-source reading or warrant page-specific claims. The researcher retains responsibility for the design and interpretation; no scientific gate is automatically approved.

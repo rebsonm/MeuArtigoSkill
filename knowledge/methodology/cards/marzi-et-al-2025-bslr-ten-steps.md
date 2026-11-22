@@ -1,4 +1,4 @@
-# B-SLR de Marzi (2025): integração crítica entre bibliometria, revisão sistemática e teoria
+# Marzi et al. (2025) B-SLR: connecting bibliometrics, systematic review and theory
 
 Card ID: marzi-et-al-2025-bslr-ten-steps
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -6,29 +6,29 @@ Evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_NEEDS_HUMAN_VERIFICATION
 Source consultation scope: DIRECT_SOURCE_PDF_PARTIAL_REVIEW; independent AI check of Table 1, printed pages 84–85, on 2026-11-21; no full claim-by-claim review
 Third-party text reproduced: NONE
 
-## Questão metodológica
+## Methodological question
 
-Quando a pergunta exige tanto mapas de estrutura bibliométrica quanto leitura crítica substantiva e contribuição teórica?
+When does a research question require both bibliometric structure mapping and substantive critical reading to support a theoretical contribution?
 
-## Síntese autoral para decisão
+## Original editorial guidance for decision-making
 
-Separar a delimitação do problema da busca e da limpeza de metadados; executar análise bibliométrica para reconhecer estruturas e correntes; realizar a revisão substantiva de textos e concluir com uma contribuição teórica explicitamente argumentada. Documentar as dez transições e os três checkpoints propostos pelos autores, sem reduzir a revisão a redes de citação.
+Keep problem delimitation separate from search design and metadata cleaning. Use bibliometric analysis to identify structures and intellectual streams, then substantively review the selected texts and develop an explicitly reasoned theoretical contribution. Document ten transitions and three checkpoints without reducing the review to citation networks.
 
-## Condições de aplicação e auditoria
+## Application and audit conditions
 
-Paráfrase editorial das operações conferidas na Tabela 1 da edição publicada (páginas impressas 84–85): 1) pergunta e fronteiras; 2) definição da busca; 3) seleção das bases; 4) triagem e conferências cruzadas; 5) limpeza e exportação; 6) escolha da abordagem bibliométrica; 7) identificação dos tópicos dos agrupamentos; 8) ordenação e seleção da amostra; 9) revisão sistemática substantiva; 10) desenvolvimento da contribuição teórica. Os checkpoints situam-se após 5, 8 e 10. A conexão entre mapas e textos é uma obrigação de coerência deste checklist editorial, não o nome da etapa 8 dos autores. Exigir decisões humanas nas mudanças de etapa.
+Original editorial paraphrase of the operations checked against Table 1 of the published edition (printed pages 84–85): (1) research question and boundaries; (2) search definition; (3) database selection; (4) screening and cross-checks; (5) cleaning and export; (6) bibliometric approach selection; (7) identification of cluster topics; (8) sample ranking and selection; (9) substantive systematic review; (10) theoretical contribution development. Checkpoints follow steps 5, 8 and 10. Requiring coherence between maps and inspected texts is an editorial safeguard, not the authors' name for their step 8. Keep human decisions explicit at stage transitions.
 
-## Alertas e limites
+## Warnings and limitations
 
-B-SLR não equivale a qualquer revisão que acrescente VOSviewer; redes de coocorrência não testam teorias, e PRISMA apenas disciplina transparência do relato.
+B-SLR is not every review that adds a VOSviewer figure. Co-occurrence networks do not test theories, and PRISMA supports transparent reporting rather than replacing the review methodology.
 
-## Fonte para verificação
+## Bibliographic lead for verification
 
 Marzi, G.; Balzano, M.; Caputo, A.; Pellegrini, M. (2025). Guidelines for Bibliometric-Systematic Literature Reviews: 10 steps to combine analysis, synthesis and theory development. International Journal of Management Reviews, 27(1), 81–103.
 DOI: https://doi.org/10.1111/ijmr.12381
-Registro original/editora: https://doi.org/10.1111/ijmr.12381
-PDF original CC BY 4.0 disponível na biblioteca pública: knowledge/methodology/pdfs/marzi-balzano-caputo-pellegrini-2025-bslr.pdf
+Publisher/source: https://doi.org/10.1111/ijmr.12381
+Original CC BY 4.0 PDF in the public library: knowledge/methodology/pdfs/marzi-balzano-caputo-pellegrini-2025-bslr.pdf
 
-## Estatuto científico e direitos
+## Scientific status and rights
 
-Card curto com redação e organização próprias; NÃO reproduz texto, figuras, tabelas ou etapas originais na íntegra. Esta orientação não comprova consulta integral nem autoriza alegação de páginas específicas. A decisão e o método permanecem do pesquisador; nenhum gate é aprovado automaticamente.
+This short, independently written editorial card does NOT reproduce original passages, tables, figures or the full work. It does not establish a complete claim-by-claim source review or automatically justify page-specific assertions beyond the expressly documented check. Researcher decisions and scientific gates remain unchanged.
