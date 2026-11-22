@@ -3,6 +3,18 @@
 
 ## Unreleased
 
+### Public documentation review and Zenodo source-copy preparation (2026-11-22)
+
+- Added an accessible author/publisher correction and removal contact
+  (`rebsonm@gmail.com`) and clarified the project's non-commercial
+  scientific-support purpose without suggesting that this overrides
+  copyright or the Apache-2.0 software license.
+- Distinguished the latest public source in `main` from the immutable,
+  previously published experimental RC.1 installer and its archived DOI.
+- Documented reviewable Git-commit-pinned source-only ZIP preparation for
+  a future Zenodo version, excluding separately licensed third-party PDFs;
+  no new release, tag, DOI or scientific approval is implied.
+
 The published v1.0.0-rc.1 prerelease is current; later development is tracked separately.
 
 ## 1.0.0-rc.1 — 2026-11-22

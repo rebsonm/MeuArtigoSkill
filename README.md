@@ -50,6 +50,23 @@ Installing a Skill does not automatically connect Google Drive, academic databas
 
 **Help and documentation:** [Start here](docs/COMECE-AQUI.md) · [Installation](docs/INSTALLATION.md) · [ChatGPT](docs/CHATGPT.md) · [Claude](docs/CLAUDE.md) · [Gemini](docs/GEMINI.md) · [Methodological routes](docs/ROTAS-METODOLOGICAS.md) · [How to report a problem](docs/TESTE-BETA-PESQUISADORES.md).
 
+## Rights holders and non-commercial research purpose
+
+Meu Artigo is an independently maintained, **non-commercial research-support
+initiative** intended to help scholars, not to replace original publications.
+If you are an author or other rights holder and want a work corrected or
+removed, please email **[rebsonm@gmail.com](mailto:rebsonm@gmail.com)**
+with the title or DOI and the relevant file link. Good-faith requests are
+reviewed for prompt correction or withdrawal as appropriate. The project's
+purpose does **not** itself authorize redistribution of copyrighted works,
+and it does not change the original software's Apache-2.0 license.
+See the [full rights-holder notice](RIGHTSHOLDER-NOTICE.md).
+
+**Source versus archive:** the latest public `main` includes post-RC.1
+methodology-card and documentation corrections. The downloadable RC.1 ZIP
+still represents its earlier immutable release. A [Zenodo-ready source copy](docs/ZENODO-DEPOSIT-PREPARATION.md) will be prepared separately without
+third-party PDF binaries; no new Zenodo version is implied by this note.
+
 ## Citation
 
 If you use Meu Artigo in your research, please cite the archived software: **Mendes, Rebson de Morais (2026). *Meu Artigo* [Computer software]. Zenodo. [https://doi.org/10.5281/zenodo.24397699](https://doi.org/10.5281/zenodo.24397699).** The repository's [CITATION.cff](CITATION.cff) also provides machine-readable citation metadata. This DOI identifies a software deposit, not an independently validated scientific method or a peer-reviewed article.

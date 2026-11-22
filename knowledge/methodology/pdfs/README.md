@@ -2,6 +2,13 @@
 
 This public source directory currently contains **51 indexed PDF files**, of which **50 are catalogued as CC BY 4.0 and one is declared CC BY without a specified version by its journal**. The catalog and [full credit register](../PDF-ATTRIBUTIONS.md) preserve the publisher-specific licensing statements. These are catalogue rights claims supported by per-work evidence pointers, not independent verification of every publisher license or a blanket copyright grant. The PDFs are **not** covered by the repository's Apache-2.0 software license. No endorsement by authors or journals is implied.
 
+**Rights-holder requests:** Authors and publishers may request correction of
+attribution, review of their work's inclusion, or removal by emailing
+[rebsonm@gmail.com](mailto:rebsonm@gmail.com), identifying the source and
+link. This project is maintained for non-commercial research assistance;
+that aim does not replace copyright authorization. See the
+[rights-holder notice](../../../RIGHTSHOLDER-NOTICE.md).
+
 See the complete 51-entry register and pending checks in [Public PDF packaging readiness](../intake/PUBLIC-PDF-PACKAGING-READINESS-2026-11-22.md), with exact hashes in [pdf_catalog.json](../pdf_catalog.json). This historic author/DOI table is not the definitive license ledger. Follow the specific applicable license for each file, including attribution requirements.
 
 | Original authors and publication | DOI and official source / license proof | PDF |

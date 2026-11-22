@@ -1,0 +1,24 @@
+{
+  "title": "Meu Artigo — experimental public source snapshot (deposit draft)",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Mendes, Rebson de Morais"
+    }
+  ],
+  "description": "Review-ready archive of the public Meu Artigo source and methodological documentation at a pinned Git commit, excluding third-party scholarly PDF binaries. Open scholarly research assistance; not a stable or scientifically validated method. Publisher copyrights and independently reviewed license requirements remain in force for referenced publications. Rights-holder contact: rebsonm@gmail.com.",
+  "keywords": [
+    "research software",
+    "research methodology",
+    "scientific writing",
+    "evidence traceability",
+    "generative AI",
+    "non-commercial educational research support"
+  ],
+  "license": "Apache-2.0",
+  "access_right": "open",
+  "notes": "DRAFT ONLY. Source snapshot is distinct from the v1.0.0-rc.1 installer. Verify DOI type, deposit version/date, license and exact source commit before publishing. Third-party PDF binaries intentionally excluded. Rights-holder concerns: rebsonm@gmail.com.",
+  "existing_zenodo_doi_to_verify_before_versioning": "10.5281/zenodo.24397699",
+  "new_version_doi_assigned": false,
+  "deposit_status": "DRAFT_NOT_PUBLISHED"
+}

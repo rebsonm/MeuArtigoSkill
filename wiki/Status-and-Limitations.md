@@ -23,3 +23,9 @@ An assistant can say that a step is planned, completed or unverified only when t
 **Availability:** [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) is the current published experimental installer with a separate archive of 51 credited PDFs. The beta.6 release remains historical. The optional XLSX failed in one host because its dependency was unavailable; primary CSV/Drive workflow passed. Newer PR changes are not part of immutable RC.1 assets.
 
 [[Start here|Start-Here]] · [[FAQ]] · [Researcher evaluation limits](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/VALIDACOES-PENDENTES.md).
+
+**Copyright requests:** Authors and rights holders may email
+[rebsonm@gmail.com](mailto:rebsonm@gmail.com) to request correction or
+removal of a hosted work. Meu Artigo is a non-commercial research-support
+initiative, but that purpose does not replace permission or licensing.
+See [rights and takedown](https://github.com/rebsonm/MeuArtigoSkill/blob/main/RIGHTSHOLDER-NOTICE.md).

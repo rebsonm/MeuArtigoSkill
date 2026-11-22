@@ -63,7 +63,7 @@ class PublicCommunicationTests(unittest.TestCase):
     def test_links_in_readme_resolve_to_real_repository_documents(self):
         text=README.read_text(encoding="utf-8")
         for target in re.findall(r"\[[^\]]+\]\(([^)]+)\)",text):
-            if target.startswith(("https://","http://","#")):
+            if target.startswith(("https://","http://","mailto:","#")):
                 continue
             self.assertTrue((ROOT/target).resolve().is_file(),
                 f"Missing public link target: {target}")
