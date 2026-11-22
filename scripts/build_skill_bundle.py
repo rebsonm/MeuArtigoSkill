@@ -30,6 +30,7 @@ DIR_TYPES = {
 EXCLUDED_SCRIPT_NAMES = frozenset({
     "audit_methodology_rights_history.py",
     "audit_public_pdf_release.py",
+    "build_reviewed_pdf_candidate.py",
     "audit_repository_secrets.py", "reconcile_methodology_library.py",
     "v1_15_integrity_audit.py",
     "audit_public_docs.py", "audit_source_language.py",
