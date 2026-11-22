@@ -72,6 +72,10 @@ The following candidates were staged after full folder enumeration, focusing on 
 
 **New staged intake total: 50 candidate cards** = eight cards based on explicitly partial direct reading of a book or course material plus 42 original [P] prospecting/checklist cards based on bibliographic/topic metadata. The 50 candidates are not added to the 174 active methodological cards; the 475 existing SRC entries are unchanged. Total new intake files: 52 (50 cards, README, and this inventory). Each promotion requires anti-duplication, provenance, rights and scientific checks.
 
+## Reconciliation checkpoint — source registry duplicate titles (2026-11-22)
+
+The latest reconciliation audit is in [SRC-DUPLICATE-TITLE-AUDIT-2026-11-22.md](./SRC-DUPLICATE-TITLE-AUDIT-2026-11-22.md). The source registry has 475 SRC records: 132 with original-PDF work identities checked for the limited stated scope, 343 with catalogue matches still not verified against their original PDFs. Across source titles, normalization exposed **13 repeated-title groups / 27 SRC entries / 14 entries beyond one per title**. This is a potential duplicate-work triage, **not** a 475-to-475 verified identity map. Only the SRC-0206/SRC-0337 pair is explicitly linked as a duplicate in the registry and corroborated by the same DOI; the remaining records and all existing links remain unchanged. Comparisons with the 50 newly drafted cards identified six high-priority editorial-overlap topics requiring merge-versus-distinct guidance decisions. No automatic promotion or gate approval is justified.
+
 ## Remaining methodological coverage work
 
 1. Reconcile the 475 enumerated OSF file entries individually against the 475 prospecting records (not merely counts), compare titles, edition, DOI and duplicates, and identify true gaps versus the 174 editorial cards.
