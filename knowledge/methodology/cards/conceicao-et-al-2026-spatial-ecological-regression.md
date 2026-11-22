@@ -1,29 +1,37 @@
 # Regressão ecológica espacial: dependência geográfica e erro de inferência
 
-- Status científico: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+- Scientific status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 - Obra identificada: Conceição e colaboradores (2026); DOI: 10.1590/1980-549720260018.2
 - URL de origem: https://doi.org/10.1590/1980-549720260018.2
 - Registro bibliográfico: SRC-0269
-- Tipo de evidência da publicação: artigo metodológico com aplicação em saúde pública
-- Escopo do card: consulta original elaborada a partir da conferência documental e de seções de método; **SEM revisão crítica externa independente**, e **SEM** autorização para usar esta ficha como evidência [L]
-- Direitos: conteúdo editorial original, sem reproduzir o artigo ou o livro
+- Type of evidence of publication: methodological article with application in public health
+- Card scope: original consultation from the documentary conference and from method sections; **No independent external critical review**, and **No authorisation to use this form as evidence [L]
+- Rights: original editorial content without reproducing the article or book
 
-## O que a fonte apresenta (requer conferência da fonte para citar)
+## What the source presents (requires source conference to quote)
 
 Descreve regressão linear espacial em unidades ecológicas e exemplifica a importância de estrutura geográfica na modelagem.
 
-## Proposição de uso da Skill [I]
+## Proposition for Skill use [I]
 
-Na Skill, solicitar descrição de unidade espacial, matriz de vizinhança, autocorrelação, diagnósticos e limitações de interpretação ecológica.
+At Skill, request description of spatial unit, neighborhood matrix, autocorrelation, ecological interpretation diagnoses and limitations.
 
-## Questões para decisão científica [P]
+## Scientific decision issues [P]
 
-- Existe dependência espacial dos resíduos?
-- A matriz de pesos foi justificada e submetida a análise de sensibilidade?
+- Is there spatial dependence on waste?
+- Was the weight matrix justified and submitted to sensitivity analysis?
 - A interpretação evita falácia ecológica?
 
 ## Contraponto e delimitações
 
-Resultados agregados não autorizam conclusões sobre indivíduos; o periódico adota política de acesso aberto mas a licença exata desta cópia continua pendente.
+Aggregated results do not allow conclusions about individuals; the journal adopts open access policy but the exact license of this copy remains pending.
 
-Este card é texto editorial original. Não representa parecer científico independente, não atesta qualidade da fonte, nem substitui leitura integral, contexto de páginas ou crítica epistemológica. A classificação [L] depende da checagem das passagens primárias pelo pesquisador. O card não autoriza distribuir versões protegidas, inferir direitos e tampouco aprovar gates. Em debates controversos, as posições e seus fundamentos devem ser confrontados sem decidir automaticamente por um dos lados.
+This card is original editorial text. It does not represent independent scientific review, does not attest to the quality of the source, nor replaces full reading, context of pages or epistemological criticism. Classification [L] depends on checking the primary passages by the researcher. The card does not authorize to distribute protected versions, infer rights or approve gates. In controversial debates, positions and their foundations must be confronted without automatically deciding on either side.
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/conceicao-et-al-2026-spatial-ecological-regression.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

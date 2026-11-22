@@ -1,26 +1,26 @@
-# Creswell e Creswell (2021): vincular pergunta à abordagem qualitativa, quantitativa ou mista
+# Creswell and Creswell (2021): link question to qualitative, quantitative or mixed approach
 
 Card ID: creswell-creswell-2021-mixed-research-design
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] orientação editorial provisória, NÃO evidência primária validada
+Evidence grade: [I] provisional editorial guidance, NO primary validated evidence
 Source reading scope: DIRECT_PROTECTED_PORTUGUESE_EDITION_PDF_PARTIAL_REVIEW
 Third-party content reproduced: NO
 
-## Questão de pesquisa metodológica
+## Methodological research issue
 
-Como tornar esta abordagem coerente com a pergunta, os pressupostos e os dados que o pesquisador realmente tem?
+How do we make this approach consistent with the question, assumptions and data that the researcher actually has?
 
-## Decisão metodológica original
+## Original methodological decision
 
-Diferenciar objetivos exploratórios, estimativas explicativas ou efeitos, e integração de perspectivas. O desenho misto precisa declarar em que momento dados e inferências se conectam, não apenas apresentar dois tipos de análise.
+Differentiate exploratory objectives, explanatory estimates or effects, and integration of perspectives. The mixed design needs to state at which moment data and inferences connect, not only present two types of analysis.
 
 ## Verificações a registrar
 
-Definir pergunta, pressupostos, amostragem, ordem da coleta, lógica de integração e limites da inferência para o contexto investigado.
+Define question, assumptions, sampling, order of collection, logic of integration and limits of inference for the investigated context.
 
-## Limitações da transferência
+## Limitations of transfer
 
-O ebook traduzido de 2021 tem direitos reservados; não redistribuir original nem produzir substituto capítulo a capítulo.
+The ebook translated from 2021 has rights reserved; neither redistribute original nor produce substitute chapter by chapter.
 
 ## Referência bibliográfica
 
@@ -28,4 +28,12 @@ Creswell, J. W.; Creswell, J. D. (2021). Projeto de Pesquisa: Métodos Qualitati
 
 ## Uso responsável
 
-Texto editorial independente e conciso. Esta ficha não disponibiliza original protegido, não é uma tradução ou substituto do livro, não atesta cobertura integral das fontes e não aprova gates. Antes de uma afirmação científica [L], examinar a obra correspondente e localizar a passagem e a edição.
+Independent and concise editorial text. This form does not provide original protected, is not a translation or replacement of the book, does not attest to full coverage of the sources and does not approve gates. Before a scientific statement [L], examinar a obra correspondente e localizar a passagem e a edição.
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/creswell-creswell-2021-mixed-research-design.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

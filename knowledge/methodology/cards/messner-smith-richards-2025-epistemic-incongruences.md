@@ -1,29 +1,37 @@
 # Incongruência epistemológica entre linguagem de IA e experiência humana
 
-- Status científico: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+- Scientific status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 - Obra identificada: Messner, Smith e Richards (2025); DOI: 10.1177/16094069251371481
 - URL de origem: https://doi.org/10.1177/16094069251371481
 - Registro bibliográfico: SRC-0051
-- Tipo de evidência da publicação: análise crítica com abordagem experimental qualitativa relatada
-- Escopo do card: consulta original elaborada a partir da conferência documental e de seções de método; **SEM revisão crítica externa independente**, e **SEM** autorização para usar esta ficha como evidência [L]
-- Direitos: conteúdo editorial original, sem reproduzir o artigo ou o livro
+- Type of publication evidence: critical analysis with qualitative experimental approach reported
+- Card scope: original consultation from the documentary conference and from method sections; **No independent external critical review**, and **No authorisation to use this form as evidence [L]
+- Rights: original editorial content without reproducing the article or book
 
-## O que a fonte apresenta (requer conferência da fonte para citar)
+## What the source presents (requires source conference to quote)
 
-Confronta capacidades de síntese de IA e centralidade da experiência situada em pesquisa construtivista e interpretativa.
+It confronts AI synthesis capabilities and centrality of the experience in constructivist and interpretive research.
 
-## Proposição de uso da Skill [I]
+## Proposition for Skill use [I]
 
-Antes de usar saída de LLM para interpretação, definir se o objeto depende de significados vividos, quais evidências são acessíveis e quem assume decisões.
+Before using LLM output for interpretation, define whether the object depends on lived meanings, what evidence is accessible and who takes decisions.
 
-## Questões para decisão científica [P]
+## Scientific decision issues [P]
 
-- Que dimensão da experiência humana é indispensável?
+- What dimension of human experience is indispensable?
 - A ferramenta apresenta inferência ou dado observado?
-- Qual contraexemplo questionaria a interpretação do modelo?
+- What counterexample would question the interpretation of the model?
 
 ## Contraponto e delimitações
 
-Criticar a modelagem linguística não prova que IA seja inútil em tarefas administrativas de pesquisa. O estudo deve ser lido no seu domínio, sem conclusão universal.
+Criticalizing linguistic modeling does not prove that AI is useless in administrative research tasks. The study should be read in its domain without universal conclusion.
 
-Este card é texto editorial original. Não representa parecer científico independente, não atesta qualidade da fonte, nem substitui leitura integral, contexto de páginas ou crítica epistemológica. A classificação [L] depende da checagem das passagens primárias pelo pesquisador. O card não autoriza distribuir versões protegidas, inferir direitos e tampouco aprovar gates. Em debates controversos, as posições e seus fundamentos devem ser confrontados sem decidir automaticamente por um dos lados.
+This card is original editorial text. It does not represent independent scientific review, does not attest to the quality of the source, nor replaces full reading, context of pages or epistemological criticism. Classification [L] depends on checking the primary passages by the researcher. The card does not authorize to distribute protected versions, infer rights or approve gates. In controversial debates, positions and their foundations must be confronted without automatically deciding on either side.
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/messner-smith-richards-2025-epistemic-incongruences.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

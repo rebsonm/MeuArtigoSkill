@@ -1,29 +1,37 @@
-# Cautela interpretativista: questões que uma codificação automática não resolve
+# Interpretivist caution: issues that an automatic encoding does not solve
 
-- Status científico: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+- Scientific status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 - Obra identificada: Friedman, Owen e VanPuymbrouck (2024); DOI: 10.1177/14687941241297375
 - URL de origem: https://doi.org/10.1177/14687941241297375
 - Registro bibliográfico: SRC-0066
-- Tipo de evidência da publicação: posição crítica e discussão metodológica
-- Escopo do card: consulta original elaborada a partir da conferência documental e de seções de método; **SEM revisão crítica externa independente**, e **SEM** autorização para usar esta ficha como evidência [L]
-- Direitos: conteúdo editorial original, sem reproduzir o artigo ou o livro
+- Type of publication evidence: critical position and methodological discussion
+- Card scope: original consultation from the documentary conference and from method sections; **No independent external critical review**, and **No authorisation to use this form as evidence [L]
+- Rights: original editorial content without reproducing the article or book
 
-## O que a fonte apresenta (requer conferência da fonte para citar)
+## What the source presents (requires source conference to quote)
 
-Questiona a compatibilidade entre aprendizagem estatística de padrões de texto e os fundamentos da pesquisa qualitativa interpretativista.
+It questions the compatibility between statistical learning of text patterns and the foundations of interpretivist qualitative research.
 
-## Proposição de uso da Skill [I]
+## Proposition for Skill use [I]
 
-A Skill pode introduzir uma checagem de compatibilidade epistemológica antes de sugerir métodos automatizados, preservando outras tradições como possibilidades.
+Skill can introduce an epistemological compatibility check before suggesting automated methods, preserving other traditions as possibilities.
 
-## Questões para decisão científica [P]
+## Scientific decision issues [P]
 
-- Qual definição de interpretação está sendo adotada?
+- What definition of interpretation is being adopted?
 - Quem sustentará inferências e contraexemplos?
-- Existem tarefas operacionais que não deslocam o julgamento do pesquisador?
+- Are there operational tasks that do not displace the researcher's judgment?
 
 ## Contraponto e delimitações
 
-Não confundir uma objeção epistemológica situada com prova de que todo processamento automatizado é cientificamente inválido.
+Do not confuse an epistemological objection situated with proof that all automated processing is scientifically invalid.
 
-Este card é texto editorial original. Não representa parecer científico independente, não atesta qualidade da fonte, nem substitui leitura integral, contexto de páginas ou crítica epistemológica. A classificação [L] depende da checagem das passagens primárias pelo pesquisador. O card não autoriza distribuir versões protegidas, inferir direitos e tampouco aprovar gates. Em debates controversos, as posições e seus fundamentos devem ser confrontados sem decidir automaticamente por um dos lados.
+This card is original editorial text. It does not represent independent scientific review, does not attest to the quality of the source, nor replaces full reading, context of pages or epistemological criticism. Classification [L] depends on checking the primary passages by the researcher. The card does not authorize to distribute protected versions, infer rights or approve gates. In controversial debates, positions and their foundations must be confronted without automatically deciding on either side.
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/friedman-owen-vanpuymbrouck-2024-caution.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

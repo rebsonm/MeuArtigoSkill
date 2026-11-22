@@ -23,7 +23,7 @@ Koerich et al. distinguish the linked purposes of addressing a situated practica
 
 ## Limits
 
-Improvement of a process does not establish a causal effect or general scientific contribution. Multiple cycles do not guarantee rigorous data collection. The published article discusses clinical/health-care contexts, so adaptation to organizations or public administration must explain institutional differences.
+Improvement of a process does not establish a causal effect or general scientific contribution. Multiple cycles of not guarantee rigorous data collection. The published article discussions clinical/health-care contexts, so adaptation to organizations or public administration must explain institutional differences.
 
 ## Source and rights
 
@@ -36,3 +36,13 @@ License: https://creativecommons.org/licenses/by/4.0/
 ## Academic responsibility
 
 This is a new short consultation card, not a translated or extracted copy of the article. It is pending independent editorial/scientific review. Verify the actual publisher edition and printed page labels for any primary [L] assertion. No researcher gate is automatically approved.
+
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/koerich-et-al-2009-action-research.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

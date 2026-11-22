@@ -1,29 +1,37 @@
-# Cinco regras de categorias na análise de conteúdo: limites de aplicação
+# Five category rules in content analysis: application limits
 
-- Status científico: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Obra identificada: Carlomagno e Rocha (2016); DOI: não confirmado no exemplar
-- URL de origem: localizador editorial específico não verificado
+- Scientific status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+- Work identified: Carlomagno e Rocha (2016); DOI: not confirmed in copy
+- Source URL: specific editorial finder not verified
 - Registro bibliográfico: SRC-0373
-- Tipo de evidência da publicação: sistematização metodológica sobre análise de conteúdo
-- Escopo do card: consulta original elaborada a partir da conferência documental e de seções de método; **SEM revisão crítica externa independente**, e **SEM** autorização para usar esta ficha como evidência [L]
-- Direitos: conteúdo editorial original, sem reproduzir o artigo ou o livro
+- Type of evidence of publication: methodological systematization on content analysis
+- Card scope: original consultation from the documentary conference and from method sections; **No independent external critical review**, and **No authorisation to use this form as evidence [L]
+- Rights: original editorial content without reproducing the article or book
 
-## O que a fonte apresenta (requer conferência da fonte para citar)
+## What the source presents (requires source conference to quote)
 
 Propõe regras de inclusão/exclusão, exclusividade mútua, homogeneidade, exaustividade e objetividade na classificação de unidades de conteúdo.
 
-## Proposição de uso da Skill [I]
+## Proposition for Skill use [I]
 
-Uma ferramenta pode oferecer checklist de codebook e exemplos de adjudicação para codificação sistemática de categorias.
+A tool can offer codebook checklist and award examples for systematic coding of categories.
 
-## Questões para decisão científica [P]
+## Scientific decision issues [P]
 
 - Há regras de classificação e exemplos contraditórios?
-- Qual é a unidade codificável e o tratamento de casos marginais?
-- A tradição da pesquisa exige exclusividade entre categorias?
+- What is the codifiable unit and the treatment of marginal cases?
+- Does the tradition of research require exclusive categories?
 
 ## Contraponto e delimitações
 
-As regras específicas deste enquadramento não devem ser impostas a toda análise temática reflexiva, que pode adotar outras premissas de interpretação.
+The specific rules of this framework should not be imposed on any reflective thematic analysis, which may adopt other interpretation assumptions.
 
-Este card é texto editorial original. Não representa parecer científico independente, não atesta qualidade da fonte, nem substitui leitura integral, contexto de páginas ou crítica epistemológica. A classificação [L] depende da checagem das passagens primárias pelo pesquisador. O card não autoriza distribuir versões protegidas, inferir direitos e tampouco aprovar gates. Em debates controversos, as posições e seus fundamentos devem ser confrontados sem decidir automaticamente por um dos lados.
+This card is original editorial text. It does not represent independent scientific review, does not attest to the quality of the source, nor replaces full reading, context of pages or epistemological criticism. Classification [L] depends on checking the primary passages by the researcher. The card does not authorize to distribute protected versions, infer rights or approve gates. In controversial debates, positions and their foundations must be confronted without automatically deciding on either side.
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/carlomagno-rocha-2016-content-categories.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

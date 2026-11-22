@@ -1,28 +1,36 @@
-# Análise documental como percurso metodológico na pesquisa qualitativa — perguntas metodológicas de consulta
+# Document analysis as a methodological path in qualitative research — methodological questions for consultation
 
-- Registro da obra: SRC-0010; autoria: Eduardo Brandão Lima Júnior; Guilherme Saramago de Oliveira; Adriana Cristina Omena dos Santos; Guilherme Fernando Schnekenberg; publicação: 2021
-- DOI: não verificado no exemplar
-- Fonte editorial: localizador primário pendente
-- Estatuto da publicação: artigo metodológico, Cadernos da Fucamp
-- Status do card: **DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE**
-- Natureza: original editorial [I]/[P]; NÃO equivale à leitura integral nem autoriza citação [L] por si só.
+- Work record: SRC-0010; author: Eduardo Brandão Lima Junior; Guilherme Saramago de Oliveira; Adriana Cristina Omena dos Santos; William Fernando Schnekenberg; publication: 2021
+- DOI: not verified on copy
+- Editorial source: primary locator pending
+- Status of publication: methodological article, Cadernos da Fucamp
+- Card status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+- Natureza: original editorial [I]/[P]; DO NOT equate to full reading or authorize citation [L] por si só.
 
-## Delimitação da obra examinada
+## Delimitation of the examined work
 
-Discute técnicas de análise documental, categorias e relações com análise de conteúdo, com foco na compreensão de documentos variados.
+It discusses document analysis techniques, categories and relations with content analysis, focusing on the understanding of various documents.
 
 ## Aplicação sugerida pela curadoria [I]
 
-Antes de chamar categorização de análise documental, identificar quais propriedades documentais e quais inferências da mensagem estão realmente examinadas.
+Before calling categorization document analysis, identify which documentary properties and which message inferences are actually examined.
 
 ## Advertência e objeção
 
-Sem licença da cópia original demonstrada; o artigo não substitui obras fundamentais citadas e seus conceitos requerem confronto com o método eleito.
+Without a license of the original copy shown, the article does not replace cited fundamental works and their concepts require confrontation with the chosen method.
 
 ## Perguntas de auditoria [P]
 
-- Que escolhas de amostra, corpus ou unidade analítica são necessárias para adaptar essa obra?
-- Qual passagem da fonte primária apoiaria uma conclusão e qual evidência contrária é plausível?
-- A orientação é compatível com a epistemologia de quem pesquisa, ou imporia critérios inadequados?
+- What sample choices, corpus or analytical unit are needed to adapt this work?
+- What passage from the primary source would support a conclusion and what contrary evidence is plausible?
+- Is guidance compatible with the epistemology of whose research, or would it impose inadequate criteria?
 
-Redação inteiramente original, não reprodução da obra. O PDF consultado para identificar título, autor e abordagem não fica disponível aos usuários por este card. A verificação de identidade não implica revisão científica independente, e nenhum gate deve ser aprovado automaticamente. Antes de declarar [L], recuperar edição, página e contexto primário.
+Writing entirely original, not reproduction of the work. The PDF consulted to identify title, author and approach is not available to users by this card. Identity verification does not imply independent scientific review, and no gate should be approved automatically. Before declaring [L], recuperar edição, página e contexto primário.
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/source-checked-0010.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

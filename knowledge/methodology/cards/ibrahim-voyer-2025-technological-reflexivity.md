@@ -1,29 +1,37 @@
-# Reflexividade tecnológica antes de interpretar textos com chatbots
+# Technological reflexivity before playing chatbot texts
 
-- Status científico: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Fonte identificada: Elida Izani Ibrahim e Andrea Voyer, obra DOI 10.1177/14687941251390794
-- Link da fonte primária para consulta: https://doi.org/10.1177/14687941251390794
-- Registro do inventário: SRC-0037; edição identificada em PDF original, trechos introdutórios/metodológicos examinados
-- Natureza da obra: argumento teórico-metodológico
-- Escopo do card: interpretação editorial original baseada na descrição e estrutura metodológica consultadas; **NÃO é uma revisão científica independente**, nem prova de leitura pela pessoa que usa a Skill
-- Direitos: somente redação original; arquivo completo redistribuído exclusivamente quando há licença e hash em catálogo separado
+- Scientific status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+- Source identified: Elida Izani Ibrahim and Andrea Voyer, work DOI 10.1177/14687941251390794
+- Primary source link for query: https://doi.org/10.1177/14687941251390794
+- Inventory log: SRC-0037; edição identificada em PDF original, trechos introdutórios/metodológicos examinados
+- Nature of the work: theoretical-methodological argument
+- Card scope: original editorial interpretation based on the description and methodological structure consulted; **It is not an independent scientific review**, nor is it proof of reading by the person using Skill
+- Rights: original writing only; complete file redistributed exclusively when there is license and hash in separate catalogue
 
-## Recorte de informação na fonte — sujeito a conferência pelo pesquisador
+## Cut information at source — subject to conference by the researcher
 
-O artigo argumenta que incorporar um chatbot ao processo qualitativo amplia as obrigações de reflexividade em torno de vieses, decisões de prompts, sistemas e responsabilidade interpretativa.
+The article argues that incorporating a chatbot into the qualitative process extends the obligations of reflexivity around biases, prompt decisions, systems and interpretive responsibility.
 
 ## Aplicação metodológica proposta [I]
 
-Para um estudo que use LLM, criar um registro decisório sobre escolha de modelo, seleção de documentos, papel humano e limites de consentimento; isso é uma proposta de governança da análise, não um procedimento testado pelo card.
+For a study using LLM, create a decision-making record on model choice, document selection, human role and consent limits; this is a proposal for governance of analysis, not a scientifically validated procedure.
 
-## Três perguntas para decisão científica [P]
+## Three questions for scientific decision [P]
 
-- Que decisões da análise foram efetivamente humanas?
-- Como escolhas de modelo e instruções podem deslocar os significados?
+- What decisions of analysis were effectively human?
+- How can model choices and instructions shift meanings?
 - Há restrição ética sobre conteúdo enviado ao modelo?
 
 ## Contestação e limites
 
-A reflexividade do pesquisador não pode ser substituída por um texto em que o modelo declare neutralidade.
+The researcher's reflexivity cannot be replaced by a text in which the model declares neutrality.
 
-A orientação não afirma que o card foi aprovado por revisor independente. Antes de usar [L] no manuscrito, conferir fonte primária, edição, contexto e páginas dos dados; declarar inferências separadas daquilo que a obra realmente demonstrou. Nenhuma escolha de gate é automaticamente aprovada. Para tradições qualitativas com posições opostas sobre GenAI, expor desacordo relevante e respeitar o desenho do usuário.
+Guidance does not state that the card was approved by an independent reviewer. Before use [L] in the manuscript, confer primary source, editing, context and pages of the data; declare separate inferences from what the work actually demonstrated. No gate choice is automatically approved. For qualitative traditions with opposite positions on GenAI, expose relevant disagreement and respect the user design.
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/ibrahim-voyer-2025-technological-reflexivity.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

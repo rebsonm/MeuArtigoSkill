@@ -14,11 +14,11 @@ Different analytic traditions define adequacy differently. Operational theme-cou
 
 ## Researcher decision checks
 
-State tradition, case heterogeneity, data adequacy logic, stopping or revision rule and why quantitative thresholds or agreement metrics do or do not fit.
+State tradition, case heterogeneity, data adequacy logic, stopping or revision rule and why quantitative issues or agreement metrics do or do not fit.
 
 ## Limits and counterexamples
 
-Do not transfer a number of interviews, saturation ratio or code agreement threshold from one methodological paradigm to all others. Avoid post-hoc certainty unsupported by records.
+From not transfer to number of interviews, saturation ratio or code agreement threshold from one methodological paradigm to all others. Avoid post-hoc certainy unsupported by records.
 
 ## Bibliographic trail (not a verified [L] claim for any user's research)
 
@@ -30,3 +30,13 @@ Publisher or repository: https://journals.plos.org/plosone/article?id=10.1371/jo
 ## Provenance limits
 
 This is an independent editorial synthesis, not a quotation, translation, extended excerpt, or reproduction of source tables and figures. Primary-source interpretation and printed page numbers require checking the applicable original edition for each concrete research claim. The user, not the card, decides methods and scientific gate approvals.
+
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/sampling-saturation-compatibility.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

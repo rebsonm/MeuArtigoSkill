@@ -20,7 +20,7 @@ The research question, scholarly tradition, search and inclusion criteria, synth
 
 ## Warnings and limitations
 
-A semi-systematic review does not become a systematic review merely by displaying a PRISMA-style flowchart. The author's source PDF carries CC BY-NC-ND conditions; do not redistribute it as if it were a CC BY 4.0 PDF.
+A semi-systematic review does not become a systematic review merely by displaying a PRISMA-style flowchart. The author's source PDF cars CC BY-NC-ND conditions; do not redistribute it as if it were a CC BY 4.0 PDF.
 
 ## Bibliographic lead for verification
 
@@ -32,3 +32,11 @@ The original source PDF is NOT supplied by this card; verify the exact edition a
 ## Scientific status and rights
 
 This is a short, independently written editorial card, NOT a reproduction of the original article's prose, figures, tables or complete procedures. It does not establish full-source reading or warrant page-specific claims. The researcher retains responsibility for the design and interpretation; no scientific gate is automatically approved.
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/snyder-2019-literature-review-designs.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

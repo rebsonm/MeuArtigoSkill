@@ -8,27 +8,35 @@ Third-party text reproduced: NONE
 
 ## Questão metodológica
 
-Como diferenciar uma investigação bibliográfica com problema e síntese próprios da simples reprodução de resumos?
+How to differentiate a bibliographic investigation with a problem and synthesis of simple reproduction of abstracts?
 
-## Síntese autoral para decisão
+## Authorial summary for decision
 
-Como hipótese de procedimento a verificar, organizar pesquisa bibliográfica em delimitação do projeto, investigação fundamentada do material, análise explicativa e síntese integradora, com fichamentos próprios e avaliação crítica de discordâncias. Este card baseia-se em registro bibliográfico do livro e descrição metodológica secundária de Lima e Mioto (2007), NÃO em consulta direta ao livro de Salvador.
+As a hypothesis of the procedure to be verified, organizing bibliographic research in delimitation of the project, grounded investigation of the material, explanatory analysis and integrative synthesis, with own forms and critical evaluation of disagreements. This card is based on bibliographic records of the book and secondary methodological description of Lima and Mioto (2007), NOT in direct consultation with Salvador's book.
 
-## Condições de aplicação e auditoria
+## Conditions of implementation and audit
 
-Identificar edição e autoria; distinguir bibliografia encontrada, obras efetivamente lidas, informações extraídas, análise e síntese produzida. Conferir o percurso em fontes primárias antes de atribuir detalhes ao autor.
+Identify edition and authorship; distinguish bibliography found, works effectively read, extracted information, analysis and synthesis produced. Check the route in primary sources before assigning details to the author.
 
 ## Alertas e limites
 
-A obra de Salvador não foi localizada nem lida diretamente neste levantamento. Não publicar PDF de livro comercial, não citar detalhes ou páginas como [L]. Fonte secundária: https://www.scielo.br/j/rk/a/HSF5Ns7dkTNjQVpRyvhc8RR/.
+Salvador's work was not directly located or read in this survey. Do not publish PDF commercial book, do not quote details or pages like [L]. Secondary source: https://www.scielo.br/j/rk/a/HSF5Ns7dkTNjQVpRyvhc8RR/.
 
-## Fonte para verificação
+## Source for verification
 
 Salvador, Ângelo Domingos. Métodos e técnicas de pesquisa bibliográfica: elaboração de trabalhos científicos. Edições diversas; verificar edição de 1986 no catálogo bibliográfico.
-DOI: não confirmado para a edição específica.
+DOI: not confirmed for the specific edition.
 Registro original/editora: https://search.worldcat.org/title/252941439
-PDF original NÃO disponibilizado por esta ficha; direitos/versão a verificar.
+Original PDF NOT made available by this form; rights/version to check.
 
-## Estatuto científico e direitos
+## Scientific status and rights
 
-Card curto com redação e organização próprias; NÃO reproduz texto, figuras, tabelas ou etapas originais na íntegra. Esta orientação não comprova consulta integral nem autoriza alegação de páginas específicas. A decisão e o método permanecem do pesquisador; nenhum gate é aprovado automaticamente.
+short card with own writing and organization; DO NOT reproduce text, figures, tables or original steps in full. This guidance does not prove full consultation or authorisation of specific pages. The decision and method remain of the researcher; no gate is automatically approved.
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/salvador-1986-bibliographic-research-foundation.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

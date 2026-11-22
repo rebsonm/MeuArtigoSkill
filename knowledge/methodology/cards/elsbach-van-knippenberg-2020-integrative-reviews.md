@@ -1,4 +1,4 @@
-# Elsbach e Van Knippenberg (2020): revisão integrativa como contribuição nova
+# Elsbach and Van Knippenberg (2020): integrative review as a new contribution
 
 Card ID: elsbach-van-knippenberg-2020-integrative-reviews
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -8,27 +8,35 @@ Third-party text reproduced: NONE
 
 ## Questão metodológica
 
-Como evitar que uma revisão integrativa seja apenas uma narrativa organizada de resultados anteriores?
+How to prevent an integrative review from being just an organized narrative of previous results?
 
-## Síntese autoral para decisão
+## Authorial summary for decision
 
-Delimitar um espaço problemático relevante, descrever suficientemente os debates que ele reúne e propor um ponto de vista novo derivado da comparação crítica de pressupostos, evidências e contradições. A síntese deve transformar a leitura do fenômeno, não apenas classificar artigos.
+Delimit a relevant problematic space, describe sufficiently the debates he brings together and propose a new point of view derived from the critical comparison of assumptions, evidences and contradictions. The synthesis should transform the reading of the phenomenon, not just classify articles.
 
-## Condições de aplicação e auditoria
+## Conditions of implementation and audit
 
-Construir mapa de tensões, contribuições convergentes e incompatíveis, alternativa teórica original e consequências para pesquisa futura.
+Build map of tensions, convergent and incompatible contributions, original theoretical alternative and consequences for future research.
 
 ## Alertas e limites
 
-A seleção de exemplos pode enviesar a integração; não confundir representatividade intelectual com levantamento exaustivo, nem redistribuir o PDF sob licença não verificada.
+The selection of examples may bias integration; do not confuse intellectual representativeness with exhaustive survey, nor redistribute the PDF under unverified license.
 
-## Fonte para verificação
+## Source for verification
 
 Elsbach, K. D.; Van Knippenberg, D. (2020). Creating high-impact literature reviews: An argument for integrative reviews. Journal of Management Studies.
 DOI: https://doi.org/10.1111/joms.12581
 Registro original/editora: https://doi.org/10.1111/joms.12581
-PDF original NÃO disponibilizado por esta ficha; direitos/versão a verificar.
+Original PDF NOT made available by this form; rights/version to check.
 
-## Estatuto científico e direitos
+## Scientific status and rights
 
-Card curto com redação e organização próprias; NÃO reproduz texto, figuras, tabelas ou etapas originais na íntegra. Esta orientação não comprova consulta integral nem autoriza alegação de páginas específicas. A decisão e o método permanecem do pesquisador; nenhum gate é aprovado automaticamente.
+short card with own writing and organization; DO NOT reproduce text, figures, tables or original steps in full. This guidance does not prove full consultation or authorisation of specific pages. The decision and method remain of the researcher; no gate is automatically approved.
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/elsbach-van-knippenberg-2020-integrative-reviews.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

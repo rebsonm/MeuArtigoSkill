@@ -8,27 +8,37 @@ Source PDF permission: CC BY 4.0, original file unmodified
 
 ## Questão de consulta
 
-Como tomar decisões metodológicas compatíveis com a pergunta e o desenho de pesquisa?
+How to make methodological decisions compatible with the research question and design?
 
 ## Orientação conceitual original
 
-Campos e Saidel (2022) discutem a construção e o fechamento de amostras qualitativas em pesquisas da saúde. Ao adaptar a orientação para Administração, o desenho deve justificar quais fontes de informação são pertinentes ao fenômeno, que diversidade é necessária e como a relação entre acesso, contexto e ética condiciona a composição da amostra. O número de casos não substitui esses critérios.
+Campos and Saidel (2022) discuss the construction and closure of qualitative samples in health research. By adapting the guidance for Administration, the design should justify which sources of information are relevant to the phenomenon, which diversity is necessary and how the relationship between access, context and ethics conditions the composition of the sample. The number of cases does not replace those criteria.
 
-## Critérios de decisão e rastreabilidade
+## Decision criteria and traceability
 
-Declarar quem ou o que pode informar a pergunta; registrar inclusão e exclusão, possíveis vieses de acesso, heterogeneidade, justificativa de recrutamento e regra reflexiva de adequação ou encerramento da coleta.
+State who or what may inform the question; register inclusion and exclusion, possible biases of access, heterogeneity, justification of recruitment and reflective rule of adequacy or closure of the collection.
 
-## Limitações e contraexemplos
+## Limitations and counterexamples
 
-Resultados sobre amostragem em contextos clínicos não definem um limite universal de participantes. Saturação, suficiência informacional e amostragem teórica não devem ser usados como sinônimos sem fundamento.
+Results on sampling in clinical contexts do not define a universal limit of participants. Saturation, informational sufficiency and theoretical sampling should not be used as baseless synonyms.
 
 ## Referência e licença
 
 Obra original: https://doi.org/10.33361/RPQ.2022.v.10.n.25.545
-Página da editora: https://editora.sepq.org.br/rpq/article/view/545
+Editor's page: https://editora.sepq.org.br/rpq/article/view/545
 PDF original autorizado: knowledge/methodology/pdfs/campos-saidel-2022-qualitative-sampling.pdf
 Licença original: https://creativecommons.org/licenses/by/4.0/
 
-## Limite de evidência
+## Evidence limit
 
-Este card é uma orientação autoral curta, não uma reprodução extensa, tradução ou substituto do artigo. A redação é independente, mas ainda exige revisão científica editorial antes da promoção a material validado. Para uma afirmação [L], consulte o original e confirme o trecho, a edição e a página. Nenhum gate científico pode ser aprovado automaticamente.
+This card is a short authorial orientation, not an extensive reproduction, translation or replacement of the article. The writing is independent, but still requires editorial scientific review before promoting validated material. For a statement [L], refer to the original and confirm the excerpt, editing and page. No scientific gate can be approved automatically.
+
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/campos-saidel-2022-qualitative-sampling-decisions.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

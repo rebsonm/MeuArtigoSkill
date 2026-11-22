@@ -1,29 +1,37 @@
-# Diferenças-em-diferenças 2×2: pressupostos antes do coeficiente
+# Differences-in-differences 2×2: assumptions before the coefficient
 
-- Status científico: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Obra identificada: Pedro H. C. Sant’Anna (aula de janeiro de 2025); DOI: não confirmado no exemplar
-- URL de origem: localizador editorial específico não verificado
+- Scientific status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+- Work identified: Pedro H. C. Sant’Anna (January 2025 class); DOI: not confirmed in copy
+- Source URL: specific editorial finder not verified
 - Registro bibliográfico: SRC-0255
-- Tipo de evidência da publicação: slides pedagógicos de inferência causal
-- Escopo do card: consulta original elaborada a partir da conferência documental e de seções de método; **SEM revisão crítica externa independente**, e **SEM** autorização para usar esta ficha como evidência [L]
-- Direitos: conteúdo editorial original, sem reproduzir o artigo ou o livro
+- Type of publication evidence: pedagogical slides of causal inference
+- Card scope: original consultation from the documentary conference and from method sections; **No independent external critical review**, and **No authorisation to use this form as evidence [L]
+- Rights: original editorial content without reproducing the article or book
 
-## O que a fonte apresenta (requer conferência da fonte para citar)
+## What the source presents (requires source conference to quote)
 
 Apresenta diferenças em mudanças médias entre tratamento e controle; a validade causal depende de pressupostos sobre evolução contrafactual e desenho.
 
-## Proposição de uso da Skill [I]
+## Proposition for Skill use [I]
 
 A Skill pode perguntar pelo grupo de comparação, períodos, tendências paralelas, antecipação de tratamento e ameaças à identificação antes de fornecer fórmula.
 
-## Questões para decisão científica [P]
+## Scientific decision issues [P]
 
-- Qual é o estimando causal e para que população?
-- Há fundamento para a evolução contrafactual comum?
+- What is the causal estimate and for what population?
+- Is there grounds for common counterfactual developments?
 - Existem choques simultâneos ou composição de amostra variável?
 
 ## Contraponto e delimitações
 
-Material de aula não é estudo empírico sobre uma política. Não inferir tendências paralelas observando apenas dois pontos.
+Class material is not empirical study of a policy. Do not infer parallel trends by observing only two points.
 
-Este card é texto editorial original. Não representa parecer científico independente, não atesta qualidade da fonte, nem substitui leitura integral, contexto de páginas ou crítica epistemológica. A classificação [L] depende da checagem das passagens primárias pelo pesquisador. O card não autoriza distribuir versões protegidas, inferir direitos e tampouco aprovar gates. Em debates controversos, as posições e seus fundamentos devem ser confrontados sem decidir automaticamente por um dos lados.
+This card is original editorial text. It does not represent independent scientific review, does not attest to the quality of the source, nor replaces full reading, context of pages or epistemological criticism. Classification [L] depends on checking the primary passages by the researcher. The card does not authorize to distribute protected versions, infer rights or approve gates. In controversial debates, positions and their foundations must be confronted without automatically deciding on either side.
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/santanna-2025-classical-2x2-did.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

@@ -33,6 +33,7 @@ class ProvisionalTitleTests(unittest.TestCase):
    self.assertIn("REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE",txt)
    self.assertTrue("NÃO" in txt or "**SEM**" in txt or
                    ("NOT primary evidence [L]" in txt and
-                    "independent scientific review pending" in txt))
+                    ("independent scientific review pending" in txt or
+                     "not independently scientifically reviewed" in txt.lower())))
    self.assertEqual(x["editorial_status"],"DRAFT_NEEDS_INDEPENDENT_REVIEW")
 if __name__=="__main__":unittest.main()
