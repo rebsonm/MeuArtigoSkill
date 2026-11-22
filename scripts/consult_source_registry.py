@@ -17,7 +17,7 @@ import consult_github_methodology as gh
 
 INDEX = "knowledge/methodology/source_registry_catalog.json"
 SCHEMA = "MEU_ARTIGO_SOURCE_CARD_INDEX_V1"
-DEFAULT_REF = "2d82c89d0b9b15056f2d64bdb57881eba7490642"
+DEFAULT_REF = "9792409b90037c6a360fd26473c92667d44532a4"
 PATH = re.compile(r"knowledge/methodology/source_cards/src-[0-9]{4}\.md\Z")
 REF = re.compile(r"[0-9a-f]{40}\Z")
 DIGEST = re.compile(r"[0-9a-f]{64}\Z")
