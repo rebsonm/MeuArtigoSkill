@@ -10,7 +10,7 @@ Esta **v1.0.0-rc.1** é uma candidata experimental para teste em ambiente compat
 
 ## O que mudou nesta candidata
 
-Resumo conservador do [CHANGELOG.md](../CHANGELOG.md#100-rc1--unreleased) já presente na PR e de sua integração posterior:
+Resumo conservador do [CHANGELOG.md](../CHANGELOG.md) já presente na PR e de sua integração posterior:
 
 - Integração operacional e reconciliação documental dos 15 workpackages V1 e 20 IB, com inventários de **475 fichas bibliográficas [P]**, **174 cards editoriais [I]/[P]**, e catálogo de **51 PDFs** externos ao ZIP padrão, consultáveis apenas nos limites e capacidades realmente disponíveis.
 - Correções e rechecagem de 13 notas editoriais no livro de disposições; preservação da quarentena de entradas bloqueadas, sem confundir cards com evidência científica primária ou revisão independente.
@@ -18,7 +18,7 @@ Resumo conservador do [CHANGELOG.md](../CHANGELOG.md#100-rc1--unreleased) já pr
 - Reforço do isolamento de armazenamento: preferência por Google Drive **do próprio pesquisador**, verificação de permissões, leitura após escrita e recusa de sincronização presumida; fallback local só com consentimento específico.
 - Diagnósticos de versão e integridade, incluindo verificador SHA-256 de todos os payloads e procedimento para observar transformações de `agents/openai.yaml`/`assets/icon.svg` após salvar a Skill, sem alterar o manifesto original nem aceitar recibo não revisado.
 - Testes sintéticos adicionais, scanner de credenciais no código rastreado, checagens de links/proveniência, demonstração de mapa interativo **fictício** sem conexão de produção.
-- Melhorias em instalação multiplataforma e interface de conversação com idioma adaptado ao pesquisador; não assume acesso a Web of Science, Scopus, Drive, ferramentas MCP ou recursos pagos.
+- Melhorias em instalação multiplataforma e interface de conversação com idioma adaptado ao pesquisador; não assume acesso a Web of Science, Scopus, Drive, ferramentas de protocolo externo ou recursos pagos.
 
 ## Compatibilidade e dependências
 
@@ -26,7 +26,7 @@ Resumo conservador do [CHANGELOG.md](../CHANGELOG.md#100-rc1--unreleased) já pr
 - **Claude/Claude Code e Gemini:** uso da Skill onde houver suporte de importação, arquivos e ferramentas; compatibilidade real dessa candidata **não homologada** nessas plataformas.
 - **Python e HTTPS:** alguns leitores opcionais usam Python e conexão HTTPS a commit GitHub imutável; quando indisponíveis, permanece o núcleo metodológico documentado da Skill, sem alegação de consulta externa.
 - **Bibliotecas opcionais:** `artifact_tool` para visualização XLSX (CSV permanece canônico), leitores PDF como `pypdf`/`PyMuPDF (fitz)`, `Pillow` para imagem, `openpyxl` para XLSX e `xlrd` para XLS legado, conforme módulos e fluxos realmente executados. Não existe garantia de que cada ambiente tenha todas essas dependências.
-- **Armazenamento:** cada pesquisador conecta o **próprio** Drive quando deseja utilizá-lo. Instalar a Skill não concede acesso ao Drive do mantenedor nem configura um servidor MCP de propriedade do projeto. O GitHub oferece o catálogo metodológico público de leitura opcional, **não** é a memória canônica de projetos particulares.
+- **Armazenamento:** cada pesquisador conecta o **próprio** Drive quando deseja utilizá-lo. Instalar a Skill não concede acesso ao Drive do mantenedor nem instala ou conecta automaticamente um servidor externo de ferramentas gerenciado pelo projeto. O GitHub oferece o catálogo metodológico público de leitura opcional, **não** é a memória canônica de projetos particulares.
 
 ## Evidência da candidata (em 22/11/2026)
 
