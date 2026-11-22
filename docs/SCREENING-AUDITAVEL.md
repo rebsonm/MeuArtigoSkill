@@ -30,11 +30,11 @@ The old fields Pass1_decision/Pass1_reason and Pass2_decision/Pass2_reason conti
 
 Requires Python 3.10+ and standard library. Examples of form of command, not actual decisions:
 
-    python scripts/screening_review.py propose "/project" --stage pass1 --record-id "R-0001" --proposal BORDERLINE --reason "The abstract presents potentially relevant indicators but does not describe the application context." --source "Referência à saída real do agente"
+    python scripts/screening_review.py propose "/project" --stage pass1 --record-id "R-0001" --proposal BORDERLINE --reason "The abstract presents potentially relevant indicators but does not describe the application context." --source "Reference to the agent\u0027s actual output"
 
 Only after the researcher actually examines the data and expresses his decision:
 
-    python scripts/screening_review.py decide "/project" --stage pass1 --record-id "R-0001" --decision INCLUDE --reason "The abstract meets the predefined inclusion criterion on document governance." --reviewer "Pesquisador" --evidence "Referência à manifestação original do pesquisador" --disagreement-reason "O pesquisador identificou aderência ao conceito central que a recomendação inicial não reconheceu."
+    python scripts/screening_review.py decide "/project" --stage pass1 --record-id "R-0001" --decision INCLUDE --reason "The abstract meets the predefined inclusion criterion on document governance." --reviewer "Researcher" --evidence "Reference to the researcher\u0027s original statement" --disagreement-reason "The researcher identified alignment with the core concept that the initial recommendation did not recognize."
 
 When there is disagreement, the last argument will be mandatory. The original decision is preserved: it is not permitted to silently replace an already recorded judgment. Subsequent revisions must have a new record in the existing DEC_ID/TRACE_ID, with justification and a versioned copy of the previous state.
 
@@ -56,7 +56,9 @@ The BORDERLINE state requires a resolution in Pass2 before freezing. Truly ident
 Old projects maintain compatibility as long as they do not activate the rule. If they need to migrate, new columns are added when the first event is registered, **without inventing retroactive revisions**. To audit old records without modifying them, run audit --strict; the correction of records must be based on real human evidence.
 
 <a id="integridade-e-limitações"></a>
-## Integrity and limitations- Do not use AI as a second independent human reviewer. If there is only one researcher, inform screening by a single reviewer and rechecking of BORDERLINE and INCLUDE/EXCLUDE sample, according to protocol.
+## Integrity and limitations
+
+- Do not use AI as a second independent human reviewer. If there is only one researcher, inform screening by a single reviewer and rechecking of BORDERLINE and INCLUDE/EXCLUDE sample, according to protocol.
 - Do not delete sources just because the full text is inaccessible. This means PENDING ACCESS in the full-text track, not scientific irrelevance.
 - Do not transform the AI ​​suggestion into a final decision silently, nor generate a justification or a fictitious human reviewer.
 - Require a clear reason for EXCLUDE and re-examine borderline cases; Potentially relevant sources should remain retained until necessary review.

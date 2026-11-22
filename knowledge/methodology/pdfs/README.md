@@ -1,6 +1,6 @@
 # Methodological PDFs — rights and attribution
 
-This public source directory currently contains **51 indexed PDF files**, of which **49 are labelled CC BY 4.0 and two have an unversioned CC BY label in the catalogue**. The version for those two requires reconciliation before a final release decision. These are catalogue rights claims supported by per-work evidence pointers, not independent verification of every publisher license or a blanket copyright grant. The PDFs are **not** covered by the repository's Apache-2.0 software license. No endorsement by authors or journals is implied.
+This public source directory currently contains **51 indexed PDF files**, of which **50 are catalogued as CC BY 4.0 and one is declared CC BY without a specified version by its journal**. The catalog and [full credit register](../PDF-ATTRIBUTIONS.md) preserve the publisher-specific licensing statements. These are catalogue rights claims supported by per-work evidence pointers, not independent verification of every publisher license or a blanket copyright grant. The PDFs are **not** covered by the repository's Apache-2.0 software license. No endorsement by authors or journals is implied.
 
 See the complete 51-entry register and pending checks in [Public PDF packaging readiness](../intake/PUBLIC-PDF-PACKAGING-READINESS-2026-11-22.md), with exact hashes in [pdf_catalog.json](../pdf_catalog.json). This historic author/DOI table is not the definitive license ledger. Follow the specific applicable license for each file, including attribution requirements.
 
@@ -17,7 +17,7 @@ See the complete 51-entry register and pending checks in [Public PDF packaging r
 
 Reproduction status: **unaltered originals**, copied from the user's research collection after independent comparison of document title, authors, DOI and public journal license. Exact byte counts and SHA-256 are in `../pdf_catalog.json`; the public corpus test rejects unindexed or altered PDFs.
 
-**33 source PDFs are publicly hosted; the 475-item personal archive remains inventory-only except for individually identified sources.** A document being in a personal Google Drive folder, available online, or accessible by link does not itself constitute permission for public redistribution. Full scholarly support, visual figures/tables and printed pagination still require primary-source review. The candidate Skill ZIP includes small optional read-only clients for cards and licensed PDFs; the PDF binaries and remote catalogues are excluded from the ZIP. Actual execution depends on host access and an optional PDF parser.
+**All 51 catalogued source PDFs are publicly hosted; the other bibliographic entries are metadata or editorial cards and must not be described as 475 additional released PDFs.** A document being in a personal Google Drive folder, available online, or accessible by link does not itself constitute permission for public redistribution. Full scholarly support, visual figures/tables and printed pagination still require primary-source review. The candidate Skill ZIP includes small optional read-only clients for cards and licensed PDFs; the PDF binaries and remote catalogues are excluded from the ZIP. Actual execution depends on host access and an optional PDF parser.
 
 ## Additional original PDFs with individual CC BY 4.0 evidence
 

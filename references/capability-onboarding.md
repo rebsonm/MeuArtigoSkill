@@ -29,10 +29,10 @@ When available, these are useful implementations of the roles above:
 
 These names are **not methodological requirements**. Equivalent services may fulfill the same roles.
 
-Para não presumir capacidades de ChatGPT, Claude ou Gemini, consulte
-[preflight de capacidades por plataforma](platform-capability-preflight.md).
-Uma interface que importa `SKILL.md` não garante Python, acesso a
-Scopus, escrita no Drive ou recibo verificável.
+To avoid assuming that ChatGPT, Claude, or Gemini support a capability, consult
+the [platform-specific capability preflight](platform-capability-preflight.md).
+A platform that can import `SKILL.md` does not necessarily provide Python,
+Scopus access, writable Google Drive storage, or verifiable execution receipts.
 
 ## First-run preflight
 

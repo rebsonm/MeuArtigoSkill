@@ -9,11 +9,12 @@ of optional *bibliographic source* authentication.
 ## Nonblocking offer at the literature-search stage
 
 At most once per project, when search/export becomes relevant, offer a brief,
-non-blocking suggestion in the researcher's language. Portuguese example:
+non-blocking suggestion in the researcher's language. English source example
+(to be localized to the researcher's conversation language at runtime):
 
-> Você pode continuar normalmente sem conectar APIs. Se desejar automatizar
-> buscas e exportações, posso orientar a conexão das suas próprias fontes
-> bibliográficas. A opção pode ser ativada depois.
+> You can continue without connecting any APIs. If you want to automate
+> searches and exports, I can help you connect your own authorized
+> bibliographic sources. You can enable this option later.
 
 If ignored or declined, continue the current flow without further questions.
 No form, scientific approval gate or connection requirement. Older projects

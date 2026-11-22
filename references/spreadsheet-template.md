@@ -710,13 +710,13 @@ The sheet is an export history, not the provenance graph itself. The graph lives
 
 Material scientific decisions. Use stable `DEC-####` identifiers.
 
-Columns:
+Columns (the original headers below are **fixed legacy workbook/schema labels**; they remain unchanged in examples to avoid misleading users about the actual CSV/XLSX format):
 
 ```text
 DEC_ID | Timestamp | Etapa | Tipo | Pergunta decisória | Decisão | Alternativas consideradas | Justificativa | Evidence_IDs | Record_IDs | CADA_ID | Trace_ID | Gate_ID | Status | Decidido por | Impacto | Artefatos afetados | Versão resultante | Supersede DEC_ID | Observações
 ```
 
-Do not overwrite frozen decisions. Super headquarters explicitly.
+Do not overwrite frozen decisions. Record superseding decisions explicitly.
 
 <a id="18_validacoes"></a>
 ## 18_VALIDATIONS
