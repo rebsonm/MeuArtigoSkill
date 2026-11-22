@@ -2,6 +2,18 @@
 
 ## Scope and precedence
 
+**Whole-repository Markdown policy.** This English-first rule applies to every
+maintained `.md` file, not merely the `docs/` directory. It covers
+`README.md`, `SKILL.md`, `references/`, `wiki/`, methodological
+editorial cards, bibliographic prospecting cards and intake documentation.
+Original published titles, quotations, source evidence, immutable identifiers
+and historical records must retain their provenance; where needed, supply an
+explicitly identified translation rather than silently changing the evidence.
+A narrow source-language check that exempts the corpus cannot establish
+English completion. Use `scripts/audit_all_markdown_language.py` to include
+the full Markdown tree. The remaining corpus translation is pending.
+
+
 The canonical repository, Skill instructions, README, guides, version-controlled
 Wiki, PDF attribution commentary, developer documentation, tool descriptions,
 and human-maintained configuration text are authored in **English**.

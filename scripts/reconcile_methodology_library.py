@@ -112,11 +112,16 @@ def reconcile():
         sid, path = item['source_id'], item['path']
         card = (ROOT / path).read_text(encoding='utf-8')
         # Normalize the consultation contract without changing prior findings.
-        header = ('FICHA_DE_PROSPECÇÃO_NÃO_REVISADA — [P] metadados para consulta.\n'
-                  'NÃO é [I] síntese de leitura nem [L] evidência científica.\n'
-                  'Esta orientação é redação editorial original; não atribuir perguntas aos autores.\n\n')
-        if header not in card:
-            (ROOT / path).write_text(header + card, encoding='utf-8')
+        legacy_header = ('FICHA_DE_PROSPECÇÃO_NÃO_REVISADA — [P] metadados para consulta.\n'
+                         'NÃO é [I] síntese de leitura nem [L] evidência científica.\n'
+                         'Esta orientação é redação editorial original; não atribuir perguntas aos autores.\n\n')
+        english_header = ('UNREVIEWED_PROSPECTING_CARD — [P] bibliographic metadata for consultation.\n'
+                          'This is NOT an [I] synthesis of a source reading or [L] scientific evidence.\n'
+                          'The guidance is original editorial text; do not attribute its questions to the source authors.\n\n')
+        # Recognize both the preserved historical header and the current English
+        # form; do not reintroduce Portuguese into translated source cards.
+        if english_header not in card and legacy_header not in card:
+            (ROOT / path).write_text(english_header + card, encoding='utf-8')
         status = 'BLOQUEADO_POR_EVIDENCIA' if sid in residuals else 'VALIDADO_COM_RESTRICOES'
         evidence = [str(ledgers[sid][0])]
         if sid in source_receipts:

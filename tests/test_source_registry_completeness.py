@@ -62,13 +62,16 @@ class SourceRegistryCompletenessTests(unittest.TestCase):
                 self.assertEqual(hashlib.sha256(data).hexdigest(), item["sha256"])
                 self.assertLessEqual(len(data), registry.MAX_CARD_BYTES)
                 text = data.decode("utf-8")
-                self.assertIn("FICHA_DE_PROSPECÇÃO_NÃO_REVISADA", text)
+                self.assertTrue("FICHA_DE_PROSPECÇÃO_NÃO_REVISADA" in text or
+                                 "UNREVIEWED_PROSPECTING_CARD" in text)
                 self.assertTrue("NÃO é [I] síntese de leitura nem [L]" in text or
                                 "Não representa [I] síntese científica aprovada nem [L]" in text or
                                 "NÃO é [I] síntese científica aprovada nem [L]" in text or
-                                "NÃO é [I] síntese de leitura cientificamente aprovada nem [L]" in text)
+                                "NÃO é [I] síntese de leitura cientificamente aprovada nem [L]" in text or
+                                "This is NOT an [I] synthesis of a source reading or [L] scientific evidence." in text)
                 self.assertTrue("Não atribuir as propostas acima ao autor" in text or
-                                "Esta orientação é redação editorial original" in text)
+                                "Esta orientação é redação editorial original" in text or
+                                "Do not attribute the editorial prompts above to the source authors." in text)
                 self.assertNotIn("drive.google.com/drive/", text.lower())
                 self.assertNotIn("access_token", text.lower())
                 self.assertNotIn("AIza", text)

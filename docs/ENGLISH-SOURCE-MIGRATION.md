@@ -16,6 +16,16 @@ history are not rewritten.
 
 ## Translation targets and acceptance criteria
 
+**Whole-repository scope (22 November 2026):** The requirement covers
+**every maintained `.md` file**, including root files, `docs/`,
+`references/`, `wiki/`, `knowledge/methodology/cards/`,
+`knowledge/methodology/source_cards/` and `knowledge/methodology/intake/`.
+Published titles, original quotations, frozen evidence and stable
+identifiers retain their provenance. This migration is **incomplete**;
+the older strict release-source scanner excluded most methodology cards
+and must not be used to claim repository-wide English completion.
+
+
 1. The root `SKILL.md`, `README.md`, contributor-facing files,
    OpenAI/Claude/Gemini adapters and installation guides are in English.
 2. Current methodological, privacy, research-governance and security
@@ -46,7 +56,17 @@ The source inventory can be run with:
 ```bash
 python scripts/audit_source_language.py
 python scripts/audit_source_language.py --strict
+python scripts/audit_all_markdown_language.py
+python scripts/audit_all_markdown_language.py --strict
 ```
+
+The new `audit_all_markdown_language.py` also inspects the methodology
+cards, bibliographic prospecting Markdown and historical intake records.
+Its default mode is a non-blocking inventory, while `--strict` fails
+when significant candidate untranslated prose remains. It does not
+translate sources or claim semantic equivalence. The original strict
+release-source command continues to cover its narrower legacy scope
+until the complete migration is finished.
 
 The first command **reports** outstanding files without blocking
 incremental engineering Pull Requests. The second returns a nonzero

@@ -62,7 +62,7 @@ def scoped_files(root: Path) -> list[Path]:
         if corpus_data:
             continue
         # The scanner stores Portuguese trigger words as DATA, not untranslated UI/source prose.
-        if rel.as_posix() == "scripts/audit_source_language.py":
+        if rel.as_posix() in {"scripts/audit_source_language.py", "scripts/audit_all_markdown_language.py"}:
             continue
         if any(part.startswith(".") and part not in {".github"} for part in rel.parts):
             continue

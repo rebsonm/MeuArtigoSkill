@@ -111,6 +111,20 @@ jobs:
       - name: Enforce English-first release source language
         run: python scripts/audit_source_language.py --strict
 
+      - name: Inventory all Markdown language (informational, no false certification)
+        run: |
+          python scripts/audit_all_markdown_language.py > "$RUNNER_TEMP/all-markdown-language.json"
+          python -c 'import json,os,pathlib; p=pathlib.Path(os.environ["RUNNER_TEMP"])/"all-markdown-language.json"; x=json.loads(p.read_text(encoding="utf-8")); print("markdown_scanned=",x["markdown_files_scanned"],"candidates_for_review=",x["files_requiring_editorial_language_review"],"english_only_verified=",x["english_only_verified"])'
+
+      - name: Preserve full Markdown language inventory
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: all-markdown-language-inventory-not-certification
+          path: ${{ runner.temp }}/all-markdown-language.json
+          if-no-files-found: warn
+          retention-days: 30
+
       - name: Provenance smoke test
         run: python scripts/smoke_test_provenance.py
 

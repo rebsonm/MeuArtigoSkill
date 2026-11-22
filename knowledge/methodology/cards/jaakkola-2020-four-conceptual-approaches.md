@@ -1,4 +1,4 @@
-# Jaakkola (2020): síntese, adaptação, tipologia e modelos em artigos conceituais
+# Jaakkola (2020): synthesis, adaptation, typology and models in conceptual articles
 
 Card ID: jaakkola-2020-four-conceptual-approaches
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -6,29 +6,29 @@ Evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_NEEDS_HUMAN_VERIFICATION
 Source consultation scope: DIRECT_SOURCE_PDF_PARTIAL_REVIEW
 Third-party text reproduced: NONE
 
-## Questão metodológica
+## Methodological question
 
-Que tipo de contribuição teórica um artigo sem dados primários pode sustentar?
+What kind of theoretical contribution can an article without primary empirical data reasonably support?
 
-## Síntese autoral para decisão
+## Original editorial guidance for decision-making
 
-Selecionar conscientemente entre síntese de teorias, adaptação de lentes para um domínio diferente, construção de tipologias ou construção de modelo conceitual. Delinear os conceitos de partida, papel das teorias empregadas, mecanismo de argumentação e natureza da proposição teórica nova.
+Consciously choose among theoretical synthesis, adapting a conceptual lens to a different domain, building a typology, or developing a conceptual model. Specify the starting concepts, the role of the theories used, the reasoning that connects them and the precise nature of the proposed theoretical contribution.
 
-## Condições de aplicação e auditoria
+## Application and audit conditions
 
-Definir problema conceitual, teoria-fonte, tensão ou lacuna, estratégia de recombinação, limites do raciocínio e o que muda no conhecimento existente.
+Define the conceptual problem, source theory, unresolved tension or gap, recombination strategy, limits of reasoning and the specific change proposed to existing understanding.
 
-## Alertas e limites
+## Warnings and limitations
 
-Artigo conceitual não é uma revisão livre e descritiva; clareza da arquitetura teórica não dispensa originalidade nem argumentação crítica. Original CC BY 4.0 disponível no catálogo.
+A conceptual article is not an unconstrained descriptive literature review. Clear conceptual architecture does not replace originality or critical argumentation. A CC BY 4.0 original is available in the public source catalogue.
 
-## Fonte para verificação
+## Bibliographic lead for verification
 
 Jaakkola, E. (2020). Designing conceptual articles: four approaches. AMS Review, 10, 18–26.
 DOI: https://doi.org/10.1007/s13162-020-00161-0
-Registro original/editora: https://doi.org/10.1007/s13162-020-00161-0
-PDF original CC BY 4.0 disponível na biblioteca pública: knowledge/methodology/pdfs/jaakkola-2020-designing-conceptual-articles.pdf
+Publisher/source: https://doi.org/10.1007/s13162-020-00161-0
+Original CC BY 4.0 PDF in the public library: knowledge/methodology/pdfs/jaakkola-2020-designing-conceptual-articles.pdf
 
-## Estatuto científico e direitos
+## Scientific status and rights
 
-Card curto com redação e organização próprias; NÃO reproduz texto, figuras, tabelas ou etapas originais na íntegra. Esta orientação não comprova consulta integral nem autoriza alegação de páginas específicas. A decisão e o método permanecem do pesquisador; nenhum gate é aprovado automaticamente.
+This brief card is an original editorial synthesis, NOT a reproduction of complete source text, figures, tables or procedures. It does not certify full-source reading or the scientific validity of a manuscript's particular claim. The researcher retains all scientific decisions; no gate is approved automatically.
