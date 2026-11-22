@@ -1,62 +1,64 @@
-# Meu Artigo v1.0.0-rc.1 — release notes (DRAFT, NOT PUBLISHED)
+# Meu Artigo v1.0.0-rc.1 — Release notes (DRAFT, NOT PUBLISHED)
 
-> **Release candidate / pré-release experimental proposta.** O texto abaixo destina-se à revisão do mantenedor **antes** de qualquer tag, merge em `main` ou publicação de GitHub Release. Não chamar de estável, aprovada cientificamente ou homologada no host.
+> **Release candidate / proposed experimental prerelease.** This document is for maintainer review **before** any tag, merge into `main`, or GitHub Release. Do not describe the candidate as stable, independently scientifically approved, or accepted on a real host.
 
-## Visão geral
+## Overview
 
-**Meu Artigo** é uma Skill para apoiar a construção, continuidade, auditoria e documentação de artigos científicos com C.A.D.A. (Capturar, Atribuir, Definir prazo/próximo passo, Acompanhar), governança de evidências, decisões científicas humanas e rastreabilidade entre fontes e alegações. O usuário continua responsável pelas decisões e validações científicas.
+**Meu Artigo** is a Skill supporting the development, continuation, audit, and documentation of scientific research papers using C.A.D.A. (Capture, Assign, Define the next step and deadline, Follow up), evidence governance, human scientific decisions, and traceability between sources and claims. The researcher retains responsibility for scientific decisions and validation.
 
-Esta **v1.0.0-rc.1** é uma candidata experimental para teste em ambiente compatível. A versão pública experimental anterior **v0.9.0-beta.6** permanece inalterada até decisão e publicação específicas.
+**v1.0.0-rc.1** is an experimental candidate for testing in compatible environments. The earlier public experimental **v0.9.0-beta.6** remains unchanged until a separate publication decision.
 
-## O que mudou nesta candidata
+## Changes in this candidate
 
-Resumo conservador do [CHANGELOG.md](../CHANGELOG.md) já presente na PR e de sua integração posterior:
+Conservative summary of the [CHANGELOG.md](../CHANGELOG.md) and subsequent integration on the draft PR:
 
-- Integração operacional e reconciliação documental dos 15 workpackages V1 e 20 IB, com inventários de **475 fichas bibliográficas [P]**, **174 cards editoriais [I]/[P]**, e catálogo de **51 PDFs** externos ao ZIP padrão, consultáveis apenas nos limites e capacidades realmente disponíveis.
-- Correções e rechecagem de 13 notas editoriais no livro de disposições; preservação da quarentena de entradas bloqueadas, sem confundir cards com evidência científica primária ou revisão independente.
-- Continuidade mais conservadora: navegação pelo próximo passo registrado, identificação do bloqueio prioritário, conservação de decisões DEC, TRACE e sete gates humanos `GATE-0001..0007`.
-- Reforço do isolamento de armazenamento: preferência por Google Drive **do próprio pesquisador**, verificação de permissões, leitura após escrita e recusa de sincronização presumida; fallback local só com consentimento específico.
-- Diagnósticos de versão e integridade, incluindo verificador SHA-256 de todos os payloads e procedimento para observar transformações de `agents/openai.yaml`/`assets/icon.svg` após salvar a Skill, sem alterar o manifesto original nem aceitar recibo não revisado.
-- Testes sintéticos adicionais, scanner de credenciais no código rastreado, checagens de links/proveniência, demonstração de mapa interativo **fictício** sem conexão de produção.
-- Melhorias em instalação multiplataforma e interface de conversação com idioma adaptado ao pesquisador; não assume acesso a Web of Science, Scopus, Drive, ferramentas de protocolo externo ou recursos pagos.
+- Operational integration and documentary reconciliation of 15 V1 and 20 IB work packages, including inventories of **475 bibliographic [P] records**, **174 editorial [I]/[P] cards**, and a catalog of **51 PDFs** external to the default installation ZIP, accessible only within available capabilities and applicable rights.
+- Corrections and rechecks of 13 editorial notes in the disposition ledger, while maintaining quarantine for blocked records and never confusing editorial cards with primary scientific evidence or independent review.
+- More conservative continuity: routing to the recorded next step, highlighting the highest-priority blocker, preserving DEC and TRACE decisions, and keeping all seven human-controlled gates `GATE-0001..0007`.
+- Stronger storage isolation: preference for **each researcher's own Google Drive**, permission checks, readback after writes, refusal to presume synchronization, and a local fallback only with explicit consent.
+- Version and integrity diagnostics, including SHA-256 verification for every payload and a procedure to observe host modifications to `agents/openai.yaml` and `assets/icon.svg` after saving the Skill, without changing the source manifest or automatically accepting an unreviewed receipt.
+- Additional synthetic tests, tracked-source credential scans, link/provenance checks, and a **fictional** interactive map demonstration without a production connection.
+- Multiplatform installation guidance and conversational language adaptation to the researcher; no assumed Web of Science, Scopus, Drive, external protocol tool, or paid-service access.
 
-## Compatibilidade e dependências
+## Compatibility and dependencies
 
-- **ChatGPT:** importação de Skills e execução de scripts dependem dos recursos efetivamente oferecidos pela conta/ambiente. A RC.1 ainda **não** possui certificado de instalação, persistência/readback ou execução end-to-end no host ChatGPT.
-- **Claude/Claude Code e Gemini:** uso da Skill onde houver suporte de importação, arquivos e ferramentas; compatibilidade real dessa candidata **não homologada** nessas plataformas.
-- **Python e HTTPS:** alguns leitores opcionais usam Python e conexão HTTPS a commit GitHub imutável; quando indisponíveis, permanece o núcleo metodológico documentado da Skill, sem alegação de consulta externa.
-- **Bibliotecas opcionais:** `artifact_tool` para visualização XLSX (CSV permanece canônico), leitores PDF como `pypdf`/`PyMuPDF (fitz)`, `Pillow` para imagem, `openpyxl` para XLSX e `xlrd` para XLS legado, conforme módulos e fluxos realmente executados. Não existe garantia de que cada ambiente tenha todas essas dependências.
-- **Armazenamento:** cada pesquisador conecta o **próprio** Drive quando deseja utilizá-lo. Instalar a Skill não concede acesso ao Drive do mantenedor nem instala ou conecta automaticamente um servidor externo de ferramentas gerenciado pelo projeto. O GitHub oferece o catálogo metodológico público de leitura opcional, **não** é a memória canônica de projetos particulares.
+- **ChatGPT:** Skill import and script execution depend on the actual account and host capabilities. RC.1 does **not** yet have an accepted certificate of installation, persistence/readback, or end-to-end execution on a live ChatGPT host.
+- **Claude/Claude Code and Gemini:** use is conditional on supported import, file, and tool capabilities. This candidate has **not** been accepted in those real platforms.
+- **Python and HTTPS:** optional readers may require Python and HTTPS access to an immutable GitHub commit. Without those capabilities, only the documented methodological core remains available; do not claim external retrieval.
+- **Optional libraries:** `artifact_tool` for XLSX visualization (CSV remains canonical); `pypdf` or `PyMuPDF (fitz)` for PDFs; `Pillow` for images; `openpyxl` for XLSX; and `xlrd` for legacy XLS, subject to actual module availability and execution. No dependency is assumed to be installed on every host.
+- **Storage:** each researcher connects **their own** Drive if needed. Installing the Skill does not grant access to the maintainer's Drive or install or automatically connect a project-managed external tool server. The public GitHub methodological catalog is an optional read-only resource, **not** canonical memory for private research projects.
 
-## Evidência da candidata (em 22/11/2026)
+## Evidence available on 22 November 2026
 
-- PR [#112](https://github.com/rebsonm/MeuArtigoSkill/pull/112), commit de entrada `cc74f7f738db39dce19f5d1253dd17e295dd8146`, **Draft**.
-- CI [Release audit #45033085251](https://github.com/rebsonm/MeuArtigoSkill/actions/runs/45033085251), status `completed/success`; **1.041 testes, 0 falhas, 2 skipped**.
-- Artefato temporário [MeuArtigoSkill-rc-test-only](https://github.com/rebsonm/MeuArtigoSkill/actions/runs/45033085251/artifacts/14757923364) — **não é GitHub Release**. Extraia primeiro o ZIP externo de CI; instale somente seu `MeuArtigoSkill-v1.0.0-rc.1.zip`.
-- SHA-256 do **ZIP instalável interno**: `c023560c0e1fbedfce72c963b98d8f930cd99adc1f5a07b3765361c968a53539`.
-- SHA-256 do **BUNDLE_MANIFEST.json** interno: `ed06446142d2473d21258a4f0a4a611aeb8408d9fc70f9b47759938e434ebd80`.
-- O pacote contém **152 payloads com hashes verificados (152/152)** e um manifesto externo à lista, total de 153 entradas, sem PDF de terceiros e sem os cards de referência externos. O checksum `SHA256SUMS.txt`, `VERSION`, `CITATION.cff`, recibo e manifesto correspondem ao pacote.
-- O recibo de build aponta para `79deb997e1208db90190be7905421b3036c2dbd1`, commit temporário do merge de `cc74f7f7` em `29458793`. Comparação GitHub com o HEAD da PR: **zero diferenças de arquivo**.
-- O verificador `scripts/verify_installed_bundle.py`, invocado sobre a **cópia extraída do ZIP** com versão e manifesto explicitamente pinados, retornou `status=PASS`, `integrity_mode=ALL_BUNDLE_BYTES_EXACT` e `payload_count=152`. Isso **não é** o teste da instalação real.
+The evidence below refers to its **specific previous CI source tree**, not automatically to the latest PR HEAD. After every new commit, CI and bundle provenance must be rechecked.
 
-## Limites conhecidos e pendências para liberar a RC.1
+- Draft [PR #112](https://github.com/rebsonm/MeuArtigoSkill/pull/112), earlier candidate commit `cc74f7f738db39dce19f5d1253dd17e295dd8146`.
+- Historical [Release audit #45033085251](https://github.com/rebsonm/MeuArtigoSkill/actions/runs/45033085251): `completed/success`, **1,041 tests, 0 failures, 2 skipped** on its original source tree.
+- Historical temporary [MeuArtigoSkill-rc-test-only](https://github.com/rebsonm/MeuArtigoSkill/actions/runs/45033085251/artifacts/14757923364) CI artifact — **not** a GitHub Release. Extract the outer CI artifact first; the installable file inside it is `MeuArtigoSkill-v1.0.0-rc.1.zip`.
+- SHA-256 of that **historical inner installer ZIP**: `c023560c0e1fbedfce72c963b98d8f930cd99adc1f5a07b3765361c968a53539`.
+- SHA-256 of its **inner BUNDLE_MANIFEST.json**: `ed06446142d2473d21258a4f0a4a611aeb8408d9fc70f9b47759938e434ebd80`.
+- That package contained **152 verified payloads (152/152)** plus the manifest, for 153 entries, excluding third-party PDFs and external reference cards. `SHA256SUMS.txt`, `VERSION`, `CITATION.cff`, the build receipt, and the manifest matched that artifact.
+- The historical build receipt identified `79deb997e1208db90190be7905421b3036c2dbd1`, a temporary merge of `cc74f7f7` into `29458793`; GitHub file comparison with that PR HEAD found no differences.
+- `scripts/verify_installed_bundle.py` returned `status=PASS`, `integrity_mode=ALL_BUNDLE_BYTES_EXACT`, and `payload_count=152` when run against the **ZIP-extracted copy**, with the manifest and expected version explicitly pinned. **This was not a live-host installation test.**
 
-- **T01/T02 HOST NOT_RUN:** identificação do executável efetivamente salvo e hashes/readback pós-Save. Se o host transformar YAML/SVG, usar apenas recibo externo que tenha conteúdo efetivamente revisado e revisão nominal, nunca `reviewed=true` automático.
-- **T05/T06 HOST NOT_RUN:** localmente CSV 8 registros e XLSX 21 abas deram PASS, mas a disponibilidade de `artifact_tool` pode variar; fallback para CSV.
-- **T32:** parser sintético foi aprovado, mas **não** há prova do comportamento do LLM da instalação real diante de conteúdo hostil recuperado.
-- **T34:** leitura documental de projeto fictício no Drive passou, mas a **integração end-to-end da Skill instalada** e sincronização via conector Drive não foram demonstradas.
-- **Isolamento multiusuário:** lógica/documentação apontam Drive individual; teste entre contas independentes em host ainda não foi realizado.
-- **Issues [#102](https://github.com/rebsonm/MeuArtigoSkill/issues/102) e [#103](https://github.com/rebsonm/MeuArtigoSkill/issues/103):** riscos históricos públicos e de metadados privados estão documentados e permanecem abertos. Não afirmar que um audit de HEAD limpou histórico/refs/forks.
-- A Skill não substitui validação por pares nem aprova automaticamente gates. Licença Apache-2.0 do software não se estende a obras de terceiros. Nenhum conteúdo externo está liberado por presunção.
+## Known limitations and conditions before RC.1 acceptance
 
-## Instalação de teste (sem release)
+- **T01/T02 HOST NOT_RUN:** actual persisted executable identification, saved file hashes, and post-save readback remain unverified. If the host transforms YAML/SVG, require an external receipt with substantive review, named reviewer, and exact observed bytes; never set `reviewed=true` automatically.
+- **T05/T06 HOST NOT_RUN:** local tests passed with eight CSV records and a 21-tab XLSX, but `artifact_tool` availability depends on the host. Preserve the CSV fallback.
+- **T32:** a synthetic parser test passed; no behavioral proof yet exists for the **actual installed model** when facing malicious retrieved content.
+- **T34:** documentary readback of a fictional project on Drive passed; end-to-end integration between the **installed Skill** and the connected Drive has not been demonstrated.
+- **Multiuser isolation:** logic and guidance use individual Drives; an independent cross-account real-host test has not been completed.
+- **Issues [#102](https://github.com/rebsonm/MeuArtigoSkill/issues/102) and [#103](https://github.com/rebsonm/MeuArtigoSkill/issues/103):** historical public-file and private-metadata risks remain open. A clean current HEAD does not establish that historical commits, refs, or forks were remediated.
+- The Skill does not replace peer validation or approve research gates automatically. The software's Apache-2.0 license does not extend to third-party works. No external materials are released by assumption.
 
-1. No workflow de origem acima, baixe o **artefato de CI** chamado `MeuArtigoSkill-rc-test-only`.
-2. Extraia o pacote externo; confira `SHA256SUMS.txt` e `BUNDLE_BUILD_RECEIPT.json`.
-3. Importe no host compatível **somente** o ZIP interno `MeuArtigoSkill-v1.0.0-rc.1.zip`. Não use “Code → Download ZIP” do repositório nem o ZIP externo de Actions.
-4. Confirme a versão *efetivamente executada* e o armazenamento autorizado do pesquisador antes de iniciar qualquer projeto. Não use dados científicos sensíveis nos testes.
-5. Para aceite de host, seguir [HOST_PRESENTATION_ATTESTATION.md](HOST_PRESENTATION_ATTESTATION.md). Nunca editar o manifesto para esconder diferenças de hashes.
+## Controlled test installation (no release)
 
-## Estado desta minuta
+1. Download the **CI artifact** named `MeuArtigoSkill-rc-test-only` from its specific workflow run.
+2. Extract the outer artifact and check `SHA256SUMS.txt` and `BUNDLE_BUILD_RECEIPT.json`.
+3. Import **only** the inner `MeuArtigoSkill-v1.0.0-rc.1.zip` into a compatible host. Do not import the repository's “Code → Download ZIP” or the outer Actions artifact.
+4. Identify the **actual executed version** and the researcher's authorized storage before testing any project. Do not use sensitive research data in acceptance tests.
+5. For host acceptance, follow [HOST_PRESENTATION_ATTESTATION.md](HOST_PRESENTATION_ATTESTATION.md). Never modify the manifest to conceal a hash mismatch.
 
-**DRAFT_ONLY / NOT_PUBLISHED.** Não existe nesta etapa um tag `v1.0.0-rc.1`, publicação de GitHub Release, merge de PR, instalação validada ou nova autorização científica produzida por este documento. A decisão de transformar a candidata em *pre-release* pública depende de ato posterior explícito do mantenedor.
+## Status of these notes
+
+**DRAFT_ONLY / NOT_PUBLISHED.** This document does not create a `v1.0.0-rc.1` tag, GitHub Release, PR merge, live installation acceptance, or new scientific authorization. A public prerelease requires a later explicit maintainer decision and verified evidence for the exact candidate commit.
