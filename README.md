@@ -10,7 +10,7 @@ The project is available in a **public GitHub repository**. **Every 0.9.0-beta r
 
 **Recommended published experimental beta:** [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6), confirmed published with its [prepared Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.6/MeuArtigoSkill-v0.9.0-beta.6.zip) and SHA-256. Earlier beta.1 and beta.2, along with beta.4 and beta.5, remain archived for reproducibility.
 
-**Current source version:** `1.0.0-rc.1` — an **experimental release candidate**, not a stable release or an accepted real-host installation. Its CI installable ZIP is distinct from GitHub's source archive and becomes a published GitHub Release only after an actual release/tag is created and verified. Until then, beta.6 remains the latest public GitHub Release.
+**Current version:** `1.0.0-rc.1` — an **experimental release candidate**, not a stable release or an accepted real-host installation. Its CI installable ZIP is distinct from GitHub's source archive and becomes a published GitHub Release only after an actual release/tag is created and verified. Until then, beta.6 remains the latest public GitHub Release.
 
 1. Follow the [installation guide](docs/INSTALLATION.md) for a compatible assistant.
 2. Start a conversation about a genuine research problem. For example: *"I want to develop an article with Meu Artigo. Help me define the question and possible methodological approaches. First, check which storage and research tools are actually available."*
