@@ -39,7 +39,7 @@ class SeventhSourceIdentityBatchTests(unittest.TestCase):
                                  sid in PREVIOUSLY_LICENSED)
                 card = (ROOT / record["path"]).read_bytes()
                 self.assertEqual(hashlib.sha256(card).hexdigest(), record["sha256"])
-                self.assertIn(b"FICHA_DE_PROSPEC", card)
+                self.assertTrue(b"FICHA_DE_PROSPEC" in card or b"UNREVIEWED_PROSPECTING_CARD" in card)
                 if sid not in PREVIOUSLY_LICENSED:
                     self.assertEqual(rights["public_distribution"], "NOT_AUTHORIZED_BY_THIS_LEDGER")
                     self.assertEqual(record["source_read_scope"],

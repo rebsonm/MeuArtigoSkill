@@ -50,7 +50,8 @@ class NinthDigitalMethodsSourceWorkTests(unittest.TestCase):
                 self.assertEqual(l["scientific_review"], "PENDING")
                 raw=(ROOT / d["path"]).read_bytes()
                 self.assertEqual(hashlib.sha256(raw).hexdigest(),d["sha256"])
-                self.assertIn("FICHA_DE_PROSPECÇÃO_NÃO_REVISADA",raw.decode("utf-8"))
+                self.assertTrue("FICHA_DE_PROSPECÇÃO_NÃO_REVISADA" in raw.decode("utf-8") or
+                                "UNREVIEWED_PROSPECTING_CARD" in raw.decode("utf-8"))
                 self.assertIn("[L]",raw.decode("utf-8"))
                 self.assertNotIn("drive.google.com/drive/",raw.decode("utf-8").lower())
 

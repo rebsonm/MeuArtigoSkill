@@ -42,7 +42,7 @@ class TenWorkIdentityEvidenceTests(unittest.TestCase):
             self.assertFalse(source["public_work_metadata_screen"]["original_archive_pdf_redistribution_authorized"])
             body = (ROOT / source["path"]).read_bytes()
             self.assertEqual(hashlib.sha256(body).hexdigest(), source["sha256"])
-            self.assertIn(b"FICHA_DE_PROSPEC", body)
+            self.assertTrue(b"FICHA_DE_PROSPEC" in body or b"UNREVIEWED_PROSPECTING_CARD" in body)
 
     def test_aggregate_count_and_rights_separation(self):
         docs = self.registry["documents"]
