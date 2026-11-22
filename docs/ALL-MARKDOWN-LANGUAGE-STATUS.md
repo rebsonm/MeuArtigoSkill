@@ -41,3 +41,18 @@ history and existing published release assets are not rewritten.
 
 A review of translation fidelity is still needed before claiming full
 English migration. This audit is not scientific review or a copyright check.
+
+
+## Editorial card machine-translation batch (22 November 2026)
+
+This branch contains **110** provisional English machine-translated editorial
+cards. A controlled integrity repair restored **40** corrupted scientific
+status markers from the original Markdown record, and preserved **six**
+previously source-compared English cards byte-for-byte. All 110 machine
+translations remain **MACHINE_TRANSLATED_REVIEW_PENDING**; they are not
+certified translations or independent scientific evaluations. The seven human
+scientific gates and the 649-record library coverage do not change.
+
+The source-of-truth notice in each translated card links to the corresponding
+original public Portuguese record. Neither editorial translation nor exact
+SHA-256 reconciliation grants rights to reproduce third-party PDFs.
