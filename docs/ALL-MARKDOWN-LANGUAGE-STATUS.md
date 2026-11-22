@@ -60,3 +60,21 @@ unchanged. A separate translation effort is tracked in PR #121 (bibliographic
 prospecting cards) and PR #122 (remaining editorial cards). Those larger
 machine-generated batches contain material translation errors and are **not
 ready for merge** without substantive corrections.
+
+
+## Bibliographic source-card translation batch (22 November 2026)
+
+The 475-record source registry remains unchanged in cardinality. The source-card
+machine translation branch reconciled **472 existing translated source cards**
+against the operational ledger (649 total cards) and repaired 102 corrupted
+machine-rendered status labels using original published records. Each of the
+translated source records is explicitly marked **MACHINE_TRANSLATED_REVIEW_PENDING**
+and links to its pre-translation public Git revision for comparison. Machine
+translation has **not** been independently reviewed for methodological or legal
+fidelity, and no [L] or scientific gate is approved. This notice does not
+certify that all repository Markdown is English-only.
+
+Source-card English editorial prose is a provisional aid and must not be
+presented as an authoritative translation of any article, book, license, or
+scientific finding. Where errors or ambiguous semantics persist, consult the
+original and the public source registry.
