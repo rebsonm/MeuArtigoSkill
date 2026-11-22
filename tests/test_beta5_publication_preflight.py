@@ -17,7 +17,7 @@ class Beta5PublicationTests(unittest.TestCase):
     def test_consistent_release_metadata(self):
         self.assertEqual(self.version,"1.0.0-rc.1")
         self.assertEqual(audit_published_source_metadata(ROOT),[])
-        self.assertIn("confirmed published",self.readme.lower())
+        self.assertIn("recommended published experimental prerelease",self.readme.lower())
         self.assertIn("published github experimental prerelease",self.readme.lower())
         self.assertIn("pre-release",self.notes.lower())
         self.assertIn("not a stable",self.notes.lower())
