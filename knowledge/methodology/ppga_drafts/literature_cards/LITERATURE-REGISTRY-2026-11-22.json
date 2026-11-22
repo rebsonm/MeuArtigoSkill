@@ -1,16 +1,16 @@
 {
   "schema": "PPGA_REFERENCED_LITERATURE_CARDS_V1",
   "date": "2026-11-22",
-  "count": 23,
+  "count": 25,
   "by_area": {
     "working-paper": 10,
     "quantitative": 10,
-    "project-methods": 3
+    "project-methods": 5
   },
   "source_policy": "Cite verified articles and books only; do not cite course slides; no scientific [L] claims from unread full text",
   "active_catalog_additions": 0,
   "base_ppga_staged_cards": 50,
-  "extension_ppga_staged_cards": 23,
+  "extension_ppga_staged_cards": 25,
   "records": [
     {
       "path": "knowledge/methodology/ppga_drafts/literature_cards/alvesson-sandberg-2011-problematization.md",
@@ -215,6 +215,24 @@
       "area": "project-methods",
       "reference": "Miia Martinsuo, Meike Tilebein and Gustavo Birollo (2024), Lifecycles, Processes, and Practices in Strategic Projects and Programs",
       "url": "https://doi.org/10.1016/j.ijproman.2024.102653",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/mariani-2026-ai-project-value.md",
+      "area": "project-methods",
+      "reference": "Costanza Mariani (2026), Are Projects Ready for AI — or for the Value It Generates?",
+      "url": "https://doi.org/10.1016/j.ijproman.2026.102846",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/chen-et-al-2025-digital-projects-review.md",
+      "area": "project-methods",
+      "reference": "Meiying Chen, T. S. Martins, L. Zhang and H. Dong (2025), Digital Transformation in Project Management: A Systematic Review and Research Agenda",
+      "url": "https://doi.org/10.3390/systems13080625",
       "scientific_status": "PENDING",
       "evidence": "P-only",
       "original_pdf_included": false

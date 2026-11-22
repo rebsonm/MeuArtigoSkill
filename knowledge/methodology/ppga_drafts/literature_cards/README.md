@@ -1,6 +1,6 @@
 # PPGA sources-first methodology extension — 2026-11-22
 
-This directory contains **23 new original methodology literature cards**: **10 Working Paper** cards, **10 quantitative and causal-method** cards, and **3 cross-disciplinary Project Management** cards. The first 50 PPGA card candidates remain in `../cards/`; the combined staging backlog is now **73** candidates. The existing 174 active editorial cards and 475 SRC entries are unchanged.
+This directory contains **25 new original methodology literature cards**: **10 Working Paper** cards, **10 quantitative and causal-method** cards, and **3 cross-disciplinary Project Management** cards. The first 50 PPGA card candidates remain in `../cards/`; the combined staging backlog is now **75** candidates. The existing 174 active editorial cards and 475 SRC entries are unchanged.
 
 **Primary research references only:** every new card points to an independently identifiable journal article or book and poses original [P] research-design checks, never using classroom slides as scholarly evidence. Source publisher metadata/available abstracts were checked, not full source text claim-by-claim. Every source remains subject to edition, rights, fidelity and duplicate-scope verification.
 
@@ -33,3 +33,8 @@ This supplements the private PPGA course inventories in Working Paper, Quantitat
 - **project-methods:** [Miia Martinsuo, Meike Tilebein and Gustavo Birollo (2024), Lifecycles, Processes, and Practices in Strategic Projects and Programs](https://doi.org/10.1016/j.ijproman.2024.102653) — [card](./martinsuo-tilebein-birollo-2024-strategic-projects.md)
 
 **Scientific governance:** no new card automatically joins the active index, no source PDF is published from this directory, and all seven research gates stay PENDING. Separately, two CC BY 4.0 research PDFs from the Project Management course were uploaded in draft PR #118; their original authorship and licenses are recorded there, and their presence does not confer scientific approval.
+
+## Two additional first-party PDF-grounded research leads
+
+- [Costanza Mariani (2026), Are Projects Ready for AI — or for the Value It Generates?](https://doi.org/10.1016/j.ijproman.2026.102846) — [decision card](./mariani-2026-ai-project-value.md), [P] only
+- [Meiying Chen, T. S. Martins, L. Zhang and H. Dong (2025), Digital Transformation in Project Management: A Systematic Review and Research Agenda](https://doi.org/10.3390/systems13080625) — [decision card](./chen-et-al-2025-digital-projects-review.md), [P] only

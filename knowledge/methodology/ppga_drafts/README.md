@@ -16,7 +16,7 @@ Next operational step: validate the specific publication/edition and method-deci
 
 ## Published-reference expansion across PPGA courses (2026-11-22)
 
-The [source-first literature extension](./literature_cards/README.md) now adds **23 separate English-language, original [P] cards** grounded in named journal articles and academic books — **10 on Working Paper**, **10 on quantitative methods**, and **3 on Project Management research strategies**. References point to the scholarly works or publisher/book entries, not to course slide decks. These 23 are **not included in the initial 50-card editorial triage report**; that report remains a snapshot of the first intake. Total staged PPGA candidates: **73** (50 initial + 23 literature). Zero were activated or upgraded to scientific [L].
+The [source-first literature extension](./literature_cards/README.md) now adds **25 separate English-language, original [P] cards** grounded in named journal articles and academic books — **10 on Working Paper**, **10 on quantitative methods**, and **5 on Project Management research strategies**. References point to the scholarly works or publisher/book entries, not to course slide decks. These 23 are **not included in the initial 50-card editorial triage report**; that report remains a snapshot of the first intake. Total staged PPGA candidates: **75** (50 initial + 25 literature). Zero were activated or upgraded to scientific [L].
 
 Separately, [draft PR #118](https://github.com/rebsonm/MeuArtigoSkill/pull/118) adds **four unchanged CC BY 4.0 original project-methods research PDFs** and updates the public PDF catalogue and credit register from 51 to 55 PDFs. This is source distribution with attribution, not scientific gate approval, and the two PRs remain independent.
 
