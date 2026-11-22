@@ -71,7 +71,8 @@ class SourceRegistryCompletenessTests(unittest.TestCase):
                                 "This is NOT an [I] synthesis of a source reading or [L] scientific evidence." in text)
                 self.assertTrue("Não atribuir as propostas acima ao autor" in text or
                                 "Esta orientação é redação editorial original" in text or
-                                "Do not attribute the editorial prompts above to the source authors." in text)
+                                "Do not attribute the editorial prompts above to the source authors." in text or
+                                "The guidance is original editorial text; do not attribute its questions to the source authors." in text)
                 self.assertNotIn("drive.google.com/drive/", text.lower())
                 self.assertNotIn("access_token", text.lower())
                 self.assertNotIn("AIza", text)
