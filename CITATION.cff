@@ -23,4 +23,17 @@ abstract: >-
 # v1.0.0-rc.1 was published as an experimental GitHub prerelease on 2026-11-22.
 # https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1
 # Earlier v0.9.0-beta.6 was published on 2026-10-15 and remains archived.
-# Zenodo DOI refers to the registered software deposit, not independent scientific validation.
+# The root version and DOI describe the last published GitHub prerelease (RC.1).
+# The newer RC.2 was archived separately on Zenodo: DOI 10.5281/zenodo.24450459.
+# Preferred citation below refers to that version without changing published RC.1 metadata.
+# Neither DOI implies independent scientific validation.
+
+preferred-citation:
+  type: software
+  title: "Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool"
+  authors:
+    - family-names: "Mendes"
+      given-names: "Rebson de Morais"
+  version: "1.0.0-rc.2"
+  doi: "10.5281/zenodo.24450459"
+  url: "https://doi.org/10.5281/zenodo.24450459"
