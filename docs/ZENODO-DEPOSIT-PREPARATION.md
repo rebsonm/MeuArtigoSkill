@@ -1,11 +1,20 @@
-# Preparing an auditable Meu Artigo copy for a future Zenodo version
+# Zenodo version records and preparing auditable source snapshots
 
-**Status: deposit-preparation documentation, NOT a Zenodo publication.**
+**Status:** The maintainer provided a new Zenodo RC.2 software DOI,
+[10.5281/zenodo.24450459](https://doi.org/10.5281/zenodo.24450459).
+The workflow discussed below still creates a separate **source-review
+artifact, NOT a Zenodo publication**. This documentation change does not
+create or update any Zenodo deposit.
 
-## Canonical public source and existing citation
+## Canonical public source and version-specific citations
 
 - Repository: https://github.com/rebsonm/MeuArtigoSkill
-- Existing software DOI cited by the project: https://doi.org/10.5281/zenodo.24397699
+- Zenodo experimental **RC.2** software DOI (reported by maintainer):
+  https://doi.org/10.5281/zenodo.24450459
+- Earlier Zenodo DOI retained for the historical citation:
+  https://doi.org/10.5281/zenodo.24397699
+- These are version references, not a confirmed concept-DOI mapping;
+  check Zenodo's version panel before claiming a verified relationship.
 - Last verified GitHub release: experimental `v1.0.0-rc.1`, published
   22 November 2026 from an **earlier** source commit.
 - Subsequent public documentation and methodology-card corrections have
@@ -22,12 +31,14 @@
 
 The workflow `.github/workflows/prepare-zenodo-copy.yml` prepares one
 **public-source-only** ZIP from an exact Git commit on `main`, together
-with file-level SHA-256 checksums and source-commit metadata. The archive
-excludes the 51 third-party PDF binaries; the publishers' original PDF
-links and the independent rights/attribution register remain in the source.
+with file-level SHA-256 checksums and source-commit metadata. That **source
+snapshot ZIP only** excludes the 51 third-party PDF binaries. **None of the
+PDFs are deleted or removed from GitHub.** The live Skill uses on-demand
+GitHub consultation; the original PDFs, publisher links and separate
+rights/attribution register remain in the public source repository.
 
-An archive prepared this way is a reviewable copy for a **future Zenodo
-version**. Its inclusion of code, methodological notes, archived intake
+An archive prepared this way is a reviewable copy for a **possible future Zenodo
+source snapshot**; it is not the already-archived RC.2 distribution. Its inclusion of code, methodological notes, archived intake
 records, and original card metadata does not mean the content has passed
 independent methodological peer review. The original sources and
 rights-holder contact pathway remain accessible.
@@ -37,7 +48,7 @@ exact ZIP SHA-256, source commit, file count, and excluded-file count.
 Inspect the generated manifest, check archive contents and sample the
 documents; **do not rely on the file name alone**.
 
-## Updating an existing Zenodo record responsibly
+## Preparing a subsequent Zenodo record responsibly
 
 Zenodo distinguishes a **concept DOI** (all versions) from
 **version-specific DOIs**. Do not assume the existing project DOI is the
@@ -60,8 +71,10 @@ new version DOI or silently overwrite an immutable archived release.
    version relationship and published date. Update the project's citation
    metadata **only after** an actual new archival version is verified.
 
-**No Zenodo upload, new DOI, release tag or Skill package is created by
-writing this guide or by generating the archival ZIP.**
+**The RC.2 DOI above was supplied by the maintainer; its record was not
+independently retrieved through the public Zenodo API in this update.**
+No additional Zenodo upload, DOI, release tag or Skill package is created by
+writing this guide or generating the separate source-review ZIP.
 
 Zenodo reference: https://zenodo.org/help/versioning
 
