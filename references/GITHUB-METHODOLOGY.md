@@ -28,8 +28,8 @@ Installing a Skill does not itself make a request or grant new tools.
   verified host capability use the bundled methodological foundations and mark
   online lookup **UNAVAILABLE/NOT_RUN**.
 
-Other optional guides: [adaptive map](docs/ADAPTIVE-METHOD-MAP.md) and
-[Skill-only method route](references/METHODOLOGY-CONSULTATION-SKILL-ONLY.md).
+Other optional guides: [adaptive map](../docs/ADAPTIVE-METHOD-MAP.md) and
+[Skill-only method route](METHODOLOGY-CONSULTATION-SKILL-ONLY.md).
 
 **Installed-source behavior, not a claim about any earlier published ZIP:**
 `SKILL.md` now directs the assistant to automatically consult relevant public
