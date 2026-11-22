@@ -29,6 +29,7 @@ DIR_TYPES = {
 # Development, distribution and release checks remain in the source repository.
 EXCLUDED_SCRIPT_NAMES = frozenset({
     "audit_methodology_rights_history.py",
+    "audit_public_pdf_release.py",
     "audit_repository_secrets.py", "reconcile_methodology_library.py",
     "v1_15_integrity_audit.py",
     "audit_public_docs.py", "audit_source_language.py",
