@@ -28,3 +28,9 @@ Rights: CC BY 4.0; source SHA-256: 6992aafd1be44a31c70d1dc080691d75eb9cfe50470ad
 ## Researcher safeguard
 
 This editorial card is a brief original orientation, not a paraphrase or reconstruction of the paper. Before an article manuscript uses a particular scholarly claim as [L], independently inspect the exact page of the published original and consider contradictory evidence. This record cannot approve scientific gates.
+
+## Prompt and retrieved-source traceability
+
+For consequential research support, log task, authorized source scope, tool/model identity, substantive prompts and retrieval settings, accessible source pages, alternative interpretations, rejected outputs, independent passage/DOI checks, and the final [L]/[I]/[P] status. Generated prose and privately available PDFs are neither source evidence nor permission to publish third-party text. Keep technical books as bibliographic prospects unless edition, provenance and redistribution rights are verified.
+
+This is original operational guidance, not a quoted or reconstructed method from a source. See [public research writing and AI evidence guide](../../../references/RESEARCH-WRITING-AND-METHOD-FIT.md).
