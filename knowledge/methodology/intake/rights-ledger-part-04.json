@@ -309,7 +309,7 @@
       },
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-15-DELTA.json",
       "identity_claim_in_receipt": false,
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
+      "operational_disposition": "EXCLUIDO_COM_JUSTIFICATIVA"
     },
     {
       "id": "SRC-0386",
