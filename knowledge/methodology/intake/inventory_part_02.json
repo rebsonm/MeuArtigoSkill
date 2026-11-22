@@ -1,0 +1,713 @@
+{
+  "schema": "MEU_ARTIGO_SOURCE_INVENTORY_V1",
+  "batch": 2,
+  "private_file_content": false,
+  "publishability": "NOT_ASSESSED",
+  "kind": "METADATA_ONLY_NOT_PRIMARY_SOURCE",
+  "folders": [
+    {
+      "category": "Confiabilidade na Pesquisa Qualitativa",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Closa,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 791129,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Mcdonaldetal,2019.pdf",
+          "mime": "application/pdf",
+          "bytes": 435640,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Castro,Rezende,2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 750615,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "cole-2023.pdf",
+          "mime": "application/pdf",
+          "bytes": 858105,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Watts,Quinn,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 694260,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "PaivaJretal,2011.pdf",
+          "mime": "application/pdf",
+          "bytes": 348443,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Yadav,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 107537,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Sevilmis,Yidiz,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 394303,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "o-connor-joffe-2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 766064,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Ullrichetal,2012.pdf",
+          "mime": "application/pdf",
+          "bytes": 436702,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Qualidade da Pesquisa Qualitativa_Avaliação de",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Johnsonetal,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 528607,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "tracy2010.pdf",
+          "mime": "application/pdf",
+          "bytes": 335879,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "barbour2001.pdf",
+          "mime": "application/pdf",
+          "bytes": 184450,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Costa,Minayo,2019.pdf",
+          "mime": "application/pdf",
+          "bytes": 383640,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Mandal, 2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 221985,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Tobin, Begley, 2004.pdf",
+          "mime": "application/pdf",
+          "bytes": 84765,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Closa_2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 237245,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "poortman, Schildkamp,2011.pdf",
+          "mime": "application/pdf",
+          "bytes": 370436,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "jarzabkowski-et-al-2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 82115,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Velloso,Tizzoni,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 279837,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Amostragem",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Cap¡tulo 4 Amostragem Aleat¢ria Simples _ _main.pdf",
+          "mime": "application/pdf",
+          "bytes": 672259,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "statistical_paradises_and_paradoxes.pdf",
+          "mime": "application/pdf",
+          "bytes": 1020025,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "MRP Norming pre-print v4 (1).pdf",
+          "mime": "application/pdf",
+          "bytes": 1434131,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Validação de Pesquisa Qualitativa",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Noble,Smith,2015.pdf",
+          "mime": "application/pdf",
+          "bytes": 261258,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Ollaik,Ziller,2012.pdf",
+          "mime": "application/pdf",
+          "bytes": 729855,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Melo,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 246613,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Anney, 2014.pdf",
+          "mime": "application/pdf",
+          "bytes": 207301,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Gondimetal,2011.pdf",
+          "mime": "application/pdf",
+          "bytes": 147572,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Leung,2015.pdf",
+          "mime": "application/pdf",
+          "bytes": 444600,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Cho,Trent,2006.pdf",
+          "mime": "application/pdf",
+          "bytes": 255145,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Hayashietal,2019.pdf",
+          "mime": "application/pdf",
+          "bytes": 685796,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Dennis_ChapterOne.pdf",
+          "mime": "application/pdf",
+          "bytes": 491149,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Souto, Korkischko, 2012.pdf",
+          "mime": "application/pdf",
+          "bytes": 341585,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Transparˆncia na Pesquisa Qualitativa",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Prattetal,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 172338,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Kaneetal,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 4384848,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "moravcsik2014.pdf",
+          "mime": "application/pdf",
+          "bytes": 252316,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "QR Transparency & Reporting May 2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 887515,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Tongetal,2012.pdf",
+          "mime": "application/pdf",
+          "bytes": 553766,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "moravcsik2013.pdf",
+          "mime": "application/pdf",
+          "bytes": 308039,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "TransparencyinQualitativeResearch.pdf",
+          "mime": "application/pdf",
+          "bytes": 577062,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Jacobsetal,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 455343,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "monroe2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 142302,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "aguinis,solarino,2019.pdf",
+          "mime": "application/pdf",
+          "bytes": 7106350,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Transparˆncia e Replicabilidade (quanti)",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "King (2006) (1).pdf",
+          "mime": "application/pdf",
+          "bytes": 90077,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Miguel et al (2014) (1).pdf",
+          "mime": "application/pdf",
+          "bytes": 277251,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "King_1995.pdf",
+          "mime": "application/pdf",
+          "bytes": 259815,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Figueiredo Filho et al (2019) (1).pdf",
+          "mime": "application/pdf",
+          "bytes": 693693,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Amostragem Qualitativa",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Simetal,2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 848083,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Rijnsoever,2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 4215360,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "gill-2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 279673,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Minayo,2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 366354,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Hennink,Kaiser,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 1838359,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Campos,Saidel,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 223205,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Nobreetal,2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 155433,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Fontanellaetal,2011.pdf",
+          "mime": "application/pdf",
+          "bytes": 104289,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Bockorni, Gomes, 2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 339007,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Subedi,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 526953,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "An lise do Discurso",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Sthapitetal,2022.pdf",
+          "mime": "application/pdf",
+          "bytes": 649937,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Gee,2011.pdf",
+          "mime": "application/pdf",
+          "bytes": 1172964,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Korobov,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 77326,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Resende, Ramalho, 2004.pdf",
+          "mime": "application/pdf",
+          "bytes": 280803,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Chiarotti Ces rio, Chiatotti Almeida, 2008.pdf",
+          "mime": "application/pdf",
+          "bytes": 178681,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Nogueira,2008.pdf",
+          "mime": "application/pdf",
+          "bytes": 84482,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Dias,2011.pdf",
+          "mime": "application/pdf",
+          "bytes": 185542,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "SOTO,1997.pdf",
+          "mime": "application/pdf",
+          "bytes": 6246789,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Lttr13,2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 453381,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "LeBart, 2019.pdf",
+          "mime": "application/pdf",
+          "bytes": 364558,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Imagem como dado",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "000633536.pdf",
+          "mime": "application/pdf",
+          "bytes": 136974,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "O uso das imagens em pesquisas nas ciˆncias sociais.pdf",
+          "mime": "application/pdf",
+          "bytes": 230328,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Joo and Steinert-Threlkeld (2018).pdf",
+          "mime": "application/pdf",
+          "bytes": 8549727,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Grounded Theory - Teoria Fundamentada em Dados",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Brandao,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 3171845,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Santosetal,2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 347428,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Centenoetal,2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 407918,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Prigol,Behrens,2019.pdf",
+          "mime": "application/pdf",
+          "bytes": 414982,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Andrewsetal,2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 632315,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Metelski,2021.pdf",
+          "mime": "application/pdf",
+          "bytes": 241981,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Pinto,Santos,2012.pdf",
+          "mime": "application/pdf",
+          "bytes": 225281,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Strauss,Corbin,1997.pdf",
+          "mime": "application/pdf",
+          "bytes": 214064,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Termos Interativos (multiplicativos)",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Braumoeller (2004).pdf",
+          "mime": "application/pdf",
+          "bytes": 752056,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Brambor_Clark and Golder_2006.pdf",
+          "mime": "application/pdf",
+          "bytes": 2218372,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Friedrich (1982).pdf",
+          "mime": "application/pdf",
+          "bytes": 2457604,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Dawson (2014).pdf",
+          "mime": "application/pdf",
+          "bytes": 560115,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Grupos Focais",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "wilkinson1998.pdf",
+          "mime": "application/pdf",
+          "bytes": 1616977,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Stanley, 2016.pdf",
+          "mime": "application/pdf",
+          "bytes": 498228,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Nyumbaetal,2018- The use of focus group discussion methodology Insights from two decades of.pdf",
+          "mime": "application/pdf",
+          "bytes": 1170571,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Aschidamini,Saupe,2004.pdf",
+          "mime": "application/pdf",
+          "bytes": 92012,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Gui,2003.pdf",
+          "mime": "application/pdf",
+          "bytes": 95247,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Focus Group Method April 2020.pdf",
+          "mime": "application/pdf",
+          "bytes": 1428415,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Netoetal,2002.pdf",
+          "mime": "application/pdf",
+          "bytes": 301336,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Guestetal,2017.pdf",
+          "mime": "application/pdf",
+          "bytes": 327129,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Gondim,2003.pdf",
+          "mime": "application/pdf",
+          "bytes": 1345423,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Kind,2004.pdf",
+          "mime": "application/pdf",
+          "bytes": 73978,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [
+        {
+          "name": "Grupos Focais Online"
+        }
+      ],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Jurimetria",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "Maia e Bezerra (2020).pdf",
+          "mime": "application/pdf",
+          "bytes": 574651,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Zabala e Silveira (2014).pdf",
+          "mime": "application/pdf",
+          "bytes": 154270,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    },
+    {
+      "category": "Avaliação de Impacto",
+      "status": "LISTED_FIRST_LEVEL",
+      "files": [
+        {
+          "name": "guiaexpost (1).pdf",
+          "mime": "application/pdf",
+          "bytes": 11932808,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "153743_analise-ex-ante_web_novo.pdf",
+          "mime": "application/pdf",
+          "bytes": 4161095,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "gertler_etl_2018.pdf",
+          "mime": "application/pdf",
+          "bytes": 7561242,
+          "rights": "UNVERIFIED"
+        },
+        {
+          "name": "Batista e Domingos (2017).pdf",
+          "mime": "application/pdf",
+          "bytes": 263280,
+          "rights": "UNVERIFIED"
+        }
+      ],
+      "subfolders": [],
+      "next_page_token_present": false
+    }
+  ]
+}

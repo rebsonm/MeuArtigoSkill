@@ -45,6 +45,23 @@ def scoped_files(root: Path) -> list[Path]:
         if not path.is_file() or path.is_symlink() or path.name in OMIT:
             continue
         rel=path.relative_to(root)
+        # Bibliographic corpus metadata preserves ORIGINAL source titles, author
+        # names and keywords (often Portuguese). It is data, not release prose;
+        # translating or stripping those titles would damage provenance.
+        corpus_data = rel.as_posix() in {
+            "knowledge/methodology/pdf_catalog.json",
+            "knowledge/methodology/PDF-ATTRIBUTIONS.md",  # bibliographic titles are original-language source data
+            "knowledge/methodology/catalog.json",
+            "knowledge/methodology/source_registry_catalog.json",
+            "knowledge/methodology/pdfs/README.md",
+        } or any(rel.as_posix().startswith(prefix) for prefix in (
+            "knowledge/methodology/inventory/",
+            "knowledge/methodology/intake/",
+            "knowledge/methodology/cards/",  # original research cards are corpus data, not instructions
+            "knowledge/methodology/source_cards/",  # protected-source bibliography, not instruction code
+        ))
+        if corpus_data:
+            continue
         # The scanner stores Portuguese trigger words as DATA, not untranslated UI/source prose.
         if rel.as_posix() == "scripts/audit_source_language.py":
             continue

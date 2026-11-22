@@ -551,3 +551,78 @@ must deliberately start/stop the local process to view a live project;
 all actual scientific choices and their authorized recording remain
 human responsibilities. Independent evaluation, integrating PR #65,
 merging PR #66 and publishing remain separately authorized tasks.
+
+## Skill-only quantitative inference-change preview (development candidate)
+
+The existing read-only scripts/method_fill_preflight.py now previews a change
+between two canonical quantitative inference-aim labels. A researcher can
+propose CAUSAL when ASSOCIATIONAL is already recorded, receiving a
+CAUSAL_ESCALATION_REQUIRES_REVIEW status and a bounded checklist of potential
+review areas. This does not infer that causal identification is satisfied.
+
+Example: save the single canonical label CAUSAL in an authorized local text
+file, then run:
+
+    python scripts/method_fill_preflight.py /authorized/project --field inference_aim --draft-file /authorized/proposed-aim.txt
+
+The inference_change_impact response exists only when an explicit draft
+targets the inference_aim field in a coherent QUANTITATIVE project. Statuses:
+NO_CANONICAL_BASELINE, NO_INFERENCE_AIM_CHANGE,
+INFERENCE_AIM_CHANGE_REQUIRES_REVIEW, CAUSAL_ESCALATION_REQUIRES_REVIEW,
+CAUSAL_DEESCALATION_REQUIRES_REVIEW, INVALID_PROPOSAL_NOT_COMPARED.
+
+The existing preflight retains its write-block on already recorded method
+fields, so a nonzero exit code can coexist with a useful read-only preview.
+Nothing is written to the method profile, DEC, TRACE, gates, claims or Drive.
+Neither previous researcher rationales nor private research text are echoed.
+
+Review targets are possible dependencies, not verified edges. This feature
+does not validate semantic support, perform selective revalidation, approve
+human decisions, or prove scientific originality. It is absent from the
+published v0.9.0-beta.6 reference pending a separately approved integration.
+
+## Cross-route change preview (stage 2 development branch; Skill only)
+
+The same read-only method field preflight now returns `method_change_impact`
+for every canonical field of the eight configured research routes whenever
+the researcher supplies a proposed text file. The preview reuses the current
+METHOD_PROFILE.json and does not change the canonical data schema.
+
+Coverage is *conservative* and explicitly limited:
+
+- Exact strings: `IDENTICAL_FIELD_NO_NEW_REVIEW`, with no added targets.
+- Boundary whitespace or CRLF/LF differences: `BOUNDARY_FORMATTING_ONLY_NO_NEW_REVIEW`.
+- Any other prose difference: `TEXT_CHANGED_SEMANTIC_IMPACT_UNKNOWN`.
+- Change in declared canonical enum (quantitative inference, mixed-method
+  design or integration type): `CANONICAL_DESIGN_LABEL_CHANGED_REVIEW_REQUIRED`.
+- Missing baseline: `NO_RECORDED_BASELINE`; invalid or blocked proposal:
+  `INVALID_OR_BLOCKED_PROPOSAL_NOT_COMPARED`.
+- Old/proposed invalid canonical enums: `INVALID_CANONICAL_ENUM_NOT_COMPARED`.
+
+The candidate documents a few route-specific *potential* dependencies:
+integrative review selection; systematic review eligibility; problematizing
+review assumptions; conceptual theory problem; qualitative sampling;
+quantitative inference aim; mixed design/integration type; design-science
+evaluation plan. Other fields are still compared, but return
+`FIELD_ONLY_UNMAPPED` rather than inventing downstream dependencies.
+
+Potential review targets identify fields a researcher might check. They
+DO NOT mean those fields have been invalidated, or that a changed field
+necessarily constitutes a scientific redesign. Internal whitespace changes
+and other editorial rewrites cannot be classified semantically by the code;
+the status deliberately remains unknown instead of silently approving them.
+Only literal/enum differences and known field names are checked.
+
+The original PR #95 `inference_change_impact` output is retained for
+compatibility. The existing write block for recorded fields is unchanged.
+The preview never updates DEC/TRACE, gates, evidence, snapshots, or Drive;
+there is no requirement for an additional remote service and no new scientific approval mechanism.
+The published v0.9.0-beta.6 reference and the article corpus are unaffected.
+
+Reproduce on an authorized local project (draft file holds researcher text):
+
+    python scripts/method_fill_preflight.py /authorized/project --field evaluation_plan --draft-file /authorized/new-evaluation-plan.txt
+
+Engineering tests with synthetic scenarios verify the behavior; they do not
+prove methodological adequacy, independent scientific evaluation or user
+benefit. Human review and actual project permissions remain mandatory.

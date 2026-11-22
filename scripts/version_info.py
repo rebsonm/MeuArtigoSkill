@@ -13,7 +13,17 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION_PATTERN = re.compile(r"\d+\.\d+\.\d+(?:-beta\.\d+)?\Z")
+VERSION_PATTERN = re.compile(r"(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-(?:beta|rc)\.[1-9]\d*)?\Z")
+
+def release_channel(version: str) -> str:
+    """Label a source version, never its actual publication or validation."""
+    if not VERSION_PATTERN.fullmatch(version):
+        raise ValueError("Invalid release version")
+    if "-beta." in version:
+        return "beta"
+    if "-rc." in version:
+        return "release-candidate"
+    return "stable"
 
 
 def read_version(root: Path = ROOT) -> str:

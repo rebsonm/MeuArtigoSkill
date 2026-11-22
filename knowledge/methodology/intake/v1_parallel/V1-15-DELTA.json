@@ -1,0 +1,636 @@
+{
+  "schema": "MEU_ARTIGO_V1_15_AUDIT_DELTA_V1",
+  "batch_id": "V1-15/20",
+  "status": "PARCIAL",
+  "date_local": "2026-11-21",
+  "branch": "work/v1-15-20261121",
+  "manifest_commit": "7c92045310eb3b1474a9612a777fb0012a511592",
+  "manifest_blob_sha1": "2f85dc6c4283376b9fc3c312668f0a1f25a0a301",
+  "reference_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+  "reference_blobs": {
+    "source_registry": "511b519f6524cd1f7f977dc41a330ce62fbd00c1",
+    "editorial_catalog": "6ca3ebde72b117717ae994390121c5aee884d7be"
+  },
+  "inspected_scopes": {
+    "frozen_source_registry_records": 475,
+    "provisional_source_records": 343,
+    "ib_delta_batches": 20,
+    "ib_delta_records": 343,
+    "source_delta_sha256_valid_format": 343,
+    "editorial_catalog_records": 174,
+    "editorial_catalog_sha256_valid_format": 174,
+    "editorial_draft_status": 170,
+    "editorial_missing_explicit_status": 4,
+    "rights_registry_not_checked": 458,
+    "rights_registry_verified_publisher_license": 17,
+    "source_card_sha256_recomputed": 343,
+    "source_card_sha256_matched": 343,
+    "editorial_card_sha256_recomputed": 174,
+    "editorial_card_sha256_matched": 174,
+    "source_and_editorial_sha256_recomputed_total": 517,
+    "source_and_editorial_sha256_mismatch_count": 0,
+    "source_and_editorial_sha256_fetch_failure_count": 0
+  },
+  "concrete_sha256_recomputations": [
+    {
+      "class": "SOURCE_CARD",
+      "id": "SRC-0099",
+      "ref": "work/ib-01-20261121",
+      "path": "knowledge/methodology/source_cards/src-0099.md",
+      "expected": "c9d2f4481f90ad19b91fa52e1e97a2dfa4412ca88574a88af80ccb3635264096",
+      "actual": "c9d2f4481f90ad19b91fa52e1e97a2dfa4412ca88574a88af80ccb3635264096",
+      "outcome": "MATCH"
+    },
+    {
+      "class": "EDITORIAL_CARD",
+      "path": "knowledge/methodology/cards/reviews.md",
+      "ref": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+      "expected": "331db84256e59599d0a8674b0064d9c3058a9261917efb03e403f083dfcde8af",
+      "actual": "331db84256e59599d0a8674b0064d9c3058a9261917efb03e403f083dfcde8af",
+      "outcome": "MATCH"
+    }
+  ],
+  "scope_full_hashes_recomputed": true,
+  "actual_sha256_divergences_in_verified_sample": [],
+  "pending_recompute_count": 0,
+  "duplicate_size_candidate_groups": [
+    {
+      "ids": [
+        "SRC-0111",
+        "SRC-0454"
+      ],
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "9b12a0c0f29cc77cbe06c20fd2b0fb2bba3ff1d20db14f677bfa87a937471036",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
+    },
+    {
+      "ids": [
+        "SRC-0354",
+        "SRC-0438"
+      ],
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "c8d8e7792adc0bc8b8893f5a7ecd9b9cec3bf913429bf5ee80c9ac07019231b0",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
+    },
+    {
+      "ids": [
+        "SRC-0206",
+        "SRC-0337"
+      ],
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "9ec4986eacda3dfccc8ceef0b7f0f96198144fd9b61c3a81cf15954b51a1ab99",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
+    },
+    {
+      "ids": [
+        "SRC-0235",
+        "SRC-0267"
+      ],
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "9a2d07e4f62edfa668bcf311e13920f99263c704a8187fae77065d0c1369674e",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
+    },
+    {
+      "ids": [
+        "SRC-0244",
+        "SRC-0371"
+      ],
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "cf7139ab385e44efb75e26e8c6334f1c959cceb5bb29010e4670f59070446d5d",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
+    },
+    {
+      "ids": [
+        "SRC-0230",
+        "SRC-0344"
+      ],
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "b9160abe4e69654761076dc02a2edd6cfc114511d169c10b2c7d0194593edc84",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
+    },
+    {
+      "ids": [
+        "SRC-0349",
+        "SRC-0391"
+      ],
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "a4f11f5d1a13bb4c150a3f4090f74aa522cf2f3e8276704847a9841d47153986",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
+    },
+    {
+      "ids": [
+        "SRC-0245",
+        "SRC-0370"
+      ],
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "329b88773b6d4c1c82bba37f7f83b995add6f2e188f380eb332081da53ddd390",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
+    },
+    {
+      "ids": [
+        "SRC-0006",
+        "SRC-0435"
+      ],
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "fe1ba0c860a4c8b4fb23ecec3cbd6701d5a63a0a7702d82ab01805542eec7c04",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
+    },
+    {
+      "ids": [
+        "SRC-0402",
+        "SRC-0430",
+        "SRC-0434"
+      ],
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "daed917cbcca5ad77cfa3ac53150012600748cf235de376835e7d00990b8731b",
+      "copies_verified": 3,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
+    },
+    {
+      "ids": [
+        "SRC-0234",
+        "SRC-0256"
+      ],
+      "evidence": "SHA256_PDF_BYTES_IDENTICAL_AUTHENTICATED_DRIVE_READ",
+      "same_file_as_confirmed": true,
+      "same_work_as_confirmed": false,
+      "pdf_sha256": "e383b25084ae5d73a535a04758d651867152d89e5f7b512331ac384840ed30f2",
+      "copies_verified": 2,
+      "same_bibliographic_title": true,
+      "judgement": "BINARY_IDENTICAL_RECORD_IDS_RETAINED_NO_MERGE_RIGHTS_UNCHANGED"
+    }
+  ],
+  "aliases_candidate_groups": [
+    {
+      "ib": "IB-05",
+      "ids": [
+        "SRC-0175",
+        "SRC-0176",
+        "SRC-0177",
+        "SRC-0178",
+        "SRC-0179",
+        "SRC-0180"
+      ],
+      "ledger_folder": "Transparˆncia na Pesquisa Qualitativa",
+      "delta_folder": "Transparência na Pesquisa Qualitativa"
+    },
+    {
+      "ib": "IB-05",
+      "ids": [
+        "SRC-0183"
+      ],
+      "ledger_folder": "Transparˆncia e Replicabilidade (quanti)",
+      "delta_folder": "Transparência e Replicabilidade (quanti)"
+    },
+    {
+      "ib": "IB-06",
+      "ids": [
+        "SRC-0195",
+        "SRC-0196",
+        "SRC-0197",
+        "SRC-0198",
+        "SRC-0200",
+        "SRC-0201",
+        "SRC-0202",
+        "SRC-0203",
+        "SRC-0204"
+      ],
+      "ledger_folder": "An lise do Discurso",
+      "delta_folder": "Análise do Discurso"
+    },
+    {
+      "ib": "IB-14",
+      "ids": [
+        "SRC-0368",
+        "SRC-0369"
+      ],
+      "ledger_folder": "An lise de Conte£do",
+      "delta_folder": "Análise de Conteúdo"
+    },
+    {
+      "ib": "IB-17",
+      "ids": [
+        "SRC-0407",
+        "SRC-0408",
+        "SRC-0409"
+      ],
+      "ledger_folder": "An lise de Sobrevivˆncia",
+      "delta_folder": "Análise de Sobrevivência"
+    },
+    {
+      "ib": "IB-17",
+      "ids": [
+        "SRC-0411",
+        "SRC-0412",
+        "SRC-0413",
+        "SRC-0414"
+      ],
+      "ledger_folder": "An lise Fatorial",
+      "delta_folder": "Análise Fatorial"
+    }
+  ],
+  "folder_alias_records_count": 25,
+  "delta_vs_ledger_filename_mismatch_count": 0,
+  "delta_vs_ledger_size_mismatch_count": 0,
+  "aliases_validated_against_private_Drive": true,
+  "copyright": {
+    "source_pdfs_republished": 0,
+    "exact_copy_pdf_sha256_compared": 23,
+    "rights_for_exact_pdf_copies_newly_approved": 0,
+    "editorial_cards_independently_scientifically_approved": 0,
+    "prior_rights_counters_not_promoted": true,
+    "sha256_identical_pdf_groups": 11
+  },
+  "script": {
+    "path": "scripts/v1_15_integrity_audit.py",
+    "commit": "4d4cb1a2e448bb0fa0ff863b49f7d5725e9c30ca",
+    "executed_in_full_git_checkout": false,
+    "ci_status": "NOT_RUN",
+    "independent_api_side_sha256_audit_executed": true
+  },
+  "canonical_md": {
+    "desired_section": "31.15",
+    "write_status": "NOT_WRITTEN_NO_ATOMIC_CONDITIONAL_SECTION_PATCH",
+    "observed_content_length_first": 306686,
+    "observed_content_length_later": 307566,
+    "blocker": "Drive raw text/markdown update overwrites entire file without version precondition; 90 revisions and active multi-tab edits observed; preserve all other sections.",
+    "observed_current_size_bytes": 331875,
+    "observed_current_modified_time": "2026-11-21T22:39:57.758Z"
+  },
+  "prohibited_actions_performed": [
+    "Unintentional Drive locator inclusion in public V1-15 commit history; value removed from HEAD without rewriting history; pending authorized review."
+  ],
+  "next_steps": [
+    "Prioridade P0: avaliar e conter 25 PDFs confirmados com ACL anyone:reader e auditar demais permissões do acervo; coordenar Issue #103 sem reescrever histórico sem autorização",
+    "Manter IDs SRC e caminhos originais; 11 grupos de PDFs binariamente idênticos não equivalem a autorização de merge ou licença",
+    "Tratar 25 grafias IB como aliases de exibição de seis pastas físicas com Unicode corrompido; preservar colisão de pastas Análise de Conteúdo",
+    "Atualizar somente 31.15 do MD quando houver edição serializada com exclusividade ou precondição atômica de versão e conferir readback",
+    "Executar script de validação Python em clone com todas as refs; CI não executada; não aprovar V1-16 antes de revisão humana."
+  ],
+  "public_history_security_incident": {
+    "severity": "NEEDS_REVIEW",
+    "description": "A previous V1-15 DELTA commit briefly included the Drive locator of the canonical Markdown. Removed from current HEAD; historical Git commit remains addressable. No rewrite/force-push attempted.",
+    "introduced_commit": "f2248b5475fe5623b026f1284d6fcf8f2ecb35ed",
+    "sanitized_head_commit": "d1f67ffe7ab8c9bbba110db7f38ce91decbd6f02",
+    "needs_human_rights_privacy_review": true,
+    "scope": "V1-15 own new commit only; possible overlap with existing Issue #103",
+    "identifier_value_in_report": false
+  },
+  "full_sha256_audit_evidence": {
+    "result": "MATCH_517_OF_517",
+    "method": "Authenticated GitHub fetch_file UTF-8 contents at frozen editorial snapshot and 20 individually bounded IB branch refs, independent SHA-256 recomputation in execution environment",
+    "algorithm_self_test": "SHA256(abc)=ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+    "per_ib_batch_counts": {
+      "IB-01": 18,
+      "IB-02": 18,
+      "IB-03": 18,
+      "IB-04": 17,
+      "IB-05": 17,
+      "IB-06": 17,
+      "IB-07": 17,
+      "IB-08": 17,
+      "IB-09": 17,
+      "IB-10": 17,
+      "IB-11": 17,
+      "IB-12": 17,
+      "IB-13": 17,
+      "IB-14": 17,
+      "IB-15": 17,
+      "IB-16": 17,
+      "IB-17": 17,
+      "IB-18": 17,
+      "IB-19": 17,
+      "IB-20": 17
+    },
+    "editorial_batches": [
+      {
+        "indexes": "0..16",
+        "matched": 17
+      },
+      {
+        "indexes": "17..33",
+        "matched": 17
+      },
+      {
+        "indexes": "34..50",
+        "matched": 17
+      },
+      {
+        "indexes": "51..67",
+        "matched": 17
+      },
+      {
+        "indexes": "68..84",
+        "matched": 17
+      },
+      {
+        "indexes": "85..101",
+        "matched": 17
+      },
+      {
+        "indexes": "102..118",
+        "matched": 17
+      },
+      {
+        "indexes": "119..135",
+        "matched": 17
+      },
+      {
+        "indexes": "136..152",
+        "matched": 17
+      },
+      {
+        "indexes": "153..169",
+        "matched": 17
+      },
+      {
+        "indexes": "170..173",
+        "matched": 4
+      }
+    ],
+    "caveats": [
+      "Confirms only source-card Markdown bytes in their IB branch refs and editorial Markdown bytes at frozen PR101 snapshot",
+      "Does not prove PDF byte identity, rights or scholarly validity",
+      "The checked contents are not guaranteed to match a future integrated HEAD without another verification"
+    ]
+  },
+  "duplicate_pdf_byte_audit": {
+    "pdfs_hashed": 23,
+    "groups_confirmed_same_sha256": 11,
+    "groups_nonmatching": 0,
+    "method": "Authenticated Drive raw-PDF reads; SHA-256 of complete ephemeral local bytes with Python hashlib.file_digest; repeated 2 or 3 copies per size group; no PDFs committed or republished",
+    "security": "No Drive file IDs, URLs, or binary PDF bytes embedded in this public delta; temporary local PDF copies erased after hashing.",
+    "scope_limit": "Binary equality does not certify scholarly identity/license, nor authorize catalog deduplication."
+  },
+  "alias_drive_verification": {
+    "target_records": 25,
+    "records_found_unique_in_ledger_named_physical_folder": 25,
+    "filename_and_byte_size_matches": 25,
+    "physical_folders_found": 6,
+    "physical_folder_names_contain_original_damaged_unicode": true,
+    "normalized_ib_names_are_display_aliases_only": true,
+    "folders_must_not_be_renamed_or_merged": true,
+    "collision": "Drive also has a separate correctly accented 'Análise de Conteúdo' folder; physical 'An lise de Conte£do' is distinct.",
+    "rights_warning": "25/25 matched PDFs have anyone:reader permission; source is accessible with the link regardless of copyright status."
+  },
+  "security_followup": {
+    "github_repository_visibility": "public",
+    "canonical_md_drive_permissions": "owner_only_no_external_share_observed",
+    "pdfs_examined_for_acl": 25,
+    "pdfs_with_anyone_reader_acl": 25,
+    "risk": "HIGH_PUBLIC_PDF_LINK_ACCESS_WITH_UNREVIEWED_COPYRIGHT",
+    "related_issue": "rebsonm/MeuArtigoSkill#103",
+    "acl_changes_performed": 0,
+    "pdf_bytes_published": 0,
+    "remediation": "Audit all private-archive PDF ACLs and revoke anyone:reader only after owner-approved share-impact decision; handle historical Git locator separately without force push."
+  },
+  "continuity_v1_15_20261121_unicode": {
+    "status": "PARCIAL_SEM_ACEITE",
+    "evidence_type": "CONTINUIDADE_AMOSTRAL_E_REVISAO_DE_SCRIPT_SEM_REAUDITAR_PDFS",
+    "manifest_commit": "7c92045310eb3b1474a9612a777fb0012a511592",
+    "frozen_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+    "independent_utf8_sha256_recomputation": [
+      {
+        "path": "knowledge/methodology/source_cards/src-0099.md",
+        "ref": "work/ib-01-20261121",
+        "sha256": "c9d2f4481f90ad19b91fa52e1e97a2dfa4412ca88574a88af80ccb3635264096",
+        "status": "MATCH",
+        "git_blob": "214f0926fa60e8b468343f495165bf3628f7dbea"
+      },
+      {
+        "path": "knowledge/methodology/cards/reviews.md",
+        "ref": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+        "sha256": "331db84256e59599d0a8674b0064d9c3058a9261917efb03e403f083dfcde8af",
+        "status": "MATCH",
+        "git_blob": "3c53e1f77d174556db4b30fa3ecc73580c910833"
+      },
+      {
+        "path": "knowledge/methodology/cards/design-science.md",
+        "ref": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+        "sha256": "fefdaa9fc5847a397dff9c065f42e910032fddf08dfbfae04bbf4fdc7a085256",
+        "status": "MATCH",
+        "git_blob": "394c2642f32acdd5f60239c0c3b83a6b327b4f78"
+      }
+    ],
+    "sha256_vectors_run": 3,
+    "sha256_sample_matched": 3,
+    "sha256_sample_mismatched": 0,
+    "historical_full_517_recount_repeated_in_this_continuity": false,
+    "historical_pdf_23_rehashed_in_this_continuity": false,
+    "duplicate_groups_consistency": {
+      "groups": 11,
+      "copies": 23,
+      "groups_with_valid_sha256_and_prior_binary_match": 11,
+      "false_positive_binary_matches_observed": 0,
+      "infer_same_intellectual_work": false,
+      "new_pdf_read": false
+    },
+    "folder_alias_string_comparison": {
+      "groups": 6,
+      "records": 25,
+      "nfc_equivalent_groups": 0,
+      "nfkc_equivalent_groups": 0,
+      "distinctly_encoded_groups": 6,
+      "group_counts_by_ib": {
+        "IB-05": 7,
+        "IB-06": 9,
+        "IB-14": 2,
+        "IB-17": 7
+      },
+      "classification": "DIFFERENT_STRING_NO_AUTO_EQUIVALENCE",
+      "note": "Metadados previos do Drive indicam correspondencias por nome/tamanho; equivalencia Unicode e identidade fisica automatica NAO demonstradas."
+    },
+    "script_correction": {
+      "path": "scripts/v1_15_integrity_audit.py",
+      "commits": [
+        "54c0022d304aea885c19d66e891718df707739be",
+        "c0818cd324a3673b8e7e54446210c2988563253a"
+      ],
+      "blob_after": "fff187a54c8857f318aa01518f6c6112c18fca88",
+      "output_alias_folder_names": "REMOVED_FROM_NEW_SCRIPT_OUTPUT",
+      "unicode_classification": "FOUR_CONSERVATIVE_CATEGORIES_NO_AUTO_MERGE",
+      "isolated_python_mirrored_logic_test": "PASS_5_OF_5",
+      "script_selftest_executed_in_checkout": false,
+      "full_script_run_in_checkout": false,
+      "ci_pass": false
+    },
+    "privacy": {
+      "current_receipts_direct_private_google_drive_urls_found": 0,
+      "historical_git_exposure_resolved": false,
+      "known_25_pdf_acl_anyone_reader_status": "PREVIOUSLY_OBSERVED_NOT_CHANGED",
+      "permissions_changed": false,
+      "public_pr_created": false
+    },
+    "results_receipt_update_commit": "3e4655fbbea283374fe022ebac2697336b0f2516",
+    "results_receipt_blob_after": "be5552a28336d39601152af66e968b196a37383d",
+    "canonical_md_body_changed": false,
+    "canonical_comment": "PENDING_VERIFIED_REPLY_OR_NEW_SECTION_COMMENT",
+    "one_next_action": "RUN_V1_15_VALIDATOR_IN_CONTROLLED_CHECKOUT_WITH_20_IB_REFS_AND_RECONCILE_RESULTS",
+    "acceptance_gate": "REPRODUCIBLE_COUNTS_343_174_11_25_PLUS_PRIVACY_AND_HUMAN_RIGHTS_REVIEW",
+    "forbidden_actions_not_taken": [
+      "MERGE",
+      "TAG",
+      "RELEASE",
+      "FORCE_PUSH",
+      "CATALOG_EDIT",
+      "RIGHTS_LEDGER_EDIT",
+      "PDF_PUBLICATION",
+      "SCIENTIFIC_APPROVAL",
+      "SECURITY_APPROVAL"
+    ]
+  },
+  "full_validator_execution_20261121": {
+    "status": "EXECUTED_FULL_WITH_EXIT_ZERO",
+    "script_git_blob_sha1": "fff187a54c8857f318aa01518f6c6112c18fca88",
+    "script_ref_sha": "155c477fa685a7237a28f817d19af64b0d9a0478",
+    "manifest_commit": "7c92045310eb3b1474a9612a777fb0012a511592",
+    "snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+    "input_acquisition": "PUBLIC_GITHUB_RAW_HTTPS_BY_PINNED_COMMIT_SHA",
+    "git_show_compatibility": "LOCAL_READ_ONLY_SHIM_RESOLVING_REF_TO_CACHED_EXACT_COMMIT_BYTES",
+    "native_git_checkout": false,
+    "ci_or_github_workflow_run": false,
+    "full_script_invoked": true,
+    "self_test_exit_code": 0,
+    "full_run_exit_code": 0,
+    "input_files_count": 546,
+    "source_md_expected": 343,
+    "source_md_recomputed": 343,
+    "source_md_matches": 343,
+    "source_md_mismatches": 0,
+    "editorial_md_expected": 174,
+    "editorial_md_recomputed": 174,
+    "editorial_md_matches": 174,
+    "editorial_md_mismatches": 0,
+    "total_md_hash_matches": 517,
+    "source_catalogue_records": 475,
+    "source_id_absent": 0,
+    "source_id_duplicate": 0,
+    "source_id_unexpected": 0,
+    "filename_or_size_mismatch": 0,
+    "source_and_editorial_fetch_errors": 0,
+    "duplicate_size_candidate_groups": 11,
+    "original_pdf_sha256_newly_recomputed": 0,
+    "aliases_count": 25,
+    "alias_unicode_classification": {
+      "DIFFERENT_STRING_NO_AUTO_EQUIVALENCE": 25
+    },
+    "technical_discrepancy_count": 0,
+    "sanitized_local_report_sha256": "698ec4b95c9e5a1efc41c0ba63c24e79cadd64fac7763c2b0a08c8e14812a150",
+    "ib_frozen_commit_shas": {
+      "work/ib-01-20261121": "99b9949ed6b55abf89e1c18418001aaaa5f99d5a",
+      "work/ib-02-20261121": "07f215b3d88f41844bf178871720149e42793f56",
+      "work/ib-03-20261121": "e6fc879b472622954f9b1feae98a65a3b9548848",
+      "work/ib-04-20261121": "50c8861348f7f09a9397811c69fe23211b06894d",
+      "work/ib-05-20261121": "5fe380c9e9880a39292154ebb76f0d6527094af2",
+      "work/ib-06-20261121": "fc1b2c971fa3e71462760c7399207a8a8359ce10",
+      "work/ib-07-20261121": "cbe460271252f2db491e0b03ee9b1f05a52c0a3c",
+      "work/ib-08-20261121": "1ebe546d8dc029a2ec6cebe9f978e3778b418133",
+      "work/ib-09-20261121": "afe3e64068b5d27043ce06bca403246f8a8874c4",
+      "work/ib-10-20261121": "94bc85c4c55b016c1c032334f6918cf91715607f",
+      "work/ib-11-20261121": "d9d13fd78f0c939101b7f8c9ab2e332fea50339f",
+      "work/ib-12-20261121": "154060567cca188fbed769ffa0746791f80f1dd1",
+      "work/ib-13-20261121": "5f50968786ccc434baba2def7f3ce097da311192",
+      "work/ib-14-20261121": "1185c45df5750d22568553791f11d4b4cb4ced0b",
+      "work/ib-15-20261121": "cd13dd75235d99408f4c55122bab2457f7a705db",
+      "work/ib-16-20261121": "8e6a3b83074549815c6514eebadfd2c737e1f4e9",
+      "work/ib-17-20261121": "a117fbf3a4604b81103073d7a2257de2c9077b32",
+      "work/ib-18-20261121": "786f8861755d84aaab2ebb758a82a3378e0fe503",
+      "work/ib-19-20261121": "d4f41cc36c24bdfe366eb1e82bd27a1e8f73e277",
+      "work/ib-20-20261121": "5778003466f86be413a9f03c4f2255e0284e38b0"
+    },
+    "results_receipt_commit": "88a2ccc34dd501b3961d1483382e41bdfcee466c",
+    "results_receipt_blob_sha1": "85c28fbd2b8b90fb51c01ac8523c214f0475bb42",
+    "privacy_risks_resolved": false,
+    "scientific_juridical_security_approval": false,
+    "canonical_md_body_changed": false,
+    "next_single_action": "COORDINAR_REVISAO_DE_ACL_DOS_25_PDFS_PREVIAMENTE_IDENTIFICADOS_COM_MANTENEDOR_E_ISSUE_103",
+    "acceptance_gate": "ACL_PRIVACY_CONFIRMED_SAFE_RIGHTS_AND_SCIENTIFIC_REVIEW_INDEPENDENT_PLUS_OTHER_V1_BATCHES",
+    "no_pdf_private_read_in_this_execution": true
+  },
+  "acl_metadata_reverification_20261121": {
+    "status": "READ_ONLY_COMPLETED_NO_PERMISSION_CHANGES",
+    "related_issue_number": 103,
+    "issue_state_at_check": "open",
+    "frozen_snapshot": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+    "method": "GOOGLE_DRIVE_EXACT_ORIGINAL_FOLDER_AND_FILENAME_AND_SIZE_MATCH_FOLLOWED_BY_GET_FILE_METADATA_PERMISSIONS",
+    "drive_pdf_bytes_opened": 0,
+    "targeted_records": 25,
+    "unique_targets_matched": 25,
+    "ambiguous_matches": 0,
+    "target_groups": 6,
+    "group_counts": [
+      6,
+      1,
+      9,
+      2,
+      3,
+      4
+    ],
+    "individual_metadata_read_success": 25,
+    "individual_metadata_read_errors": 0,
+    "visibility_permission_metadata_available_count": 25,
+    "explicit_anyone_reader_count": 25,
+    "explicit_anyone_reader_by_group": [
+      6,
+      1,
+      9,
+      2,
+      3,
+      4
+    ],
+    "explicit_anyone_reader_count_unknown": 0,
+    "other_450_pdf_acl_verified_in_this_step": false,
+    "public_access_using_link_possible": true,
+    "public_link_leaked_or_accessed_confirmed": false,
+    "file_locator_or_pdf_id_written_to_public_repo": false,
+    "acl_changed": 0,
+    "github_history_rewritten": false,
+    "security_approval": false,
+    "legal_or_copyright_approval": false,
+    "remediation_pending": "OWNER_APPROVED_ACL_CHANGE_AFTER_IMPACT_REVIEW_PRESERVING_NAMED_COLLABORATORS",
+    "verify_remediation": "GET_FILE_METADATA_FOR_25_EXPECT_NO_TYPE_ANYONE_OR_EXPLICIT_APPROVED_EXCEPTION",
+    "results_receipt_commit": "c462493969216049223f26c6ce2ccdb5ac93d128",
+    "results_receipt_blob_sha1": "9d14ddbcdd3d14db0dcd8e0876e22d2c1f4b68ce",
+    "one_next_action": "OBTAIN_EXPLICIT_OWNER_DECISION_ON_REVOKING_ANYONE_READER_FROM_25_FILES_WITH_SHARE_IMPACT_CHECK",
+    "advance_gate": "NO_UNAPPROVED_PUBLIC_LINK_ACL_FOR_25_AND_HISTORICAL_PRIVACY_RIGHTS_SCIENCE_REVIEW"
+  }
+}

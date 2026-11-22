@@ -1,0 +1,152 @@
+{
+  "schema": "meu-artigo-2026-11-22-3-case-rights-delta-v1",
+  "base_matrix_commit": "99e232ca4c61430e915160f3c22e55e58c19539d",
+  "frozen_catalog_license_fields": {
+    "PDF35": "CC BY 4.0",
+    "PDF48": "CC BY",
+    "PDF49": "CC BY"
+  },
+  "scope": "INFORMATION_ONLY_NOT_LICENSE_OR_ALLOWLIST_CHANGE",
+  "three_direct_sha256_matches": true,
+  "three_publisher_pdf_equality": "NOT_VERIFIED",
+  "human_signoff": "NOT_GIVEN",
+  "requests_sent": 0,
+  "release": "NO_GO",
+  "records": [
+    {
+      "id": "PDF-35",
+      "catalog_index": 35,
+      "doi": "10.33361/RPQ.2022.v.10.n.25.545",
+      "journal": "Revista Pesquisa Qualitativa",
+      "edition": "10(25), pp. 404–424, set/dez 2022",
+      "title": "Amostragem em investigações qualitativas: conceitos e aplicações ao campo da saúde",
+      "authors": "Claudinei José Gomes Campos; Maria Giovana Borges Saidel",
+      "file": "knowledge/methodology/pdfs/campos-saidel-2022-qualitative-sampling.pdf",
+      "github_sha256": "b3e78db1e163a787ec0ac08c44fca1cbb2c664f53564581128779c65a8ddd1a8",
+      "github_bytes": 223205,
+      "sha256_direct_current": "MATCH",
+      "github_blob_sha1": "3507ba7c143cd295e752bca55feeb061255dce00",
+      "source_article": "https://editora.sepq.org.br/rpq/article/view/545",
+      "source_pdf": "https://editora.sepq.org.br/rpq/article/download/545/337",
+      "evidence": [
+        {
+          "type": "article",
+          "url": "https://editora.sepq.org.br/rpq/article/view/545",
+          "observation": "Article-specific Creative Commons Attribution 4.0 International License"
+        },
+        {
+          "type": "site_template_2021",
+          "url": "https://editora.sepq.org.br/rpq/article/view/484",
+          "observation": "Article CC BY 4.0 followed by journal-wide noncommercial wording"
+        },
+        {
+          "type": "site_template_2026",
+          "url": "https://editora.sepq.org.br/rpq/article/view/1787",
+          "observation": "Article CC BY 4.0 followed by identical noncommercial general notice"
+        },
+        {
+          "type": "publisher_pdf",
+          "url": "https://editora.sepq.org.br/rpq/article/download/545/337",
+          "observation": "21 pages; first page names edition and DOI; targeted text scan found Quadro 1, source 'Elaborado pelos autores (2022)', and no explicit CC version in PDF text"
+        }
+      ],
+      "license_interpretation": "Contradiction unresolved; no inference BY-NC or permission for unrestricted redistribution",
+      "third_parties": "Quadro 1 sourced to authors in the article, conceptual methods cite other works; source citation is not proof of copied graphics; full item inventory still pending",
+      "risk": "P0",
+      "distribution": "BLOCKED_LICENSE_CONFLICT",
+      "required_evidence": "Written work-and-version-specific clarification from RPQ editorial team with canonical license URI, PDF coverage and exceptions",
+      "responsible_proposed": "Editor-in-chief RPQ; rights curator; authorized reviewer",
+      "request_to_editor": "DRAFT_NOT_SENT"
+    },
+    {
+      "id": "PDF-48",
+      "catalog_index": 48,
+      "doi": "10.12712/rpca.v14i1.38405",
+      "journal": "Revista Pensamento Contemporâneo em Administração (RPCA/UFF)",
+      "edition": "14(1), pp. 111 et seq., Jan–Mar 2020",
+      "title": "Usos e possibilidades metodológicas para os estudos qualitativos em Administração: explorando a análise temática",
+      "authors": "Manuela Ramos da Silva; Marcos Antônio de Souza Barbosa; Lucas Gabriel Bezerra Lima",
+      "file": "knowledge/methodology/pdfs/silva-barbosa-lima-2020-analise-tematica-administracao.pdf",
+      "github_sha256": "ba56e9b7fff572af066706ddbe0d886f36eff0ecf8916227c1ff0ec7798a5870",
+      "github_bytes": 631240,
+      "sha256_direct_current": "MATCH",
+      "github_blob_sha1": "83a1140fa939436a187f4773e60c116efed4caa9",
+      "source_article": "https://periodicos.uff.br/pca/article/view/38405",
+      "source_pdf": "https://periodicos.uff.br/pca/article/download/38405/pdf/138387",
+      "evidence": [
+        {
+          "type": "article",
+          "url": "https://periodicos.uff.br/pca/article/view/38405",
+          "observation": "2020-03-31, edition 14(1), CC Attribution, explicitly permits commercial remix with attribution, but no version number or CC URI shown"
+        },
+        {
+          "type": "journal_submission_policy",
+          "url": "https://periodicos.uff.br/pca/about/submissions",
+          "observation": "Same generic CC BY and commercial permission, no numeric version"
+        },
+        {
+          "type": "published_pdf",
+          "url": "https://periodicos.uff.br/pca/article/download/38405/pdf/138387",
+          "observation": "PDF title DOI and 2020 edition matched; Fig 1–5 credited to authors, Quadro 1, illustrative Research A and B with prior empirical data; no explicit CC version in extracted PDF text"
+        }
+      ],
+      "license_interpretation": "CC BY kind and permission for commercial uses documented; specific CC version not independently identified",
+      "third_parties": "Figures 1–5 credited 'Elaborado pelos autores' but derived from prior Research A/B and historical/participant materials; review source dataset and any interview quotations in actual PDF before treating rights as fully cleared",
+      "risk": "P1",
+      "distribution": "CONDITIONAL_UNVERSIONED_CC_BY",
+      "required_evidence": "Edition-2020-specific link to versioned CC license or written publisher confirmation; item-level source data and credits; PDF byte equivalence",
+      "responsible_proposed": "RPCA editorial office; rights curator; authorized reviewer",
+      "request_to_editor": "DRAFT_NOT_SENT"
+    },
+    {
+      "id": "PDF-49",
+      "catalog_index": 49,
+      "doi": "10.1590/1981-3821201900020001",
+      "journal": "Brazilian Political Science Review (BPSR)",
+      "edition": "13(2), e0001 (2019), corrected classification Review Essay",
+      "title": "Seven Reasons Why: A User’s Guide to Transparency and Reproducibility",
+      "authors": "Dalson Figueiredo Filho; Rodrigo Lins; Amanda Domingos; Nicole Janz; Lucas Silva",
+      "file": "knowledge/methodology/pdfs/figueiredo-filho-et-al-2019-seven-reasons-transparency.pdf",
+      "github_sha256": "c2dc25fc39a0782be735e723e5613eacf90562aadb4cfe00e51442cce056a7e8",
+      "github_bytes": 693693,
+      "sha256_direct_current": "MATCH",
+      "github_blob_sha1": "4e7d3eeb61dbb45b10f67c48add78d1187d5e6c3",
+      "source_article": "https://www.scielo.br/j/bpsr/a/sytyL4L63976XCHfK3d7Qjh/?format=html&ilang=en&lang=en",
+      "source_pdf": "https://www.scielo.br/j/bpsr/a/sytyL4L63976XCHfK3d7Qjh/?format=pdf&lang=en",
+      "evidence": [
+        {
+          "type": "article_specific_license",
+          "url": "https://www.scielo.br/j/bpsr/a/sytyL4L63976XCHfK3d7Qjh/?format=html&ilang=en&lang=en",
+          "observation": "At original article's Creative Commons Attribution notice (link ID 205), hyperlink points directly to https://creativecommons.org/licenses/by/4.0/; publication date Aug 12, 2019"
+        },
+        {
+          "type": "journal_policy_latest",
+          "url": "https://new.scielo.br/journal/bpsr/about/",
+          "observation": "CC BY 4.0, unless otherwise specified, article and media license; policy last updated 2026"
+        },
+        {
+          "type": "journal_original_page",
+          "url": "https://brazilianpoliticalsciencereview.org/article/seven-reasons-why-a-users-guide-to-transparency-and-reproducibility/",
+          "observation": "Publication in BPSR 13(2) e0001 2019; erratum refers article classification"
+        },
+        {
+          "type": "publisher_pdf",
+          "url": "https://www.scielo.br/j/bpsr/a/sytyL4L63976XCHfK3d7Qjh/?format=pdf&lang=en",
+          "observation": "37-page PDF text inspected, screenshot unavailable due web cache miss; exact binary comparison unavailable"
+        },
+        {
+          "type": "figures_and_sources",
+          "url": "https://www.scielo.br/j/bpsr/a/sytyL4L63976XCHfK3d7Qjh/?format=html&ilang=en&lang=en",
+          "observation": "Figure 1 cites external blog/shadowtolight, figure 2 cites Imai et al. 2016, figure 3 author-generated from external biology dataset, figure 4 cites TIER 2017, figure 5 cites r4stats; table 2 TOP guideline source Nosek et al. 2015; erratum corrects Article to Review Essay"
+        }
+      ],
+      "license_interpretation": "CC BY 4.0 article-level supported by 2019 edition's own linked hyperlink; removes uncertainty about article license version in HTML, but no item-level clearance of external figures and exact repo PDF",
+      "third_parties": "At least four figures reference separate external sources, not cleared for sublicensing merely because main article is CC BY 4.0; table-derived standards require attribution; no finding of infringement",
+      "risk": "P1",
+      "distribution": "CONDITIONAL_THIRD_PARTY_FIGURES_AND_EXACT_PDF",
+      "required_evidence": "Caption by caption permission/exception review for figures 1,2,4,5, confirm figure 3/data, table 2 and final PDF hash; editorial confirmation only if captions/original rights cannot resolve",
+      "responsible_proposed": "BPSR rights contact; editorial content curator; authorized reviewer",
+      "request_to_editor": "OPTIONAL_DRAFT_NOT_SENT"
+    }
+  ]
+}

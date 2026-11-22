@@ -165,3 +165,39 @@ not measures of scientific validity.
 ## Last planned beta: 0.9.0-beta.6 (2026-10-15 preparation)
 
 The maintainer authorized consolidating PR #70 into the final *planned* experimental beta.6 and documenting that status across the repository. This does **not** assert that beta.6 is stable or that the custom external-tool server and external-tool Apps UI have passed authenticated real-host acceptance. The existing manual workflow remains the only publishing route: merge the reviewed PR to `main`, dispatch **Publish beta (manual)** with `publish-beta` on the same UTC day recorded in `CITATION.cff`, then verify the tag, ZIP and SHA-256. Only after successful release verification may `OFFICIAL_SKILL_RELEASE` and download recommendations switch from beta.5 to beta.6. Do not silently update installed Skills or replace archived release assets.
+
+## v1.0.0-rc.1 — unpublished Skill-only acceptance candidate
+
+The source candidate is prepared on a development branch, stacked above
+the reviewed Stage-1 integration PR. It is not yet merged, tagged,
+published, stable, installed in a real host, or independently scientifically
+validated. The existing v0.9.0-beta.6 official download pointer must stay
+unchanged throughout candidate testing.
+
+A source `VERSION` ending in `-rc.N` is a **candidate channel**, not
+a public release. The candidate `CITATION.cff` identifies that version
+but **does not** have `date-released`; `CHANGELOG.md` uses an
+`UNRELEASED` candidate heading. Use `python scripts/sync_version.py --candidate` to align README and citation
+version without inserting a date. Do not run the historical
+`sync_version.py --date` command to invent a candidate publication date.
+
+For a candidate PR, the read-only `Release audit` workflow:
+1. Checks `python scripts/check_release_metadata.py --candidate` and fails
+   if a publication date, false official recommendation or misleading
+   candidate status is present.
+2. Runs full regression, privacy/source-language audits and bundle checks.
+3. Attaches the prepared RC ZIP, SHA256SUMS and build receipt to the GitHub
+   Actions run as a **temporary CI test artifact**. These are neither
+   permanent distribution assets nor an authenticated public release.
+4. Never creates a tag, changes the published recommendation or updates
+   an already installed Skill.
+
+Inspect the exact SHA, compare the ZIP checksum and install only in a
+controlled test environment. Document platform, verified installed package,
+real interaction outcomes and material limitations before proposing stable
+v1.0.0. The old `Publish beta (manual)` workflow deliberately refuses
+`-rc` and stable versions; a separate stable publishing process requires
+maintainer decision after real-host acceptance.
+
+Do not merge the candidate PR with the earlier stacked component PRs in
+addition to the integration PR: select one history to avoid duplicate changes.

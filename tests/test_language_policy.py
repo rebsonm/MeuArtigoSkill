@@ -78,6 +78,39 @@ class AutomaticLanguageTests(unittest.TestCase):
             self.assertEqual(report["source_files_requiring_editorial_language_review"],0)
             self.assertFalse(report["all_source_translated_verified"])
 
+    def test_corpus_bibliographic_titles_remain_original_without_exempting_guides(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            (root/"knowledge/methodology/pdfs").mkdir(parents=True)
+            (root/"docs").mkdir()
+            original=(
+                "A pesquisa científica e a revisão bibliográfica e análise "
+                "exigem metodologia, evidência, fontes e verificação "
+                "para a construção de conhecimento. "
+            )*2
+            (root/"knowledge/methodology/cards").mkdir(parents=True)
+            (root/"knowledge/methodology/cards/card.md").write_text(original,encoding="utf-8")
+            (root/"knowledge/methodology/pdfs/README.md").write_text(original,encoding="utf-8")
+            (root/"knowledge/methodology/pdf_catalog.json").write_text(original,encoding="utf-8")
+            (root/"docs/guide.md").write_text(original,encoding="utf-8")
+            report=audit(root)
+            self.assertEqual(report["source_files_requiring_editorial_language_review"],1)
+            self.assertEqual(report["unresolved"][0]["path"],"docs/guide.md")
+
+    def test_methodology_catalog_keywords_are_source_metadata_not_instructions(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / "knowledge/methodology").mkdir(parents=True)
+            multilingual = (
+                "A pesquisa cientifica e a revisao, analise e metodologia "
+                "fundamentada por evidencia de pesquisa para pesquisadores. "
+            ) * 3
+            (root / "knowledge/methodology/catalog.json").write_text(
+                multilingual, encoding="utf-8"
+            )
+            report = audit(root)
+            self.assertEqual(report["source_files_requiring_editorial_language_review"], 0)
+
     def test_entrypoint_and_adapter_treat_english_source_as_not_english_user(self):
         text=(ROOT/"SKILL.md").read_text(encoding="utf-8")
         adapter=(ROOT/"agents/openai.yaml").read_text(encoding="utf-8")

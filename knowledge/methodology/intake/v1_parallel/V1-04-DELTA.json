@@ -1,0 +1,529 @@
+{
+  "schema": "MEU_ARTIGO_V1_04_EDITORIAL_AUDIT_DELTA_V1",
+  "stage": "V1-04/20",
+  "date": "2026-11-21",
+  "status": "ENTREGUE_PARA_AUDITORIA",
+  "repository": "rebsonm/MeuArtigoSkill",
+  "branch": "work/v1-04-20261121",
+  "plan_commit": "7c92045310eb3b1474a9612a777fb0012a511592",
+  "reading_snapshot": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+  "manifest_path": "knowledge/methodology/intake/v1_parallel/V1-WORKPACKAGES-MANIFEST.json",
+  "allowed_write_scope": "Somente cards listados neste ticket e seus próprios RESULTS/DELTA/recibos; NUNCA catalog.json global ou outro card",
+  "dependencies": [],
+  "checks": {
+    "assigned_cards": 18,
+    "read_success": 18,
+    "baseline_sha256_matches": 18,
+    "metadata_normalized": 6,
+    "unchanged_cards": 12,
+    "scientific_independent_reviews_approved": 0,
+    "rights_independent_reviews_approved": 0,
+    "private_drive_urls_detected": 0,
+    "source_primary_texts_examined": 0,
+    "checksums_after_edit_verified": 18,
+    "global_catalog_updated": false,
+    "source_registry_updated": false,
+    "other_stages_modified": false,
+    "current_branch_sha256_matches": 18,
+    "static_prompt_injection_patterns_detected": 0,
+    "static_private_drive_links_detected": 0,
+    "publisher_metadata_spotchecks": 2
+  },
+  "technical_tests": [
+    "SHA256 algorithm self-test abc PASS",
+    "18 frozen card hashes match manifest PASS",
+    "18 assigned files present and readable PASS",
+    "CI GitHub Actions not executed in this stage",
+    "18/18 frozen SHA256 re-computed independently against immutable manifest PASS",
+    "18/18 branch card SHA256 matched updated receipt values PASS (2 new editorial fixes)",
+    "12 unchanged files and 6 metadata-edited cards confined to V1-04 PASS",
+    "18/18 static scan for typical prompt-injection directives and private Drive locators: 0 hits; NOT a dynamic security test",
+    "SciELO metadata EC-012 and publisher ROSES EC-018 checked; NOT full scientific/rights review",
+    "Release audit #44961093790 on exact SHA 9f53b1fc4b30bbc12467a379322aef438b3a65d5: FAILURE; 893 tests, 4 failures, 1 error, 2 skipped; Static release audit PASS; behavioral regression FAIL",
+    "Catalog points to frozen SHA256 for edited cards; two logged test failures explicitly compare reviews.md new 59c17017… against old 331db842…; remote digest mismatch and blocked retriever symptoms"
+  ],
+  "canonical_md": {
+    "write_status": "BLOCKED_NOT_WRITTEN",
+    "cause": "Google Docs batchUpdate rejects text/markdown; raw Drive update lacked safe transactional merge while remote edits were observed",
+    "scope_intended": "subsection 31.04 only",
+    "preservation": "No raw Markdown replacement attempted and no other subsection edited"
+  },
+  "integration_notes": [
+    "Four modified cards have new SHA256; global catalog remains intentionally untouched and its old hashes must be reconciled exclusively during V1-16.",
+    "Approval of editorial science and rights remains independent, unresolved; no [L] promotion.",
+    "No third-party PDFs, original source full texts, private identifiers or personal data copied.",
+    "The two additional edited cards EC-012 and EC-018 require hash reconciliation only by future V1-16; no global index was touched.",
+    "CI blocking: six card SHAs differ from frozen global catalog; tests fail by design until integration reconciles indices. NEVER patch global catalog in V1-04."
+  ],
+  "cards": [
+    {
+      "card_id": "EC-001",
+      "path": "knowledge/methodology/cards/reviews.md",
+      "title": "Literature reviews and integrative synthesis",
+      "old_sha256": "331db84256e59599d0a8674b0064d9c3058a9261917efb03e403f083dfcde8af",
+      "new_sha256": "59c17017becb127659cac8292df6b3cf0adda6272ff1baadb67798df140a1479",
+      "new_git_blob": "d89cc6019d7767b7ed5e509e98696b2ea69ddbe1",
+      "changed": true,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [
+        "10.1111/j.1471-1842.2009.00848.x",
+        "10.1016/j.jbusres.2019.07.039",
+        "10.1177/1534484305278283"
+      ],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "Risco de confundir revisão semissistemática, integrativa e sistemática sem protocolo verificável.",
+      "action": "Detalhar critério de escolha do tipo de revisão e conferir Grant–Booth, Snyder e Torraco nas obras originais; manter apenas indicação bibliográfica até revisão."
+    },
+    {
+      "card_id": "EC-002",
+      "path": "knowledge/methodology/cards/design.md",
+      "title": "Study design and research inference",
+      "old_sha256": "d819d33b1a2f93b8a521f870e09cdac32c7fb18333eabd0b8be82f4de314b142",
+      "new_sha256": "0500934ef64ec197da6b23d56a6b935d64408b4f5cdaffa8c2964d1638b4f84d",
+      "new_git_blob": "c7818cd3942fd6adefc51cf9155ed2a653bbe8e9",
+      "changed": true,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "Livros de Saunders/Creswell sem ano e edição no rastro; 'cebola' não prova rigor.",
+      "action": "Registrar edição/ano/trecho original antes de qualquer atribuição precisa; diferenciar inferência descritiva, preditiva e causal."
+    },
+    {
+      "card_id": "EC-003",
+      "path": "knowledge/methodology/cards/qualitative.md",
+      "title": "Qualitative analysis and thematic approaches",
+      "old_sha256": "cab9733a5fe55f3e91e17e0a8a549b9e74d076d09cf2587f8111c0a35dbbf4b6",
+      "new_sha256": "936725a5eac07f00d9a481a89461f9b5687afb4ba61eb25e922a85cea6b9e2b6",
+      "new_git_blob": "11ab19fb15495e9c92fcf0d2ece0ec13592ef5ac",
+      "changed": true,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "Braun–Clarke e Yin citados sem edição; tradições qualitativas não equivalentes.",
+      "action": "Conferir fonte original e distinguir análise temática reflexiva de procedimentos de confiabilidade intercodificadores."
+    },
+    {
+      "card_id": "EC-004",
+      "path": "knowledge/methodology/cards/design-science.md",
+      "title": "Design science and artifact evaluation",
+      "old_sha256": "fefdaa9fc5847a397dff9c065f42e910032fddf08dfbfae04bbf4fdc7a085256",
+      "new_sha256": "7a0f36a80dade4e360f283f0981d4e58cd988f1d60b9a8104252edd5965e9e3c",
+      "new_git_blob": "b16ef40e65d409c088fe9a08d183ab1831d91c41",
+      "changed": true,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "Hevner e Peffers são leads editoriais; teste de software não mede efeito acadêmico.",
+      "action": "Precisar desenho de avaliação, comparação, falhas e requisitos; checar obra primária antes de atribuições específicas."
+    },
+    {
+      "card_id": "EC-005",
+      "path": "knowledge/methodology/cards/prisma-2020-reporting.md",
+      "title": "PRISMA 2020: transparent reporting, not a conduct certificate",
+      "old_sha256": "5dd99bd4bce2f2a713e6f15f88e96f6c4c4b34267d49c319403fc07ed05d77b4",
+      "new_sha256": "5dd99bd4bce2f2a713e6f15f88e96f6c4c4b34267d49c319403fc07ed05d77b4",
+      "new_git_blob": "23e75c5a8f3b7a448fae4854d223be8dd66f9bc1",
+      "changed": false,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [
+        "10.1186/s13643-021-01626-4"
+      ],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "PRISMA 2020 é relato, não selo de qualidade; extensão depende do desenho.",
+      "action": "Conferir itens e versão da declaração antes de afirmar aderência em revisão concreta."
+    },
+    {
+      "card_id": "EC-006",
+      "path": "knowledge/methodology/cards/roses-systematic-maps.md",
+      "title": "ROSES: reporting systematic reviews and evidence maps",
+      "old_sha256": "cea628d1079fbdcb2cb8fa637b8c047016be936ffb4c474f090f6e522dddec63",
+      "new_sha256": "cea628d1079fbdcb2cb8fa637b8c047016be936ffb4c474f090f6e522dddec63",
+      "new_git_blob": "76976b8db0e4d32be652fae5c05961b69ba4abd8",
+      "changed": false,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [
+        "10.1186/s13750-018-0121-7"
+      ],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "ROSES provém de síntese de evidência ambiental; transposição a Administração exige justificativa.",
+      "action": "Conferir escopo e instrumentos oficiais do ROSES e restrições de reprodução de formulários."
+    },
+    {
+      "card_id": "EC-007",
+      "path": "knowledge/methodology/cards/reflexive-thematic-analysis.md",
+      "title": "Reflexive thematic analysis: coherence before coding counts",
+      "old_sha256": "344ba709864f3e8d777c5d4dca8c615e6e6375de6f59cc8cb57e47ad680df56a",
+      "new_sha256": "344ba709864f3e8d777c5d4dca8c615e6e6375de6f59cc8cb57e47ad680df56a",
+      "new_git_blob": "539cb82e84dcda467a3847db5210a4f9aa9f37d4",
+      "changed": false,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [
+        "10.1007/s11135-021-01182-y"
+      ],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "Análise temática reflexiva não exige concordância entre codificadores por padrão.",
+      "action": "Checar aderência à tradição Braun–Clarke e condições do exemplo de Byrne antes de generalizar."
+    },
+    {
+      "card_id": "EC-008",
+      "path": "knowledge/methodology/cards/focus-group-design.md",
+      "title": "Focus groups: data from interaction, not multiple interviews at once",
+      "old_sha256": "89a0472fab7d13f0fb533cbb9b61d92bf567ba946f22e3786279a48af31dbb80",
+      "new_sha256": "89a0472fab7d13f0fb533cbb9b61d92bf567ba946f22e3786279a48af31dbb80",
+      "new_git_blob": "ad6ebd64f8982bb08de61fef76218b3a13ed06cb",
+      "changed": false,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [
+        "10.1111/2041-210X.12860"
+      ],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "Confidencialidade, hierarquia, silenciamento e moderador limitam grupos focais.",
+      "action": "Detalhar salvaguardas por contexto e evitar inferência de prevalência populacional."
+    },
+    {
+      "card_id": "EC-009",
+      "path": "knowledge/methodology/cards/case-study-bounded-design.md",
+      "title": "Case study: specify the case and philosophical orientation",
+      "old_sha256": "c656b1917470f643af5da1d7ae9532297c91af9711281f44b7e4a9247399c172",
+      "new_sha256": "c656b1917470f643af5da1d7ae9532297c91af9711281f44b7e4a9247399c172",
+      "new_git_blob": "00a936422aa0d3dc17083b7268e7b3440e361ac4",
+      "changed": false,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [
+        "10.17169/fqs-18.1.2655"
+      ],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "Definir fronteiras, unidade do caso e orientação filosófica; triangulação não valida automaticamente.",
+      "action": "Conferir fonte e explicitar lógica de seleção e inferência caso a caso."
+    },
+    {
+      "card_id": "EC-010",
+      "path": "knowledge/methodology/cards/qualitative-design-quality.md",
+      "title": "Qualitative design and quality: choose evidence for the question",
+      "old_sha256": "f4d70034174097a9ded5739d1db10815d0e15a264c1f6936276231d5c2a721dc",
+      "new_sha256": "f4d70034174097a9ded5739d1db10815d0e15a264c1f6936276231d5c2a721dc",
+      "new_git_blob": "b44ef55f0b4f317642070495743a9d187fd64206",
+      "changed": false,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [
+        "10.1186/s42466-020-00059-z"
+      ],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "Checklist de qualidade é sensível à epistemologia; member checking não é universal.",
+      "action": "Verificar desenho específico e justificar as práticas de qualidade e ética aplicadas."
+    },
+    {
+      "card_id": "EC-011",
+      "path": "knowledge/methodology/cards/thematic-saturation.md",
+      "title": "Thematic saturation is conditional, not a magic interview count",
+      "old_sha256": "3c42119920be38d30ba42ca051bd9e00ec5082de38ccb884d60d0839b512d367",
+      "new_sha256": "3c42119920be38d30ba42ca051bd9e00ec5082de38ccb884d60d0839b512d367",
+      "new_git_blob": "16f3251e2dd2c55f8cb9b63d73ceb36a1519bef1",
+      "changed": false,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [
+        "10.1371/journal.pone.0232076"
+      ],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "Saturação não é regra numérica universal; Guest et al. abordam um desenho delimitado.",
+      "action": "Exigir janela/unidade/limiar explicitados e negar transferência automática a análise reflexiva."
+    },
+    {
+      "card_id": "EC-012",
+      "path": "knowledge/methodology/cards/content-analysis-reliability.md",
+      "title": "Systematic literature synthesis and content-analysis reliability",
+      "old_sha256": "3c0a9acbddfeb6fd28373a36aa1833a54af438e36182f139e6062c1a5af46730",
+      "new_sha256": "17671b0bc192256fdfd0c950bfc56155344ec0987170492fde53e2744430a015",
+      "new_git_blob": "dfccda0c5bf7794c511d056ad6b3bfe8f39f0180",
+      "changed": true,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [
+        "10.1590/2318-0889202335e220027"
+      ],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "Grafia e e-location bibliográficos normalizados com metadados SciELO; verificação de fidelidade científica e validade de inferência ainda não realizada.",
+      "action": "Metadados corrigidos conforme SciELO, Transinformação 35, e220027; obter cotejo metodológico e avaliações independentes antes de aceite.",
+      "metadata_source_consulted": true,
+      "metadata_only_verification": true,
+      "metadata_source_url": "https://new.scielo.br/j/tinf/a/hX8CfMV7xgKV4JbghWL4yXJ/?lang=pt"
+    },
+    {
+      "card_id": "EC-013",
+      "path": "knowledge/methodology/cards/mixed-methods-integration.md",
+      "title": "Mixed methods: integration requires more than two datasets",
+      "old_sha256": "e69b4bf0e54519088d7cf83dc9983ee085e179588f3d549551d2babb186f1c05",
+      "new_sha256": "e69b4bf0e54519088d7cf83dc9983ee085e179588f3d549551d2babb186f1c05",
+      "new_git_blob": "1db11bbe846a5131a6ac2a530dd554d3e44dbbb1",
+      "changed": false,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [
+        "10.1590/15174522-018004221"
+      ],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "Duas bases de dados não bastam para métodos mistos; contradição não é erro por si.",
+      "action": "Demonstrar mecanismo de integração, prioridade, sequência e metainferência, com fonte conferida."
+    },
+    {
+      "card_id": "EC-014",
+      "path": "knowledge/methodology/cards/bibliometrics-claim-boundary.md",
+      "title": "Bibliometrics: distinguish publication patterns from knowledge quality",
+      "old_sha256": "39e86ac39e493af9705a949c9b42f398d555301488dd5f2cdad5868cb5d849f4",
+      "new_sha256": "39e86ac39e493af9705a949c9b42f398d555301488dd5f2cdad5868cb5d849f4",
+      "new_git_blob": "2c20941dec829d8fa0fa0c22ac1b543a30dcc049",
+      "changed": false,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [
+        "10.20396/rdbci.v18i0.8658889"
+      ],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "Citações/ocorrências não demonstram qualidade, causalidade ou impacto.",
+      "action": "Explicitar cobertura, desambiguação e limites antes de inferência substantiva."
+    },
+    {
+      "card_id": "EC-015",
+      "path": "knowledge/methodology/cards/qualitative-metaanalysis.md",
+      "title": "Qualitative meta-analysis requires interpretive synthesis logic",
+      "old_sha256": "3e196f6528fda7d9f06e6ff174e4d16959fa6c6597b89e3451a6f19821c0dab6",
+      "new_sha256": "3e196f6528fda7d9f06e6ff174e4d16959fa6c6597b89e3451a6f19821c0dab6",
+      "new_git_blob": "7c8bbaaa8a0996d3eb64c8604667c18a99ba480f",
+      "changed": false,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [
+        "10.5007/1981-1322.2014v9nespp7"
+      ],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "'Meta-análise qualitativa' pode designar rotas epistemicamente distintas.",
+      "action": "Distinguir metassíntese interpretativa de agregação e não transferir fórmulas quantitativas."
+    },
+    {
+      "card_id": "EC-016",
+      "path": "knowledge/methodology/cards/grounded-theory-analytic-logic.md",
+      "title": "Grounded theory: iterative category development, not generic coding",
+      "old_sha256": "1f4e534ae7305c3316a3f55c78de1194a620184bfefa076e8e6a0fec16192c3c",
+      "new_sha256": "1f4e534ae7305c3316a3f55c78de1194a620184bfefa076e8e6a0fec16192c3c",
+      "new_git_blob": "49d4f7dc9cd68f949445d0cfbe8b367e69415718",
+      "changed": false,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [
+        "10.1590/2175-623684611"
+      ],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "Grounded theory exige comparação constante e amostragem teórica coerente com tradição.",
+      "action": "Detalhar variantes e evidências de evolução analítica, não inferir a partir de codificação genérica."
+    },
+    {
+      "card_id": "EC-017",
+      "path": "knowledge/methodology/cards/interrupted-time-series-inference.md",
+      "title": "Interrupted time series: separate an interruption from a causal effect",
+      "old_sha256": "f0d420f9db1b57cec993581df330f1fc7816ec9bc10db30f9c08230fc77d114b",
+      "new_sha256": "f0d420f9db1b57cec993581df330f1fc7816ec9bc10db30f9c08230fc77d114b",
+      "new_git_blob": "163ecdc7c2ba284621f75bb265aee558d47ea6fc",
+      "changed": false,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [
+        "10.1093/ije/dyw098"
+      ],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "Série interrompida é vulnerável a tendência secular, autocorrelação e choques simultâneos.",
+      "action": "Exigir testes de sensibilidade e definição contrafactual antes de alegação causal."
+    },
+    {
+      "card_id": "EC-018",
+      "path": "knowledge/methodology/cards/prisma-roses-selection.md",
+      "title": "Reporting review designs: do not force one checklist everywhere",
+      "old_sha256": "75434122b13328dc9cc9dca49c81aab8203103a9a04d9e140a65e42c91a9fdd9",
+      "new_sha256": "79c4059dfa76a41a0124515222956975fa6f704dd39ae958422367b0350195ef",
+      "new_git_blob": "07ed22c75cf901a935b359dbb58150c85c694d3b",
+      "changed": true,
+      "status": "BLOQUEADO_PARA_ACEITE_INDEPENDENTE",
+      "evidence_grade": "[I]",
+      "sources_cited_doi": [
+        "10.1186/s13643-021-01626-4",
+        "10.1186/s13750-018-0121-7"
+      ],
+      "source_primary_consulted": false,
+      "originality_check": "triagem textual sem comparação exaustiva com fonte original",
+      "copyright": "nenhum PDF reproduzido; licenciamento da edicao citada e originalidade independente nao verificados",
+      "scientific_review": "PENDENTE",
+      "rights_review": "PENDENTE",
+      "risk": "Separados os localizadores de PRISMA e ROSES. O cotejo completo dos critérios normativos com as fontes não equivale à verificação dos DOIs.",
+      "action": "Localizador ROSES acrescentado com base na página oficial do periódico; cotejo crítico por revisor independente continua necessário.",
+      "metadata_source_consulted": true,
+      "metadata_only_verification": true,
+      "metadata_source_url": "https://link.springer.com/article/10.1186/s13750-018-0121-7"
+    }
+  ],
+  "commits_to_receipt_version": [
+    {
+      "kind": "EC-001 reviews.md",
+      "sha": "a697ee587802d83a255b69b203d4c096cf8f3f0d"
+    },
+    {
+      "kind": "EC-002 design.md",
+      "sha": "195ffe31bb3241b09fe99794e03d3fa5b5fd17b1"
+    },
+    {
+      "kind": "EC-003 qualitative.md",
+      "sha": "d84ea3ce1d54a33fd3d8556d913f1140910b47a0"
+    },
+    {
+      "kind": "EC-004 design-science.md",
+      "sha": "7d5e3886bf673db182afb5fa718f33ec077c9389"
+    },
+    {
+      "kind": "V1-04-DELTA.json inicial",
+      "sha": "97209b3557e91b684c023fbc6af55faad467cdb5"
+    },
+    {
+      "kind": "V1-04-RESULTS.md inicial",
+      "sha": "3512631311ed41abdcec5d6748246a5f1fb9600c"
+    },
+    {
+      "kind": "EC-012 correct metadata",
+      "sha": "80dea4809dde67054413b3babf852ff06568f974"
+    },
+    {
+      "kind": "EC-018 ROSES locator",
+      "sha": "65abb975318b73fc74ed30d5d4afdf26531ccc22"
+    }
+  ],
+  "ci_checks_observed_at_receipt": "No combined status checks returned for 3512631311ed41abdcec5d6748246a5f1fb9600c; no CI claim",
+  "continuity_2026_11_21": {
+    "scope": "V1-04 exclusive branch, receipts and assigned cards only",
+    "frozen_snapshot_verified": "18/18 SHA256",
+    "current_head_verified": "18/18 SHA256",
+    "new_changes": [
+      {
+        "card_id": "EC-012",
+        "commit": "80dea4809dde67054413b3babf852ff06568f974",
+        "reason": "bibliographic names, Portuguese diacritics and e-locator aligned with publisher metadata",
+        "publisher": "https://new.scielo.br/j/tinf/a/hX8CfMV7xgKV4JbghWL4yXJ/?lang=pt",
+        "new_git_blob": "dfccda0c5bf7794c511d056ad6b3bfe8f39f0180",
+        "new_sha256": "17671b0bc192256fdfd0c950bfc56155344ec0987170492fde53e2744430a015"
+      },
+      {
+        "card_id": "EC-018",
+        "commit": "65abb975318b73fc74ed30d5d4afdf26531ccc22",
+        "reason": "separate public primary-source locators for PRISMA and ROSES",
+        "publisher": "https://link.springer.com/article/10.1186/s13750-018-0121-7",
+        "new_git_blob": "07ed22c75cf901a935b359dbb58150c85c694d3b",
+        "new_sha256": "79c4059dfa76a41a0124515222956975fa6f704dd39ae958422367b0350195ef"
+      }
+    ],
+    "safety": "No detected static prompt-injection markers is NOT proof of runtime safety; no private locator observed in 18 card bodies.",
+    "approvals": "Zero distinct documented independent scientific or rights reviews; no public license approval.",
+    "ci": "Workflow run https://github.com/rebsonm/MeuArtigoSkill/actions/runs/44961093790 FAILED on prior SHA 9f53b1fc4b30bbc12467a379322aef438b3a65d5; 893 tests, failures=4, errors=1, skipped=2. After receipt updates the branch HEAD is different, with CI not presumed. Global catalog reconciliation permitted only in V1-16.",
+    "canonical_md": "Body 31.04 not rewritten: no concurrency-safe transaction on raw markdown; comment-based continuity required.",
+    "next": "Obter duas revisões independentes documentadas, começando pelo cotejo das alegações de EC-012 com o texto primário e direitos da edição.",
+    "pr": "https://github.com/rebsonm/MeuArtigoSkill/pull/108",
+    "ci_failure": {
+      "head_sha": "9f53b1fc4b30bbc12467a379322aef438b3a65d5",
+      "run_id": 44961093790,
+      "run_url": "https://github.com/rebsonm/MeuArtigoSkill/actions/runs/44961093790",
+      "conclusion": "failure",
+      "test_count": 893,
+      "failures": 4,
+      "errors": 1,
+      "skipped": 2,
+      "static_release_audit": "success",
+      "behavioral_regressions": "failure",
+      "root_cause_evidence": "At least two asserted SHA256 mismatches between updated reviews.md and old global catalog. A remote digest mismatch and two retriever failures are consistent with stale catalog entries.",
+      "allowed_fix": "Propose reconciliation only for V1-16; not permitted in this V1-04 branch",
+      "do_not_infer": "No security, rights or scientific approval; no CI pass for later commits"
+    }
+  },
+  "pr": {
+    "number": 108,
+    "url": "https://github.com/rebsonm/MeuArtigoSkill/pull/108",
+    "draft": true,
+    "base": "plan/v1-methodology-20-stages-20261121",
+    "opened_head_sha": "ca525627fc9383131a43b246b57a2201704a8ef3",
+    "state_at_creation": "open",
+    "no_merge": true
+  }
+}

@@ -69,10 +69,13 @@ class DriveDeliveryTests(unittest.TestCase):
         self.assertTrue(self.verify()["complete"])
         self.assertEqual(self.action()["action"], "DONE")
 
-    def test_missing_folders_are_created_before_files(self):
+    def test_missing_folders_require_guard_before_files(self):
         inv = copy.deepcopy(self.inventory)
         inv["entries"] = []
-        self.assertEqual(self.action(inv)["action"], "CREATE_FOLDER")
+        pending = self.action(inv)
+        self.assertEqual(pending["action"], "CHECK_PARENT_FOR_CREATE")
+        self.assertFalse(pending["remote_create_authorized"])
+        self.assertEqual(pending["required_guard"], "scripts/drive_create_guard.py prepare")
         inv["entries"] = copy.deepcopy(self.inventory["entries"][:2])
         self.assertEqual(self.action(inv)["action"], "UPLOAD_FILE")
         self.assertEqual(self.action(inv)["parent_id"], MANAGE_ID)

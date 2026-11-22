@@ -125,6 +125,39 @@ class WorkspaceUiTests(unittest.TestCase):
         self.assertFalse(m["decision_continuity"]["human_identity_authenticated"])
         self.assertFalse(m["decision_continuity"]["scientific_gate_approved"])
 
+    def test_minimal_html_preserves_partial_gates_without_false_zero(self):
+        with (self.m / "18_Human_Validation_Gates.csv").open(
+                "w", encoding="utf-8-sig", newline="") as stream:
+            writer=csv.DictWriter(stream,TABLES[f"{MGMT}/18_Human_Validation_Gates.csv"])
+            writer.writeheader()
+            writer.writerows([
+                {"GATE_ID":f"GATE-{i:04d}",
+                 "Status":"COMPLETED" if i == 4 else "READY",
+                 "Decision":"APPROVED" if i == 4 else "PENDING",
+                 "Validated_by":"RESEARCHER" if i == 4 else "",
+                 "Validation_evidence":"synthetic approval" if i == 4 else ""}
+                for i in range(1,8)])
+        compact=app.model(project=self.project,mode="MINIMAL")
+        full=app.model(project=self.project,mode="FULL")
+        self.assertEqual(compact["human_gates"]["total"],7)
+        self.assertEqual(len(compact["human_gates"]["items"]),3)
+        self.assertTrue(compact["human_gates"]["items_partial"])
+        self.assertEqual(compact["overview"]["human_gate_approvals_recorded"],1)
+        self.assertEqual(full["human_gates"]["total"],7)
+        self.assertFalse(full["human_gates"]["items_partial"])
+        self.assertEqual(len(full["human_gates"]["items"]),7)
+        html=app.render(compact)
+        self.assertIn('id="gate-scope"',html)
+        self.assertIn("Visualização parcial:",html)
+        self.assertIn('"items_partial":true',html)
+        self.assertIn('"human_gate_approvals_recorded":1',html)
+
+    def test_fictional_gate_scope_never_implies_verified(self):
+        m=app.model(route="QUALITATIVE")
+        self.assertIsNone(m["human_gates"]["total"])
+        self.assertFalse(m["human_gates"]["items_partial"])
+        self.assertIn("Registros de gates não verificados",app.render(m))
+
     def test_html_contains_interactive_controls_and_offline_security(self):
         page=app.render(app.model(route="QUANTITATIVE"))
         tags=Tags()
