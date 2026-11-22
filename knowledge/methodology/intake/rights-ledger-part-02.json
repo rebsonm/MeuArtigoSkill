@@ -1242,7 +1242,7 @@
       },
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-07-DELTA.json",
       "identity_claim_in_receipt": false,
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0216",
@@ -1494,7 +1494,7 @@
       },
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-07-DELTA.json",
       "identity_claim_in_receipt": false,
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0225",
@@ -1858,7 +1858,7 @@
       },
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-08-DELTA.json",
       "identity_claim_in_receipt": false,
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0238",
@@ -2182,7 +2182,7 @@
       },
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-08-DELTA.json",
       "identity_claim_in_receipt": false,
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0250",
@@ -2552,7 +2552,7 @@
       },
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-09-DELTA.json",
       "identity_claim_in_receipt": false,
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0264",
