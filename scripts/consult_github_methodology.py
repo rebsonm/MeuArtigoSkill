@@ -214,6 +214,10 @@ def query(question: str, *, ref: str, top: int = 3, max_chars: int = 3300,
                      "source_doi": doc.get("source_doi"),
                      "source_url": doc.get("source_url"),
                      "operational_disposition": doc.get("operational_disposition", "NOT_REVIEWED"),
+                     "editorial_card_rights": doc["rights"],
+                     "editorial_card_rights_scope": doc.get("rights_scope", "UNVERIFIED"),
+                     "rights_review": doc.get("underlying_source_rights_status", "NOT_ESTABLISHED_BY_CARD_CATALOG"),
+                     "rights_review_scope": "UNDERLYING_SOURCE",
                      "scientific_use_validated": False,
                      "primary_source_directly_verified": False})
         remaining -= len(part)
