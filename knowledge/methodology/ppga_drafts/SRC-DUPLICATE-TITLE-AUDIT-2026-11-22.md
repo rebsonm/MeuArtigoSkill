@@ -8,7 +8,7 @@
 - The public GitHub source registry currently has **475 SRC entries**: **132** labeled `SOURCE_PDF_WORK_VERIFIED`, **343** labeled `CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED`; neither category implies scientific peer review.
 - Operational dispositions: **474 `VALIDADO_COM_RESTRICOES`**, one `EXCLUIDO_COM_JUSTIFICATIVA` (**SRC-0385**). This is an operational status, not primary scientific [L] evidence.
 - Normalizing case, accents, punctuation and whitespace in the existing GitHub source titles reveals **13 repeated-title groups involving 27 SRC records** — 14 surplus catalogue entries relative to one record per distinct normalized title. This finding does **not** establish identical file bytes, edition, licence or scholarly identity.
-- The source registry explicitly marks only one `work_duplicate_of` link (`SRC-0337 → SRC-0206`); do not invent the other 12 links.
+- The source registry explicitly marks only one `work_duplicate_of` link (`SRC-0337 → SRC-0206`); both records have the same directly checked DOI **10.1590/S0034-759020140211** and year **2014**, which corroborates bibliographic work identity (not identical PDF bytes). Do not invent the other links.
 
 ## Duplicate-title groups in the existing SRC registry
 
@@ -27,6 +27,10 @@
 | SRC-0372, SRC-0373 | COMO CRIAR E CLASSIFICAR CATEGORIAS PARA FAZER ANÁLISE DE CONTEÚDO: UMA QUESTÃO METODOLÓGICA | Análise de Conteúdo | Check individual edition and source |
 | SRC-0402, SRC-0430, SRC-0434 | Metodologias de pesquisa em ciência política: uma breve introdução | Regressão linear | Check individual edition and source |
 | SRC-0406, SRC-0408 | Tempo, tempo, tempo: regressão de Cox na ciência política | Análise de Sobrevivência | Check individual edition and source |
+
+## DOI-level spot check of the 13 repeated-title groups
+
+Only **one pair**, `SRC-0206` / `SRC-0337`, currently exposes the same nonempty original-work DOI in *both* SRC records. In several other pairs only one record has a verified DOI or none has one, so title-normalization alone cannot authenticate a work identity. Mark the other groups `REQUIRES_SOURCE_EDITION_CHECK`; do not infer that each is a distinct work or an identical version.
 
 ## Selected cross-folder / same-name warnings from the Drive listing
 
