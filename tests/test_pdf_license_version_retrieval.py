@@ -1,6 +1,6 @@
-"""Fail-closed retrieval for PDFs whose exact CC BY license version is unknown.
+"""Synthetic regression: publisher-declared CC BY PDFs can be accessed.
 
-Synthetic metadata and dummy bytes only. No published PDF is downloaded.
+No third-party PDFs are downloaded; fixture bytes are fictional.
 """
 from __future__ import annotations
 
@@ -20,10 +20,10 @@ import github_pdf_reader as experimental_reader
 COMMIT = "a" * 40
 
 
-def entry(slug, license_label):
+def entry(license_label):
     body = b"not a PDF"
     return {
-        "path": f"knowledge/methodology/pdfs/{slug}.pdf",
+        "path": "knowledge/methodology/pdfs/synthetic-example.pdf",
         "title": "Synthetic research methods",
         "authors": "Fixture Author",
         "year": 2026,
@@ -39,47 +39,38 @@ def entry(slug, license_label):
 
 
 class LicenseVersionRetrievalTests(unittest.TestCase):
-    def test_unversioned_entry_remains_metadata_only(self):
+    def test_declared_cc_by_available_without_silent_downgrade(self):
+        for module in (installed_reader, experimental_reader):
+            for label in ("CC BY", "CC BY 4.0"):
+                with self.subTest(module=module.__name__, license=label):
+                    item = entry(label)
+                    raw = json.dumps({
+                        "schema": module.SCHEMA,
+                        "documents": [item],
+                    }).encode("utf-8")
+                    calls = []
+
+                    def fetch(ref, path, limit):
+                        calls.append(path)
+                        if path == module.CATALOG:
+                            return raw
+                        self.assertEqual(path, item["path"])
+                        return b"not a PDF"
+
+                    self.assertEqual(len(module.metadata(raw)), 1)
+                    with self.assertRaisesRegex(ValueError, "NOT_A_PDF"):
+                        module.query("synthetic methods", ref=COMMIT, fetch=fetch)
+                    self.assertEqual(calls, [module.CATALOG, item["path"]])
+
+    def test_restricted_license_is_not_mislabeled_as_cc_by(self):
         for module in (installed_reader, experimental_reader):
             with self.subTest(module=module.__name__):
                 raw = json.dumps({
                     "schema": module.SCHEMA,
-                    "documents": [entry("unversioned", "CC BY")],
+                    "documents": [entry("CC BY-NC 4.0")],
                 }).encode("utf-8")
-                calls = []
-
-                def fetch(ref, path, limit):
-                    calls.append(path)
-                    if path != module.CATALOG:
-                        self.fail("Unversioned PDF was downloaded")
-                    return raw
-
-                result = module.query("synthetic methods", ref=COMMIT, fetch=fetch)
-                self.assertEqual(result["status"], "NO_MATCH_IN_PUBLIC_PDF_CATALOG")
-                self.assertFalse(result["pdf_fetched"])
-                self.assertEqual(calls, [module.CATALOG])
-                self.assertEqual(len(module.metadata(raw)), 1)
-
-    def test_versioned_document_selected_before_ambiguous_one(self):
-        for module in (installed_reader, experimental_reader):
-            with self.subTest(module=module.__name__):
-                approved = entry("versioned", "CC BY 4.0")
-                raw = json.dumps({
-                    "schema": module.SCHEMA,
-                    "documents": [entry("unversioned", "CC BY"), approved],
-                }).encode("utf-8")
-                calls = []
-
-                def fetch(ref, path, limit):
-                    calls.append(path)
-                    if path == module.CATALOG:
-                        return raw
-                    self.assertEqual(path, approved["path"])
-                    return b"not a PDF"
-
-                with self.assertRaisesRegex(ValueError, "NOT_A_PDF"):
-                    module.query("synthetic methods", ref=COMMIT, fetch=fetch)
-                self.assertEqual(calls, [module.CATALOG, approved["path"]])
+                with self.assertRaisesRegex(ValueError, "PUBLIC_PDF_LICENSE_NOT_UNRESTRICTED"):
+                    module.metadata(raw)
 
 
 if __name__ == "__main__":
