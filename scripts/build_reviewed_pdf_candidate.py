@@ -144,6 +144,18 @@ def build(root: Path, base_zip: Path, output_zip: Path):
         payload = {name: z.read(name) for name in names if name != MANIFEST}
     for item, _, data in selected:
         payload[item["path"]] = data
+    # Bundle a LOCAL, filtered catalogue; never expose the 22 pending binaries
+    # by resolving a different remote catalogue while using the local archive.
+    catalogue = json.loads((root / CATALOG).read_text(encoding="utf-8"))
+    allowed_paths = {item["path"] for item, _, _ in selected}
+    catalogue["documents"] = [d for d in catalogue["documents"] if d["path"] in allowed_paths]
+    if len(catalogue["documents"]) != len(selected):
+        raise ValueError("BUNDLE_CATALOGUE_AND_PDFS_NOT_ONE_TO_ONE")
+    catalogue["installer_includes_pdfs"] = True
+    catalogue["catalog_status"] = "TEST_ONLY_DOC_REVIEWED_CC_BY4_SUBSET"
+    catalogue["scientific_quality_validated"] = False
+    payload[CATALOG] = (json.dumps(catalogue, ensure_ascii=False,
+                                   sort_keys=True, indent=2) + "\n").encode("utf-8")
     payload[NOTICE] = notices(selected)
     payload[SCOPE_COPY] = (json.dumps(scope, indent=2, sort_keys=True,
                                     ensure_ascii=False) + "\n").encode("utf-8")
