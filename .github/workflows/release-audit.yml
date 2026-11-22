@@ -33,6 +33,9 @@ jobs:
       - name: Verify individual operational library dispositions
         run: python scripts/reconcile_methodology_library.py --check
 
+      - name: Verify every catalogued public PDF against its SHA-256
+        run: python scripts/audit_public_pdf_release.py --verify-only
+
       - name: Behavioral regression tests
         run: python -m unittest discover -s tests -v
 
