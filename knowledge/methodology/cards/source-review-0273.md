@@ -23,3 +23,8 @@ Extração do corpo muito degradada; somente título/autoria da capa são confi�
 ## Transparência
 
 Texto editorial autoral, sem reprodução extensa. A confirmação do PDF não significa que um avaliador científico tenha aprovado este card. O PDF de origem não foi reproduzido no GitHub sem comprovação de direitos específicos. Preserve [I] como inferência e [P] como hipótese de consulta. Nenhum gate aprovado, nenhuma leitura integral simulada e nenhuma certificação de host.
+## Conferência editorial complementar — 21/11/2026 [I]/[P]
+
+A fonte institucional do **INPE** disponibiliza um capítulo intitulado *Análise espacial e geoprocessamento*, com autoria de Gilberto Câmara, Antônio Miguel Monteiro, Suzana Druck e Marília Sá Carvalho: https://www.dpi.inpe.br/gilberto/livro/analise/cap1-intro.pdf.
+
+**Escopo verificado:** existência pública de um capítulo institucional com o título/autoria correspondentes. **Escopo não verificado:** equivalência byte a byte à cópia privada, paginação original, direitos da edição e fidelidade do conteúdo completo. Este card só propõe [I]/[P] perguntas gerais: definir unidade espacial e escala, considerar autocorrelação e efeitos da agregação e explicitar hipóteses alternativas. Não tratar como prova de leitura [L] ou liberar o PDF.
