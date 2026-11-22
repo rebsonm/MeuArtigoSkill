@@ -1,107 +1,58 @@
-# English migration status — all Markdown, not just docs
+# Public Markdown English: editorial correction and limits
 
-## Second-round editorial quality verification — 22 November 2026
+## Current status — 22 November 2026
 
-Pre-existing high-quality English editorial cards were restored from the immutable baseline where their text was already English. Other cards received specific methodological cautions when the title and source scope allowed a conservative editorial decision. Neither action changes independent scientific-review status or copyright.
+The public methodology library contains 649 catalogued records: **475
+bibliographic prospecting cards** and **174 original editorial methodology
+cards**. In this two-round correction, **582 previously machine-translated
+Markdown cards** have been rewritten as conservative English editorial aids:
 
-## Current English-language remediation — 22 November 2026
+| Area | Cards corrected | Result |
+| --- | ---: | --- |
+| Bibliographic source cards | 472 | English bibliography and method-specific research questions |
+| Methodological editorial cards | 110 | 24 pre-existing substantive English cards restored; 68 rewritten cards refined with topic-specific guidance; 18 retain conservative general guidance |
+| **Total** | **582** | No prior machine-translation draft is treated as a certified translation |
 
-**582 unreliable machine-translated Markdown cards have been replaced** by conservative English editorial redrafts: 472 bibliographic prospecting cards and 110 methodological decision cards.
+All updated card contents have their SHA-256 values reconciled with the
+corresponding catalogue and the shared 649-record operational-validation
+ledger. The old machine-translation status no longer applies to those 582
+cards. This correction does not change any scientific gate, source reading
+status, bibliographic identity, copyright permission, or published PDF.
 
-This is NOT a certification of literal translation fidelity. The redrafts use the existing public bibliographic metadata and method-specific decision prompts, without attributing unverified claims to source authors. Each card links to its immutable prior Portuguese editorial record so that valuable original detail remains accessible. The 649-entry ledger and all source-rights and scientific-review states are unchanged. The seven scientific gates remain unapproved and no restricted PDF is republished.
+## Nature and limitations of the work
 
-Historical intake notes remain archival evidence in their original language; they were not silently rewritten. Original published titles and technical identifiers also retain their source language. This is an editorial quality repair, not a peer review of 582 underlying works.
+The corrected cards are **new English editorial guidance grounded in publicly
+catalogued metadata**. They are **not literal or certified translations**
+of the older Portuguese notes, and they do not claim that the underlying
+publications were read or independently scientifically reviewed. The original
+Portuguese editorial records remain accessible through immutable Git links
+from the rewritten cards; the 24 pre-existing English substantive cards
+were restored where appropriate.
 
+The seven scientific gates remain pending. No third-party publication has
+been redistributed, and no new version of the installed Skill or release has
+been created as part of this language correction.
 
-Date: 22 November 2026. This is a **partial implementation record**, not a
-claim that the complete source tree has been translated or validated.
+Original published titles, author names, DOIs, stable identifiers, archival
+evidence and immutable historical receipts are retained in their original
+forms. In particular, historical methodology-intake records are **not
+silently overwritten or retrospectively translated**. The Marzi (2025)
+card remains bound to its prior review/correction record and requires an
+independent check before any content-changing translation.
 
-The Git tree inventory at the start of the work counted **853 Markdown files**
-across root documentation, `docs/`, `references/`, `wiki/`, and the research
-library. This includes 475 bibliographic prospecting cards and 174 editorial
-methodology cards. The previous strict source-language scanner deliberately
-exempted the methodology cards and intake records.
+## Validation and remaining language scope
 
-## Changes in this migration increment
+For a repository-wide language inventory run:
 
-- The three editorial cards on Snyder (2019), Grant and Booth (2009),
-  and Jaakkola (2020) now contain English editorial prose.
-- The SRC-0001 and SRC-0002 bibliographic prospecting cards have English
-  editorial prose, without changing their source records or research status.
-- Updated catalogue SHA-256 values track the exact changed card bytes.
-- A comprehensive inventory script scans Markdown across **all** directories,
-  including previously exempted cards, source cards and intake records.
-- The policy and README no longer equate a narrow language gate with
-  full Markdown language coverage.
+    python scripts/audit_all_markdown_language.py
+    python scripts/audit_all_markdown_language.py --strict
 
-Marzi et al. (2025) retains its previously reviewed Portuguese card because
-the original correction and review receipt binds to its historic exact hash.
-An English replacement would require fresh independent fidelity checks
-before replacing the hash-bound card.
+The first command records candidate untranslated material; the second fails
+on unresolved indicators. This heuristic does **not** certify semantic
+equivalence. Archival Markdown documents and bibliographic titles may still
+contain Portuguese, so do **not** claim the entire Git repository is
+English-only merely because the 582 corrections have been published.
 
-## Outstanding work and nonclaims
-
-Remaining Markdown documents may still contain Portuguese editorial prose,
-especially in historical research-intake notes and hundreds of method cards.
-Use `python scripts/audit_all_markdown_language.py` and inspect its JSON
-output to obtain the current candidate list; the present repository state
-is **NOT** certified as English-only.
-
-Bibliographic titles and direct source quotations stay in their original
-language when necessary for provenance. Scientific decisions, seven human
-gates and [L]/[I]/[P] classifications are unchanged. Immutable older Git
-history and existing published release assets are not rewritten.
-
-A review of translation fidelity is still needed before claiming full
-English migration. This audit is not scientific review or a copyright check.
-
-## Source-compared English editorial cards (22 November 2026)
-
-Six additional, narrowly scoped methodological cards have been translated by
-comparing the English wording directly against the existing Portuguese Markdown:
-`source-review-0259.md`, `source-review-0298.md`,
-`yin-2018-case-study-design.md`, `suddaby-2006-grounded-theory-not.md`,
-`zupic-cater-2015-bibliometric-methods.md`, and
-`donthu-2021-bibliometric-how-to.md`. Bibliographic identities, evidence
-classification [I]/[P]/[L], limited source-reading scope and exact rights
-boundaries were maintained. Historical scientific-review-pending identifiers
-remain as technical provenance labels where used by the original cards.
-
-These edits do not claim independent scholarly peer review. The original
-649-card catalogue cardinality and all seven human scientific gates are
-unchanged. A separate translation effort is tracked in PR #121 (bibliographic
-prospecting cards) and PR #122 (remaining editorial cards). Those larger
-machine-generated batches contain material translation errors and are **not
-ready for merge** without substantive corrections.
-
-
-## Bibliographic source-card translation batch (22 November 2026)
-
-The 475-record source registry remains unchanged in cardinality. The source-card
-machine translation branch reconciled **472 existing translated source cards**
-against the operational ledger (649 total cards) and repaired 102 corrupted
-machine-rendered status labels using original published records. Each of the
-translated source records is explicitly marked **MACHINE_TRANSLATED_REVIEW_PENDING**
-and links to its pre-translation public Git revision for comparison. Machine
-translation has **not** been independently reviewed for methodological or legal
-fidelity, and no [L] or scientific gate is approved. This notice does not
-certify that all repository Markdown is English-only.
-
-Source-card English editorial prose is a provisional aid and must not be
-presented as an authoritative translation of any article, book, license, or
-scientific finding. Where errors or ambiguous semantics persist, consult the
-original and the public source registry.
-
-## Editorial card machine-translation batch (22 November 2026)
-
-This branch contains **110** provisional English machine-translated editorial
-cards. A controlled integrity repair restored **40** corrupted scientific
-status markers from the original Markdown record, and preserved **six**
-previously source-compared English cards byte-for-byte. All 110 machine
-translations remain **MACHINE_TRANSLATED_REVIEW_PENDING**; they are not
-certified translations or independent scientific evaluations. The seven human
-scientific gates and the 649-record library coverage do not change.
-
-The source-of-truth notice in each translated card links to the corresponding
-original public Portuguese record. Neither editorial translation nor exact
-SHA-256 reconciliation grants rights to reproduce third-party PDFs.
+Recheck the precise changes and CI in the public PR associated with this
+correction. Preceding snapshots remain available in Git history and the
+source-of-truth links in individual cards.
