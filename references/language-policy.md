@@ -2,8 +2,14 @@
 
 ## Scope and precedence
 
-The canonical repository, Skill instructions, developer documentation, tool
-descriptions and human-maintained configuration text are authored in **English**.
+The canonical repository, Skill instructions, README, guides, version-controlled
+Wiki, PDF attribution commentary, developer documentation, tool descriptions,
+and human-maintained configuration text are authored in **English**.
+All example prompts, explanatory text and fictional command arguments in maintained
+documentation should also be written in English. Original research titles,
+bibliographic citations, direct quotations supplied as evidence, and stable
+schema identifiers may retain their source language when rewriting them would
+misstate provenance or break compatibility.
 "Meu Artigo" and "C.A.D.A." are proper names and must not be silently renamed.
 Existing machine-readable identifiers, legacy paths, DOI strings and bibliographic
 titles are stable identifiers, **not language preferences**.

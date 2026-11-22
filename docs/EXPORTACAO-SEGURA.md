@@ -2,20 +2,20 @@
 # Secure provenance export — separation by audience
 
 This document defines three **distribution profiles**, implemented in `scripts/export_provenance.py`.
-No profile grants rights to share protected academic material, manuscripts
-confidential, personal data or content subject to embargo.
+No profile grants rights to share protected academic material, confidential
+manuscripts, personal data, or embargoed content.
 
 <a id="1-private-auditoria-interna-padrão"></a>
 ## 1. PRIVATE — internal audit (standard)
 
 ```bash
-python scripts/export_provenance.py /caminho/do/projeto --audience PRIVATE
+python scripts/export_provenance.py /path/to/project --audience PRIVATE
 ```
 
 This profile maintains the full provenance package, internal records, controls,
 and eligible canonical files, according to the rights rules for full texts.
-The package has prefix `RO_CRATE_PRIVATE_` and **should not be redistributed**
-no separate assessment. Your data may include names, decision history,
+The package has the prefix `RO_CRATE_PRIVATE_` and **must not be redistributed**
+without a separate authorization and confidentiality review. Your data may include names, decision history,
 citations, comments, documents under review, and personal identifiers.
 The fact that a SHA-256 matches the files does not mean the absence of sensitive data.
 
@@ -28,7 +28,7 @@ as per [full file rights](DIREITOS-FULLTEXT-E-PDFS.md).
 ## 2. PUBLIC — neutral structure, without research data
 
 ```bash
-python scripts/export_provenance.py /caminho/do/projeto --audience PUBLIC
+python scripts/export_provenance.py /path/to/project --audience PUBLIC
 ```
 
 Generates RO-Crate structure with technical description and PROV graph **deliberately
@@ -45,12 +45,12 @@ the quality of the manuscript.
 ## 3. COLLABORATIVE — collaboration with specifically authorized files
 
 ```bash
-python scripts/export_provenance.py /caminho/do/projeto \
+python scripts/export_provenance.py /path/to/project \
   --audience COLLABORATIVE \
-  --approved-files-manifest aprovacao-colaboracao.json
+  --approved-files-manifest collaboration-approval.json
 ```
 
-Without a manifesto, the result is also just the neutral structure.
+Without an approved-files manifest, the result is only the neutral structure.
 With manifest, it only supports textual files `.md` and `.txt` within the
 canonical folder `05_Manuscrito/Versao_Canonica/`, each linked to a
 Accurate SHA-256, with declared content review and human authorization.
@@ -61,13 +61,13 @@ Accurate SHA-256, with declared content review and human authorization.
 {
   "schema_version": 1,
   "audience": "COLLABORATIVE",
-  "reviewed_by": "Identificação real do revisor autorizado",
+  "reviewed_by": "Actual identity of the authorized reviewer",
   "reviewed_at": "2026-10-09T17:00:00-03:00",
-  "review_scope": "Descrever o que foi revisado: confidencialidade, autorização e público destinatário",
+  "review_scope": "Describe exactly what was reviewed: confidentiality, authorization, and intended recipients",
   "files": [
     {
-      "path": "05_Manuscrito/Versao_Canonica/NOME_REAL_ARQUIVO.md",
-      "sha256": "SUBSTITUIR_PELO_SHA256_REAL_DE_64_CARACTERES"
+      "path": "05_Manuscrito/Versao_Canonica/ACTUAL_FILE_NAME.md",
+      "sha256": "REPLACE_WITH_ACTUAL_64_CHARACTER_SHA256"
     }
   ]
 }
@@ -97,6 +97,7 @@ indirectly identifiable figures or commitments to periodicals. A
   are reduced; do not declare full coverage of the research.
 - Do not place names, private URLs or sensitive documents in public Issues,
   tests, installation packages or release notes.
-- For full private interoperability, use `PRIVATE` and distribution
-  restricted, with the relevant institutional and editorial checks.Choosing the license for the **Skill code** (Apache-2.0) does not modify the
-licenses, rights and confidentiality of **data and works used in the scientific project**.
+- For full private interoperability, use `PRIVATE` with restricted distribution
+  and the relevant institutional and editorial checks.
+- Choosing Apache-2.0 for the **Skill code** does not modify the licenses,
+  rights, or confidentiality requirements of **research data and third-party works**.

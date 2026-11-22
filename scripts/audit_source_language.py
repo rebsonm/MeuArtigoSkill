@@ -50,7 +50,6 @@ def scoped_files(root: Path) -> list[Path]:
         # translating or stripping those titles would damage provenance.
         corpus_data = rel.as_posix() in {
             "knowledge/methodology/pdf_catalog.json",
-            "knowledge/methodology/PDF-ATTRIBUTIONS.md",  # bibliographic titles are original-language source data
             "knowledge/methodology/catalog.json",
             "knowledge/methodology/source_registry_catalog.json",
             "knowledge/methodology/pdfs/README.md",
@@ -89,6 +88,14 @@ def audit(root: Path) -> dict:
         except (OSError,UnicodeError):
             unreadable.append(path.relative_to(root).as_posix())
             continue
+        # Academic titles in the attribution table must remain in their
+        # original language. However, editorial paragraphs, headings and
+        # attribution instructions outside the table are English-only.
+        if path.relative_to(root).as_posix() == "knowledge/methodology/PDF-ATTRIBUTIONS.md":
+            content = "\n".join(
+                line for line in content.splitlines()
+                if not re.match(r"^\s*\|", line)
+            )
         # Legacy Portuguese heading slugs are stable URL identifiers, not prose.
         if path.suffix.lower() == ".md":
             content = re.sub(r'(?m)^\s*<a\s+id="[^"]+"></a>\s*$', '', content)

@@ -17,13 +17,13 @@ Traceability differentiates what the AI described from what a tool actually perf
 
 Options come before the project path. Example of local verification without internet:
 
-    python scripts/trace_execution.py run --action SOURCE_CHECK --summary "Conferir fontes" --stage 08 --script verify_sources.py --input 00_Gestao_e_Continuidade/05_Evidence_Matrix.csv --output 00_Gestao_e_Continuidade/SOURCE_VERIFICATION.json "/caminho/do/projeto" -- --offline
+    python scripts/trace_execution.py run --action SOURCE_CHECK --summary "Check source records" --stage 08 --script verify_sources.py --input 00_Gestao_e_Continuidade/05_Evidence_Matrix.csv --output 00_Gestao_e_Continuidade/SOURCE_VERIFICATION.json "/path/to/project" -- --offline
 
 Execution is done without a shell, only for explicitly permitted scripts. For these scripts, the logger captures time, process return, hash of executed code, and hash of declared inputs and outputs. Does not log the contents of stdout/stderr or raw arguments, which may contain sensitive data.
 
 A process that only validates the workspace can be followed without output artifact:
 
-    python scripts/trace_execution.py run --action PROJECT_VALIDATION --summary "Validar estrutura" --stage 13 --script validate_project.py "/caminho/do/projeto"
+    python scripts/trace_execution.py run --action PROJECT_VALIDATION --summary "Validate project structure" --stage 13 --script validate_project.py "/path/to/project"
 
 For deduplication, provide all input files and the three corresponding canonical outputs using --input and --output, and pass the necessary arguments to the script after "--". Interpreting counts requires additional reconciliation with exports.
 
@@ -34,14 +34,14 @@ The receipt is preserved in 00_Gestao_e_Continuidade/TRACE_RECEIPTS/TRACE-xxxx.j
 
 Connectors for Scopus/WoS, Google Drive, browsers, magazines, or other platforms are not automatically audited by local code. An IA statement is not a transaction receipt. Therefore, use:
 
-    python scripts/trace_execution.py declare --action SEARCH_EXECUTED --summary "Busca na base pendente de comprovação" --stage 04 "/caminho/do/projeto"
+    python scripts/trace_execution.py declare --action SEARCH_EXECUTED --summary "Database search awaiting verification" --stage 04 "/path/to/project"
 
 The event becomes UNVERIFIED. An export actually received may have its existence, hash, number of lines and fields compared to a search record, but this in itself does not certify the external query. Do not promote status without capturing and verifying reliable evidence of execution.
 
 <a id="auditoria"></a>
 ## Audit
 
-    python scripts/trace_execution.py audit "/caminho/do/projeto" --strict
+    python scripts/trace_execution.py audit "/path/to/project" --strict
 
 The audit checks record-to-receipt correspondence, receipt hash, logged output, and current file. A CONFIRMED event without a valid receipt is an error. Subsequent changes to the files must generate a new execution or snapshot; Historical hashes do not constitute proof of authenticity.
 

@@ -119,7 +119,7 @@ SNAP-0003 — estratégia de busca congelada
 SNAP-0004 — corpus congelado
 SNAP-0005 — síntese aprovada
 SNAP-0006 — claims aprovados
-SNAP-0007 — versão liberada para submissão
+SNAP-0007 — version cleared for submission
 ```
 
 Each snapshot has:
@@ -218,7 +218,7 @@ python scripts/governance_events.py gate /project \
   --gate-id GATE-0002 \
   --decision APPROVED \
   --validated-by "Researcher" \
-  --method "Revisão do protocolo e das strings" \
+  --method "Review of the protocol and search strings" \
   --evidence "Reference to the researcher’s actual response"
 ```
 

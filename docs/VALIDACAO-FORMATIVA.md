@@ -27,9 +27,9 @@ python scripts/governance_events.py gate /path/to/project \
   --gate-id GATE-0002 \
   --decision APPROVED \
   --validated-by "Researcher" \
-  --method "Revisão do protocolo metodológico" \
+  --method "Methodological protocol review" \
   --evidence "Reference to the researcher’s original message" \
-  --researcher-rationale "O desenho reúne perspectivas teóricas diferentes para esclarecer uma questão conceitual." \
+  --researcher-rationale "The proposed design combines different theoretical perspectives to clarify a conceptual question." \
   --researcher-limitation "Coverage depends on the sources consulted and the literature-selection decisions."
 ```
 
