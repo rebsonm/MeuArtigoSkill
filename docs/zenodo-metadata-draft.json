@@ -17,17 +17,8 @@
   ],
   "license": "Apache-2.0",
   "access_right": "open",
-  "related_identifiers": [
-    {
-      "identifier": "https://doi.org/10.5281/zenodo.24397699",
-      "relation": "isVersionOf",
-      "scheme": "doi"
-    },
-    {
-      "identifier": "https://github.com/rebsonm/MeuArtigoSkill",
-      "relation": "isSupplementTo",
-      "scheme": "url"
-    }
-  ],
-  "notes": "DRAFT ONLY. Source snapshot is distinct from the v1.0.0-rc.1 installer. Verify DOI type, deposit version/date, license and exact source commit before publishing. Third-party PDF binaries intentionally excluded. Rights-holder concerns: rebsonm@gmail.com."
+  "notes": "DRAFT ONLY. Source snapshot is distinct from the v1.0.0-rc.1 installer. Verify DOI type, deposit version/date, license and exact source commit before publishing. Third-party PDF binaries intentionally excluded. Rights-holder concerns: rebsonm@gmail.com.",
+  "existing_zenodo_doi_to_verify_before_versioning": "10.5281/zenodo.24397699",
+  "new_version_doi_assigned": false,
+  "deposit_status": "DRAFT_NOT_PUBLISHED"
 }

@@ -64,3 +64,10 @@ new version DOI or silently overwrite an immutable archived release.
 writing this guide or by generating the archival ZIP.**
 
 Zenodo reference: https://zenodo.org/help/versioning
+
+**Reproduction:** a maintainer can run
+`python scripts/build_zenodo_review_copy.py --output /tmp/zenodo-review`
+in a checked-out public commit. The generated package includes `READ-FIRST-ZENODO.txt`,
+`ZENODO-REVIEW-COPY-MANIFEST.json`, `SHA256SUMS-zenodo-review.txt` and the
+source ZIP. The GitHub Actions workflow uploads these four files together as a
+90-day review artifact; an artifact download does not itself update Zenodo.
