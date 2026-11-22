@@ -114,6 +114,7 @@ def main():
                    if x["source_id"] == "SRC-0385")}
     candidates = [p for p in sorted((LIB/"source_cards").glob("*.md"))
                   if p.relative_to(ROOT).as_posix() not in banned
+                  and p.relative_to(ROOT).as_posix() in index
                   and index[p.relative_to(ROOT).as_posix()].get("translation_fidelity_status") != "MACHINE_TRANSLATED_REVIEW_PENDING"
                   and PT.search(p.read_text(encoding="utf-8"))]
     from argostranslate import package, translate
