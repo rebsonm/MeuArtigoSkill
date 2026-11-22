@@ -18,6 +18,11 @@ from xml.etree import ElementTree
 
 MAX_FILE_BYTES = 8_000_000
 MAX_PAYLOADS = 1000
+HOST_PRESENTATION = {
+    "agents/openai.yaml": "PLATFORM_YAML_RESERIALIZATION",
+    "assets/icon.svg": "HOST_ICON_REPLACEMENT",
+}
+RECEIPT_SCHEMA = "MEU_ARTIGO_HOST_PRESENTATION_REVIEW_V1"
 SHA = re.compile(r"[0-9a-f]{64}\Z")
 
 
