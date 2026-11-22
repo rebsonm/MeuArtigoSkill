@@ -216,8 +216,10 @@ def main():
                 revised,num=re.subn(a,f,revised,count=1)
                 if num!=1:raise ValueError("UNEXPECTED_FORMAT: "+path)
                 enriched+=1
-        if not revised or "[L]" not in revised:
-            raise ValueError("GRADE_LOST "+path)
+        if not revised:
+            raise ValueError("EMPTY_EDITORIAL_CARD "+path)
+        if not portable_english(previous) and "[L]" not in revised:
+            raise ValueError("GRADE_LOST_IN_NEW_CARD "+path)
         file.write_text(revised,encoding="utf-8")
         row["sha256"]=lookup[path]["sha256"]=hash_bytes(revised)
     assert preserved+enriched>=40,(preserved,enriched)
