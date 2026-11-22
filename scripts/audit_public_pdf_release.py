@@ -154,8 +154,9 @@ def attribution_register(result: dict) -> str:
     ]
     for item in result["documents"]:
         line = f'| {_safe(item["authors"])} ({_safe(item["year"])}), *{_safe(item["title"])}* | '
-        line += f'{_safe(item["doi"])} | {_safe(item["license"])} | '
-        line += f'{_safe(item["rights_evidence"])} | {_safe(item["review_status"])} |'
+        line += f'[DOI]({_safe("https://doi.org/" + str(item["doi"]))}) | '
+        line += f'[{_safe(item["license"])}]({_safe(item["license_url"])}) | '
+        line += f'[Publisher evidence]({_safe(item["rights_evidence"])}) | {_safe(item["review_status"])} |'
         lines.append(line)
     lines.extend(["", "No independent full-text license verification or distribution",
                   "permission is asserted by this generated register.", ""])
