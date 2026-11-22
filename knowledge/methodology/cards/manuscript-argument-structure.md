@@ -38,3 +38,13 @@ Use four connected argument moves: **A — area/context/stakes** (why the phenom
 Check that all moves concern the same research unit and construct. A claim that "nobody has studied this" needs a defensive review, not rhetorical emphasis. Do not label proposed results as endings. Related bibliographic leads for separate checking: Grant & Pollock (2011), DOI 10.5465/amj.2011.4000; Barney (2018), DOI 10.5465/amr.2018.0112; Alvesson & Sandberg (2011), DOI 10.5465/amr.2009.0188; Bispo (2023), DOI 10.1590/1982-7849rac2023220256.por.
 
 Full original operational checklist: [ABCD and methodological fit](../../../references/RESEARCH-WRITING-AND-METHOD-FIT.md).
+
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/manuscript-argument-structure.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

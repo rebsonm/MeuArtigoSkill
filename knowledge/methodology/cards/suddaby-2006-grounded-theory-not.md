@@ -1,31 +1,31 @@
-# Suddaby (2006): what does not characterize grounded theory
+# Suddaby (2006): what does not constitute grounded theory
 
 Card ID: suddaby-2006-grounded-theory-not
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] provisional editorial guidance, NO primary validated evidence
+Evidence grade: [I] provisional editorial guidance, NOT validated primary evidence
 Source reading scope: DIRECT_PROTECTED_ARTICLE_PDF_PARTIAL_REVIEW
 Third-party content reproduced: NO
 
-## Methodological research issue
+## Methodological research question
 
-How do we make this approach consistent with the question, assumptions and data that the researcher actually has?
+How can this approach be made consistent with the research question, assumptions and data the researcher actually has?
 
-## Original methodological decision
+## Original methodological decision guidance
 
-Demonstrate as constant comparison and progressive development of categories justify a theory anchored in the records and interpretive work; verify the restrictions and differentiations between grounded theory traditions.
+Show how constant comparison and the progressive development of categories could justify a theory grounded in records and interpretive work. Examine the distinct assumptions and restrictions of different grounded-theory traditions.
 
-## Verificações a registrar
+## Checks to document
 
-Document iterative collection/analysis, theoretical sampling, memos and changes between preliminary categories and theoretical abstraction.
+Document iterative data collection and analysis, theoretical sampling, analytic memos and revisions from preliminary categories toward theoretical abstraction.
 
-## Limitations of transfer
+## Limits of application
 
-Using interviews, codes or software does not make the study grounded theory; the article is protected and cannot be distributed in full.
+Interviews, coding or software use alone do not make a study grounded theory. The article is copyrighted and may not be redistributed in full.
 
-## Referência bibliográfica
+## Bibliographic reference
 
-Suddaby, R. (2006). From the editors: What grounded theory is not. Academy of Management Journal, 49(4), 633–642.
+Suddaby, R. (2006). From the editors: What grounded theory is not. *Academy of Management Journal*, 49(4), 633–642.
 
-## Uso responsável
+## Responsible use
 
-Independent and concise editorial text. This form does not provide original protected, is not a translation or replacement of the book, does not attest to full coverage of the sources and does not approve gates. Before a scientific statement [L], examinar a obra correspondente e localizar a passagem e a edição.
+This short, independently written editorial card does not supply the protected original. It is neither a translation nor a substitute for the article, does not certify complete source coverage and does not approve scientific gates. Before advancing a particular claim as [L], inspect the relevant edition and locate the supporting passage.

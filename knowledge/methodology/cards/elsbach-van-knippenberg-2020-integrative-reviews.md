@@ -32,3 +32,11 @@ Original PDF NOT made available by this form; rights/version to check.
 ## Scientific status and rights
 
 short card with own writing and organization; DO NOT reproduce text, figures, tables or original steps in full. This guidance does not prove full consultation or authorisation of specific pages. The decision and method remain of the researcher; no gate is automatically approved.
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/elsbach-van-knippenberg-2020-integrative-reviews.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

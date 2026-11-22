@@ -21,7 +21,7 @@
       ],
       "path": "knowledge/methodology/cards/reviews.md",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
-      "sha256": "c35369a0b827d0a3f3d5ecb0221ef38b8a9b79d87d960120861d19f68287b6d8",
+      "sha256": "3de784e0049a0040f9062f31f09d9ffe63df6cf3ccda76def340d858aaa00343",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
       "title": "Literature reviews and integrative synthesis",
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
@@ -51,7 +51,7 @@
       ],
       "path": "knowledge/methodology/cards/design.md",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
-      "sha256": "a9b24ba759ae8008a35b1983d82339522c6938221a2986b9860cd1f8c38e609b",
+      "sha256": "296e0bda550a143e02f5f30bd5812e17e2db9098567f4f6bad4f692ad196d1e5",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
       "title": "Study design and research inference",
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
@@ -81,7 +81,7 @@
       ],
       "path": "knowledge/methodology/cards/qualitative.md",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
-      "sha256": "02e1ef7bec474695e3d350bd68f647443e9a499f0c204b76e7866d0f8d4f18ab",
+      "sha256": "584d47fd641970c033eea4b4516ce623b263a369015f7385a21db061f92fc30d",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
       "title": "Qualitative analysis and thematic approaches",
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
@@ -110,7 +110,7 @@
       ],
       "path": "knowledge/methodology/cards/design-science.md",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
-      "sha256": "61904f84674b997eed4a71b05aa95e133acd020a9e6953dbd8240aaef7bee789",
+      "sha256": "3912363b97b55f03cba30d9a6d31c7ce9e7e41c6d867aedd2d811ca6b7ef3006",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
       "title": "Design science and artifact evaluation",
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
@@ -189,7 +189,7 @@
       "title": "Reflexive thematic analysis: coherence before coding counts",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "30ce20989a7ddcc2187d6521d1ff2184181c0e9bf126cd9128b55d26cd1dc225",
+      "sha256": "b5378d14a1e3ee52c0bc6069c62fc0dd6052a0bc5241daea2c2aa03a951af98a",
       "keywords": [
         "análise",
         "analise",
@@ -224,7 +224,7 @@
       "title": "Focus groups: data from interaction, not multiple interviews at once",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "90b079813e5a47e882698338f484a2bd7905d4f8553edc4a365d21755afa0d3b",
+      "sha256": "e72ef21ae915955d94626c34391d770eb1fd56dbe91d3a8ce97eae8b6b6fe49d",
       "keywords": [
         "focus",
         "grupo",
@@ -290,7 +290,7 @@
       "title": "Qualitative design and quality: choose evidence for the question",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "c277479a62c7da234444c8fb41535225851fcba834dfcc25a4b7be12acdc098c",
+      "sha256": "f3c0a5f511a2165099ccf9ad5b85e33cd6a016e5dedcbbecf47d73ea141672db",
       "keywords": [
         "qualitative",
         "qualitativa",
@@ -323,7 +323,7 @@
       "title": "Thematic saturation is conditional, not a magic interview count",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "16a0782a0e42bed90b2525de1ab3cf30e6b7af091b4e9edfce05c3d6d6ef4c02",
+      "sha256": "a49beb32a90c8d144f584ae2ab937d4c103f3b490da79a777bcf139b7eb05985",
       "keywords": [
         "saturation",
         "saturação",
@@ -356,7 +356,7 @@
       "title": "Systematic literature synthesis and content-analysis reliability",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "29f5379866d1651d3aeeef4a09d57f03963dd48b1652725c4a1d4fcc60501dd6",
+      "sha256": "a0ceb3220223c2ee484a8c61cba47ce6d055282220aa272ac60bc56eb0921ac7",
       "keywords": [
         "confiabilidade",
         "content",
@@ -390,7 +390,7 @@
       "title": "Mixed methods: integration requires more than two datasets",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "723d00c83a79463ecec5de004857f8e3cb8e53a7440b5f796d1b974254420203",
+      "sha256": "c22d434e0ac8f26656aa8f8efcde8f96973a553286580e1d648ed0342022fc8a",
       "keywords": [
         "mixed",
         "mistos",
@@ -424,7 +424,7 @@
       "title": "Bibliometrics: distinguish publication patterns from knowledge quality",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "0a3551e6b71ab98b2bf1140b4be8041754fdae8b5ebe5f5a80e86d6252defc37",
+      "sha256": "972827f1c9e7023a7526844c20be367a23b6622bcebb5d6e9f1574ee6f289406",
       "keywords": [
         "bibliometrics",
         "bibliometria",
@@ -457,7 +457,7 @@
       "title": "Qualitative meta-analysis requires interpretive synthesis logic",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "bddfba2e28e090fafaf22fdb6e2b9ed5f84c5c04f7542d69a0b448bfa402e96d",
+      "sha256": "19a51ab3cc6a22dc76e1a1ad9e86a66076dd13daae135725dd9c355360fb678f",
       "keywords": [
         "qualitative",
         "qualitativa",
@@ -552,7 +552,7 @@
       "title": "Reporting review designs: do not force one checklist everywhere",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "d84168cbe26fb0b5abd0876c365933316aeb94a8d8bb318fc45ca34dcdb1e4ff",
+      "sha256": "5e0de906b31a05670935b886932a35c2ab55773f2a6d87c247a48b553fdba6e4",
       "keywords": [
         "prisma",
         "roses",
@@ -584,7 +584,7 @@
       "title": "Sampling adequacy must match the qualitative analytic tradition",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "73008173fb5c55a336ea404a40135e20fdbf3ad77bfac96e6b7b512e78c08f23",
+      "sha256": "12b231ad2c38b054c02467334fe92af2cc72c98c675263e44585082afe5590d2",
       "keywords": [
         "saturation",
         "saturação",
@@ -617,7 +617,7 @@
       "title": "Writing a literature review without mistaking narrative for systematic evidence",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "963d215f2d7d753f89a61f2bb4c3a098491624bd4fbe9c4f72c144b570d5d891",
+      "sha256": "51bc3e162f6990f0bb4ee56442e0eb42aff6a95ac18b2e4728509b02d2017e42",
       "keywords": [
         "literature",
         "review",
@@ -649,7 +649,7 @@
       "title": "Scientific article structure: align claims, evidence and reader navigation",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "5eb9ad151bf88bf34dd44736ea73f74165756f4fa3db5f09c44e0a036e9417a3",
+      "sha256": "9c66ed730a59d74578a324af4280cc49b78002b6f7b9fff509bcda7709a3d2b2",
       "keywords": [
         "writing",
         "article",
@@ -837,7 +837,7 @@
       "title": "Thematic analysis: match the coding process to the research objective",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "abb86aff70d0619bce40d052161b7f42ccd9307ed55ffb508f1f1e81076a70ab",
+      "sha256": "ee7a323e05aa7c366c6516a3d66e4ec4203bbb2df687fe12c95c9721154470ca",
       "keywords": [
         "kiger",
         "varpio",
@@ -895,7 +895,7 @@
       "title": "Qualitative sampling saturation: heterogeneity defeats fixed sample recipes",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "f325abf9659515ffbd0482cd3c28d533993d5965d3b3482d355bed63eaace2de",
+      "sha256": "3226f4beddbd5f5eea6c21753d71f34e79041ab7fea8b7423796facdfcf0ee57",
       "keywords": [
         "rijnsoever",
         "saturation",
@@ -1121,7 +1121,7 @@
       "title": "Survey questionnaire quality: response wording is a measurement decision",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "e806413b8dddc2811cfa8d29981f3f0db5c064d99dc90dcac3cd1753b02b7d20",
+      "sha256": "90a96d8792274e1a377af3cb942895e92833104fab17c2b067edffd71f5d4efc",
       "keywords": [
         "lietz",
         "survey",
@@ -1292,7 +1292,7 @@
       "title": "A priori qualitative sample size: justify a range without pretending saturation is known",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "e9aadc4752e7b7387120b1a67c40c0e7e7bfa70b4f1fad239ce019ff471a4581",
+      "sha256": "b3c98671fa78cd03e05b8b4bacac9b281bb032780572bafc79ac8a0eff34d3f9",
       "keywords": [
         "sim",
         "saunders",
@@ -1610,7 +1610,7 @@
       "title": "Scientific writing productivity: protect evidence-review time",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "bb41a3ce86ca468cbd301e21e7204de24cf638b296ab5942191349e825d32a18",
+      "sha256": "a4aa1cfadc411b087302b55212d4e7d3379ec8fe8e6541d8e7cd0ff71c0c3fa0",
       "keywords": [
         "writing",
         "productivity",
@@ -1636,7 +1636,7 @@
       "title": "Good research practice: make choices and deviations explicit",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "aaea16b1f8d48e2cb8604937a7cc1fc302472fe26bc3fe57fcc2b0f3a7ad30e3",
+      "sha256": "2fe650f2e66f54f4debcca8b4347021895d536db078d27b59ef97e64bf088fb3",
       "keywords": [
         "protocol",
         "study",
@@ -1790,7 +1790,7 @@
       "title": "Análise temática: decisões entre contexto, unidades de sentido e temas",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "22874be22e4fbb9f0cfc29db8f1b452538d045a4248b239c09619abb51a4ac30",
+      "sha256": "5b3fdf6a8489cea2894a71510498889e6d9da66d8d2f62664e3da8f3f92532b3",
       "keywords": [
         "análise",
         "temática",
@@ -1821,7 +1821,7 @@
       "title": "Amostragem qualitativa: escolhas técnicas, contextuais e éticas",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "8e38d8b807acd55ece2fc6ba382a333e20ca06f33c037f2a00f440a098961ec9",
+      "sha256": "9f93e8253691a153c57404caafdbe3ff71d9896168d3e7a3fc29a3f302cf857a",
       "keywords": [
         "amostragem",
         "qualitativa",
@@ -1852,7 +1852,7 @@
       "title": "Action research: linking participatory change and scientific inquiry",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "40559df1dc8b13a9dcdc832c3462f7608b7a2d47e90824c5f4a2b2ff80906f82",
+      "sha256": "ea8f516c232aafffe41010656afd6dc36f498a4acc0ff555e19349a770195038",
       "keywords": [
         "pesquisa ação",
         "action research",
@@ -1909,7 +1909,7 @@
       "title": "Snyder (2019): critérios para escolher entre revisões sistemáticas, semissistemáticas e integrativas",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "87162d8e287a2b8aca0ff4650a5a49b837dc85c53888922824ec6523961c4846",
+      "sha256": "28eaa57cae23ac599e7e1f4cf37ead8299f56722595de395dbd913ab8288fdda",
       "keywords": [
         "snyder",
         "revisao sistematica",
@@ -1937,7 +1937,7 @@
       "title": "Ângelo Domingos Salvador: investigação bibliográfica e leitura crítica — referência histórica",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "3b9893dca714f531550ac36758f0a1c00d00ae742af4e70342ddf233269bd100",
+      "sha256": "2ab1ae807534f8410f8b71b658c3b55dfd08db7406c34d62dedab374c12a715c",
       "keywords": [
         "angelo domingos salvador",
         "salvador",
@@ -2018,7 +2018,7 @@
       "title": "Elsbach e Van Knippenberg (2020): revisão integrativa como contribuição nova",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "ff955911e174ba8b1e1565cb2016ad1be68af88c60eefc6d134c41b2a28dbfa6",
+      "sha256": "0471c34bccbbc095fa05f05e0ad7685c005b18990a8284a9121881b365934c5a",
       "keywords": [
         "elsbach",
         "van knippenberg",
@@ -2044,7 +2044,7 @@
       "title": "Alvesson e Sandberg (2011): problematização de pressupostos como origem da pergunta",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "14d3e352f0ab14fe0a17edda10067b7962af952d976796da617d993a1581160a",
+      "sha256": "4585773d63ec02860f66b1ee297f2ab560483489d7433bc8d1b94de6a561dd12",
       "keywords": [
         "alvesson",
         "sandberg",
@@ -2071,7 +2071,7 @@
       "title": "PRISMA-S (2021): transparência de estratégias e fontes de busca",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "ff9aa60f90bf2418a28cb2eadcf7fca2e01c28f399f9d67dd70d791d6f55e6b6",
+      "sha256": "ccec9c7c479ca22a82d77c3c216143fccafd75cb6125a4391fc6dbf82b33955e",
       "keywords": [
         "prisma-s",
         "prisma search",
@@ -2098,7 +2098,7 @@
       "title": "PRISMA-ScR (2018): relato específico para revisões de escopo",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "7007d44b44c5f787d41160453260a5cc2701334bde771a155708365a5bb033e1",
+      "sha256": "ac607d7303cf78cb32b50b03c7659461d52c96d2ab290409eeaeca83e07849f5",
       "keywords": [
         "prisma-scr",
         "scoping review",
@@ -2124,7 +2124,7 @@
       "title": "PRISMA 2020: controle operacional dos 27 itens e fluxograma auditável",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "9da2c849ed7acce1afb245c0a0cb039de6381e7ace3dca1964e055bd3bc9b5c1",
+      "sha256": "b2640cba98c20dab489b73d88161bc0f3f569f57d109e26285052962e69648d4",
       "keywords": [
         "prisma",
         "prisma 2020",
@@ -2152,7 +2152,7 @@
       "title": "PRISMA-P (2015): transparência prévia de protocolos de revisão sistemática",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "62379a2e878f63039e65316f57c5e155aabe030f8b7b4c4f4d91884e88086ed5",
+      "sha256": "1c9d3b1ab168bf22af92ec5012c2b31169b897469efac6112077f396ea6c6367",
       "keywords": [
         "prisma-p",
         "protocol",
@@ -2178,7 +2178,7 @@
       "title": "Braun e Clarke: análise temática reflexiva é interpretação teórica, não contagem de códigos",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "8f07171d945f769e20bfce06a24d6e2383d94da4294bcdd56384c51eeaa22c3c",
+      "sha256": "3ca28eb24d192b222b958e42e3f5f8fb84616b9d892a1a202dfe7968f8c14f9b",
       "keywords": [
         "braun",
         "clarke",
@@ -2201,7 +2201,7 @@
       "title": "Miles, Huberman e Saldaña (2014): condensação de dados, visualizações e conclusões",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "0173bd72bb371c0cc800c4f3312adc9a7fbe540b7980a21547149f91fc361259",
+      "sha256": "c8bd9239002621387e334da429e20f5053c96152ed74dca89ff5e95e3f3ef960",
       "keywords": [
         "miles",
         "huberman",
@@ -2225,7 +2225,7 @@
       "title": "Saldaña (2009): ciclos de codificação devem corresponder à pergunta",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "a92deceb7ee72d18a7f8b519f65ba8ae37df0672d21017d69c21683761026e5a",
+      "sha256": "11ffef91cb8fabfa3ab8a55bf9c81c4f36a29289e85a72b8f5c02c3e965b1744",
       "keywords": [
         "saldana",
         "coding",
@@ -2248,7 +2248,7 @@
       "title": "Saunders, Lewis e Thornhill: coerência da cebola de pesquisa (edição identificada de 2023)",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "50f531a89adc75bbcfa707515a2a60807f144d2caf6e1b5726307244eaea78bd",
+      "sha256": "3b869141f784b8564b7d864465ef07ac20ad744b1d27502679b9c8358e3c836b",
       "keywords": [
         "saunders",
         "research onion",
@@ -2271,7 +2271,7 @@
       "title": "Creswell e Creswell (2021): vincular pergunta à abordagem qualitativa, quantitativa ou mista",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "e77bb12f112a504a827cb492bb2f312919fca38230d9221ae37867f0a751fd0f",
+      "sha256": "9ad4ebfd568bdd17433e8b41af98c22e82dc123b9cf73d38b6e55491e8805b85",
       "keywords": [
         "creswell",
         "mixed methods",
@@ -2294,7 +2294,7 @@
       "title": "Yin (2018): protocolo, unidade de análise e explicações alternativas no estudo de caso",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "d8598152961228dca3157f67f01ed0a8d0c55852323f3a59fa60f920c00997e0",
+      "sha256": "1db55e4ef3451637cf9e17856df0e28074d727720f13ec0b84182c91ca5d9e82",
       "keywords": [
         "yin",
         "case study",
@@ -2309,15 +2309,14 @@
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false,
       "rights_scope": "ORIGINAL_EDITORIAL_TEXT_ONLY",
-      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG",
-      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
+      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG"
     },
     {
       "path": "knowledge/methodology/cards/eisenhardt-1989-building-theory-cases.md",
       "title": "Eisenhardt (1989): teoria a partir de múltiplos casos exige comparação disciplinada",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "4d097a167c45e5c49e5f77a146a7985d508bb84e90c299a44686c014e5b21de5",
+      "sha256": "a3fcfd97366359eb81a941d4e59a16d65acc75b57a66982e37e935f391cbb876",
       "keywords": [
         "eisenhardt",
         "case studies",
@@ -2340,7 +2339,7 @@
       "title": "Hevner et al. (2004): artefato, relevância, rigor e avaliação em DSR",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "d9e351621cc99a8294491c8f4428b6b4eb367460822b592b793b830a685df250",
+      "sha256": "93e0f4c96990e181868fb5b31c2fbd834df6f0ae523db7ec07ed865686408eba",
       "keywords": [
         "hevner",
         "design science",
@@ -2363,7 +2362,7 @@
       "title": "Peffers et al. (2008): ciclo DSRM distingue demonstração de avaliação",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "dd18ef67dc83cd9d2bcba68a8cc589d772c9b6e6f852a3dd0868d419d7a00664",
+      "sha256": "17519f615ae7a187c89b1144afb89231796179ed155ae17ec0bb6d232ac7d4ac",
       "keywords": [
         "peffers",
         "dsrm",
@@ -2386,7 +2385,7 @@
       "title": "Suddaby (2006): o que não caracteriza grounded theory",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "c3fc03a88c186d5a3ade0ce41f4712d805910fca05259ec46467f223e9fd3e1f",
+      "sha256": "6dc675920d92419209faeff52353beb17525eea9d3ec3dd0b78dc8f86efe0242",
       "keywords": [
         "suddaby",
         "grounded theory",
@@ -2401,15 +2400,14 @@
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false,
       "rights_scope": "ORIGINAL_EDITORIAL_TEXT_ONLY",
-      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG",
-      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
+      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG"
     },
     {
       "path": "knowledge/methodology/cards/sampaio-sabbatini-limongi-2024-research-ai.md",
       "title": "Sampaio, Sabbatini e Limongi (2024): uso responsável de IA generativa na pesquisa",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "4a7313c201c2b91501e3c027ff6258fba6bbbd112d600d3a2072cfe19686716c",
+      "sha256": "f70ec2c898be0427aba3f4d2796f63a5899e6cefc4a2d95ce2fa960d417e6639",
       "keywords": [
         "sampaio",
         "sabbatini",
@@ -2433,7 +2431,7 @@
       "title": "Zupic e Čater (2015): métodos bibliométricos como mapas, não testes causais",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "e5246b116aefc20a057fd35297ae59a2c37f6db752319324872641db9b1f86b0",
+      "sha256": "1b5f14faea07219efbc903717635233c9000467e379a7b0664112dd684e53d87",
       "keywords": [
         "zupic",
         "cater",
@@ -2449,15 +2447,14 @@
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false,
       "rights_scope": "ORIGINAL_EDITORIAL_TEXT_ONLY",
-      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG",
-      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
+      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG"
     },
     {
       "path": "knowledge/methodology/cards/donthu-2021-bibliometric-how-to.md",
       "title": "Donthu et al. (2021): decisões para análise bibliométrica reprodutível",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "8c677f72c8b8c6e4e0a1940275a2548cba98bf62c33e9f071fd5da02cc50a938",
+      "sha256": "c88aeaf7908f8401f11ed80159f64c47b009a1b6da66e78b1d35f1eff3dfd3c6",
       "keywords": [
         "donthu",
         "bibliometric analysis",
@@ -2472,15 +2469,14 @@
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false,
       "rights_scope": "ORIGINAL_EDITORIAL_TEXT_ONLY",
-      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG",
-      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
+      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG"
     },
     {
       "path": "knowledge/methodology/cards/siddiki-basurto-weible-2012-institutional-grammar-compliance.md",
       "title": "Gramática institucional: o texto da regra não é o comportamento de conformidade",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "4b69ebdf9aa491f3ce9a1c56f6af2f9676db7c96e365f54d5afc023fbd837ac5",
+      "sha256": "e139e023f0726ec861b15d9395576d2ce0fa77a11079773a7e145e1d9f227436",
       "keywords": [
         "gramática",
         "institucional",
@@ -2792,7 +2788,7 @@
       "title": "Reflexividade tecnológica antes de interpretar textos com chatbots",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "8ca8d845d3a0478ad1ca27219d60a801159ea57a8ebd67239894db5f85efc677",
+      "sha256": "2cec64b16e52e5b1bcc0c88cba8389a4be7246bf1a90c5c65a904c60154c59e4",
       "keywords": [
         "elida",
         "pesquisa qualitativa",
@@ -2819,7 +2815,7 @@
       "title": "Comparar códigos de LLMs com humanos sem confundir volume e validade",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "774f3e9f48939e76b68b2f023793a15b4c456a11e2eda2a3932a93820c23128a",
+      "sha256": "6c16a110d80260496f8fff9c834c3546be1622aad40cf725c062312e10636be6",
       "keywords": [
         "misra",
         "pesquisa qualitativa",
@@ -2847,7 +2843,7 @@
       "title": "Risco epistêmico: conversar com dados não equivale a interpretá-los",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "c039d509b4d2170a5223c9bb1d64f48677d3a3219e17bff09552e05fad88c416",
+      "sha256": "b698e5ce0d86773520735a4e9badb479d69901a55bdfbb96d9279dae17e2529c",
       "keywords": [
         "duc",
         "pesquisa qualitativa",
@@ -2873,7 +2869,7 @@
       "title": "Comparabilidade de códigos em pesquisa sobre equidade exige contexto",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "e157b7ef3dc967c06a04eb56cf751a70bec44c93a5c4d7c8548eb7982fdd80ec",
+      "sha256": "bc4ca8add571632a7f238105bd114088318fdacd5c405b6cd33c98108c423c8f",
       "keywords": [
         "yan",
         "pesquisa qualitativa",
@@ -2900,7 +2896,7 @@
       "title": "Em análise temática reflexiva, suporte offline não elimina interpretação humana",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "8f23637a23a16428f0c6b59e52e7d340a950f1939e75d35fa92b9267aa68c5f4",
+      "sha256": "b45342884f60f600a86e852dad4761f1e302b74e697ec1908f1fb778599813d5",
       "keywords": [
         "magnhild",
         "pesquisa qualitativa",
@@ -2930,7 +2926,7 @@
       "title": "AbductivAI: IA como interlocutora abductiva, com responsabilidade humana",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "cb2d001d0dfa2002b496a73034694db97d62f2355c1d58ffab1157a8e0fe1696",
+      "sha256": "a4e0b0170360d7b3230896633236ab3843638b33b946de64b194b17450fbfbc4",
       "keywords": [
         "antónio",
         "pesquisa qualitativa",
@@ -2957,7 +2953,7 @@
       "title": "GAITA e ACTOR: orientar análise temática assistida sem automatizar juízo",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "3cce73f35e74595a3a112f131c4bd5a6d5e3117322802f70853e4ffa531fd13a",
+      "sha256": "7360cf14cd470b643da036c6bd2947cd029a54b14075b678f5c197cf0782c926",
       "keywords": [
         "kien",
         "pesquisa qualitativa",
@@ -2984,7 +2980,7 @@
       "title": "Autoetnografia comparativa: profundidade interpretativa e eficiência não são a mesma medida",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "b1c09c4e8bd611928e1aa8fe9c510d39c7ca1173f7cf58198fe333021a8eec44",
+      "sha256": "ca77fec9513f159c9dd8edf7696f7922e54cefa760c6aa4e9128c8d4fbf80f73",
       "keywords": [
         "anas",
         "pesquisa qualitativa",
@@ -3012,7 +3008,7 @@
       "title": "Entrevistas com especialistas: separar percepção de IA e desempenho verificado",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "de9c33bb1a41e16fdaa82691a6f57f2609aa568139410dfbb1f446b079d4a259",
+      "sha256": "837deea595c0bd4c468e5073a427d9ab00c4f958309e0b9f38e49aa25418a041",
       "keywords": [
         "federica",
         "pesquisa qualitativa",
@@ -3040,7 +3036,7 @@
       "title": "Declarar o uso de GenAI: heurística de rastreabilidade não é certificado de rigor",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "d9506f53310f814bbe55ac5ff493e18bde2bc8e07f37f0730e65f6a81f70ecc6",
+      "sha256": "e1d5f1fec89edfa54823a8899040177309e2bd81f3e15acfee04b24195a18394",
       "keywords": [
         "kyle",
         "pesquisa qualitativa",
@@ -3066,7 +3062,7 @@
       "title": "Crises de representação, legitimação e práxis na pesquisa qualitativa com GenAI",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "a50bc2319248d7719c08c52c1ad6fa5ad665133554e4dac6bb8f5fe509d2443c",
+      "sha256": "89d30271bf4c3fd14096c12129cb843b679fbe2dbafbea6a936b60c9a4a7ddb2",
       "keywords": [
         "niroj",
         "pesquisa qualitativa",
@@ -3123,7 +3119,7 @@
       "title": "Acordo temático 247/310: associação entre interpretações não prova equivalência",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "a895ac1590591846087741ea1a9a057c89c96c93a914250e300442afe27e4991",
+      "sha256": "b655312d0b28f368571b6f194357521883c7b30441b62ac85767aba0e03f17a3",
       "keywords": [
         "arturo",
         "pesquisa qualitativa",
@@ -3150,7 +3146,7 @@
       "title": "Entrevistar sistemas de IA: investigação de comportamento, não participante humano",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "0b6e3f0347b97c9ef9e6384a657cb51edb179e826e8aa005bf34236279fc2e12",
+      "sha256": "f328512fb46931bcc39ae73e736ff077ee3b7fcebbc8509ffd1034a261749236",
       "keywords": [
         "mohammad",
         "pesquisa qualitativa",
@@ -3178,7 +3174,7 @@
       "title": "IA no circuito interpretativo: compromisso qualitativo antes de eficiência",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "dfa0215fc455fb6fc96532c99bf4ec3258ae4ad2a085269701176f92646219a9",
+      "sha256": "d4c06d9c35f2e28c7758f2f4a45ebc02458f0afb5ab1706761a191bb07f0f082",
       "keywords": [
         "wise",
         "métodos",
@@ -3206,7 +3202,7 @@
       "title": "Questionar a inevitabilidade de IA como decisão metodológica legítima",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "b496d571e500b0c42d1269a611c4ec0586edab4012531962e091ae21a91f51e1",
+      "sha256": "680e4931893fd9b81eb851692f83b60d36d4048556e51d618edc183bd23d6829",
       "keywords": [
         "duarte",
         "métodos",
@@ -3234,7 +3230,7 @@
       "title": "Pesquisa de futuros: diferenciação entre rapidez e interpretação",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "9edfddae97c9fe2eec3f9fd2d79546252bca73e35a9f5e8de47fd4eb91cdae19",
+      "sha256": "fbfa246fa8ac977e3da699b7036e800ba283f18fb08b43329462cd8857648c87",
       "keywords": [
         "macgeorge",
         "métodos",
@@ -3262,7 +3258,7 @@
       "title": "Incongruência epistemológica entre linguagem de IA e experiência humana",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "f56ae119e5c3b7a0b116d12f645106f33b5b9b8c3b9784b5e8270afb642f5e36",
+      "sha256": "9078cdbae9b38fc141cd64e86b632cf87473f0342009fbd49037476fa2bae88f",
       "keywords": [
         "messner",
         "métodos",
@@ -3290,7 +3286,7 @@
       "title": "Três entrevistas clínicas não validam sumarização qualitativa universal",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "99f1410f5252ab5a1a7dc85431103ed591e89088132c35c60571f4b0bc273e9d",
+      "sha256": "3c8e0bfda1f2613c004eab1b1321da9acca2d23341fb1285a7b860e927967953",
       "keywords": [
         "kon",
         "métodos",
@@ -3319,7 +3315,7 @@
       "title": "Papéis atribuídos à IA nos artigos não são capacidades demonstradas",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "db1770eed284c81af93b56e576ecd7bdf71c0377141fa861dfce7e8e99792ff6",
+      "sha256": "ff8facca32ae9c8f9d3c6b7a1523710d202cf9d124d7f084ca7fa50897246b5c",
       "keywords": [
         "paulus",
         "métodos",
@@ -3347,7 +3343,7 @@
       "title": "Dados para treinamento: distinguir finalidade analítica de exploração secundária",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "f96f9cb0a17822195043f45df688bc0ad106210f624217a11dcc88e47f96f82c",
+      "sha256": "bf08c92b337f280647a24c91e09a964be53a27aaa2f65b23fb4b322546ad9657",
       "keywords": [
         "davison",
         "métodos",
@@ -3376,7 +3372,7 @@
       "title": "Pesquisa engajada: objeção substantiva ao uso de GenAI",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "0d7926e9cf932ec8e39136ef3d737d34e44c19b8692fc0205d763b01d5b08b71",
+      "sha256": "7d99b3823a76ee73af33770d49670f6b0557a039f2e9ed0612cb192092b28481",
       "keywords": [
         "nguyen",
         "métodos",
@@ -3403,7 +3399,7 @@
       "title": "Cautela interpretativista: questões que uma codificação automática não resolve",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "0027ec87c4779ef3158e94b07e51e12bf014fcf9a63a049dd1f1927c47eef0e1",
+      "sha256": "605fbabcbad4db3481cd28f233056dd4b58cdf6a11652d65f8f4fc7a54668b1f",
       "keywords": [
         "friedman",
         "métodos",
@@ -3432,7 +3428,7 @@
       "title": "Limites da codificação por GenAI em documento de posição não publicado em anais",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "cab01833667b540040de91c83ed1f2211990dd45bece08757599ee2b9c1cec1b",
+      "sha256": "c4e152a949773dae7b6dd18966a779cab2bc18ee504356dd8cd191a08ffc9b60",
       "keywords": [
         "teixeira",
         "métodos",
@@ -3460,7 +3456,7 @@
       "title": "Mapeamento de aplicações de LLM: frequência não é acurácia metodológica",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "fdbcf199917a42b3e059a902eacd57f56d78b827a6296d1b979350da67c38170",
+      "sha256": "fc20e8036d2ca399d389bc6f6f7fa43839af94fd1b152f35727eec4fb6ec39a7",
       "keywords": [
         "barros",
         "métodos",
@@ -3488,7 +3484,7 @@
       "title": "Promessas comerciais de análise automática não substituem evidência científica",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "53a008d1121a62b61c484103952f52de65cbd89eafa90c963e5f6181411093e9",
+      "sha256": "e2aa4babed3c3c7623cd4fb5a553f35fd5c7a25fd9f81521e384fc13aa23d67a",
       "keywords": [
         "paulus",
         "métodos",
@@ -3518,7 +3514,7 @@
       "title": "LLM para propor ou refutar interpretações: contraexemplos sob checagem humana",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "7d6f1ed29fa08a1b05654f540e9fe8a1168a6cb1d1ff13f47749c40301843d82",
+      "sha256": "3b85d715ecd522735b5a2c5441cd18843ee2b0b3fc5772f0d85a6aaa1c6e1d23",
       "keywords": [
         "eschrich",
         "métodos",
@@ -3547,7 +3543,7 @@
       "title": "Contraponto à rejeição total de GenAI: distinguir réplica filosófica de teste",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "b823857f64106d539efc876b5f950825ce24611cba1799f97a6e36a8d7a78930",
+      "sha256": "001c07d93e56045b7cf55812446cf070722b1816818f76e67b64a4f85e65576a",
       "keywords": [
         "stefano",
         "métodos",
@@ -3575,7 +3571,7 @@
       "title": "Diferenças-em-diferenças 2×2: pressupostos antes do coeficiente",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "8ff293f2a1671edc7473f7b833e6bf0ca3d8836e474e075be725246611ed3923",
+      "sha256": "ce34c3857e6437421e71b00fd87b310cba6c4302dcb56ce10f9b27542eeaef67",
       "keywords": [
         "pedro",
         "métodos",
@@ -3601,7 +3597,7 @@
       "title": "Avaliação de impacto: identificar contrafactual e versão da obra",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "87c080c4de7082b47d186b34b427fb4739c932a04d041a3374060eba277f8efc",
+      "sha256": "3e73335e9d07b00ded1fcaa074b5b1ab875663c35691b57e7bacc1b5978351e1",
       "keywords": [
         "gertler",
         "métodos",
@@ -3629,7 +3625,7 @@
       "title": "Estudo clássico de salário mínimo: contraste quase experimental e limites",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "dd9532ed5270ab7dbedf0f3dea3be8e5f6e7765ee802eee9d0d6ad6298426ce1",
+      "sha256": "79d62f99cbadfda8c1348f052eccf0b6fc99c60c1a5a71a6b6f8b1653c44e30a",
       "keywords": [
         "david",
         "métodos",
@@ -3659,7 +3655,7 @@
       "title": "Regressão ecológica espacial: dependência geográfica e erro de inferência",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "384e6c1e7fe4aa7a17443c08482d7d065ae9c2ccc536ba18fb7576f9cf505a09",
+      "sha256": "33d35429d9a5521812e019b407249c4114b60f244db8aafec157b6e829726c9a",
       "keywords": [
         "conceição",
         "métodos",
@@ -3688,7 +3684,7 @@
       "title": "Cinco regras de categorias na análise de conteúdo: limites de aplicação",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "8bacc5f93347c8b1eb7d9cd7a88c89f7f36b840c7f759b68c8d800862489fd77",
+      "sha256": "a6f356022b98fd8a7c68f05abf1775f26807bcfe55fb243cbd107cdc3400ed12",
       "keywords": [
         "carlomagno",
         "métodos",
@@ -3717,7 +3713,7 @@
       "title": "Desenhos de pesquisa em política comparada",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "e6cc8972cb89f7a0e74eddc8ef6d277d5972620dd92ce5333e1e3d28a5fc03d3",
+      "sha256": "f4c766dc696fd6592ad45123bcbeea1a7aec6d9ce1705b3ab4ba7034bb3017a0",
       "keywords": [
         "tica",
         "comparada",
@@ -3743,7 +3739,7 @@
       "title": "Análise Documental Ilustrada em Administração Pública: uma Proposta Operacional (Re)Aplicável",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "da607108318cc351b96a2d65627f6637ed502a10c76bfaf14620b051f1e9402b",
+      "sha256": "db924c6bbe646e34a6fc8c5712193a92d0c73b6fcec52e7c38b5d390270123d0",
       "keywords": [
         "lise",
         "documental",
@@ -3774,7 +3770,7 @@
       "title": "Feminist Epistemology",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "7c54b84f5f2a8cc11f3e8b7a89bc9808797915e007e09bbe1f29e0968df4d068",
+      "sha256": "5036a32c3af0e3e08b31d78e2f25b04d590ec8d2c5b347b3fe91048ac97d4162",
       "keywords": [
         "epistemologia",
         "feminista",
@@ -3799,7 +3795,7 @@
       "title": "AI for Qualitative Research: A Hands-On Guide for Management Scholars",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "b1654fe2d1d38f3d58ba2bd0b7203b30bb41220401b3da8bf7e1b7fc44ec8f6f",
+      "sha256": "922a1f16487a362c62b91f6c721c718d7878ad2f846bdbea5ef94bb1271480cd",
       "keywords": [
         "inteligˆncia",
         "artificial",
@@ -3828,7 +3824,7 @@
       "title": "Usos e possibilidades metodológicas para os estudos qualitativos em Administração: explorando a análise temática",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "bd97ce66b00bdf432be3270b41a744477cc547a110c3ba2bb31ecb6ce328f98d",
+      "sha256": "55300685162b48df8880b06b42a45de0745cd3581a478aa7b7b0a4656d17d715",
       "keywords": [
         "lise",
         "tica",
@@ -3860,7 +3856,7 @@
       "title": "Planning, implementing and reporting: increasing transparency, replicability and credibility in qualitative political science research",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "6ad23cbbad7908ac13ca568e35996e5be9f4e52154f93124032e0043f1d3514f",
+      "sha256": "7eb6ff70436b438a2da3ab2d4fc8c6a4206c99cdef6a0533f8f966c14eb4af2d",
       "keywords": [
         "qualidade",
         "qualitativa",
@@ -3893,7 +3889,7 @@
       "title": "Capítulo 4: Amostragem Aleatória Simples, de Amostragem: Teoria e Prática Usando R",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "95fede50e4d4802daa4954869ea0e5faf18e2b381ee677fc7e2d5bc2896ab020",
+      "sha256": "3a1d9d5631dead5def6332fbce7e574efb5ec0640fcd8e1f89cbd97a344c4568",
       "keywords": [
         "amostragem",
         "tulo",
@@ -3923,7 +3919,7 @@
       "title": "Publication, Publication",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "a844f31b784ee07686a091dd009c14ac9cae436821c565d73d5a5a71327b9587",
+      "sha256": "5c3c000704375ba260537d2884de04d32742844fa0b02ae56d7bc8481fb94398",
       "keywords": [
         "transparˆncia",
         "replicabilidade",
@@ -3949,7 +3945,7 @@
       "title": "Promoting Transparency in Social Science Research",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "4d3e6aea22e341887a98aa0e3f1337a1d8439cb6e5b1b6bf4edec9afc4545af2",
+      "sha256": "ea00b12b3296a9a188025f880ab84533f125bf27dc9fd3be89fe5ccd1d8b95b8",
       "keywords": [
         "transparˆncia",
         "replicabilidade",
@@ -3979,7 +3975,7 @@
       "title": "Seven Reasons Why: A User's Guide to Transparency and Reproducibility",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "c05966869614c44f95d0835273d227e9d4b159defe65e9a9b12d9bbc8f514939",
+      "sha256": "e6b869af1332707987f6a18c7a01e099da7e23d5ca3ada1ec62b2b43be0b1bee",
       "keywords": [
         "transparˆncia",
         "replicabilidade",
@@ -4007,7 +4003,7 @@
       "title": "A análise do discurso político",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "3cf80a5ea235609e0452f551fa13a8e14a07ccf8eefb08d26d871f9e5ea7ce8b",
+      "sha256": "874138c3f0c18f4f5c72aba25dd2a7039173526b4aded592a856f8feffe352d7",
       "keywords": [
         "lise",
         "discurso",
@@ -4034,7 +4030,7 @@
       "title": "Imagens como estratégia metodológica em pesquisa: a fotocomposição e outros caminhos possíveis",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "403fa8e783cc010a067cf09b4adf84eb6120b96de69ae060670cb3653da40d51",
+      "sha256": "4daa3bf05a6f47d816e0ede2e2669f7c3a67119dd19496a6b875feafd3190490",
       "keywords": [
         "imagem",
         "dado",
@@ -4065,7 +4061,7 @@
       "title": "O uso das imagens em pesquisas nas ciências sociais",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "cc546acc3450b87e13f6b5b66359707681ecf3192af3559f81f6b5101c025566",
+      "sha256": "3dd4742c2b8478283d32065a81ecf4e8ebcb112b9adc8742287d62ca912aa3ef",
       "keywords": [
         "imagem",
         "dado",
@@ -4091,7 +4087,7 @@
       "title": "Correspondence Analysis",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "0fe17ee971e1080a01e34dc1568eaa3e78f0e1482861863eb2af6616fd124c97",
+      "sha256": "c0557c739aed18158937e27209aece87b6d4b8fe9b7583d2abe67f0e40aa8eed",
       "keywords": [
         "lise",
         "correspondˆncia",
@@ -4117,7 +4113,7 @@
       "title": "Charting fields and spaces quantitatively: from multiple correspondence analysis to categorical principal components analysis",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "4d5dde5fdd8cb0c96b11877155db91dc529a4bce2f250197db3807ca2dfb8409",
+      "sha256": "822daa5d39080376d214da86e7622f99d1fb4640c8c6c59fccf5a002937eb1de",
       "keywords": [
         "lise",
         "correspondˆncia",
@@ -4149,7 +4145,7 @@
       "title": "Simple Correspondence Analysis: A Bibliographic Review",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "af3637456ba064ecb4f83dd785226dfd094d43b46599abecdd5afb7581ca0a46",
+      "sha256": "9bc453f92a67a13be191264aadabbf8ca03fbd27624e480d37f3e0bc26a0645d",
       "keywords": [
         "lise",
         "correspondˆncia",
@@ -4177,7 +4173,7 @@
       "title": "Causal Inference using Difference-in-Differences — Lecture 1: Introduction",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "96edca2216a62775edb1ab0b7352c0e3ade1e994e67d12daabcd98e784443f28",
+      "sha256": "d1aabcb0c9a437ed667f8b4a69fc2fdfe00623f7c4af4887e7419042f82dd9e3",
       "keywords": [
         "regressao",
         "diferencas",
@@ -4197,15 +4193,14 @@
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false,
       "rights_scope": "ORIGINAL_EDITORIAL_TEXT_ONLY",
-      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG",
-      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
+      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG"
     },
     {
       "path": "knowledge/methodology/cards/source-review-0267.md",
       "title": "Mais que boas intenções: técnicas quantitativas e qualitativas na avaliação de impacto de políticas públicas",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "1eade9df9674b6ebb41402e648fe3b7d4d821feaa00d75a16ffe302a6046b2e0",
+      "sha256": "050d07e0c0d923118626e2e1b0d419cd381f0a0f93c1f275a3791ef8eef69122",
       "keywords": [
         "ticas",
         "blicas",
@@ -4238,7 +4233,7 @@
       "title": "Políticas públicas: modelos clássicos e 40 anos de produção no Brasil",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "328ebf751f78124eaf8626ef802a008d9fb60ea6299f1c53765bc40229de56a2",
+      "sha256": "aa238413835b4bd538d41f2c56ef1e5326871e2ff2dd8508fe79dd09f32cbc32",
       "keywords": [
         "ticas",
         "blicas",
@@ -4269,7 +4264,7 @@
       "title": "Linear regression in ecological studies involving space: methodology and an application example in public health",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "c7723f4f2d841d400a38bc9a5fff87d153547555b81aeaf2a14294c26fbca46c",
+      "sha256": "36504a4ba03a83098a92a08504d3b8b241937189ccb03f389ba5714139bcaa1a",
       "keywords": [
         "analise",
         "espacial",
@@ -4326,7 +4321,7 @@
       "title": "Spatial Data Analysis",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "e8bd25e531c5f3413ce8d243ce510ca0858dee2a22e74fb0f49a8a6124a68ef0",
+      "sha256": "91d20f7b22cfaab49a75e0209fd581fa0b74a68dc179e6b3ab0de9d6fed7db36",
       "keywords": [
         "lise",
         "espacial",
@@ -4352,7 +4347,7 @@
       "title": "A Brief Introduction to Monte Carlo Simulation",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "3adeeb99b2a58585c34f575012e1becbb30bb6b8d8d35683f9f8f178c5c2650c",
+      "sha256": "b8daa781a3b032d16363c95cb6d713a7a42c69df278d9a6969aebaf0443576f3",
       "keywords": [
         "simulacao",
         "bonate",
@@ -4369,15 +4364,14 @@
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false,
       "rights_scope": "ORIGINAL_EDITORIAL_TEXT_ONLY",
-      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG",
-      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
+      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG"
     },
     {
       "path": "knowledge/methodology/cards/source-review-0310.md",
       "title": "Análise de redes sociais aplicada à comunicação política: uma proposta metodológica",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "ee98c35f5941dc0df76128211e2ac336d2315e34c53a4b6e62cfee80f422ee9f",
+      "sha256": "13dd21288f808f4bb13578281878f98df60ae8953a8e5b74b2ef41192ec64c79",
       "keywords": [
         "lise",
         "redes",
@@ -4409,7 +4403,7 @@
       "title": "O uso das imagens em pesquisas nas ciências sociais",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "34a5569ce2ba66745dfd087564b3ab6760bcad30a7b9ce19ca38473e54acba97",
+      "sha256": "edb7a5f46d1384340f8bb1e14d1c1c099214201285c3d1f5068ecf77fec51323",
       "keywords": [
         "fotografias",
         "imagens",
@@ -4435,7 +4429,7 @@
       "title": "Pesquisa bibliométrica e hierarquias do conhecimento em Ciência Política",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "921f8d1147d0d795b0beb699230cf03d0809cd9ae6097797da2bca632784294b",
+      "sha256": "436df5df311a468efaedf99387a1669ac93ac06c1f915522afd675bcefc379cc",
       "keywords": [
         "epistemologia",
         "lenine",
@@ -4466,7 +4460,7 @@
       "title": "Das causas na Ciência Política: uma intervenção filosófica necessária",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "8e6545e7817aa1c2d57a5cead4cba0ef8add241893cea362aab190b03fd23c27",
+      "sha256": "cc4be0d3e9e24a6585ecd0d14315ec18910b5366c63eab56d24b1d22e109fcb5",
       "keywords": [
         "epistemologia",
         "mulo",
@@ -4527,7 +4521,7 @@
       "title": "Experimentos de survey na administração pública brasileira: conceitos, métodos e exemplos",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "faaddb6a9bbffb7caf582196471d58b30296efe3d55e88b887578f284cee9415",
+      "sha256": "ded42752f2bc57b5f55e902caab4eca598e2dc1d3ad070a59d00cdfd44036fba",
       "keywords": [
         "survey",
         "artigo",
@@ -4559,7 +4553,7 @@
       "title": "tclust: An R Package for a Trimming Approach to Cluster Analysis",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "676ad671d013560712121002cbacbbaea93d76ee31b2d37f59714f9d8b10ad4f",
+      "sha256": "e9bfe020dc7fb5af94b7edf4857d60c7f486bdd980fd7bc028b03326abac4776",
       "keywords": [
         "lise",
         "cluster",
@@ -4589,7 +4583,7 @@
       "title": "Uso da análise fatorial exploratória em psicologia",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "33d1fc364be9b6f4819b911ddf1592702a5149181f42417f3b5d2b3a4de1b2b0",
+      "sha256": "85d3545aa164988cbcb4ef90a29b0d781bc6ac33f769b8f29e3be54386eecb67",
       "keywords": [
         "lise",
         "fatorial",
@@ -4642,7 +4636,7 @@
       "title": "Pesquisa documental: pistas teóricas e metodológicas",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "2f75555e5dda223b34ce051d03c1386ab3ee85dab91acb2252b458cbda998658",
+      "sha256": "72cd1f9afbaea85e4b5f521691fa2f096e26fed229ade660cab0ca1800621076",
       "source_url": null,
       "source_doi": null,
       "source_registry_id": "SRC-0008",
@@ -4667,7 +4661,7 @@
       "title": "Conducting a Qualitative Document Analysis",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "1a00574f93223cab00772e114825e71966b4526bf91879aff588ab47baad45a5",
+      "sha256": "c75512218e8e1a572f18f8cd0532b25508ab8dd5d6e4b43e31f4f8ac902caf3a",
       "source_url": "https://doi.org/10.46743/2160-3715/2022.5044",
       "source_doi": "10.46743/2160-3715/2022.5044",
       "source_registry_id": "SRC-0009",
@@ -4691,7 +4685,7 @@
       "title": "Análise documental como percurso metodológico na pesquisa qualitativa",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "a0134aad86da38c2b8f783b5e4e6a9c41a196e0210097a6084a86a3e15bef325",
+      "sha256": "1eaf71b8a8766d95c07dce11b3ae381f8127eea6b58433cfce61cd43bdf1ad3f",
       "source_url": null,
       "source_doi": null,
       "source_registry_id": "SRC-0010",
@@ -4717,7 +4711,7 @@
       "title": "Estudo/análise documental: uma revisão teórica e metodológica",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "f215c9855d8a49f4c0843303bae9a89232f74c155bff2edfb008ec159ef8eda0",
+      "sha256": "108dab5a2d75cbcd45bff901e40d6be0db9c78dcb4ca99ccb27e8593eae03af3",
       "source_url": null,
       "source_doi": null,
       "source_registry_id": "SRC-0012",
@@ -4743,7 +4737,7 @@
       "title": "Análise documental e sua contribuição no desenvolvimento da pesquisa científica",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "2b3fad95919c8ea0edaa02376e919f7c6af6c7a44d6eb3887a0a72c3e1f087f0",
+      "sha256": "7a39a35f76dd7f8d162783087ebd14bbd0a4e4aaf22eea5839fb251d4838e83b",
       "source_url": null,
       "source_doi": null,
       "source_registry_id": "SRC-0013",
@@ -4794,7 +4788,7 @@
       "title": "Análise documental como ferramenta metodológica em história da educação: um olhar para pesquisas locais",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "6d786f0e71637e7849dbaa45d5cdbff294eda88dd38741ef37dc4b2a193a57be",
+      "sha256": "0c3526005f9d481afa8a6a0e6a8dd26bb2710819fa1bfc4fb6a962db1de80de9",
       "source_url": null,
       "source_doi": null,
       "source_registry_id": "SRC-0015",
@@ -4822,7 +4816,7 @@
       "title": "Intercoder Reliability in Qualitative Research: Debates and Practical Guidelines",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "03be426be258444b99272edb4355f81605f6a1bbad24f12fe4c933663219246c",
+      "sha256": "118e4063a2b7392d9740097c197b882b748a80ec5fb81b1dd610420e1e72dc39",
       "source_url": "https://doi.org/10.1177/1609406919899220",
       "source_doi": "10.1177/1609406919899220",
       "source_registry_id": "SRC-0146",
@@ -4849,7 +4843,7 @@
       "title": "Qualitative Quality: Eight ‘Big-Tent’ Criteria for Excellent Qualitative Research",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "f5f03dbe177121a485267cd4b64ed18c293ac00f80e20956b03550cae7a710a5",
+      "sha256": "b6e2afadee5e9d85fd167c6c22b7718b8105f087d894894e0802df0df7fbb5c3",
       "source_url": "https://doi.org/10.1177/1077800410383121",
       "source_doi": "10.1177/1077800410383121",
       "source_registry_id": "SRC-0149",

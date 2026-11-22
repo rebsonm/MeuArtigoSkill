@@ -30,3 +30,13 @@ Publisher: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcb
 ## Provenance limits
 
 This is an independent editorial synthesis, not a quotation, translation, extended excerpt or reproduction of a published work's protected expression. A concrete claim must be verified against the primary source and its printed page where appropriate. The user, not this card, decides methods and scientific gates.
+
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/literature-review-writing-practice.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

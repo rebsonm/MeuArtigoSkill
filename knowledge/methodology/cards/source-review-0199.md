@@ -23,3 +23,11 @@ PDF Redalyc brings republishment and generic attribution notice without exact ve
 ## Transparência
 
 Authorial editorial text without extensive reproduction. PDF confirmation does not mean that a scientific evaluator has approved this card. The source PDF was not reproduced in GitHub without proof of specific rights. Preserve [I] as inference and [P] as a hypothesis of consultation. No approved gate, no simulated full read and no host certification.
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/source-review-0199.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

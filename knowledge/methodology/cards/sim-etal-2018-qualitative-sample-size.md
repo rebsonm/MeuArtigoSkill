@@ -32,3 +32,13 @@ Publisher/repository entry: https://doi.org/10.1080/13645579.2018.1454643
 ## Attribution and reuse boundaries
 
 This is an independent, short editorial consultation card, not a translation, a long excerpt, or a substitute for the third-party work. The archived source PDF must not be redistributed based on possession in a private research library. This card is not accepted [L] proof for a scientific claim until a reader verifies the exact original passage and edition. The investigator must decide the method and approve human scientific gates.
+
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/sim-etal-2018-qualitative-sample-size.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

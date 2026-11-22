@@ -33,3 +33,13 @@ Do not quote this card as proof [L] of an academic result; open and check the so
 Previous record stated that it identified the application of institutional grammar to the regulatory design of aquaculture in Colorado and the measurement of Q-Sort compliance. In this audit V1-08 there was no new full reading of the source or comparison of specific pages. Methodological interpretation remains conditioned to the distinction between statements, motivations and behaviors.
 
 ** Scope and caution:** the previous record stated to confer title, authors, DOI and methodological structure in private copy, without reproducing content or registering private identifiers. It is a historical allegation of conference, not independent scientific verification carried out in V1-08. No automatic rights promotion: original copy remains outside the public catalogue. The scientific review**independent** of this card remains pending; to support the claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.
+
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/siddiki-basurto-weible-2012-institutional-grammar-compliance.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

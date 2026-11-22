@@ -1,6 +1,6 @@
 # Crisis of representation, legitimation and praxis in qualitative research with GenAI
 
-- Scientific status: == sync, corrected by elderman == @elder man
+- Scientific status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 - Source identified: Niroj Dahal et al., DOI 10.3389/frma.2025.1685968
 - Primary source link for query: https://doi.org/10.3389/frma.2025.1685968
 - Inventory log: SRC-0060; edição identificada em PDF original, trechos introdutórios/metodológicos examinados
@@ -27,3 +27,11 @@ Translating the problem into voice controls of the researcher, examination of co
 Propostas de qualidade dependem de enquadramento epistemológico e precisam ser debatidas e operacionalizadas antes de aplicação.
 
 Guidance does not state that the card was approved by an independent reviewer. Before use [L] in the manuscript, confer primary source, editing, context and pages of the data; declare separate inferences from what the work actually demonstrated. No gate choice is automatically approved. For qualitative traditions with opposite positions on GenAI, expose relevant disagreement and respect the user design.
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/dahal-et-al-2025-generativity-quality-crises.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

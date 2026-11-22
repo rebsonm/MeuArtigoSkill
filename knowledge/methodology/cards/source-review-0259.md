@@ -1,25 +1,25 @@
-# Causal Inference using Difference-in-Differences — Lecture 1: Introduction — orientação metodológica e limites
+# Causal Inference using Difference-in-Differences — Lecture 1: Introduction — methodological guidance and limits
 
-- Registro: SRC-0259; Pedro H. C. Sant'Anna (janeiro de 2025)
-- Bibliographic identifier: not established in this edition; no specific authorial URL verified
-- Natureza: slides de ensino de inferência causal
-- Estado de curadoria: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Classe: editorial original [I]/[P], DO NOT use as primary evidence [L] ou prova de leitura integral
+- Record: SRC-0259; Pedro H. C. Sant'Anna (January 2025)
+- Bibliographic identifier: not established for this edition; no specific author-issued URL verified
+- Material type: teaching slides on causal inference
+- Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE (legacy status identifier; independent scientific review pending)
+- Evidence class: original editorial guidance [I]/[P]; NOT primary evidence [L] or proof of complete source reading
 
-## Authorial guidance for research
+## Original methodological guidance
 
-It introduces data, potential results, estimates, and reasons for DiD's popularity. For responsible use, verify the integral work, place the method in the object, examine alternatives and recover the evidence used in the argumentation.
+The slides introduce data, potential outcomes, estimands and reasons for the popularity of difference-in-differences (DiD). Before applying the ideas, consult the complete work, establish whether the approach fits the research object, examine alternatives and verify the evidence supporting any specific argument.
 
-## Contraprova e limitação
+## Counterevidence and limitations
 
-Teacher slides without positive license for republishment; authorial card only. Also ask if another interpretation of the same material or a rival methodological strategy is compatible with the data. An editorial or didactic position is not experimental superiority test.
+The teaching slides have no confirmed permission for republication; only this independently written card is offered. Consider whether a competing interpretation of the same material or an alternative methodological strategy is consistent with the data. An editorial or teaching position is not an experimental demonstration that a method is superior.
 
-## Perguntas aplicáveis
+## Questions to examine
 
-- What is the object and unit of analysis that restrict the proposed method?
-- What assumption, misinterpretation or bias must be confronted at source?
-- What alternative result would falsify the conclusion? What pages and evidence would be needed for [L]?
+- What research object and unit of analysis delimit the proposed method?
+- Which assumption, interpretive error or source of bias needs to be tested against the original source?
+- What alternative result would falsify the conclusion? Which pages and evidence would be needed before asserting [L] support?
 
-## Transparência
+## Transparency
 
-Authorial editorial text without extensive reproduction. PDF confirmation does not mean that a scientific evaluator has approved this card. The source PDF was not reproduced in GitHub without proof of specific rights. Preserve [I] as inference and [P] as a hypothesis of consultation. No approved gate, no simulated full read and no host certification.
+This independent editorial text does not extensively reproduce the source. Confirmation that a PDF exists does not mean that a scientific reviewer approved this card. The source PDF was not republished on GitHub without proof of specific reuse rights. Preserve [I] for interpretation and [P] for a possible line of inquiry. No scientific gate has been approved, no complete reading has been simulated, and no host certification is claimed.

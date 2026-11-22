@@ -1,25 +1,25 @@
-# A Brief Introduction to Monte Carlo Simulation — orientação metodológica e limites
+# A Brief Introduction to Monte Carlo Simulation — methodological guidance and limits
 
-- Registro: SRC-0298; Peter L. Bonate (2001 (not 2011 as the filename indicates))
-- Bibliographic identifier: not established in this edition; no specific authorial URL verified
-- Nature: Clinical Pharmacokinetics 40(1):15–22
-- Estado de curadoria: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Classe: editorial original [I]/[P], DO NOT use as primary evidence [L] ou prova de leitura integral
+- Record: SRC-0298; Peter L. Bonate (2001, NOT 2011 as suggested by the archived filename)
+- Bibliographic identifier: not established for this edition; no specific author-issued URL verified
+- Material type: introductory article in Clinical Pharmacokinetics, 40(1), 15–22
+- Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE (legacy status identifier; independent scientific review pending)
+- Evidence class: original editorial guidance [I]/[P]; NOT primary evidence [L] or proof of complete source reading
 
-## Authorial guidance for research
+## Original methodological guidance
 
-It explains stochastic simulation, random parameters and examples of clinical studies. For responsible use, verify the integral work, place the method in the object, examine alternatives and recover the evidence used in the argumentation.
+The article introduces stochastic simulation, random parameters and examples from clinical studies. Responsible application requires consulting the complete work, checking how the proposed method fits the research object, considering alternatives and verifying the evidence used to support specific arguments.
 
-## Contraprova e limitação
+## Counterevidence and limitations
 
-© Addis International Limited, all rights reserved; PDF explicitly deleted. Also ask if another interpretation of the same material or a rival methodological strategy is compatible with the data. An editorial or didactic position is not experimental superiority test.
+The source is marked © Adis International Limited, all rights reserved; its PDF is explicitly excluded from public redistribution. Consider whether other interpretations of the material or a rival methodological approach could explain the same data. An editorial or instructional statement is not an experimental demonstration of methodological superiority.
 
-## Perguntas aplicáveis
+## Questions to examine
 
-- What is the object and unit of analysis that restrict the proposed method?
-- What assumption, misinterpretation or bias must be confronted at source?
-- What alternative result would falsify the conclusion? What pages and evidence would be needed for [L]?
+- What research object and unit of analysis delimit the proposed method?
+- Which assumptions, interpretive errors or possible biases must be checked against the original source?
+- What alternative result would challenge the conclusion, and which source pages and evidence would be needed for a claim graded [L]?
 
-## Transparência
+## Transparency
 
-Authorial editorial text without extensive reproduction. PDF confirmation does not mean that a scientific evaluator has approved this card. The source PDF was not reproduced in GitHub without proof of specific rights. Preserve [I] as inference and [P] as a hypothesis of consultation. No approved gate, no simulated full read and no host certification.
+This independent editorial text does not extensively reproduce the source. Confirming a PDF's identity is not evidence of scientific approval of this card. The original PDF has not been republished on GitHub without specific reuse rights. Preserve [I] for interpretation and [P] for prospective questions. No scientific gate, complete-reading claim or host certification is approved.

@@ -32,3 +32,13 @@ Licença original: https://creativecommons.org/licenses/by/4.0/
 ## Evidence limit
 
 This card is a short authorial orientation, not an extensive reproduction, translation or replacement of the article. The writing is independent, but still requires editorial scientific review before promoting validated material. For a statement [L], refer to the original and confirm the excerpt, editing and page. No scientific gate can be approved automatically.
+
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+
+## Translation and source-of-truth notice
+
+**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+
+Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/dias-mishima-2023-thematic-practice.md
+
+Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
