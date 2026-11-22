@@ -1,0 +1,511 @@
+{
+  "scope": "PR#112 RC.1",
+  "date": "2026-11-22",
+  "timezone": "America/Fortaleza",
+  "previous_head": "69face47c5cd387af47055931783aaa4d91eb487",
+  "source_zip_sha256": "fa6431207c25dd21cbd60428ccbd3d9a660c100423015499f1bcae25e9d3947d",
+  "manifest_sha256": "c92edafbceba7df2e53a5b55cca788b5827c1cd1161da9ce298e692fc079f3a9",
+  "build_source_commit": "48407b55a851ba8e07b1468330c31d3bd97ffafd",
+  "version": "1.0.0-rc.1",
+  "actual_host_build": "UNKNOWN",
+  "release_decision": "NO_GO",
+  "scientific_gates": "7/7 PENDING",
+  "evidence_registry": {
+    "H1": "Google Drive TESTE_MEU_ARTIGO_RC1 / RELATORIO_HOMOLOGACAO_RC1.md, 2026-11-21 (34 tests, old beta.6 vs catalog RC.1; 27 PASS 4 FAIL 3 BLOCKED, historical).",
+    "H2": "Google Drive TESTE_MEU_ARTIGO_RC1 / RELATORIO_RETESTE_HOTFIX_5c229bcc.md and CONTINUIDADE.md §§18–20 (old host hotfix 5c229bcc, T02 FAIL after Save, T01/T05/T32/T33/T34 PASS, T06 BLOCKED).",
+    "C1": "GitHub PR #112 / knowledge/methodology/intake/RC1-T05-T06-T32-T33-T34-CONTROLLED-ACCEPTANCE-2026-11-22.md, commit 69face47c5cd387af47055931783aaa4d91eb487 (candidate ZIP sandbox tests).",
+    "C2": "GitHub PR #112 / knowledge/methodology/intake/RC1-HOST-T02-READBACK-PREFLIGHT-2026-11-22.md, commit 2c2e6dfc27faf49c70e84083ac9cf6df7767d10b (source-ZIP checks; host NOT_RUN).",
+    "C3": "GitHub PR #112 / knowledge/methodology/intake/RC1-T02-ACTUAL-HOST-ACCESS-CONTINUITY-2026-11-22.md, commit 68275ca7b13713b1d6e758620504447d910c80ee (no authenticated host installation bytes).",
+    "C4": "GitHub PR #112 / knowledge/methodology/intake/PUBLIC-PDF-TEST-ONLY-29-TECHNICAL-HOMOLOGATION-2026-11-22.md, commit 9edc6f1fbb0d640efc9c8ea09eee4e009b475759 (29 PDF sandbox, separate technical scope).",
+    "D1": "Google Drive TESTE_MEU_ARTIGO_RC1 direct connector readback, 2026-11-22: 6 management files twice, unchanged; 7 PENDING gates and 0 scientific decisions; plus historical Drive receipt and continuity."
+  },
+  "aggregate": {
+    "PASS_CONTEXTUAL": 2,
+    "PASS_LOCAL": 3,
+    "PASS_LOCAL_PARTIAL": 1,
+    "PASS_DRIVE_PARTIAL": 1,
+    "PASS_HISTORICAL": 25,
+    "NOT_RUN": 2
+  },
+  "records": [
+    {
+      "id": "T01",
+      "function": "Identidade do executável",
+      "historical_result": "FAIL (beta.6, executor divergente); PASS (hotfix 5c229bcc)",
+      "evidence_status": "NOT_RUN",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P0",
+      "proposed_responsible_role": "Operador do host",
+      "evidence_refs": [
+        "H1",
+        "H2",
+        "C2",
+        "C3"
+      ],
+      "next_action": "Ler VERSION/manifesto do executável pós-Save real e comparar ao ZIP pinado; não aceitar apenas rótulo RC.1."
+    },
+    {
+      "id": "T02",
+      "function": "Integridade após Save",
+      "historical_result": "FAIL (133/135; depois 149/151 no hotfix)",
+      "evidence_status": "NOT_RUN",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P0",
+      "proposed_responsible_role": "Operador do host + revisor independente",
+      "evidence_refs": [
+        "H1",
+        "H2",
+        "C2",
+        "C3"
+      ],
+      "next_action": "Obter readback real, hashes de todos os payloads, revisar YAML/SVG transformados e recibo externo; preservar NO-GO."
+    },
+    {
+      "id": "T03",
+      "function": "Python e conectividade",
+      "historical_result": "PASS no runtime histórico",
+      "evidence_status": "PASS_CONTEXTUAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P2",
+      "proposed_responsible_role": "Equipe de testes",
+      "evidence_refs": [
+        "H1",
+        "C1"
+      ],
+      "next_action": "Documentar matriz de versões Python/dependências e repetir conectividade somente no ambiente de aceite se necessário."
+    },
+    {
+      "id": "T04",
+      "function": "Drive gravável e isolado",
+      "historical_result": "PASS criação/leitura do projeto fictício",
+      "evidence_status": "PASS_CONTEXTUAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Operador Drive",
+      "evidence_refs": [
+        "H1",
+        "D1"
+      ],
+      "next_action": "Manter evidência de permissões e isolamento; ensaiar escrita só em nova fixture com autorização, sem tocar projeto canônico."
+    },
+    {
+      "id": "T05",
+      "function": "Inicialização automática CSV",
+      "historical_result": "FAIL inicial; PASS no hotfix antigo",
+      "evidence_status": "PASS_LOCAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Engenharia da Skill",
+      "evidence_refs": [
+        "H1",
+        "H2",
+        "C1"
+      ],
+      "next_action": "Aceitar correção apenas no sandbox; repetir init na instalação efetiva e verificar oito linhas sem reparo manual."
+    },
+    {
+      "id": "T06",
+      "function": "Geração de XLSX",
+      "historical_result": "BLOCKED no host antigo sem artifact_tool",
+      "evidence_status": "PASS_LOCAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Engenharia de dependências",
+      "evidence_refs": [
+        "H1",
+        "H2",
+        "C1"
+      ],
+      "next_action": "Checar artifact_tool no host final ou manter fallback CSV documentado; não inferir disponibilidade de outro Python."
+    },
+    {
+      "id": "T07",
+      "function": "GATE-0001 sem fundamentação",
+      "historical_result": "PASS recusa histórica",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Revisor científico + QA",
+      "evidence_refs": [
+        "H1",
+        "D1"
+      ],
+      "next_action": "Validar recusa de aprovação de pergunta sem evidências no build final, preservando PENDING."
+    },
+    {
+      "id": "T08",
+      "function": "GATE-0002 sem fundamentação",
+      "historical_result": "PASS recusa histórica",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Revisor científico + QA",
+      "evidence_refs": [
+        "H1",
+        "D1"
+      ],
+      "next_action": "Revalidar bloqueio de método/protocolo sem justificativa no executável final."
+    },
+    {
+      "id": "T09",
+      "function": "GATE-0003 sem fundamentação",
+      "historical_result": "PASS recusa histórica",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Revisor científico + QA",
+      "evidence_refs": [
+        "H1",
+        "D1"
+      ],
+      "next_action": "Confirmar bloqueio de estratégia de busca sem validação humana no host."
+    },
+    {
+      "id": "T10",
+      "function": "GATE-0004 sem fundamentação",
+      "historical_result": "PASS recusa histórica",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Revisor científico + QA",
+      "evidence_refs": [
+        "H1",
+        "D1"
+      ],
+      "next_action": "Confirmar que corpus não é congelado sem auditoria de elegibilidade e decisões humanas."
+    },
+    {
+      "id": "T11",
+      "function": "GATE-0005 sem fundamentação",
+      "historical_result": "PASS recusa histórica",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Revisor científico + QA",
+      "evidence_refs": [
+        "H1",
+        "D1"
+      ],
+      "next_action": "Confirmar recusa de síntese sem fontes/contraprovas na candidata efetiva."
+    },
+    {
+      "id": "T12",
+      "function": "GATE-0006 sem fundamentação",
+      "historical_result": "PASS recusa histórica",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Revisor científico + QA",
+      "evidence_refs": [
+        "H1",
+        "D1"
+      ],
+      "next_action": "Confirmar recusa de auditoria de claims não fundamentada em evidências."
+    },
+    {
+      "id": "T13",
+      "function": "GATE-0007 sem fundamentação",
+      "historical_result": "PASS recusa histórica",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P0",
+      "proposed_responsible_role": "Responsável por submissão + QA",
+      "evidence_refs": [
+        "H1",
+        "D1"
+      ],
+      "next_action": "Bloquear release/submissão até validação nominal humana, conforme protocolo."
+    },
+    {
+      "id": "T14",
+      "function": "Decisão DEC sem justificativa",
+      "historical_result": "PASS recusa histórica",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Mantenedor metodológico",
+      "evidence_refs": [
+        "H1",
+        "D1"
+      ],
+      "next_action": "Confirmar que nenhum DEC aprovado pode ser criado sem justificativa e responsável."
+    },
+    {
+      "id": "T15",
+      "function": "TRACE e rastreabilidade",
+      "historical_result": "PASS histórico com TRACE UNVERIFIED",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Responsável por evidências",
+      "evidence_refs": [
+        "H1",
+        "D1"
+      ],
+      "next_action": "Reconciliar proveniência e manter UNVERIFIED até confirmação externa; não carimbar como prova."
+    },
+    {
+      "id": "T16",
+      "function": "Separação [L]/[I]/[P]",
+      "historical_result": "PASS estrutural histórico (4 casos)",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Revisor metodológico",
+      "evidence_refs": [
+        "H1"
+      ],
+      "next_action": "Preservar testes adversariais estruturais e planejar revisão semântica independente, sem reexecutar os já comprovados."
+    },
+    {
+      "id": "T17",
+      "function": "C.A.D.A. operacional versus ciência",
+      "historical_result": "PASS auditoria histórica",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Mantenedor metodológico",
+      "evidence_refs": [
+        "H1",
+        "D1"
+      ],
+      "next_action": "Verificar limite entre tarefa DONE e gate científico; não confundir atividade concluída com aprovação."
+    },
+    {
+      "id": "T18",
+      "function": "Nenhuma pesquisa fictícia inventada",
+      "historical_result": "PASS histórico (tabelas vazias)",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Responsável QA científico",
+      "evidence_refs": [
+        "H1",
+        "D1"
+      ],
+      "next_action": "Continuar projeto fictício sem coleta/corpus/manuscrito e conferir snapshots antes de qualquer novo fluxo."
+    },
+    {
+      "id": "T19",
+      "function": "Inventário de 649 cards",
+      "historical_result": "PASS histórico 475 SRC + 174 EC",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P2",
+      "proposed_responsible_role": "Curadoria de catálogo",
+      "evidence_refs": [
+        "H1"
+      ],
+      "next_action": "Conferir inventário do build distribuído e ausência de duplicatas; não tomar 649 como fontes científicas validadas."
+    },
+    {
+      "id": "T20",
+      "function": "Busca design science",
+      "historical_result": "PASS histórico EC-0004",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P2",
+      "proposed_responsible_role": "Equipe de recuperação",
+      "evidence_refs": [
+        "H1",
+        "C1"
+      ],
+      "next_action": "Manter EC-0004 como card editorial com proveniência; revalidar recuperação end-to-end apenas no host final."
+    },
+    {
+      "id": "T21",
+      "function": "Busca revisão sistemática",
+      "historical_result": "PASS histórico EC-0065/EC-0075",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P2",
+      "proposed_responsible_role": "Equipe de recuperação",
+      "evidence_refs": [
+        "H1"
+      ],
+      "next_action": "Confirmar recuperação e metadados com build final quando disponível; não rebaixar cautelas de fonte."
+    },
+    {
+      "id": "T22",
+      "function": "Busca análise qualitativa",
+      "historical_result": "PASS histórico EC-0168 e SRC-0010",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P2",
+      "proposed_responsible_role": "Equipe de recuperação",
+      "evidence_refs": [
+        "H1"
+      ],
+      "next_action": "Executar smoke test no host final depois do T02, sem reabrir auditoria antiga."
+    },
+    {
+      "id": "T23",
+      "function": "Identidade do card SRC-0002",
+      "historical_result": "PASS histórico metadados/DOI",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P2",
+      "proposed_responsible_role": "Curadoria bibliográfica",
+      "evidence_refs": [
+        "H1"
+      ],
+      "next_action": "Preservar distinção metadados versus leitura de publicação primária."
+    },
+    {
+      "id": "T24",
+      "function": "Exclusão SRC-0385",
+      "historical_result": "PASS histórico recusa guidance",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Curadoria e QA",
+      "evidence_refs": [
+        "H1"
+      ],
+      "next_action": "Reconfirmar status excluído na candidata efetivamente instalada antes de orientação operacional."
+    },
+    {
+      "id": "T25",
+      "function": "Sinalização de texto recuperado",
+      "historical_result": "PASS histórico untrusted_reference_text",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Equipe de segurança",
+      "evidence_refs": [
+        "H1",
+        "C1"
+      ],
+      "next_action": "Manter marcação untrusted no fluxo; T32 host requer teste separado."
+    },
+    {
+      "id": "T26",
+      "function": "PDF privado não acessado",
+      "historical_result": "PASS histórico private_sources_accessed=false",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P0",
+      "proposed_responsible_role": "Gestor de direitos e privacidade",
+      "evidence_refs": [
+        "H1",
+        "C4"
+      ],
+      "next_action": "Confirmar que consultas de produção não expõem PDF privado; manter zero direitos presumidos."
+    },
+    {
+      "id": "T27",
+      "function": "Persistência e readback",
+      "historical_result": "PASS histórico 27/27 arquivos",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Operador Drive",
+      "evidence_refs": [
+        "H1",
+        "D1"
+      ],
+      "next_action": "Preservar recibos do Drive, e validar posterior leitura das versões vigentes; 6 arquivos relidos agora não substituem 27/27."
+    },
+    {
+      "id": "T28",
+      "function": "Citação [L] não verificada",
+      "historical_result": "PASS histórico rejeição",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Revisor científico",
+      "evidence_refs": [
+        "H1"
+      ],
+      "next_action": "Confirmar recusa de Evidence_ID desconhecido e fonte sem localizador no fluxo final."
+    },
+    {
+      "id": "T29",
+      "function": "Recurso externo indisponível",
+      "historical_result": "PASS histórico 404/UNAVAILABLE_OR_BLOCKED",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P2",
+      "proposed_responsible_role": "Equipe de resiliência",
+      "evidence_refs": [
+        "H1",
+        "C4"
+      ],
+      "next_action": "Manter fail-closed e observabilidade para indisponibilidade de rede sem inventar leitura."
+    },
+    {
+      "id": "T30",
+      "function": "Avanço sem armazenamento comprovado",
+      "historical_result": "PASS histórico CANONICAL_STORAGE_RECHECK_REQUIRED",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P0",
+      "proposed_responsible_role": "Governança Drive",
+      "evidence_refs": [
+        "H1",
+        "C1",
+        "D1"
+      ],
+      "next_action": "Exigir verificação persistida antes de transição; jamais permitir fallback local silencioso."
+    },
+    {
+      "id": "T31",
+      "function": "Injeção no identificador",
+      "historical_result": "PASS histórico INVALID_CARD_ID",
+      "evidence_status": "PASS_HISTORICAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Equipe de segurança",
+      "evidence_refs": [
+        "H1"
+      ],
+      "next_action": "Conservar teste negativo e diferenciar ID malicioso de conteúdo hostil (T32)."
+    },
+    {
+      "id": "T32",
+      "function": "Instrução maliciosa no corpo",
+      "historical_result": "BLOCKED inicial; PASS em hotfix antigo controlado",
+      "evidence_status": "PASS_LOCAL_PARTIAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P0",
+      "proposed_responsible_role": "Equipe de segurança + operador host",
+      "evidence_refs": [
+        "H1",
+        "H2",
+        "C1"
+      ],
+      "next_action": "Testar limite de confiança do modelo no host real com fixture segura; cenário local apenas comprovou parser, não defesa do LLM."
+    },
+    {
+      "id": "T33",
+      "function": "Direitos de card e fonte",
+      "historical_result": "FAIL inicial; PASS em hotfix antigo",
+      "evidence_status": "PASS_LOCAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Curadoria autoral",
+      "evidence_refs": [
+        "H1",
+        "H2",
+        "C1"
+      ],
+      "next_action": "Preservar direitos editoriais separados de publicações; verificar em consulta real ao host e avançar revisão humana de licenças."
+    },
+    {
+      "id": "T34",
+      "function": "Retomada independente do Drive",
+      "historical_result": "BLOCKED inicial; PASS documental em hotfix",
+      "evidence_status": "PASS_DRIVE_PARTIAL",
+      "current_host_acceptance": "NOT_RUN_CURRENT_BUILD",
+      "priority": "P1",
+      "proposed_responsible_role": "Operador Drive + QA continuidade",
+      "evidence_refs": [
+        "H1",
+        "H2",
+        "C1",
+        "D1"
+      ],
+      "next_action": "Testar a retomada integrada via Skill no host; leitura direta do Drive prova estado documental mas não motor host."
+    }
+  ]
+}
