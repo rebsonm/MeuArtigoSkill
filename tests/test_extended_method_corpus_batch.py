@@ -42,7 +42,7 @@ class ExtendedMethodsRegression(unittest.TestCase):
  def test_book_license_verified_but_pdf_not_uploaded(self):
   m=json.loads((BASE/"intake"/"rights-ledger-manifest.json").read_text("utf-8"))
   self.assertEqual(m["actual_individually_verified_rights_in_this_ledger"],17)
-  self.assertEqual(m["source_pdf_count_public_catalogue"],55)
+  self.assertEqual(m["source_pdf_count_public_catalogue"],51)  # immutable pre-intake ledger snapshot
   self.assertEqual(m["original_editorial_cards_count"],174)
   ledger=[]
   for i in range(1,6):

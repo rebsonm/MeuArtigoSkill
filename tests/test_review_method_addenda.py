@@ -78,7 +78,7 @@ class ReviewMethodAddendaTests(unittest.TestCase):
     def test_no_unlicensed_original_pdf_promoted_by_registry_matching(self):
         manifest = json.loads((ROOT/"knowledge/methodology/intake/rights-ledger-manifest.json").read_text("utf-8"))
         self.assertEqual(manifest["actual_individually_verified_rights_in_this_ledger"], 17)
-        self.assertEqual(manifest["source_pdf_count_public_catalogue"], 55)
+        self.assertEqual(manifest["source_pdf_count_public_catalogue"], 51)  # historical ledger snapshot
         self.assertEqual(manifest["original_editorial_cards_count"], 174)
         self.assertFalse(manifest["private_corpus_copied"])
 
