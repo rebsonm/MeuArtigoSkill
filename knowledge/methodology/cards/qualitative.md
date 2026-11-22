@@ -1,30 +1,33 @@
-# Qualitative analysis and reflexivity
+# Methodological decision card — Qualitative interviewing — qualitative
 
 Card ID: qualitative
-Publication state: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_RIGHTS_REVIEW
-Research evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_ONLY
-Rights status: UNVERIFIED FOR PUBLICATION — bibliographic leads from not establish reproduction rights or scientific loyalty.
-
-## Conceptual orientation
-
-Methods such as thematic analysis, grounded theory, qualitative case study, ethnography, and narrative inquiry involve distinct research aims, assumptions, analytic processes, and quality criteria. Treating all qualitative studies as a generic process of coding loses material methodological differences.
-
-## Researcher decisions
-
-When thematic analysis is considered, clarify which variant is intended, how interpretation and researcher reflexivity operate, what constitutes a theme, and whether suggested reliability procedures fit that tradition. A list of themes is not proof of an adequate analysis. Reconcile interpretation with actual data and limitations rather than treating automated coding as researcher validation.
-
-## Source trail
-
-Bibliographic pointers: Braun and Clarke, *Thematic Analysis: A Practical Guide*; Yin, *Qualitative Research from Start to Finish*. Original editorial synthesis, not a reproduction of licensed materials. Consult the authorized primary work for publication-ready claims.
-
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
 
-Rights status: UNVERIFIED_FOR_PUBLICATION
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Qualitative analysis and thematic approaches
+## Original English methodological guidance [I]
+Record recruitment, interview protocol, consent, participant context, and analytic trail.
 
-## Translation and source-of-truth notice
+## Limits and alternative interpretations [I]
+Interview accounts are situated testimony rather than complete behavioral records.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/qualitative.md
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: UNVERIFIED_FOR_PUBLICATION
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-Catalogue underlying-source rights: `UNVERIFIED_FOR_PUBLICATION`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/qualitative.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

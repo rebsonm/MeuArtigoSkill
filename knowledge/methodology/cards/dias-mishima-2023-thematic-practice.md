@@ -1,44 +1,35 @@
-# Thematic analysis: decisions between context, units of meaning and themes
+# Methodological decision card — Thematic analysis — dias-mishima-2023-thematic-practice
 
 Card ID: dias-mishima-2023-thematic-practice
-Status: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_SCIENTIFIC_REVIEW
-Evidence classification: [I] original editorial synthesis
-Source inspected: article PDF, abstract, methodological sections
-Source PDF permission: CC BY 4.0, original file unmodified
-
-## Questão de consulta
-
-How to make methodological decisions compatible with the research question and design?
-
-## Orientação conceitual original
-
-The proposal of Dias and Mishima (2023) didactically organizes the thematic analysis of qualitative data in stages, from the approximation with the material to the construction of themes. As editorial guidance, the researcher must explain the origin of the records, which defines a unit of context and what justifies grouping excerpts into a nucleus of meaning. The name of a stage is not equivalent to the demonstration that the interpretation was supported by evidence.
-
-## Decision criteria and traceability
-
-Register corpus, inclusion rules, forms of familiarization, coding choices, context units, competing interpretations and changes between versions of the themes. Specify which tradition of thematic analysis was adopted.
-
-## Limitations and counterexamples
-
-Do not treat the seven stages as a universal standard or automatically match them to Braun and Clarke's reflective thematic analysis. The interpretation remains of the researcher and does not result from the mechanical counting of words.
-
-## Referência e licença
-
-Obra original: https://doi.org/10.12957/sustinere.2023.71828
-Página da editora: https://doi.org/10.12957/sustinere.2023.71828
-PDF original autorizado: knowledge/methodology/pdfs/dias-mishima-2023-thematic-analysis.pdf
-Licença original: https://creativecommons.org/licenses/by/4.0/
-
-## Evidence limit
-
-This card is a short authorial orientation, not an extensive reproduction, translation or replacement of the article. The writing is independent, but still requires editorial scientific review before promoting validated material. For a statement [L], refer to the original and confirm the excerpt, editing and page. No scientific gate can be approved automatically.
-
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+DOI lead for source verification: 10.12957/sustinere.2023.71828
+Source locator for independent verification: https://doi.org/10.12957/sustinere.2023.71828
 
-## Translation and source-of-truth notice
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Análise temática: decisões entre contexto, unidades de sentido e temas
+## Original English methodological guidance [I]
+Align the role of codes and themes with the analytic tradition and research question.
 
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+## Limits and alternative interpretations [I]
+Coding agreement or frequency alone does not demonstrate interpretive validity.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/dias-mishima-2023-thematic-practice.md
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/dias-mishima-2023-thematic-practice.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

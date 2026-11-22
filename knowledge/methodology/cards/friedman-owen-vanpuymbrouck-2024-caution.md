@@ -1,37 +1,36 @@
-# Interpretivist caution: issues that an automatic encoding does not solve
+# Methodological decision card — Thematic analysis — friedman-owen-vanpuymbrouck-2024-caution
 
-- Scientific status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Obra identificada: Friedman, Owen e VanPuymbrouck (2024); DOI: 10.1177/14687941241297375
-- URL de origem: https://doi.org/10.1177/14687941241297375
-- Registro bibliográfico: SRC-0066
-- Type of publication evidence: critical position and methodological discussion
-- Card scope: original consultation from the documentary conference and from method sections; **No independent external critical review**, and **No authorisation to use this form as evidence [L]
-- Rights: original editorial content without reproducing the article or book
+Card ID: friedman-owen-vanpuymbrouck-2024-caution
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+Related bibliographic record: SRC-0066
+DOI lead for source verification: 10.1177/14687941241297375
+Source locator for independent verification: https://doi.org/10.1177/14687941241297375
 
-## What the source presents (requires source conference to quote)
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Cautela interpretativista: questões que uma codificação automática não resolve
+## Original English methodological guidance [I]
+Align the role of codes and themes with the analytic tradition and research question.
 
-It questions the compatibility between statistical learning of text patterns and the foundations of interpretivist qualitative research.
+## Limits and alternative interpretations [I]
+Coding agreement or frequency alone does not demonstrate interpretive validity.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Proposition for Skill use [I]
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Skill can introduce an epistemological compatibility check before suggesting automated methods, preserving other traditions as possibilities.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Scientific decision issues [P]
-
-- What definition of interpretation is being adopted?
-- Quem sustentará inferências e contraexemplos?
-- Are there operational tasks that do not displace the researcher's judgment?
-
-## Contraponto e delimitações
-
-Do not confuse an epistemological objection situated with proof that all automated processing is scientifically invalid.
-
-This card is original editorial text. It does not represent independent scientific review, does not attest to the quality of the source, nor replaces full reading, context of pages or epistemological criticism. Classification [L] depends on checking the primary passages by the researcher. The card does not authorize to distribute protected versions, infer rights or approve gates. In controversial debates, positions and their foundations must be confronted without automatically deciding on either side.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/friedman-owen-vanpuymbrouck-2024-caution.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/friedman-owen-vanpuymbrouck-2024-caution.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

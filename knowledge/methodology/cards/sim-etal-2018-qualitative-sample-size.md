@@ -1,44 +1,35 @@
-# A priori qualitative sample size: justify a range without pretending saturation is known
+# Methodological decision card — Sampling and saturation — sim-etal-2018-qualitative-sample-size
 
 Card ID: sim-etal-2018-qualitative-sample-size
-Publication status: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_SCIENTIFIC_REVIEW
-Research evidence type: [I] EDITORIAL_SYNTHESIS_ONLY
-Source consultation: Original PDF text inspected for identification, research question, abstract and methodological scope on 2026-11-21. No comprehensive claim-by-claim page verification.
-Third-party full text reproduced here: NO
-
-## Intended methodological question
-
-How can a qualitative study propose a sampling plan before it knows what variation and analytic depth will emerge?
-
-## Original editorial guidance
-
-State the rationale for an initial feasible sample range using research purpose, case heterogeneity, information requirements and the analytic tradition. Describe a monitored sampling decision rather than guaranteeing the final number before data collection.
-
-## Decision checks for the researcher
-
-Provide inclusion logic, heterogeneity assessment, planned interview depth, interim review points, stopping rationale and circumstances requiring more cases.
-
-## Limitations and counterevidence
-
-A numerical precommitment allone cannot certify theoretical saturation or thematic adequacy; do not transfer a fixed interview count between unrelated designs.
-
-## Source bibliographic lead
-
-Sim, J.; Saunders, B.; Waterfield, J.; Kingstone, T. (2018). Can sample size in qualitative research be determined a priori? International Journal of Social Research Methodology 21(5), 619-634.
-
-DOI: https://doi.org/10.1080/13645579.2018.1454643
-Publisher/repository entry: https://doi.org/10.1080/13645579.2018.1454643
-
-## Attribution and reuse boundaries
-
-This is an independent, short editorial consultation card, not a translation, a long excerpt, or a substitute for the third-party work. The archived source PDF must not be redistributed based on possession in a private research library. This card is not accepted [L] proof for a scientific claim until a reader verifies the exact original passage and edition. The investigator must decide the method and approve human scientific gates.
-
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+DOI lead for source verification: 10.1080/13645579.2018.1454643
+Source locator for independent verification: https://doi.org/10.1080/13645579.2018.1454643
 
-## Translation and source-of-truth notice
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): A priori qualitative sample size: justify a range without pretending saturation is known
+## Original English methodological guidance [I]
+Explain sample selection, heterogeneity, coverage, and stopping rationale.
 
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+## Limits and alternative interpretations [I]
+Do not treat a predetermined interview count as proof of saturation.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/sim-etal-2018-qualitative-sample-size.md
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/sim-etal-2018-qualitative-sample-size.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

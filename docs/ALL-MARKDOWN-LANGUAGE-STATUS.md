@@ -1,5 +1,14 @@
 # English migration status — all Markdown, not just docs
 
+## Current English-language remediation — 22 November 2026
+
+**582 unreliable machine-translated Markdown cards have been replaced** by conservative English editorial redrafts: 472 bibliographic prospecting cards and 110 methodological decision cards.
+
+This is NOT a certification of literal translation fidelity. The redrafts use the existing public bibliographic metadata and method-specific decision prompts, without attributing unverified claims to source authors. Each card links to its immutable prior Portuguese editorial record so that valuable original detail remains accessible. The 649-entry ledger and all source-rights and scientific-review states are unchanged. The seven scientific gates remain unapproved and no restricted PDF is republished.
+
+Historical intake notes remain archival evidence in their original language; they were not silently rewritten. Original published titles and technical identifiers also retain their source language. This is an editorial quality repair, not a peer review of 582 underlying works.
+
+
 Date: 22 November 2026. This is a **partial implementation record**, not a
 claim that the complete source tree has been translated or validated.
 

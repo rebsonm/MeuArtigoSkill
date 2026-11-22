@@ -1,40 +1,35 @@
-# Scientific writing productivity: protect evidence-review time
+# Methodological decision card — Reviews and synthesis — scientific-writing-productivity
 
 Card ID: scientific-writing-productivity
-Editorial status: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_SCIENTIFIC_REVIEW
-Evidence grade: [I] ORIGINAL_EDITORIAL_GUIDANCE_ONLY
-Source reading boundary: Official publisher metadata and CC BY 4.0 source availability established; this card does not certify a close, page-by-page reading of the primary work.
-
-## Methodological decision
-
-How do researchers avoid mixing drifting speed for scientific progress?
-
-## Independent editorial guidance
-
-Divide writing into evidence-linked milestones and separate drafting, analysis, citation checking and editorial review. Keep the next valid scientific decision explicit.
-
-## What not to infer
-
-Page counts can reward unsupported claims if treated as scientific performance measures.
-
-## Bibliographic and copyright trail
-
-Todd C. Peterson; Sofie R. Kleppner; Crystal M. Botham (2018). Ten simple rules for scientists: Improving your writing productivity.
-DOI: https://doi.org/10.1371/journal.pcbi.1006379
-Original PDF: knowledge/methodology/pdfs/plos-pcbi-1006379.pdf
-Publisher: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006379
-Rights: CC BY 4.0; source SHA-256: 3bfbea8bee896869025322175aa352c5707b6d9f1ea8aa45d3303dc5c5d8828b
-
-## Researcher safeguard
-
-This editorial card is a brief original orientation, not a paraphrase or reconstruction of the paper. Before an article manuscript uses a particular scholarly claim as [L], independently inspect the exact page of the published original and consider contradictory evidence. This record cannot approve scientific gates.
-
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+DOI lead for source verification: 10.1371/journal.pcbi.1006379
+Source locator for independent verification: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006379
 
-## Translation and source-of-truth notice
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Scientific writing productivity: protect evidence-review time
+## Original English methodological guidance [I]
+Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
 
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+## Limits and alternative interpretations [I]
+A PRISMA-style flowchart does not replace a defensible review design.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/scientific-writing-productivity.md
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/scientific-writing-productivity.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

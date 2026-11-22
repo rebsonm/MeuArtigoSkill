@@ -1,37 +1,34 @@
-# Classic minimum wage study: near experimental contrast and limits
+# Methodological decision card — Difference-in-differences — card-krueger-1994-nj-pa-did-study
 
-- Scientific status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Work identified: David Card and Alan B. Krueger (1994); DOI: not confirmed in copy
-- Source URL: specific editorial finder not verified
-- Registro bibliográfico: SRC-0258
-- Type of publication evidence: empirical article in labor economy
-- Card scope: original consultation from the documentary conference and from method sections; **No independent external critical review**, and **No authorisation to use this form as evidence [L]
-- Rights: original editorial content without reproducing the article or book
+Card ID: card-krueger-1994-nj-pa-did-study
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+Related bibliographic record: SRC-0258
 
-## What the source presents (requires source conference to quote)
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Estudo clássico de salário mínimo: contraste quase experimental e limites
+## Original English methodological guidance [I]
+Specify treated and comparison units, timing, estimand, and assumptions about counterfactual trends.
 
-Comparing jobs in 410 fast-food restaurants, before/after an increase in New Jersey, with comparison group in Pennsylvania.
+## Limits and alternative interpretations [I]
+Check anticipation, spillovers, changing composition, and rival time trends.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Proposition for Skill use [I]
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-A causal research should explain groups, intervention scenario, comparison hypotheses, possible contamination and inference on results.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Scientific decision issues [P]
-
-- Could the change have occurred even without treatment?
-- Are there simultaneous shocks and distinct conditions between states?
-- Does the collection instrument measure the outcome with reliability?
-
-## Contraponto e delimitações
-
-The study does not automatically prove that every minimum wage increase does not affect employment elsewhere; the JSTOR copy consulted was not redistributed.
-
-This card is original editorial text. It does not represent independent scientific review, does not attest to the quality of the source, nor replaces full reading, context of pages or epistemological criticism. Classification [L] depends on checking the primary passages by the researcher. The card does not authorize to distribute protected versions, infer rights or approve gates. In controversial debates, positions and their foundations must be confronted without automatically deciding on either side.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/card-krueger-1994-nj-pa-did-study.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/card-krueger-1994-nj-pa-did-study.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

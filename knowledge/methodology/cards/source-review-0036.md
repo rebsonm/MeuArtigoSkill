@@ -1,33 +1,34 @@
-# Feminist Epistemology — orientação metodológica e limites
+# Methodological decision card — Reviews and synthesis — source-review-0036
 
-- Registro: SRC-0036; Helen E. Longino (1999)
-- Bibliographic identifier: not established in this edition; no specific authorial URL verified
-- Natureza: capítulo 14 de The Blackwell Guide to Epistemology
-- Estado de curadoria: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Classe: editorial original [I]/[P], DO NOT use as primary evidence [L] ou prova de leitura integral
+Card ID: source-review-0036
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+Related bibliographic record: SRC-0036
 
-## Authorial guidance for research
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Feminist Epistemology
+## Original English methodological guidance [I]
+Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
 
-It examines disputes of objectivity, social production of knowledge and feminist criticisms of epistemology. For responsible use, verify the integral work, place the method in the object, examine alternatives and recover the evidence used in the argumentation.
+## Limits and alternative interpretations [I]
+A PRISMA-style flowchart does not replace a defensible review design.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Contraprova e limitação
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-The file is a protected book chapter of Blackwell; home page inspected visually, no redistribution authorization. Also ask if another interpretation of the same material or a rival methodological strategy is compatible with the data. An editorial or didactic position is not experimental superiority test.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Perguntas aplicáveis
-
-- What is the object and unit of analysis that restrict the proposed method?
-- What assumption, misinterpretation or bias must be confronted at source?
-- What alternative result would falsify the conclusion? What pages and evidence would be needed for [L]?
-
-## Transparência
-
-Authorial editorial text without extensive reproduction. PDF confirmation does not mean that a scientific evaluator has approved this card. The source PDF was not reproduced in GitHub without proof of specific rights. Preserve [I] as inference and [P] as a hypothesis of consultation. No approved gate, no simulated full read and no host certification.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/source-review-0036.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/source-review-0036.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

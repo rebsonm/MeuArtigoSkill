@@ -1,42 +1,35 @@
-# Reflexive thematic analysis: coherence before coding counts
+# Methodological decision card — Thematic analysis — reflexive-thematic-analysis
 
 Card ID: reflexive-thematic-analysis
-Publication state: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_RIGHTS_REVIEW
-Research evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_ONLY
-
-## Methodological question
-
-When the research question explores patterns of meaning in interviews, documents or other qualitative material.
-
-## Original conceptual guidance
-
-Specify the theoretical and interpretive position before selecting a thematic analysis variant. In reflexive thematic analysis, the analytic role of the researcher is explicit; themes are meaning-oriented interpretations rather than mere tallies of frequent words. Software can organize data but cannot supply researcher interpretation.
-
-## Researcher decision checks
-
-Describe dataset, analytic perspective, transformations from observations into interpretive claims, reflexive memos and how competing interpretations were addressed. State why the selected variant fits the claim.
-
-## Limits and counterexamples
-
-Avoid importing inter-coder reliability requirements as a default validation rule for every reflective thematic analysis. Do not claim that the existence of a codebook or automatically generated themes establishes rigor.
-
-## Bibliographic trail (not a verified [L] claim for any user's research)
-
-Byrne, D. (2022). A worked example of Braun and Clarke's approach to reflexive thematic analysis. Quality & Quantity 56, 1391-1412. DOI 10.1007/s11135-021-01182-y.
-
-Primary-source locator: https://doi.org/10.1007/s11135-021-01182-y
-Publisher or repository: https://link.springer.com/article/10.1007/s11135-021-01182-y
-
-## Provenance limits
-
-This is an independent editorial synthesis, not a quotation, translation, extended excerpt, or reproduction of source tables and figures. Primary-source interpretation and printed page numbers require checking the applicable original edition for each concrete research claim. The user, not the card, decides methods and scientific gate approvals.
-
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+DOI lead for source verification: 10.1007/s11135-021-01182-y
+Source locator for independent verification: https://link.springer.com/article/10.1007/s11135-021-01182-y
 
-## Translation and source-of-truth notice
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Reflexive thematic analysis: coherence before coding counts
+## Original English methodological guidance [I]
+Align the role of codes and themes with the analytic tradition and research question.
 
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+## Limits and alternative interpretations [I]
+Coding agreement or frequency alone does not demonstrate interpretive validity.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/reflexive-thematic-analysis.md
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/reflexive-thematic-analysis.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

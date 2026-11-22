@@ -1,37 +1,34 @@
-# GenAI encoding limits in position document not published in annals
+# Methodological decision card — Document analysis — teixeira-tschopp-jobin-2025-hype-vs-risks
 
-- Scientific status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Work identified: Teixeira, Tschopp and Jobin (2025); DOI: not confirmed in copy
-- Source URL: specific editorial finder not verified
-- Registro bibliográfico: SRC-0067
-- Type of publication evidence: position paper accepted in workshop, without publication in the proceedings
-- Card scope: original consultation from the documentary conference and from method sections; **No independent external critical review**, and **No authorisation to use this form as evidence [L]
-- Rights: original editorial content without reproducing the article or book
+Card ID: teixeira-tschopp-jobin-2025-hype-vs-risks
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+Related bibliographic record: SRC-0067
 
-## What the source presents (requires source conference to quote)
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Limites da codificação por GenAI em documento de posição não publicado em anais
+## Original English methodological guidance [I]
+Specify provenance, document selection, genre, missing records, and coding or interpretation.
 
-It maintains that opacity, insufficient documentation and erroneous outputs can weaken rigor and confidence in coding with GenAI.
+## Limits and alternative interpretations [I]
+Official documents must not be equated automatically with lived or organizational practice.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Proposition for Skill use [I]
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-The card can inspire implementation risk matrix; clearly signal its position paper status without annals, not journal article reference.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Scientific decision issues [P]
-
-- Which version of the document was read?
-- What claim is argued and what is empirical?
-- Existe réplica ou literatura crítica à tese?
-
-## Contraponto e delimitações
-
-Do not invent DOI or link the supposed volume of anals; author positioning is not causal evaluation or consensus among researchers.
-
-This card is original editorial text. It does not represent independent scientific review, does not attest to the quality of the source, nor replaces full reading, context of pages or epistemological criticism. Classification [L] depends on checking the primary passages by the researcher. The card does not authorize to distribute protected versions, infer rights or approve gates. In controversial debates, positions and their foundations must be confronted without automatically deciding on either side.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/teixeira-tschopp-jobin-2025-hype-vs-risks.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/teixeira-tschopp-jobin-2025-hype-vs-risks.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

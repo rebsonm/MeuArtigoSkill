@@ -1,48 +1,35 @@
-# Action research: connecting collective diagnosis, change and scientific inquiry
+# Methodological decision card — Action research — koerich-et-al-2009-action-research
 
 Card ID: koerich-et-al-2009-action-research
-Status: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_SCIENTIFIC_REVIEW
-Research evidence type: [I] original editorial interpretation; confirm [L] claims directly in cited source.
-Source read scope: abstract and methodological exposition, not a page-by-page independent peer review.
-
-## Methodological question
-
-When does a participatory change initiative qualify as action research rather than routine implementation or a post-hoc project report?
-
-## Original methodological guidance
-
-Koerich et al. distinguish the linked purposes of addressing a situated practical problem and constructing understanding while participants help interpret the investigated situation. For research design, explicitly define the participants, the organization and observed needs, planned intervention, evidence collected during the change process and how reflection may alter subsequent action. Treat the participatory relationship as an object of documentation, not a label attached after the intervention.
-
-## Decision checks
-
-- Which intervention question, participants, decision authority and institutional context define the cycle?
-- What records distinguish diagnosis, collaborative interpretation, decision, implementation and observation?
-- What outcome evidence could count against the team's initial explanation?
-- How are participation ethics, consent, possible coercion and unequal power handled?
-- How does the study's inference extend beyond the practical success or failure of one action?
-
-## Limits
-
-Improvement of a process does not establish a causal effect or general scientific contribution. Multiple cycles of not guarantee rigorous data collection. The published article discussions clinical/health-care contexts, so adaptation to organizations or public administration must explain institutional differences.
-
-## Source and rights
-
-Koerich, Magda Santos; Backes, Dirce Stein; Sousa, Francisca Georgina Macêdo de; Erdmann, Alacoque Lorenzini; Albuquerque, Gelson Luiz (2009). Pesquisa-ação: ferramenta metodológica para a pesquisa qualitativa. Revista Eletrônica de Enfermagem, 11(3), 713-719.
-DOI: https://doi.org/10.5216/ree.v11.47234
-Journal and CC BY 4.0 permission: https://revistas.ufg.br/fen/article/view/47234
-Unmodified public PDF: knowledge/methodology/pdfs/koerich-et-al-2009-action-research.pdf
-License: https://creativecommons.org/licenses/by/4.0/
-
-## Academic responsibility
-
-This is a new short consultation card, not a translated or extracted copy of the article. It is pending independent editorial/scientific review. Verify the actual publisher edition and printed page labels for any primary [L] assertion. No researcher gate is automatically approved.
-
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+DOI lead for source verification: 10.5216/ree.v11.47234
+Source locator for independent verification: https://revistas.ufg.br/fen/article/view/47234
 
-## Translation and source-of-truth notice
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Action research: linking participatory change and scientific inquiry
+## Original English methodological guidance [I]
+Describe collaboration, intervention cycles, reflection, and documented evaluation.
 
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+## Limits and alternative interpretations [I]
+A successful improvement is not automatically a generalizable scientific finding.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/koerich-et-al-2009-action-research.md
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/koerich-et-al-2009-action-research.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

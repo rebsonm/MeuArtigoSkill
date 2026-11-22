@@ -1,42 +1,35 @@
-# Focus groups: data from interaction, not multiple interviews at once
+# Methodological decision card — Qualitative interviewing — focus-group-design
 
 Card ID: focus-group-design
-Publication state: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_RIGHTS_REVIEW
-Research evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_ONLY
-
-## Methodological question
-
-When interactions among participants can illuminate shared or contested meanings relevant to a problem.
-
-## Original conceptual guidance
-
-Focus group discussion can reveal social negotiation, disagreement and group dynamics that individual interviews may not expose. Design sampling, moderation, prompts, recording and analysis around that interaction rather than treating each utterance as statistically independent evidence.
-
-## Researcher decision checks
-
-Justify composition, group size, number of sessions, facilitation and ethical sensitivity. Document participation imbalances, silence and the moderator's influence. Analyze conversations with attention to context and group processes.
-
-## Limits and counterexamples
-
-Do not assume convenience group discussions production population prevalence estimates. Sensitive or hierarchical settings can suppress disagreement and expose participants to confidentiality risks.
-
-## Bibliographic trail (not a verified [L] claim for any user's research)
-
-Nyumba, T. O., Wilson, K., Derrick, C. J., & Mukherjee, N. (2018). The use of focus group discussion methodology. Methods in Ecology and Evolution 9, 20-32. DOI 10.1111/2041-210X.12860.
-
-Primary-source locator: https://doi.org/10.1111/2041-210X.12860
-Publisher or repository: https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12860
-
-## Provenance limits
-
-This is an independent editorial synthesis, not a quotation, translation, extended excerpt, or reproduction of source tables and figures. Primary-source interpretation and printed page numbers require checking the applicable original edition for each concrete research claim. The user, not the card, decides methods and scientific gate approvals.
-
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+DOI lead for source verification: 10.1111/2041-210X.12860
+Source locator for independent verification: https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12860
 
-## Translation and source-of-truth notice
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Focus groups: data from interaction, not multiple interviews at once
+## Original English methodological guidance [I]
+Record recruitment, interview protocol, consent, participant context, and analytic trail.
 
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+## Limits and alternative interpretations [I]
+Interview accounts are situated testimony rather than complete behavioral records.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/focus-group-design.md
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/focus-group-design.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

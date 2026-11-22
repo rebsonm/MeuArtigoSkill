@@ -1,37 +1,36 @@
-# Regressão ecológica espacial: dependência geográfica e erro de inferência
+# Methodological decision card — Reviews and synthesis — conceicao-et-al-2026-spatial-ecological-regression
 
-- Scientific status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Obra identificada: Conceição e colaboradores (2026); DOI: 10.1590/1980-549720260018.2
-- URL de origem: https://doi.org/10.1590/1980-549720260018.2
-- Registro bibliográfico: SRC-0269
-- Type of evidence of publication: methodological article with application in public health
-- Card scope: original consultation from the documentary conference and from method sections; **No independent external critical review**, and **No authorisation to use this form as evidence [L]
-- Rights: original editorial content without reproducing the article or book
+Card ID: conceicao-et-al-2026-spatial-ecological-regression
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+Related bibliographic record: SRC-0269
+DOI lead for source verification: 10.1590/1980-549720260018.2
+Source locator for independent verification: https://doi.org/10.1590/1980-549720260018.2
 
-## What the source presents (requires source conference to quote)
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Regressão ecológica espacial: dependência geográfica e erro de inferência
+## Original English methodological guidance [I]
+Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
 
-Descreve regressão linear espacial em unidades ecológicas e exemplifica a importância de estrutura geográfica na modelagem.
+## Limits and alternative interpretations [I]
+A PRISMA-style flowchart does not replace a defensible review design.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Proposition for Skill use [I]
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-At Skill, request description of spatial unit, neighborhood matrix, autocorrelation, ecological interpretation diagnoses and limitations.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Scientific decision issues [P]
-
-- Is there spatial dependence on waste?
-- Was the weight matrix justified and submitted to sensitivity analysis?
-- A interpretação evita falácia ecológica?
-
-## Contraponto e delimitações
-
-Aggregated results do not allow conclusions about individuals; the journal adopts open access policy but the exact license of this copy remains pending.
-
-This card is original editorial text. It does not represent independent scientific review, does not attest to the quality of the source, nor replaces full reading, context of pages or epistemological criticism. Classification [L] depends on checking the primary passages by the researcher. The card does not authorize to distribute protected versions, infer rights or approve gates. In controversial debates, positions and their foundations must be confronted without automatically deciding on either side.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/conceicao-et-al-2026-spatial-ecological-regression.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/conceicao-et-al-2026-spatial-ecological-regression.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

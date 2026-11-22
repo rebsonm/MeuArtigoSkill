@@ -1,42 +1,35 @@
-# Snyder (2019): choosing among systematic, semi-systematic and integrative reviews
+# Methodological decision card — Thematic analysis — snyder-2019-literature-review-designs
 
 Card ID: snyder-2019-literature-review-designs
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_NEEDS_HUMAN_VERIFICATION
-Source consultation scope: DIRECT_SOURCE_PDF_PARTIAL_REVIEW_RESTRICTED_CC_BY_NC_ND
-Third-party text reproduced: NONE
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+DOI lead for source verification: 10.1016/j.jbusres.2019.07.039
+Source locator for independent verification: https://doi.org/10.1016/j.jbusres.2019.07.039
 
-## Methodological question
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Snyder (2019): critérios para escolher entre revisões sistemáticas, semissistemáticas e integrativas
+## Original English methodological guidance [I]
+Align the role of codes and themes with the analytic tradition and research question.
 
-Which review design answers the research question without promising exhaustive coverage that the study cannot substantiate?
+## Limits and alternative interpretations [I]
+Coding agreement or frequency alone does not demonstrate interpretive validity.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Original editorial guidance for decision-making
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Use the purpose of the review to distinguish the alternatives: a systematic review addresses a defined question through a rigorously traceable process; a semi-systematic review examines the development of, or differing perspectives within, a heterogeneous field; and an integrative review seeks to reconceptualize a problem through a critical combination of literatures. Report the actual scope of searching, selection and synthesis rather than an idealized procedure.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Application and audit conditions
-
-The research question, scholarly tradition, search and inclusion criteria, synthesis strategy, critical assessment, coverage limitations and intended contribution must remain coherent.
-
-## Warnings and limitations
-
-A semi-systematic review does not become a systematic review merely by displaying a PRISMA-style flowchart. The author's source PDF cars CC BY-NC-ND conditions; do not redistribute it as if it were a CC BY 4.0 PDF.
-
-## Bibliographic lead for verification
-
-Snyder, H. (2019). Literature review as a research methodology: An overview and guidelines. Journal of Business Research, 104, 333–339.
-DOI: https://doi.org/10.1016/j.jbusres.2019.07.039
-Publisher/source: https://doi.org/10.1016/j.jbusres.2019.07.039
-The original source PDF is NOT supplied by this card; verify the exact edition and reuse conditions.
-
-## Scientific status and rights
-
-This is a short, independently written editorial card, NOT a reproduction of the original article's prose, figures, tables or complete procedures. It does not establish full-source reading or warrant page-specific claims. The researcher retains responsibility for the design and interpretation; no scientific gate is automatically approved.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/snyder-2019-literature-review-designs.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/snyder-2019-literature-review-designs.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

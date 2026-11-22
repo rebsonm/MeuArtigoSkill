@@ -1,33 +1,36 @@
-# The use of images in social science research — methodological guidance and limits
+# Methodological decision card — Reviews and synthesis — source-review-0206
 
-- Registro: SRC-0206; Rita de Cássia Alves Oliveira (2014)
-- Identificador bibliográfico: 10.1590/S0034-759020140211; https://doi.org/10.1590/S0034-759020140211
-- Natureza: indicação bibliográfica de uma página, RAE 54(2)
-- Estado de curadoria: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Classe: editorial original [I]/[P], DO NOT use as primary evidence [L] ou prova de leitura integral
+Card ID: source-review-0206
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+Related bibliographic record: SRC-0206
+DOI lead for source verification: 10.1590/S0034-759020140211
+Source locator for independent verification: https://doi.org/10.1590/S0034-759020140211
 
-## Authorial guidance for research
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): O uso das imagens em pesquisas nas ciências sociais
+## Original English methodological guidance [I]
+Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
 
-Recommends works on photography, visual anthropology and social research. For responsible use, verify the integral work, place the method in the object, examine alternatives and recover the evidence used in the argumentation.
+## Limits and alternative interpretations [I]
+A PRISMA-style flowchart does not replace a defensible review design.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Contraprova e limitação
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-It is a bibliographic indication, not empirical study or systematic review; license of the unconfirmed edition. Also ask if another interpretation of the same material or a rival methodological strategy is compatible with the data. An editorial or didactic position is not experimental superiority test.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Perguntas aplicáveis
-
-- What is the object and unit of analysis that restrict the proposed method?
-- What assumption, misinterpretation or bias must be confronted at source?
-- What alternative result would falsify the conclusion? What pages and evidence would be needed for [L]?
-
-## Transparência
-
-Authorial editorial text without extensive reproduction. PDF confirmation does not mean that a scientific evaluator has approved this card. The source PDF was not reproduced in GitHub without proof of specific rights. Preserve [I] as inference and [P] as a hypothesis of consultation. No approved gate, no simulated full read and no host certification.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/source-review-0206.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/source-review-0206.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

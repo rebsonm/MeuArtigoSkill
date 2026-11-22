@@ -1,39 +1,33 @@
-# Hevner et al. (2004): artefato, relevância, rigor e avaliação em DSR
+# Methodological decision card — Design science research — hevner-2004-design-science
 
 Card ID: hevner-2004-design-science
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] provisional editorial guidance, NO primary validated evidence
-Source reading scope: DIRECT_PROTECTED_ARTICLE_PDF_PARTIAL_REVIEW
-Third-party content reproduced: NO
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
 
-## Methodological research issue
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Hevner et al. (2004): artefato, relevância, rigor e avaliação em DSR
+## Original English methodological guidance [I]
+Separate artifact design, demonstration, evaluation, and iteration.
 
-How do we make this approach consistent with the question, assumptions and data that the researcher actually has?
+## Limits and alternative interpretations [I]
+Demonstration of use does not by itself establish effectiveness.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Original methodological decision
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Separate real problem, construction of the artifact, scientific foundation and informative evaluation for the context. An implementation can be useful without producing scientific contribution; the study should show what was learned from a valid evaluation.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Verificações a registrar
-
-Registrar propósito, características, requisitos, justificativa de design, ambiente e critérios de avaliação e mecanismos de generalização.
-
-## Limitations of transfer
-
-Producing software is not enough proof of DSR; unauthorised article for integral redistribution.
-
-## Referência bibliográfica
-
-Hevner, A. R.; March, S. T.; Park, J.; Ram, S. (2004). Design Science in Information Systems Research. MIS Quarterly, 28(1), 75–105.
-
-## Uso responsável
-
-Independent and concise editorial text. This form does not provide original protected, is not a translation or replacement of the book, does not attest to full coverage of the sources and does not approve gates. Before a scientific statement [L], examinar a obra correspondente e localizar a passagem e a edição.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/hevner-2004-design-science.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/hevner-2004-design-science.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW
