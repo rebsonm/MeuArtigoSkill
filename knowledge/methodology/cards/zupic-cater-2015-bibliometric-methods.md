@@ -1,26 +1,26 @@
-# Zupic e Čater (2015): métodos bibliométricos como mapas, não testes causais
+# Zupic and Čater (2015): bibliometric methods such as maps, not causal tests
 
 Card ID: zupic-cater-2015-bibliometric-methods
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [P] proposta de investigação, NÃO prova de leitura
+Evidence grade: [P] research proposal, NOT read proof
 Source reading scope: BIBLIOGRAPHIC_CROSS_REFERENCE_VIA_MARZI_NOT_DIRECT_SOURCE_READ
 Third-party content reproduced: NO
 
-## Questão de pesquisa metodológica
+## Methodological research issue
 
-Como tornar esta abordagem coerente com a pergunta, os pressupostos e os dados que o pesquisador realmente tem?
+How do we make this approach consistent with the question, assumptions and data that the researcher actually has?
 
-## Decisão metodológica original
+## Original methodological decision
 
-Comparar cocitação, acoplamento bibliográfico, coautoria e coocorrência por pergunta, tipo de rede e interpretação possível. Tratar clusterizações como hipóteses de estrutura intelectual a serem confrontadas com a leitura dos textos.
+Compare cocitation, bibliographic coupling, co-authorship and co-occurrence by question, type of network and possible interpretation. Treat clusters as hypotheses of intellectual structure to be confronted with the reading of texts.
 
 ## Verificações a registrar
 
-Definir cobertura de base, qualidade dos metadados, normalização de autores, período, algoritmo, thresholds e revisão interpretativa.
+Define basic coverage, metadata quality, authors normalization, period, algorithm, threshold and interpretative review.
 
-## Limitações da transferência
+## Limitations of transfer
 
-Fonte registrada como lead bibliográfico derivado da leitura de Marzi; não atribuir achados ou páginas como se o artigo Zupic–Čater tivesse sido lido.
+Source recorded as bibliographic lead derived from Marzi's reading; do not assign findings or pages as if the article Zupic–Čater had been read.
 
 ## Referência bibliográfica
 
@@ -28,4 +28,4 @@ Zupic, I.; Čater, T. (2015). Bibliometric methods in management and organizatio
 
 ## Uso responsável
 
-Texto editorial independente e conciso. Esta ficha não disponibiliza original protegido, não é uma tradução ou substituto do livro, não atesta cobertura integral das fontes e não aprova gates. Antes de uma afirmação científica [L], examinar a obra correspondente e localizar a passagem e a edição.
+Independent and concise editorial text. This form does not provide original protected, is not a translation or replacement of the book, does not attest to full coverage of the sources and does not approve gates. Before a scientific statement [L], examinar a obra correspondente e localizar a passagem e a edição.

@@ -1,29 +1,29 @@
-# Em análise temática reflexiva, suporte offline não elimina interpretação humana
+# In reflexive thematic analysis, offline support does not eliminate human interpretation
 
-- Status científico: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Fonte identificada: Magnhild Vikan et al., obra DOI 10.1177/10497323251365211
-- Link da fonte primária para consulta: https://doi.org/10.1177/10497323251365211
-- Registro do inventário: SRC-0043; edição identificada em PDF original, trechos introdutórios/metodológicos examinados
-- Natureza da obra: exploração qualitativa de LLM offline
-- Escopo do card: interpretação editorial original baseada na descrição e estrutura metodológica consultadas; **NÃO é uma revisão científica independente**, nem prova de leitura pela pessoa que usa a Skill
-- Direitos: somente redação original; arquivo completo redistribuído exclusivamente quando há licença e hash em catálogo separado
+- Scientific status: == sync, corrected by elderman == @elder man
+- Source identified: Magnhild Vikan et al., DOI 10.1177/10497323251365211
+- Primary source link for query: https://doi.org/10.1177/10497323251365211
+- Inventory log: SRC-0043; edição identificada em PDF original, trechos introdutórios/metodológicos examinados
+- Nature of the work: qualitative exploitation of offline LLM
+- Card scope: original editorial interpretation based on the description and methodological structure consulted; **It is not an independent scientific review**, nor is it proof of reading by the person using Skill
+- Rights: original writing only; complete file redistributed exclusively when there is license and hash in separate catalogue
 
-## Recorte de informação na fonte — sujeito a conferência pelo pesquisador
+## Cut information at source — subject to conference by the researcher
 
-O estudo explorou apoio de um LLM executado offline em etapas da análise temática reflexiva e relatou contribuição restrita e riscos de tradução ou indução de respostas.
+The study explored the support of an LLM performed offline in stages of reflexive thematic analysis and reported restricted contribution and risks of translation or induction of responses.
 
 ## Aplicação metodológica proposta [I]
 
-Para um projeto de análise temática reflexiva, comparar resultados de IA com familiarização integral do pesquisador, justificando se o método aceita ou rejeita assistência algorítmica.
+For a reflective thematic analysis project, compare results of AI with full familiarization of the researcher, justifying whether the method accepts or rejects algorithmic assistance.
 
-## Três perguntas para decisão científica [P]
+## Three questions for scientific decision [P]
 
-- A análise assume qual entendimento de tema?
-- O pesquisador examinou todos os dados antes da síntese?
+- The analysis assumes what theme understanding?
+- Did the researcher examine all the data before synthesis?
 - O sistema introduziu problemas de tradução ou falso consenso?
 
 ## Contestação e limites
 
-Não transformar a menção a um modelo offline em prova de confidencialidade ou em substituição dos critérios epistemológicos da tradição.
+Do not transform the mention of an offline model into a proof of confidentiality or to replace the epistemological criteria of tradition.
 
-A orientação não afirma que o card foi aprovado por revisor independente. Antes de usar [L] no manuscrito, conferir fonte primária, edição, contexto e páginas dos dados; declarar inferências separadas daquilo que a obra realmente demonstrou. Nenhuma escolha de gate é automaticamente aprovada. Para tradições qualitativas com posições opostas sobre GenAI, expor desacordo relevante e respeitar o desenho do usuário.
+Guidance does not state that the card was approved by an independent reviewer. Before use [L] in the manuscript, confer primary source, editing, context and pages of the data; declare separate inferences from what the work actually demonstrated. No gate choice is automatically approved. For qualitative traditions with opposite positions on GenAI, expose relevant disagreement and respect the user design.

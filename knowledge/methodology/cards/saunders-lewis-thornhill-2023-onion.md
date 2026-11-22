@@ -1,26 +1,26 @@
-# Saunders, Lewis e Thornhill: coerência da cebola de pesquisa (edição identificada de 2023)
+# Saunders, Lewis and Thornhill: coherence of the research onion (identified edition of 2023)
 
 Card ID: saunders-lewis-thornhill-2023-onion
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] orientação editorial provisória, NÃO evidência primária validada
+Evidence grade: [I] provisional editorial guidance, NO primary validated evidence
 Source reading scope: DIRECT_PROTECTED_BOOK_PDF_PARTIAL_REVIEW
 Third-party content reproduced: NO
 
-## Questão de pesquisa metodológica
+## Methodological research issue
 
-Como tornar esta abordagem coerente com a pergunta, os pressupostos e os dados que o pesquisador realmente tem?
+How do we make this approach consistent with the question, assumptions and data that the researcher actually has?
 
-## Decisão metodológica original
+## Original methodological decision
 
-A 'cebola' é um dispositivo de planejamento: relacionar filosofia, abordagem da teoria, escolha metodológica, estratégia, horizonte temporal e técnicas de coleta/análise. Cada camada deve ser justificada pelo problema, em vez de escolhida mecanicamente.
+Onion is a planning device: relating philosophy, theory approach, methodological choice, strategy, time horizon and collection/analysis techniques. Each layer must be justified by the problem rather than mechanically chosen.
 
 ## Verificações a registrar
 
-Explicitar por que inferência, amostra, método e temporalidade são coerentes; registrar escolhas inviáveis e compromissos do desenho.
+Explain why inference, sample, method and temporality are consistent; record unviable choices and design commitments.
 
-## Limitações da transferência
+## Limitations of transfer
 
-O arquivo denominado 'Saunders (2017)' no Drive contém a nona edição publicada em 2023; evitar referenciá-la como edição de 2017. PDF Pearson é protegido.
+The file called 'Saunders (2017)' on Drive contains the ninth edition published in 2023; avoid referencing it as a 2017 edition. PDF Pearson is protected.
 
 ## Referência bibliográfica
 
@@ -28,4 +28,4 @@ Saunders, M. N. K.; Lewis, P.; Thornhill, A. (2023). Research Methods for Busine
 
 ## Uso responsável
 
-Texto editorial independente e conciso. Esta ficha não disponibiliza original protegido, não é uma tradução ou substituto do livro, não atesta cobertura integral das fontes e não aprova gates. Antes de uma afirmação científica [L], examinar a obra correspondente e localizar a passagem e a edição.
+Independent and concise editorial text. This form does not provide original protected, is not a translation or replacement of the book, does not attest to full coverage of the sources and does not approve gates. Before a scientific statement [L], examinar a obra correspondente e localizar a passagem e a edição.

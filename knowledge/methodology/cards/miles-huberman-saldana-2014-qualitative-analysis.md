@@ -1,26 +1,26 @@
-# Miles, Huberman e Saldaña (2014): condensação de dados, visualizações e conclusões
+# Miles, Huberman and Saldaña (2014): data condensation, visualizations and conclusions
 
 Card ID: miles-huberman-saldana-2014-qualitative-analysis
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] orientação editorial provisória, NÃO evidência primária validada
+Evidence grade: [I] provisional editorial guidance, NO primary validated evidence
 Source reading scope: DIRECT_PROTECTED_BOOK_PDF_PARTIAL_REVIEW
 Third-party content reproduced: NO
 
-## Questão de pesquisa metodológica
+## Methodological research issue
 
-Como tornar esta abordagem coerente com a pergunta, os pressupostos e os dados que o pesquisador realmente tem?
+How do we make this approach consistent with the question, assumptions and data that the researcher actually has?
 
-## Decisão metodológica original
+## Original methodological decision
 
-Organizar a análise como trabalho iterativo de condensação, exibição comparativa de evidências e elaboração/verificação de conclusões. Matrizes e esquemas são instrumentos para pensar relações, não certificados de confirmação.
+Organize the analysis as iterative work of condensation, comparative display of evidence and elaboration/verification of conclusions. Matrixes and schematics are instruments for thinking relationships, not certificates of confirmation.
 
 ## Verificações a registrar
 
-Verificar unidade de observação, como cada exibição deriva do corpus, hipóteses rivais e exceções, e retorno aos registros originais.
+Verify observation unit, as each display derives from corpus, rival hypotheses and exceptions, and return to original records.
 
-## Limitações da transferência
+## Limitations of transfer
 
-A visualização pode tornar erros mais persuasivos; não divulgar as figuras ou tabelas originais do livro.
+Visualization can make errors more persuasive; do not disclose the original figures or tables of the book.
 
 ## Referência bibliográfica
 
@@ -28,4 +28,4 @@ Miles, M. B.; Huberman, A. M.; Saldaña, J. (2014). Qualitative Data Analysis: A
 
 ## Uso responsável
 
-Texto editorial independente e conciso. Esta ficha não disponibiliza original protegido, não é uma tradução ou substituto do livro, não atesta cobertura integral das fontes e não aprova gates. Antes de uma afirmação científica [L], examinar a obra correspondente e localizar a passagem e a edição.
+Independent and concise editorial text. This form does not provide original protected, is not a translation or replacement of the book, does not attest to full coverage of the sources and does not approve gates. Before a scientific statement [L], examinar a obra correspondente e localizar a passagem e a edição.

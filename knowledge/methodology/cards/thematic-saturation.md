@@ -18,7 +18,7 @@ Specify the unit of information, sequence of cases, threshold, base window and s
 
 ## Limits and counterexamples
 
-The Guest-Namey-Chen method was evaluated using three datasets of individual interviews and inductive thematic analysis. Do not transfer its thresholds to reflexive thematic analysis, theoretical saturation or all qualitative designs by default.
+The Guest-Namey-Chen method was evaluated using three datasets of individual interviews and inductive thematic analysis. Do not transfer its issues to reflective thematic analysis, theoretical saturation or all qualitative designs by default.
 
 ## Bibliographic trail (not a verified [L] claim for any user's research)
 

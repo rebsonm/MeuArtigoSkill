@@ -8,7 +8,7 @@ Third-party full text reproduced here: NO
 
 ## Intended methodological question
 
-Why do small choices in survey wording and response formats change what is actually measured?
+Why do small choices in survey words and response formats change what is currently measured?
 
 ## Original editorial guidance
 

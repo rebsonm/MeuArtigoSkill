@@ -1,29 +1,29 @@
-# Promessas comerciais de análise automática não substituem evidência científica
+# Commercial promises of automatic analysis do not replace scientific evidence
 
-- Status científico: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+- Scientific status: == sync, corrected by elderman == @elder man
 - Obra identificada: Paulus e Marone (online 2024; volume 2025); DOI: 10.1177/10778004241250065
 - URL de origem: https://doi.org/10.1177/10778004241250065
 - Registro bibliográfico: SRC-0070
-- Tipo de evidência da publicação: análise de discursos de fornecedores
-- Escopo do card: consulta original elaborada a partir da conferência documental e de seções de método; **SEM revisão crítica externa independente**, e **SEM** autorização para usar esta ficha como evidência [L]
-- Direitos: conteúdo editorial original, sem reproduzir o artigo ou o livro
+- Type of publication evidence: analysis of suppliers' speeches
+- Card scope: original consultation from the documentary conference and from method sections; **No independent external critical review**, and **No authorisation to use this form as evidence [L]
+- Rights: original editorial content without reproducing the article or book
 
-## O que a fonte apresenta (requer conferência da fonte para citar)
+## What the source presents (requires source conference to quote)
 
-Examina como empresas de ferramentas de análise qualitativa descrevem economias de tempo, automação e o papel de quem pesquisa.
+It examines how companies of qualitative analysis tools describe time savings, automation and the role of those who research.
 
-## Proposição de uso da Skill [I]
+## Proposition for Skill use [I]
 
-Antes de recomendar software, comparar alegações de marketing com avaliação em corpus, reprodutibilidade e preservação da agência analítica.
+Before recommending software, compare marketing claims with corpus evaluation, reproducibility and preservation of the analytical agency.
 
-## Questões para decisão científica [P]
+## Scientific decision issues [P]
 
-- Há validação independente e com dados representativos?
-- A descrição do fornecedor confunde velocidade e rigor?
+- Is there independent validation with representative data?
+- Does the supplier's description confuse speed and rigor?
 - O processo registra papéis humanos e máquinas?
 
 ## Contraponto e delimitações
 
-Não usar discurso comercial como prova de desempenho. Não generalizar resultados à versão futura de cada ferramenta.
+Do not use commercial speech as proof of performance. Do not generalize results to the future version of each tool.
 
-Este card é texto editorial original. Não representa parecer científico independente, não atesta qualidade da fonte, nem substitui leitura integral, contexto de páginas ou crítica epistemológica. A classificação [L] depende da checagem das passagens primárias pelo pesquisador. O card não autoriza distribuir versões protegidas, inferir direitos e tampouco aprovar gates. Em debates controversos, as posições e seus fundamentos devem ser confrontados sem decidir automaticamente por um dos lados.
+This card is original editorial text. It does not represent independent scientific opinion, does not attest to the quality of the source, nor replaces full reading, context of pages or epistemological criticism. Classification [L] depends on checking the primary passages by the researcher. The card does not authorize to distribute protected versions, infer rights or approve gates. In controversial debates, positions and their foundations must be confronted without automatically deciding on either side.

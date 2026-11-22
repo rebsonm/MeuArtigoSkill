@@ -23,7 +23,7 @@ Koerich et al. distinguish the linked purposes of addressing a situated practica
 
 ## Limits
 
-Improvement of a process does not establish a causal effect or general scientific contribution. Multiple cycles do not guarantee rigorous data collection. The published article discusses clinical/health-care contexts, so adaptation to organizations or public administration must explain institutional differences.
+Improvement of a process does not establish a causal effect or general scientific contribution. Multiple cycles of not guarantee rigorous data collection. The published article discussions clinical/health-care contexts, so adaptation to organizations or public administration must explain institutional differences.
 
 ## Source and rights
 

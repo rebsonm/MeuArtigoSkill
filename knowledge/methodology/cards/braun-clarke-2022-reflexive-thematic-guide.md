@@ -1,26 +1,26 @@
-# Braun e Clarke: análise temática reflexiva é interpretação teórica, não contagem de códigos
+# Braun and Clarke: Reflective thematic analysis is theoretical interpretation, not code counting
 
 Card ID: braun-clarke-2022-reflexive-thematic-guide
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] orientação editorial provisória, NÃO evidência primária validada
+Evidence grade: [I] provisional editorial guidance, NO primary validated evidence
 Source reading scope: DIRECT_PROTECTED_BOOK_PDF_PARTIAL_REVIEW
 Third-party content reproduced: NO
 
-## Questão de pesquisa metodológica
+## Methodological research issue
 
-Como tornar esta abordagem coerente com a pergunta, os pressupostos e os dados que o pesquisador realmente tem?
+How do we make this approach consistent with the question, assumptions and data that the researcher actually has?
 
-## Decisão metodológica original
+## Original methodological decision
 
-Não tratar temas como objetos naturais que emergem sozinhos dos dados. Explicitar pressupostos e posição analítica, registrar mudanças reflexivas e reconstruir como padrões de sentido respondem à pergunta.
+Do not treat themes as natural objects that emerge alone from the data. Explain assumptions and analytical position, register reflective changes and reconstruct how patterns of meaning answer the question.
 
 ## Verificações a registrar
 
-Registrar decisões de familiarização, codificação, produção e revisão de temas, incluindo padrões minoritários e contradições.
+Register decisions on familiarization, coding, production and review of themes, including minority patterns and contradictions.
 
-## Limitações da transferência
+## Limitations of transfer
 
-O livro é protegido por copyright; não publicar PDF, capítulos, tabelas ou tradução. Concordância entre codificadores não valida automaticamente análise reflexiva.
+The book is protected by copyright; do not publish PDF, chapters, tables or translation. Concordance between encoders does not automatically validate reflective analysis.
 
 ## Referência bibliográfica
 
@@ -28,4 +28,4 @@ Braun, V.; Clarke, V. (2022). Thematic Analysis: A Practical Guide. SAGE.
 
 ## Uso responsável
 
-Texto editorial independente e conciso. Esta ficha não disponibiliza original protegido, não é uma tradução ou substituto do livro, não atesta cobertura integral das fontes e não aprova gates. Antes de uma afirmação científica [L], examinar a obra correspondente e localizar a passagem e a edição.
+Independent and concise editorial text. This form does not provide original protected, is not a translation or replacement of the book, does not attest to full coverage of the sources and does not approve gates. Before a scientific statement [L], examinar a obra correspondente e localizar a passagem e a edição.

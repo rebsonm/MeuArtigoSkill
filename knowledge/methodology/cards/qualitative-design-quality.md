@@ -18,7 +18,7 @@ Document why this form of data is necessary, who or what is sampled, how interpr
 
 ## Limits and counterexamples
 
-Do not substitute a generic checklist for epistemic alignment, or assume any single technique such as member checking is mandatory or universally sufficient.
+Do not replace a generic checklist for epistemic alignment, or assume any single technique such as member checking is mandated or universally sufficient.
 
 ## Bibliographic trail (not a verified [L] claim for any user's research)
 

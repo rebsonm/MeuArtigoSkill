@@ -2,25 +2,25 @@
 
 Card ID: eisenhardt-1989-building-theory-cases
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] orientação editorial provisória, NÃO evidência primária validada
+Evidence grade: [I] provisional editorial guidance, NO primary validated evidence
 Source reading scope: DIRECT_PROTECTED_JSTOR_ARTICLE_PDF_PARTIAL_REVIEW
 Third-party content reproduced: NO
 
-## Questão de pesquisa metodológica
+## Methodological research issue
 
-Como tornar esta abordagem coerente com a pergunta, os pressupostos e os dados que o pesquisador realmente tem?
+How do we make this approach consistent with the question, assumptions and data that the researcher actually has?
 
-## Decisão metodológica original
+## Original methodological decision
 
-Usar contraste entre casos para identificar padrões e exceções, reexaminar construtos e relacionar as interpretações à literatura, preservando as razões de seleção e as condições de comparabilidade.
+Use contrast between cases to identify patterns and exceptions, re-examine constructs and relate interpretations to literature, preserving selection ratios and comparability conditions.
 
 ## Verificações a registrar
 
-Registrar critérios de amostragem teórica, processo de comparação, evidências discordantes e nível de abstração das proposições.
+Record theoretical sampling criteria, comparison process, discordant evidence and level of abstraction of propositions.
 
-## Limitações da transferência
+## Limitations of transfer
 
-A presença de vários casos não substitui qualidade dos dados; arquivo JSTOR não tem licença pública de redistribuição documentada.
+The presence of several cases does not replace data quality; JSTOR file does not have documented public redistribution license.
 
 ## Referência bibliográfica
 
@@ -28,4 +28,4 @@ Eisenhardt, K. M. (1989). Building theories from case study research. Academy of
 
 ## Uso responsável
 
-Texto editorial independente e conciso. Esta ficha não disponibiliza original protegido, não é uma tradução ou substituto do livro, não atesta cobertura integral das fontes e não aprova gates. Antes de uma afirmação científica [L], examinar a obra correspondente e localizar a passagem e a edição.
+Independent and concise editorial text. This form does not provide original protected, is not a translation or replacement of the book, does not attest to full coverage of the sources and does not approve gates. Before a scientific statement [L], examinar a obra correspondente e localizar a passagem e a edição.

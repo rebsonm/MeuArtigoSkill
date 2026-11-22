@@ -18,7 +18,7 @@ Specify units, code definitions, coding scheme provenance, how disagreements wer
 
 ## Limits and counterexamples
 
-Do not equate software-generated codes or a high agreement statistic with construct validity. The source reference is a bibliographic lead until relevant original pages and measures are checked.
+Do not equate software-generated codes or a high agreement statistical with construct validity. The source reference is a bibliographic lead until relevant original pages and measurements are checked.
 
 ## Bibliographic trail (not a verified [L] claim for any user's research)
 

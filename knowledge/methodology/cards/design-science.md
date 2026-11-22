@@ -3,7 +3,7 @@
 Card ID: design-science
 Publication state: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_RIGHTS_REVIEW
 Research evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_ONLY
-Rights status: UNVERIFIED_FOR_PUBLICATION — bibliographic leads do not establish reproduction rights or scientific fidelity.
+Rights status: UNVERIFIED FOR PUBLICATION — bibliographic leads from not establish reproduction rights or scientific loyalty.
 
 ## Conceptual orientation
 

@@ -10,7 +10,7 @@ When a researcher must craft a scholarly literature review that supports a clear
 
 ## Original conceptual guidance
 
-Define what the review must contribute before selecting or narrating sources. Group claims by a reasoned conceptual argument and explain convergences, disagreements and omissions. Bibliographic breadth, a readable narrative and a reproducible search answer different quality questions; do not treat them as interchangeable.
+Define what the review must contribute before selecting or narrating sources. Group claims by a Reasoned Conceptual argument and explanation convergences, disagreements and omissions. Bibliographic breadth, a readable narrative and a reproducible search answer different quality questions; do not treat them as interchangeable.
 
 ## Researcher decision checks
 

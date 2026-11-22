@@ -18,7 +18,7 @@ Define which texts, meanings, findings and conceptual levels are comparable, and
 
 ## Limits and counterexamples
 
-Do not apply numeric meta-analysis formulas to qualitative findings by analogy or assume all qualitative syntheses share one epistemological model. Check the cited paper before attributing a precise definition.
+Do not apply numerical meta-analysis formulas to qualitative findings by analysis or assumes all qualitative syntheses share one epistemological model. Check the quoted paper before attributing a precise definition.
 
 ## Bibliographic trail (not a verified [L] claim for any user's research)
 

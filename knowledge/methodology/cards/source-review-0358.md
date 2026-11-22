@@ -1,25 +1,25 @@
-# Das causas na Ciência Política: uma intervenção filosófica necessária — orientação metodológica e limites
+# Causes in Political Science: a necessary philosophical intervention — methodological guidance and limits
 
 - Registro: SRC-0358; Enzo Lenine; Rômulo Machado (2023)
 - Identificador bibliográfico: 10.15332/25005375.8464; https://doi.org/10.15332/25005375.8464
-- Natureza: artigo conceitual de causalidade em Ciência Política
+- Nature: conceptual article of causality in Political Science
 - Estado de curadoria: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Classe: editorial original [I]/[P], NÃO usar como evidência primária [L] ou prova de leitura integral
+- Classe: editorial original [I]/[P], DO NOT use as primary evidence [L] ou prova de leitura integral
 
-## Orientação autoral para pesquisa
+## Authorial guidance for research
 
-Distingue explicação causal, pressupostos ontológicos e inferência estatística. Para aproveitamento responsável, verificar a obra integral, situar o método no objeto, examinar alternativas e recuperar as evidências usadas na argumentação.
+It distinguishes causal explanation, ontological assumptions and statistical inference. For responsible use, verify the integral work, place the method in the object, examine alternatives and recover the evidence used in the argumentation.
 
 ## Contraprova e limitação
 
-Não confundir concepções de causa com um estimando causal empírico; licença do exemplar não conferida. Perguntar também se outra interpretação do mesmo material ou uma estratégia metodológica rival é compatível com os dados. Uma posição editorial ou didática não é teste de superioridade experimental.
+Do not confuse conceptions of cause with an empirical causal estimation; license of the copy not conferred. Also ask if another interpretation of the same material or a rival methodological strategy is compatible with the data. An editorial or didactic position is not experimental superiority test.
 
 ## Perguntas aplicáveis
 
-- Qual é o objeto e a unidade de análise que restringem o método proposto?
-- Qual pressuposto, erro de interpretação ou viés precisa ser confrontado na fonte?
-- Que resultado alternativo falsificaria a conclusão? Que páginas e evidências seriam necessárias para [L]?
+- What is the object and unit of analysis that restrict the proposed method?
+- What assumption, misinterpretation or bias must be confronted at source?
+- What alternative result would falsify the conclusion? What pages and evidence would be needed for [L]?
 
 ## Transparência
 
-Texto editorial autoral, sem reprodução extensa. A confirmação do PDF não significa que um avaliador científico tenha aprovado este card. O PDF de origem não foi reproduzido no GitHub sem comprovação de direitos específicos. Preserve [I] como inferência e [P] como hipótese de consulta. Nenhum gate aprovado, nenhuma leitura integral simulada e nenhuma certificação de host.
+Authorial editorial text without extensive reproduction. PDF confirmation does not mean that a scientific evaluator has approved this card. The source PDF was not reproduced in GitHub without proof of specific rights. Preserve [I] as inference and [P] as a hypothesis of consultation. No approved gate, no simulated full read and no host certification.

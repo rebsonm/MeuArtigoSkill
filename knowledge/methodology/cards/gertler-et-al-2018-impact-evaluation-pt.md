@@ -1,29 +1,29 @@
-# Avaliação de impacto: identificar contrafactual e versão da obra
+# Impact assessment: identify counterfactual and version of the work
 
-- Status científico: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+- Scientific status: == sync, corrected by elderman == @elder man
 - Obra identificada: Gertler, Martínez, Premand, Rawlings e Vermeersch (edição portuguesa 2018); DOI: 10.1596/978-1-4648-0889-0
 - URL de origem: https://doi.org/10.1596/978-1-4648-0889-0
 - Registro bibliográfico: SRC-0256
-- Tipo de evidência da publicação: livro-manual institucional de avaliação de impacto
-- Escopo do card: consulta original elaborada a partir da conferência documental e de seções de método; **SEM revisão crítica externa independente**, e **SEM** autorização para usar esta ficha como evidência [L]
-- Direitos: conteúdo editorial original, sem reproduzir o artigo ou o livro
+- Type of publication evidence: institutional book-manual of impact assessment
+- Card scope: original consultation from the documentary conference and from method sections; **No independent external critical review**, and **No authorisation to use this form as evidence [L]
+- Rights: original editorial content without reproducing the article or book
 
-## O que a fonte apresenta (requer conferência da fonte para citar)
+## What the source presents (requires source conference to quote)
 
-Discute desenhos experimentais e quase experimentais, identificação de contrafactuais, mensuração e ameaças à validade para decisões de avaliação de políticas.
+It discusses experimental and quasi-experimental designs, identification of counterfactuals, measurement and threats to validity for policy evaluation decisions.
 
-## Proposição de uso da Skill [I]
+## Proposition for Skill use [I]
 
-A Skill pode orientar decisões sobre elegibilidade de desenho e alternativas causais, mas cada aplicação requer condições empíricas próprias.
+Skill can guide decisions about design eligibility and causal alternatives, but each application requires its own empirical conditions.
 
-## Questões para decisão científica [P]
+## Scientific decision issues [P]
 
-- Qual a pergunta de impacto e qual contrafactual plausível?
-- Os pressupostos da técnica são verificáveis no caso?
-- O texto usado é da edição portuguesa 2018 ou da inglesa 2016?
+- What's the impact question and what plausible counterfactual?
+- Are the assumptions of the technique verifiable in this case?
+- Is the text used in the Portuguese edition 2018 or in English 2016?
 
 ## Contraponto e delimitações
 
-Edição portuguesa licenciada CC BY 3.0 IGO e tradução de obra de 2016; a cópia de 7,5MB NÃO entrou no GitHub após falha de transferência; preservar atribuição e restrições de componentes de terceiros.
+Portuguese edition licensed CC BY 3.0 IGO and work translation 2016; copy 7,5MB DO NOT enter GitHub after transfer failure; preserve attribution and restrictions of third party components.
 
-Este card é texto editorial original. Não representa parecer científico independente, não atesta qualidade da fonte, nem substitui leitura integral, contexto de páginas ou crítica epistemológica. A classificação [L] depende da checagem das passagens primárias pelo pesquisador. O card não autoriza distribuir versões protegidas, inferir direitos e tampouco aprovar gates. Em debates controversos, as posições e seus fundamentos devem ser confrontados sem decidir automaticamente por um dos lados.
+This card is original editorial text. It does not represent independent scientific opinion, does not attest to the quality of the source, nor replaces full reading, context of pages or epistemological criticism. Classification [L] depends on checking the primary passages by the researcher. The card does not authorize to distribute protected versions, infer rights or approve gates. In controversial debates, positions and their foundations must be confronted without automatically deciding on either side.

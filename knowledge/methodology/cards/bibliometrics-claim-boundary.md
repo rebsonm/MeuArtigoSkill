@@ -18,7 +18,7 @@ Report retrieval date, database, search syntax, deduplication, author identity h
 
 ## Limits and counterexamples
 
-Do not infer methodological rigor, causal influence or societal impact from citations alone. The named source remains a bibliographic pointer until the relevant article section is checked.
+Do not infer methodological rigor, causal influence or societal impact from quotations allone. The name source remains a bibliographic pointer until the relevant article section is checked.
 
 ## Bibliographic trail (not a verified [L] claim for any user's research)
 

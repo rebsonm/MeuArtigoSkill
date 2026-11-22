@@ -1,28 +1,28 @@
-# Pesquisa documental: pistas teóricas e metodológicas — perguntas metodológicas de consulta
+# Documentary research: theoretical and methodological clues — methodological questions for consultation
 
-- Registro da obra: SRC-0008; autoria: Jackson Ronie Sá-Silva; Cristóvão Domingos de Almeida; Joel Felipe Guindani; publicação: 2009
-- DOI: não verificado no exemplar
-- Fonte editorial: localizador primário pendente
-- Estatuto da publicação: ensaio bibliográfico de metodologia documental
-- Status do card: **DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE**
-- Natureza: original editorial [I]/[P]; NÃO equivale à leitura integral nem autoriza citação [L] por si só.
+- Work record: SRC-0008; autoria: Jackson Ronie Sá-Silva; Cristóvão Domingos de Almeida; Joel Felipe Guindani; publicação: 2009
+- DOI: not verified on copy
+- Editorial source: primary locator pending
+- Publication status: bibliographic essay of documentary methodology
+- Card status: == sync, corrected by elderman == @elder man
+- Natureza: original editorial [I]/[P]; DO NOT equate to full reading or authorize citation [L] por si só.
 
-## Delimitação da obra examinada
+## Delimitation of the examined work
 
-Diferencia pesquisa bibliográfica e pesquisa documental, discutindo conceito de documento, pré-análise e etapas de análise.
+It differs bibliographic research and documentary research, discussing the concept of document, pre-analysis and analysis stages.
 
 ## Aplicação sugerida pela curadoria [I]
 
-Avaliar origem, contexto, intenção, autenticidade e representatividade antes de transformar documento em evidência; separar registro bruto de interpretação.
+Evaluate origin, context, intention, authenticity and representativeness before transforming document into evidence; separate crude record from interpretation.
 
 ## Advertência e objeção
 
-Não há licença de reprodução da cópia exata comprovada. Um ensaio teórico não é validação empírica universal de todos os desenhos documentais.
+There is no reproduction license for the exact copy proven. A theoretical essay is not universal empirical validation of all documentary drawings.
 
 ## Perguntas de auditoria [P]
 
-- Que escolhas de amostra, corpus ou unidade analítica são necessárias para adaptar essa obra?
-- Qual passagem da fonte primária apoiaria uma conclusão e qual evidência contrária é plausível?
-- A orientação é compatível com a epistemologia de quem pesquisa, ou imporia critérios inadequados?
+- What sample choices, corpus or analytical unit are needed to adapt this work?
+- What passage from the primary source would support a conclusion and what contrary evidence is plausible?
+- Is guidance compatible with the epistemology of whose research, or would it impose inadequate criteria?
 
-Redação inteiramente original, não reprodução da obra. O PDF consultado para identificar título, autor e abordagem não fica disponível aos usuários por este card. A verificação de identidade não implica revisão científica independente, e nenhum gate deve ser aprovado automaticamente. Antes de declarar [L], recuperar edição, página e contexto primário.
+Writing entirely original, not reproduction of the work. The PDF consulted to identify title, author and approach is not available to users by this card. Identity verification does not imply independent scientific review, and no gate should be approved automatically. Before declaring [L], recuperar edição, página e contexto primário.

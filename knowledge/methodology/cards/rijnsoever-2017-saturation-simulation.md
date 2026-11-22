@@ -20,7 +20,7 @@ Identify population heterogeneity, code discovery process, sample-selection logi
 
 ## Limitations and counterevidence
 
-Simulation results depend on model assumptions; do not convert stylized saturation curves into a universal interview quota or apply to all interpretive paradigms.
+Simulation results depends on model assumptions; do not convert stylized saturation curves into a universal interview quota or apply to all interpretive paradigms.
 
 ## Source bibliographic lead
 

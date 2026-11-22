@@ -14,11 +14,11 @@ Different analytic traditions define adequacy differently. Operational theme-cou
 
 ## Researcher decision checks
 
-State tradition, case heterogeneity, data adequacy logic, stopping or revision rule and why quantitative thresholds or agreement metrics do or do not fit.
+State tradition, case heterogeneity, data adequacy logic, stopping or revision rule and why quantitative issues or agreement metrics do or do not fit.
 
 ## Limits and counterexamples
 
-Do not transfer a number of interviews, saturation ratio or code agreement threshold from one methodological paradigm to all others. Avoid post-hoc certainty unsupported by records.
+From not transfer to number of interviews, saturation ratio or code agreement threshold from one methodological paradigm to all others. Avoid post-hoc certainy unsupported by records.
 
 ## Bibliographic trail (not a verified [L] claim for any user's research)
 

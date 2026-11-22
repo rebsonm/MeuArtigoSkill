@@ -1,26 +1,26 @@
-# Donthu et al. (2021): decisões para análise bibliométrica reprodutível
+# Donthu et al. (2021): decisions for reproducible bibliometric analysis
 
 Card ID: donthu-2021-bibliometric-how-to
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [P] proposta de investigação, NÃO prova de leitura
+Evidence grade: [P] research proposal, NOT read proof
 Source reading scope: BIBLIOGRAPHIC_CROSS_REFERENCE_VIA_MARZI_NOT_DIRECT_SOURCE_READ
 Third-party content reproduced: NO
 
-## Questão de pesquisa metodológica
+## Methodological research issue
 
-Como tornar esta abordagem coerente com a pergunta, os pressupostos e os dados que o pesquisador realmente tem?
+How do we make this approach consistent with the question, assumptions and data that the researcher actually has?
 
-## Decisão metodológica original
+## Original methodological decision
 
-Planejar perguntas bibliométricas, fonte e universo dos metadados, limpeza, escolha de métricas e integração com leitura substantiva. Discutir efeitos de corte temporal e plataforma.
+Planning bibliometric questions, source and universe of metadata, cleaning, choice of metrics and integration with substantive reading. Discuss temporal cutting effects and platform.
 
 ## Verificações a registrar
 
-Publicar string, cobertura, deduplicação, limiares, parâmetros do software, estrutura da rede e interpretação contextual.
+Publish string, coverage, deduplication, thresholds, software parameters, network structure and contextual interpretation.
 
-## Limitações da transferência
+## Limitations of transfer
 
-Esta ficha usa referência bibliográfica identificada em Marzi; artigo primário não foi consultado diretamente nesta etapa e requer leitura antes de alegações [L].
+This data sheet uses a bibliographic reference identified in Marzi; primary article was not consulted directly at this stage and requires reading before allegations [L].
 
 ## Referência bibliográfica
 
@@ -28,4 +28,4 @@ Donthu, N.; Kumar, S.; Mukherjee, D.; Pandey, N.; Lim, W. M. (2021). How to cond
 
 ## Uso responsável
 
-Texto editorial independente e conciso. Esta ficha não disponibiliza original protegido, não é uma tradução ou substituto do livro, não atesta cobertura integral das fontes e não aprova gates. Antes de uma afirmação científica [L], examinar a obra correspondente e localizar a passagem e a edição.
+Independent and concise editorial text. This form does not provide original protected, is not a translation or replacement of the book, does not attest to full coverage of the sources and does not approve gates. Before a scientific statement [L], examinar a obra correspondente e localizar a passagem e a edição.

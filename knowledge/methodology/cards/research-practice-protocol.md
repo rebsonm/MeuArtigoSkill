@@ -15,7 +15,7 @@ State research question, population, design, planned comparisons, data managemen
 
 ## What not to infer
 
-Preregistration and checklists improve traceability but do not guarantee a valid estimand or representative sample.
+Preregistration and checklists improve traceability but do not guarantee a value estimate or representative sample.
 
 ## Bibliographic and copyright trail
 

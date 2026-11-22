@@ -1,4 +1,4 @@
-# PRISMA-S (2021): transparência de estratégias e fontes de busca
+# PRISMA-S (2021): transparency of strategies and search sources
 
 Card ID: prisma-s-2021-search-reporting
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -8,27 +8,27 @@ Third-party text reproduced: NONE
 
 ## Questão metodológica
 
-Uma revisão pode demonstrar que sua busca é repetível e que não omitiu fontes relevantes?
+Can a review show that your search is repeatable and that you have not omitted relevant sources?
 
-## Síntese autoral para decisão
+## Authorial summary for decision
 
-Documentar bases e plataformas com suas interfaces, datas, cobertura temporal, strings completas adaptadas a cada sintaxe, limites, fontes suplementares e estratégia de atualização. Preservar logs de resultados e deduplicação de cada passagem, sem reconstituí-los retroativamente.
+Document bases and platforms with their interfaces, dates, time coverage, complete strings adapted to each syntax, limits, supplementary sources and update strategy. Preserve results logs and deduplication of each passage without reconstructing them retroactively.
 
-## Condições de aplicação e auditoria
+## Conditions of implementation and audit
 
-Fonte, plataforma, data, intervalo, string literal, filtros, resultados por fonte, conferência por pares quando aplicável, exportação, deduplicação e justificativa das alterações.
+Source, platform, date, interval, literal string, filters, results by source, peer check when applicable, export, deduplication and justification of changes.
 
 ## Alertas e limites
 
-PRISMA-S especifica RELATO da busca; não transforma uma busca fraca em estratégia sensível nem obriga a reproduzir uma busca feita em outro banco.
+PRISMA-S specifies the search report; it does not transform a weak search into a sensitive strategy nor does it require reproducing a search made in another bank.
 
-## Fonte para verificação
+## Source for verification
 
 Rethlefsen, M. L. et al. (2021). PRISMA-S: an extension to the PRISMA statement for reporting literature searches in systematic reviews. Systematic Reviews, 10, 39.
 DOI: https://doi.org/10.1186/s13643-020-01542-z
 Registro original/editora: https://doi.org/10.1186/s13643-020-01542-z
-PDF original NÃO disponibilizado por esta ficha; direitos/versão a verificar.
+Original PDF NOT made available by this form; rights/version to check.
 
-## Estatuto científico e direitos
+## Scientific status and rights
 
-Card curto com redação e organização próprias; NÃO reproduz texto, figuras, tabelas ou etapas originais na íntegra. Esta orientação não comprova consulta integral nem autoriza alegação de páginas específicas. A decisão e o método permanecem do pesquisador; nenhum gate é aprovado automaticamente.
+short card with own writing and organization; DO NOT reproduce text, figures, tables or original steps in full. This guidance does not prove full consultation or authorisation of specific pages. The decision and method remain of the researcher; no gate is automatically approved.

@@ -1,4 +1,4 @@
-# PRISMA-P (2015): transparência prévia de protocolos de revisão sistemática
+# PRISMA-P (2015): prior transparency of systematic review protocols
 
 Card ID: prisma-p-2015-protocol
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -8,27 +8,27 @@ Third-party text reproduced: NONE
 
 ## Questão metodológica
 
-Que escolhas são prospectivas e quais mudanças do protocolo precisam permanecer visíveis?
+What choices are prospective and what protocol changes need to remain visible?
 
-## Síntese autoral para decisão
+## Authorial summary for decision
 
-Distinguir pergunta, elegibilidade, fontes, planos de seleção e síntese definidos antes da revisão das modificações posteriores justificadas. Registrar versão e data do protocolo e permitir alterações transparentes, não disfarçadas.
+Distinguishing question, eligibility, sources, selection plans and synthesis defined before reviewing the subsequent justified modifications. Register protocol version and date and allow transparent, undisguised changes.
 
-## Condições de aplicação e auditoria
+## Conditions of implementation and audit
 
-Pergunta e estimando, fonte e datas, critérios, coleta, análise planejada, financiamento e histórico de emendas.
+Question and estimating, source and dates, criteria, collection, planned analysis, financing and amendment history.
 
 ## Alertas e limites
 
-PRISMA-P trata relato de protocolo; não torna um protocolo obrigatório quando o desenho não exige um, nem aprova gates da Skill.
+PRISMA-P deals with protocol reporting; it does not make a protocol mandatory when the design does not require one or approve Skill gates.
 
-## Fonte para verificação
+## Source for verification
 
 Shamseer, L. et al. (2015). Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015: elaboration and explanation. BMJ.
 DOI: https://doi.org/10.1136/bmj.g7647
 Registro original/editora: https://www.prisma-statement.org/protocols
-PDF original NÃO disponibilizado por esta ficha; direitos/versão a verificar.
+Original PDF NOT made available by this form; rights/version to check.
 
-## Estatuto científico e direitos
+## Scientific status and rights
 
-Card curto com redação e organização próprias; NÃO reproduz texto, figuras, tabelas ou etapas originais na íntegra. Esta orientação não comprova consulta integral nem autoriza alegação de páginas específicas. A decisão e o método permanecem do pesquisador; nenhum gate é aprovado automaticamente.
+short card with own writing and organization; DO NOT reproduce text, figures, tables or original steps in full. This guidance does not prove full consultation or authorisation of specific pages. The decision and method remain of the researcher; no gate is automatically approved.

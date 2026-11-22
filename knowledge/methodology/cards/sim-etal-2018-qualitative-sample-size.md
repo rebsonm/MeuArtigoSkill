@@ -20,7 +20,7 @@ Provide inclusion logic, heterogeneity assessment, planned interview depth, inte
 
 ## Limitations and counterevidence
 
-A numeric precommitment alone cannot certify theoretical saturation or thematic adequacy; do not transfer a fixed interview count between unrelated designs.
+A numerical precommitment allone cannot certify theoretical saturation or thematic adequacy; do not transfer a fixed interview count between unrelated designs.
 
 ## Source bibliographic lead
 

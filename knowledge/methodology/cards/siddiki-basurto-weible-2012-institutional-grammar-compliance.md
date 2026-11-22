@@ -1,35 +1,35 @@
-# Gramática institucional: o texto da regra não é o comportamento de conformidade
+# Institutional grammar: the text of the rule is not conformity behavior
 
 - Status: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Escopo inicial da consulta (registro histórico): página da editora e resumo público; naquele momento o PDF integral do inventário não havia sido examinado. Há registro posterior de conferência documental abaixo, cuja extensão não foi revalidada nesta auditoria. Nenhum PDF foi redistribuído por este card.
+- Initial consultation scope (historical record): publisher's page and public summary; at that time the full inventory PDF had not been examined. There is a later record of a documentary conference below, whose extension was not revalidated in this audit. No PDFs were redistributed by this card.
 - Referência identificada: Siddiki, Basurto e Weible (2012). DOI: 10.1111/j.1748-5991.2012.01132.x
-- Fonte pública indicada no registro inicial: https://onlinelibrary.wiley.com/doi/10.1111/j.1748-5991.2012.01132.x
-- Registro correlato do inventário: SRC-0001 (identidade do PDF privado ainda não estabelecida por hash/edição)
-- Direitos do PDF privado: NÃO AUTORIZADOS por este card. Este card é criação editorial, não substituto do artigo.
+- Public source indicated in the initial record: https://onlinelibrary.wiley.com/doi/10.1111/j.1748-5991.2012.01132.x
+- Correlated inventory record: SRC-0001 (identity of private PDF not yet established by hash/editing)
+- Private PDF rights: Not authorized by this card. This card is editorial creation, not article replacement.
 
-## Informação diretamente verificável na apresentação pública da fonte
+## Information directly verifiable in the public presentation of the source
 
-O resumo informa aplicação da gramática institucional a regras de aquicultura do Colorado; o estudo também examina percepção de adequação, participação na elaboração e motivações de conformidade, recorrendo a Q-Sort.
+The abstract informs the application of institutional grammar to Colorado aquaculture rules; the study also examines perception of adequacy, participation in the elaboration and motivations of compliance, using Q-Sort.
 
-## Orientação metodológica independente [I] — NÃO é conclusão atribuída à fonte
+## Orientação metodológica independente [I] — NO conclusion attributed to the source
 
-Se a pergunta diz respeito ao desenho normativo, defina unidade de codificação das prescrições e um protocolo de dupla revisão; se diz respeito ao cumprimento, acrescente fonte independente sobre práticas e participantes.
+If the question concerns the normative design, define the coding unit of the prescriptions and a double revision protocol; if it concerns compliance, add independent source on practices and participants.
 
 ## Perguntas práticas de controle [P]
 
 - Diferenciar enunciado regulatório, interpretação e comportamento observado.
 - Definir a amostra de normas e a data de vigência.
-- Especificar em que nível a medida de conformidade foi obtida.
+- Please specify at which level the conformity measure was obtained.
 - Documentar casos de prescrições ambíguas e decisões de codificação.
 
 ## Limites de inferência e alerta
 
-Não concluir que um dispositivo textual causou conformidade sem desenho de inferência adequado.
+Do not conclude that a textual device caused conformity without appropriate inference design.
 
-Não cite este card como prova [L] de um resultado acadêmico; abra e confira a fonte para qualquer uso em manuscrito. A descrição pública e o resumo não substituem leitura integral. Não há aprovação de gate, de protocolo, de direitos para PDFs ou de validade acadêmica independente.
+Do not quote this card as proof [L] of an academic result; open and check the source for any use in manuscript. The public description and abstract do not replace full reading. There is no approval of gate, protocol, rights to PDFs or independent academic validity.
 
-## Registro histórico de verificação do exemplar — 21/11/2026 (não reexecutado nesta auditoria)
+## Copy verification history record — 11/21/2026 (not rerun in this audit)
 
-Registro anterior declarou ter identificado a aplicação da gramática institucional ao desenho regulatório da aquicultura no Colorado e a medição de conformidade com Q-Sort. Nesta auditoria V1-08 não houve nova leitura integral da fonte nem cotejo de páginas específicas. A interpretação metodológica continua condicionada à distinção entre enunciados, motivações e comportamentos.
+Previous record stated that it identified the application of institutional grammar to the regulatory design of aquaculture in Colorado and the measurement of Q-Sort compliance. In this audit V1-08 there was no new full reading of the source or comparison of specific pages. Methodological interpretation remains conditioned to the distinction between statements, motivations and behaviors.
 
-**Escopo e cautela:** o registro anterior declarou conferir título, autores, DOI e estrutura metodológica em exemplar privado, sem reproduzir conteúdo ou registrar identificadores privados. É uma alegação histórica de conferência, não verificação científica independente realizada na V1-08. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.
+** Scope and caution:** the previous record stated to confer title, authors, DOI and methodological structure in private copy, without reproducing content or registering private identifiers. It is a historical allegation of conference, not independent scientific verification carried out in V1-08. No automatic rights promotion: original copy remains outside the public catalogue. The scientific review**independent** of this card remains pending; to support the claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.

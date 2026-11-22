@@ -1,29 +1,29 @@
-# Dados para treinamento: distinguir finalidade analítica de exploração secundária
+# Training data: distinguish analytical purpose from secondary exploration
 
-- Status científico: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+- Scientific status: == sync, corrected by elderman == @elder man
 - Obra identificada: Davison e equipe editorial (2024); DOI: 10.1111/isj.12504
 - URL de origem: https://doi.org/10.1111/isj.12504
 - Registro bibliográfico: SRC-0057
-- Tipo de evidência da publicação: editorial normativo sobre ética em sistemas de análise
-- Escopo do card: consulta original elaborada a partir da conferência documental e de seções de método; **SEM revisão crítica externa independente**, e **SEM** autorização para usar esta ficha como evidência [L]
-- Direitos: conteúdo editorial original, sem reproduzir o artigo ou o livro
+- Type of evidence of publication: normative editorial on ethics in analysis systems
+- Card scope: original consultation from the documentary conference and from method sections; **No independent external critical review**, and **No authorisation to use this form as evidence [L]
+- Rights: original editorial content without reproducing the article or book
 
-## O que a fonte apresenta (requer conferência da fonte para citar)
+## What the source presents (requires source conference to quote)
 
-A discussão parte de um dilema de compartilhamento de dados de pesquisa para treinamento de recursos generativos e debate consentimento, direitos e responsabilidade científica.
+The discussion is based on a dilemma of sharing research data for training generative resources and discussing consent, rights and scientific responsibility.
 
-## Proposição de uso da Skill [I]
+## Proposition for Skill use [I]
 
-O usuário da Skill deve distinguir dados próprios, materiais licenciados e informações sensíveis; nenhum upload para treinar modelos deve ser inferido da autorização de analisar uma fonte.
+Skill user must distinguish their own data, licensed materials and sensitive information; no upload to train models should be inferred from the authorization to analyze a source.
 
-## Questões para decisão científica [P]
+## Scientific decision issues [P]
 
 - O consentimento cobre tratamento por fornecedor externo?
-- O contrato prevê treinamento com os dados?
+- Does the contract provide data training?
 - É necessário anonimizar ou manter processamento local?
 
 ## Contraponto e delimitações
 
-Editorial baseado em deliberação de editores, não auditoria de conformidade legal; não concede permissões sobre dados de terceiros.
+Editorial based on deliberation of editors, non-audit of legal compliance; does not grant permissions on third-party data.
 
-Este card é texto editorial original. Não representa parecer científico independente, não atesta qualidade da fonte, nem substitui leitura integral, contexto de páginas ou crítica epistemológica. A classificação [L] depende da checagem das passagens primárias pelo pesquisador. O card não autoriza distribuir versões protegidas, inferir direitos e tampouco aprovar gates. Em debates controversos, as posições e seus fundamentos devem ser confrontados sem decidir automaticamente por um dos lados.
+This card is original editorial text. It does not represent independent scientific opinion, does not attest to the quality of the source, nor replaces full reading, context of pages or epistemological criticism. Classification [L] depends on checking the primary passages by the researcher. The card does not authorize to distribute protected versions, infer rights or approve gates. In controversial debates, positions and their foundations must be confronted without automatically deciding on either side.

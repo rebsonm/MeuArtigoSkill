@@ -1,29 +1,29 @@
-# Autoetnografia comparativa: profundidade interpretativa e eficiência não são a mesma medida
+# Comparative autoethnography: interpretative depth and efficiency are not the same measure
 
-- Status científico: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Fonte identificada: Anas Al-Fattal e Jasvir Singh, obra DOI 10.1177/16094069251337870
-- Link da fonte primária para consulta: https://doi.org/10.1177/16094069251337870
-- Registro do inventário: SRC-0052; edição identificada em PDF original, trechos introdutórios/metodológicos examinados
-- Natureza da obra: autoetnografia colaborativa
-- Escopo do card: interpretação editorial original baseada na descrição e estrutura metodológica consultadas; **NÃO é uma revisão científica independente**, nem prova de leitura pela pessoa que usa a Skill
-- Direitos: somente redação original; arquivo completo redistribuído exclusivamente quando há licença e hash em catálogo separado
+- Scientific status: == sync, corrected by elderman == @elder man
+- Source identified: Anas Al-Fattal and Jasvir Singh, DOI 10.1177/16094069251337870
+- Primary source link for query: https://doi.org/10.1177/16094069251337870
+- Inventory log: SRC-0052; edição identificada em PDF original, trechos introdutórios/metodológicos examinados
+- Nature of the work: collaborative autoethnography
+- Card scope: original editorial interpretation based on the description and methodological structure consulted; **It is not an independent scientific review**, nor is it proof of reading by the person using Skill
+- Rights: original writing only; complete file redistributed exclusively when there is license and hash in separate catalogue
 
-## Recorte de informação na fonte — sujeito a conferência pelo pesquisador
+## Cut information at source — subject to conference by the researcher
 
-Os autores contrastam reflexões sobre análise temática conduzida por humanos e com suporte de GenAI, salientando tensões entre velocidade e contexto.
+The authors contrast reflections on thematic analysis conducted by humans and with GenAI support, highlighting tensions between speed and context.
 
 ## Aplicação metodológica proposta [I]
 
-Caso se deseje comparar abordagens, formular critérios separados de tempo, coerência, densidade interpretativa e compromisso epistêmico; registrar a natureza situada dos relatos.
+If one wants to compare approaches, formulate separate criteria of time, coherence, interpretive density and epistemic commitment; record the situated nature of the reports.
 
-## Três perguntas para decisão científica [P]
+## Three questions for scientific decision [P]
 
-- O valor do método foi avaliado por quais critérios?
-- Quem definiu o que é profundidade temática?
-- Como o posicionamento dos autores afeta a comparação?
+- The value of the method was evaluated by what criteria?
+- Who defined what is thematic depth?
+- How does the authors' positioning affect the comparison?
 
 ## Contestação e limites
 
-A autoetnografia de dois pesquisadores não fornece estimativa populacional nem ensaio randomizado.
+The autoethnography of two researchers does not provide a population estimate or randomized trial.
 
-A orientação não afirma que o card foi aprovado por revisor independente. Antes de usar [L] no manuscrito, conferir fonte primária, edição, contexto e páginas dos dados; declarar inferências separadas daquilo que a obra realmente demonstrou. Nenhuma escolha de gate é automaticamente aprovada. Para tradições qualitativas com posições opostas sobre GenAI, expor desacordo relevante e respeitar o desenho do usuário.
+Guidance does not state that the card was approved by an independent reviewer. Before use [L] in the manuscript, confer primary source, editing, context and pages of the data; declare separate inferences from what the work actually demonstrated. No gate choice is automatically approved. For qualitative traditions with opposite positions on GenAI, expose relevant disagreement and respect the user design.

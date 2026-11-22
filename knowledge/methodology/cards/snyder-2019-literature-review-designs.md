@@ -20,7 +20,7 @@ The research question, scholarly tradition, search and inclusion criteria, synth
 
 ## Warnings and limitations
 
-A semi-systematic review does not become a systematic review merely by displaying a PRISMA-style flowchart. The author's source PDF carries CC BY-NC-ND conditions; do not redistribute it as if it were a CC BY 4.0 PDF.
+A semi-systematic review does not become a systematic review merely by displaying a PRISMA-style flowchart. The author's source PDF cars CC BY-NC-ND conditions; do not redistribute it as if it were a CC BY 4.0 PDF.
 
 ## Bibliographic lead for verification
 

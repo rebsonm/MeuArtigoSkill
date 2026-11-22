@@ -18,7 +18,7 @@ Justify composition, group size, number of sessions, facilitation and ethical se
 
 ## Limits and counterexamples
 
-Do not assume convenience group discussions produce population prevalence estimates. Sensitive or hierarchical settings can suppress disagreement and expose participants to confidentiality risks.
+Do not assume convenience group discussions production population prevalence estimates. Sensitive or hierarchical settings can suppress disagreement and expose participants to confidentiality risks.
 
 ## Bibliographic trail (not a verified [L] claim for any user's research)
 

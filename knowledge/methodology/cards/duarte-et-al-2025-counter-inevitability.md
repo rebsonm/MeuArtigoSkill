@@ -1,29 +1,29 @@
-# Questionar a inevitabilidade de IA como decisão metodológica legítima
+# To question the inevitability of AI as a legitimate methodological decision
 
-- Status científico: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Obra identificada: Duarte e colaboradores (2025), documento do We and AI; DOI: 10.5281/zenodo.17343830
+- Scientific status: == sync, corrected by elderman == @elder man
+- Work identified: Duarte et al. (2025), We and AI document; DOI: 10.5281/zenodo.17343830
 - URL de origem: https://doi.org/10.5281/zenodo.17343830
 - Registro bibliográfico: SRC-0046
-- Tipo de evidência da publicação: taxonomia e posicionamento sociotécnico
-- Escopo do card: consulta original elaborada a partir da conferência documental e de seções de método; **SEM revisão crítica externa independente**, e **SEM** autorização para usar esta ficha como evidência [L]
-- Direitos: conteúdo editorial original, sem reproduzir o artigo ou o livro
+- Type of publication evidence: taxonomy and sociotechnical positioning
+- Card scope: original consultation from the documentary conference and from method sections; **No independent external critical review**, and **No authorisation to use this form as evidence [L]
+- Rights: original editorial content without reproducing the article or book
 
-## O que a fonte apresenta (requer conferência da fonte para citar)
+## What the source presents (requires source conference to quote)
 
-Distingue resistir, recusar, recuperar e reimaginar a IA como respostas possíveis a narrativas de inevitabilidade tecnológica.
+It distinguishes resisting, refusing, recovering and reimagining AI as possible responses to narratives of technological inevitability.
 
-## Proposição de uso da Skill [I]
+## Proposition for Skill use [I]
 
-O pesquisador deve poder registrar justificadamente uma decisão de não usar IA; a Skill não pode impor automação como única opção metodológica.
+The researcher should be able to properly register a decision not to use AI; Skill cannot impose automation as the only methodological option.
 
-## Questões para decisão científica [P]
+## Scientific decision issues [P]
 
-- A adoção de IA é exigência científica ou conveniência operacional?
-- Há alternativa metodológica sem modelo generativo?
-- Os critérios de recusa incluem agência e direitos dos participantes?
+- Is AI adoption a scientific requirement or operational convenience?
+- Is there a methodological alternative without a generative model?
+- Do the criteria for refusal include agency and rights of participants?
 
 ## Contraponto e delimitações
 
-A cópia consultada tem menção genérica à licença de atribuição, sem versão individual incontroversa; há versões diferentes no Zenodo, logo o PDF não foi publicado.
+The consulted copy has generic mention to the assignment license, without incontroversial individual version; there are different versions in Zenodo, so the PDF has not been published.
 
-Este card é texto editorial original. Não representa parecer científico independente, não atesta qualidade da fonte, nem substitui leitura integral, contexto de páginas ou crítica epistemológica. A classificação [L] depende da checagem das passagens primárias pelo pesquisador. O card não autoriza distribuir versões protegidas, inferir direitos e tampouco aprovar gates. Em debates controversos, as posições e seus fundamentos devem ser confrontados sem decidir automaticamente por um dos lados.
+This card is original editorial text. It does not represent independent scientific opinion, does not attest to the quality of the source, nor replaces full reading, context of pages or epistemological criticism. Classification [L] depends on checking the primary passages by the researcher. The card does not authorize to distribute protected versions, infer rights or approve gates. In controversial debates, positions and their foundations must be confronted without automatically deciding on either side.

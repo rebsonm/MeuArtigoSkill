@@ -18,7 +18,7 @@ State the integration purpose and priority, timing, link between strands, handli
 
 ## Limits and counterexamples
 
-Do not treat triangulation as automatic confirmation; contradictory evidence is a legitimate analytic outcome. Consult the paper for specific typologies before a primary-source claim.
+Do not treat triangulation as automatic confirmation; contradictory evidence is a legitimate analytical outcome. Consult the paper for specific types before a primary source claim.
 
 ## Bibliographic trail (not a verified [L] claim for any user's research)
 

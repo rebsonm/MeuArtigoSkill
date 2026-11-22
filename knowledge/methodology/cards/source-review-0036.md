@@ -1,25 +1,25 @@
 # Feminist Epistemology — orientação metodológica e limites
 
 - Registro: SRC-0036; Helen E. Longino (1999)
-- Identificador bibliográfico: não estabelecido nesta edição; sem URL autoral específico verificado
+- Bibliographic identifier: not established in this edition; no specific authorial URL verified
 - Natureza: capítulo 14 de The Blackwell Guide to Epistemology
 - Estado de curadoria: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Classe: editorial original [I]/[P], NÃO usar como evidência primária [L] ou prova de leitura integral
+- Classe: editorial original [I]/[P], DO NOT use as primary evidence [L] ou prova de leitura integral
 
-## Orientação autoral para pesquisa
+## Authorial guidance for research
 
-Examina disputas de objetividade, produção social do conhecimento e críticas feministas da epistemologia. Para aproveitamento responsável, verificar a obra integral, situar o método no objeto, examinar alternativas e recuperar as evidências usadas na argumentação.
+It examines disputes of objectivity, social production of knowledge and feminist criticisms of epistemology. For responsible use, verify the integral work, place the method in the object, examine alternatives and recover the evidence used in the argumentation.
 
 ## Contraprova e limitação
 
-O arquivo é um capítulo de livro protegido da Blackwell; página inicial inspecionada visualmente, não há autorização de redistribuição. Perguntar também se outra interpretação do mesmo material ou uma estratégia metodológica rival é compatível com os dados. Uma posição editorial ou didática não é teste de superioridade experimental.
+The file is a protected book chapter of Blackwell; home page inspected visually, no redistribution authorization. Also ask if another interpretation of the same material or a rival methodological strategy is compatible with the data. An editorial or didactic position is not experimental superiority test.
 
 ## Perguntas aplicáveis
 
-- Qual é o objeto e a unidade de análise que restringem o método proposto?
-- Qual pressuposto, erro de interpretação ou viés precisa ser confrontado na fonte?
-- Que resultado alternativo falsificaria a conclusão? Que páginas e evidências seriam necessárias para [L]?
+- What is the object and unit of analysis that restrict the proposed method?
+- What assumption, misinterpretation or bias must be confronted at source?
+- What alternative result would falsify the conclusion? What pages and evidence would be needed for [L]?
 
 ## Transparência
 
-Texto editorial autoral, sem reprodução extensa. A confirmação do PDF não significa que um avaliador científico tenha aprovado este card. O PDF de origem não foi reproduzido no GitHub sem comprovação de direitos específicos. Preserve [I] como inferência e [P] como hipótese de consulta. Nenhum gate aprovado, nenhuma leitura integral simulada e nenhuma certificação de host.
+Authorial editorial text without extensive reproduction. PDF confirmation does not mean that a scientific evaluator has approved this card. The source PDF was not reproduced in GitHub without proof of specific rights. Preserve [I] as inference and [P] as a hypothesis of consultation. No approved gate, no simulated full read and no host certification.

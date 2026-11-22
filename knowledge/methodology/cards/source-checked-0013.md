@@ -1,28 +1,28 @@
-# Análise documental e sua contribuição no desenvolvimento da pesquisa científica — perguntas metodológicas de consulta
+# Document analysis and its contribution to the development of scientific research — methodological questions for consultation
 
-- Registro da obra: SRC-0013; autoria: Laís Hilário Alves; Guilherme Saramago; Lucia de Fátima Valente; Angélica Silva de Sousa; publicação: 2021
-- DOI: não verificado no exemplar
-- Fonte editorial: localizador primário pendente
-- Estatuto da publicação: artigo metodológico, Cadernos da Fucamp
-- Status do card: **DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE**
-- Natureza: original editorial [I]/[P]; NÃO equivale à leitura integral nem autoriza citação [L] por si só.
+- Work record: SRC-0013; autoria: Laís Hilário Alves; Guilherme Saramago; Lucia de Fátima Valente; Angélica Silva de Sousa; publicação: 2021
+- DOI: not verified on copy
+- Editorial source: primary locator pending
+- Status of publication: methodological article, Cadernos da Fucamp
+- Card status: == sync, corrected by elderman == @elder man
+- Natureza: original editorial [I]/[P]; DO NOT equate to full reading or authorize citation [L] por si só.
 
-## Delimitação da obra examinada
+## Delimitation of the examined work
 
-Discute por que seleção documental não deve ser aleatória e examina potencialidades e limites da análise documental.
+Discuss why document selection should not be random and examine potentialities and limits of document analysis.
 
 ## Aplicação sugerida pela curadoria [I]
 
-Para uso na Skill, exigir justificativa de inclusão/exclusão, rastreamento da origem e separação entre inventário e análise.
+For use in Skill, require justification for inclusion/exclusion, origin tracking and separation between inventory and analysis.
 
 ## Advertência e objeção
 
-A delimitação conceitual da técnica não comprova validade externa de um corpus qualquer. Licença do PDF não esclarecida.
+The conceptual delimitation of the technique does not prove external validity of any corpus. Unclarified PDF license.
 
 ## Perguntas de auditoria [P]
 
-- Que escolhas de amostra, corpus ou unidade analítica são necessárias para adaptar essa obra?
-- Qual passagem da fonte primária apoiaria uma conclusão e qual evidência contrária é plausível?
-- A orientação é compatível com a epistemologia de quem pesquisa, ou imporia critérios inadequados?
+- What sample choices, corpus or analytical unit are needed to adapt this work?
+- What passage from the primary source would support a conclusion and what contrary evidence is plausible?
+- Is guidance compatible with the epistemology of whose research, or would it impose inadequate criteria?
 
-Redação inteiramente original, não reprodução da obra. O PDF consultado para identificar título, autor e abordagem não fica disponível aos usuários por este card. A verificação de identidade não implica revisão científica independente, e nenhum gate deve ser aprovado automaticamente. Antes de declarar [L], recuperar edição, página e contexto primário.
+Writing entirely original, not reproduction of the work. The PDF consulted to identify title, author and approach is not available to users by this card. Identity verification does not imply independent scientific review, and no gate should be approved automatically. Before declaring [L], recuperar edição, página e contexto primário.

@@ -18,7 +18,7 @@ Record the review question, protocol policy, screening route, appraisal approach
 
 ## Limits and counterexamples
 
-Do not mistake a reporting checklist for a recipe for scientific rigor. Never imply that one standard is mandatory for all interdisciplinary management studies.
+From not mixedke to reporting checklist for a recipe for scientific rigor. Never imply that one standard is mandate for all interdisciplinary management studies.
 
 ## Bibliographic trail (not a verified [L] claim for any user's research)
 

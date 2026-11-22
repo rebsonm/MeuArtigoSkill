@@ -1,26 +1,26 @@
-# Suddaby (2006): o que não caracteriza grounded theory
+# Suddaby (2006): what does not characterize grounded theory
 
 Card ID: suddaby-2006-grounded-theory-not
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] orientação editorial provisória, NÃO evidência primária validada
+Evidence grade: [I] provisional editorial guidance, NO primary validated evidence
 Source reading scope: DIRECT_PROTECTED_ARTICLE_PDF_PARTIAL_REVIEW
 Third-party content reproduced: NO
 
-## Questão de pesquisa metodológica
+## Methodological research issue
 
-Como tornar esta abordagem coerente com a pergunta, os pressupostos e os dados que o pesquisador realmente tem?
+How do we make this approach consistent with the question, assumptions and data that the researcher actually has?
 
-## Decisão metodológica original
+## Original methodological decision
 
-Demonstrar como comparação constante e desenvolvimento progressivo de categorias justificam uma teoria ancorada nos registros e no trabalho interpretativo; verificar as restrições e diferenciações entre tradições de grounded theory.
+Demonstrate as constant comparison and progressive development of categories justify a theory anchored in the records and interpretive work; verify the restrictions and differentiations between grounded theory traditions.
 
 ## Verificações a registrar
 
-Documentar coleta/ análise iterativas, amostragem teórica, memos e mudanças entre categorias preliminares e abstração teórica.
+Document iterative collection/analysis, theoretical sampling, memos and changes between preliminary categories and theoretical abstraction.
 
-## Limitações da transferência
+## Limitations of transfer
 
-Usar entrevistas, códigos ou software não torna o estudo grounded theory; o artigo é protegido e não pode ser distribuído integralmente.
+Using interviews, codes or software does not make the study grounded theory; the article is protected and cannot be distributed in full.
 
 ## Referência bibliográfica
 
@@ -28,4 +28,4 @@ Suddaby, R. (2006). From the editors: What grounded theory is not. Academy of Ma
 
 ## Uso responsável
 
-Texto editorial independente e conciso. Esta ficha não disponibiliza original protegido, não é uma tradução ou substituto do livro, não atesta cobertura integral das fontes e não aprova gates. Antes de uma afirmação científica [L], examinar a obra correspondente e localizar a passagem e a edição.
+Independent and concise editorial text. This form does not provide original protected, is not a translation or replacement of the book, does not attest to full coverage of the sources and does not approve gates. Before a scientific statement [L], examinar a obra correspondente e localizar a passagem e a edição.

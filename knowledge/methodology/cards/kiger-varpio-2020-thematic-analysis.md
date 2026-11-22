@@ -20,7 +20,7 @@ Record analytic unit, coding mode, inclusion/exclusion criteria for theme exampl
 
 ## Limitations and counterevidence
 
-Coding volume or frequent words do not make a theme analytically meaningful. The guide is not a universal validation checklist across all qualitative traditions.
+Coding volume or frequent words do not make a theme analytically meaning. The guide is not a universal validation checklist across all qualitative traditions.
 
 ## Source bibliographic lead
 

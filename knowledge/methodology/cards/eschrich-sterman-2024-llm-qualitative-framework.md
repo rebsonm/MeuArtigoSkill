@@ -1,29 +1,29 @@
-# LLM para propor ou refutar interpretações: contraexemplos sob checagem humana
+# LLM to propose or refute interpretations: counterexamples under human verification
 
-- Status científico: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Obra identificada: Eschrich e Sterman (arXiv:2407.11198 v1, 2024); DOI: não confirmado no exemplar
+- Scientific status: == sync, corrected by elderman == @elder man
+- Work identified: Eschrich and Sterman (arXiv:2407.11198 v1, 2024); DOI: not confirmed in copy
 - URL de origem: https://arxiv.org/abs/2407.11198
 - Registro bibliográfico: SRC-0073
-- Tipo de evidência da publicação: preprint com quadro filosófico de uso de LLMs
-- Escopo do card: consulta original elaborada a partir da conferência documental e de seções de método; **SEM revisão crítica externa independente**, e **SEM** autorização para usar esta ficha como evidência [L]
-- Direitos: conteúdo editorial original, sem reproduzir o artigo ou o livro
+- Type of publication evidence: preprint with philosophical framework of use of LLMs
+- Card scope: original consultation from the documentary conference and from method sections; **No independent external critical review**, and **No authorisation to use this form as evidence [L]
+- Rights: original editorial content without reproducing the article or book
 
-## O que a fonte apresenta (requer conferência da fonte para citar)
+## What the source presents (requires source conference to quote)
 
-Propõe discriminar tarefas em que o modelo sugere versus refuta modelos qualitativos e se as decisões podem ser diretamente conferidas pelo pesquisador.
+It proposes to discriminate tasks in which the model suggests versus refutes qualitative models and whether decisions can be directly conferred by the researcher.
 
-## Proposição de uso da Skill [I]
+## Proposition for Skill use [I]
 
-Aplicar a LLM como gerador de hipóteses rivais ou casos contraditórios a verificar, não como fonte que aprova a interpretação.
+Apply LLM as a generator of rival hypotheses or contradictory cases to verify, not as a source that approves the interpretation.
 
-## Questões para decisão científica [P]
+## Scientific decision issues [P]
 
-- O resultado pode ser conferido literalmente no material?
+- Can the result be checked literally in the material?
 - O pedido busca confirmação ou possível refutação?
-- A decisão final exige julgamento epistêmico humano?
+- Does the final decision require human epistemic judgment?
 
 ## Contraponto e delimitações
 
-Preprint sem certificação independente de revisão por pares; o PDF v1 declara CC BY 4.0, mas contém elementos tipográficos de template de conferência.
+Preprint without independent peer review certification; PDF v1 declares CC BY 4.0, but contains typographic elements of conference template.
 
-Este card é texto editorial original. Não representa parecer científico independente, não atesta qualidade da fonte, nem substitui leitura integral, contexto de páginas ou crítica epistemológica. A classificação [L] depende da checagem das passagens primárias pelo pesquisador. O card não autoriza distribuir versões protegidas, inferir direitos e tampouco aprovar gates. Em debates controversos, as posições e seus fundamentos devem ser confrontados sem decidir automaticamente por um dos lados.
+This card is original editorial text. It does not represent independent scientific opinion, does not attest to the quality of the source, nor replaces full reading, context of pages or epistemological criticism. Classification [L] depends on checking the primary passages by the researcher. The card does not authorize to distribute protected versions, infer rights or approve gates. In controversial debates, positions and their foundations must be confronted without automatically deciding on either side.

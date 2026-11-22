@@ -7,7 +7,7 @@ Source reading boundary: Official publisher metadata and CC BY 4.0 source availa
 
 ## Methodological decision
 
-How do researchers avoid mistaking drafting speed for scientific progress?
+How do researchers avoid mixing drifting speed for scientific progress?
 
 ## Independent editorial guidance
 

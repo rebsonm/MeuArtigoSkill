@@ -1,29 +1,29 @@
-# Declarar o uso de GenAI: heurística de rastreabilidade não é certificado de rigor
+# Declaring the use of GenAI: traceability heuristic is not a certificate of accuracy
 
-- Status científico: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Fonte identificada: Kyle M. L. Jones, obra DOI 10.1177/16094069251404329
-- Link da fonte primária para consulta: https://doi.org/10.1177/16094069251404329
-- Registro do inventário: SRC-0059; edição identificada em PDF original, trechos introdutórios/metodológicos examinados
-- Natureza da obra: proposta de heurística de relato
-- Escopo do card: interpretação editorial original baseada na descrição e estrutura metodológica consultadas; **NÃO é uma revisão científica independente**, nem prova de leitura pela pessoa que usa a Skill
-- Direitos: somente redação original; arquivo completo redistribuído exclusivamente quando há licença e hash em catálogo separado
+- Scientific status: == sync, corrected by elderman == @elder man
+- Source identified: Kyle M. L. Jones, work DOI 10.1177/16094069251404329
+- Primary source link for query: https://doi.org/10.1177/16094069251404329
+- Inventory log: SRC-0059; edição identificada em PDF original, trechos introdutórios/metodológicos examinados
+- Nature of the work: proposal of heuristics of report
+- Card scope: original editorial interpretation based on the description and methodological structure consulted; **It is not an independent scientific review**, nor is it proof of reading by the person using Skill
+- Rights: original writing only; complete file redistributed exclusively when there is license and hash in separate catalogue
 
-## Recorte de informação na fonte — sujeito a conferência pelo pesquisador
+## Cut information at source — subject to conference by the researcher
 
-Jones organiza 20 perguntas em cinco grupos relativos a equipe, participantes, desenho, dados e análise para tornar práticas com IA mais transparentes.
+Jones organizes 20 questions in five groups concerning the team, participants, design, data and analysis to make AI practices more transparent.
 
 ## Aplicação metodológica proposta [I]
 
-A Skill pode usar a estrutura como inspiração para checklist original de divulgação, registrando o que efetivamente foi feito, quais ferramentas atuaram e onde a decisão permaneceu humana.
+Skill can use the structure as inspiration for the original disclosure checklist, recording what was effectively done, what tools they acted on and where the decision remained human.
 
-## Três perguntas para decisão científica [P]
+## Three questions for scientific decision [P]
 
-- Que uso concreto da IA exigirá divulgação?
+- What concrete use of the AI will require disclosure?
 - Há registros verificáveis ou apenas autodeclarações?
-- A declaração distingue automação de decisão científica?
+- Does the statement distinguish automation from scientific decision?
 
 ## Contestação e limites
 
-Relatar decisões não garante que o método, a ética ou a interpretação tenham sido adequados.
+Reporting decisions does not guarantee that the method, ethics or interpretation has been adequate.
 
-A orientação não afirma que o card foi aprovado por revisor independente. Antes de usar [L] no manuscrito, conferir fonte primária, edição, contexto e páginas dos dados; declarar inferências separadas daquilo que a obra realmente demonstrou. Nenhuma escolha de gate é automaticamente aprovada. Para tradições qualitativas com posições opostas sobre GenAI, expor desacordo relevante e respeitar o desenho do usuário.
+Guidance does not state that the card was approved by an independent reviewer. Before use [L] in the manuscript, confer primary source, editing, context and pages of the data; declare separate inferences from what the work actually demonstrated. No gate choice is automatically approved. For qualitative traditions with opposite positions on GenAI, expose relevant disagreement and respect the user design.

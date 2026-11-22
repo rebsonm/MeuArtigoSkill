@@ -18,7 +18,7 @@ Describe dataset, analytic perspective, transformations from observations into i
 
 ## Limits and counterexamples
 
-Avoid importing inter-coder reliability requirements as a default validation rule for every reflexive thematic analysis. Do not claim that the existence of a codebook or automatically generated themes establishes rigor.
+Avoid importing inter-coder reliability requirements as a default validation rule for every reflective thematic analysis. Do not claim that the existence of a codebook or automatically generated themes establishes rigor.
 
 ## Bibliographic trail (not a verified [L] claim for any user's research)
 

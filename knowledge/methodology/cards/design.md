@@ -3,7 +3,7 @@
 Card ID: design
 Publication state: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_RIGHTS_REVIEW
 Research evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_ONLY
-Rights status: UNVERIFIED_FOR_PUBLICATION — bibliographic leads do not establish reproduction rights or scientific fidelity.
+Rights status: UNVERIFIED FOR PUBLICATION — bibliographic leads from not establish reproduction rights or scientific loyalty.
 
 ## Conceptual orientation
 
@@ -11,7 +11,7 @@ Define the research problem and the type of inference being sought before choosi
 
 ## Researcher decisions
 
-Compare possible designs by expected evidence, feasible collection, analysis, validity threats, ethical constraints, and what cannot be concluded. A research onion can help check coherence among choices but is not a scoring rule or automatic proof of rigor. Do not approve a gate solely because a design field was filled.
+Compare possible designs by expected evidence, feature collection, analysis, validity Threats, ethical constraints, and what cannot be completed. A research onion can help check coherence among choices but is not a scoring rule or automatic proof of rigor. Do not approve the gate only because of the field was filled design.
 
 ## Source trail
 

@@ -1,26 +1,26 @@
-# Yin (2018): protocolo, unidade de análise e explicações alternativas no estudo de caso
+# Yin (2018): protocol, unit of analysis and alternative explanations in the case study
 
 Card ID: yin-2018-case-study-design
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] orientação editorial provisória, NÃO evidência primária validada
+Evidence grade: [I] provisional editorial guidance, NO primary validated evidence
 Source reading scope: DIRECT_PROTECTED_BOOK_PDF_PARTIAL_REVIEW
 Third-party content reproduced: NO
 
-## Questão de pesquisa metodológica
+## Methodological research issue
 
-Como tornar esta abordagem coerente com a pergunta, os pressupostos e os dados que o pesquisador realmente tem?
+How do we make this approach consistent with the question, assumptions and data that the researcher actually has?
 
-## Decisão metodológica original
+## Original methodological decision
 
-Distinguir caso, unidade(s) de análise, proposições e contexto. Projetar múltiplas fontes de evidência, cadeia de documentação e condições para comparar explicações sem confundir narrativa descritiva com inferência causal.
+Distinguishing case, unit(s) of analysis, propositions and context. Design multiple sources of evidence, documentation chain and conditions to compare explanations without confusing descriptive narrative with causal inference.
 
 ## Verificações a registrar
 
-Justificar seleção de caso único/múltiplos, protocolo, base de evidências, triangulação e limites para generalização analítica.
+Justify single/multiple case selection, protocol, evidence base, triangulation and limits for analytical generalization.
 
-## Limitações da transferência
+## Limitations of transfer
 
-Generalização estatística não se presume de um caso; obra sob copyright SAGE, não redistribuir PDF.
+Statistical generalization is not presumed of a case; work under copyright SAGE, do not redistribute PDF.
 
 ## Referência bibliográfica
 
@@ -28,4 +28,4 @@ Yin, R. K. (2018). Case Study Research and Applications: Design and Methods, 6th
 
 ## Uso responsável
 
-Texto editorial independente e conciso. Esta ficha não disponibiliza original protegido, não é uma tradução ou substituto do livro, não atesta cobertura integral das fontes e não aprova gates. Antes de uma afirmação científica [L], examinar a obra correspondente e localizar a passagem e a edição.
+Independent and concise editorial text. This form does not provide original protected, is not a translation or replacement of the book, does not attest to full coverage of the sources and does not approve gates. Before a scientific statement [L], examinar a obra correspondente e localizar a passagem e a edição.
