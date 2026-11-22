@@ -50,8 +50,7 @@ and [secure export](docs/EXPORTACAO-SEGURA.md).
 
 ## Version coverage
 
-This policy covers historical `0.8.x-beta` and published `0.9.x-beta`
-releases as well as subsequent source candidates, unless superseded.
+This policy covers historical `0.8.x-beta` and `0.9.x-beta` releases, the published experimental `v1.0.0-rc.1` prerelease, and subsequent development candidates unless superseded.
 Current experimental public recommendation: `v0.9.0-beta.5` (published as a
 GitHub Pre-release on 2026-10-14, with its tagged ZIP and SHA-256). Historical
 beta.1 and beta.2 packages remain available.

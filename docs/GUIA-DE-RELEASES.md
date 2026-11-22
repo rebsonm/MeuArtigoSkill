@@ -12,11 +12,7 @@ scientifically validated.
    check remains named `audit`. It checks software regression tests,
    copyright/privacy controls, documentation, provenance and bundle
    integrity with `contents: read`. It cannot publish releases.
-2. **Publish beta (manual)** (`.github/workflows/publish-beta.yml`)
-   runs only through **Actions → Publish beta (manual) → Run workflow**
-   on `main`. The maintainer must type `publish-beta`. This job
-   rechecks all safety controls before receiving the write permission
-   needed for release creation. It will not overwrite existing tags.
+2. **Manual publishers are version-specific.** The historical beta-only workflow (`.github/workflows/publish-beta.yml`) accepts `publish-beta` and refuses RC/stable tags. The [RC.1-specific manual workflow](../.github/workflows/publish-rc1.yml) accepted `publish-rc1` and created the verified [v1.0.0-rc.1 prerelease](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) on 2026-11-22 with the Skill ZIP, 51 credited PDFs and SHA256SUMS. Both publishers require explicit dispatch and refuse to overwrite tags; do not dispatch either again for an existing tag.
 3. **English-source completeness:** the manual workflow additionally
    runs `python scripts/audit_source_language.py --strict`.
    An English-source release must not ship while the repository
@@ -78,10 +74,7 @@ scientifically validated.
    package source, source-language completeness and public notes.
    Merge into `main` only after applying the repository's actual,
    verified review and branch-protection requirements.
-7. Manually dispatch `Publish beta` from `main` and enter the
-   required confirmation. Inspect the newly created immutable
-   release, `MeuArtigoSkill-v<version>.zip`, SHA-256 digest and
-   `SHA256SUMS.txt` attachment.
+7. For a **new, unpublished version only**, use its specifically authorized manual publisher from `main`, with the required confirmation. Inspect the resulting immutable tag, versioned Skill ZIP, checksum and any separately licensed reference archive. Do not rerun a publisher to overwrite RC.1 or historical betas.
 
 **Merging source code does not automatically publish it.**
 The last published version is determined by an **actual GitHub Release and
