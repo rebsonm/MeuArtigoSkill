@@ -64,8 +64,7 @@ See the [full rights-holder notice](RIGHTSHOLDER-NOTICE.md).
 
 **Source versus archive:** the latest public `main` includes post-RC.1
 methodology-card and documentation corrections. The downloadable RC.1 ZIP
-still represents its earlier immutable release. A [Zenodo-ready source copy](
-docs/ZENODO-DEPOSIT-PREPARATION.md) will be prepared separately without
+still represents its earlier immutable release. A [Zenodo-ready source copy](docs/ZENODO-DEPOSIT-PREPARATION.md) will be prepared separately without
 third-party PDF binaries; no new Zenodo version is implied by this note.
 
 ## Citation

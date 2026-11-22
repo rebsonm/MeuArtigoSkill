@@ -55,7 +55,7 @@ new version DOI or silently overwrite an immutable archived release.
 4. Review title, author, description, date, version, Apache-2.0 license,
    related identifiers, exclusions and [rights-holder requests](
    ../RIGHTSHOLDER-NOTICE.md). Metadata for the future deposit is in
-   [the draft JSON](zenodo-metadata-draft.json).
+   [the draft JSON](../zenodo/metadata-draft.json).
 5. Verify Zenodo's resulting record, DOI, downloaded bytes, checksum,
    version relationship and published date. Update the project's citation
    metadata **only after** an actual new archival version is verified.
