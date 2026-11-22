@@ -50,6 +50,7 @@ def scoped_files(root: Path) -> list[Path]:
         # translating or stripping those titles would damage provenance.
         corpus_data = rel.as_posix() in {
             "knowledge/methodology/pdf_catalog.json",
+            "knowledge/methodology/PDF-ATTRIBUTIONS.md",  # bibliographic titles are original-language source data
             "knowledge/methodology/catalog.json",
             "knowledge/methodology/source_registry_catalog.json",
             "knowledge/methodology/pdfs/README.md",
