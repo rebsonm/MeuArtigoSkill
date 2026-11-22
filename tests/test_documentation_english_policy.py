@@ -29,7 +29,7 @@ class EnglishDocumentationPolicyTests(unittest.TestCase):
         content = (ROOT / CREDITS).read_text(encoding="utf-8")
         rows = [line for line in content.splitlines()
                 if line.startswith("| ") and line.split("|")[1].strip().isdigit()]
-        self.assertEqual(len(rows), 51)
+        self.assertEqual(len(rows), 55)
         editorial = "\n".join(
             line for line in content.splitlines() if not line.lstrip().startswith("|")
         )

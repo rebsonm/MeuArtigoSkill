@@ -28,7 +28,7 @@ class NonCommercialRightsBoundary(unittest.TestCase):
   corpus=(BASE/"pdf_catalog.json").read_bytes()
   for module in (installed,experimental):
    items=module.metadata(corpus)
-   self.assertEqual(len(items),51)
+   self.assertEqual(len(items),55)
    self.assertFalse(any("silva-hernandez-2020" in x["path"] for x in items))
    self.assertTrue(all(x["license"] in ("CC BY","CC BY 4.0") for x in items))
  def test_retriever_rejects_noncommercial_metadata_even_with_rights_flag(self):

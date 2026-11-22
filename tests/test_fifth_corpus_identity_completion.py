@@ -42,7 +42,7 @@ class AllFormerlyUnresolvedWorkIdentities(unittest.TestCase):
    self.assertEqual(hashlib.sha256(raw).hexdigest(),row["sha256"])
    self.assertIn("REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE",raw.decode("utf-8"))
  def test_five_exact_redistributable_pdfs_and_binary_copyright_isolation(self):
-  self.assertEqual(len(self.pdfs),51)
+  self.assertEqual(len(self.pdfs),55)
   reg={x["source_id"]:x for x in self.registry["documents"]}
   pub=[x for x in self.pdfs if x["path"] in {reg[s]["public_pdf_path"] for s in LICENSED}]
   self.assertEqual(len(pub),4)
