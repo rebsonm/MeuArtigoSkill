@@ -26,3 +26,8 @@ A capa de terceiros não confere licença ao artigo. Não afirmar que este exemp
 - A orientação é compatível com a epistemologia de quem pesquisa, ou imporia critérios inadequados?
 
 Redação inteiramente original, não reprodução da obra. O PDF consultado para identificar título, autor e abordagem não fica disponível aos usuários por este card. A verificação de identidade não implica revisão científica independente, e nenhum gate deve ser aprovado automaticamente. Antes de declarar [L], recuperar edição, página e contexto primário.
+## Conferência editorial complementar — 21/11/2026 [I]/[P]
+
+A obra de Kripka, Scheller e Bonotto é citada como comunicação do **IV CIAIQ 2015**, na área de pesquisa documental qualitativa. O antigo endereço https://proceedings.ciaiq.org/index.php/ciaiq2015/article/view/252 atualmente redireciona à página geral da editora, **sem autenticar ali a edição original**. Referência bibliográfica candidata, não identificação definitiva da cópia.
+
+Orientação autoral de uso [I]: definir critérios de seleção/autenticidade documental, origem, contexto, lacunas de acervo e contraprovas interpretativas. Sem a edição primária recuperada, não atribuir conclusões específicas às autoras, não criar DOI/páginas e não liberar a cópia privada. Este card pode servir como proposta genérica [P] de consulta, nunca prova [L].
