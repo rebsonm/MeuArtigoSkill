@@ -1,0 +1,165 @@
+{
+  "schema": "PPGA_PRIVATE_ORIGINALS_BYTE_COMPARISON_V1",
+  "checked_at": "2026-11-22",
+  "scope": "12 normalized-title source groups from the corrected 475-record catalogue (draft PR #117); only checked private PPGA originals, not all 475 files",
+  "method": "Each listed file copy was retrieved from connected Google Drive. Equal-size pairs had original raw base64 byte streams compared; SHA-256 was computed from the mounted source PDF bytes. The 3-copy group was compared pairwise through one reference copy. Different-size files had their independent SHA-256 recorded.",
+  "file_locator_included": false,
+  "original_pdfs_published": false,
+  "scientific_validation": false,
+  "confirmed_exact_duplicate_groups": 10,
+  "confirmed_extra_pdf_copies_within_these_groups": 11,
+  "groups": [
+    {
+      "ids": [
+        "SRC-0006",
+        "SRC-0435"
+      ],
+      "label": "Comparative research design book",
+      "sha256": "fe1ba0c860a4c8b4fb23ecec3cbd6701d5a63a0a7702d82ab01805542eec7c04",
+      "size": 2535759,
+      "verdict": "BYTE_IDENTICAL"
+    },
+    {
+      "ids": [
+        "SRC-0111",
+        "SRC-0454"
+      ],
+      "label": "Participant observation review",
+      "sha256": "9b12a0c0f29cc77cbe06c20fd2b0fb2bba3ff1d20db14f677bfa87a937471036",
+      "size": 63385,
+      "verdict": "BYTE_IDENTICAL"
+    },
+    {
+      "ids": [
+        "SRC-0129",
+        "SRC-0132"
+      ],
+      "label": "Thematic analysis in administration article",
+      "verdict": "SAME_BIBLIOGRAPHIC_WORK_DIFFERENT_PDF",
+      "doi": "10.12712/rpca.v14i1.38405",
+      "variants": [
+        {
+          "id": "SRC-0129",
+          "size": 672728,
+          "sha256": "ed2e37192bca40bce5b3ab5d456def4ff8acbf29b1570c4f8e442ecf039c01b7",
+          "description": "Open-access aggregator wrapper and article"
+        },
+        {
+          "id": "SRC-0132",
+          "size": 631240,
+          "sha256": "ba56e9b7fff572af066706ddbe0d886f36eff0ecf8916227c1ff0ec7798a5870",
+          "description": "Journal-formatted article"
+        }
+      ]
+    },
+    {
+      "ids": [
+        "SRC-0206",
+        "SRC-0337"
+      ],
+      "label": "Image research bibliographic review",
+      "sha256": "9ec4986eacda3dfccc8ceef0b7f0f96198144fd9b61c3a81cf15954b51a1ab99",
+      "size": 230328,
+      "verdict": "BYTE_IDENTICAL",
+      "doi": "10.1590/S0034-759020140211"
+    },
+    {
+      "ids": [
+        "SRC-0230",
+        "SRC-0344"
+      ],
+      "label": "Bibliometric study of jurimetrics",
+      "sha256": "b9160abe4e69654761076dc02a2edd6cfc114511d169c10b2c7d0194593edc84",
+      "size": 574651,
+      "verdict": "BYTE_IDENTICAL",
+      "doi": "10.20396/rdbci.v18i0.8658889"
+    },
+    {
+      "ids": [
+        "SRC-0235",
+        "SRC-0267"
+      ],
+      "label": "Policy impact evaluation methods article",
+      "sha256": "9a2d07e4f62edfa668bcf311e13920f99263c704a8187fae77065d0c1369674e",
+      "size": 263280,
+      "verdict": "BYTE_IDENTICAL",
+      "doi": "10.17666/329414/2017"
+    },
+    {
+      "ids": [
+        "SRC-0244",
+        "SRC-0371"
+      ],
+      "label": "Automated nonparametric content analysis paper",
+      "sha256": "cf7139ab385e44efb75e26e8c6334f1c959cceb5bb29010e4670f59070446d5d",
+      "size": 528155,
+      "verdict": "BYTE_IDENTICAL"
+    },
+    {
+      "ids": [
+        "SRC-0245",
+        "SRC-0370"
+      ],
+      "label": "Text-as-data promise and pitfalls paper",
+      "sha256": "329b88773b6d4c1c82bba37f7f83b995add6f2e188f380eb332081da53ddd390",
+      "size": 972383,
+      "verdict": "BYTE_IDENTICAL",
+      "doi": "10.1093/pan/mps028"
+    },
+    {
+      "ids": [
+        "SRC-0349",
+        "SRC-0391"
+      ],
+      "label": "Time-series cross-sectional causal matching paper",
+      "sha256": "a4f11f5d1a13bb4c150a3f4090f74aa522cf2f3e8276704847a9841d47153986",
+      "size": 889686,
+      "verdict": "BYTE_IDENTICAL",
+      "doi": "10.1111/ajps.12685"
+    },
+    {
+      "ids": [
+        "SRC-0354",
+        "SRC-0438"
+      ],
+      "label": "Brazilian political science methodological critique",
+      "sha256": "c8d8e7792adc0bc8b8893f5a7ecd9b9cec3bf913429bf5ee80c9ac07019231b0",
+      "size": 120525,
+      "verdict": "BYTE_IDENTICAL"
+    },
+    {
+      "ids": [
+        "SRC-0402",
+        "SRC-0430",
+        "SRC-0434"
+      ],
+      "label": "Introduction to research methodology in political science",
+      "sha256": "daed917cbcca5ad77cfa3ac53150012600748cf235de376835e7d00990b8731b",
+      "size": 2633104,
+      "verdict": "BYTE_IDENTICAL",
+      "doi": "10.17666/bib9402/2021"
+    },
+    {
+      "ids": [
+        "SRC-0406",
+        "SRC-0408"
+      ],
+      "label": "Cox regression teaching slides versus journal article",
+      "verdict": "SAME_TITLE_DISTINCT_FORMATS",
+      "variants": [
+        {
+          "id": "SRC-0406",
+          "size": 602343,
+          "sha256": "c02f5ce76ec9d4e0cfb1a1db35656f363faf936576c5aa2d5b6c4b08f1211782",
+          "description": "Slides, not a scholarly journal article"
+        },
+        {
+          "id": "SRC-0408",
+          "size": 7569582,
+          "sha256": "f7e29c1d52a6c860fac6a2321a78f1866a7f2477453a0516517385e2a476bbac",
+          "description": "Journal article, 39 pages"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,645 @@
+{
+  "schema": "PPGA_FIFTY_CARD_EDITORIAL_TRIAGE_V1",
+  "prepared_on": "2026-11-22",
+  "scope": "Source-evidence and active-card-title overlap triage only, not independent source validation or researcher scientific approval",
+  "active_reference_cards": 174,
+  "staged_candidate_cards": 50,
+  "reviewer_scientific_acceptance_count": 0,
+  "decisions": [
+    {
+      "id": "ppga-anderson-business-statistics",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-anderson-business-statistics.md",
+      "reading_scope": "BIBLIOGRAPHIC_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "effective-statistical-decisions.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-charmaz-2006-grounded-theory-constructivist",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-charmaz-2006-grounded-theory-constructivist.md",
+      "reading_scope": "PARTIAL_ORIGINAL_SOURCE_READING",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "grounded-theory-analytic-logic.md",
+        "suddaby-2006-grounded-theory-not.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-cluster-analysis",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-cluster-analysis.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "RETAIN_GENERAL_METHOD_SEPARATE_FROM_TOOL",
+      "related_active_cards": [
+        "source-review-0401.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-comparative-politics-design",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-comparative-politics-design.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "source-review-0006.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-correspondence-analysis",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-correspondence-analysis.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "RETAIN_GENERAL_METHOD_SEPARATE_FROM_SOURCE_REVIEWS",
+      "related_active_cards": [
+        "source-review-0239.md",
+        "source-review-0240.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-creswell-2014-five-qualitative-approaches",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-creswell-2014-five-qualitative-approaches.md",
+      "reading_scope": "PARTIAL_ORIGINAL_SOURCE_READING",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "qualitative-design-quality.md",
+        "creswell-creswell-2021-mixed-research-design.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-de-sordi-2024-business-qualitative-methods",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-de-sordi-2024-business-qualitative-methods.md",
+      "reading_scope": "BIBLIOGRAPHIC_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-denzin-interpretive-ethnography",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-denzin-interpretive-ethnography.md",
+      "reading_scope": "BIBLIOGRAPHIC_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-digital-ethnography",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-digital-ethnography.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-dresch-lacerda-antunes-design-science",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-dresch-lacerda-antunes-design-science.md",
+      "reading_scope": "BIBLIOGRAPHIC_METADATA_ONLY",
+      "editorial_triage": "HOLD_EXACT_BOOK_EDITION_AND_DIFFERENTIATION",
+      "related_active_cards": [
+        "design-science.md",
+        "hevner-2004-design-science.md",
+        "peffers-2008-dsrm-process.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-factor-analysis",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-factor-analysis.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "source-review-0410.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-feminist-epistemology",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-feminist-epistemology.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "RETAIN_DISTINCT_EPISTEMOLOGY_LENS",
+      "related_active_cards": [
+        "source-review-0036.md",
+        "lazar-2007-feminist-critical-discourse.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-flick-2009-qualitative-research-process",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-flick-2009-qualitative-research-process.md",
+      "reading_scope": "PARTIAL_ORIGINAL_SOURCE_READING",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "qualitative-design-quality.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-friese-2019-atlasti-qualitative-analysis",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-friese-2019-atlasti-qualitative-analysis.md",
+      "reading_scope": "BIBLIOGRAPHIC_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "qualitative.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-gibbs-qualitative-data-analysis",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-gibbs-qualitative-data-analysis.md",
+      "reading_scope": "BIBLIOGRAPHIC_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "qualitative.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-gray-real-world-research",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-gray-real-world-research.md",
+      "reading_scope": "BIBLIOGRAPHIC_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "design.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-ideal-point-modeling",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-ideal-point-modeling.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-instrumental-variables",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-instrumental-variables.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-interaction-terms-effect-modification",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-interaction-terms-effect-modification.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "effective-statistical-decisions.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-jurimetrics",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-jurimetrics.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "source-review-0353.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-kvale-interview-design",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-kvale-interview-design.md",
+      "reading_scope": "BIBLIOGRAPHIC_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "field-based-interview-sampling.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-linear-regression-diagnostics",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-linear-regression-diagnostics.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "effective-statistical-decisions.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-locke-2003-grounded-theory-management",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-locke-2003-grounded-theory-management.md",
+      "reading_scope": "BIBLIOGRAPHIC_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "grounded-theory-analytic-logic.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-logistic-regression",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-logistic-regression.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-machine-learning-evaluation",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-machine-learning-evaluation.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-merriam-tisdell-2016-qualitative-design",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-merriam-tisdell-2016-qualitative-design.md",
+      "reading_scope": "PARTIAL_ORIGINAL_SOURCE_READING",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "qualitative-design-quality.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-myers-2013-qualitative-business",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-myers-2013-qualitative-business.md",
+      "reading_scope": "PARTIAL_ORIGINAL_SOURCE_READING",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "qualitative-design-quality.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-network-analysis",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-network-analysis.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "source-review-0310.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-observational-matching",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-observational-matching.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "gertler-et-al-2018-impact-evaluation-pt.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-online-focus-groups",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-online-focus-groups.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "RETAIN_DISTINCT_ONLINE_MODALITY",
+      "related_active_cards": [
+        "focus-group-design.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-online-interviews",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-online-interviews.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "field-based-interview-sampling.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-panel-data-regression",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-panel-data-regression.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-participant-observation",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-participant-observation.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "qualitative-design-quality.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-phenomenology-management-practices",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-phenomenology-management-practices.md",
+      "reading_scope": "BIBLIOGRAPHIC_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-prosopography",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-prosopography.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-qualitative-causal-inference",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-qualitative-causal-inference.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "design.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-qualitative-validation-transparency",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-qualitative-validation-transparency.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "RETAIN_CROSS_TRADITION_QUALITY_DECISION",
+      "related_active_cards": [
+        "qualitative-design-quality.md",
+        "nowell-2017-trustworthy-analysis.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-random-sampling-uncertainty",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-random-sampling-uncertainty.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "source-review-0158.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-research-canvas-working-paper-intake",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-research-canvas-working-paper-intake.md",
+      "reading_scope": "PARTIAL_COURSE_SLIDES_AND_CANVAS_METADATA",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "design.md",
+        "research-practice-protocol.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-research-simulation",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-research-simulation.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "source-review-0298.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-sampieri-general-research-design",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-sampieri-general-research-design.md",
+      "reading_scope": "BIBLIOGRAPHIC_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "design.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-structural-equation-models",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-structural-equation-models.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-survival-analysis",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-survival-analysis.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-synthetic-control",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-synthetic-control.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "gertler-et-al-2018-impact-evaluation-pt.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-text-as-data",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-text-as-data.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-thiollent-1986-action-research",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-thiollent-1986-action-research.md",
+      "reading_scope": "BIBLIOGRAPHIC_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "tripp-2005-action-research-iterative-evidence.md",
+        "koerich-et-al-2009-action-research.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-visual-data-analysis",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-visual-data-analysis.md",
+      "reading_scope": "TOPIC_FOLDER_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "source-review-0205.md",
+        "source-review-0206.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-wooldridge-introductory-econometrics",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-wooldridge-introductory-econometrics.md",
+      "reading_scope": "BIBLIOGRAPHIC_METADATA_ONLY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "effective-statistical-decisions.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-working-paper-2026-problematization-contribution",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-working-paper-2026-problematization-contribution.md",
+      "reading_scope": "COURSE_SLIDES_SECONDARY_NOT_PRIMARY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "alvesson-sandberg-2011-problematization.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    },
+    {
+      "id": "ppga-working-paper-2026-research-design-alignment",
+      "path": "knowledge/methodology/ppga_drafts/cards/ppga-working-paper-2026-research-design-alignment.md",
+      "reading_scope": "COURSE_SLIDES_SECONDARY_NOT_PRIMARY",
+      "editorial_triage": "KEEP_IN_STAGING_UNTIL_SOURCE_VALIDATION",
+      "related_active_cards": [
+        "design.md",
+        "research-practice-protocol.md"
+      ],
+      "unresolved_active_path_hints": [],
+      "publication_status": "NOT_PROMOTED",
+      "source_level_claim_grade": "[I]/[P] only in 8 partial/teaching-context cases; [P] metadata-only in remaining 42",
+      "prerequisites": "Exact source/version, primary fidelity, rights/originality, duplicate-scope comparison, reviewer record and catalogue/hash checks"
+    }
+  ]
+}
