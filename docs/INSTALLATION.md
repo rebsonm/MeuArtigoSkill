@@ -25,6 +25,23 @@ Meu Artigo checks which services it can actually reach. Google Drive is its pref
 
 You can start without a journal in mind. If you already have one, share its official author guidelines. You do not need to build search strings, matrices or a complete methodology before your first conversation.
 
+## Using current online methodological cards and PDFs
+
+The updated `SKILL.md` in the repository source directs the assistant to
+consult the public GitHub method library automatically **when** methodological
+guidance is needed, after the authorized project-storage preflight. This does
+not mean the installation action itself fetches PDFs. The assistant uses the
+available runtime tools: preferably the small bundled
+`scripts/consult_live_methodology.py` client (Python and HTTPS required), or
+an actually accessible read-only GitHub/web source. The lookup is scoped to
+relevant source entries and one immutable Git commit.
+
+If no network or PDF parser exists, the Skill must say what was not read; no
+scientific gate is autoapproved. The **already published RC.1 ZIP does not
+contain this new live router**, so researchers must install a future
+updated, verified bundle/source to receive the new behavior. Do not use a
+source-code archive as though it were the prepared RC.1 installer.
+
 ## Updating an installed Skill
 
 A new GitHub version does **not** update the copy installed in your assistant. Install a new package deliberately and preserve your existing research files. Ask Meu Artigo to read the actual saved project before continuing; it should not reconstruct decisions from memory alone.

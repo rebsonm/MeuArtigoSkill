@@ -38,6 +38,22 @@ You can converse in Portuguese or another language you prefer. The article's wri
 
 The Skill separates **[L]** consulted literature, **[I]** interpretation/inference and **[P]** original propositions. Consequential scientific choices are made by the researcher, not silently by the assistant.
 
+## Online methodological guidance from the public library
+
+In updated source installations, a substantive methodology question triggers a
+**read-only, on-demand consultation** of the public GitHub method library,
+subject to actual host network and tool access. The Skill selects relevant
+editorial cards, bibliographic prospecting cards and licensed public PDF pages
+from the current catalogue using one pinned commit per consultation. It does
+not download every PDF during installation, nor turn catalogue metadata into
+a claim that an original source was read. See the
+[online consultation contract](references/GITHUB-METHODOLOGY.md).
+
+The existing published v1.0.0-rc.1 installer remains an immutable earlier
+bundle: updating GitHub `main` does **not** silently update that ZIP or any
+user's installed copy. This new behavior requires installation of an updated
+bundle or source with these files.
+
 ## Public third-party PDF and methodology-card library
 
 This repository includes a **public library of 51 third-party academic PDFs**, individually attributed under their publishers' Creative Commons Attribution terms. The papers retain their authors' licenses; they are **not** part of the software's Apache-2.0 license. See the [51-PDF attribution register](knowledge/methodology/PDF-ATTRIBUTIONS.md) and the [PDF catalogue](knowledge/methodology/pdf_catalog.json). One publisher labels its work CC BY without a version; no specific version is invented.

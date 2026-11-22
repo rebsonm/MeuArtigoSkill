@@ -85,7 +85,7 @@ If denied or unanswered, stop substantive work at the storage gate.
 Drive-local files remain staging until [individual Drive folders and files
 are verified](references/drive-delivery.md). ZIP-only upload is incomplete.
 
-Preserve the research question and intended contribution. Choose a provisional route via [method pathways](docs/ROTAS-METODOLOGICAS.md) and [review design](references/review-design.md). `UNDECIDED` is not a choice. Optional guidance: [adaptive map](docs/ADAPTIVE-METHOD-MAP.md), [Skill-only method route](references/METHODOLOGY-CONSULTATION-SKILL-ONLY.md), and [public sources](references/GITHUB-METHODOLOGY.md). Never autoapprove; allow other methods.
+Preserve the research question and intended contribution. Choose a provisional route via [method pathways](docs/ROTAS-METODOLOGICAS.md) and [review design](references/review-design.md). `UNDECIDED` is not a choice. After storage preflight, **automatically attempt GitHub card/PDF reading** for method questions per [online guide](references/GITHUB-METHODOLOGY.md); report unavailable access, no gate approvals. See [Skill-only route](references/METHODOLOGY-CONSULTATION-SKILL-ONLY.md).
 
 Obtain the researcher's original,
 attributable methodological decision; use `scripts/choose_method_route.py`
