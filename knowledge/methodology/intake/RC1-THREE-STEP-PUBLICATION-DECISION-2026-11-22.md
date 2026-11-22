@@ -1,36 +1,27 @@
-# Meu Artigo RC.1 — three-step closure decision, 2026-11-22
+# Meu Artigo RC.1 — publicação em três passos (decisão vigente em 22/11/2026)
 
-**Scope:** public GitHub content, methodological safeguards and final release. This is a factual release-decision record, not a GitHub Release, copyright opinion, scientific gate approval or installation attestation.
+**Decisão expressa e prevalente do mantenedor:** publicar os PDFs de terceiros no GitHub, preservando sua autoria e licenças. Esta determinação SUBSTITUI a recomendação anterior de publicação do acervo apenas como software-only. A Skill em ZIP continua sem embutir PDFs; o repositório público disponibiliza a biblioteca separadamente.
 
-## Step 1 — Public PDFs and editorial cards
+## 1. Publicar PDFs de terceiros e cards, com atribuição
 
-**Observed in public PR #112 development branch:** 51 third-party PDFs in `knowledge/methodology/pdf_catalog.json`; 649 cards comprising 475 [P] bibliographic metadata cards and 174 [I]/[P] editorial cards. On `main`, the RC.1 catalogue and CARD-POLICY are not present; public access to a PR branch is NOT a release or merge.
+- Inventário consolidado: **51 PDFs de terceiros**, **475 fichas de metadados bibliográficos [P]** e **174 cards editoriais [I]/[P]**, totalizando 649 cards.
+- Cada PDF retém direitos/licença próprios; os 51 são catalogados sob condições CC BY declaradas pelos respectivos periódicos. Depois da verificação editorial específica dos dois casos pendentes, o catálogo declara **50 CC BY 4.0** e **1 CC BY sem versão especificada** (permissão de compartilhamento descrita expressamente na página da RPCA). Não inventar versão de licença.
+- Créditos por obra estão no registro `knowledge/methodology/PDF-ATTRIBUTIONS.md` (autores, ano, título, DOI, link editorial, licença e link PDF). Os PDFs não herdam a licença Apache-2.0 do software.
+- O arquivo histórico `SRC-0367` não integra esses 51 PDFs: sua licença CC BY-NC 4.0 requer respeito à finalidade não comercial, e a issue #102 continua aberta para histórico, sem acusação automática de infração. A issue #103 trata dos IDs de Drive em **históricos** já publicamente alcançáveis; merge por squash evita adicionar toda a sequência de commits da PR à `main`, mas não apaga refs históricas preexistentes.
+- Não publicar outros PDFs do Drive privado nem converter os 475 metadados em 475 PDFs. Aprovação editorial dos cards não constitui evidência primária [L] nem validação dos gates científicos.
 
-**Rights triage:** 49 PDF entries claim `CC BY 4.0`, two have unresolved `CC BY` version: `silva-barbosa-lima-2020-analise-tematica-administracao.pdf` and `figueiredo-filho-et-al-2019-seven-reasons-transparency.pdf`. These two are **NOT RELEASE-CLEARED**; full-text lookup is now refused by both Python readers until exact-license review, without falsifying catalogue metadata or removing traceability. Any public binary already reachable through Git history requires separate containment/legal review. The 49 labelled CC BY 4.0 are NOT independently cleared by these automated checks.
+## 2. Corrigir o software sem restringir arbitrariamente uma licença CC BY
 
-**Editorial status:** operational validations `635 VALIDADO_COM_RESTRICOES + 13 CORRIGIDO_E_REVALIDADO + 1 EXCLUIDO_COM_JUSTIFICATIVA` do not equate to 649 scientific acceptances. The user waiver for stage V1-05 closes only documentary triage. Preserve [L]/[I]/[P], source editions, SRC-0385 quarantine, human scientific gates and rights distinctions.
+- `scripts/public_method_pdf.py` e `experimental/conceptual_rag/github_pdf_reader.py` aceitam o rótulo editorial CC BY e CC BY 4.0 (mas rejeitam NC, ND e SA quando não contempladas na política do catálogo); o usuário não terá PDFs licitamente compartilháveis silenciosamente bloqueados por simples ausência de número na etiqueta.
+- Teste sintético `tests/test_pdf_license_version_retrieval.py` cobre ambos os leitores sem baixar PDFs reais. A verificação de hashes do catálogo, metadados, limites e riscos permanece.
+- O acervo distingue fichas [P], orientação editorial [I] e afirmações de fonte primária [L]. A validação operacional (635 condicionais, 13 corrigidos, 1 excluído) **não** é validação científica de 649 fontes.
+- T01 PASS reportado na instalação anterior; T02 FAIL estrito por dois arquivos apresentados pelo host (151/153), recibo reviewed=false; T32/T34 host NOT_RUN. Não publicar como funcionalidade certificada end-to-end ou versão estável.
 
-**Distribution decision:** software-only installer with no third-party PDF binaries. The separate PDF repository history/issues #102/#103 must not be claimed resolved or licensed by that software-only boundary.
+## 3. Integrar ao GitHub e emitir candidata experimental
 
-## Step 2 — Methodological corrections actually committed
+- Manter os 51 PDFs e 649 cards no repositório público. Depois de CI verde para o commit final, integrar PR #112 preferencialmente por **squash** para minimizar propagação de commits intermediários à `main` (sem alegar eliminação de histórico).
+- Divulgar a biblioteca com seus créditos e licenças e o pacote instalável da Skill com hash do **mesmo código final**. Uma GitHub Release é diferente de merge; a publicação de pre-release exige o workflow manual autorizado no `main`, com conferência de metadados, e não pode ser declarada realizada antes de existir.
+- Publicação é **experimental**, com limitações host T02/T32/T34 claramente identificadas. Issues #102/#103 devem continuar abertas até resolução, sem bloquear o direito de publicar PDFs efetivamente CC BY e devidamente creditados.
+- Não aprovar gates, não expor Drive privado, não reescrever histórico/force-push e não incluir obras de terceiros além das autorizadas.
 
-1. `knowledge/methodology/CARD-POLICY.md`: explicitly differentiates public branch vs final release, 475 [P]/174 [I]/[P] cards vs checked primary works [L], conditional operational validations vs independent scientific acceptance and two unversioned PDF licenses.
-2. `scripts/public_method_pdf.py` and `experimental/conceptual_rag/github_pdf_reader.py`: fail closed for PDF full-text retrieval when only an unversioned `CC BY` label exists. Metadata may remain visible; no PDF is downloaded.
-3. `tests/test_pdf_license_version_retrieval.py`: synthetic no-network regression for both readers, covering metadata-only unversioned references and positive selection of explicit CC BY 4.0. `docs/RC1-RELEASE-NOTES-DRAFT-2026-11-22.md` now distinguishes host T01 PASS, T02 FAIL strict, T32/T34 NOT_RUN and Drive-only PASS.
-
-All checks are software/metadata safeguards. No reviewed primary-source [L] claims, journal acceptance, human gate or publication license is created.
-
-## Step 3 — Final GitHub publication decision
-
-**Current status: RELEASE BLOCKED / NO-GO.** The public software source is already visible in the PR branch. The user's request to publish is not sufficient to establish third-party redistribution rights or attest a failed host-integrity test.
-
-Before any final merge, tag, GitHub Release or new release asset, **all** of the following must be proved against the *new HEAD*:
-
-- Passing CI/release audit on the final commit, plus matching new installable ZIP and SHA256 manifest/build receipt. Earlier ZIP build `ff7889ad528670075c81b02dd975d3320008a8a5` is now historical because new source files changed. Do not deploy it as if it included the current code.
-- Public-source rights and privacy disposition for open issues #102 (historic CC BY-NC file/attribution) and #103 (historic Drive identifiers), without secretly rewriting commits or publishing protected PDFs. The two unversioned PDF entries require independent exact-license/attribution confirmation or exclusion from release.
-- Clear written separation of **software experimental release** from scientific/card/source-PDF approval and from the failed actual-host T02 (151/153 with YAML/SVG transformations; unsigned/UNREVIEWED receipt; T32/T34 host NOT_RUN). A stable or fully accepted v1.0.0 label would be misleading.
-- Use the established manual release workflow from `main` ONLY after these requirements and version/date/readme metadata are reconciled. The workflow requires an explicit GitHub maintainer dispatch and confirmation; GitHub source ZIP is not the installable Skill archive.
-
-**What was deliberately NOT done:** merge; tag; final/preview release; deletion/rewrite of public Git history; force-push; sending emails; third-party PDF copying; auto-approval of scientific gates or rights; reinstalling to manufacture T02 PASS.
-
-**Next executable action:** review new PR HEAD CI. If green, hold an explicit software-only publication candidate with unresolved third-party PDFs excluded; dispose of #102/#103 and documented blockers before final Git publication. No further T32/T34 test loops are needed for this rights/candidate separation.
+**Última instrução do mantenedor:** “PUBLIQUE OS PDFS TERCEIROS. Pare de tentar desfazer uma decisão minha”. Esta versão reconcilia o projeto com essa autorização; não reintroduzir recomendação de retirar os 51 PDFs como suposta exigência técnica.
