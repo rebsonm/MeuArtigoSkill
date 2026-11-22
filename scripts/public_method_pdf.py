@@ -159,7 +159,11 @@ def query(question: str, *, ref: str, fetch: Callable = fetch_installed_or_githu
     documents = metadata(fetch(ref, CATALOG, MAX_CATALOG))
     ranked = sorted(((_score(question, doc), doc) for doc in documents),
                     key=lambda x: (-x[0], x[1]["path"]))
-    candidates = [doc for score, doc in ranked if score > 0]
+    # An unversioned CC BY label is not enough to establish the conditions
+    # applicable to the exact archived PDF. Keep its metadata visible while
+    # failing closed for full-text downloads until the license is resolved.
+    candidates = [doc for score, doc in ranked
+                  if score > 0 and doc["license"] == "CC BY 4.0"]
     if not candidates:
         return {"status": "NO_MATCH_IN_PUBLIC_PDF_CATALOG", "pdf_fetched": False,
                 "hits": [], "no_source_read_claim": True,
