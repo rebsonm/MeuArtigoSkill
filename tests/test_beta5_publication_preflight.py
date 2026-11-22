@@ -1,11 +1,11 @@
-"""Preserve published beta history while source advances to test-only RC."""
+"""Preserve published beta history alongside published RC.1 metadata."""
 from pathlib import Path
 import sys
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"scripts"))
-from check_release_metadata import audit_candidate_metadata
+from check_release_metadata import audit_published_source_metadata
 from version_info import read_version
 
 class Beta5PublicationTests(unittest.TestCase):
@@ -16,9 +16,9 @@ class Beta5PublicationTests(unittest.TestCase):
 
     def test_consistent_release_metadata(self):
         self.assertEqual(self.version,"1.0.0-rc.1")
-        self.assertEqual(audit_candidate_metadata(ROOT),[])
+        self.assertEqual(audit_published_source_metadata(ROOT),[])
         self.assertIn("confirmed published",self.readme.lower())
-        self.assertIn("unpublished release candidate",self.readme.lower())
+        self.assertIn("published github experimental prerelease",self.readme.lower())
         self.assertIn("pre-release",self.notes.lower())
         self.assertIn("not a stable",self.notes.lower())
 
@@ -29,15 +29,15 @@ class Beta5PublicationTests(unittest.TestCase):
         self.assertNotIn("v1.0.0 has been published",self.readme)
 
     def test_user_guides_and_recommendation(self):
-        self.assertEqual((ROOT/"OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip(),"0.9.0-beta.6")
+        self.assertEqual((ROOT/"OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip(),"1.0.0-rc.1")
         guide=(ROOT/"docs/TESTE-BETA-PESQUISADORES.md").read_text(encoding="utf-8")
         issue=(ROOT/".github/ISSUE_TEMPLATE/relato-beta.md").read_text(encoding="utf-8")
-        self.assertIn("v0.9.0-beta.6",guide)
+        self.assertIn("v1.0.0-rc.1",guide)
         self.assertIn("saved project",guide)
         self.assertIn("SECURITY.md",issue)
         self.assertIn("Expected result",issue)
         self.assertIn("Actual observed result",issue)
-        self.assertIn("beta.1 and beta.2",self.readme)
+        self.assertIn("v0.9.0-beta.6",self.readme)
 
     def test_manual_publishing_enforces_explicit_confirmation(self):
         workflow=(ROOT/".github/workflows/publish-beta.yml").read_text(encoding="utf-8")
