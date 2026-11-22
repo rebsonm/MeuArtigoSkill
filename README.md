@@ -5,8 +5,8 @@ the repository, including every `.md` methodology card, bibliographic card
 and historical intake note—not only `docs/`. This is an **ongoing
 translation**, not a completed English-only certification. Original scholarly
 titles, quoted source evidence and stable identifiers remain unchanged.
-For the comprehensive audit run `python scripts/audit_all_markdown_language.py`
-(and use `--strict` to fail on unresolved language indicators). The
+See the [English migration guide](docs/ENGLISH-SOURCE-MIGRATION.md) for the
+complete Markdown audit commands and the strict unresolved-language check. The
 installed assistant still responds in the researcher's requested language.
 See [the full migration scope](docs/ENGLISH-SOURCE-MIGRATION.md).
 
