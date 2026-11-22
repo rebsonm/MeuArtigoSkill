@@ -4455,7 +4455,7 @@
       },
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-04-DELTA.json",
       "identity_claim_in_receipt": false,
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0161",
