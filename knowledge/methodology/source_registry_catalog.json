@@ -115,7 +115,7 @@
         "2023",
         "src-0003"
       ],
-      "sha256": "045aea76178885d5f6c33045e8b177320d8e3d76754fb92b667ce7cd532aca73",
+      "sha256": "27e8eae12caa3c6f91fad9cc333d12c0094715e905bf9c8f46ffff4f1e1fcf9c",
       "source_metadata_only": true,
       "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
@@ -138,7 +138,8 @@
         "rights_screen": "CC_ATTRIBUTION_NOTICE_PRESENT_NOT_PDF_CLEARED"
       },
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
-      "scientific_use_validated": false
+      "scientific_use_validated": false,
+      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0004.md",
@@ -155,7 +156,7 @@
         "2014",
         "src-0004"
       ],
-      "sha256": "e77c97075ea6eaef4f99375f3162cc228c9f45d2fccd187ec816f4e4f61e6fa5",
+      "sha256": "8f05b97b5b1418287ce5bec0eba99a0ea21929830feda70849b5354c5dbc5344",
       "source_metadata_only": true,
       "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
@@ -178,7 +179,8 @@
         "rights_screen": "RIGHTS_UNREVIEWED"
       },
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
-      "scientific_use_validated": false
+      "scientific_use_validated": false,
+      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0005.md",
@@ -195,7 +197,7 @@
         "2008",
         "src-0005"
       ],
-      "sha256": "6f15dc53bedb25fab8c5865778a8c23ef39f9c5a3e057bff2b0d8fc273b81823",
+      "sha256": "514ff0f0584e1b40a13b053b867651501412409d97ad9923cf5eec84b8e3885e",
       "source_metadata_only": true,
       "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
@@ -218,7 +220,8 @@
         "rights_screen": "INTERNAL_2007_2008_HEADER_CONFLICT"
       },
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
-      "scientific_use_validated": false
+      "scientific_use_validated": false,
+      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0006.md",
@@ -234,7 +237,7 @@
         "pesquisa",
         "política"
       ],
-      "sha256": "af372cc4a3260c621573266f5c88a3976faa25e64c4f8bfbd086b3a08360fd09",
+      "sha256": "df5be5c2b1c269f3a89c8a23df565c04590d19eb4e40834fc3ea2e38cb7b15aa",
       "source_metadata_only": true,
       "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
@@ -259,7 +262,8 @@
         "provenance_note": null
       },
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
-      "scientific_use_validated": false
+      "scientific_use_validated": false,
+      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0007.md",
@@ -283,7 +287,7 @@
         "2020",
         "src-0007"
       ],
-      "sha256": "b1bc03a93968e9bc33c49e3673c1b9cef555ef947d283afa5457334516f4dcbc",
+      "sha256": "6d040bdfdcc44ef65371c8d1d93ff9c86a83844fd720d6ce659a6b5854b9443a",
       "source_metadata_only": true,
       "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
@@ -306,7 +310,8 @@
         "rights_screen": "CC_BY_WORK_DIFFERENT_BYTES"
       },
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
-      "scientific_use_validated": false
+      "scientific_use_validated": false,
+      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0008.md",
@@ -322,7 +327,7 @@
         "2009",
         "src-0008"
       ],
-      "sha256": "3a3f925d99b62ef1df6a525f461c663aca9c14f902811514ef89ff105c5e277a",
+      "sha256": "b4f913d6937df506850f4e72d271be94597782fa66310dddf3f24312a33d3ce6",
       "source_metadata_only": true,
       "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
@@ -345,7 +350,8 @@
         "rights_screen": "NOT_CLEARED"
       },
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
-      "scientific_use_validated": false
+      "scientific_use_validated": false,
+      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0009.md",
@@ -362,7 +368,7 @@
         "2022",
         "src-0009"
       ],
-      "sha256": "8d60576fda7cabd3f1cb52abd4bf1ee3cb82069f6aa023c6a672e322f9246e09",
+      "sha256": "296fb69f4493cda822736baf92bdbd4748e0995d22c088b7d02c39c79a371a72",
       "source_metadata_only": true,
       "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
@@ -385,7 +391,8 @@
         "rights_screen": "CC_BY_NC_SA_4"
       },
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
-      "scientific_use_validated": false
+      "scientific_use_validated": false,
+      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0010.md",
@@ -403,7 +410,7 @@
         "2021",
         "src-0010"
       ],
-      "sha256": "b568da7fbbc7de6ba4974b3043ab11f77daa355f0db7c313f9b6b516e1c9fc49",
+      "sha256": "0af0cb862777effd3af9203c4f7778b10c5f8efbe69a2b101572e64ce3582e74",
       "source_metadata_only": true,
       "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
@@ -426,7 +433,8 @@
         "rights_screen": "NOT_CLEARED"
       },
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
-      "scientific_use_validated": false
+      "scientific_use_validated": false,
+      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0011.md",
@@ -447,7 +455,7 @@
         "operacional",
         "aplicável"
       ],
-      "sha256": "1990c8b0c303caaf2ab6d887d7f827aaf7f93003fdbbf5f39a0da9e5be103d51",
+      "sha256": "5c59dd80d23e01912b7d4390db3e44e79f08fac1c2904e94f7bf459a7e538154",
       "source_metadata_only": true,
       "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
@@ -472,7 +480,8 @@
         "provenance_note": null
       },
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
-      "scientific_use_validated": false
+      "scientific_use_validated": false,
+      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0012.md",
@@ -490,7 +499,7 @@
         "2016",
         "src-0012"
       ],
-      "sha256": "5723a27095ef2c149cf1a4583a1ce32f0ffa4f3e53881a50c6e1ae3aad9acf38",
+      "sha256": "9f56f056bf242a704a78bdf9853e42b11f8ac9f35f09e7e9c5ce6b757a4f0c6e",
       "source_metadata_only": true,
       "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
@@ -513,7 +522,8 @@
         "rights_screen": "NOT_CLEARED"
       },
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
-      "scientific_use_validated": false
+      "scientific_use_validated": false,
+      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0013.md",
@@ -529,7 +539,7 @@
         "alvesetal",
         "src-0013"
       ],
-      "sha256": "2a110e69964abf88b29276f9b33008ed61c54886a6c6e528ddd4782da67c6e6a",
+      "sha256": "9f500225daf093a054de20faefa924144060781f888ef0e21c598046c237904c",
       "source_metadata_only": true,
       "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
@@ -552,7 +562,8 @@
         "rights_screen": "NOT_CLEARED"
       },
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
-      "scientific_use_validated": false
+      "scientific_use_validated": false,
+      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0014.md",
@@ -569,7 +580,7 @@
         "2015",
         "src-0014"
       ],
-      "sha256": "9219774515e576e25eb0e74059f354b7a36789679a06a363c662574b43f70d2c",
+      "sha256": "79a6adfbc7d4f93cf82ac1a453f0721cc7ba86f8b93f28fc3fb3d843edde01e7",
       "source_metadata_only": true,
       "bibliography_match_status": "SOURCE_PDF_WORK_VERIFIED",
       "rights_review": "NOT_CHECKED",
@@ -592,7 +603,8 @@
         "rights_screen": "NOT_CLEARED"
       },
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
-      "scientific_use_validated": false
+      "scientific_use_validated": false,
+      "translation_fidelity_status": "MACHINE_TRANSLATED_REVIEW_PENDING"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0015.md",
