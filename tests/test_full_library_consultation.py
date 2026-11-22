@@ -48,6 +48,24 @@ class TestUnifiedLibrary(unittest.TestCase):
         with self.assertRaises(ValueError):
             lib.select([self.a], card_id="SRC-0001", mode="release")
 
+    def test_real_repository_catalogues_contain_all_649(self):
+        root = Path(__file__).resolve().parents[1]
+        def local_fetch(ref, path, cap):
+            data = (root / path).read_bytes()
+            self.assertLessEqual(len(data), cap)
+            return data
+        rows = lib.load("a"*40, fetch=local_fetch)
+        self.assertEqual(len(rows), 649)
+        self.assertEqual(len({r["id"] for r in rows}), 649)
+        self.assertEqual(len({r["path"] for r in rows}), 649)
+        q = lib.query(ref="a"*40, list_all=True, mode="audit", fetch=local_fetch)
+        self.assertEqual(len(q["hits"]), 649)
+        self.assertEqual(q["dispositions"].get("EXCLUIDO_COM_JUSTIFICATIVA"), 1)
+        approved = lib.query(ref="a"*40, list_all=True, mode="guidance", fetch=local_fetch)
+        self.assertEqual(len(approved["hits"]), 648)
+        self.assertEqual([r["id"] for r in q["hits"] if not r["available_for_guidance"]],
+                         ["SRC-0385"])
+
     def test_hash_and_whole_catalogue_coverage_from_mock(self):
         import json
         src = []
