@@ -531,7 +531,7 @@
     "outras etapas"
   ],
   "drive_canonical_sync": {
-    "file_id": "1-dccVbAUX5-xLw6fq027cB15oVqOjl_U",
+    "file_id": null,
     "initial_update_saved_and_readback_verified": true,
     "intermediate_update_write_acknowledged": true,
     "intermediate_readback_confirmed": false,
