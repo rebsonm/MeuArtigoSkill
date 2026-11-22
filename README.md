@@ -1,5 +1,15 @@
 # Meu Artigo
 
+**Repository language:** Maintained authorial text is intended to be in English throughout
+the repository, including every `.md` methodology card, bibliographic card
+and historical intake note—not only `docs/`. This is an **ongoing
+translation**, not a completed English-only certification. Original scholarly
+titles, quoted source evidence and stable identifiers remain unchanged.
+For the comprehensive audit run `python scripts/audit_all_markdown_language.py`
+(and use `--strict` to fail on unresolved language indicators). The
+installed assistant still responds in the researcher's requested language.
+See [the full migration scope](docs/ENGLISH-SOURCE-MIGRATION.md).
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24397699.svg)](https://doi.org/10.5281/zenodo.24397699)
 
 **A research-support Skill for people preparing scientific articles.** Meu Artigo helps a researcher organize a question, consider appropriate methods, find and assess sources, document decisions, and prepare a manuscript. You remain responsible for the scientific work.

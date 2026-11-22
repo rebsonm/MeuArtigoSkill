@@ -48,6 +48,14 @@ python scripts/audit_source_language.py
 python scripts/audit_source_language.py --strict
 ```
 
+The new `audit_all_markdown_language.py` also inspects the methodology
+cards, bibliographic prospecting Markdown and historical intake records.
+Its default mode is a non-blocking inventory, while `--strict` fails
+when significant candidate untranslated prose remains. It does not
+translate sources or claim semantic equivalence. The original strict
+release-source command continues to cover its narrower legacy scope
+until the complete migration is finished.
+
 The first command **reports** outstanding files without blocking
 incremental engineering Pull Requests. The second returns a nonzero
 status if significant Portuguese prose remains. The manual
