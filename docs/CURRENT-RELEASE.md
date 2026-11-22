@@ -2,6 +2,15 @@
 
 **Status verified on 2026-11-22:** [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) is the latest **published experimental GitHub prerelease**. It was released at 18:09:28 UTC on 2026-11-22. It is neither stable v1.0.0 nor independently scientifically validated.
 
+**Important archival distinction (22 November 2026):** the public `main`
+branch has later English-language card and documentation corrections (PRs
+#121, #122 and #124). These changes were not incorporated into the
+previously published immutable RC.1 ZIP. A separate, precisely pinned
+source-only snapshot is being prepared for Zenodo review; it is **not** a
+new versioned installer, GitHub release, stable v1.0.0, or verified Zenodo
+deposit. See [Zenodo preparation](ZENODO-DEPOSIT-PREPARATION.md) and
+[the rights-holder notice](../RIGHTSHOLDER-NOTICE.md).
+
 ## Official downloads
 
 - [Installable Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip)

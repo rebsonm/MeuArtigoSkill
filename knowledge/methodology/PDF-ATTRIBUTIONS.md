@@ -2,6 +2,15 @@
 
 **This public GitHub repository distributes 51 third-party academic PDFs, subject to each work's declared license and attribution requirements.**
 
+**Author and publisher requests:** This is a non-commercial educational and
+research-support initiative. If you are a rights holder and would like a
+publication's hosting, credit, or presence in the catalogue reviewed or
+removed, email **[rebsonm@gmail.com](mailto:rebsonm@gmail.com)** with its
+title/DOI and relevant link. We will examine good-faith requests and make
+appropriate corrections or withdrawals. This invitation does not replace
+the applicable copyright license or permission to redistribute. See the
+[full notice](../../RIGHTSHOLDER-NOTICE.md).
+
 Each PDF remains the property of its authors or other rightsholders and retains its own license. **The software's Apache-2.0 license does not apply to third-party PDFs.** The list below documents distribution and attribution; it does not turn editorial methodology cards into independently verified primary-source evidence, replace the original publication, or authorize uses beyond each individual license.
 
 The copies are available in [`knowledge/methodology/pdfs/`](pdfs/), with one GitHub PDF link per work. Authors, publication year, DOI, original publisher, and declared license are listed to preserve provenance. The project does not claim endorsement from the original authors, journals, or publishers.

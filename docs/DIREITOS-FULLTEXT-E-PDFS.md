@@ -2,6 +2,15 @@
 # Full text usage, licenses and redistribution rights
 
 <a id="quatro-permissões-diferentes"></a>
+**Good-faith correction and takedown requests:** Meu Artigo has a
+non-commercial, educational research-support purpose. Authors, publishers
+or other rights holders wishing to request correction or removal of an
+included work should write to **[rebsonm@gmail.com](mailto:rebsonm@gmail.com)**
+with the publication title/DOI and file link. The project will review the
+request and address it where warranted. This is not a substitute for the
+required license or permission; details are in the
+[public rights-holder notice](../RIGHTSHOLDER-NOTICE.md).
+
 ## Four different permissions
 
 1. **Bibliographic discovery:** a DOI, a Crossref/OpenAlex record or a found link identifies a publication. DOES NOT determine license or download permission.
