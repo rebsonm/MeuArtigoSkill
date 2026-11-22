@@ -1,16 +1,17 @@
 {
   "schema": "PPGA_REFERENCED_LITERATURE_CARDS_V1",
   "date": "2026-11-22",
-  "count": 25,
+  "count": 30,
   "by_area": {
     "working-paper": 10,
     "quantitative": 10,
-    "project-methods": 5
+    "project-methods": 5,
+    "organizational-methods": 5
   },
   "source_policy": "Cite verified articles and books only; do not cite course slides; no scientific [L] claims from unread full text",
   "active_catalog_additions": 0,
   "base_ppga_staged_cards": 50,
-  "extension_ppga_staged_cards": 25,
+  "extension_ppga_staged_cards": 30,
   "records": [
     {
       "path": "knowledge/methodology/ppga_drafts/literature_cards/alvesson-sandberg-2011-problematization.md",
@@ -233,6 +234,51 @@
       "area": "project-methods",
       "reference": "Meiying Chen, T. S. Martins, L. Zhang and H. Dong (2025), Digital Transformation in Project Management: A Systematic Review and Research Agenda",
       "url": "https://doi.org/10.3390/systems13080625",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/langley-1999-process-theorizing.md",
+      "area": "organizational-methods",
+      "reference": "Ann Langley (1999), Strategies for Theorizing from Process Data",
+      "url": "https://doi.org/10.5465/amr.1999.2553248",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/edmondson-mcmanus-2007-methodological-fit.md",
+      "area": "organizational-methods",
+      "reference": "Amy C. Edmondson and Stacy E. McManus (2007), Methodological Fit in Management Field Research",
+      "url": "https://doi.org/10.5465/amr.2007.26586086",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/gioia-corley-hamilton-2013-inductive-research.md",
+      "area": "organizational-methods",
+      "reference": "Dennis A. Gioia, Kevin G. Corley and Aimee L. Hamilton (2013), Seeking Qualitative Rigor in Inductive Research: Notes on the Gioia Methodology",
+      "url": "https://doi.org/10.1177/1094428112452151",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/sein-2011-action-design-research.md",
+      "area": "organizational-methods",
+      "reference": "Maung K. Sein, Ola Henfridsson, Sandeep Purao, Matti Rossi and Rikard Lindgren (2011), Action Design Research",
+      "url": "https://doi.org/10.2307/23043488",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/van-de-ven-poole-1995-organizational-change.md",
+      "area": "organizational-methods",
+      "reference": "Andrew H. Van de Ven and Marshall Scott Poole (1995), Explaining Development and Change in Organizations",
+      "url": "https://doi.org/10.5465/amr.1995.9508080329",
       "scientific_status": "PENDING",
       "evidence": "P-only",
       "original_pdf_included": false

@@ -1,6 +1,6 @@
 # PPGA sources-first methodology extension — 2026-11-22
 
-This directory contains **25 new original methodology literature cards**: **10 Working Paper** cards, **10 quantitative and causal-method** cards, and **3 cross-disciplinary Project Management** cards. The first 50 PPGA card candidates remain in `../cards/`; the combined staging backlog is now **75** candidates. The existing 174 active editorial cards and 475 SRC entries are unchanged.
+This directory contains **30 new original methodology literature cards**: **10 Working Paper** cards, **10 quantitative and causal-method** cards, and **3 cross-disciplinary Project Management** cards. The first 50 PPGA card candidates remain in `../cards/`; the combined staging backlog is now **80** candidates. The existing 174 active editorial cards and 475 SRC entries are unchanged.
 
 **Primary research references only:** every new card points to an independently identifiable journal article or book and poses original [P] research-design checks, never using classroom slides as scholarly evidence. Source publisher metadata/available abstracts were checked, not full source text claim-by-claim. Every source remains subject to edition, rights, fidelity and duplicate-scope verification.
 
@@ -38,3 +38,11 @@ This supplements the private PPGA course inventories in Working Paper, Quantitat
 
 - [Costanza Mariani (2026), Are Projects Ready for AI — or for the Value It Generates?](https://doi.org/10.1016/j.ijproman.2026.102846) — [decision card](./mariani-2026-ai-project-value.md), [P] only
 - [Meiying Chen, T. S. Martins, L. Zhang and H. Dong (2025), Digital Transformation in Project Management: A Systematic Review and Research Agenda](https://doi.org/10.3390/systems13080625) — [decision card](./chen-et-al-2025-digital-projects-review.md), [P] only
+
+## Additional organizational and process-method references
+
+- [Ann Langley (1999), Strategies for Theorizing from Process Data](https://doi.org/10.5465/amr.1999.2553248) — [decision card](./langley-1999-process-theorizing.md)
+- [Amy C. Edmondson and Stacy E. McManus (2007), Methodological Fit in Management Field Research](https://doi.org/10.5465/amr.2007.26586086) — [decision card](./edmondson-mcmanus-2007-methodological-fit.md)
+- [Dennis A. Gioia, Kevin G. Corley and Aimee L. Hamilton (2013), Seeking Qualitative Rigor in Inductive Research: Notes on the Gioia Methodology](https://doi.org/10.1177/1094428112452151) — [decision card](./gioia-corley-hamilton-2013-inductive-research.md)
+- [Maung K. Sein, Ola Henfridsson, Sandeep Purao, Matti Rossi and Rikard Lindgren (2011), Action Design Research](https://doi.org/10.2307/23043488) — [decision card](./sein-2011-action-design-research.md)
+- [Andrew H. Van de Ven and Marshall Scott Poole (1995), Explaining Development and Change in Organizations](https://doi.org/10.5465/amr.1995.9508080329) — [decision card](./van-de-ven-poole-1995-organizational-change.md)
