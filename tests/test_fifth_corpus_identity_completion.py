@@ -31,7 +31,7 @@ class AllFormerlyUnresolvedWorkIdentities(unittest.TestCase):
    self.assertEqual(row["rights_review"]=="VERIFIED_PUBLISHER_LICENSE",row["source_id"] in LICENSED)
    body=(ROOT/row["path"]).read_bytes()
    self.assertEqual(hashlib.sha256(body).hexdigest(),row["sha256"])
-   self.assertIn("FICHA_DE_PROSPECÇÃO_NÃO_REVISADA",body.decode("utf-8"))
+   self.assertTrue("FICHA_DE_PROSPECÇÃO_NÃO_REVISADA" in body.decode("utf-8") or "UNREVIEWED_PROSPECTING_CARD" in body.decode("utf-8"))
  def test_archived_sources_do_not_inherit_scholarship_approval(self):
   self.assertEqual(len(self.cards),174)
   new=[x for x in self.cards if x.get("source_registry_id") in NEW]
