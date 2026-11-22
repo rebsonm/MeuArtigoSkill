@@ -1,0 +1,223 @@
+{
+  "schema": "PPGA_REFERENCED_LITERATURE_CARDS_V1",
+  "date": "2026-11-22",
+  "count": 23,
+  "by_area": {
+    "working-paper": 10,
+    "quantitative": 10,
+    "project-methods": 3
+  },
+  "source_policy": "Cite verified articles and books only; do not cite course slides; no scientific [L] claims from unread full text",
+  "active_catalog_additions": 0,
+  "base_ppga_staged_cards": 50,
+  "extension_ppga_staged_cards": 23,
+  "records": [
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/alvesson-sandberg-2011-problematization.md",
+      "area": "working-paper",
+      "reference": "Mats Alvesson and Jörgen Sandberg (2011), Generating Research Questions Through Problematization",
+      "url": "https://doi.org/10.5465/amr.2009.0188",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/bispo-2023-types-contributions.md",
+      "area": "working-paper",
+      "reference": "Marcelo de Souza Bispo (2023), Contribuições Teóricas, Práticas, Metodológicas e Didáticas em Artigos Científicos",
+      "url": "https://doi.org/10.1590/1982-7849rac2023220256.por",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/bono-mcnamara-2011-research-design.md",
+      "area": "working-paper",
+      "reference": "Joyce E. Bono and Gerry McNamara (2011), Publishing in AMJ—Part 2: Research Design",
+      "url": "https://doi.org/10.5465/amj.2011.64869103",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/grant-pollock-2011-setting-hook.md",
+      "area": "working-paper",
+      "reference": "Adam M. Grant and Timothy G. Pollock (2011), Publishing in AMJ—Part 3: Setting the Hook",
+      "url": "https://doi.org/10.5465/amj.2011.4000",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/zhang-shaw-2012-methods-results.md",
+      "area": "working-paper",
+      "reference": "Yan (Anthea) Zhang and Jason D. Shaw (2012), Publishing in AMJ—Part 5: Crafting the Methods and Results",
+      "url": "https://doi.org/10.5465/amj.2012.4001",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/geletkanycz-tepper-2012-discussion.md",
+      "area": "working-paper",
+      "reference": "Marta A. Geletkanycz and Bennett J. Tepper (2012), Publishing in AMJ—Part 6: Discussing the Implications",
+      "url": "https://doi.org/10.5465/amj.2012.4002",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/elsbach-knippenberg-2020-integrative-review.md",
+      "area": "working-paper",
+      "reference": "Kimberly D. Elsbach and Daan van Knippenberg (2020), Creating High-Impact Literature Reviews: An Argument for 'Integrative Reviews'",
+      "url": "https://doi.org/10.1111/joms.12581",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/jaakkola-2020-conceptual-paper-design.md",
+      "area": "working-paper",
+      "reference": "Elina Jaakkola (2020), Designing Conceptual Articles: Four Approaches",
+      "url": "https://doi.org/10.1007/s13162-020-00161-0",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/sutton-staw-1995-what-theory-is-not.md",
+      "area": "working-paper",
+      "reference": "Robert I. Sutton and Barry M. Staw (1995), What Theory Is Not",
+      "url": "https://doi.org/10.2307/2393788",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/whetten-1989-theoretical-contribution.md",
+      "area": "working-paper",
+      "reference": "David A. Whetten (1989), What Constitutes a Theoretical Contribution?",
+      "url": "https://doi.org/10.5465/amr.1989.4308371",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/wooldridge-econometric-identification.md",
+      "area": "quantitative",
+      "reference": "Jeffrey M. Wooldridge (2020), Introductory Econometrics: A Modern Approach, 7th ed.",
+      "url": "https://www.cengage.com/c/introductory-econometrics-a-modern-approach-7e-wooldridge/9781337558860",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/angrist-pischke-2009-design-based-causality.md",
+      "area": "quantitative",
+      "reference": "Joshua D. Angrist and Jörn-Steffen Pischke (2009), Mostly Harmless Econometrics: An Empiricist's Companion",
+      "url": "https://press.princeton.edu/books/paperback/9780691120355/mostly-harmless-econometrics",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/gelman-hill-vehtari-2020-regression-uncertainty.md",
+      "area": "quantitative",
+      "reference": "Andrew Gelman, Jennifer Hill and Aki Vehtari (2020), Regression and Other Stories",
+      "url": "https://www.cambridge.org/highereducation/books/regression-and-other-stories/DD20DD6C9057118581076E54E40C372C",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/hernan-robins-2020-causal-target-trials.md",
+      "area": "quantitative",
+      "reference": "Miguel A. Hernán and James M. Robins (2020), Causal Inference: What If",
+      "url": "https://miguelhernan.org/whatifbook",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/callaway-santanna-2021-staggered-did.md",
+      "area": "quantitative",
+      "reference": "Brantly Callaway and Pedro H. C. Sant'Anna (2021), Difference-in-Differences with Multiple Time Periods",
+      "url": "https://doi.org/10.1016/j.jeconom.2020.06.003",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/abadie-2021-synthetic-control.md",
+      "area": "quantitative",
+      "reference": "Alberto Abadie (2021), Using Synthetic Controls: Feasibility, Data Requirements, and Methodological Aspects",
+      "url": "https://doi.org/10.1257/jel.20191450",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/hayes-2022-mediation-moderation.md",
+      "area": "quantitative",
+      "reference": "Andrew F. Hayes (2022), Introduction to Mediation, Moderation, and Conditional Process Analysis, 3rd ed.",
+      "url": "https://www.guilford.com/books/Introduction-to-Mediation-Moderation-and-Conditional-Process-Analysis/Andrew-Hayes/9781462549030",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/kline-2023-structural-equation-models.md",
+      "area": "quantitative",
+      "reference": "Rex B. Kline (2023), Principles and Practice of Structural Equation Modeling, 5th ed.",
+      "url": "https://www.guilford.com/books/Principles-and-Practice-of-Structural-Equation-Modeling/Rex-Kline/9781462551910",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/wasserstein-lazar-2016-pvalue-interpretation.md",
+      "area": "quantitative",
+      "reference": "Ronald L. Wasserstein and Nicole A. Lazar (2016), The ASA Statement on p-Values: Context, Process, and Purpose",
+      "url": "https://doi.org/10.1080/00031305.2016.1154108",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/benjamini-hochberg-1995-multiple-tests.md",
+      "area": "quantitative",
+      "reference": "Yoav Benjamini and Yosef Hochberg (1995), Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+      "url": "https://doi.org/10.1111/j.2517-6161.1995.tb02031.x",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/mirzaei-mabin-zwikael-2025-hybrid.md",
+      "area": "project-methods",
+      "reference": "Maryam Mirzaei, Victoria J. Mabin and Ofer Zwikael (2025), Customising Hybrid Project Management Methodologies",
+      "url": "https://doi.org/10.1080/09537287.2024.2349231",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/geels-locatelli-2024-sustainability-transitions.md",
+      "area": "project-methods",
+      "reference": "Frank W. Geels and Giorgio Locatelli (2024), Broadening Project Studies to Address Sustainability Transitions",
+      "url": "https://doi.org/10.1016/j.ijproman.2024.102646",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    },
+    {
+      "path": "knowledge/methodology/ppga_drafts/literature_cards/martinsuo-tilebein-birollo-2024-strategic-projects.md",
+      "area": "project-methods",
+      "reference": "Miia Martinsuo, Meike Tilebein and Gustavo Birollo (2024), Lifecycles, Processes, and Practices in Strategic Projects and Programs",
+      "url": "https://doi.org/10.1016/j.ijproman.2024.102653",
+      "scientific_status": "PENDING",
+      "evidence": "P-only",
+      "original_pdf_included": false
+    }
+  ]
+}
