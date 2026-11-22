@@ -87,3 +87,7 @@ All six now carry their provisional disposition inside the draft card itself; no
 - **Registry-level count before isolated PR #117 is integrated:** 13 repeated-title groups / 27 entries; this reflects the stale title. **Expected after SRC-0372 title-only correction:** 12 repeated-title groups / 25 entries; one group is still a slides-vs-article distinction. This is a deterministic interpretation of the planned single-record correction, **not** proof of merge.
 - No SRC deletion, DOI invention, promotion of [P] to [L], publication of PDF or gate approval is authorized by this note. The erratum PR is separate from this PPGA card intake PR.
 
+
+## Actual private-PDF binary check (2026-11-22)
+
+See [PPGA-PDF-BYTE-COMPARISON-2026-11-22.md](./PPGA-PDF-BYTE-COMPARISON-2026-11-22.md) and its [machine-readable metadata](./PPGA-PDF-BYTE-COMPARISON-2026-11-22.json). **All 12 repeated-title groups in the corrected source-title registry have been checked against their original PDF bytes for the claimed duplicates.** Exactly 10 groups have byte-identical PDFs (11 extra copy appearances including one three-copy group); one pair is the same DOI with different PDF packaging; one pair is slides versus journal article. This check is narrower than all 475 archived source files. File-level provenance remains; no SRC deleted and no rights/scientific promotion.
