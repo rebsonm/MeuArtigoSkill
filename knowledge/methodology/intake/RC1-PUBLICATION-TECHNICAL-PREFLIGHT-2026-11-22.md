@@ -56,7 +56,7 @@ A candidata é uma Skill textual com scripts utilitários. **Nenhum arquivo `req
 
 ## Changelog e notas de release
 
-- O [`CHANGELOG.md`](../../../../CHANGELOG.md) **já contém a seção `1.0.0-rc.1 — UNRELEASED`** com a evolução de controles de DEC/TRACE, rotas, rastreabilidade, biblioteca metodológica, melhorias da inicialização e procedimentos de Drive/host. **Não reescrever históricos nem acrescentar data de lançamento antes de publicar**.
+- O [`CHANGELOG.md`](../../../CHANGELOG.md) **já contém a seção `1.0.0-rc.1 — UNRELEASED`** com a evolução de controles de DEC/TRACE, rotas, rastreabilidade, biblioteca metodológica, melhorias da inicialização e procedimentos de Drive/host. **Não reescrever históricos nem acrescentar data de lançamento antes de publicar**.
 - O `CITATION.cff` declara versão `1.0.0-rc.1`, autor e Apache-2.0, **sem `date-released`**. O DOI registrado se refere ao software/registro arquivado, não prova depósito desta versão.
 - Criado rascunho de notas: [`docs/RC1-RELEASE-NOTES-DRAFT-2026-11-22.md`](../../../docs/RC1-RELEASE-NOTES-DRAFT-2026-11-22.md) com descrição, novidades, limitações, checksums e instruções de instalação. Está **DRAFT_NOT_PUBLISHED**.
 - **Alterações a deixar para o ato de release, não executadas agora:** aprovar a versão exata de pacote; verificar/atualizar links de instalação e README que ainda recomendam beta.6; validar texto final do changelog, data e referência de release, associar tag e checksums ao mesmo commit/release; publicar GitHub pre-release somente mediante decisão separada do mantenedor.
