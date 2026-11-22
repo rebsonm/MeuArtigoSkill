@@ -135,6 +135,14 @@ def reconcile():
             # Prospecting-only access, NEVER a resolution of copy identity or rights.
             status = 'VALIDADO_COM_RESTRICOES'
             evidence.append(str(amendment_path))
+        if sid == 'SRC-0385':
+            excluded = amendment.get('editorial_exclusion', {})
+            if (excluded.get('id') != sid
+                    or excluded.get('status') != 'EXCLUIDO_COM_JUSTIFICATIVA'
+                    or excluded.get('source_card_sha256') != digest(path)):
+                raise ValueError('QUARANTINE_EXCLUSION_PROVENANCE_INVALID')
+            status = 'EXCLUIDO_COM_JUSTIFICATIVA'
+            evidence.append(str(amendment_path))
         item['sha256'] = digest(path)
         item['operational_disposition'] = status
         item['scientific_use_validated'] = False
@@ -142,7 +150,9 @@ def reconcile():
         dispositions.append({'id': sid, 'path': path, 'kind': 'BIBLIOGRAPHIC_METADATA',
             'disposition': status, 'sha256': item['sha256'], 'evidence': evidence,
             'primary_source_rechecked_this_cycle': False,
-            'reason': ('Unresolved edition/authenticity or copy provenance; see individual V1 finding.'
+            'reason': ('Editorial exclusion: Smith/OEconomia private attribution uncorroborated; distinct Dacombe source confirmed. Not a claim of fraud or nonexistence.'
+                       if sid == 'SRC-0385' else
+                       'Unresolved edition/authenticity or copy provenance; bibliography prospecting [P] only.'
                        if sid in residuals else 'Integrity and receipt linkage checked; usable only as a bibliographic lead, not scientific evidence.'),
             'limits': ['No new private PDF reading', 'No primary claim support verified',
                        'No new redistribution permission', 'No scientific gate approval']})
@@ -233,11 +243,13 @@ def check():
             if doc['sha256'] != row['sha256'] or doc.get('operational_disposition') != row['disposition']:
                 raise ValueError('CATALOG_DISPOSITION_MISMATCH')
     quarantine = next(r for r in entries if r['id'] == 'SRC-0385')
-    if quarantine['disposition'] != 'BLOQUEADO_POR_EVIDENCIA':
+    if quarantine['disposition'] != 'EXCLUIDO_COM_JUSTIFICATIVA':
         raise ValueError('QUARANTINE_BREACH')
     amendment = read(LIB / 'intake/operational-scope-amendment.json')
     if report.get('operational_scope_amendment') != str(LIB / 'intake/operational-scope-amendment.json'):
         raise ValueError('OPERATIONAL_AMENDMENT_NOT_RECORDED')
+    if quarantine['sha256'] != amendment.get('editorial_exclusion', {}).get('source_card_sha256'):
+        raise ValueError('QUARANTINE_EXCLUSION_HASH_MISMATCH')
     for sid in amendment['source_lead_ids']:
         entry = next(r for r in entries if r['id'] == sid)
         if entry['disposition'] != 'VALIDADO_COM_RESTRICOES':
