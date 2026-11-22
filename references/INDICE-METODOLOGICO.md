@@ -73,3 +73,8 @@ must not be silently translated, copied or redistributed.
 - [PRISMA 2020 reporting audit: 27 items, flow diagram and appropriate extensions](PRISMA-2020-CONTROLE.md). This is an original control template, not a claim of PRISMA compliance or an original PDF copy.
 - [Snyder, Marzi B-SLR, SALSA, Salvador and PRISMA review-design choice matrix](REVIEW-METHOD-ROUTES.md). Decisions remain with the researcher, and third-party source reuse rights are assessed separately.
 - The expanded external method library now indexes 88 provisional editorial cards, 38 licensed original source PDFs, and 475 separate bibliographic prospects [P], not 475 source-read scientific summaries.
+
+## Public research-writing navigation
+
+- [ABCD introduction, methodological coherence and AI source verification](RESEARCH-WRITING-AND-METHOD-FIT.md) — original editorial guide; not a copied handout or new indexed card.
+- [Direct publication, PDF rights and hash integrity](PUBLIC-METHODOLOGY-INTAKE-POLICY.md) — publication without draft PR; existing branch protections and required audit still apply.
