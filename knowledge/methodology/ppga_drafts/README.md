@@ -13,3 +13,11 @@ See [intake and coverage ledger](./PPGA-METHODOLOGY-INVENTORY-2026-11-22.md). Re
 - [Original repeated-title SRC audit](./SRC-DUPLICATE-TITLE-AUDIT-2026-11-22.md) remains for provenance and warnings. SRC-0372's distinct-work title correction is proposed in separate **draft PR #117**, not merged into this intake.
 
 Next operational step: validate the specific publication/edition and method-decision gap of candidate cards against primary sources, with independent copyright/originality and scientific/editorial checks before any individually recorded promotion. Leave all seven scientific gates PENDING.
+
+## Published-reference expansion across PPGA courses (2026-11-22)
+
+The [source-first literature extension](./literature_cards/README.md) now adds **23 separate English-language, original [P] cards** grounded in named journal articles and academic books — **10 on Working Paper**, **10 on quantitative methods**, and **3 on Project Management research strategies**. References point to the scholarly works or publisher/book entries, not to course slide decks. These 23 are **not included in the initial 50-card editorial triage report**; that report remains a snapshot of the first intake. Total staged PPGA candidates: **73** (50 initial + 23 literature). Zero were activated or upgraded to scientific [L].
+
+Separately, [draft PR #118](https://github.com/rebsonm/MeuArtigoSkill/pull/118) adds **four unchanged CC BY 4.0 original project-methods research PDFs** and updates the public PDF catalogue and credit register from 51 to 55 PDFs. This is source distribution with attribution, not scientific gate approval, and the two PRs remain independent.
+
+For course-by-course coverage across quantitative, Working Paper, projects, organizational methods, theory and strategy, see [cross-course methods coverage](./PPGA-CROSS-COURSE-METHODS-COVERAGE-2026-11-22.md).
