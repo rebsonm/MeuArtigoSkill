@@ -1,4 +1,4 @@
-# Methodological decision card — Impact evaluation — gertler-et-al-2018-impact-evaluation-pt
+# Methodological decision card — Quasi-experimental impact identification — gertler-et-al-2018-impact-evaluation-pt
 
 Card ID: gertler-et-al-2018-impact-evaluation-pt
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1596/978-1-4648-
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Avaliação de impacto: identificar contrafactual e versão da obra
 ## Original English methodological guidance [I]
-State the intervention, comparison logic, estimand, and identifying assumptions.
+Define comparison groups, treatment timing, identifying assumptions and robust counterfactual checks.
 
 ## Limits and alternative interpretations [I]
-Association or temporal coincidence cannot establish a causal effect.
+A before/after comparison or study-label alone is not a causal design.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

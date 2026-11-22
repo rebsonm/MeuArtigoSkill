@@ -1,4 +1,4 @@
-# Methodological decision card — Document analysis — source-checked-0010
+# Methodological decision card — Documentary methodology — source-checked-0010
 
 Card ID: source-checked-0010
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -9,10 +9,10 @@ Related bibliographic record: SRC-0010
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Análise documental como percurso metodológico na pesquisa qualitativa
 ## Original English methodological guidance [I]
-Specify provenance, document selection, genre, missing records, and coding or interpretation.
+Differentiate document analysis, content interpretation and evidence of observed organizational behavior.
 
 ## Limits and alternative interpretations [I]
-Official documents must not be equated automatically with lived or organizational practice.
+Archival selection, document genre and missing records can bias conclusions.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

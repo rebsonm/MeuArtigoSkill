@@ -1,4 +1,4 @@
-# Methodological decision card — Reviews and synthesis — prisma-s-2021-search-reporting
+# Methodological decision card — Search-strategy reporting — prisma-s-2021-search-reporting
 
 Card ID: prisma-s-2021-search-reporting
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -10,10 +10,10 @@ Source locator for independent verification: https://doi.org/10.1186/s13643-020-
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): PRISMA-S (2021): transparência de estratégias e fontes de busca
 ## Original English methodological guidance [I]
-Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
+Record databases, search dates, exact strings, field tags, limits and reproducible retrieval decisions.
 
 ## Limits and alternative interpretations [I]
-A PRISMA-style flowchart does not replace a defensible review design.
+Search reporting standards do not by themselves establish critical appraisal or synthesis validity.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

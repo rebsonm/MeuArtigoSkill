@@ -1,4 +1,4 @@
-# Methodological decision card — Reviews and synthesis — macgeorge-2025-qualitative-futures-llm
+# Methodological decision card — Futures research and generative AI — macgeorge-2025-qualitative-futures-llm
 
 Card ID: macgeorge-2025-qualitative-futures-llm
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1177/19467567251
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Pesquisa de futuros: diferenciação entre rapidez e interpretação
 ## Original English methodological guidance [I]
-Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
+Separate rapid scenario generation from contextual interpretation and stakeholder validation.
 
 ## Limits and alternative interpretations [I]
-A PRISMA-style flowchart does not replace a defensible review design.
+A plausible generated future is not a forecast supported by empirical evidence.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

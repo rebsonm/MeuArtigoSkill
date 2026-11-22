@@ -1,4 +1,4 @@
-# Methodological decision card — Difference-in-differences — card-krueger-1994-nj-pa-did-study
+# Methodological decision card — Quasi-experimental impact identification — card-krueger-1994-nj-pa-did-study
 
 Card ID: card-krueger-1994-nj-pa-did-study
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -9,10 +9,10 @@ Related bibliographic record: SRC-0258
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Estudo clássico de salário mínimo: contraste quase experimental e limites
 ## Original English methodological guidance [I]
-Specify treated and comparison units, timing, estimand, and assumptions about counterfactual trends.
+Define comparison groups, treatment timing, identifying assumptions and robust counterfactual checks.
 
 ## Limits and alternative interpretations [I]
-Check anticipation, spillovers, changing composition, and rival time trends.
+A before/after comparison or study-label alone is not a causal design.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

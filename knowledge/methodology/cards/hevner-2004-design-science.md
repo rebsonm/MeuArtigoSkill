@@ -8,10 +8,10 @@ Independent scientific review: NOT APPROVED.
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Hevner et al. (2004): artefato, relevância, rigor e avaliação em DSR
 ## Original English methodological guidance [I]
-Separate artifact design, demonstration, evaluation, and iteration.
+Separate problem relevance, artifact construction, demonstration, evaluation and iterative refinement.
 
 ## Limits and alternative interpretations [I]
-Demonstration of use does not by itself establish effectiveness.
+An artifact demonstration cannot be relabeled independent effectiveness evaluation.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

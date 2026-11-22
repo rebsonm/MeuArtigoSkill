@@ -1,4 +1,4 @@
-# Methodological decision card — Sampling and saturation — campos-saidel-2022-qualitative-sampling-decisions
+# Methodological decision card — Qualitative sampling and stopping decisions — campos-saidel-2022-qualitative-sampling-decisions
 
 Card ID: campos-saidel-2022-qualitative-sampling-decisions
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -10,10 +10,10 @@ Source locator for independent verification: https://editora.sepq.org.br/rpq/art
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Amostragem qualitativa: escolhas técnicas, contextuais e éticas
 ## Original English methodological guidance [I]
-Explain sample selection, heterogeneity, coverage, and stopping rationale.
+Justify the sample through heterogeneity, study purpose, analytic depth and explicit stopping rationale.
 
 ## Limits and alternative interpretations [I]
-Do not treat a predetermined interview count as proof of saturation.
+Do not claim saturation solely from a convenient predetermined sample size.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

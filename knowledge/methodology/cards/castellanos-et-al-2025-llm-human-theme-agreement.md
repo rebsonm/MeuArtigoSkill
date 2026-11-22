@@ -1,4 +1,4 @@
-# Methodological decision card — Thematic analysis — castellanos-et-al-2025-llm-human-theme-agreement
+# Methodological decision card — Comparing human and LLM qualitative coding — castellanos-et-al-2025-llm-human-theme-agreement
 
 Card ID: castellanos-et-al-2025-llm-human-theme-agreement
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.2196/64447
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Acordo temático 247/310: associação entre interpretações não prova equivalência
 ## Original English methodological guidance [I]
-Align the role of codes and themes with the analytic tradition and research question.
+Specify unit of comparison, coding framework, adjudication and interpretation of observed agreement.
 
 ## Limits and alternative interpretations [I]
-Coding agreement or frequency alone does not demonstrate interpretive validity.
+Agreement proportions do not establish equivalent meaning, causal validity or universal quality.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

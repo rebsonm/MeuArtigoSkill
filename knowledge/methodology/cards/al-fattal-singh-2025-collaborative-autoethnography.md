@@ -1,4 +1,4 @@
-# Methodological decision card — Ethnography and observation — al-fattal-singh-2025-collaborative-autoethnography
+# Methodological decision card — Comparative autoethnography and AI-assisted interpretation — al-fattal-singh-2025-collaborative-autoethnography
 
 Card ID: al-fattal-singh-2025-collaborative-autoethnography
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1177/16094069251
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Autoetnografia comparativa: profundidade interpretativa e eficiência não são a mesma medida
 ## Original English methodological guidance [I]
-Describe field access, positionality, observation protocols, and interpretation.
+Compare analytic speed with situated interpretive depth and researcher reflexivity using distinct criteria.
 
 ## Limits and alternative interpretations [I]
-The observer's presence and situated access can affect what is recorded.
+Two researchers' reflexive accounts do not establish population-level agreement or a randomized performance comparison.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

@@ -1,4 +1,4 @@
-# Methodological decision card — Thematic analysis — friedman-owen-vanpuymbrouck-2024-caution
+# Methodological decision card — Critical alternatives to automated qualitative interpretation — friedman-owen-vanpuymbrouck-2024-caution
 
 Card ID: friedman-owen-vanpuymbrouck-2024-caution
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1177/14687941241
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Cautela interpretativista: questões que uma codificação automática não resolve
 ## Original English methodological guidance [I]
-Align the role of codes and themes with the analytic tradition and research question.
+Compare AI and non-AI research paths against epistemological commitments and participant obligations.
 
 ## Limits and alternative interpretations [I]
-Coding agreement or frequency alone does not demonstrate interpretive validity.
+Using GenAI is not inevitable and declining it is a legitimate methodological choice.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

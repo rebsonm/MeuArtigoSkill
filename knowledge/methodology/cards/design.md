@@ -1,33 +1,24 @@
-# Methodological decision card — Impact evaluation — design
+# Research design and intended inference
 
 Card ID: design
-Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
-Independent scientific review: NOT APPROVED.
+Publication state: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_RIGHTS_REVIEW
+Research evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_ONLY
+Rights status: UNVERIFIED_FOR_PUBLICATION — bibliographic leads do not establish reproduction rights or scientific fidelity.
 
-## Original topic and research use
-- Original catalogued topic label (preserved as metadata): Study design and research inference
-## Original English methodological guidance [I]
-State the intervention, comparison logic, estimand, and identifying assumptions.
+## Conceptual orientation
 
-## Limits and alternative interpretations [I]
-Association or temporal coincidence cannot establish a causal effect.
-Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
+Define the research problem and the type of inference being sought before choosing a method. Descriptive, interpretive, associative, predictive, and causal questions demand different warrants and designs. Quantitative, qualitative, mixed, theoretical, and artifact-based designs are not interchangeable labels.
 
-## Researcher prompts [P]
-- Which research question, theory, unit of analysis and data make this method defensible?
-- Which competing design or interpretation could explain the observations?
-- What contrary evidence or primary-source passage must be checked before asserting [L] support?
-- Which decisions, omissions and sensitivity checks should be reported?
+## Researcher decisions
 
-## Scientific governance and rights
-Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
-Underlying publication rights: UNVERIFIED_FOR_PUBLICATION
-The article/book/PDF is not reproduced or authorized for redistribution by this card.
-No source-specific result, independent review, or scientific gate is approved.
-Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+Compare possible designs by expected evidence, feasible collection, analysis, validity threats, ethical constraints, and what cannot be concluded. A research onion can help check coherence among choices but is not a scoring rule or automatic proof of rigor. Do not approve a gate solely because a design field was filled.
 
-## Provenance
-This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
-Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/design.md
-Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW
+## Source trail
+
+Bibliographic pointers: Saunders, Lewis and Thornhill, *Research Methods for Business Students*; Creswell and Creswell, *Research Design*. This is original editorial guidance, not reproduced book text, and it does not claim direct consultation of any specific edition for an ongoing study.
+
+## Question-to-method vertical coherence
+
+Trace **phenomenon -> unresolved issue -> research question -> objective -> theoretical constructs -> required observations -> sampling/analysis -> bounded contribution**. For each arrow ask what evidence would falsify a claim, what rival interpretation remains plausible, and whether the necessary data actually exist. Distinguish procedures that are *planned*, *performed* or *independently verified*. A causal promise cannot be justified by descriptive-only observations, and interpretive designs need not invent numerical hypotheses.
+
+This is an original editorial check; source leads for validation include Bono & McNamara (2011), DOI 10.5465/amj.2011.64869103. See [public writing and method-fit guide](../../../references/RESEARCH-WRITING-AND-METHOD-FIT.md).

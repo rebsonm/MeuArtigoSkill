@@ -1,4 +1,4 @@
-# Methodological decision card — Document analysis — source-review-0011
+# Methodological decision card — Documentary methodology — source-review-0011
 
 Card ID: source-review-0011
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.21714/2238-104X2
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Análise Documental Ilustrada em Administração Pública: uma Proposta Operacional (Re)Aplicável
 ## Original English methodological guidance [I]
-Specify provenance, document selection, genre, missing records, and coding or interpretation.
+Differentiate document analysis, content interpretation and evidence of observed organizational behavior.
 
 ## Limits and alternative interpretations [I]
-Official documents must not be equated automatically with lived or organizational practice.
+Archival selection, document genre and missing records can bias conclusions.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

@@ -1,4 +1,4 @@
-# Methodological decision card — AI-assisted research — ibrahim-voyer-2025-technological-reflexivity
+# Methodological decision card — Technological reflexivity — ibrahim-voyer-2025-technological-reflexivity
 
 Card ID: ibrahim-voyer-2025-technological-reflexivity
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1177/14687941251
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Reflexividade tecnológica antes de interpretar textos com chatbots
 ## Original English methodological guidance [I]
-Record the AI's task, model version, prompts, researcher decisions, and verification steps.
+Record how LLM framing, interface and researcher interpretations may shape qualitative reading.
 
 ## Limits and alternative interpretations [I]
-Fluent output, speed, or apparent human agreement does not validate scientific interpretation.
+A conversational tool is not a neutral observer or epistemological substitute.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

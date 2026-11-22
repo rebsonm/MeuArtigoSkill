@@ -1,4 +1,4 @@
-# Methodological decision card — Reviews and synthesis — messner-smith-richards-2025-epistemic-incongruences
+# Methodological decision card — Epistemic compatibility of GenAI and qualitative inquiry — messner-smith-richards-2025-epistemic-incongruences
 
 Card ID: messner-smith-richards-2025-epistemic-incongruences
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1177/16094069251
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Incongruência epistemológica entre linguagem de IA e experiência humana
 ## Original English methodological guidance [I]
-Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
+Examine how language-model outputs differ from situated meaning-making and researcher experience.
 
 ## Limits and alternative interpretations [I]
-A PRISMA-style flowchart does not replace a defensible review design.
+Textual plausibility cannot stand in for contextual human understanding.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

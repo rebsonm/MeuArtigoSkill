@@ -1,4 +1,4 @@
-# Methodological decision card — Thematic analysis — barros-et-al-2024-llm-qualitative-systematic-mapping
+# Methodological decision card — Mapping LLM uses in qualitative studies — barros-et-al-2024-llm-qualitative-systematic-mapping
 
 Card ID: barros-et-al-2024-llm-qualitative-systematic-mapping
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.5281/zenodo.1417
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Mapeamento de aplicações de LLM: frequência não é acurácia metodológica
 ## Original English methodological guidance [I]
-Align the role of codes and themes with the analytic tradition and research question.
+Separate counts of reported applications from measurements of their analytical validity.
 
 ## Limits and alternative interpretations [I]
-Coding agreement or frequency alone does not demonstrate interpretive validity.
+Publication frequency is not a performance metric.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

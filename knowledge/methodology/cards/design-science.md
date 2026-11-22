@@ -1,33 +1,18 @@
-# Methodological decision card — Design science research — design-science
+# Design science and evaluation of research artifacts
 
 Card ID: design-science
-Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
-Independent scientific review: NOT APPROVED.
+Publication state: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_RIGHTS_REVIEW
+Research evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_ONLY
+Rights status: UNVERIFIED_FOR_PUBLICATION — bibliographic leads do not establish reproduction rights or scientific fidelity.
 
-## Original topic and research use
-- Original catalogued topic label (preserved as metadata): Design science and artifact evaluation
-## Original English methodological guidance [I]
-Separate artifact design, demonstration, evaluation, and iteration.
+## Conceptual orientation
 
-## Limits and alternative interpretations [I]
-Demonstration of use does not by itself establish effectiveness.
-Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
+When a study creates an artifact, distinguish its motivating problem, requirements, design rationale, implementation, and independent assessment. The existence of a prototype does not demonstrate effectiveness. Technical unit tests are evidence of particular software behaviors, not automatically evidence of academic rigor or practical impact.
 
-## Researcher prompts [P]
-- Which research question, theory, unit of analysis and data make this method defensible?
-- Which competing design or interpretation could explain the observations?
-- What contrary evidence or primary-source passage must be checked before asserting [L] support?
-- Which decisions, omissions and sensitivity checks should be reported?
+## Researcher decisions
 
-## Scientific governance and rights
-Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
-Underlying publication rights: UNVERIFIED_FOR_PUBLICATION
-The article/book/PDF is not reproduced or authorized for redistribution by this card.
-No source-specific result, independent review, or scientific gate is approved.
-Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+State what the proposed artifact must accomplish, how success and failure will be observable, what comparison is defensible, and which claims remain untested. Explain the limits of any synthetic or simulated evaluation. Keep the researcher's gate decisions separate from the execution log.
 
-## Provenance
-This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
-Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/design-science.md
-Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW
+## Source trail
+
+Bibliographic pointers: Hevner et al., *Design Science in Information Systems Research* (2004); Peffers et al., *A Design Science Research Methodology for Information Systems Research* (2007). Original editorial synthesis, not copied full text or independent scientific validation.

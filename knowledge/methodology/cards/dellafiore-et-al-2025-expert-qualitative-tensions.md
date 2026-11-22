@@ -1,4 +1,4 @@
-# Methodological decision card — Qualitative interviewing — dellafiore-et-al-2025-expert-qualitative-tensions
+# Methodological decision card — Claims about AI roles in qualitative research — dellafiore-et-al-2025-expert-qualitative-tensions
 
 Card ID: dellafiore-et-al-2025-expert-qualitative-tensions
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1177/10497323251
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Entrevistas com especialistas: separar percepção de IA e desempenho verificado
 ## Original English methodological guidance [I]
-Record recruitment, interview protocol, consent, participant context, and analytic trail.
+Separate expert perceptions, documented use, and experimentally demonstrated capabilities.
 
 ## Limits and alternative interpretations [I]
-Interview accounts are situated testimony rather than complete behavioral records.
+Reported enthusiasm or task descriptions are not causal performance estimates.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

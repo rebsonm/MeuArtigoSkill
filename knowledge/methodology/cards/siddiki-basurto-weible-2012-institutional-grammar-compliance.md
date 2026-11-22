@@ -1,4 +1,4 @@
-# Methodological decision card — Thematic analysis — siddiki-basurto-weible-2012-institutional-grammar-compliance
+# Methodological decision card — Institutional grammar and compliance — siddiki-basurto-weible-2012-institutional-grammar-compliance
 
 Card ID: siddiki-basurto-weible-2012-institutional-grammar-compliance
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://onlinelibrary.wiley.com/doi
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Gramática institucional: o texto da regra não é o comportamento de conformidade
 ## Original English methodological guidance [I]
-Align the role of codes and themes with the analytic tradition and research question.
+Distinguish encoded rules from actors' observed behavior and explain the coding grammar.
 
 ## Limits and alternative interpretations [I]
-Coding agreement or frequency alone does not demonstrate interpretive validity.
+Institutional rules cannot establish compliance without observational evidence.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

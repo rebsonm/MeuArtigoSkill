@@ -1,4 +1,4 @@
-# Methodological decision card — Document analysis — source-checked-0008
+# Methodological decision card — Documentary methodology — source-checked-0008
 
 Card ID: source-checked-0008
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -9,10 +9,10 @@ Related bibliographic record: SRC-0008
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Pesquisa documental: pistas teóricas e metodológicas
 ## Original English methodological guidance [I]
-Specify provenance, document selection, genre, missing records, and coding or interpretation.
+Differentiate document analysis, content interpretation and evidence of observed organizational behavior.
 
 ## Limits and alternative interpretations [I]
-Official documents must not be equated automatically with lived or organizational practice.
+Archival selection, document genre and missing records can bias conclusions.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

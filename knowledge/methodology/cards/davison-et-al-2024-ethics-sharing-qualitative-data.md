@@ -1,4 +1,4 @@
-# Methodological decision card — Reviews and synthesis — davison-et-al-2024-ethics-sharing-qualitative-data
+# Methodological decision card — Secondary use and sharing of qualitative data — davison-et-al-2024-ethics-sharing-qualitative-data
 
 Card ID: davison-et-al-2024-ethics-sharing-qualitative-data
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1111/isj.12504
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Dados para treinamento: distinguir finalidade analítica de exploração secundária
 ## Original English methodological guidance [I]
-Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
+State consent, purpose limitation, confidentiality and risks of model training on research records.
 
 ## Limits and alternative interpretations [I]
-A PRISMA-style flowchart does not replace a defensible review design.
+Analytical access is not automatically consent for secondary exploitation or redistribution.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

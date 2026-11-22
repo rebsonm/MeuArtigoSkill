@@ -1,4 +1,4 @@
-# Methodological decision card — Difference-in-differences — santanna-2025-classical-2x2-did
+# Methodological decision card — Quasi-experimental impact identification — santanna-2025-classical-2x2-did
 
 Card ID: santanna-2025-classical-2x2-did
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -9,10 +9,10 @@ Related bibliographic record: SRC-0255
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Diferenças-em-diferenças 2×2: pressupostos antes do coeficiente
 ## Original English methodological guidance [I]
-Specify treated and comparison units, timing, estimand, and assumptions about counterfactual trends.
+Define comparison groups, treatment timing, identifying assumptions and robust counterfactual checks.
 
 ## Limits and alternative interpretations [I]
-Check anticipation, spillovers, changing composition, and rival time trends.
+A before/after comparison or study-label alone is not a causal design.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

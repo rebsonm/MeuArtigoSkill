@@ -1,4 +1,4 @@
-# Methodological decision card — Research design and methods — creswell-creswell-2021-mixed-research-design
+# Methodological decision card — Mixed-methods inference — creswell-creswell-2021-mixed-research-design
 
 Card ID: creswell-creswell-2021-mixed-research-design
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -8,10 +8,10 @@ Independent scientific review: NOT APPROVED.
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Creswell e Creswell (2021): vincular pergunta à abordagem qualitativa, quantitativa ou mista
 ## Original English methodological guidance [I]
-Link the question, constructs, data sources, and inferential strategy.
+Specify when quantitative and qualitative strands connect and how their integration changes the interpretation.
 
 ## Limits and alternative interpretations [I]
-Limit claims to the evidence and alternatives the design can support.
+Simply collecting two types of data is not a mixed-methods integration.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

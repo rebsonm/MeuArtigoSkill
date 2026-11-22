@@ -1,4 +1,4 @@
-# Methodological decision card — Qualitative interviewing — kon-et-al-2024-interviews-three-transcripts
+# Methodological decision card — Small-sample AI summarization — kon-et-al-2024-interviews-three-transcripts
 
 Card ID: kon-et-al-2024-interviews-three-transcripts
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1038/s41433-024-
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Três entrevistas clínicas não validam sumarização qualitativa universal
 ## Original English methodological guidance [I]
-Record recruitment, interview protocol, consent, participant context, and analytic trail.
+Disclose number and type of transcripts, sampling variation and adjudicated omissions.
 
 ## Limits and alternative interpretations [I]
-Interview accounts are situated testimony rather than complete behavioral records.
+A very small clinical transcript sample cannot establish broadly generalizable validity.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

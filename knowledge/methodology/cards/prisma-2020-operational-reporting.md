@@ -1,4 +1,4 @@
-# Methodological decision card — Thematic analysis — prisma-2020-operational-reporting
+# Methodological decision card — Transparent review reporting — prisma-2020-operational-reporting
 
 Card ID: prisma-2020-operational-reporting
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -10,10 +10,10 @@ Source locator for independent verification: https://www.prisma-statement.org/pr
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): PRISMA 2020: controle operacional dos 27 itens e fluxograma auditável
 ## Original English methodological guidance [I]
-Align the role of codes and themes with the analytic tradition and research question.
+Trace eligibility, screened records, exclusions and synthesis decisions against the appropriate checklist.
 
 ## Limits and alternative interpretations [I]
-Coding agreement or frequency alone does not demonstrate interpretive validity.
+A flowchart and checklist cannot compensate for omitted full-text assessment.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

@@ -1,4 +1,4 @@
-# Methodological decision card — Reviews and synthesis — source-review-0274
+# Methodological decision card — Spatial data methods — source-review-0274
 
 Card ID: source-review-0274
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -9,10 +9,10 @@ Related bibliographic record: SRC-0274
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Spatial Data Analysis
 ## Original English methodological guidance [I]
-Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
+Document geolocation, scale, spatial autocorrelation and uncertainty in map-based inference.
 
 ## Limits and alternative interpretations [I]
-A PRISMA-style flowchart does not replace a defensible review design.
+Aggregated spatial relations are not individual causal evidence.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

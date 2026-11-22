@@ -1,4 +1,4 @@
-# Methodological decision card — AI-assisted research — nguyen-welch-2025-epistemic-risks-qualitative-ai
+# Methodological decision card — Epistemic compatibility of GenAI and qualitative inquiry — nguyen-welch-2025-epistemic-risks-qualitative-ai
 
 Card ID: nguyen-welch-2025-epistemic-risks-qualitative-ai
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1177/10944281251
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Risco epistêmico: conversar com dados não equivale a interpretá-los
 ## Original English methodological guidance [I]
-Record the AI's task, model version, prompts, researcher decisions, and verification steps.
+Examine how language-model outputs differ from situated meaning-making and researcher experience.
 
 ## Limits and alternative interpretations [I]
-Fluent output, speed, or apparent human agreement does not validate scientific interpretation.
+Textual plausibility cannot stand in for contextual human understanding.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

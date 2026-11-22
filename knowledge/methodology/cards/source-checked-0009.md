@@ -1,4 +1,4 @@
-# Methodological decision card — Document analysis — source-checked-0009
+# Methodological decision card — Documentary methodology — source-checked-0009
 
 Card ID: source-checked-0009
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.46743/2160-3715/
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Conducting a Qualitative Document Analysis
 ## Original English methodological guidance [I]
-Specify provenance, document selection, genre, missing records, and coding or interpretation.
+Differentiate document analysis, content interpretation and evidence of observed organizational behavior.
 
 ## Limits and alternative interpretations [I]
-Official documents must not be equated automatically with lived or organizational practice.
+Archival selection, document genre and missing records can bias conclusions.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

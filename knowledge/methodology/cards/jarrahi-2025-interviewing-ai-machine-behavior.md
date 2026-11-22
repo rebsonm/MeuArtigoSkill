@@ -1,4 +1,4 @@
-# Methodological decision card — Qualitative interviewing — jarrahi-2025-interviewing-ai-machine-behavior
+# Methodological decision card — AI-system behavior as a research object — jarrahi-2025-interviewing-ai-machine-behavior
 
 Card ID: jarrahi-2025-interviewing-ai-machine-behavior
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1177/20539517251
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Entrevistar sistemas de IA: investigação de comportamento, não participante humano
 ## Original English methodological guidance [I]
-Record recruitment, interview protocol, consent, participant context, and analytic trail.
+Specify whether prompts are probes of system responses rather than interviews with human participants.
 
 ## Limits and alternative interpretations [I]
-Interview accounts are situated testimony rather than complete behavioral records.
+Model behavior cannot be interpreted as human subjective experience.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

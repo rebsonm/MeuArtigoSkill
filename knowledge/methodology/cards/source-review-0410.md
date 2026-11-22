@@ -1,4 +1,4 @@
-# Methodological decision card — Reviews and synthesis — source-review-0410
+# Methodological decision card — Exploratory factor analysis — source-review-0410
 
 Card ID: source-review-0410
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -9,10 +9,10 @@ Related bibliographic record: SRC-0410
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Uso da análise fatorial exploratória em psicologia
 ## Original English methodological guidance [I]
-Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
+Check dimensionality assumptions, sampling adequacy, loadings, rotations and interpretation.
 
 ## Limits and alternative interpretations [I]
-A PRISMA-style flowchart does not replace a defensible review design.
+Factor labels are theoretically interpreted, not identified by software automatically.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

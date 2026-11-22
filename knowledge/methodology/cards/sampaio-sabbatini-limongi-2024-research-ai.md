@@ -1,4 +1,4 @@
-# Methodological decision card — AI-assisted research — sampaio-sabbatini-limongi-2024-research-ai
+# Methodological decision card — Responsible AI research assistance — sampaio-sabbatini-limongi-2024-research-ai
 
 Card ID: sampaio-sabbatini-limongi-2024-research-ai
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -8,10 +8,10 @@ Independent scientific review: NOT APPROVED.
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Sampaio, Sabbatini e Limongi (2024): uso responsável de IA generativa na pesquisa
 ## Original English methodological guidance [I]
-Record the AI's task, model version, prompts, researcher decisions, and verification steps.
+Record AI tasks, prompt/model versions, human decisions, claim provenance and disclosure.
 
 ## Limits and alternative interpretations [I]
-Fluent output, speed, or apparent human agreement does not validate scientific interpretation.
+Generated output is not primary scientific evidence without independent examination.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

@@ -1,4 +1,4 @@
-# Methodological decision card — AI-assisted research — misra-et-al-2026-inductive-deductive-code-comparison
+# Methodological decision card — Comparing human and LLM qualitative coding — misra-et-al-2026-inductive-deductive-code-comparison
 
 Card ID: misra-et-al-2026-inductive-deductive-code-comparison
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1177/16094069261
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Comparar códigos de LLMs com humanos sem confundir volume e validade
 ## Original English methodological guidance [I]
-Record the AI's task, model version, prompts, researcher decisions, and verification steps.
+Specify unit of comparison, coding framework, adjudication and interpretation of observed agreement.
 
 ## Limits and alternative interpretations [I]
-Fluent output, speed, or apparent human agreement does not validate scientific interpretation.
+Agreement proportions do not establish equivalent meaning, causal validity or universal quality.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

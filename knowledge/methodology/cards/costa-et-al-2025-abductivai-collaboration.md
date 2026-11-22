@@ -1,4 +1,4 @@
-# Methodological decision card — Research design and methods — costa-et-al-2025-abductivai-collaboration
+# Methodological decision card — Abductive and guided AI-assisted analysis — costa-et-al-2025-abductivai-collaboration
 
 Card ID: costa-et-al-2025-abductivai-collaboration
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1177/16094069251
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): AbductivAI: IA como interlocutora abductiva, com responsabilidade humana
 ## Original English methodological guidance [I]
-Link the question, constructs, data sources, and inferential strategy.
+Log surprising observations, proposed explanations, AI alternatives and human adjudication.
 
 ## Limits and alternative interpretations [I]
-Limit claims to the evidence and alternatives the design can support.
+Automatically suggested themes or hypotheses need corroboration and competing explanations.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

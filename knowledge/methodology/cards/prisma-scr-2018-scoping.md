@@ -1,4 +1,4 @@
-# Methodological decision card — Reviews and synthesis — prisma-scr-2018-scoping
+# Methodological decision card — Scoping-review reporting — prisma-scr-2018-scoping
 
 Card ID: prisma-scr-2018-scoping
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -10,10 +10,10 @@ Source locator for independent verification: https://www.prisma-statement.org/sc
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): PRISMA-ScR (2018): relato específico para revisões de escopo
 ## Original English methodological guidance [I]
-Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
+Specify the mapping purpose, inclusion logic, charting of evidence and relevant reporting decisions.
 
 ## Limits and alternative interpretations [I]
-A PRISMA-style flowchart does not replace a defensible review design.
+Mapping a field is not necessarily a systematic review of intervention effectiveness.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

@@ -1,4 +1,4 @@
-# Methodological decision card — AI-assisted research — dahal-et-al-2025-generativity-quality-crises
+# Methodological decision card — Representational and legitimacy risks in GenAI research — dahal-et-al-2025-generativity-quality-crises
 
 Card ID: dahal-et-al-2025-generativity-quality-crises
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.3389/frma.2025.1
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Crises de representação, legitimação e práxis na pesquisa qualitativa com GenAI
 ## Original English methodological guidance [I]
-Record the AI's task, model version, prompts, researcher decisions, and verification steps.
+Examine who is represented, whose interpretation is authorized, and which practices are affected.
 
 ## Limits and alternative interpretations [I]
-Fluent output, speed, or apparent human agreement does not validate scientific interpretation.
+Procedural convenience should not displace reflexivity and research ethics.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

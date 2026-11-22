@@ -1,4 +1,4 @@
-# Methodological decision card — AI-assisted research — jiang-et-al-2025-equity-research-ai-comparability
+# Methodological decision card — Comparing human and LLM qualitative coding — jiang-et-al-2025-equity-research-ai-comparability
 
 Card ID: jiang-et-al-2025-equity-research-ai-comparability
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.3102/0013189X251
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Comparabilidade de códigos em pesquisa sobre equidade exige contexto
 ## Original English methodological guidance [I]
-Record the AI's task, model version, prompts, researcher decisions, and verification steps.
+Specify unit of comparison, coding framework, adjudication and interpretation of observed agreement.
 
 ## Limits and alternative interpretations [I]
-Fluent output, speed, or apparent human agreement does not validate scientific interpretation.
+Agreement proportions do not establish equivalent meaning, causal validity or universal quality.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

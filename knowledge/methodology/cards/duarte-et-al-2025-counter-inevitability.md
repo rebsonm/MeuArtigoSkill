@@ -1,4 +1,4 @@
-# Methodological decision card — Reviews and synthesis — duarte-et-al-2025-counter-inevitability
+# Methodological decision card — Critical alternatives to automated qualitative interpretation — duarte-et-al-2025-counter-inevitability
 
 Card ID: duarte-et-al-2025-counter-inevitability
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.5281/zenodo.1734
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Questionar a inevitabilidade de IA como decisão metodológica legítima
 ## Original English methodological guidance [I]
-Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
+Compare AI and non-AI research paths against epistemological commitments and participant obligations.
 
 ## Limits and alternative interpretations [I]
-A PRISMA-style flowchart does not replace a defensible review design.
+Using GenAI is not inevitable and declining it is a legitimate methodological choice.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

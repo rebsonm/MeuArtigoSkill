@@ -1,4 +1,4 @@
-# Methodological decision card — AI-assisted research — jones-2025-genai-disclosure-heuristic
+# Methodological decision card — Transparent disclosure of GenAI use — jones-2025-genai-disclosure-heuristic
 
 Card ID: jones-2025-genai-disclosure-heuristic
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1177/16094069251
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Declarar o uso de GenAI: heurística de rastreabilidade não é certificado de rigor
 ## Original English methodological guidance [I]
-Record the AI's task, model version, prompts, researcher decisions, and verification steps.
+State each AI contribution, model/tool, human review, and effect on research outputs.
 
 ## Limits and alternative interpretations [I]
-Fluent output, speed, or apparent human agreement does not validate scientific interpretation.
+Disclosure alone does not certify rigorous collection, analysis or source verification.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

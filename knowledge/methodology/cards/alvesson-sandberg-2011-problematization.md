@@ -1,4 +1,4 @@
-# Methodological decision card — Research design and methods — alvesson-sandberg-2011-problematization
+# Methodological decision card — Problematisation and research questions — alvesson-sandberg-2011-problematization
 
 Card ID: alvesson-sandberg-2011-problematization
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -10,10 +10,10 @@ Source locator for independent verification: https://doi.org/10.5465/amr.2009.01
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Alvesson e Sandberg (2011): problematização de pressupostos como origem da pergunta
 ## Original English methodological guidance [I]
-Link the question, constructs, data sources, and inferential strategy.
+Identify assumptions taken for granted by a literature and formulate a meaningful theoretical tension.
 
 ## Limits and alternative interpretations [I]
-Limit claims to the evidence and alternatives the design can support.
+A simple claim that few papers exist is not necessarily a defensible theoretical gap.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

@@ -1,34 +1,34 @@
-# Methodological decision card — Surveys and measurement — lietz-2009-survey-questionnaire
+# Survey questionnaire quality: response wording is a measurement decision
 
 Card ID: lietz-2009-survey-questionnaire
-Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
-Independent scientific review: NOT APPROVED.
-Source locator for independent verification: https://doi.org/10.2501/S147078530920120X
+Publication status: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_SCIENTIFIC_REVIEW
+Research evidence type: [I] EDITORIAL_SYNTHESIS_ONLY
+Source consultation: Original PDF text inspected for identification, research question, abstract and methodological scope on 2026-11-21. No comprehensive claim-by-claim page verification.
+Third-party full text reproduced here: NO
 
-## Original topic and research use
-- Original catalogued topic label (preserved as metadata): Survey questionnaire quality: response wording is a measurement decision
-## Original English methodological guidance [I]
-Document the population, sampling, item wording, measurement validity, and nonresponse.
+## Intended methodological question
 
-## Limits and alternative interpretations [I]
-Questionnaire responses alone do not prove population representativeness.
-Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
+Why do small choices in survey wording and response formats change what is actually measured?
 
-## Researcher prompts [P]
-- Which research question, theory, unit of analysis and data make this method defensible?
-- Which competing design or interpretation could explain the observations?
-- What contrary evidence or primary-source passage must be checked before asserting [L] support?
-- Which decisions, omissions and sensitivity checks should be reported?
+## Original editorial guidance
 
-## Scientific governance and rights
-Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
-Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
-The article/book/PDF is not reproduced or authorized for redistribution by this card.
-No source-specific result, independent review, or scientific gate is approved.
-Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+Treat comprehension, reference period, question ordering, response alternatives and respondent burden as potential sources of measurement bias. Pilot cognitive understanding and revise the instrument before collecting substantive responses.
 
-## Provenance
-This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
-Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/lietz-2009-survey-questionnaire.md
-Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW
+## Decision checks for the researcher
+
+Document target population, operationalization of constructs, language, translation, pretesting, nonresponse options, sensitive items and effects of instrument mode.
+
+## Limitations and counterevidence
+
+A standardized questionnaire is not proof of construct validity or population representativeness. Survey design and sampling require independent checks.
+
+## Source bibliographic lead
+
+Lietz, P. (2009/2010). Research into questionnaire design: A summary of the literature. International Journal of Market Research 52(2).
+
+DOI: not independently verified for this edition.
+Publisher/repository entry: https://doi.org/10.2501/S147078530920120X
+
+## Attribution and reuse boundaries
+
+This is an independent, short editorial consultation card, not a translation, a long excerpt, or a substitute for the third-party work. The archived source PDF must not be redistributed based on possession in a private research library. This card is not accepted [L] proof for a scientific claim until a reader verifies the exact original passage and edition. The investigator must decide the method and approve human scientific gates.

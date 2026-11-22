@@ -1,4 +1,4 @@
-# Methodological decision card — Thematic analysis — nguyen-trung-2025-gaita-actor-thematic
+# Methodological decision card — Abductive and guided AI-assisted analysis — nguyen-trung-2025-gaita-actor-thematic
 
 Card ID: nguyen-trung-2025-gaita-actor-thematic
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1007/s11135-025-
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): GAITA e ACTOR: orientar análise temática assistida sem automatizar juízo
 ## Original English methodological guidance [I]
-Align the role of codes and themes with the analytic tradition and research question.
+Log surprising observations, proposed explanations, AI alternatives and human adjudication.
 
 ## Limits and alternative interpretations [I]
-Coding agreement or frequency alone does not demonstrate interpretive validity.
+Automatically suggested themes or hypotheses need corroboration and competing explanations.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

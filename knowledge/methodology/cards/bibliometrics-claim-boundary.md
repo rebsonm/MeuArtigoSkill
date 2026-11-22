@@ -1,35 +1,32 @@
-# Methodological decision card — Bibliometrics and networks — bibliometrics-claim-boundary
+# Bibliometrics: distinguish publication patterns from knowledge quality
 
 Card ID: bibliometrics-claim-boundary
-Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
-Independent scientific review: NOT APPROVED.
-DOI lead for source verification: 10.20396/rdbci.v18i0.8658889
-Source locator for independent verification: https://periodicos.sbu.unicamp.br/ojs/index.php/rdbci/article/view/8658889
+Publication state: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_RIGHTS_REVIEW
+Research evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_ONLY
 
-## Original topic and research use
-- Original catalogued topic label (preserved as metadata): Bibliometrics: distinguish publication patterns from knowledge quality
-## Original English methodological guidance [I]
-Report database coverage, metadata cleanup, thresholds, network assumptions, and interpretation.
+## Methodological question
 
-## Limits and alternative interpretations [I]
-Citation counts and network clusters do not establish theory truth or causality.
-Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
+When mapping scientific output, collaboration or citation patterns in a field.
 
-## Researcher prompts [P]
-- Which research question, theory, unit of analysis and data make this method defensible?
-- Which competing design or interpretation could explain the observations?
-- What contrary evidence or primary-source passage must be checked before asserting [L] support?
-- Which decisions, omissions and sensitivity checks should be reported?
+## Original conceptual guidance
 
-## Scientific governance and rights
-Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
-Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
-The article/book/PDF is not reproduced or authorized for redistribution by this card.
-No source-specific result, independent review, or scientific gate is approved.
-Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+Publication and citation indicators describe a constructed corpus, not the intrinsic validity of its conclusions. Interpret frequencies and networks in light of database coverage, language restrictions, document types and disambiguation rules.
 
-## Provenance
-This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
-Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/bibliometrics-claim-boundary.md
-Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW
+## Researcher decision checks
+
+Report retrieval date, database, search syntax, deduplication, author identity handling, time-window effects and missing coverage. Separate descriptive indicators from explanatory claims.
+
+## Limits and counterexamples
+
+Do not infer methodological rigor, causal influence or societal impact from citations alone. The named source remains a bibliographic pointer until the relevant article section is checked.
+
+## Bibliographic trail (not a verified [L] claim for any user's research)
+
+Maia, M., & Bezerra, C. A. (2020). Analise bibliometrica dos artigos cientificos de jurimetria publicados no Brasil. RDBCI 18:e020018. DOI 10.20396/rdbci.v18i0.8658889.
+
+Primary-source locator: https://doi.org/10.20396/rdbci.v18i0.8658889
+Publisher or repository: https://periodicos.sbu.unicamp.br/ojs/index.php/rdbci/article/view/8658889
+
+## Provenance limits
+
+This is an independent editorial synthesis, not a quotation, translation, extended excerpt, or reproduction of source tables and figures. Primary-source interpretation and printed page numbers require checking the applicable original edition for each concrete research claim. The user, not the card, decides methods and scientific gate approvals.

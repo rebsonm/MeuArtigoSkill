@@ -1,4 +1,4 @@
-# Methodological decision card — Thematic analysis — braun-clarke-2022-reflexive-thematic-guide
+# Methodological decision card — Reflexive thematic analysis — braun-clarke-2022-reflexive-thematic-guide
 
 Card ID: braun-clarke-2022-reflexive-thematic-guide
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -8,10 +8,10 @@ Independent scientific review: NOT APPROVED.
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Braun e Clarke: análise temática reflexiva é interpretação teórica, não contagem de códigos
 ## Original English methodological guidance [I]
-Align the role of codes and themes with the analytic tradition and research question.
+Make epistemological position, researcher role, interpretive themes, analytic memos and reflexivity explicit.
 
 ## Limits and alternative interpretations [I]
-Coding agreement or frequency alone does not demonstrate interpretive validity.
+Intercoder agreement and counts are not automatic quality criteria for reflexive thematic analysis.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

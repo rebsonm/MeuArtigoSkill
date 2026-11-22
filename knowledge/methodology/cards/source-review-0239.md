@@ -1,4 +1,4 @@
-# Methodological decision card — Reviews and synthesis — source-review-0239
+# Methodological decision card — Correspondence analysis — source-review-0239
 
 Card ID: source-review-0239
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1007/978-1-4614-
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Correspondence Analysis
 ## Original English methodological guidance [I]
-Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
+Justify categorical data structure, weighting, dimensional interpretation and stability.
 
 ## Limits and alternative interpretations [I]
-A PRISMA-style flowchart does not replace a defensible review design.
+A visual map of associations should not be interpreted as a causal model.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

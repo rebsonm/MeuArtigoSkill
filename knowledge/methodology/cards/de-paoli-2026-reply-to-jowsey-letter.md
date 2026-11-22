@@ -1,4 +1,4 @@
-# Methodological decision card — Reviews and synthesis — de-paoli-2026-reply-to-jowsey-letter
+# Methodological decision card — Philosophical debate about GenAI — de-paoli-2026-reply-to-jowsey-letter
 
 Card ID: de-paoli-2026-reply-to-jowsey-letter
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1177/10778004261
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Contraponto à rejeição total de GenAI: distinguir réplica filosófica de teste
 ## Original English methodological guidance [I]
-Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
+Distinguish a conceptual rejoinder to AI scepticism from empirical evaluation of tools.
 
 ## Limits and alternative interpretations [I]
-A PRISMA-style flowchart does not replace a defensible review design.
+Philosophical argument and experimental validation answer different questions.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

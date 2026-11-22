@@ -1,4 +1,4 @@
-# Methodological decision card — Document analysis — teixeira-tschopp-jobin-2025-hype-vs-risks
+# Methodological decision card — Status of a position paper on AI coding — teixeira-tschopp-jobin-2025-hype-vs-risks
 
 Card ID: teixeira-tschopp-jobin-2025-hype-vs-risks
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -9,10 +9,10 @@ Related bibliographic record: SRC-0067
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Limites da codificação por GenAI em documento de posição não publicado em anais
 ## Original English methodological guidance [I]
-Specify provenance, document selection, genre, missing records, and coding or interpretation.
+Identify the exact manuscript version and distinguish conference acceptance from proceedings publication.
 
 ## Limits and alternative interpretations [I]
-Official documents must not be equated automatically with lived or organizational practice.
+Do not attribute the evidentiary status of a published empirical study to an unpublished position paper.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

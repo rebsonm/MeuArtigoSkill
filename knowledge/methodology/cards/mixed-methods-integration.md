@@ -1,35 +1,32 @@
-# Methodological decision card — Research design and methods — mixed-methods-integration
+# Mixed methods: integration requires more than two datasets
 
 Card ID: mixed-methods-integration
-Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
-Independent scientific review: NOT APPROVED.
-DOI lead for source verification: 10.1590/15174522-018004221
-Source locator for independent verification: https://www.scielo.br/j/soc/a/WtDMmCV3jQB8mT6tmpnzkKc/?format=html&lang=pt
+Publication state: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_RIGHTS_REVIEW
+Research evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_ONLY
 
-## Original topic and research use
-- Original catalogued topic label (preserved as metadata): Mixed methods: integration requires more than two datasets
-## Original English methodological guidance [I]
-Link the question, constructs, data sources, and inferential strategy.
+## Methodological question
 
-## Limits and alternative interpretations [I]
-Limit claims to the evidence and alternatives the design can support.
-Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
+When different forms of evidence are needed to answer one connected research problem.
 
-## Researcher prompts [P]
-- Which research question, theory, unit of analysis and data make this method defensible?
-- Which competing design or interpretation could explain the observations?
-- What contrary evidence or primary-source passage must be checked before asserting [L] support?
-- Which decisions, omissions and sensitivity checks should be reported?
+## Original conceptual guidance
 
-## Scientific governance and rights
-Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
-Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
-The article/book/PDF is not reproduced or authorized for redistribution by this card.
-No source-specific result, independent review, or scientific gate is approved.
-Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+A mixed-methods design should explain where qualitative and quantitative strands connect: at sampling, sequencing, analysis or interpretation. Coexistence of interviews and a spreadsheet is not evidence of genuine integration. Identify what the combination can answer that neither strand can answer alone.
 
-## Provenance
-This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
-Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/mixed-methods-integration.md
-Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW
+## Researcher decision checks
+
+State the integration purpose and priority, timing, link between strands, handling of contradictions and the expected meta-inference. Compare integrated conclusions with each individual strand's limitations.
+
+## Limits and counterexamples
+
+Do not treat triangulation as automatic confirmation; contradictory evidence is a legitimate analytic outcome. Consult the paper for specific typologies before a primary-source claim.
+
+## Bibliographic trail (not a verified [L] claim for any user's research)
+
+Paranhos, R. et al. (2016). Uma introducao aos metodos mistos. Sociologias 18(42), 384-411. DOI 10.1590/15174522-018004221.
+
+Primary-source locator: https://doi.org/10.1590/15174522-018004221
+Publisher or repository: https://www.scielo.br/j/soc/a/WtDMmCV3jQB8mT6tmpnzkKc/?format=html&lang=pt
+
+## Provenance limits
+
+This is an independent editorial synthesis, not a quotation, translation, extended excerpt, or reproduction of source tables and figures. Primary-source interpretation and printed page numbers require checking the applicable original edition for each concrete research claim. The user, not the card, decides methods and scientific gate approvals.

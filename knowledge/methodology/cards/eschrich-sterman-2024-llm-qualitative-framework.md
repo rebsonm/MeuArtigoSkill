@@ -1,4 +1,4 @@
-# Methodological decision card — Reviews and synthesis — eschrich-sterman-2024-llm-qualitative-framework
+# Methodological decision card — Counterexamples in AI-assisted interpretation — eschrich-sterman-2024-llm-qualitative-framework
 
 Card ID: eschrich-sterman-2024-llm-qualitative-framework
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -10,10 +10,10 @@ Source locator for independent verification: https://arxiv.org/abs/2407.11198
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): LLM para propor ou refutar interpretações: contraexemplos sob checagem humana
 ## Original English methodological guidance [I]
-Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
+Use generated interpretations as hypotheses to challenge against source passages and alternative readings.
 
 ## Limits and alternative interpretations [I]
-A PRISMA-style flowchart does not replace a defensible review design.
+A confident model-generated interpretation is not a verified participant perspective.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

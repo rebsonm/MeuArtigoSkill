@@ -1,4 +1,4 @@
-# Methodological decision card — Thematic analysis — dias-mishima-2023-thematic-practice
+# Methodological decision card — Reflexive thematic analysis — dias-mishima-2023-thematic-practice
 
 Card ID: dias-mishima-2023-thematic-practice
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -10,10 +10,10 @@ Source locator for independent verification: https://doi.org/10.12957/sustinere.
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Análise temática: decisões entre contexto, unidades de sentido e temas
 ## Original English methodological guidance [I]
-Align the role of codes and themes with the analytic tradition and research question.
+Make epistemological position, researcher role, interpretive themes, analytic memos and reflexivity explicit.
 
 ## Limits and alternative interpretations [I]
-Coding agreement or frequency alone does not demonstrate interpretive validity.
+Intercoder agreement and counts are not automatic quality criteria for reflexive thematic analysis.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

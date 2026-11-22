@@ -1,4 +1,4 @@
-# Methodological decision card — Reviews and synthesis — conceicao-et-al-2026-spatial-ecological-regression
+# Methodological decision card — Spatial ecological regression — conceicao-et-al-2026-spatial-ecological-regression
 
 Card ID: conceicao-et-al-2026-spatial-ecological-regression
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1590/1980-549720
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Regressão ecológica espacial: dependência geográfica e erro de inferência
 ## Original English methodological guidance [I]
-Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
+Inspect spatial dependence, unit aggregation, confounding and the ecological level of inference.
 
 ## Limits and alternative interpretations [I]
-A PRISMA-style flowchart does not replace a defensible review design.
+Area-level coefficients are not individual-level treatment effects.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

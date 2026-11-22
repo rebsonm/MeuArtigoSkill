@@ -8,10 +8,10 @@ Independent scientific review: NOT APPROVED.
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Peffers et al. (2008): ciclo DSRM distingue demonstração de avaliação
 ## Original English methodological guidance [I]
-Separate artifact design, demonstration, evaluation, and iteration.
+Separate problem relevance, artifact construction, demonstration, evaluation and iterative refinement.
 
 ## Limits and alternative interpretations [I]
-Demonstration of use does not by itself establish effectiveness.
+An artifact demonstration cannot be relabeled independent effectiveness evaluation.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

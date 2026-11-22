@@ -1,4 +1,4 @@
-# Methodological decision card — Reviews and synthesis — salvador-1986-bibliographic-research-foundation
+# Methodological decision card — Literature-review strategy — salvador-1986-bibliographic-research-foundation
 
 Card ID: salvador-1986-bibliographic-research-foundation
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -9,10 +9,10 @@ Source locator for independent verification: https://search.worldcat.org/title/2
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Ângelo Domingos Salvador: investigação bibliográfica e leitura crítica — referência histórica
 ## Original English methodological guidance [I]
-Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
+Distinguish systematic, semi-systematic, narrative and integrative objectives, retrieval and synthesis requirements.
 
 ## Limits and alternative interpretations [I]
-A PRISMA-style flowchart does not replace a defensible review design.
+A database query or PRISMA figure alone cannot establish the chosen review type.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

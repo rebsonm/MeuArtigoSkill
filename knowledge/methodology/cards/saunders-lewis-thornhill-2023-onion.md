@@ -1,4 +1,4 @@
-# Methodological decision card — Research design and methods — saunders-lewis-thornhill-2023-onion
+# Methodological decision card — Vertical research-design coherence — saunders-lewis-thornhill-2023-onion
 
 Card ID: saunders-lewis-thornhill-2023-onion
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -8,10 +8,10 @@ Independent scientific review: NOT APPROVED.
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Saunders, Lewis e Thornhill: coerência da cebola de pesquisa (edição identificada de 2023)
 ## Original English methodological guidance [I]
-Link the question, constructs, data sources, and inferential strategy.
+Link problem, question, constructs, philosophy, observations, analysis and bounded contribution.
 
 ## Limits and alternative interpretations [I]
-Limit claims to the evidence and alternatives the design can support.
+A chosen method or research-onion label does not justify the inference without appropriate data.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

@@ -1,5 +1,9 @@
 # English migration status — all Markdown, not just docs
 
+## Second-round editorial quality verification — 22 November 2026
+
+Pre-existing high-quality English editorial cards were restored from the immutable baseline where their text was already English. Other cards received specific methodological cautions when the title and source scope allowed a conservative editorial decision. Neither action changes independent scientific-review status or copyright.
+
 ## Current English-language remediation — 22 November 2026
 
 **582 unreliable machine-translated Markdown cards have been replaced** by conservative English editorial redrafts: 472 bibliographic prospecting cards and 110 methodological decision cards.

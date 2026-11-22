@@ -1,4 +1,4 @@
-# Methodological decision card — Reviews and synthesis — elsbach-van-knippenberg-2020-integrative-reviews
+# Methodological decision card — Literature-review strategy — elsbach-van-knippenberg-2020-integrative-reviews
 
 Card ID: elsbach-van-knippenberg-2020-integrative-reviews
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -10,10 +10,10 @@ Source locator for independent verification: https://doi.org/10.1111/joms.12581
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Elsbach e Van Knippenberg (2020): revisão integrativa como contribuição nova
 ## Original English methodological guidance [I]
-Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
+Distinguish systematic, semi-systematic, narrative and integrative objectives, retrieval and synthesis requirements.
 
 ## Limits and alternative interpretations [I]
-A PRISMA-style flowchart does not replace a defensible review design.
+A database query or PRISMA figure alone cannot establish the chosen review type.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

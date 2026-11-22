@@ -1,33 +1,18 @@
-# Methodological decision card — Qualitative interviewing — qualitative
+# Qualitative analysis and reflexivity
 
 Card ID: qualitative
-Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
-Independent scientific review: NOT APPROVED.
+Publication state: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_RIGHTS_REVIEW
+Research evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_ONLY
+Rights status: UNVERIFIED_FOR_PUBLICATION — bibliographic leads do not establish reproduction rights or scientific fidelity.
 
-## Original topic and research use
-- Original catalogued topic label (preserved as metadata): Qualitative analysis and thematic approaches
-## Original English methodological guidance [I]
-Record recruitment, interview protocol, consent, participant context, and analytic trail.
+## Conceptual orientation
 
-## Limits and alternative interpretations [I]
-Interview accounts are situated testimony rather than complete behavioral records.
-Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
+Methods such as thematic analysis, grounded theory, qualitative case study, ethnography, and narrative inquiry involve distinct research aims, assumptions, analytic processes, and quality criteria. Treating all qualitative studies as a generic process of coding loses material methodological differences.
 
-## Researcher prompts [P]
-- Which research question, theory, unit of analysis and data make this method defensible?
-- Which competing design or interpretation could explain the observations?
-- What contrary evidence or primary-source passage must be checked before asserting [L] support?
-- Which decisions, omissions and sensitivity checks should be reported?
+## Researcher decisions
 
-## Scientific governance and rights
-Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
-Underlying publication rights: UNVERIFIED_FOR_PUBLICATION
-The article/book/PDF is not reproduced or authorized for redistribution by this card.
-No source-specific result, independent review, or scientific gate is approved.
-Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+When thematic analysis is considered, clarify which variant is intended, how interpretation and researcher reflexivity operate, what constitutes a theme, and whether suggested reliability procedures fit that tradition. A list of themes is not proof of an adequate analysis. Reconcile interpretation with actual data and limitations rather than treating automated coding as researcher validation.
 
-## Provenance
-This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
-Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/qualitative.md
-Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW
+## Source trail
+
+Bibliographic pointers: Braun and Clarke, *Thematic Analysis: A Practical Guide*; Yin, *Qualitative Research from Start to Finish*. Original editorial synthesis, not a reproduction of licensed materials. Consult the authorized primary work for publication-ready claims.

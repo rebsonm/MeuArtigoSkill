@@ -1,35 +1,32 @@
-# Methodological decision card — Sampling and saturation — thematic-saturation
+# Thematic saturation is conditional, not a magic interview count
 
 Card ID: thematic-saturation
-Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
-Independent scientific review: NOT APPROVED.
-DOI lead for source verification: 10.1371/journal.pone.0232076
-Source locator for independent verification: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0232076
+Publication state: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_RIGHTS_REVIEW
+Research evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_ONLY
 
-## Original topic and research use
-- Original catalogued topic label (preserved as metadata): Thematic saturation is conditional, not a magic interview count
-## Original English methodological guidance [I]
-Explain sample selection, heterogeneity, coverage, and stopping rationale.
+## Methodological question
 
-## Limits and alternative interpretations [I]
-Do not treat a predetermined interview count as proof of saturation.
-Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
+When deciding how to report adequacy of inductive thematic interview samples.
 
-## Researcher prompts [P]
-- Which research question, theory, unit of analysis and data make this method defensible?
-- Which competing design or interpretation could explain the observations?
-- What contrary evidence or primary-source passage must be checked before asserting [L] support?
-- Which decisions, omissions and sensitivity checks should be reported?
+## Original conceptual guidance
 
-## Scientific governance and rights
-Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
-Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
-The article/book/PDF is not reproduced or authorized for redistribution by this card.
-No source-specific result, independent review, or scientific gate is approved.
-Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+A saturation claim should make its operational meaning explicit. One published approach examines how many new themes appear across defined interview windows, rather than relying on a bare assertion that no new ideas appeared. Applicability depends on the type of analysis, population heterogeneity and question.
 
-## Provenance
-This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
-Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/thematic-saturation.md
-Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW
+## Researcher decision checks
+
+Specify the unit of information, sequence of cases, threshold, base window and sensitivity to the chosen decision rule when this approach fits. Report the analytic tradition and whether the collected data genuinely allow the proposed assessment.
+
+## Limits and counterexamples
+
+The Guest-Namey-Chen method was evaluated using three datasets of individual interviews and inductive thematic analysis. Do not transfer its thresholds to reflexive thematic analysis, theoretical saturation or all qualitative designs by default.
+
+## Bibliographic trail (not a verified [L] claim for any user's research)
+
+Guest, G., Namey, E., & Chen, M. (2020). A simple method to assess and report thematic saturation in qualitative research. PLOS ONE 15(5):e0232076. DOI 10.1371/journal.pone.0232076.
+
+Primary-source locator: https://doi.org/10.1371/journal.pone.0232076
+Publisher or repository: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0232076
+
+## Provenance limits
+
+This is an independent editorial synthesis, not a quotation, translation, extended excerpt, or reproduction of source tables and figures. Primary-source interpretation and printed page numbers require checking the applicable original edition for each concrete research claim. The user, not the card, decides methods and scientific gate approvals.

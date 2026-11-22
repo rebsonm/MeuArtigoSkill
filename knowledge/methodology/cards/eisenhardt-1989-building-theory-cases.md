@@ -1,4 +1,4 @@
-# Methodological decision card — Sampling and saturation — eisenhardt-1989-building-theory-cases
+# Methodological decision card — Building theory from cases — eisenhardt-1989-building-theory-cases
 
 Card ID: eisenhardt-1989-building-theory-cases
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -8,10 +8,10 @@ Independent scientific review: NOT APPROVED.
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Eisenhardt (1989): teoria a partir de múltiplos casos exige comparação disciplinada
 ## Original English methodological guidance [I]
-Explain sample selection, heterogeneity, coverage, and stopping rationale.
+Justify purposive case sampling, within-case evidence, cross-case comparisons and rival mechanisms.
 
 ## Limits and alternative interpretations [I]
-Do not treat a predetermined interview count as proof of saturation.
+Multiple cases alone do not yield theory without defensible theoretical iteration.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

@@ -1,4 +1,4 @@
-# Methodological decision card — Reviews and synthesis — paulus-lester-davis-2025-roles-ai-qualitative
+# Methodological decision card — Claims about AI roles in qualitative research — paulus-lester-davis-2025-roles-ai-qualitative
 
 Card ID: paulus-lester-davis-2025-roles-ai-qualitative
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1007/s00146-025-
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Papéis atribuídos à IA nos artigos não são capacidades demonstradas
 ## Original English methodological guidance [I]
-Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
+Separate expert perceptions, documented use, and experimentally demonstrated capabilities.
 
 ## Limits and alternative interpretations [I]
-A PRISMA-style flowchart does not replace a defensible review design.
+Reported enthusiasm or task descriptions are not causal performance estimates.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

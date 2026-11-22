@@ -1,4 +1,4 @@
-# Methodological decision card — Thematic analysis — vikan-et-al-2025-rta-offline-llm-limitations
+# Methodological decision card — Human interpretation with local or assisted AI — vikan-et-al-2025-rta-offline-llm-limitations
 
 Card ID: vikan-et-al-2025-rta-offline-llm-limitations
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1177/10497323251
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Em análise temática reflexiva, suporte offline não elimina interpretação humana
 ## Original English methodological guidance [I]
-Align the role of codes and themes with the analytic tradition and research question.
+Distinguish technical deployment constraints from analytic judgement and researcher accountability.
 
 ## Limits and alternative interpretations [I]
-Coding agreement or frequency alone does not demonstrate interpretive validity.
+Offline inference does not automatically resolve interpretive bias or ethical limitations.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

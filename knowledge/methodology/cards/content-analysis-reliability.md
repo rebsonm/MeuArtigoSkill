@@ -1,35 +1,32 @@
-# Methodological decision card — Thematic analysis — content-analysis-reliability
+# Systematic literature synthesis and content-analysis reliability
 
 Card ID: content-analysis-reliability
-Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
-Independent scientific review: NOT APPROVED.
-DOI lead for source verification: 10.1590/2318-0889202335e220027
-Source locator for independent verification: https://periodicos.puc-campinas.edu.br/transinfo/article/view/10064
+Publication state: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_RIGHTS_REVIEW
+Research evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_ONLY
 
-## Original topic and research use
-- Original catalogued topic label (preserved as metadata): Systematic literature synthesis and content-analysis reliability
-## Original English methodological guidance [I]
-Align the role of codes and themes with the analytic tradition and research question.
+## Methodological question
 
-## Limits and alternative interpretations [I]
-Coding agreement or frequency alone does not demonstrate interpretive validity.
-Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
+When screening, categorizing and interpreting documentary or bibliographic material with a reproducible content-analysis route.
 
-## Researcher prompts [P]
-- Which research question, theory, unit of analysis and data make this method defensible?
-- Which competing design or interpretation could explain the observations?
-- What contrary evidence or primary-source passage must be checked before asserting [L] support?
-- Which decisions, omissions and sensitivity checks should be reported?
+## Original conceptual guidance
 
-## Scientific governance and rights
-Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
-Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
-The article/book/PDF is not reproduced or authorized for redistribution by this card.
-No source-specific result, independent review, or scientific gate is approved.
-Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+Separate the reliability of selection and coding from the persuasiveness of the resulting inference. Define category boundaries, coder training and disagreement resolution consistent with the design; establish a traceable audit trail linking decisions and documentary evidence.
 
-## Provenance
-This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
-Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/content-analysis-reliability.md
-Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW
+## Researcher decision checks
+
+Specify units, code definitions, coding scheme provenance, how disagreements were tracked and whether interpretation relies on human judgment beyond nominal agreement. Select an agreement approach only after defining the measurement problem.
+
+## Limits and counterexamples
+
+Do not equate software-generated codes or a high agreement statistic with construct validity. The source reference is a bibliographic lead until relevant original pages and measures are checked.
+
+## Bibliographic trail (not a verified [L] claim for any user's research)
+
+Lycarião, D., Roque, R., & Costa, D. (2023). Revisão Sistemática de Literatura e Análise de Conteúdo na Área da Comunicação e Informação: o problema da confiabilidade e como resolvê-lo. *Transinformação*, 35, e220027. DOI 10.1590/2318-0889202335e220027.
+
+Primary-source locator: https://doi.org/10.1590/2318-0889202335e220027
+Publisher or repository: https://periodicos.puc-campinas.edu.br/transinfo/article/view/10064
+
+## Provenance limits
+
+This is an independent editorial synthesis, not a quotation, translation, extended excerpt, or reproduction of source tables and figures. Primary-source interpretation and printed page numbers require checking the applicable original edition for each concrete research claim. The user, not the card, decides methods and scientific gate approvals.

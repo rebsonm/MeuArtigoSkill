@@ -8974,7 +8974,7 @@
       "path": "knowledge/methodology/cards/reviews.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "4eadd307daec28ea509171c60d0d022e740a54269d24190ab7c94096da732986",
+      "sha256": "59c17017becb127659cac8292df6b3cf0adda6272ff1baadb67798df140a1479",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-04-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -8994,7 +8994,7 @@
       "path": "knowledge/methodology/cards/design.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "8728c12448a10d955890aaad58c4e060eb3c2665f346e1d3e74d4d23012204ad",
+      "sha256": "f0a704adb416980575f655ab90e31b739852f2cc3fdf294b8efdc06c39de0b25",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-04-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json",
@@ -9016,7 +9016,7 @@
       "path": "knowledge/methodology/cards/qualitative.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "45259b0c18e0e47305411fc5046f0c1b60ee6fec838669559975d0a20b893f30",
+      "sha256": "936725a5eac07f00d9a481a89461f9b5687afb4ba61eb25e922a85cea6b9e2b6",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-04-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -9036,7 +9036,7 @@
       "path": "knowledge/methodology/cards/design-science.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "3eb46b6313c018068698f372a06bf2ca3e780db2ed2c253d130748ac3f6e9fb8",
+      "sha256": "7a0f36a80dade4e360f283f0981d4e58cd988f1d60b9a8104252edd5965e9e3c",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-04-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -9096,7 +9096,7 @@
       "path": "knowledge/methodology/cards/reflexive-thematic-analysis.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "23eb06ae54070709fe8d3fce19be145bcc6a068e018b7b692527d005996f3d8d",
+      "sha256": "344ba709864f3e8d777c5d4dca8c615e6e6375de6f59cc8cb57e47ad680df56a",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-04-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -9116,7 +9116,7 @@
       "path": "knowledge/methodology/cards/focus-group-design.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "33ef3d19851a8cee394616b29cda2ce711e321f6729d974313ae2b956b000567",
+      "sha256": "89a0472fab7d13f0fb533cbb9b61d92bf567ba946f22e3786279a48af31dbb80",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-04-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -9156,7 +9156,7 @@
       "path": "knowledge/methodology/cards/qualitative-design-quality.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "ddaeccf6c7d92c68ff6dcba2381d20c6cbf3957b6c9a8996c2416db3098fb188",
+      "sha256": "f4d70034174097a9ded5739d1db10815d0e15a264c1f6936276231d5c2a721dc",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-04-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -9176,7 +9176,7 @@
       "path": "knowledge/methodology/cards/thematic-saturation.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "4e8584ff951bf3500c3658cf0c17c5884ffc3a0d4b82db0aa52fca6fd7e163b4",
+      "sha256": "3c42119920be38d30ba42ca051bd9e00ec5082de38ccb884d60d0839b512d367",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-04-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -9196,7 +9196,7 @@
       "path": "knowledge/methodology/cards/content-analysis-reliability.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "4565de558e84d452102d72f86ac96a4870d56d1948d362f758a1cad4c31a13e9",
+      "sha256": "17671b0bc192256fdfd0c950bfc56155344ec0987170492fde53e2744430a015",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-04-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -9216,7 +9216,7 @@
       "path": "knowledge/methodology/cards/mixed-methods-integration.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "8ace11a0d9cb36720f1563f326ee48b0a96a523da525597f071b67ce7daf98f0",
+      "sha256": "e69b4bf0e54519088d7cf83dc9983ee085e179588f3d549551d2babb186f1c05",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-04-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -9236,7 +9236,7 @@
       "path": "knowledge/methodology/cards/bibliometrics-claim-boundary.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "e41af9d40b8234df4e4db95e4e33905efff672a803e676970d9edbb25b5ae426",
+      "sha256": "39e86ac39e493af9705a949c9b42f398d555301488dd5f2cdad5868cb5d849f4",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-04-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -9256,7 +9256,7 @@
       "path": "knowledge/methodology/cards/qualitative-metaanalysis.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "6a7c737263f374f36d847ff898ca3087231c5216440ae53ce1f9a17b09bb67de",
+      "sha256": "3e196f6528fda7d9f06e6ff174e4d16959fa6c6597b89e3451a6f19821c0dab6",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-04-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -9316,7 +9316,7 @@
       "path": "knowledge/methodology/cards/prisma-roses-selection.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "9f76dd4d7c7a96d3c874d2ec9a61226396b536fddc678a5467f8cc28eb21b54f",
+      "sha256": "79c4059dfa76a41a0124515222956975fa6f704dd39ae958422367b0350195ef",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-04-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -9336,7 +9336,7 @@
       "path": "knowledge/methodology/cards/sampling-saturation-compatibility.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "7d6427093113166f8724af885d9cf01233f504919f8fd097c83a3bda8e5f385b",
+      "sha256": "80cc1417dde8fafb8d7ee7a86ace5c9c096788839295fd643a0284e256202b8c",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-05-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -9356,7 +9356,7 @@
       "path": "knowledge/methodology/cards/literature-review-writing-practice.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "d02a29904b088c738201e81c8e3652fc008dd3eba522af7bcbbc5c977048d22b",
+      "sha256": "ad217b701d06e740638f28c00c8970bfdbd66d763f91682060dd58f6e8c84ea3",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-05-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -9376,7 +9376,7 @@
       "path": "knowledge/methodology/cards/manuscript-argument-structure.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "e90ab378b0aab48da1687a210e1f21c721796e40b840d978ca23c4f5bbbf913e",
+      "sha256": "5c7aba4f78c8d7248b861935632f6710b9fa08aca924882b5ed811f3d397f001",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-05-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json",
@@ -9498,7 +9498,7 @@
       "path": "knowledge/methodology/cards/kiger-varpio-2020-thematic-analysis.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "ced1cf060f8d601ca426b5bc1ef8a6940016fc8c24211b6b511dd6114068affe",
+      "sha256": "534a4f0e28fea489ec30506f5457112a3d54c2c5ee4521ce5b67caeb7fa6bca2",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-05-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -9538,7 +9538,7 @@
       "path": "knowledge/methodology/cards/rijnsoever-2017-saturation-simulation.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "6ee6e4c315f20a835558c38256757bb8977d3a4773868898e677e3bc25e5011d",
+      "sha256": "acf11fae0407e9a26ea754fc2d5c943434d45238efca4094af998bc58057c563",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-05-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -9698,7 +9698,7 @@
       "path": "knowledge/methodology/cards/lietz-2009-survey-questionnaire.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "98981240ed1ecdb4c869399043959d791e6ce384c462a4293ff590b818885817",
+      "sha256": "61736b7c519202e35f93d2ed883ec21530a01019aed63f4875f3de56b6f953f4",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-06-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -9818,7 +9818,7 @@
       "path": "knowledge/methodology/cards/sim-etal-2018-qualitative-sample-size.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "1b5ab9a4bf904a37de4386861588db683796254ce9f626863c8ec5a707aa811e",
+      "sha256": "270900540abf3109a5a582ca481e4f654716b3c9af8c9d90a4b23b14392013b9",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-06-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10060,7 +10060,7 @@
       "path": "knowledge/methodology/cards/scientific-writing-productivity.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "9b42655ccfb92a4856b251f59a3d6632bfa01304105a13309220bb29be9a27c3",
+      "sha256": "c1d4ab17a793f29c18584e92f5da7dd2a5b6e489df033e478e7f26914b28317f",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-07-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10080,7 +10080,7 @@
       "path": "knowledge/methodology/cards/research-practice-protocol.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "ea5493a63701a65cccacce68b85c6614adf67c42c2902ff7d7ae3f61d9899c2a",
+      "sha256": "3993d5b8aa70eda6eb820c86cc1c20548d65907029f3fa5a797f32f170ade988",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-07-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10200,7 +10200,7 @@
       "path": "knowledge/methodology/cards/dias-mishima-2023-thematic-practice.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "7bd73bee5a4bf6304e1fccdb6078704ad44a5738e15e898688da54bfb2855cbf",
+      "sha256": "dc55cec279c8241ca2c544eb274520ad9b4b224100e5b08fa5fd11001db07538",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-07-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10220,7 +10220,7 @@
       "path": "knowledge/methodology/cards/campos-saidel-2022-qualitative-sampling-decisions.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "6064bd526304851c5d0a585606b4ddb6dd504fbc74b5230056e359e1ee5b3442",
+      "sha256": "af376baa6a8163b6f39c70f1dd2c136262ac3ae34831d6a46f4cecfdfbaef06e",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-07-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10240,7 +10240,7 @@
       "path": "knowledge/methodology/cards/koerich-et-al-2009-action-research.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "bf1ee85db21104030eef62ad84ce922eba868bdb79c1eaff0a5d475520aebdc5",
+      "sha256": "a266aba6510460e9a29511285652fa5e3ff21d0eb99a844f6b4ab51ec74e3cbf",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-07-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10281,7 +10281,7 @@
       "path": "knowledge/methodology/cards/snyder-2019-literature-review-designs.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "7ac1f08a1ae060147d306d41304d15c979efdeb24e5f114cbde67f2a2854c638",
+      "sha256": "ca9f2b7a21c4a932ae4d032172f3c4b1d4ec87b1fe5c24ee600240f05af124f6",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-07-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10301,7 +10301,7 @@
       "path": "knowledge/methodology/cards/salvador-1986-bibliographic-research-foundation.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "f98b075340b98fcb93da2ac36bd22950ffa7acd23a801a121cdd3a8bbb2d56ee",
+      "sha256": "d03caf21cd1d2c12dd34871e7a3db0b924996ee3cb61928b6abe5a9edcfb5c3c",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-07-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10361,7 +10361,7 @@
       "path": "knowledge/methodology/cards/elsbach-van-knippenberg-2020-integrative-reviews.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "efcde24091b82dac46a522cbd3f4e9f5b994235f0f21aef86dd4a697ee8be199",
+      "sha256": "ec5a98dff630e171dd22e6e2953c7b91a7d82d5866e2fc5e35a5f81ecf16f186",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-07-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10381,7 +10381,7 @@
       "path": "knowledge/methodology/cards/alvesson-sandberg-2011-problematization.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "5e951826920ac0f5bb10d68e3c978aacc381f6c023fbabe1144e5831795f42a6",
+      "sha256": "ecd8d97ebf517c467c8ed845b6a10c78f3ad2970d18db0c0c0dbe93cc1255900",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-07-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10401,7 +10401,7 @@
       "path": "knowledge/methodology/cards/prisma-s-2021-search-reporting.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "3f6df3ee865ed26b34a9536d1e667b8c786c596c4800a4ebb2fecf03a9882aa3",
+      "sha256": "5f4b4fb8b8e732bc563aad18d4b777c141777894be59882d1fd5646a6f2ab3c9",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-07-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10421,7 +10421,7 @@
       "path": "knowledge/methodology/cards/prisma-scr-2018-scoping.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "3e398b09bb51fd10bbeb8aece58234138377ae43605dfaea33cb3070ad459ac4",
+      "sha256": "22bd3968503c583a548f47c8075806f153e57d4fff80c495332f262c4258fd51",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10441,7 +10441,7 @@
       "path": "knowledge/methodology/cards/prisma-2020-operational-reporting.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "d9319362f9270cad1dc76d53a7e80f8f928f12679d4d1e877028f66183aafd78",
+      "sha256": "1abf228f1f45abd4be5ba804f90495a98926a8992cad98433db3d94117562e0f",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10461,7 +10461,7 @@
       "path": "knowledge/methodology/cards/prisma-p-2015-protocol.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "5300302298e090892eb93783f60f5e12520806257c7750fd6ef3aed732c96680",
+      "sha256": "fba504a0bfd3fc83deb8a873384086448b5ff64b050239517460ceaa3fc011e4",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10481,7 +10481,7 @@
       "path": "knowledge/methodology/cards/braun-clarke-2022-reflexive-thematic-guide.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "e5aea77329df1f6887a6c83e24df97950b56ddc33a4d4fba7b18474732cf7baa",
+      "sha256": "6d22fdf0f688a5e2de3624fc56d73a9e87bea1826fd161606a25a10640e41fd3",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10541,7 +10541,7 @@
       "path": "knowledge/methodology/cards/saunders-lewis-thornhill-2023-onion.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "61af30c2ecfec0c79e671724e82053eb885ce07c3ab95de4922039bef0e7b337",
+      "sha256": "61e567684c6a444ca39fbbfe03eb1fc98144ed64d0fe7bb9ed99ca3adc41e0f1",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10561,7 +10561,7 @@
       "path": "knowledge/methodology/cards/creswell-creswell-2021-mixed-research-design.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "3e3aeb3a8f924578ed5ca888790085b559dfa0f73505496fb61cfb7cef07d2cb",
+      "sha256": "719dcff9e5817a4ed91bce5a78a1e821d01825aa53960041aebaae76aa38cac6",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10601,7 +10601,7 @@
       "path": "knowledge/methodology/cards/eisenhardt-1989-building-theory-cases.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "324b7fd7964996cac9f2c5c688f23e3edc1a6542adbd82da0382281dab8954c0",
+      "sha256": "9c1d0b9ad6aaaaf683aa59f4189aa8869a38bf094a4fc33a473ba3331262a506",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10621,7 +10621,7 @@
       "path": "knowledge/methodology/cards/hevner-2004-design-science.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "4db67a07fb3257bc7d11e59a1fa86112e65e6226d67f0a4a97004c006b2d91c4",
+      "sha256": "39cf7785a5163e16a423453383fe32771c83c702a48ec54f37623c7ae2f63394",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10641,7 +10641,7 @@
       "path": "knowledge/methodology/cards/peffers-2008-dsrm-process.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "0f8b5d2287c56fe4c4d64d2ee487f0639c57bd3a2bb5e1b492d880e3faec5e9c",
+      "sha256": "8b73141c36cf83eaf010febfdffec9fa9dac4b4d2fec37d3295ae2633a2971c2",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10681,7 +10681,7 @@
       "path": "knowledge/methodology/cards/sampaio-sabbatini-limongi-2024-research-ai.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "1c7a383594e62c318f1cd6a7aa129fe8437eb7fc06d52ae2bcadf7dd406a0e25",
+      "sha256": "a0518b1618bd406474a7c866b1366cf3e7624dc8ba3c1152426107fe2a54a485",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10741,7 +10741,7 @@
       "path": "knowledge/methodology/cards/siddiki-basurto-weible-2012-institutional-grammar-compliance.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "065b133469adbdc6fd4b211722a7755eb0216a9faf837f4f717136a2aee14d72",
+      "sha256": "b45543cf6afb11daae566f650d14b4a262b4f426045c03475edf92af8ffec702",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10992,7 +10992,7 @@
       "path": "knowledge/methodology/cards/ibrahim-voyer-2025-technological-reflexivity.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "6babac49ff1f8ab9ffeea726344325d2b7f1ab332c79c817306f8f08e3884341",
+      "sha256": "e1b1fc30661a6cf26e2496dddeb51ccbd2e3cec37033e0e84729bfb71d02d056",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-09-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11012,7 +11012,7 @@
       "path": "knowledge/methodology/cards/misra-et-al-2026-inductive-deductive-code-comparison.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "13d5a1f3b315a55f94d1f6180be01c052eb3dc05fcf2d6c65e5c21a8f9e3e093",
+      "sha256": "89483c376213886bee72dbd5b1565f7b472ac279a0c9a9312744b4d85cdc1ce0",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-09-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11032,7 +11032,7 @@
       "path": "knowledge/methodology/cards/nguyen-welch-2025-epistemic-risks-qualitative-ai.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "1c9178657c89ad4c1c303b67bb7960e081c93d1b9c24d1bb65a4ecaa4e9fa657",
+      "sha256": "3260e1be14e520ba5b66f90689bfd614b81ff4a1f9ff6850fe2d9f65f21f74b2",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-09-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11052,7 +11052,7 @@
       "path": "knowledge/methodology/cards/jiang-et-al-2025-equity-research-ai-comparability.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "e5e58eb7d62e0d7b88f989d4dff2caf997518b9aed54f22da5f96da9a9e36d18",
+      "sha256": "4ad5ba630fcbe08f27a4470d330008dd22c22cc4d113f3d6813ae46d2562234b",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-09-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11072,7 +11072,7 @@
       "path": "knowledge/methodology/cards/vikan-et-al-2025-rta-offline-llm-limitations.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "f7f003a7425f512fcfa7e1840e24019339ff6327914321999867290ad64cfc3b",
+      "sha256": "460d6b4dab23a1604a3864e15d3f7ca98cb5c02802becb0e9af7f5b845010ec5",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-09-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11092,7 +11092,7 @@
       "path": "knowledge/methodology/cards/costa-et-al-2025-abductivai-collaboration.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "224a328305d608589d5e0f8c2c881141239997348f1dd5b1caa8e80a0f5de830",
+      "sha256": "10a2483e5a3e6e068fa055c914934d6f21d435e3f947ae294f14b09ae23e3c4d",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-09-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11112,7 +11112,7 @@
       "path": "knowledge/methodology/cards/nguyen-trung-2025-gaita-actor-thematic.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "8285627489851825a86e6070c3b58526c3bfe8955d51053bc43820b22598ae51",
+      "sha256": "dce5a1a82b7edc6c7f4278ea33930e85642f810e6e70a654dbd621fd2bfe99b7",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11132,7 +11132,7 @@
       "path": "knowledge/methodology/cards/al-fattal-singh-2025-collaborative-autoethnography.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "f3b2ce14c18c69219f35aff53ef7e8051d585bf7aab30a3a6e1dc2c7091e24d7",
+      "sha256": "53af69e8095bec7f7419ee3473b85adbb1ee69b7cce4483449bbe752666d0066",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11152,7 +11152,7 @@
       "path": "knowledge/methodology/cards/dellafiore-et-al-2025-expert-qualitative-tensions.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "c6b374d0d3f66ae871f607a969254e67ec2f5d649e8ffc4433f1d1fa180f10fd",
+      "sha256": "f851e23b2e278defb6f0ccc213f97d36078f1c9d626925b3d6eab1dad8955bf7",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11172,7 +11172,7 @@
       "path": "knowledge/methodology/cards/jones-2025-genai-disclosure-heuristic.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "3a10df2934e4038c698a45acc1a175b709247ccb4a378d7021c8383a6b479d11",
+      "sha256": "80b57469d06f3839212e508639c19901fd20e8a9a61e8da800f1985c0242348b",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11192,7 +11192,7 @@
       "path": "knowledge/methodology/cards/dahal-et-al-2025-generativity-quality-crises.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "928bae91a6b68c1cb5fc80fdbeee78d46ba1242dd8121931a745fda0e4955d37",
+      "sha256": "cbd9e6a2a7365fffc4af060d9805770326fee4928b3a33ccc0a328af71414a73",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11233,7 +11233,7 @@
       "path": "knowledge/methodology/cards/castellanos-et-al-2025-llm-human-theme-agreement.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "f05ea739e5b81d57a0a6b4dd5b8a2043f7a484e519145d0abcf8b1368d8f9d45",
+      "sha256": "28fea41b03b1ebaf2886fc0d6113560e7e48a3ceac4cd55ddda5e6285e434cdc",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11253,7 +11253,7 @@
       "path": "knowledge/methodology/cards/jarrahi-2025-interviewing-ai-machine-behavior.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "2874acd44caa439427256af4f413c0f7b586688085ec142875d027d54b6d6791",
+      "sha256": "c2cda12310f8eb049d25be727ce2c10b64e9452c564e1d1d6fce8bae96184d73",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11273,7 +11273,7 @@
       "path": "knowledge/methodology/cards/wise-gresalfi-spencer-smith-2026-ai-in-the-loop.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "05dd68743f70c818ba5fb2ebcfaf5622ca64d41ebe484c74a0819bbcacec8b25",
+      "sha256": "a70e482a7038bb46057c1051112925b9b218b424df812eaa983ebc0633766403",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11293,7 +11293,7 @@
       "path": "knowledge/methodology/cards/duarte-et-al-2025-counter-inevitability.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "d37758c54f91989d34fdce9f7aa52356aa9ebff3bf7b65fce7b5da1f478c954a",
+      "sha256": "ca5041d1b284b93dd4f2c1782e633f4dd3c51b4995efb785a8237018f7108f1d",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11313,7 +11313,7 @@
       "path": "knowledge/methodology/cards/macgeorge-2025-qualitative-futures-llm.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "df3b5f3c90dc0aaf8fba5dcf141fd11ff6732e315df8a3272a111eca613a46a2",
+      "sha256": "3a6f449060b7f520edf3353456b8f0af938959a2126210362b0f9a9f4da3d911",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11333,7 +11333,7 @@
       "path": "knowledge/methodology/cards/messner-smith-richards-2025-epistemic-incongruences.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "801d0b6d748991b0ff30a42344c0bd8a6384a852f060995d309334f2839fbcce",
+      "sha256": "52138acd123824c68f3052dbbd38bb9dc057e7ca4316b8bbc40bf05c522c43a3",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11353,7 +11353,7 @@
       "path": "knowledge/methodology/cards/kon-et-al-2024-interviews-three-transcripts.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "c869c5dd0f49d8178d5657ae42c79968b99e72459b7e1a24cf8435abb307fc3c",
+      "sha256": "4943988c97125464f4b90f71b8054a1dc55c12ab7a417e574fe1daae65ab5fd4",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11373,7 +11373,7 @@
       "path": "knowledge/methodology/cards/paulus-lester-davis-2025-roles-ai-qualitative.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "11551826c812af937b2b66d99229f97bb437e448d1fa5df18f0965e8df489351",
+      "sha256": "39b577c2dec379f05226a354c4aa93fb3c7a2f5fdb50b4d30172ca92763ec823",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11393,7 +11393,7 @@
       "path": "knowledge/methodology/cards/davison-et-al-2024-ethics-sharing-qualitative-data.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "70ba553334dea44b1f9527438c40d80aefab02d18f3cfffb88671786502974b3",
+      "sha256": "f1e9189992da611ee053000d5fb459d8bbc156d6ba2c80171bc0a6e66c1fea29",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11413,7 +11413,7 @@
       "path": "knowledge/methodology/cards/nguyen-welch-2025-engaged-scholarship-anti-genai.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "e09d9d0c6bfce8a73b37602b32d5400ddaa4d736597c85ca4ce12aabef6acb37",
+      "sha256": "f684fd7779379c903784d6b8f74504f7d3fa6de9592a6461da0e89c2b6701575",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11433,7 +11433,7 @@
       "path": "knowledge/methodology/cards/friedman-owen-vanpuymbrouck-2024-caution.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "5c6c37ea8af1738d354751f8fd1dc0a1863cda16f61feeced2a225b63dce3cf7",
+      "sha256": "6c661c791baf211f1fbbc18df59ef39f05d645287570c5f71de2153e775afd21",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11453,7 +11453,7 @@
       "path": "knowledge/methodology/cards/teixeira-tschopp-jobin-2025-hype-vs-risks.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "a26c61c6e22208f88d478d7ddb50a6f4b4681ba44f7e4f89b78eb701aea71876",
+      "sha256": "ac91543af113dc829febbb90440a7bc4aaddd21c2b1079cd4058222bf9dcfd64",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-11-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11473,7 +11473,7 @@
       "path": "knowledge/methodology/cards/barros-et-al-2024-llm-qualitative-systematic-mapping.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "cf3edce101ec775d379d21e4554cc99f73bab0b90f99e2ffcabecd2ee2536f20",
+      "sha256": "34b6296d1e0a4d816ae3ebb72eb00a5339fe0ba6c7ebe01cc324106c95af717c",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-11-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11493,7 +11493,7 @@
       "path": "knowledge/methodology/cards/paulus-marone-2024-commercial-claims.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "6bef93d013ccec9c4127beeae37d78d05c03d08c874ccabb29a7fe888595f1d4",
+      "sha256": "1a46c764ea1608679d05dad87339353021077fb4be9ab442f960af532337a027",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-11-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11513,7 +11513,7 @@
       "path": "knowledge/methodology/cards/eschrich-sterman-2024-llm-qualitative-framework.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "2b2fb5c9ad8f19b3f4019ce16983ef46ee480112450b0788c4de65272c4a8df2",
+      "sha256": "a9957d80f656332fefc145bfa87baf262e0e25462afe12c40e1e0c857b9ebdac",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-11-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11533,7 +11533,7 @@
       "path": "knowledge/methodology/cards/de-paoli-2026-reply-to-jowsey-letter.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "7a9442175f4ce41dd14801c9300316c3a1fff7f3afb3c100ba18618e1e9ab2d2",
+      "sha256": "aa0155b2823b70a7859327f5b22941763f73263b85ce2ccbb3c151944e364e90",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-11-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11553,7 +11553,7 @@
       "path": "knowledge/methodology/cards/santanna-2025-classical-2x2-did.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "c7812809bb192597d612d7607209b49c134414e864056569529ff02ba4f527c6",
+      "sha256": "98ac25cc71ca7e9a4ff7d030d5f666e3e6535eb787236bd175ae579139954ea2",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-11-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11573,7 +11573,7 @@
       "path": "knowledge/methodology/cards/gertler-et-al-2018-impact-evaluation-pt.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "bbc354a064b368f19ef1fb14f69b3d7ff855b54bac6e5f08db9c9757aa99e44a",
+      "sha256": "3119588f487b652693a326200591f1e33b6d5f39d8304a51a22372227f8e518b",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-11-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11593,7 +11593,7 @@
       "path": "knowledge/methodology/cards/card-krueger-1994-nj-pa-did-study.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "ca5c1a399a99b5e8d6da7cd6dbce2ea256a170932dcf24a1e8e8b6ba84ac4681",
+      "sha256": "d123edc343e6681b69d9fbd145e8178e58037ab4ea74d1355e87e24fe46a3347",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-11-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11613,7 +11613,7 @@
       "path": "knowledge/methodology/cards/conceicao-et-al-2026-spatial-ecological-regression.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "1adf4de550c73f509bea4e64aca5c2b665b5368c9cd96832783b4759098637e6",
+      "sha256": "5b36f25559823594461695df356578868d7a580a2928a02dcfeea281093951da",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-11-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11633,7 +11633,7 @@
       "path": "knowledge/methodology/cards/carlomagno-rocha-2016-content-categories.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "02da4877ba435782da0cb712d596138005a54730315d78187215a3fab1e61249",
+      "sha256": "b9e5b7f269f99e4ae999f1df8c2d6cb844164017989a84867229607bd54d6d30",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-11-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11673,7 +11673,7 @@
       "path": "knowledge/methodology/cards/source-review-0011.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "b6f31ab889a88fe7bfdffb95ab5339322d2a4a2047a95b8634b1f4f3b6da8a50",
+      "sha256": "9924b77cbca415e6b947afd4a61ecdd4aa93feb09b8e8cf2068a1c8e8dfca93d",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-11-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11793,7 +11793,7 @@
       "path": "knowledge/methodology/cards/source-review-0181.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "5d04afeecae2590c44520e792743a05de9555d61ea893cbee059b66ef8e95989",
+      "sha256": "b4ecddfef00712cbc3d84a9f294719879a60877ff6e1fd09cffa2c9ff8fd326b",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-12-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11813,7 +11813,7 @@
       "path": "knowledge/methodology/cards/source-review-0182.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "688f34f944d0ab955c7915ee53493aa0d1fe94b0799f8e2351900878b9398e70",
+      "sha256": "6fd1be0572e20daf4e8955115c06338beed56e413ee7e129cdbf596dc0d48a4f",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-12-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11833,7 +11833,7 @@
       "path": "knowledge/methodology/cards/source-review-0184.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "ff920cd20ea2919fda23297e0c95ae708789296eb7032ad4241285ceba5b9552",
+      "sha256": "30e8099ce8e162171dc749c5fb0697eac969d19ec600b46a6651e42bf3a66f13",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-12-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11873,7 +11873,7 @@
       "path": "knowledge/methodology/cards/source-review-0205.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "e3e4f00a9e1b4695c121c9e44168265f5398140f384d42d993411e9adf1770ab",
+      "sha256": "2a5594364ce797f1f87697b05c1ac266343ee0934927f7e7895c23a68ddbfaf8",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-12-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11893,7 +11893,7 @@
       "path": "knowledge/methodology/cards/source-review-0206.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "39f23a4223b3a48927c31c4fef2e5e2abecc75f6f8773852fc6964d81a7f3014",
+      "sha256": "b0470f90dca93dea60a495e5589927a73d425eef3f67bfc2306ab2e6bb932435",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-12-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11913,7 +11913,7 @@
       "path": "knowledge/methodology/cards/source-review-0239.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "0c7a0af8744b4f809d5cd65afd57df7feab8e01d54ea64745da3a8984e3ae321",
+      "sha256": "3c352dd3f0a8f277caba6254d3d7825512bce37907b678a332a3fa528449bcb3",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-12-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11933,7 +11933,7 @@
       "path": "knowledge/methodology/cards/source-review-0240.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "58521745e9afaa2483144eaad7a1ae42f98cc0ebcc7995f1f174aa18826df338",
+      "sha256": "c874eef42879a57e6def77b55e4ca7ea066e19d910ef2c94b4b7d867ffbff4dc",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-12-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11953,7 +11953,7 @@
       "path": "knowledge/methodology/cards/source-review-0242.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "2721e09150743dc08cab6e2e86bec7879a19edf1745d60e02ccef276b4755fc3",
+      "sha256": "067b0a6f79fe1c3f5bbd06056cce03f0162b3509946bff44debbb4ab52b9ab86",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-12-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -12075,7 +12075,7 @@
       "path": "knowledge/methodology/cards/source-review-0274.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "c54dc9fa02a6baa4ce5d21f240c63835899e9c894d07bf072627ae6dab4d662e",
+      "sha256": "e59c404d73cce1ae3c9e9c87026627951a8966cbffb681871cacd85fe0032305",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-12-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -12135,7 +12135,7 @@
       "path": "knowledge/methodology/cards/source-review-0337.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "41bbe2b379ab4f04a6a29cb211ad79b625bb8712863a4c508acbff549c0210db",
+      "sha256": "515aa1490664cfcf3bdee75a2670718782d40d022afe5125ad510664b33e7f72",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-13-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -12237,7 +12237,7 @@
       "path": "knowledge/methodology/cards/source-review-0401.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "f616311f1be12d6fcbaa8521d857221e6919e1b66d7f2c897862a4ef713cc20b",
+      "sha256": "960eb030cd4147825225f19c1706e6c61cc648bb42e0ff9ee4be31c4b60a6451",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-13-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -12257,7 +12257,7 @@
       "path": "knowledge/methodology/cards/source-review-0410.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "d37a35a56f219e9a758ff7a2635bdfbf9e8bfeba3e40ec4d3ffef3178cadc457",
+      "sha256": "850c42079de390c3e84f83ba60de8940912cb2a0ee2da999b6456b997ac7393a",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-13-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -12299,7 +12299,7 @@
       "path": "knowledge/methodology/cards/source-checked-0008.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "c418ee2dc80cc227279c67ff44e0c1c49a3fe9f3df76b6c1d0ad451cdba2cb82",
+      "sha256": "bac60bc74674e727319c62b3e1797ecb38ab97ee8b9e3723b412697641684b96",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-13-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -12319,7 +12319,7 @@
       "path": "knowledge/methodology/cards/source-checked-0009.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "1fdc1fa85ab097bc4500a925febadf025be3b2704dff1f7fd66af5e59c972604",
+      "sha256": "4ef2937e063717edaae3f2f98a4e71992ab2268f3188f06c8d9b1ed5b7ad558c",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-13-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -12339,7 +12339,7 @@
       "path": "knowledge/methodology/cards/source-checked-0010.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "10f671ad5149ff0f911f2e69b0d0cee8d384ed1fe41b384f5f15cc1fe9fc89c7",
+      "sha256": "e41f5a1881cc9d395944e3dc4825a312a36a35c07c05371ae9fcd471d018d723",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-13-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -12359,7 +12359,7 @@
       "path": "knowledge/methodology/cards/source-checked-0012.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "50672a8dcce6db94fbe464913a1303adcd6a6d0e96900d1acdaf4f65ae8ae45c",
+      "sha256": "551795541155cd363b904d733952f692e7e508f514b249d40f7393d93e8bfe70",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-13-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -12379,7 +12379,7 @@
       "path": "knowledge/methodology/cards/source-checked-0013.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "59c02b6b25f1c1db14615d10cb84500f6bb5e8d285f75de1186eff913f29279b",
+      "sha256": "b9443861c35d66814aeb6d8306d68452b1e108f1fe70fc4a4dafc01eac9c28ea",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-13-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -12421,7 +12421,7 @@
       "path": "knowledge/methodology/cards/source-checked-0015.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "bc5c3c8e2f7c25049a4bd40cbacc737c286c72ab335f8daf9afcd87b782f3787",
+      "sha256": "f0c6354cda79d5dc24cef8f7b425941dd965917b78a7023b4d20f8debef014b5",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-13-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"

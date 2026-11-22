@@ -1,4 +1,4 @@
-# Methodological decision card — Reviews and synthesis — source-review-0184
+# Methodological decision card — Transparency and reproducibility — source-review-0184
 
 Card ID: source-review-0184
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -11,10 +11,10 @@ Source locator for independent verification: https://doi.org/10.1590/1981-382120
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Seven Reasons Why: A User's Guide to Transparency and Reproducibility
 ## Original English methodological guidance [I]
-Match the review type to the question; document retrieval, selection, appraisal, and synthesis.
+Specify what data, scripts, protocols and corrections are available for reproduction.
 
 ## Limits and alternative interpretations [I]
-A PRISMA-style flowchart does not replace a defensible review design.
+Availability of files does not guarantee independent scientific replication.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

@@ -1,4 +1,4 @@
-# Methodological decision card — Discourse and content analysis — carlomagno-rocha-2016-content-categories
+# Methodological decision card — Content-category construction — carlomagno-rocha-2016-content-categories
 
 Card ID: carlomagno-rocha-2016-content-categories
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -9,10 +9,10 @@ Related bibliographic record: SRC-0373
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): Cinco regras de categorias na análise de conteúdo: limites de aplicação
 ## Original English methodological guidance [I]
-Set units of analysis, categories, context, counterexamples, and interpretation rules.
+Define mutually intelligible category rules, empirical examples, ambiguity handling and coding decisions.
 
 ## Limits and alternative interpretations [I]
-A word or category count is not a causal inference or interpretation by itself.
+Mechanical assignment does not substitute interpretive category validity.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]

@@ -1,4 +1,4 @@
-# Methodological decision card — Thematic analysis — prisma-p-2015-protocol
+# Methodological decision card — Systematic-review protocols — prisma-p-2015-protocol
 
 Card ID: prisma-p-2015-protocol
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
@@ -10,10 +10,10 @@ Source locator for independent verification: https://www.prisma-statement.org/pr
 ## Original topic and research use
 - Original catalogued topic label (preserved as metadata): PRISMA-P (2015): transparência prévia de protocolos de revisão sistemática
 ## Original English methodological guidance [I]
-Align the role of codes and themes with the analytic tradition and research question.
+Distinguish planned eligibility, selection, analysis and deviations before and after the study.
 
 ## Limits and alternative interpretations [I]
-Coding agreement or frequency alone does not demonstrate interpretive validity.
+A protocol is not proof that procedures were executed as planned.
 Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
 ## Researcher prompts [P]
