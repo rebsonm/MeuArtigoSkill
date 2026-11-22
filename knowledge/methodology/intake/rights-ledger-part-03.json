@@ -353,7 +353,7 @@
       },
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
       "identity_claim_in_receipt": false,
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0284",
@@ -633,7 +633,7 @@
       },
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
       "identity_claim_in_receipt": false,
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0294",
@@ -745,7 +745,7 @@
       },
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
       "identity_claim_in_receipt": false,
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0298",
@@ -1209,7 +1209,7 @@
       },
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
       "identity_claim_in_receipt": false,
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0315",
@@ -1405,7 +1405,7 @@
       },
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
       "identity_claim_in_receipt": false,
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0322",
@@ -1517,7 +1517,7 @@
       },
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
       "identity_claim_in_receipt": false,
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0326",
@@ -1825,7 +1825,7 @@
       },
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
       "identity_claim_in_receipt": false,
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0337",
