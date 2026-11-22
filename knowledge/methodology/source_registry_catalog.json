@@ -13353,7 +13353,7 @@
         "2020",
         "src-0385"
       ],
-      "sha256": "32d3d832c4152a110e0698643552f6361dab290ed4874684c97e06ce2d067175",
+      "sha256": "b0ae4a0613550e767a92a47189319d645edae1d8a42ba00641900d6a8da1a7cc",
       "source_metadata_only": true,
       "bibliography_match_status": "CATALOGUE_MATCH_NOT_ORIGINAL_VERIFIED",
       "rights_review": "NOT_CHECKED",
@@ -13363,8 +13363,9 @@
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-15-DELTA.json",
       "documentary_identity_claim": false,
       "pending_bibliographic_findings": "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json",
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
-      "scientific_use_validated": false
+      "operational_disposition": "EXCLUIDO_COM_JUSTIFICATIVA",
+      "scientific_use_validated": false,
+      "editorial_exclusion_evidence": "knowledge/methodology/intake/operational-scope-amendment.json"
     },
     {
       "path": "knowledge/methodology/source_cards/src-0386.md",
@@ -16110,7 +16111,7 @@
   "confirmed_pdf_work_identities": 132,
   "operational_dispositions": {
     "VALIDADO_COM_RESTRICOES": 474,
-    "BLOQUEADO_POR_EVIDENCIA": 1
+    "EXCLUIDO_COM_JUSTIFICATIVA": 1
   },
   "ib_documentary_receipt_count": 343
 }
