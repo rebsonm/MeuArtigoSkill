@@ -1,31 +1,31 @@
-# Donthu et al. (2021): decisões para análise bibliométrica reprodutível
+# Donthu et al. (2021): decisions for reproducible bibliometric analysis
 
 Card ID: donthu-2021-bibliometric-how-to
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [P] proposta de investigação, NÃO prova de leitura
+Evidence grade: [P] prospecting proposal, NOT proof of direct source reading
 Source reading scope: BIBLIOGRAPHIC_CROSS_REFERENCE_VIA_MARZI_NOT_DIRECT_SOURCE_READ
 Third-party content reproduced: NO
 
-## Questão de pesquisa metodológica
+## Methodological research question
 
-Como tornar esta abordagem coerente com a pergunta, os pressupostos e os dados que o pesquisador realmente tem?
+How can the proposed approach be made coherent with the research question, assumptions and available data?
 
-## Decisão metodológica original
+## Original methodological decision guidance
 
-Planejar perguntas bibliométricas, fonte e universo dos metadados, limpeza, escolha de métricas e integração com leitura substantiva. Discutir efeitos de corte temporal e plataforma.
+Plan the bibliometric questions, source databases and metadata universe, cleaning procedures, metric selection and combination with substantive reading. Discuss the effects of temporal cutoffs and database/platform choices.
 
-## Verificações a registrar
+## Checks to document
 
-Publicar string, cobertura, deduplicação, limiares, parâmetros do software, estrutura da rede e interpretação contextual.
+Report the exact search string, database coverage, deduplication rules, thresholds, software parameters, network structures and contextual interpretation.
 
-## Limitações da transferência
+## Limits of application
 
-Esta ficha usa referência bibliográfica identificada em Marzi; artigo primário não foi consultado diretamente nesta etapa e requer leitura antes de alegações [L].
+The bibliographic reference was identified through Marzi. The primary Donthu et al. article was not consulted directly at this stage, so it must be read before it is used to support a specific scholarly claim [L].
 
-## Referência bibliográfica
+## Bibliographic reference
 
-Donthu, N.; Kumar, S.; Mukherjee, D.; Pandey, N.; Lim, W. M. (2021). How to conduct a bibliometric analysis: An overview and guidelines. Journal of Business Research, 133, 285–296.
+Donthu, N.; Kumar, S.; Mukherjee, D.; Pandey, N.; Lim, W. M. (2021). How to conduct a bibliometric analysis: An overview and guidelines. *Journal of Business Research*, 133, 285–296.
 
-## Uso responsável
+## Responsible use
 
-Texto editorial independente e conciso. Esta ficha não disponibiliza original protegido, não é uma tradução ou substituto do livro, não atesta cobertura integral das fontes e não aprova gates. Antes de uma afirmação científica [L], examinar a obra correspondente e localizar a passagem e a edição.
+This short, independently written editorial card does not supply protected original content. It is neither a translation nor a substitute for the primary article, does not certify comprehensive reading and does not approve scientific gates. Verify the actual edition and supporting passages before claiming [L] evidence.

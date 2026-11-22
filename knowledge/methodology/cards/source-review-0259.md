@@ -1,25 +1,25 @@
-# Causal Inference using Difference-in-Differences — Lecture 1: Introduction — orientação metodológica e limites
+# Causal Inference using Difference-in-Differences — Lecture 1: Introduction — methodological guidance and limits
 
-- Registro: SRC-0259; Pedro H. C. Sant'Anna (janeiro de 2025)
-- Identificador bibliográfico: não estabelecido nesta edição; sem URL autoral específico verificado
-- Natureza: slides de ensino de inferência causal
-- Estado de curadoria: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Classe: editorial original [I]/[P], NÃO usar como evidência primária [L] ou prova de leitura integral
+- Record: SRC-0259; Pedro H. C. Sant'Anna (January 2025)
+- Bibliographic identifier: not established for this edition; no specific author-issued URL verified
+- Material type: teaching slides on causal inference
+- Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE (legacy status identifier; independent scientific review pending)
+- Evidence class: original editorial guidance [I]/[P]; NOT primary evidence [L] or proof of complete source reading
 
-## Orientação autoral para pesquisa
+## Original methodological guidance
 
-Introduz dados, resultados potenciais, estimandos e motivos de popularidade de DiD. Para aproveitamento responsável, verificar a obra integral, situar o método no objeto, examinar alternativas e recuperar as evidências usadas na argumentação.
+The slides introduce data, potential outcomes, estimands and reasons for the popularity of difference-in-differences (DiD). Before applying the ideas, consult the complete work, establish whether the approach fits the research object, examine alternatives and verify the evidence supporting any specific argument.
 
-## Contraprova e limitação
+## Counterevidence and limitations
 
-Slides docentes sem licença positiva para republicação; apenas card autoral. Perguntar também se outra interpretação do mesmo material ou uma estratégia metodológica rival é compatível com os dados. Uma posição editorial ou didática não é teste de superioridade experimental.
+The teaching slides have no confirmed permission for republication; only this independently written card is offered. Consider whether a competing interpretation of the same material or an alternative methodological strategy is consistent with the data. An editorial or teaching position is not an experimental demonstration that a method is superior.
 
-## Perguntas aplicáveis
+## Questions to examine
 
-- Qual é o objeto e a unidade de análise que restringem o método proposto?
-- Qual pressuposto, erro de interpretação ou viés precisa ser confrontado na fonte?
-- Que resultado alternativo falsificaria a conclusão? Que páginas e evidências seriam necessárias para [L]?
+- What research object and unit of analysis delimit the proposed method?
+- Which assumption, interpretive error or source of bias needs to be tested against the original source?
+- What alternative result would falsify the conclusion? Which pages and evidence would be needed before asserting [L] support?
 
-## Transparência
+## Transparency
 
-Texto editorial autoral, sem reprodução extensa. A confirmação do PDF não significa que um avaliador científico tenha aprovado este card. O PDF de origem não foi reproduzido no GitHub sem comprovação de direitos específicos. Preserve [I] como inferência e [P] como hipótese de consulta. Nenhum gate aprovado, nenhuma leitura integral simulada e nenhuma certificação de host.
+This independent editorial text does not extensively reproduce the source. Confirmation that a PDF exists does not mean that a scientific reviewer approved this card. The source PDF was not republished on GitHub without proof of specific reuse rights. Preserve [I] for interpretation and [P] for a possible line of inquiry. No scientific gate has been approved, no complete reading has been simulated, and no host certification is claimed.

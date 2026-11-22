@@ -1,25 +1,25 @@
-# A Brief Introduction to Monte Carlo Simulation — orientação metodológica e limites
+# A Brief Introduction to Monte Carlo Simulation — methodological guidance and limits
 
-- Registro: SRC-0298; Peter L. Bonate (2001 (não 2011 como indica o nome do arquivo))
-- Identificador bibliográfico: não estabelecido nesta edição; sem URL autoral específico verificado
-- Natureza: artigo introdutório Clinical Pharmacokinetics 40(1):15–22
-- Estado de curadoria: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Classe: editorial original [I]/[P], NÃO usar como evidência primária [L] ou prova de leitura integral
+- Record: SRC-0298; Peter L. Bonate (2001, NOT 2011 as suggested by the archived filename)
+- Bibliographic identifier: not established for this edition; no specific author-issued URL verified
+- Material type: introductory article in Clinical Pharmacokinetics, 40(1), 15–22
+- Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE (legacy status identifier; independent scientific review pending)
+- Evidence class: original editorial guidance [I]/[P]; NOT primary evidence [L] or proof of complete source reading
 
-## Orientação autoral para pesquisa
+## Original methodological guidance
 
-Explica simulação estocástica, parâmetros aleatórios e exemplos de estudos clínicos. Para aproveitamento responsável, verificar a obra integral, situar o método no objeto, examinar alternativas e recuperar as evidências usadas na argumentação.
+The article introduces stochastic simulation, random parameters and examples from clinical studies. Responsible application requires consulting the complete work, checking how the proposed method fits the research object, considering alternatives and verifying the evidence used to support specific arguments.
 
-## Contraprova e limitação
+## Counterevidence and limitations
 
-© Adis International Limited, todos os direitos reservados; PDF explicitamente excluído. Perguntar também se outra interpretação do mesmo material ou uma estratégia metodológica rival é compatível com os dados. Uma posição editorial ou didática não é teste de superioridade experimental.
+The source is marked © Adis International Limited, all rights reserved; its PDF is explicitly excluded from public redistribution. Consider whether other interpretations of the material or a rival methodological approach could explain the same data. An editorial or instructional statement is not an experimental demonstration of methodological superiority.
 
-## Perguntas aplicáveis
+## Questions to examine
 
-- Qual é o objeto e a unidade de análise que restringem o método proposto?
-- Qual pressuposto, erro de interpretação ou viés precisa ser confrontado na fonte?
-- Que resultado alternativo falsificaria a conclusão? Que páginas e evidências seriam necessárias para [L]?
+- What research object and unit of analysis delimit the proposed method?
+- Which assumptions, interpretive errors or possible biases must be checked against the original source?
+- What alternative result would challenge the conclusion, and which source pages and evidence would be needed for a claim graded [L]?
 
-## Transparência
+## Transparency
 
-Texto editorial autoral, sem reprodução extensa. A confirmação do PDF não significa que um avaliador científico tenha aprovado este card. O PDF de origem não foi reproduzido no GitHub sem comprovação de direitos específicos. Preserve [I] como inferência e [P] como hipótese de consulta. Nenhum gate aprovado, nenhuma leitura integral simulada e nenhuma certificação de host.
+This independent editorial text does not extensively reproduce the source. Confirming a PDF's identity is not evidence of scientific approval of this card. The original PDF has not been republished on GitHub without specific reuse rights. Preserve [I] for interpretation and [P] for prospective questions. No scientific gate, complete-reading claim or host certification is approved.
