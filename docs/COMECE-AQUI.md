@@ -2,6 +2,8 @@
 
 Meu Artigo is a **published experimental release candidate** designed to assist researchers in different fields, research traditions and methodological approaches. It offers guidance and organizational tools; it does not make scientific judgments on your behalf.
 
+**Current published version:** [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1), experimental prerelease (22 November 2026), not stable software.
+
 ## The first conversation
 
 After [installing a published Skill package](INSTALLATION.md) (currently the [published RC.1 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip)), describe your topic in your own words. For example:
