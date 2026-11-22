@@ -41,7 +41,7 @@ class ReviewMethodAddendaTests(unittest.TestCase):
             self.assertNotEqual(x.get("editorial_status"), "ACCEPTED")
 
     def test_two_new_licensed_pdf_originals_publisher_evidence_and_integrity(self):
-        self.assertEqual(len(self.pdfs), 51)
+        self.assertEqual(len(self.pdfs), 55)
         for doi in ("10.1111/ijmr.12381", "10.1007/s13162-020-00161-0"):
             item = next((x for x in self.pdfs if x.get("doi")==doi), None)
             self.assertIsNotNone(item)
@@ -78,7 +78,7 @@ class ReviewMethodAddendaTests(unittest.TestCase):
     def test_no_unlicensed_original_pdf_promoted_by_registry_matching(self):
         manifest = json.loads((ROOT/"knowledge/methodology/intake/rights-ledger-manifest.json").read_text("utf-8"))
         self.assertEqual(manifest["actual_individually_verified_rights_in_this_ledger"], 17)
-        self.assertEqual(manifest["source_pdf_count_public_catalogue"], 51)
+        self.assertEqual(manifest["source_pdf_count_public_catalogue"], 51)  # historical ledger snapshot
         self.assertEqual(manifest["original_editorial_cards_count"], 174)
         self.assertFalse(manifest["private_corpus_copied"])
 

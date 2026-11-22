@@ -1,6 +1,6 @@
 {
   "schema": "MEU_ARTIGO_PUBLIC_PDF_CATALOG_V1",
-  "version": "pilot-2026-11-21-51-unrestricted-rights-approved-pdfs",
+  "version": "pilot-2026-11-22-55-cc-by-sources",
   "documents": [
     {
       "path": "knowledge/methodology/pdfs/lycariao-roque-costa-2023.pdf",
@@ -1421,6 +1421,94 @@
         "conceitos",
         "métodos",
         "exemplos"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/mirzaei-mabin-zwikael-2025-hybrid-project-management.pdf",
+      "title": "Customising Hybrid Project Management Methodologies",
+      "authors": "Maryam Mirzaei; Victoria J. Mabin; Ofer Zwikael",
+      "year": 2025,
+      "doi": "10.1080/09537287.2024.2349231",
+      "size": 1807583,
+      "sha256": "6012d1ecae3aa60258aa6d4fea86b5ff1a94db2914de6f1a5079014f8d7d6886",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://doi.org/10.1080/09537287.2024.2349231",
+      "source_url": "https://doi.org/10.1080/09537287.2024.2349231",
+      "original_file_unchanged": true,
+      "keywords": [
+        "project management",
+        "hybrid methodology",
+        "agile",
+        "plan-driven",
+        "method tailoring",
+        "customisation"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/martinsuo-tilebein-birollo-2024-project-lifecycles.pdf",
+      "title": "Lifecycles, Processes, and Practices in Strategic Projects and Programs",
+      "authors": "Miia Martinsuo; Meike Tilebein; Gustavo Birollo",
+      "year": 2024,
+      "doi": "10.1016/j.ijproman.2024.102653",
+      "size": 415970,
+      "sha256": "1b1d66b221e3c7c1eed14a29d1cdfc1f341de231c6417e870a1df60d5eee514a",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://doi.org/10.1016/j.ijproman.2024.102653",
+      "source_url": "https://doi.org/10.1016/j.ijproman.2024.102653",
+      "original_file_unchanged": true,
+      "keywords": [
+        "project lifecycles",
+        "process research",
+        "strategic projects",
+        "program management"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/mariani-2026-projects-ready-for-ai.pdf",
+      "title": "Are Projects Ready for AI — or for the Value It Generates?",
+      "authors": "Costanza Mariani",
+      "year": 2026,
+      "doi": "10.1016/j.ijproman.2026.102846",
+      "size": 622527,
+      "sha256": "4d2ff1fdec51501ed79b912ab9341fa51ed034f57cbdc2b3fd3625bbe1bed5be",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://doi.org/10.1016/j.ijproman.2026.102846",
+      "source_url": "https://doi.org/10.1016/j.ijproman.2026.102846",
+      "original_file_unchanged": true,
+      "keywords": [
+        "artificial intelligence",
+        "project management",
+        "AI value",
+        "AI capability",
+        "technology implementation"
+      ]
+    },
+    {
+      "path": "knowledge/methodology/pdfs/chen-martins-zhang-dong-2025-digital-transformation-projects.pdf",
+      "title": "Digital Transformation in Project Management: A Systematic Review and Research Agenda",
+      "authors": "Meiying Chen; T. S. Martins; L. Zhang; H. Dong",
+      "year": 2025,
+      "doi": "10.3390/systems13080625",
+      "size": 2404059,
+      "sha256": "25d5a29d0d3d28d4eacf9e0a6fedfb567a37b20814b42aa403b8e2ea396d4b6b",
+      "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence": "https://doi.org/10.3390/systems13080625",
+      "source_url": "https://doi.org/10.3390/systems13080625",
+      "original_file_unchanged": true,
+      "keywords": [
+        "digital transformation",
+        "project management",
+        "systematic literature review",
+        "research agenda",
+        "technology"
       ]
     }
   ],

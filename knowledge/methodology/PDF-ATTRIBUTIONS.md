@@ -1,6 +1,6 @@
 # Third-party academic PDF credits and licenses — Meu Artigo
 
-**This public GitHub repository distributes 51 third-party academic PDFs, subject to each work's declared license and attribution requirements.**
+**This public GitHub repository distributes 55 third-party academic PDFs, subject to each work's declared license and attribution requirements.**
 
 Each PDF remains the property of its authors or other rightsholders and retains its own license. **The software's Apache-2.0 license does not apply to third-party PDFs.** The list below documents distribution and attribution; it does not turn editorial methodology cards into independently verified primary-source evidence, replace the original publication, or authorize uses beyond each individual license.
 
@@ -71,3 +71,16 @@ For *Seven Reasons Why*, [SciELO's published version](https://www.scielo.br/j/bp
 - Third-party resources outside the 51-item catalog are **not** automatically authorized for redistribution.
 - Report attribution mistakes or inconsistent publisher licenses in the catalog and this register without silently rewriting historical evidence.
 - Publication of the reference library does not approve scientific decisions or any of the project's seven researcher-controlled gates.
+
+## 2026-11-22 PPGA Project Management licensed original additions
+
+The following **four** additional PDF files were retrieved from the user's PPGA Project Management materials and reproduced as unchanged originals after confirming the CC BY 4.0 statement in each PDF. Publisher/source attribution and retained copyright notices are mandatory.
+
+| # | Original work and authors (year) | DOI / publisher | Declared license | Original PDF |
+|---:|---|---|---|---|
+| 52 | **Customising Hybrid Project Management Methodologies** — Maryam Mirzaei; Victoria J. Mabin; Ofer Zwikael (2025) | [DOI](https://doi.org/10.1080/09537287.2024.2349231) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [PDF](pdfs/mirzaei-mabin-zwikael-2025-hybrid-project-management.pdf) |
+| 53 | **Lifecycles, Processes, and Practices in Strategic Projects and Programs** — Miia Martinsuo; Meike Tilebein; Gustavo Birollo (2024) | [DOI](https://doi.org/10.1016/j.ijproman.2024.102653) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [PDF](pdfs/martinsuo-tilebein-birollo-2024-project-lifecycles.pdf) |
+| 54 | **Are Projects Ready for AI — or for the Value It Generates?** — Costanza Mariani (2026) | [DOI](https://doi.org/10.1016/j.ijproman.2026.102846) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [PDF](pdfs/mariani-2026-projects-ready-for-ai.pdf) |
+| 55 | **Digital Transformation in Project Management: A Systematic Review and Research Agenda** — Meiying Chen; T. S. Martins; L. Zhang; H. Dong (2025) | [DOI](https://doi.org/10.3390/systems13080625) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [PDF](pdfs/chen-martins-zhang-dong-2025-digital-transformation-projects.pdf) |
+
+**Rights scope:** the Apache-2.0 software licence does not apply to third-party PDFs. PDF SHA-256 hashes are kept in `pdf_catalog.json`. Source visibility, PDF publication and bibliographic claims are separate from researcher-controlled scientific approval.

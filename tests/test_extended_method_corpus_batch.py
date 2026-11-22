@@ -28,7 +28,7 @@ class ExtendedMethodsRegression(unittest.TestCase):
   self.assertIn("Carlos Closa",closa["public_work_metadata_screen"]["authors"])
  def test_exact_open_pdf_copies_are_indexed_not_other_licenses(self):
   c=json.loads((BASE/"pdf_catalog.json").read_text("utf-8"))["documents"]
-  self.assertEqual(len(c),51)
+  self.assertEqual(len(c),55)
   paths={"knowledge/methodology/pdfs/messner-smith-richards-2025-epistemological-incongruences.pdf","knowledge/methodology/pdfs/eschrich-sterman-2024-llm-qualitative-framework-arxiv-v1.pdf"}
   for row in (x for x in c if x["path"] in paths):
    data=(ROOT/row["path"]).read_bytes()
@@ -42,7 +42,7 @@ class ExtendedMethodsRegression(unittest.TestCase):
  def test_book_license_verified_but_pdf_not_uploaded(self):
   m=json.loads((BASE/"intake"/"rights-ledger-manifest.json").read_text("utf-8"))
   self.assertEqual(m["actual_individually_verified_rights_in_this_ledger"],17)
-  self.assertEqual(m["source_pdf_count_public_catalogue"],51)
+  self.assertEqual(m["source_pdf_count_public_catalogue"],51)  # immutable pre-intake ledger snapshot
   self.assertEqual(m["original_editorial_cards_count"],174)
   ledger=[]
   for i in range(1,6):

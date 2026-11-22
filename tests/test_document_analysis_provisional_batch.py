@@ -32,7 +32,7 @@ class TenDocumentProspects(unittest.TestCase):
    self.assertEqual(x["editorial_status"],"DRAFT_NEEDS_INDEPENDENT_REVIEW")
  def test_noncommercial_sources_and_scielo_book_not_uploaded(self):
   pdf=json.loads((BASE/"pdf_catalog.json").read_text("utf-8"))["documents"]
-  self.assertEqual(len(pdf),51)
+  self.assertEqual(len(pdf),55)
   self.assertFalse(any("fujita" in x["path"] or "morgan-2022" in x["path"] or "oconnor" in x["path"] for x in pdf))
   l=json.loads((BASE/"intake"/"rights-ledger-part-01.json").read_text("utf-8"))["records"]
   for sid,notice in (("SRC-0009","CC_BY_NC_SA_4"),("SRC-0146","CC_BY_NC_4")):
