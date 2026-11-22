@@ -78,3 +78,12 @@ These are non-scientific, metadata-and-prose-level scope judgments; no candidate
 | `ppga-qualitative-validation-transparency` | `RETAIN_AS_DISTINCT_CROSS_TRADITION_CHECK` | Existing qualitative-design-quality |
 
 All six now carry their provisional disposition inside the draft card itself; no active card, source PDF, scientific gate or published catalog was changed.
+
+## Source-card cross-check — two apparent duplicates are not equivalent (2026-11-22)
+
+- **SRC-0372 / SRC-0373: FALSE DUPLICATE CREATED BY STALE REGISTRY TITLE.** The already-inspected `src-0372.md` and `IB-15-DELTA.json` identify a **2017 conference paper by Danielle Costa da Silva**, whereas SRC-0373 is a **2016 article by Carlomagno and Rocha**. The registry title and its search keywords for SRC-0372 were wrong. A separate isolated correction is proposed in **draft PR #117**, without changing its scientific grade, rights, source-card hash or stable ID. These are two distinct works.
+- **SRC-0406 / SRC-0408: SAME TITLE BUT DIFFERENT RESEARCH OUTPUTS.** The former is a 2020 slide presentation (~602,343 bytes), the latter a 2020 journal article (~7,569,582 bytes; 39 pages). Same author and title do **not** authorize treating them as byte-identical duplicates or merging their scholarly citations.
+- The other **11 repeated-title groups, covering 23 SRC records**, have matching bibliographic work identity descriptions in their individual source-card checks (some by identical DOI and author/edition; others by title/author/year and file provenance). This leaves **12 additional SRC representations beyond one per repeated bibliographic work group**. The underlying files and editions still require content-hash comparison before any file-level deduplication.
+- **Registry-level count before isolated PR #117 is integrated:** 13 repeated-title groups / 27 entries; this reflects the stale title. **Expected after SRC-0372 title-only correction:** 12 repeated-title groups / 25 entries; one group is still a slides-vs-article distinction. This is a deterministic interpretation of the planned single-record correction, **not** proof of merge.
+- No SRC deletion, DOI invention, promotion of [P] to [L], publication of PDF or gate approval is authorized by this note. The erratum PR is separate from this PPGA card intake PR.
+

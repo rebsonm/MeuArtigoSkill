@@ -88,3 +88,7 @@ The latest reconciliation audit is in [SRC-DUPLICATE-TITLE-AUDIT-2026-11-22.md](
 ## Research-governance boundary
 
 No gate or scientific decision was approved, no protected PDF was moved to GitHub, and none of these drafts is a primary scientific [L] claim. A staged branch/PR is NOT an approved card release. All OSF topic and nested folder entries were listed, but there is no claim of complete content reading of every textbook or source; counting entries and verifying source-level evidence are separate tasks.
+
+## Corrected bibliographic-identity triage (2026-11-22)
+
+The title-only duplicate audit uncovered one **false duplicate** (SRC-0372 vs SRC-0373, erroneous registry title; isolated fix in draft PR #117) and one **different-formats collision** (SRC-0406 slide presentation vs SRC-0408 journal article). Eleven remaining repeated-title groups currently appear to be repeat bibliographic work representations; actual file byte hashes, editions and permissions still require comparison. This is recorded in the [deduplication audit](./SRC-DUPLICATE-TITLE-AUDIT-2026-11-22.md). No change to active-source corpus, draft-scientific grade or gates in this PR.
