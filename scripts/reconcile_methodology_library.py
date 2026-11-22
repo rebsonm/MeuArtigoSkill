@@ -91,6 +91,22 @@ def reconcile():
     catalog = read(catalog_path)
     corrections_path = LIB / 'intake/editorial-corrections.json'
     corrections = {r['path']: r for r in read(corrections_path)}
+    amendment_path = LIB / 'intake/operational-scope-amendment.json'
+    amendment = read(amendment_path)
+    if (amendment.get('schema') != 'MEU_ARTIGO_OPERATIONAL_SCOPE_AMENDMENT_V1'
+            or amendment.get('scientific_use_validated') is not False
+            or amendment.get('pdf_redistribution_authorized') is not False
+            or amendment.get('strictly_blocked_ids') != ['SRC-0385']):
+        raise ValueError('UNSAFE_OPERATIONAL_SCOPE_AMENDMENT')
+    lead_ids = set(amendment['source_lead_ids'])
+    if len(lead_ids) != 14 or 'SRC-0385' in lead_ids or not lead_ids.issubset(residuals):
+        raise ValueError('SOURCE_AMENDMENT_SCOPE_INVALID')
+    editorial_amendments = {r['path']: r for r in amendment['editorial_card_amendments']}
+    if len(editorial_amendments) != 4 or not set(editorial_amendments).issubset(editorial):
+        raise ValueError('EDITORIAL_AMENDMENT_SCOPE_INVALID')
+    for path, entry in editorial_amendments.items():
+        if entry.get('sha') != digest(path):
+            raise ValueError('EDITORIAL_AMENDMENT_CARD_HASH_MISMATCH')
     dispositions = []
     for item in registry['documents']:
         sid, path = item['source_id'], item['path']
@@ -115,6 +131,10 @@ def reconcile():
             receipt_path, receipt = residuals[sid]
             evidence.append(receipt_path)
             item['pending_bibliographic_findings'] = receipt_path
+        if sid in lead_ids:
+            # Prospecting-only access, NEVER a resolution of copy identity or rights.
+            status = 'VALIDADO_COM_RESTRICOES'
+            evidence.append(str(amendment_path))
         item['sha256'] = digest(path)
         item['operational_disposition'] = status
         item['scientific_use_validated'] = False
@@ -139,12 +159,16 @@ def reconcile():
             if digest(path) != corrections[path]['after_sha256'] or review['sha256_reviewed'] != digest(path):
                 raise ValueError('CORRECTED_CARD_NOT_REVALIDATED')
             status = 'CORRIGIDO_E_REVALIDADO'
+        if path in editorial_amendments:
+            # Original prompts [I]/[P] may be used as guidance with limitations.
+            # This does not erase historical blockers or validate underlying PDFs.
+            status = 'VALIDADO_COM_RESTRICOES'
         item['sha256'] = digest(path)
         item['operational_disposition'] = status
         item['scientific_use_validated'] = False
         dispositions.append({'id': 'EC-' + str(len(dispositions) - 474).zfill(4),
             'path': path, 'kind': 'EDITORIAL_GUIDANCE', 'disposition': status,
-            'sha256': item['sha256'], 'evidence': [receipt_path, str(independent_path)] + ([str(corrections_path)] if path in corrections else []),
+            'sha256': item['sha256'], 'evidence': [receipt_path, str(independent_path)] + ([str(corrections_path)] if path in corrections else []) + ([str(amendment_path)] if path in editorial_amendments else []),
             'reason': 'Individual IA content review and deterministic integrity check; restrictions/blockers from review retained.',
             'review_record': str(independent_path) + '#' + path,
             'primary_source_rechecked_this_cycle': bool(review.get('primary_evidence')),
@@ -167,8 +191,9 @@ def reconcile():
     manifest = read(manifest_path)
     manifest['operational_validation'] = str(OUT)
     manifest['ib_receipts_integrated'] = 343
-    manifest['unresolved_residuals_excluded_from_recommendations'] = sorted(residuals)
-    manifest['next'] = 'Resolve the individual residuals and review exact primary passages; host acceptance and history decisions remain pending.'
+    manifest['unresolved_residuals_excluded_from_recommendations'] = sorted(set(residuals) - lead_ids)
+    manifest['unresolved_copy_identities_accessible_as_leads_only'] = sorted(lead_ids)
+    manifest['next'] = 'All 649 records have operational dispositions; exact copy identity, rights and primary claim support remain pending before scientific L use.'
     write(manifest_path, manifest)
     result = {'schema': 'MEU_ARTIGO_OPERATIONAL_VALIDATION_V1', 'date': '2026-11-21',
         'actor': 'IA_CODEX', 'review_policy': 'MAINTAINER_AUTHORIZED_AI_AND_CODE_OPERATIONAL_ONLY',
@@ -178,7 +203,9 @@ def reconcile():
         'procedure': 'scripts/reconcile_methodology_library.py',
         'ref_evidence': str(LIB / 'intake/v1_parallel/INTEGRATION-REFS.json'),
         'counts': dict(Counter(d['disposition'] for d in dispositions)),
-        'card_count': 649, 'cards': dispositions}
+        'card_count': 649, 'operational_scope_amendment': str(amendment_path),
+        'scientific_primary_claims_validated': 0,
+        'cards': dispositions}
     write(OUT, result)
     print(json.dumps({'cards': 649, 'counts': result['counts']}, ensure_ascii=False))
 
@@ -208,6 +235,17 @@ def check():
     quarantine = next(r for r in entries if r['id'] == 'SRC-0385')
     if quarantine['disposition'] != 'BLOQUEADO_POR_EVIDENCIA':
         raise ValueError('QUARANTINE_BREACH')
+    amendment = read(LIB / 'intake/operational-scope-amendment.json')
+    if report.get('operational_scope_amendment') != str(LIB / 'intake/operational-scope-amendment.json'):
+        raise ValueError('OPERATIONAL_AMENDMENT_NOT_RECORDED')
+    for sid in amendment['source_lead_ids']:
+        entry = next(r for r in entries if r['id'] == sid)
+        if entry['disposition'] != 'VALIDADO_COM_RESTRICOES':
+            raise ValueError('PROSPECTING_SCOPE_NOT_RECONCILED')
+    for x in amendment['editorial_card_amendments']:
+        entry = next(r for r in entries if r['id'] == x['id'])
+        if (entry['sha256'] != x['sha'] or entry['disposition'] != 'VALIDADO_COM_RESTRICOES'):
+            raise ValueError('EDITORIAL_SCOPE_NOT_RECONCILED')
     print('649 dispositions: coverage, hashes, evidence, catalogues and quarantine OK')
 
 
