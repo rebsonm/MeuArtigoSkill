@@ -10,8 +10,8 @@
   "procedure": "scripts/reconcile_methodology_library.py",
   "ref_evidence": "knowledge/methodology/intake/v1_parallel/INTEGRATION-REFS.json",
   "counts": {
-    "VALIDADO_COM_RESTRICOES": 617,
-    "BLOQUEADO_POR_EVIDENCIA": 19,
+    "VALIDADO_COM_RESTRICOES": 635,
+    "BLOQUEADO_POR_EVIDENCIA": 1,
     "CORRIGIDO_E_REVALIDADO": 13
   },
   "card_count": 649,
@@ -2938,20 +2938,23 @@
       "id": "SRC-0160",
       "path": "knowledge/methodology/source_cards/src-0160.md",
       "kind": "BIBLIOGRAPHIC_METADATA",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "disposition": "VALIDADO_COM_RESTRICOES",
       "sha256": "c2b7c43adb11262abeec0961fb43040405de3cb786aaf3c004bd1726a1fce1ba",
       "evidence": [
         "knowledge/methodology/intake/rights-ledger-part-01.json",
         "knowledge/methodology/intake/parallel/IB-04-DELTA.json",
-        "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json"
+        "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
       "primary_source_rechecked_this_cycle": false,
-      "reason": "Unresolved edition/authenticity or copy provenance; see individual V1 finding.",
+      "reason": "Unresolved exact copy/version: permitted as a *bibliographic prospecting [P] lead only* with attributed V1 caveats, not claim-grade [L] or PDF license.",
       "limits": [
         "No new private PDF reading",
         "No primary claim support verified",
         "No new redistribution permission",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Exact private PDF edition and legal rights remain unverified",
+        "No citation-grade primary claims"
       ]
     },
     {
@@ -3978,20 +3981,23 @@
       "id": "SRC-0215",
       "path": "knowledge/methodology/source_cards/src-0215.md",
       "kind": "BIBLIOGRAPHIC_METADATA",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "disposition": "VALIDADO_COM_RESTRICOES",
       "sha256": "8b5a7faf69bff65c46ff88ab960cab97a70452e4060ff25c130e8983ba894f8c",
       "evidence": [
         "knowledge/methodology/intake/rights-ledger-part-02.json",
         "knowledge/methodology/intake/parallel/IB-07-DELTA.json",
-        "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json"
+        "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
       "primary_source_rechecked_this_cycle": false,
-      "reason": "Unresolved edition/authenticity or copy provenance; see individual V1 finding.",
+      "reason": "Unresolved exact copy/version: permitted as a *bibliographic prospecting [P] lead only* with attributed V1 caveats, not claim-grade [L] or PDF license.",
       "limits": [
         "No new private PDF reading",
         "No primary claim support verified",
         "No new redistribution permission",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Exact private PDF edition and legal rights remain unverified",
+        "No citation-grade primary claims"
       ]
     },
     {
@@ -4150,20 +4156,23 @@
       "id": "SRC-0224",
       "path": "knowledge/methodology/source_cards/src-0224.md",
       "kind": "BIBLIOGRAPHIC_METADATA",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "disposition": "VALIDADO_COM_RESTRICOES",
       "sha256": "87c94666e92cee559a615356d8c3fee298cefce1cba722e884bb80c9035a82fe",
       "evidence": [
         "knowledge/methodology/intake/rights-ledger-part-02.json",
         "knowledge/methodology/intake/parallel/IB-07-DELTA.json",
-        "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json"
+        "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
       "primary_source_rechecked_this_cycle": false,
-      "reason": "Unresolved edition/authenticity or copy provenance; see individual V1 finding.",
+      "reason": "Unresolved exact copy/version: permitted as a *bibliographic prospecting [P] lead only* with attributed V1 caveats, not claim-grade [L] or PDF license.",
       "limits": [
         "No new private PDF reading",
         "No primary claim support verified",
         "No new redistribution permission",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Exact private PDF edition and legal rights remain unverified",
+        "No citation-grade primary claims"
       ]
     },
     {
@@ -4398,20 +4407,23 @@
       "id": "SRC-0237",
       "path": "knowledge/methodology/source_cards/src-0237.md",
       "kind": "BIBLIOGRAPHIC_METADATA",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "disposition": "VALIDADO_COM_RESTRICOES",
       "sha256": "4fc380b8ddd374091086d95e648288aef6344ef769a6261015ab7e720a7e9aa5",
       "evidence": [
         "knowledge/methodology/intake/rights-ledger-part-02.json",
         "knowledge/methodology/intake/parallel/IB-08-DELTA.json",
-        "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json"
+        "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
       "primary_source_rechecked_this_cycle": false,
-      "reason": "Unresolved edition/authenticity or copy provenance; see individual V1 finding.",
+      "reason": "Unresolved exact copy/version: permitted as a *bibliographic prospecting [P] lead only* with attributed V1 caveats, not claim-grade [L] or PDF license.",
       "limits": [
         "No new private PDF reading",
         "No primary claim support verified",
         "No new redistribution permission",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Exact private PDF edition and legal rights remain unverified",
+        "No citation-grade primary claims"
       ]
     },
     {
@@ -4624,20 +4636,23 @@
       "id": "SRC-0249",
       "path": "knowledge/methodology/source_cards/src-0249.md",
       "kind": "BIBLIOGRAPHIC_METADATA",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "disposition": "VALIDADO_COM_RESTRICOES",
       "sha256": "7fc6342b51b5bf9de66af5963f6392c9486eccd763dfc646ef5263c2d09723ff",
       "evidence": [
         "knowledge/methodology/intake/rights-ledger-part-02.json",
         "knowledge/methodology/intake/parallel/IB-08-DELTA.json",
-        "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json"
+        "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
       "primary_source_rechecked_this_cycle": false,
-      "reason": "Unresolved edition/authenticity or copy provenance; see individual V1 finding.",
+      "reason": "Unresolved exact copy/version: permitted as a *bibliographic prospecting [P] lead only* with attributed V1 caveats, not claim-grade [L] or PDF license.",
       "limits": [
         "No new private PDF reading",
         "No primary claim support verified",
         "No new redistribution permission",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Exact private PDF edition and legal rights remain unverified",
+        "No citation-grade primary claims"
       ]
     },
     {
@@ -4887,20 +4902,23 @@
       "id": "SRC-0263",
       "path": "knowledge/methodology/source_cards/src-0263.md",
       "kind": "BIBLIOGRAPHIC_METADATA",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "disposition": "VALIDADO_COM_RESTRICOES",
       "sha256": "ebc7b5344c6bf53172253d944eb180dac21283d8d0a2daf2f4e0efb3bbdd7879",
       "evidence": [
         "knowledge/methodology/intake/rights-ledger-part-02.json",
         "knowledge/methodology/intake/parallel/IB-09-DELTA.json",
-        "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json"
+        "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
       "primary_source_rechecked_this_cycle": false,
-      "reason": "Unresolved edition/authenticity or copy provenance; see individual V1 finding.",
+      "reason": "Unresolved exact copy/version: permitted as a *bibliographic prospecting [P] lead only* with attributed V1 caveats, not claim-grade [L] or PDF license.",
       "limits": [
         "No new private PDF reading",
         "No primary claim support verified",
         "No new redistribution permission",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Exact private PDF edition and legal rights remain unverified",
+        "No citation-grade primary claims"
       ]
     },
     {
@@ -5262,20 +5280,23 @@
       "id": "SRC-0283",
       "path": "knowledge/methodology/source_cards/src-0283.md",
       "kind": "BIBLIOGRAPHIC_METADATA",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "disposition": "VALIDADO_COM_RESTRICOES",
       "sha256": "2a473a0d4af17b749278e9ab7d1519328392cf4142a896418cbae14f3c4c284b",
       "evidence": [
         "knowledge/methodology/intake/rights-ledger-part-03.json",
         "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
-        "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json"
+        "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
       "primary_source_rechecked_this_cycle": false,
-      "reason": "Unresolved edition/authenticity or copy provenance; see individual V1 finding.",
+      "reason": "Unresolved exact copy/version: permitted as a *bibliographic prospecting [P] lead only* with attributed V1 caveats, not claim-grade [L] or PDF license.",
       "limits": [
         "No new private PDF reading",
         "No primary claim support verified",
         "No new redistribution permission",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Exact private PDF edition and legal rights remain unverified",
+        "No citation-grade primary claims"
       ]
     },
     {
@@ -5453,20 +5474,23 @@
       "id": "SRC-0293",
       "path": "knowledge/methodology/source_cards/src-0293.md",
       "kind": "BIBLIOGRAPHIC_METADATA",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "disposition": "VALIDADO_COM_RESTRICOES",
       "sha256": "77e486117829beb80b4e9b1991471389ac1666329751740676e78fc88c4ae6bc",
       "evidence": [
         "knowledge/methodology/intake/rights-ledger-part-03.json",
         "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
-        "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json"
+        "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
       "primary_source_rechecked_this_cycle": false,
-      "reason": "Unresolved edition/authenticity or copy provenance; see individual V1 finding.",
+      "reason": "Unresolved exact copy/version: permitted as a *bibliographic prospecting [P] lead only* with attributed V1 caveats, not claim-grade [L] or PDF license.",
       "limits": [
         "No new private PDF reading",
         "No primary claim support verified",
         "No new redistribution permission",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Exact private PDF edition and legal rights remain unverified",
+        "No citation-grade primary claims"
       ]
     },
     {
@@ -5530,20 +5554,23 @@
       "id": "SRC-0297",
       "path": "knowledge/methodology/source_cards/src-0297.md",
       "kind": "BIBLIOGRAPHIC_METADATA",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "disposition": "VALIDADO_COM_RESTRICOES",
       "sha256": "ea5523e7ba797ec746ff70e74e5b2bff6625e51c95e358f1a816f73485a1242a",
       "evidence": [
         "knowledge/methodology/intake/rights-ledger-part-03.json",
         "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
-        "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json"
+        "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
       "primary_source_rechecked_this_cycle": false,
-      "reason": "Unresolved edition/authenticity or copy provenance; see individual V1 finding.",
+      "reason": "Unresolved exact copy/version: permitted as a *bibliographic prospecting [P] lead only* with attributed V1 caveats, not claim-grade [L] or PDF license.",
       "limits": [
         "No new private PDF reading",
         "No primary claim support verified",
         "No new redistribution permission",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Exact private PDF edition and legal rights remain unverified",
+        "No citation-grade primary claims"
       ]
     },
     {
@@ -5852,20 +5879,23 @@
       "id": "SRC-0314",
       "path": "knowledge/methodology/source_cards/src-0314.md",
       "kind": "BIBLIOGRAPHIC_METADATA",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "disposition": "VALIDADO_COM_RESTRICOES",
       "sha256": "55d4573be11a4d3b41784a40713e9b2cc311a6a2cd75513c282ca5d4f54e71b5",
       "evidence": [
         "knowledge/methodology/intake/rights-ledger-part-03.json",
         "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
-        "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json"
+        "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
       "primary_source_rechecked_this_cycle": false,
-      "reason": "Unresolved edition/authenticity or copy provenance; see individual V1 finding.",
+      "reason": "Unresolved exact copy/version: permitted as a *bibliographic prospecting [P] lead only* with attributed V1 caveats, not claim-grade [L] or PDF license.",
       "limits": [
         "No new private PDF reading",
         "No primary claim support verified",
         "No new redistribution permission",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Exact private PDF edition and legal rights remain unverified",
+        "No citation-grade primary claims"
       ]
     },
     {
@@ -5986,20 +6016,23 @@
       "id": "SRC-0321",
       "path": "knowledge/methodology/source_cards/src-0321.md",
       "kind": "BIBLIOGRAPHIC_METADATA",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "disposition": "VALIDADO_COM_RESTRICOES",
       "sha256": "930aa2b13b263bfdb364789bc6ae5d038c4955929f52635f61f09a4a8ce5e5bd",
       "evidence": [
         "knowledge/methodology/intake/rights-ledger-part-03.json",
         "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
-        "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json"
+        "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
       "primary_source_rechecked_this_cycle": false,
-      "reason": "Unresolved edition/authenticity or copy provenance; see individual V1 finding.",
+      "reason": "Unresolved exact copy/version: permitted as a *bibliographic prospecting [P] lead only* with attributed V1 caveats, not claim-grade [L] or PDF license.",
       "limits": [
         "No new private PDF reading",
         "No primary claim support verified",
         "No new redistribution permission",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Exact private PDF edition and legal rights remain unverified",
+        "No citation-grade primary claims"
       ]
     },
     {
@@ -6063,20 +6096,23 @@
       "id": "SRC-0325",
       "path": "knowledge/methodology/source_cards/src-0325.md",
       "kind": "BIBLIOGRAPHIC_METADATA",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "disposition": "VALIDADO_COM_RESTRICOES",
       "sha256": "88abdd08e449020368d99296f6acd3c4d0e11f45fc45707c50f8e14c37e41e40",
       "evidence": [
         "knowledge/methodology/intake/rights-ledger-part-03.json",
         "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
-        "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json"
+        "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
       "primary_source_rechecked_this_cycle": false,
-      "reason": "Unresolved edition/authenticity or copy provenance; see individual V1 finding.",
+      "reason": "Unresolved exact copy/version: permitted as a *bibliographic prospecting [P] lead only* with attributed V1 caveats, not claim-grade [L] or PDF license.",
       "limits": [
         "No new private PDF reading",
         "No primary claim support verified",
         "No new redistribution permission",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Exact private PDF edition and legal rights remain unverified",
+        "No citation-grade primary claims"
       ]
     },
     {
@@ -6273,20 +6309,23 @@
       "id": "SRC-0336",
       "path": "knowledge/methodology/source_cards/src-0336.md",
       "kind": "BIBLIOGRAPHIC_METADATA",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "disposition": "VALIDADO_COM_RESTRICOES",
       "sha256": "d170b3b59c31230fce819c4e7b61b55f1e34dd73a09b2e50db48d74e490801c0",
       "evidence": [
         "knowledge/methodology/intake/rights-ledger-part-03.json",
         "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
-        "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json"
+        "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
       "primary_source_rechecked_this_cycle": false,
-      "reason": "Unresolved edition/authenticity or copy provenance; see individual V1 finding.",
+      "reason": "Unresolved exact copy/version: permitted as a *bibliographic prospecting [P] lead only* with attributed V1 caveats, not claim-grade [L] or PDF license.",
       "limits": [
         "No new private PDF reading",
         "No primary claim support verified",
         "No new redistribution permission",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Exact private PDF edition and legal rights remain unverified",
+        "No citation-grade primary claims"
       ]
     },
     {
@@ -7541,20 +7580,23 @@
       "id": "SRC-0403",
       "path": "knowledge/methodology/source_cards/src-0403.md",
       "kind": "BIBLIOGRAPHIC_METADATA",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "disposition": "VALIDADO_COM_RESTRICOES",
       "sha256": "5bd168b6b8d477648c7c273a2cabbdd9d5d21a3986b0efa5473c3d191114103f",
       "evidence": [
         "knowledge/methodology/intake/rights-ledger-part-04.json",
         "knowledge/methodology/intake/parallel/IB-16-DELTA.json",
-        "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json"
+        "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
       "primary_source_rechecked_this_cycle": false,
-      "reason": "Unresolved edition/authenticity or copy provenance; see individual V1 finding.",
+      "reason": "Unresolved exact copy/version: permitted as a *bibliographic prospecting [P] lead only* with attributed V1 caveats, not claim-grade [L] or PDF license.",
       "limits": [
         "No new private PDF reading",
         "No primary claim support verified",
         "No new redistribution permission",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Exact private PDF edition and legal rights remain unverified",
+        "No citation-grade primary claims"
       ]
     },
     {
@@ -12001,20 +12043,22 @@
       "id": "EC-0154",
       "path": "knowledge/methodology/cards/source-review-0273.md",
       "kind": "EDITORIAL_GUIDANCE",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
-      "sha256": "267e1b63a2847ac3ef1419d366f87663ed96a8c734cf4030bbfe037fa65e1da6",
+      "disposition": "VALIDADO_COM_RESTRICOES",
+      "sha256": "ec5d4b207f26e04ad8dcf3bd096133ae41ce58cd9b51810d91a449a86db95a33",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-12-DELTA.json",
-        "knowledge/methodology/intake/independent-editorial-review.json"
+        "knowledge/methodology/intake/independent-editorial-review.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
-      "reason": "Individual IA content review and deterministic integrity check; restrictions/blockers from review retained.",
+      "reason": "Operational editorial [I]/[P] orientation with bounded public bibliographic cross-check; historical rights and exact-copy blockers preserved; not [L] evidence.",
       "review_record": "knowledge/methodology/intake/independent-editorial-review.json#knowledge/methodology/cards/source-review-0273.md",
       "primary_source_rechecked_this_cycle": false,
       "limits": [
         "Editorial orientation only",
         "Not independently validated science",
         "Read exact source passages before [L]",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Public catalogue/metadata does not verify the exact private copy"
       ]
     },
     {
@@ -12141,20 +12185,22 @@
       "id": "EC-0161",
       "path": "knowledge/methodology/cards/source-review-0367.md",
       "kind": "EDITORIAL_GUIDANCE",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
-      "sha256": "a27078ed44bafa7791a88567958214eb7c9b11ffb592d06010cda9b9d04ae850",
+      "disposition": "VALIDADO_COM_RESTRICOES",
+      "sha256": "e02aa0ac2ccb901daef97b70f2582ca3a4f7bf99a55922e5f78721de47cf7bbd",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-13-DELTA.json",
-        "knowledge/methodology/intake/independent-editorial-review.json"
+        "knowledge/methodology/intake/independent-editorial-review.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
-      "reason": "Individual IA content review and deterministic integrity check; restrictions/blockers from review retained.",
+      "reason": "Operational editorial [I]/[P] orientation with bounded public bibliographic cross-check; historical rights and exact-copy blockers preserved; not [L] evidence.",
       "review_record": "knowledge/methodology/intake/independent-editorial-review.json#knowledge/methodology/cards/source-review-0367.md",
       "primary_source_rechecked_this_cycle": false,
       "limits": [
         "Editorial orientation only",
         "Not independently validated science",
         "Read exact source passages before [L]",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Public catalogue/metadata does not verify the exact private copy"
       ]
     },
     {
@@ -12221,20 +12267,22 @@
       "id": "EC-0165",
       "path": "knowledge/methodology/cards/source-checked-0007.md",
       "kind": "EDITORIAL_GUIDANCE",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
-      "sha256": "df2fafc5c40123e8d195131d24ab7a6840d877a997832ecb3e5d46d92ca06670",
+      "disposition": "VALIDADO_COM_RESTRICOES",
+      "sha256": "700d78056b85c05579e3c6f6023c649ef336183126b0ae659c02f234363e2d44",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-13-DELTA.json",
-        "knowledge/methodology/intake/independent-editorial-review.json"
+        "knowledge/methodology/intake/independent-editorial-review.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
-      "reason": "Individual IA content review and deterministic integrity check; restrictions/blockers from review retained.",
+      "reason": "Operational editorial [I]/[P] orientation with bounded public bibliographic cross-check; historical rights and exact-copy blockers preserved; not [L] evidence.",
       "review_record": "knowledge/methodology/intake/independent-editorial-review.json#knowledge/methodology/cards/source-checked-0007.md",
       "primary_source_rechecked_this_cycle": false,
       "limits": [
         "Editorial orientation only",
         "Not independently validated science",
         "Read exact source passages before [L]",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Public catalogue/metadata does not verify the exact private copy"
       ]
     },
     {
@@ -12341,20 +12389,22 @@
       "id": "EC-0171",
       "path": "knowledge/methodology/cards/source-checked-0014.md",
       "kind": "EDITORIAL_GUIDANCE",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
-      "sha256": "4fa98ebed6484b5f3fde68a90722a99a48ddd3bc5313619c3c52dec5460d3ec4",
+      "disposition": "VALIDADO_COM_RESTRICOES",
+      "sha256": "09a764576012427c2a0257361f4ab0f7a401b9543b288eb1c7e63a97933e5b6a",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-13-DELTA.json",
-        "knowledge/methodology/intake/independent-editorial-review.json"
+        "knowledge/methodology/intake/independent-editorial-review.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
-      "reason": "Individual IA content review and deterministic integrity check; restrictions/blockers from review retained.",
+      "reason": "Operational editorial [I]/[P] orientation with bounded public bibliographic cross-check; historical rights and exact-copy blockers preserved; not [L] evidence.",
       "review_record": "knowledge/methodology/intake/independent-editorial-review.json#knowledge/methodology/cards/source-checked-0014.md",
       "primary_source_rechecked_this_cycle": false,
       "limits": [
         "Editorial orientation only",
         "Not independently validated science",
         "Read exact source passages before [L]",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "Public catalogue/metadata does not verify the exact private copy"
       ]
     },
     {
@@ -12417,5 +12467,7 @@
         "No scientific gate approval"
       ]
     }
-  ]
+  ],
+  "operational_scope_amendment": "knowledge/methodology/intake/operational-scope-amendment.json",
+  "scientific_primary_claims_validated": 0
 }
