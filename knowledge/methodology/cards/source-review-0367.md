@@ -23,3 +23,8 @@ A SciELO vincula este artigo à licença **CC BY-NC 4.0**. A versão consultada 
 ## Transparência
 
 Texto editorial autoral, sem reprodução extensa. A confirmação do PDF não significa que um avaliador científico tenha aprovado este card. A cópia protegida por restrição não comercial foi retirada do catálogo público atual; o card permanece como orientação original, sem reprodução integral e sem certificação científica. Preserve [I] como inferência e [P] como hipótese de consulta. Nenhum gate aprovado, nenhuma leitura integral simulada e nenhuma certificação de host.
+## Conferência editorial complementar — 21/11/2026 [I]/[P]
+
+A página primária SciELO registra Silva e Hernández (2020), *Aplicação metodológica da análise de conteúdo em pesquisas de análise de política externa*: https://www.scielo.br/j/rbcpol/a/QFmq77JnT468fcBKCdh99ms/.
+
+O resumo editorial documenta duas pesquisas com estratégias distintas de análise de conteúdo, relacionadas aos objetivos e às decisões de pesquisa. Orientação autoral de uso [I]: explicitar unidade de codificação, corpus, categorias e alternativas interpretativas antes de inferir resultados. **Direitos:** o registro de licença CC BY-NC da Issue #102 continua impedindo incluir a cópia como PDF de distribuição irrestrita. O card original não transporta essa autorização. Não declarar validação de conteúdo integral ou do exemplar privado.
