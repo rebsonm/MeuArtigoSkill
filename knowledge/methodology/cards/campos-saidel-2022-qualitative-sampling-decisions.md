@@ -1,44 +1,35 @@
-# Amostragem qualitativa: escolhas técnicas, contextuais e éticas
+# Methodological decision card — Qualitative sampling and stopping decisions — campos-saidel-2022-qualitative-sampling-decisions
 
 Card ID: campos-saidel-2022-qualitative-sampling-decisions
-Status: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_SCIENTIFIC_REVIEW
-Evidence classification: [I] original editorial synthesis
-Source inspected: article PDF, abstract, methodological sections
-Source PDF permission: CC BY 4.0, original file unmodified
-
-## Questão de consulta
-
-How to make methodological decisions compatible with the research question and design?
-
-## Orientação conceitual original
-
-Campos and Saidel (2022) discuss the construction and closure of qualitative samples in health research. By adapting the guidance for Administration, the design should justify which sources of information are relevant to the phenomenon, which diversity is necessary and how the relationship between access, context and ethics conditions the composition of the sample. The number of cases does not replace those criteria.
-
-## Decision criteria and traceability
-
-State who or what may inform the question; register inclusion and exclusion, possible biases of access, heterogeneity, justification of recruitment and reflective rule of adequacy or closure of the collection.
-
-## Limitations and counterexamples
-
-Results on sampling in clinical contexts do not define a universal limit of participants. Saturation, informational sufficiency and theoretical sampling should not be used as baseless synonyms.
-
-## Referência e licença
-
-Obra original: https://doi.org/10.33361/RPQ.2022.v.10.n.25.545
-Editor's page: https://editora.sepq.org.br/rpq/article/view/545
-PDF original autorizado: knowledge/methodology/pdfs/campos-saidel-2022-qualitative-sampling.pdf
-Licença original: https://creativecommons.org/licenses/by/4.0/
-
-## Evidence limit
-
-This card is a short authorial orientation, not an extensive reproduction, translation or replacement of the article. The writing is independent, but still requires editorial scientific review before promoting validated material. For a statement [L], refer to the original and confirm the excerpt, editing and page. No scientific gate can be approved automatically.
-
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+DOI lead for source verification: 10.33361/RPQ.2022.v.10.n.25.545
+Source locator for independent verification: https://editora.sepq.org.br/rpq/article/view/545
 
-## Translation and source-of-truth notice
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Amostragem qualitativa: escolhas técnicas, contextuais e éticas
+## Original English methodological guidance [I]
+Justify the sample through heterogeneity, study purpose, analytic depth and explicit stopping rationale.
 
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
+## Limits and alternative interpretations [I]
+Do not claim saturation solely from a convenient predetermined sample size.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/campos-saidel-2022-qualitative-sampling-decisions.md
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
+
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/campos-saidel-2022-qualitative-sampling-decisions.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

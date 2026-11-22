@@ -1,39 +1,33 @@
-# Eisenhardt (1989): teoria a partir de múltiplos casos exige comparação disciplinada
+# Methodological decision card — Building theory from cases — eisenhardt-1989-building-theory-cases
 
 Card ID: eisenhardt-1989-building-theory-cases
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] provisional editorial guidance, NO primary validated evidence
-Source reading scope: DIRECT_PROTECTED_JSTOR_ARTICLE_PDF_PARTIAL_REVIEW
-Third-party content reproduced: NO
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
 
-## Methodological research issue
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Eisenhardt (1989): teoria a partir de múltiplos casos exige comparação disciplinada
+## Original English methodological guidance [I]
+Justify purposive case sampling, within-case evidence, cross-case comparisons and rival mechanisms.
 
-How do we make this approach consistent with the question, assumptions and data that the researcher actually has?
+## Limits and alternative interpretations [I]
+Multiple cases alone do not yield theory without defensible theoretical iteration.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Original methodological decision
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Use contrast between cases to identify patterns and exceptions, re-examine constructs and relate interpretations to literature, preserving selection ratios and comparability conditions.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Verificações a registrar
-
-Record theoretical sampling criteria, comparison process, discordant evidence and level of abstraction of propositions.
-
-## Limitations of transfer
-
-The presence of several cases does not replace data quality; JSTOR file does not have documented public redistribution license.
-
-## Referência bibliográfica
-
-Eisenhardt, K. M. (1989). Building theories from case study research. Academy of Management Review, 14(4), 532–550.
-
-## Uso responsável
-
-Independent and concise editorial text. This form does not provide original protected, is not a translation or replacement of the book, does not attest to full coverage of the sources and does not approve gates. Before a scientific statement [L], examinar a obra correspondente e localizar a passagem e a edição.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/eisenhardt-1989-building-theory-cases.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/eisenhardt-1989-building-theory-cases.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

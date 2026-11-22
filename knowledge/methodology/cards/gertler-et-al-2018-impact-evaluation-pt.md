@@ -1,37 +1,36 @@
-# Impact assessment: identify counterfactual and version of the work
+# Methodological decision card — Quasi-experimental impact identification — gertler-et-al-2018-impact-evaluation-pt
 
-- Scientific status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Obra identificada: Gertler, Martínez, Premand, Rawlings e Vermeersch (edição portuguesa 2018); DOI: 10.1596/978-1-4648-0889-0
-- URL de origem: https://doi.org/10.1596/978-1-4648-0889-0
-- Registro bibliográfico: SRC-0256
-- Type of publication evidence: institutional book-manual of impact assessment
-- Card scope: original consultation from the documentary conference and from method sections; **No independent external critical review**, and **No authorisation to use this form as evidence [L]
-- Rights: original editorial content without reproducing the article or book
+Card ID: gertler-et-al-2018-impact-evaluation-pt
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+Related bibliographic record: SRC-0256
+DOI lead for source verification: 10.1596/978-1-4648-0889-0
+Source locator for independent verification: https://doi.org/10.1596/978-1-4648-0889-0
 
-## What the source presents (requires source conference to quote)
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Avaliação de impacto: identificar contrafactual e versão da obra
+## Original English methodological guidance [I]
+Define comparison groups, treatment timing, identifying assumptions and robust counterfactual checks.
 
-It discusses experimental and quasi-experimental designs, identification of counterfactuals, measurement and threats to validity for policy evaluation decisions.
+## Limits and alternative interpretations [I]
+A before/after comparison or study-label alone is not a causal design.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Proposition for Skill use [I]
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Skill can guide decisions about design eligibility and causal alternatives, but each application requires its own empirical conditions.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Scientific decision issues [P]
-
-- What's the impact question and what plausible counterfactual?
-- Are the assumptions of the technique verifiable in this case?
-- Is the text used in the Portuguese edition 2018 or in English 2016?
-
-## Contraponto e delimitações
-
-Portuguese edition licensed CC BY 3.0 IGO and work translation 2016; copy 7,5MB DO NOT enter GitHub after transfer failure; preserve attribution and restrictions of third party components.
-
-This card is original editorial text. It does not represent independent scientific review, does not attest to the quality of the source, nor replaces full reading, context of pages or epistemological criticism. Classification [L] depends on checking the primary passages by the researcher. The card does not authorize to distribute protected versions, infer rights or approve gates. In controversial debates, positions and their foundations must be confronted without automatically deciding on either side.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/gertler-et-al-2018-impact-evaluation-pt.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/gertler-et-al-2018-impact-evaluation-pt.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

@@ -15,7 +15,7 @@ State research question, population, design, planned comparisons, data managemen
 
 ## What not to infer
 
-Preregistration and checklists improve traceability but do not guarantee a value estimate or representative sample.
+Preregistration and checklists improve traceability but do not guarantee a valid estimand or representative sample.
 
 ## Bibliographic and copyright trail
 
@@ -28,13 +28,3 @@ Rights: CC BY 4.0; source SHA-256: 4588713574299621ba7aa41d457c20e0d8008f4792b97
 ## Researcher safeguard
 
 This editorial card is a brief original orientation, not a paraphrase or reconstruction of the paper. Before an article manuscript uses a particular scholarly claim as [L], independently inspect the exact page of the published original and consider contradictory evidence. This record cannot approve scientific gates.
-
-Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/research-practice-protocol.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

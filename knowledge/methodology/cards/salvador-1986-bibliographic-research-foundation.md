@@ -1,42 +1,34 @@
-# Ângelo Domingos Salvador: investigação bibliográfica e leitura crítica — referência histórica
+# Methodological decision card — Literature-review strategy — salvador-1986-bibliographic-research-foundation
 
 Card ID: salvador-1986-bibliographic-research-foundation
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [P] bibliographic prospect; original book NOT read
-Source consultation scope: BIBLIOGRAPHIC_REFERENCE_AND_SECONDARY_SCIENTIFIC_DISCUSSION_ONLY_NOT_BOOK_READ
-Third-party text reproduced: NONE
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+Source locator for independent verification: https://search.worldcat.org/title/252941439
 
-## Questão metodológica
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Ângelo Domingos Salvador: investigação bibliográfica e leitura crítica — referência histórica
+## Original English methodological guidance [I]
+Distinguish systematic, semi-systematic, narrative and integrative objectives, retrieval and synthesis requirements.
 
-How to differentiate a bibliographic investigation with a problem and synthesis of simple reproduction of abstracts?
+## Limits and alternative interpretations [I]
+A database query or PRISMA figure alone cannot establish the chosen review type.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Authorial summary for decision
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-As a hypothesis of the procedure to be verified, organizing bibliographic research in delimitation of the project, grounded investigation of the material, explanatory analysis and integrative synthesis, with own forms and critical evaluation of disagreements. This card is based on bibliographic records of the book and secondary methodological description of Lima and Mioto (2007), NOT in direct consultation with Salvador's book.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Conditions of implementation and audit
-
-Identify edition and authorship; distinguish bibliography found, works effectively read, extracted information, analysis and synthesis produced. Check the route in primary sources before assigning details to the author.
-
-## Alertas e limites
-
-Salvador's work was not directly located or read in this survey. Do not publish PDF commercial book, do not quote details or pages like [L]. Secondary source: https://www.scielo.br/j/rk/a/HSF5Ns7dkTNjQVpRyvhc8RR/.
-
-## Source for verification
-
-Salvador, Ângelo Domingos. Métodos e técnicas de pesquisa bibliográfica: elaboração de trabalhos científicos. Edições diversas; verificar edição de 1986 no catálogo bibliográfico.
-DOI: not confirmed for the specific edition.
-Registro original/editora: https://search.worldcat.org/title/252941439
-Original PDF NOT made available by this form; rights/version to check.
-
-## Scientific status and rights
-
-short card with own writing and organization; DO NOT reproduce text, figures, tables or original steps in full. This guidance does not prove full consultation or authorisation of specific pages. The decision and method remain of the researcher; no gate is automatically approved.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/salvador-1986-bibliographic-research-foundation.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/salvador-1986-bibliographic-research-foundation.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

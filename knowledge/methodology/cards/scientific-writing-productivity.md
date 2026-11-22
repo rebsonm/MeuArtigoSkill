@@ -7,7 +7,7 @@ Source reading boundary: Official publisher metadata and CC BY 4.0 source availa
 
 ## Methodological decision
 
-How do researchers avoid mixing drifting speed for scientific progress?
+How do researchers avoid mistaking drafting speed for scientific progress?
 
 ## Independent editorial guidance
 
@@ -28,13 +28,3 @@ Rights: CC BY 4.0; source SHA-256: 3bfbea8bee896869025322175aa352c5707b6d9f1ea8a
 ## Researcher safeguard
 
 This editorial card is a brief original orientation, not a paraphrase or reconstruction of the paper. Before an article manuscript uses a particular scholarly claim as [L], independently inspect the exact page of the published original and consider contradictory evidence. This record cannot approve scientific gates.
-
-Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/scientific-writing-productivity.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.

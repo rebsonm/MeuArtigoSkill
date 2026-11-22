@@ -1,39 +1,33 @@
-# Miles, Huberman and Saldaña (2014): data condensation, visualizations and conclusions
+# Methodological decision card — Visual methods — miles-huberman-saldana-2014-qualitative-analysis
 
 Card ID: miles-huberman-saldana-2014-qualitative-analysis
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] provisional editorial guidance, NO primary validated evidence
-Source reading scope: DIRECT_PROTECTED_BOOK_PDF_PARTIAL_REVIEW
-Third-party content reproduced: NO
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
 
-## Methodological research issue
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Miles, Huberman e Saldaña (2014): condensação de dados, visualizações e conclusões
+## Original English methodological guidance [I]
+Record image provenance, production context, consent, and analytic triangulation.
 
-How do we make this approach consistent with the question, assumptions and data that the researcher actually has?
+## Limits and alternative interpretations [I]
+A photograph is not a self-interpreting explanation of a social phenomenon.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Original methodological decision
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Organize the analysis as iterative work of condensation, comparative display of evidence and elaboration/verification of conclusions. Matrixes and schematics are instruments for thinking relationships, not certificates of confirmation.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Verificações a registrar
-
-Verify observation unit, as each display derives from corpus, rival hypotheses and exceptions, and return to original records.
-
-## Limitations of transfer
-
-Visualization can make errors more persuasive; do not disclose the original figures or tables of the book.
-
-## Referência bibliográfica
-
-Miles, M. B.; Huberman, A. M.; Saldaña, J. (2014). Qualitative Data Analysis: A Methods Sourcebook, 3rd ed. SAGE.
-
-## Uso responsável
-
-Independent and concise editorial text. This form does not provide original protected, is not a translation or replacement of the book, does not attest to full coverage of the sources and does not approve gates. Before a scientific statement [L], examinar a obra correspondente e localizar a passagem e a edição.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/miles-huberman-saldana-2014-qualitative-analysis.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/miles-huberman-saldana-2014-qualitative-analysis.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

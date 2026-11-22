@@ -1,39 +1,33 @@
-# Sampaio, Sabbatini and Limongi (2024): responsible use of AI in the research
+# Methodological decision card — Responsible AI research assistance — sampaio-sabbatini-limongi-2024-research-ai
 
 Card ID: sampaio-sabbatini-limongi-2024-research-ai
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] provisional editorial guidance, NO primary validated evidence
-Source reading scope: DIRECT_BOOK_PDF_PARTIAL_REVIEW_RIGHTS_PENDING
-Third-party content reproduced: NO
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
 
-## Methodological research issue
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Sampaio, Sabbatini e Limongi (2024): uso responsável de IA generativa na pesquisa
+## Original English methodological guidance [I]
+Record AI tasks, prompt/model versions, human decisions, claim provenance and disclosure.
 
-How do we make this approach consistent with the question, assumptions and data that the researcher actually has?
+## Limits and alternative interpretations [I]
+Generated output is not primary scientific evidence without independent examination.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Original methodological decision
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Separate operational automation and human scientific judgment. Register tool, type of processed material, supervision, bibliography checks and limitations; inform in the manuscript noun use of AI according to journal norms.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Verificações a registrar
-
-Validate citations in original sources, privacy controls, consent to sensitive data and responsibility for interpretations and conclusions.
-
-## Limitations of transfer
-
-No generative system is scientific author or substitute for reading the corpus; full ebook republication license was not verified.
-
-## Referência bibliográfica
-
-Sampaio, R. C.; Sabbatini, M.; Limongi, R. (2024). Diretrizes para o uso ético e responsável da Inteligência Artificial Generativa: um guia prático para pesquisadores. Editora Intercom.
-
-## Uso responsável
-
-Independent and concise editorial text. This form does not provide original protected, is not a translation or replacement of the book, does not attest to full coverage of the sources and does not approve gates. Before a scientific statement [L], examinar a obra correspondente e localizar a passagem e a edição.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/sampaio-sabbatini-limongi-2024-research-ai.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/sampaio-sabbatini-limongi-2024-research-ai.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

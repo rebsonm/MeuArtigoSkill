@@ -68,11 +68,14 @@ class SourceRegistryCompletenessTests(unittest.TestCase):
                                 "Não representa [I] síntese científica aprovada nem [L]" in text or
                                 "NÃO é [I] síntese científica aprovada nem [L]" in text or
                                 "NÃO é [I] síntese de leitura cientificamente aprovada nem [L]" in text or
-                                "This is NOT an [I] synthesis of a source reading or [L] scientific evidence." in text)
+                                "This is NOT an [I] synthesis of a source reading or [L] scientific evidence." in text or
+                                ("UNREVIEWED_PROSPECTING_CARD — [P] bibliography for consultation, NOT evidence [L]." in text and
+                                 "[P] proposals and [I] interpretations are not primary source support [L]." in text))
                 self.assertTrue("Não atribuir as propostas acima ao autor" in text or
                                 "Esta orientação é redação editorial original" in text or
                                 "Do not attribute the editorial prompts above to the source authors." in text or
-                                "The guidance is original editorial text; do not attribute its questions to the source authors." in text)
+                                "The guidance is original editorial text; do not attribute its questions to the source authors." in text or
+                                "The questions are independent guidance, not claims about what the source authors established." in text)
                 self.assertNotIn("drive.google.com/drive/", text.lower())
                 self.assertNotIn("access_token", text.lower())
                 self.assertNotIn("AIza", text)

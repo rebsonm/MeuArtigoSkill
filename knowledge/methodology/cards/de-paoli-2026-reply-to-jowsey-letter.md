@@ -1,37 +1,36 @@
-# Contraponto à rejeição total de GenAI: distinguir réplica filosófica de teste
+# Methodological decision card — Philosophical debate about GenAI — de-paoli-2026-reply-to-jowsey-letter
 
-- Scientific status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Obra identificada: Stefano De Paoli (2026); DOI: 10.1177/10778004261425137
-- URL de origem: https://doi.org/10.1177/10778004261425137
-- Registro bibliográfico: SRC-0076
-- Type of publication evidence: position response published in Qualitative Inquiry
-- Card scope: original consultation from the documentary conference and from method sections; **No independent external critical review**, and **No authorisation to use this form as evidence [L]
-- Rights: original editorial content without reproducing the article or book
+Card ID: de-paoli-2026-reply-to-jowsey-letter
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+Related bibliographic record: SRC-0076
+DOI lead for source verification: 10.1177/10778004261425137
+Source locator for independent verification: https://doi.org/10.1177/10778004261425137
 
-## What the source presents (requires source conference to quote)
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Contraponto à rejeição total de GenAI: distinguir réplica filosófica de teste
+## Original English methodological guidance [I]
+Distinguish a conceptual rejoinder to AI scepticism from empirical evaluation of tools.
 
-Responde ao manifesto contrário à GenAI em abordagens reflexivas e questiona o fechamento dogmático de uma discussão metodológica.
+## Limits and alternative interpretations [I]
+Philosophical argument and experimental validation answer different questions.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Proposition for Skill use [I]
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Present diverging positions of De Paoli and the manifesto as epistemological debate, preserving separate empirical evidence.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Scientific decision issues [P]
-
-- O argumento é empírico, lógico ou normativo?
-- Quais limites de uso decorrem de cada tradição?
-- How to separate methodological objections from environmental and social objections?
-
-## Contraponto e delimitações
-
-The answer refers to the manifesto of Jowsey et al., not to the empirical study Frankenstein by Jowsey et al. published in PLOS One; do not confuse the two publications.
-
-This card is original editorial text. It does not represent independent scientific review, does not attest to the quality of the source, nor replaces full reading, context of pages or epistemological criticism. Classification [L] depends on checking the primary passages by the researcher. The card does not authorize to distribute protected versions, infer rights or approve gates. In controversial debates, positions and their foundations must be confronted without automatically deciding on either side.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/de-paoli-2026-reply-to-jowsey-letter.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/de-paoli-2026-reply-to-jowsey-letter.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

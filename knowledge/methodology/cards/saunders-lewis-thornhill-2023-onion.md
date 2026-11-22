@@ -1,39 +1,33 @@
-# Saunders, Lewis and Thornhill: coherence of the research onion (identified edition of 2023)
+# Methodological decision card — Vertical research-design coherence — saunders-lewis-thornhill-2023-onion
 
 Card ID: saunders-lewis-thornhill-2023-onion
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] provisional editorial guidance, NO primary validated evidence
-Source reading scope: DIRECT_PROTECTED_BOOK_PDF_PARTIAL_REVIEW
-Third-party content reproduced: NO
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
 
-## Methodological research issue
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Saunders, Lewis e Thornhill: coerência da cebola de pesquisa (edição identificada de 2023)
+## Original English methodological guidance [I]
+Link problem, question, constructs, philosophy, observations, analysis and bounded contribution.
 
-How do we make this approach consistent with the question, assumptions and data that the researcher actually has?
+## Limits and alternative interpretations [I]
+A chosen method or research-onion label does not justify the inference without appropriate data.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Original methodological decision
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Onion is a planning device: relating philosophy, theory approach, methodological choice, strategy, time horizon and collection/analysis techniques. Each layer must be justified by the problem rather than mechanically chosen.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Verificações a registrar
-
-Explain why inference, sample, method and temporality are consistent; record unviable choices and design commitments.
-
-## Limitations of transfer
-
-The file called 'Saunders (2017)' on Drive contains the ninth edition published in 2023; avoid referencing it as a 2017 edition. PDF Pearson is protected.
-
-## Referência bibliográfica
-
-Saunders, M. N. K.; Lewis, P.; Thornhill, A. (2023). Research Methods for Business Students, 9th ed. Pearson.
-
-## Uso responsável
-
-Independent and concise editorial text. This form does not provide original protected, is not a translation or replacement of the book, does not attest to full coverage of the sources and does not approve gates. Before a scientific statement [L], examinar a obra correspondente e localizar a passagem e a edição.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/saunders-lewis-thornhill-2023-onion.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/saunders-lewis-thornhill-2023-onion.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

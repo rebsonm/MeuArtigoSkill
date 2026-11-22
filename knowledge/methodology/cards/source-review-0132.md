@@ -1,33 +1,36 @@
-# Uses and methodological possibilities for qualitative studies in Administration: exploring thematic analysis — methodological guidance and limits
+# Methodological decision card — Thematic analysis — source-review-0132
 
-- Registro: SRC-0132; Manuela Ramos da Silva; Marcos Antônio de Souza Barbosa; Lucas Gabriel Bezerra Lima (2020)
-- Identificador bibliográfico: 10.12712/rpca.v14i1.38405; https://doi.org/10.12712/rpca.v14i1.38405
-- Nature: Theoretical article applied in Administration
-- Estado de curadoria: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Classe: editorial original [I]/[P], DO NOT use as primary evidence [L] ou prova de leitura integral
+Card ID: source-review-0132
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+Related bibliographic record: SRC-0132
+DOI lead for source verification: 10.12712/rpca.v14i1.38405
+Source locator for independent verification: https://doi.org/10.12712/rpca.v14i1.38405
 
-## Authorial guidance for research
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): Usos e possibilidades metodológicas para os estudos qualitativos em Administração: explorando a análise temática
+## Original English methodological guidance [I]
+Align the role of codes and themes with the analytic tradition and research question.
 
-Discuss thematic analysis and examples of its use in Administration. For responsible use, verify the integral work, place the method in the object, examine alternatives and recover the evidence used in the argumentation.
+## Limits and alternative interpretations [I]
+Coding agreement or frequency alone does not demonstrate interpretive validity.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Contraprova e limitação
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-Editorial policy of the journal declares CC BY; copy of the journal awarded; full compulsory assignment. Also ask if another interpretation of the same material or a rival methodological strategy is compatible with the data. An editorial or didactic position is not experimental superiority test.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Perguntas aplicáveis
-
-- What is the object and unit of analysis that restrict the proposed method?
-- What assumption, misinterpretation or bias must be confronted at source?
-- What alternative result would falsify the conclusion? What pages and evidence would be needed for [L]?
-
-## Transparência
-
-Authorial editorial text without extensive reproduction. PDF confirmation does not mean that a scientific evaluator has approved this card. The copy was incorporated only by redistribution license with assignment; this does not certify its scientific quality. Preserve [I] as inference and [P] as a hypothesis of consultation. No approved gate, no simulated full read and no host certification.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/source-review-0132.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/source-review-0132.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW

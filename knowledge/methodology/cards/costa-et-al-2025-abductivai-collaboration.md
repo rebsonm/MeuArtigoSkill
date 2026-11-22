@@ -1,37 +1,36 @@
-# AbductivAI: AI as an abductive interlocutor with human responsibility
+# Methodological decision card — Abductive and guided AI-assisted analysis — costa-et-al-2025-abductivai-collaboration
 
-- Scientific status: DRAFT_NEEDS_INDEPENDENT_REVIEW — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Source identified: António Pedro Costa et al., work DOI 10.1177/16094069251383739
-- Primary source link for query: https://doi.org/10.1177/16094069251383739
-- Inventory log: SRC-0045; edição identificada em PDF original, trechos introdutórios/metodológicos examinados
-- Nature of the work: proposed method with exploitation of 323 abstracts
-- Card scope: original editorial interpretation based on the description and methodological structure consulted; **It is not an independent scientific review**, nor is it proof of reading by the person using Skill
-- Rights: original writing only; complete file redistributed exclusively when there is license and hash in separate catalogue
+Card ID: costa-et-al-2025-abductivai-collaboration
+Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
+Evidence grade: [I] bounded editorial perspective; [P] research prompts; NOT primary evidence [L].
+Independent scientific review: NOT APPROVED.
+Related bibliographic record: SRC-0045
+DOI lead for source verification: 10.1177/16094069251383739
+Source locator for independent verification: https://doi.org/10.1177/16094069251383739
 
-## Cut information at source — subject to conference by the researcher
+## Original topic and research use
+- Original catalogued topic label (preserved as metadata): AbductivAI: IA como interlocutora abductiva, com responsabilidade humana
+## Original English methodological guidance [I]
+Log surprising observations, proposed explanations, AI alternatives and human adjudication.
 
-The text proposes AbductivAI for collaboration between researchers and AI agents and explores the model of 323 abstracts of congress work.
+## Limits and alternative interpretations [I]
+Automatically suggested themes or hypotheses need corroboration and competing explanations.
+Source-specific conclusions require consultation of the relevant original publication, edition and exact supporting passages.
 
-## Aplicação metodológica proposta [I]
+## Researcher prompts [P]
+- Which research question, theory, unit of analysis and data make this method defensible?
+- Which competing design or interpretation could explain the observations?
+- What contrary evidence or primary-source passage must be checked before asserting [L] support?
+- Which decisions, omissions and sensitivity checks should be reported?
 
-If the user adopts abductive guidance, he/she registers alternative hypotheses, decisions of acceptance or rejection and origin of evidence without attributing proven autonomous epistemic agency to the AI.
+## Scientific governance and rights
+Editorial rights scope: ORIGINAL_EDITORIAL_TEXT_ONLY
+Underlying publication rights: NOT_ESTABLISHED_BY_CARD_CATALOG
+The article/book/PDF is not reproduced or authorized for redistribution by this card.
+No source-specific result, independent review, or scientific gate is approved.
+Historic pending-review identifier (technical metadata only): REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
 
-## Three questions for scientific decision [P]
-
-- How to distinguish abductive suggestion from accepted explanation?
-- What negative cases would invalidate the interpretation?
-- A prestação de contas humana está documentada?
-
-## Contestação e limites
-
-An exploration with abstracts does not demonstrate validity for ethnographic data, protected interviews or causal inference.
-
-Guidance does not state that the card was approved by an independent reviewer. Before use [L] in the manuscript, confer primary source, editing, context and pages of the data; declare separate inferences from what the work actually demonstrated. No gate choice is automatically approved. For qualitative traditions with opposite positions on GenAI, expose relevant disagreement and respect the user design.
-
-## Translation and source-of-truth notice
-
-**MACHINE_TRANSLATED_REVIEW_PENDING:** This English editorial draft is **not independently scientifically reviewed**. It is NOT primary evidence [L], does not reproduce or authorize the source PDF, and cannot approve a scientific gate. The original Portuguese record prevails in any discrepancy, including limitations, negation, methodological scope and rights.
-
-Original preserved editorial record: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/costa-et-al-2025-abductivai-collaboration.md
-
-Catalogue underlying-source rights: `NOT_ESTABLISHED_BY_CARD_CATALOG`. No republication rights or scientific validation are established by this translation.
+## Provenance
+This is newly written conservative English guidance based on the existing public catalogue topic, NOT a faithful line-by-line translation or a primary-source appraisal.
+Original Portuguese editorial notes and source-specific detail: https://github.com/rebsonm/MeuArtigoSkill/blob/9cf5b9ee91c0c0ade6c6d66316b26bde67cbe413/knowledge/methodology/cards/costa-et-al-2025-abductivai-collaboration.md
+Editorial rewrite classification: ENGLISH_EDITORIAL_REWRITE_METADATA_GROUNDED_NOT_SOURCE_REVIEW
