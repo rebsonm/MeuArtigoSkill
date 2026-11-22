@@ -1,31 +1,31 @@
-# Yin (2018): protocolo, unidade de análise e explicações alternativas no estudo de caso
+# Yin (2018): protocol, unit of analysis and alternative explanations in case study research
 
 Card ID: yin-2018-case-study-design
 Editorial status: DRAFT_NEEDS_INDEPENDENT_REVIEW
-Evidence grade: [I] orientação editorial provisória, NÃO evidência primária validada
+Evidence grade: [I] provisional editorial guidance, NOT validated primary evidence
 Source reading scope: DIRECT_PROTECTED_BOOK_PDF_PARTIAL_REVIEW
 Third-party content reproduced: NO
 
-## Questão de pesquisa metodológica
+## Methodological research question
 
-Como tornar esta abordagem coerente com a pergunta, os pressupostos e os dados que o pesquisador realmente tem?
+How can this approach be made consistent with the research question, assumptions and data the researcher actually has?
 
-## Decisão metodológica original
+## Original methodological decision guidance
 
-Distinguir caso, unidade(s) de análise, proposições e contexto. Projetar múltiplas fontes de evidência, cadeia de documentação e condições para comparar explicações sem confundir narrativa descritiva com inferência causal.
+Distinguish the case, unit(s) of analysis, propositions and context. Plan multiple evidence sources, a traceable documentation chain and explicit conditions for comparing explanations without conflating a descriptive account with causal inference.
 
-## Verificações a registrar
+## Checks to document
 
-Justificar seleção de caso único/múltiplos, protocolo, base de evidências, triangulação e limites para generalização analítica.
+Justify single-case or multiple-case selection, research protocol, evidence base, triangulation and limits on analytical generalization.
 
-## Limitações da transferência
+## Limits of application
 
-Generalização estatística não se presume de um caso; obra sob copyright SAGE, não redistribuir PDF.
+Statistical generalization cannot be assumed from an individual case. The book is published under SAGE copyright; do not redistribute its PDF.
 
-## Referência bibliográfica
+## Bibliographic reference
 
-Yin, R. K. (2018). Case Study Research and Applications: Design and Methods, 6th ed. SAGE.
+Yin, R. K. (2018). *Case Study Research and Applications: Design and Methods*, 6th ed. SAGE.
 
-## Uso responsável
+## Responsible use
 
-Texto editorial independente e conciso. Esta ficha não disponibiliza original protegido, não é uma tradução ou substituto do livro, não atesta cobertura integral das fontes e não aprova gates. Antes de uma afirmação científica [L], examinar a obra correspondente e localizar a passagem e a edição.
+This short, independently written editorial card does not provide the protected original. It is neither a translation nor a replacement for the book, does not certify comprehensive reading of the source and does not approve scientific gates. Before making a specific scholarly claim [L], inspect the applicable edition and locate the supporting passage.

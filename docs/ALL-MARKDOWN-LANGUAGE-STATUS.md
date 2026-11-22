@@ -41,3 +41,22 @@ history and existing published release assets are not rewritten.
 
 A review of translation fidelity is still needed before claiming full
 English migration. This audit is not scientific review or a copyright check.
+
+## Source-compared English editorial cards (22 November 2026)
+
+Six additional, narrowly scoped methodological cards have been translated by
+comparing the English wording directly against the existing Portuguese Markdown:
+`source-review-0259.md`, `source-review-0298.md`,
+`yin-2018-case-study-design.md`, `suddaby-2006-grounded-theory-not.md`,
+`zupic-cater-2015-bibliometric-methods.md`, and
+`donthu-2021-bibliometric-how-to.md`. Bibliographic identities, evidence
+classification [I]/[P]/[L], limited source-reading scope and exact rights
+boundaries were maintained. Historical scientific-review-pending identifiers
+remain as technical provenance labels where used by the original cards.
+
+These edits do not claim independent scholarly peer review. The original
+649-card catalogue cardinality and all seven human scientific gates are
+unchanged. A separate translation effort is tracked in PR #121 (bibliographic
+prospecting cards) and PR #122 (remaining editorial cards). Those larger
+machine-generated batches contain material translation errors and are **not
+ready for merge** without substantive corrections.
