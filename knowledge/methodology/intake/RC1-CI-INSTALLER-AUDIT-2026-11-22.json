@@ -1,0 +1,77 @@
+{
+  "schema": "meu-artigo-rc1-installable-candidate-audit-v1",
+  "date": "2026-11-22",
+  "scope": "CI prepared ZIP snapshot; NOT real installed host",
+  "pr": 112,
+  "pr_source_head": "cc74f7f738db39dce19f5d1253dd17e295dd8146",
+  "ci_merge_commit": "79deb997e1208db90190be7905421b3036c2dbd1",
+  "ci_merge_vs_head": {
+    "commit_delta": 1,
+    "files_differing": 0
+  },
+  "ci_run_id": 45033085251,
+  "ci_run_conclusion": "success",
+  "ci_automated_tests": {
+    "executed": 1041,
+    "failures": 0,
+    "skipped": 2
+  },
+  "ci_artifact_id": 14757923364,
+  "outer_ci_zip": {
+    "name": "MeuArtigoSkill_rc1_ci_artifact_45033085251.zip",
+    "size_bytes": 602437,
+    "sha256": "c1a6053ec12648eae60120a27adbfcd22a5906dc972506536e47cf96d5b61597"
+  },
+  "installable_zip": {
+    "name": "MeuArtigoSkill-v1.0.0-rc.1.zip",
+    "size_bytes": 610386,
+    "sha256": "c023560c0e1fbedfce72c963b98d8f930cd99adc1f5a07b3765361c968a53539",
+    "zip_crc": "PASS",
+    "dangerous_paths": 0,
+    "symlinks": 0,
+    "duplicate_names": 0
+  },
+  "manifest": {
+    "sha256": "ed06446142d2473d21258a4f0a4a611aeb8408d9fc70f9b47759938e434ebd80",
+    "payload_count": 152,
+    "matching_sha256": 152,
+    "missing": 0,
+    "unexpected": 0,
+    "version": "1.0.0-rc.1",
+    "source_build": "79deb997e1208db90190be7905421b3036c2dbd1"
+  },
+  "strict_verifier": {
+    "status": "PASS",
+    "integrity_mode": "ALL_BUNDLE_BYTES_EXACT",
+    "tested_environment": "extracted ZIP only",
+    "host_installed_t01_t02": "NOT_RUN"
+  },
+  "compatibility": {
+    "ci_python": "3.12.16",
+    "static_ast_python": "3.13.5",
+    "artifact_tool": "OPTIONAL_HOST_NOT_VERIFIED",
+    "pypdf_fitz_pil_openpyxl_xlrd": "OPTIONAL_HOST_NOT_VERIFIED",
+    "connected_drive": "REQUIRES_EACH_RESEARCHER_AUTHORIZATION",
+    "external_mcp": "NOT_AUTO_CONNECTED"
+  },
+  "contents": {
+    "pdfs": 0,
+    "external_methodology_cards": 0
+  },
+  "flags": {
+    "scientific_quality_validated": false,
+    "public_release_authorized": false,
+    "release_metadata": "READY_FOR_CANDIDATE_TESTING",
+    "merged": false,
+    "tag_created": false,
+    "github_release_published": false
+  },
+  "remaining": [
+    "T01/T02 host Save/readback",
+    "T32 host LLM data boundary",
+    "T34 skill-to-Drive continuation",
+    "T05/T06 host smoke and optional XLSX",
+    "multi-researcher Drive isolation",
+    "issues #102/#103 historic disposition"
+  ]
+}
