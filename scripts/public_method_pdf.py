@@ -16,6 +16,7 @@ import urllib.error
 import urllib.request
 import unicodedata
 from typing import Callable
+from pathlib import Path
 
 REPO = "rebsonm/MeuArtigoSkill"
 BASE = "https://raw.githubusercontent.com/" + REPO + "/"
@@ -54,6 +55,28 @@ def fetch_github(ref: str, path: str, limit: int) -> bytes:
             raise ValueError("REMOTE_BYTES_EXCEED_LIMIT")
         return value
 
+
+
+def fetch_installed_or_github(ref: str, path: str, limit: int) -> bytes:
+    """Prefer the reviewed LOCAL PDF subset when this Skill bundles PDFs.
+
+    When a local catalog exists, missing selected PDF bytes are a hard failure:
+    never silently fall through to a broader remote inventory.
+    """
+    root = Path(__file__).resolve().parents[1]
+    local_catalog = root / CATALOG
+    if local_catalog.exists() or local_catalog.is_symlink():
+        if path != CATALOG and not PATH_RE.fullmatch(path):
+            raise ValueError("UNSAFE_BUNDLED_PDF_PATH")
+        target = root / path
+        if (not target.is_file() or target.is_symlink()
+                or not target.resolve().is_relative_to(root)
+                or any(x.is_symlink() for x in [target.parent, target.parent.parent])):
+            raise ValueError("BUNDLED_CATALOG_OR_PDF_MISSING_OR_LINKED")
+        if target.stat().st_size > limit:
+            raise ValueError("BUNDLED_BYTES_EXCEED_LIMIT")
+        return target.read_bytes()
+    return fetch_github(ref, path, limit)
 
 def metadata(blob: bytes) -> list[dict]:
     if not isinstance(blob, bytes) or len(blob) > MAX_CATALOG:
@@ -125,7 +148,7 @@ def _score(question: str, item: dict) -> int:
             sum(2 for w in q if w in title) + 2 * len(matched))
 
 
-def query(question: str, *, ref: str, fetch: Callable = fetch_github,
+def query(question: str, *, ref: str, fetch: Callable = fetch_installed_or_github,
           max_chars: int = 3000, max_pages: int = 2) -> dict:
     if not isinstance(question, str) or not question.strip() or len(question) > 800:
         raise ValueError("QUESTION_INVALID")
