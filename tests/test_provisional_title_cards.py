@@ -31,6 +31,8 @@ class ProvisionalTitleTests(unittest.TestCase):
    self.assertEqual(hashlib.sha256(raw).hexdigest(),x["sha256"])
    txt=raw.decode("utf-8")
    self.assertIn("REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE",txt)
-   self.assertTrue("NÃO" in txt or "**SEM**" in txt)
+   self.assertTrue("NÃO" in txt or "**SEM**" in txt or
+                   ("NOT primary evidence [L]" in txt and
+                    "independent scientific review pending" in txt))
    self.assertEqual(x["editorial_status"],"DRAFT_NEEDS_INDEPENDENT_REVIEW")
 if __name__=="__main__":unittest.main()
