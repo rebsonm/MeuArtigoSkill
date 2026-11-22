@@ -11,7 +11,7 @@
   "ref_evidence": "knowledge/methodology/intake/v1_parallel/INTEGRATION-REFS.json",
   "counts": {
     "VALIDADO_COM_RESTRICOES": 635,
-    "BLOQUEADO_POR_EVIDENCIA": 1,
+    "EXCLUIDO_COM_JUSTIFICATIVA": 1,
     "CORRIGIDO_E_REVALIDADO": 13
   },
   "card_count": 649,
@@ -7239,20 +7239,23 @@
       "id": "SRC-0385",
       "path": "knowledge/methodology/source_cards/src-0385.md",
       "kind": "BIBLIOGRAPHIC_METADATA",
-      "disposition": "BLOQUEADO_POR_EVIDENCIA",
-      "sha256": "32d3d832c4152a110e0698643552f6361dab290ed4874684c97e06ce2d067175",
+      "disposition": "EXCLUIDO_COM_JUSTIFICATIVA",
+      "sha256": "b0ae4a0613550e767a92a47189319d645edae1d8a42ba00641900d6a8da1a7cc",
       "evidence": [
         "knowledge/methodology/intake/rights-ledger-part-04.json",
         "knowledge/methodology/intake/parallel/IB-15-DELTA.json",
-        "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json"
+        "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json",
+        "knowledge/methodology/intake/operational-scope-amendment.json"
       ],
       "primary_source_rechecked_this_cycle": false,
-      "reason": "Unresolved edition/authenticity or copy provenance; see individual V1 finding.",
+      "reason": "Excluded from the active corpus for uncorroborated private publisher/authorship attribution; distinct Rod Dacombe article verified at SAGE/KCL. No finding of fraud or nonexistence. Preserved as an audit-only card.",
       "limits": [
         "No new private PDF reading",
         "No primary claim support verified",
         "No new redistribution permission",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "No active search recommendations; source reference may be audited only",
+        "Reinstatement requires original publisher proof"
       ]
     },
     {
