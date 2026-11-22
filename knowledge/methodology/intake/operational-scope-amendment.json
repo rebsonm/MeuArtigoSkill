@@ -1,0 +1,64 @@
+{
+  "schema": "MEU_ARTIGO_OPERATIONAL_SCOPE_AMENDMENT_V1",
+  "date": "2026-11-21",
+  "authorization": "MAINTAINER_AI_AND_CODE_OPERATIONAL_VALIDATION",
+  "scope": "NON_CITATION_PROSPECTING_AND_ORIGINAL_EDITORIAL_GUIDANCE_ONLY",
+  "scientific_use_validated": false,
+  "primary_pdf_copy_authenticated": false,
+  "pdf_redistribution_authorized": false,
+  "strictly_blocked_ids": [
+    "SRC-0385"
+  ],
+  "source_lead_ids": [
+    "SRC-0160",
+    "SRC-0215",
+    "SRC-0224",
+    "SRC-0237",
+    "SRC-0249",
+    "SRC-0263",
+    "SRC-0283",
+    "SRC-0293",
+    "SRC-0297",
+    "SRC-0314",
+    "SRC-0321",
+    "SRC-0325",
+    "SRC-0336",
+    "SRC-0403"
+  ],
+  "source_basis": "Historical V1-01..03 residual receipts retain all unresolved bibliographic identity/copy/rights findings. Cards may be displayed solely as P metadata leads; no DOI/year or original copy is certified by this amendment.",
+  "editorial_card_amendments": [
+    {
+      "id": "EC-0154",
+      "path": "knowledge/methodology/cards/source-review-0273.md",
+      "sha": "ec5d4b207f26e04ad8dcf3bd096133ae41ce58cd9b51810d91a449a86db95a33",
+      "reference": "https://www.dpi.inpe.br/gilberto/livro/analise/cap1-intro.pdf",
+      "source_status": "institutional_chapter_metadata"
+    },
+    {
+      "id": "EC-0161",
+      "path": "knowledge/methodology/cards/source-review-0367.md",
+      "sha": "e02aa0ac2ccb901daef97b70f2582ca3a4f7bf99a55922e5f78721de47cf7bbd",
+      "reference": "https://www.scielo.br/j/rbcpol/a/QFmq77JnT468fcBKCdh99ms/",
+      "source_status": "editorial_article_verified_noncommercial_pdf"
+    },
+    {
+      "id": "EC-0165",
+      "path": "knowledge/methodology/cards/source-checked-0007.md",
+      "sha": "700d78056b85c05579e3c6f6023c649ef336183126b0ae659c02f234363e2d44",
+      "reference": "https://books.scielo.org/id/96v3r",
+      "source_status": "public_book_metadata_copy_mismatch"
+    },
+    {
+      "id": "EC-0171",
+      "path": "knowledge/methodology/cards/source-checked-0014.md",
+      "sha": "09a764576012427c2a0257361f4ab0f7a401b9543b288eb1c7e63a97933e5b6a",
+      "reference": "https://proceedings.ciaiq.org/index.php/ciaiq2015/article/view/252",
+      "source_status": "legacy_proceedings_url_redirects_not_primary_verified"
+    }
+  ],
+  "editorial_basis": "Original independent-of-PDF prompts I/P with dated bounded source leads, no literal source quotations or original-PDF redistribution. Historical editorial blockers retained as history; this document changes only operational discoverability.",
+  "operational_disposition": "VALIDADO_COM_RESTRICOES",
+  "no_claim_of": "SCIENTIFIC_VALIDATION_OR_HUMAN_INDEPENDENT_REVIEW",
+  "review_actor": "AI-assisted technical/editorial verification by assistant",
+  "risk": "Source editions and source passages still require checking before any scientific L assertion."
+}
