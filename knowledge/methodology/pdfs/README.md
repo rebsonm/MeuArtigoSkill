@@ -1,8 +1,8 @@
 # Methodological PDFs — rights and attribution
 
-This public corpus contains **38 source PDFs** with documented publisher or repository licensing statements for Creative Commons Attribution 4.0 International (CC BY 4.0). They are **not** covered by the repository's Apache-2.0 software license. The binary PDF copies are unmodified; no endorsement by their authors or journals is implied.
+This public source directory currently contains **51 indexed PDF files**, of which **49 are labelled CC BY 4.0 and two have an unversioned CC BY label in the catalogue**. The version for those two requires reconciliation before a final release decision. These are catalogue rights claims supported by per-work evidence pointers, not independent verification of every publisher license or a blanket copyright grant. The PDFs are **not** covered by the repository's Apache-2.0 software license. No endorsement by authors or journals is implied.
 
-License: https://creativecommons.org/licenses/by/4.0/
+See the complete 51-entry register and pending checks in [Public PDF packaging readiness](../intake/PUBLIC-PDF-PACKAGING-READINESS-2026-11-22.md), with exact hashes in [pdf_catalog.json](../pdf_catalog.json). This historic author/DOI table is not the definitive license ledger. Follow the specific applicable license for each file, including attribution requirements.
 
 | Original authors and publication | DOI and official source / license proof | PDF |
 | --- | --- | --- |
