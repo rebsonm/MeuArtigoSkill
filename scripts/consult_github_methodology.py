@@ -123,6 +123,12 @@ def _catalog(blob: bytes) -> list[dict]:
                 "DRAFT_NEEDS_INDEPENDENT_REVIEW", "NEEDS_REVIEW",
                 "ACCEPTED", "NOT_INDEPENDENTLY_REVIEWED"}:
             raise ValueError("CATALOG_EDITORIAL_STATUS_INVALID")
+        disposition = doc.get("operational_disposition")
+        if disposition is not None and disposition not in {
+                "VALIDADO_POR_IA_E_CODIGO", "CORRIGIDO_E_REVALIDADO",
+                "VALIDADO_COM_RESTRICOES", "BLOQUEADO_POR_EVIDENCIA",
+                "EXCLUIDO_COM_JUSTIFICATIVA"}:
+            raise ValueError("CATALOG_OPERATIONAL_DISPOSITION_INVALID")
         if not isinstance(doc.get("title"), str) or len(doc["title"]) > 150:
             raise ValueError("CATALOG_TITLE_INVALID")
         if not isinstance(doc.get("keywords"), list) or len(doc["keywords"]) > 24 or any(not isinstance(k, str) or len(k) > 55 for k in doc["keywords"]):
@@ -145,6 +151,9 @@ def _terms(value: str) -> set[str]:
 
 
 def _relevance(question: str, doc: dict) -> int:
+    if doc.get("operational_disposition") in {
+            "BLOQUEADO_POR_EVIDENCIA", "EXCLUIDO_COM_JUSTIFICATIVA"}:
+        return 0
     q = _terms(question)
     if not q:
         return 0
@@ -204,6 +213,8 @@ def query(question: str, *, ref: str, top: int = 3, max_chars: int = 3300,
                      "editorial_status": doc.get("editorial_status", "NOT_INDEPENDENTLY_REVIEWED"),
                      "source_doi": doc.get("source_doi"),
                      "source_url": doc.get("source_url"),
+                     "operational_disposition": doc.get("operational_disposition", "NOT_REVIEWED"),
+                     "scientific_use_validated": False,
                      "primary_source_directly_verified": False})
         remaining -= len(part)
         if remaining <= 0:

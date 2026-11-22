@@ -1,0 +1,686 @@
+[
+  {
+    "stage": 1,
+    "ref": "origin/work/v1-01-20261121",
+    "sha": "c768db4240b8a0e983f29c8e042b3250bfc80e74",
+    "paths": [
+      "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json",
+      "knowledge/methodology/intake/v1_parallel/V1-01-RESULTS.md"
+    ]
+  },
+  {
+    "stage": 2,
+    "ref": "origin/work/v1-02-20261121",
+    "sha": "d4c97bfe82eb905e693f81657fdc676992c10e25",
+    "paths": [
+      "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json",
+      "knowledge/methodology/intake/v1_parallel/V1-02-RESULTS.md"
+    ]
+  },
+  {
+    "stage": 3,
+    "ref": "origin/work/v1-03-20261121",
+    "sha": "59ca157ef8c2edc7eb4cec2c42ef449738bc70fd",
+    "paths": [
+      "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json",
+      "knowledge/methodology/intake/v1_parallel/V1-03-RESULTS.md"
+    ]
+  },
+  {
+    "stage": 4,
+    "ref": "origin/work/v1-04-20261121",
+    "sha": "b4ca9ec5932db1f7b30c6162f69e81b8d44ac9af",
+    "paths": [
+      "knowledge/methodology/cards/content-analysis-reliability.md",
+      "knowledge/methodology/cards/design-science.md",
+      "knowledge/methodology/cards/design.md",
+      "knowledge/methodology/cards/prisma-roses-selection.md",
+      "knowledge/methodology/cards/qualitative.md",
+      "knowledge/methodology/cards/reviews.md",
+      "knowledge/methodology/intake/v1_parallel/V1-04-DELTA.json",
+      "knowledge/methodology/intake/v1_parallel/V1-04-RESULTS.md"
+    ]
+  },
+  {
+    "stage": 5,
+    "ref": "origin/work/v1-05-20261121",
+    "sha": "4005c710299b06e7e3ca4180b581c815de0bacf3",
+    "paths": [
+      "knowledge/methodology/intake/v1_parallel/V1-05-DELTA.json",
+      "knowledge/methodology/intake/v1_parallel/V1-05-RESULTS.md"
+    ]
+  },
+  {
+    "stage": 6,
+    "ref": "origin/work/v1-06-20261121",
+    "sha": "5fecef4f358014b6deb43f6750b3d1c44026f904",
+    "paths": [
+      "knowledge/methodology/intake/v1_parallel/V1-06-DELTA.json",
+      "knowledge/methodology/intake/v1_parallel/V1-06-RESULTS.md"
+    ]
+  },
+  {
+    "stage": 7,
+    "ref": "origin/work/v1-07-20261121",
+    "sha": "0eeab140784ec989779c9a3b7f7562bea25a83e3",
+    "paths": [
+      "knowledge/methodology/intake/v1_parallel/V1-07-DELTA.json",
+      "knowledge/methodology/intake/v1_parallel/V1-07-RESULTS.md"
+    ]
+  },
+  {
+    "stage": 8,
+    "ref": "origin/work/v1-08-20261121",
+    "sha": "ca985b8badd38238843e278f2394529fa8d991b8",
+    "paths": [
+      "knowledge/methodology/cards/siddiki-basurto-weible-2012-institutional-grammar-compliance.md",
+      "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
+      "knowledge/methodology/intake/v1_parallel/V1-08-RESULTS.md"
+    ]
+  },
+  {
+    "stage": 9,
+    "ref": "origin/work/v1-09-20261121",
+    "sha": "f9bf4db76dc0613e2e8c5680c58537c3cb2fac23",
+    "paths": [
+      "knowledge/methodology/intake/v1_parallel/V1-09-DELTA.json",
+      "knowledge/methodology/intake/v1_parallel/V1-09-RESULTS.md"
+    ]
+  },
+  {
+    "stage": 10,
+    "ref": "origin/work/v1-10-20261121",
+    "sha": "7b7500d7d8ae472d9a876f44e11dfd2df3f5f616",
+    "paths": [
+      "knowledge/methodology/intake/v1_parallel/V1-10-DELTA.json",
+      "knowledge/methodology/intake/v1_parallel/V1-10-RESULTS.md"
+    ]
+  },
+  {
+    "stage": 11,
+    "ref": "origin/work/v1-11-20261121",
+    "sha": "7f8e399ba776c1168b38f94c30e412c7f67557d0",
+    "paths": [
+      "knowledge/methodology/intake/v1_parallel/V1-11-DELTA.json",
+      "knowledge/methodology/intake/v1_parallel/V1-11-RESULTS.md"
+    ]
+  },
+  {
+    "stage": 12,
+    "ref": "origin/work/v1-12-20261121",
+    "sha": "288834033f83e56db4f11e1d1cd1a13862b544a4",
+    "paths": [
+      "knowledge/methodology/intake/v1_parallel/V1-12-DELTA.json",
+      "knowledge/methodology/intake/v1_parallel/V1-12-RESULTS.md"
+    ]
+  },
+  {
+    "stage": 13,
+    "ref": "origin/work/v1-13-20261121",
+    "sha": "6568e0e7c4f43bd792ef24737a0058775cb8f904",
+    "paths": [
+      "knowledge/methodology/intake/v1_parallel/V1-13-DELTA.json",
+      "knowledge/methodology/intake/v1_parallel/V1-13-RESULTS.md"
+    ]
+  },
+  {
+    "stage": 14,
+    "ref": "origin/work/v1-14-20261121",
+    "sha": "bb9365a5517dd2572fa9a8cf3d773773503fa14f",
+    "paths": [
+      "knowledge/methodology/intake/v1_parallel/V1-14-DELTA.json",
+      "knowledge/methodology/intake/v1_parallel/V1-14-RESULTS.md"
+    ]
+  },
+  {
+    "stage": 15,
+    "ref": "origin/work/v1-15-20261121",
+    "sha": "1177019bceadc32863ef58c0773047a200f99961",
+    "paths": [
+      "knowledge/methodology/intake/v1_parallel/V1-15-DELTA.json",
+      "knowledge/methodology/intake/v1_parallel/V1-15-RESULTS.md",
+      "scripts/v1_15_integrity_audit.py"
+    ]
+  },
+  {
+    "stage": "IB-01",
+    "ref": "origin/work/ib-01-20261121",
+    "sha": "99b9949ed6b55abf89e1c18418001aaaa5f99d5a",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-01-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-01-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0099.md",
+      "knowledge/methodology/source_cards/src-0100.md",
+      "knowledge/methodology/source_cards/src-0101.md",
+      "knowledge/methodology/source_cards/src-0102.md",
+      "knowledge/methodology/source_cards/src-0103.md",
+      "knowledge/methodology/source_cards/src-0104.md",
+      "knowledge/methodology/source_cards/src-0105.md",
+      "knowledge/methodology/source_cards/src-0106.md",
+      "knowledge/methodology/source_cards/src-0107.md",
+      "knowledge/methodology/source_cards/src-0108.md",
+      "knowledge/methodology/source_cards/src-0109.md",
+      "knowledge/methodology/source_cards/src-0110.md",
+      "knowledge/methodology/source_cards/src-0111.md",
+      "knowledge/methodology/source_cards/src-0112.md",
+      "knowledge/methodology/source_cards/src-0113.md",
+      "knowledge/methodology/source_cards/src-0114.md",
+      "knowledge/methodology/source_cards/src-0115.md",
+      "knowledge/methodology/source_cards/src-0116.md"
+    ]
+  },
+  {
+    "stage": "IB-02",
+    "ref": "origin/work/ib-02-20261121",
+    "sha": "07f215b3d88f41844bf178871720149e42793f56",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-02-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-02-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0117.md",
+      "knowledge/methodology/source_cards/src-0118.md",
+      "knowledge/methodology/source_cards/src-0119.md",
+      "knowledge/methodology/source_cards/src-0120.md",
+      "knowledge/methodology/source_cards/src-0121.md",
+      "knowledge/methodology/source_cards/src-0122.md",
+      "knowledge/methodology/source_cards/src-0123.md",
+      "knowledge/methodology/source_cards/src-0124.md",
+      "knowledge/methodology/source_cards/src-0125.md",
+      "knowledge/methodology/source_cards/src-0126.md",
+      "knowledge/methodology/source_cards/src-0127.md",
+      "knowledge/methodology/source_cards/src-0128.md",
+      "knowledge/methodology/source_cards/src-0129.md",
+      "knowledge/methodology/source_cards/src-0130.md",
+      "knowledge/methodology/source_cards/src-0131.md",
+      "knowledge/methodology/source_cards/src-0133.md",
+      "knowledge/methodology/source_cards/src-0134.md",
+      "knowledge/methodology/source_cards/src-0135.md"
+    ]
+  },
+  {
+    "stage": "IB-03",
+    "ref": "origin/work/ib-03-20261121",
+    "sha": "e6fc879b472622954f9b1feae98a65a3b9548848",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-03-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-03-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0136.md",
+      "knowledge/methodology/source_cards/src-0137.md",
+      "knowledge/methodology/source_cards/src-0138.md",
+      "knowledge/methodology/source_cards/src-0139.md",
+      "knowledge/methodology/source_cards/src-0140.md",
+      "knowledge/methodology/source_cards/src-0141.md",
+      "knowledge/methodology/source_cards/src-0142.md",
+      "knowledge/methodology/source_cards/src-0143.md",
+      "knowledge/methodology/source_cards/src-0144.md",
+      "knowledge/methodology/source_cards/src-0145.md",
+      "knowledge/methodology/source_cards/src-0147.md",
+      "knowledge/methodology/source_cards/src-0148.md",
+      "knowledge/methodology/source_cards/src-0150.md",
+      "knowledge/methodology/source_cards/src-0151.md",
+      "knowledge/methodology/source_cards/src-0152.md",
+      "knowledge/methodology/source_cards/src-0153.md",
+      "knowledge/methodology/source_cards/src-0155.md",
+      "knowledge/methodology/source_cards/src-0156.md"
+    ]
+  },
+  {
+    "stage": "IB-04",
+    "ref": "origin/work/ib-04-20261121",
+    "sha": "50c8861348f7f09a9397811c69fe23211b06894d",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-04-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-04-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0157.md",
+      "knowledge/methodology/source_cards/src-0159.md",
+      "knowledge/methodology/source_cards/src-0160.md",
+      "knowledge/methodology/source_cards/src-0161.md",
+      "knowledge/methodology/source_cards/src-0162.md",
+      "knowledge/methodology/source_cards/src-0163.md",
+      "knowledge/methodology/source_cards/src-0164.md",
+      "knowledge/methodology/source_cards/src-0165.md",
+      "knowledge/methodology/source_cards/src-0166.md",
+      "knowledge/methodology/source_cards/src-0167.md",
+      "knowledge/methodology/source_cards/src-0168.md",
+      "knowledge/methodology/source_cards/src-0169.md",
+      "knowledge/methodology/source_cards/src-0170.md",
+      "knowledge/methodology/source_cards/src-0171.md",
+      "knowledge/methodology/source_cards/src-0172.md",
+      "knowledge/methodology/source_cards/src-0173.md",
+      "knowledge/methodology/source_cards/src-0174.md"
+    ]
+  },
+  {
+    "stage": "IB-05",
+    "ref": "origin/work/ib-05-20261121",
+    "sha": "5fe380c9e9880a39292154ebb76f0d6527094af2",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-05-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-05-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0175.md",
+      "knowledge/methodology/source_cards/src-0176.md",
+      "knowledge/methodology/source_cards/src-0177.md",
+      "knowledge/methodology/source_cards/src-0178.md",
+      "knowledge/methodology/source_cards/src-0179.md",
+      "knowledge/methodology/source_cards/src-0180.md",
+      "knowledge/methodology/source_cards/src-0183.md",
+      "knowledge/methodology/source_cards/src-0185.md",
+      "knowledge/methodology/source_cards/src-0186.md",
+      "knowledge/methodology/source_cards/src-0187.md",
+      "knowledge/methodology/source_cards/src-0188.md",
+      "knowledge/methodology/source_cards/src-0189.md",
+      "knowledge/methodology/source_cards/src-0190.md",
+      "knowledge/methodology/source_cards/src-0191.md",
+      "knowledge/methodology/source_cards/src-0192.md",
+      "knowledge/methodology/source_cards/src-0193.md",
+      "knowledge/methodology/source_cards/src-0194.md"
+    ]
+  },
+  {
+    "stage": "IB-06",
+    "ref": "origin/work/ib-06-20261121",
+    "sha": "fc1b2c971fa3e71462760c7399207a8a8359ce10",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-06-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-06-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0195.md",
+      "knowledge/methodology/source_cards/src-0196.md",
+      "knowledge/methodology/source_cards/src-0197.md",
+      "knowledge/methodology/source_cards/src-0198.md",
+      "knowledge/methodology/source_cards/src-0200.md",
+      "knowledge/methodology/source_cards/src-0201.md",
+      "knowledge/methodology/source_cards/src-0202.md",
+      "knowledge/methodology/source_cards/src-0203.md",
+      "knowledge/methodology/source_cards/src-0204.md",
+      "knowledge/methodology/source_cards/src-0207.md",
+      "knowledge/methodology/source_cards/src-0208.md",
+      "knowledge/methodology/source_cards/src-0209.md",
+      "knowledge/methodology/source_cards/src-0210.md",
+      "knowledge/methodology/source_cards/src-0211.md",
+      "knowledge/methodology/source_cards/src-0212.md",
+      "knowledge/methodology/source_cards/src-0213.md",
+      "knowledge/methodology/source_cards/src-0214.md"
+    ]
+  },
+  {
+    "stage": "IB-07",
+    "ref": "origin/work/ib-07-20261121",
+    "sha": "cbe460271252f2db491e0b03ee9b1f05a52c0a3c",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-07-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-07-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0215.md",
+      "knowledge/methodology/source_cards/src-0216.md",
+      "knowledge/methodology/source_cards/src-0217.md",
+      "knowledge/methodology/source_cards/src-0218.md",
+      "knowledge/methodology/source_cards/src-0219.md",
+      "knowledge/methodology/source_cards/src-0220.md",
+      "knowledge/methodology/source_cards/src-0221.md",
+      "knowledge/methodology/source_cards/src-0222.md",
+      "knowledge/methodology/source_cards/src-0223.md",
+      "knowledge/methodology/source_cards/src-0224.md",
+      "knowledge/methodology/source_cards/src-0225.md",
+      "knowledge/methodology/source_cards/src-0226.md",
+      "knowledge/methodology/source_cards/src-0227.md",
+      "knowledge/methodology/source_cards/src-0228.md",
+      "knowledge/methodology/source_cards/src-0229.md",
+      "knowledge/methodology/source_cards/src-0230.md",
+      "knowledge/methodology/source_cards/src-0231.md"
+    ]
+  },
+  {
+    "stage": "IB-08",
+    "ref": "origin/work/ib-08-20261121",
+    "sha": "1ebe546d8dc029a2ec6cebe9f978e3778b418133",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-08-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-08-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0232.md",
+      "knowledge/methodology/source_cards/src-0233.md",
+      "knowledge/methodology/source_cards/src-0234.md",
+      "knowledge/methodology/source_cards/src-0235.md",
+      "knowledge/methodology/source_cards/src-0236.md",
+      "knowledge/methodology/source_cards/src-0237.md",
+      "knowledge/methodology/source_cards/src-0238.md",
+      "knowledge/methodology/source_cards/src-0241.md",
+      "knowledge/methodology/source_cards/src-0243.md",
+      "knowledge/methodology/source_cards/src-0244.md",
+      "knowledge/methodology/source_cards/src-0245.md",
+      "knowledge/methodology/source_cards/src-0246.md",
+      "knowledge/methodology/source_cards/src-0247.md",
+      "knowledge/methodology/source_cards/src-0248.md",
+      "knowledge/methodology/source_cards/src-0249.md",
+      "knowledge/methodology/source_cards/src-0250.md",
+      "knowledge/methodology/source_cards/src-0251.md"
+    ]
+  },
+  {
+    "stage": "IB-09",
+    "ref": "origin/work/ib-09-20261121",
+    "sha": "afe3e64068b5d27043ce06bca403246f8a8874c4",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-09-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-09-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0252.md",
+      "knowledge/methodology/source_cards/src-0253.md",
+      "knowledge/methodology/source_cards/src-0254.md",
+      "knowledge/methodology/source_cards/src-0257.md",
+      "knowledge/methodology/source_cards/src-0260.md",
+      "knowledge/methodology/source_cards/src-0261.md",
+      "knowledge/methodology/source_cards/src-0262.md",
+      "knowledge/methodology/source_cards/src-0263.md",
+      "knowledge/methodology/source_cards/src-0264.md",
+      "knowledge/methodology/source_cards/src-0265.md",
+      "knowledge/methodology/source_cards/src-0266.md",
+      "knowledge/methodology/source_cards/src-0271.md",
+      "knowledge/methodology/source_cards/src-0272.md",
+      "knowledge/methodology/source_cards/src-0275.md",
+      "knowledge/methodology/source_cards/src-0276.md",
+      "knowledge/methodology/source_cards/src-0277.md",
+      "knowledge/methodology/source_cards/src-0278.md"
+    ]
+  },
+  {
+    "stage": "IB-10",
+    "ref": "origin/work/ib-10-20261121",
+    "sha": "94bc85c4c55b016c1c032334f6918cf91715607f",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-10-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0279.md",
+      "knowledge/methodology/source_cards/src-0280.md",
+      "knowledge/methodology/source_cards/src-0281.md",
+      "knowledge/methodology/source_cards/src-0282.md",
+      "knowledge/methodology/source_cards/src-0283.md",
+      "knowledge/methodology/source_cards/src-0284.md",
+      "knowledge/methodology/source_cards/src-0285.md",
+      "knowledge/methodology/source_cards/src-0286.md",
+      "knowledge/methodology/source_cards/src-0287.md",
+      "knowledge/methodology/source_cards/src-0288.md",
+      "knowledge/methodology/source_cards/src-0289.md",
+      "knowledge/methodology/source_cards/src-0290.md",
+      "knowledge/methodology/source_cards/src-0291.md",
+      "knowledge/methodology/source_cards/src-0292.md",
+      "knowledge/methodology/source_cards/src-0293.md",
+      "knowledge/methodology/source_cards/src-0294.md",
+      "knowledge/methodology/source_cards/src-0295.md"
+    ]
+  },
+  {
+    "stage": "IB-11",
+    "ref": "origin/work/ib-11-20261121",
+    "sha": "d9d13fd78f0c939101b7f8c9ab2e332fea50339f",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-11-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0296.md",
+      "knowledge/methodology/source_cards/src-0297.md",
+      "knowledge/methodology/source_cards/src-0299.md",
+      "knowledge/methodology/source_cards/src-0300.md",
+      "knowledge/methodology/source_cards/src-0301.md",
+      "knowledge/methodology/source_cards/src-0302.md",
+      "knowledge/methodology/source_cards/src-0303.md",
+      "knowledge/methodology/source_cards/src-0304.md",
+      "knowledge/methodology/source_cards/src-0305.md",
+      "knowledge/methodology/source_cards/src-0306.md",
+      "knowledge/methodology/source_cards/src-0307.md",
+      "knowledge/methodology/source_cards/src-0308.md",
+      "knowledge/methodology/source_cards/src-0309.md",
+      "knowledge/methodology/source_cards/src-0311.md",
+      "knowledge/methodology/source_cards/src-0312.md",
+      "knowledge/methodology/source_cards/src-0313.md",
+      "knowledge/methodology/source_cards/src-0314.md"
+    ]
+  },
+  {
+    "stage": "IB-12",
+    "ref": "origin/work/ib-12-20261121",
+    "sha": "154060567cca188fbed769ffa0746791f80f1dd1",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-12-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0315.md",
+      "knowledge/methodology/source_cards/src-0316.md",
+      "knowledge/methodology/source_cards/src-0317.md",
+      "knowledge/methodology/source_cards/src-0318.md",
+      "knowledge/methodology/source_cards/src-0319.md",
+      "knowledge/methodology/source_cards/src-0320.md",
+      "knowledge/methodology/source_cards/src-0321.md",
+      "knowledge/methodology/source_cards/src-0322.md",
+      "knowledge/methodology/source_cards/src-0323.md",
+      "knowledge/methodology/source_cards/src-0324.md",
+      "knowledge/methodology/source_cards/src-0325.md",
+      "knowledge/methodology/source_cards/src-0326.md",
+      "knowledge/methodology/source_cards/src-0327.md",
+      "knowledge/methodology/source_cards/src-0328.md",
+      "knowledge/methodology/source_cards/src-0329.md",
+      "knowledge/methodology/source_cards/src-0330.md",
+      "knowledge/methodology/source_cards/src-0331.md"
+    ]
+  },
+  {
+    "stage": "IB-13",
+    "ref": "origin/work/ib-13-20261121",
+    "sha": "5f50968786ccc434baba2def7f3ce097da311192",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-13-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0332.md",
+      "knowledge/methodology/source_cards/src-0333.md",
+      "knowledge/methodology/source_cards/src-0334.md",
+      "knowledge/methodology/source_cards/src-0335.md",
+      "knowledge/methodology/source_cards/src-0336.md",
+      "knowledge/methodology/source_cards/src-0338.md",
+      "knowledge/methodology/source_cards/src-0339.md",
+      "knowledge/methodology/source_cards/src-0340.md",
+      "knowledge/methodology/source_cards/src-0341.md",
+      "knowledge/methodology/source_cards/src-0342.md",
+      "knowledge/methodology/source_cards/src-0343.md",
+      "knowledge/methodology/source_cards/src-0344.md",
+      "knowledge/methodology/source_cards/src-0345.md",
+      "knowledge/methodology/source_cards/src-0346.md",
+      "knowledge/methodology/source_cards/src-0347.md",
+      "knowledge/methodology/source_cards/src-0348.md",
+      "knowledge/methodology/source_cards/src-0349.md"
+    ]
+  },
+  {
+    "stage": "IB-14",
+    "ref": "origin/work/ib-14-20261121",
+    "sha": "1185c45df5750d22568553791f11d4b4cb4ced0b",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-14-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0350.md",
+      "knowledge/methodology/source_cards/src-0351.md",
+      "knowledge/methodology/source_cards/src-0352.md",
+      "knowledge/methodology/source_cards/src-0354.md",
+      "knowledge/methodology/source_cards/src-0355.md",
+      "knowledge/methodology/source_cards/src-0356.md",
+      "knowledge/methodology/source_cards/src-0357.md",
+      "knowledge/methodology/source_cards/src-0359.md",
+      "knowledge/methodology/source_cards/src-0360.md",
+      "knowledge/methodology/source_cards/src-0361.md",
+      "knowledge/methodology/source_cards/src-0362.md",
+      "knowledge/methodology/source_cards/src-0363.md",
+      "knowledge/methodology/source_cards/src-0364.md",
+      "knowledge/methodology/source_cards/src-0365.md",
+      "knowledge/methodology/source_cards/src-0366.md",
+      "knowledge/methodology/source_cards/src-0368.md",
+      "knowledge/methodology/source_cards/src-0369.md"
+    ]
+  },
+  {
+    "stage": "IB-15",
+    "ref": "origin/work/ib-15-20261121",
+    "sha": "cd13dd75235d99408f4c55122bab2457f7a705db",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-15-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-15-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0370.md",
+      "knowledge/methodology/source_cards/src-0371.md",
+      "knowledge/methodology/source_cards/src-0372.md",
+      "knowledge/methodology/source_cards/src-0374.md",
+      "knowledge/methodology/source_cards/src-0375.md",
+      "knowledge/methodology/source_cards/src-0376.md",
+      "knowledge/methodology/source_cards/src-0377.md",
+      "knowledge/methodology/source_cards/src-0378.md",
+      "knowledge/methodology/source_cards/src-0379.md",
+      "knowledge/methodology/source_cards/src-0380.md",
+      "knowledge/methodology/source_cards/src-0381.md",
+      "knowledge/methodology/source_cards/src-0382.md",
+      "knowledge/methodology/source_cards/src-0383.md",
+      "knowledge/methodology/source_cards/src-0384.md",
+      "knowledge/methodology/source_cards/src-0385.md",
+      "knowledge/methodology/source_cards/src-0386.md",
+      "knowledge/methodology/source_cards/src-0387.md"
+    ]
+  },
+  {
+    "stage": "IB-16",
+    "ref": "origin/work/ib-16-20261121",
+    "sha": "8e6a3b83074549815c6514eebadfd2c737e1f4e9",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-16-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-16-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0388.md",
+      "knowledge/methodology/source_cards/src-0389.md",
+      "knowledge/methodology/source_cards/src-0390.md",
+      "knowledge/methodology/source_cards/src-0391.md",
+      "knowledge/methodology/source_cards/src-0392.md",
+      "knowledge/methodology/source_cards/src-0393.md",
+      "knowledge/methodology/source_cards/src-0394.md",
+      "knowledge/methodology/source_cards/src-0395.md",
+      "knowledge/methodology/source_cards/src-0396.md",
+      "knowledge/methodology/source_cards/src-0398.md",
+      "knowledge/methodology/source_cards/src-0399.md",
+      "knowledge/methodology/source_cards/src-0400.md",
+      "knowledge/methodology/source_cards/src-0402.md",
+      "knowledge/methodology/source_cards/src-0403.md",
+      "knowledge/methodology/source_cards/src-0404.md",
+      "knowledge/methodology/source_cards/src-0405.md",
+      "knowledge/methodology/source_cards/src-0406.md"
+    ]
+  },
+  {
+    "stage": "IB-17",
+    "ref": "origin/work/ib-17-20261121",
+    "sha": "a117fbf3a4604b81103073d7a2257de2c9077b32",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-17-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-17-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0407.md",
+      "knowledge/methodology/source_cards/src-0408.md",
+      "knowledge/methodology/source_cards/src-0409.md",
+      "knowledge/methodology/source_cards/src-0411.md",
+      "knowledge/methodology/source_cards/src-0412.md",
+      "knowledge/methodology/source_cards/src-0413.md",
+      "knowledge/methodology/source_cards/src-0414.md",
+      "knowledge/methodology/source_cards/src-0415.md",
+      "knowledge/methodology/source_cards/src-0416.md",
+      "knowledge/methodology/source_cards/src-0417.md",
+      "knowledge/methodology/source_cards/src-0418.md",
+      "knowledge/methodology/source_cards/src-0419.md",
+      "knowledge/methodology/source_cards/src-0420.md",
+      "knowledge/methodology/source_cards/src-0421.md",
+      "knowledge/methodology/source_cards/src-0422.md",
+      "knowledge/methodology/source_cards/src-0423.md",
+      "knowledge/methodology/source_cards/src-0424.md"
+    ]
+  },
+  {
+    "stage": "IB-18",
+    "ref": "origin/work/ib-18-20261121",
+    "sha": "786f8861755d84aaab2ebb758a82a3378e0fe503",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-18-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-18-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0425.md",
+      "knowledge/methodology/source_cards/src-0426.md",
+      "knowledge/methodology/source_cards/src-0427.md",
+      "knowledge/methodology/source_cards/src-0428.md",
+      "knowledge/methodology/source_cards/src-0429.md",
+      "knowledge/methodology/source_cards/src-0430.md",
+      "knowledge/methodology/source_cards/src-0431.md",
+      "knowledge/methodology/source_cards/src-0432.md",
+      "knowledge/methodology/source_cards/src-0433.md",
+      "knowledge/methodology/source_cards/src-0434.md",
+      "knowledge/methodology/source_cards/src-0435.md",
+      "knowledge/methodology/source_cards/src-0436.md",
+      "knowledge/methodology/source_cards/src-0437.md",
+      "knowledge/methodology/source_cards/src-0438.md",
+      "knowledge/methodology/source_cards/src-0439.md",
+      "knowledge/methodology/source_cards/src-0440.md",
+      "knowledge/methodology/source_cards/src-0441.md"
+    ]
+  },
+  {
+    "stage": "IB-19",
+    "ref": "origin/work/ib-19-20261121",
+    "sha": "d4f41cc36c24bdfe366eb1e82bd27a1e8f73e277",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-19-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-19-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0442.md",
+      "knowledge/methodology/source_cards/src-0443.md",
+      "knowledge/methodology/source_cards/src-0444.md",
+      "knowledge/methodology/source_cards/src-0445.md",
+      "knowledge/methodology/source_cards/src-0446.md",
+      "knowledge/methodology/source_cards/src-0447.md",
+      "knowledge/methodology/source_cards/src-0448.md",
+      "knowledge/methodology/source_cards/src-0449.md",
+      "knowledge/methodology/source_cards/src-0450.md",
+      "knowledge/methodology/source_cards/src-0451.md",
+      "knowledge/methodology/source_cards/src-0452.md",
+      "knowledge/methodology/source_cards/src-0453.md",
+      "knowledge/methodology/source_cards/src-0454.md",
+      "knowledge/methodology/source_cards/src-0455.md",
+      "knowledge/methodology/source_cards/src-0456.md",
+      "knowledge/methodology/source_cards/src-0457.md",
+      "knowledge/methodology/source_cards/src-0458.md"
+    ]
+  },
+  {
+    "stage": "IB-20",
+    "ref": "origin/work/ib-20-20261121",
+    "sha": "5778003466f86be413a9f03c4f2255e0284e38b0",
+    "paths": [
+      "knowledge/methodology/intake/parallel/IB-20-DELTA.json",
+      "knowledge/methodology/intake/parallel/IB-20-RESULTS.md",
+      "knowledge/methodology/source_cards/src-0459.md",
+      "knowledge/methodology/source_cards/src-0460.md",
+      "knowledge/methodology/source_cards/src-0461.md",
+      "knowledge/methodology/source_cards/src-0462.md",
+      "knowledge/methodology/source_cards/src-0463.md",
+      "knowledge/methodology/source_cards/src-0464.md",
+      "knowledge/methodology/source_cards/src-0465.md",
+      "knowledge/methodology/source_cards/src-0466.md",
+      "knowledge/methodology/source_cards/src-0467.md",
+      "knowledge/methodology/source_cards/src-0468.md",
+      "knowledge/methodology/source_cards/src-0469.md",
+      "knowledge/methodology/source_cards/src-0470.md",
+      "knowledge/methodology/source_cards/src-0471.md",
+      "knowledge/methodology/source_cards/src-0472.md",
+      "knowledge/methodology/source_cards/src-0473.md",
+      "knowledge/methodology/source_cards/src-0474.md",
+      "knowledge/methodology/source_cards/src-0475.md"
+    ]
+  },
+  {
+    "stage": "PR-98",
+    "ref": "chore/skill-stability-integration-stage1-20261120",
+    "sha": "83a90f2faeef72e253d7a6753cf8b93acd424c93",
+    "integration": "Selective content patch; original PR chain unchanged"
+  },
+  {
+    "stage": "PR-99",
+    "ref": "chore/skill-v1-rc1-preparation-20261120",
+    "sha": "9eb6fed5786e81bf71a427f9bedb39ec35334b0d",
+    "integration": "Selective content patch; original PR chain unchanged"
+  },
+  {
+    "stage": "PR-100",
+    "ref": "fix/skill-rc-hardening-selective-20261120",
+    "sha": "fc6e829574de834b19fe6f205b7fef433604c712",
+    "integration": "Selective content patch; original PR chain unchanged"
+  }
+]

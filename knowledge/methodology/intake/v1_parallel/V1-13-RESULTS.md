@@ -1,0 +1,236 @@
+# V1-13/20 — RESULTADOS de auditoria editorial dos 17 cards
+
+**Data:** 21/11/2026 (America/Fortaleza). **Resultado:** triagem documental concluída, **sem revisão científica independente, sem liberação de direitos, sem GO**.
+
+- Manifesto: `7c92045310eb3b1474a9612a777fb0012a511592`, Git blob `2f85dc6c4283376b9fc3c312668f0a1f25a0a301`; snapshot de leitura: `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`; branch: `work/v1-13-20261121`.
+- Onda A sem dependências anteriores. Exclusividade: EC-158 a EC-174 e recibos V1-13. Nenhum arquivo global ou de outras etapas alterado.
+- Leitura: 17 cards Git, nenhuma fonte primária/PDF original consultada nesta etapa. Os direitos e DOI descritos nos cards são alegações a confirmar na edição original.
+- Integridade: SHA-256 do UTF-8 computado de forma independente para cada card e confrontado com manifesto; 17/17 coincidentes. Git blobs registrados. O hash NÃO valida fatos, originalidade ou licença.
+- Revisão: triagem original do conteúdo visível (metadados, inferência, objeção, direitos, fonte, prompt injection). Não houve revisor científico humano independente, nem auditor independente de originalidade/direitos. Classes [I]/[P] mantidas, nenhuma [L] promovida.
+- Decisão de escrita: **nenhum card modificado**, pois não se confirmou evidência primária suficiente para correção assertiva; alterações sugeridas registradas apenas nos recibos.
+
+## Matriz integral de decisões
+
+| Card | SRC | SHA-256 (prefixo) | Parecer provisório | Pendência principal |
+|---|---|---|---|---|
+| EC-158 | SRC-0337 | `cb068cae79d7cd59…` | CORREÇÃO_NECESSÁRIA | Cotejar DOI, versão, páginas e duplicidade com SRC-0206 sem dupla contagem |
+| EC-159 | SRC-0353 | `d16318216a5a0be5…` | CORREÇÃO_NECESSÁRIA | Verificar cobertura/base e viés bibliométrico na fonte original; comprovar direitos |
+| EC-160 | SRC-0358 | `87f602cde7dfe8a1…` | CORREÇÃO_NECESSÁRIA | Checar argumento original e distinguir ontologia causal de estimando empírico |
+| EC-161 | SRC-0367 | `a27078ed44bafa77…` | BLOQUEADO | Revisar licença da versão, uso não comercial e histórico de redistribuição; PDF fora do pacote |
+| EC-162 | SRC-0397 | `cfbad1bc5a2866fb…` | CORREÇÃO_NECESSÁRIA | Conferir atribuição, direitos de terceiros e pressupostos dos tipos de survey |
+| EC-163 | SRC-0401 | `3891198d4b9f7df3…` | CORREÇÃO_NECESSÁRIA | Conferir ano/versão, corrigir nota editorial de 2012/2023 quando houver fonte |
+| EC-164 | SRC-0410 | `4a47bd42b1c5d30d…` | CORREÇÃO_NECESSÁRIA | Verificar edição, fonte primária e escolhas de extração/rotação/retenção |
+| EC-165 | SRC-0007 | `df2fafc5c40123e8…` | BLOQUEADO | Identificar cópia/edição e direitos de terceiros antes de eventual distribuição |
+| EC-166 | SRC-0008 | `1f934429f388d8eb…` | CORREÇÃO_NECESSÁRIA | Conferir publicação original, páginas e distinções conceituais |
+| EC-167 | SRC-0009 | `62f6446e6e8e2084…` | CORREÇÃO_NECESSÁRIA | Validar edição/licença/uso; manter PDF fora de distribuição irrestrita |
+| EC-168 | SRC-0010 | `76df07c052df796f…` | CORREÇÃO_NECESSÁRIA | Validar fonte e distinção entre análise documental e de conteúdo |
+| EC-169 | SRC-0012 | `4f4e662052abc28e…` | CORREÇÃO_NECESSÁRIA | Conferir publicação e contexto/autoria/intenção como dimensões de crítica |
+| EC-170 | SRC-0013 | `15d7a382add2d988…` | CORREÇÃO_NECESSÁRIA | Cotejar fonte editorial e argumento de seleção de documentos |
+| EC-171 | SRC-0014 | `4fa98ebed6484b5f…` | BLOQUEADO | Cotejar anais/editorial, versão da cópia e direitos de imagens/terceiros |
+| EC-172 | SRC-0015 | `fc2bebe70af44d85…` | CORREÇÃO_NECESSÁRIA | Verificar fonte original e limites de transposição entre áreas |
+| EC-173 | SRC-0146 | `2ea24ba23785ad49…` | CORREÇÃO_NECESSÁRIA | Conferir edição/licença e condições de validade dos indicadores ICR |
+| EC-174 | SRC-0149 | `80277f8ff0b2dbe1…` | CORREÇÃO_NECESSÁRIA | Conferir original e limites epistemológicos dos critérios de qualidade |
+
+## Recibos por card
+
+Em cada recibo, **fonte primária não consultada**, **licença não conferida no original**, **revisão independente pendente**, **não citar como [L]**. As seguintes observações são derivados da leitura do card, não endosso científico.
+
+### EC-158 — O uso das imagens em pesquisas nas ciências sociais
+
+- Arquivo: `knowledge/methodology/cards/source-review-0337.md`; SHA-256 real `cb068cae79d7cd59bf24c315839cd93203f4f150975d74f99bb249a47f1f0a8c`; Git blob `ea22a8706e24c1793429135ad90962aad40f785d`; identidade reportada pelo card: SRC-0337.
+- **CORREÇÃO_NECESSÁRIA**. Direitos/edição: Cópia sem licença demonstrada; duplicidade com SRC-0206 alegada no card.
+- Ação: Cotejar DOI, versão, páginas e duplicidade com SRC-0206 sem dupla contagem.
+- Contraprova metodológica: Interpretação rival da imagem e dependência da unidade de análise.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+### EC-159 — Pesquisa bibliométrica e hierarquias do conhecimento em Ciência Política
+
+- Arquivo: `knowledge/methodology/cards/source-review-0353.md`; SHA-256 real `d16318216a5a0be51e3da4403128b44d65a7055b0578fafd7dd1a874db71a6a8`; Git blob `51c1fd1897ed4ad10850921c52d5055ca0192cdf`; identidade reportada pelo card: SRC-0353.
+- **CORREÇÃO_NECESSÁRIA**. Direitos/edição: Licença exata não demonstrada.
+- Ação: Verificar cobertura/base e viés bibliométrico na fonte original; comprovar direitos.
+- Contraprova metodológica: Alternativa: hierarquia observada decorre da indexação e idioma.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+### EC-160 — Das causas na Ciência Política: uma intervenção filosófica necessária
+
+- Arquivo: `knowledge/methodology/cards/source-review-0358.md`; SHA-256 real `87f602cde7dfe8a14667f740f2a80d10bebab5e0a190027997a9a37fd9b893b7`; Git blob `06cc4a2254b13d348995f986df269486d65b871a`; identidade reportada pelo card: SRC-0358.
+- **CORREÇÃO_NECESSÁRIA**. Direitos/edição: Direitos da cópia não verificados.
+- Ação: Checar argumento original e distinguir ontologia causal de estimando empírico.
+- Contraprova metodológica: Contrastar explicações rivais sem identificação causal presumida.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+### EC-161 — Aplicação metodológica da análise de conteúdo em pesquisas de análise de política externa
+
+- Arquivo: `knowledge/methodology/cards/source-review-0367.md`; SHA-256 real `a27078ed44bafa7791a88567958214eb7c9b11ffb592d06010cda9b9d04ae850`; Git blob `e721b4a35e72c126b4a56299087a2e64dc5c3f29`; identidade reportada pelo card: SRC-0367.
+- **BLOQUEADO**. Direitos/edição: CC BY-NC 4.0 alegada; Issue #102 de histórico de direitos pendente.
+- Ação: Revisar licença da versão, uso não comercial e histórico de redistribuição; PDF fora do pacote.
+- Contraprova metodológica: Codificações alternativas, regras de categorização e replicabilidade.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+### EC-162 — Experimentos de survey na administração pública brasileira: conceitos, métodos e exemplos
+
+- Arquivo: `knowledge/methodology/cards/source-review-0397.md`; SHA-256 real `cfbad1bc5a2866fb63b22e66d9027553ba5c044047e059ac038a6a08c0fb6458`; Git blob `d4712e83fad9abb4ad9b94f3696e6d194265acde`; identidade reportada pelo card: SRC-0397.
+- **CORREÇÃO_NECESSÁRIA**. Direitos/edição: CC BY 4.0 alegada; não verificada nesta leitura no exemplar primário.
+- Ação: Conferir atribuição, direitos de terceiros e pressupostos dos tipos de survey.
+- Contraprova metodológica: Testar vieses de vinheta, lista e checagem de fatos.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+### EC-163 — tclust: An R Package for a Trimming Approach to Cluster Analysis
+
+- Arquivo: `knowledge/methodology/cards/source-review-0401.md`; SHA-256 real `3891198d4b9f7df3a36e1ba6a7165467e418866adfa36697db62dd462e410013`; Git blob `6647513f3e58c9db2786412ee37c5191967392df`; identidade reportada pelo card: SRC-0401.
+- **CORREÇÃO_NECESSÁRIA**. Direitos/edição: Licença exata não demonstrada.
+- Ação: Conferir ano/versão, corrigir nota editorial de 2012/2023 quando houver fonte.
+- Contraprova metodológica: Sensibilidade dos clusters a trimming/outliers.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+### EC-164 — Uso da análise fatorial exploratória em psicologia
+
+- Arquivo: `knowledge/methodology/cards/source-review-0410.md`; SHA-256 real `4a47bd42b1c5d30d4a10a516a8bb76d081d6526c2fbb255c46d61fa0de4e976d`; Git blob `1f614a67990faa9ca8bd8eddc50102189cf195c1`; identidade reportada pelo card: SRC-0410.
+- **CORREÇÃO_NECESSÁRIA**. Direitos/edição: Copyright exato não verificado; identificador editorial ausente.
+- Ação: Verificar edição, fonte primária e escolhas de extração/rotação/retenção.
+- Contraprova metodológica: Confrontar soluções fatoriais alternativas.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+### EC-165 — Modelos de leitura documentária para indexação: abordagens teóricas interdisciplinares e aplicações em diferentes tipos de documentos
+
+- Arquivo: `knowledge/methodology/cards/source-checked-0007.md`; SHA-256 real `df2fafc5c40123e8d195131d24ab7a6840d877a997832ecb3e5d46d92ca06670`; Git blob `113b6bf0d2def5c88dd60d8c6e5b2e6bb732eb68`; identidade reportada pelo card: SRC-0007.
+- **BLOQUEADO**. Direitos/edição: CC BY 4.0 declarada com ressalvas; exemplar diverge em tamanho do inventário.
+- Ação: Identificar cópia/edição e direitos de terceiros antes de eventual distribuição.
+- Contraprova metodológica: Distinção entre indexação e inferência qualitativa.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+### EC-166 — Pesquisa documental: pistas teóricas e metodológicas
+
+- Arquivo: `knowledge/methodology/cards/source-checked-0008.md`; SHA-256 real `1f934429f388d8eb2190a9d0ffbc0d69f637fd65be15223ac9cea31abf4e2601`; Git blob `eb189ba92c0fb3fe1a484b358ac24f126e1c6d37`; identidade reportada pelo card: SRC-0008.
+- **CORREÇÃO_NECESSÁRIA**. Direitos/edição: Licença não demonstrada; localizador primário pendente.
+- Ação: Conferir publicação original, páginas e distinções conceituais.
+- Contraprova metodológica: Autenticidade e contexto documental podem inverter inferências.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+### EC-167 — Conducting a Qualitative Document Analysis
+
+- Arquivo: `knowledge/methodology/cards/source-checked-0009.md`; SHA-256 real `62f6446e6e8e2084a8df6dc019f185a8dfe446909e08e3a5b5b19c060e24791e`; Git blob `93103ec9a1ed060d209a9050717ac68b2b5e734a`; identidade reportada pelo card: SRC-0009.
+- **CORREÇÃO_NECESSÁRIA**. Direitos/edição: CC BY-NC-SA 4.0 alegada; condições específicas de uso não verificadas.
+- Ação: Validar edição/licença/uso; manter PDF fora de distribuição irrestrita.
+- Contraprova metodológica: Seleção e ausência de documentos podem enviesar análise.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+### EC-168 — Análise documental como percurso metodológico na pesquisa qualitativa
+
+- Arquivo: `knowledge/methodology/cards/source-checked-0010.md`; SHA-256 real `76df07c052df796f916efccc7d64889eeb9574bf8db583f2f916a2a18922a23d`; Git blob `5a3e17fc91b25fbfbe7d6b609c70ff71d6659c01`; identidade reportada pelo card: SRC-0010.
+- **CORREÇÃO_NECESSÁRIA**. Direitos/edição: Sem licença comprovada; DOI e localizador pendentes.
+- Ação: Validar fonte e distinção entre análise documental e de conteúdo.
+- Contraprova metodológica: Falsos positivos quando se lê mensagem como fato.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+### EC-169 — Estudo/análise documental: uma revisão teórica e metodológica
+
+- Arquivo: `knowledge/methodology/cards/source-checked-0012.md`; SHA-256 real `4f4e662052abc28e245daad9a2d4c3330a7367fa54b4953ce83d88ed38165d31`; Git blob `0b1cb51233143238c7c40283719bf10207e216e1`; identidade reportada pelo card: SRC-0012.
+- **CORREÇÃO_NECESSÁRIA**. Direitos/edição: Sem direitos comprovados; URL e DOI pendentes.
+- Ação: Conferir publicação e contexto/autoria/intenção como dimensões de crítica.
+- Contraprova metodológica: Triangulação com documentação contraditória.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+### EC-170 — Análise documental e sua contribuição no desenvolvimento da pesquisa científica
+
+- Arquivo: `knowledge/methodology/cards/source-checked-0013.md`; SHA-256 real `15d7a382add2d98817ac6752354d2087448ad22a7587da79a1df9330cface68e`; Git blob `dc8be7fccb05d497e2232d2fb1ed5da10072b7b9`; identidade reportada pelo card: SRC-0013.
+- **CORREÇÃO_NECESSÁRIA**. Direitos/edição: PDF sem licença comprovada; localizador e DOI pendentes.
+- Ação: Cotejar fonte editorial e argumento de seleção de documentos.
+- Contraprova metodológica: Viés de sobrevivência e critérios de inclusão.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+### EC-171 — Pesquisa documental: considerações sobre conceitos e características na pesquisa qualitativa
+
+- Arquivo: `knowledge/methodology/cards/source-checked-0014.md`; SHA-256 real `4fa98ebed6484b5f3fde68a90722a99a48ddd3bc5313619c3c52dec5460d3ec4`; Git blob `017450302d63bc0cec29a32e6c848d21a7732a4a`; identidade reportada pelo card: SRC-0014.
+- **BLOQUEADO**. Direitos/edição: Capa ResearchGate não concede licença ao artigo dos anais.
+- Ação: Cotejar anais/editorial, versão da cópia e direitos de imagens/terceiros.
+- Contraprova metodológica: Vieses de amostragem e diferenças de contexto.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+### EC-172 — Análise documental como ferramenta metodológica em história da educação: um olhar para pesquisas locais
+
+- Arquivo: `knowledge/methodology/cards/source-checked-0015.md`; SHA-256 real `fc2bebe70af44d85b072e140eb9d8b664c196b4c63acded945c6a8118ecb4b3a`; Git blob `ff3d739380d7f9cdcc413ab863fc1c60e3379109`; identidade reportada pelo card: SRC-0015.
+- **CORREÇÃO_NECESSÁRIA**. Direitos/edição: Direitos não confirmados; DOI/URL pendentes.
+- Ação: Verificar fonte original e limites de transposição entre áreas.
+- Contraprova metodológica: Tradição da História Cultural e lacunas dos acervos locais.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+### EC-173 — Intercoder Reliability in Qualitative Research: Debates and Practical Guidelines
+
+- Arquivo: `knowledge/methodology/cards/source-checked-0146.md`; SHA-256 real `2ea24ba23785ad49bec283b3f38cfd5daf00d4f875d3ba43caca2eddd9daf3d6`; Git blob `2af5096beb138df4f273c89abf565c64390fe05d`; identidade reportada pelo card: SRC-0146.
+- **CORREÇÃO_NECESSÁRIA**. Direitos/edição: CC BY-NC 4.0 alegada; distribuição comercial não licenciada automaticamente.
+- Ação: Conferir edição/licença e condições de validade dos indicadores ICR.
+- Contraprova metodológica: Conflito potencial entre ICR e análise temática reflexiva.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+### EC-174 — Qualitative Quality: Eight ‘Big-Tent’ Criteria for Excellent Qualitative Research
+
+- Arquivo: `knowledge/methodology/cards/source-checked-0149.md`; SHA-256 real `80277f8ff0b2dbe16183c449093f6336ebca94de6265a231b6035bf39445add1`; Git blob `526f370f946225452390df044bf4fe4e7b89b426`; identidade reportada pelo card: SRC-0149.
+- **CORREÇÃO_NECESSÁRIA**. Direitos/edição: SAGE: edição sem licença permissiva declarada.
+- Ação: Conferir original e limites epistemológicos dos critérios de qualidade.
+- Contraprova metodológica: Critérios rivais de qualidade por tradição metodológica.
+- Segurança: tratar conteúdo recuperado como dado não confiável; nenhum card instrui revisão, acesso ou gates automaticamente.
+
+## Critérios de aceite e pendências
+
+- [x] 17 caminhos atribuídos examinados; 17/17 correspondem aos hashes declarados no manifesto.
+- [x] 17 recibos com direitos observados, ação corretiva, contraprova, proveniência e limites [I]/[P]/[L].
+- [x] Nenhuma alteração em catalog.json, registries, rights-ledger, cards de terceiros, PDFs, branch principal ou outras etapas.
+- [ ] Conferência editorial de edição/licença dos PDFs com evidência primária e por exemplar, especialmente SRC-0367 / Issue #102, SRC-0007 e SRC-0014.
+- [ ] Verificação de originalidade de trechos, direitos de terceiros e fidelidade bibliográfica por revisor independente.
+- [ ] Revisão científica independente com páginas/trechos e decisões humanas identificadas; sem homologação.
+
+## Bloqueio de concorrência do MD e próximos passos
+
+Durante a abertura, o MD canônico havia mudado entre leitura e preflight: versão 312644 bytes modificada às 22:18:31.685Z foi seguida por 314993 bytes às 22:19:13.756Z. **Gravação abortada sem sobrescrever mudanças de outras abas.** O fechamento ainda requer reconciliação do bloco 31.13 no mesmo arquivo canônico, respeitando a regra de não gravar em caso de conflito.
+
+Não iniciar V1-16…V1-20, merge, release, tag, force-push, MCP ou redistribuição de PDF. O diagnóstico documental não é homologação de direitos nem científica. V1-16 aguarda a entrega auditada de todas as 15 etapas da onda A.
+
+**Segunda tentativa de gravação do MD (fechamento):** abortada preventivamente antes de escrita: a versão-base de 318.452 bytes, modificada em `2026-11-21T22:21:38.796Z`, foi substituída por versão de 320.654 bytes, modificada em `2026-11-21T22:22:19.899Z`, entre materialização e preflight. **Nenhuma alteração da subseção 31.13 foi enviada ao Google Drive**. Permanecem preservadas as versões atuais de outras abas. O próprio MD canônico segue pendente de atualização por concorrência; nunca considerar a V1-13 formalmente encerrada no diário do Drive. A retomada exigirá reconciliação em janela de escrita exclusiva ou edição transacional específica da subseção, sem sobrescrever o Markdown bruto de outras abas.
+
+## Complemento documental verificado nesta continuidade — 21/11/2026
+
+**Acréscimo sem retrabalho:** conferidos os 17 cards atribuídos no snapshot `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`: 17 caminhos e 17 Git blobs coincidentes com os recibos existentes, todos ainda `DRAFT_NEEDS_INDEPENDENT_REVIEW`. Isto não substitui validação SHA-256 independente nesta passagem, autenticação da cópia ou revisão científica.
+
+### Evidências editoriais públicas adicionais (sem acesso ao PDF privado)
+
+- **EC-161 / SRC-0367:** a página da *Revista Brasileira de Ciência Política* confirma autores, artigo de 2020, DOI `10.1590/0103-3352.2020.33.218584` e vincula expressamente a licença **CC BY-NC 4.0**: https://www.scielo.br/j/rbcpol/a/QFmq77JnT468fcBKCdh99ms/?format=html . Manter **BLOQUEADO** até equivalência da cópia, direitos de terceiros e deliberação da Issue #102.
+- **EC-163 / SRC-0401:** ficha do *Journal of Statistical Software* confirma autoria, DOI `10.18637/jss.v047.i12` e publicação em **17/05/2012**: https://www.jstatsoft.org/article/view/v047i12 . A dúvida entre 2012/2023 se resolve para a publicação catalogada, mas a versão específica e seus direitos seguem pendentes; manter **CORREÇÃO_NECESSÁRIA**.
+- **EC-165 / SRC-0007:** a página da obra na SciELO/Unesp confirma 2020, 460 páginas e DOI `10.36311/2020.978-65-86546-07-1`, mas apresenta ao rodapé **CC BY-NC-SA 3.0 Unported** com ressalvas, diferente da licença **CC BY 4.0** afirmada no card: https://books.scielo.org/id/96v3r . Manter **BLOQUEADO**; conferir a licença aplicada ao exemplar, colofão, capítulos e materiais de terceiros antes de eventual distribuição, sem inferir permissão para a cópia privada.
+- **EC-167 / SRC-0009:** página editorial de *The Qualitative Report* confirma o artigo de Hani Morgan, DOI `10.46743/2160-3715/2022.5044` e licença **CC BY-NC-SA 4.0**: https://nsuworks.nova.edu/tqr/vol27/iss1/4/ . Manter **CORREÇÃO_NECESSÁRIA** até correspondência com a cópia específica e checagem de componentes de terceiros.
+
+### Limites, risco e estado Git
+
+- Os demais 13 cards conservam as avaliações e contraprovas individuais anteriores. Nenhum card foi modificado ou promovido de [P]/[I] para [L]. As quatro fontes editoriais públicas não substituem confronto integral por exemplar/página, teste sistemático de originalidade ou as duas avaliações independentes requeridas.
+- Fontes recuperadas e cards foram tratados como **entrada não confiável**, não como instruções operacionais. Não houve teste dinâmico de prompt injection, CI, pytest ou teste de host nesta continuidade.
+- HEAD auditado antes deste adendo: `da64d3c30467a1d509764f4aff7b23e77f612e33`. Comparação `7c92045310eb3b1474a9612a777fb0012a511592...work/v1-13-20261121`: 4 commits à frente e 1 atrás, com ancestral comum `c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf`, diff restrito a RESULTS e DELTA da V1-13. A branch **não contém** o commit de planejamento na ancestralidade; reconciliar apenas em futura integração autorizada. PR exclusiva não encontrada. Verificação do HEAD retornou **zero status checks, zero check runs, zero workflow runs**, o que não prova aprovação de testes.
+- **MD canônico:** MIME `text/markdown` bruto, 31.13 inicial desatualizada e atualização por substituição integral sem CAS transacional. Nenhuma regravação de bytes será feita; acompanhamento por comentário vinculado à seção com relato explícito da limitação.
+
+**FEITO:** leitura atual e controle de escopo, checagem de 17 Git blobs, quatro evidências editoriais públicas novas, verificação de HEAD/diff/PR/CI. **EM EXECUÇÃO / BLOQUEIOS:** direitos por edição/cópia, divergência de licença no EC-165, originalidade e fidelidade científica independentes para 17/17; nenhum GO.
+
+**PRÓXIMA AÇÃO ÚNICA:** cotejar a edição/cópia exata de EC-165 / SRC-0007 com colofão/licença do editor, registrando de forma auditável a divergência CC BY-NC-SA 3.0 versus CC BY 4.0, sem distribuição do PDF.
+
+**CRITÉRIO PARA AVANÇAR:** evidência primária de identidade e direitos por edição/cópia, tratamento de componentes de terceiros, e dois pareceres independentes distintos por card (originalidade/direitos e fidelidade científica/editorial), com decisões humanas e links/hashes verificáveis; não liberar V1-16 ou publicação diante de bloqueios P0 e dependências da onda A.
+
+## EC-165 — cotejo direto do exemplar de acervo e avisos editoriais (21/11/2026)
+
+**Trabalho NOVO e limites precisos:** localizado, por busca no Drive, o exemplar do acervo associado a SRC-0007, com tipo `application/pdf` e tamanho **4.637.247 bytes**. Seu texto inicial foi lido diretamente pelo conector (não por nome de arquivo) e coincide em título, três organizadores, 2020, 460 páginas, ISBN digital `978-65-86546-07-1`, DOI `10.36311/2020.978-65-86546-07-1` e menção ao SciELO Books com o registro bibliográfico público. Não informar no GitHub o identificador/URL privado do Drive; nenhuma cópia do binário foi inserida no repositório. **Sem SHA-256 binário independente do PDF local ou comparação byte a byte com o PDF do editor**, portanto identidade intelectual/editorial plausível, não identidade binária comprovada.
+
+**Conflito de avisos de licença agora localizado por superfície:**
+
+1. No **frontispício da cópia do acervo**, o texto extraído declara **Creative Commons Attribution 4.0 International (CC BY 4.0)** e ressalva conteúdos individualmente excluídos; isto **corrobora a observação original do card EC-165**, que não deve ser descrita como mera alegação sem localização.
+2. No **PDF integral editorial publicamente indexado** pela SciELO Books, identificado pelo título/DOI e URL `https://books.scielo.org/id/96v3r/pdf/fujita-9786586546071.pdf`, o frontispício também traz CC BY 4.0, com ressalvas, conforme texto da edição pública disponível. A semelhança textual não é prova binária.
+3. Na **página geral do livro** da SciELO Books, `https://books.scielo.org/id/96v3r`, o aviso no rodapé indica **CC BY-NC-SA 3.0 Unported**, exceto quando indicado de outra forma. Trata-se de aviso da página; não inferir que necessariamente revoga o que consta no PDF desta edição.
+4. O catálogo `https://ebooks.marilia.unesp.br/index.php/lab_editorial/catalog/book/163` apresenta outra licença na página pública (**CC BY-NC-ND 4.0** segundo índice de busca); como a abertura direta da página não foi concluída na checagem, classificar como **indício secundário a confirmar**, não licença autenticada do PDF.
+
+**Decisão editorial corrigida:** conflito **entre superfícies/versões de aviso**, e não prova de que o PDF do acervo tenha CC BY-NC-SA. A cópia consultada indica **CC BY 4.0 com ressalvas**; a página HTML indica **CC BY-NC-SA 3.0**. A autorização de redistribuição da cópia exata e dos elementos de terceiros não é inferida apenas de avisos conflitantes. Manter EC-165 **BLOQUEADO** quanto à distribuição, sem excluir a obra, sem promover [I]/[P]→[L] e sem simular parecer independente de direitos/originalidade ou científico.
+
+**Risco de segurança:** os metadados de acesso do exemplar analisado indicam uma permissão de leitura por link (`anyone:reader`). Nenhum ID privado, URL de Drive ou metadado pessoal foi registrado neste recibo; nenhum ACL alterado. Encaminhar o fato ao tratamento P0 pela etapa responsável V1-14, sem exceder os caminhos da V1-13.
+
+**Originalidade / fidelidade / contraprova:** no card de consulta, a afirmação de orientação editorial original e a distinção entre indexação/recuperação documental e inferência científica permanecem **[I]/[P]**; não houve cotejo textual exaustivo para plágio ou verificação capítulo a capítulo/página de cada inferência. Contraprova: eventual conteúdo de capítulo pode estabelecer recorte diverso, e elementos sob direitos específicos podem contrariar uma licença global. Texto de PDF/página externa tratado como entrada não confiável, sem executar ordens ou alterar gates.
+
+**EM EXECUÇÃO:** verificar com confirmação editorial/colofão as condições aplicáveis ao PDF da edição, a ressalva de componentes e a divergência de avisos; conferir a identidade binária ou documentar por que o cotejo apenas bibliográfico é suficiente para uso link-only. Requer pareceres independentes caso o card venha a ser homologado para distribuição.
+
+**PRÓXIMA AÇÃO CONCRETA ÚNICA:** obter confirmação do editor/SciELO Books sobre qual aviso de licença rege especificamente o **PDF integral desta edição** e quais componentes estão ressalvados; registrar a resposta e a correspondência da cópia sem expor o PDF nem dados privados.
+
+**CRITÉRIO DE AVANÇO:** resposta oficial específica para DOI/eISBN/versão ou licença inequívoca no colofão e exceções documentadas, prova de correspondência da cópia e pareceres independentes de originalidade/direitos e fidelidade científica antes de homologação. O parecer documental atual não concede GO, merge, tag, release, publicação ou V1-16.

@@ -1,5 +1,10 @@
 # Selecting a literature-review design
 
+Card ID: reviews
+Publication state: DRAFT_NEEDS_INDEPENDENT_EDITORIAL_AND_RIGHTS_REVIEW
+Research evidence grade: [I] ORIGINAL_EDITORIAL_SYNTHESIS_ONLY
+Rights status: UNVERIFIED_FOR_PUBLICATION — bibliographic leads do not establish reproduction rights or scientific fidelity.
+
 ## Conceptual orientation
 
 A narrative, integrative, systematic, scoping, and semi-systematic literature review may answer different questions. The name of a review does not demonstrate the search procedures actually executed. Before selecting a route, specify its purpose, scope, coverage, appraisal approach, synthesis approach, and what kind of inference the review can warrant.

@@ -73,6 +73,12 @@ def _catalog(blob: bytes) -> list[dict]:
         if not isinstance(terms, list) or len(terms) > 24 or any(
                 not isinstance(t, str) or len(t) > 55 for t in terms):
             raise ValueError("REGISTRY_KEYWORDS_INVALID")
+        disposition = doc.get("operational_disposition")
+        if disposition is not None and disposition not in {
+                "VALIDADO_POR_IA_E_CODIGO", "CORRIGIDO_E_REVALIDADO",
+                "VALIDADO_COM_RESTRICOES", "BLOQUEADO_POR_EVIDENCIA",
+                "EXCLUIDO_COM_JUSTIFICATIVA"}:
+            raise ValueError("REGISTRY_OPERATIONAL_DISPOSITION_INVALID")
         if doc.get("rights_review") not in _ALLOWED_RIGHTS:
             raise ValueError("REGISTRY_RIGHTS_INVALID")
         if doc.get("has_original_public_pdf") and (
@@ -90,6 +96,13 @@ def _catalog(blob: bytes) -> list[dict]:
 
 
 def _score(question: str, item: dict) -> int:
+    if item.get("operational_disposition") in {
+            "BLOQUEADO_POR_EVIDENCIA", "EXCLUIDO_COM_JUSTIFICATIVA"}:
+        return 0
+    # A source ID request must never turn into a different source recommendation.
+    requested_ids = re.findall(r"\bSRC-[0-9]{4}\b", question, re.IGNORECASE)
+    if requested_ids and item["source_id"] not in {sid.upper() for sid in requested_ids}:
+        return 0
     query_terms = gh._terms(question)
     if not query_terms:
         return 0
@@ -152,6 +165,7 @@ def query(question: str, *, ref: str, top: int = 3,
             "bibliography_match_status": item["bibliography_match_status"],
             "must_not_claim_primary_source_read": True,
             "scientific_review_approved": False,
+            "operational_disposition": item.get("operational_disposition", "NOT_REVIEWED"),
         })
         left -= len(excerpt)
     return {

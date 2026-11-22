@@ -1,0 +1,277 @@
+{
+  "schema": "MEU_ARTIGO_V1_01_BIBLIOGRAPHIC_DELTA_V1",
+  "batch_id": "V1-01/20",
+  "date": "2026-11-21",
+  "timezone": "America/Fortaleza",
+  "stage": "A",
+  "status": "ENTREGUE_PARA_AUDITORIA",
+  "branch": "work/v1-01-20261121",
+  "manifest_commit": "7c92045310eb3b1474a9612a777fb0012a511592",
+  "manifest_blob_sha": "2f85dc6c4283376b9fc3c312668f0a1f25a0a301",
+  "snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+  "dependencies": [],
+  "counts": {
+    "records_audited": 5,
+    "fully_identified": 0,
+    "still_blocked": 5,
+    "independent_scientific_approvals": 0,
+    "redistributable_pdf_copies_authorized": 0
+  },
+  "global_changes_permitted": false,
+  "scientific_review": "NOT_PERFORMED",
+  "rights_redistribution": "NOT_ESTABLISHED",
+  "merge_released": false,
+  "patch_intents": [
+    {
+      "source_id": "SRC-0160",
+      "prior_ib_branch": "work/ib-04-20261121",
+      "source_card": "knowledge/methodology/source_cards/src-0160.md",
+      "source_card_git_blob_sha": "38c573e8494b9abd7db5c192dbf85230d21e444f",
+      "original_filename": "MRP Norming pre-print v4 (1).pdf",
+      "pdf_sha256": "955630502bbf2a8cc24f9fcf6e3d6dd7efe51404aa8be1d5c6843d29f9152bf8",
+      "pdf_size_bytes": 1434131,
+      "pages": 43,
+      "evidence": "PDF p. 1 (autores/título); p. 31 (identificador de preprint); metadados técnicos do arquivo.",
+      "identity_verification": "Alsalti, Hussey, Elson e Arslan; título da folha inicial confirmado; preprint/tutorial com ligação PsyArXiv DOI 10.31234/osf.io/fcm3n citada na página 31. Ano da versão e status editorial da cópia não confirmados. Data de criação técnica do PDF em 01/11/2023 NÃO é publicação.",
+      "status": "BLOQUEADO_ANO_VERSAO",
+      "disposition": "CORREÇÃO_NECESSÁRIA",
+      "rights": "Nenhuma licença de redistribuição explícita identificada; manter cópia privada.",
+      "scientific_status": "P_ONLY_INDEPENDENT_REVIEW_PENDING",
+      "edit_target": "DEFER_TO_V1_16_NO_GLOBAL_EDIT",
+      "external_editorial_followup": {
+        "audit_date": "2026-11-21",
+        "evidence_level": "EXTERNAL_BIBLIOGRAPHIC_ONLY_NOT_LICENSE_OR_SCIENTIFIC_APPROVAL",
+        "source_type": "PREPRINT_RECORD_CANDIDATE_NOT_VERSION_PROOF",
+        "primary_url": "https://osf.io/preprints/psyarxiv/fcm3n",
+        "secondary_url": "https://www.ablesci.com/assist/detail?id=wzM1pK",
+        "bibliographic_findings": "Identificador de preprint PsyArXiv 10.31234/osf.io/fcm3n mantido. Indexação secundária associa 2023-10-31 à obra, mas portal primário OSF não pôde ser lido (403) nesta verificação; sem carimbo autoritativo da versão v4 da cópia exata.",
+        "copy_equivalence": "NÃO_DEMONSTRADA",
+        "closure": "MANTER_BLOQUEIO_ANO_VERSAO",
+        "remaining": "Obter registro de versões no PsyArXiv e conciliar DOI, data, licença e hash da v4"
+      }
+    },
+    {
+      "source_id": "SRC-0215",
+      "prior_ib_branch": "work/ib-07-20261121",
+      "source_card": "knowledge/methodology/source_cards/src-0215.md",
+      "source_card_git_blob_sha": "0c52e5f5d82cc3facd1d2354f7e429b1a029dfd8",
+      "original_filename": "Strauss,Corbin,1997.pdf",
+      "pdf_sha256": "82f461c9c0bba2394b1ab48b2a76209f299fbb317e1c488b2c6d1f61473e2911",
+      "pdf_size_bytes": 214064,
+      "pages": 15,
+      "evidence": "PDF p. 1 (título/autoria) e p. 15 (crédito/data da tradução); metadados técnicos criados em 2008 não provam publicação original.",
+      "identity_verification": "Anselm Strauss e Juliet Corbin; Metodologia da Teoria Fundamentada: Uma visão geral, traduzido por Frederico José Andries Lopes em maio/1997. Não foi identificado no exemplar o veículo, edição e ano do original.",
+      "status": "BLOQUEADO_EDICAO_ORIGINAL",
+      "disposition": "CORREÇÃO_NECESSÁRIA",
+      "rights": "Tradução e original sem licença explícita de reprodução localizada; não redistribuir.",
+      "scientific_status": "P_ONLY_INDEPENDENT_REVIEW_PENDING",
+      "edit_target": "DEFER_TO_V1_16_NO_GLOBAL_EDIT",
+      "external_editorial_followup": {
+        "audit_date": "2026-11-21",
+        "evidence_level": "EXTERNAL_BIBLIOGRAPHIC_ONLY_NOT_LICENSE_OR_SCIENTIFIC_APPROVAL",
+        "source_type": "PUBLISHED_ORIGINAL_CANDIDATE",
+        "publisher_related_url": "https://journals.sagepub.com/doi/10.1177/0959354398081006",
+        "secondary_url": "https://www.sciepub.com/reference/155048",
+        "bibliographic_findings": "Referências acadêmicas apontam Strauss e Corbin (1994), Grounded Theory Methodology: An Overview, capítulo em Denzin e Lincoln (org.), Handbook of Qualitative Research, Sage, pp. 273-285. Não há prova de equivalência textual e editorial com a tradução brasileira de maio/1997 e seu exemplar de 15 páginas.",
+        "copy_equivalence": "NÃO_DEMONSTRADA",
+        "closure": "MANTER_BLOQUEIO_EDICAO_ORIGINAL",
+        "remaining": "Confrontar a tradução com o capítulo impresso, expediente/ISBN e autorização de tradução"
+      }
+    },
+    {
+      "source_id": "SRC-0224",
+      "prior_ib_branch": "work/ib-07-20261121",
+      "source_card": "knowledge/methodology/source_cards/src-0224.md",
+      "source_card_git_blob_sha": "f976492a0b32fcd1e33aabd2501a2fc1488370b1",
+      "original_filename": "Gui,2003.pdf",
+      "pdf_sha256": "f670c5bd5ff0323d59711716a20c5ff3fade0ed39b38b7e409902a3a653b4482",
+      "pdf_size_bytes": 95247,
+      "pages": 16,
+      "evidence": "PDF p. 1 (título/autoria/resumo); p. 16 (referências); metadados técnicos.",
+      "identity_verification": "Roque Tadeu Gui; Grupo focal em pesquisa qualitativa aplicada: intersubjetividade e construção de sentido. Página 1 confirma autoria/título; ano, periódico e versão publicados não identificados. 2003 consta somente do nome do arquivo; criação técnica de 2009 não comprova publicação.",
+      "status": "BLOQUEADO_ANO_VEICULO",
+      "disposition": "CORREÇÃO_NECESSÁRIA",
+      "rights": "Sem licença expressa de redistribuição identificada; manter cópia privada.",
+      "scientific_status": "P_ONLY_INDEPENDENT_REVIEW_PENDING",
+      "edit_target": "DEFER_TO_V1_16_NO_GLOBAL_EDIT",
+      "external_editorial_followup": {
+        "audit_date": "2026-11-21",
+        "evidence_level": "EXTERNAL_BIBLIOGRAPHIC_ONLY_NOT_LICENSE_OR_SCIENTIFIC_APPROVAL",
+        "source_type": "JOURNAL_METADATA_PRIMARY_INDEX",
+        "primary_url": "https://pepsic.scielo.org/scielo.php?lng=p&pid=S1984-66572003000100007&script=sci_arttext",
+        "catalog_url": "https://pepsic.bvsalud.org/scielo.php?lng=en&pid=S1984-66572003000100007&script=sci_isoref",
+        "bibliographic_findings": "Roque Tadeu Gui; Grupo focal em pesquisa qualitativa aplicada: intersubjetividade e construção de sentido; Revista Psicologia: Organizações e Trabalho, 3(1), 2003, pp.135-159 (metadados PePSIC). DOI não confirmado. Arquivo do acervo tem 16 páginas, não sendo automaticamente idêntico à paginação publicada.",
+        "copy_equivalence": "NÃO_DEMONSTRADA",
+        "closure": "METADADOS_PUBLICADOS_ENCONTRADOS_BLOQUEIO_COPIA_DIREITOS",
+        "remaining": "Comparar texto/capa/rodapés da cópia privada com publicação indexada; confirmar direitos de cópia exata"
+      }
+    },
+    {
+      "source_id": "SRC-0237",
+      "prior_ib_branch": "work/ib-08-20261121",
+      "source_card": "knowledge/methodology/source_cards/src-0237.md",
+      "source_card_git_blob_sha": "19dfdb723c73d50ee7999c2cbd2ca61d1d2a54a0",
+      "original_filename": "Duval (ano).pdf",
+      "pdf_sha256": "5a9f71cfa273e623e294b4f7e6b8273e98f36f0a4e2cd86c5dc68d31727309ed",
+      "pdf_size_bytes": 91520298,
+      "pages": 40,
+      "evidence": "PDF p. 1, p. 2 e p. 40 (URL, carimbos, rodapé); metadados Skia/PDF.",
+      "identity_verification": "PDF privado de impressão da mesma URL Politika em 14/12/2023: título/estrutura e passagens amostradas correspondem à obra editorial de Julien Duval, publicada em 06/06/2017 e modificada em 25/10/2022. A criação do PDF não é a data editorial. Comparação textual integral com versão arquivada de 2023 não realizada; direitos de imagens/captura não liberados.",
+      "status": "BLOQUEADO_EQUIVALENCIA_INTEGRAL_E_DIREITOS",
+      "disposition": "CORREÇÃO_NECESSÁRIA",
+      "rights": "Página de avisos legais Politika declara All Rights Reserved Tepsis-EHESS; sem licença específica pública para a captura exata nem imagens de terceiros. PDF privado, metadata+link only.",
+      "scientific_status": "P_ONLY_INDEPENDENT_REVIEW_PENDING",
+      "edit_target": "DEFER_TO_V1_16_NO_GLOBAL_EDIT",
+      "external_editorial_followup": {
+        "audit_date": "2026-11-21",
+        "evidence_level": "EXTERNAL_BIBLIOGRAPHIC_ONLY_NOT_LICENSE_OR_SCIENTIFIC_APPROVAL",
+        "source_type": "MATCHING_PUBLISHER_URL",
+        "primary_url": "https://www.politika.io/en/notice/multiple-correspondence-analysis",
+        "bibliographic_findings": "O próprio expediente Politika atribui Multiple Correspondence Analysis a Julien Duval, publicação 06-06-2017, atualização 25-10-2022. URL editorial corresponde à URL registrada no PDF impresso do acervo. A data 14-12-2023 é de impressão, não de publicação. Não há licença verificada para redistribuição da captura integral.",
+        "copy_equivalence": "MATCH_SAMPLED_WITH_VERIFIED_PDF_HASH_FULL_EDITION_NOT_PROVEN",
+        "closure": "SOURCE_BIBLIOGRAPHIC_IDENTIFIED_NOT_REDISTRIBUTION_APPROVED",
+        "remaining": "Revisão editorial de equivalência integral/snapshot arquivado, direitos e terceiros; conservar bloqueio de redistribuição"
+      },
+      "copy_edition_reconciliation": {
+        "audit_date": "2026-11-21",
+        "review_type": "PRIVATE_BINARY_TO_PUBLISHER_PAGE_SAMPLED_CONTENT_COMPARISON",
+        "copy_integrity": {
+          "size_bytes_verified": 91520298,
+          "pages_verified": 40,
+          "sha256_verified": "5a9f71cfa273e623e294b4f7e6b8273e98f36f0a4e2cd86c5dc68d31727309ed",
+          "pdf_producer": "Skia/PDF m120 (browser print)",
+          "pdf_technical_creation_date": "2023-12-14",
+          "page_footer_url_matches_publisher": true,
+          "printed_pages_header_date": "2023-12-14",
+          "technical_creation_is_not_publication": true,
+          "local_visual_pages_checked": [
+            1,
+            20,
+            40
+          ]
+        },
+        "publisher_evidence": {
+          "url": "https://www.politika.io/en/notice/multiple-correspondence-analysis",
+          "legal_notices_url": "https://www.politika.io/en/page-simple/legal-notices",
+          "author": "Julien Duval",
+          "title": "Multiple Correspondence Analysis",
+          "publisher": "Politika",
+          "kind": "online notice / digital editorial entry",
+          "first_publication": "2017-06-06",
+          "page_last_modified": "2022-10-25",
+          "doi": "NOT_PRESENT_OR_CONFIRMED",
+          "url_confirmed": true
+        },
+        "correspondence": {
+          "url_same": true,
+          "internal_title_same": true,
+          "publisher_authorship_confirmed_in_editorial_not_in_pdf_byline": true,
+          "sampled_text_and_structure_matches": true,
+          "page_anchor_samples": [
+            {
+              "pdf_page": 1,
+              "publisher_section": "opening MCA definition and article purpose"
+            },
+            {
+              "pdf_page": 4,
+              "publisher_section": "historical French school of data analysis; Jozef Krakovsky image credit"
+            },
+            {
+              "pdf_page": 7,
+              "publisher_section": "centred cloud / table 2"
+            },
+            {
+              "pdf_page": 11,
+              "publisher_section": "graph 4 to graph 5 sequence"
+            },
+            {
+              "pdf_page": 21,
+              "publisher_section": "ministers in first factorial plane; graph 9"
+            },
+            {
+              "pdf_page": 26,
+              "publisher_section": "Ségolène Royal and modality comparison"
+            },
+            {
+              "pdf_page": 31,
+              "publisher_section": "graph 15: supplementary individual"
+            },
+            {
+              "pdf_page": 38,
+              "publisher_section": "numbered bibliography/footnotes"
+            }
+          ],
+          "full_text_diff_performed": false,
+          "archived_2023_publisher_snapshot_verified": false,
+          "exact_2022_edition_equivalence": "HIGHLY_PLAUSIBLE_BUT_NOT_FULLY_PROVEN"
+        },
+        "rights": {
+          "legal_notice": "All Rights Reserved Tepsis-EHESS",
+          "license_on_this_notice": "NO_PUBLIC_REDISTRIBUTION_LICENSE_OBSERVED",
+          "image_or_third_party_rights": "NOT_CLEARED",
+          "copy_publication": "PROHIBITED_PENDING_SPECIFIC_LICENSE_OR_AUTHORIZATION",
+          "allowed_now": "PUBLIC_METADATA_AND_LINK_ONLY",
+          "rights_decision": "REQUIRES_HUMAN_LEGAL_REVIEW"
+        },
+        "disposition": "PUBLISHER_IDENTITY_VERIFIED_COPY_MATCH_SAMPLED_RIGHTS_BLOCKED",
+        "remaining_required": "É necessária decisão editorial sobre o grau de equivalência amostral versus integral e autorização específica de redistribuição, se desejada. Sem isso, citar metadados públicos via URL e manter a captura privada.",
+        "evidence_limit": "O PDF não contém expediente completo de autoria/data; os dados foram obtidos da página editorial autoritativa. Amostragem de conteúdo não constitui prova de identidade byte-a-byte nem de versão arquivada de 2023."
+      }
+    },
+    {
+      "source_id": "SRC-0249",
+      "prior_ib_branch": "work/ib-08-20261121",
+      "source_card": "knowledge/methodology/source_cards/src-0249.md",
+      "source_card_git_blob_sha": "6bfdebe56b744c0234f8275bc41e0cd426239d06",
+      "original_filename": "Cranmer_2019.pdf",
+      "pdf_sha256": "8ade564241434135b34946d57fb19ff45af85f7b2dacb00254c29419dcd3ca67",
+      "pdf_size_bytes": 127938,
+      "pages": 9,
+      "evidence": "PDF p. 1 (cabeçalho); p. 9 (fecho/referências); metadados PDF.",
+      "identity_verification": "Skyler J. Cranmer; Introduction to the Virtual Issue: Machine Learning in Political Science. Autoria e título na página 1; ano/veículo/edição específicos não comprovados. '2019' no filename e data técnica 02/01/2019 NÃO comprovam data editorial.",
+      "status": "BLOQUEADO_ANO_EDICAO",
+      "disposition": "CORREÇÃO_NECESSÁRIA",
+      "rights": "Sem licença expressa de redistribuição observada no PDF; manter original privado.",
+      "scientific_status": "P_ONLY_INDEPENDENT_REVIEW_PENDING",
+      "edit_target": "DEFER_TO_V1_16_NO_GLOBAL_EDIT",
+      "external_editorial_followup": {
+        "audit_date": "2026-11-21",
+        "evidence_level": "EXTERNAL_BIBLIOGRAPHIC_ONLY_NOT_LICENSE_OR_SCIENTIFIC_APPROVAL",
+        "source_type": "PUBLISHER_HOSTED_EDITORIAL_PDF",
+        "primary_url": "https://www.cambridge.org/core/services/aop-file-manager/file/5c348274e401b41903dae11b/PAN-VSI-Intro-0119-Machine-learning.pdf",
+        "secondary_url": "https://journals.sagepub.com/doi/abs/10.1177/14789299241265084",
+        "bibliographic_findings": "Cambridge hospeda Introduction to the Virtual Issue: Machine Learning in Political Science; referências acadêmicas secundárias atribuem 2019 a Skyler J. Cranmer. Não foi confirmada por confronto de binários a identidade com o PDF privado de 9 páginas nem licença da cópia exata; nenhuma afirmação sobre DOI.",
+        "copy_equivalence": "NÃO_DEMONSTRADA",
+        "closure": "MANTER_BLOQUEIO_ANO_EDICAO_DA_COPIA",
+        "remaining": "Conferir expediente/versão da cópia privada contra PDF editorial Cambridge, data e direitos"
+      }
+    }
+  ],
+  "tests": {
+    "json_parse": true,
+    "exact_assigned_ids": true,
+    "unique_records": true,
+    "hash_format": true,
+    "pdf_size_and_digest_verified_locally": true,
+    "no_pdf_in_git": true,
+    "no_private_drive_ids": true,
+    "ci_on_commit": "NOT_RUN",
+    "host_qa": "NOT_RUN",
+    "ib_original_card_git_blobs_reverified": true,
+    "external_bibliographic_followup_documented": true,
+    "exact_private_copy_equivalence_not_revalidated_in_this_followup": true,
+    "web_pdf_screenshot_for_cambridge": "ATTEMPTED_BUT_CACHE_MISS",
+    "src_0237_exact_private_pdf_sha256_recomputed": true,
+    "src_0237_pages_and_visuals_checked": true,
+    "src_0237_publisher_text_sampled_match": true,
+    "src_0237_full_version_diff": "NOT_PERFORMED",
+    "src_0237_rights_notice_verified": "ALL_RIGHTS_RESERVED_NO_PUBLIC_COPY_LICENSE"
+  },
+  "blockers": [
+    "Faltam metadados bibliográficos finais por exemplar nos cinco casos",
+    "Não existem autorizações específicas de redistribuição demonstradas",
+    "Revisão científica independente não realizada",
+    "V1-16 depende da conclusão auditada da onda A"
+  ],
+  "followup_scope": "Somente patch-intents da V1-01; não alterar fichas IB nem registry global. Fontes externas podem qualificar metadados, mas 5/5 bloqueios de fechamento preservados até reconciliação documental e direitos."
+}

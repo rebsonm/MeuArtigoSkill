@@ -99,13 +99,59 @@ def sync(root: Path, release_date: str) -> list[str]:
     return changes
 
 
+def prepare_candidate(root: Path) -> list[str]:
+    """Sync RC source metadata without inventing a publication date.
+
+    Human authors must write the release notes and changelog first.
+    This procedure never publishes software or changes the public pointer.
+    """
+    root = Path(root)
+    version = read_version(root)
+    if not re.fullmatch(r"\d+\.\d+\.\d+-rc\.[1-9]\d*", version):
+        raise ValueError("Candidate preparation requires a release-candidate version")
+    notes = release_notes_path(root)
+    if not notes.is_file() or version not in notes.read_text(encoding="utf-8"):
+        raise ValueError("Author actual candidate notes before preparing metadata")
+    changelog = (root / "CHANGELOG.md").read_text(encoding="utf-8")
+    if f"## {version} — UNRELEASED" not in changelog:
+        raise ValueError("Author an unpublished candidate changelog section first")
+    readme_path = root / "README.md"
+    citation_path = root / "CITATION.cff"
+    original_readme = readme_path.read_text(encoding="utf-8")
+    original_citation = citation_path.read_text(encoding="utf-8")
+    if "unpublished release candidate" not in original_readme.lower():
+        raise ValueError("README must state that the candidate is unpublished")
+    readme = replace_once(
+        r"^\*\*Current version:\*\* [\x60][^\x60]+[\x60]",
+        "**Current version:** " + chr(96) + version + chr(96),
+        original_readme, "README candidate source version")
+    citation = replace_once(
+        r'^version:\s*"[^"]+"', f'version: "{version}"',
+        original_citation, "CITATION candidate version")
+    # A pre-release candidate must not inherit an older release date.
+    citation = re.sub(r'(?m)^date-released:\s*"[^"]*"[ \t]*\n', "", citation)
+    changes = []
+    for path, before, after in (
+        (readme_path, original_readme, readme),
+        (citation_path, original_citation, citation),
+    ):
+        if before != after:
+            changes.append(path.name)
+            path.write_text(after, encoding="utf-8")
+    return changes
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--repo", default=str(ROOT))
-    ap.add_argument("--date", required=True, help="Real release date in YYYY-MM-DD format")
+    selection = ap.add_mutually_exclusive_group(required=True)
+    selection.add_argument("--date", help="Actual publication date YYYY-MM-DD")
+    selection.add_argument("--candidate", action="store_true",
+                           help="Sync unpublished RC metadata without a release date")
     args = ap.parse_args(argv)
     try:
-        changed = sync(Path(args.repo), args.date)
+        changed = (prepare_candidate(Path(args.repo)) if args.candidate
+                   else sync(Path(args.repo), args.date))
     except (OSError, ValueError) as exc:
         ap.error(str(exc))
     print("derived_version=" + read_version(Path(args.repo)))

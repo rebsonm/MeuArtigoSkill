@@ -1,0 +1,237 @@
+[
+  {
+    "path": "knowledge/methodology/cards/cardno-2018-policy-document-analysis.md",
+    "before_sha256": "67d14742e6865ac0be0e7bf9de268533ccef45f64721ea5039d3e45bb2c3b152",
+    "after_sha256": "67c1a93ff49b52391ef98ce9648fdd23738062783cd314abec51b12b48271bad",
+    "edits": [
+      {
+        "before": "- Escopo da consulta: página editorial, resumo ou texto aberto da publicação; PDF PRIVADO NÃO CONSULTADO NESTA ETAPA",
+        "after": "- Escopo inicial (histórico): página editorial, resumo ou texto aberto; o registro posterior de conferência documental está distinguido abaixo e não foi reexecutado por esta revisão editorial. Não há nova leitura certificada do exemplar privado."
+      },
+      {
+        "before": "## Verificação direta do exemplar identificado — 21/11/2026",
+        "after": "## Registro histórico de conferência documental — 21/11/2026 (não reexecutado nesta revisão)"
+      },
+      {
+        "before": "**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.",
+        "after": "**Escopo e cautela:** o registro anterior declarou conferir título, autores, DOI e estrutura metodológica no exemplar autorizado; essa alegação de execução não foi revalidada nesta revisão editorial. O registro histórico é preservado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra."
+      }
+    ]
+  },
+  {
+    "path": "knowledge/methodology/cards/friese-2026-dialogical-qualitative-analysis-llm.md",
+    "before_sha256": "6df5311b3db289c41f7ee6fddfcf4b1fbdce7a978da36c0e911dae6338b2def0",
+    "after_sha256": "ddd8fcfba77edcafb89801d9028f914596f07a4f99c83b2f234247314cacf1d2",
+    "edits": [
+      {
+        "before": "- Escopo da consulta: página editorial, resumo ou texto aberto da publicação; PDF PRIVADO NÃO CONSULTADO NESTA ETAPA",
+        "after": "- Escopo inicial (histórico): página editorial, resumo ou texto aberto; o registro posterior de conferência documental está distinguido abaixo e não foi reexecutado por esta revisão editorial. Não há nova leitura certificada do exemplar privado."
+      },
+      {
+        "before": "## Verificação direta do exemplar identificado — 21/11/2026",
+        "after": "## Registro histórico de conferência documental — 21/11/2026 (não reexecutado nesta revisão)"
+      },
+      {
+        "before": "**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.",
+        "after": "**Escopo e cautela:** o registro anterior declarou conferir título, autores, DOI e estrutura metodológica no exemplar autorizado; essa alegação de execução não foi revalidada nesta revisão editorial. O registro histórico é preservado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra."
+      }
+    ]
+  },
+  {
+    "path": "knowledge/methodology/cards/hayes-2025-conversing-qualitative-llms.md",
+    "before_sha256": "65a1e8e25fef0f0d763be2fc97fb94f08da41b5c26c1c652328982f049403048",
+    "after_sha256": "836e2577103f0eff803b7f1d7f6e38bc50fc73e616d079d4c5dd6264608c7fe9",
+    "edits": [
+      {
+        "before": "- Limite da consulta: Texto HTML público e identificação da licença CC BY-NC 4.0 pela editora; nenhum PDF foi incorporado nem relicenciado.",
+        "after": "- Limite inicial da consulta (histórico): Texto HTML público e identificação da licença CC BY-NC 4.0 pela editora; nenhum PDF foi incorporado nem relicenciado. O registro posterior de exame documental é uma alegação histórica, não nova leitura realizada nesta revisão."
+      },
+      {
+        "before": "## Verificação direta do exemplar identificado — 21/11/2026",
+        "after": "## Registro histórico de conferência documental — 21/11/2026 (não reexecutado nesta revisão)"
+      },
+      {
+        "before": "**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. PDF CC BY-NC mantido fora do catálogo público CC BY. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.",
+        "after": "**Escopo e cautela:** o registro anterior declarou conferir título, autores, DOI e estrutura metodológica no exemplar autorizado; essa alegação de execução não foi revalidada nesta revisão editorial. O registro histórico é preservado, sem replicar seu conteúdo e sem registrar IDs privados. PDF CC BY-NC mantido fora do catálogo público CC BY. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra."
+      }
+    ]
+  },
+  {
+    "path": "knowledge/methodology/cards/institutional-grammar-2-2021-encoding-design.md",
+    "before_sha256": "9669020d9e167a2774bcac0f3c011981c629d566be7a72c6be7e0eb05d401623",
+    "after_sha256": "16d2e4ca980cd2a7766fd5f346712045d6eaa070afb07ef985e1cb3c392a6e40",
+    "edits": [
+      {
+        "before": "- Limite da consulta: Página pública da editora, resumo e recursos institucionais da gramática; não foi feita validação independente de uma codificação empírica.",
+        "after": "- Limite inicial da consulta (histórico): Página pública da editora, resumo e recursos institucionais da gramática; não foi feita validação independente de uma codificação empírica. O registro posterior de exame documental é uma alegação histórica, não nova leitura realizada nesta revisão."
+      },
+      {
+        "before": "## Verificação direta do exemplar identificado — 21/11/2026",
+        "after": "## Registro histórico de conferência documental — 21/11/2026 (não reexecutado nesta revisão)"
+      },
+      {
+        "before": "**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.",
+        "after": "**Escopo e cautela:** o registro anterior declarou conferir título, autores, DOI e estrutura metodológica no exemplar autorizado; essa alegação de execução não foi revalidada nesta revisão editorial. O registro histórico é preservado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra."
+      }
+    ]
+  },
+  {
+    "path": "knowledge/methodology/cards/jowsey-2025-reject-genai-reflexive-qualitative.md",
+    "before_sha256": "699b23bae748da48eed369c0c8df7b169f2b9ac855b40cd1e50ccf46e3889092",
+    "after_sha256": "afa1c762bc64e1e4af37c54d5418de8c6ea8785e37864f16ebcda330ce6879db",
+    "edits": [
+      {
+        "before": "- Escopo da consulta: página editorial, resumo ou texto aberto da publicação; PDF PRIVADO NÃO CONSULTADO NESTA ETAPA",
+        "after": "- Escopo inicial (histórico): página editorial, resumo ou texto aberto; o registro posterior de conferência documental está distinguido abaixo e não foi reexecutado por esta revisão editorial. Não há nova leitura certificada do exemplar privado."
+      },
+      {
+        "before": "## Verificação direta do exemplar identificado — 21/11/2026",
+        "after": "## Registro histórico de conferência documental — 21/11/2026 (não reexecutado nesta revisão)"
+      },
+      {
+        "before": "**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.",
+        "after": "**Escopo e cautela:** o registro anterior declarou conferir título, autores, DOI e estrutura metodológica no exemplar autorizado; essa alegação de execução não foi revalidada nesta revisão editorial. O registro histórico é preservado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra."
+      }
+    ]
+  },
+  {
+    "path": "knowledge/methodology/cards/lazar-2007-feminist-critical-discourse.md",
+    "before_sha256": "de1441b0fbf8fa7997f582b6a5c935b148cdd17e6740f46f0cd24b6d7b32b122",
+    "after_sha256": "ac7c847b133477434ff06adfa1303c0ea819aaf26c51b353a0d6821f63d434b8",
+    "edits": [
+      {
+        "before": "- Limite da consulta: Resumo público e metadados editoriais; texto integral não revisado nesta etapa.",
+        "after": "- Limite inicial da consulta (histórico): Resumo público e metadados editoriais; texto integral não revisado nesta etapa. O registro posterior de exame documental é uma alegação histórica, não nova leitura realizada nesta revisão."
+      },
+      {
+        "before": "## Verificação direta do exemplar identificado — 21/11/2026",
+        "after": "## Registro histórico de conferência documental — 21/11/2026 (não reexecutado nesta revisão)"
+      },
+      {
+        "before": "**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. Exemplar com restrição expressa de reprodução substancial; não redistribuir. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.",
+        "after": "**Escopo e cautela:** o registro anterior declarou conferir título, autores, DOI e estrutura metodológica no exemplar autorizado; essa alegação de execução não foi revalidada nesta revisão editorial. O registro histórico é preservado, sem replicar seu conteúdo e sem registrar IDs privados. Exemplar com restrição expressa de reprodução substancial; não redistribuir. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra."
+      }
+    ]
+  },
+  {
+    "path": "knowledge/methodology/cards/mayring-2025-chatgpt-content-analysis-pitfalls.md",
+    "before_sha256": "9d3f763f20b601420f575c8021ea6ac7c665de3321ba298fe6e28e0e309a6854",
+    "after_sha256": "a88484c623ff27000bc6f3fc420e86d70aa8d3fb9b6a1b3887950240137e7f1f",
+    "edits": [
+      {
+        "before": "- Escopo da consulta: página editorial, resumo ou texto aberto da publicação; PDF PRIVADO NÃO CONSULTADO NESTA ETAPA",
+        "after": "- Escopo inicial (histórico): página editorial, resumo ou texto aberto; o registro posterior de conferência documental está distinguido abaixo e não foi reexecutado por esta revisão editorial. Não há nova leitura certificada do exemplar privado."
+      },
+      {
+        "before": "## Verificação direta do exemplar identificado — 21/11/2026",
+        "after": "## Registro histórico de conferência documental — 21/11/2026 (não reexecutado nesta revisão)"
+      },
+      {
+        "before": "**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. PDF CC BY 4.0 redistribuído apenas com a licença e a atribuição exigidas. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.",
+        "after": "**Escopo e cautela:** o registro anterior declarou conferir título, autores, DOI e estrutura metodológica no exemplar autorizado; essa alegação de execução não foi revalidada nesta revisão editorial. O registro histórico é preservado, sem replicar seu conteúdo e sem registrar IDs privados. PDF CC BY 4.0 redistribuído apenas com a licença e a atribuição exigidas. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra."
+      }
+    ]
+  },
+  {
+    "path": "knowledge/methodology/cards/prahl-2025-ai-reflexivity-checklist.md",
+    "before_sha256": "eb434b655f9b4b3ad0a44ebf2f4d6a101c4add0ec65d90df905c137f7cc65da4",
+    "after_sha256": "7ed1ab3489d83d16f76f102d4529073cdf74a54f074965214e63645765402742",
+    "edits": [
+      {
+        "before": "- Escopo da consulta: página editorial, resumo ou texto aberto da publicação; PDF PRIVADO NÃO CONSULTADO NESTA ETAPA",
+        "after": "- Escopo inicial (histórico): página editorial, resumo ou texto aberto; o registro posterior de conferência documental está distinguido abaixo e não foi reexecutado por esta revisão editorial. Não há nova leitura certificada do exemplar privado."
+      },
+      {
+        "before": "## Verificação direta do exemplar identificado — 21/11/2026",
+        "after": "## Registro histórico de conferência documental — 21/11/2026 (não reexecutado nesta revisão)"
+      },
+      {
+        "before": "**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.",
+        "after": "**Escopo e cautela:** o registro anterior declarou conferir título, autores, DOI e estrutura metodológica no exemplar autorizado; essa alegação de execução não foi revalidada nesta revisão editorial. O registro histórico é preservado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra."
+      }
+    ]
+  },
+  {
+    "path": "knowledge/methodology/cards/schroeder-2025-llms-uses-tensions-intentions.md",
+    "before_sha256": "847f6264c0d75b7e03899c8f7d27272c6dbac832856f30b4a248af49548e345d",
+    "after_sha256": "dd5b86da85e7d5ab052d6198ebb1ea5e00dfef448f4ca4ecf4f9010776275fcb",
+    "edits": [
+      {
+        "before": "- Escopo da consulta: página editorial, resumo ou texto aberto da publicação; PDF PRIVADO NÃO CONSULTADO NESTA ETAPA",
+        "after": "- Escopo inicial (histórico): página editorial, resumo ou texto aberto; o registro posterior de conferência documental está distinguido abaixo e não foi reexecutado por esta revisão editorial. Não há nova leitura certificada do exemplar privado."
+      },
+      {
+        "before": "## Verificação direta do exemplar identificado — 21/11/2026",
+        "after": "## Registro histórico de conferência documental — 21/11/2026 (não reexecutado nesta revisão)"
+      },
+      {
+        "before": "**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. PDF CC BY 4.0 redistribuído apenas com a licença e a atribuição exigidas. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.",
+        "after": "**Escopo e cautela:** o registro anterior declarou conferir título, autores, DOI e estrutura metodológica no exemplar autorizado; essa alegação de execução não foi revalidada nesta revisão editorial. O registro histórico é preservado, sem replicar seu conteúdo e sem registrar IDs privados. PDF CC BY 4.0 redistribuído apenas com a licença e a atribuição exigidas. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra."
+      }
+    ]
+  },
+  {
+    "path": "knowledge/methodology/cards/tripp-2005-action-research-iterative-evidence.md",
+    "before_sha256": "bb191bfe1059279c6341a20c573946f03c8a053ae536d166e9be5de2a99efc80",
+    "after_sha256": "2405b660afd40fde21d692412974f301f8d4cfa50316c7da2dfa8ebc7d794308",
+    "edits": [
+      {
+        "before": "- Limite da consulta: Resumo e informações bibliográficas públicos da revista; o arquivo original no inventário não foi cotejado linha a linha.",
+        "after": "- Limite inicial da consulta (histórico): Resumo e informações bibliográficas públicos da revista; o arquivo original no inventário não foi cotejado linha a linha. O registro posterior de exame documental é uma alegação histórica, não nova leitura realizada nesta revisão."
+      },
+      {
+        "before": "## Verificação direta do exemplar identificado — 21/11/2026",
+        "after": "## Registro histórico de conferência documental — 21/11/2026 (não reexecutado nesta revisão)"
+      },
+      {
+        "before": "**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.",
+        "after": "**Escopo e cautela:** o registro anterior declarou conferir título, autores, DOI e estrutura metodológica no exemplar autorizado; essa alegação de execução não foi revalidada nesta revisão editorial. O registro histórico é preservado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra."
+      }
+    ]
+  },
+  {
+    "path": "knowledge/methodology/cards/wachinger-2024-prompts-pearls-imperfections.md",
+    "before_sha256": "603b5e6065b9e76dc272af737e1bcc2022b68a6744c74c802e0df1d2311bd90a",
+    "after_sha256": "dae755414f42eadaba3c5644cb039941aac0ddb6ac6c830862b1406c37fdb57e",
+    "edits": [
+      {
+        "before": "- Escopo da consulta: página editorial, resumo ou texto aberto da publicação; PDF PRIVADO NÃO CONSULTADO NESTA ETAPA",
+        "after": "- Escopo inicial (histórico): página editorial, resumo ou texto aberto; o registro posterior de conferência documental está distinguido abaixo e não foi reexecutado por esta revisão editorial. Não há nova leitura certificada do exemplar privado."
+      },
+      {
+        "before": "## Verificação direta do exemplar identificado — 21/11/2026",
+        "after": "## Registro histórico de conferência documental — 21/11/2026 (não reexecutado nesta revisão)"
+      },
+      {
+        "before": "**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.",
+        "after": "**Escopo e cautela:** o registro anterior declarou conferir título, autores, DOI e estrutura metodológica no exemplar autorizado; essa alegação de execução não foi revalidada nesta revisão editorial. O registro histórico é preservado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra."
+      }
+    ]
+  },
+  {
+    "path": "knowledge/methodology/cards/marzi-et-al-2025-bslr-ten-steps.md",
+    "before_sha256": "b2248ec12576d02787b5ff65e7d7e3e930258fe81ecdf355c4b66fd6c4a2b2c9",
+    "after_sha256": "52498f7167745298c1e876f787df37718d3830c3a407c2a04741c406278b57ce",
+    "edits": [
+      {
+        "before": "1) Questão e fronteiras; 2) palavras e string; 3) bases; 4) triagem; 5) limpeza; 6) escolhas bibliométricas; 7) interpretação dos mapas; 8) conexão mapas-textos; 9) síntese substantiva; 10) contribuição teórica. Exigir decisões humanas nas mudanças de etapa.",
+        "after": "Paráfrase editorial das operações conferidas na Tabela 1 da edição publicada (páginas impressas 84–85): 1) pergunta e fronteiras; 2) definição da busca; 3) seleção das bases; 4) triagem e conferências cruzadas; 5) limpeza e exportação; 6) escolha da abordagem bibliométrica; 7) identificação dos tópicos dos agrupamentos; 8) ordenação e seleção da amostra; 9) revisão sistemática substantiva; 10) desenvolvimento da contribuição teórica. Os checkpoints situam-se após 5, 8 e 10. A conexão entre mapas e textos é uma obrigação de coerência deste checklist editorial, não o nome da etapa 8 dos autores. Exigir decisões humanas nas mudanças de etapa."
+      },
+      {
+        "before": "Source consultation scope: DIRECT_SOURCE_PDF_PARTIAL_REVIEW",
+        "after": "Source consultation scope: DIRECT_SOURCE_PDF_PARTIAL_REVIEW; independent AI check of Table 1, printed pages 84–85, on 2026-11-21; no full claim-by-claim review"
+      }
+    ]
+  },
+  {
+    "path": "knowledge/methodology/cards/jowsey-et-al-2025-frankenstein-copilot-validity.md",
+    "before_sha256": "ba26850b63a122b51d64fc9dea3acaa50c9a29fe3315658694846a1157cc901a",
+    "after_sha256": "eeda5b067644a1d16cf16f0faa56b79060909dd5936e43b9c3ee17e6a1945010",
+    "edits": [
+      {
+        "before": "Os autores testaram Copilot sobre conjuntos de dados abertos com análises humanas publicadas e relataram pouca sobreposição temática e citações inventadas em parte das saídas.",
+        "after": "Os autores testaram Copilot em cinco conjuntos de dados com análises humanas publicadas. O artigo informa restrições de acesso protegido em quatro deles; não presumir dados irrestritamente abertos. Relata correspondências temáticas em parte das comparações, cobertura limitada de participantes e citações modificadas ou fabricadas nas saídas. A concordância temática não elimina esses problemas de rastreabilidade."
+      }
+    ]
+  }
+]

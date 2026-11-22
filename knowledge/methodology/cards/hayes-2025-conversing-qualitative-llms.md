@@ -1,7 +1,7 @@
 # Conversar com dados qualitativos via LLM: hipótese exploratória não é achado validado
 
 - Status: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Limite da consulta: Texto HTML público e identificação da licença CC BY-NC 4.0 pela editora; nenhum PDF foi incorporado nem relicenciado.
+- Limite inicial da consulta (histórico): Texto HTML público e identificação da licença CC BY-NC 4.0 pela editora; nenhum PDF foi incorporado nem relicenciado. O registro posterior de exame documental é uma alegação histórica, não nova leitura realizada nesta revisão.
 - Referência identificada: Hayes (2025). DOI: 10.1177/16094069251322346
 - Fonte primária consultada nesta etapa: https://journals.sagepub.com/doi/10.1177/16094069251322346
 - Registro correlato do inventário: SRC-0050 (identidade do PDF privado ainda não estabelecida por hash/edição)
@@ -28,8 +28,8 @@ Concordância entre respostas de LLM não demonstra fidelidade ao corpus nem val
 
 Não cite este card como prova [L] de um resultado acadêmico; abra e confira a fonte para qualquer uso em manuscrito. A descrição pública e o resumo não substituem leitura integral. Não há aprovação de gate, de protocolo, de direitos para PDFs ou de validade acadêmica independente.
 
-## Verificação direta do exemplar identificado — 21/11/2026
+## Registro histórico de conferência documental — 21/11/2026 (não reexecutado nesta revisão)
 
 Hayes (2025) propõe diálogo entre pesquisador, corpus e LLM sem deslocar responsabilidade interpretativa. O PDF consultado é **CC BY-NC 4.0**, não incluído no catálogo de redistribuição CC BY.
 
-**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. PDF CC BY-NC mantido fora do catálogo público CC BY. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.
+**Escopo e cautela:** o registro anterior declarou conferir título, autores, DOI e estrutura metodológica no exemplar autorizado; essa alegação de execução não foi revalidada nesta revisão editorial. O registro histórico é preservado, sem replicar seu conteúdo e sem registrar IDs privados. PDF CC BY-NC mantido fora do catálogo público CC BY. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.

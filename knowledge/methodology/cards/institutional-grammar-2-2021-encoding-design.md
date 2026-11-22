@@ -1,7 +1,7 @@
 # Gramática institucional 2.0: codificação de regras como escolha analítica
 
 - Status: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Limite da consulta: Página pública da editora, resumo e recursos institucionais da gramática; não foi feita validação independente de uma codificação empírica.
+- Limite inicial da consulta (histórico): Página pública da editora, resumo e recursos institucionais da gramática; não foi feita validação independente de uma codificação empírica. O registro posterior de exame documental é uma alegação histórica, não nova leitura realizada nesta revisão.
 - Referência identificada: Christopher K. Frantz e Saba Siddiki (2021). DOI: 10.1111/padm.12719
 - Fonte primária consultada nesta etapa: https://onlinelibrary.wiley.com/doi/full/10.1111/padm.12719
 - Registro correlato do inventário: SRC-0002 (identidade do PDF privado ainda não estabelecida por hash/edição)
@@ -28,8 +28,8 @@ A boa qualidade de uma codificação institucional não equivale a evidência de
 
 Não cite este card como prova [L] de um resultado acadêmico; abra e confira a fonte para qualquer uso em manuscrito. A descrição pública e o resumo não substituem leitura integral. Não há aprovação de gate, de protocolo, de direitos para PDFs ou de validade acadêmica independente.
 
-## Verificação direta do exemplar identificado — 21/11/2026
+## Registro histórico de conferência documental — 21/11/2026 (não reexecutado nesta revisão)
 
 O texto de Frantz e Siddiki (2021) esclarece que a Institutional Grammar 2.0 amplia a sintaxe para enunciados regulativos e constitutivos, sem tratar a representação do desenho institucional como prova de seus efeitos.
 
-**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.
+**Escopo e cautela:** o registro anterior declarou conferir título, autores, DOI e estrutura metodológica no exemplar autorizado; essa alegação de execução não foi revalidada nesta revisão editorial. O registro histórico é preservado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.

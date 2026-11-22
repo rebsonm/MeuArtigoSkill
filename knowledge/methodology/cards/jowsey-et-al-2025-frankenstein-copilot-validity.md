@@ -10,7 +10,7 @@
 
 ## Recorte de informação na fonte — sujeito a conferência pelo pesquisador
 
-Os autores testaram Copilot sobre conjuntos de dados abertos com análises humanas publicadas e relataram pouca sobreposição temática e citações inventadas em parte das saídas.
+Os autores testaram Copilot em cinco conjuntos de dados com análises humanas publicadas. O artigo informa restrições de acesso protegido em quatro deles; não presumir dados irrestritamente abertos. Relata correspondências temáticas em parte das comparações, cobertura limitada de participantes e citações modificadas ou fabricadas nas saídas. A concordância temática não elimina esses problemas de rastreabilidade.
 
 ## Aplicação metodológica proposta [I]
 

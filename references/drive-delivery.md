@@ -54,13 +54,14 @@ With up-to-date observations recorded outside the source project, run:
 
 Interpret the next action:
 
-- CREATE_FOLDER: use the connected host Drive tool and its exact parent ID; retrieve the created ID.
+- CHECK_PARENT_FOR_CREATE: **STOP**. This is a request to verify the parent, not permission to call Drive create. A simple MISSING path does not justify creation. Obtain authoritative, complete paginated parent-child observations, confirm exact parent/root IDs, reconcile any existing same-name folder and persist an explicit create-once intent to shared durable audit storage before any external create. A timeout or error after a possible side effect must NEVER trigger a blind retry.
+- The optional offline `scripts/drive_create_guard.py` contains conservative synthetic create-once and reconciliation routines. Its public CLI deliberately blocks remote create when the Skill host cannot independently establish authenticated root scope, complete pagination and durable cross-session journal readback. A local JSON receipt does not satisfy that requirement. **This standalone Skill does not implement an authenticated Drive API writer or authorize remote folder creation.**
 - UPLOAD_FILE: send that single local file into the verified parent folder only if its exact relative path is not already present.
 - READ_BACK_FILE: fetch the remote file using its ID; compute SHA-256 from actual bytes and update the observed inventory.
 - BLOCKED_CONFLICT: stop, preserve existing remote files, and explain duplicate names, wrong parents, size/content disagreement or type mismatch. Never silently overwrite or delete.
 - DONE: all expected folders and files have been reported in the requested hierarchy, and all expected file bytes have been read back and compared.
 
-**Re-list relevant folders after each external action**, refresh the inventory and call next again. If the action fails or times out, perform fresh inspection before retrying. A retried run must skip already verified files, not upload them again. Use real tool receipts where possible; the locally written inventory is not independently authenticated.
+**Re-list relevant folders after each separately authorized external action**, refresh the inventory and call next again. If a folder creation fails or times out, inspect the remote parent again and reconcile the durable create intent; **never blindly repeat the creation**. A retried file operation must skip already verified files, not upload them again. Use real tool receipts where possible; the locally written inventory is not independently authenticated.
 
 ## Final verification and reporting
 
@@ -78,4 +79,4 @@ Never report the Drive tree as complete solely because the project's ZIP was upl
 
 ## Acceptance and real-world evidence
 
-Offline regression tests in tests/test_drive_delivery.py cover nested folders, partial delivery/resume, duplicate names, conflicts, missing content readback, wrong root, restricted PDF, unsafe paths and non-modification of scientific gates. A **real end-to-end test through an authorized connected Drive host**, using disposable synthetic data, is still necessary. A local fixture cannot establish live Drive integration, content access or independent user acceptance.
+Offline regression tests in tests/test_drive_delivery.py cover nested folders, partial delivery/resume, duplicate names, conflicts, missing content readback, wrong root, restricted PDF, unsafe paths and non-modification of scientific gates. Additional offline `tests/test_drive_create_guard.py` cover ambiguous create outcomes, durable intent journaling, incomplete inventory pagination, same-name duplicates, parent drift and no blind retry. A **real end-to-end test through an authorized connected Drive host**, using disposable synthetic data, is still necessary. A local fixture cannot establish live Drive integration, content access or independent user acceptance.

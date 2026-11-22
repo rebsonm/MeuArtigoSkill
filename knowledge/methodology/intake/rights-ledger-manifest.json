@@ -21,7 +21,7 @@
   "author_year_filename_possible_matches": 7,
   "scope": "Public metadata only; source-level legal decisions must be evidenced before public PDF distribution",
   "rights_decision_not_inferred_from": "public reachability, presence in the user's Drive, title or file extension",
-  "next": "Verify 343 provisional source-work records, review 174 editorial cards, and resolve historic rights incident Issue #102 before stable release.",
+  "next": "Resolve the individual residuals and review exact primary passages; host acceptance and history decisions remain pending.",
   "research_catalogue_rows": 433,
   "matched_bibliographic_titles": 404,
   "ambiguous_bibliographic_matches": 4,
@@ -45,5 +45,24 @@
   "identity_reconciliation_complete_for_previously_unresolved": true,
   "identity_review_note": "31 source entries reconciled with original PDF title pages, publisher metadata for 0154/0158, visual PDF confirmation for SRC-0036. This is work identity only, not independent scientific review.",
   "rights_correction_note": "SRC-0367 was inaccurately classified as unrestricted CC BY. Official SciELO page links CC BY-NC 4.0. The GitHub HEAD removes its PDF; older Git commits may still retain the blob and need a separate rights/history response. No unrestricted distribution permitted. Public PDFs now 51 and original inventory approvals 17.",
-  "provisional_matches_remaining": 343
+  "provisional_matches_remaining": 343,
+  "operational_validation": "knowledge/methodology/intake/operational-validation.json",
+  "ib_receipts_integrated": 343,
+  "unresolved_residuals_excluded_from_recommendations": [
+    "SRC-0160",
+    "SRC-0215",
+    "SRC-0224",
+    "SRC-0237",
+    "SRC-0249",
+    "SRC-0263",
+    "SRC-0283",
+    "SRC-0293",
+    "SRC-0297",
+    "SRC-0314",
+    "SRC-0321",
+    "SRC-0325",
+    "SRC-0336",
+    "SRC-0385",
+    "SRC-0403"
+  ]
 }

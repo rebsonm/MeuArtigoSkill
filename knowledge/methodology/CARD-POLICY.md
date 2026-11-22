@@ -19,7 +19,12 @@ that a user or the running host opened an identified book or article.
    applicable edition; a PDF page index need not equal its printed label.
 4. Require **two independent acceptance checks** before a draft is promoted to accepted/public-release-ready:
    rights/originality review and scientific/editorial fidelity review.
-   A machine-generated draft or lexical similarity test cannot approve either.
+   A machine-generated draft or lexical similarity test alone cannot approve either.
+   For the maintainer-authorized 2026-11-21 integration cycle, deterministic
+   checks plus a separate AI content assessment may determine **operational**
+   dispositions. Identify AI authorship, individual evidence and limitations.
+   This exception never grants human peer review, source redistribution rights,
+   primary-source claim support or approval of researcher scientific gates.
 5. A published card is labeled **[I] editorial synthesis**. A bibliographic
    reference inside it is not an automatically supported **[L]** claim.
    **[P]** remains an explicit proposal for the researcher's consideration.
@@ -45,7 +50,7 @@ that a user or the running host opened an identified book or article.
   decisions and date; link to internal editorial receipt when applicable
 - Public release status: DRAFT / NEEDS_REVIEW / ACCEPTED
 
-The four earliest methodology cards and the subsequent eighty-four drafts are original editorial summaries; all remain subject to independent methodological and originality review.
+The 174 methodology cards are original editorial summaries; all remain subject to independent methodological and originality review.
 Their bibliographies are **leads only**, not source-page-verified claims.
 Their presence in a catalog does not prove independent scientific validation.
 The 475 original archive records now have a separate **metadata-only prospecting card** each under `source_cards/`. These are [P] questions, not 475 new scientific interpretations. No automatic full-text conversion or import of those 475 source PDFs is authorized by this policy.
@@ -58,3 +63,21 @@ require an exact immutable commit and actual HTTPS/Python support. Access
 to a user's personal documents is outside this module, not shared with other
 users, and not enabled by installing the Skill. This prototype does not need
 MCP, server credentials, private Drive access, or a hosted embedding service.
+
+## Operational retrieval boundary — integration candidate
+
+`intake/operational-validation.json` records one disposition for each of the
+475 bibliographic records and 174 editorial notes. `VALIDADO_COM_RESTRICOES`
+means the stated limited consultation contract was checked; it does **not**
+mean full bibliographic, scientific, rights or host validation. Each record
+retains its individual evidence and limits. Historical IB source inspections
+are attributed to their frozen receipts, never re-executed by assertion.
+
+`BLOQUEADO_POR_EVIDENCIA` and `EXCLUIDO_COM_JUSTIFICATIVA` are retained in the
+inventory for audit but excluded from both lexical recommendation channels.
+SRC-0385 remains quarantined. A source-ID query must never silently return
+another source. Missing operational status in an older immutable snapshot
+means unreviewed legacy data, never operational or scientific acceptance.
+
+Run `python scripts/reconcile_methodology_library.py --check` to detect stale
+hashes, missing individual receipts, incomplete coverage or quarantine breach.

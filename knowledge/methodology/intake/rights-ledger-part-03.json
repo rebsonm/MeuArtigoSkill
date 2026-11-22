@@ -26,7 +26,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-09-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0272",
@@ -51,7 +54,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-09-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0273",
@@ -72,7 +78,8 @@
       "source_text_year": "arquivo atribuído a 2004; capítulo sem folha editorial completa",
       "scientific_review": "PENDING",
       "pdf_redistribution_observation": "Direitos: Extração do corpo muito degradada; somente título/autoria da capa são confiáveis nesta etapa; copyright não confirmado. A inclusão deste registro bibliográfico não autoriza o compartilhamento do PDF.",
-      "limitations": "Extração do corpo muito degradada; somente título/autoria da capa são confiáveis nesta etapa; copyright não confirmado"
+      "limitations": "Extração do corpo muito degradada; somente título/autoria da capa são confiáveis nesta etapa; copyright não confirmado",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0274",
@@ -93,7 +100,8 @@
       "source_text_year": "2024, manuscrito de capítulo",
       "scientific_review": "PENDING",
       "pdf_redistribution_observation": "Direitos: Cópia manuscrita sem licença positiva de redistribuição; não republicar. A inclusão deste registro bibliográfico não autoriza o compartilhamento do PDF.",
-      "limitations": "Cópia manuscrita sem licença positiva de redistribuição; não republicar"
+      "limitations": "Cópia manuscrita sem licença positiva de redistribuição; não republicar",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0275",
@@ -118,7 +126,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-09-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0276",
@@ -143,7 +154,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-09-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0277",
@@ -168,7 +182,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-09-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0278",
@@ -193,7 +210,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-09-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0279",
@@ -218,7 +238,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0280",
@@ -243,7 +266,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0281",
@@ -268,7 +294,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0282",
@@ -293,7 +322,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0283",
@@ -318,7 +350,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": false,
+      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
     },
     {
       "id": "SRC-0284",
@@ -343,7 +378,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0285",
@@ -368,7 +406,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0286",
@@ -393,7 +434,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0287",
@@ -418,7 +462,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0288",
@@ -443,7 +490,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0289",
@@ -468,7 +518,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0290",
@@ -493,7 +546,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0291",
@@ -518,7 +574,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0292",
@@ -543,7 +602,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0293",
@@ -568,7 +630,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": false,
+      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
     },
     {
       "id": "SRC-0294",
@@ -593,7 +658,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0295",
@@ -618,7 +686,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0296",
@@ -643,7 +714,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0297",
@@ -668,7 +742,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": false,
+      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
     },
     {
       "id": "SRC-0298",
@@ -689,7 +766,8 @@
       "source_text_year": "2001 (não 2011 como indica o nome do arquivo)",
       "scientific_review": "PENDING",
       "pdf_redistribution_observation": "Direitos: © Adis International Limited, todos os direitos reservados; PDF explicitamente excluído. A inclusão deste registro bibliográfico não autoriza o compartilhamento do PDF.",
-      "limitations": "© Adis International Limited, todos os direitos reservados; PDF explicitamente excluído"
+      "limitations": "© Adis International Limited, todos os direitos reservados; PDF explicitamente excluído",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0299",
@@ -714,7 +792,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0300",
@@ -739,7 +820,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0301",
@@ -764,7 +848,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0302",
@@ -789,7 +876,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0303",
@@ -814,7 +904,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0304",
@@ -839,7 +932,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0305",
@@ -864,7 +960,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0306",
@@ -889,7 +988,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0307",
@@ -914,7 +1016,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0308",
@@ -939,7 +1044,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0309",
@@ -964,7 +1072,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0310",
@@ -985,7 +1096,8 @@
       "source_text_year": "2016",
       "scientific_review": "PENDING",
       "pdf_redistribution_observation": "Direitos: PDF baixado por ResearchGate, não há permissão de republicação da cópia. A inclusão deste registro bibliográfico não autoriza o compartilhamento do PDF.",
-      "limitations": "PDF baixado por ResearchGate, não há permissão de republicação da cópia"
+      "limitations": "PDF baixado por ResearchGate, não há permissão de republicação da cópia",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0311",
@@ -1010,7 +1122,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0312",
@@ -1035,7 +1150,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0313",
@@ -1060,7 +1178,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0314",
@@ -1085,7 +1206,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
+      "identity_claim_in_receipt": false,
+      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
     },
     {
       "id": "SRC-0315",
@@ -1110,7 +1234,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0316",
@@ -1135,7 +1262,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0317",
@@ -1160,7 +1290,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0318",
@@ -1185,7 +1318,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0319",
@@ -1210,7 +1346,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0320",
@@ -1235,7 +1374,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0321",
@@ -1260,7 +1402,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": false,
+      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
     },
     {
       "id": "SRC-0322",
@@ -1285,7 +1430,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0323",
@@ -1310,7 +1458,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0324",
@@ -1335,7 +1486,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0325",
@@ -1360,7 +1514,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": false,
+      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
     },
     {
       "id": "SRC-0326",
@@ -1385,7 +1542,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0327",
@@ -1410,7 +1570,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0328",
@@ -1435,7 +1598,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0329",
@@ -1460,7 +1626,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0330",
@@ -1485,7 +1654,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0331",
@@ -1510,7 +1682,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0332",
@@ -1535,7 +1710,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0333",
@@ -1560,7 +1738,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0334",
@@ -1585,7 +1766,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0335",
@@ -1610,7 +1794,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0336",
@@ -1635,7 +1822,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": false,
+      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA"
     },
     {
       "id": "SRC-0337",
@@ -1656,7 +1846,8 @@
       "source_text_year": "2014",
       "scientific_review": "PENDING",
       "pdf_redistribution_observation": "Direitos: Não é segunda obra ou segundo resultado científico; usar deduplicação de obra e preservar origem de ambas as cópias. A inclusão deste registro bibliográfico não autoriza o compartilhamento do PDF.",
-      "limitations": "Não é segunda obra ou segundo resultado científico; usar deduplicação de obra e preservar origem de ambas as cópias"
+      "limitations": "Não é segunda obra ou segundo resultado científico; usar deduplicação de obra e preservar origem de ambas as cópias",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0338",
@@ -1681,7 +1872,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0339",
@@ -1706,7 +1900,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0340",
@@ -1731,7 +1928,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0341",
@@ -1756,7 +1956,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0342",
@@ -1781,7 +1984,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0343",
@@ -1806,7 +2012,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0344",
@@ -1831,7 +2040,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0345",
@@ -1856,7 +2068,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0346",
@@ -1881,7 +2096,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0347",
@@ -1906,7 +2124,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0348",
@@ -1931,7 +2152,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0349",
@@ -1956,7 +2180,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0350",
@@ -1981,7 +2208,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0351",
@@ -2027,7 +2257,10 @@
         "crossref_record_url": "https://api.crossref.org/works/10.1590%2F0103-3352.2021.34.222017",
         "is_exact_source_file_identity_checked": false,
         "rights_to_copy_original_pdf_established": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0352",
@@ -2052,7 +2285,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0353",
@@ -2073,7 +2309,8 @@
       "source_text_year": "2020",
       "scientific_review": "PENDING",
       "pdf_redistribution_observation": "Direitos: DOI e nomes constam do PDF; direitos exatos não conferidos, apenas card. A inclusão deste registro bibliográfico não autoriza o compartilhamento do PDF.",
-      "limitations": "DOI e nomes constam do PDF; direitos exatos não conferidos, apenas card"
+      "limitations": "DOI e nomes constam do PDF; direitos exatos não conferidos, apenas card",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0354",
@@ -2098,7 +2335,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0355",
@@ -2123,7 +2363,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0356",
@@ -2148,7 +2391,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0357",
@@ -2173,7 +2419,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0358",
@@ -2194,7 +2443,8 @@
       "source_text_year": "2023",
       "scientific_review": "PENDING",
       "pdf_redistribution_observation": "Direitos: Não confundir concepções de causa com um estimando causal empírico; licença do exemplar não conferida. A inclusão deste registro bibliográfico não autoriza o compartilhamento do PDF.",
-      "limitations": "Não confundir concepções de causa com um estimando causal empírico; licença do exemplar não conferida"
+      "limitations": "Não confundir concepções de causa com um estimando causal empírico; licença do exemplar não conferida",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0359",
@@ -2219,7 +2469,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0360",
@@ -2244,7 +2497,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0361",
@@ -2269,7 +2525,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0362",
@@ -2294,7 +2553,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0363",
@@ -2319,7 +2581,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0364",
@@ -2344,7 +2609,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0365",
@@ -2369,7 +2637,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0366",
@@ -2394,7 +2665,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0367",
@@ -2423,7 +2697,8 @@
       "license_url": null,
       "observed_publisher_license": "CC BY-NC 4.0",
       "license_restriction": "NONCOMMERCIAL",
-      "restriction_evidence_url": "https://www.scielo.br/j/rbcpol/a/QFmq77JnT468fcBKCdh99ms/"
+      "restriction_evidence_url": "https://www.scielo.br/j/rbcpol/a/QFmq77JnT468fcBKCdh99ms/",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0368",
@@ -2456,7 +2731,10 @@
         "crossref_record_url": "https://api.crossref.org/works/10.5380%2Frecp.v6i2.39039",
         "is_exact_source_file_identity_checked": false,
         "rights_to_copy_original_pdf_established": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0369",
@@ -2481,7 +2759,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-14-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0370",
@@ -2506,7 +2787,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-15-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0371",
@@ -2531,7 +2815,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-15-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0372",
@@ -2556,7 +2843,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-15-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0373",
@@ -2576,7 +2866,8 @@
       "source_text_doi": null,
       "source_text_year": "2016; Revista Eletrônica de Ciência Política 7(1)",
       "pdf_redistribution_observation": "Não há autorização individual de redistribuição comprovada para esta cópia",
-      "scientific_review": "PENDING"
+      "scientific_review": "PENDING",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     },
     {
       "id": "SRC-0374",
@@ -2601,7 +2892,10 @@
         "status": "METADATA_LOOKUP_UNAVAILABLE",
         "error_kind": "HTTPError",
         "cc_by_4_candidate": false
-      }
+      },
+      "documentary_receipt": "knowledge/methodology/intake/parallel/IB-15-DELTA.json",
+      "identity_claim_in_receipt": true,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES"
     }
   ]
 }

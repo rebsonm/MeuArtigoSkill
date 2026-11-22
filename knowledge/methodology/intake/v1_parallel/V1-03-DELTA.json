@@ -1,0 +1,240 @@
+{
+  "schema": "MEU_ARTIGO_V1_BIBLIOGRAPHIC_DELTA_V1",
+  "batch_id": "V1-03/20",
+  "status": "PARCIAL_PENDENTE_SINCRONIZACAO_CANONICA",
+  "date": "2026-11-21",
+  "branch": "work/v1-03-20261121",
+  "base_commit": "7c92045310eb3b1474a9612a777fb0012a511592",
+  "manifest_blob_sha": "2f85dc6c4283376b9fc3c312668f0a1f25a0a301",
+  "read_snapshot_commit": "c5e0ca9abd98f824f1576c3ad94c6e9a5d18e9bf",
+  "dependencies": [],
+  "scope": "PATCH_INTENTS_ONLY_NO_IB_OR_GLOBAL_FILE_EDITS",
+  "summary": {
+    "records_checked": 5,
+    "bibliographic_matches_proposed": 4,
+    "quarantined": 1,
+    "scientific_independent_reviews": 0,
+    "private_pdfs_approved_for_redistribution": 0
+  },
+  "items": [
+    {
+      "source_id": "SRC-0321",
+      "prior_ib_branch": "work/ib-12-20261121",
+      "prior_ib_card_blob_sha": "6903c9eceacc40ce3de073b7559d75d892cd5431",
+      "source_pdf_sha256": "e24381ef90447e5f85fe966f58a8c1c4625c7233edcea7c535f31b9d07306ad7",
+      "pages": 10,
+      "proposed_title": "Um guia para escrever profissionalmente na Ciência Política",
+      "proposed_authors": "James A. Stimson; tradução Patrícia Nabuco Martuscelli e Victor Araújo",
+      "proposed_edition": "Revista Política Hoje 27(1), 2018, pp. 142–151",
+      "proposed_doi": "10.51359/1808-8708.2018.239112",
+      "disposition": "IDENTIDADE_CORRESPONDENTE_COM_RESSALVAS",
+      "rights": "SEM_AUTORIZACAO_DE_REDISTRIBUICAO_DA_COPIA",
+      "scientific_status": "P_ONLY_NOT_INDEPENDENTLY_REVIEWED",
+      "evidence_note": "Na cópia, autoria Stimson, divergente do nome Stinson do arquivo; periódico e volume confirmados; ano do arquivo não foi tomado como evidência.",
+      "source_url": "https://periodicos.ufpe.br/revistas/index.php/politicahoje/article/download/239112/30890/130303",
+      "patch_action": "REVIEW_AND_APPLY_ONLY_DURING_V1_16"
+    },
+    {
+      "source_id": "SRC-0325",
+      "prior_ib_branch": "work/ib-12-20261121",
+      "prior_ib_card_blob_sha": "163f4160ec60000ed7477ddb171a5e6f2d926fe7",
+      "source_pdf_sha256": "d5f5763bfaaa4b45035e6139f6619d57d802d7d468f3df0ac9344aaa57b52fcd",
+      "pages": 248,
+      "proposed_title": "Writing a Research Paper in Political Science: A Practical Guide to Inquiry, Structure, and Methods",
+      "proposed_authors": "Lisa A. Baglione",
+      "proposed_edition": "Third edition, CQ Press/SAGE; copyright 2016 impresso na copia",
+      "proposed_doi": null,
+      "disposition": "IDENTIDADE_E_EDICAO_CORRESPONDENTES",
+      "rights": "LIVRO_COMERCIAL_SEM_AUTORIZACAO_DE_REDISTRIBUICAO",
+      "scientific_status": "P_ONLY_NOT_INDEPENDENTLY_REVIEWED",
+      "evidence_note": "Capa e expediente examinados visualmente; copyright 2016 na folha 8 da cópia, distinto da data comercial indicada no site da editora.",
+      "source_url": "https://study.sagepub.com/bagl%C4%B1one3e",
+      "patch_action": "REVIEW_AND_APPLY_ONLY_DURING_V1_16"
+    },
+    {
+      "source_id": "SRC-0336",
+      "prior_ib_branch": "work/ib-13-20261121",
+      "prior_ib_card_blob_sha": "ffbfd48aac35965c53b953fa783edad8e16c2d7b",
+      "source_pdf_sha256": "5e9575966d1490f850114f12007a374679d6ff190820d9059c84b9c4cb49ef75",
+      "pages": 2,
+      "proposed_title": "Possibilidades do uso da fotografia e da filmagem na pesquisa social qualitativa",
+      "proposed_authors": "Francisco Mesquita de Oliveira; Magno Vila Castro Júnior",
+      "proposed_edition": "Ciência e Cultura 71(4), 2019, pp. 60–61",
+      "proposed_doi": "10.21800/2317-66602019000400017",
+      "disposition": "IDENTIDADE_E_VEICULO_CORRESPONDENTES",
+      "rights": "SEM_AUTORIZACAO_DE_REDISTRIBUICAO_DA_COPIA",
+      "scientific_status": "P_ONLY_NOT_INDEPENDENTLY_REVIEWED",
+      "evidence_note": "Cópia de duas páginas, p. 60–61, compatível com registro em repositório; depósito de 2023 não é data de publicação.",
+      "source_url": "https://repositorio.ufpi.br/handle/123456789/3148",
+      "patch_action": "REVIEW_AND_APPLY_ONLY_DURING_V1_16"
+    },
+    {
+      "source_id": "SRC-0385",
+      "prior_ib_branch": "work/ib-15-20261121",
+      "prior_ib_card_blob_sha": "b0afbf7b391b1cc9624daed3f3aab7bc2e247515",
+      "source_pdf_sha256": "d7b0214fd183488a0dcb9afa76e616b288f4adefc39aadd74f23ef2859db6748",
+      "pages": 8,
+      "proposed_title": "What can Systematic Reviews in Political Science contribute to political research?",
+      "proposed_authors": "Michael Smith (somente atribuição interna da cópia, não autenticada)",
+      "proposed_edition": "OEconomia 4(2), 2020 alegados; não corroborados",
+      "proposed_doi": null,
+      "disposition": "BLOQUEADO_QUARENTENA_AUTENTICIDADE_NAO_CONFIRMADA",
+      "rights": "NAO_AUTORIZADO_PARA_REDISTRIBUICAO",
+      "scientific_status": "P_ONLY_NOT_INDEPENDENTLY_REVIEWED",
+      "evidence_note": "A cópia possui atribuição e metadados incongruentes; título e conteúdo similares a Rod Dacombe, doi 10.1177/1478929916680641. Nenhuma imputação conclusiva de fraude ou plágio. Manter quarentena e não citar como fonte validada.",
+      "source_url": "https://journals.sagepub.com/doi/10.1177/1478929916680641",
+      "patch_action": "MAINTAIN_QUARANTINE_OR_JUSTIFIED_EXCLUSION"
+    },
+    {
+      "source_id": "SRC-0403",
+      "prior_ib_branch": "work/ib-16-20261121",
+      "prior_ib_card_blob_sha": "3dafb7485e41e05cb1088181e8afe76e5c89ea1d",
+      "source_pdf_sha256": "075a73cd10a71aa02905df150bfa21c18d77f203a5d8b0535c9cfbfb2f504ef4",
+      "pages": 43,
+      "proposed_title": "7 Cluster Analysis — An R Companion for Introduction to Data Mining",
+      "proposed_authors": "Michael Hahsler",
+      "proposed_edition": "Página didática gerada em 31/08/2023, cópia impressa em 14/12/2023; não confundir com edição posterior de 2024",
+      "proposed_doi": null,
+      "disposition": "IDENTIDADE_E_AUTORIA_CORRESPONDENTES_COM_RESSALVA_DA_VERSAO",
+      "rights": "CC_BY_4_0_OBSERVADA_NO_SITE_ATUAL_NAO_COMPROVA_LICENCA_DA_COPIA_HISTORICA",
+      "scientific_status": "P_ONLY_NOT_INDEPENDENTLY_REVIEWED",
+      "evidence_note": "Rodapé da própria cópia atribui obra a Michael Hahsler e data de construção 2023-08-31. Licença CC BY 4.0 do site atual e DOI do livro recente não comprovam direitos da versão privada exata.",
+      "source_url": "https://michael.hahsler.net/Introduction_to_Data_Mining_R_Examples/",
+      "patch_action": "REVIEW_AND_APPLY_ONLY_DURING_V1_16"
+    }
+  ],
+  "tests": {
+    "unique_source_ids": true,
+    "source_hashes_64_hex": true,
+    "readback": "PASS_PREVIOUS_DELTA_POSTCOMMIT; THIS_CHANGE_PENDING_POSTCOMMIT",
+    "ci": "NOT_EXECUTED",
+    "real_host": "NOT_EXECUTED",
+    "github_receipt_readback": "PASS_RESULTS_BLOB_a613f6309ab7e93d73f3220be825721d474849f5_BEFORE_THIS_DELTA_WRITE"
+  },
+  "next_step": "V1-16 conditioned on audited V1-01..V1-15, no global update now",
+  "restrictions": [
+    "NO_MAIN_MERGE",
+    "NO_RELEASE_OR_TAG",
+    "NO_FORCE_PUSH",
+    "NO_PDF_REDISTRIBUTION",
+    "NO_SCIENTIFIC_APPROVAL"
+  ],
+  "canonical_drive": {
+    "initial_update": "CONFIRMED_REMOTE_READBACK",
+    "middle_update": "ABORTED_STALE_SNAPSHOT",
+    "final_update": "ABORTED_STALE_SNAPSHOT",
+    "last_observed_section": "EM_EXECUCAO",
+    "blocker": "CONCURRENT_RAW_MARKDOWN_WRITES_OTHER_TABS",
+    "resolution": "Retomar apenas 31.03 de versão fresca do MD, conferir estado remoto pré-escrita e pós-escrita; preservar registros de outras abas"
+  },
+  "continuity_verification": {
+    "date": "2026-11-21",
+    "audit_kind": "EXISTING_RECEIPTS_AND_PRIOR_IB_CARD_BLOB_RECHECK_NO_NEW_PDF_READING",
+    "initial_audited_head": "a5e1b26eca51a58934bd4f025e2bf3817670072a",
+    "results_audit_commit": "43362f32c0599ba86e4070898e5acba29b2c4db3",
+    "results_audit_blob": "8120d051310b864a7df193945a70eb8ff1aeb1f4",
+    "manifest_blob": "2f85dc6c4283376b9fc3c312668f0a1f25a0a301",
+    "ib_card_blobs": [
+      {
+        "source_id": "SRC-0321",
+        "prior_ib_branch": "work/ib-12-20261121",
+        "observed_blob_sha": "6903c9eceacc40ce3de073b7559d75d892cd5431",
+        "match_prior_receipt": true
+      },
+      {
+        "source_id": "SRC-0325",
+        "prior_ib_branch": "work/ib-12-20261121",
+        "observed_blob_sha": "163f4160ec60000ed7477ddb171a5e6f2d926fe7",
+        "match_prior_receipt": true
+      },
+      {
+        "source_id": "SRC-0336",
+        "prior_ib_branch": "work/ib-13-20261121",
+        "observed_blob_sha": "ffbfd48aac35965c53b953fa783edad8e16c2d7b",
+        "match_prior_receipt": true
+      },
+      {
+        "source_id": "SRC-0385",
+        "prior_ib_branch": "work/ib-15-20261121",
+        "observed_blob_sha": "b0afbf7b391b1cc9624daed3f3aab7bc2e247515",
+        "match_prior_receipt": true
+      },
+      {
+        "source_id": "SRC-0403",
+        "prior_ib_branch": "work/ib-16-20261121",
+        "observed_blob_sha": "3dafb7485e41e05cb1088181e8afe76e5c89ea1d",
+        "match_prior_receipt": true
+      }
+    ],
+    "logical_checks": {
+      "exact_manifest_source_ids": true,
+      "unique_source_ids": true,
+      "source_hashes_64_hex": true,
+      "prior_ib_blobs_confirmed": 5,
+      "source_branches_confirmed": 4,
+      "changed_paths_at_initial_head": [
+        "knowledge/methodology/intake/v1_parallel/V1-03-RESULTS.md",
+        "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json"
+      ],
+      "branch_commits_ahead_at_initial_head": 4,
+      "pr_found": false,
+      "commit_status_checks_returned": 0,
+      "pr_triggered_workflow_runs_returned": 0,
+      "ci_execution_not_demonstrated": true
+    },
+    "source_0385": "CONTINUE_QUARANTINE_PENDING_INDEPENDENT_PRIMARY_AUTHENTICATION_OR_MOTIVATED_EXCLUSION",
+    "scientific_review": "NOT_DONE",
+    "copyright_copy_license": "NOT_VERIFIED_FOR_ANY_OF_FIVE",
+    "canonical_section_31_03": "BODY_STALE_CONCURRENT_MARKDOWN_WRITE_UNSAFE; COMMENT_CREATED_FOR_STAGE; NO_BODY_OVERWRITE",
+    "next_action": "RECONCILE_ONLY_31_03_IN_EXCLUSIVE_SAFE_WINDOW_WITH_READBACK"
+  },
+  "canonical_reconciliation": {
+    "status": "PATCH_PREPARED_NOT_APPLIED_EDITOR_UNAVAILABLE",
+    "note": "Raw Google Drive text/markdown replacement lacks an exposed conditional revision/ETag guard. Simultaneous editors may overwrite each other; do not replace full bytes without demonstrated exclusive write window or safe revision guard.",
+    "target_section": "31.03",
+    "patch_only_in": "knowledge/methodology/intake/v1_parallel/V1-03-RESULTS.md",
+    "patch_commit": "70697de64315ac57d1b66c03ff80d60d32c44468",
+    "patch_blob": "6b3acfc7dbb1c2fa44366703ca425a44f35ef20c",
+    "current_canonical_body_still_stale": true,
+    "comment_thread_updated_prior_turn": true,
+    "acceptance": "Write only 31.03 with revision-safe or exclusive operation; read back; verify all other section bytes unchanged; no presumed scientific/legal/security approvals.",
+    "next_single_action": "EDIT_ONLY_SECTION_31_03_WITH_FUNCTIONAL_SCOPED_EDITOR_AND_VERIFIED_EXCLUSIVITY",
+    "native_docs_api_attempt": {
+      "date": "2026-11-21",
+      "precheck": "SEVEN_UNIQUE_TEXT_REPLACEMENTS_IN_31_03_CHECKED_WITH_GOOGLE_DOCS_REVISION_ID",
+      "attempt": "documents.batchUpdate write_control.requiredRevisionId",
+      "result": "REJECTED_NO_WRITE",
+      "http_status": 400,
+      "error_status": "FAILED_PRECONDITION",
+      "error_message": "This operation is not supported for this document. The document must not be a Markdown file. Please use the Drive API to access this file.",
+      "consequence": "NO_CANONICAL_BODY_MUTATION",
+      "safe_next_step": "EXCLUSIVE_WINDOW_FOR_RAW_MARKDOWN_OR_PROVIDER_SUPPORTED_CONDITIONAL_UPLOAD; NEVER_UNGUARDED_OVERWRITE"
+    },
+    "latest_receipt_commit": "74d0e64a0676eef923957044ce5a32de8898494f",
+    "latest_receipt_blob": "a613f6309ab7e93d73f3220be825721d474849f5",
+    "web_gui_attempt": {
+      "date": "2026-11-21",
+      "url_kind": "ORIGINAL_DRIVE_MARKDOWN_FILE",
+      "target": "ONLY_SECTION_31_03",
+      "outcome": "ABORTED_WITHOUT_CHANGES",
+      "reason": "Section located in outline but seven body paragraphs could not be selected confidently in 171-page editor",
+      "modified_lines": 0,
+      "post_browser_drive_readback": "STILL_STALE",
+      "format": "text/markdown",
+      "results_commit": "bf716d653005ec82b92a6cd028563b8dad6e5ede",
+      "results_blob": "1cb68648a77b5f5746d9f83b8a5aaa320461754b"
+    },
+    "attempt_with_browser_blocked": {
+      "date": "2026-11-21",
+      "intent": "USER_AUTHORIZED_EXCLUSIVE_WINDOW_AND_SCOPED_31_03_EDIT",
+      "reason": "SIGNED_IN_BROWSER_AUTOMATION_UNAVAILABLE_DUE_TO_PROVIDER_CREDIT_LIMIT_BEFORE_RUN_START",
+      "change_attempted": false,
+      "raw_file_replaced": false,
+      "other_sessions_suspended_by_this_tab": false,
+      "current_canonical_section_31_03": "STALE_UNMODIFIED",
+      "next_single_action": "USE_OPERATIONAL_SCOPED_EDITOR_WITH_CONFIRMED_EXCLUSIVE_WINDOW_THEN_APPLY_EXISTING_31_03_PATCH_AND_VERIFY",
+      "results_commit": "74d0e64a0676eef923957044ce5a32de8898494f",
+      "results_blob": "a613f6309ab7e93d73f3220be825721d474849f5"
+    }
+  }
+}

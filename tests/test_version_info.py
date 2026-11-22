@@ -26,11 +26,26 @@ class VersionContractTests(unittest.TestCase):
             self.assertEqual(version_info.release_notes_path(root).name,
                              "NOTAS-DA-VERSAO-4.2.0-beta.93.md")
 
+    def test_release_candidate_and_stable_are_source_identifiers_only(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            for version, channel in (
+                ("1.0.0-rc.1", "release-candidate"),
+                ("1.0.0-rc.23", "release-candidate"),
+                ("1.0.0", "stable"),
+                ("0.9.0-beta.6", "beta"),
+            ):
+                with self.subTest(version=version):
+                    (root / "VERSION").write_text(version + "\n", encoding="utf-8")
+                    self.assertEqual(version_info.read_version(root), version)
+                    self.assertEqual(version_info.release_channel(version), channel)
+                    self.assertFalse(version_info.diagnostic(root)["public_release_verified"])
+
     def test_invalid_version_fails_closed(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)
             for bad in ("", "latest", "v4.2.0", "0.8.0-beta.8; rm -rf /",
-                        "../secret", "0.8.0-beta."):
+                        "../secret", "0.8.0-beta.", "1.0.0-rc.0", "1.0.0-rc.01", "01.0.0", "1.0.0-RC.1"):
                 (root / "VERSION").write_text(bad, encoding="utf-8")
                 with self.subTest(bad=bad), self.assertRaises(ValueError):
                     version_info.read_version(root)

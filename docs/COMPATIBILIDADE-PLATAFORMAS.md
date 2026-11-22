@@ -24,4 +24,4 @@ You can describe a research problem, discuss methodological options, review sour
 
 Compatibility testing remains **PENDING** for platforms and accounts not yet observed. For an explanation of how capabilities are checked, see [the platform access guide](../references/platform-capability-preflight.md). The software's automated tests do not certify full real-world compatibility on ChatGPT, Claude or Gemini. If a feature cannot be verified, the correct status is **not verified**, not completed.
 
-**Version:** beta.6 is the source candidate; beta.5 is the latest confirmed published package until a complete beta.6 release is visible.
+**Version:** v0.9.0-beta.6 is the latest verified published experimental package. Source v1.0.0-rc.1 is an unpublished Skill-only acceptance candidate, not a confirmed installation or stable release. A candidate package does not include the historical hosted UI panel.

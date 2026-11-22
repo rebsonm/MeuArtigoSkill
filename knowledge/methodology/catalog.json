@@ -21,9 +21,11 @@
       ],
       "path": "knowledge/methodology/cards/reviews.md",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
-      "sha256": "331db84256e59599d0a8674b0064d9c3058a9261917efb03e403f083dfcde8af",
+      "sha256": "59c17017becb127659cac8292df6b3cf0adda6272ff1baadb67798df140a1479",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "title": "Literature reviews and integrative synthesis"
+      "title": "Literature reviews and integrative synthesis",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "keywords": [
@@ -46,9 +48,11 @@
       ],
       "path": "knowledge/methodology/cards/design.md",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
-      "sha256": "d819d33b1a2f93b8a521f870e09cdac32c7fb18333eabd0b8be82f4de314b142",
+      "sha256": "0500934ef64ec197da6b23d56a6b935d64408b4f5cdaffa8c2964d1638b4f84d",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "title": "Study design and research inference"
+      "title": "Study design and research inference",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "keywords": [
@@ -71,9 +75,11 @@
       ],
       "path": "knowledge/methodology/cards/qualitative.md",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
-      "sha256": "cab9733a5fe55f3e91e17e0a8a549b9e74d076d09cf2587f8111c0a35dbbf4b6",
+      "sha256": "936725a5eac07f00d9a481a89461f9b5687afb4ba61eb25e922a85cea6b9e2b6",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "title": "Qualitative analysis and thematic approaches"
+      "title": "Qualitative analysis and thematic approaches",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "keywords": [
@@ -95,9 +101,11 @@
       ],
       "path": "knowledge/methodology/cards/design-science.md",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
-      "sha256": "fefdaa9fc5847a397dff9c065f42e910032fddf08dfbfae04bbf4fdc7a085256",
+      "sha256": "7a0f36a80dade4e360f283f0981d4e58cd988f1d60b9a8104252edd5965e9e3c",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "title": "Design science and artifact evaluation"
+      "title": "Design science and artifact evaluation",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/prisma-2020-reporting.md",
@@ -125,7 +133,9 @@
       "source_url": "https://link.springer.com/article/10.1186/s13643-021-01626-4",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/roses-systematic-maps.md",
@@ -154,7 +164,9 @@
       "source_url": "https://link.springer.com/article/10.1186/s13750-018-0121-7",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/reflexive-thematic-analysis.md",
@@ -184,7 +196,9 @@
       "source_url": "https://link.springer.com/article/10.1007/s11135-021-01182-y",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/focus-group-design.md",
@@ -212,7 +226,9 @@
       "source_url": "https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12860",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/case-study-bounded-design.md",
@@ -241,7 +257,9 @@
       "source_url": "https://researchonline.jcu.edu.au/47422/",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/qualitative-design-quality.md",
@@ -269,7 +287,9 @@
       "source_url": "https://link.springer.com/article/10.1186/s42466-020-00059-z",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/thematic-saturation.md",
@@ -297,14 +317,16 @@
       "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0232076",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/content-analysis-reliability.md",
       "title": "Systematic literature synthesis and content-analysis reliability",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "3c0a9acbddfeb6fd28373a36aa1833a54af438e36182f139e6062c1a5af46730",
+      "sha256": "17671b0bc192256fdfd0c950bfc56155344ec0987170492fde53e2744430a015",
       "keywords": [
         "confiabilidade",
         "content",
@@ -326,7 +348,9 @@
       "source_url": "https://periodicos.puc-campinas.edu.br/transinfo/article/view/10064",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/mixed-methods-integration.md",
@@ -355,7 +379,9 @@
       "source_url": "https://www.scielo.br/j/soc/a/WtDMmCV3jQB8mT6tmpnzkKc/?format=html&lang=pt",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/bibliometrics-claim-boundary.md",
@@ -383,7 +409,9 @@
       "source_url": "https://periodicos.sbu.unicamp.br/ojs/index.php/rdbci/article/view/8658889",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/qualitative-metaanalysis.md",
@@ -409,7 +437,9 @@
       "source_url": "https://periodicos.ufsc.br/index.php/revemat/article/view/1981-1322.2014v9nespp7",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/grounded-theory-analytic-logic.md",
@@ -436,7 +466,9 @@
       "source_url": "https://www.scielo.br/j/edreal/a/rDDFsHvBCQyWKpthzPjMGzk/?format=html&lang=pt",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/interrupted-time-series-inference.md",
@@ -465,14 +497,16 @@
       "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5407170/",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/prisma-roses-selection.md",
       "title": "Reporting review designs: do not force one checklist everywhere",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "75434122b13328dc9cc9dca49c81aab8203103a9a04d9e140a65e42c91a9fdd9",
+      "sha256": "79c4059dfa76a41a0124515222956975fa6f704dd39ae958422367b0350195ef",
       "keywords": [
         "prisma",
         "roses",
@@ -492,7 +526,9 @@
       "source_url": "https://link.springer.com/article/10.1186/s13643-021-01626-4",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/sampling-saturation-compatibility.md",
@@ -520,7 +556,9 @@
       "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0232076",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/literature-review-writing-practice.md",
@@ -547,7 +585,9 @@
       "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003149",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/manuscript-argument-structure.md",
@@ -576,7 +616,9 @@
       "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/reproducible-computational-workflow.md",
@@ -605,7 +647,9 @@
       "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/meta-analysis-design-and-reporting.md",
@@ -634,7 +678,9 @@
       "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006922",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/sa-silva-2009-documentary-research.md",
@@ -660,7 +706,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/morgan-2022-qualitative-document-analysis.md",
@@ -685,7 +733,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/byrne-2022-reflexive-thematic-worked-example.md",
@@ -710,7 +760,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/kiger-varpio-2020-thematic-analysis.md",
@@ -735,7 +787,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/nowell-2017-trustworthy-analysis.md",
@@ -759,7 +813,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/rijnsoever-2017-saturation-simulation.md",
@@ -783,7 +839,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/hennink-kaiser-2022-saturation-review.md",
@@ -807,7 +865,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/roth-etal-2023-did-identification.md",
@@ -832,7 +892,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/cattaneo-titiunik-2022-rdd.md",
@@ -856,7 +918,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/imbens-lemieux-2007-rdd-practice.md",
@@ -879,7 +943,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/bennett-fairfield-soifer-2019-process-tracing.md",
@@ -904,7 +970,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/thiem-2017-qca.md",
@@ -928,7 +996,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/couto-albala-2022-public-policy-qca.md",
@@ -952,7 +1022,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/lietz-2009-survey-questionnaire.md",
@@ -977,7 +1049,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/harrer-etal-2022-meta-analysis-r.md",
@@ -1001,7 +1075,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/sampaio-mancini-2007-systematic-review.md",
@@ -1025,7 +1101,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/ibrahim-voyer-2025-llm-reflexivity.md",
@@ -1050,7 +1128,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/vikan-2025-rta-llm-support.md",
@@ -1074,7 +1154,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/nguyen-welch-2025-genai-qualitative-judgement.md",
@@ -1098,7 +1180,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/sim-etal-2018-qualitative-sample-size.md",
@@ -1122,7 +1206,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS"
+      "source_text_scope": "BIBLIOGRAPHIC_HEADER_AND_ABSTRACT_AND_SELECTED_SECTIONS",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/field-based-interview-sampling.md",
@@ -1143,7 +1229,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pone-0210776.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pone-0210776.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/smartphone-respondent-driven-sampling.md",
@@ -1165,7 +1253,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pone-0270673.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pone-0270673.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/rds-versus-snowball-sampling.md",
@@ -1188,7 +1278,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pone-0331666.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pone-0331666.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/survey-invitation-participation.md",
@@ -1210,7 +1302,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pone-0289695.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pone-0289695.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/survey-mode-nonresponse-bias.md",
@@ -1233,7 +1327,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pone-0283092.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pone-0283092.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/effective-statistical-decisions.md",
@@ -1255,7 +1351,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1004961.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1004961.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/computable-knowledge-reuse.md",
@@ -1277,7 +1375,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1012179.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1012179.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/responsible-ai-research-assistance.md",
@@ -1300,7 +1400,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1014882.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1014882.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/scientific-publication-clarity.md",
@@ -1323,7 +1425,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1008938.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1008938.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/multi-author-manuscript-governance.md",
@@ -1345,7 +1449,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1006508.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1006508.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/computational-research-notebook.md",
@@ -1367,7 +1473,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1004385.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1004385.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/scientific-writing-productivity.md",
@@ -1388,7 +1496,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1006379.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1006379.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/research-practice-protocol.md",
@@ -1409,7 +1519,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1010139.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1010139.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/research-software-robustness.md",
@@ -1430,7 +1542,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1005412.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1005412.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/open-human-research-privacy.md",
@@ -1452,7 +1566,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1007846.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1007846.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/responsible-referencing-practice.md",
@@ -1473,7 +1589,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1006036.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1006036.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/reusing-public-datasets.md",
@@ -1496,7 +1614,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1010749.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1010749.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/scientific-supplement-evidence.md",
@@ -1517,7 +1637,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1014419.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/plos-pcbi-1014419.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/dias-mishima-2023-thematic-practice.md",
@@ -1543,7 +1665,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/dias-mishima-2023-thematic-analysis.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/dias-mishima-2023-thematic-analysis.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/campos-saidel-2022-qualitative-sampling-decisions.md",
@@ -1569,7 +1693,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
       "source_reference_verified_for_this_project": false,
-      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/campos-saidel-2022-qualitative-sampling.pdf"
+      "source_catalogue_pdf_path": "knowledge/methodology/pdfs/campos-saidel-2022-qualitative-sampling.pdf",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/koerich-et-al-2009-action-research.md",
@@ -1591,14 +1717,16 @@
       "source_catalogue_pdf_path": "knowledge/methodology/pdfs/koerich-et-al-2009-action-research.pdf",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/marzi-et-al-2025-bslr-ten-steps.md",
       "title": "B-SLR de Marzi (2025): integração crítica entre bibliometria, revisão sistemática e teoria",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "b2248ec12576d02787b5ff65e7d7e3e930258fe81ecdf355c4b66fd6c4a2b2c9",
+      "sha256": "52498f7167745298c1e876f787df37718d3830c3a407c2a04741c406278b57ce",
       "keywords": [
         "marzi",
         "balzano",
@@ -1617,7 +1745,9 @@
       "source_read_scope": "DIRECT_SOURCE_PDF_PARTIAL_REVIEW",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "CORRIGIDO_E_REVALIDADO",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/snyder-2019-literature-review-designs.md",
@@ -1640,7 +1770,9 @@
       "source_read_scope": "DIRECT_SOURCE_PDF_PARTIAL_REVIEW_RESTRICTED_CC_BY_NC_ND",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/salvador-1986-bibliographic-research-foundation.md",
@@ -1663,7 +1795,9 @@
       "source_read_scope": "BIBLIOGRAPHIC_REFERENCE_AND_SECONDARY_SCIENTIFIC_DISCUSSION_ONLY_NOT_BOOK_READ",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/grant-booth-2009-salsa-review-typology.md",
@@ -1686,7 +1820,9 @@
       "source_read_scope": "DIRECT_SOURCE_PDF_PARTIAL_REVIEW_RESTRICTED",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/jaakkola-2020-four-conceptual-approaches.md",
@@ -1708,7 +1844,9 @@
       "source_read_scope": "DIRECT_SOURCE_PDF_PARTIAL_REVIEW",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/elsbach-van-knippenberg-2020-integrative-reviews.md",
@@ -1729,7 +1867,9 @@
       "source_read_scope": "DIRECT_SOURCE_PDF_PARTIAL_REVIEW_RESTRICTED",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/alvesson-sandberg-2011-problematization.md",
@@ -1751,7 +1891,9 @@
       "source_read_scope": "DIRECT_SOURCE_PDF_PARTIAL_REVIEW_RESTRICTED",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/prisma-s-2021-search-reporting.md",
@@ -1773,7 +1915,9 @@
       "source_read_scope": "PRIMARY_PUBLISHER_ABSTRACT_AND_REPORTING_GUIDANCE_VERIFIED",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/prisma-scr-2018-scoping.md",
@@ -1794,7 +1938,9 @@
       "source_read_scope": "PRIMARY_PUBLISHER_AND_OFFICIAL_GUIDANCE_VERIFIED",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/prisma-2020-operational-reporting.md",
@@ -1817,7 +1963,9 @@
       "source_read_scope": "ORIGINAL_OFFICIAL_GUIDELINE_REFERENCED_CC_BY_4",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/prisma-p-2015-protocol.md",
@@ -1838,7 +1986,9 @@
       "source_read_scope": "OFFICIAL_EXTENSION_REFERENCE_VERIFIED",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/braun-clarke-2022-reflexive-thematic-guide.md",
@@ -1856,7 +2006,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "DIRECT_PROTECTED_BOOK_PDF_PARTIAL_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/miles-huberman-saldana-2014-qualitative-analysis.md",
@@ -1875,7 +2027,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "DIRECT_PROTECTED_BOOK_PDF_PARTIAL_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/saldana-2009-coding-manual.md",
@@ -1893,7 +2047,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "DIRECT_BOOK_FILE_IDENTIFIED_SCOPE_NOT_FULLY_READ",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/saunders-lewis-thornhill-2023-onion.md",
@@ -1911,7 +2067,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "DIRECT_PROTECTED_BOOK_PDF_PARTIAL_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/creswell-creswell-2021-mixed-research-design.md",
@@ -1929,7 +2087,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "DIRECT_PROTECTED_PORTUGUESE_EDITION_PDF_PARTIAL_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/yin-2018-case-study-design.md",
@@ -1947,7 +2107,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "DIRECT_PROTECTED_BOOK_PDF_PARTIAL_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/eisenhardt-1989-building-theory-cases.md",
@@ -1965,7 +2127,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "DIRECT_PROTECTED_JSTOR_ARTICLE_PDF_PARTIAL_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/hevner-2004-design-science.md",
@@ -1983,7 +2147,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "DIRECT_PROTECTED_ARTICLE_PDF_PARTIAL_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/peffers-2008-dsrm-process.md",
@@ -2001,7 +2167,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "DIRECT_PROTECTED_ARTICLE_PDF_PARTIAL_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/suddaby-2006-grounded-theory-not.md",
@@ -2019,7 +2187,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "DIRECT_PROTECTED_ARTICLE_PDF_PARTIAL_REVIEW",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/sampaio-sabbatini-limongi-2024-research-ai.md",
@@ -2038,7 +2208,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "DIRECT_BOOK_PDF_PARTIAL_REVIEW_RIGHTS_PENDING",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/zupic-cater-2015-bibliometric-methods.md",
@@ -2057,7 +2229,9 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "BIBLIOGRAPHIC_CROSS_REFERENCE_VIA_MARZI_NOT_DIRECT_SOURCE_READ",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/donthu-2021-bibliometric-how-to.md",
@@ -2075,14 +2249,16 @@
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "BIBLIOGRAPHIC_CROSS_REFERENCE_VIA_MARZI_NOT_DIRECT_SOURCE_READ",
       "source_uses_full_text": false,
-      "source_reference_verified_for_this_project": false
+      "source_reference_verified_for_this_project": false,
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/siddiki-basurto-weible-2012-institutional-grammar-compliance.md",
       "title": "Gramática institucional: o texto da regra não é o comportamento de conformidade",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "24906c8f222a6f0c4c3f5c2acfb95e7bc52109c420470b85649f2484f0697ee5",
+      "sha256": "d6ba803ed1c895520cb9e477a66bf323e5ddadec9b057ea3c2abcdbd9039eb4a",
       "keywords": [
         "gramática",
         "institucional",
@@ -2098,14 +2274,16 @@
       "source_url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1748-5991.2012.01132.x",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0001"
+      "source_registry_id": "SRC-0001",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/institutional-grammar-2-2021-encoding-design.md",
       "title": "Gramática institucional 2.0: codificação de regras como escolha analítica",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "9669020d9e167a2774bcac0f3c011981c629d566be7a72c6be7e0eb05d401623",
+      "sha256": "16d2e4ca980cd2a7766fd5f346712045d6eaa070afb07ef985e1cb3c392a6e40",
       "keywords": [
         "institutional",
         "grammar",
@@ -2121,14 +2299,16 @@
       "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/padm.12719",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0002"
+      "source_registry_id": "SRC-0002",
+      "operational_disposition": "CORRIGIDO_E_REVALIDADO",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/tripp-2005-action-research-iterative-evidence.md",
       "title": "Pesquisa-ação: ciclos de melhoria exigem evidência e reflexividade",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "bb191bfe1059279c6341a20c573946f03c8a053ae536d166e9be5de2a99efc80",
+      "sha256": "2405b660afd40fde21d692412974f301f8d4cfa50316c7da2dfa8ebc7d794308",
       "keywords": [
         "pesquisa-ação",
         "action research",
@@ -2142,14 +2322,16 @@
       "source_url": "https://www.scielo.br/j/ep/a/3DkbXnqBQqyq5bV4TCL9NSH/?format=html",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0026"
+      "source_registry_id": "SRC-0026",
+      "operational_disposition": "CORRIGIDO_E_REVALIDADO",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/hayes-2025-conversing-qualitative-llms.md",
       "title": "Conversar com dados qualitativos via LLM: hipótese exploratória não é achado validado",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "65a1e8e25fef0f0d763be2fc97fb94f08da41b5c26c1c652328982f049403048",
+      "sha256": "836e2577103f0eff803b7f1d7f6e38bc50fc73e616d079d4c5dd6264608c7fe9",
       "keywords": [
         "hayes",
         "LLM",
@@ -2165,14 +2347,16 @@
       "source_url": "https://journals.sagepub.com/doi/10.1177/16094069251322346",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0050"
+      "source_registry_id": "SRC-0050",
+      "operational_disposition": "CORRIGIDO_E_REVALIDADO",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/lazar-2007-feminist-critical-discourse.md",
       "title": "Análise crítica feminista do discurso: poder e gênero exigem posição teórica explícita",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "de1441b0fbf8fa7997f582b6a5c935b148cdd17e6740f46f0cd24b6d7b32b122",
+      "sha256": "ac7c847b133477434ff06adfa1303c0ea819aaf26c51b353a0d6821f63d434b8",
       "keywords": [
         "feminista",
         "discurso",
@@ -2187,14 +2371,16 @@
       "source_url": "https://www.tandfonline.com/doi/abs/10.1080/17405900701464816",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0035"
+      "source_registry_id": "SRC-0035",
+      "operational_disposition": "CORRIGIDO_E_REVALIDADO",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/cardno-2018-policy-document-analysis.md",
       "title": "Análise documental de políticas: texto, prática e contexto são dimensões distintas",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "67d14742e6865ac0be0e7bf9de268533ccef45f64721ea5039d3e45bb2c3b152",
+      "sha256": "67c1a93ff49b52391ef98ce9648fdd23738062783cd314abec51b12b48271bad",
       "keywords": [
         "documental",
         "policy",
@@ -2208,14 +2394,16 @@
       "source_url": "https://eric.ed.gov/?id=EJ1305631",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0016"
+      "source_registry_id": "SRC-0016",
+      "operational_disposition": "CORRIGIDO_E_REVALIDADO",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/friese-2026-dialogical-qualitative-analysis-llm.md",
       "title": "Análise dialógica com IA: hipótese de método não é validação automática",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "6df5311b3db289c41f7ee6fddfcf4b1fbdce7a978da36c0e911dae6338b2def0",
+      "sha256": "ddd8fcfba77edcafb89801d9028f914596f07a4f99c83b2f234247314cacf1d2",
       "keywords": [
         "friese",
         "CA AI",
@@ -2230,14 +2418,16 @@
       "source_url": "https://journals.sagepub.com/doi/10.1177/10778004251412871",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0041"
+      "source_registry_id": "SRC-0041",
+      "operational_disposition": "CORRIGIDO_E_REVALIDADO",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/schroeder-2025-llms-uses-tensions-intentions.md",
       "title": "LLMs em pesquisa qualitativa: usos, tensões e intenção do pesquisador",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "847f6264c0d75b7e03899c8f7d27272c6dbac832856f30b4a248af49548e345d",
+      "sha256": "dd5b86da85e7d5ab052d6198ebb1ea5e00dfef448f4ca4ecf4f9010776275fcb",
       "keywords": [
         "schroeder",
         "tensões",
@@ -2251,14 +2441,16 @@
       "source_url": "https://dl.acm.org/doi/10.1145/3706598.3713120",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0049"
+      "source_registry_id": "SRC-0049",
+      "operational_disposition": "CORRIGIDO_E_REVALIDADO",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/wachinger-2024-prompts-pearls-imperfections.md",
       "title": "ChatGPT versus pesquisador: semelhança de temas não basta para validar análise",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "603b5e6065b9e76dc272af737e1bcc2022b68a6744c74c802e0df1d2311bd90a",
+      "sha256": "dae755414f42eadaba3c5644cb039941aac0ddb6ac6c830862b1406c37fdb57e",
       "keywords": [
         "wachinger",
         "chatgpt",
@@ -2273,14 +2465,16 @@
       "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202826/",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0054"
+      "source_registry_id": "SRC-0054",
+      "operational_disposition": "CORRIGIDO_E_REVALIDADO",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/prahl-2025-ai-reflexivity-checklist.md",
       "title": "Checklist de reflexividade para LLMs: pausa de decisão antes da codificação",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "eb434b655f9b4b3ad0a44ebf2f4d6a101c4add0ec65d90df905c137f7cc65da4",
+      "sha256": "7ed1ab3489d83d16f76f102d4529073cdf74a54f074965214e63645765402742",
       "keywords": [
         "prahl",
         "ARC",
@@ -2295,14 +2489,16 @@
       "source_url": "https://journals.sagepub.com/doi/10.1177/10497323251401503",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0055"
+      "source_registry_id": "SRC-0055",
+      "operational_disposition": "CORRIGIDO_E_REVALIDADO",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/jowsey-2025-reject-genai-reflexive-qualitative.md",
       "title": "Contestação do uso de GenAI na pesquisa qualitativa reflexiva",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "699b23bae748da48eed369c0c8df7b169f2b9ac855b40cd1e50ccf46e3889092",
+      "sha256": "afa1c762bc64e1e4af37c54d5418de8c6ea8785e37864f16ebcda330ce6879db",
       "keywords": [
         "jowsey",
         "braun",
@@ -2317,14 +2513,16 @@
       "source_url": "https://journals.sagepub.com/doi/10.1177/10778004251401851",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0063"
+      "source_registry_id": "SRC-0063",
+      "operational_disposition": "CORRIGIDO_E_REVALIDADO",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/mayring-2025-chatgpt-content-analysis-pitfalls.md",
       "title": "Análise de conteúdo com ChatGPT: testar erros antes de delegar inferências",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "9d3f763f20b601420f575c8021ea6ac7c665de3321ba298fe6e28e0e309a6854",
+      "sha256": "a88484c623ff27000bc6f3fc420e86d70aa8d3fb9b6a1b3887950240137e7f1f",
       "keywords": [
         "mayring",
         "chatgpt",
@@ -2338,7 +2536,9 @@
       "source_url": "https://www.qualitative-research.net/index.php/fqs/article/view/4252",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0069"
+      "source_registry_id": "SRC-0069",
+      "operational_disposition": "CORRIGIDO_E_REVALIDADO",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/ibrahim-voyer-2025-technological-reflexivity.md",
@@ -2360,7 +2560,9 @@
       "source_url": "https://doi.org/10.1177/14687941251390794",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0037"
+      "source_registry_id": "SRC-0037",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/misra-et-al-2026-inductive-deductive-code-comparison.md",
@@ -2383,7 +2585,9 @@
       "source_url": "https://doi.org/10.1177/16094069261426100",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0038"
+      "source_registry_id": "SRC-0038",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/nguyen-welch-2025-epistemic-risks-qualitative-ai.md",
@@ -2404,7 +2608,9 @@
       "source_url": "https://doi.org/10.1177/10944281251377154",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0039"
+      "source_registry_id": "SRC-0039",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/jiang-et-al-2025-equity-research-ai-comparability.md",
@@ -2426,7 +2632,9 @@
       "source_url": "https://doi.org/10.3102/0013189X251314821",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0042"
+      "source_registry_id": "SRC-0042",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/vikan-et-al-2025-rta-offline-llm-limitations.md",
@@ -2451,7 +2659,9 @@
       "source_url": "https://doi.org/10.1177/10497323251365211",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0043"
+      "source_registry_id": "SRC-0043",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/costa-et-al-2025-abductivai-collaboration.md",
@@ -2473,7 +2683,9 @@
       "source_url": "https://doi.org/10.1177/16094069251383739",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0045"
+      "source_registry_id": "SRC-0045",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/nguyen-trung-2025-gaita-actor-thematic.md",
@@ -2495,7 +2707,9 @@
       "source_url": "https://doi.org/10.1007/s11135-025-02165-z",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0048"
+      "source_registry_id": "SRC-0048",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/al-fattal-singh-2025-collaborative-autoethnography.md",
@@ -2518,7 +2732,9 @@
       "source_url": "https://doi.org/10.1177/16094069251337870",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0052"
+      "source_registry_id": "SRC-0052",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/dellafiore-et-al-2025-expert-qualitative-tensions.md",
@@ -2541,7 +2757,9 @@
       "source_url": "https://doi.org/10.1177/10497323251389800",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0058"
+      "source_registry_id": "SRC-0058",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/jones-2025-genai-disclosure-heuristic.md",
@@ -2562,7 +2780,9 @@
       "source_url": "https://doi.org/10.1177/16094069251404329",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0059"
+      "source_registry_id": "SRC-0059",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/dahal-et-al-2025-generativity-quality-crises.md",
@@ -2585,14 +2805,16 @@
       "source_url": "https://doi.org/10.3389/frma.2025.1685968",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0060"
+      "source_registry_id": "SRC-0060",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/jowsey-et-al-2025-frankenstein-copilot-validity.md",
       "title": "Citações fabricadas em análise temática automatizada: auditoria de evidência primeiro",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "ba26850b63a122b51d64fc9dea3acaa50c9a29fe3315658694846a1157cc901a",
+      "sha256": "eeda5b067644a1d16cf16f0faa56b79060909dd5936e43b9c3ee17e6a1945010",
       "keywords": [
         "tanisha",
         "pesquisa qualitativa",
@@ -2610,7 +2832,9 @@
       "source_url": "https://doi.org/10.1371/journal.pone.0330217",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0061"
+      "source_registry_id": "SRC-0061",
+      "operational_disposition": "CORRIGIDO_E_REVALIDADO",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/castellanos-et-al-2025-llm-human-theme-agreement.md",
@@ -2632,7 +2856,9 @@
       "source_url": "https://doi.org/10.2196/64447",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0062"
+      "source_registry_id": "SRC-0062",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/jarrahi-2025-interviewing-ai-machine-behavior.md",
@@ -2655,7 +2881,9 @@
       "source_url": "https://doi.org/10.1177/20539517251381697",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0064"
+      "source_registry_id": "SRC-0064",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/wise-gresalfi-spencer-smith-2026-ai-in-the-loop.md",
@@ -2678,7 +2906,9 @@
       "source_url": "https://doi.org/10.1177/16094069261435579",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0044"
+      "source_registry_id": "SRC-0044",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/duarte-et-al-2025-counter-inevitability.md",
@@ -2701,7 +2931,9 @@
       "source_url": "https://doi.org/10.5281/zenodo.17343830",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0046"
+      "source_registry_id": "SRC-0046",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/macgeorge-2025-qualitative-futures-llm.md",
@@ -2724,7 +2956,9 @@
       "source_url": "https://doi.org/10.1177/19467567251330210",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0047"
+      "source_registry_id": "SRC-0047",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/messner-smith-richards-2025-epistemic-incongruences.md",
@@ -2747,7 +2981,9 @@
       "source_url": "https://doi.org/10.1177/16094069251371481",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0051"
+      "source_registry_id": "SRC-0051",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/kon-et-al-2024-interviews-three-transcripts.md",
@@ -2771,7 +3007,9 @@
       "source_url": "https://doi.org/10.1038/s41433-024-03419-0",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0053"
+      "source_registry_id": "SRC-0053",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/paulus-lester-davis-2025-roles-ai-qualitative.md",
@@ -2794,7 +3032,9 @@
       "source_url": "https://doi.org/10.1007/s00146-025-02488-3",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0056"
+      "source_registry_id": "SRC-0056",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/davison-et-al-2024-ethics-sharing-qualitative-data.md",
@@ -2818,7 +3058,9 @@
       "source_url": "https://doi.org/10.1111/isj.12504",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0057"
+      "source_registry_id": "SRC-0057",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/nguyen-welch-2025-engaged-scholarship-anti-genai.md",
@@ -2840,7 +3082,9 @@
       "source_url": "https://doi.org/10.1177/00076503251386539",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0065"
+      "source_registry_id": "SRC-0065",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/friedman-owen-vanpuymbrouck-2024-caution.md",
@@ -2864,7 +3108,9 @@
       "source_url": "https://doi.org/10.1177/14687941241297375",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0066"
+      "source_registry_id": "SRC-0066",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/teixeira-tschopp-jobin-2025-hype-vs-risks.md",
@@ -2887,7 +3133,9 @@
       "source_url": null,
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0067"
+      "source_registry_id": "SRC-0067",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/barros-et-al-2024-llm-qualitative-systematic-mapping.md",
@@ -2910,7 +3158,9 @@
       "source_url": "https://doi.org/10.5281/zenodo.14177022",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0068"
+      "source_registry_id": "SRC-0068",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/paulus-marone-2024-commercial-claims.md",
@@ -2935,7 +3185,9 @@
       "source_url": "https://doi.org/10.1177/10778004241250065",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0070"
+      "source_registry_id": "SRC-0070",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/eschrich-sterman-2024-llm-qualitative-framework.md",
@@ -2959,7 +3211,9 @@
       "source_url": "https://arxiv.org/abs/2407.11198",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0073"
+      "source_registry_id": "SRC-0073",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/de-paoli-2026-reply-to-jowsey-letter.md",
@@ -2982,7 +3236,9 @@
       "source_url": "https://doi.org/10.1177/10778004261425137",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0076"
+      "source_registry_id": "SRC-0076",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/santanna-2025-classical-2x2-did.md",
@@ -3003,7 +3259,9 @@
       "source_url": null,
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0255"
+      "source_registry_id": "SRC-0255",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/gertler-et-al-2018-impact-evaluation-pt.md",
@@ -3026,7 +3284,9 @@
       "source_url": "https://doi.org/10.1596/978-1-4648-0889-0",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0256"
+      "source_registry_id": "SRC-0256",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/card-krueger-1994-nj-pa-did-study.md",
@@ -3051,7 +3311,9 @@
       "source_url": null,
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0258"
+      "source_registry_id": "SRC-0258",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/conceicao-et-al-2026-spatial-ecological-regression.md",
@@ -3075,7 +3337,9 @@
       "source_url": "https://doi.org/10.1590/1980-549720260018.2",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0269"
+      "source_registry_id": "SRC-0269",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/carlomagno-rocha-2016-content-categories.md",
@@ -3099,7 +3363,9 @@
       "source_url": null,
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0373"
+      "source_registry_id": "SRC-0373",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0006.md",
@@ -3120,7 +3386,9 @@
       "source_url": null,
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0006"
+      "source_registry_id": "SRC-0006",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0011.md",
@@ -3146,7 +3414,9 @@
       "source_url": "https://doi.org/10.21714/2238-104X2020v10i2-51394",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0011"
+      "source_registry_id": "SRC-0011",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0036.md",
@@ -3166,7 +3436,9 @@
       "source_url": null,
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0036"
+      "source_registry_id": "SRC-0036",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0040.md",
@@ -3190,7 +3462,9 @@
       "source_url": "https://doi.org/10.1007/978-3-032-08872-7",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0040"
+      "source_registry_id": "SRC-0040",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0132.md",
@@ -3217,7 +3491,9 @@
       "source_url": "https://doi.org/10.12712/rpca.v14i1.38405",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0132"
+      "source_registry_id": "SRC-0132",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0154.md",
@@ -3245,7 +3521,9 @@
       "source_url": "https://doi.org/10.1057/s41304-020-00299-2",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0154"
+      "source_registry_id": "SRC-0154",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0158.md",
@@ -3270,7 +3548,9 @@
       "source_url": "https://amostragemcomr.github.io/livro/aas.html",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0158"
+      "source_registry_id": "SRC-0158",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0181.md",
@@ -3291,7 +3571,9 @@
       "source_url": null,
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0181"
+      "source_registry_id": "SRC-0181",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0182.md",
@@ -3316,7 +3598,9 @@
       "source_url": "https://doi.org/10.1126/science.1245317",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0182"
+      "source_registry_id": "SRC-0182",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0184.md",
@@ -3339,7 +3623,9 @@
       "source_url": "https://doi.org/10.1590/1981-3821201900020001",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0184"
+      "source_registry_id": "SRC-0184",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0199.md",
@@ -3361,7 +3647,9 @@
       "source_url": "https://doi.org/10.4025/actascihumansoc.v30i2.4771",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0199"
+      "source_registry_id": "SRC-0199",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0205.md",
@@ -3387,7 +3675,9 @@
       "source_url": null,
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0205"
+      "source_registry_id": "SRC-0205",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0206.md",
@@ -3408,7 +3698,9 @@
       "source_url": "https://doi.org/10.1590/S0034-759020140211",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0206"
+      "source_registry_id": "SRC-0206",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0239.md",
@@ -3429,7 +3721,9 @@
       "source_url": "https://doi.org/10.1007/978-1-4614-7163-9_140-2",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0239"
+      "source_registry_id": "SRC-0239",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0240.md",
@@ -3456,7 +3750,9 @@
       "source_url": "https://doi.org/10.1007/s11135-023-01669-w",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0240"
+      "source_registry_id": "SRC-0240",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0242.md",
@@ -3479,7 +3775,9 @@
       "source_url": "https://doi.org/10.1111/j.1751-5823.2004.tb00236.x",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0242"
+      "source_registry_id": "SRC-0242",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0259.md",
@@ -3502,7 +3800,9 @@
       "source_url": null,
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0259"
+      "source_registry_id": "SRC-0259",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0267.md",
@@ -3530,7 +3830,9 @@
       "source_url": "https://doi.org/10.17666/329414/2017",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0267"
+      "source_registry_id": "SRC-0267",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0268.md",
@@ -3556,7 +3858,9 @@
       "source_url": "https://doi.org/10.17666/bib9403/2021",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0268"
+      "source_registry_id": "SRC-0268",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0270.md",
@@ -3583,7 +3887,9 @@
       "source_url": "https://doi.org/10.1590/1980-549720260018",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0270"
+      "source_registry_id": "SRC-0270",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0273.md",
@@ -3604,7 +3910,9 @@
       "source_url": null,
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0273"
+      "source_registry_id": "SRC-0273",
+      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0274.md",
@@ -3625,7 +3933,9 @@
       "source_url": null,
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0274"
+      "source_registry_id": "SRC-0274",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0298.md",
@@ -3645,7 +3955,9 @@
       "source_url": null,
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0298"
+      "source_registry_id": "SRC-0298",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0310.md",
@@ -3672,7 +3984,9 @@
       "source_url": null,
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0310"
+      "source_registry_id": "SRC-0310",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0337.md",
@@ -3693,7 +4007,9 @@
       "source_url": "https://doi.org/10.1590/S0034-759020140211",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0337"
+      "source_registry_id": "SRC-0337",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0353.md",
@@ -3719,7 +4035,9 @@
       "source_url": "https://doi.org/10.1590/0103-335220203104",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0353"
+      "source_registry_id": "SRC-0353",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0358.md",
@@ -3744,7 +4062,9 @@
       "source_url": "https://doi.org/10.15332/25005375.8464",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0358"
+      "source_registry_id": "SRC-0358",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0367.md",
@@ -3771,7 +4091,9 @@
       "source_url": "https://doi.org/10.1590/0103-3352.2020.33.218584",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0367"
+      "source_registry_id": "SRC-0367",
+      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0397.md",
@@ -3798,7 +4120,9 @@
       "source_url": "https://doi.org/10.1590/0034-761220250695",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0397"
+      "source_registry_id": "SRC-0397",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0401.md",
@@ -3823,7 +4147,9 @@
       "source_url": "https://doi.org/10.18637/jss.v047.i12",
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0401"
+      "source_registry_id": "SRC-0401",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-review-0410.md",
@@ -3844,7 +4170,9 @@
       "source_url": null,
       "editorial_status": "DRAFT_NEEDS_INDEPENDENT_REVIEW",
       "source_read_scope": "ORIGINAL_PDF_WORK_IDENTITY_METHOD_OUTLINE_INSPECTED_SCIENCE_REVIEW_PENDING",
-      "source_registry_id": "SRC-0410"
+      "source_registry_id": "SRC-0410",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-checked-0007.md",
@@ -3867,7 +4195,9 @@
         "teóricas",
         "interdisciplinares",
         "aplicações"
-      ]
+      ],
+      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-checked-0008.md",
@@ -3887,7 +4217,9 @@
         "pistas",
         "teóricas",
         "metodológicas"
-      ]
+      ],
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-checked-0009.md",
@@ -3906,7 +4238,9 @@
         "qualitative",
         "document",
         "analysis"
-      ]
+      ],
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-checked-0010.md",
@@ -3927,7 +4261,9 @@
         "metodológico",
         "pesquisa",
         "qualitativa"
-      ]
+      ],
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-checked-0012.md",
@@ -3948,7 +4284,9 @@
         "revisão",
         "teórica",
         "metodológica"
-      ]
+      ],
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-checked-0013.md",
@@ -3969,7 +4307,9 @@
         "desenvolvimento",
         "pesquisa",
         "científica"
-      ]
+      ],
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-checked-0014.md",
@@ -3990,7 +4330,9 @@
         "conceitos",
         "características",
         "qualitativa"
-      ]
+      ],
+      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-checked-0015.md",
@@ -4013,7 +4355,9 @@
         "educação",
         "pesquisas",
         "locais"
-      ]
+      ],
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-checked-0146.md",
@@ -4035,7 +4379,9 @@
         "debates",
         "practical",
         "guidelines"
-      ]
+      ],
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     },
     {
       "path": "knowledge/methodology/cards/source-checked-0149.md",
@@ -4055,7 +4401,9 @@
         "criteria",
         "excellent",
         "research"
-      ]
+      ],
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
+      "scientific_use_validated": false
     }
   ],
   "license": "Apache-2.0 (original editorial cards only)",

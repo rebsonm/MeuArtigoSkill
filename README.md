@@ -10,7 +10,7 @@ The project is available in a **public GitHub repository**. **Every 0.9.0-beta r
 
 **Recommended published experimental beta:** [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6), confirmed published with its [prepared Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.6/MeuArtigoSkill-v0.9.0-beta.6.zip) and SHA-256. Earlier beta.1 and beta.2, along with beta.4 and beta.5, remain archived for reproducibility.
 
-**Current version:** `0.9.0-beta.6`, a published **experimental GitHub Pre-release** (not stable or independently scientifically validated). New source candidates and unmerged PRs do not update that published package or installed Skills. GitHub's source archive is not the prepared Skill installer.
+**Current version:** `1.0.0-rc.1` — an **unpublished release candidate in the development branch**, not a stable release or an installed Skill. It is being prepared for real-platform acceptance testing; its temporary CI installer is not a published GitHub Release. The latest recommended public package remains the published experimental beta.6. GitHub's source archive is not the prepared Skill installer.
 
 1. Follow the [installation guide](docs/INSTALLATION.md) for a compatible assistant.
 2. Start a conversation about a genuine research problem. For example: *"I want to develop an article with Meu Artigo. Help me define the question and possible methodological approaches. First, check which storage and research tools are actually available."*
@@ -40,3 +40,13 @@ Installing a Skill does not automatically connect Google Drive, academic databas
 If you use Meu Artigo in your research, please cite the archived software: **Mendes, Rebson de Morais (2026). *Meu Artigo* [Computer software]. Zenodo. [https://doi.org/10.5281/zenodo.24397699](https://doi.org/10.5281/zenodo.24397699).** The repository's [CITATION.cff](CITATION.cff) also provides machine-readable citation metadata. This DOI identifies a software deposit, not an independently validated scientific method or a peer-reviewed article.
 
 The source and original documentation are licensed under the **Apache License 2.0**; third-party research materials retain their own rights. See [LICENSE](LICENSE), [NOTICE](NOTICE), [CITATION.cff](CITATION.cff) and [security guidance](SECURITY.md).
+
+### Isolated integration candidate (unpublished)
+
+The integration branch combines the RC preparation and scoped IB/V1 changes.
+Its operational card review is recorded in
+[the individual disposition ledger](knowledge/methodology/intake/operational-validation.json).
+Restricted entries are consultation aids only; blocked entries are excluded
+from recommendations. AI/code acceptance does not approve scientific gates,
+clear source-PDF rights, demonstrate installed-host operation or authorize a
+stable release. See [card policy](knowledge/methodology/CARD-POLICY.md).

@@ -1,7 +1,7 @@
 # Pesquisa-ação: ciclos de melhoria exigem evidência e reflexividade
 
 - Status: CARD_ORIGINAL_EDITORIAL_PROVISORIO — REVISÃO_CIENTÍFICA_INDEPENDENTE_PENDENTE
-- Limite da consulta: Resumo e informações bibliográficas públicos da revista; o arquivo original no inventário não foi cotejado linha a linha.
+- Limite inicial da consulta (histórico): Resumo e informações bibliográficas públicos da revista; o arquivo original no inventário não foi cotejado linha a linha. O registro posterior de exame documental é uma alegação histórica, não nova leitura realizada nesta revisão.
 - Referência identificada: Tripp (2005). DOI: 10.1590/S1517-97022005000300009
 - Fonte primária consultada nesta etapa: https://www.scielo.br/j/ep/a/3DkbXnqBQqyq5bV4TCL9NSH/?format=html
 - Registro correlato do inventário: SRC-0026 (identidade do PDF privado ainda não estabelecida por hash/edição)
@@ -28,8 +28,8 @@ Chamar uma intervenção ou uma consultoria de pesquisa-ação não demonstra pa
 
 Não cite este card como prova [L] de um resultado acadêmico; abra e confira a fonte para qualquer uso em manuscrito. A descrição pública e o resumo não substituem leitura integral. Não há aprovação de gate, de protocolo, de direitos para PDFs ou de validade acadêmica independente.
 
-## Verificação direta do exemplar identificado — 21/11/2026
+## Registro histórico de conferência documental — 21/11/2026 (não reexecutado nesta revisão)
 
 Tripp (2005) discute pesquisa-ação como investigação de melhoria sistemática fundamentada empiricamente; intervenção rotineira sem método explícito não é equivalente.
 
-**Escopo e cautela:** título, autores, DOI e estrutura textual metodológica conferidos no PDF correspondente do acervo autorizado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.
+**Escopo e cautela:** o registro anterior declarou conferir título, autores, DOI e estrutura metodológica no exemplar autorizado; essa alegação de execução não foi revalidada nesta revisão editorial. O registro histórico é preservado, sem replicar seu conteúdo e sem registrar IDs privados. Sem promoção automática de direitos: cópia original continua fora do catálogo público. A revisão científica **independente** deste card continua pendente; para sustentar claims [L] o pesquisador precisa cotejar os trechos e suas páginas diretamente na obra.
