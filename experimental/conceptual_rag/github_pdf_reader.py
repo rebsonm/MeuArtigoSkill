@@ -118,10 +118,7 @@ def query(question: str, *, ref: str, fetch: Callable = fetch_github,
     documents = metadata(fetch(ref, CATALOG, MAX_CATALOG))
     ranked = sorted(((_score(question, doc), doc) for doc in documents),
                     key=lambda x: (-x[0], x[1]["path"]))
-    # Preserve bibliographic discovery but do not fetch a full text when the
-    # catalog does not state the actual Creative Commons license version.
-    candidates = [doc for score, doc in ranked
-                  if score > 0 and doc["license"] == "CC BY 4.0"]
+    candidates = [doc for score, doc in ranked if score > 0]
     if not candidates:
         return {"status": "NO_MATCH_IN_PUBLIC_PDF_CATALOG", "pdf_fetched": False,
                 "hits": [], "no_source_read_claim": True,
