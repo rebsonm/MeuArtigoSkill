@@ -9,7 +9,9 @@ See the [English migration guide](docs/ENGLISH-SOURCE-MIGRATION.md) for the
 complete Markdown audit commands and the strict unresolved-language check. The
 installed assistant still responds in the researcher's requested language.
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24397699.svg)](https://doi.org/10.5281/zenodo.24397699)
+[![Zenodo v1.0.0-rc.2 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24450459.svg)](https://doi.org/10.5281/zenodo.24450459)
+
+**Latest Zenodo archival version:** [v1.0.0-rc.2 — DOI 10.5281/zenodo.24450459](https://doi.org/10.5281/zenodo.24450459), deposited separately from the last published GitHub prerelease v1.0.0-rc.1. The Zenodo DOI and GitHub release are distinct publication channels; this does not silently replace an existing installed Skill.
 
 **A research-support Skill for people preparing scientific articles.** Meu Artigo helps a researcher organize a question, consider appropriate methods, find and assess sources, document decisions, and prepare a manuscript. You remain responsible for the scientific work.
 
@@ -78,14 +80,18 @@ purpose does **not** itself authorize redistribution of copyrighted works,
 and it does not change the original software's Apache-2.0 license.
 See the [full rights-holder notice](RIGHTSHOLDER-NOTICE.md).
 
-**Source versus archive:** the latest public `main` includes post-RC.1
-methodology-card and documentation corrections. The downloadable RC.1 ZIP
-still represents its earlier immutable release. A [Zenodo-ready source copy](docs/ZENODO-DEPOSIT-PREPARATION.md) will be prepared separately without
-third-party PDF binaries; no new Zenodo version is implied by this note.
+**Source versus archive:** GitHub `main` contains changes newer than the published
+GitHub RC.1 installer. The newer experimental RC.2 has a separate
+[Zenodo archival DOI](https://doi.org/10.5281/zenodo.24450459), reported by
+the maintainer; it is not a new GitHub release. The
+[source-review snapshot workflow](docs/ZENODO-DEPOSIT-PREPARATION.md) remains a
+separate, unpublished archival-preparation process. It intentionally omits
+third-party PDF binaries **from that ZIP only**: all 51 original PDF files
+remain in the public GitHub methodology library for online, on-demand use.
 
 ## Citation
 
-If you use Meu Artigo in your research, please cite the archived software: **Mendes, Rebson de Morais (2026). *Meu Artigo* [Computer software]. Zenodo. [https://doi.org/10.5281/zenodo.24397699](https://doi.org/10.5281/zenodo.24397699).** The repository's [CITATION.cff](CITATION.cff) also provides machine-readable citation metadata. This DOI identifies a software deposit, not an independently validated scientific method or a peer-reviewed article.
+For the newer archived experimental version, cite **Mendes, Rebson de Morais (2026). *Meu Artigo* (v1.0.0-rc.2) [Computer software]. Zenodo. [https://doi.org/10.5281/zenodo.24450459](https://doi.org/10.5281/zenodo.24450459).** The earlier Zenodo DOI, [10.5281/zenodo.24397699](https://doi.org/10.5281/zenodo.24397699), remains documented as a prior citation. The root [CITATION.cff](CITATION.cff) retains the original GitHub RC.1 release metadata while offering the Zenodo RC.2 record as the preferred citation. A software DOI does not constitute independent methodological validation.
 
 The source and original documentation are licensed under the **Apache License 2.0**; third-party research materials retain their own rights. See [LICENSE](LICENSE), [NOTICE](NOTICE), [CITATION.cff](CITATION.cff) and [security guidance](SECURITY.md).
 

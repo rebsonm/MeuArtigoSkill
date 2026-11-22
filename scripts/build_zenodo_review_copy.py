@@ -80,7 +80,8 @@ def main() -> None:
         "pdf_binaries_included": 0,
         "sha256_of_each_included_file": manifest_index,
         "author_rights_contact": "rebsonm@gmail.com",
-        "existing_record_doi_as_cited": "10.5281/zenodo.24397699",
+        "current_zenodo_rc2_doi_reported": "10.5281/zenodo.24450459",
+        "previous_zenodo_doi_as_cited": "10.5281/zenodo.24397699",
         "further_zenodo_publication_performed": False,
         "scientific_gates_approved_by_snapshot": 0,
         "exclusion_note": "All 51 third-party scholarly PDF binaries are excluded; see rights register for external original sources.",
@@ -115,7 +116,10 @@ def main() -> None:
         "This is a public source snapshot for review before a future Zenodo version.\n"
         "It is NOT a versioned installable Meu Artigo Skill ZIP, a GitHub release,\n"
         "a published Zenodo record, or independent validation of research methodology.\n"
-        "The 51 third-party scholarly PDFs are NOT included. Confirm that the record\n"
+        "The 51 third-party scholarly PDFs are NOT included in THIS snapshot,\n"
+        "but all 51 remain published in the GitHub methodology library.\n"
+        "Zenodo RC.2 DOI reported by maintainer: 10.5281/zenodo.24450459.\n"
+        "Confirm that the record\n"
         "belongs to you and inspect the DOI/version relationship before depositing.\n"
         f"Git commit: {sha}\nVersion-file value (not a new release): {version}\n"
         f"Rights-holder email: rebsonm@gmail.com\nZIP SHA-256: {checksum}\n",
