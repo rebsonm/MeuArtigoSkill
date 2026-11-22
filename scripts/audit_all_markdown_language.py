@@ -13,7 +13,25 @@ import json
 from pathlib import Path
 import re
 
-from audit_source_language import PORTUGUESE_WORDS
+# Standalone pattern: the installable bundle must not import the legacy
+# release-audit module, whose inclusion would violate dependency closure.
+PORTUGUESE_WORDS=re.compile(
+    r"\b(?:não|você|vocês|também|portanto|entretanto|pesquisador(?:es)?|"
+    r"pesquisa(?:s)?|científic[oa]s?|bibliográfic[oa]s?|revisão|"
+    r"arquivo(?:s)?|documentação|informações|orientações|"
+    r"ferramenta(?:s)?|quando|somente|etapa(?:s)?|"
+    r"fontes|fonte|análise|evidência(?:s)?|"
+    r"utiliza(?:r|ção)|verificar|verificação|"
+    r"responsabilidade|necessário|metodologia|"
+    r"procedimento(?:s)?|perguntas|respostas|"
+    r"conclusão|projeto(?:s)?|"
+    r"atualização|alterações|realizada(?:s)?|"
+    r"executada(?:s)?|construção|processo(?:s)?|"
+    r"disponível|permitido|relatório(?:s)?|"
+    r"instruções|autorização|resultado(?:s)?|"
+    r"apresenta(?:r|ção)|criado(?:s)?|geração|"
+    r"aprovad[oa]s?|pendente(?:s)?)\b",re.I
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 IGNORE_DIRS = {".git", ".venv", "__pycache__", ".cache", "dist"}
