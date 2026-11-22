@@ -56,3 +56,7 @@ English-only merely because the 582 corrections have been published.
 Recheck the precise changes and CI in the public PR associated with this
 correction. Preceding snapshots remain available in Git history and the
 source-of-truth links in individual cards.
+
+The regression suite now checks all 582 corrected-card digests, English
+editorial prose, source-attribution boundaries and the exact 649-entry ledger.
+The checks do not amount to independent scholarly or translation certification.
