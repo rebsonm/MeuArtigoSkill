@@ -84,6 +84,12 @@ class TestUnifiedLibrary(unittest.TestCase):
         guided = lib.query(ref="a"*40, card_id="SRC-0385", fetch=fetch)
         self.assertEqual(guided["hits"], [])
         self.assertEqual(result["dispositions"]["BLOQUEADO_POR_EVIDENCIA"], 1)
+        full_inventory = lib.query(ref="a"*40, list_all=True, mode="audit", fetch=fetch)
+        self.assertEqual(len(full_inventory["hits"]), 649)
+        active_inventory = lib.query(ref="a"*40, list_all=True, mode="guidance", fetch=fetch)
+        self.assertEqual(len(active_inventory["hits"]), 648)
+        with self.assertRaises(ValueError):
+            lib.query(ref="a"*40, list_all=True, mode="audit", include_text=True, fetch=fetch)
 
 
 if __name__ == "__main__":
