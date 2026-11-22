@@ -16,8 +16,8 @@ import sys
 
 PDF_SUBDIR = Path("knowledge/methodology/pdfs")
 CATALOG = Path("knowledge/methodology/pdf_catalog.json")
-PDF_PATH = re.compile(r"knowledge/methodology/pdfs/[a-z0-9][a-z0-9_-]{2,75}\\.pdf\\Z")
-SHA256 = re.compile(r"[0-9a-f]{64}\\Z")
+PDF_PATH = re.compile(r"knowledge/methodology/pdfs/[a-z0-9][a-z0-9_-]{2,75}\.pdf\Z")
+SHA256 = re.compile(r"[0-9a-f]{64}\Z")
 MAX_SINGLE_BYTES = 20_000_000
 MAX_PDF_BYTES = 100_000_000
 
@@ -137,7 +137,7 @@ def audit(root: Path) -> dict:
 
 
 def _safe(value) -> str:
-    return str(value or "").replace("|", "\\|").replace("\\n", " ").replace("\\r", " ")
+    return str(value or "").replace("|", "\\|").replace("\n", " ").replace("\r", " ")
 
 
 def attribution_register(result: dict) -> str:
@@ -159,7 +159,7 @@ def attribution_register(result: dict) -> str:
         lines.append(line)
     lines.extend(["", "No independent full-text license verification or distribution",
                   "permission is asserted by this generated register.", ""])
-    return "\\n".join(lines)
+    return "\n".join(lines)
 
 
 def main(argv=None):
@@ -173,7 +173,7 @@ def main(argv=None):
     result = audit(args.repo)
     if args.out_json:
         args.out_json.parent.mkdir(parents=True, exist_ok=True)
-        args.out_json.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\\n", encoding="utf-8")
+        args.out_json.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     if args.out_credits:
         args.out_credits.parent.mkdir(parents=True, exist_ok=True)
         args.out_credits.write_text(attribution_register(result), encoding="utf-8")
