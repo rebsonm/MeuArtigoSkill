@@ -21,6 +21,11 @@ exempted the methodology cards and intake records.
 - The policy and README no longer equate a narrow language gate with
   full Markdown language coverage.
 
+Marzi et al. (2025) retains its previously reviewed Portuguese card because
+the original correction and review receipt binds to its historic exact hash.
+Its separate English editorial translation must undergo fresh independent
+fidelity checks before replacing the hash-bound card.
+
 ## Outstanding work and nonclaims
 
 Remaining Markdown documents may still contain Portuguese editorial prose,
