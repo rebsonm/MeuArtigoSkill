@@ -106,11 +106,17 @@ def select(rows, *, question=None, card_id=None, mode="guidance", top=5):
     return matched[:top]
 
 
-def query(*, ref, question=None, card_id=None, mode="guidance", top=5,
-          include_text=False, fetch=None):
+def query(*, ref, question=None, card_id=None, list_all=False, mode="guidance",
+          top=5, include_text=False, fetch=None):
     fetch = editorial._fetch if fetch is None else fetch
     rows = load(ref, fetch)
-    chosen = select(rows, question=question, card_id=card_id, mode=mode, top=top)
+    if list_all:
+        if question is not None or card_id is not None or include_text:
+            raise ValueError("LIST_ALL_IS_METADATA_ONLY")
+        chosen = rows if mode == "audit" else [
+            row for row in rows if row["disposition"] not in BLOCKED]
+    else:
+        chosen = select(rows, question=question, card_id=card_id, mode=mode, top=top)
     hits = []
     for row in chosen:
         item = _public_record(row)
@@ -146,13 +152,15 @@ def main(argv=None):
     group = p.add_mutually_exclusive_group(required=True)
     group.add_argument("--question")
     group.add_argument("--id", dest="card_id")
+    group.add_argument("--list-all", action="store_true",
+                       help="Enumerate all 649 metadata records in audit mode, or all eligible in guidance mode")
     p.add_argument("--mode", choices=["guidance", "audit"], default="guidance")
     p.add_argument("--top", type=int, default=5)
     p.add_argument("--include-text", action="store_true")
     a = p.parse_args(argv)
     try:
         result = query(ref=a.ref, question=a.question, card_id=a.card_id,
-                       mode=a.mode, top=a.top, include_text=a.include_text)
+                       list_all=a.list_all, mode=a.mode, top=a.top, include_text=a.include_text)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0 if result["status"] == "RETRIEVED_FOR_REVIEW" else 2
     except (ValueError, OSError, TimeoutError) as exc:
