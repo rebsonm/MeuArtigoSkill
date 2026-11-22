@@ -60,5 +60,18 @@
   "operational_disposition": "VALIDADO_COM_RESTRICOES",
   "no_claim_of": "SCIENTIFIC_VALIDATION_OR_HUMAN_INDEPENDENT_REVIEW",
   "review_actor": "AI-assisted technical/editorial verification by assistant",
-  "risk": "Source editions and source passages still require checking before any scientific L assertion."
+  "risk": "Source editions and source passages still require checking before any scientific L assertion.",
+  "editorial_exclusion": {
+    "id": "SRC-0385",
+    "status": "EXCLUIDO_COM_JUSTIFICATIVA",
+    "source_card_sha256": "b0ae4a0613550e767a92a47189319d645edae1d8a42ba00641900d6a8da1a7cc",
+    "basis": "Original private attribution and claimed OEconomia 2020 edition not authenticated in publisher records; distinct substantially similar Rod Dacombe work verified at SAGE and KCL. Excluded from ACTIVE bibliography because evidence is insufficient; no fraud, plagiarism, or nonexistence conclusion.",
+    "verified_external_sources": [
+      "https://journals.sagepub.com/doi/10.1177/1478929916680641",
+      "https://kclpure.kcl.ac.uk/portal/en/publications/systematic-reviews-in-political-science-what-can-the-approach-con/"
+    ],
+    "reinstatement_requires": "Primary publisher proof of alleged Smith edition and provenance of private copy; new explicit editorial decision.",
+    "private_pdf_redistribution": false,
+    "identity_verified": false
+  }
 }
