@@ -52,7 +52,10 @@ def load(ref: str, fetch=None):
                      "terms": [item["title"]] + item["keywords"],
                      "disposition": item.get("operational_disposition", "NOT_REVIEWED"),
                      "source_identity": "NOT_APPLICABLE",
-                     "rights_review": item["rights"]})
+                     "rights_review": item["rights"],
+                     "original_card_rights_scope": item.get("rights_scope", "UNVERIFIED"),
+                     "underlying_source_rights_status": item.get(
+                         "underlying_source_rights_status", "NOT_ESTABLISHED_BY_CARD_CATALOG")})
     if len(rows) != 649 or len({x["id"] for x in rows}) != 649 or len({x["path"] for x in rows}) != 649:
         raise ValueError("DUPLICATED_OR_INCOMPLETE_649_CARDS")
     return rows
@@ -68,7 +71,12 @@ def _public_record(row):
             if row["kind"] == "BIBLIOGRAPHIC_PROSPECTING_P"
             else "I_P_ORIGINAL_EDITORIAL_GUIDANCE_ONLY",
             "source_identity": row["source_identity"],
-            "rights_review": row["rights_review"],
+            "rights_review": (row.get("underlying_source_rights_status", "NOT_ESTABLISHED_BY_CARD_CATALOG")
+                              if row["kind"] == "ORIGINAL_EDITORIAL_I_P" else row["rights_review"]),
+            "rights_review_scope": ("UNDERLYING_SOURCE" if row["kind"] == "ORIGINAL_EDITORIAL_I_P"
+                                     else "SOURCE_COPY_METADATA"),
+            "editorial_card_rights": (row["rights_review"] if row["kind"] == "ORIGINAL_EDITORIAL_I_P" else None),
+            "editorial_card_rights_scope": row.get("original_card_rights_scope"),
             "scientific_quality_validated": False,
             "scientific_gate_approved": False,
             "source_pdf_read_in_this_query": False}
