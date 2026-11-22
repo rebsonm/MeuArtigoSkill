@@ -1,0 +1,57 @@
+name: One-shot English field and regression correction
+on:
+  push:
+    branches: [docs/english-cleanup-two-round-20261122]
+permissions:
+  contents: write
+jobs:
+  finish:
+    if: github.repository == 'rebsonm/MeuArtigoSkill'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Translate source-edition qualifiers and reconcile exact digests
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path("knowledge/methodology")
+          pairs={
+              "src-0242.md":("2004 (não 2007 como indica o nome do arquivo)","2004 (not 2007, as suggested by the archived filename)"),
+              "src-0298.md":("2001 (não 2011 como indica o nome do arquivo)","2001 (not 2011, as suggested by the archived filename)"),
+              "src-0401.md":("2012 (não inferir 2023)","2012 (do not infer 2023)"),
+          }
+          regpath=root/"source_registry_catalog.json"
+          ledgerpath=root/"intake/operational-validation.json"
+          reg=json.loads(regpath.read_text("utf-8"))
+          ledger=json.loads(ledgerpath.read_text("utf-8"))
+          a={x["path"]:x for x in reg["documents"]}
+          b={x["path"]:x for x in ledger["cards"]}
+          for name,(old,new) in pairs.items():
+              path="knowledge/methodology/source_cards/"+name
+              p=Path(path)
+              content=p.read_text("utf-8")
+              assert content.count(old)==1,path
+              content=content.replace(old,new)
+              p.write_text(content,encoding="utf-8")
+              h=hashlib.sha256(content.encode("utf-8")).hexdigest()
+              a[path]["sha256"]=b[path]["sha256"]=h
+              print("SOURCE_EDITION_CORRECTED",path,h)
+          regpath.write_text(json.dumps(reg,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+          ledgerpath.write_text(json.dumps(ledger,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+          PY
+          python scripts/reconcile_methodology_library.py --check
+      - name: Remove one-shot writer and push only corrected files
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm -f .github/workflows/temporary-english-final-fields.yml
+          git add knowledge/methodology/source_cards knowledge/methodology/source_registry_catalog.json knowledge/methodology/intake/operational-validation.json
+          git commit -m 'fix(i18n): correct three original-edition qualifiers and preserve English evidence guards'
+          git push origin HEAD:docs/english-cleanup-two-round-20261122
