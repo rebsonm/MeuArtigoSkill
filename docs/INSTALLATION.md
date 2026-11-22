@@ -6,6 +6,8 @@ You do not need to be a programmer or use GitHub commands to install Meu Artigo.
 
 The **current published experimental prerelease is [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1)** (22 November 2026). Download the [prepared Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip) and [SHA256SUMS](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/SHA256SUMS.txt) directly from GitHub. It is experimental, not stable v1.0.0 or comprehensive host certification.
 
+**Zenodo experimental RC.2 record:** [DOI 10.5281/zenodo.24450459](https://doi.org/10.5281/zenodo.24450459), archived separately. The previous GitHub RC.1 installer linked above is not the RC.2 package; do not confuse the two publication channels. The current lightweight Skill is designed to consult the 51 public PDF files remotely on GitHub rather than including them in the installable ZIP.
+
 The release also contains a [separate archive of 51 attributed academic PDFs](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigo-PDFs-51-attributed.zip). **Do not import this PDF archive as a Skill**. The older [beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) remains accessible for historical comparison.
 
 ## Install in a supported assistant
