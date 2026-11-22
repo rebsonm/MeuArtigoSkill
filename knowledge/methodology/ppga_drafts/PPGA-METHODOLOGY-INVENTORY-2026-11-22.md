@@ -12,7 +12,7 @@ The supplementary unzipped OSF collection contains 70 direct topic folders. Its 
 
 Representative active topics: Saunders's research onion; Snyder/Marzi/Grant–Booth review design; Jaakkola conceptual articles; Yin/Eisenhardt case studies; Hevner/Peffers design science; Braun–Clarke thematic analysis; Miles–Huberman–Saldaña coding; PRISMA reporting; process tracing, QCA, DID, RDD, ITS, bibliometrics, survey/non-response, qualitative sampling and grounded theory. Existing availability does NOT imply independent scientific source verification or rights clearance.
 
-## New staged cards
+## First 21 source/author-oriented staged cards
 
 - `ppga-flick-2009-qualitative-research-process` — Flick — qualitative research as a coherent process; partial source/course reading
 - `ppga-creswell-2014-five-qualitative-approaches` — Creswell — choosing among five qualitative traditions; partial source/course reading
@@ -36,11 +36,47 @@ Representative active topics: Saunders's research onion; Snyder/Marzi/Grant–Bo
 - `ppga-phenomenology-management-practices` — Phenomenology — studying lived managerial experience; metadata-only prospecting
 - `ppga-research-canvas-working-paper-intake` — Research Canvas — mapping methodological coherence; partial source/course reading
 
+## Additional 29 category/strategy cards (metadata-only [P])
+
+The following candidates were staged after full folder enumeration, focusing on method-selection decisions and risks rather than claims about unread books. Their original source items were *listed*, not substantively read. Do not promote without edition/DOI and article-level review.
+
+1. Probability sampling and uncertainty
+2. Interaction terms and conditional effects
+3. Instrumental variables
+4. Synthetic control
+5. Observational matching
+6. Panel regression
+7. Logistic regression
+8. Factor analysis
+9. Structural equation modeling
+10. Survival analysis
+11. Clustering
+12. Correspondence analysis
+13. Text as data
+14. Machine-learning evaluation
+15. Network analysis
+16. Digital ethnography
+17. Participant observation
+18. Online interviews
+19. Online focus groups
+20. Visual research data
+21. Prosopography
+22. Jurimetrics
+23. Feminist epistemology
+24. Ideal-point estimation
+25. Comparative policy research
+26. Simulation
+27. Linear-regression diagnostics
+28. Qualitative causal inference
+29. Qualitative validity and transparency
+
+**New staged intake total: 50 candidate cards** = eight cards based on explicitly partial direct reading of a book or course material plus 42 original [P] prospecting/checklist cards based on bibliographic/topic metadata. The 50 candidates are not added to the 174 active methodological cards; the 475 existing SRC entries are unchanged. Total new intake files: 52 (50 cards, README, and this inventory). Each promotion requires anti-duplication, provenance, rights and scientific checks.
+
 ## Remaining methodological coverage work
 
 1. Reconcile the 475 enumerated OSF file entries individually against the 475 prospecting records (not merely counts), compare titles, edition, DOI and duplicates, and identify true gaps versus the 174 editorial cards.
 2. Inspect remaining major source books and chapter evidence: Gray, Sampieri, Kvale, Gibbs, Friese, De Sordi, Wooldridge, Anderson/Sweeney/Williams, Dresch, Thiollent, Locke, Denzin and methodological references in the strategy subfolders. Metadata-only drafts may not be claimed as source reviews.
-3. Map and add genuinely missing thematic candidates from quantitative data strategies (time-series diagnostics, construct measurement, research ethics, estimation, robustness) only after checking overlap with current cards.
+3. Review these 29 topic-level drafts against the existing 174 editorial cards (including DID, RDD, ITS, QCA, mixed methods, design science and bibliometrics) and remove or consolidate redundant decision aids; source-specific claims require direct original checking.
 4. Independently review evidence fidelity, bibliography and original editorial rights; identify source pages/editions without reproducing or redistributing books; promote eligible cards into the active catalog and operational ledger with matching hashes under separate checks.
 5. Extend language coverage across **editorial card prose**, rather than relying only on the current language scanner, which deliberately skips `knowledge/methodology/cards/` and `source_cards/`. Preserve original bibliographic titles and immutable IDs.
 6. Re-run methodological catalog reconciliation, source-language strict checks, CI and installer tests after any later activation.
