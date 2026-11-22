@@ -50,10 +50,19 @@ that a user or the running host opened an identified book or article.
   decisions and date; link to internal editorial receipt when applicable
 - Public release status: DRAFT / NEEDS_REVIEW / ACCEPTED
 
-The 174 methodology cards are original editorial summaries; all remain subject to independent methodological and originality review.
+The 174 methodology cards are presented as independent editorial summaries, not as verified primary-source extracts. Their operational validation does not establish scientific fidelity, legal clearance, or independent originality review.
 Their bibliographies are **leads only**, not source-page-verified claims.
 Their presence in a catalog does not prove independent scientific validation.
 The 475 original archive records now have a separate **metadata-only prospecting card** each under `source_cards/`. These are [P] questions, not 475 new scientific interpretations. No automatic full-text conversion or import of those 475 source PDFs is authorized by this policy.
+
+## Public-candidate and release distinctions (RC.1, 2026-11-22)
+
+- The **public GitHub PR branch** contains 475 bibliographic metadata/prospecting cards [P], 174 editorial guidance cards [I]/[P] and a separate 51-PDF catalogue. Presence in a public source tree is not a completed GitHub Release and does not authorize third-party redistribution.
+- The **operational-validation.json** ledger documents 635 `VALIDADO_COM_RESTRICOES`, 13 `CORRIGIDO_E_REVALIDADO` and 1 `EXCLUIDO_COM_JUSTIFICATIVA`. These are software/inventory dispositions, **not** scientific, copyright or publication approval. The 475 metadata cards are not peer-reviewed method guidance. The 174 editorial cards are not primary evidence [L] without direct source verification.
+- The maintainer's V1-05 dispensation of independent reviewers applied **only** to closing that workpackage's documentary triage. It did not approve release rights, originality, scientific fidelity or card publication. Do not silently change `DRAFT/NEEDS_REVIEW` into `ACCEPTED`.
+- The 51 candidate PDF entries currently declare 49 `CC BY 4.0` and two `CC BY` without a confirmed edition/version. The two unresolved entries (`silva-barbosa-lima-2020-analise-tematica-administracao.pdf` and `figueiredo-filho-et-al-2019-seven-reasons-transparency.pdf`) must **not** be treated as rights-cleared for a public release until their exact copies, license versions, and attribution requirements are checked. Nor does a technical pass settle rights for the other 49.
+- Distribution policy: the **Skill installer ships no third-party PDFs**. A future release may refer to permitted source URLs and bibliographic metadata, but must not publish an unreviewed PDF archive. Existing public Git history remains a separate concern under issues #102 (license/history) and #103 (private file identifiers/history). Removing a link from the current HEAD does not erase prior commits, caches or forks.
+- A final GitHub release must expressly distinguish: software/code licensing, original editable card text, bibliographic references, and each third-party PDF's separate rights. Authorizing software publication is not an approval of scientific gates, copyrighted full texts, or research-project access.
 
 ## Distribution boundary
 
