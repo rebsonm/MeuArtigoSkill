@@ -38,15 +38,22 @@ The evidence below refers to its **specific previous CI source tree**, not autom
 - SHA-256 of that **historical inner installer ZIP**: `c023560c0e1fbedfce72c963b98d8f930cd99adc1f5a07b3765361c968a53539`.
 - SHA-256 of its **inner BUNDLE_MANIFEST.json**: `ed06446142d2473d21258a4f0a4a611aeb8408d9fc70f9b47759938e434ebd80`.
 - That package contained **152 verified payloads (152/152)** plus the manifest, for 153 entries, excluding third-party PDFs and external reference cards. `SHA256SUMS.txt`, `VERSION`, `CITATION.cff`, the build receipt, and the manifest matched that artifact.
-- The historical build receipt identified `79deb997e1208db90190be7905421b3036c2dbd1`, a temporary merge of `cc74f7f7` into `29458793`; GitHub file comparison with that PR HEAD found no differences.
+- The historical build receipt identified `79deb997e1208db90190be7905421b3036c2dbd1`, a temporary merge of `cc74f7f7` into `29458793`; GitHub file comparison with that PR HEAD found no differences. The subsequent tested RC.1 installer from workflow `45041628289` used build `ff7889ad528670075c81b02dd975d3320008a8a5` (merge check for PR head `be284c2bdd32d2dcef202a508e7695978336c76e`, zero differing files). This was a CI artifact, not an official GitHub Release.
 - `scripts/verify_installed_bundle.py` returned `status=PASS`, `integrity_mode=ALL_BUNDLE_BYTES_EXACT`, and `payload_count=152` when run against the **ZIP-extracted copy**, with the manifest and expected version explicitly pinned. **This was not a live-host installation test.**
+
+## Public methodology catalogue and PDF release boundary (latest verified status)
+
+- On the public candidate PR branch there are 475 metadata-only [P] prospecting cards and 174 editorial [I]/[P] cards. The dispositions (635 conditional operational validations, 13 corrected/revalidated, 1 excluded) do not establish independent scientific or publication approval.
+- The candidate PDF catalogue contains 51 entries, 49 declaring CC BY 4.0 and two labelled only CC BY without verified versions. Exact-copy licensing and attribution remain separate from the software's Apache-2.0 license; the two version-unknown PDF files are not release-cleared. No third-party PDF is embedded in the prepared Skill ZIP.
+- GitHub issues #102 (license/history) and #103 (private Drive file identifiers in historical commits) are unresolved. These issues must not be described as closed merely because a current HEAD is cleaner.
+- These release notes stay DRAFT/UNPUBLISHED. Code CI passing and a documented host T01 do not justify calling the RC.1 a final, stable, rights-cleared release.
 
 ## Known limitations and conditions before RC.1 acceptance
 
-- **T01/T02 HOST NOT_RUN:** actual persisted executable identification, saved file hashes, and post-save readback remain unverified. If the host transforms YAML/SVG, require an external receipt with substantive review, named reviewer, and exact observed bytes; never set `reviewed=true` automatically.
+- **T01 HOST PASS / T02 STRICT FAIL on current RC.1:** the maintainer supplied a sanitized verification of the actually installed build `ff7889ad` and original manifest SHA-256 `d64c399e5a33637a9836f42bfefda83110e85d57f5edf582c0226cd072015357`. Of 153 listed payloads, 151 matched; `agents/openai.yaml` and `assets/icon.svg` were modified by host presentation processing. Substantive comparison was documented, but host Save/reload remains `NOT_OBSERVED` and the external receipt has `reviewed=false`. This is NOT a live-host T02 PASS or final acceptance.
 - **T05/T06 HOST NOT_RUN:** local tests passed with eight CSV records and a 21-tab XLSX, but `artifact_tool` availability depends on the host. Preserve the CSV fallback.
-- **T32:** a synthetic parser test passed; no behavioral proof yet exists for the **actual installed model** when facing malicious retrieved content.
-- **T34:** documentary readback of a fictional project on Drive passed; end-to-end integration between the **installed Skill** and the connected Drive has not been demonstrated.
+- **T32 HOST NOT_RUN:** local/synthetic parser checks are historical only; the installed Skill's real retrieved-card route was not exercised with a fictional hostile card. No absence-of-marker or resistance claim is supported.
+- **T34 HOST NOT_RUN / DRIVE DOCUMENTAL PASS:** the fictional project was read directly from Google Drive before and after testing (four unchanged SHA-256s, seven PENDING gates, zero scientific decisions, `UNDECIDED` method); the actual Skill resume function was NOT observed.
 - **Multiuser isolation:** logic and guidance use individual Drives; an independent cross-account real-host test has not been completed.
 - **Issues [#102](https://github.com/rebsonm/MeuArtigoSkill/issues/102) and [#103](https://github.com/rebsonm/MeuArtigoSkill/issues/103):** historical public-file and private-metadata risks remain open. A clean current HEAD does not establish that historical commits, refs, or forks were remediated.
 - The Skill does not replace peer validation or approve research gates automatically. The software's Apache-2.0 license does not extend to third-party works. No external materials are released by assumption.
