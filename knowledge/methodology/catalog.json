@@ -2256,7 +2256,7 @@
       "title": "Yin (2018): protocolo, unidade de análise e explicações alternativas no estudo de caso",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "b23529f585d34b4839924ffb7b8bdf00a1c7c523c6332ce7f917e5c4f8dd66fe",
+      "sha256": "1db55e4ef3451637cf9e17856df0e28074d727720f13ec0b84182c91ca5d9e82",
       "keywords": [
         "yin",
         "case study",
@@ -2271,7 +2271,8 @@
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false,
       "rights_scope": "ORIGINAL_EDITORIAL_TEXT_ONLY",
-      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG"
+      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG",
+      "translation_fidelity_status": "SOURCE_COMPARED_AI_EDITORIAL_TRANSLATION_NO_INDEPENDENT_REVIEW"
     },
     {
       "path": "knowledge/methodology/cards/eisenhardt-1989-building-theory-cases.md",
@@ -2344,7 +2345,7 @@
       "title": "Suddaby (2006): o que não caracteriza grounded theory",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "3f1acea5204a6f5974c51a37cfbf4e69be9ccf4da52e145b36175f43a6adb3a6",
+      "sha256": "6dc675920d92419209faeff52353beb17525eea9d3ec3dd0b78dc8f86efe0242",
       "keywords": [
         "suddaby",
         "grounded theory",
@@ -2359,7 +2360,8 @@
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false,
       "rights_scope": "ORIGINAL_EDITORIAL_TEXT_ONLY",
-      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG"
+      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG",
+      "translation_fidelity_status": "SOURCE_COMPARED_AI_EDITORIAL_TRANSLATION_NO_INDEPENDENT_REVIEW"
     },
     {
       "path": "knowledge/methodology/cards/sampaio-sabbatini-limongi-2024-research-ai.md",
@@ -2389,7 +2391,7 @@
       "title": "Zupic e Čater (2015): métodos bibliométricos como mapas, não testes causais",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "c62cd14c7bfd7d12b938eb99863f8b9c0964b66595f0d9909f213930561462e0",
+      "sha256": "1b5f14faea07219efbc903717635233c9000467e379a7b0664112dd684e53d87",
       "keywords": [
         "zupic",
         "cater",
@@ -2405,14 +2407,15 @@
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false,
       "rights_scope": "ORIGINAL_EDITORIAL_TEXT_ONLY",
-      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG"
+      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG",
+      "translation_fidelity_status": "SOURCE_COMPARED_AI_EDITORIAL_TRANSLATION_NO_INDEPENDENT_REVIEW"
     },
     {
       "path": "knowledge/methodology/cards/donthu-2021-bibliometric-how-to.md",
       "title": "Donthu et al. (2021): decisões para análise bibliométrica reprodutível",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "e6a4bf185e8835ec29d2dc997cf8ca1ea1a925db5cbf65e653e64606f7fa62b4",
+      "sha256": "c88aeaf7908f8401f11ed80159f64c47b009a1b6da66e78b1d35f1eff3dfd3c6",
       "keywords": [
         "donthu",
         "bibliometric analysis",
@@ -2427,7 +2430,8 @@
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false,
       "rights_scope": "ORIGINAL_EDITORIAL_TEXT_ONLY",
-      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG"
+      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG",
+      "translation_fidelity_status": "SOURCE_COMPARED_AI_EDITORIAL_TRANSLATION_NO_INDEPENDENT_REVIEW"
     },
     {
       "path": "knowledge/methodology/cards/siddiki-basurto-weible-2012-institutional-grammar-compliance.md",
@@ -4082,7 +4086,7 @@
       "title": "Causal Inference using Difference-in-Differences — Lecture 1: Introduction",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "188ce74ba623e150b1ed9e5e28e2fb5811a85a44a0d59cc97337b0e31e2bb82f",
+      "sha256": "d1aabcb0c9a437ed667f8b4a69fc2fdfe00623f7c4af4887e7419042f82dd9e3",
       "keywords": [
         "regressao",
         "diferencas",
@@ -4102,7 +4106,8 @@
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false,
       "rights_scope": "ORIGINAL_EDITORIAL_TEXT_ONLY",
-      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG"
+      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG",
+      "translation_fidelity_status": "SOURCE_COMPARED_AI_EDITORIAL_TRANSLATION_NO_INDEPENDENT_REVIEW"
     },
     {
       "path": "knowledge/methodology/cards/source-review-0267.md",
@@ -4252,7 +4257,7 @@
       "title": "A Brief Introduction to Monte Carlo Simulation",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "3fa09ee57c707d6d7fa54487889c47c3e3872e3319622aaf68154418b843bebf",
+      "sha256": "b8daa781a3b032d16363c95cb6d713a7a42c69df278d9a6969aebaf0443576f3",
       "keywords": [
         "simulacao",
         "bonate",
@@ -4269,7 +4274,8 @@
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false,
       "rights_scope": "ORIGINAL_EDITORIAL_TEXT_ONLY",
-      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG"
+      "underlying_source_rights_status": "NOT_ESTABLISHED_BY_CARD_CATALOG",
+      "translation_fidelity_status": "SOURCE_COMPARED_AI_EDITORIAL_TRANSLATION_NO_INDEPENDENT_REVIEW"
     },
     {
       "path": "knowledge/methodology/cards/source-review-0310.md",

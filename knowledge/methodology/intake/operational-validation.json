@@ -10581,7 +10581,7 @@
       "path": "knowledge/methodology/cards/yin-2018-case-study-design.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "b23529f585d34b4839924ffb7b8bdf00a1c7c523c6332ce7f917e5c4f8dd66fe",
+      "sha256": "1db55e4ef3451637cf9e17856df0e28074d727720f13ec0b84182c91ca5d9e82",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10661,7 +10661,7 @@
       "path": "knowledge/methodology/cards/suddaby-2006-grounded-theory-not.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "3f1acea5204a6f5974c51a37cfbf4e69be9ccf4da52e145b36175f43a6adb3a6",
+      "sha256": "6dc675920d92419209faeff52353beb17525eea9d3ec3dd0b78dc8f86efe0242",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10701,7 +10701,7 @@
       "path": "knowledge/methodology/cards/zupic-cater-2015-bibliometric-methods.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "c62cd14c7bfd7d12b938eb99863f8b9c0964b66595f0d9909f213930561462e0",
+      "sha256": "1b5f14faea07219efbc903717635233c9000467e379a7b0664112dd684e53d87",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -10721,7 +10721,7 @@
       "path": "knowledge/methodology/cards/donthu-2021-bibliometric-how-to.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "e6a4bf185e8835ec29d2dc997cf8ca1ea1a925db5cbf65e653e64606f7fa62b4",
+      "sha256": "c88aeaf7908f8401f11ed80159f64c47b009a1b6da66e78b1d35f1eff3dfd3c6",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-08-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -11973,7 +11973,7 @@
       "path": "knowledge/methodology/cards/source-review-0259.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "188ce74ba623e150b1ed9e5e28e2fb5811a85a44a0d59cc97337b0e31e2bb82f",
+      "sha256": "d1aabcb0c9a437ed667f8b4a69fc2fdfe00623f7c4af4887e7419042f82dd9e3",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-12-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
@@ -12095,7 +12095,7 @@
       "path": "knowledge/methodology/cards/source-review-0298.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "3fa09ee57c707d6d7fa54487889c47c3e3872e3319622aaf68154418b843bebf",
+      "sha256": "b8daa781a3b032d16363c95cb6d713a7a42c69df278d9a6969aebaf0443576f3",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-12-DELTA.json",
         "knowledge/methodology/intake/independent-editorial-review.json"
