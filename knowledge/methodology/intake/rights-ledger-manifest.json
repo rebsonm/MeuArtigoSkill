@@ -21,7 +21,7 @@
   "author_year_filename_possible_matches": 7,
   "scope": "Public metadata only; source-level legal decisions must be evidenced before public PDF distribution",
   "rights_decision_not_inferred_from": "public reachability, presence in the user's Drive, title or file extension",
-  "next": "Resolve the individual residuals and review exact primary passages; host acceptance and history decisions remain pending.",
+  "next": "All 649 records have dispositions; 14 residuals are P-only leads with original copies unresolved. SRC-0385 remains quarantined; no new scientific L claim or PDF permission.",
   "research_catalogue_rows": 433,
   "matched_bibliographic_titles": 404,
   "ambiguous_bibliographic_matches": 4,
@@ -49,6 +49,9 @@
   "operational_validation": "knowledge/methodology/intake/operational-validation.json",
   "ib_receipts_integrated": 343,
   "unresolved_residuals_excluded_from_recommendations": [
+    "SRC-0385"
+  ],
+  "unresolved_copy_identities_accessible_as_leads_only": [
     "SRC-0160",
     "SRC-0215",
     "SRC-0224",
@@ -62,7 +65,6 @@
     "SRC-0321",
     "SRC-0325",
     "SRC-0336",
-    "SRC-0385",
     "SRC-0403"
   ]
 }
