@@ -1,14 +1,24 @@
-# Current published release — Meu Artigo v1.0.0-rc.1
+# GitHub published release v1.0.0-rc.1 and archived Zenodo v1.0.0-rc.2
 
 **Status verified on 2026-11-22:** [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) is the latest **published experimental GitHub prerelease**. It was released at 18:09:28 UTC on 2026-11-22. It is neither stable v1.0.0 nor independently scientifically validated.
+
+**Newer Zenodo archive:** The maintainer has supplied DOI
+[10.5281/zenodo.24450459](https://doi.org/10.5281/zenodo.24450459) for
+**v1.0.0-rc.2** (experimental). This record is separate from the GitHub
+RC.1 release: the GitHub release list and the source `VERSION`/
+`OFFICIAL_SKILL_RELEASE` still identify RC.1. Do not use the historical
+RC.1 installable ZIP as evidence that it includes the newer online-consultation
+changes. The prior Zenodo DOI cited by the project was
+[10.5281/zenodo.24397699](https://doi.org/10.5281/zenodo.24397699).
+The two records' exact version relationship and Zenodo file inventory
+were not independently read through the public Zenodo API during this update.
 
 **Important archival distinction (22 November 2026):** the public `main`
 branch has later English-language card and documentation corrections (PRs
 #121, #122 and #124). These changes were not incorporated into the
 previously published immutable RC.1 ZIP. A separate, precisely pinned
-source-only snapshot is being prepared for Zenodo review; it is **not** a
-new versioned installer, GitHub release, stable v1.0.0, or verified Zenodo
-deposit. See [Zenodo preparation](ZENODO-DEPOSIT-PREPARATION.md) and
+source-only snapshot is prepared by the review workflow; it is **not** the
+published Zenodo RC.2 installer, a new GitHub release, or a stable v1.0.0. See [Zenodo preparation](ZENODO-DEPOSIT-PREPARATION.md) and
 [the rights-holder notice](../RIGHTSHOLDER-NOTICE.md).
 
 ## Official downloads
