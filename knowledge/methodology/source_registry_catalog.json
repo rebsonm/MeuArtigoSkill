@@ -6262,7 +6262,7 @@
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-04-DELTA.json",
       "documentary_identity_claim": false,
       "pending_bibliographic_findings": "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json",
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false
     },
     {
@@ -7976,7 +7976,7 @@
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-07-DELTA.json",
       "documentary_identity_claim": false,
       "pending_bibliographic_findings": "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json",
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false
     },
     {
@@ -8252,7 +8252,7 @@
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-07-DELTA.json",
       "documentary_identity_claim": false,
       "pending_bibliographic_findings": "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json",
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false
     },
     {
@@ -8632,7 +8632,7 @@
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-08-DELTA.json",
       "documentary_identity_claim": false,
       "pending_bibliographic_findings": "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json",
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false
     },
     {
@@ -9030,7 +9030,7 @@
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-08-DELTA.json",
       "documentary_identity_claim": false,
       "pending_bibliographic_findings": "knowledge/methodology/intake/v1_parallel/V1-01-DELTA.json",
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false
     },
     {
@@ -9503,7 +9503,7 @@
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-09-DELTA.json",
       "documentary_identity_claim": false,
       "pending_bibliographic_findings": "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json",
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false
     },
     {
@@ -10185,7 +10185,7 @@
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
       "documentary_identity_claim": false,
       "pending_bibliographic_findings": "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json",
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false
     },
     {
@@ -10486,7 +10486,7 @@
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-10-DELTA.json",
       "documentary_identity_claim": false,
       "pending_bibliographic_findings": "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json",
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false
     },
     {
@@ -10608,7 +10608,7 @@
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
       "documentary_identity_claim": false,
       "pending_bibliographic_findings": "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json",
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false
     },
     {
@@ -11136,7 +11136,7 @@
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-11-DELTA.json",
       "documentary_identity_claim": false,
       "pending_bibliographic_findings": "knowledge/methodology/intake/v1_parallel/V1-02-DELTA.json",
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false
     },
     {
@@ -11337,7 +11337,7 @@
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
       "documentary_identity_claim": false,
       "pending_bibliographic_findings": "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json",
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false
     },
     {
@@ -11459,7 +11459,7 @@
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-12-DELTA.json",
       "documentary_identity_claim": false,
       "pending_bibliographic_findings": "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json",
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false
     },
     {
@@ -11776,7 +11776,7 @@
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-13-DELTA.json",
       "documentary_identity_claim": false,
       "pending_bibliographic_findings": "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json",
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false
     },
     {
@@ -13921,7 +13921,7 @@
       "documentary_receipt": "knowledge/methodology/intake/parallel/IB-16-DELTA.json",
       "documentary_identity_claim": false,
       "pending_bibliographic_findings": "knowledge/methodology/intake/v1_parallel/V1-03-DELTA.json",
-      "operational_disposition": "BLOQUEADO_POR_EVIDENCIA",
+      "operational_disposition": "VALIDADO_COM_RESTRICOES",
       "scientific_use_validated": false
     },
     {
@@ -16109,8 +16109,8 @@
   "provisional_matches": 343,
   "confirmed_pdf_work_identities": 132,
   "operational_dispositions": {
-    "VALIDADO_COM_RESTRICOES": 460,
-    "BLOQUEADO_POR_EVIDENCIA": 15
+    "VALIDADO_COM_RESTRICOES": 474,
+    "BLOQUEADO_POR_EVIDENCIA": 1
   },
   "ib_documentary_receipt_count": 343
 }
