@@ -1,0 +1,68 @@
+name: One-shot reconcile six verified English methodology cards
+
+on:
+  push:
+    branches: [i18n/curated-method-cards-20261122]
+
+permissions:
+  contents: write
+
+jobs:
+  reconcile:
+    if: github.repository == 'rebsonm/MeuArtigoSkill'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Reconcile only the six authored translations
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          root = Path('knowledge/methodology')
+          changed = [
+              'source-review-0259.md', 'source-review-0298.md',
+              'yin-2018-case-study-design.md', 'suddaby-2006-grounded-theory-not.md',
+              'zupic-cater-2015-bibliometric-methods.md',
+              'donthu-2021-bibliometric-how-to.md'
+          ]
+          paths = {'knowledge/methodology/cards/' + f for f in changed}
+          cat_path = root / 'catalog.json'
+          ledger_path = root / 'intake/operational-validation.json'
+          cat = json.loads(cat_path.read_text(encoding='utf-8'))
+          ledger = json.loads(ledger_path.read_text(encoding='utf-8'))
+          m = {x['path']: x for x in cat['documents']}
+          n = {x['path']: x for x in ledger['cards']}
+          assert len(paths) == 6 and all(x in m and x in n for x in paths)
+          for path in sorted(paths):
+              card = Path(path).read_bytes()
+              assert b'[I]' in card or b'[P]' in card
+              assert b'DRAFT_NEEDS_INDEPENDENT_REVIEW' in card
+              value = hashlib.sha256(card).hexdigest()
+              m[path]['sha256'] = value
+              n[path]['sha256'] = value
+              m[path]['translation_fidelity_status'] = 'SOURCE_COMPARED_AI_EDITORIAL_TRANSLATION_NO_INDEPENDENT_REVIEW'
+              assert m[path]['scientific_use_validated'] is False
+              print('RECONCILED', path, value)
+          cat_path.write_text(json.dumps(cat, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+          ledger_path.write_text(json.dumps(ledger, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+          PY
+          python scripts/reconcile_methodology_library.py --check
+      - name: Remove this temporary writer and publish branch changes
+        shell: bash
+        run: |
+          test "$GITHUB_REF" = 'refs/heads/i18n/curated-method-cards-20261122'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm -- .github/workflows/temporary-reconcile-curated.yml
+          git add knowledge/methodology/catalog.json knowledge/methodology/intake/operational-validation.json
+          git commit -m 'docs(i18n): reconcile six editorial translations; remove one-shot writer'
+          git push origin HEAD:i18n/curated-method-cards-20261122
