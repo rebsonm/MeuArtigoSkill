@@ -14,19 +14,19 @@
 
 | SRC records to reconcile | Repeated source title | Current category (sample) | Evidence caveat |
 |---|---|---|---|
-| SRC-0006, SRC-0435 | Desenhos de pesquisa em política comparada | Política Comparada | Check individual edition and source |
-| SRC-0111, SRC-0454 | Os dez mandamentos da observação participante | Observação Participante | Check individual edition and source |
-| SRC-0129, SRC-0132 | USOS E POSSIBILIDADES METODOLÓGICAS PARA OS ESTUDOS QUALITATIVOS EM ADMINISTRAÇÃO: EXPLORANDO A ANÁLISE TEMÁTICA | Análise Temática | Check individual edition and source |
-| SRC-0206, SRC-0337 | O uso das imagens em pesquisas nas ciências sociais | Imagem como dado | May have inspected source metadata |
-| SRC-0230, SRC-0344 | Análise bibliométrica dos artigos científicos de jurimetria publicados no Brasil | Jurimetria | Check individual edition and source |
-| SRC-0235, SRC-0267 | MAIS QUE BOAS INTENÇÕES Técnicas quantitativas e qualitativas na avaliação de impacto de políticas públicas | Avaliação de Impacto | Check individual edition and source |
-| SRC-0244, SRC-0371 | A Method of Automated Nonparametric Content Analysis for Social Science | Texto como Dado (text mining) | Check individual edition and source |
-| SRC-0245, SRC-0370 | Text as Data: The Promise and Pitfalls of Automatic Content Analysis Methods for Political Texts | Texto como Dado (text mining) | Check individual edition and source |
-| SRC-0349, SRC-0391 | Matching Methods for Causal Inference with Time-Series Cross-Sectional Data | Regressão de Painel | Check individual edition and source |
-| SRC-0354, SRC-0438 | O CALCANHAR METODOLÓGICO DA CIÊNCIA POLÍTICA NO BRASIL | Epistemologia | Check individual edition and source |
-| SRC-0372, SRC-0373 | COMO CRIAR E CLASSIFICAR CATEGORIAS PARA FAZER ANÁLISE DE CONTEÚDO: UMA QUESTÃO METODOLÓGICA | Análise de Conteúdo | Check individual edition and source |
-| SRC-0402, SRC-0430, SRC-0434 | Metodologias de pesquisa em ciência política: uma breve introdução | Regressão linear | Check individual edition and source |
-| SRC-0406, SRC-0408 | Tempo, tempo, tempo: regressão de Cox na ciência política | Análise de Sobrevivência | Check individual edition and source |
+| SRC-0006, SRC-0435 | Comparative political research designs | Política Comparada | Check individual edition and source |
+| SRC-0111, SRC-0454 | Participant observation principles | Observação Participante | Check individual edition and source |
+| SRC-0129, SRC-0132 | Thematic analysis applications in administration | Análise Temática | Check individual edition and source |
+| SRC-0206, SRC-0337 | Images as social-science research data | Imagem como dado | May have inspected source metadata |
+| SRC-0230, SRC-0344 | Bibliometric analysis of jurimetrics in Brazil | Jurimetria | Check individual edition and source |
+| SRC-0235, SRC-0267 | Quantitative and qualitative techniques for policy impact evaluation | Avaliação de Impacto | Check individual edition and source |
+| SRC-0244, SRC-0371 | Nonparametric automated content analysis | Texto como Dado (text mining) | Check individual edition and source |
+| SRC-0245, SRC-0370 | Text as data and automated political-text analysis | Texto como Dado (text mining) | Check individual edition and source |
+| SRC-0349, SRC-0391 | Matching for time-series cross-sectional causal inference | Regressão de Painel | Check individual edition and source |
+| SRC-0354, SRC-0438 | Methodological weaknesses of Brazilian political science | Epistemologia | Check individual edition and source |
+| SRC-0372, SRC-0373 | Constructing content-analysis categories | Análise de Conteúdo | Check individual edition and source |
+| SRC-0402, SRC-0430, SRC-0434 | Introduction to research methods in political science | Regressão linear | Check individual edition and source |
+| SRC-0406, SRC-0408 | Survival analysis and Cox regression | Análise de Sobrevivência | Check individual edition and source |
 
 ## DOI-level spot check of the 13 repeated-title groups
 
