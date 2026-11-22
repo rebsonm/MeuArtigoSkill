@@ -4,7 +4,7 @@ Meu Artigo is a **Skill**, not a replacement for ChatGPT. Its research guidance 
 
 ## Start using the Skill
 
-1. Download the prepared [beta.6 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.6/MeuArtigoSkill-v0.9.0-beta.6.zip) from the [currently published release](INSTALLATION.md).
+1. Download the prepared [RC.1 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip) from the [currently published release](INSTALLATION.md).
 2. Import it using the **Skills** feature if it is available on your account.
 3. Begin in your preferred language:
    > I want to use Meu Artigo to prepare a scientific article. Please check my available connections and storage before proposing methodological options.
@@ -28,7 +28,7 @@ Google Drive is preferred for long-term project continuity after a real writable
 
 **No additional connection is required just to use the standalone Skill's guidance.** If your ChatGPT session already exposes authorized MCP tools, the Skill may use them for specific tasks. Installing the Skill does not itself create an MCP connection, install a separate server or activate a visual MCP Apps interface.
 
-If no MCP connection is available, **continue as a normal Skill** using already authorized tools or verifiable manual research materials. A separate interactive interface does not appear **when its Skill ZIP is installed**. The experimental project-owned connection and its interactive interface have **not** been confirmed in a live beta.6 installation. If a connected service is not available, the Skill can still explain alternatives and work with files or tools already accessible, without claiming that an external action took place.
+If no MCP connection is available, **continue as a normal Skill** using already authorized tools or verifiable manual research materials. A separate interactive interface does not appear **when its Skill ZIP is installed**. The project-owned external connection and its interactive interface are not guaranteed by the published RC.1 Skill ZIP; no production OAuth connection is implied. If a connected service is not available, the Skill can still explain alternatives and work with files or tools already accessible, without claiming that an external action took place.
 
 ## How do I know which Skill version is running?
 
@@ -49,4 +49,4 @@ remote Drive persistence, which is a separate operation.
 
 You choose the method, decide which materials to include, examine evidence, approve interpretations and review the manuscript before any submission. See [Getting started](COMECE-AQUI.md) and [scientific governance](GOVERNANCA-CIENTIFICA.md).
 
-**Version note:** the [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) installer is published. The corrections in open GitHub PRs must not be reported as installed or published until a separately authorized, verified build is actually loaded.
+**Version note:** [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) is the current experimental GitHub prerelease with the [installable ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip). The documented fictional-project run passed CSV/Drive initialization, card guidance, save/readback and gate preservation; optional XLSX failed due to an unavailable dependency. Installed-host identity still requires checking; earlier strict T02 mismatches and unrun T32/T34 scenarios are not silently approved.

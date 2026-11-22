@@ -1,3 +1,9 @@
+# Historical beta.6 integration and acceptance plan — archived evidence
+
+> This dated test-plan snapshot describes the 2026-10-15 **beta.6** plan. The latest published experimental release is [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) (2026-11-22). Earlier beta.6 statements below are historical, not current installer recommendations. Core CSV/Drive fictional-project operation subsequently passed; optional XLSX failed for missing dependency. See [current notes](NOTAS-DA-VERSAO-1.0.0-rc.1.md).
+
+---
+
 # Integrated Skill acceptance — single candidate line
 
 **Release-plan status (2026-10-15):** The authorized target `v0.9.0-beta.6` is the *last planned experimental beta*, not a stable `v1.0.0`. Engineering acceptance is not evidence of live project-owned MCP Apps connectivity or independent scientific validity. A GitHub release is only published when the manual workflow creates a tag, installable ZIP, and SHA-256 attachment. Host acceptance remains pending and must be disclosed in beta.6 notes.
