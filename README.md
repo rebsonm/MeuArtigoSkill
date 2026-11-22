@@ -10,7 +10,7 @@ The project is available in a **public GitHub repository**. **Every 0.9.0-beta r
 
 **Recommended published experimental beta:** [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6), confirmed published with its [prepared Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.6/MeuArtigoSkill-v0.9.0-beta.6.zip) and SHA-256. Earlier beta.1 and beta.2, along with beta.4 and beta.5, remain archived for reproducibility.
 
-**Current version:** `1.0.0-rc.1` — an **unpublished release candidate in the development branch**, not a stable release or an installed Skill. It is being prepared for real-platform acceptance testing; its temporary CI installer is not a published GitHub Release. The latest recommended public package remains the published experimental beta.6. GitHub's source archive is not the prepared Skill installer.
+**Current source version:** `1.0.0-rc.1` — an **experimental release candidate**, not a stable release or an accepted real-host installation. Its CI installable ZIP is distinct from GitHub's source archive and becomes a published GitHub Release only after an actual release/tag is created and verified. Until then, beta.6 remains the latest public GitHub Release.
 
 1. Follow the [installation guide](docs/INSTALLATION.md) for a compatible assistant.
 2. Start a conversation about a genuine research problem. For example: *"I want to develop an article with Meu Artigo. Help me define the question and possible methodological approaches. First, check which storage and research tools are actually available."*
@@ -29,6 +29,12 @@ You can converse in Portuguese or another language you prefer. The article's wri
 
 The Skill separates **[L]** consulted literature, **[I]** interpretation/inference and **[P]** original propositions. Consequential scientific choices are made by the researcher, not silently by the assistant.
 
+## Public third-party PDF and methodology-card library
+
+This repository includes a **public library of 51 third-party academic PDFs**, individually attributed under their publishers' Creative Commons Attribution terms. The papers retain their authors' licenses; they are **not** part of the software's Apache-2.0 license. See the [51-PDF attribution register](knowledge/methodology/PDF-ATTRIBUTIONS.md) and the [PDF catalogue](knowledge/methodology/pdf_catalog.json). One publisher labels its work CC BY without a version; no specific version is invented.
+
+The library also includes **475 bibliographic prospecting cards [P] and 174 editorial methodological cards [I]/[P]**. These cards are aids to research, not 649 independently validated primary-source analyses or new PDFs. See the [card policy](knowledge/methodology/CARD-POLICY.md). The prepared installer ZIP stays small and retrieves public references on demand; it does not embed the third-party PDF binaries.
+
 ## What it does not promise
 
 Installing a Skill does not automatically connect Google Drive, academic databases or other services. Access and permission must be verified; a different storage location requires your explicit agreement. A source cited by an AI may still fail to support the claim. No scientific originality, publication acceptance, quality improvement or independent validation is guaranteed.
@@ -41,9 +47,9 @@ If you use Meu Artigo in your research, please cite the archived software: **Men
 
 The source and original documentation are licensed under the **Apache License 2.0**; third-party research materials retain their own rights. See [LICENSE](LICENSE), [NOTICE](NOTICE), [CITATION.cff](CITATION.cff) and [security guidance](SECURITY.md).
 
-### Isolated integration candidate (unpublished)
+### Integrated RC.1 source (experimental)
 
-The integration branch combines the RC preparation and scoped IB/V1 changes.
+The integrated source combines RC preparation and scoped IB/V1 changes.
 Its operational card review is recorded in
 [the individual disposition ledger](knowledge/methodology/intake/operational-validation.json).
 Restricted entries are consultation aids only; blocked entries are excluded
