@@ -61,7 +61,10 @@ def _validate_host_receipt(root: Path, receipt_path: Path, *, manifest_sha: str,
         return [], "PINNED_MANIFEST_SHA256_REQUIRED"
     if manifest_sha != expected_manifest_sha:
         return [], "BUNDLE_MANIFEST_NOT_PINNED"
-    receipt_path = receipt_path.expanduser().resolve()
+    receipt_path = receipt_path.expanduser()
+    if receipt_path.is_symlink():
+        return [], "RECEIPT_SYMLINK_REJECTED"
+    receipt_path = receipt_path.resolve()
     if receipt_path == root or root in receipt_path.parents:
         return [], "RECEIPT_MUST_BE_OUTSIDE_SKILL"
     if not receipt_path.is_file() or receipt_path.is_symlink() or receipt_path.stat().st_size > 500_000:
@@ -108,7 +111,7 @@ def _validate_host_receipt(root: Path, receipt_path: Path, *, manifest_sha: str,
                 body = target.read_text(encoding="utf-8")
             except (UnicodeError, OSError):
                 return [], "HOST_YAML_INVALID_UTF8"
-            if len(body) > 100_000 or not re.search(r"(?m)^\\s*interface\\s*:", body):
+            if len(body) > 100_000 or not re.search(r"(?m)^\s*interface\s*:", body):
                 return [], "HOST_YAML_PRESENTATION_STRUCTURE_MISSING"
         mapped[name] = digest
     if set(mapped) != set(mismatched):
