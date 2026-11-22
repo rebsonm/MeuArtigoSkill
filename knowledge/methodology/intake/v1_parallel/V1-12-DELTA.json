@@ -30,7 +30,7 @@
   "results_path": "knowledge/methodology/intake/v1_parallel/V1-12-RESULTS.md",
   "results_commit_sha": "0df5cfe6c8c304a86a3d28ff4a9581849413d8bb",
   "google_drive_canonical_update": {
-    "file_id": "1-dccVbAUX5-xLw6fq027cB15oVqOjl_U",
+    "file_id": null,
     "section": "31.12",
     "updated": false,
     "reason": "Docs batchUpdate not supported for Markdown; raw Drive file update lacks conditional concurrency-safe write, parallel abas active. State preserved."
