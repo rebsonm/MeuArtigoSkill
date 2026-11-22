@@ -18,7 +18,7 @@ PT = re.compile(r"\b(?:não|pesquisa|revisão|análise|metodologia|fontes?|"
                 r"leitura|proposta|estudo|dados|orientação|limites?|resultados?|"
                 r"publicação|documental|contribuição|identidade|observada|"
                 r"condições|perguntas?|trabalho|nenhum|nenhuma|aprovada|"
-                r"pendente|científic[ao]|autoria|título|autores)\b", re.I)
+                r"pendente|científic[ao]|autoria|título|autores|antes|qualquer|como|sem|com|para|da|dos|das|na|por|seu|suas|seus|uma|quando|que|ainda|fonte|provas)\b", re.I)
 KEEP = re.compile(r"(\x60[^\x60]+\x60|\[[LIP]\]|\b(?:SRC|EC|GATE|TRACE|DEC|IB)-\d+\b|"
                   r"https?://[^\s)\]>]+|\b10\.\d{4,9}/[^\s)]+|"
                   r"\[[^\]]+\]\([^)]+\))")
@@ -61,6 +61,19 @@ def translate_line(line, model):
         return m.group(1) + "Original published title: " + m.group(2)
     head = re.match(r"^(\s*(?:#{1,6}\s+|[-*>]\s+|\d+\.\s+)?)(.*)$", line)
     prefix, body = head.groups()
+    # Preserve exact source values, but translate short recurring metadata labels.
+    for old, new in (
+        ("Ano:", "Year:"), ("Autor:", "Author:"), ("Autoria:", "Authorship:"),
+        ("Autores:", "Authors:"), ("Tipo de material:", "Material type:"),
+        ("DOI:", "DOI:"), ("Localizador editorial:", "Publisher locator:"),
+        ("Conferência efetiva:", "Verification performed:"),
+        ("Status científico:", "Scientific status:"),
+        ("Natureza:", "Nature:"), ("Registro:", "Record:"),
+        ("Grau de evidência:", "Evidence grade:"),
+    ):
+        if body.startswith(old):
+            body = new + body[len(old):]
+            break
     pieces = KEEP.split(body)
     for i in range(0, len(pieces), 2):
         pieces[i] = translate_piece(pieces[i], model)
@@ -101,6 +114,7 @@ def main():
                    if x["source_id"] == "SRC-0385")}
     candidates = [p for p in sorted((LIB/"source_cards").glob("*.md"))
                   if p.relative_to(ROOT).as_posix() not in banned
+                  and index[p.relative_to(ROOT).as_posix()].get("translation_fidelity_status") != "MACHINE_TRANSLATED_REVIEW_PENDING"
                   and PT.search(p.read_text(encoding="utf-8"))]
     from argostranslate import package, translate
     package.update_package_index()

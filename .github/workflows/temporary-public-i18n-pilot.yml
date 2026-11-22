@@ -22,15 +22,15 @@ jobs:
           python-version: '3.12'
       - name: Install offline translation runtime
         run: python -m pip install 'argostranslate>=1.10,<2' 'langid>=1.1,<2'
-      - name: Translate public source-card pilot and reconcile catalogues
+      - name: Translate the next 100 source cards and reconcile catalogues
         run: |
-          python tools/translate_markdown_corpus.py --limit 12 --report /tmp/translation-pilot.json
+          python tools/translate_markdown_corpus.py --limit 100 --report /tmp/translation-pilot.json
           python scripts/reconcile_methodology_library.py --check
       - name: Preserve translation report
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: public-i18n-pilot-not-scientific-approval
+          name: public-i18n-source100-not-scientific-approval
           path: /tmp/translation-pilot.json
           if-no-files-found: warn
           retention-days: 30
