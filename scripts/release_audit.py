@@ -179,8 +179,8 @@ def main()->int:
         errors.append("README does not display current VERSION")
     if 'As long as access is not opened by the author' in onboarding:
         errors.append("Onboarding still falsely describes public repository as restricted")
-    if "public beta" not in onboarding.lower():
-        errors.append("Public-beta access is not described in onboarding")
+    if not any(label in onboarding.lower() for label in ("public beta", "published experimental release candidate", "published rc.1")):
+        errors.append("Public experimental release access is not described in onboarding")
     publisher=(ROOT/".github/workflows/publish-beta.yml").read_text(encoding="utf-8") if (ROOT/".github/workflows/publish-beta.yml").exists() else ""
     if not all(name in workflow for name in [
         "pull_request:", "push:", "branches: [main]", "audit:",

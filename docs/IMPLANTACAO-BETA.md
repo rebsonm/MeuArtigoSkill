@@ -4,7 +4,7 @@ Meu Artigo is being tested as a **Skill for scientific research support**. You c
 
 ## Available download
 
-The **confirmed published experimental installer** is [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6), with the [prepared ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.6/MeuArtigoSkill-v0.9.0-beta.6.zip) and SHA-256 attachment. Unmerged PR changes remain development candidates, not part of the published package.
+The **current published experimental installer** is [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1), with its [prepared Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip) and checksum. The 51 attributed PDFs are distributed in a separate release archive; do not import that archive as a Skill. Beta.6 remains available for historical use. Installing a new version does not automatically replace an existing Skill; no scientific or full host certification is implied.
 
 For installation, always choose the prepared ZIP on the [Releases page](https://github.com/rebsonm/MeuArtigoSkill/releases), not **Code → Download ZIP**. Each installed Skill remains on its installed version until you update it.
 

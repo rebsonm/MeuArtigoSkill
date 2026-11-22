@@ -22,7 +22,7 @@ You can ask in your own language. The language of your final paper may be determ
 
 ## Published version
 
-The **confirmed published experimental package** is [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6). Beta.6 is published as a GitHub Pre-release with installable ZIP and checksum. Check [Releases](https://github.com/rebsonm/MeuArtigoSkill/releases) before installing.
+The **current published experimental package** is [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1), with the [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip), a separate attributed 51-PDF archive and SHA256SUMS. The former beta.6 remains a historical release; neither version is stable or independently scientifically validated.
 
 Meu Artigo does not automatically connect Drive, academic databases or other accounts. Its research support has not been independently scientifically validated.
 

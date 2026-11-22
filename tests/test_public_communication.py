@@ -32,7 +32,7 @@ class PublicCommunicationTests(unittest.TestCase):
                 f"Developer-only term in public README: {pattern}")
         self.assertIn("public GitHub repository",readme)
         self.assertIn(read_version(ROOT),readme)
-        for word in ("researcher","sources","C.A.D.A.","Getting started","experimental beta"):
+        for word in ("researcher","sources","C.A.D.A.","Getting started","experimental prerelease"):
             self.assertIn(word.lower(),readme.lower())
 
     def test_public_release_notes_do_not_expose_internal_remediation_codes(self):

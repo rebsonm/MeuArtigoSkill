@@ -60,3 +60,7 @@ automatically update the installed Skill or the published release.
 ## One-time navigation-table correction
 
 The initial Home used GitHub Wiki-style double-bracket links containing a pipe inside a Markdown table. The Wiki renderer interpreted the pipe as a table separator. The subsequent reviewed Home uses ordinary Markdown links, and the publisher only replaces Home when it matches the exact original PR #59 source. Independent editor changes remain protected.
+
+## Post-RC.1 Wiki sync (2026-11-22)
+
+The version-controlled `wiki/` Markdown pages in this repository have been corrected to link to the [published experimental RC.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1). **These tracked files are not automatically the separately hosted GitHub Wiki.** Verify that the live Wiki Home, FAQ, Installation, and Status pages are synchronized through an authorized Wiki publication process before reporting the hosted Wiki as updated. The historical beta.6 pages and tags remain archived.

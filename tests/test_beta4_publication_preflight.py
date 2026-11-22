@@ -13,7 +13,7 @@ class HistoricalBeta4Tests(unittest.TestCase):
         changelog=(ROOT/"CHANGELOG.md").read_text(encoding="utf-8")
         self.assertIn("v0.9.0-beta.4",notes)
         self.assertIn("## 0.9.0-beta.4 — 2026-10-11",changelog)
-        self.assertIn("beta.4", (ROOT/"README.md").read_text(encoding="utf-8"))
+        self.assertIn("v1.0.0-rc.1", (ROOT/"README.md").read_text(encoding="utf-8"))
 
 if __name__=="__main__":
     unittest.main()

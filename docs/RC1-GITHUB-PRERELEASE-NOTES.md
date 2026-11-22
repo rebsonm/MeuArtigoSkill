@@ -1,6 +1,6 @@
-# Meu Artigo v1.0.0-rc.1 — experimental prerelease
+# Meu Artigo v1.0.0-rc.1 — published experimental prerelease (2026-11-22)
 
-This is an **experimental software release candidate**, not a stable version or independent scientific validation.
+**Published and verified:** [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) on 2026-11-22 with three downloadable assets. This is an **experimental software release candidate**, not a stable version or independent scientific validation.
 
 ## Assets
 

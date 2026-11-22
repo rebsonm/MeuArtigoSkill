@@ -12,11 +12,7 @@ scientifically validated.
    check remains named `audit`. It checks software regression tests,
    copyright/privacy controls, documentation, provenance and bundle
    integrity with `contents: read`. It cannot publish releases.
-2. **Publish beta (manual)** (`.github/workflows/publish-beta.yml`)
-   runs only through **Actions → Publish beta (manual) → Run workflow**
-   on `main`. The maintainer must type `publish-beta`. This job
-   rechecks all safety controls before receiving the write permission
-   needed for release creation. It will not overwrite existing tags.
+2. **Manual publishers are version-specific.** The historical beta-only workflow (`.github/workflows/publish-beta.yml`) accepts `publish-beta` and refuses RC/stable tags. The [RC.1-specific manual workflow](../.github/workflows/publish-rc1.yml) accepted `publish-rc1` and created the verified [v1.0.0-rc.1 prerelease](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) on 2026-11-22 with the Skill ZIP, 51 credited PDFs and SHA256SUMS. Both publishers require explicit dispatch and refuse to overwrite tags; do not dispatch either again for an existing tag.
 3. **English-source completeness:** the manual workflow additionally
    runs `python scripts/audit_source_language.py --strict`.
    An English-source release must not ship while the repository
@@ -78,18 +74,15 @@ scientifically validated.
    package source, source-language completeness and public notes.
    Merge into `main` only after applying the repository's actual,
    verified review and branch-protection requirements.
-7. Manually dispatch `Publish beta` from `main` and enter the
-   required confirmation. Inspect the newly created immutable
-   release, `MeuArtigoSkill-v<version>.zip`, SHA-256 digest and
-   `SHA256SUMS.txt` attachment.
+7. For a **new, unpublished version only**, use its specifically authorized manual publisher from `main`, with the required confirmation. Inspect the resulting immutable tag, versioned Skill ZIP, checksum and any separately licensed reference archive. Do not rerun a publisher to overwrite RC.1 or historical betas.
 
 **Merging source code does not automatically publish it.**
 The last published version is determined by an **actual GitHub Release and
 its uploaded ZIP and SHA-256**, never by `VERSION`, `date-released` or a
-merge commit. All public versions remain **experimental betas**, not stable
+merge commit. All public versions remain **experimental prereleases**, not stable
 or independently scientifically validated. The historical **beta.4 Pre-release was published** on 2026-10-11 (UTC) from commit
 `3ef2bfb1f73c42cb029a2862b2c7959c12fe718f`, with an uploaded
-versioned ZIP and `SHA256SUMS.txt`. The **beta.5 Pre-release was published** on 2026-10-14 (UTC) from source commit `267b4239a1aea1ec0d7a6fcf6ba1aa0607e90ccc`, with the versioned ZIP and `SHA256SUMS.txt` attached. `OFFICIAL_SKILL_RELEASE` now recommends **the published experimental beta.5**, not a stable or independently validated release. Historical beta.1/beta.2 tags and
+versioned ZIP and `SHA256SUMS.txt`. The **beta.5 Pre-release was published** on 2026-10-14 (UTC) from source commit `267b4239a1aea1ec0d7a6fcf6ba1aa0607e90ccc`, with the versioned ZIP and `SHA256SUMS.txt` attached. At the time of beta.5 publication it was recommended; the current recommendation is **v1.0.0-rc.1** (2026-11-22), not a stable or independently validated release. Historical beta.1/beta.2 tags and
 assets are retained.
 
 ## Beta.5 maintenance release (2026-10-14)
@@ -125,7 +118,7 @@ correct real-world cross-platform language behavior.
 
 ## Phase 6: offline bundle closure audit
 
-The unreleased development Skill source is packaged by
+The current Skill source is packaged by
 `scripts/build_skill_bundle.py`, which calls the source-only
 `scripts/bundle_dependency_audit.py`. Before writing the archive, it
 checks that links directly navigated from `SKILL.md` are present and
@@ -152,7 +145,7 @@ python scripts/build_skill_bundle.py --verify "dist/MeuArtigoSkill-v$(cat VERSIO
 (cd dist && sha256sum -c SHA256SUMS.txt)
 ```
 
-A CI-built ZIP on `main` is a **development artifact**. Preparing a later candidate is not proof of its publication.
+A CI-built ZIP on `main` is a **development artifact**, not automatically a GitHub release. RC.1 was separately published and verified on 2026-11-22.
 After an authorized manual workflow publishes a *new* tagged beta, verify
 its ZIP and checksum first, then update the official recommendation pointer
 and user-facing download pages. This follow-up was completed for beta.5;
@@ -162,42 +155,16 @@ require a separate decision. The redundant discovery of
 15 Phase-5 unit tests was corrected; software regression counts are
 not measures of scientific validity.
 
-## Last planned beta: 0.9.0-beta.6 (2026-10-15 preparation)
+## Historical beta.6 release preparation (2026-10-15)
 
 The maintainer authorized consolidating PR #70 into the final *planned* experimental beta.6 and documenting that status across the repository. This does **not** assert that beta.6 is stable or that the custom external-tool server and external-tool Apps UI have passed authenticated real-host acceptance. The existing manual workflow remains the only publishing route: merge the reviewed PR to `main`, dispatch **Publish beta (manual)** with `publish-beta` on the same UTC day recorded in `CITATION.cff`, then verify the tag, ZIP and SHA-256. Only after successful release verification may `OFFICIAL_SKILL_RELEASE` and download recommendations switch from beta.5 to beta.6. Do not silently update installed Skills or replace archived release assets.
 
-## v1.0.0-rc.1 — unpublished Skill-only acceptance candidate
+## v1.0.0-rc.1 — published experimental prerelease (2026-11-22)
 
-The source candidate is prepared on a development branch, stacked above
-the reviewed Stage-1 integration PR. It is not yet merged, tagged,
-published, stable, installed in a real host, or independently scientifically
-validated. The existing v0.9.0-beta.6 official download pointer must stay
-unchanged throughout candidate testing.
+The [RC.1 GitHub prerelease](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) exists with the installable Skill ZIP, 51 attributed third-party PDFs in a separate archive, and matching SHA256SUMS. The [manual RC publisher](../.github/workflows/publish-rc1.yml) was used after CI checks; the beta-only workflow continues to reject release candidates. The version is experimental, not a stable v1.0.0, and its existence does not certify all host integrations.
 
-A source `VERSION` ending in `-rc.N` is a **candidate channel**, not
-a public release. The candidate `CITATION.cff` identifies that version
-but **does not** have `date-released`; `CHANGELOG.md` uses an
-`UNRELEASED` candidate heading. Use `python scripts/sync_version.py --candidate` to align README and citation
-version without inserting a date. Do not run the historical
-`sync_version.py --date` command to invent a candidate publication date.
+The repository's current public recommendation is `OFFICIAL_SKILL_RELEASE=1.0.0-rc.1`. `VERSION` matches the released source; `CITATION.cff` and CHANGELOG use its real 2026-11-22 publication date. Keep original beta releases and old tags unchanged. The legacy `--candidate` metadata check is for historical *unpublished* RC fixtures; current CI must instead check published-source metadata without making network claims about installation.
 
-For a candidate PR, the read-only `Release audit` workflow:
-1. Checks `python scripts/check_release_metadata.py --candidate` and fails
-   if a publication date, false official recommendation or misleading
-   candidate status is present.
-2. Runs full regression, privacy/source-language audits and bundle checks.
-3. Attaches the prepared RC ZIP, SHA256SUMS and build receipt to the GitHub
-   Actions run as a **temporary CI test artifact**. These are neither
-   permanent distribution assets nor an authenticated public release.
-4. Never creates a tag, changes the published recommendation or updates
-   an already installed Skill.
+The core CSV/Drive fictional-project run passed while optional XLSX failed for missing dependency. Earlier strict host T02 (151/153) and focused T32/T34 host routes are not fully accepted. The 51 PDFs retain their own licenses and attributions; issues #102/#103 concern historical Git references and remain tracked. Do not infer independent scientific approval of any card or gate.
 
-Inspect the exact SHA, compare the ZIP checksum and install only in a
-controlled test environment. Document platform, verified installed package,
-real interaction outcomes and material limitations before proposing stable
-v1.0.0. The old `Publish beta (manual)` workflow deliberately refuses
-`-rc` and stable versions; a separate stable publishing process requires
-maintainer decision after real-host acceptance.
-
-Do not merge the candidate PR with the earlier stacked component PRs in
-addition to the integration PR: select one history to avoid duplicate changes.
+For future versions, create a new version number and new authorized release rather than overwriting the immutable `v1.0.0-rc.1` tag or assets. Main-branch source documentation may evolve, but it must not falsely describe an already published release as unpublished.

@@ -6,6 +6,7 @@ authors:
   - family-names: "Mendes"
     given-names: "Rebson de Morais"
 version: "1.0.0-rc.1"
+date-released: "2026-11-22"
 doi: "10.5281/zenodo.24397699"
 repository-code: "https://github.com/rebsonm/MeuArtigoSkill"
 url: "https://github.com/rebsonm/MeuArtigoSkill"
@@ -19,9 +20,7 @@ abstract: >-
   AI-use transparency, high-rigor anonymization controls for generated
   external artifacts, and interoperable provenance export.
 
-# The source VERSION is an UNPUBLISHED v1.0.0-rc.1 candidate.
-# No date-released is assigned until a separately authorized GitHub release.
-# The v0.9.0-beta.6 experimental GitHub pre-release was published on 2026-10-15.
-# https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6
-# The Zenodo DOI identifies an archived software record, not this candidate.
-# Candidate source/version metadata are not proof of host installation.
+# v1.0.0-rc.1 was published as an experimental GitHub prerelease on 2026-11-22.
+# https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1
+# Earlier v0.9.0-beta.6 was published on 2026-10-15 and remains archived.
+# Zenodo DOI refers to the registered software deposit, not independent scientific validation.

@@ -3,9 +3,11 @@
 
 ## Unreleased
 
-No further post-candidate changes have been recorded.
+The published v1.0.0-rc.1 prerelease is current; later development is tracked separately.
 
-## 1.0.0-rc.1 — UNRELEASED
+## 1.0.0-rc.1 — 2026-11-22
+
+- Published 51 individually attributed third-party PDFs in the source repository and a separate release archive; preserved 475 bibliographic [P] and 174 editorial [I]/[P] cards. No transfer of third-party licenses into Apache-2.0; historical issues #102/#103 remain tracked.
 
 ### Isolated operational-library integration (2026-11-21)
 
@@ -20,10 +22,7 @@ No further post-candidate changes have been recorded.
   gates, private-PDF boundaries and outstanding historical-risk decisions.
 
 
-**Skill-first release candidate for real-host acceptance.** This entry
-documents a development artifact, not a GitHub release or independent
-scientific validation. Consolidates PRs #95–#98 without changing
-historical beta tags or authorizing a merge, hosted deployment or publication.
+**Published experimental GitHub prerelease on 2026-11-22.** The RC.1 release includes a versioned Skill installer ZIP, a separate archive of 51 attributed CC BY third-party PDFs and SHA256SUMS; see the [GitHub release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1). This is not stable software or independent scientific validation. The original pre-publication work consolidated PRs #95–#98; historical beta tags were preserved.
 
 - Preview potential consequences of changes to quantitative inference
   aims and fields on all eight methodological routes, without approving
@@ -59,7 +58,7 @@ historical beta tags or authorizing a merge, hosted deployment or publication.
 
 - Prepare resumable host-assisted Google Drive project-tree delivery: local manifest, safe next-step recommendation, remote readback reconciliation and incomplete/conflict reporting. Offline synthetic tests are included, but no direct Drive adapter or authenticated end-to-end host test is claimed; published beta.6 assets remain untouched.
 
-The published beta.6 remains the recommended historical public installer; this candidate is not published.
+The earlier beta.6 remains archived for reproducibility; the published experimental recommendation is now v1.0.0-rc.1. A ChatGPT fictional-project run passed CSV initialization, methodology-card orientation, Drive save/readback and scientific gate preservation; optional XLSX generation failed because the dependency was unavailable. This does not imply comprehensive installed-host T02/T32/T34 acceptance.
 
 ## 0.9.0-beta.6 — 2026-10-15
 

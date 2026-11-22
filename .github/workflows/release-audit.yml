@@ -114,12 +114,16 @@ jobs:
       - name: Provenance smoke test
         run: python scripts/smoke_test_provenance.py
 
-      - name: Verify unpublished release-candidate metadata
+      - name: Verify candidate or published RC source metadata
         id: rc
         shell: bash
         run: |
           if [[ "$(cat VERSION)" =~ -rc\.[1-9][0-9]*$ ]]; then
-            python scripts/check_release_metadata.py --candidate
+            if [[ "$(cat VERSION)" == "$(cat OFFICIAL_SKILL_RELEASE)" ]]; then
+              python scripts/check_release_metadata.py --published-source
+            else
+              python scripts/check_release_metadata.py --candidate
+            fi
             echo "eligible=true" >> "$GITHUB_OUTPUT"
           else
             echo "eligible=false" >> "$GITHUB_OUTPUT"

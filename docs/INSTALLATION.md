@@ -4,24 +4,13 @@ You do not need to be a programmer or use GitHub commands to install Meu Artigo.
 
 ## Which version should I use?
 
-The [beta.6 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) is the **confirmed published experimental installer**. [Download its prepared ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.6/MeuArtigoSkill-v0.9.0-beta.6.zip) and the matching SHA-256 from the official release. Unmerged corrections in PRs are not part of this package.
+The **current published experimental prerelease is [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1)** (22 November 2026). Download the [prepared Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip) and [SHA256SUMS](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/SHA256SUMS.txt) directly from GitHub. It is experimental, not stable v1.0.0 or comprehensive host certification.
 
-All current releases are experimental; none is independently scientifically validated.
-
-**For controlled acceptance testers only:** the development PR for
-`1.0.0-rc.1` can provide a temporary GitHub Actions artifact named
-`MeuArtigoSkill-rc-test-only`, containing the prepared installer,
-`SHA256SUMS.txt` and a build receipt. Verify the successful audit,
-the exact PR commit and digest. This is **not** a published GitHub
-Release, not a stable version and not an automatic update. Unpack the
-CI artifact first and import only its prepared
-`MeuArtigoSkill-v1.0.0-rc.1.zip` through a compatible Skills interface.
-Do not import the outer Actions artifact or GitHub source-code ZIP as
-the Skill. Do not use sensitive research records in experimental tests.
+The release also contains a [separate archive of 51 attributed academic PDFs](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigo-PDFs-51-attributed.zip). **Do not import this PDF archive as a Skill**. The older [beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) remains accessible for historical comparison.
 
 ## Install in a supported assistant
 
-1. On the published release page, download the file named `MeuArtigoSkill-v0.9.0-beta.6.zip` and, if you wish to verify it, `SHA256SUMS.txt`.
+1. On the published release page, download the file named `MeuArtigoSkill-v1.0.0-rc.1.zip` and, if you wish to verify it, `SHA256SUMS.txt`.
 2. In your assistant, find its supported **Skills** import feature. The name and availability depend on the service and account.
 3. Import the downloaded Skill ZIP. If your environment instead uses Skill folders, unpack it so that `SKILL.md` is at the top level.
 4. Start a conversation in your usual language:

@@ -1,3 +1,9 @@
+# Historical release-notes draft — superseded by published v1.0.0-rc.1 (2026-11-22)
+
+> **Archived pre-publication snapshot.** Its original DRAFT / NOT PUBLISHED statements reflect the state **before** the official [RC.1 GitHub release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1). For current download links, functional limitations and 51-PDF attribution, use [the published notes](RC1-GITHUB-PRERELEASE-NOTES.md) and [version notes](NOTAS-DA-VERSAO-1.0.0-rc.1.md). Do not use this historical document to determine current status.
+
+---
+
 # Meu Artigo v1.0.0-rc.1 — Release notes (DRAFT, NOT PUBLISHED)
 
 > **Release candidate / proposed experimental prerelease.** This document is for maintainer review **before** any tag, merge into `main`, or GitHub Release. Do not describe the candidate as stable, independently scientifically approved, or accepted on a real host.

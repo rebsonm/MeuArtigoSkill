@@ -2,7 +2,7 @@
 
 This **experimental beta** is open to voluntary use and feedback. The purpose of feedback is to identify confusing steps, accessibility barriers and scientific-governance risks, not to endorse the tool.
 
-**Installer currently confirmed:** [beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) with published ZIP and checksum. Tests of newer PR candidates must identify their actual commit; installing published beta.6 does not include those unmerged corrections.
+**Installer currently confirmed:** [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1), published on 2026-11-22 with [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip) and checksum. This is an experimental prerelease, not a stable or independently scientifically validated product. Beta.6 is a previous historical release. Report your actual installed build and observed limitations, including optional XLSX dependencies.
 
 ## A simple way to try it
 

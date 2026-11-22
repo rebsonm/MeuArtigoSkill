@@ -20,6 +20,6 @@
 
 An assistant can say that a step is planned, completed or unverified only when the available evidence supports that status. You remain responsible for research ethics, source rights and scientific decisions.
 
-**Availability:** [beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) is the confirmed published experimental installer. Future PR changes are not automatically included.
+**Availability:** [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) is the current published experimental installer with a separate archive of 51 credited PDFs. The beta.6 release remains historical. The optional XLSX failed in one host because its dependency was unavailable; primary CSV/Drive workflow passed. Newer PR changes are not part of immutable RC.1 assets.
 
 [[Start here|Start-Here]] · [[FAQ]] · [Researcher evaluation limits](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/VALIDACOES-PENDENTES.md).

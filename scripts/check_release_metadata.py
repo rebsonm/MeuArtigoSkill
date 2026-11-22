@@ -85,6 +85,30 @@ def audit_candidate_metadata(root: Path) -> list[str]:
     return errors
 
 
+
+def audit_published_source_metadata(root: Path) -> list[str]:
+    """Check source metadata AFTER an actual release was verified externally.
+
+    This is an offline consistency check: it must never pretend to query GitHub
+    or prove installation in an assistant host.
+    """
+    root = Path(root)
+    errors = audit_release_metadata(root)
+    version = read_version(root)
+    official = (root / "OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip()
+    citation = (root / "CITATION.cff").read_text(encoding="utf-8")
+    readme = (root / "README.md").read_text(encoding="utf-8")
+    if official != version:
+        errors.append("PUBLISHED_RECOMMENDATION_DIFFERS_FROM_SOURCE_VERSION")
+    if f'version: "{version}"' not in citation:
+        errors.append("CITATION_VERSION_INCONSISTENT")
+    if f"**Current version:** `{version}`" not in readme:
+        errors.append("README_SOURCE_VERSION_INCONSISTENT")
+    if "published" not in readme.lower() or "experimental" not in readme.lower():
+        errors.append("PUBLISHED_PRERELEASE_NOT_CLEARLY_DESCRIBED")
+    return errors
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo", default=str(ROOT))
@@ -93,15 +117,20 @@ def main(argv=None) -> int:
                       help="Require CITATION date to match UTC day of publication")
     mode.add_argument("--candidate", action="store_true",
                       help="Audit unpublished RC metadata without a publication date")
+    mode.add_argument("--published-source", action="store_true",
+                      help="Audit metadata of an already published release without checking GitHub")
     args = parser.parse_args(argv)
     when = datetime.now(timezone.utc).date().isoformat() if args.require_today else None
     try:
         errors = (audit_candidate_metadata(Path(args.repo)) if args.candidate else
+                  audit_published_source_metadata(Path(args.repo)) if args.published_source else
                   audit_release_metadata(Path(args.repo), expected_date=when))
     except (OSError, ValueError):
         print("release_metadata=BLOCKED; cannot read verified source")
         return 2
-    ready = "READY_FOR_CANDIDATE_TESTING" if args.candidate else "READY_FOR_MANUAL_REVIEW"
+    ready = ("READY_FOR_CANDIDATE_TESTING" if args.candidate else
+             "PUBLISHED_SOURCE_METADATA_CONSISTENT" if args.published_source else
+             "READY_FOR_MANUAL_REVIEW")
     print("release_metadata=" + ("BLOCKED" if errors else ready))
     for code in errors:
         print("  " + code)

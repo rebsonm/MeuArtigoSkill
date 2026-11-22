@@ -1,9 +1,7 @@
 # Security policy — Meu Artigo
 
 
-> **Last planned experimental beta: `v0.9.0-beta.6` (release preparation, 2026-10-15).** The cumulative continuity, conversational resume and safe blocker guidance update is documented in [beta.6 release notes](docs/NOTAS-DA-VERSAO-0.9.0-beta.6.md). **Beta.5 remains the latest published installer until GitHub actually publishes beta.6 and its checksum.** This last-beta designation is a plan, not stable certification; the project-owned external-tool service and external-tool Apps UI are not live-validated. Existing installations do not auto-update.
-
-> **Published release (2026-10-14):** [v0.9.0-beta.5](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.5) is the **recommended experimental beta**. Its versioned [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/MeuArtigoSkill-v0.9.0-beta.5.zip) and [SHA-256 checksum](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v0.9.0-beta.5/SHA256SUMS.txt) are available. Previous releases remain archived; installed Skills do not automatically update.
+> **Current published experimental release: [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1)** (2026-11-22). [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip), a separately attributed 51-PDF archive and checksums are attached. Older beta.6 and beta.5 tags remain historical. This prerelease is not stable or independently scientifically validated. Existing installations do not auto-update.
 
 
 ## Scope
@@ -52,8 +50,7 @@ and [secure export](docs/EXPORTACAO-SEGURA.md).
 
 ## Version coverage
 
-This policy covers historical `0.8.x-beta` and published `0.9.x-beta`
-releases as well as subsequent source candidates, unless superseded.
+This policy covers historical `0.8.x-beta` and `0.9.x-beta` releases, the published experimental `v1.0.0-rc.1` prerelease, and subsequent development candidates unless superseded.
 Current experimental public recommendation: `v0.9.0-beta.5` (published as a
 GitHub Pre-release on 2026-10-14, with its tagged ZIP and SHA-256). Historical
 beta.1 and beta.2 packages remain available.
