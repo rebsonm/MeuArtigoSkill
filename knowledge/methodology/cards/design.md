@@ -16,3 +16,9 @@ Compare possible designs by expected evidence, feasible collection, analysis, va
 ## Source trail
 
 Bibliographic pointers: Saunders, Lewis and Thornhill, *Research Methods for Business Students*; Creswell and Creswell, *Research Design*. This is original editorial guidance, not reproduced book text, and it does not claim direct consultation of any specific edition for an ongoing study.
+
+## Question-to-method vertical coherence
+
+Trace **phenomenon -> unresolved issue -> research question -> objective -> theoretical constructs -> required observations -> sampling/analysis -> bounded contribution**. For each arrow ask what evidence would falsify a claim, what rival interpretation remains plausible, and whether the necessary data actually exist. Distinguish procedures that are *planned*, *performed* or *independently verified*. A causal promise cannot be justified by descriptive-only observations, and interpretive designs need not invent numerical hypotheses.
+
+This is an original editorial check; source leads for validation include Bono & McNamara (2011), DOI 10.5465/amj.2011.64869103. See [public writing and method-fit guide](../../../references/RESEARCH-WRITING-AND-METHOD-FIT.md).

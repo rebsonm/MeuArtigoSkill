@@ -30,3 +30,11 @@ Publisher: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcb
 ## Provenance limits
 
 This is an independent editorial synthesis, not a quotation, translation, extended excerpt or reproduction of a published work's protected expression. A concrete claim must be verified against the primary source and its printed page where appropriate. The user, not this card, decides methods and scientific gates.
+
+## ABCD introduction diagnostic (original editorial synthesis)
+
+Use four connected argument moves: **A — area/context/stakes** (why the phenomenon matters); **B — boundary/tension** (what the nearest literature does and does not yet explain, and why it matters); **C — conceptual lens** (constructs, mechanisms and assumptions); **D — direction/contribution** (explicit question, matching objective, feasible investigation and bounded expected gain). They are not prescribed paragraph counts or a canonical model attributed verbatim to any referenced author.
+
+Check that all moves concern the same research unit and construct. A claim that "nobody has studied this" needs a defensible review, not rhetorical emphasis. Do not label proposed results as findings. Related bibliographic leads for separate checking: Grant & Pollock (2011), DOI 10.5465/amj.2011.4000; Barney (2018), DOI 10.5465/amr.2018.0112; Alvesson & Sandberg (2011), DOI 10.5465/amr.2009.0188; Bispo (2023), DOI 10.1590/1982-7849rac2023220256.por.
+
+Full original operational checklist: [ABCD and methodological fit](../../../references/RESEARCH-WRITING-AND-METHOD-FIT.md).

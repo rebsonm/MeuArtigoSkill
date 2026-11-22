@@ -50,7 +50,7 @@
       ],
       "path": "knowledge/methodology/cards/design.md",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
-      "sha256": "0500934ef64ec197da6b23d56a6b935d64408b4f5cdaffa8c2964d1638b4f84d",
+      "sha256": "f0a704adb416980575f655ab90e31b739852f2cc3fdf294b8efdc06c39de0b25",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
       "title": "Study design and research inference",
       "operational_disposition": "VALIDADO_COM_RESTRICOES",
@@ -634,7 +634,7 @@
       "title": "Scientific article structure: align claims, evidence and reader navigation",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "2fe6e5a440306a6bec3197e50040dd9ad122c24fc73ffe06540239b41fe93056",
+      "sha256": "5c7aba4f78c8d7248b861935632f6710b9fa08aca924882b5ed811f3d397f001",
       "keywords": [
         "writing",
         "article",
@@ -1484,7 +1484,7 @@
       "title": "Responsible AI in scientific workflows: separate assistance from proof",
       "rights": "PUBLIC_REDISTRIBUTION_REVIEWED",
       "source_kind": "ORIGINAL_CURATED_SUMMARY",
-      "sha256": "29f4ec706284e4227b7978e797ac4812490505f96593a3f10ec82014c4ca2703",
+      "sha256": "33ebc8fdeb5aabc307282f8e305f40eb349c08e4cbb9bfc2843e96f4f80a76a4",
       "keywords": [
         "ai",
         "llm",

@@ -8994,19 +8994,21 @@
       "path": "knowledge/methodology/cards/design.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "0500934ef64ec197da6b23d56a6b935d64408b4f5cdaffa8c2964d1638b4f84d",
+      "sha256": "f0a704adb416980575f655ab90e31b739852f2cc3fdf294b8efdc06c39de0b25",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-04-DELTA.json",
-        "knowledge/methodology/intake/independent-editorial-review.json"
+        "knowledge/methodology/intake/independent-editorial-review.json",
+        "knowledge/methodology/intake/PUBLIC-EDITORIAL-EXTENSIONS-2026-11-22.md"
       ],
-      "reason": "Individual IA content review and deterministic integrity check; restrictions/blockers from review retained.",
+      "reason": "Individual IA content review and deterministic integrity check; restrictions/blockers from review retained. Editorial extension (2026-11-22) has updated digest only; independent scientific review of new text NOT performed.",
       "review_record": "knowledge/methodology/intake/independent-editorial-review.json#knowledge/methodology/cards/design.md",
       "primary_source_rechecked_this_cycle": false,
       "limits": [
         "Editorial orientation only",
         "Not independently validated science",
         "Read exact source passages before [L]",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "2026-11-22 extension: new text is unreviewed editorial [I]/[P], not new [L] evidence"
       ]
     },
     {
@@ -9374,19 +9376,21 @@
       "path": "knowledge/methodology/cards/manuscript-argument-structure.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "2fe6e5a440306a6bec3197e50040dd9ad122c24fc73ffe06540239b41fe93056",
+      "sha256": "5c7aba4f78c8d7248b861935632f6710b9fa08aca924882b5ed811f3d397f001",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-05-DELTA.json",
-        "knowledge/methodology/intake/independent-editorial-review.json"
+        "knowledge/methodology/intake/independent-editorial-review.json",
+        "knowledge/methodology/intake/PUBLIC-EDITORIAL-EXTENSIONS-2026-11-22.md"
       ],
-      "reason": "Individual IA content review and deterministic integrity check; restrictions/blockers from review retained.",
+      "reason": "Individual IA content review and deterministic integrity check; restrictions/blockers from review retained. Editorial extension (2026-11-22) has updated digest only; independent scientific review of new text NOT performed.",
       "review_record": "knowledge/methodology/intake/independent-editorial-review.json#knowledge/methodology/cards/manuscript-argument-structure.md",
       "primary_source_rechecked_this_cycle": false,
       "limits": [
         "Editorial orientation only",
         "Not independently validated science",
         "Read exact source passages before [L]",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "2026-11-22 extension: new text is unreviewed editorial [I]/[P], not new [L] evidence"
       ]
     },
     {
@@ -9974,19 +9978,21 @@
       "path": "knowledge/methodology/cards/responsible-ai-research-assistance.md",
       "kind": "EDITORIAL_GUIDANCE",
       "disposition": "VALIDADO_COM_RESTRICOES",
-      "sha256": "29f4ec706284e4227b7978e797ac4812490505f96593a3f10ec82014c4ca2703",
+      "sha256": "33ebc8fdeb5aabc307282f8e305f40eb349c08e4cbb9bfc2843e96f4f80a76a4",
       "evidence": [
         "knowledge/methodology/intake/v1_parallel/V1-06-DELTA.json",
-        "knowledge/methodology/intake/independent-editorial-review.json"
+        "knowledge/methodology/intake/independent-editorial-review.json",
+        "knowledge/methodology/intake/PUBLIC-EDITORIAL-EXTENSIONS-2026-11-22.md"
       ],
-      "reason": "Individual IA content review and deterministic integrity check; restrictions/blockers from review retained.",
+      "reason": "Individual IA content review and deterministic integrity check; restrictions/blockers from review retained. Editorial extension (2026-11-22) has updated digest only; independent scientific review of new text NOT performed.",
       "review_record": "knowledge/methodology/intake/independent-editorial-review.json#knowledge/methodology/cards/responsible-ai-research-assistance.md",
       "primary_source_rechecked_this_cycle": false,
       "limits": [
         "Editorial orientation only",
         "Not independently validated science",
         "Read exact source passages before [L]",
-        "No scientific gate approval"
+        "No scientific gate approval",
+        "2026-11-22 extension: new text is unreviewed editorial [I]/[P], not new [L] evidence"
       ]
     },
     {
@@ -12472,5 +12478,11 @@
     }
   ],
   "operational_scope_amendment": "knowledge/methodology/intake/operational-scope-amendment.json",
-  "scientific_primary_claims_validated": 0
+  "scientific_primary_claims_validated": 0,
+  "editorial_extensions_2026_11_22": {
+    "record": "knowledge/methodology/intake/PUBLIC-EDITORIAL-EXTENSIONS-2026-11-22.md",
+    "scope": "THREE_EXISTING_EDITED_CARDS",
+    "new_scientific_claims_validated": 0,
+    "new_source_pdfs_distributed": 0
+  }
 }
