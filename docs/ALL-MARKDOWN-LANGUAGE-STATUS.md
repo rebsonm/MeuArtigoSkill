@@ -11,8 +11,8 @@ exempted the methodology cards and intake records.
 
 ## Changes in this migration increment
 
-- The four editorial cards on Snyder (2019), Grant and Booth (2009),
-  Marzi et al. (2025), and Jaakkola (2020) now contain English editorial prose.
+- The three editorial cards on Snyder (2019), Grant and Booth (2009),
+  and Jaakkola (2020) now contain English editorial prose.
 - The SRC-0001 and SRC-0002 bibliographic prospecting cards have English
   editorial prose, without changing their source records or research status.
 - Updated catalogue SHA-256 values track the exact changed card bytes.
@@ -23,8 +23,8 @@ exempted the methodology cards and intake records.
 
 Marzi et al. (2025) retains its previously reviewed Portuguese card because
 the original correction and review receipt binds to its historic exact hash.
-Its separate English editorial translation must undergo fresh independent
-fidelity checks before replacing the hash-bound card.
+An English replacement would require fresh independent fidelity checks
+before replacing the hash-bound card.
 
 ## Outstanding work and nonclaims
 

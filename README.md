@@ -8,7 +8,6 @@ titles, quoted source evidence and stable identifiers remain unchanged.
 See the [English migration guide](docs/ENGLISH-SOURCE-MIGRATION.md) for the
 complete Markdown audit commands and the strict unresolved-language check. The
 installed assistant still responds in the researcher's requested language.
-See [the full migration scope](docs/ENGLISH-SOURCE-MIGRATION.md).
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24397699.svg)](https://doi.org/10.5281/zenodo.24397699)
 
