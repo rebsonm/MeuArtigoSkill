@@ -23,8 +23,9 @@ class FourChoiceDecisionGuidanceTests(unittest.TestCase):
         doc = (ROOT / "references/decision-navigation.md").read_text(encoding="utf-8")
         for required in (
             "exactly three", "A, B, C", "Pros", "Cons",
-            "Recommended", "D — Other", "open text field",
-            "native interaction controls", "plain Markdown",
+            "Recommended", "D — Other", "Submit answer",
+            "real editable free-text field immediately beneath D",
+            "ordinary platform message composer",
             "researcher's own rationale", "PENDING",
             "one", "not adopting it", "MINIMAL/FULL",
             "single-select radio button immediately before each option",
