@@ -85,7 +85,7 @@ class CandidatePreparationTests(unittest.TestCase):
         (self.root / "VERSION").write_text("1.0.0-rc.3\n")
         (self.root / "OFFICIAL_SKILL_RELEASE").write_text("1.0.0-rc.1\n")
         (self.root / "docs/NOTAS-DA-VERSAO-1.0.0-rc.3.md").write_text(
-            "RC.3 RELEASE CANDIDATE ONLY — NOT PUBLISHED. NOT A STABLE RELEASE.\n")
+            "1.0.0-rc.3 RELEASE CANDIDATE ONLY — NOT PUBLISHED. NOT A STABLE RELEASE.\n")
         changelog = self.root / "CHANGELOG.md"
         changelog.write_text(
             changelog.read_text().replace("## 1.0.0-rc.1 — UNRELEASED",
