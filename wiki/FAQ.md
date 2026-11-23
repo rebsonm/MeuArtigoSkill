@@ -1,5 +1,8 @@
 # Questions and troubleshooting
 
+**RC.3 authorized release (2026-11-23 UTC):** [GitHub v1.0.0-rc.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) | [installable Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.3/MeuArtigoSkill-v1.0.0-rc.3.zip). Historical RC.1 references below remain valid for their original archived assets; the Zenodo RC.3 version-specific DOI is pending independent verification.
+
+
 ### Do I need to know how to code?
 
 No. A supported assistant can import the prepared Skill package; installing from its source repository is a different process.
