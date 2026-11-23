@@ -132,6 +132,11 @@ jobs:
         id: rc
         shell: bash
         run: |
+          if [[ "$(cat VERSION)" == "1.0.0-rc.4" ]]; then
+            echo "plugin_only=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "plugin_only=false" >> "$GITHUB_OUTPUT"
+          fi
           if [[ "$(cat VERSION)" =~ -rc\.[1-9][0-9]*$ ]]; then
             if [[ "$(cat VERSION)" == "$(cat OFFICIAL_SKILL_RELEASE)" ]]; then
               python scripts/check_release_metadata.py --published-source
@@ -143,21 +148,38 @@ jobs:
             echo "eligible=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Build and verify installable Skill ZIP
+      - name: Preflight unpublished RC4 plugin-only candidate
+        if: steps.rc.outputs.plugin_only == 'true'
+        run: python scripts/build_plugin_bundle.py --preflight
+
+      - name: Build RC4 plugin only when the approved logo exists
+        if: steps.rc.outputs.plugin_only == 'true'
+        shell: bash
+        run: |
+          if [[ -f assets/rc4-logo.png ]]; then
+            python scripts/build_plugin_bundle.py
+            python scripts/build_plugin_bundle.py --verify "dist/MeuArtigoPlugin-v$(cat VERSION).zip"
+            (cd dist && sha256sum -c SHA256SUMS.txt)
+          else
+            echo "::warning::RC4_LOGO_PENDING; NO installable RC4 package generated"
+          fi
+
+      - name: Build historical Skill ZIP (never for RC4)
+        if: steps.rc.outputs.plugin_only != 'true'
         run: |
           python scripts/build_skill_bundle.py
           python scripts/build_skill_bundle.py --verify "dist/MeuArtigoSkill-v$(cat VERSION).zip"
           (cd dist && sha256sum -c SHA256SUMS.txt)
 
       - name: Package reviewed PDFs in a separate trial ZIP
-        if: github.event_name == 'pull_request' && steps.rc.outputs.eligible == 'true'
+        if: github.event_name == 'pull_request' && steps.rc.outputs.eligible == 'true' && steps.rc.outputs.plugin_only != 'true'
         run: |
           python scripts/build_reviewed_pdf_candidate.py \
             --base-zip "dist/MeuArtigoSkill-v$(cat VERSION).zip" \
             --out "$RUNNER_TEMP/MeuArtigoSkill-v$(cat VERSION)-PDFs-TEST-ONLY.zip"
 
       - name: Upload PDF-bearing TEST-ONLY ZIP separately from installable Skill
-        if: github.event_name == 'pull_request' && steps.rc.outputs.eligible == 'true'
+        if: github.event_name == 'pull_request' && steps.rc.outputs.eligible == 'true' && steps.rc.outputs.plugin_only != 'true'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: MeuArtigoSkill-PDFs-TEST-ONLY-NOT-RELEASE
@@ -165,7 +187,7 @@ jobs:
           if-no-files-found: error
           retention-days: 30
       - name: Upload checked Skill bundle as CI artifact (not a release)
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && steps.rc.outputs.plugin_only != 'true'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: MeuArtigoSkill-ci
@@ -176,7 +198,7 @@ jobs:
           retention-days: 30
 
       - name: Upload RC installation ZIP for controlled review (not a release)
-        if: github.event_name == 'pull_request' && steps.rc.outputs.eligible == 'true'
+        if: github.event_name == 'pull_request' && steps.rc.outputs.eligible == 'true' && steps.rc.outputs.plugin_only != 'true'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: MeuArtigoSkill-rc-test-only
@@ -185,4 +207,16 @@ jobs:
             dist/SHA256SUMS.txt
             dist/BUNDLE_BUILD_RECEIPT.json
           if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload RC4 plugin candidate only (not a release)
+        if: steps.rc.outputs.plugin_only == 'true'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: MeuArtigoPlugin-rc4-test-only-not-published
+          path: |
+            dist/MeuArtigoPlugin-v*.zip
+            dist/SHA256SUMS.txt
+            dist/PLUGIN_BUILD_RECEIPT.json
+          if-no-files-found: warn
           retention-days: 30

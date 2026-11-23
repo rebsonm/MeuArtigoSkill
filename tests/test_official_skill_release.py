@@ -1,44 +1,34 @@
-"""Publish RC.3 without rewriting historical RC.1 assets.
-
-These offline checks cannot prove an external release or active installation.
-"""
+"""Historical standalone Skill assets must remain unchanged during RC.4 plugin migration."""
 from pathlib import Path
 import unittest
 
-ROOT = Path(__file__).resolve().parents[1]
-BASE_URL = "https://github.com/rebsonm/MeuArtigoSkill/releases/download"
-GUIDES = ("README.md", "docs/INSTALLATION.md", "docs/COMECE-AQUI.md",
-          "docs/CHATGPT.md", "docs/IMPLANTACAO-BETA.md")
+ROOT=Path(__file__).resolve().parents[1]
+BASE="https://github.com/rebsonm/MeuArtigoSkill"
+PUBLISHED="1.0.0-rc.3"
 
+class HistoricalSkillReleaseTests(unittest.TestCase):
+    def test_published_rc3_pointer_remains_historical(self):
+        self.assertEqual((ROOT/"OFFICIAL_SKILL_RELEASE").read_text().strip(),PUBLISHED)
+        self.assertEqual((ROOT/"VERSION").read_text().strip(),"1.0.0-rc.4")
+        old_url=f"{BASE}/releases/download/v{PUBLISHED}/MeuArtigoSkill-v{PUBLISHED}.zip"
+        for path in ("docs/INSTALLATION.md","docs/CURRENT-RELEASE.md"):
+            self.assertIn(old_url,(ROOT/path).read_text(encoding="utf-8"))
+        self.assertIn(f"{BASE}/releases/tag/v{PUBLISHED}",
+                      (ROOT/"README.md").read_text(encoding="utf-8"))
+        self.assertNotIn("MeuArtigoSkill-v1.0.0-rc.4.zip",
+                         (ROOT/"README.md").read_text(encoding="utf-8"))
 
-class OfficialRecommendationTests(unittest.TestCase):
-    def test_published_rc3_pointer_and_download_links(self):
-        recommended = (ROOT / "OFFICIAL_SKILL_RELEASE").read_text().strip()
-        self.assertEqual(recommended, "1.0.0-rc.3")
-        self.assertEqual((ROOT / "VERSION").read_text().strip(), "1.0.0-rc.3")
-        url = f"{BASE_URL}/v{recommended}/MeuArtigoSkill-v{recommended}.zip"
-        for filename in GUIDES:
-            with self.subTest(filename=filename):
-                self.assertIn(url, (ROOT / filename).read_text(encoding="utf-8"))
-        self.assertIn("Recommended published experimental prerelease",
-                      (ROOT / "README.md").read_text(encoding="utf-8"))
+    def test_candidate_not_mislabeled_published(self):
+        text=(ROOT/"README.md").read_text(encoding="utf-8").lower()
+        self.assertIn("unpublished release candidate",text)
+        self.assertIn("not a stable release",text)
+        self.assertIn("plugin",text)
+        self.assertIn("v0.9.0-beta.6",text)
 
-    def test_source_is_published_experimental_not_host_certified(self):
-        version = (ROOT / "VERSION").read_text().strip()
-        readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        self.assertIn(f"**Current version:** `{version}`", readme)
-        self.assertNotIn("unpublished release candidate source", readme)
-        self.assertIn("published GitHub experimental prerelease", readme)
-        self.assertIn("no stable v1.0.0", readme)
-        self.assertIn("optional XLSX", readme)
-        self.assertIn("v0.9.0-beta.6", readme)
-        self.assertIn("/releases/tag/v" + version, readme)
+    def test_historical_release_notes_survive(self):
+        for version in ("0.9.0-beta.1","0.9.0-beta.2","0.9.0-beta.4",
+                        "0.9.0-beta.5","0.9.0-beta.6","1.0.0-rc.1","1.0.0-rc.3"):
+            self.assertTrue((ROOT/"docs"/f"NOTAS-DA-VERSAO-{version}.md").is_file())
 
-    def test_historical_releases_remain_available_as_history(self):
-        for version in ("0.9.0-beta.1", "0.9.0-beta.2", "0.9.0-beta.4",
-                        "0.9.0-beta.5", "0.9.0-beta.6", "1.0.0-rc.1"):
-            self.assertTrue((ROOT / "docs" / f"NOTAS-DA-VERSAO-{version}.md").exists())
-
-
-if __name__ == "__main__":
+if __name__=="__main__":
     unittest.main()

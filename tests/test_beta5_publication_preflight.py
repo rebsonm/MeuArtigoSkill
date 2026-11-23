@@ -1,35 +1,30 @@
-"""Preserve published beta history alongside published RC.1 metadata."""
+"""Keep historical beta release evidence without treating RC.4 as published."""
 from pathlib import Path
 import sys
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"scripts"))
-from check_release_metadata import audit_published_source_metadata
+from check_release_metadata import audit_candidate_metadata
 from version_info import read_version
 
-class Beta5PublicationTests(unittest.TestCase):
+class Beta5PublicationHistoryTests(unittest.TestCase):
     def setUp(self):
         self.version=read_version(ROOT)
-        self.notes=(ROOT/"docs"/"NOTAS-DA-VERSAO-0.9.0-beta.6.md").read_text(encoding="utf-8")
+        self.notes=(ROOT/"docs/NOTAS-DA-VERSAO-0.9.0-beta.6.md").read_text(encoding="utf-8")
         self.readme=(ROOT/"README.md").read_text(encoding="utf-8")
 
-    def test_consistent_release_metadata(self):
-        self.assertEqual(self.version,"1.0.0-rc.3")
-        self.assertEqual(audit_published_source_metadata(ROOT),[])
-        self.assertIn("recommended published experimental prerelease",self.readme.lower())
-        self.assertIn("published github experimental prerelease",self.readme.lower())
+    def test_historical_beta_and_current_candidate_distinction(self):
+        self.assertEqual(self.version,"1.0.0-rc.4")
+        self.assertEqual(audit_candidate_metadata(ROOT),[])
+        self.assertIn("experimental",self.readme.lower())
         self.assertIn("pre-release",self.notes.lower())
         self.assertIn("not a stable",self.notes.lower())
-
-    def test_release_is_experimental(self):
-        self.assertIn("Every 0.9.0-beta release is experimental",self.readme)
         self.assertIn("No independent scientific validation",self.notes)
         self.assertIn("seven researcher decision gates",self.notes)
-        self.assertNotIn("v1.0.0 has been published",self.readme)
 
-    def test_user_guides_and_recommendation(self):
-        self.assertEqual((ROOT/"OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip(),"1.0.0-rc.3")
+    def test_history_and_manual_publisher_unchanged(self):
+        self.assertEqual((ROOT/"OFFICIAL_SKILL_RELEASE").read_text().strip(),"1.0.0-rc.3")
         guide=(ROOT/"docs/TESTE-BETA-PESQUISADORES.md").read_text(encoding="utf-8")
         issue=(ROOT/".github/ISSUE_TEMPLATE/relato-beta.md").read_text(encoding="utf-8")
         self.assertIn("v1.0.0-rc.1",guide)
@@ -38,10 +33,9 @@ class Beta5PublicationTests(unittest.TestCase):
         self.assertIn("Expected result",issue)
         self.assertIn("Actual observed result",issue)
         self.assertIn("v0.9.0-beta.6",self.readme)
-
-    def test_manual_publishing_enforces_explicit_confirmation(self):
         workflow=(ROOT/".github/workflows/publish-beta.yml").read_text(encoding="utf-8")
-        for fragment in ("workflow_dispatch:","acknowledgement",'"$ACK" != "publish-beta"', "gh release create","--prerelease","--latest=false"):
+        for fragment in ("workflow_dispatch:","acknowledgement",'"$ACK" != "publish-beta"',
+                         "gh release create","--prerelease","--latest=false"):
             self.assertIn(fragment,workflow)
         self.assertNotIn("pull_request:",workflow)
 

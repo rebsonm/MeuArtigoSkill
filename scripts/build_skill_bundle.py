@@ -37,7 +37,7 @@ EXCLUDED_SCRIPT_NAMES = frozenset({
     "check_documentation_links.py", "check_install_package.py",
     "check_release_metadata.py", "release_audit.py",
     "smoke_test_provenance.py", "sync_version.py",
-    "build_skill_bundle.py", "quality_benchmark.py",
+    "build_skill_bundle.py", "build_plugin_bundle.py", "quality_benchmark.py",
     "bundle_dependency_audit.py",
     "homologate_integrated_skill.py",
 })

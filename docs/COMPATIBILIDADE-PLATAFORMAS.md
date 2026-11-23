@@ -1,30 +1,20 @@
-# Where can I use Meu Artigo?
+# Meu Artigo — compatibility and distribution from RC.4
 
-**RC.3 authorized release (2026-11-23 UTC):** [GitHub v1.0.0-rc.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) | [installable Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.3/MeuArtigoSkill-v1.0.0-rc.3.zip). Historical RC.1 references below remain valid for their original archived assets; the Zenodo RC.3 version-specific DOI is pending independent verification.
+**Only the ChatGPT plugin is planned for RC.4.** There will be no standalone RC.4 Skill ZIP or dedicated Claude/Gemini installation package. The GitHub repository remains public source code and historical Skill releases remain untouched.
 
-
-Meu Artigo is distributed as a **Skill**, but installing Skills and accessing external research services depend on your assistant and account.
-
-| Platform | How you may use Meu Artigo | What to check |
+| Surface | RC.4 plan | Evidence status |
 | --- | --- | --- |
-| ChatGPT | Import the prepared Skill ZIP if Skills import is offered | Installed version; access to saved files and connected services |
-| Claude / Claude Code | Import a custom Skill or use a supported local Skill directory | Whether the product can run scripts and preserve project files |
-| Gemini | Import the Skill where the product supports it | Supported files, available tools and reliable storage |
+| ChatGPT normal chat | Select the official Meu Artigo plugin | Lab plugin observed by maintainer; official RC.4 NOT_VERIFIED |
+| ChatGPT Work | Use the same official plugin when Work exposes it | Lab plugin observed by maintainer; official RC.4 NOT_VERIFIED |
+| Standalone Skill import | **Not offered for RC.4** | Historical RC.3 and earlier only |
+| Claude / Gemini | No official RC.4 installer promised | NOT_SUPPORTED_AS_A_RELEASE_TARGET |
 
-[ChatGPT guide](CHATGPT.md) · [Claude guide](CLAUDE.md) · [Gemini guide](GEMINI.md) · [Installation](INSTALLATION.md)
+The internal `skills/meu-artigo/SKILL.md` is part of the plugin archive. It does not create a separate product or guarantee a host will execute bundled scripts.
 
-## What is independent of the platform?
+Researcher interactions may use Portuguese, English or another requested language. Source documents are maintained mainly in English and manuscripts follow verified editorial requirements independently.
 
-You can describe a research problem, discuss methodological options, review source evidence and control your own scientific decisions. Seven significant scientific checkpoints remain under researcher responsibility.
+Full platform capability verification remains PENDING. See [platform-capability-preflight.md](../references/platform-capability-preflight.md). External tools, writable Drive, remote GitHub consultation, native choice UI and local Python execution depend on the host and permissions; a successful static package test is not a real-host functional test. Scientific judgments remain subject to human review and the seven gates.
 
-## What varies?
+**Last published version:** [GitHub RC.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) with [Zenodo DOI](https://doi.org/10.5281/zenodo.24452285). **RC.4: unpublished candidate; no DOI.**
 
-- **Storage:** a displayed Drive connection is not proof of a successful file write.
-- **Academic research access:** paid databases and licensed articles require your own authorized access and a real query.
-- **Scripts and files:** some assistant environments cannot run Python or handle all file types directly.
-- **External connections:** available connectors can differ even between accounts on the same platform.
-- **Visual presentation:** the Skill's conversational guidance is the primary path; any richer interface depends on actual host support.
-
-Compatibility testing remains **PENDING** for platforms and accounts not yet observed. For an explanation of how capabilities are checked, see [the platform access guide](../references/platform-capability-preflight.md). The software's automated tests do not certify full real-world compatibility on ChatGPT, Claude or Gemini. If a feature cannot be verified, the correct status is **not verified**, not completed.
-
-**Version:** [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) is the current published experimental prerelease. Its available [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip) does not install a hosted UI panel or automatically connect Drive. The ChatGPT fictional-project core CSV/Drive workflow was observed as functional, with optional XLSX failing due to missing dependencies; full host acceptance and other platforms remain unverified.
+[Installation](INSTALLATION.md) · [ChatGPT](CHATGPT.md) · [RC.4 technical contract](RC4-PLUGIN-DISTRIBUTION.md).

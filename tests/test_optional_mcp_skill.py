@@ -43,7 +43,7 @@ class OptionalMcpSkillTests(unittest.TestCase):
     def test_mcp_apps_ui_is_not_claimed_to_be_a_skill_only_feature(self):
         self.assertIn("separate host",self.rules)
         self.assertIn("does **not** activate MCP Apps UI",self.rules)
-        self.assertIn("when its Skill ZIP is installed",self.chat)
+        self.assertIn("Installing this plugin does **not** activate MCP Apps UI automatically",self.chat)
 
     def test_real_host_acceptance_keeps_evidence_levels_separate(self):
         record=(ROOT/"docs/CHATGPT-MCP-HOST-ACCEPTANCE.md").read_text(encoding="utf-8")
@@ -64,7 +64,7 @@ class OptionalMcpSkillTests(unittest.TestCase):
         self.assertIn("No exposed MCP tool means",self.rules)
         self.assertIn("authorized native tool",self.rules)
         self.assertIn("If no MCP connection is available",self.chat)
-        self.assertIn("continue as a normal Skill",self.chat)
+        self.assertIn("continue with the plugin\u0027s internal scientific guidance",self.chat)
 
 if __name__ == "__main__":
     unittest.main()
