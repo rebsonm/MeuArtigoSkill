@@ -34,10 +34,16 @@ class FourChoiceDecisionGuidanceTests(unittest.TestCase):
             with self.subTest(phrase=required):
                 self.assertIn(required, doc)
         self.assertIn("do not invent unsafe alternatives", doc.lower())
-        self.assertIn("When D is selected", doc)
+        self.assertIn("Typing a non-empty answer in the D field automatically selects", doc)
+        self.assertIn("never submit on radio selection", doc.lower())
         self.assertIn("not a default selection", doc)
         self.assertIn("plain-chat choice", doc)
-        self.assertIn("real editable text field", doc)
+        self.assertIn("real editable free-text field immediately beneath D", doc)
+        self.assertIn("Never hide, disable or require clicking D", doc)
+        self.assertIn("Submit answer", doc)
+        self.assertIn("disabled until a valid choice exists", doc)
+        self.assertIn("whitespace-only D text", doc)
+        self.assertIn("exact written proposal", doc)
         self.assertIn("never **automatically** changes", doc)
 
     def test_host_help_explains_fallback_and_limits(self):
@@ -47,8 +53,10 @@ class FourChoiceDecisionGuidanceTests(unittest.TestCase):
         self.assertIn("not approve", chatgpt)
         self.assertIn("native", chatgpt)
         self.assertIn("four clickable radio buttons", chatgpt)
-        self.assertIn("when selected", chatgpt)
-        self.assertIn("text field", chatgpt)
+        self.assertIn("always-visible, enabled text field", chatgpt)
+        self.assertIn("typing automatically selects D", chatgpt)
+        self.assertIn("Submit answer", chatgpt)
+        self.assertIn("does not send anything until", chatgpt)
         self.assertIn("no option should", chatgpt.lower())
 
 
