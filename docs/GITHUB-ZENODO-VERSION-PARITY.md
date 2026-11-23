@@ -102,6 +102,8 @@ scientific validation.
 
 ## Display title and metadata for future automatically archived releases
 
+Use **Mendes, Rebson de Morais** as the exact author name, preserving `family-names: Mendes` and `given-names: Rebson de Morais` in `CITATION.cff`. Keep the corresponding `creators[0].name` equal to `Mendes, Rebson de Morais` in any Zenodo metadata override.
+
 Use this exact **software title** for every future GitHub–Zenodo version:
 
 **Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool**
