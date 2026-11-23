@@ -37,7 +37,7 @@ class RC4PluginOnlyTests(unittest.TestCase):
 
     def test_citation_and_release_match_verified_zenodo_rc4(self):
         cff=(ROOT/"CITATION.cff").read_text()
-        self.assertIn('doi: "${doi}"',cff)
+        self.assertIn('doi: "10.5281/zenodo.24453186"',cff)
         self.assertIn('date-released: "2026-11-23"',cff)
         obj=json.loads((ROOT/"zenodo/metadata-draft.json").read_text())
         self.assertEqual(obj["version"],"1.0.0-rc.4")
