@@ -11,7 +11,7 @@ The existing root `SKILL.md` stays in the Git source as the canonical scientific
 - Portable Agent Plugins manifest `plugin.json`: name `meu-artigo`, version `1.0.0-rc.4`, author Rebson de Morais Mendes, official title/presentation and accurate capabilities.
 - Archive `MeuArtigoPlugin-v1.0.0-rc.4.zip` with one enclosing `meu-artigo/` folder.
 - Internal `skills/meu-artigo/SKILL.md` with exact source content (no experimental Lab override), scientific documents and eligible support scripts; dependency closure and per-file checksums.
-- **New user-supplied logo:** reserve `assets/rc4-logo.png` at package root, referenced by the final plugin manifest. The inline images supplied in chat have not been obtained as verifiable mountable bytes by the packaging process; **logo remains PENDING**. No guessed or old icon may be presented as the approved new one. The builder must block publishable packaging until the real reviewed asset exists.
+- **New user-supplied logo:** reserve `assets/rc4-logo.png` at package root, referenced by the final plugin manifest. The selected logo is now included as a reviewed PNG optimized to 128 × 128 directly from the user's uploaded 256 × 256 artwork, preserving the composition. The private plugin candidate contains the original 256 × 256 image. The builder must still verify its signature and dimensions, never substitute unrelated artwork.
 - No scholarly third-party PDF binaries, credentials, private research data, generated output or host installation receipts in the package.
 - Exactly one RC.4 version marker across `VERSION`, root `CITATION.cff`, plugin manifest, build receipt and subsequent release metadata. DOI/date are **unset until real publication**; RC.3 DOI is historical.
 

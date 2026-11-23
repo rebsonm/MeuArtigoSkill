@@ -9,7 +9,7 @@ One **ChatGPT plugin** for normal chat and Work; no standalone Skill ZIP as an R
 ## Candidate checks — no release side effects
 
 1. Develop on a branch and keep the seven scientific gates and [L]/[I]/[P] controls unchanged.
-2. Verify original user-selected logo at `assets/rc4-logo.png`; no placeholder substitution. This is **PENDING** until the original verified image is available. Run `python scripts/build_plugin_bundle.py --preflight`; a missing logo must block actual packaging.
+2. Verify original user-selected logo at `assets/rc4-logo.png`; no placeholder substitution. The selected logo has been verified and source includes a derived 128 × 128 PNG from the same artwork. The private plugin uses the full original 256 × 256 PNG. Confirm the CI bundle references the reviewed source icon. Run `python scripts/build_plugin_bundle.py --preflight`; a missing logo must block actual packaging.
 3. Run source tests and rights checks (read-only CI; no fabricated authorization): `python scripts/release_audit.py`, `python -m unittest discover -s tests -v`, `python scripts/audit_repository_secrets.py`, `python scripts/audit_public_docs.py` and `python scripts/check_documentation_links.py`.
 4. Only after the approved logo is packaged: `python scripts/build_plugin_bundle.py` followed by `python scripts/build_plugin_bundle.py --verify dist/MeuArtigoPlugin-v1.0.0-rc.4.zip` and actual SHA-256 comparison.
 5. Install the exact private RC.4 plugin candidate and test separately in normal chat and Work with fictitious records. Verify only witnessed operations, including the full scientific entrypoint, A/B/C/D interaction, source rights, tools and gate integrity; maintain NOT_RUN where inaccessible. The Lab v0.1.0 is **not** equivalent RC.4 evidence.

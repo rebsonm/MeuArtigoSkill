@@ -10,7 +10,7 @@
 - Choose a **single ChatGPT plugin** for ordinary chat and Work, with the full existing scientific instruction skill incorporated internally; no separate RC.4 Skill installer.
 - Begin plugin manifest and deterministic packaging preparations; preserve historical RC.3 source/release/Zenodo assets.
 - Preserve [L]/[I]/[P], researcher-controlled seven gates, C.A.D.A., A/B/C/D decisions and method-specific routes; no claim that an instruction-only plugin supplies MCP, Python or Drive writes.
-- New user-selected logo remains a **blocking unverified asset** until original image bytes are available; no substitute logo is authorized.
+- Original user-selected logo verified in the private plugin; an optimized 128 × 128 PNG from the same image is now included in the GitHub source and checked by the RC.4 builder.
 - Document honest unpublished version, citation and independent live-host testing requirements.
 
 

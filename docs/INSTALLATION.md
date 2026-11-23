@@ -18,7 +18,7 @@ The plugin archive contains `plugin.json`, `skills/meu-artigo/SKILL.md`, appropr
 
 The 649 cards (475 [P], 174 [I]/[P]) and licensed public PDFs are **not all embedded**. On-demand GitHub consultation requires accessible read-only retrieval and actual source inspection; never assert full-text reading from catalogue metadata.
 
-**Branding:** the user's selected image must be incorporated as a verified icon file in the final bundle before publication. This step is pending; there is no automatic right to substitute an unrelated image.
+**Branding:** the selected user-uploaded image is included as a verified, visually faithful optimized 128 × 128 PNG in the source. The private candidate has the original 256 × 256 file. The official plugin bundle must reference this reviewed asset; do not substitute another design.
 
 ## Historical releases
 

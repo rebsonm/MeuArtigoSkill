@@ -31,7 +31,7 @@ Documentation is written primarily in English; researcher-facing responses follo
 
 ## RC.4 preparation status
 
-**Plugin-only packaging is in development.** The user-selected logo has not yet been available as a verified image file for packaging; the release logo asset is therefore **PENDING**, not replaced by a guessed drawing. A release must pass asset verification, integrity checks, supported-host use, rights checks and GitHub–Zenodo identity reconciliation.
+**Plugin-only packaging is in development.** The user-selected logo is included as a reviewed **128 × 128 PNG optimized from the original uploaded image** at `assets/rc4-logo.png`. The private ChatGPT candidate uses the original 256 × 256 PNG. Neither asset acceptance nor CI success alone confirms host behavior. A release must pass asset verification, integrity checks, supported-host use, rights checks and GitHub–Zenodo identity reconciliation.
 
 The RC.4 build must emit `MeuArtigoPlugin-v1.0.0-rc.4.zip` only. Historic `MeuArtigoSkill-*.zip` files remain published for older releases, but **no new RC.4 standalone Skill ZIP** may be produced or advertised.
 
