@@ -1,12 +1,11 @@
-# GitHub published release v1.0.0-rc.1 and archived Zenodo v1.0.0-rc.2
+# RC.3 source candidate — published GitHub RC.1 and historical Zenodo RC.2
 
-**Status verified on 2026-11-22:** [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) is the latest **published experimental GitHub prerelease**. It was released at 18:09:28 UTC on 2026-11-22. It is neither stable v1.0.0 nor independently scientifically validated.
+**Unpublished working source:** `VERSION=1.0.0-rc.3` is being prepared for a future matching GitHub/Zenodo release. It is **not yet a GitHub Release, installable published asset or Zenodo deposit**. Historical publication status verified on 2026-11-22: [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) is the latest **published experimental GitHub prerelease**. It was released at 18:09:28 UTC on 2026-11-22. It is neither stable v1.0.0 nor independently scientifically validated.
 
 **Newer Zenodo archive:** The maintainer has supplied DOI
 [10.5281/zenodo.24450459](https://doi.org/10.5281/zenodo.24450459) for
 **v1.0.0-rc.2** (experimental). This record is separate from the GitHub
-RC.1 release: the GitHub release list and the source `VERSION`/
-`OFFICIAL_SKILL_RELEASE` still identify RC.1. Do not use the historical
+RC.1 release: the published GitHub tag and `OFFICIAL_SKILL_RELEASE` still identify RC.1. The working source `VERSION` is the **unpublished RC.3 candidate**, not a previously published archive. Do not use the historical
 RC.1 installable ZIP as evidence that it includes the newer online-consultation
 changes. The prior Zenodo DOI cited by the project was
 [10.5281/zenodo.24397699](https://doi.org/10.5281/zenodo.24397699).
@@ -27,7 +26,7 @@ published Zenodo RC.2 installer, a new GitHub release, or a stable v1.0.0. See [
 - [51 third-party PDF archive with author/publisher attribution](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigo-PDFs-51-attributed.zip)
 - [SHA256SUMS.txt](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/SHA256SUMS.txt)
 
-The repository's `OFFICIAL_SKILL_RELEASE` and `VERSION` both identify `1.0.0-rc.1`. `CITATION.cff` records the actual release date of `2026-11-22`. The previous [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) remains available and documented as a **historical release**, not the recommended current installer.
+`OFFICIAL_SKILL_RELEASE` still identifies published GitHub `1.0.0-rc.1`; `VERSION` and top-level `CITATION.cff` identify **unpublished candidate `1.0.0-rc.3`**, without `date-released`, a new DOI or any published RC.3 ZIP. The historical RC.1 release date was `2026-11-22`. The previous [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) remains available and documented as a **historical release**, not the recommended current installer.
 
 **Installation:** Import **only** the Skill ZIP into a compatible Skills-enabled assistant. The PDF archive is separate scholarly reference material; the GitHub source-code ZIP is not the prepared installer. Existing installed copies never auto-update.
 
@@ -40,6 +39,6 @@ The repository's `OFFICIAL_SKILL_RELEASE` and `VERSION` both identify `1.0.0-rc.
 
 ## Documentation policy
 
-The [README](../README.md), [installation guide](INSTALLATION.md), [ChatGPT guide](CHATGPT.md), [published release notes](NOTAS-DA-VERSAO-1.0.0-rc.1.md) and version-controlled [Wiki source](../wiki/Home.md) must identify this published RC.1 as current. Dated beta.6 work logs and historical acceptance records are preserved as historical evidence, not silently rewritten. The separately hosted GitHub Wiki may need a distinct synchronization step; tracked `wiki/` content is not proof that the live Wiki was published.
+The [README](../README.md) identifies unpublished source RC.3 and separately lists the last actual published RC.1. The [installation guide](INSTALLATION.md), [ChatGPT guide](CHATGPT.md), [published RC.1 release notes](NOTAS-DA-VERSAO-1.0.0-rc.1.md) and [Wiki source](../wiki/Home.md) must continue to point to the actual published RC.1 installer, not invent a downloadable RC.3. Dated beta.6 work logs and historical acceptance records are preserved as historical evidence, not silently rewritten. The separately hosted GitHub Wiki may need a distinct synchronization step; tracked `wiki/` content is not proof that the live Wiki was published.
 
 This document does not modify, replace or rebuild the already published GitHub release assets.
