@@ -6,6 +6,15 @@ The workflow discussed below still creates a separate **source-review
 artifact, NOT a Zenodo publication**. This documentation change does not
 create or update any Zenodo deposit.
 
+**New RC publication invariant:** See
+[GitHub–Zenodo version parity](GITHUB-ZENODO-VERSION-PARITY.md).
+The GitHub release tag, `VERSION`, citation version and Zenodo
+version must agree and the archived code must be traceable to the
+same commit. The existing RC.1/RC.2 divergence remains **unreconciled**
+until Zenodo's actual records and packages are independently inspected.
+A repository toggle or `Sync now` does not retroactively synchronize
+different historical releases.
+
 ## Canonical public source and version-specific citations
 
 - Repository: https://github.com/rebsonm/MeuArtigoSkill

@@ -18,6 +18,22 @@ scientifically validated.
    An English-source release must not ship while the repository
    still contains substantial untranslated Portuguese prose.
 
+## Mandatory GitHub–Zenodo RC parity
+
+New RC releases must have **one identical software version and pinned
+source-commit identity** on GitHub and Zenodo. Check the GitHub tag,
+`VERSION`, both citation version fields and the archived Zenodo
+version-specific DOI. A development commit is not a release; `Sync now`
+only refreshes Zenodo's repository list.
+
+Use the [two-stage release identity gate](GITHUB-ZENODO-VERSION-PARITY.md)
+before a **new** RC release and after its automatic Zenodo archive.
+Do not create or rename a historical release to paper over the current
+RC.1 GitHub / separately reported RC.2 Zenodo difference. A GitHub
+release and a Zenodo record must refer to the same source commit,
+not merely the same description. If provider evidence is unavailable,
+report verification pending and do not claim parity.
+
 ## Prepare a new release safely
 
 1. Work in a development branch, recording **actual implemented**

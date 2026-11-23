@@ -30,6 +30,12 @@ The project is available in a **public GitHub repository**. **Every 0.9.0-beta r
 
 You can converse in Portuguese or another language you prefer. The article's writing language can be different from the language of your conversation.
 
+**Release identity policy:** A future RC must use the same
+software version on GitHub and Zenodo and identify the same archived
+code. See the [GitHub–Zenodo parity gate](docs/GITHUB-ZENODO-VERSION-PARITY.md).
+The GitHub RC.1 and separately deposited Zenodo RC.2 are not claimed
+equivalent without an actual archived-source comparison.
+
 ## Researcher-guided next steps
 
 At a meaningful decision point, updated Skill instructions propose **three
