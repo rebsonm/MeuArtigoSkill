@@ -20,7 +20,7 @@ class HistoricalSkillReleaseTests(unittest.TestCase):
 
     def test_candidate_not_mislabeled_published(self):
         text=(ROOT/"README.md").read_text(encoding="utf-8").lower()
-        self.assertIn("unpublished release candidate",text)
+        self.assertIn("published experimental prerelease (plugin-only)",text)
         self.assertIn("not a stable release",text)
         self.assertIn("plugin",text)
         self.assertIn("v0.9.0-beta.6",text)

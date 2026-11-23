@@ -1,12 +1,12 @@
 # Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool
 
-**Current version:** `1.0.0-rc.4` — **unpublished release candidate**; **plugin-only distribution planned**. This source is **not published** as RC.4, is **not a stable release**, and has not passed RC.4 live-host acceptance. Do not cite an RC.4 DOI or assume it can already be installed.
+**Current version:** `1.0.0-rc.4` — **published experimental prerelease (plugin-only)** on 23 November 2026 (UTC). [GitHub official RC.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4) · [Installable plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.4/MeuArtigoPlugin-v1.0.0-rc.4.zip) · [Zenodo DOI 10.5281/zenodo.24453186](https://doi.org/10.5281/zenodo.24453186). The source and release are public, but this is not a stable release and no independent scientific validation is claimed. The private ChatGPT installation may display a fallback app icon even while its `logo` and `composerIcon` files are valid; host appearance remains NOT_VERIFIED.
 
-**Last published experimental prerelease version:** [v1.0.0-rc.3 on GitHub](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3); [Zenodo version-specific DOI 10.5281/zenodo.24452285](https://doi.org/10.5281/zenodo.24452285). Its historical Skill ZIP remains accessible and unchanged. Earlier deposits and releases are preserved, including [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) and the historical [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6). Every 0.9.0-beta release is experimental; no stable v1.0.0 has been published.
+**Historical experimental versions:** [RC.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3), [RC.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) and [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) remain available. RC.3's [Zenodo DOI 10.5281/zenodo.24452285](https://doi.org/10.5281/zenodo.24452285) continues to identify RC.3 only. Every 0.9.0-beta release is experimental; no stable v1.0.0 has been published.
 
 ## Getting started
 
-For **RC.4 and subsequent approved versions**, Meu Artigo will be distributed as **one ChatGPT plugin**, not as a separate downloadable Skill installer. Its scientific skill instructions, methodological documentation and eligible support files live **inside the plugin**. A nested `skills/meu-artigo/SKILL.md` is an internal plugin component, **not a second product**.
+Beginning with the **published RC.4**, Meu Artigo is distributed as **one ChatGPT plugin**, not as a separate downloadable Skill installer. Its scientific skill instructions, methodological documentation and eligible support files live **inside the plugin**. A nested `skills/meu-artigo/SKILL.md` is an internal plugin component, **not a second product**.
 
 - **ChatGPT normal conversation:** open/activate the installed plugin, if available in your account, and request scientific guidance.
 - **ChatGPT Work:** use the same plugin inside a Work task when plugin access and Work tools are actually available.
@@ -29,17 +29,17 @@ Meu Artigo helps researchers frame questions, compare methodological strategies,
 
 Documentation is written primarily in English; researcher-facing responses follow the researcher's language. Manuscript language is a separate scholarly/editorial choice.
 
-## RC.4 preparation status
+## RC.4 publication and verification status
 
-**Plugin-only packaging is in development.** The user-selected logo is included as a reviewed **128 × 128 PNG optimized from the original uploaded image** at `assets/rc4-logo.png`. The private ChatGPT candidate uses the original 256 × 256 PNG. Neither asset acceptance nor CI success alone confirms host behavior. A release must pass asset verification, integrity checks, supported-host use, rights checks and GitHub–Zenodo identity reconciliation.
+**The plugin-only release is published and its package integrity was verified.** The user-selected logo is included as a reviewed **128 × 128 PNG optimized from the original uploaded image** at `assets/rc4-logo.png`. The private ChatGPT candidate uses the original 256 × 256 PNG. Neither asset acceptance nor CI success alone confirms host behavior. A release must pass asset verification, integrity checks, supported-host use, rights checks and GitHub–Zenodo identity reconciliation.
 
-The RC.4 build must emit `MeuArtigoPlugin-v1.0.0-rc.4.zip` only. Historic `MeuArtigoSkill-*.zip` files remain published for older releases, but **no new RC.4 standalone Skill ZIP** may be produced or advertised.
+The RC.4 release emitted `MeuArtigoPlugin-v1.0.0-rc.4.zip` only. Historic `MeuArtigoSkill-*.zip` files remain published for older releases, but **no new RC.4 standalone Skill ZIP** may be produced or advertised.
 
 ## Citation and rights
 
 **Published RC.3 citation:** Mendes, Rebson de Morais. (2026). *Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool* (v1.0.0-rc.3) [Software]. Zenodo. https://doi.org/10.5281/zenodo.24452285
 
-**RC.4:** citation metadata are a candidate only. Do not invent publication dates or a version DOI before an actual release and Zenodo deposit. See [CITATION.cff](CITATION.cff) and [GitHub–Zenodo controls](docs/GITHUB-ZENODO-VERSION-PARITY.md).
+**Published RC.4 citation:** Mendes, Rebson de Morais. (2026). *Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool* (v1.0.0-rc.4) [Software]. Zenodo. https://doi.org/10.5281/zenodo.24453186. See [CITATION.cff](CITATION.cff) and [GitHub–Zenodo controls](docs/GITHUB-ZENODO-VERSION-PARITY.md).
 
 Software is licensed under the Apache License 2.0 (Apache-2.0), subject to [LICENSE](LICENSE), [NOTICE](NOTICE) and [SECURITY.md](SECURITY.md). Academic PDFs and other third-party source texts retain their original licenses. For rights-holder corrections contact rebsonm@gmail.com.
 

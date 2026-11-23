@@ -20,8 +20,8 @@ class ZenodoDisplayMetadataTests(unittest.TestCase):
         self.assertEqual(names, [OFFICIAL_TITLE])
         self.assertIn('version: "' + (ROOT / "VERSION").read_text().strip() + '"', cff)
         if (ROOT / "VERSION").read_text().strip() == "1.0.0-rc.4":
-            self.assertNotRegex(cff, r'(?m)^doi:')
-            self.assertNotRegex(cff, r'(?m)^date-released:')
+            self.assertIn('doi: "10.5281/zenodo.24453186"', cff)
+            self.assertIn('date-released: "2026-11-23"', cff)
         else:
             self.assertIn('doi: "10.5281/zenodo.24452285"', cff)
 

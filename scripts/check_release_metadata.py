@@ -107,7 +107,8 @@ def audit_published_source_metadata(root: Path) -> list[str]:
     root = Path(root)
     errors = audit_release_metadata(root)
     version = read_version(root)
-    official = (root / "OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip()
+    pointer = "OFFICIAL_PLUGIN_RELEASE" if version == "1.0.0-rc.4" else "OFFICIAL_SKILL_RELEASE"
+    official = (root / pointer).read_text(encoding="utf-8").strip()
     citation = (root / "CITATION.cff").read_text(encoding="utf-8")
     readme = (root / "README.md").read_text(encoding="utf-8")
     if official != version:

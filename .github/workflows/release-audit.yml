@@ -138,7 +138,9 @@ jobs:
             echo "plugin_only=false" >> "$GITHUB_OUTPUT"
           fi
           if [[ "$(cat VERSION)" =~ -rc\.[1-9][0-9]*$ ]]; then
-            if [[ "$(cat VERSION)" == "$(cat OFFICIAL_SKILL_RELEASE)" ]]; then
+            if [[ "$(cat VERSION)" == "1.0.0-rc.4" && -f OFFICIAL_PLUGIN_RELEASE ]]; then
+              python scripts/check_release_metadata.py --published-source
+            elif [[ "$(cat VERSION)" == "$(cat OFFICIAL_SKILL_RELEASE)" ]]; then
               python scripts/check_release_metadata.py --published-source
             else
               python scripts/check_release_metadata.py --candidate
