@@ -100,6 +100,38 @@ these checks authenticate a researcher, auto-approve scientific gates,
 publish software, change GitHub tags, alter Zenodo records, or prove
 scientific validation.
 
+## Display title and metadata for future automatically archived releases
+
+Use **Mendes, Rebson de Morais** as the exact author name, preserving `family-names: Mendes` and `given-names: Rebson de Morais` in `CITATION.cff`. Keep the corresponding `creators[0].name` equal to `Mendes, Rebson de Morais` in any Zenodo metadata override.
+
+Use this exact **software title** for every future GitHub–Zenodo version:
+
+**Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool**
+
+- Zenodo takes the title from the root `CITATION.cff` file when there is
+  no root `.zenodo.json`. The separate `zenodo/metadata-draft.json`
+  file is documentation only and is **not** read automatically.
+- If a root `.zenodo.json` is ever added, Zenodo **ignores the entire
+  `CITATION.cff` file** for automatic GitHub release metadata. Match
+  the official title there as well and keep version, creators and access
+  consistent. Do not introduce a competing short title.
+- In Zenodo the **publication date** is associated with the actual
+  archived release, not fixed to the example day; the version displayed
+  corresponds to the versioned GitHub tag. Software type and open access
+  must remain accurate.
+- A title/metadata edit on the public source **does not rewrite previously
+  archived GitHub releases or Zenodo records**. The existing RC.3 record
+  may be edited in Zenodo's **Edit published record** interface if its
+  historical display title should also be normalized; never republish
+  RC.3 under an additional DOI just for a title correction.
+- Test: `python -m unittest tests/test_zenodo_display_metadata.py`
+  (or standard test discovery) checks the repository metadata, not
+  the remote Zenodo page.
+
+References:
+https://help.zenodo.org/docs/github/describe-software/citation-file/
+https://help.zenodo.org/docs/github/describe-software/zenodo-json/
+
 ## One publication trigger
 
 Enable GitHub–Zenodo repository integration once in the Zenodo account.

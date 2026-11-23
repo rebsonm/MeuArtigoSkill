@@ -35,7 +35,7 @@ class CandidateAndPublishedDocsTests(unittest.TestCase):
         citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
         self.assertIn('version: "' + CANDIDATE + '"', citation)
         self.assertIn('date-released: "2026-11-23"', citation)
-        self.assertNotIn('doi: "10.5281/zenodo.', citation)
+        self.assertIn('doi: "10.5281/zenodo.24452285"', citation)
         self.assertIn("## " + CANDIDATE + " — 2026-11-23",
                       (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"))
         self.assertIn("experimental release",
