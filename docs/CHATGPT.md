@@ -18,6 +18,23 @@ Say *"Meu Artigo, let's continue my article on [topic]"*. When an authorized sav
 
 If a file is unavailable, the research decisions are inconsistent or storage access has not been confirmed, the Skill should explain the blockage and suggest a safe check. It must not invent an approval, a restored file or a completed synchronization.
 
+## Guided next-step choices (A/B/C/D)
+
+When a meaningful researcher decision is due, the updated Skill offers **three
+contextual alternatives (A, B and C)**. Each describes a benefit, a downside
+and the next consequence. It clearly identifies **one recommended option**
+and explains its limits. **Option D** lets you **type your own different
+answer**. If ChatGPT supports a suitable **native** editable field in the
+active conversation it may display one; otherwise just write **D: your
+proposal** in the chat. The Skill does not install or guarantee any special
+form control. You may reject all three suggestions.
+
+These options orient **one** currently valid next decision; they do **not approve**
+scientific gates, submit a paper or write a canonical research decision
+automatically. A consequential scientific choice still requires your own
+justification and acknowledgement of limitations. See the
+[four-choice decision contract](../references/decision-navigation.md).
+
 ## What about my Google Drive and research services?
 
 Installing the Skill does **not** grant access to Drive or databases. Connection status should be presented in a short, readable explanation rather than empty tables. A service is **NOT_VERIFIED** until actual access is checked; for saved files, an authorized write and, where possible, **read-after-write** confirmation are distinct from a successful read. ChatGPT can use only services actually connected and authorized for the current conversation. The assistant should distinguish accessible services from a successfully completed read, write or query.
