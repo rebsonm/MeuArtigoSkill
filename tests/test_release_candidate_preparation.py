@@ -70,7 +70,7 @@ class CandidatePreparationTests(unittest.TestCase):
     def test_public_recommendation_must_not_silently_change_to_rc(self):
         prepare_candidate(self.root)
         (self.root / "OFFICIAL_SKILL_RELEASE").write_text("1.0.0-rc.1\n")
-        self.assertIn("PUBLISHED_RECOMMENDATION_MUST_STAY_BETA6",
+        self.assertIn("PUBLISHED_RECOMMENDATION_MUST_REMAIN_PRIOR_VERSION",
                       audit_candidate_metadata(self.root))
 
     def test_bogus_published_rc_link_is_not_accepted(self):
@@ -80,6 +80,18 @@ class CandidatePreparationTests(unittest.TestCase):
                      "https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1\n")
         self.assertIn("UNPUBLISHED_RC_MUST_NOT_HAVE_RELEASE_LINK",
                       audit_candidate_metadata(self.root))
+
+    def test_rc3_candidate_can_retain_rc1_as_last_published_version(self):
+        (self.root / "VERSION").write_text("1.0.0-rc.3\n")
+        (self.root / "OFFICIAL_SKILL_RELEASE").write_text("1.0.0-rc.1\n")
+        (self.root / "docs/NOTAS-DA-VERSAO-1.0.0-rc.3.md").write_text(
+            "RC.3 RELEASE CANDIDATE ONLY — NOT PUBLISHED. NOT A STABLE RELEASE.\n")
+        changelog = self.root / "CHANGELOG.md"
+        changelog.write_text(
+            changelog.read_text().replace("## 1.0.0-rc.1 — UNRELEASED",
+                                          "## 1.0.0-rc.3 — UNRELEASED"))
+        prepare_candidate(self.root)
+        self.assertEqual(audit_candidate_metadata(self.root), [])
 
     def test_missing_author_notes_blocks_candidate_synchronizer(self):
         (self.root / "docs/NOTAS-DA-VERSAO-1.0.0-rc.1.md").unlink()
