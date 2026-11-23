@@ -34,6 +34,19 @@ release and a Zenodo record must refer to the same source commit,
 not merely the same description. If provider evidence is unavailable,
 report verification pending and do not claim parity.
 
+## RC.3 is a source candidate only
+
+The working source is staged as `1.0.0-rc.3`, but the latest
+**published** GitHub release remains `v1.0.0-rc.1`; the historical
+Zenodo RC.2 has DOI `10.5281/zenodo.24450459`. The root
+`CITATION.cff` candidate version must be RC.3 **without an assigned
+publication date or new DOI**. Keep `OFFICIAL_SKILL_RELEASE=1.0.0-rc.1`
+until a real subsequent GitHub release is verified. Do not publish a
+GitHub RC.3 release while the associated Zenodo archive is not yet
+authorized: the enabled integration may archive it immediately.
+Only after a genuine GitHub/Zenodo RC.3 publication and readback may
+the published recommendation and citation DOI be advanced.
+
 ## Prepare a new release safely
 
 1. Work in a development branch, recording **actual implemented**
