@@ -1,30 +1,21 @@
 cff-version: 1.2.0
-message: "If you use Meu Artigo in research, please cite the software."
+message: "If you use Meu Artigo in research, please cite the software. The RC.4 candidate is not yet published."
 title: "Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool"
 type: software
 authors:
   - family-names: "Mendes"
     given-names: "Rebson de Morais"
-version: "1.0.0-rc.3"
-date-released: "2026-11-23"
-doi: "10.5281/zenodo.24452285"
+version: "1.0.0-rc.4"
 repository-code: "https://github.com/rebsonm/MeuArtigoSkill"
 url: "https://github.com/rebsonm/MeuArtigoSkill"
 license: "Apache-2.0"
 abstract: >-
-  Meu Artigo is a cross-platform scientific-workflow skill for managing,
-  tracing, validating, and documenting AI-assisted article construction.
-  It combines C.A.D.A. operational governance, evidence-to-claim
-  traceability, journal-aware manuscript construction, adversarial claim
-  robustness checks, human validation gates, frozen scientific snapshots,
-  AI-use transparency, high-rigor anonymization controls for generated
-  external artifacts, and interoperable provenance export.
+  Meu Artigo is an experimental ChatGPT plugin incorporating a
+  scientific-research workflow skill for evidence-grounded article
+  preparation, methodological guidance, researcher-controlled
+  scientific gates, and provenance-aware research project governance.
+  RC.4 is an unpublished candidate and no scientific validation is claimed.
 
-# v1.0.0-rc.3 publication is approved for 2026-11-23 UTC.
-# Zenodo RC.3 version-specific DOI was verified at https://zenodo.org/records/24452285
-# Historical GitHub release was v1.0.0-rc.1 (2026-11-22); current published RC is v1.0.0-rc.3.
-# Historical GitHub release: https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1
-# Separately archived Zenodo RC.2: https://doi.org/10.5281/zenodo.24450459
-# Earlier cited DOI: https://doi.org/10.5281/zenodo.24397699
-# Neither earlier DOI identifies RC.3. The RC.3 DOI is 10.5281/zenodo.24452285.
-# CFF canonical author renders as: Mendes, Rebson de Morais.
+# No date-released or DOI until actual RC.4 publication and Zenodo readback.
+# Published historical RC.3 DOI: https://doi.org/10.5281/zenodo.24452285
+# Canonical author: Mendes, Rebson de Morais.

@@ -3,8 +3,14 @@
 
 ## Unreleased
 
-RC.3 publication is explicitly authorized. The GitHub release and
-Zenodo archive must be verified independently after automated publication.
+### 1.0.0-rc.4 — plugin-only distribution candidate (NOT PUBLISHED)
+
+- Choose a **single ChatGPT plugin** for ordinary chat and Work, with the full existing scientific instruction skill incorporated internally; no separate RC.4 Skill installer.
+- Begin plugin manifest and deterministic packaging preparations; preserve historical RC.3 source/release/Zenodo assets.
+- Preserve [L]/[I]/[P], researcher-controlled seven gates, C.A.D.A., A/B/C/D decisions and method-specific routes; no claim that an instruction-only plugin supplies MCP, Python or Drive writes.
+- New user-selected logo remains a **blocking unverified asset** until original image bytes are available; no substitute logo is authorized.
+- Document honest unpublished version, citation and independent live-host testing requirements.
+
 
 ## 1.0.0-rc.3 — 2026-11-23
 

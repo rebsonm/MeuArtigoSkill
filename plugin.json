@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "meu-artigo",
+  "version": "1.0.0-rc.4",
+  "description": "Experimental research workflow plugin with human-controlled scientific decisions, evidence traceability and methodological guidance.",
+  "author": {
+    "name": "Rebson de Morais Mendes"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/rebsonm/MeuArtigoSkill",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Meu Artigo",
+        "shortDescription": "Scientific research assistant",
+        "longDescription": "Research workflow guidance, evidence-to-claim traceability, methodological alternatives, C.A.D.A. continuity and seven researcher-reviewed gates. Experimental RC.4 plugin for ChatGPT and Work; operations require verified permissions.",
+        "developerName": "Rebson de Morais Mendes",
+        "category": "Productivity",
+        "capabilities": [
+          "Interactive"
+        ],
+        "defaultPrompt": "Use Meu Artigo to orient my research. Verify accessible tools and canonical storage, distinguish [L]/[I]/[P], present A/B/C/D choices with pros and cons when appropriate, and preserve all seven gates pending until actual individual researcher review."
+      }
+    }
+  }
+}

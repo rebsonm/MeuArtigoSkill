@@ -19,7 +19,11 @@ class ZenodoDisplayMetadataTests(unittest.TestCase):
         names = re.findall(r'^title:\s*"([^"]+)"\s*$', cff, flags=re.M)
         self.assertEqual(names, [OFFICIAL_TITLE])
         self.assertIn('version: "' + (ROOT / "VERSION").read_text().strip() + '"', cff)
-        self.assertIn('doi: "10.5281/zenodo.24452285"', cff)
+        if (ROOT / "VERSION").read_text().strip() == "1.0.0-rc.4":
+            self.assertNotRegex(cff, r'(?m)^doi:')
+            self.assertNotRegex(cff, r'(?m)^date-released:')
+        else:
+            self.assertIn('doi: "10.5281/zenodo.24452285"', cff)
 
     def test_canonical_author_is_mendes_rebson_de_morais(self):
         cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")

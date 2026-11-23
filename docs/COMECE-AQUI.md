@@ -1,41 +1,13 @@
-# Start here: conduct research with Meu Artigo
+# Start here — Meu Artigo
 
-**RC.3 authorized release (2026-11-23 UTC):** [GitHub v1.0.0-rc.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) | [installable Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.3/MeuArtigoSkill-v1.0.0-rc.3.zip). Historical RC.1 references below remain valid for their original archived assets; the Zenodo RC.3 version-specific DOI is pending independent verification.
+**RC.4 is an unpublished release candidate and will be distributed as one ChatGPT plugin only.** No separate RC.4 Skill ZIP is planned. The still-published historical version is [RC.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) (experimental).
 
+Once the official RC.4 plugin is released and installed, select it from a normal ChatGPT conversation or from Work where available. The private Lab proved only feasibility in the maintainer's environment; RC.4 access and execution are not yet independently confirmed.
 
-Meu Artigo is a **published experimental release candidate** designed to assist researchers in different fields, research traditions and methodological approaches. It offers guidance and organizational tools; it does not make scientific judgments on your behalf.
+Describe your research question exactly. Meu Artigo should first establish available storage/tools, then present methodological choices, evaluate actual evidence with [L]/[I]/[P], document C.A.D.A. actions and preserve researcher-approved seven scientific gates. You can use Portuguese; the manuscript language follows your choice and journal requirements.
 
-**Current published version:** [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1), experimental prerelease (22 November 2026), not stable software.
+> I am studying [problem/topic]. Using Meu Artigo, verify authorized storage and current tools before suggesting a methodological approach. Present pros, cons, recommendation and D for my own proposal.
 
-## The first conversation
+A proposed search is not an executed search; a citation is not proof a source was read. No automatic scientific approval, publication or write to external storage occurs merely because a plugin is installed.
 
-After [installing a published Skill package](INSTALLATION.md) (currently the [published RC.1 ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip)), describe your topic in your own words. For example:
-
-> I am studying [topic/problem]. I want to write a scientific article, but I have not chosen the method yet. Show me reasonable options, their advantages and limitations, and help me decide the next step. First check which storage and tools are available.
-
-It is fine if you only have a preliminary idea. You can also bring an established protocol, journal instructions, your own sources or work already in progress.
-
-## How the process works
-
-1. **Understand the problem.** The assistant helps delimit the question without changing your original intent silently.
-2. **Explore suitable methodological choices.** It should explain possible approaches and their trade-offs. You can compare alternatives, reject a suggestion or propose another method.
-3. **Confirm storage and access.** A connected service is not automatically writable. Google Drive is preferred when you authorize it and a real write can be verified; alternatives require your agreement.
-4. **Gather and examine actual evidence.** A proposed search is not an executed search. References and passages must be checked before supporting an assertion.
-5. **Document scientific decisions.** Important choices, interpretations and approvals are yours. C.A.D.A. keeps track of tasks and deadlines, not scientific authority.
-6. **Prepare and review the manuscript.** The article should reflect the selected design, actual evidence, limitations, verified journal requirements and applicable rights.
-
-There are seven consequential human scientific checkpoints in the Skill. They are meant to preserve decisions rather than make you fill out unnecessary forms.
-
-## Can I continue the same article later?
-
-Yes, when the original project records are accessible. Tell the Skill which article to continue and ask for a progress summary. It should report what is recorded, what is pending and one useful next step. If a record or permission is missing, it should explain the limitation instead of pretending that progress has been saved.
-
-## Can I talk in Portuguese?
-
-Yes. The conversation can follow your preferred language even though the source documentation is maintained in English. You may separately choose the language of the manuscript or follow the target journal's requirements.
-
-## What should I be careful about?
-
-A suggested article, citation or AI-generated explanation is not evidence of scientific validity. Do not treat missing full text as an automatic reason to exclude a study, invent human reviewers, or share confidential research and copyrighted PDFs without permission.
-
-For practical questions, see [Installation](INSTALLATION.md), [methodological routes](ROTAS-METODOLOGICAS.md), [ChatGPT](CHATGPT.md), [Claude](CLAUDE.md), [Gemini](GEMINI.md) and [feedback](TESTE-BETA-PESQUISADORES.md).
+[Installation](INSTALLATION.md) · [ChatGPT](CHATGPT.md) · [RC.4 plugin-only design](RC4-PLUGIN-DISTRIBUTION.md) · [Methods](ROTAS-METODOLOGICAS.md).

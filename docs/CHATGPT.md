@@ -1,83 +1,25 @@
-# Using Meu Artigo with ChatGPT
+# Meu Artigo in ChatGPT — RC.4 plugin
 
-**RC.3 authorized release (2026-11-23 UTC):** [GitHub v1.0.0-rc.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) | [installable Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.3/MeuArtigoSkill-v1.0.0-rc.3.zip). Historical RC.1 references below remain valid for their original archived assets; the Zenodo RC.3 version-specific DOI is pending independent verification.
+RC.4 is an **unpublished plugin-only release candidate**. The existing public RC.3 remains a historical Skill ZIP, not an RC.4 plugin.
 
+## One plugin, two ChatGPT surfaces
 
-Meu Artigo is a **Skill**, not a replacement for ChatGPT. Its research guidance works through the normal conversation, provided your ChatGPT account supports importing and running the Skill.
+The maintainer's independent **Meu Artigo Lab** feasibility test demonstrated a plugin selectable in both ordinary conversation and Work in their environment. RC.4 is intended to keep that **one-plugin** installation experience: activate the same official plugin in normal chat or in Work when supported and authorized. Do not claim cross-plan access, host-wide UI consistency or actual RC.4 acceptance until tested.
 
-## Start using the Skill
+**Do not install a separate RC.4 Skill.** The nested `skills/meu-artigo/SKILL.md` is packaged inside `MeuArtigoPlugin-v1.0.0-rc.4.zip` and retains the scientific workflow; it is not an independent installer. The official plugin URL is pending actual release.
 
-1. Download the prepared [RC.1 Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip) from the [currently published release](INSTALLATION.md).
-2. Import it using the **Skills** feature if it is available on your account.
-3. Begin in your preferred language:
-   > I want to use Meu Artigo to prepare a scientific article. Please check my available connections and storage before proposing methodological options.
-4. Review the recommendations and decide what you want to adopt.
+## First interaction
 
-You do not need to open a technical dashboard to begin. The Skill is designed to offer a useful summary and next-step guidance in the conversation itself.
+> I want to work on a scientific article with Meu Artigo. Read my research question exactly, verify which tools and storage you can actually access, and then present the next useful methodological alternatives with pros, cons, one recommendation and D for another answer.
 
-## When returning to an article
+The assistant must use [L] only for sources actually inspected, distinguish [I] and [P], keep all seven scientific gates pending until specific researcher review, and never invent source access, storage writes or approvals.
 
-Say *"Meu Artigo, let's continue my article on [topic]"*. When an authorized saved project is accessible, the assistant should tell you where the recorded work stopped, what decision is pending and which step can safely follow. It should not assume that *"next"* means approval of a scientific choice.
+## Decisions A/B/C/D
 
-If a file is unavailable, the research decisions are inconsistent or storage access has not been confirmed, the Skill should explain the blockage and suggest a safe check. It must not invent an approval, a restored file or a completed synchronization.
+A/B/C are three genuine alternatives, with explicit trade-offs and one recommendation; D accepts the user's own text. Native radio controls, a visible free-text field and a submit button are expected **only if the host can actually render them**. Otherwise use ordinary chat input, not fake widgets. A decision menu is not scientific or storage authorization.
 
-## Guided next-step choices (A/B/C/D)
+## Limits
 
-When a meaningful researcher decision is due, the updated Skill offers **three
-contextual alternatives (A, B and C)**. Each describes a benefit, a downside
-and the next consequence. It clearly identifies **one recommended option**
-and explains its limits. On a ChatGPT interface with native radio controls,
-you should see **four clickable radio buttons, one immediately before each
-option A, B, C and D**, with only one selectable at a time. No option should
-be preselected just because it is recommended. **Option D** is the fourth
-radio choice and has an **always-visible, enabled text field immediately
-below D**, even before you select it. Type your own different answer
-directly into that field; typing automatically selects D. A separate
-**Submit answer** button is visible below the choices, and becomes clickable
-only after A/B/C is selected or D has nonblank text. Selecting a radio or
-typing does not send anything until **Submit answer** is clicked. If native
-controls are not available in your ChatGPT session, choose by writing
-**A**, **B**, **C** or **D: your proposal** in the ordinary chat composer
-and send the message normally. Plain text circles, example text fields and
-decorative buttons are not functional controls. Installing the Skill cannot
-itself add a host UI widget.
-You may reject all three suggestions.
+An instruction-only plugin gives no automatic Drive authentication, remote database access, external MCP services, Python execution, host-embedded App view or file persistence. Use real connected capabilities where available. Source rights, data privacy, journal rules, AI disclosure and provenance controls still apply. A project may resume only from the verified, authorized canonical records.
 
-These options orient **one** currently valid next decision; they do **not approve**
-scientific gates, submit a paper or write a canonical research decision
-automatically. A consequential scientific choice still requires your own
-justification and acknowledgement of limitations. See the
-[four-choice decision contract](../references/decision-navigation.md).
-
-## What about my Google Drive and research services?
-
-Installing the Skill does **not** grant access to Drive or databases. Connection status should be presented in a short, readable explanation rather than empty tables. A service is **NOT_VERIFIED** until actual access is checked; for saved files, an authorized write and, where possible, **read-after-write** confirmation are distinct from a successful read. ChatGPT can use only services actually connected and authorized for the current conversation. The assistant should distinguish accessible services from a successfully completed read, write or query.
-
-Google Drive is preferred for long-term project continuity after a real writable-access check. When a project is saved there, expect actual folders and files that you can open individually, not only a ZIP or probe file. The assistant should provide a project link and tell you whether the structured delivery was fully verified or remains incomplete. Switching to another workspace requires your express agreement.
-
-## Do I need an additional app or MCP connection?
-
-**No additional connection is required just to use the standalone Skill's guidance.** If your ChatGPT session already exposes authorized MCP tools, the Skill may use them for specific tasks. Installing the Skill does not itself create an MCP connection, install a separate server or activate a visual MCP Apps interface.
-
-If no MCP connection is available, **continue as a normal Skill** using already authorized tools or verifiable manual research materials. A separate interactive interface does not appear **when its Skill ZIP is installed**. The project-owned external connection and its interactive interface are not guaranteed by the published RC.1 Skill ZIP; no production OAuth connection is implied. If a connected service is not available, the Skill can still explain alternatives and work with files or tools already accessible, without claiming that an external action took place.
-
-## How do I know which Skill version is running?
-
-An assistant may inspect the local Skill's VERSION and, when actually
-accessible, verify the BUNDLE_MANIFEST.json file hashes. This identifies
-the **local files inspected**, not necessarily which Skill package the host
-activated. A repository release or path name must not be substituted for
-actual installed-package evidence. If the host does not expose the
-installed bundle, the correct answer is **installation not verified**,
-with the observed source and its limitations.
-
-When an optional XLSX visual dashboard is unavailable, the core protocol,
-CSV tables and continuity may still be usable. Ask for a readable status
-that distinguishes core readiness, optional visual status, and actual
-remote Drive persistence, which is a separate operation.
-
-## What remains your responsibility?
-
-You choose the method, decide which materials to include, examine evidence, approve interpretations and review the manuscript before any submission. See [Getting started](COMECE-AQUI.md) and [scientific governance](GOVERNANCA-CIENTIFICA.md).
-
-**Version note:** [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) is the current experimental GitHub prerelease with the [installable ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip). The documented fictional-project run passed CSV/Drive initialization, card guidance, save/readback and gate preservation; optional XLSX failed due to an unavailable dependency. Installed-host identity still requires checking; earlier strict T02 mismatches and unrun T32/T34 scenarios are not silently approved.
+See [installation](INSTALLATION.md), [RC.4 packaging](RC4-PLUGIN-DISTRIBUTION.md), and [supported modes](COMPATIBILIDADE-PLATAFORMAS.md).
