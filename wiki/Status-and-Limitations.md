@@ -1,5 +1,8 @@
 # What Meu Artigo can and cannot do
 
+**RC.3 experimental release (2026-11-23 UTC):** [GitHub v1.0.0-rc.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) | [installable Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.3/MeuArtigoSkill-v1.0.0-rc.3.zip). Earlier RC.1 links remain as historical archives. The Zenodo RC.3 DOI is pending independent verification.
+
+
 **Meu Artigo is experimental research-support software, not an independently validated scientific method.**
 
 ## What it is designed to help with
