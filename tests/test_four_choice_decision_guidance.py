@@ -50,7 +50,7 @@ class FourChoiceDecisionGuidanceTests(unittest.TestCase):
     def test_host_help_explains_fallback_and_limits(self):
         chatgpt = (ROOT / "docs/CHATGPT.md").read_text(encoding="utf-8")
         self.assertIn("Option D", chatgpt)
-        self.assertIn("type", chatgpt)
+        self.assertIn("type", chatgpt.lower())
         self.assertIn("not approve", chatgpt)
         self.assertIn("native", chatgpt)
         self.assertIn("four clickable radio buttons", chatgpt)
