@@ -23,11 +23,16 @@ If a file is unavailable, the research decisions are inconsistent or storage acc
 When a meaningful researcher decision is due, the updated Skill offers **three
 contextual alternatives (A, B and C)**. Each describes a benefit, a downside
 and the next consequence. It clearly identifies **one recommended option**
-and explains its limits. **Option D** lets you **type your own different
-answer**. If ChatGPT supports a suitable **native** editable field in the
-active conversation it may display one; otherwise just write **D: your
-proposal** in the chat. The Skill does not install or guarantee any special
-form control. You may reject all three suggestions.
+and explains its limits. On a ChatGPT interface with native radio controls,
+you should see **four clickable radio buttons, one immediately before each
+option A, B, C and D**, with only one selectable at a time. No option should
+be preselected just because it is recommended. **Option D** is the fourth
+radio choice: when selected, an **enabled text field** should appear so you
+can **type your own different answer**. If native radio controls are not
+available in your ChatGPT session, choose by writing **A**, **B**, **C** or
+**D: your proposal** in the chat. Plain text circles are not clickable
+radio buttons. Installing the Skill cannot itself add a host UI widget.
+You may reject all three suggestions.
 
 These options orient **one** currently valid next decision; they do **not approve**
 scientific gates, submit a paper or write a canonical research decision
