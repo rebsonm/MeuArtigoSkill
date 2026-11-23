@@ -35,10 +35,14 @@ You can converse in Portuguese or another language you prefer. The article's wri
 At a meaningful decision point, updated Skill instructions propose **three
 alternatives (A/B/C)** with a concrete advantage, disadvantage and next step
 for each, mark **one context-based recommendation**, and offer **D — Other**
-so the researcher can freely type a different answer. A native editable field
-may appear when the active chat host supports one; otherwise option D is a
-plain-text chat reply. This is decision support, not an automatic scientific
-approval or new graphical application. See the
+so the researcher can freely type a different answer. **Where native
+radio controls exist, all four choices must have a real single-select radio
+button in front of their labels** (without preselecting the recommended
+option). Selecting **D** opens/enables the researcher's text field. Where
+the host cannot render radio controls, use explicit plain-chat A/B/C/D
+answers without fake clickable circles. Installing the Skill does not
+install any additional host UI components. This is decision support,
+not an automatic scientific approval or new graphical application. See the
 [four-choice next-step policy](references/decision-navigation.md).
 Existing installed release ZIPs do not update themselves when these source
 instructions change.
