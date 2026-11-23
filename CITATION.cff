@@ -7,6 +7,7 @@ authors:
     given-names: "Rebson de Morais"
 version: "1.0.0-rc.3"
 date-released: "2026-11-23"
+doi: "10.5281/zenodo.24452285"
 repository-code: "https://github.com/rebsonm/MeuArtigoSkill"
 url: "https://github.com/rebsonm/MeuArtigoSkill"
 license: "Apache-2.0"
@@ -20,10 +21,10 @@ abstract: >-
   external artifacts, and interoperable provenance export.
 
 # v1.0.0-rc.3 publication is approved for 2026-11-23 UTC.
-# Zenodo's RC.3 version DOI will be added only after external verification.
-# The last actual GitHub release is v1.0.0-rc.1 (2026-11-22).
+# Zenodo RC.3 version-specific DOI was verified at https://zenodo.org/records/24452285
+# Historical GitHub release was v1.0.0-rc.1 (2026-11-22); current published RC is v1.0.0-rc.3.
 # Historical GitHub release: https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1
 # Separately archived Zenodo RC.2: https://doi.org/10.5281/zenodo.24450459
 # Earlier cited DOI: https://doi.org/10.5281/zenodo.24397699
-# Neither earlier DOI identifies RC.3. A version-specific DOI will be recorded
-# only after the GitHub release and Zenodo automatic deposit are observed.
+# Neither earlier DOI identifies RC.3. The RC.3 DOI is 10.5281/zenodo.24452285.
+# CFF canonical author renders as: Mendes, Rebson de Morais.
