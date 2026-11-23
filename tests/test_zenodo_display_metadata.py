@@ -20,9 +20,22 @@ class ZenodoDisplayMetadataTests(unittest.TestCase):
         self.assertEqual(names, [OFFICIAL_TITLE])
         self.assertIn('version: "' + (ROOT / "VERSION").read_text().strip() + '"', cff)
 
+    def test_canonical_author_is_mendes_rebson_de_morais(self):
+        cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
+        match = re.search(
+            r'(?m)^authors:\\s*\\n\\s+- family-names:\\s*"([^"]+)"'
+            r'\\s*\\n\\s+given-names:\\s*"([^"]+)"',
+            cff,
+        )
+        self.assertIsNotNone(match, "Software author missing or malformed")
+        family, given = match.groups()
+        self.assertEqual((family, given), ("Mendes", "Rebson de Morais"))
+        self.assertEqual(f"{family}, {given}", "Mendes, Rebson de Morais")
+
     def test_zenodo_draft_matches_title_type_and_access(self):
         obj = json.loads((ROOT / "zenodo/metadata-draft.json").read_text(encoding="utf-8"))
         self.assertEqual(obj["title"], OFFICIAL_TITLE)
+        self.assertEqual(obj["creators"], [{"name": "Mendes, Rebson de Morais"}])
         self.assertEqual(obj["upload_type"], "software")
         self.assertEqual(obj["access_right"], "open")
 
