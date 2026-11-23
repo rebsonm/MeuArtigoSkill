@@ -1,0 +1,51 @@
+# Four-choice next-step guidance — native radios, visible free text and explicit submission
+
+## Purpose and trigger
+
+When the researcher reaches a **meaningful next-step decision** (initial orientation, a methodological fork, a documented blocker, a research design trade-off, a consequential change, or a requested "next/continue"), orient the conversation toward **one currently valid decision or next action**. Ground it in the authorized, current canonical project state and the existing next-step router; do not infer completion, access or a pending scientific gate from chat history alone.
+
+When a real choice is needed, present a concise, researcher-facing **A/B/C/D decision menu** in the researcher's conversational language. **In any host with native radio-group controls, render one actual clickable single-select radio button immediately before each option A, B, C and D**; do not substitute a decorative circle, plain alphabetical list, disabled demonstration field, checkbox or ordinary prose for interactive radio controls. Never preselect the recommendation. This is an interaction and explanation policy, not a new scientific route, scoring algorithm, register, UI installation or approval mechanism. Do not interrupt ordinary factual answers, safely authorized routine operations or simple progress reports with a contrived menu.
+
+## Required four choices
+
+1. **A, B, C — exactly three distinct, feasible proposals for the same pending decision.** For each give (i) a plain-language description; (ii) a concrete advantage (**Pros**); (iii) a concrete disadvantage, limitation or risk (**Cons**); and (iv) what happens next if it is chosen. Tailor these to the research question, evidence actually checked, available tools, permissions, effort and current stage. The third option is not automatically "do nothing"; it must be a genuine useful alternative, which may be a safe pause or verification step when necessary.
+2. **One explicit recommendation.** Visibly mark exactly one of A/B/C as **Recommended**, explain *why* it best fits the verified context and what material trade-off remains. The recommendation is provisional advice, **never** a selection, researcher endorsement, scientific judgment, gate approval or empirical evidence. If the project or evidence is unverified, recommend an appropriate safe verification/reconciliation path, **not** an unsupported research method. Never assert an objective best method or rank unassessed catalogue cards as scientifically superior.
+3. **D — Other / my own answer.** D is the **fourth radio option**. Show a **real editable free-text field immediately beneath D from the moment the four options appear**, even when no radio option has been selected. **Never hide, disable or require clicking D to reveal or enable this field.** The field is initially blank and always accepts typing. **Typing a non-empty answer in the D field automatically selects the D radio**, deselecting A/B/C. Users can also explicitly select the D radio and then type. A/B/C selections may leave the D draft visible, but must not submit it in place of the selected option. An empty or whitespace-only D text is not a valid submitted answer.
+4. **Always-visible submit button.** Render a genuine, keyboard-operable **Submit answer** button immediately below the choices and D field, whether the selected radio is A, B, C or D. The button must be **disabled until a valid choice exists**: A/B/C selected, or D selected with nonblank trimmed text. Clicking it submits **only** the current A/B/C option or D plus the researcher's exact written proposal as a new chat response; **never submit on radio selection, field focus or typing alone**. The button does not itself approve a gate, authorize external side effects or mutate a canonical project.
+5. **One-select semantics and follow-up.** Only one radio option can be selected at once, including D; **Recommended** is an explanatory label, **not a default selection**. Keep the D field visible regardless of selected radio. If the user clears the text while D remains selected, the button becomes disabled until they type valid text or choose A/B/C. Preserve the user's D draft when toggling options unless they explicitly clear it, but never include an inactive D draft in another option's submission. A choice to explore or compare remains read-only until the existing governed researcher decision process is followed. Keep language and length appropriate to MINIMAL/FULL and the actual research stage.
+6. **Graceful fallback, not a fake widget.** When the host genuinely lacks native radio groups, an always-visible editable field or a clickable submit button, explicitly offer `A`, `B`, `C` or `D: [researcher's own text]` as a plain-chat choice using the ordinary platform message composer. Do not show decorative circles, an inert or disabled demo input, or a fake submit button as if functional. The Skill is instructions and does not install native UI controls; explain the limitation without omitting the four options. The host's normal message send action is the fallback submission mechanism.
+
+## Native presentation and honest fallback
+
+- **Capable host:** Show a **radio-group** with four exclusive native radio inputs arranged vertically, radio on the **left**, label and pros/cons/next step beside each. Put the **recommended** indication alongside exactly one option, while the initially selected value remains empty. Show a **persistently visible and enabled** text input/textarea immediately below D whether or not it is selected. Typing into the field must select D automatically, and a separate **Submit answer** button must appear beneath all choices and remain disabled until selection is valid.
+- **Fallback host:** A plain A/B/C/D chat list with the platform's existing message composer is permitted **only when the host cannot expose genuinely functional native controls**. Do not claim a Markdown circle, decorative text field or illustrated send button is functional, or promise that installing a Skill ZIP creates widgets.
+- **Accessibility:** All radio labels, the always-visible D textarea and the submission button need descriptive accessible labels and keyboard operability where native controls support them. Do not use color or the recommendation marker as the sole differentiation.
+- **Submission:** The **Submit answer** button sends exactly one choice to the existing conversation flow upon an explicit user click; it must not update DEC/GATE, write storage, approve an article or initiate external activity without separately satisfying governance and authorization. Require trimmed D text, while preserving the researcher's actual words when forwarding.
+
+## Scientific and operational safeguards
+
+- Resolve **one** genuinely eligible pending decision using the existing continuity/router/C.A.D.A. records; these four responses are choices **about that decision**, not four independently authorized tasks or four new gates. Do not override an earlier unresolved gate, a storage-authorization blocker or existing dependencies just to show an attractive menu.
+- Choosing an option to **explore or compare** is not adopting it; choosing an option in chat never **automatically** changes canonical scientific state. For a consequential research decision, obtain the researcher's own rationale and recognized limitation, and use the existing authorized DEC/GATE procedure only after the necessary explicit confirmation, provenance and review. Maintain every gate PENDING until its own actual requirements are satisfied.
+- A choice involving storage fallback, publication, external sharing, manuscript submission, human subjects, permissions, purchases or sensitive data requires its own applicable explicit authorization and verification; menu selection cannot bypass those requirements.
+- When only one course is permitted for scientific, ethical or access reasons, **do not invent unsafe alternatives**. Offer three distinct safe ways to address the *real* constraint (for example, verify access, inspect original records, or defer) and keep D open. If no real decision is pending, give the next step directly rather than manufacture three scientific paths.
+- For a free-text D response, assess the proposed path on the same criteria (feasibility, evidence, scientific integrity and rights), explain consequences, and ask only for the additional information genuinely needed. Do not silently convert it into A/B/C.
+- Record only **actual** researcher decisions and verified work in the authorized canonical workspace. If storage is unavailable or project records disagree, report that honestly; no menu, button, placeholder or draft is evidence of persistence, authentication, execution or Drive synchronization.
+- Respect [automatic interaction language](language-policy.md), [scientific governance](scientific-governance.md), [canonical state](project-state.md) and [minimal/full presentation](../docs/MODO-NUCLEO-MINIMO.md).
+
+## Illustrative researcher-facing format (translate naturally)
+
+**Next decision:** [one grounded decision, with the current evidence or blocker]
+
+[Native radio: unselected] **A — [approach].** Pros: [specific gain]. Cons: [specific limitation]. Next: [next valid action].
+
+[Native radio: unselected] **B — [approach].** Pros: [specific gain]. Cons: [specific limitation]. Next: [next valid action]. **Recommended** — [contextual, bounded reason].
+
+[Native radio: unselected] **C — [approach].** Pros: [specific gain]. Cons: [specific limitation]. Next: [next valid action].
+
+[Native radio: unselected] **D — Other:** [real, blank, always-visible and enabled text field directly below D; typing selects D automatically].
+
+[Functional button: **Submit answer**; initially disabled; enabled on valid A/B/C selection or D plus nonblank text; sends only on explicit click].
+
+*Choose A, B, C, or type a different approach under D, then click Submit answer. No scientific gate is approved by this menu.*
+
+The bracketed **Native radio** lines above are descriptive placeholders in the documentation, not actual interactive widgets. On a capable host, use real radio inputs. The example is not a source of actual project options, a default recommendation for every research problem, or proof that interactive inputs are supported on a specific host.

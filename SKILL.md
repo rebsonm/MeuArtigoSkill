@@ -214,6 +214,10 @@ submission without external confirmation. See
 
 [Optional 649-card library guide](references/unified-library-649.md).
 
+## 4A. Choice UI
+
+For meaningful decisions, show **three alternatives** A/B/C (pros/cons, one recommendation) and **free-text** D. Follow [native radio button, D radio and Submit](references/decision-navigation.md); no gate approval.
+
 ## 5. Platforms and interaction presentation
 
 Importing a Skill does not grant tools or authentication.
@@ -224,7 +228,7 @@ Consult the
 [ChatGPT](docs/CHATGPT.md), [Claude](docs/CLAUDE.md) and
 [Gemini](docs/GEMINI.md). Adapters never relax scientific or ethical controls.
 
-**Next/próximo:** Use [authorized continuity and C.A.D.A.](references/project-state.md). For local approved fallback, run `scripts/next_step_router.py PROJECT`. Navigation never approves a gate or verifies Drive sync.
+**Next/próximo:** See [canonical continuity](references/project-state.md); local fallback: `scripts/next_step_router.py PROJECT`. Never approve gates or assume Drive sync.
 
 
 **Native in-chat visual dashboard:** For progress requests, read the
@@ -237,9 +241,7 @@ invent data or imply that navigation approves scientific work.
 An authorized local project can use the read-only
 `scripts/native_chat_dashboard.py`; Drive remains canonical when used.
 
-For **each response**, in the researcher's active conversational language:
-state confirmed facts, material uncertainty and the next valid action.
-Avoid flooding an inexperienced researcher with internal record names
-when the MINIMAL view suffices. Neither a ZIP, release badge, citation
-metadata nor a successful engineering CI job validates research quality.
-Apache-2.0 for the software does not grant rights over third-party PDFs.
+For each reply use the researcher's language; show verified facts,
+uncertainty and the next action. MINIMAL avoids clutter. A ZIP, CI,
+release badge or DOI never validates science; Apache-2.0 does not
+license third-party PDFs.

@@ -77,6 +77,24 @@ Do not overwhelm the user with low-level mechanics that were executed correctly.
 
 For scientifically material validation gates, briefly explain *why* a methodological choice is proposed, its closest alternative, and one practical risk. Then ask the researcher, in plain language, why they choose it and which limitation they recognize. The Skill should not write the researcher's answer or present a ready-to-copy response. If the user is unsure, explain the decision more clearly and leave the gate pending until a real response is received. This is not a quiz at every operational step: routine work remains autonomous. Read [formative validation](../docs/VALIDACAO-FORMATIVA.md).
 
+## A/B/C/D next-step presentation
+
+At each consequential researcher decision, use the
+[four-choice decision contract](decision-navigation.md): three grounded
+alternatives with distinct pros and cons, one explicit but provisional
+recommendation, and D for the researcher's free-text alternative. Render
+**one native radio button before A, B, C and D** wherever supported by
+the host; only one may be selected and the recommendation is never
+preselected. **Always show an enabled text field beneath D**, even
+before D is selected; typing in it **selects D automatically**. Include
+a visible **Submit answer** button, disabled until a valid A/B/C selection
+or D with nonblank text exists, and send only on the researcher's button
+click. If no real native interactive controls exist, use the ordinary
+chat composer/send action for A/B/C/D, never fake radio markers or buttons.
+Do not manufacture a new scientific decision when one next action is
+already clear or disrupt authorized routine work. No choice displayed or
+explored constitutes scientific gate approval.
+
 ## Plain-language vocabulary
 
 When needed, explain terms simply:
