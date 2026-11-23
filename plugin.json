@@ -12,14 +12,16 @@
     "com.openai": {
       "interface": {
         "displayName": "Meu Artigo",
-        "shortDescription": "Scientific research assistant",
-        "longDescription": "Research workflow guidance, evidence-to-claim traceability, methodological alternatives, C.A.D.A. continuity and seven researcher-reviewed gates. Experimental RC.4 plugin for ChatGPT and Work; operations require verified permissions.",
+        "shortDescription": "Pesquisa científica",
+        "longDescription": "Orientação científica com estratégias metodológicas, evidências [L]/[I]/[P], rastreabilidade, C.A.D.A. e sete gates sob controle do pesquisador. Funcionalidades externas dependem de acesso verificado.",
         "developerName": "Rebson de Morais Mendes",
         "category": "Productivity",
         "capabilities": [
           "Interactive"
         ],
-        "defaultPrompt": "Use Meu Artigo to orient my research. Verify accessible tools and canonical storage, distinguish [L]/[I]/[P], present A/B/C/D choices with pros and cons when appropriate, and preserve all seven gates pending until actual individual researcher review."
+        "defaultPrompt": "Use Meu Artigo to orient my research. Verify accessible tools and canonical storage, distinguish [L]/[I]/[P], present A/B/C/D choices with pros and cons when appropriate, and preserve all seven gates pending until actual individual researcher review.",
+        "logo": "./assets/rc4-logo.png",
+        "composerIcon": "./assets/rc4-logo.png"
       }
     }
   }
