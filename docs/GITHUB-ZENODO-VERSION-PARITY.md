@@ -1,144 +1,26 @@
-# GitHub–Zenodo RC version and source-identity lock
+# GitHub–Zenodo source and release identity — plugin-only RC.4
 
-## Publication rule
+## Current verifiable history
 
-For **every future release candidate**, require a one-to-one identity:
-**GitHub tag `vX.Y.Z-rc.N` = `VERSION` `X.Y.Z-rc.N` =
-top-level `CITATION.cff` version = preferred-citation version (if
-present) = Zenodo version `X.Y.Z-rc.N`**. The code archived in Zenodo
-must resolve to the exact **GitHub release tag source commit**.
-A version-specific DOI is expected to differ numerically from the
-software version: it uniquely identifies that version's Zenodo record.
-Neither a DOI nor a GitHub tag is proof that two packages contain the
-same code. A GitHub Skill installer and Zenodo's repository snapshot
-need not have the same bytes or SHA-256 unless they are the same package
-type; do not compare unlike archives as if they were identical.
+- [Published RC.3 GitHub release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) and [version-specific Zenodo DOI 10.5281/zenodo.24452285](https://doi.org/10.5281/zenodo.24452285) are historical. RC.3 distributed a standalone Skill ZIP; its original archive remains intact.
+- Historical RC.2 Zenodo DOI: [10.5281/zenodo.24450459](https://doi.org/10.5281/zenodo.24450459); earlier RC.1 release remains preserved.
+- The source candidate `1.0.0-rc.4` is **NOT PUBLISHED**. The RC.4 DOI, date, official plugin URL and Zenodo publication are all unassigned.
 
-**Do not use a development merge as a release**, reassign an existing
-release tag, fabricate a retrospective RC.2 GitHub release, overwrite
-a published archive, or create a second Zenodo deposit for the same
-version just to make identifiers appear aligned.
+## Exact RC.4 identity and distribution
 
-## Present discrepancy and audit limitation
+For RC.4, GitHub tag `v1.0.0-rc.4` must match root `VERSION`, root `CITATION.cff` and root `plugin.json` version, plus the archived source commit and Zenodo version if publication occurs. `CITATION.cff` retains the official title **Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool** and author **Mendes, Rebson de Morais**, as split family/given names.
 
-On 2026-11-22, the GitHub release listing showed **v1.0.0-rc.1** as
-the latest published RC, with an immutable installer and assets.
-The maintainer separately reported Zenodo DOI
-[10.5281/zenodo.24450459](https://doi.org/10.5281/zenodo.24450459)
-as **RC.2**. The project's working source is now prepared as
-`VERSION=1.0.0-rc.3`, with top-level `CITATION.cff` RC.3 and
-**no RC.3 DOI or publication date**. The last actually published GitHub
-tag is still RC.1, and the separately deposited Zenodo RC.2 remains a
-historical record. The previous source had RC.1 in `VERSION` and RC.2
-in its preferred citation; these candidate metadata inconsistencies
-have been corrected without overwriting published records.
-This *documents a mismatch of publication channels*, but does **not**
-prove identical or different code. Zenodo's own record files,
-source-commit provenance and version chain remain to be independently
-checked before any historical reconciliation.
+**Artifact:** `MeuArtigoPlugin-v1.0.0-rc.4.zip` containing the plugin manifest and internal skill. **Never** publish `MeuArtigoSkill-v1.0.0-rc.4.zip` or a second release to correct metadata. The plugin ZIP SHA-256 is not necessarily comparable with GitHub's source archive SHA; compare identical archive types only.
 
-Do not relabel RC.1 as RC.2, or make a new GitHub RC.2 release,
-without verified exact code and publication evidence. Existing
-Zenodo references must remain reachable and historically accurate.
-The new candidate is RC.3; keep it **unpublished** until the GitHub
-release and Zenodo automatic archive can be approved and checked together.
-Do not invent a DOI.
+## Two-stage identity verification
 
-## Two-stage offline evidence gate
+1. **Before publication:** check out the exact approved source commit, run `python scripts/check_github_zenodo_parity.py preflight --tag v1.0.0-rc.4`, confirm the user-selected logo asset, build/verify the plugin ZIP, check source and archive integrity, software rights and RC.4 host functionality. Confirm the tag does **not** already exist. Offline tests cannot prove that.
+2. **After a separately authorized GitHub release and Zenodo's automatic GitHub archiving:** independently read GitHub tag/source-commit information and Zenodo's version DOI, version and archived-source provenance. Run `scripts/check_github_zenodo_parity.py reconcile` with real evidence objects. Missing provenance is NOT_VERIFIED, never guessed from a DOI alone. Zenodo "Sync now" does not create a version: publishing the GitHub release triggers automatic archiving when the integration is enabled.
 
-1. **Before publishing a new GitHub RC:** check out the exact candidate
-   source commit, set the intended `VERSION` and matching
-   `CITATION.cff` versions, and run:
+The separate `zenodo/metadata-draft.json` is internal preparation only. A root `.zenodo.json`, if introduced later, overrides the metadata interpretation of root `CITATION.cff`; ensure its title, creator and version agree exactly. Updating GitHub source or a future plugin does not retroactively change an already published Zenodo record. Do not republish RC.3 or mint a duplicate DOI for the same archived version.
 
-   ```bash
-   python scripts/check_github_zenodo_parity.py preflight --tag v1.0.0-rc.3
-   ```
+## Scientific independence
 
-   This blocks mismatched source version, tag or preferred citation.
-   Also run the usual full CI, publication rights checks and a real
-   GitHub check that the intended tag/release does not already exist.
-   Do not interpret an offline preflight as a live GitHub check.
+DOI, repository publication, script execution, metadata parity, a plugin listing and host installation do **not** certify scientific quality, originality, empirical effects, source-rights clearance, gate approval or independent reviewer decisions. Maintain [L]/[I]/[P] and seven human-reviewed gates.
 
-2. **After the GitHub release is actually published and Zenodo has
-   archived it:** obtain *real* GitHub release/tag information and
-   Zenodo version-specific DOI plus archived-source commit provenance.
-   Place verified values in two temporary evidence JSON objects:
-
-   ```json
-   {
-     "tag": "v1.0.0-rc.3",
-     "version": "1.0.0-rc.3",
-     "source_commit": "<observed full 40-character Git SHA>",
-     "archive_kind": "github-source",
-     "archive_sha256": "<observed checksum, if applicable>"
-   }
-   ```
-
-   ```json
-   {
-     "version": "1.0.0-rc.3",
-     "version_doi": "10.5281/zenodo.<real record id>",
-     "source_commit": "<independently verified archived source Git SHA>",
-     "archive_kind": "github-source",
-     "archive_sha256": "<observed checksum, if applicable>"
-   }
-   ```
-
-   Run `python scripts/check_github_zenodo_parity.py reconcile
-   --github-evidence /path/github.json --zenodo-evidence /path/zenodo.json`.
-   The exact `source_commit` and matching software version are mandatory.
-   If the archive lacks a trustworthy commit manifest, report
-   **NOT_VERIFIED** and inspect actual archived content instead of
-   guessing a commit from the title or DOI.
-   Verify SHA-256 equality when comparing *the same package kind*;
-   different ZIP kinds are not directly hash comparable.
-
-**Scope and limitation:** The script validates supplied evidence for
-internal consistency only, not its external authenticity. Real GitHub
-and Zenodo records must be opened and verified separately. None of
-these checks authenticate a researcher, auto-approve scientific gates,
-publish software, change GitHub tags, alter Zenodo records, or prove
-scientific validation.
-
-## Display title and metadata for future automatically archived releases
-
-Use **Mendes, Rebson de Morais** as the exact author name, preserving `family-names: Mendes` and `given-names: Rebson de Morais` in `CITATION.cff`. Keep the corresponding `creators[0].name` equal to `Mendes, Rebson de Morais` in any Zenodo metadata override.
-
-Use this exact **software title** for every future GitHub–Zenodo version:
-
-**Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool**
-
-- Zenodo takes the title from the root `CITATION.cff` file when there is
-  no root `.zenodo.json`. The separate `zenodo/metadata-draft.json`
-  file is documentation only and is **not** read automatically.
-- If a root `.zenodo.json` is ever added, Zenodo **ignores the entire
-  `CITATION.cff` file** for automatic GitHub release metadata. Match
-  the official title there as well and keep version, creators and access
-  consistent. Do not introduce a competing short title.
-- In Zenodo the **publication date** is associated with the actual
-  archived release, not fixed to the example day; the version displayed
-  corresponds to the versioned GitHub tag. Software type and open access
-  must remain accurate.
-- A title/metadata edit on the public source **does not rewrite previously
-  archived GitHub releases or Zenodo records**. The existing RC.3 record
-  may be edited in Zenodo's **Edit published record** interface if its
-  historical display title should also be normalized; never republish
-  RC.3 under an additional DOI just for a title correction.
-- Test: `python -m unittest tests/test_zenodo_display_metadata.py`
-  (or standard test discovery) checks the repository metadata, not
-  the remote Zenodo page.
-
-References:
-https://help.zenodo.org/docs/github/describe-software/citation-file/
-https://help.zenodo.org/docs/github/describe-software/zenodo-json/
-
-## One publication trigger
-
-Enable GitHub–Zenodo repository integration once in the Zenodo account.
-A GitHub **release publication**, not an ordinary push/merge or
-the `Sync now` repository-list refresh, triggers automatic archiving.
-Avoid additionally depositing that same release manually, which may
-create a second DOI series. Keep the GitHub release tag, Zenodo version
-field, provenance and `CITATION.cff` in sync.
-
-Reference: https://help.zenodo.org/docs/github/
+[RC.4 release process](GUIA-DE-RELEASES.md) · [RC.4 packaging](RC4-PLUGIN-DISTRIBUTION.md).

@@ -3,7 +3,9 @@
 
 ## Unreleased
 
-### 1.0.0-rc.4 — plugin-only distribution candidate (NOT PUBLISHED)
+## 1.0.0-rc.4 — UNRELEASED
+
+### Plugin-only distribution candidate (NOT PUBLISHED)
 
 - Choose a **single ChatGPT plugin** for ordinary chat and Work, with the full existing scientific instruction skill incorporated internally; no separate RC.4 Skill installer.
 - Begin plugin manifest and deterministic packaging preparations; preserve historical RC.3 source/release/Zenodo assets.

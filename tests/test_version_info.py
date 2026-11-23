@@ -15,8 +15,9 @@ class VersionContractTests(unittest.TestCase):
     def test_repository_version_has_matching_release_notes(self):
         version = version_info.read_version(ROOT)
         self.assertTrue(version_info.release_notes_path(ROOT).is_file())
-        self.assertEqual(version_info.release_zip_name(ROOT),
-                         f"MeuArtigoSkill-v{version}.zip")
+        expected = (f"MeuArtigoPlugin-v{version}.zip" if version == "1.0.0-rc.4"
+                    else f"MeuArtigoSkill-v{version}.zip")
+        self.assertEqual(version_info.release_zip_name(ROOT), expected)
 
     def test_version_can_advance_without_changing_python_source(self):
         with tempfile.TemporaryDirectory() as name:
