@@ -1,4 +1,4 @@
-"""Offline checks for unpublished RC.3 source and published historical RC.1.
+"""Offline checks for published RC.3 source and historical RC.1.
 
 Read-only file assertions; cannot verify real GitHub/Zenodo releases.
 """
@@ -8,11 +8,11 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from check_release_metadata import audit_candidate_metadata
+from check_release_metadata import audit_published_source_metadata
 from check_github_zenodo_parity import preflight
 
 CANDIDATE = "1.0.0-rc.3"
-PUBLISHED = "1.0.0-rc.1"
+PUBLISHED = "1.0.0-rc.3"
 RELEASE_URL = "https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v" + PUBLISHED
 ZIP_URL = ("https://github.com/rebsonm/MeuArtigoSkill/releases/download/"
            "v" + PUBLISHED + "/MeuArtigoSkill-v" + PUBLISHED + ".zip")
@@ -30,15 +30,15 @@ class CandidateAndPublishedDocsTests(unittest.TestCase):
         self.assertEqual((ROOT / "VERSION").read_text().strip(), CANDIDATE)
         self.assertEqual((ROOT / "OFFICIAL_SKILL_RELEASE").read_text().strip(),
                          PUBLISHED)
-        self.assertEqual(audit_candidate_metadata(ROOT), [])
+        self.assertEqual(audit_published_source_metadata(ROOT), [])
         self.assertEqual(preflight(ROOT, "v" + CANDIDATE), [])
         citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
         self.assertIn('version: "' + CANDIDATE + '"', citation)
-        self.assertNotIn("date-released:", citation)
+        self.assertIn('date-released: "2026-11-23"', citation)
         self.assertNotIn('doi: "10.5281/zenodo.', citation)
-        self.assertIn("## " + CANDIDATE + " — UNRELEASED",
+        self.assertIn("## " + CANDIDATE + " — 2026-11-23",
                       (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"))
-        self.assertIn("NOT PUBLISHED",
+        self.assertIn("experimental release",
                       (ROOT / "docs" / f"NOTAS-DA-VERSAO-{CANDIDATE}.md")
                       .read_text(encoding="utf-8"))
 
@@ -53,8 +53,8 @@ class CandidateAndPublishedDocsTests(unittest.TestCase):
                      "docs/COMECE-AQUI.md", "wiki/Installation.md"):
             with self.subTest(installer=path):
                 self.assertIn(ZIP_URL, (ROOT / path).read_text(encoding="utf-8"))
-        self.assertNotIn(f"/releases/tag/v{CANDIDATE}",
-                         (ROOT / "README.md").read_text(encoding="utf-8"))
+        self.assertIn(f"/releases/tag/v{CANDIDATE}",
+                      (ROOT / "README.md").read_text(encoding="utf-8"))
 
     def test_rights_scope_and_host_limitations_remain_documented(self):
         landing = (ROOT / "docs/CURRENT-RELEASE.md").read_text(encoding="utf-8")
