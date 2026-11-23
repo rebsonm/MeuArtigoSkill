@@ -1,6 +1,6 @@
 # Current release and candidate — verified status
 
-**RC.4:** `1.0.0-rc.4` is an **unpublished ChatGPT-plugin-only source candidate**, not a verified release or installed production plugin. The user-selected RC.4 logo is PENDING as a verified source file. RC.4 builds must never publish a standalone Skill ZIP. ChatGPT normal chat and Work are targeted, but RC.4 host acceptance is NOT_VERIFIED. Optional XLSX and remote tool access remain environment-dependent.
+**RC.4:** `1.0.0-rc.4` is **published as an experimental ChatGPT-plugin-only release** ([GitHub](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4); [Zenodo](https://doi.org/10.5281/zenodo.24453186)). The selected logo is verified and bundled, but the ChatGPT private plugin page showed a generic fallback icon; its presentation is not verified as corrected. RC.4 builds must never publish a standalone Skill ZIP. ChatGPT normal chat and Work are targeted, but RC.4 host acceptance is NOT_VERIFIED. Optional XLSX and remote tool access remain environment-dependent.
 
 **RC.3:** published experimental GitHub prerelease on 2026-11-23 UTC, preserved unchanged:
 - [GitHub RC.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3)

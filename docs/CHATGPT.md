@@ -1,12 +1,12 @@
 # Meu Artigo in ChatGPT — RC.4 plugin
 
-RC.4 is an **unpublished plugin-only release candidate**. The existing public [RC.3 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) remains a historical Skill ZIP, not an RC.4 plugin.
+RC.4 is a **published experimental plugin-only release candidate** ([GitHub](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4); [Zenodo](https://doi.org/10.5281/zenodo.24453186)). The existing public [RC.3 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) remains a historical Skill ZIP, not an RC.4 plugin.
 
 ## One plugin, two ChatGPT surfaces
 
 The maintainer's independent **Meu Artigo Lab** feasibility test demonstrated a plugin selectable in both ordinary conversation and Work in their environment. RC.4 is intended to keep that **one-plugin** installation experience: activate the same official plugin in normal chat or in Work when supported and authorized. Do not claim cross-plan access, host-wide UI consistency or actual RC.4 acceptance until tested.
 
-**Do not install a separate RC.4 Skill.** The nested `skills/meu-artigo/SKILL.md` is packaged inside `MeuArtigoPlugin-v1.0.0-rc.4.zip` and retains the scientific workflow; it is not an independent installer. The official plugin URL is pending actual release.
+**Do not install a separate RC.4 Skill.** The nested `skills/meu-artigo/SKILL.md` is packaged inside `MeuArtigoPlugin-v1.0.0-rc.4.zip` and retains the scientific workflow; it is not an independent installer. Official [public plugin package](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4) is published; an account-installed plugin listing is distinct and may remain private. The screenshot from the maintainer's account showed a generic icon even though bundled logo and composerIcon references were present; UI display is NOT_VERIFIED as resolved.
 
 ## First interaction
 

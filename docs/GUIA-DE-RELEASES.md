@@ -1,20 +1,20 @@
 # Meu Artigo release procedure — RC.4 plugin-only
 
-**Current source:** `1.0.0-rc.4`, **unpublished**. **Last published release:** [v1.0.0-rc.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3), [Zenodo DOI 10.5281/zenodo.24452285](https://doi.org/10.5281/zenodo.24452285). The full title and author remain Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool; Mendes, Rebson de Morais.
+**Current published experimental source:** `1.0.0-rc.4`. [GitHub v1.0.0-rc.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4) · [Zenodo version DOI](https://doi.org/10.5281/zenodo.24453186). RC.3 remains a historical release. The full title and author remain Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool; Mendes, Rebson de Morais.
 
 ## Canonical distribution from RC.4
 
 One **ChatGPT plugin** for normal chat and Work; no standalone Skill ZIP as an RC.4 release asset. The source `SKILL.md` is included internally at `skills/meu-artigo/SKILL.md` by the plugin builder; this is a plugin component, not a second installer. RC.3 and earlier Skill releases remain accessible historical records.
 
-## Candidate checks — no release side effects
+## Historical RC.4 candidate checks — completed for the published source
 
 1. Develop on a branch and keep the seven scientific gates and [L]/[I]/[P] controls unchanged.
 2. Verify original user-selected logo at `assets/rc4-logo.png`; no placeholder substitution. The selected logo has been verified and source includes a derived 128 × 128 PNG from the same artwork. The private plugin uses the full original 256 × 256 PNG. Confirm the CI bundle references the reviewed source icon. Run `python scripts/build_plugin_bundle.py --preflight`; a missing logo must block actual packaging.
 3. Run source tests and rights checks (read-only CI; no fabricated authorization): `python scripts/release_audit.py`, `python -m unittest discover -s tests -v`, `python scripts/audit_repository_secrets.py`, `python scripts/audit_public_docs.py` and `python scripts/check_documentation_links.py`.
 4. Only after the approved logo is packaged: `python scripts/build_plugin_bundle.py` followed by `python scripts/build_plugin_bundle.py --verify dist/MeuArtigoPlugin-v1.0.0-rc.4.zip` and actual SHA-256 comparison.
 5. Install the exact private RC.4 plugin candidate and test separately in normal chat and Work with fictitious records. Verify only witnessed operations, including the full scientific entrypoint, A/B/C/D interaction, source rights, tools and gate integrity; maintain NOT_RUN where inaccessible. The Lab v0.1.0 is **not** equivalent RC.4 evidence.
-6. Open/review a PR. Neither CI success nor merge constitutes a publication. Create a new manual RC.4-specific publisher **only after** the plugin package, rights, logo, host acceptance and release metadata are approved. No RC.4 publisher exists now.
-7. At approved publication time, reconcile VERSION/CITATION/manifest, record actual UTC publication date, create a new immutable GitHub tag and **plugin archive only**, verify GitHub source commit, then independently verify Zenodo's automatically generated version DOI. Do not invent DOI/date or repeat historic RC.3 deposits.
+6. Open/review a PR. Neither CI success nor merge constitutes a publication. Create a new manual RC.4-specific publisher **only after** the plugin package, rights, logo, host acceptance and release metadata are approved. An authorized RC.4 publisher was created and executed successfully on the merge commit; do not rerun it.
+7. After publication (completed 2026-11-23 UTC): reconcile source citation and version DOI, verify the immutable GitHub tag and **plugin archive only**, and verify the Zenodo version-specific DOI. Do not invent DOI/date or repeat historic RC.3 deposits.
 
 ## Safety and history
 

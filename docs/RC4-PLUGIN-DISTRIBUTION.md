@@ -13,7 +13,7 @@ The existing root `SKILL.md` stays in the Git source as the canonical scientific
 - Internal `skills/meu-artigo/SKILL.md` with exact source content (no experimental Lab override), scientific documents and eligible support scripts; dependency closure and per-file checksums.
 - **New user-supplied logo:** reserve `assets/rc4-logo.png` at package root, referenced by the final plugin manifest. The selected logo is now included as a reviewed PNG optimized to 128 × 128 directly from the user's uploaded 256 × 256 artwork, preserving the composition. The private plugin candidate contains the original 256 × 256 image. The builder must still verify its signature and dimensions, never substitute unrelated artwork.
 - No scholarly third-party PDF binaries, credentials, private research data, generated output or host installation receipts in the package.
-- Exactly one RC.4 version marker across `VERSION`, root `CITATION.cff`, plugin manifest, build receipt and subsequent release metadata. DOI/date are **unset until real publication**; RC.3 DOI is historical.
+- Exactly one RC.4 version marker across `VERSION`, root `CITATION.cff`, plugin manifest, build receipt and subsequent release metadata. The verified post-publication DOI is [10.5281/zenodo.24453186](https://doi.org/10.5281/zenodo.24453186), dated 2026-11-23 UTC. The immutable tagged source may retain candidate-era citation metadata; root main has the corrected post-release citation.
 
 ## Capability boundaries
 
@@ -28,7 +28,7 @@ Plugin creation alone cannot prove:
 
 Test these independently in both intended surfaces. Retain NOT_RUN/NOT_VERIFIED for unavailable capabilities. Do not infer complete RC.3 feature parity from the private RC.2-based Lab prototype.
 
-## Publication process
+## Publication process (historical controls for the now-published RC.4)
 
 1. Prepare RC.4 source on a review branch; maintain source/version/documentation without touching RC.3 tags, assets or Zenodo records.
 2. Obtain the original user-selected logo image file, check rights, file signature, legibility, dimensions (48–4096px), <=5 MiB, appropriate square composition; keep the visual artwork unchanged unless separately approved.
@@ -37,4 +37,4 @@ Test these independently in both intended surfaces. Retain NOT_RUN/NOT_VERIFIED 
 5. Install the exact RC.4 candidate in a private test plugin and perform fictitious normal-chat and Work tests; preserve seven PENDING gates and externally observed receipts.
 6. Only after actual functional and rights acceptance, prepare an explicitly authorized, manual one-time GitHub release, then verify Zenodo automatic archival and version-specific DOI. Do not republish or edit historical RC.3 through this RC.4 pipeline.
 
-**Status:** PREPARATION ONLY. No RC.4 GitHub release, tag, Zenodo DOI, official plugin installation or scientific validation is asserted.
+**Status:** PUBLISHED experimental RC.4 as GitHub plugin ZIP ([release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4)) and Zenodo ([DOI](https://doi.org/10.5281/zenodo.24453186)). Private plugin installation exists, but the ChatGPT logo display showed a fallback icon and full real-host acceptance remains NOT_VERIFIED. Scientific validation and seven human gate approvals are not implied.
