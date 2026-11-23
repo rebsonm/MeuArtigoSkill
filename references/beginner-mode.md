@@ -85,9 +85,12 @@ alternatives with distinct pros and cons, one explicit but provisional
 recommendation, and D for the researcher's free-text alternative. Render
 **one native radio button before A, B, C and D** wherever supported by
 the host; only one may be selected and the recommendation is never
-preselected. Selecting the D radio enables an editable field for the
-researcher's own answer. If no real native radio interface exists, use
-plain chat A/B/C/D selection, never a fake clickable marker.
+preselected. **Always show an enabled text field beneath D**, even
+before D is selected; typing in it **selects D automatically**. Include
+a visible **Submit answer** button, disabled until a valid A/B/C selection
+or D with nonblank text exists, and send only on the researcher's button
+click. If no real native interactive controls exist, use the ordinary
+chat composer/send action for A/B/C/D, never fake radio markers or buttons.
 Do not manufacture a new scientific decision when one next action is
 already clear or disrupt authorized routine work. No choice displayed or
 explored constitutes scientific gate approval.
