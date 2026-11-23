@@ -15,6 +15,8 @@ class FourChoiceDecisionGuidanceTests(unittest.TestCase):
         self.assertIn("references/decision-navigation.md", skill)
         self.assertIn("three alternatives", skill.lower())
         self.assertIn("free-text", skill.lower())
+        self.assertIn("native radio button", skill.lower())
+        self.assertIn("D radio", skill)
         self.assertIn("gate", skill.lower())
 
     def test_guidance_preserves_four_options_and_human_review(self):
@@ -25,10 +27,17 @@ class FourChoiceDecisionGuidanceTests(unittest.TestCase):
             "native interaction controls", "plain Markdown",
             "researcher's own rationale", "PENDING",
             "one", "not adopting it", "MINIMAL/FULL",
+            "single-select radio button immediately before each option",
+            "D is the **fourth radio option**",
+            "never **automatically** changes",
         ):
             with self.subTest(phrase=required):
                 self.assertIn(required, doc)
         self.assertIn("do not invent unsafe alternatives", doc.lower())
+        self.assertIn("When D is selected", doc)
+        self.assertIn("not a default selection", doc)
+        self.assertIn("plain-chat choice", doc)
+        self.assertIn("real editable text field", doc)
         self.assertIn("never **automatically** changes", doc)
 
     def test_host_help_explains_fallback_and_limits(self):
@@ -37,6 +46,10 @@ class FourChoiceDecisionGuidanceTests(unittest.TestCase):
         self.assertIn("type", chatgpt)
         self.assertIn("not approve", chatgpt)
         self.assertIn("native", chatgpt)
+        self.assertIn("four clickable radio buttons", chatgpt)
+        self.assertIn("when selected", chatgpt)
+        self.assertIn("text field", chatgpt)
+        self.assertIn("no option should", chatgpt.lower())
 
 
 if __name__ == "__main__":
