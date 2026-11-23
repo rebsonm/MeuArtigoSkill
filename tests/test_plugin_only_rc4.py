@@ -35,14 +35,14 @@ class RC4PluginOnlyTests(unittest.TestCase):
         self.assertIn("MeuArtigoPlugin-rc4-test-only-not-published",ci)
         self.assertNotIn("gh release create",ci)
 
-    def test_citation_and_release_cannot_claim_zenodo_rc4(self):
+    def test_citation_and_release_match_verified_zenodo_rc4(self):
         cff=(ROOT/"CITATION.cff").read_text()
-        self.assertNotRegex(cff,r"(?m)^doi:")
-        self.assertNotRegex(cff,r"(?m)^date-released:")
+        self.assertIn('doi: "${doi}"',cff)
+        self.assertIn('date-released: "2026-11-23"',cff)
         obj=json.loads((ROOT/"zenodo/metadata-draft.json").read_text())
         self.assertEqual(obj["version"],"1.0.0-rc.4")
-        self.assertIsNone(obj["zenodo_version_doi"])
-        self.assertFalse(obj["github_release_published"])
+        self.assertEqual(obj["zenodo_version_doi"],"${doi}")
+        self.assertTrue(obj["github_release_published"])
 
 
 if __name__=="__main__":

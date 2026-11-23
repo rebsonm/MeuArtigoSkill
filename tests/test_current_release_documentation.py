@@ -1,11 +1,11 @@
-"""RC.4 is an unpublished plugin candidate; historical RC.3 remains cited."""
+"""Published plugin-only RC.4 and preserved historical RC.3."""
 from pathlib import Path
 import sys
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from check_release_metadata import audit_candidate_metadata
+from check_release_metadata import audit_published_source_metadata
 from check_github_zenodo_parity import preflight
 
 CANDIDATE = "1.0.0-rc.4"
@@ -17,14 +17,14 @@ class PluginCandidateAndPublishedHistoryTests(unittest.TestCase):
     def test_candidate_separate_from_published_history(self):
         self.assertEqual((ROOT / "VERSION").read_text().strip(), CANDIDATE)
         self.assertEqual((ROOT / "OFFICIAL_SKILL_RELEASE").read_text().strip(), PUBLISHED)
-        self.assertEqual(audit_candidate_metadata(ROOT), [])
+        self.assertEqual(audit_published_source_metadata(ROOT), [])
         self.assertEqual(preflight(ROOT, "v" + CANDIDATE), [])
         citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
         self.assertIn('version: "1.0.0-rc.4"', citation)
-        self.assertNotRegex(citation, r"(?m)^date-released:")
-        self.assertNotRegex(citation, r"(?m)^doi:")
+        self.assertIn('date-released: "2026-11-23"', citation)
+        self.assertIn('doi: "10.5281/zenodo.24453186"', citation)
         self.assertIn("## 1.0.0-rc.4 —", (ROOT / "CHANGELOG.md").read_text())
-        self.assertIn("NOT PUBLISHED", (ROOT / "docs/NOTAS-DA-VERSAO-1.0.0-rc.4.md").read_text())
+        self.assertIn("PUBLISHED experimental RC.4", (ROOT / "docs/NOTAS-DA-VERSAO-1.0.0-rc.4.md").read_text())
 
     def test_plugin_only_public_guides_and_historical_release(self):
         for path in ("README.md","docs/INSTALLATION.md","docs/CHATGPT.md",
