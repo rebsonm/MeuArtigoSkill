@@ -9,9 +9,11 @@ See the [English migration guide](docs/ENGLISH-SOURCE-MIGRATION.md) for the
 complete Markdown audit commands and the strict unresolved-language check. The
 installed assistant still responds in the researcher's requested language.
 
-[![Historical Zenodo v1.0.0-rc.2 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24450459.svg)](https://doi.org/10.5281/zenodo.24450459)
+[![Zenodo v1.0.0-rc.3 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24452285.svg)](https://doi.org/10.5281/zenodo.24452285)
 
-**Latest reported historical Zenodo archival version:** [v1.0.0-rc.2 — DOI 10.5281/zenodo.24450459](https://doi.org/10.5281/zenodo.24450459), deposited separately from the last published GitHub prerelease v1.0.0-rc.1. **The RC.3 DOI will be shown only after the automatic Zenodo archive is actually verified.** The Zenodo DOI and GitHub release are distinct publication channels; this does not silently replace an existing installed Skill.
+**Current published Zenodo software:** [Meu Artigo v1.0.0-rc.3 — DOI 10.5281/zenodo.24452285](https://doi.org/10.5281/zenodo.24452285), automatically archived from [GitHub v1.0.0-rc.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3). The Zenodo version-specific DOI identifies the published **repository source snapshot**, not the separately distributed installable Skill ZIP. Earlier historical [Zenodo RC.2 — DOI 10.5281/zenodo.24450459](https://doi.org/10.5281/zenodo.24450459) remains preserved. Existing installed Skills do not automatically update.
+
+**How to cite this version:** Mendes, Rebson de Morais. (2026). *Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool* (v1.0.0-rc.3) [Software]. Zenodo. https://doi.org/10.5281/zenodo.24452285
 
 **A research-support Skill for people preparing scientific articles.** Meu Artigo helps a researcher organize a question, consider appropriate methods, find and assess sources, document decisions, and prepare a manuscript. You remain responsible for the scientific work.
 
