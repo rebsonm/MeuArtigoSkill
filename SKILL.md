@@ -214,6 +214,21 @@ submission without external confirmation. See
 
 [Optional 649-card library guide](references/unified-library-649.md).
 
+## 4A. Next-step decisions — three alternatives and open text
+
+**MANDATORY WHEN A MEANINGFUL RESEARCHER CHOICE IS DUE:** Apply the
+[four-choice next-step guidance](references/decision-navigation.md).
+Present **three alternatives** (A/B/C), each with concrete pros, cons
+and its immediate consequence; explicitly recommend **one**, with a
+bounded reason grounded in the actual project. The fourth choice,
+**D — Other**, is a **free-text** response written by the researcher:
+show an editable native field if the current host actually supports
+one, otherwise invite a typed response in chat. The researcher may
+reject every proposed alternative. Focus on one valid pending decision
+from canonical continuity; do not turn simple factual answers or
+routine work into obligatory questionnaires. Recommendations and menu
+selections never approve scientific gates or authorize external action.
+
 ## 5. Platforms and interaction presentation
 
 Importing a Skill does not grant tools or authentication.
