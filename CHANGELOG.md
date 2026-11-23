@@ -3,6 +3,21 @@
 
 ## Unreleased
 
+Source preparation completed for an unpublished RC.3 candidate; no
+GitHub release, tag or Zenodo deposit has been created.
+
+## 1.0.0-rc.3 — UNRELEASED
+
+- Consolidates development after immutable GitHub RC.1, without
+  changing the separately archived historical Zenodo RC.2.
+- Provides next-step A/B/C research choices with pros/cons and a
+  contextual recommendation, a persistent D text field and explicit
+  Submit answer button on capable native chat hosts.
+- Documents and tests GitHub/Zenodo RC software-version and source
+  commit parity; still requires independent post-archive verification.
+- Keeps scientific decisions and all seven gates under researcher control.
+- This is source code only, not a release or a DOI.
+
 ### Public documentation review and Zenodo source-copy preparation (2026-11-22)
 
 - Added an accessible author/publisher correction and removal contact
