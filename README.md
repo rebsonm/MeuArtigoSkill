@@ -30,6 +30,19 @@ The project is available in a **public GitHub repository**. **Every 0.9.0-beta r
 
 You can converse in Portuguese or another language you prefer. The article's writing language can be different from the language of your conversation.
 
+## Researcher-guided next steps
+
+At a meaningful decision point, updated Skill instructions propose **three
+alternatives (A/B/C)** with a concrete advantage, disadvantage and next step
+for each, mark **one context-based recommendation**, and offer **D — Other**
+so the researcher can freely type a different answer. A native editable field
+may appear when the active chat host supports one; otherwise option D is a
+plain-text chat reply. This is decision support, not an automatic scientific
+approval or new graphical application. See the
+[four-choice next-step policy](references/decision-navigation.md).
+Existing installed release ZIPs do not update themselves when these source
+instructions change.
+
 ## What can it help with?
 
 - **Research question and method:** compare paths suited to qualitative, quantitative, mixed, theoretical, review or design-oriented research rather than impose one template.
