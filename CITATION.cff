@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use Meu Artigo in research, please cite the software."
-title: "Meu Artigo"
+title: "Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool"
 type: software
 authors:
   - family-names: "Mendes"
