@@ -25,8 +25,13 @@ On 2026-11-22, the GitHub release listing showed **v1.0.0-rc.1** as
 the latest published RC, with an immutable installer and assets.
 The maintainer separately reported Zenodo DOI
 [10.5281/zenodo.24450459](https://doi.org/10.5281/zenodo.24450459)
-as **RC.2**. The project currently has `VERSION=1.0.0-rc.1`,
-top-level `CITATION.cff` RC.1 and its `preferred-citation` RC.2.
+as **RC.2**. The project's working source is now prepared as
+`VERSION=1.0.0-rc.3`, with top-level `CITATION.cff` RC.3 and
+**no RC.3 DOI or publication date**. The last actually published GitHub
+tag is still RC.1, and the separately deposited Zenodo RC.2 remains a
+historical record. The previous source had RC.1 in `VERSION` and RC.2
+in its preferred citation; these candidate metadata inconsistencies
+have been corrected without overwriting published records.
 This *documents a mismatch of publication channels*, but does **not**
 prove identical or different code. Zenodo's own record files,
 source-commit provenance and version chain remain to be independently
@@ -35,8 +40,9 @@ checked before any historical reconciliation.
 Do not relabel RC.1 as RC.2, or make a new GitHub RC.2 release,
 without verified exact code and publication evidence. Existing
 Zenodo references must remain reachable and historically accurate.
-When preparing a future release, use a new unused version and fix
-candidate metadata **before** publishing; do not invent a DOI.
+The new candidate is RC.3; keep it **unpublished** until the GitHub
+release and Zenodo automatic archive can be approved and checked together.
+Do not invent a DOI.
 
 ## Two-stage offline evidence gate
 

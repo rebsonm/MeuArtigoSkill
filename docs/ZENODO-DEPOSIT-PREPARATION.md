@@ -15,6 +15,17 @@ until Zenodo's actual records and packages are independently inspected.
 A repository toggle or `Sync now` does not retroactively synchronize
 different historical releases.
 
+## Unpublished RC.3 preparation
+
+The working GitHub source is being prepared as **v1.0.0-rc.3**.
+This is **not a GitHub release**, not a Zenodo upload and not an assigned
+RC.3 DOI. The historical Zenodo RC.2 DOI
+`10.5281/zenodo.24450459` **cannot be reused** for RC.3.
+The GitHub–Zenodo integration may already be enabled. Publishing
+the future GitHub RC.3 release can immediately trigger Zenodo archiving,
+so no release/tag is created during this candidate-only stage.
+See [candidate notes](NOTAS-DA-VERSAO-1.0.0-rc.3.md).
+
 ## Canonical public source and version-specific citations
 
 - Repository: https://github.com/rebsonm/MeuArtigoSkill

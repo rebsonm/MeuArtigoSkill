@@ -78,8 +78,20 @@ def audit_candidate_metadata(root: Path) -> list[str]:
             "not published" in notes.lower() and
             "not a stable release" in notes.lower()):
         errors.append("CANDIDATE_NOT_CLEARLY_UNPUBLISHED")
-    if official != "0.9.0-beta.6":
-        errors.append("PUBLISHED_RECOMMENDATION_MUST_STAY_BETA6")
+    # Unpublished source candidates must preserve an older actual release pointer.
+    def order(v: str):
+        m = re.fullmatch(r"(\d+)\.(\d+)\.(\d+)(?:-(beta|rc)\.(\d+))?", v)
+        if not m:
+            return None
+        return (int(m[1]), int(m[2]), int(m[3]),
+                {"beta": 0, "rc": 1, None: 2}[m[4]],
+                int(m[5]) if m[5] else 0)
+    official_order = order(official)
+    candidate_order = order(version)
+    if official_order is None or candidate_order is None or not official_order < candidate_order:
+        errors.append("PUBLISHED_RECOMMENDATION_MUST_REMAIN_PRIOR_VERSION")
+    from check_github_zenodo_parity import preflight as parity_preflight
+    errors.extend(parity_preflight(root, "v" + version))
     if f"/releases/tag/v{version}" in readme:
         errors.append("UNPUBLISHED_RC_MUST_NOT_HAVE_RELEASE_LINK")
     return errors

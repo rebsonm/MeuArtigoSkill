@@ -5,9 +5,7 @@ type: software
 authors:
   - family-names: "Mendes"
     given-names: "Rebson de Morais"
-version: "1.0.0-rc.1"
-date-released: "2026-11-22"
-doi: "10.5281/zenodo.24397699"
+version: "1.0.0-rc.3"
 repository-code: "https://github.com/rebsonm/MeuArtigoSkill"
 url: "https://github.com/rebsonm/MeuArtigoSkill"
 license: "Apache-2.0"
@@ -20,20 +18,10 @@ abstract: >-
   AI-use transparency, high-rigor anonymization controls for generated
   external artifacts, and interoperable provenance export.
 
-# v1.0.0-rc.1 was published as an experimental GitHub prerelease on 2026-11-22.
-# https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1
-# Earlier v0.9.0-beta.6 was published on 2026-10-15 and remains archived.
-# The root version and DOI describe the last published GitHub prerelease (RC.1).
-# The newer RC.2 was archived separately on Zenodo: DOI 10.5281/zenodo.24450459.
-# Preferred citation below refers to that version without changing published RC.1 metadata.
-# Neither DOI implies independent scientific validation.
-
-preferred-citation:
-  type: software
-  title: "Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool"
-  authors:
-    - family-names: "Mendes"
-      given-names: "Rebson de Morais"
-  version: "1.0.0-rc.2"
-  doi: "10.5281/zenodo.24450459"
-  url: "https://doi.org/10.5281/zenodo.24450459"
+# Source v1.0.0-rc.3 is UNPUBLISHED; no release date or DOI is assigned.
+# The last actual GitHub release is v1.0.0-rc.1 (2026-11-22).
+# Historical GitHub release: https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1
+# Separately archived Zenodo RC.2: https://doi.org/10.5281/zenodo.24450459
+# Earlier cited DOI: https://doi.org/10.5281/zenodo.24397699
+# Neither earlier DOI identifies RC.3. No preferred-citation override is declared
+# until independently verified RC.3 publication and archival.
