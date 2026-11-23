@@ -17,10 +17,10 @@
   ],
   "license": "Apache-2.0",
   "access_right": "open",
-  "notes": "GitHub RC.3 release authorized for publication on 2026-11-23 UTC; this JSON is an informational review draft and is not the active .zenodo.json metadata. The official GitHub–Zenodo account integration is enabled; do not manually upload a duplicate. Zenodo RC.3 version-specific DOI will only be recorded after verification. Historical RC.2 DOI 10.5281/zenodo.24450459 must not be reused for RC.3.",
+  "notes": "RC.3 published on GitHub and automatically archived in Zenodo as 10.5281/zenodo.24452285 (publication date 2026-11-23). The published record title currently reads 'Meu Artigo', inherited from the tagged source CITATION.cff; correcting the working CITATION.cff now is for FUTURE releases only. The root CFF and future metadata draft enforce the full title, and the author remains 'Mendes, Rebson de Morais'. Do not republish RC.3 or create another DOI to correct title metadata. Historical RC.2 DOI 10.5281/zenodo.24450459 remains unchanged.",
   "existing_zenodo_doi_to_verify_before_versioning": "10.5281/zenodo.24450459",
-  "new_version_doi_assigned": false,
-  "deposit_status": "AWAITING_GITHUB_RELEASE_AND_ZENODO_AUTOMATIC_ARCHIVE",
+  "new_version_doi_assigned": true,
+  "deposit_status": "RC3_PUBLISHED_GITHUB_AND_ZENODO",
   "current_zenodo_rc2_version": {
     "version": "1.0.0-rc.2",
     "doi": "10.5281/zenodo.24450459",
@@ -30,7 +30,15 @@
   "previous_zenodo_doi": "10.5281/zenodo.24397699",
   "version": "1.0.0-rc.3",
   "github_release_tag_planned": "v1.0.0-rc.3",
-  "github_release_published": false,
-  "zenodo_version_doi": null,
-  "archive_source_commit_verified": false
+  "github_release_published": true,
+  "zenodo_version_doi": "10.5281/zenodo.24452285",
+  "archive_source_commit_verified": false,
+  "current_zenodo_rc3_version": {
+    "version": "v1.0.0-rc.3",
+    "doi": "10.5281/zenodo.24452285",
+    "record_url": "https://zenodo.org/records/24452285",
+    "observed_title": "Meu Artigo",
+    "title_correction_needed_for_display": true,
+    "source": "zenodo_public_record_api"
+  }
 }
