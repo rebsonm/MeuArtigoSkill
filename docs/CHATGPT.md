@@ -1,6 +1,6 @@
 # Meu Artigo in ChatGPT — RC.4 plugin
 
-RC.4 is an **unpublished plugin-only release candidate**. The existing public RC.3 remains a historical Skill ZIP, not an RC.4 plugin.
+RC.4 is an **unpublished plugin-only release candidate**. The existing public [RC.3 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) remains a historical Skill ZIP, not an RC.4 plugin.
 
 ## One plugin, two ChatGPT surfaces
 
@@ -16,7 +16,7 @@ The assistant must use [L] only for sources actually inspected, distinguish [I] 
 
 ## Decisions A/B/C/D
 
-A/B/C are three genuine alternatives, with explicit trade-offs and one recommendation; D accepts the user's own text. Native radio controls, a visible free-text field and a submit button are expected **only if the host can actually render them**. Otherwise use ordinary chat input, not fake widgets. A decision menu is not scientific or storage authorization.
+A/B/C are three genuine alternatives, with explicit trade-offs and one recommendation; D accepts the user's own text; type your free-text answer below D when the host supports the field. Native radio controls, a visible free-text field and a submit button are expected **only if the host can actually render them**. Otherwise use ordinary chat input, not fake widgets. A decision menu is not scientific or storage authorization.
 
 ## Native four-choice behavior and honest preflight
 
