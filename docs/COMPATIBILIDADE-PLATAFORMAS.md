@@ -15,6 +15,6 @@ Researcher interactions may use Portuguese, English or another requested languag
 
 Full platform capability verification remains PENDING. See [platform-capability-preflight.md](../references/platform-capability-preflight.md). External tools, writable Drive, remote GitHub consultation, native choice UI and local Python execution depend on the host and permissions; a successful static package test is not a real-host functional test. Scientific judgments remain subject to human review and the seven gates.
 
-**Latest published experimental release:** [GitHub RC.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4) with [Zenodo DOI](https://doi.org/10.5281/zenodo.24453186). RC.3 remains historical. The installed account plugin may still show a generic fallback icon despite the correct bundled image.
+**Latest published experimental release:** [GitHub RC.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4) with [Zenodo DOI](https://doi.org/10.5281/zenodo.24453186). The historical [RC.3 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) remains available. The installed account plugin may still show a generic fallback icon despite the correct bundled image.
 
 [Installation](INSTALLATION.md) · [ChatGPT](CHATGPT.md) · [RC.4 technical contract](RC4-PLUGIN-DISTRIBUTION.md).
