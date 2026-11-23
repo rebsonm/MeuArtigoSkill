@@ -1,5 +1,5 @@
 {
-  "title": "Meu Artigo — experimental public source snapshot (deposit draft)",
+  "title": "Meu Artigo v1.0.0-rc.3 — UNPUBLISHED source candidate (deposit draft)",
   "upload_type": "software",
   "creators": [
     {
@@ -17,15 +17,20 @@
   ],
   "license": "Apache-2.0",
   "access_right": "open",
-  "notes": "FUTURE SOURCE-ONLY SNAPSHOT DRAFT, NOT a description of the already archived Zenodo RC.2 installer. Existing Zenodo RC.2 DOI 10.5281/zenodo.24450459 supplied by maintainer; prior DOI 10.5281/zenodo.24397699 retained historically. This source snapshot excludes PDF binaries ONLY FROM THE ZIP; all 51 remain publicly hosted in GitHub. Check deposit and version chain on Zenodo before any later upload.",
+  "notes": "FUTURE RC.3 SOURCE-ONLY DRAFT; NO RELEASE OR DOI HAS BEEN PUBLISHED FOR RC.3. Historical Zenodo RC.2 DOI 10.5281/zenodo.24450459 is NOT the RC.3 DOI. Previous 10.5281/zenodo.24397699 also remains historical. GitHub–Zenodo integration is enabled according to maintainer screenshot, but that does not retroactively correct old versions. GitHub RC.3 release publication may trigger an automatic Zenodo record; do NOT duplicate it through manual deposit. Third-party PDFs are excluded only from the source-review ZIP; their individual rights and GitHub records remain.",
   "existing_zenodo_doi_to_verify_before_versioning": "10.5281/zenodo.24450459",
   "new_version_doi_assigned": false,
-  "deposit_status": "DRAFT_NOT_PUBLISHED",
+  "deposit_status": "RC3_DRAFT_NOT_PUBLISHED",
   "current_zenodo_rc2_version": {
     "version": "1.0.0-rc.2",
     "doi": "10.5281/zenodo.24450459",
     "record_url": "https://doi.org/10.5281/zenodo.24450459",
     "source": "maintainer_supplied_not_independently_verified"
   },
-  "previous_zenodo_doi": "10.5281/zenodo.24397699"
+  "previous_zenodo_doi": "10.5281/zenodo.24397699",
+  "version": "1.0.0-rc.3",
+  "github_release_tag_planned": "v1.0.0-rc.3",
+  "github_release_published": false,
+  "zenodo_version_doi": null,
+  "archive_source_commit_verified": false
 }
