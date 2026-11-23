@@ -82,8 +82,12 @@ For scientifically material validation gates, briefly explain *why* a methodolog
 At each consequential researcher decision, use the
 [four-choice decision contract](decision-navigation.md): three grounded
 alternatives with distinct pros and cons, one explicit but provisional
-recommendation, and D for the researcher's free-text alternative. Native
-editable fields are optional host capabilities; chat text is sufficient.
+recommendation, and D for the researcher's free-text alternative. Render
+**one native radio button before A, B, C and D** wherever supported by
+the host; only one may be selected and the recommendation is never
+preselected. Selecting the D radio enables an editable field for the
+researcher's own answer. If no real native radio interface exists, use
+plain chat A/B/C/D selection, never a fake clickable marker.
 Do not manufacture a new scientific decision when one next action is
 already clear or disrupt authorized routine work. No choice displayed or
 explored constitutes scientific gate approval.
