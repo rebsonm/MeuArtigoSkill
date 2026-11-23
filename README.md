@@ -2,7 +2,7 @@
 
 **Current version:** `1.0.0-rc.4` — **unpublished release candidate**; **plugin-only distribution planned**. This source is **not published** as RC.4, is **not a stable release**, and has not passed RC.4 live-host acceptance. Do not cite an RC.4 DOI or assume it can already be installed.
 
-**Last published experimental prerelease version:** [v1.0.0-rc.3 on GitHub](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3); [Zenodo version-specific DOI 10.5281/zenodo.24452285](https://doi.org/10.5281/zenodo.24452285). Its historical Skill ZIP remains accessible and unchanged. Earlier deposits and releases are preserved, including the historical [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6). Every 0.9.0-beta release is experimental; no stable v1.0.0 has been published.
+**Last published experimental prerelease version:** [v1.0.0-rc.3 on GitHub](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3); [Zenodo version-specific DOI 10.5281/zenodo.24452285](https://doi.org/10.5281/zenodo.24452285). Its historical Skill ZIP remains accessible and unchanged. Earlier deposits and releases are preserved, including [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) and the historical [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6). Every 0.9.0-beta release is experimental; no stable v1.0.0 has been published.
 
 ## Getting started
 

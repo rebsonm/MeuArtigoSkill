@@ -18,6 +18,14 @@ The assistant must use [L] only for sources actually inspected, distinguish [I] 
 
 A/B/C are three genuine alternatives, with explicit trade-offs and one recommendation; D accepts the user's own text. Native radio controls, a visible free-text field and a submit button are expected **only if the host can actually render them**. Otherwise use ordinary chat input, not fake widgets. A decision menu is not scientific or storage authorization.
 
+## Native four-choice behavior and honest preflight
+
+At a meaningful decision point, show **four clickable radio buttons** for A, B, C and **Option D** when the host provides real interactive controls. There must be an **always-visible, enabled text field** immediately under D, and **typing automatically selects D**. One contextual recommended option is advisory only: **no option should** be selected by default. An actual **Submit answer** button must be available and it **does not send anything until** the user explicitly clicks it. Valid user choices do not approve a scientific gate. When native controls are unavailable, use a real plain-chat A/B/C/D answer and the ordinary platform message composer; do not fake widgets.
+
+For tool/storage preflight, use a **short, readable explanation rather than empty tables**. Report authenticated access and permissions based on actual operations, and confirm persistent storage through **read-after-write** where applicable. Do not change a project's canonical store merely to make the preflight pass. Otherwise report **NOT_VERIFIED** or NOT_RUN explicitly.
+
+If no MCP connection is available, continue with the plugin's internal scientific guidance and authorized native tools where possible; do not invent an MCP tool or claim an MCP Apps view was launched. Installing this plugin does **not** activate MCP Apps UI automatically.
+
 ## Limits
 
 An instruction-only plugin gives no automatic Drive authentication, remote database access, external MCP services, Python execution, host-embedded App view or file persistence. Use real connected capabilities where available. Source rights, data privacy, journal rules, AI disclosure and provenance controls still apply. A project may resume only from the verified, authorized canonical records.

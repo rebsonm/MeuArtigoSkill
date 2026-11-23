@@ -32,7 +32,7 @@ class PluginCandidateAndPublishedHistoryTests(unittest.TestCase):
             text=(ROOT / path).read_text(encoding="utf-8")
             self.assertIn("plugin", text.lower())
             self.assertIn(RELEASE_URL, text)
-            self.assertNotIn("MeuArtigoSkill-v1.0.0-rc.4.zip", text)
+            self.assertNotIn("/releases/download/v1.0.0-rc.4/MeuArtigoSkill-", text)
             self.assertIn("rc.4", text.lower())
         self.assertFalse((ROOT / "assets/rc4-logo.png").exists() and
                          (ROOT / "VERSION").read_text().strip() != CANDIDATE)
