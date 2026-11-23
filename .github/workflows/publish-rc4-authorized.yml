@@ -1,0 +1,119 @@
+name: Publish authorized RC.4 plugin and enable Zenodo archiving
+
+on:
+  push:
+    branches: [main]
+    paths: ['docs/RC4-PUBLISH-AUTHORIZATION.md']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: single-rc4-plugin-publisher
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'rebsonm/MeuArtigoSkill' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout authorized exact source
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - name: Python 3.12
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Check approval, version, official logo, repository provenance
+        run: |
+          set -euo pipefail
+          grep -Fx 'RC4_PLUGIN_GITHUB_RELEASE_APPROVED=YES' docs/RC4-PUBLISH-AUTHORIZATION.md
+          grep -Fx 'RC4_GITHUB_ZENODO_AUTOARCHIVE_APPROVED=YES' docs/RC4-PUBLISH-AUTHORIZATION.md
+          test "$(cat VERSION)" = '1.0.0-rc.4'
+          test "$(cat OFFICIAL_SKILL_RELEASE)" = '1.0.0-rc.3'
+          python scripts/check_release_metadata.py --candidate
+          python scripts/check_github_zenodo_parity.py preflight --tag v1.0.0-rc.4
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          m=json.loads(Path('plugin.json').read_text())
+          assert m['name']=='meu-artigo' and m['version']=='1.0.0-rc.4'
+          u=m['extensions']['com.openai']['interface']
+          assert u['logo']==u['composerIcon']=='./assets/rc4-logo.png'
+          assert m['author']['name']=='Rebson de Morais Mendes'
+          print('RC4_PLUGIN_ONLY_METADATA_PASS')
+          PY
+          printf '267d9f1b9c68c71f1f6bc6603aed36cc84ab58b408aae5129a335a0002894154  assets/rc4-logo.png\n' | sha256sum -c -
+      - name: Refuse previously published release or tag
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if gh release view v1.0.0-rc.4 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then echo 'Release exists; refusing overwrite'; exit 1; fi
+          if git ls-remote --tags origin refs/tags/v1.0.0-rc.4 | grep -q .; then echo 'Tag exists; refusing overwrite'; exit 1; fi
+      - name: Check code, library, rights and source integrity
+        run: |
+          set -euo pipefail
+          python scripts/release_audit.py
+          python scripts/reconcile_methodology_library.py --check
+          python scripts/audit_public_pdf_release.py --verify-only
+          python scripts/check_documentation_links.py
+          python scripts/audit_public_docs.py
+          python scripts/audit_repository_secrets.py
+          python scripts/audit_source_language.py --strict
+          python -m unittest discover -s tests -q
+      - name: Build and verify only the RC.4 plugin ZIP
+        run: |
+          set -euo pipefail
+          python scripts/build_plugin_bundle.py
+          python scripts/build_plugin_bundle.py --verify dist/MeuArtigoPlugin-v1.0.0-rc.4.zip
+          (cd dist && sha256sum -c SHA256SUMS.txt)
+          test -f dist/MeuArtigoPlugin-v1.0.0-rc.4.zip
+          test ! -e dist/MeuArtigoSkill-v1.0.0-rc.4.zip
+          python - <<'PY'
+          from zipfile import ZipFile
+          with ZipFile('dist/MeuArtigoPlugin-v1.0.0-rc.4.zip') as z:
+              files=z.namelist()
+              assert 'meu-artigo/plugin.json' in files
+              assert 'meu-artigo/assets/rc4-logo.png' in files
+              assert 'meu-artigo/skills/meu-artigo/SKILL.md' in files
+              assert not any(x.lower().endswith('.pdf') for x in files)
+          print('RC4_PLUGIN_ONLY_ARCHIVE_PASS')
+          PY
+      - name: Create accurate release notes after release preflight
+        run: |
+          cat > "$RUNNER_TEMP/rc4-notes.md" <<'EOF'
+          **Meu Artigo v1.0.0-rc.4 — experimental plugin-only prerelease**
+
+          The first ChatGPT plugin-only distribution. One plugin embeds the scientific-workflow skill and supports normal chat and Work wherever the installed plugin is available. No separate RC.4 Skill ZIP is distributed.
+
+          Includes methodological cards and workflows, [L]/[I]/[P] provenance discipline, A/B/C/D choices, C.A.D.A., and seven researcher-controlled scientific gates. The original approved visual identity is bundled. Private installation does not establish public-directory listing or host-wide logo display.
+
+          **Experimental software, not independently scientifically validated.** Availability of licensed material, Python tools, third-party access and Drive persistence depends on connected permissions. Third-party PDF binaries are excluded from this archive.
+
+          **Citation:** Mendes, Rebson de Morais. *Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool* (v1.0.0-rc.4) [Software]. Zenodo version-specific DOI is pending observed archiving and must not reuse the previous RC.3 DOI.
+          EOF
+      - name: Publish exactly one RC.4 plugin GitHub prerelease
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh release create v1.0.0-rc.4 \
+            dist/MeuArtigoPlugin-v1.0.0-rc.4.zip \
+            dist/SHA256SUMS.txt \
+            --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
+            --title "Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool v1.0.0-rc.4" \
+            --notes-file "$RUNNER_TEMP/rc4-notes.md" --prerelease --latest=false
+      - name: Read back immutable tag and both release assets
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh release view v1.0.0-rc.4 --repo "$GITHUB_REPOSITORY" --json isPrerelease,url,tagName,assets \
+            --jq '{prerelease:.isPrerelease,url:.url,tag:.tagName,assets:[.assets[].name]}'
+          test "$(gh release view v1.0.0-rc.4 --repo "$GITHUB_REPOSITORY" --json assets --jq '[.assets[].name]|index("MeuArtigoPlugin-v1.0.0-rc.4.zip") != null')" = "true"
+          test "$(gh release view v1.0.0-rc.4 --repo "$GITHUB_REPOSITORY" --json assets --jq '[.assets[].name]|index("SHA256SUMS.txt") != null')" = "true"
