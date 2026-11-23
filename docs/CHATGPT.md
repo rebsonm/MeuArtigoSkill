@@ -27,11 +27,17 @@ and explains its limits. On a ChatGPT interface with native radio controls,
 you should see **four clickable radio buttons, one immediately before each
 option A, B, C and D**, with only one selectable at a time. No option should
 be preselected just because it is recommended. **Option D** is the fourth
-radio choice: when selected, an **enabled text field** should appear so you
-can **type your own different answer**. If native radio controls are not
-available in your ChatGPT session, choose by writing **A**, **B**, **C** or
-**D: your proposal** in the chat. Plain text circles are not clickable
-radio buttons. Installing the Skill cannot itself add a host UI widget.
+radio choice and has an **always-visible, enabled text field immediately
+below D**, even before you select it. Type your own different answer
+directly into that field; typing automatically selects D. A separate
+**Submit answer** button is visible below the choices, and becomes clickable
+only after A/B/C is selected or D has nonblank text. Selecting a radio or
+typing does not send anything until **Submit answer** is clicked. If native
+controls are not available in your ChatGPT session, choose by writing
+**A**, **B**, **C** or **D: your proposal** in the ordinary chat composer
+and send the message normally. Plain text circles, example text fields and
+decorative buttons are not functional controls. Installing the Skill cannot
+itself add a host UI widget.
 You may reject all three suggestions.
 
 These options orient **one** currently valid next decision; they do **not approve**
