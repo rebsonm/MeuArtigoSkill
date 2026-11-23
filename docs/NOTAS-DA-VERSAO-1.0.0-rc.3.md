@@ -28,7 +28,7 @@ historical RC.2 record and MUST NOT be reused for RC.3.
   ChatGPT host will render native radio inputs, a textarea or a submit
   button for an imported Skill.
 - Repository changes alone do not update the currently installed Skill.
-  A skills-only Plugin package is a separate optional distribution format,
+  A skills-only installer format is a separate optional distribution choice,
   not created by these version metadata changes.
 - The complete GitHub audit, candidate ZIP, real-host acceptance and
   independently verified Zenodo archive/source fingerprint remain
