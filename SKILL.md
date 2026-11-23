@@ -214,28 +214,9 @@ submission without external confirmation. See
 
 [Optional 649-card library guide](references/unified-library-649.md).
 
-## 4A. Next-step decisions — three alternatives and open text
+## 4A. Choice UI
 
-**MANDATORY WHEN A MEANINGFUL RESEARCHER CHOICE IS DUE:** Apply the
-[four-choice next-step guidance](references/decision-navigation.md).
-Present **three alternatives** (A/B/C), each with concrete pros, cons
-and its immediate consequence; explicitly recommend **one**, with a
-bounded reason grounded in the actual project. The fourth choice,
-**D — Other**, is a **free-text** response written by the researcher:
-**render a real, single-select native radio button before each of
-A, B, C and D wherever the host supports radio groups**. Do not
-preselect the recommended option. **Show the D free-text field
-immediately, always visible and editable even before selecting D**.
-Typing an answer automatically selects the D radio. **Show a real
-Submit answer button** below the choices, disabled until A/B/C is
-selected or D contains nonblank text; submit only on button click,
-sending the selected response through the chat. If native controls
-are unavailable, clearly offer A/B/C/D through ordinary chat,
-without fake inputs or buttons. The researcher may
-reject every proposed alternative. Focus on one valid pending decision
-from canonical continuity; do not turn simple factual answers or
-routine work into obligatory questionnaires. Recommendations and menu
-selections never approve scientific gates or authorize external action.
+For meaningful decisions, show **three alternatives** A/B/C (pros/cons, one recommendation) and **free-text** D. Follow [native radio button, D radio and Submit](references/decision-navigation.md); no gate approval.
 
 ## 5. Platforms and interaction presentation
 
@@ -247,7 +228,7 @@ Consult the
 [ChatGPT](docs/CHATGPT.md), [Claude](docs/CLAUDE.md) and
 [Gemini](docs/GEMINI.md). Adapters never relax scientific or ethical controls.
 
-**Next/próximo:** Use [authorized continuity and C.A.D.A.](references/project-state.md). For local approved fallback, run `scripts/next_step_router.py PROJECT`. Navigation never approves a gate or verifies Drive sync.
+**Next/próximo:** See [canonical continuity](references/project-state.md); local fallback: `scripts/next_step_router.py PROJECT`. Never approve gates or assume Drive sync.
 
 
 **Native in-chat visual dashboard:** For progress requests, read the
@@ -260,9 +241,7 @@ invent data or imply that navigation approves scientific work.
 An authorized local project can use the read-only
 `scripts/native_chat_dashboard.py`; Drive remains canonical when used.
 
-For **each response**, in the researcher's active conversational language:
-state confirmed facts, material uncertainty and the next valid action.
-Avoid flooding an inexperienced researcher with internal record names
-when the MINIMAL view suffices. Neither a ZIP, release badge, citation
-metadata nor a successful engineering CI job validates research quality.
-Apache-2.0 for the software does not grant rights over third-party PDFs.
+For each reply use the researcher's language; show verified facts,
+uncertainty and the next action. MINIMAL avoids clutter. A ZIP, CI,
+release badge or DOI never validates science; Apache-2.0 does not
+license third-party PDFs.
