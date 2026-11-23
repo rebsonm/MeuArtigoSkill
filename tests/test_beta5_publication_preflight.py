@@ -5,7 +5,7 @@ import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"scripts"))
-from check_release_metadata import audit_candidate_metadata
+from check_release_metadata import audit_published_source_metadata
 from version_info import read_version
 
 class Beta5PublicationTests(unittest.TestCase):
@@ -16,7 +16,7 @@ class Beta5PublicationTests(unittest.TestCase):
 
     def test_consistent_release_metadata(self):
         self.assertEqual(self.version,"1.0.0-rc.3")
-        self.assertEqual(audit_candidate_metadata(ROOT),[])
+        self.assertEqual(audit_published_source_metadata(ROOT),[])
         self.assertIn("recommended published experimental prerelease",self.readme.lower())
         self.assertIn("published github experimental prerelease",self.readme.lower())
         self.assertIn("pre-release",self.notes.lower())
@@ -29,7 +29,7 @@ class Beta5PublicationTests(unittest.TestCase):
         self.assertNotIn("v1.0.0 has been published",self.readme)
 
     def test_user_guides_and_recommendation(self):
-        self.assertEqual((ROOT/"OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip(),"1.0.0-rc.1")
+        self.assertEqual((ROOT/"OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip(),"1.0.0-rc.3")
         guide=(ROOT/"docs/TESTE-BETA-PESQUISADORES.md").read_text(encoding="utf-8")
         issue=(ROOT/".github/ISSUE_TEMPLATE/relato-beta.md").read_text(encoding="utf-8")
         self.assertIn("v1.0.0-rc.1",guide)

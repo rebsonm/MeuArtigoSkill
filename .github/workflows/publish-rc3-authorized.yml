@@ -1,0 +1,99 @@
+name: Publish specifically authorized RC.3 and enable Zenodo archiving
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/RC3-PUBLISH-AUTHORIZATION.md"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: single-rc3-publisher
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'rebsonm/MeuArtigoSkill' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - name: Check out exact authorized public revision
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Python 3.12
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Explicit one-time release approval and source parity
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -Fx 'RC3_RELEASE_APPROVED_FOR_GITHUB_AND_ZENODO=YES' docs/RC3-PUBLISH-AUTHORIZATION.md
+          test "$(cat VERSION)" = "1.0.0-rc.3"
+          test "$(cat OFFICIAL_SKILL_RELEASE)" = "1.0.0-rc.3"
+          test -f docs/NOTAS-DA-VERSAO-1.0.0-rc.3.md
+          python scripts/check_github_zenodo_parity.py preflight --tag v1.0.0-rc.3
+          python scripts/check_release_metadata.py --require-today
+      - name: Refuse any preexisting tag or release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if gh release view v1.0.0-rc.3 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo '::error::Existing RC.3 release; never overwrite'; exit 1
+          fi
+          if git ls-remote --tags origin refs/tags/v1.0.0-rc.3 | grep -q .; then
+            echo '::error::RC.3 tag exists; refuse to move'; exit 1
+          fi
+      - name: Recheck public rights, source documentation and security
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/release_audit.py
+          python scripts/reconcile_methodology_library.py --check
+          python scripts/audit_public_pdf_release.py --verify-only
+          python scripts/check_documentation_links.py
+          python scripts/audit_public_docs.py
+          python scripts/audit_repository_secrets.py
+          python scripts/audit_source_language.py --strict
+          python -m unittest discover -s tests -q
+      - name: Build and verify installable RC.3 ZIP and digest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_skill_bundle.py
+          python scripts/build_skill_bundle.py --verify dist/MeuArtigoSkill-v1.0.0-rc.3.zip
+          (cd dist && sha256sum -c SHA256SUMS.txt)
+      - name: Create exactly one experimental RC.3 release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh release create v1.0.0-rc.3 \
+            dist/MeuArtigoSkill-v1.0.0-rc.3.zip \
+            dist/SHA256SUMS.txt \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title "Meu Artigo v1.0.0-rc.3 — experimental" \
+            --notes-file docs/NOTAS-DA-VERSAO-1.0.0-rc.3.md \
+            --prerelease \
+            --latest=false
+      - name: Confirm published release assets
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh release view v1.0.0-rc.3 --repo "$GITHUB_REPOSITORY" \
+            --json isPrerelease,assets,url,tagName \
+            --jq '{prerelease:.isPrerelease,url:.url,tag:.tagName,assets:[.assets[].name]}'
+          test "$(gh release view v1.0.0-rc.3 --repo "$GITHUB_REPOSITORY" --json assets --jq '[.assets[].name]|index("MeuArtigoSkill-v1.0.0-rc.3.zip") != null')" = "true"
+          test "$(gh release view v1.0.0-rc.3 --repo "$GITHUB_REPOSITORY" --json assets --jq '[.assets[].name]|index("SHA256SUMS.txt") != null')" = "true"

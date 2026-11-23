@@ -1,5 +1,5 @@
 {
-  "title": "Meu Artigo v1.0.0-rc.3 — UNPUBLISHED source candidate (deposit draft)",
+  "title": "Meu Artigo v1.0.0-rc.3 — experimental software release",
   "upload_type": "software",
   "creators": [
     {
@@ -17,10 +17,10 @@
   ],
   "license": "Apache-2.0",
   "access_right": "open",
-  "notes": "FUTURE RC.3 SOURCE-ONLY DRAFT; NO RELEASE OR DOI HAS BEEN PUBLISHED FOR RC.3. Historical Zenodo RC.2 DOI 10.5281/zenodo.24450459 is NOT the RC.3 DOI. Previous 10.5281/zenodo.24397699 also remains historical. GitHub–Zenodo integration is enabled according to maintainer screenshot, but that does not retroactively correct old versions. GitHub RC.3 release publication may trigger an automatic Zenodo record; do NOT duplicate it through manual deposit. Third-party PDFs are excluded only from the source-review ZIP; their individual rights and GitHub records remain.",
+  "notes": "GitHub RC.3 release authorized for publication on 2026-11-23 UTC; this JSON is an informational review draft and is not the active .zenodo.json metadata. The official GitHub–Zenodo account integration is enabled; do not manually upload a duplicate. Zenodo RC.3 version-specific DOI will only be recorded after verification. Historical RC.2 DOI 10.5281/zenodo.24450459 must not be reused for RC.3.",
   "existing_zenodo_doi_to_verify_before_versioning": "10.5281/zenodo.24450459",
   "new_version_doi_assigned": false,
-  "deposit_status": "RC3_DRAFT_NOT_PUBLISHED",
+  "deposit_status": "AWAITING_GITHUB_RELEASE_AND_ZENODO_AUTOMATIC_ARCHIVE",
   "current_zenodo_rc2_version": {
     "version": "1.0.0-rc.2",
     "doi": "10.5281/zenodo.24450459",

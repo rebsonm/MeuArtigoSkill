@@ -3,10 +3,10 @@
 
 ## Unreleased
 
-Source preparation completed for an unpublished RC.3 candidate; no
-GitHub release, tag or Zenodo deposit has been created.
+RC.3 publication is explicitly authorized. The GitHub release and
+Zenodo archive must be verified independently after automated publication.
 
-## 1.0.0-rc.3 — UNRELEASED
+## 1.0.0-rc.3 — 2026-11-23
 
 - Consolidates development after immutable GitHub RC.1, without
   changing the separately archived historical Zenodo RC.2.
@@ -16,7 +16,8 @@ GitHub release, tag or Zenodo deposit has been created.
 - Documents and tests GitHub/Zenodo RC software-version and source
   commit parity; still requires independent post-archive verification.
 - Keeps scientific decisions and all seven gates under researcher control.
-- This is source code only, not a release or a DOI.
+- An explicitly approved experimental prerelease; a DOI is not claimed
+  until the Zenodo version-specific archive is independently verified.
 
 ### Public documentation review and Zenodo source-copy preparation (2026-11-22)
 

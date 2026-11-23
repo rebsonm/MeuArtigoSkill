@@ -1,5 +1,8 @@
 # Start here: conduct research with Meu Artigo
 
+**RC.3 authorized release (2026-11-23 UTC):** [GitHub v1.0.0-rc.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) | [installable Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.3/MeuArtigoSkill-v1.0.0-rc.3.zip). Historical RC.1 references below remain valid for their original archived assets; the Zenodo RC.3 version-specific DOI is pending independent verification.
+
+
 Meu Artigo is a **published experimental release candidate** designed to assist researchers in different fields, research traditions and methodological approaches. It offers guidance and organizational tools; it does not make scientific judgments on your behalf.
 
 **Current published version:** [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1), experimental prerelease (22 November 2026), not stable software.

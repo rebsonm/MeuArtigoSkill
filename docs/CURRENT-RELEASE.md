@@ -1,6 +1,6 @@
-# RC.3 source candidate — published GitHub RC.1 and historical Zenodo RC.2
+# GitHub experimental release v1.0.0-rc.3 and Zenodo archive verification
 
-**Unpublished working source:** `VERSION=1.0.0-rc.3` is being prepared for a future matching GitHub/Zenodo release. It is **not yet a GitHub Release, installable published asset or Zenodo deposit**. Historical publication status verified on 2026-11-22: [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) is the latest **published experimental GitHub prerelease**. It was released at 18:09:28 UTC on 2026-11-22. It is neither stable v1.0.0 nor independently scientifically validated.
+**RC.3 publication authorized on 2026-11-23 UTC:** `VERSION=1.0.0-rc.3` identifies the approved GitHub experimental release. The Zenodo DOI and archive must be verified separately after publication. Historical publication status verified on 2026-11-22: [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) is the latest **published experimental GitHub prerelease**. It was released at 18:09:28 UTC on 2026-11-22. It is neither stable v1.0.0 nor independently scientifically validated.
 
 **Newer Zenodo archive:** The maintainer has supplied DOI
 [10.5281/zenodo.24450459](https://doi.org/10.5281/zenodo.24450459) for
@@ -20,13 +20,24 @@ source-only snapshot is prepared by the review workflow; it is **not** the
 published Zenodo RC.2 installer, a new GitHub release, or a stable v1.0.0. See [Zenodo preparation](ZENODO-DEPOSIT-PREPARATION.md) and
 [the rights-holder notice](../RIGHTSHOLDER-NOTICE.md).
 
-## Official downloads
+## RC.3 release
+
+- [GitHub RC.3 experimental release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3)
+- [RC.3 installable Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.3/MeuArtigoSkill-v1.0.0-rc.3.zip)
+- [RC.3 SHA256 checksums](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.3/SHA256SUMS.txt)
+
+**This RC.3 release is distinct from earlier RC.1 and Zenodo RC.2.**
+The Zenodo RC.3 DOI will be added after the automatic archival is observed
+and the version/source identity matches the release tag. No older DOI is
+reassigned to RC.3.
+
+## Historical RC.1 downloads
 
 - [Installable Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip)
 - [51 third-party PDF archive with author/publisher attribution](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigo-PDFs-51-attributed.zip)
 - [SHA256SUMS.txt](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/SHA256SUMS.txt)
 
-`OFFICIAL_SKILL_RELEASE` still identifies published GitHub `1.0.0-rc.1`; `VERSION` and top-level `CITATION.cff` identify **unpublished candidate `1.0.0-rc.3`**, without `date-released`, a new DOI or any published RC.3 ZIP. The historical RC.1 release date was `2026-11-22`. The previous [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) remains available and documented as a **historical release**, not the recommended current installer.
+`OFFICIAL_SKILL_RELEASE`, `VERSION` and top-level `CITATION.cff` all identify approved publication of `1.0.0-rc.3` with release date `2026-11-23`. No Zenodo RC.3 DOI is claimed before independent archive readback. The historical RC.1 release date was `2026-11-22`. The previous [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) remains available and documented as a **historical release**, not the recommended current installer.
 
 **Installation:** Import **only** the Skill ZIP into a compatible Skills-enabled assistant. The PDF archive is separate scholarly reference material; the GitHub source-code ZIP is not the prepared installer. Existing installed copies never auto-update.
 
