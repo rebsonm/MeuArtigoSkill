@@ -24,8 +24,8 @@ class ZenodoDisplayMetadataTests(unittest.TestCase):
     def test_canonical_author_is_mendes_rebson_de_morais(self):
         cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
         match = re.search(
-            r'(?m)^authors:\\s*\\n\\s+- family-names:\\s*"([^"]+)"'
-            r'\\s*\\n\\s+given-names:\\s*"([^"]+)"',
+            r'(?m)^authors:\s*\n\s+- family-names:\s*"([^"]+)"'
+            r'\s*\n\s+given-names:\s*"([^"]+)"',
             cff,
         )
         self.assertIsNotNone(match, "Software author missing or malformed")
