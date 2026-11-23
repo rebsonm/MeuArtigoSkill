@@ -41,7 +41,11 @@ def release_notes_path(root: Path = ROOT) -> Path:
 
 
 def release_zip_name(root: Path = ROOT) -> str:
-    return f"MeuArtigoSkill-v{read_version(root)}.zip"
+    version = read_version(root)
+    # Historical bundles retain Skill names; RC.4 is plugin-only.
+    if version == "1.0.0-rc.4":
+        return f"MeuArtigoPlugin-v{version}.zip"
+    return f"MeuArtigoSkill-v{version}.zip"
 
 
 def diagnostic(root: Path = ROOT) -> dict:

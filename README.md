@@ -2,7 +2,7 @@
 
 **Current version:** `1.0.0-rc.4` — **unpublished release candidate**; **plugin-only distribution planned**. This source is **not published** as RC.4, is **not a stable release**, and has not passed RC.4 live-host acceptance. Do not cite an RC.4 DOI or assume it can already be installed.
 
-**Last published experimental version:** [v1.0.0-rc.3 on GitHub](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3); [Zenodo version-specific DOI 10.5281/zenodo.24452285](https://doi.org/10.5281/zenodo.24452285). Its historical Skill ZIP remains accessible and unchanged. Earlier deposits and releases are preserved.
+**Last published experimental prerelease version:** [v1.0.0-rc.3 on GitHub](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3); [Zenodo version-specific DOI 10.5281/zenodo.24452285](https://doi.org/10.5281/zenodo.24452285). Its historical Skill ZIP remains accessible and unchanged. Earlier deposits and releases are preserved.
 
 ## Getting started
 
@@ -25,7 +25,7 @@ Meu Artigo helps researchers frame questions, compare methodological strategies,
 - Preserve **all seven human-reviewed gates**. A generated log, tool response or completed C.A.D.A. task is not approval.
 - Support qualitative, quantitative, mixed methods, reviews, design science and relevant research-method choices, without forcing every study through one bibliographic-review route.
 - Use Google Drive only with genuine authorization and confirmed operations. Plugin installation does not provide credentials, write permissions or tools by itself.
-- The public methodology repository contains **475 bibliographic prospecting cards [P] and 174 editorial cards [I]/[P]**, plus **51 separately licensed research PDFs**. The plugin must consult eligible source material on demand where verified access exists; it does not embed third-party PDF binaries or claim they were read by merely indexing them.
+- The public GitHub repository's methodology library contains **475 bibliographic prospecting cards [P] and 174 editorial cards [I]/[P]**, plus **51 separately licensed research PDFs**. The plugin must consult eligible source material on demand where verified access exists; it does not embed third-party PDF binaries or claim they were read by merely indexing them.
 
 Documentation is written primarily in English; researcher-facing responses follow the researcher's language. Manuscript language is a separate scholarly/editorial choice.
 
@@ -41,6 +41,6 @@ The RC.4 build must emit `MeuArtigoPlugin-v1.0.0-rc.4.zip` only. Historic `MeuAr
 
 **RC.4:** citation metadata are a candidate only. Do not invent publication dates or a version DOI before an actual release and Zenodo deposit. See [CITATION.cff](CITATION.cff) and [GitHub–Zenodo controls](docs/GITHUB-ZENODO-VERSION-PARITY.md).
 
-Software is Apache-2.0, subject to [LICENSE](LICENSE), [NOTICE](NOTICE) and [SECURITY.md](SECURITY.md). Academic PDFs and other third-party source texts retain their original licenses. For rights-holder corrections contact rebsonm@gmail.com.
+Software is licensed under the Apache License 2.0 (Apache-2.0), subject to [LICENSE](LICENSE), [NOTICE](NOTICE) and [SECURITY.md](SECURITY.md). Academic PDFs and other third-party source texts retain their original licenses. For rights-holder corrections contact rebsonm@gmail.com.
 
 **Additional guides:** [Start here](docs/COMECE-AQUI.md) · [ChatGPT](docs/CHATGPT.md) · [Research routes](docs/ROTAS-METODOLOGICAS.md) · [Release guide](docs/GUIA-DE-RELEASES.md) · [Open validation issues](docs/VALIDACOES-PENDENTES.md).
