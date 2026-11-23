@@ -9,9 +9,9 @@ See the [English migration guide](docs/ENGLISH-SOURCE-MIGRATION.md) for the
 complete Markdown audit commands and the strict unresolved-language check. The
 installed assistant still responds in the researcher's requested language.
 
-[![Zenodo v1.0.0-rc.2 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24450459.svg)](https://doi.org/10.5281/zenodo.24450459)
+[![Historical Zenodo v1.0.0-rc.2 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24450459.svg)](https://doi.org/10.5281/zenodo.24450459)
 
-**Latest Zenodo archival version:** [v1.0.0-rc.2 — DOI 10.5281/zenodo.24450459](https://doi.org/10.5281/zenodo.24450459), deposited separately from the last published GitHub prerelease v1.0.0-rc.1. The Zenodo DOI and GitHub release are distinct publication channels; this does not silently replace an existing installed Skill.
+**Latest reported historical Zenodo archival version:** [v1.0.0-rc.2 — DOI 10.5281/zenodo.24450459](https://doi.org/10.5281/zenodo.24450459), deposited separately from the last published GitHub prerelease v1.0.0-rc.1. **RC.3 has no DOI or published release yet.** The Zenodo DOI and GitHub release are distinct publication channels; this does not silently replace an existing installed Skill.
 
 **A research-support Skill for people preparing scientific articles.** Meu Artigo helps a researcher organize a question, consider appropriate methods, find and assess sources, document decisions, and prepare a manuscript. You remain responsible for the scientific work.
 
@@ -21,7 +21,7 @@ The project is available in a **public GitHub repository**. **Every 0.9.0-beta r
 
 **Recommended published experimental prerelease:** [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1), published 2026-11-22 with the [installable Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip), [51 attributed third-party PDFs](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigo-PDFs-51-attributed.zip) in a separate archive, and SHA-256 checksums. The earlier [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) remains available as a historical beta.
 
-**Current version:** `1.0.0-rc.1` — **published GitHub experimental prerelease**, not stable v1.0.0 or comprehensive host certification. The versioned installable Skill ZIP is distinct from GitHub's source-code archive; installed copies do not update automatically. The central CSV/Drive workflow passed a fictional-project functional test; optional XLSX generation failed because its dependency was unavailable.
+**Current version:** `1.0.0-rc.3` — **unpublished release candidate source** (not published in GitHub or Zenodo). The **recommended published GitHub experimental prerelease** remains `v1.0.0-rc.1`, not stable v1.0.0 or comprehensive host certification. The versioned installable Skill ZIP is distinct from GitHub's source-code archive; installed copies do not update automatically. The central CSV/Drive workflow passed a fictional-project functional test; optional XLSX generation failed because its dependency was unavailable.
 
 1. Follow the [installation guide](docs/INSTALLATION.md) for a compatible assistant.
 2. Start a conversation about a genuine research problem. For example: *"I want to develop an article with Meu Artigo. Help me define the question and possible methodological approaches. First, check which storage and research tools are actually available."*
