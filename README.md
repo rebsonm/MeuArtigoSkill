@@ -38,9 +38,14 @@ for each, mark **one context-based recommendation**, and offer **D — Other**
 so the researcher can freely type a different answer. **Where native
 radio controls exist, all four choices must have a real single-select radio
 button in front of their labels** (without preselecting the recommended
-option). Selecting **D** opens/enables the researcher's text field. Where
-the host cannot render radio controls, use explicit plain-chat A/B/C/D
-answers without fake clickable circles. Installing the Skill does not
+option). D has a **real text field that is visible and enabled from
+the start**, even before the researcher selects it; **typing selects D
+automatically**. A real **Submit answer** button always appears below the
+options and becomes enabled only when a valid A/B/C or nonblank D response
+exists. The selected response is sent **only when that button is clicked**.
+Where the host cannot render functional controls, use explicit plain-chat
+A/B/C/D answers via the usual message send action, without fake clickable
+circles, text boxes or buttons. Installing the Skill does not
 install any additional host UI components. This is decision support,
 not an automatic scientific approval or new graphical application. See the
 [four-choice next-step policy](references/decision-navigation.md).
