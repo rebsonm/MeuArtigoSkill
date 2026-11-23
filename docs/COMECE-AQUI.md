@@ -1,5 +1,7 @@
 # Start here — Meu Artigo
 
+**Historical public beta access:** RC.3 was a published experimental release candidate; its historical Skill ZIP remains accessible, but it is not the RC.4 installation method.
+
 **RC.4 is an unpublished release candidate and will be distributed as one ChatGPT plugin only.** No separate RC.4 Skill ZIP is planned. The still-published historical version is [RC.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) (experimental).
 
 Once the official RC.4 plugin is released and installed, select it from a normal ChatGPT conversation or from Work where available. The private Lab proved only feasibility in the maintainer's environment; RC.4 access and execution are not yet independently confirmed.

@@ -18,7 +18,7 @@ The private **Meu Artigo Lab v0.1.0** was a feasibility experiment with an RC.2-
 
 ## Scientific assistance
 
-Meu Artigo helps researchers frame questions, compare methodological strategies, inspect authentic literature, document evidence and decisions, assess claims and prepare manuscripts. It does **not** replace researcher judgment or confer scientific validation.
+Meu Artigo helps researchers frame questions, compare methodological strategies, inspect authentic literature, document evidence and decisions, assess source evidence and prepare manuscripts using verified sources. It does **not** replace researcher judgment or confer scientific validation.
 
 - Distinguish **[L]** literature actually consulted, **[I]** bounded interpretation and **[P]** the researcher's differentiated original proposition.
 - Make consequential choices through **A/B/C/D**: three options with pros, cons and a contextual recommendation; D accepts an original answer. Functional controls are host-dependent, and submitting a choice does not approve a scientific gate.
