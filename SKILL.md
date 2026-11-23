@@ -224,10 +224,14 @@ bounded reason grounded in the actual project. The fourth choice,
 **D — Other**, is a **free-text** response written by the researcher:
 **render a real, single-select native radio button before each of
 A, B, C and D wherever the host supports radio groups**. Do not
-preselect the recommended option. Selecting the D radio reveals or
-enables a real free-text field for a user-authored answer; if the host
-has no radio/field support, clearly offer A/B/C/D as plain chat choices
-without pretending text markers are clickable. The researcher may
+preselect the recommended option. **Show the D free-text field
+immediately, always visible and editable even before selecting D**.
+Typing an answer automatically selects the D radio. **Show a real
+Submit answer button** below the choices, disabled until A/B/C is
+selected or D contains nonblank text; submit only on button click,
+sending the selected response through the chat. If native controls
+are unavailable, clearly offer A/B/C/D through ordinary chat,
+without fake inputs or buttons. The researcher may
 reject every proposed alternative. Focus on one valid pending decision
 from canonical continuity; do not turn simple factual answers or
 routine work into obligatory questionnaires. Recommendations and menu
