@@ -5,7 +5,7 @@ import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"scripts"))
-from check_release_metadata import audit_published_source_metadata
+from check_release_metadata import audit_candidate_metadata
 from version_info import read_version
 
 class Beta5PublicationTests(unittest.TestCase):
@@ -15,8 +15,8 @@ class Beta5PublicationTests(unittest.TestCase):
         self.readme=(ROOT/"README.md").read_text(encoding="utf-8")
 
     def test_consistent_release_metadata(self):
-        self.assertEqual(self.version,"1.0.0-rc.1")
-        self.assertEqual(audit_published_source_metadata(ROOT),[])
+        self.assertEqual(self.version,"1.0.0-rc.3")
+        self.assertEqual(audit_candidate_metadata(ROOT),[])
         self.assertIn("recommended published experimental prerelease",self.readme.lower())
         self.assertIn("published github experimental prerelease",self.readme.lower())
         self.assertIn("pre-release",self.notes.lower())
