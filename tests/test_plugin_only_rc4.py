@@ -41,7 +41,7 @@ class RC4PluginOnlyTests(unittest.TestCase):
         self.assertIn('date-released: "2026-11-23"',cff)
         obj=json.loads((ROOT/"zenodo/metadata-draft.json").read_text())
         self.assertEqual(obj["version"],"1.0.0-rc.4")
-        self.assertEqual(obj["zenodo_version_doi"],"${doi}")
+        self.assertEqual(obj["zenodo_version_doi"],"10.5281/zenodo.24453186")
         self.assertTrue(obj["github_release_published"])
 
 
