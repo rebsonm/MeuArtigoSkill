@@ -13,7 +13,7 @@ from datetime import date, timezone, datetime
 from pathlib import Path
 import re
 
-from version_info import ROOT, read_version, release_notes_path
+from version_info import ROOT, read_version, release_notes_path, plugin_only_version
 
 
 def audit_release_metadata(root: Path, *, expected_date: str | None = None) -> list[str]:
@@ -57,13 +57,13 @@ def audit_candidate_metadata(root: Path) -> list[str]:
     errors: list[str] = []
     try:
         version = read_version(root)
-        if not re.fullmatch(r"\d+\.\d+\.\d+-rc\.[1-9]\d*", version):
+        if not re.fullmatch(r"\d+\.\d+\.\d+-rc\.[1-9]\d*(?:\.[1-9]\d*)*", version):
             return ["SOURCE_VERSION_IS_NOT_RELEASE_CANDIDATE"]
         citation = (root / "CITATION.cff").read_text(encoding="utf-8")
         changelog = (root / "CHANGELOG.md").read_text(encoding="utf-8")
         readme = (root / "README.md").read_text(encoding="utf-8")
         notes = release_notes_path(root).read_text(encoding="utf-8")
-        official = (root / "OFFICIAL_SKILL_RELEASE").read_text(encoding="utf-8").strip()
+        official = (root / ("OFFICIAL_PLUGIN_RELEASE" if plugin_only_version(version) else "OFFICIAL_SKILL_RELEASE")).read_text(encoding="utf-8").strip()
     except (OSError, ValueError, UnicodeError):
         return ["SOURCE_CANDIDATE_DOCUMENTS_NOT_AVAILABLE"]
     if f'version: "{version}"' not in citation:
@@ -80,12 +80,12 @@ def audit_candidate_metadata(root: Path) -> list[str]:
         errors.append("CANDIDATE_NOT_CLEARLY_UNPUBLISHED")
     # Unpublished source candidates must preserve an older actual release pointer.
     def order(v: str):
-        m = re.fullmatch(r"(\d+)\.(\d+)\.(\d+)(?:-(beta|rc)\.(\d+))?", v)
+        m = re.fullmatch(r"(\d+)\.(\d+)\.(\d+)(?:-(beta|rc)\.(\d+(?:\.\d+)*))?", v)
         if not m:
             return None
         return (int(m[1]), int(m[2]), int(m[3]),
                 {"beta": 0, "rc": 1, None: 2}[m[4]],
-                int(m[5]) if m[5] else 0)
+                tuple(int(part) for part in m[5].split('.')) if m[5] else ())
     official_order = order(official)
     candidate_order = order(version)
     if official_order is None or candidate_order is None or not official_order < candidate_order:
@@ -107,7 +107,7 @@ def audit_published_source_metadata(root: Path) -> list[str]:
     root = Path(root)
     errors = audit_release_metadata(root)
     version = read_version(root)
-    pointer = "OFFICIAL_PLUGIN_RELEASE" if version == "1.0.0-rc.4" else "OFFICIAL_SKILL_RELEASE"
+    pointer = "OFFICIAL_PLUGIN_RELEASE" if plugin_only_version(version) else "OFFICIAL_SKILL_RELEASE"
     official = (root / pointer).read_text(encoding="utf-8").strip()
     citation = (root / "CITATION.cff").read_text(encoding="utf-8")
     readme = (root / "README.md").read_text(encoding="utf-8")

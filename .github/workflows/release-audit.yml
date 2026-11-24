@@ -132,13 +132,13 @@ jobs:
         id: rc
         shell: bash
         run: |
-          if [[ "$(cat VERSION)" == "1.0.0-rc.4" ]]; then
+          if python -c 'import sys; sys.path.insert(0,"scripts"); from version_info import read_version,plugin_only_version; sys.exit(0 if plugin_only_version(read_version()) else 1)'; then
             echo "plugin_only=true" >> "$GITHUB_OUTPUT"
           else
             echo "plugin_only=false" >> "$GITHUB_OUTPUT"
           fi
-          if [[ "$(cat VERSION)" =~ -rc\.[1-9][0-9]*$ ]]; then
-            if [[ "$(cat VERSION)" == "1.0.0-rc.4" && -f OFFICIAL_PLUGIN_RELEASE ]]; then
+          if [[ "$(cat VERSION)" =~ -rc\.[1-9][0-9]*(\.[1-9][0-9]*)*$ ]]; then
+            if [[ -f OFFICIAL_PLUGIN_RELEASE && "$(cat VERSION)" == "$(cat OFFICIAL_PLUGIN_RELEASE)" ]]; then
               python scripts/check_release_metadata.py --published-source
             elif [[ "$(cat VERSION)" == "$(cat OFFICIAL_SKILL_RELEASE)" ]]; then
               python scripts/check_release_metadata.py --published-source

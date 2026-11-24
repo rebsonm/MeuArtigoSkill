@@ -5,10 +5,10 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from check_release_metadata import audit_published_source_metadata
+from check_release_metadata import audit_published_source_metadata, audit_candidate_metadata
 from check_github_zenodo_parity import preflight
 
-CANDIDATE = "1.0.0-rc.4"
+CANDIDATE = (ROOT / "VERSION").read_text().strip()
 PUBLISHED = "1.0.0-rc.3"
 RELEASE_URL = "https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v" + PUBLISHED
 
@@ -17,12 +17,13 @@ class PluginCandidateAndPublishedHistoryTests(unittest.TestCase):
     def test_candidate_separate_from_published_history(self):
         self.assertEqual((ROOT / "VERSION").read_text().strip(), CANDIDATE)
         self.assertEqual((ROOT / "OFFICIAL_SKILL_RELEASE").read_text().strip(), PUBLISHED)
-        self.assertEqual(audit_published_source_metadata(ROOT), [])
+        self.assertEqual((ROOT / "OFFICIAL_PLUGIN_RELEASE").read_text().strip(), "1.0.0-rc.4")
+        self.assertEqual(audit_candidate_metadata(ROOT), [])
         self.assertEqual(preflight(ROOT, "v" + CANDIDATE), [])
         citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
-        self.assertIn('version: "1.0.0-rc.4"', citation)
-        self.assertIn('date-released: "2026-11-23"', citation)
-        self.assertIn('doi: "10.5281/zenodo.24453186"', citation)
+        self.assertIn(f'version: "{CANDIDATE}"', citation)
+        self.assertNotIn("\ndate-released:", citation)
+        self.assertNotIn("\ndoi:", citation)
         self.assertIn("## 1.0.0-rc.4 —", (ROOT / "CHANGELOG.md").read_text())
         self.assertIn("PUBLISHED experimental RC.4", (ROOT / "docs/NOTAS-DA-VERSAO-1.0.0-rc.4.md").read_text())
 
@@ -31,7 +32,7 @@ class PluginCandidateAndPublishedHistoryTests(unittest.TestCase):
                      "docs/COMECE-AQUI.md","docs/COMPATIBILIDADE-PLATAFORMAS.md"):
             text=(ROOT / path).read_text(encoding="utf-8")
             self.assertIn("plugin", text.lower())
-            self.assertIn(RELEASE_URL, text)
+            self.assertIn("1.0.0-rc.4", text)
             self.assertNotIn("/releases/download/v1.0.0-rc.4/MeuArtigoSkill-", text)
             self.assertIn("rc.4", text.lower())
         self.assertFalse((ROOT / "assets/rc4-logo.png").exists() and

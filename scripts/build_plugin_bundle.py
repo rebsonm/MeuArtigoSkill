@@ -18,11 +18,11 @@ from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 
 from build_skill_bundle import list_sources, source_provenance
 from bundle_dependency_audit import audit as audit_dependencies
-from version_info import read_version
+from version_info import read_version, plugin_only_version
 
 ROOT = Path(__file__).resolve().parents[1]
 PLUGIN_NAME = "meu-artigo"
-PLUGIN_VERSION = "1.0.0-rc.4"
+PLUGIN_VERSION = read_version(ROOT)
 LOGO_PATH = "assets/rc4-logo.png"
 FIXED_TIME = (2026, 10, 9, 0, 0, 0)
 INTEGRITY_PATH = "PLUGIN_BUNDLE_MANIFEST.json"
@@ -61,8 +61,8 @@ def source_payload(root: Path) -> dict[str, bytes]:
 
 def checked_manifest(root: Path) -> dict:
     version = read_version(root)
-    if version != PLUGIN_VERSION:
-        raise ValueError("PLUGIN_ONLY_RC4_REQUIRES_VERSION_1_0_0_RC4")
+    if not plugin_only_version(version):
+        raise ValueError("PLUGIN_ONLY_VERSION_REQUIRED")
     obj = json.loads((root / "plugin.json").read_text(encoding="utf-8"))
     if (obj.get("$schema") != "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json"
             or obj.get("name") != PLUGIN_NAME or obj.get("version") != version):
@@ -77,7 +77,7 @@ def preflight(root: Path) -> dict:
         raise ValueError("WRONG_SCIENTIFIC_ENTRYPOINT")
     ok, logo_status = checked_logo(root)
     return {
-        "source_version": PLUGIN_VERSION,
+        "source_version": read_version(root),
         "distribution": "CHATGPT_PLUGIN_ONLY",
         "nested_skill_internal_only": True,
         "scientific_quality_validated": False,
@@ -96,7 +96,7 @@ def package(root: Path, dest: Path) -> dict:
     state = preflight(root)
     if not state["plugin_build_ready"]:
         raise ValueError(state["logo_status"] + ": do not publish with placeholder logo")
-    if dest.name != f"MeuArtigoPlugin-v{PLUGIN_VERSION}.zip":
+    if dest.name != f"MeuArtigoPlugin-v{read_version(root)}.zip":
         raise ValueError("RC4_PACKAGE_NAME_MISMATCH")
     manifest = copy.deepcopy(checked_manifest(root))
     interface = manifest["extensions"]["com.openai"]["interface"]
@@ -111,7 +111,7 @@ def package(root: Path, dest: Path) -> dict:
     built[LOGO_PATH] = (root / LOGO_PATH).read_bytes()
     integrity = {
         "schema_version": 1,
-        "version": PLUGIN_VERSION,
+        "version": read_version(root),
         "distribution_type": "CHATGPT_PLUGIN_ONLY",
         "publication_verified": False,
         "scientific_quality_validated": False,
@@ -133,7 +133,7 @@ def package(root: Path, dest: Path) -> dict:
         f"{digest(dest.read_bytes())}  {dest.name}\n", encoding="utf-8")
     (dest.parent / "PLUGIN_BUILD_RECEIPT.json").write_text(
         json.dumps({
-            "version": PLUGIN_VERSION, "distribution_type": "CHATGPT_PLUGIN_ONLY",
+            "version": read_version(root), "distribution_type": "CHATGPT_PLUGIN_ONLY",
             "package": dest.name, "package_sha256": digest(dest.read_bytes()),
             "source_entrypoint_sha256": integrity["source_entrypoint_sha256"],
             "source_verification": provenance["source_verification"],
@@ -170,7 +170,7 @@ def verify_package(path: Path) -> dict:
             if digest(z.read(member)) != integrity["files"][rel]:
                 raise ValueError("PLUGIN_MEMBER_SHA256_MISMATCH: " + rel)
         manifest = json.loads(z.read(root + "plugin.json"))
-        if manifest["version"] != PLUGIN_VERSION or manifest["name"] != PLUGIN_NAME:
+        if (not plugin_only_version(manifest["version"]) or manifest["version"] != integrity["version"] or manifest["name"] != PLUGIN_NAME):
             raise ValueError("PLUGIN_MANIFEST_IDENTITY_MISMATCH")
         if manifest["extensions"]["com.openai"]["interface"].get("logo") != "./" + LOGO_PATH:
             raise ValueError("APPROVED_LOGO_NOT_REFERENCED")
@@ -195,7 +195,7 @@ def main() -> int:
         elif args.preflight:
             result = preflight(args.repo)
         else:
-            destination = args.out or args.repo / "dist" / f"MeuArtigoPlugin-v{PLUGIN_VERSION}.zip"
+            destination = args.out or args.repo / "dist" / f"MeuArtigoPlugin-v{read_version(args.repo)}.zip"
             result = package(args.repo, destination)
             result = {**result, "package": str(destination)}
     except (ValueError, OSError, KeyError, TypeError, UnicodeError, json.JSONDecodeError) as exc:
