@@ -9,9 +9,9 @@ PUBLISHED="1.0.0-rc.3"
 class HistoricalSkillReleaseTests(unittest.TestCase):
     def test_published_rc3_pointer_remains_historical(self):
         self.assertEqual((ROOT/"OFFICIAL_SKILL_RELEASE").read_text().strip(),PUBLISHED)
-        self.assertEqual((ROOT/"VERSION").read_text().strip(),"1.0.0-rc.4")
+        self.assertEqual((ROOT/"OFFICIAL_PLUGIN_RELEASE").read_text().strip(),"1.0.0-rc.4")
         old_url=f"{BASE}/releases/download/v{PUBLISHED}/MeuArtigoSkill-v{PUBLISHED}.zip"
-        for path in ("docs/INSTALLATION.md","docs/CURRENT-RELEASE.md"):
+        for path in ("docs/CURRENT-RELEASE.md",):
             self.assertIn(old_url,(ROOT/path).read_text(encoding="utf-8"))
         self.assertIn(f"{BASE}/releases/tag/v{PUBLISHED}",
                       (ROOT/"README.md").read_text(encoding="utf-8"))
@@ -21,6 +21,8 @@ class HistoricalSkillReleaseTests(unittest.TestCase):
     def test_candidate_not_mislabeled_published(self):
         text=(ROOT/"README.md").read_text(encoding="utf-8").lower()
         self.assertIn("published experimental prerelease (plugin-only)",text)
+        if (ROOT/"VERSION").read_text().strip() != (ROOT/"OFFICIAL_PLUGIN_RELEASE").read_text().strip():
+            self.assertIn("unpublished release candidate",text)
         self.assertIn("not a stable release",text)
         self.assertIn("plugin",text)
         self.assertIn("v0.9.0-beta.6",text)

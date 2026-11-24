@@ -374,3 +374,5 @@ When a journal is defined, the profile must distinguish:
 Do not infer missing journal rules. Record sources and verification dates.
 
 If the target changes materially, preserve the superseded profile and record a DEC_ID of type JOURNAL.
+
+RC.5 refinement: [flexible storage](flexible-storage.md) describes explicitly authorized other connected stores, Work, user-local folders and portable checkpoint handoffs using the existing fallback contract. Do not conflate staging, local HD, and verified canonical persistence; informational help is allowed while storage is being resolved.

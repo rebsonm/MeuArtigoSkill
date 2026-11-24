@@ -1,5 +1,8 @@
 # Meu Artigo in ChatGPT — RC.4 plugin
 
+**Current candidate:** RC.5.1 (unpublished); RC.4 remains the last published plugin. Follow the [quick Plugin Creator installation guide](INSTALLATION.md) for a personal copy or an update. RC.5.1 adds detailed AI execution identity, tool routing and flexible authorized storage. Private installation was confirmed; cross-host functional tests remain pending.
+
+
 RC.4 is a **published experimental plugin-only release candidate** ([GitHub](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4); [Zenodo](https://doi.org/10.5281/zenodo.24453186)). The existing public [RC.3 release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) remains a historical Skill ZIP, not an RC.4 plugin.
 
 ## One plugin, two ChatGPT surfaces

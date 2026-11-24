@@ -12,3 +12,5 @@ Before freezing material literature-grounded claims, read docs/VERIFICACAO-FONTE
 - Before GATE-0006, examine source-check results and substantiate human review of any unresolved or semantically material claims. Never invent a completed verification.
 
 A source-verification report is technical evidence, not peer review or a replacement for critical appraisal.
+
+Missing DOI/abstract or metadata conflict: apply [RC.5 recovery protocol](doi-recovery.md) before freezing the corpus or claims where relevant. Candidate ranking from doi_recovery.py is only conservative triage; corroboration and actual researcher review are separate.

@@ -110,3 +110,5 @@ Drive write and verify it separately. Project scientific gates are unchanged.
 - [Retraction Watch](https://www.crossref.org/documentation/retrieve-metadata/retraction-watch/)
 - [Unpaywall](https://unpaywall.org/api)
 - [Zotero](https://www.zotero.org/support/dev/web_api/v3/start)
+
+Public metadata recovery is distinct from opting into a new indexed-search API or paid integration. Use [DOI recovery](doi-recovery.md) for missing identifiers via available authorized web/registry routes; record actual results. Direct script calls still require explicit --allow-network and relevant permissions.

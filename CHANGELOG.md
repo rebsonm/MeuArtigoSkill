@@ -3,6 +3,11 @@
 
 ## Unreleased
 
+## 1.0.0-rc.5.1 — UNRELEASED
+
+- Operational maturity, detailed AI execution provenance and independent Plugin Creator installation. See candidate notes.
+
+
 ## 1.0.0-rc.4 — 2026-11-23
 
 ### Published experimental plugin-only distribution

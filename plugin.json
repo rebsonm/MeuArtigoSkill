@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "meu-artigo",
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0-rc.5.1",
   "description": "Experimental research workflow plugin with human-controlled scientific decisions, evidence traceability and methodological guidance.",
   "author": {
     "name": "Rebson de Morais Mendes"

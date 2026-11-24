@@ -13,7 +13,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION_PATTERN = re.compile(r"(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-(?:beta|rc)\.[1-9]\d*)?\Z")
+VERSION_PATTERN = re.compile(r"(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-(?:beta|rc)\.[1-9]\d*(?:\.[1-9]\d*)*)?\Z")
 
 def release_channel(version: str) -> str:
     """Label a source version, never its actual publication or validation."""
@@ -40,10 +40,15 @@ def release_notes_path(root: Path = ROOT) -> Path:
     return Path(root) / "docs" / f"NOTAS-DA-VERSAO-{read_version(root)}.md"
 
 
+def plugin_only_version(version: str) -> bool:
+    """RC.4 and later 1.0.0 release candidates use plugin distribution."""
+    return bool(re.fullmatch(r"1\.0\.0-rc\.(?:[4-9]|[1-9]\d+)(?:\.[1-9]\d*)*", version))
+
+
 def release_zip_name(root: Path = ROOT) -> str:
     version = read_version(root)
     # Historical bundles retain Skill names; RC.4 is plugin-only.
-    if version == "1.0.0-rc.4":
+    if plugin_only_version(version):
         return f"MeuArtigoPlugin-v{version}.zip"
     return f"MeuArtigoSkill-v{version}.zip"
 

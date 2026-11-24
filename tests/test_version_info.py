@@ -15,7 +15,7 @@ class VersionContractTests(unittest.TestCase):
     def test_repository_version_has_matching_release_notes(self):
         version = version_info.read_version(ROOT)
         self.assertTrue(version_info.release_notes_path(ROOT).is_file())
-        expected = (f"MeuArtigoPlugin-v{version}.zip" if version == "1.0.0-rc.4"
+        expected = (f"MeuArtigoPlugin-v{version}.zip" if version_info.plugin_only_version(version)
                     else f"MeuArtigoSkill-v{version}.zip")
         self.assertEqual(version_info.release_zip_name(ROOT), expected)
 
@@ -33,6 +33,7 @@ class VersionContractTests(unittest.TestCase):
             for version, channel in (
                 ("1.0.0-rc.1", "release-candidate"),
                 ("1.0.0-rc.23", "release-candidate"),
+                ("1.0.0-rc.5.1", "release-candidate"),
                 ("1.0.0", "stable"),
                 ("0.9.0-beta.6", "beta"),
             ):

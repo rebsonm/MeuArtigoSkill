@@ -13,7 +13,7 @@ import build_plugin_bundle as bundle
 class RC4PluginOnlyTests(unittest.TestCase):
     def test_manifest_version_and_scientific_entrypoint(self):
         self.assertEqual(bundle.checked_manifest(ROOT)["name"],"meu-artigo")
-        self.assertEqual(bundle.checked_manifest(ROOT)["version"],"1.0.0-rc.4")
+        self.assertEqual(bundle.checked_manifest(ROOT)["version"],(ROOT/"VERSION").read_text().strip())
         self.assertTrue((ROOT/"SKILL.md").read_text().startswith("---\nname: meu-artigo\n"))
         self.assertEqual(bundle.PLUGIN_NAME,"meu-artigo")
 
@@ -37,8 +37,13 @@ class RC4PluginOnlyTests(unittest.TestCase):
 
     def test_citation_and_release_match_verified_zenodo_rc4(self):
         cff=(ROOT/"CITATION.cff").read_text()
-        self.assertIn('doi: "10.5281/zenodo.24453186"',cff)
-        self.assertIn('date-released: "2026-11-23"',cff)
+        self.assertEqual((ROOT/"OFFICIAL_PLUGIN_RELEASE").read_text().strip(),"1.0.0-rc.4")
+        if (ROOT/"VERSION").read_text().strip() == "1.0.0-rc.4":
+            self.assertIn('doi: "10.5281/zenodo.24453186"',cff)
+            self.assertIn('date-released: "2026-11-23"',cff)
+        else:
+            self.assertNotIn('\ndoi:',cff)
+            self.assertNotIn('\ndate-released:',cff)
         obj=json.loads((ROOT/"zenodo/metadata-draft.json").read_text())
         self.assertEqual(obj["version"],"1.0.0-rc.4")
         self.assertEqual(obj["zenodo_version_doi"],"10.5281/zenodo.24453186")

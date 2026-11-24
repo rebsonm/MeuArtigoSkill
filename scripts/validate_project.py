@@ -12,6 +12,7 @@ from rights_audit import audit_project as audit_fulltext_rights
 from method_routes import GATE_VARIANTS, ROUTES, load as read_method_profile, profile_issues
 from language_config import settings_issues
 from scientific_evidence_tiers import audit as audit_evidence_tiers
+from ai_execution_identity import FIELDS as AI_IDENTITY_FIELDS, identity_issues
 
 REQUIRED=[
 "00_Gestao_e_Continuidade/CONTINUIDADE.md",
@@ -349,6 +350,10 @@ def main():
             if aid in ai_ids:
                 errors.append(f"AI-use row {i}: duplicate AI_Use_ID {aid}")
             ai_ids.add(aid)
+            # Legacy records are warned about, never rewritten or retroactively relabeled.
+            for issue in identity_issues(r):
+                target = errors if any((r.get(k) or "").strip() for k in AI_IDENTITY_FIELDS) else warnings
+                target.append(f"{aid}: AI execution identity: {issue}")
             if not aid.startswith("AIUSE-"):
                 warnings.append(f"AI-use row {i}: nonstandard AI_Use_ID {aid!r}")
             materiality=(r.get("Materiality") or "").strip().upper()

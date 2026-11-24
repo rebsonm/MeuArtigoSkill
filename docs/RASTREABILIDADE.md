@@ -177,3 +177,7 @@ Traceability distinguishes:
 - `SNAP_ID`: what was the official status of the project at that time.
 
 This allows you to reconstruct not only what happened, but also decisions, human responsibility, and changes between versions.
+
+## Detailed AI execution identity (RC.5.1)
+
+Apply the [mandatory identity contract](../references/ai-execution-identity.md). Preserve existing identifiers and headers except append-only AI-use metadata fields: `Model_provider`, `Execution_environment`, `Client_surface`, `Model_configuration`, `Execution_timestamp`, `Model_identification_source`, `Environment_identification_source`, `Meu_Artigo_version`. The actual `Date` and `Model_or_version` remain required. Distinguish execution environment from client surface; do not infer or retroactively relabel. Reports must expose actual recorded identities and provenance gaps.

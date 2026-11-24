@@ -1,0 +1,13 @@
+# 1.0.0-rc.5.1 — operational maturity and AI execution provenance
+
+**Not published. Not a stable release.** The latest published plugin remains RC.4. Private RC.5.1 installation was confirmed in the maintainer's account; live cross-account, cross-host and scientific acceptance remain unverified. No new DOI or release is claimed.
+
+- Persistent A/B/C/D navigation after free-text replies and intervening questions; native controls or plain-chat fallback.
+- Crossref-first DOI recovery, conservative matching, missing abstract recovery, provider routing and batch checkpoints.
+- Method-aware tool playbook for the same seven human-controlled gates.
+- Drive-first storage with explicitly authorized alternatives, Work, accessible local folders or portable checkpoints; verified persistence only.
+- Capability onboarding, quota/error handling and bibliometric design under existing routes.
+- Detailed AI-use provenance: model/version, provider, reasoning configuration when exposed, actual date/time and timezone, execution environment (Chat, Work, Codex, API), client surface, Meu Artigo version and identification source. Record unavailable data as NOT_EXPOSED; preserve earlier records without fabricated backfill.
+- Easy personal ZIP installation and update instructions using Plugin Creator.
+
+The public GitHub source is canonical. Historical releases and library files are unchanged. See [installation](INSTALLATION.md) and [AI execution identity](../references/ai-execution-identity.md).

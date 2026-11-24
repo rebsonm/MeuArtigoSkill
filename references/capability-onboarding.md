@@ -106,3 +106,6 @@ Do not start substantive research while the storage gate is unresolved. After Go
 6. move into protocol design.
 
 The default behavior is action-oriented research, not a tutorial about research tools.
+
+## RC.5 nonblocking onboarding refinement
+Inspect remaining tool roles alongside storage rather than waiting to identify missing integrations. Clearly surface genuine install/connect options for Drive, Consensus, Scite and Firecrawl where relevant. Use available Crossref/public registry, OpenAlex, Semantic Scholar, SciSpace, Unpaywall and browser alternatives as appropriate; no vendor is mandatory. Explain the benefit and fallback once; reoffer at a material new need or after reconnect, not every turn. Storage choice remains explicit for substantive project writes; [flexible storage](flexible-storage.md) defines other connected storage, Work, local HD and portable checkpoints, all with actual permission and verified access. Informational help is allowed during onboarding.

@@ -13,7 +13,7 @@ import json
 from pathlib import Path
 import re
 
-VERSION_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+-rc\.[1-9][0-9]*$")
+VERSION_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+-rc\.[1-9][0-9]*(?:\.[1-9][0-9]*)*$")
 SHA_RE = re.compile(r"^[a-f0-9]{40}$")
 HASH_RE = re.compile(r"^[a-f0-9]{64}$")
 DOI_RE = re.compile(r"^10\.5281/zenodo\.[1-9][0-9]*$")

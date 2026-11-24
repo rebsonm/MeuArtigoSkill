@@ -3,6 +3,7 @@
 import argparse,csv,hashlib,json,sys
 from pathlib import Path
 from urllib.parse import urlparse
+from ai_execution_identity import identity_record, identity_label, identity_issues, model_known, known
 MGMT="00_Gestao_e_Continuidade"
 AI=f"{MGMT}/14_AI_Use_Log.csv"
 PROFILE="06_Submissao/Regras_da_Revista/JOURNAL_PROFILE.json"
@@ -56,11 +57,12 @@ def assess(root):
    errors.append(f"{id}: confidentiality review pending")
   if clean(row.get("Disclosure_required")).upper()=="NO":
    warnings.append(f"{id}: NO in the log does not override editorial rules")
-  model=clean(row.get("Model_or_version")) or 'uninformed version'
-  uses.append({"id":id,"category":cat,"tool":tool,"model":model,"purpose":purpose,
+  identity=identity_record(row)
+  warnings.extend(f"{id}: {issue}" for issue in identity_issues(row))
+  uses.append({"id":id,"category":cat,"tool":tool,**identity,"purpose":purpose,
                "review":clean(row.get("Human_review_method")),"decision":disposition})
  policy=profile.get("ai_disclosure_policy") or {}
- if policy.get("require_model_version") is True and any(u["model"]=='uninformed version' for u in uses):
+ if policy.get("require_model_version") is True and any(not model_known(u["model"]) or not known(u["Model_identification_source"]) for u in uses):
   errors.append("journal requires exact model/version identification")
  att=profile.get("ai_disclosure_attestation") or {}
  if not (profile.get("status")=="VERIFIED" and
@@ -110,7 +112,7 @@ def render(result):
           "The authors remain responsible for source accuracy, interpretations and final content.",""]
   for event in result["uses"]:
    lines.append("- "+safe(event["category"])+": "+safe(event["tool"])+" ("+
-                safe(event["model"])+"); purpose: "+safe(event["purpose"])+
+                safe(identity_label(event))+"); purpose: "+safe(event["purpose"])+
                 "; human review: "+safe(event["review"] or "not described")+
                 "; decision: "+safe(event["decision"])+".")
  else:
@@ -128,7 +130,7 @@ def render_compact(result):
  status="DRAFT WITH OUTSTANDING REQUIREMENTS" if result["errors"] else "READY FOR FINAL AUTHOR REVIEW"
  groups={}
  for u in result["uses"]:
-  k=(u["category"],u["tool"],u["model"])
+  k=(u["category"],u["tool"],identity_label(u))
   groups.setdefault(k,[]).append(u["purpose"])
  lines=["# AI-use transparency — concise draft","",
         "Journal: "+safe(result["journal"] or "TO CONFIRM"),
@@ -148,10 +150,10 @@ def render_compact(result):
     "FIGURES":"figure preparation",
     "OTHER":"other documented activity",
   }
-  for (category,tool,model),purposes in sorted(groups.items()):
+  for (category,tool,identity),purposes in sorted(groups.items()):
    unique=list(dict.fromkeys(clean(p) for p in purposes))
    lines.append("- "+safe(labels.get(category,category))+": "+safe(tool)+" ("+
-                safe(model)+") — "+safe("; ".join(unique))+".")
+                safe(identity)+") — "+safe("; ".join(unique))+".")
   lines.append("")
   lines.append("The researcher remains responsible for reviewing results, source accuracy, interpretation and final content.")
  lines+=["","The wording is subject to actual journal rules and human approval; this draft does not certify editorial acceptance."]

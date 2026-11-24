@@ -5,9 +5,7 @@ type: software
 authors:
   - family-names: "Mendes"
     given-names: "Rebson de Morais"
-version: "1.0.0-rc.4"
-date-released: "2026-11-23"
-doi: "10.5281/zenodo.24453186"
+version: "1.0.0-rc.5.1"
 repository-code: "https://github.com/rebsonm/MeuArtigoSkill"
 url: "https://github.com/rebsonm/MeuArtigoSkill"
 license: "Apache-2.0"
@@ -15,11 +13,8 @@ abstract: >-
   Meu Artigo is an experimental ChatGPT plugin incorporating a scientific-research
   workflow skill for evidence-grounded article preparation, methodological guidance,
   researcher-controlled scientific gates, and provenance-aware research governance.
-  This RC.4 software release is public, but independent scientific validation,
+  This is an unpublished experimental candidate; independent scientific validation,
   host-wide user interface consistency and external tool access are not certified.
 
-# Published RC.4 on GitHub: https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4
-# Verified RC.4 Zenodo version-specific DOI: https://doi.org/10.5281/zenodo.24453186
-# The immutable RC.4 release tag may contain preceding candidate metadata;
-# this file is a post-publication correction to the source main branch.
-# Historical RC.3 DOI: https://doi.org/10.5281/zenodo.24452285
+# Cite the actual version used. RC.4 remains the published experimental release.
+# Historical RC.4: https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4
