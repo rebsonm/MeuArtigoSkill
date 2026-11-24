@@ -1,6 +1,6 @@
 # Install Meu Artigo — quick start
 
-**Latest published installer:** [Download RC.4 plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.4/MeuArtigoPlugin-v1.0.0-rc.4.zip). **Development source:** `1.0.0-rc.5.1`, an unpublished release candidate. To test RC.5.1, use a verified candidate ZIP supplied by the maintainer, not the RC.4 download. Manual installation is independent of public directory publication.
+**Latest published installer:** [Download RC.5.1 plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.5.1/MeuArtigoPlugin-v1.0.0-rc.5.1.zip). [Release and checksum](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1), November 24, 2026. Manual installation is independent of public directory publication.
 
 ## First installation — no coding
 

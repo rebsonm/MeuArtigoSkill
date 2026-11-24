@@ -37,16 +37,19 @@ class RC4PluginOnlyTests(unittest.TestCase):
 
     def test_citation_and_release_match_verified_zenodo_rc4(self):
         cff=(ROOT/"CITATION.cff").read_text()
-        self.assertEqual((ROOT/"OFFICIAL_PLUGIN_RELEASE").read_text().strip(),"1.0.0-rc.4")
+        self.assertEqual((ROOT/"OFFICIAL_PLUGIN_RELEASE").read_text().strip(),"1.0.0-rc.5.1")
         if (ROOT/"VERSION").read_text().strip() == "1.0.0-rc.4":
             self.assertIn('doi: "10.5281/zenodo.24453186"',cff)
             self.assertIn('date-released: "2026-11-23"',cff)
+        elif (ROOT/"VERSION").read_text().strip() == (ROOT/"OFFICIAL_PLUGIN_RELEASE").read_text().strip():
+            self.assertIn('date-released: "2026-11-24"',cff)
+            self.assertNotIn('doi: "10.5281/zenodo.24453186"',cff)
         else:
             self.assertNotIn('\ndoi:',cff)
             self.assertNotIn('\ndate-released:',cff)
         obj=json.loads((ROOT/"zenodo/metadata-draft.json").read_text())
-        self.assertEqual(obj["version"],"1.0.0-rc.4")
-        self.assertEqual(obj["zenodo_version_doi"],"10.5281/zenodo.24453186")
+        self.assertEqual(obj["version"],"1.0.0-rc.5.1")
+        self.assertEqual(obj["historical_zenodo_rc4_version"]["doi"],"10.5281/zenodo.24453186")
         self.assertTrue(obj["github_release_published"])
 
 

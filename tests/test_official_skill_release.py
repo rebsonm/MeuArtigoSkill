@@ -9,7 +9,7 @@ PUBLISHED="1.0.0-rc.3"
 class HistoricalSkillReleaseTests(unittest.TestCase):
     def test_published_rc3_pointer_remains_historical(self):
         self.assertEqual((ROOT/"OFFICIAL_SKILL_RELEASE").read_text().strip(),PUBLISHED)
-        self.assertEqual((ROOT/"OFFICIAL_PLUGIN_RELEASE").read_text().strip(),"1.0.0-rc.4")
+        self.assertEqual((ROOT/"OFFICIAL_PLUGIN_RELEASE").read_text().strip(),"1.0.0-rc.5.1")
         old_url=f"{BASE}/releases/download/v{PUBLISHED}/MeuArtigoSkill-v{PUBLISHED}.zip"
         for path in ("docs/CURRENT-RELEASE.md",):
             self.assertIn(old_url,(ROOT/path).read_text(encoding="utf-8"))

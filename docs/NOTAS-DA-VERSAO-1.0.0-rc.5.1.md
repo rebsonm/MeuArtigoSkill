@@ -1,6 +1,6 @@
 # 1.0.0-rc.5.1 — operational maturity and AI execution provenance
 
-**Not published. Not a stable release.** The latest published plugin remains RC.4. Private RC.5.1 installation was confirmed in the maintainer's account; live cross-account, cross-host and scientific acceptance remain unverified. No new DOI or release is claimed.
+**Published November 24, 2026 — not a stable release.** [GitHub experimental plugin release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1). Private RC.5.1 installation was confirmed in the maintainer's account; live cross-account, cross-host and scientific acceptance remain unverified. Zenodo version DOI pending independent confirmation.
 
 - Persistent A/B/C/D navigation after free-text replies and intervening questions; native controls or plain-chat fallback.
 - Crossref-first DOI recovery, conservative matching, missing abstract recovery, provider routing and batch checkpoints.

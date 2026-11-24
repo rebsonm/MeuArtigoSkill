@@ -25,6 +25,10 @@ The project can retain existing `Record_ID`/`Evidence_ID`, `Search_ID`, `Claim_I
 5. For originality claims, describe the searches performed and the **bounds of coverage**; never claim universal precedence from a finite search.
 6. Obtain real researcher review for consequential final claims.
 
+## AI-use traceability
+
+RC.5.1 records actual model/version, date/time and timezone, environment (Chat, Work, Codex or API), client surface, software version and identity provenance. Unknown fields must remain explicitly unknown; never invent or backfill historical identities.
+
 ## Common invalid shortcuts
 
 - Treating "DOI verified" as "full text read" or "claim supported."

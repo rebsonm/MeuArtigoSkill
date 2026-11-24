@@ -1,15 +1,15 @@
 # Security policy — Meu Artigo
 
-**RC.3 authorized release (2026-11-23 UTC):** [GitHub v1.0.0-rc.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) | [installable Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.3/MeuArtigoSkill-v1.0.0-rc.3.zip). Historical RC.1 references below remain valid for their original archived assets; the Zenodo RC.3 version-specific DOI is pending independent verification.
+**Current published experimental release: [v1.0.0-rc.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (2026-11-24 UTC).** [Plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.5.1/MeuArtigoPlugin-v1.0.0-rc.5.1.zip) and checksum are attached. RC.3 and earlier Skill packages are historical; RC.4 began plugin-only distribution. Zenodo version DOI pending independent confirmation.
 
 
 
-> **Current published experimental release: [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1)** (2026-11-22). [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip), a separately attributed 51-PDF archive and checksums are attached. Older beta.6 and beta.5 tags remain historical. This prerelease is not stable or independently scientifically validated. Existing installations do not auto-update.
+> **Current published experimental release: [v1.0.0-rc.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (2026-11-24 UTC).** [Plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.5.1/MeuArtigoPlugin-v1.0.0-rc.5.1.zip) and checksum are attached. RC.3 and earlier Skill packages are historical; RC.4 began plugin-only distribution. Zenodo version DOI pending independent confirmation.
 
 
 ## Scope
 
-The Skill may process academic PDFs, project documents, linked
+The plugin may process academic PDFs, project documents, linked
 accounts, unpublished manuscripts, private paths, metadata and
 research data. Users must preserve access secrets and share
 only materials that they have lawful permission to disclose.
@@ -54,9 +54,7 @@ and [secure export](docs/EXPORTACAO-SEGURA.md).
 ## Version coverage
 
 This policy covers historical `0.8.x-beta` and `0.9.x-beta` releases, the published experimental `v1.0.0-rc.1` prerelease, and subsequent development candidates unless superseded.
-Current experimental public recommendation: `v0.9.0-beta.5` (published as a
-GitHub Pre-release on 2026-10-14, with its tagged ZIP and SHA-256). Historical
-beta.1 and beta.2 packages remain available.
+Current experimental public recommendation: `v1.0.0-rc.5.1`. Historical releases remain available; no support or backport commitment is implied.
 No support obligation or backport commitment is implied.
 Check [CHANGELOG.md](CHANGELOG.md).
 

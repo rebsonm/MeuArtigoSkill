@@ -24,6 +24,9 @@ class ZenodoDisplayMetadataTests(unittest.TestCase):
             self.assertIn('date-released: "2026-11-23"', cff)
         elif (ROOT / "VERSION").read_text().strip() == "1.0.0-rc.3":
             self.assertIn('doi: "10.5281/zenodo.24452285"', cff)
+        elif (ROOT / "VERSION").read_text().strip() == (ROOT / "OFFICIAL_PLUGIN_RELEASE").read_text().strip():
+            self.assertIn('date-released: "2026-11-24"', cff)
+            self.assertNotIn('doi: "10.5281/zenodo.24453186"', cff)
         else:
             self.assertNotRegex(cff, r"(?m)^doi:")
             self.assertNotRegex(cff, r"(?m)^date-released:")

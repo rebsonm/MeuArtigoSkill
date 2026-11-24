@@ -3,7 +3,7 @@
 You do not need to complete every item at once. Use this list to understand what Meu Artigo will help you check throughout a project.
 
 - [ ] I know what question or practical problem I want to investigate, even if it is still preliminary.
-- [ ] I have installed a published Meu Artigo Skill package in a supported assistant.
+- [ ] I have installed the published Meu Artigo plugin using Plugin Creator in an eligible ChatGPT account.
 - [ ] I have checked which storage location is actually available and authorized.
 - [ ] I have looked at reasonable methodological options before deciding which fits my question.
 - [ ] I know which sources were actually accessed and which were only suggested.

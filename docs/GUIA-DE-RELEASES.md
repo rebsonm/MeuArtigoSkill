@@ -1,6 +1,8 @@
-# Meu Artigo release procedure — RC.4 plugin-only
+# Meu Artigo release procedure — plugin-only since RC.4
 
-**Current published experimental source:** `1.0.0-rc.4`. [GitHub v1.0.0-rc.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4) · [Zenodo version DOI](https://doi.org/10.5281/zenodo.24453186). RC.3 remains a historical release. The full title and author remain Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool; Mendes, Rebson de Morais.
+**Current published experimental release: [v1.0.0-rc.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (2026-11-24 UTC).** [Plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.5.1/MeuArtigoPlugin-v1.0.0-rc.5.1.zip) and checksum are attached. RC.3 and earlier Skill packages are historical; RC.4 began plugin-only distribution. Zenodo version DOI pending independent confirmation.
+
+RC.5.1 publication used the audited source commit `8a08726e366b4c0ad6345150b5d17923f877b66d` and the one-time [publication run](https://github.com/rebsonm/MeuArtigoSkill/actions/runs/45494841982). No new tag or release is required for documentation maintenance. See [GitHub–Zenodo identity](GITHUB-ZENODO-VERSION-PARITY.md).
 
 ## Canonical distribution from RC.4
 

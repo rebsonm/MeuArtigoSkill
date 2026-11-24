@@ -64,3 +64,7 @@ The initial Home used GitHub Wiki-style double-bracket links containing a pipe i
 ## Post-RC.1 Wiki sync (2026-11-22)
 
 The version-controlled `wiki/` Markdown pages in this repository have been corrected to link to the [published experimental RC.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1). **These tracked files are not automatically the separately hosted GitHub Wiki.** Verify that the live Wiki Home, FAQ, Installation, and Status pages are synchronized through an authorized Wiki publication process before reporting the hosted Wiki as updated. The historical beta.6 pages and tags remain archived.
+
+## RC.5.1 documentation maintenance (2026-11-24)
+
+Tracked Wiki source pages now point to the RC.5.1 ChatGPT plugin. Native Wiki deployment is a separate authorized operation: run the existing Publish Wiki workflow, reconcile any independently edited pages before overwriting, and verify the live pages. Do not report live synchronization based solely on tracked files or CI.

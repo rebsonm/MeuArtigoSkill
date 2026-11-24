@@ -3,9 +3,9 @@
 
 ## Unreleased
 
-## 1.0.0-rc.5.1 — UNRELEASED
+## 1.0.0-rc.5.1 — 2026-11-24
 
-- Operational maturity, detailed AI execution provenance and independent Plugin Creator installation. See candidate notes.
+- Operational maturity, detailed AI execution provenance and independent Plugin Creator installation. See release notes.
 
 
 ## 1.0.0-rc.4 — 2026-11-23

@@ -1,10 +1,10 @@
 # Start here
 
-You can use Meu Artigo whether your research question is already defined or still an idea. The Skill should suggest possible ways forward without choosing your method for you.
+You can use Meu Artigo whether your research question is already defined or still an idea. The plugin should suggest possible ways forward without choosing your method for you.
 
 ## Five simple steps
 
-1. **Install the published Skill** if your assistant supports Skills. See [[Installation]].
+1. **Install the published plugin** using Plugin Creator in an eligible ChatGPT account. See [[Installation]].
 2. **Describe your research problem** in your own language.
 3. **Compare methodological options.** Ask why each is suitable, what evidence it needs and what its limitations are.
 4. **Confirm storage and actual sources.** The assistant should only claim a saved file, database search or imported article when it can verify that action.

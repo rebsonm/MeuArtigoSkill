@@ -2,14 +2,9 @@
 
 Meu Artigo offers the same research guidance regardless of assistant, but each platform has different installation and file-access capabilities.
 
-## Installation
+## Installation status
 
-Download the prepared ZIP from the [currently published Meu Artigo release](INSTALLATION.md). Do not use the generic GitHub source-code archive.
-
-- **Claude:** if your account offers custom Skills, import the complete published package through the feature shown in the application.
-- **Claude Code:** in a supported environment, use a Skill directory with `SKILL.md` at its root, following Claude Code's current Skill instructions.
-
-Importing a package does not demonstrate that it can execute scripts, access a database or save to Drive. See [Anthropic's Skill documentation](https://platform.claude.com/docs/pt-BR/agents-and-tools/agent-skills/overview) for your product.
+RC.4 and later are distributed exclusively as a ChatGPT plugin. No dedicated current Claude or Claude Code installer is provided; do not import the current ChatGPT plugin ZIP as a standalone Skill. Earlier Skill releases are historical, and any use in another host requires separate compatibility verification. See [current installation](INSTALLATION.md).
 
 ## Your first research conversation
 
