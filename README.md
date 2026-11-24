@@ -1,6 +1,6 @@
 # Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool
 
-**Current version:** `1.0.0-rc.5.1` — unpublished release candidate (plugin-only). **Latest published experimental release:** [RC.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4). No new release or DOI is claimed for RC.5.1.
+**Current version:** `1.0.0-rc.5.1` — unpublished release candidate (plugin-only). **Latest published experimental prerelease (plugin-only):** [RC.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4). The RC.5.1 candidate is not a stable release. No new release or DOI is claimed for RC.5.1.
 
 **Historical experimental versions:** [RC.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3), [RC.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) and [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) remain available. RC.3's [Zenodo DOI 10.5281/zenodo.24452285](https://doi.org/10.5281/zenodo.24452285) continues to identify RC.3 only. Every 0.9.0-beta release is experimental; no stable v1.0.0 has been published.
 

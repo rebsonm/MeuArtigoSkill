@@ -43,4 +43,11 @@ def identity_record(row):
     return out
 
 def identity_label(record):
+    """Support historical disclosure records without inventing absent provenance."""
+    original = record
+    record = {"model": clean(original.get("model") or original.get("Model_or_version")) or "NOT_RECORDED",
+              "date": clean(original.get("date") or original.get("Date")) or "NOT_RECORDED"}
+    if not model_known(record["model"]):
+        record["model"] = "NOT_RECORDED"
+    record.update({f: clean(original.get(f)) or "NOT_RECORDED" for f in FIELDS})
     return "; ".join(["model="+record["model"],"provider="+record["Model_provider"],"date="+record["date"],"timestamp="+record["Execution_timestamp"],"environment="+record["Execution_environment"],"client="+record["Client_surface"],"configuration="+record["Model_configuration"],"Meu Artigo="+record["Meu_Artigo_version"],"model source="+record["Model_identification_source"],"environment source="+record["Environment_identification_source"]])

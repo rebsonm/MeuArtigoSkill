@@ -22,8 +22,11 @@ class ZenodoDisplayMetadataTests(unittest.TestCase):
         if (ROOT / "VERSION").read_text().strip() == "1.0.0-rc.4":
             self.assertIn('doi: "10.5281/zenodo.24453186"', cff)
             self.assertIn('date-released: "2026-11-23"', cff)
-        else:
+        elif (ROOT / "VERSION").read_text().strip() == "1.0.0-rc.3":
             self.assertIn('doi: "10.5281/zenodo.24452285"', cff)
+        else:
+            self.assertNotRegex(cff, r"(?m)^doi:")
+            self.assertNotRegex(cff, r"(?m)^date-released:")
 
     def test_canonical_author_is_mendes_rebson_de_morais(self):
         cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")

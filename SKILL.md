@@ -9,27 +9,13 @@ description: Build and resume traceable scientific articles using research-appro
 
 **MANDATORY ON FIRST TURN AND EVERY SUBSEQUENT TURN:** Apply
 [automatic user-language policy](references/language-policy.md).
-Skill source files are English; users need not respond in English.
-Infer the response language from the researcher's current substantive direct
-message, respecting any explicit instruction to use another language and
-the established conversational preference. Ask onboarding questions,
-explain research choices, give progress updates and answer in that language.
-Thus a Portuguese-speaking researcher gets Portuguese answers automatically;
-Spanish speakers receive Spanish and English speakers receive English,
-without choosing a locale during installation. Do not infer language from
-nationality, platform, bibliographic citations or quoted text.
+Skill sources are English; answer in the user's current substantive message language or explicit preference. Do not infer it from nationality, platform, citations or quotations.
 
-**Do not conflate three independent languages:** repository authoring (English);
-researcher interaction (automatic or explicitly chosen); and the scientific
-manuscript (set by the researcher's preference or the journal's actual author
-guidelines). Preserve the original wording of research questions, source
-quotations, participant material, search strings and technical identifiers.
-Translate source material only when requested/appropriate with original
-provenance retained. Do not translate enums, paths, IDs or commands.
+**Do not conflate three independent languages:** English source, researcher interaction and manuscript language (researcher/journal choice). Preserve original questions, quotations, participant material, queries and technical IDs; translate only with provenance. Do not translate enums, paths, IDs or commands.
 
 ## 0A. RC.5 operational preflight
 
-At activation and every resumption apply [RC.5 operational contract](references/rc5-operational-contract.md). It refines interaction and capability handling while preserving all scientific safeguards, project schemas and seven gates. Surface actual integration setup, maintain pending decisions across free-text replies, and route by [gate tool playbook](references/gate-tool-playbook.md). Use [DOI recovery](references/doi-recovery.md) for missing or conflicting identifiers, and [bibliometric design](references/bibliometric-design.md) when relevant. Never claim a script or integration was executed without evidence.
+At activation/resumption follow [RC.5 operational contract](references/rc5-operational-contract.md) for tools, decisions, DOI recovery and seven gates. Never claim unexecuted operations.
 
 ## 0B. Preflight
 Use bullets, no empty tables; cite real checks. See [guidance](docs/CHATGPT.md).
@@ -82,7 +68,7 @@ Determine the next action from recorded persistent state.
 before substantive literature searches, synthesis, drafting or local
 canonical workspace creation. A displayed app is not proof of authentication,
 successful writes or synchronization. If unavailable, present the connection
-path and recheck after the researcher's required authorization. Offer the [flexible storage ladder](references/flexible-storage.md): authorized alternative persistent storage, Work, local user folder if truly accessible, or portable checkpoint. An explicit affirmative fallback choice authorizes that destination; record actor, date and limitations using existing `WORK_FALLBACK` mode. Do not ask again for an already explicit choice. If denied or unanswered, allow informational help only, not new canonical research writes.
+path and recheck after the researcher's required authorization. Offer [flexible storage ladder](references/flexible-storage.md): explicitly authorized alternative store, Work, accessible local folder or portable checkpoint. Record actor, date and limits under `WORK_FALLBACK`; no repeated consent. Without permission, informational help only, no substantive project writes.
 Drive-local files remain staging until [individual Drive folders and files
 are verified](references/drive-delivery.md). ZIP-only upload is incomplete.
 
@@ -156,7 +142,7 @@ or demonstrated utility. Read only the branch appropriate to the research.
 
 ## 4. Events, decisions, evidence and submission controls
 
-**MANDATORY AI-use identity:** on each material AI-assisted activity, record the actual platform/provider, exposed model/version, execution date/time with offset when available, environment (CHAT/WORK/CODEX/API/OTHER), client surface (WEB/DESKTOP_APP/MOBILE_APP/CLI/IDE/API/OTHER), known configuration, plugin version and identification sources. Read [AI execution identity](references/ai-execution-identity.md) before writing trace or AI-use logs, reports or editorial declarations. Record unknown values explicitly; never guess hidden model identifiers or retroactively assign today's identity to earlier work. Preserve the seven gates and existing records.
+**MANDATORY AI-use identity:** follow [AI execution identity](references/ai-execution-identity.md) for every material activity: model/version, actual date/time, environment, client, configuration, plugin version and provenance. Never invent missing values or relabel past records.
 
 **Local execution:** when scripts and execution facilities are available,
 use `scripts/trace_execution.py run` with permitted scripts, actual
@@ -219,7 +205,7 @@ submission without external confirmation. See
 
 ## 4A. Choice UI
 
-For meaningful decisions, show **three alternatives** A/B/C (pros/cons, one recommendation) and **free-text** D. After any ordinary chat answer or detour, return to the same pending choice if unresolved or present the next valid one. Never drop D or auto-select a recommendation. Follow [native radio button, D radio and Submit](references/decision-navigation.md); no gate approval.
+For meaningful decisions, show **three alternatives** A/B/C (pros/cons, one recommendation) and **free-text** D. Resume unresolved/next choice after free text; never hide D or preselect. Follow [native radio button, D radio and Submit](references/decision-navigation.md); no gate approval.
 
 ## 5. Platforms and interaction presentation
 
@@ -244,7 +230,4 @@ invent data or imply that navigation approves scientific work.
 An authorized local project can use the read-only
 `scripts/native_chat_dashboard.py`; Drive remains canonical when used.
 
-For each reply use the researcher's language; show verified facts,
-uncertainty and the next action. MINIMAL avoids clutter. A ZIP, CI,
-release badge or DOI never validates science; Apache-2.0 does not
-license third-party PDFs.
+Report verified facts, uncertainty and next action concisely. ZIP, CI and DOI do not validate science; Apache-2.0 does not license third-party PDFs.

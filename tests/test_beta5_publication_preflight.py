@@ -5,7 +5,7 @@ import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"scripts"))
-from check_release_metadata import audit_published_source_metadata
+from check_release_metadata import audit_published_source_metadata, audit_candidate_metadata
 from version_info import read_version
 
 class Beta5PublicationHistoryTests(unittest.TestCase):
@@ -15,8 +15,8 @@ class Beta5PublicationHistoryTests(unittest.TestCase):
         self.readme=(ROOT/"README.md").read_text(encoding="utf-8")
 
     def test_historical_beta_and_current_candidate_distinction(self):
-        self.assertEqual(self.version,"1.0.0-rc.4")
-        self.assertEqual(audit_published_source_metadata(ROOT),[])
+        self.assertEqual((ROOT/"OFFICIAL_PLUGIN_RELEASE").read_text().strip(),"1.0.0-rc.4")
+        self.assertEqual(audit_published_source_metadata(ROOT) if self.version=="1.0.0-rc.4" else audit_candidate_metadata(ROOT),[])
         self.assertIn("experimental",self.readme.lower())
         self.assertIn("pre-release",self.notes.lower())
         self.assertIn("not a stable",self.notes.lower())

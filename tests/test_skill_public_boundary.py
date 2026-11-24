@@ -13,7 +13,7 @@ class PublicPluginBoundaryTests(unittest.TestCase):
     def test_single_plugin_source_and_internal_skill(self):
         manifest=json.loads((ROOT/"plugin.json").read_text(encoding="utf-8"))
         self.assertEqual(manifest["name"],"meu-artigo")
-        self.assertEqual(manifest["version"],"1.0.0-rc.4")
+        self.assertEqual(manifest["version"],(ROOT/"VERSION").read_text().strip())
         self.assertTrue((ROOT/"SKILL.md").is_file())
         self.assertTrue((ROOT/"scripts/build_plugin_bundle.py").is_file())
         self.assertFalse((ROOT/"visual-app").exists())

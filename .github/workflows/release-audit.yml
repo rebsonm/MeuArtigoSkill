@@ -51,7 +51,10 @@ jobs:
           retention-days: 30
 
       - name: Behavioral regression tests
-        run: python -m unittest discover -s tests -v
+        run: |
+          python -m unittest discover -s tests -v
+          python -m unittest discover -s scripts -p 'test_ai_execution_identity.py' -v
+          python -m unittest discover -s scripts -p 'test_rc5_operational.py' -v
 
       - name: Exercise eight fictional research journeys
         run: |
