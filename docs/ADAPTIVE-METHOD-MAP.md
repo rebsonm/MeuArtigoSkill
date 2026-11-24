@@ -1,6 +1,6 @@
 # Historical note: this living reference includes pre-RC.1 development text
 
-> The latest [published experimental RC.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) was released on 2026-11-22. References below to features absent from the *beta.6* package describe that earlier historical package, not necessarily the RC.1 installer. Scientific dependency claims and host behavior still require independent evidence.
+> The then-current [published experimental RC.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) was released on 2026-11-22. References below to features absent from the *beta.6* package describe that earlier historical package, not necessarily the RC.1 installer. Scientific dependency claims and host behavior still require independent evidence.
 
 # Adaptive Research Map — methodological alternatives (experimental)
 

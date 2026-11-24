@@ -1,6 +1,6 @@
 # Historical beta.6 integration and acceptance plan — archived evidence
 
-> This dated test-plan snapshot describes the 2026-10-15 **beta.6** plan. The latest published experimental release is [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) (2026-11-22). Earlier beta.6 statements below are historical, not current installer recommendations. Core CSV/Drive fictional-project operation subsequently passed; optional XLSX failed for missing dependency. See [current notes](NOTAS-DA-VERSAO-1.0.0-rc.1.md).
+> This dated test-plan snapshot describes the 2026-10-15 **beta.6** plan. At the time of this historical annotation, the published experimental release was [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) (2026-11-22). Earlier beta.6 statements below are historical, not current installer recommendations. Core CSV/Drive fictional-project operation subsequently passed; optional XLSX failed for missing dependency. See [historical notes](NOTAS-DA-VERSAO-1.0.0-rc.1.md).
 
 ---
 
