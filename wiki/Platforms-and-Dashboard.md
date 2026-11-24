@@ -1,18 +1,17 @@
 # Platforms and project overview
 
-Meu Artigo is a **Skill**, which means its guidance can be used through a supported assistant's conversation. The features available beyond that depend on the product and your account.
+Meu Artigo is a **ChatGPT plugin** with an internal scientific Skill; use the same personal installation in normal chat or Work when available. The features available beyond that depend on the product and your account.
 
 ## Where can I use it?
 
-- **ChatGPT:** import the Skill if your account offers that feature. [Guide](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/CHATGPT.md)
-- **Claude / Claude Code:** follow the relevant custom Skill or local Skill instructions. [Guide](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/CLAUDE.md)
-- **Gemini:** use Skills import where available for your product. [Guide](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/GEMINI.md)
+- **ChatGPT:** install the prepared plugin ZIP using Plugin Creator. [Guide](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/INSTALLATION.md)
+- **Claude / Gemini:** no current dedicated installer or certified compatibility; earlier standalone Skill releases are historical.
 
 Not every environment offers the same scripts, file formats, storage or connected services.
 
 ## Do I need a dashboard?
 
-No. You can ask **“Where did my research stop?”** or **“What should I decide next?”** in the conversation. When accessible saved records exist, the Skill should summarize progress, tasks and blockers there.
+No. You can ask **“Where did my research stop?”** or **“What should I decide next?”** in the conversation. When accessible saved records exist, the plugin should summarize progress, tasks and blockers there.
 
 You may see a concise overview or request fuller detail. Neither view replaces a scientific decision, creates a saved file or guarantees that an external tool was used.
 

@@ -1,14 +1,14 @@
 # Meu Artigo — research support for scientific articles
 
-**RC.3 authorized release (2026-11-23 UTC):** [GitHub v1.0.0-rc.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) | [installable Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.3/MeuArtigoSkill-v1.0.0-rc.3.zip). Historical RC.1 references below remain valid for their original archived assets; the Zenodo RC.3 version-specific DOI is pending independent verification.
+**Current published experimental release: [v1.0.0-rc.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (2026-11-24 UTC).** [Plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.5.1/MeuArtigoPlugin-v1.0.0-rc.5.1.zip) and checksum are attached. RC.3 and earlier Skill packages are historical; RC.4 began plugin-only distribution. Zenodo version DOI pending independent confirmation.
 
 
-Meu Artigo is an **experimental Skill** that helps researchers organize a question, consider suitable methods, review real sources, document scientific choices and develop an article. The researcher retains authority over decisions and conclusions.
+Meu Artigo is an **experimental ChatGPT plugin** that helps researchers organize a question, consider suitable methods, review real sources, document scientific choices and develop an article. The researcher retains authority over decisions and conclusions.
 
 ## Start here
 
 - **New to Meu Artigo?** Read [[Start here|Start-Here]].
-- **Want to install it?** See [[Installation]] for the published Skill package.
+- **Want to install it?** See [[Installation]] for the published plugin package.
 - **Unsure which method fits your article?** Explore [[Methodological routes|Methodological-Routes]].
 - **Returning to an existing study?** Read [[Storage and continuity|Storage-and-Continuity]].
 - **Need help?** See [[FAQ]].
@@ -25,7 +25,7 @@ You can ask in your own language. The language of your final paper may be determ
 
 ## Published version
 
-The **current published experimental package** is [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1), with the [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip), a separate attributed 51-PDF archive and SHA256SUMS. The former beta.6 remains a historical release; neither version is stable or independently scientifically validated.
+**Current published experimental release: [v1.0.0-rc.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (2026-11-24 UTC).** [Plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.5.1/MeuArtigoPlugin-v1.0.0-rc.5.1.zip) and checksum are attached. RC.3 and earlier Skill packages are historical; RC.4 began plugin-only distribution. Zenodo version DOI pending independent confirmation.
 
 Meu Artigo does not automatically connect Drive, academic databases or other accounts. Its research support has not been independently scientifically validated.
 

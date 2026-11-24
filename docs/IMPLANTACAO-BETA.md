@@ -1,15 +1,15 @@
 # Meu Artigo experimental beta: information for researchers
 
-**RC.3 authorized release (2026-11-23 UTC):** [GitHub v1.0.0-rc.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) | [installable Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.3/MeuArtigoSkill-v1.0.0-rc.3.zip). Historical RC.1 references below remain valid for their original archived assets; the Zenodo RC.3 version-specific DOI is pending independent verification.
+**Current published experimental release: [v1.0.0-rc.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (2026-11-24 UTC).** [Plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.5.1/MeuArtigoPlugin-v1.0.0-rc.5.1.zip) and checksum are attached. RC.3 and earlier Skill packages are historical; RC.4 began plugin-only distribution. Zenodo version DOI pending independent confirmation.
 
 
-Meu Artigo is being tested as a **Skill for scientific research support**. You can explore its guidance and workflow without claiming that it has been independently validated or that it guarantees a publishable article.
+Meu Artigo is an **experimental ChatGPT plugin for scientific research support**. You can explore its guidance and workflow without claiming that it has been independently validated or that it guarantees a publishable article.
 
 ## Available download
 
-The **current published experimental installer** is [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1), with its [prepared Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip) and checksum. The 51 attributed PDFs are distributed in a separate release archive; do not import that archive as a Skill. Beta.6 remains available for historical use. Installing a new version does not automatically replace an existing Skill; no scientific or full host certification is implied.
+**Current published experimental release: [v1.0.0-rc.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (2026-11-24 UTC).** [Plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.5.1/MeuArtigoPlugin-v1.0.0-rc.5.1.zip) and checksum are attached. RC.3 and earlier Skill packages are historical; RC.4 began plugin-only distribution. Zenodo version DOI pending independent confirmation.
 
-For installation, always choose the prepared ZIP on the [Releases page](https://github.com/rebsonm/MeuArtigoSkill/releases), not **Code → Download ZIP**. Each installed Skill remains on its installed version until you update it.
+For installation, always choose the prepared ZIP on the [Releases page](https://github.com/rebsonm/MeuArtigoSkill/releases), not **Code → Download ZIP**. Each installed plugin remains on its installed version until you update it.
 
 [Read the step-by-step installation guide](INSTALLATION.md).
 
@@ -25,7 +25,7 @@ You can do this in your preferred conversational language. A research method or 
 
 ## Services, access and privacy
 
-Google Drive is the preferred canonical storage only after its permissions and writable access are actually verified. A local alternative requires your explicit agreement. Paid databases, full-text content, cloud synchronization and publication services are not bundled with the Skill.
+Google Drive is the preferred canonical storage only after its permissions and writable access are actually verified. A local alternative requires your explicit agreement. Paid databases, full-text content, cloud synchronization and publication services are not bundled with the plugin.
 
 Avoid sharing access credentials, confidential manuscripts, protected participant details or third-party PDFs unless their use is authorized.
 

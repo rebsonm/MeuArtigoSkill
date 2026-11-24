@@ -1,27 +1,32 @@
 # Installing Meu Artigo
 
-**RC.3 authorized release (2026-11-23 UTC):** [GitHub v1.0.0-rc.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) | [installable Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.3/MeuArtigoSkill-v1.0.0-rc.3.zip). Historical RC.1 references below remain valid for their original archived assets; the Zenodo RC.3 version-specific DOI is pending independent verification.
+**Current published experimental release: [v1.0.0-rc.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (2026-11-24 UTC).** [Plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.5.1/MeuArtigoPlugin-v1.0.0-rc.5.1.zip) and checksum are attached. RC.3 and earlier Skill packages are historical; RC.4 began plugin-only distribution. Zenodo version DOI pending independent confirmation.
 
+## First installation — no coding
 
-The package is a **Skill ZIP** for compatible assistants. You do not need Git or programming knowledge.
+1. Download the prepared **MeuArtigoPlugin** ZIP. Keep it compressed; do not use GitHub's Code → Download ZIP, automatic source archives or PDF archives.
+2. Open ChatGPT in **your own account**. Find and activate **Plugin Creator** in the plugin directory/controls if available. Your account must allow personal plugin creation.
+3. Start a new conversation, attach the ZIP and select Plugin Creator using the @ selector. Send this instruction:
 
-## Download
+   > Using Plugin Creator, create a new personal plugin directly from the attached Meu Artigo ZIP. Preserve all package contents and the declared version. Do not search the public directory or request access to the maintainer's private plugin. Return my own plugin link and the installed version only after confirming creation.
 
-**Latest confirmed published experimental version:** [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) (22 November 2026).
+4. Open the returned link, activate your independent copy and verify its installed version. The maintainer reported success with an independent RC.4 account using this approach; success in every account, plan and RC.5.1 host is not established.
+5. Use the same plugin in normal chat or Work where supported. Request guidance in your preferred language. No separate Skill installer or publisher-hosted MCP server is required.
 
-The [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.1/MeuArtigoSkill-v1.0.0-rc.1.zip) and checksum are available on the RC.1 release. The separately distributed 51-PDF archive is not a Skill installer. Previous beta.6 is retained in [all releases](https://github.com/rebsonm/MeuArtigoSkill/releases).
+## Update an existing installation
 
-## Set up
+Attach the newer verified plugin ZIP, activate Plugin Creator, and send:
 
-1. Open the published release page.
-2. Download its prepared `MeuArtigoSkill-v1.0.0-rc.1.zip`.
-3. Import that package using the Skills feature available in your assistant. Some accounts may not offer this feature.
-4. Ask: *"I want to write a scientific article with Meu Artigo. First check my available storage and tools."*
+> Using Plugin Creator, update my existing owned Meu Artigo plugin with the attached newer ZIP. Confirm the exact plugin identity and current version first; preserve permissions and all research project records. Do not create a duplicate. Report the confirmed new version.
 
-**Do not use GitHub's Code → Download ZIP** as the Skill package. That is a source-code archive.
+A GitHub source update does not automatically update personal copies. To test separately, explicitly create an independent copy rather than replacing the existing one.
 
-Google Drive and academic database access are not included automatically. Ask the assistant which connections and permissions it has actually verified. An alternative to the preferred Drive storage must be authorized by you.
+## Troubleshooting
 
-A newly published version does not replace a Skill already installed in your account.
+If ChatGPT searches the public directory or reports that the maintainer's plugin is private, repeat step 3 with Plugin Creator selected: the ZIP is the source of a new personal copy. If Plugin Creator is unavailable, report the actual account restriction; do not claim installation or ask for credentials. If the ZIP is rejected, check the prepared archive and share the exact error. Google Drive, Consensus, Scite, Firecrawl and other tools require real access and authorization. Local disk access depends on the host. Prefer Drive and offer an expressly authorized alternative if unavailable.
+
+Installation does not approve scientific gates or validate research. The seven gates remain under researcher control.
 
 [Full installation guide](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/INSTALLATION.md) · [[FAQ]].
+
+The historical RC.3 and earlier Skill packages remain archived; they are not the current ChatGPT plugin installer.

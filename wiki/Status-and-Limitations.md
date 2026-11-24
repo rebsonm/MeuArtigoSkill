@@ -1,6 +1,6 @@
 # What Meu Artigo can and cannot do
 
-**RC.3 experimental release (2026-11-23 UTC):** [GitHub v1.0.0-rc.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) | [installable Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.3/MeuArtigoSkill-v1.0.0-rc.3.zip). Earlier RC.1 links remain as historical archives. The Zenodo RC.3 DOI is pending independent verification.
+**Current published experimental release: [v1.0.0-rc.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (2026-11-24 UTC).** [Plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.5.1/MeuArtigoPlugin-v1.0.0-rc.5.1.zip) and checksum are attached. RC.3 and earlier Skill packages are historical; RC.4 began plugin-only distribution. Zenodo version DOI pending independent confirmation.
 
 
 **Meu Artigo is experimental research-support software, not an independently validated scientific method.**
@@ -23,7 +23,7 @@
 
 An assistant can say that a step is planned, completed or unverified only when the available evidence supports that status. You remain responsible for research ethics, source rights and scientific decisions.
 
-**Availability:** [v1.0.0-rc.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) is the current published experimental installer with a separate archive of 51 credited PDFs. The beta.6 release remains historical. The optional XLSX failed in one host because its dependency was unavailable; primary CSV/Drive workflow passed. Newer PR changes are not part of immutable RC.1 assets.
+**Availability:** [RC.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) is the current published experimental plugin. Optional XLSX and connected tool capabilities remain host-dependent; historical RC.1 observations do not certify RC.5.1.
 
 [[Start here|Start-Here]] · [[FAQ]] · [Researcher evaluation limits](https://github.com/rebsonm/MeuArtigoSkill/blob/main/docs/VALIDACOES-PENDENTES.md).
 

@@ -2,11 +2,9 @@
 
 Meu Artigo is a research-support Skill. Whether Gemini can import it or run every supporting function depends on the Gemini product and account available to you.
 
-## Installation
+## Installation status
 
-Get the complete prepared ZIP from the [currently published Meu Artigo release](INSTALLATION.md). If your Gemini product supports Skills import, follow its import instructions and choose the prepared Skill package, not GitHub's source-code archive.
-
-See [Google's current Skill guidance](https://support.google.com/gemini/answer/17094296?hl=en) for availability and supported formats.
+RC.4 and later are distributed exclusively as a ChatGPT plugin. No dedicated current Gemini installer is provided; do not import the current ChatGPT plugin ZIP as a standalone Skill. Earlier Skill releases are historical, and any use in another host requires separate compatibility verification. See [current installation](INSTALLATION.md).
 
 ## What you can expect
 
