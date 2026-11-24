@@ -1,6 +1,6 @@
 # Current release and candidate — verified status
 
-**Current candidate:** RC.5.1 (unpublished); RC.4 remains the last published plugin. Follow the [quick Plugin Creator installation guide](INSTALLATION.md) for a personal copy or an update. RC.5.1 adds detailed AI execution identity, tool routing and flexible authorized storage. Private installation was confirmed; cross-host functional tests remain pending.
+**Current published release:** [RC.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (November 24, 2026). Follow the [quick Plugin Creator installation guide](INSTALLATION.md) for a personal copy or update. RC.5.1 adds detailed AI execution identity, tool routing and flexible authorized storage. Private installation was confirmed in the maintainer's account; cross-host functional tests remain pending. Zenodo version DOI pending confirmation.
 
 
 **RC.4:** `1.0.0-rc.4` is **published as an experimental ChatGPT-plugin-only release** ([GitHub](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4); [Zenodo](https://doi.org/10.5281/zenodo.24453186)). The selected logo is verified and bundled, but the ChatGPT private plugin page showed a generic fallback icon; its presentation is not verified as corrected. RC.4 builds must never publish a standalone Skill ZIP. ChatGPT normal chat and Work are targeted, but RC.4 host acceptance is NOT_VERIFIED. Optional XLSX and remote tool access remain environment-dependent.
@@ -15,6 +15,6 @@
 
 **Scientific/methodology library:** 51 separately licensed third-party PDFs (not incorporated in the plugin package); 475 bibliographic prospecting cards [P] and 174 editorial cards [I]/[P]. Inclusion in an index does not establish semantic evidence or legal permission for further distribution.
 
-**Validation state:** all seven scientific gates require individual researcher approval. Engineering CI, private Lab installation and synthetic tests do not establish independent scientific validation. External storage synchronization, fully native A/B/C/D UI, real GitHub-card/PDF retrieval, publication rights and optional XLSX generation must be assessed in the actual RC.4 environment; unavailable operations remain **PENDING** or **NOT_VERIFIED**.
+**Validation state:** all seven scientific gates require individual researcher approval. Engineering CI, private Lab installation and synthetic tests do not establish independent scientific validation. External storage synchronization, fully native A/B/C/D UI, real GitHub-card/PDF retrieval, publication rights and optional XLSX generation must be assessed in the actual RC.5.1 environment; unavailable operations remain **PENDING** or **NOT_VERIFIED**.
 
 [RC.4 distribution specification](RC4-PLUGIN-DISTRIBUTION.md) · [Plugin installation](INSTALLATION.md) · [Release governance](GUIA-DE-RELEASES.md).
