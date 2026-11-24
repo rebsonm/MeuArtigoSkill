@@ -51,3 +51,4 @@ JOURNAL_PROFILE.json lives under 06_Submissao/Regras_da_Revista. ANONYMIZATION_P
 5. On divergent edits, preserve both versions, stop synchronization of affected rows and record the conflict. Scientific conflicts need human judgment; never choose a winner solely by timestamp.
 6. After reconciliation, record the material decision and new baseline. External task managers remain mirrors.
 
+RC.5 refinement: [flexible storage](flexible-storage.md) describes explicitly authorized other connected stores, Work, user-local folders and portable checkpoint handoffs using the existing fallback contract. Do not conflate staging, local HD, and verified canonical persistence; informational help is allowed while storage is being resolved.

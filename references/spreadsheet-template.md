@@ -828,3 +828,7 @@ A claim marked QUALIFIED must carry the qualification into the manuscript.
 ## Canonical backend and view mapping
 
 Read [storage mapping](storage-mapping.md) before exporting, synchronizing or resolving conflicts between CSV tables and workbook views. The template generator does not synchronize existing research data.
+
+## Detailed AI execution identity (RC.5.1)
+
+Apply the [mandatory identity contract](ai-execution-identity.md). Preserve existing identifiers and headers except append-only AI-use metadata fields: `Model_provider`, `Execution_environment`, `Client_surface`, `Model_configuration`, `Execution_timestamp`, `Model_identification_source`, `Environment_identification_source`, `Meu_Artigo_version`. The actual `Date` and `Model_or_version` remain required. Distinguish execution environment from client surface; do not infer or retroactively relabel. Reports must expose actual recorded identities and provenance gaps.

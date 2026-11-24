@@ -49,3 +49,6 @@ When a real choice is needed, present a concise, researcher-facing **A/B/C/D dec
 *Choose A, B, C, or type a different approach under D, then click Submit answer. No scientific gate is approved by this menu.*
 
 The bracketed **Native radio** lines above are descriptive placeholders in the documentation, not actual interactive widgets. On a capable host, use real radio inputs. The example is not a source of actual project options, a default recommendation for every research problem, or proof that interactive inputs are supported on a specific host.
+
+## RC.5 continuity after ordinary chat input
+On every turn resolve the current pending decision from actual continuity. If the researcher asks a question, answer it and re-display the unresolved menu when a choice remains. If free text is a clear A/B/C choice or D proposal, preserve its exact meaning and apply the same authorization/rationale rules; otherwise ask only the necessary clarification and show A/B/C/D again. After authorized routine execution show the next meaningful menu; if none is pending give the next step directly. Do not require repeated approval of a previously resolved decision. A bare “next” resumes authorized tasks, never approves a gate. For multiple outstanding decisions, show only the next eligible decision. Native controls depend on host; plain chat fallback must still include D.

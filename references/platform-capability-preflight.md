@@ -70,3 +70,5 @@ publication alone cannot establish ChatGPT platform compatibility.
 
 Functional verification of each platform is a different task,
 registered in [pending validations](../docs/VALIDACOES-PENDENTES.md).
+
+RC.5 refinement: [flexible storage](flexible-storage.md) describes explicitly authorized other connected stores, Work, user-local folders and portable checkpoint handoffs using the existing fallback contract. Do not conflate staging, local HD, and verified canonical persistence; informational help is allowed while storage is being resolved.

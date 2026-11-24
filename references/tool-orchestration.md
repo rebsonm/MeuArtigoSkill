@@ -158,3 +158,6 @@ Keep human/agent judgment explicit where scientific interpretation is required:
 ## Canonical workspace initialization
 
 When persistent storage is connected, initialize or resume the structure in `drive-workspace.md` before large searches. Reproduce the same logical schema even if the platform uses another storage system. Create the project root, canonical subfolders, `CONTINUIDADE.md`, protocol, and master tracking table. Update them continuously; do not leave state only in the conversation.
+
+## RC.5 provider routing
+Use [DOI/abstract recovery](doi-recovery.md) for imported missing or suspect metadata and [gate tool playbook](gate-tool-playbook.md) for the current route/gate. Crossref/registry and publisher establish candidate identity; Consensus/Scite/SciSpace discovery or context is complementary. Use authorized real execution, then persist actual results in batches. Firecrawl/native web fetch public publisher or institutional pages; TinyFish/authorized browser may support interactive access, never bypass authentication or paywalls. If unavailable/quota exhausted, report the actual limit and use an equivalent; do not substitute an unexecuted search.

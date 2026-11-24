@@ -300,3 +300,7 @@ For Drive-canonical projects, verify access with authorized connected
 tools; a local mirror never proves synchronization.
 
 Contract and measures: [guided continuity and anti-loop assessment](../docs/CONTINUIDADE-GUIADA-ANTICIRCULARIDADE.md).
+
+RC.5 refinement: [flexible storage](flexible-storage.md) describes explicitly authorized other connected stores, Work, user-local folders and portable checkpoint handoffs using the existing fallback contract. Do not conflate staging, local HD, and verified canonical persistence; informational help is allowed while storage is being resolved.
+
+RC.5 resumption: answer direct questions and recover any still-pending decision; process authorized routine queues in batches, checkpoint actual state, and never duplicate or overwrite existing records. See [operational contract](rc5-operational-contract.md).

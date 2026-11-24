@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from audit_governance_boundary import audit as audit_cada_boundary
+from ai_execution_identity import identity_record, identity_label, identity_issues
 
 MGMT="00_Gestao_e_Continuidade"
 
@@ -174,6 +175,8 @@ def report_data(root:Path)->dict:
         "gates":gates,
         "snapshots":snaps,
         "substantive_ai":substantive,
+        "ai_execution_records":[r for r in ai if (r.get("AI_Use_ID") or "").strip()],
+        "ai_execution_identity_gaps":[{"id":r.get("AI_Use_ID"),"issues":identity_issues(r)} for r in ai if (r.get("AI_Use_ID") or "").strip() and identity_issues(r)],
         "interop":interop,
         "corpus_map":corpus_map,
         "journal_profile":journal_profile,
@@ -360,16 +363,19 @@ def main()->int:
         "## 7. AI use and human review",
         f"- Substantive AI-use records: {c['substantive_ai_uses']}",
     ]
-    if data["substantive_ai"]:
-        for r in data["substantive_ai"]:
+    if data["ai_execution_records"]:
+        for r in data["ai_execution_records"]:
             lines.append(
                 f"- {r.get('AI_Use_ID') or 'AI use'} — {r.get('Platform_or_tool') or 'tool not recorded'}"
+                f" — {identity_label(identity_record(r))}"
                 f" — purpose={r.get('Purpose') or '—'}"
                 f" — review={r.get('Human_review_method') or 'PENDING'}"
                 f" — decision={r.get('Accepted_modified_or_rejected') or 'PENDING'}"
             )
     else:
-        lines.append("- No substantive AI use recorded.")
+        lines.append("- No AI use recorded; absence of records does not prove non-use.")
+    for gap in data["ai_execution_identity_gaps"]:
+        lines.append(f"- Execution identity gap {gap['id']}: {'; '.join(gap['issues'])}")
 
     lines += [
         "",

@@ -27,7 +27,11 @@ quotations, participant material, search strings and technical identifiers.
 Translate source material only when requested/appropriate with original
 provenance retained. Do not translate enums, paths, IDs or commands.
 
-## 0A. Preflight
+## 0A. RC.5 operational preflight
+
+At activation and every resumption apply [RC.5 operational contract](references/rc5-operational-contract.md). It refines interaction and capability handling while preserving all scientific safeguards, project schemas and seven gates. Surface actual integration setup, maintain pending decisions across free-text replies, and route by [gate tool playbook](references/gate-tool-playbook.md). Use [DOI recovery](references/doi-recovery.md) for missing or conflicting identifiers, and [bibliometric design](references/bibliometric-design.md) when relevant. Never claim a script or integration was executed without evidence.
+
+## 0B. Preflight
 Use bullets, no empty tables; cite real checks. See [guidance](docs/CHATGPT.md).
 
 ## 1. Invariant scientific contract
@@ -78,10 +82,7 @@ Determine the next action from recorded persistent state.
 before substantive literature searches, synthesis, drafting or local
 canonical workspace creation. A displayed app is not proof of authentication,
 successful writes or synchronization. If unavailable, present the connection
-path and recheck after the researcher's required authorization. Only after
-an **explicit affirmative** decision may an alternative Work/local
-`WORK_FALLBACK` be created. Record the real actor, date and limitations.
-If denied or unanswered, stop substantive work at the storage gate.
+path and recheck after the researcher's required authorization. Offer the [flexible storage ladder](references/flexible-storage.md): authorized alternative persistent storage, Work, local user folder if truly accessible, or portable checkpoint. An explicit affirmative fallback choice authorizes that destination; record actor, date and limitations using existing `WORK_FALLBACK` mode. Do not ask again for an already explicit choice. If denied or unanswered, allow informational help only, not new canonical research writes.
 Drive-local files remain staging until [individual Drive folders and files
 are verified](references/drive-delivery.md). ZIP-only upload is incomplete.
 
@@ -155,6 +156,8 @@ or demonstrated utility. Read only the branch appropriate to the research.
 
 ## 4. Events, decisions, evidence and submission controls
 
+**MANDATORY AI-use identity:** on each material AI-assisted activity, record the actual platform/provider, exposed model/version, execution date/time with offset when available, environment (CHAT/WORK/CODEX/API/OTHER), client surface (WEB/DESKTOP_APP/MOBILE_APP/CLI/IDE/API/OTHER), known configuration, plugin version and identification sources. Read [AI execution identity](references/ai-execution-identity.md) before writing trace or AI-use logs, reports or editorial declarations. Record unknown values explicitly; never guess hidden model identifiers or retroactively assign today's identity to earlier work. Preserve the seven gates and existing records.
+
 **Local execution:** when scripts and execution facilities are available,
 use `scripts/trace_execution.py run` with permitted scripts, actual
 process result, receipts and hashes. Without dependable evidence of an
@@ -216,7 +219,7 @@ submission without external confirmation. See
 
 ## 4A. Choice UI
 
-For meaningful decisions, show **three alternatives** A/B/C (pros/cons, one recommendation) and **free-text** D. Follow [native radio button, D radio and Submit](references/decision-navigation.md); no gate approval.
+For meaningful decisions, show **three alternatives** A/B/C (pros/cons, one recommendation) and **free-text** D. After any ordinary chat answer or detour, return to the same pending choice if unresolved or present the next valid one. Never drop D or auto-select a recommendation. Follow [native radio button, D radio and Submit](references/decision-navigation.md); no gate approval.
 
 ## 5. Platforms and interaction presentation
 

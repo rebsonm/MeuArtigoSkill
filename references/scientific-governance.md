@@ -429,3 +429,5 @@ scripts/governance_events.py decision defaults to PROPOSED with no assumed resea
 ## Researcher accountability and AI use
 
 Consult [the complementary methodological bibliography](methodological-foundations.md), including Sampaio, Sabbatini and Limongi (2024), when discussing transparency, author accountability and AI-assisted research. The guide complements but does not replace the current requirements of the journal actually selected. Full research logs remain separate from concise manuscript declarations.
+
+Operational tool selection and entry/evidence checks: [RC.5 gate playbook](gate-tool-playbook.md). Route-specific definitions, approval dependencies, researcher reasoning and limitations remain authoritative. For bibliometric strategies use [bibliometric design](bibliometric-design.md) under an existing justified route.
