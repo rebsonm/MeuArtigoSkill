@@ -1,8 +1,26 @@
 # Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool
 
-**Current version:** `1.0.0-rc.4` — **published experimental prerelease (plugin-only)** on 23 November 2026 (UTC). [GitHub official RC.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4) · [Installable plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.4/MeuArtigoPlugin-v1.0.0-rc.4.zip) · [Zenodo DOI 10.5281/zenodo.24453186](https://doi.org/10.5281/zenodo.24453186). The source and release are public, but this is not a stable release and no independent scientific validation is claimed. The private ChatGPT installation may display a fallback app icon even while its `logo` and `composerIcon` files are valid; host appearance remains NOT_VERIFIED.
+**Current version:** `1.0.0-rc.5.1` — unpublished release candidate (plugin-only). **Latest published experimental release:** [RC.4](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4). No new release or DOI is claimed for RC.5.1.
 
 **Historical experimental versions:** [RC.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3), [RC.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.1) and [v0.9.0-beta.6](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v0.9.0-beta.6) remain available. RC.3's [Zenodo DOI 10.5281/zenodo.24452285](https://doi.org/10.5281/zenodo.24452285) continues to identify RC.3 only. Every 0.9.0-beta release is experimental; no stable v1.0.0 has been published.
+
+## Quick installation (ChatGPT)
+
+**[Download the latest published plugin ZIP (RC.4)](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.4/MeuArtigoPlugin-v1.0.0-rc.4.zip)**. Keep it compressed. Open ChatGPT, activate Plugin Creator, attach the ZIP, and send:
+
+> Using Plugin Creator, create a new personal plugin directly from the attached Meu Artigo ZIP. Preserve all package contents and the declared version. Do not search the public directory or request access to the maintainer's private plugin. Return my own plugin link and the installed version only after confirming creation.
+
+Open the returned link and verify your version. Each eligible account creates an independent private copy; no maintainer-account access or public listing is required. To test RC.5.1, use a verified candidate ZIP supplied by the maintainer. [Full installation and update guide](docs/INSTALLATION.md).
+
+## What is new in RC.5.1?
+
+- Reliable A/B/C/D continuity and tool onboarding.
+- Crossref-first DOI recovery, complementary verification and batch checkpoints.
+- Method-aware tool routing for the same seven gates.
+- Drive-first flexible authorized storage and portable continuity.
+- Detailed AI-use provenance: model/version, execution date/time, environment and access surface, plugin version and identification source. Unknown values are documented, not invented.
+
+[Candidate notes](docs/RC5-RELEASE-NOTES.md) · [AI execution identity](references/ai-execution-identity.md).
 
 ## Getting started
 

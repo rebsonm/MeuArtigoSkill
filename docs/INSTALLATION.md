@@ -1,27 +1,32 @@
-# Install Meu Artigo — plugin-only from RC.4
+# Install Meu Artigo — quick start
 
-**RC.4 is PUBLISHED on GitHub as an experimental prerelease:** [official plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.4). [Zenodo DOI](https://doi.org/10.5281/zenodo.24453186). The only installation format is a ChatGPT **plugin**. There will be **no** `MeuArtigoSkill-v1.0.0-rc.4.zip` release asset, and users do **not** import a standalone Skill for RC.4.
+**Latest published installer:** [Download RC.4 plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.4/MeuArtigoPlugin-v1.0.0-rc.4.zip). **Development source:** `1.0.0-rc.5.1`, an unpublished release candidate. To test RC.5.1, use a verified candidate ZIP supplied by the maintainer, not the RC.4 download. Manual installation is independent of public directory publication.
 
-## ChatGPT normal chat and Work
+## First installation — no coding
 
-1. Download the [published RC.4 plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.4/MeuArtigoPlugin-v1.0.0-rc.4.zip), then install or update the plugin through your ChatGPT plugin controls. Publication is verified; cross-account installation is not.
-2. Select the plugin in a normal chat, or invoke the **same plugin** from a Work task when that mode exposes it.
-3. Request a research orientation in your own language. State a research problem; the plugin must verify real capabilities and authorized persistent storage before performing substantive external work.
-4. Review A/B/C/D proposals. No choice automatically approves a scientific gate.
-5. Confirm saved state from actual records before resuming; seeing a connected service does not establish a successful read/write.
+1. Download the prepared **MeuArtigoPlugin** ZIP. Keep it compressed; do not use GitHub's Code → Download ZIP, automatic source archives or PDF archives.
+2. Open ChatGPT in **your own account**. Find and activate **Plugin Creator** in the plugin directory/controls if available. Your account must allow personal plugin creation.
+3. Start a new conversation, attach the ZIP and select Plugin Creator using the @ selector. Send this instruction:
 
-**Compatibility boundary:** a private Lab plugin was observed by the maintainer in normal chat and Work; availability of the official RC.4 plugin, its scripts, APIs, persistent storage and user interface remains separately **NOT_VERIFIED** until tests are performed in the intended host and account.
+   > Using Plugin Creator, create a new personal plugin directly from the attached Meu Artigo ZIP. Preserve all package contents and the declared version. Do not search the public directory or request access to the maintainer's private plugin. Return my own plugin link and the installed version only after confirming creation.
 
-## What is inside the plugin?
+4. Open the returned link, activate your independent copy and verify its installed version. The maintainer reported success with an independent RC.4 account using this approach; success in every account, plan and RC.5.1 host is not established.
+5. Use the same plugin in normal chat or Work where supported. Request guidance in your preferred language. No separate Skill installer or publisher-hosted MCP server is required.
 
-The plugin archive contains `plugin.json`, `skills/meu-artigo/SKILL.md`, appropriate companion methods, scripts, instructions and rights information. That nested SKILL.md is an **internal component**, not a second installation file. A plugin with instructions does not inherently execute Python scripts or supply remote MCP tools. Use only host-provided, authorized tools and report unavailable operations as NOT_RUN.
+## Update an existing installation
 
-The 649 cards (475 [P], 174 [I]/[P]) and licensed public PDFs are **not all embedded**. On-demand GitHub consultation requires accessible read-only retrieval and actual source inspection; never assert full-text reading from catalogue metadata.
+Attach the newer verified plugin ZIP, activate Plugin Creator, and send:
 
-**Branding:** the selected user-uploaded image is included as a verified, visually faithful optimized 128 × 128 PNG in the source. The private candidate has the original 256 × 256 file. The official plugin bundle must reference this reviewed asset; do not substitute another design.
+> Using Plugin Creator, update my existing owned Meu Artigo plugin with the attached newer ZIP. Confirm the exact plugin identity and current version first; preserve permissions and all research project records. Do not create a duplicate. Report the confirmed new version.
 
-## Historical releases
+A GitHub source update does not automatically update personal copies. To test separately, explicitly create an independent copy rather than replacing the existing one.
 
-The [published experimental RC.3](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) used a standalone [Skill ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.3/MeuArtigoSkill-v1.0.0-rc.3.zip) and remains unchanged. It is **not** the published RC.4 plugin. Historic RC.1/beta assets and Zenodo deposits are preserved, but not offered as the current RC.4 installation method.
+## Troubleshooting
 
-See [RC.4 distribution specification](RC4-PLUGIN-DISTRIBUTION.md), [ChatGPT guide](CHATGPT.md) and [compatibility](COMPATIBILIDADE-PLATAFORMAS.md).
+If ChatGPT searches the public directory or reports that the maintainer's plugin is private, repeat step 3 with Plugin Creator selected: the ZIP is the source of a new personal copy. If Plugin Creator is unavailable, report the actual account restriction; do not claim installation or ask for credentials. If the ZIP is rejected, check the prepared archive and share the exact error. Google Drive, Consensus, Scite, Firecrawl and other tools require real access and authorization. Local disk access depends on the host. Prefer Drive and offer an expressly authorized alternative if unavailable.
+
+Installation does not approve scientific gates or validate research. The seven gates remain under researcher control.
+
+[Privacy](../PRIVACY.md) · [Terms](../TERMS.md) · [Support](../SUPPORT.md) · [Current status](CURRENT-RELEASE.md) · [Platform compatibility](COMPATIBILIDADE-PLATAFORMAS.md).
+
+The historical RC.3 and earlier Skill packages remain archived; they are not the current ChatGPT plugin installer.

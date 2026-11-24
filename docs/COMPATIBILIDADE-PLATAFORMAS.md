@@ -1,5 +1,8 @@
 # Meu Artigo — compatibility and distribution from RC.4
 
+**Current candidate:** RC.5.1 (unpublished); RC.4 remains the last published plugin. Follow the [quick Plugin Creator installation guide](INSTALLATION.md) for a personal copy or an update. RC.5.1 adds detailed AI execution identity, tool routing and flexible authorized storage. Private installation was confirmed; cross-host functional tests remain pending.
+
+
 **Only the ChatGPT plugin was published for RC.4.** There will be no standalone RC.4 Skill ZIP or dedicated Claude/Gemini installation package. The GitHub repository remains public source code and historical Skill releases remain untouched.
 
 | Surface | RC.4 plan | Evidence status |
