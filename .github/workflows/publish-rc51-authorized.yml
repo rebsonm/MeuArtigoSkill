@@ -1,0 +1,120 @@
+name: Publish authorized RC.5.1 plugin and enable Zenodo archiving
+
+on:
+  push:
+    branches: [main]
+    paths: ['docs/RC51-PUBLISH-AUTHORIZATION.md']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: single-rc51-plugin-publisher
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'rebsonm/MeuArtigoSkill' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      actions: read
+    env:
+      RELEASE_SOURCE: '8a08726e366b4c0ad6345150b5d17923f877b66d'
+      RELEASE_TAG: 'v1.0.0-rc.5.1'
+      AUDIT_RUN: '45490939066'
+    steps:
+      - name: Checkout authorized main revision
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Verify authorization and exact previously audited source
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          grep -Fx 'RC51_PLUGIN_GITHUB_RELEASE_APPROVED=YES' docs/RC51-PUBLISH-AUTHORIZATION.md
+          grep -Fx 'RC51_GITHUB_ZENODO_AUTOARCHIVE_APPROVED=YES' docs/RC51-PUBLISH-AUTHORIZATION.md
+          git merge-base --is-ancestor "$RELEASE_SOURCE" HEAD
+          unexpected="$(git diff --name-only "$RELEASE_SOURCE" HEAD | grep -v -x -e '.github/workflows/publish-rc51-authorized.yml' -e 'docs/RC51-PUBLISH-AUTHORIZATION.md' || true)"
+          test -z "$unexpected"
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$AUDIT_RUN" --jq '{head_sha,conclusion,status,name}' > "$RUNNER_TEMP/rc51-audit.json"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          run=json.loads((Path(os.environ['RUNNER_TEMP'])/'rc51-audit.json').read_text())
+          assert run['head_sha']==os.environ['RELEASE_SOURCE']
+          assert run['conclusion']=='success' and run['status']=='completed' and run['name']=='Release audit'
+          PY
+          git checkout --detach "$RELEASE_SOURCE"
+          test "$(git rev-parse HEAD)" = "$RELEASE_SOURCE"
+          test "$(cat VERSION)" = '1.0.0-rc.5.1'
+          test "$(cat OFFICIAL_PLUGIN_RELEASE)" = '1.0.0-rc.4'
+      - name: Python 3.12
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Refuse existing tag or release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then echo 'Release exists; refusing overwrite'; exit 1; fi
+          if git ls-remote --tags origin "refs/tags/$RELEASE_TAG" | grep -q .; then echo 'Tag exists; refusing overwrite'; exit 1; fi
+      - name: Validate metadata and build canonical plugin only
+        run: |
+          set -euo pipefail
+          python scripts/check_release_metadata.py --candidate
+          python scripts/check_github_zenodo_parity.py preflight --tag "$RELEASE_TAG"
+          python scripts/build_plugin_bundle.py
+          python scripts/build_plugin_bundle.py --verify dist/MeuArtigoPlugin-v1.0.0-rc.5.1.zip
+          (cd dist && sha256sum -c SHA256SUMS.txt)
+          test ! -e dist/MeuArtigoSkill-v1.0.0-rc.5.1.zip
+          python - <<'PY'
+          import json, os
+          from zipfile import ZipFile
+          with ZipFile('dist/MeuArtigoPlugin-v1.0.0-rc.5.1.zip') as z:
+              files=z.namelist()
+              assert 'meu-artigo/plugin.json' in files
+              assert 'meu-artigo/assets/rc4-logo.png' in files
+              assert 'meu-artigo/skills/meu-artigo/SKILL.md' in files
+              assert not any(x.lower().endswith('.pdf') for x in files)
+              m=json.loads(z.read('meu-artigo/plugin.json'))
+              assert m['version']=='1.0.0-rc.5.1'
+              assert m['author']['name']=='Rebson de Morais Mendes'
+              i=json.loads(z.read('meu-artigo/PLUGIN_BUNDLE_MANIFEST.json'))
+              assert i['build_source_commit']==os.environ['RELEASE_SOURCE']
+          PY
+      - name: Prepare release notes
+        run: |
+          cat > "$RUNNER_TEMP/rc51-notes.md" <<'EOF'
+          **Meu Artigo v1.0.0-rc.5.1 — experimental plugin-only prerelease**
+
+          Operational maturity and detailed AI-use traceability: persistent A/B/C/D navigation, Crossref-first DOI recovery, complementary bibliographic tools, method-specific tool routing for seven researcher-controlled gates, Drive-first flexible authorized storage, and explicit AI model/version, execution date/time, environment and client-surface provenance.
+
+          **Installation:** download the prepared plugin ZIP, activate Plugin Creator in your ChatGPT account, attach the ZIP and request creation of an independent personal plugin directly from the archive. Do not search the public directory or request access to the maintainer's private installation. Existing users may request an update instead. See the repository installation guide. Availability depends on actual account permissions.
+
+          The plugin is built from the audited canonical GitHub source, excludes third-party PDFs, and has no separate Skill installer or bundled MCP server. This is experimental software, not a stable release or independent scientific validation. Cross-host functional validation remains pending.
+
+          **Citation:** Mendes, Rebson de Morais. *Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool* (v1.0.0-rc.5.1) [Software]. The version-specific Zenodo DOI is pending observed archiving; do not reuse an earlier DOI. The tagged source retains its audited pre-publication candidate metadata.
+          EOF
+      - name: Publish exactly one authorized experimental GitHub prerelease
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh release create "$RELEASE_TAG" \
+            dist/MeuArtigoPlugin-v1.0.0-rc.5.1.zip dist/SHA256SUMS.txt \
+            --repo "$GITHUB_REPOSITORY" --target "$RELEASE_SOURCE" \
+            --title "Meu Artigo — AI-Assisted Scientific Research Workflow and Governance Tool v1.0.0-rc.5.1" \
+            --notes-file "$RUNNER_TEMP/rc51-notes.md" --prerelease --latest=false
+      - name: Confirm published release, tag and exact assets
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json isPrerelease,isDraft,url,tagName,assets --jq '{prerelease:.isPrerelease,draft:.isDraft,url:.url,tag:.tagName,assets:[.assets[].name]}'
+          test "$(gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json assets --jq '[.assets[].name]|sort|join(",")')" = 'MeuArtigoPlugin-v1.0.0-rc.5.1.zip,SHA256SUMS.txt'
+          test "$(git ls-remote --tags origin "refs/tags/$RELEASE_TAG" | cut -f1)" = "$RELEASE_SOURCE"
