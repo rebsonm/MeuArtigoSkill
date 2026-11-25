@@ -2,7 +2,7 @@
 
 ## Current verifiable history
 
-- **RC.5.1 PUBLISHED 2026-11-24 UTC:** [GitHub release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1), tag source commit `8a08726e366b4c0ad6345150b5d17923f877b66d`; plugin SHA-256 `4d864026622b92f3c4f673f02050efa4755aa3248308109f329b4e834c5623d1`. GitHub publication and tag were observed; Zenodo DOI, record version and archive-source parity remain NOT_VERIFIED. The immutable tag retains pre-publication candidate metadata; post-publication documentation on main does not change it.
+- **RC.5.1 PUBLISHED 2026-11-24 UTC:** [GitHub release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1), tag source commit `8a08726e366b4c0ad6345150b5d17923f877b66d`; plugin SHA-256 `4d864026622b92f3c4f673f02050efa4755aa3248308109f329b4e834c5623d1`. GitHub publication and tag were observed; Zenodo DOI provided by the maintainer: [10.5281/zenodo.24516640](https://doi.org/10.5281/zenodo.24516640); independent record version and archive-source parity remain NOT_VERIFIED. The immutable tag retains pre-publication candidate metadata; post-publication documentation on main does not change it.
 
 - [Published RC.3 GitHub release](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.3) and [version-specific Zenodo DOI 10.5281/zenodo.24452285](https://doi.org/10.5281/zenodo.24452285) are historical. RC.3 distributed a standalone Skill ZIP; its original archive remains intact.
 - Historical RC.2 Zenodo DOI: [10.5281/zenodo.24450459](https://doi.org/10.5281/zenodo.24450459); earlier RC.1 release remains preserved.
