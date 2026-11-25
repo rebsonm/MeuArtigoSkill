@@ -1,6 +1,6 @@
 # Questions and troubleshooting
 
-**Current published experimental release: [v1.0.0-rc.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (2026-11-24 UTC).** [Plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.5.1/MeuArtigoPlugin-v1.0.0-rc.5.1.zip) and checksum are attached. RC.3 and earlier Skill packages are historical; RC.4 began plugin-only distribution. Zenodo version DOI pending independent confirmation.
+**Current published experimental release: [v1.0.0-rc.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (2026-11-24 UTC).** [Plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.5.1/MeuArtigoPlugin-v1.0.0-rc.5.1.zip) and checksum are attached. RC.3 and earlier Skill packages are historical; RC.4 began plugin-only distribution. Zenodo version DOI (provided by the maintainer): [10.5281/zenodo.24516640](https://doi.org/10.5281/zenodo.24516640).
 
 
 ### Do I need to know how to code?
