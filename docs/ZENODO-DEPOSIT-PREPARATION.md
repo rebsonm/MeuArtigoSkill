@@ -1,6 +1,6 @@
 # Historical RC.3 deposit preparation — archived procedure
 
-> Historical snapshot. For the current published RC.5.1 release and pending Zenodo DOI verification see [GitHub–Zenodo version parity](GITHUB-ZENODO-VERSION-PARITY.md). Do not create a duplicate manual deposit.
+> Historical snapshot. For the current published RC.5.1 release and maintainer-provided Zenodo DOI and pending independent verification see [GitHub–Zenodo version parity](GITHUB-ZENODO-VERSION-PARITY.md). Do not create a duplicate manual deposit.
 
 **Status:** The maintainer provided a new Zenodo RC.2 software DOI,
 [10.5281/zenodo.24450459](https://doi.org/10.5281/zenodo.24450459).

@@ -1,6 +1,6 @@
 # Meu Artigo — compatibility and distribution from RC.4
 
-**Current published release:** [RC.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (November 24, 2026). Follow the [quick Plugin Creator installation guide](INSTALLATION.md) for a personal copy or update. RC.5.1 adds detailed AI execution identity, tool routing and flexible authorized storage. Private installation was confirmed in the maintainer's account; cross-host functional tests remain pending. Zenodo version DOI pending confirmation.
+**Current published release:** [RC.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (November 24, 2026). Follow the [quick Plugin Creator installation guide](INSTALLATION.md) for a personal copy or update. RC.5.1 adds detailed AI execution identity, tool routing and flexible authorized storage. Private installation was confirmed in the maintainer's account; cross-host functional tests remain pending. Zenodo version DOI (provided by the maintainer): [10.5281/zenodo.24516640](https://doi.org/10.5281/zenodo.24516640).
 
 
 **Only the ChatGPT plugin was published for RC.4.** There will be no standalone RC.4 Skill ZIP or dedicated Claude/Gemini installation package. The GitHub repository remains public source code and historical Skill releases remain untouched.
