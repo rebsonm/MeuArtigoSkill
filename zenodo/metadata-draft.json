@@ -17,7 +17,7 @@
   ],
   "license": "Apache-2.0",
   "access_right": "open",
-  "notes": "Published experimental RC.5.1 on GitHub, 2026-11-24 UTC. Official release: https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1. Zenodo version-specific DOI and archived source parity pending independent confirmation. Author: Mendes, Rebson de Morais. Install the dedicated plugin ZIP, not the GitHub source snapshot. No independent scientific validation or gate approval implied.",
+  "notes": "Published experimental RC.5.1 on GitHub, 2026-11-24 UTC. Official release: https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1. Zenodo version-specific DOI supplied by the maintainer: https://doi.org/10.5281/zenodo.24516640; independent record and archived source parity verification pending. Author: Mendes, Rebson de Morais. Install the dedicated plugin ZIP, not the GitHub source snapshot. No independent scientific validation or gate approval implied.",
   "existing_zenodo_doi_to_verify_before_versioning": "10.5281/zenodo.24450459",
   "new_version_doi_assigned": false,
   "deposit_status": "RC51_GITHUB_PUBLISHED_ZENODO_NOT_VERIFIED",

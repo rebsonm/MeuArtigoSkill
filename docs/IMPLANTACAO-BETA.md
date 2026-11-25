@@ -1,13 +1,13 @@
 # Meu Artigo experimental beta: information for researchers
 
-**Current published experimental release: [v1.0.0-rc.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (2026-11-24 UTC).** [Plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.5.1/MeuArtigoPlugin-v1.0.0-rc.5.1.zip) and checksum are attached. RC.3 and earlier Skill packages are historical; RC.4 began plugin-only distribution. Zenodo version DOI pending independent confirmation.
+**Current published experimental release: [v1.0.0-rc.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (2026-11-24 UTC).** [Plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.5.1/MeuArtigoPlugin-v1.0.0-rc.5.1.zip) and checksum are attached. RC.3 and earlier Skill packages are historical; RC.4 began plugin-only distribution. Zenodo version DOI (provided by the maintainer): [10.5281/zenodo.24516640](https://doi.org/10.5281/zenodo.24516640).
 
 
 Meu Artigo is an **experimental ChatGPT plugin for scientific research support**. You can explore its guidance and workflow without claiming that it has been independently validated or that it guarantees a publishable article.
 
 ## Available download
 
-**Current published experimental release: [v1.0.0-rc.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (2026-11-24 UTC).** [Plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.5.1/MeuArtigoPlugin-v1.0.0-rc.5.1.zip) and checksum are attached. RC.3 and earlier Skill packages are historical; RC.4 began plugin-only distribution. Zenodo version DOI pending independent confirmation.
+**Current published experimental release: [v1.0.0-rc.5.1](https://github.com/rebsonm/MeuArtigoSkill/releases/tag/v1.0.0-rc.5.1) (2026-11-24 UTC).** [Plugin ZIP](https://github.com/rebsonm/MeuArtigoSkill/releases/download/v1.0.0-rc.5.1/MeuArtigoPlugin-v1.0.0-rc.5.1.zip) and checksum are attached. RC.3 and earlier Skill packages are historical; RC.4 began plugin-only distribution. Zenodo version DOI (provided by the maintainer): [10.5281/zenodo.24516640](https://doi.org/10.5281/zenodo.24516640).
 
 For installation, always choose the prepared ZIP on the [Releases page](https://github.com/rebsonm/MeuArtigoSkill/releases), not **Code → Download ZIP**. Each installed plugin remains on its installed version until you update it.
 

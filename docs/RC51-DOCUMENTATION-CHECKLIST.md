@@ -12,7 +12,7 @@ Reviewed against the confirmed [GitHub release](https://github.com/rebsonm/MeuAr
 | Website source | Current version and download/installation links | Corrected in this PR; deployment not yet verified |
 | Tracked Wiki | Home, installation, FAQ, start, platform, continuity, evidence, limitations and footer | Corrected in this PR; native Wiki not yet verified |
 | Release governance | Source/tag identity, authorization, archive checksum and publication date | Corrected in this PR |
-| Zenodo | RC.5.1 documentary metadata, historical DOIs preserved | Remote version DOI and archive parity pending verification |
+| Zenodo | RC.5.1 documentary metadata, historical DOIs preserved | Maintainer-provided DOI: [10.5281/zenodo.24516640](https://doi.org/10.5281/zenodo.24516640); independent record and archive parity verification pending |
 | Security, privacy, terms and support | Preserve safeguards; update current installer guidance | Security guidance corrected; no policy change intended |
 | Scientific method and governance | Preserve seven human-controlled gates, source rights and existing project schemas | Unchanged by documentation PR |
 | Historical release files | No retroactive edits to immutable releases or old version notes | Preserved |
